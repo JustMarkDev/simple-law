@@ -269,8 +269,22 @@ Obiettivo precedente (completato): UI/UX, feature, corpus 5005 voci.
   main-guard, regex diacritici, wiring hub/dettaglio/API.
 - Verifiche mie: `npm test` 804/804 OK, `typecheck`/`lint` OK, `build` OK
   (874 pagine), smoke live (hub/dettaglio/API/ricerca 200).
-- Next: altre regioni/finestre, Corte dei Conti/CSM se si aprono,
-  riduzione del sintetico via crescita reale.
+- Next: altre regioni/finestre (fatte sotto: 1965, 2022), Corte dei
+  Conti/CSM se si aprono, riduzione del sintetico via crescita reale.
+
+## Reali-15 (2026-09-28, commit `dbb9296`): freschezza, finestre 1965/2022
+- Workflow: 1 chiamata `workflow` con 10 subagenti (3 audit + 1 giudice + 4
+  scrittori + 2 revisori). Audit: link-rot, coerenza MANIFEST/disco/UI,
+  freschezza e performance.
+- Refresh: governo-comunicati, GU, sondaggi ri-ingeriti (conteggi stabili,
+  nessun record inventato/cancellato); finestre 1965 + 2022; MANIFEST 57
+  voci zero orfani/fantasmi; docs/FRESCHEZZA-DATI.md + verifica-freschezza.
+- Fix miei: refresh test con orologio congelato (falliva tra giorni),
+  verificaFreschezza NaN-throw, sleep inutile, eslint-disable orfani.
+- Verifiche mie: `npm test` 845/845 OK, `typecheck`/`lint` OK, `build` OK
+  (874 pagine), smoke live (7049 totale, 2046 reali 29%, export 200).
+- Next: altre finestre/regioni, Corte dei Conti/CSM se si aprono, crescita
+  reale continua.
 
 ## Stato iniziale (2026-09-28, iterazione 0)
 - Repo: `/Users/mark/Projects/simple-law`, branch `master` (appena `git init`, baseline committata `5391a84`).
