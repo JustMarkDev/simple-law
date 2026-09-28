@@ -9,7 +9,7 @@ import Footer from '@/components/Footer'
 export const revalidate = 3600
 
 export function generateStaticParams(): Array<{ id: string }> {
-  return [{ id: 'europee-2024' }, { id: 'politiche-2022-camera' }, { id: 'politiche-2022-senato' }]
+  return [{ id: 'europee-2024' }, { id: 'politiche-2022-camera' }, { id: 'politiche-2022-senato' }, { id: 'regionali-2025-toscana' }, { id: 'regionali-2024-umbria' }]
 }
 
 /* Registro consultazioni: id statici, titoli e file. Nessun numero qui. */
@@ -46,6 +46,22 @@ const REGISTRO: VoceRegistro[] = [
     descrizione:
       'Solo aggregati DAIT–Eligendo per il Senato: affluenza e voti per lista a livello nazionale, per circoscrizione e collegio, affluenza per comune. Nessun nominativo, nessuna riga candidata.',
     file: path.join('data', 'reali', 'elezioni-politiche-2022-senato.json'),
+  },
+  {
+    id: 'regionali-2025-toscana',
+    titoloBreve: 'Regionali 2025 — Toscana',
+    titolo: 'Elezioni regionali 2025 — Toscana (12 ottobre 2025)',
+    descrizione:
+      'Solo aggregati DAIT–Eligendo per la Toscana: affluenza e voti per lista a livello regionale, affluenza per comune. Nessun nominativo, nessuna riga candidata; i voti del presidente non sono pubblicati come aggregato nel tracciato.',
+    file: path.join('data', 'reali', 'elezioni-regionali-2025-toscana.json'),
+  },
+  {
+    id: 'regionali-2024-umbria',
+    titoloBreve: 'Regionali 2024 — Umbria',
+    titolo: 'Elezioni regionali 2024 — Umbria (17 novembre 2024)',
+    descrizione:
+      'Solo aggregati DAIT–Eligendo per l’Umbria (circoscrizione unica): affluenza e voti per lista a livello regionale, affluenza per comune. Nessun nominativo, nessuna riga candidata; i voti del presidente non sono pubblicati come aggregato nel tracciato.',
+    file: path.join('data', 'reali', 'elezioni-regionali-2024-umbria.json'),
   },
 ]
 
@@ -357,7 +373,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 /**
- * Dettaglio generico di una consultazione (3 id di registro, resto 404).
+ * Dettaglio generico di una consultazione (5 id di registro, resto 404).
  *
  * Legge solo l'aggregato committato del registro con guardie never-throw
  * (file assente / oltre 1 MB / malformato → stato vuoto, mai numeri

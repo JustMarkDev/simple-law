@@ -261,8 +261,17 @@
    "conteggio": 30,
    "recuperatoIl": "2026-09-28",
    "legislatura": null
+  },
+  {
+   "nome": "CNEL (osservazioni e proposte, solo metadati + link)",
+   "url": "https://www.cnel.it/documenti",
+   "licenza": "solo metadati + link ufficiali, nessun mirror (licenza aperta non dichiarata nelle pagine)",
+   "file": "oversight-cnel-2026.json",
+   "conteggio": 50,
+   "recuperatoIl": "2026-09-28T20:35:15.499Z",
+   "legislatura": null
   }
  ],
- "generatoIl": "2026-09-28T21:20:27.768Z",
+ "generatoIl": "2026-09-28T20:35:15.499Z",
  "nota": "Dati ufficiali open data (11 file). I file >1MB non si committano: rigenerare via scripts/ingest-reale-*.ts. I gruppi Camera sono derivati dai deputati; le denominazioni Senato includono varianti storiche della leg. 19; i DDL/atti sono disegni e atti parlamentari, MAI leggi in vigore."
 }

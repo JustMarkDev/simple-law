@@ -16,6 +16,9 @@ const REGISTRO: Array<{ id: string; titoloBreve: string; titolo: string; file: s
   { id: 'europee-2024', titoloBreve: 'Europee 2024', titolo: 'Elezioni europee — 9 giugno 2024', file: path.join('data', 'reali', 'elezioni-europee-2024.json') },
   { id: 'politiche-2022-camera', titoloBreve: 'Politiche 2022 — Camera', titolo: 'Elezioni politiche 2022 — Camera dei deputati', file: path.join('data', 'reali', 'elezioni-politiche-2022-camera.json') },
   { id: 'politiche-2022-senato', titoloBreve: 'Politiche 2022 — Senato', titolo: 'Elezioni politiche 2022 — Senato della Repubblica', file: path.join('data', 'reali', 'elezioni-politiche-2022-senato.json') },
+  { id: 'regionali-2025-toscana', titoloBreve: 'Regionali 2025 — Toscana', titolo: 'Elezioni regionali 2025 — Toscana', file: path.join('data', 'reali', 'elezioni-regionali-2025-toscana.json') },
+  { id: 'regionali-2024-umbria', titoloBreve: 'Regionali 2024 — Umbria', titolo: 'Elezioni regionali 2024 — Umbria', file: path.join('data', 'reali', 'elezioni-regionali-2024-umbria.json') },
+  { id: 'referendum-2025', titoloBreve: 'Referendum 2025', titolo: 'Referendum 8-9 giugno 2025 — 5 quesiti', file: path.join('data', 'reali', 'referendum-2025.json') },
 ]
 
 const MAX_BYTE_JSON = 1024 * 1024

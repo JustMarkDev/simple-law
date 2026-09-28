@@ -14,8 +14,10 @@
 import { beforeEach, describe, expect, it, vi } from "vitest";
 import {
   aContratto,
+  aDocumentoCnel,
   aProvvedimentoGA,
   cercaContratti,
+  cercaDocumentiCnel,
   cercaProvvedimenti,
   contaPerGiudice,
   filtraPerEnte,
@@ -23,6 +25,7 @@ import {
   normalizzaGiudiceGA,
   normalizzaOversight,
   paginaOversight,
+  tuttiDocumentiCnel,
 } from "@/lib/oversight-dati";
 import { GET as controlloGET } from "@/app/api/controllo/route";
 
@@ -240,8 +243,7 @@ describe("oversight: normalizzazione fixture (zero rete, zero disco)", () => {
   });
 
   it("never-throw su input malformati", () => {
-    expect(() => aContratto({})).not.toThrow();
-    expect(() => aProvvedimentoGA({})).not.toThrow();
+    expect(() => aContratto({})).not.toThrow();    expect(() => aProvvedimentoGA({})).not.toThrow();
     expect(() => cercaContratti(null as never, "x")).not.toThrow();
     expect(() => filtraPerEnte(null as never, "x")).not.toThrow();
     expect(() => cercaProvvedimenti(null as never, "x")).not.toThrow();
@@ -331,6 +333,29 @@ describe("oversight: API /api/controllo mai-500 e bounded", () => {
     expect(data.tipo).toBe("contratti");
     expect(Array.isArray(data.items)).toBe(true);
   });
+
+  it("tipo=cnel risponde 200 con documenti mai-stato e disclaimer", async () => {
+    const res = await controlloGET(
+      new Request("http://localhost/api/controllo?tipo=cnel&q=lavoro&page=1&per=10"),
+    );
+    expect(res.status).toBe(200);
+    const data = (await res.json()) as {
+      tipo: string;
+      items: Record<string, unknown>[];
+      total: number;
+      provenance: unknown;
+      disclaimer: string;
+    };
+    expect(data.tipo).toBe("cnel");
+    expect(Array.isArray(data.items)).toBe(true);
+    expect(typeof data.disclaimer).toBe("string");
+    for (const voce of data.items) {
+      expect(voce).not.toHaveProperty("stato");
+      expect(voce).not.toHaveProperty("vigenza");
+      expect(typeof voce["titolo"]).toBe("string");
+      expect(typeof voce["url"]).toBe("string");
+    }
+  });
 });
 
 describe("oversight: integrazione disco tollerante (solo se i file esistono)", () => {
@@ -356,7 +381,10 @@ describe("oversight: integrazione disco tollerante (solo se i file esistono)", (
     for (const voce of lista) {
       const c = aContratto(voce);
       expect(c).not.toBeNull();
-      expect((c?.cig ?? "").length).toBeGreaterThanOrEqual(7);
+      // CIG opzionale (mai inventato): se presente e lungo almeno 7.
+      if (c?.cig !== undefined) {
+        expect(c.cig.length).toBeGreaterThanOrEqual(7);
+      }
       expect((c?.oggetto ?? "").length).toBeGreaterThanOrEqual(5);
       expect(c as unknown as Record<string, unknown>).not.toHaveProperty("stato");
       const chiave = c?.cig ?? "";
@@ -385,9 +413,48 @@ describe("oversight: integrazione disco tollerante (solo se i file esistono)", (
     for (const voce of lista) {
       const p = aProvvedimentoGA(voce);
       expect(p).not.toBeNull();
-      expect(["cds", "tar"]).toContain(p?.giudice);
+      expect(["cds", "tar", "cga"]).toContain(p?.giudice);
       expect(p?.schedaUrl.startsWith("https://")).toBe(true);
       expect(p as unknown as Record<string, unknown>).not.toHaveProperty("stato");
     }
+  });
+});
+
+describe("oversight: documenti CNEL (metadati + link, mai testo)", () => {
+  it("aDocumentoCnel accetta voci reali e scarta senza id/titolo/url", () => {
+    const ok = aDocumentoCnel({
+      id: "https://www.cnel.it/osservazioni-e-proposte-esempio",
+      titolo: "Osservazioni e proposte in materia di lavoro",
+      data: "2026-07-23",
+      url: "https://www.cnel.it/osservazioni-e-proposte-esempio",
+      tipo: "osservazione",
+    });
+    expect(ok?.id.length).toBeGreaterThan(0);
+    expect(ok?.titolo.length).toBeGreaterThan(0);
+    expect(ok?.url.startsWith("https://")).toBe(true);
+    expect(ok && "testo" in ok).toBe(false);
+    expect(aDocumentoCnel({ titolo: "x", url: "https://www.cnel.it/y" })).toBeNull();
+    expect(aDocumentoCnel({ id: "x", titolo: "yyyyy", url: "http://inscure.example/y" })).toBeNull();
+    expect(aDocumentoCnel(null)).toBeNull();
+  });
+
+  it("tuttiDocumentiCnel carica il file reale con provenance (tollerante se assente)", async () => {
+    const docs = await tuttiDocumentiCnel();
+    expect(Array.isArray(docs)).toBe(true);
+    for (const d of docs.slice(0, 5)) {
+      expect(d.titolo.length).toBeGreaterThanOrEqual(5);
+      expect(d.url.startsWith("https://")).toBe(true);
+      expect(d).not.toHaveProperty("stato");
+      expect(d).not.toHaveProperty("testo");
+    }
+  });
+
+  it("cercaDocumentiCnel bound e min-2 (mai throw)", async () => {
+    const docs = await tuttiDocumentiCnel();
+    expect(cercaDocumentiCnel(docs, "lavoro").length).toBeLessThanOrEqual(docs.length);
+    expect(cercaDocumentiCnel(docs, "x")).toEqual(
+      docs.length > 0 ? expect.any(Array) : [],
+    );
+    expect(() => cercaDocumentiCnel(null as never, null)).not.toThrow();
   });
 });

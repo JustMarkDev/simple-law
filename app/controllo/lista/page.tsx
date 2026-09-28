@@ -4,16 +4,19 @@ import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import {
   cercaContratti,
+  cercaDocumentiCnel,
   cercaProvvedimenti,
   contaPerGiudice,
   DISCLAIMER_CONTROLLO,
   filtraPerEnte,
   filtraPerGiudice,
   leggiProvenanceAnac,
+  leggiProvenanceCnel,
   leggiProvenanceGA,
   normalizzaGiudiceGA,
   paginaOversight,
   tuttiContratti,
+  tuttiDocumentiCnel,
   tuttiProvvedimentiGA,
 } from '@/lib/oversight-dati'
 
@@ -60,7 +63,7 @@ export default async function ListaControlloPage({
 }) {
   const params = await searchParams
   const tipoGrezzo = (params.tipo ?? 'contratti').trim().toLowerCase()
-  const tipo = tipoGrezzo === 'ga' ? 'ga' : 'contratti'
+  const tipo = tipoGrezzo === 'ga' ? 'ga' : tipoGrezzo === 'cnel' ? 'cnel' : 'contratti'
   const q = (params.q ?? '').slice(0, 100)
   const ente = (params.ente ?? '').slice(0, 100)
   const giudice = normalizzaGiudiceGA(params.giudice ?? '')
@@ -122,7 +125,7 @@ export default async function ListaControlloPage({
             </p>
           </header>
 
-          <div className="mt-6 flex flex-wrap gap-2" role="group" aria-label="Passa tra contratti e provvedimenti">
+          <div className="mt-6 flex flex-wrap gap-2" role="group" aria-label="Passa tra contratti, provvedimenti e documenti">
             <Link
               href="/controllo/lista?tipo=contratti"
               className="inline-flex min-h-[44px] items-center border border-regola px-4 py-2 text-xs font-semibold uppercase tracking-wide text-inchiostro hover:border-inchiostro dark:border-notte-deep dark:text-nebbia dark:hover:border-nebbia"
@@ -135,6 +138,12 @@ export default async function ListaControlloPage({
             >
               Provvedimenti
             </span>
+            <Link
+              href="/controllo/lista?tipo=cnel"
+              className="inline-flex min-h-[44px] items-center border border-regola px-4 py-2 text-xs font-semibold uppercase tracking-wide text-inchiostro hover:border-inchiostro dark:border-notte-deep dark:text-nebbia dark:hover:border-nebbia"
+            >
+              Documenti CNEL
+            </Link>
           </div>
 
           <form method="get" action="/controllo/lista" className="mt-4 flex flex-col gap-3 sm:flex-row" role="search">
@@ -268,6 +277,151 @@ export default async function ListaControlloPage({
     )
   }
 
+  if (tipo === 'cnel') {
+    const [tutte, provenance] = await Promise.all([tuttiDocumentiCnel(), leggiProvenanceCnel()])
+    const filtrati = cercaDocumentiCnel(tutte, q)
+    const totale = filtrati.length
+    const items = paginaOversight(filtrati, page, per)
+    const pagine = Math.max(1, Math.ceil(totale / per))
+    const paginaCorrente = Math.min(page, pagine)
+
+    return (
+      <>
+        <Header />
+        <main id="contenuto" className="mx-auto w-full max-w-editoriale px-4 py-10 sm:px-6 sm:py-12 lg:px-8">
+          <nav aria-label="Percorso" className="text-xs text-inchiostro-soft dark:text-nebbia-soft">
+            <ol className="flex flex-wrap items-center gap-2">
+              <li>
+                <Link href="/" className="hover:text-accento dark:hover:text-accento-chiara">Home</Link>
+              </li>
+              <li aria-hidden="true">/</li>
+              <li>
+                <Link href="/controllo" className="hover:text-accento dark:hover:text-accento-chiara">Controllo pubblico</Link>
+              </li>
+              <li aria-hidden="true">/</li>
+              <li aria-current="page" className="font-medium text-inchiostro dark:text-nebbia">Documenti CNEL</li>
+            </ol>
+          </nav>
+
+          <header className="mt-4 border-b-2 border-inchiostro pb-5 dark:border-nebbia">
+            <p className="text-xs font-semibold uppercase tracking-[0.28em] text-accento dark:text-accento-chiara">
+              Controllo · CNEL
+            </p>
+            <h1 className="mt-2 font-serif text-3xl font-bold text-inchiostro dark:text-nebbia sm:text-4xl">
+              Documenti CNEL
+            </h1>
+            <p className="mt-3 max-w-2xl text-sm leading-relaxed text-inchiostro-soft dark:text-nebbia-soft">
+              Osservazioni e proposte del Consiglio Nazionale dell&apos;Economia e del Lavoro: sono
+              atti consultivi, <strong>non sono leggi</strong>. Solo metadati con link ufficiali.
+            </p>
+            <p className="mt-2 text-sm font-semibold text-inchiostro dark:text-nebbia" role="status">
+              {totale} documenti trovati · {tutte.length} caricati
+            </p>
+          </header>
+
+          <div className="mt-6 flex flex-wrap gap-2" role="group" aria-label="Passa tra contratti, provvedimenti e documenti">
+            <Link
+              href="/controllo/lista?tipo=contratti"
+              className="inline-flex min-h-[44px] items-center border border-regola px-4 py-2 text-xs font-semibold uppercase tracking-wide text-inchiostro hover:border-inchiostro dark:border-notte-deep dark:text-nebbia dark:hover:border-nebbia"
+            >
+              Contratti
+            </Link>
+            <Link
+              href="/controllo/lista?tipo=ga"
+              className="inline-flex min-h-[44px] items-center border border-regola px-4 py-2 text-xs font-semibold uppercase tracking-wide text-inchiostro hover:border-inchiostro dark:border-notte-deep dark:text-nebbia dark:hover:border-nebbia"
+            >
+              Provvedimenti
+            </Link>
+            <span
+              aria-current="page"
+              className="inline-flex min-h-[44px] items-center border border-inchiostro bg-inchiostro px-4 py-2 text-xs font-semibold uppercase tracking-wide text-carta dark:border-nebbia dark:bg-nebbia dark:text-notte"
+            >
+              Documenti CNEL
+            </span>
+          </div>
+
+          <form method="get" action="/controllo/lista" className="mt-4 flex flex-col gap-3 sm:flex-row" role="search">
+            <input type="hidden" name="tipo" value="cnel" />
+            <label htmlFor="cerca-cnel" className="sr-only">Cerca tra i documenti CNEL</label>
+            <input
+              id="cerca-cnel"
+              name="q"
+              type="search"
+              defaultValue={q}
+              maxLength={100}
+              placeholder="Cerca per titolo o tipo…"
+              className="min-h-[44px] w-full flex-1 border border-regola bg-carta px-4 py-2 text-sm text-inchiostro placeholder:text-inchiostro-faint focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-inchiostro dark:border-notte-deep dark:bg-notte-soft dark:text-nebbia dark:placeholder:text-nebbia-faint dark:focus-visible:outline-nebbia"
+            />
+            <button
+              type="submit"
+              className="inline-flex min-h-[44px] items-center justify-center border border-inchiostro px-5 py-2 text-xs font-semibold uppercase tracking-wide text-inchiostro transition-colors hover:bg-inchiostro hover:text-carta focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-inchiostro dark:border-nebbia dark:text-nebbia dark:hover:bg-nebbia dark:hover:text-notte dark:focus-visible:outline-nebbia"
+            >
+              Cerca
+            </button>
+          </form>
+
+          {items.length === 0 ? (
+            <p className="mt-8 border border-dashed border-regola bg-carta-soft p-5 text-sm text-inchiostro-soft dark:border-notte-deep dark:bg-notte-soft dark:text-nebbia-soft" role="status">
+              {tutte.length === 0
+                ? 'Dati in preparazione: il file dei documenti non è ancora disponibile. Nessun numero stimato qui.'
+                : 'Nessun documento trovato con questi criteri. Prova a togliere il filtro.'}
+            </p>
+          ) : (
+            <ol className="mt-6 grid gap-4">
+              {items.map((d) => (
+                <li key={d.id} className="border border-regola bg-carta p-5 dark:border-notte-deep dark:bg-notte-soft">
+                  <div className="flex flex-wrap items-center gap-2">
+                    <span className="inline-flex items-center border border-inchiostro px-2 py-1 text-[11px] font-bold uppercase tracking-wide text-inchiostro dark:border-nebbia dark:text-nebbia">
+                      CNEL{d.tipo ? ` · ${d.tipo}` : ''} — non è una legge
+                    </span>
+                    <span className="text-xs text-inchiostro-faint dark:text-nebbia-faint">
+                      {d.data ? dataIT(d.data) : 'data non indicata'}
+                    </span>
+                  </div>
+                  <h2 className="mt-3 font-serif text-xl font-bold text-inchiostro dark:text-nebbia">
+                    {d.titolo}
+                  </h2>
+                  <p className="mt-3">
+                    <a href={d.url} target="_blank" rel="noopener" className="font-semibold text-accento underline underline-offset-2 dark:text-accento-chiara">
+                      Scheda ufficiale ↗
+                    </a>
+                  </p>
+                </li>
+              ))}
+            </ol>
+          )}
+
+          {pagine > 1 && (
+            <nav aria-label="Pagine" className="mt-6 flex flex-wrap items-center gap-2">
+              {paginaCorrente > 1 && (
+                <Link href={linkPagina(paginaCorrente - 1)} className="inline-flex min-h-[44px] items-center border border-regola px-4 py-2 text-xs font-semibold uppercase tracking-wide text-inchiostro hover:border-inchiostro dark:border-notte-deep dark:text-nebbia dark:hover:border-nebbia">
+                  ← Precedente
+                </Link>
+              )}
+              <span className="text-sm text-inchiostro-soft dark:text-nebbia-soft" role="status">
+                Pagina {paginaCorrente} di {pagine}
+              </span>
+              {paginaCorrente < pagine && (
+                <Link href={linkPagina(paginaCorrente + 1)} className="inline-flex min-h-[44px] items-center border border-regola px-4 py-2 text-xs font-semibold uppercase tracking-wide text-inchiostro hover:border-inchiostro dark:border-notte-deep dark:text-nebbia dark:hover:border-nebbia">
+                  Successiva →
+                </Link>
+              )}
+            </nav>
+          )}
+
+          <section aria-labelledby="fonti-cnel" className="mt-10 border border-regola bg-carta-soft p-5 dark:border-notte-deep dark:bg-notte-soft">
+            <h2 id="fonti-cnel" className="font-serif text-lg font-bold text-inchiostro dark:text-nebbia">Fonte e licenza</h2>
+            <p className="mt-2 text-sm leading-relaxed text-inchiostro-soft dark:text-nebbia-soft">
+              Fonte: {provenance.fonte ?? 'CNEL'} — licenza {provenance.licenza ?? 'da confermare nel file'}
+              {provenance.recuperatoIl ? ` · dati aggiornati al ${dataIT(provenance.recuperatoIl)}` : ''}. {DISCLAIMER_CONTROLLO}
+            </p>
+          </section>
+        </main>
+        <Footer />
+      </>
+    )
+  }
+
   const [tutte, provenance] = await Promise.all([tuttiContratti(), leggiProvenanceAnac()])
   const base = filtraPerEnte(tutte, ente)
   const filtrati = cercaContratti(base, q)
@@ -310,7 +464,7 @@ export default async function ListaControlloPage({
           </p>
         </header>
 
-        <div className="mt-6 flex flex-wrap gap-2" role="group" aria-label="Passa tra contratti e provvedimenti">
+        <div className="mt-6 flex flex-wrap gap-2" role="group" aria-label="Passa tra contratti, provvedimenti e documenti">
           <span
             aria-current="page"
             className="inline-flex min-h-[44px] items-center border border-inchiostro bg-inchiostro px-4 py-2 text-xs font-semibold uppercase tracking-wide text-carta dark:border-nebbia dark:bg-nebbia dark:text-notte"
@@ -322,6 +476,12 @@ export default async function ListaControlloPage({
             className="inline-flex min-h-[44px] items-center border border-regola px-4 py-2 text-xs font-semibold uppercase tracking-wide text-inchiostro hover:border-inchiostro dark:border-notte-deep dark:text-nebbia dark:hover:border-nebbia"
           >
             Provvedimenti
+          </Link>
+          <Link
+            href="/controllo/lista?tipo=cnel"
+            className="inline-flex min-h-[44px] items-center border border-regola px-4 py-2 text-xs font-semibold uppercase tracking-wide text-inchiostro hover:border-inchiostro dark:border-notte-deep dark:text-nebbia dark:hover:border-nebbia"
+          >
+            Documenti CNEL
           </Link>
         </div>
 

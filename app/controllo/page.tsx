@@ -5,14 +5,15 @@ import Footer from '@/components/Footer'
 import {
   DISCLAIMER_CONTROLLO,
   leggiProvenanceAnac,
+  leggiProvenanceCnel,
   leggiProvenanceGA,
   sintesiControllo,
 } from '@/lib/oversight-dati'
 
 export const metadata: Metadata = {
-  title: 'Controllo pubblico — Contratti e giustizia amministrativa — Stato della Repubblica',
+  title: 'Controllo pubblico — Contratti, giustizia amministrativa e CNEL — Stato della Repubblica',
   description:
-    'Contratti pubblici ANAC 2025 e provvedimenti del Consiglio di Stato e dei TAR 2026 dai dati ufficiali: documenti di controllo, non sono leggi in vigore.',
+    'Contratti pubblici ANAC 2025, provvedimenti del Consiglio di Stato, dei TAR e CGA Sicilia 2026 e documenti CNEL dai dati ufficiali: documenti di controllo, non sono leggi in vigore.',
 }
 
 function dataIT(iso?: string): string {
@@ -28,10 +29,11 @@ function dataIT(iso?: string): string {
 }
 
 export default async function ControlloPage() {
-  const [sintesi, provAnac, provGa] = await Promise.all([
+  const [sintesi, provAnac, provGa, provCnel] = await Promise.all([
     sintesiControllo(),
     leggiProvenanceAnac(),
     leggiProvenanceGA(),
+    leggiProvenanceCnel(),
   ])
 
   return (
@@ -65,11 +67,11 @@ export default async function ControlloPage() {
             se una norma funziona.
           </p>
           <p className="mt-2 text-sm font-semibold text-inchiostro dark:text-nebbia" role="status">
-            {sintesi.contratti} contratti caricati · {sintesi.provvedimenti} provvedimenti caricati
+            {sintesi.contratti} contratti caricati · {sintesi.provvedimenti} provvedimenti caricati · {sintesi.documentiCnel} documenti CNEL
           </p>
         </header>
 
-        <div className="mt-6 grid gap-4 sm:grid-cols-2">
+        <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           <section
             aria-labelledby="titolo-contratti"
             className="border border-regola bg-carta p-5 dark:border-notte-deep dark:bg-notte-soft"
@@ -127,6 +129,35 @@ export default async function ControlloPage() {
               </Link>
             </p>
           </section>
+
+          <section
+            aria-labelledby="titolo-cnel"
+            className="border border-regola bg-carta p-5 dark:border-notte-deep dark:bg-notte-soft"
+          >
+            <p className="inline-flex items-center border border-inchiostro px-2 py-1 text-[11px] font-bold uppercase tracking-wide text-inchiostro dark:border-nebbia dark:text-nebbia">
+              Documento CNEL — non è una legge
+            </p>
+            <h2 id="titolo-cnel" className="mt-3 font-serif text-xl font-bold text-inchiostro dark:text-nebbia">
+              CNEL 2026
+            </h2>
+            <p className="mt-2 text-sm leading-relaxed text-inchiostro-soft dark:text-nebbia-soft">
+              {sintesi.documentiCnelDisponibili
+                ? `${sintesi.documentiCnel} osservazioni e proposte del Consiglio Nazionale dell'Economia e del Lavoro. Solo metadati con link ufficiali.`
+                : 'Dati in preparazione: il file dei documenti non è ancora disponibile. Nessun numero stimato qui.'}
+            </p>
+            <p className="mt-2 text-xs text-inchiostro-faint dark:text-nebbia-faint">
+              Fonte: {provCnel.fonte ?? 'CNEL'} · licenza {provCnel.licenza ?? 'da confermare nel file'}
+              {provCnel.recuperatoIl ? ` · aggiornati al ${dataIT(provCnel.recuperatoIl)}` : ''}.
+            </p>
+            <p className="mt-4">
+              <Link
+                href="/controllo/lista?tipo=cnel"
+                className="inline-flex min-h-[44px] items-center border border-inchiostro px-5 py-2 text-xs font-semibold uppercase tracking-wide text-inchiostro transition-colors hover:bg-inchiostro hover:text-carta focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-inchiostro dark:border-nebbia dark:text-nebbia dark:hover:bg-nebbia dark:hover:text-notte dark:focus-visible:outline-nebbia"
+              >
+                Sfoglia i documenti →
+              </Link>
+            </p>
+          </section>
         </div>
 
         <section
@@ -158,6 +189,18 @@ export default async function ControlloPage() {
                 <>
                   {' · '}
                   <a href={provGa.url} target="_blank" rel="noopener" className="font-semibold text-accento underline underline-offset-2 dark:text-accento-chiara">
+                    fonte ufficiale ↗
+                  </a>
+                </>
+              ) : null}
+              .
+            </li>
+            <li>
+              Documenti CNEL: {provCnel.fonte ?? 'CNEL'} — licenza {provCnel.licenza ?? 'da confermare nel file'}
+              {provCnel.url ? (
+                <>
+                  {' · '}
+                  <a href={provCnel.url} target="_blank" rel="noopener" className="font-semibold text-accento underline underline-offset-2 dark:text-accento-chiara">
                     fonte ufficiale ↗
                   </a>
                 </>

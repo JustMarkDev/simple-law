@@ -1,0 +1,599 @@
+{
+  "provenance": {
+    "fonte": "normattiva",
+    "url": "https://api.normattiva.it/t/normattiva.api/bff-opendata/v1/api/v1/ricerca/aggiornati",
+    "recuperatoIl": "2026-09-28T21:53:00.168Z",
+    "licenza": "riproduzione consentita con menzione di fonte, carattere non autentico e gratuito (Note legali dati.normattiva.it; solo la Gazzetta Ufficiale a stampa e' autentica)"
+  },
+  "atti": [
+    {
+      "chiave": "/eli/id/1948/10/06/048U1200/sg",
+      "titolo": "DECRETO-LEGGE 6 ottobre 1948, n. 1200",
+      "tipo": "decreto.legge",
+      "numero": "1200",
+      "dataEmanazione": "1948-10-06",
+      "nir": "urn:nir:stato:decreto.legge:1948-10-06;1200",
+      "eli": "/eli/id/1948/10/06/048U1200/sg",
+      "stato": "in_vigore",
+      "sintesi": "Modificazioni al regime fiscale degli alcoli e del benzolo.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legge:1948-10-06;1200",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1948/10/06/048U1200/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1948-10-06",
+      "numeroGU": "233",
+      "codiceRedazionale": "048U1200",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "IL PRESIDENTE DELLA REPUBBLICA Visto l'art. 77, comma, secondo, della Costituzione; Visti i decreti Ministeriali in data 8 luglio 1924, che approvano i testi unici di legge per le imposte di fabbricazione, e successive modificazioni; Visto il decreto legislativo 7 maggio 1948, n. 464 , che stabilisce la imposta di fabbricazione sul benzolo; Ritenuta la necessit&agrave; e l'urgenza di provvedere ad alcune modificazioni al regime fiscale degli alcool e del benzolo; Sentito il Consiglio dei Ministri; Sulla proposta del Ministro per le finanze; Decreta: Art. 1 Misura dell'imposta La imposta interna di fabbricazione sullo spirito (alcool etilico) e la corrispondente sovrimposta di confine sul prodotto medesimo importato dall'estero sono stabilite nella misura di L. 30.000 per ogni ettanidro alla temperatura di 15,56 del termometro centesimale. Nella stessa misura sono stabilite la imposta interna di fabbricazione e la corrispondente sovrimposta di confine per gli alcoli metilico, propilico e isopropilico, i quali ((, agli effetti del presente decreto,)) sono in tutto equiparati all'alcool etilico di 1&ordf; categoria."
+    },
+    {
+      "chiave": "/eli/id/1948/10/06/048U1199/sg",
+      "titolo": "DECRETO-LEGGE 6 ottobre 1948, n. 1199",
+      "tipo": "decreto.legge",
+      "numero": "1199",
+      "dataEmanazione": "1948-10-06",
+      "nir": "urn:nir:stato:decreto.legge:1948-10-06;1199",
+      "eli": "/eli/id/1948/10/06/048U1199/sg",
+      "stato": "abrogato",
+      "sintesi": "Modificazioni alla imposta sul consumo dell'energia elettrica.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legge:1948-10-06;1199",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1948/10/06/048U1199/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1948-10-06",
+      "numeroGU": "233",
+      "codiceRedazionale": "048U1199",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.LGS. 13 DICEMBRE 2010, N. 212 ))"
+    },
+    {
+      "chiave": "/eli/id/1948/05/07/048U0927/sg",
+      "titolo": "DECRETO LEGISLATIVO 7 maggio 1948, n. 927",
+      "tipo": "decreto.legislativo",
+      "numero": "927",
+      "dataEmanazione": "1948-05-07",
+      "nir": "urn:nir:stato:decreto.legislativo:1948-05-07;927",
+      "eli": "/eli/id/1948/05/07/048U0927/sg",
+      "stato": "in_vigore",
+      "sintesi": "Aumento fino a dollari duecento milioni del limite dei finanziamenti previsti dal decreto legislativo 11 settembre 1947, n. 891.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legislativo:1948-05-07;927",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1948/07/21/048U0927/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1948-07-21",
+      "numeroGU": "167",
+      "codiceRedazionale": "048U0927",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "IL PRESIDENTE DELLA REPUBBLICA Visto l' art. 4 del decreto-legge luogotenenziale 25 giugno 1944, n. 151 , con le modificazioni ad esso apportate dall' art. 3, comma primo, del decreto legislativo luogotenenziale 16 marzo 1946, n. 98 ; Viste le disposizioni transitorie I e XV della Costituzione; Visto l' art. 87, comma quinto, della Costituzione ; Sulla proposta del Ministro per il tesoro, di concerto coi Ministri per l'industria e commercio, per il commercio con l'estero, per la grazia e giustizia, per gli affari esteri, per le finanze e per il bilancio; PROMULGA il seguente decreto legislativo, approvato dal Consiglio dei Ministri con deliberazione dei 3 maggio 1948: Art. 1 Il Ministro per il tesoro &egrave; autorizzato a trattare, concludere e perfezionare con il Governo degli Stati Uniti e con l'Export Import Bank i finanziamenti previsti dal decreto legislativo del Capo provvisorio dello Stato 11 settembre 1947, n. 891 , nonch&egrave; a concedere le relative garanzie statali, oltre il limite di cento milioni di dollari, ma non oltre l'importo massimo di duecento milioni di dollari U.S.A. Al maggiore importo previsto dal presente articolo sono applicabili tutte le altre norme di cui al citato decreto legislativo del Capo provvisorio dello Stato 11 settembre 1917, n. 891 ."
+    },
+    {
+      "chiave": "/eli/id/1947/11/01/047U1815/sg",
+      "titolo": "DECRETO DEL CAPO PROVVISORIO DELLO STATO 1 novembre 1947, n. 1815",
+      "tipo": "decreto.del.capo.provvisorio.dello.stato",
+      "numero": "1815",
+      "dataEmanazione": "1947-11-01",
+      "nir": "urn:nir:stato:decreto.del.capo.provvisorio.dello.stato:1947-11-01;1815",
+      "eli": "/eli/id/1947/11/01/047U1815/sg",
+      "stato": "in_vigore",
+      "sintesi": "Estensione dei benefici di cui agli articoli 10 e 11 del decreto legislativo luogotenenziale 12 aprile 1946, n. 320 al personale che ha proceduto alla bonifica di campi minati prima dell'entrata in vigore del decreto stesso.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.del.capo.provvisorio.dello.stato:1947-11-01;1815",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1948/06/24/047U1815/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1948-06-24",
+      "numeroGU": "145",
+      "codiceRedazionale": "047U1815",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "IL CAPO PROVVISORIO DELLO STATO Visto il decreto legislativo luogotenenziale 12 aprile 1946, n. 320 ; Visto il decreto-legge luogotenenziale 25 giugno 1944, n. 151 ; Visto il decreto legislativo luogotenenziale 16 marzo 1946, n. 98 ; Vista la deliberazione del Consiglio dei Ministri; Sulla proposta del Presidente del Consiglio dei Ministri e del Ministro per la difesa, di concerto con i Ministri per l'interno, per la grazia e giustizia, per le finanze, per il tesoro, per i lavori pubblici, per l'agricoltura e foreste, per i trasporti, per l'industria, e commercio e per il lavoro e la previdenza sociale; HA SANZIONATO E PROMULGA: Art. 1 A coloro che, dalla data di liberazione delle singole province fino a quella di entrata in vigore del decreto legislativo luogotenenziale 12 aprile 1946, n. 320 , siano stati impegnati direttamente da autorit&agrave; civili o per conto di autorit&agrave; alleate in operazioni di bonifica da mine o di rastrellamento o brillamento di ordigni esplosivi diversi dalle mine o siano stati impiegati da privati nelle operazioni suddette effettuate su immobili di loro propriet&agrave;, sono concessi i benefici stabiliti dagli articoli seguenti."
+    },
+    {
+      "chiave": "/eli/id/1948/05/05/048U0596/sg",
+      "titolo": "DECRETO LEGISLATIVO 5 maggio 1948, n. 596",
+      "tipo": "decreto.legislativo",
+      "numero": "596",
+      "dataEmanazione": "1948-05-05",
+      "nir": "urn:nir:stato:decreto.legislativo:1948-05-05;596",
+      "eli": "/eli/id/1948/05/05/048U0596/sg",
+      "stato": "abrogato",
+      "sintesi": "Proroga dei contratti di locazione e di sublocazione degli immobili urbani.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legislativo:1948-05-05;596",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1948/06/05/048U0596/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1948-06-05",
+      "numeroGU": "129",
+      "codiceRedazionale": "048U0596",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.L. 25 GIUGNO 2008, N. 112 , CONVERTITO CON MODIFICAZIONI DALLA L. 6 AGOSTO 2008, N. 133 ))"
+    },
+    {
+      "chiave": "/eli/id/1948/05/05/048U0589/sg",
+      "titolo": "DECRETO LEGISLATIVO 5 maggio 1948, n. 589",
+      "tipo": "decreto.legislativo",
+      "numero": "589",
+      "dataEmanazione": "1948-05-05",
+      "nir": "urn:nir:stato:decreto.legislativo:1948-05-05;589",
+      "eli": "/eli/id/1948/05/05/048U0589/sg",
+      "stato": "abrogato",
+      "sintesi": "<em><strong>((Riassetto))</strong></em> dei servizi e revisione dei ruoli organici della Corte dei conti.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legislativo:1948-05-05;589",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1948/06/04/048U0589/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1948-06-04",
+      "numeroGU": "128",
+      "codiceRedazionale": "048U0589",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.L. 25 GIUGNO 2008, N.112 , CONVERTITO, CON MODIFICAZIONI, DALLA L. 6 AGOSTO 2008, N. 133 ))"
+    },
+    {
+      "chiave": "/eli/id/1948/03/27/048U0506/sg",
+      "titolo": "DECRETO LEGISLATIVO 27 marzo 1948, n. 506",
+      "tipo": "decreto.legislativo",
+      "numero": "506",
+      "dataEmanazione": "1948-03-27",
+      "nir": "urn:nir:stato:decreto.legislativo:1948-03-27;506",
+      "eli": "/eli/id/1948/03/27/048U0506/sg",
+      "stato": "in_vigore",
+      "sintesi": "Proroga al 30 giugno 1948 del termine previsto dal decreto legislativo del Capo provvisorio dello Stato 29 novembre 1947, n. 1523, in materia di distribuzione e consumo dei prodotti industriali nonche' in materia di iniziative industriali.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legislativo:1948-03-27;506",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1948/05/24/048U0506/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1948-05-24",
+      "numeroGU": "119",
+      "codiceRedazionale": "048U0506",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "IL PRESIDENTE DELLA REPUBBLICA Visto l' art. 4 del decreto-legge luogotenenziale 25 giugno 1944, n. 151 , con le modificazioni ad esso apportate dall' art. 3, comma primo, del decreto legislativo luogotenenziale 16 marzo 1946, n. 98 ; Viste le disposizioni transitorie I e XV della Costituzione; Visto l' art. 87, comma quinto, della Costituzione ; Sulla proposta del Ministro per l'industria e il commercio, di concerto con i Ministri per l'interno, per la grazia e giustizia, per le finanze, per il tesoro, per la difesa, per i lavori pubblici, per l'agricoltura e le foreste, per i trasporti, per le poste e le telecomunicazioni; PROMULGA il seguente decreto legislativo, approvato dal Consiglio dei Ministri con deliberazione del 17 marzo 1948: Art. 1 Il termine previsto dagli articoli 1 e 2 del decreto legislativo del Capo provvisorio dello Stato 29 novembre 1947, n. 1523 , concernente la proroga delle disposizioni in materia di distribuzione e consumi dei prodotti industriali nonch&egrave; in materia di iniziative industriali &egrave; ulteriormente prorogato al 30 giugno 1948."
+    },
+    {
+      "chiave": "/eli/id/1948/05/05/048U0483/sg",
+      "titolo": "DECRETO LEGISLATIVO 5 maggio 1948, n. 483",
+      "tipo": "decreto.legislativo",
+      "numero": "483",
+      "dataEmanazione": "1948-05-05",
+      "nir": "urn:nir:stato:decreto.legislativo:1948-05-05;483",
+      "eli": "/eli/id/1948/05/05/048U0483/sg",
+      "stato": "in_vigore",
+      "sintesi": "Modificazioni e aggiunte al Codice di procedura civile.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legislativo:1948-05-05;483",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1948/05/20/048U0483/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1948-05-20",
+      "numeroGU": "116",
+      "codiceRedazionale": "048U0483",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "IL PRESIDENTE DELLA REPUBBLICA Visto l' art. 4 del decreto-legge luogotenenziale 25 giugno 1944, n. 151 , con le modificazioni ad esso apportate dall' art. 3, comma primo, del decreto legislativo luogotenenziale 16 marzo 1946, n. 98 ; Viste le disposizioni transitorie I e XV della Costituzione; Sulla proposta del Guardasigilli, Ministro Segretario di Stato per la grazia, e giustizia; PROMULGA il seguente decreto legislativo, approvato dal Consiglio dei Ministri con deliberazione dell'8 aprile 1948: Art. 1 Fino alla revisione generale del codice di procedura civile , approvato con regio decreto 28 ottobre 1940, n. 1443 e coordinato col codice civile con regio decreto 20 aprile 1942, n. 504 , sono ad esso apportate le modificazioni e le aggiunte risultanti dagli articoli seguenti."
+    },
+    {
+      "chiave": "/eli/id/1948/03/12/048U0326/sg",
+      "titolo": "DECRETO LEGISLATIVO 12 marzo 1948, n. 326",
+      "tipo": "decreto.legislativo",
+      "numero": "326",
+      "dataEmanazione": "1948-03-12",
+      "nir": "urn:nir:stato:decreto.legislativo:1948-03-12;326",
+      "eli": "/eli/id/1948/03/12/048U0326/sg",
+      "stato": "in_vigore",
+      "sintesi": "Norme integrative e transitorie in materia di imposta di negoziazione e di sovrimposta di negoziazione.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legislativo:1948-03-12;326",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1948/04/26/048U0326/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1948-04-26",
+      "numeroGU": "98",
+      "codiceRedazionale": "048U0326",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "IL PRESIDENTE DELLA REPUBBLICA Visto l' art. 4 del decreto-legge luogotenenziale 25 giugno 1944, n. 151 , con le modificazioni ad esso apportate dall' art. 3, comma primo, del decreto legislativo luogotenenziale 16 marzo 1946, n. 98 ; Viste le disposizioni transitorie I e XV della Costituzione; Visto l' art. 87, comma quinto, della Costituzione ; Sulla proposta del Ministro per le finanze, di concerto con i Ministri per il tesoro e per il bilancio; PROMULGA il seguente decreto legislativo, approvato dal Consiglio dei Ministri con deliberazione del 12 febbraio 1948: Art. 1 Imposte di negoziazione. Fino a quando non sar&agrave; stato pubblicato il decreto previsto dal primo comma dell'art. 6 del decreto legislativo del Capo provvisorio dello Stato 5 settembre 1947, n. 1173 , le societ&agrave; e gli enti, soggetti alla imposta di negoziazione, a corredo della dichiarazione del valore dei propri titoli prescritta dal primo comma dell'art. 5 del citato decreto, devono presentare, a proprie spese, entro lo stesso termine stabilito per tale dichiarazione, una relazione estimativa rilasciata da tre membri, preventivamente designati, del Comitato direttivo degli agenti di cambio, competente per territorio, o della Commissione che ne fa le veci, concernente il valore dei titoli stessi, relativamente all'anno precedente a quello al quale si riferisce l'imposta; i diritti dovuti per il rilascio della relazione vanno devoluti a favore del Comitato o della Commissione predetti. Tale relazione deve essere rilasciata nei sessanta giorni dalla richiesta; essa non &egrave; vincolante per l'Amministrazione finanziaria. Gli agenti di cambio membri effettivi o supplenti della Commissione per la valutazione dei titoli, di cui all'art. 7 del decreto sopracitato, non possono essere designati alla redazione della detta relazione estimativa. La pena pecuniaria stabilita dall'art. 14 del predetto decreto non si applica quando il valore dichiarato validamente dal contribuente sia almeno uguale [...]",
+      "testoTroncato": true
+    },
+    {
+      "chiave": "/eli/id/1948/03/12/048U0318/sg",
+      "titolo": "DECRETO LEGISLATIVO 12 marzo 1948, n. 318",
+      "tipo": "decreto.legislativo",
+      "numero": "318",
+      "dataEmanazione": "1948-03-12",
+      "nir": "urn:nir:stato:decreto.legislativo:1948-03-12;318",
+      "eli": "/eli/id/1948/03/12/048U0318/sg",
+      "stato": "in_vigore",
+      "sintesi": "Proroga dei termini di prescrizione e di decadenza, stabiliti nei confronti dell'Amministrazione dello Stato, per l'applicazione delle imposte dirette a carico di Enti e Societa' tassabili in base a bilancio.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legislativo:1948-03-12;318",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1948/04/24/048U0318/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1948-04-24",
+      "numeroGU": "97",
+      "codiceRedazionale": "048U0318",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "IL PRESIDENTE DELLA REPUBBLICA Visto l' art. 4 del decreto-legge luogotenenziale 25 giugno 1944, n. 151 , con le modificazioni ad esso apportate dall' art. 3, comma primo, del decreto legislativo luogotenenziale 16 marzo 1946, n. 98 ; Viste le disposizioni transitorie I e XV della Costituzione; Visto l' art. 87, comma quinto, della Costituzione ; Sulla proposta del Ministro per le finanze; PROMULGA il seguente decreto legislativo, approvato dal Consiglio dei Ministri con deliberazione del 21 febbraio 1948: Art. 1 I termini di prescrizione e di decadenza stabiliti nei confronti dell'Amministrazione dello Stato per l'applicazione delle imposte dirette a carico di enti e societ&agrave; tassabili in base a bilancio, i quali vengano a scadere entro il 31 dicembre 1948, sono prorogati a tale data. ((1)) --------------- AGGIORNAMENTO (1) La L. 23 dicembre 1948, n. 1451 ha disposto (con l'art. 5, comma 1) che \"Sono prorogati al 31 dicembre 1949 i termini di prescrizione e decadenza, stabiliti nei confronti dell'Amministrazione dello Stato, per l'applicazione delle imposte dirette, che ai sensi [...] del decreto legislativo 12 marzo 1948, n. 318 , [...] vengano a scadere entro il 31 dicembre 1948\"."
+    },
+    {
+      "chiave": "/eli/id/1948/03/25/048U0186/sg",
+      "titolo": "DECRETO LEGISLATIVO 25 marzo 1948, n. 186",
+      "tipo": "decreto.legislativo",
+      "numero": "186",
+      "dataEmanazione": "1948-03-25",
+      "nir": "urn:nir:stato:decreto.legislativo:1948-03-25;186",
+      "eli": "/eli/id/1948/03/25/048U0186/sg",
+      "stato": "in_vigore",
+      "sintesi": "Stato di previsione della spesa del Ministero dei trasporti per l'esercizio finanziario 1947-48.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legislativo:1948-03-25;186",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1948/03/31/048U0186/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1948-03-31",
+      "numeroGU": "76",
+      "codiceRedazionale": "048U0186",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "IL PRESIDENTE DELLA REPUBBLICA Visto l' art. 4 del decreto-legge luogotenenziale 25 giugno 1944, n. 151 , con le modificazioni ad esso apportate dall' art. 3, comma primo, del decreto legislativo luogotenenziale 16 marzo 1946, n. 98 ; Viste le disposizioni transitorie I e XV della Costituzione; Visto l' art. 87, comma quinto, della Costituzione ; Sulla proposta del Ministro Segretario di Stato per il tesoro, di concerto con il Ministro Segretario di Stato per il bilancio; PROMULGA il seguente decreto legislativo, approvato dal Consiglio dei Ministri con deliberazione del 17 marzo 1948: Art. 1 &Egrave; autorizzato il pagamento delle spese ordinarie e straordinarie del Ministero dei trasporti per l'esercizio finanziario dal 1 luglio 1947 al 30 giugno 1948, in conformit&agrave; dello stato di previsione annesso al presente decreto."
+    },
+    {
+      "chiave": "/eli/id/1948/03/25/048U0185/sg",
+      "titolo": "DECRETO LEGISLATIVO 25 marzo 1948, n. 185",
+      "tipo": "decreto.legislativo",
+      "numero": "185",
+      "dataEmanazione": "1948-03-25",
+      "nir": "urn:nir:stato:decreto.legislativo:1948-03-25;185",
+      "eli": "/eli/id/1948/03/25/048U0185/sg",
+      "stato": "in_vigore",
+      "sintesi": "Stato di previsione della spesa del Ministero dei lavori pubblici per l'esercizio finanziario 1947-48.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legislativo:1948-03-25;185",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1948/03/31/048U0185/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1948-03-31",
+      "numeroGU": "76",
+      "codiceRedazionale": "048U0185",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "IL PRESIDENTE DELLA REPUBBLICA Visto l' art. 4 del decreto-legge luogotenenziale 25 giugno 1944, n. 151 , con le modificazioni ad esso apportate dall' art. 3, comma primo, del decreto legislativo luogotenenziale 16 marzo 1946, n. 98 ; Viste le disposizioni transitorie I e XV della Costituzione; Visto l' art. 87, comma quinto, della Costituzione ; Sulla proposta del Ministro Segretario di Stato per il tesoro, di concerto con il Ministro Segretario di Stato per il bilancio; PROMULGA il seguente decreto legislativo, approvato dal Consiglio dei Ministri con deliberazione del 17 marzo 1948: Art. 1 &Egrave; autorizzato il pagamento delle spese ordinarie e straordinarie del Ministero dei lavori pubblici per l'esercizio finanziario dal 1 luglio 1947 al 30 giugno 1948, in conformit&agrave; dello stato di previsione annesso al presente decreto."
+    },
+    {
+      "chiave": "/eli/id/1948/03/05/048U0121/sg",
+      "titolo": "DECRETO LEGISLATIVO 5 marzo 1948, n. 121",
+      "tipo": "decreto.legislativo",
+      "numero": "121",
+      "dataEmanazione": "1948-03-05",
+      "nir": "urn:nir:stato:decreto.legislativo:1948-03-05;121",
+      "eli": "/eli/id/1948/03/05/048U0121/sg",
+      "stato": "in_vigore",
+      "sintesi": "Provvedimenti a favore di varie regioni dell'Italia meridionale e delle Isole.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legislativo:1948-03-05;121",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1948/03/15/048U0121/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1948-03-15",
+      "numeroGU": "63",
+      "codiceRedazionale": "048U0121",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "IL PRESIDENTE DELLA REPUBBLICA Visto l' art. 4 del decreto-legge luogotenenziale 25 giugno 1944, n. 151 , con le modificazioni ad esso apportate dall' art. 3, comma primo, del decreto legislativo luogotenenziale 16 marzo 1946, n. 98 ; Viste le disposizioni transitorie I e XV della Costituzione; Visto l' art. 87, comma quinto, della Costituzione ; Sulla proposta del Presidente del Consiglio dei Ministri e dei Ministri per i lavori pubblici, per l'agricoltura e le foreste, per i trasporti e per l'industria e commercio; Di concerto con i Ministri per l'interno, per il bilancio e per il tesoro; PROMULGA il seguente decreto legislativo, approvato dal Consiglio dei Ministri con deliberazione del 19 e 20 febbraio 1948: Art. 1 Per l'esecuzione di opere pubbliche straordinarie a pagamento non differito, nelle regioni Abruzzi e Molise, Campania, Paglie, Basilicata, Calabria e Sardegna e nei territori dei Comuni appartenenti alle province di Latina e Frosinone, nonch&egrave; dell'Isola d'Elba, anche di competenza di Amministrazioni provinciali e comunali, di istituzioni pubbliche di beneficenza e di enti pubblici di assistenza, &egrave; autorizzata la spesa di L. 18.000.000.000. Detta spesa sar&agrave; iscritta per L. 6.000.000.000 nello stato di previsione della spesa del Ministero dei lavori pubblici per l'esercizio 1947-48 e per L. 12.000.000.000 nello stesso stato di previsione dell'esercizio 1948-49."
+    },
+    {
+      "chiave": "/eli/id/1948/01/31/048U0109/sg",
+      "titolo": "DECRETO LEGISLATIVO 31 gennaio 1948, n. 109",
+      "tipo": "decreto.legislativo",
+      "numero": "109",
+      "dataEmanazione": "1948-01-31",
+      "nir": "urn:nir:stato:decreto.legislativo:1948-01-31;109",
+      "eli": "/eli/id/1948/01/31/048U0109/sg",
+      "stato": "abrogato",
+      "sintesi": "Condono di sopratasse e pene pecuniarie in materia tributaria.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legislativo:1948-01-31;109",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1948/03/11/048U0109/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1948-03-11",
+      "numeroGU": "60",
+      "codiceRedazionale": "048U0109",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.L . 25 GIUGNO 2008, N. 112, CONVERTITO CON MODIFICAZIONI DALLA L. 6 AGOSTO 2008, N. 133 ))"
+    },
+    {
+      "chiave": "/eli/id/1948/02/26/048U0107/sg",
+      "titolo": "DECRETO LEGISLATIVO 26 febbraio 1948, n. 107",
+      "tipo": "decreto.legislativo",
+      "numero": "107",
+      "dataEmanazione": "1948-02-26",
+      "nir": "urn:nir:stato:decreto.legislativo:1948-02-26;107",
+      "eli": "/eli/id/1948/02/26/048U0107/sg",
+      "stato": "abrogato",
+      "sintesi": "Modificazioni al regime fiscale dello zucchero e degli altri prodotti zuccherini.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legislativo:1948-02-26;107",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1948/03/09/048U0107/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1948-03-09",
+      "numeroGU": "58",
+      "codiceRedazionale": "048U0107",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.L. 25 GIUGNO 2008, N. 112 , CONVERTITO, CON MODIFICAZIONI, DALLA L. 6 AGOSTO 2008, N. 133 ))"
+    },
+    {
+      "chiave": "/eli/id/1948/02/10/048U0105/sg",
+      "titolo": "DECRETO LEGISLATIVO 10 febbraio 1948, n. 105",
+      "tipo": "decreto.legislativo",
+      "numero": "105",
+      "dataEmanazione": "1948-02-10",
+      "nir": "urn:nir:stato:decreto.legislativo:1948-02-10;105",
+      "eli": "/eli/id/1948/02/10/048U0105/sg",
+      "stato": "abrogato",
+      "sintesi": "Disposizioni sull'ordinamento delle banche popolari.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legislativo:1948-02-10;105",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1948/03/08/048U0105/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1948-03-08",
+      "numeroGU": "57",
+      "codiceRedazionale": "048U0105",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.LGS. 1 SETTEMBRE 1993, N. 385 ))"
+    },
+    {
+      "chiave": "/eli/id/1948/02/05/048U0100/sg",
+      "titolo": "DECRETO LEGISLATIVO 5 febbraio 1948, n. 100",
+      "tipo": "decreto.legislativo",
+      "numero": "100",
+      "dataEmanazione": "1948-02-05",
+      "nir": "urn:nir:stato:decreto.legislativo:1948-02-05;100",
+      "eli": "/eli/id/1948/02/05/048U0100/sg",
+      "stato": "in_vigore",
+      "sintesi": "Disposizioni penali per il controllo delle armi.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legislativo:1948-02-05;100",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1948/03/06/048U0100/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1948-03-06",
+      "numeroGU": "56",
+      "codiceRedazionale": "048U0100",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "IL PRESIDENTE DELLA REPUBBLICA Visti gli articoli 678 , 679 , 695 , 697 , 698 e 699 del Codice penale , relativi alla fabbricazione, commercio e detenzione abusiva di armi e di materie esplodenti, nonch&egrave; alla omessa denuncia di esse da parte di chi le detiene o di chi abbia notizia che si trovano in un luogo da lui abitato; Visto l' art. 4 del decreto-legge luogotenenziale 25 giugno 1944, n. 151 , con le modificazioni ad esso apportate dall'art. 3, comma primo, del decreto legislativo, luogotenenziale 16 marzo 1946, n. 98; Viste le disposizioni transitorie I e XV della Costituzione; Visto l' art. 87, comma quinto, della Costituzione ; Sulla proposta del Ministro per la grazia e giustizia, di concerto con il Ministro per l'interno; PROMULGA il seguente decreto legislativo, approvato dal Consiglio dei Ministri con deliberazione del 5 febbraio 1948; Art. 1 Chiunque, senza licenza dell'autorit&agrave;, fabbrica o introduce nello Stato o esporta o pone comunque in vendita o cede a qualsiasi titolo armi o parti di armi ((atte all'impiego)) , munizioni, esplosivi o aggressivi chimici, ovvero ne fa raccolta, &egrave; punito con la reclusione da tre a dieci anni e con la multa sino a lire duecentomila. Non si applica la precedente disposizione qualora si tratti di collezione di armi artistiche, rare o antiche. ((1)) --------------- AGGIORNAMENTO (1) La L. 23 luglio 1948, n. 970 ha disposto (con l'articolo unico) che \"Il decreto legislativo 5 febbraio 1948, n. 100 , recante disposizioni penali per il controllo delle armi, &egrave; ratificato, ai sensi dell' art. 6 del decreto legislativo 16 marzo 1946, n. 98 , ed avr&agrave; efficacia, dalla entrata in vigore della presente legge fino ai 30 giugno 1949."
+    },
+    {
+      "chiave": "/eli/id/1948/01/26/048U0074/sg",
+      "titolo": "DECRETO LEGISLATIVO 26 gennaio 1948, n. 74",
+      "tipo": "decreto.legislativo",
+      "numero": "74",
+      "dataEmanazione": "1948-01-26",
+      "nir": "urn:nir:stato:decreto.legislativo:1948-01-26;74",
+      "eli": "/eli/id/1948/01/26/048U0074/sg",
+      "stato": "abrogato",
+      "sintesi": "Disposizioni a favore dei grandi invalidi titolari di pensioni privilegiate ordinarie.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legislativo:1948-01-26;74",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1948/02/28/048U0074/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1948-02-28",
+      "numeroGU": "50",
+      "codiceRedazionale": "048U0074",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.LGS. 15 MARZO 2010, N. 66 ))"
+    },
+    {
+      "chiave": "/eli/id/1948/02/20/048U0062/sg",
+      "titolo": "DECRETO LEGISLATIVO 20 febbraio 1948, n. 62",
+      "tipo": "decreto.legislativo",
+      "numero": "62",
+      "dataEmanazione": "1948-02-20",
+      "nir": "urn:nir:stato:decreto.legislativo:1948-02-20;62",
+      "eli": "/eli/id/1948/02/20/048U0062/sg",
+      "stato": "abrogato",
+      "sintesi": "Disposizioni a favore del teatro.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legislativo:1948-02-20;62",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1948/02/25/048U0062/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1948-02-25",
+      "numeroGU": "47",
+      "codiceRedazionale": "048U0062",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.L. 25 GIUGNO 2008, N. 112 , CONVERTITO, CON MODIFICAZIONI, DALLA L. 6 AGOSTO 2008, N. 133 ))"
+    },
+    {
+      "chiave": "/eli/id/1948/01/29/048U0055/sg",
+      "titolo": "DECRETO LEGISLATIVO 29 gennaio 1948, n. 55",
+      "tipo": "decreto.legislativo",
+      "numero": "55",
+      "dataEmanazione": "1948-01-29",
+      "nir": "urn:nir:stato:decreto.legislativo:1948-01-29;55",
+      "eli": "/eli/id/1948/01/29/048U0055/sg",
+      "stato": "in_vigore",
+      "sintesi": "Certificazione dei beni italiani bloccati negli Stati Uniti, dei Nord America.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legislativo:1948-01-29;55",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1948/02/23/048U0055/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1948-02-23",
+      "numeroGU": "45",
+      "codiceRedazionale": "048U0055",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "IL PRESIDENTE DELLA REPUBBLICA Visto l' art. 4 del decreto-legge luogotenenziale 20 giugno 1944, n. 151 , con le modificazioni ad esso apportate dall' art. 3, comma primo, del decreto legislativo luogotenenziale 16 marzo 1946, n. 98 ; Viste le disposizioni transitorie I e XV della Costituzione; Visto l' art. 87, comma quinto, della Costituzione ; Sulla proposta del Presidente del Consiglio dei Ministri, di concerto con i Ministri per gli affari esteri, per il tesoro, per il commercio con l'estero, per l'interno per la grazia e giustizia; PROMULGA il seguente decreto legislativo, approvato dal Consiglio dei Ministri con deliberazione del 28 gennaio 1948: Art. 1 Ai fini di ottenere la disponibilit&agrave; dei beni bloccati o comunque sequestrati in dipendenza delle disposizioni a suo tempo emanate dal Governo degli U.S.A., i cittadini e le persone giuridiche italiane, aventi in Italia, rispettivamente, la residenza o la sede e che siano proprietari di tali beni, debbono, entro sessanta giorni dalla entrata in vigore del presente decreto, chiedere al Ministero del tesoro, per il tramite dell'Ufficio italiano dei cambi, che curer&agrave; l'istruttoria delle singole domande, il rilascio delle certificazioni sull'appartenenza dei beni stessi, necessarie per lo sblocco di essi. La disposizione del comma precedente si applica anche ai cittadini ed alle persone giuridiche italiane, proprietari dei beni ivi previsti e che li abbiano intestati ad interposte persone nonch&egrave; ai cittadini stranieri che abbiano la residenza in Italia."
+    },
+    {
+      "chiave": "/eli/id/1948/02/12/048U0051/sg",
+      "titolo": "DECRETO LEGISLATIVO 12 febbraio 1948, n. 51",
+      "tipo": "decreto.legislativo",
+      "numero": "51",
+      "dataEmanazione": "1948-02-12",
+      "nir": "urn:nir:stato:decreto.legislativo:1948-02-12;51",
+      "eli": "/eli/id/1948/02/12/048U0051/sg",
+      "stato": "abrogato",
+      "sintesi": "Approvazione del nuovo statuto dell'Istituto per la Ricostruzione industriale (I.R.I.).",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legislativo:1948-02-12;51",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1948/02/21/048U0051/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1948-02-21",
+      "numeroGU": "44",
+      "codiceRedazionale": "048U0051",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.LGS. 13 DICEMBRE 2010, N. 212 ))"
+    },
+    {
+      "chiave": "/eli/id/1948/02/14/048U0049/sg",
+      "titolo": "DECRETO LEGISLATIVO 14 febbraio 1948, n. 49",
+      "tipo": "decreto.legislativo",
+      "numero": "49",
+      "dataEmanazione": "1948-02-14",
+      "nir": "urn:nir:stato:decreto.legislativo:1948-02-14;49",
+      "eli": "/eli/id/1948/02/14/048U0049/sg",
+      "stato": "abrogato",
+      "sintesi": "Rivalutazioni per conguaglio monetario.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legislativo:1948-02-14;49",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1948/02/20/048U0049/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1948-02-20",
+      "numeroGU": "43",
+      "codiceRedazionale": "048U0049",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.LGS. 13 DICEMBRE 2010, N. 212 ))"
+    },
+    {
+      "chiave": "/eli/id/1948/01/20/048U0045/sg",
+      "titolo": "DECRETO LEGISLATIVO 20 gennaio 1948, n. 45",
+      "tipo": "decreto.legislativo",
+      "numero": "45",
+      "dataEmanazione": "1948-01-20",
+      "nir": "urn:nir:stato:decreto.legislativo:1948-01-20;45",
+      "eli": "/eli/id/1948/01/20/048U0045/sg",
+      "stato": "abrogato",
+      "sintesi": "Organici provvisoria degli ufficiali dell'Esercito.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legislativo:1948-01-20;45",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1948/02/18/048U0045/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1948-02-18",
+      "numeroGU": "41",
+      "codiceRedazionale": "048U0045",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.LGS. 15 MARZO 2010, N. 66 ))"
+    },
+    {
+      "chiave": "/eli/id/1948/01/18/048U0031/sg",
+      "titolo": "DECRETO LEGISLATIVO 18 gennaio 1948, n. 31",
+      "tipo": "decreto.legislativo",
+      "numero": "31",
+      "dataEmanazione": "1948-01-18",
+      "nir": "urn:nir:stato:decreto.legislativo:1948-01-18;31",
+      "eli": "/eli/id/1948/01/18/048U0031/sg",
+      "stato": "in_vigore",
+      "sintesi": "Costituzione di un fondo per la concessione di mutui ad interesse a breve termine alle societa' per azioni con partecipazione dello Stato ed a talune aziende patrimoniali dello Stato.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legislativo:1948-01-18;31",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1948/02/09/048U0031/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1948-02-09",
+      "numeroGU": "32",
+      "codiceRedazionale": "048U0031",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "IL PRESIDENTE DELLA REPUBBLICA Visto l' art. 4 del decreto-legge luogotenenziale 25 giugno 1944, n. 151 , con le modificazioni ad esso apportate dall' art. 3, comma primo, del decreto legislativo luogotenenziale 16 marzo 1946, n. 98 ; Viste le disposizioni transitorie I e XV della Costituzione; Visto l' art. 87, comma quinto, della Costituzione ; Sulla proposta del Ministro per le finanze, di concerto con il Ministro per il tesoro; PROMULGA il seguente decreto legislativo, approvato dal Consiglio dei Ministri con deliberazione del 10 gennaio 1948: Art. 1 Per la concessione di mutui ad interesse a breve termine alle societ&agrave; per azioni con partecipazione dello Stato, nonch&egrave; alle aziende patrimoniali dello Stato in gestione diretta del Ministero delle finanze (Direzione generale del demanio) &egrave; costituito un fondo di centotrentacinque milioni di lire. ((1)) --------------- AGGIORNAMENTO (1) Il D.Lgs. 21 aprile 1948, n. 1073 ha disposto (con l'art. 2) che \"Il fondo di L. 135.000.000 di cui al decreto legislativo 18 gennaio 1948, n. 31 , viene elevato a L. 620.000.000.\""
+    },
+    {
+      "chiave": "/eli/id/1947/10/19/047U1432/sg",
+      "titolo": "DECRETO DEL CAPO PROVVISORIO DELLO STATO 19 ottobre 1947, n. 1432",
+      "tipo": "decreto.del.capo.provvisorio.dello.stato",
+      "numero": "1432",
+      "dataEmanazione": "1947-10-19",
+      "nir": "urn:nir:stato:decreto.del.capo.provvisorio.dello.stato:1947-10-19;1432",
+      "eli": "/eli/id/1947/10/19/047U1432/sg",
+      "stato": "abrogato",
+      "sintesi": "Terza aliquota di ufficiali generali e superiori dell'Aeronautica militare da collocare in ausiliaria ai sensi del regio decreto legislativo 14 maggio 1946, n. 384.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.del.capo.provvisorio.dello.stato:1947-10-19;1432",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1947/12/24/047U1432/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1947-12-24",
+      "numeroGU": "295",
+      "codiceRedazionale": "047U1432",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.L. 22 DICEMBRE 2008, N. 200 , CONVERTITO, CON MODIFICAZIONI, DALLA L. 18 FEBBRAIO 2009, N. 9 ))"
+    },
+    {
+      "chiave": "/eli/id/1947/11/13/047U1422/sg",
+      "titolo": "LEGGE 13 novembre 1947, n. 1422",
+      "tipo": "legge",
+      "numero": "1422",
+      "dataEmanazione": "1947-11-13",
+      "nir": "urn:nir:stato:legge:1947-11-13;1422",
+      "eli": "/eli/id/1947/11/13/047U1422/sg",
+      "stato": "in_vigore",
+      "sintesi": "Approvazione dello scambio di Note effettuato in Roma tra l'Italia e la Francia, circa il recupero di navi mercantili francesi affondate nelle acque territoriali italiane.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1947-11-13;1422",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1947/12/23/047U1422/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1947-12-23",
+      "numeroGU": "294",
+      "codiceRedazionale": "047U1422",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 Piena ed intera esecuzione &egrave; data allo scambio di Note effettuato in Roma, fra l'Italia e la Francia, il 1° giugno 1946, circa, il recupero di navi mercantili francesi affondate nelle acque territoriali italiane."
+    },
+    {
+      "chiave": "/eli/id/1947/10/07/047U1058/sg",
+      "titolo": "LEGGE 7 ottobre 1947, n. 1058",
+      "tipo": "legge",
+      "numero": "1058",
+      "dataEmanazione": "1947-10-07",
+      "nir": "urn:nir:stato:legge:1947-10-07;1058",
+      "eli": "/eli/id/1947/10/07/047U1058/sg",
+      "stato": "in_vigore",
+      "sintesi": "Norme per la disciplina dell'elettorato attivo e per la tenuta e la revisione annuale delle liste elettorali.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1947-10-07;1058",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1947/10/13/047U1058/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1947-10-13",
+      "numeroGU": "235",
+      "codiceRedazionale": "047U1058",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 Sono elettori tutti i cittadini italiani che abbiano compiuto il 21° anno di et&agrave; e non si trovino in alcuna delle condizioni previste dall'art. 2."
+    },
+    {
+      "chiave": "/eli/id/1947/07/10/047U0873/sg",
+      "titolo": "DECRETO DEL CAPO PROVVISORIO DELLO STATO 10 luglio 1947, n. 873",
+      "tipo": "decreto.del.capo.provvisorio.dello.stato",
+      "numero": "873",
+      "dataEmanazione": "1947-07-10",
+      "nir": "urn:nir:stato:decreto.del.capo.provvisorio.dello.stato:1947-07-10;873",
+      "eli": "/eli/id/1947/07/10/047U0873/sg",
+      "stato": "abrogato",
+      "sintesi": "Approvazione del nuovo statuto della Societa' Italiana di antropologia.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.del.capo.provvisorio.dello.stato:1947-07-10;873",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1947/09/15/047U0873/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1947-09-15",
+      "numeroGU": "211",
+      "codiceRedazionale": "047U0873",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.L. 22 DICEMBRE 2008, N. 200 , CONVERTITO, CON MODIFICAZIONI, DALLA L. 18 FEBBRAIO 2009, N. 9 ))"
+    }
+  ]
+}

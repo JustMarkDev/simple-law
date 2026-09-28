@@ -57,6 +57,22 @@ const REGISTRO: VoceRegistro[] = [
     file: path.join('data', 'reali', 'referendum-2025.json'),
     tipo: 'referendum',
   },
+  {
+    id: 'regionali-2025-toscana',
+    titolo: 'Elezioni regionali 2025 — Toscana',
+    descrizione:
+      'Voto del 12 ottobre 2025 in Toscana: affluenza e voti per lista a livello regionale e affluenza per comune. Solo aggregati, nessun nominativo; i voti del presidente non sono pubblicati come aggregato nel tracciato.',
+    file: path.join('data', 'reali', 'elezioni-regionali-2025-toscana.json'),
+    tipo: 'liste',
+  },
+  {
+    id: 'regionali-2024-umbria',
+    titolo: 'Elezioni regionali 2024 — Umbria',
+    descrizione:
+      'Voto del 17 novembre 2024 in Umbria (circoscrizione unica): affluenza e voti per lista a livello regionale e affluenza per comune. Solo aggregati, nessun nominativo; i voti del presidente non sono pubblicati come aggregato nel tracciato.',
+    file: path.join('data', 'reali', 'elezioni-regionali-2024-umbria.json'),
+    tipo: 'liste',
+  },
 ]
 
 const MAX_BYTE_JSON = 1024 * 1024

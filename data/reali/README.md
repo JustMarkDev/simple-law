@@ -181,7 +181,7 @@ npx tsx scripts/ingest-reale-quirinale.ts
 Ricerca verificata su Eligendo/Archivio Storico Elezioni/ISTAT con URL
 provati, formati, volumi e licenze. L'ingest elettorale e' il prossimo passo.
 
-## Controllo: appalti e giustizia amministrativa — `oversight-anac-2025.json` (60) + `oversight-ga-2026.json` (14)
+## Controllo: appalti e giustizia amministrativa — `oversight-anac-2025.json` (60) + `oversight-ga-2026.json` (14) + `oversight-cnel-2026.json` (50)
 
 - **ANAC/BDNCP via OCP Data Registry** (CC BY 4.0): 60 contratti 2025 con
   OCID, CIG, stazione appaltante, oggetto, data. Sezione UI: `/controllo`
@@ -190,6 +190,8 @@ provati, formati, volumi e licenze. L'ingest elettorale e' il prossimo passo.
   link ufficiali): 14 provvedimenti 2026 di Consiglio di Stato (7), TAR (6)
   e CGA Sicilia (1). Giudice derivato dall'ente, sezione dopo la virgola;
   numero/anno solo se espliciti, mai inventati.
+- **CNEL** (solo metadati + link ufficiali, licenza aperta non dichiarata):
+  50 osservazioni e proposte 2026 con titolo, data e scheda ufficiale.
 - Sono documenti di controllo, **mai leggi**: badge dedicato in UI e API.
 
 ```bash

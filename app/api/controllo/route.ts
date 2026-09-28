@@ -1,21 +1,25 @@
 /**
- * GET /api/controllo?tipo=contratti|ga&q=&ente=&giudice=&page=&per=
- * Hub oversight: contratti pubblici ANAC 2025 + provvedimenti GA 2026.
- * Mai 500: in caso di errore restituisce elenchi vuoti con provenance.
- * Documenti di controllo, MAI leggi: nessun campo stato/vigenza.
+ * GET /api/controllo?tipo=contratti|ga|cnel&q=&ente=&giudice=&page=&per=
+ * Hub oversight: contratti pubblici ANAC 2025 + provvedimenti GA 2026 +
+ * documenti CNEL. Mai 500: in caso di errore restituisce elenchi vuoti
+ * con provenance. Documenti di controllo, MAI leggi: nessun campo
+ * stato/vigenza.
  */
 
 import { NextResponse } from "next/server";
 import {
   cercaContratti,
+  cercaDocumentiCnel,
   cercaProvvedimenti,
   DISCLAIMER_CONTROLLO,
   filtraPerEnte,
   filtraPerGiudice,
   leggiProvenanceAnac,
+  leggiProvenanceCnel,
   leggiProvenanceGA,
   paginaOversight,
   tuttiContratti,
+  tuttiDocumentiCnel,
   tuttiProvvedimentiGA,
 } from "@/lib/oversight-dati";
 
@@ -23,7 +27,7 @@ export const dynamic = "force-dynamic";
 export const runtime = "nodejs";
 
 const PER_AMMESSI = [10, 20, 50] as const;
-const TIPI_AMMESSI = ["contratti", "ga"] as const;
+const TIPI_AMMESSI = ["contratti", "ga", "cnel"] as const;
 
 function intero(
   value: string | null,
@@ -66,6 +70,29 @@ export async function GET(request: Request) {
     const per = (PER_AMMESSI as readonly number[]).includes(perGrezzo)
       ? perGrezzo
       : 20;
+
+    if (tipo === "cnel") {
+      let base = await tuttiDocumentiCnel();
+      base = cercaDocumentiCnel(base, q);
+      const totale = base.length;
+      const items = paginaOversight(base, page, per);
+      let provenance: unknown = {};
+      try {
+        provenance = await leggiProvenanceCnel();
+      } catch {
+        provenance = {};
+      }
+      return NextResponse.json({
+        tipo: "cnel",
+        items,
+        total: totale,
+        page,
+        per,
+        count: totale,
+        provenance,
+        disclaimer: DISCLAIMER_CONTROLLO,
+      });
+    }
 
     if (tipo === "ga") {
       const giudice = (params.get("giudice") ?? "").slice(0, 20);

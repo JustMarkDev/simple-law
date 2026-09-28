@@ -464,8 +464,15 @@ async function main(): Promise<void> {
   console.log(`[ingest-europee-2024] scritto data/reali/elezioni-europee-2024.json (${byte} byte).`);
 }
 
-main().catch((errore: unknown) => {
-  const messaggio = errore instanceof Error ? errore.message : "errore sconosciuto";
-  console.error(`Ingest europee-2024 fallito, nessun file scritto: ${messaggio}`);
-  process.exit(1);
-});
+const eseguitoDiretto =
+  typeof process !== "undefined" &&
+  Array.isArray(process.argv) &&
+  typeof process.argv[1] === "string" &&
+  process.argv[1].endsWith("ingest-reale-elezioni-europee-2024.ts");
+if (eseguitoDiretto) {
+  main().catch((errore: unknown) => {
+    const messaggio = errore instanceof Error ? errore.message : "errore sconosciuto";
+    console.error(`Ingest europee-2024 fallito, nessun file scritto: ${messaggio}`);
+    process.exit(1);
+  });
+}

@@ -1244,3 +1244,193 @@ export function cercaComuneReferendum(
     return [];
   }
 }
+
+/* ---------------------------------------------------------------------------
+ * Regionali 2024-2025 (Toscana 2025-10-12 + Umbria 2024-11-17). Sezione
+ * aggiuntiva, mai tocca registry/loader europee/politiche/referendum sopra.
+ * Stesso envelope aggregato di DatiElezioni (`regioni` con per-lista,
+ * `comuni` solo affluenza e/v/a, mai per-lista comunale, mai nominativi):
+ * i voti del presidente del tracciato DAIT sono scartati in ingest, mai
+ * emessi. File assente o invalido -> consultazione assente, mai throw.
+ * ------------------------------------------------------------------------- */
+
+/** Percorsi relativi (da cwd) dei file regionali (W1, se presenti). */
+export const PERCORSO_REGIONALI_TOSCANA_2025 =
+  "data/reali/elezioni-regionali-2025-toscana.json";
+export const PERCORSO_REGIONALI_UMBRIA_2024 =
+  "data/reali/elezioni-regionali-2024-umbria.json";
+
+/** Identificativi REST delle regionali. */
+export const ID_REGIONALI_TOSCANA_2025 = "regionali-2025-toscana" as const;
+export const ID_REGIONALI_UMBRIA_2024 = "regionali-2024-umbria" as const;
+
+/** Identificativi REST delle regionali (unione dedicata, mai in IdElezione). */
+export type IdRegionale =
+  | typeof ID_REGIONALI_TOSCANA_2025
+  | typeof ID_REGIONALI_UMBRIA_2024;
+
+/** Voce del registry regionali: metadati statici, mai numeri reali. */
+export interface VoceRegistroRegionale {
+  id: IdRegionale;
+  tipo: string;
+  data: string;
+  file: string;
+  titolo: string;
+}
+
+/**
+ * Registry statico delle regionali (metadati, mai numeri reali).
+ * La disponibilita' effettiva dipende dal file su disco: file assente
+ * o invalido -> consultazione assente, mai throw.
+ */
+export const REGISTRY_REGIONALI: readonly VoceRegistroRegionale[] = [
+  {
+    id: "regionali-2025-toscana",
+    tipo: "regionali",
+    data: "2025-10-12",
+    file: PERCORSO_REGIONALI_TOSCANA_2025,
+    titolo: "Elezioni regionali 2025 — Toscana",
+  },
+  {
+    id: "regionali-2024-umbria",
+    tipo: "regionali",
+    data: "2024-11-17",
+    file: PERCORSO_REGIONALI_UMBRIA_2024,
+    titolo: "Elezioni regionali 2024 — Umbria",
+  },
+];
+
+/** Normalizza un id regionale (trim, minuscole, max 64 ch). */
+export function normalizzaIdRegionale(value: unknown): IdRegionale | null {
+  try {
+    if (typeof value !== "string") return null;
+    const chiave = value.trim().toLowerCase().slice(0, 64);
+    if (
+      chiave === "regionali-2025-toscana" ||
+      chiave === "regionali-2024-umbria"
+    )
+      return chiave;
+    return null;
+  } catch {
+    return null;
+  }
+}
+
+/** True se `value` e' un id regionale noto. Non lancia mai. */
+export function isIdRegionale(value: unknown): value is IdRegionale {
+  try {
+    return normalizzaIdRegionale(value) !== null;
+  } catch {
+    return false;
+  }
+}
+
+/** Voce di registry regionale per id noto, altrimenti null. Non lancia mai. */
+export function voceRegistroRegionale(
+  id: unknown,
+): VoceRegistroRegionale | null {
+  try {
+    const chiave = normalizzaIdRegionale(id);
+    if (!chiave) return null;
+    const voce = REGISTRY_REGIONALI.find((v) => v.id === chiave);
+    return voce ? { ...voce } : null;
+  } catch {
+    return null;
+  }
+}
+
+export interface SintesiRegionale {
+  id: IdRegionale;
+  tipo: string;
+  data: string;
+  titolo: string;
+  disponibile: boolean;
+  elettori: number;
+  votanti: number;
+  affluenza: number;
+  totaleListe: number;
+  totaleRegioni: number;
+  totaleComuni: number;
+}
+
+/**
+ * Carica l'envelope di una regionale (copia difensiva) o null se
+ * id ignoto, file assente, oltre 1MB o invalido. Mai lancia.
+ */
+export async function caricaRegionale(
+  id: unknown,
+): Promise<DatiElezioni | null> {
+  try {
+    const voce = voceRegistroRegionale(id);
+    if (!voce) return null;
+    const stato = statoPerPercorso(voce.file);
+    return stato.dati ? copiaDati(stato.dati) : null;
+  } catch {
+    return null;
+  }
+}
+
+/** Variante Result per-id regionale con motivo del vuoto in italiano (mai lancia). */
+export async function caricaRegionaleResult(
+  id: unknown,
+): Promise<Result<DatiElezioni>> {
+  try {
+    const voce = voceRegistroRegionale(id);
+    if (!voce) return { ok: false, errore: "consultazione non trovata" };
+    const stato = statoPerPercorso(voce.file);
+    if (!stato.dati)
+      return { ok: false, errore: stato.errore || "dati non disponibili" };
+    return { ok: true, dati: copiaDati(stato.dati) };
+  } catch {
+    return { ok: false, errore: "errore imprevisto" };
+  }
+}
+
+/**
+ * Elenca le regionali con file presente e valido (file assente o
+ * invalido -> voce omessa, mai throw). Mai lancia, mai numeri inventati.
+ */
+export async function elencaRegionali(): Promise<SintesiRegionale[]> {
+  try {
+    const out: SintesiRegionale[] = [];
+    for (const voce of REGISTRY_REGIONALI) {
+      try {
+        const s = statoPerPercorso(voce.file);
+        if (!s.dati) continue;
+        const d = s.dati;
+        out.push({
+          id: voce.id,
+          tipo: d.elezione.tipo || voce.tipo,
+          data: d.elezione.data || voce.data,
+          titolo: voce.titolo,
+          disponibile: true,
+          elettori: d.elezione.e,
+          votanti: d.elezione.v,
+          affluenza: d.elezione.a,
+          totaleListe: d.liste.length,
+          totaleRegioni: d.regioni.length,
+          totaleComuni: d.comuni.length,
+        });
+      } catch {
+        continue;
+      }
+    }
+    return out;
+  } catch {
+    return [];
+  }
+}
+
+/** Provenance per-id regionale (vuota se id ignoto o file assente). Mai lancia. */
+export async function leggiProvenanceRegionale(
+  id: unknown,
+): Promise<ProvenanceElezioni> {
+  try {
+    const voce = voceRegistroRegionale(id);
+    if (!voce) return {};
+    const stato = statoPerPercorso(voce.file);
+    return stato.dati ? { ...stato.dati.provenance } : {};
+  } catch {
+    return {};
+  }
+}

@@ -60,9 +60,20 @@ export interface ProvenienzaOversight {
   paginaDati?: string;
 }
 
+/** Documento CNEL (osservazione/proposta: solo metadati + link, mai testo). */
+export interface DocumentoCnel {
+  id: string;
+  titolo: string;
+  data?: string;
+  url: string;
+  tipo?: string;
+}
+
 /** Percorsi relativi (da cwd) degli envelope reali di W1/W2. */
 export const PERCORSO_ANAC = "data/reali/oversight-anac-2025.json";
 export const PERCORSO_GA = "data/reali/oversight-ga-2026.json";
+/** Documenti CNEL (osservazioni e proposte, solo metadati + link). */
+export const PERCORSO_CNEL = "data/reali/oversight-cnel-2026.json";
 
 /** Dimensione massima accettata del JSON (oltre -> vuoto, mai parziali). */
 export const MAX_JSON_BYTES = 1048576;
@@ -564,11 +575,15 @@ const cache: {
   provenanceAnac: ProvenienzaOversight | null;
   provvedimenti: ProvvedimentoGA[] | null;
   provenanceGa: ProvenienzaOversight | null;
+  documentiCnel: DocumentoCnel[] | null;
+  provenanceCnel: ProvenienzaOversight | null;
 } = {
   contratti: null,
   provenanceAnac: null,
   provvedimenti: null,
   provenanceGa: null,
+  documentiCnel: null,
+  provenanceCnel: null,
 };
 
 /** Azzera la cache in modulo (utile nei test). Non lancia mai. */
@@ -578,6 +593,8 @@ export function azzeraCacheOversight(): void {
     cache.provenanceAnac = null;
     cache.provvedimenti = null;
     cache.provenanceGa = null;
+    cache.documentiCnel = null;
+    cache.provenanceCnel = null;
   } catch {
     // mai lanciare
   }
@@ -754,11 +771,116 @@ export async function leggiProvenanceGA(): Promise<ProvenienzaOversight> {
   }
 }
 
+/**
+ * Normalizza un documento CNEL in `DocumentoCnel` o `null` (mancano id,
+ * titolo o URL https). Mai testo integrale: solo metadati + link.
+ * Non lancia mai.
+ */
+export function aDocumentoCnel(voce: unknown): DocumentoCnel | null {
+  try {
+    if (!voce || typeof voce !== "object" || Array.isArray(voce)) return null;
+    const o = voce as Record<string, unknown>;
+    const id = stringaPulita(o["id"]);
+    const titolo = stringaPulita(o["titolo"]);
+    const url = httpsUrl(o["url"]);
+    if (!id || !titolo || titolo.length < 5 || !url) return null;
+    const doc: DocumentoCnel = {
+      id: id.slice(0, 500),
+      titolo: titolo.slice(0, 2000),
+      url: url.slice(0, 500),
+    };
+    const data = isoValida(o["data"]);
+    if (data) doc.data = data;
+    const tipo = stringaPulita(o["tipo"]).slice(0, 120);
+    if (tipo) doc.tipo = tipo;
+    return doc;
+  } catch {
+    return null;
+  }
+}
+
+function caricaDocumentiCnel(): {
+  documenti: DocumentoCnel[];
+  provenance: ProvenienzaOversight | null;
+} {
+  try {
+    const grezzo = leggiEnvelope(PERCORSO_CNEL);
+    if (!grezzo) return { documenti: [], provenance: null };
+    const lista = listaDi(grezzo, ["voci", "documenti", "items"]);
+    const documenti: DocumentoCnel[] = [];
+    const visti = new Set<string>();
+    for (const voce of lista.slice(0, 100)) {
+      const d = aDocumentoCnel(voce);
+      if (!d) continue;
+      if (visti.has(d.id)) continue;
+      visti.add(d.id);
+      documenti.push(d);
+    }
+    return { documenti, provenance: provenanceDi(grezzo) };
+  } catch {
+    return { documenti: [], provenance: null };
+  }
+}
+
+/** Tutti i documenti CNEL (copia difensiva, mai throw). */
+export async function tuttiDocumentiCnel(): Promise<DocumentoCnel[]> {
+  try {
+    if (!cache.documentiCnel) {
+      const { documenti, provenance } = caricaDocumentiCnel();
+      cache.documentiCnel = documenti;
+      cache.provenanceCnel = provenance;
+    }
+    return (cache.documentiCnel ?? []).map((d) => ({ ...d }));
+  } catch {
+    return [];
+  }
+}
+
+/** Provenance CNEL del file reale. Mai throw. */
+export async function leggiProvenanceCnel(): Promise<ProvenienzaOversight> {
+  try {
+    await tuttiDocumentiCnel();
+    return { ...(cache.provenanceCnel ?? {}) };
+  } catch {
+    return {};
+  }
+}
+
+/**
+ * Ricerca documenti CNEL per titolo (max 100 char, min 2 dopo
+ * normalizzazione). Sotto i 2 caratteri: copia invariata. Non lancia mai.
+ */
+export function cercaDocumentiCnel(
+  documenti: readonly DocumentoCnel[],
+  q: unknown,
+): DocumentoCnel[] {
+  try {
+    if (!Array.isArray(documenti)) return [];
+    const grezza = typeof q === "string" ? q.slice(0, 100) : "";
+    const n = normalizzaOversight(grezza);
+    if (n.length < 2) return [...documenti];
+    return documenti.filter((d) => {
+      try {
+        return (
+          normalizzaOversight(d?.titolo).includes(n) ||
+          normalizzaOversight(d?.tipo ?? "").includes(n)
+        );
+      } catch {
+        return false;
+      }
+    });
+  } catch {
+    return [];
+  }
+}
+
 export interface SintesiControllo {
   contratti: number;
   contrattiDisponibili: boolean;
   provvedimenti: number;
   provvedimentiDisponibili: boolean;
+  documentiCnel: number;
+  documentiCnelDisponibili: boolean;
 }
 
 /**
@@ -767,15 +889,18 @@ export interface SintesiControllo {
  */
 export async function sintesiControllo(): Promise<SintesiControllo> {
   try {
-    const [contratti, provvedimenti] = await Promise.all([
+    const [contratti, provvedimenti, documentiCnel] = await Promise.all([
       tuttiContratti(),
       tuttiProvvedimentiGA(),
+      tuttiDocumentiCnel(),
     ]);
     return {
       contratti: contratti.length,
       contrattiDisponibili: contratti.length > 0,
       provvedimenti: provvedimenti.length,
       provvedimentiDisponibili: provvedimenti.length > 0,
+      documentiCnel: documentiCnel.length,
+      documentiCnelDisponibili: documentiCnel.length > 0,
     };
   } catch {
     return {
@@ -783,6 +908,8 @@ export async function sintesiControllo(): Promise<SintesiControllo> {
       contrattiDisponibili: false,
       provvedimenti: 0,
       provvedimentiDisponibili: false,
+      documentiCnel: 0,
+      documentiCnelDisponibili: false,
     };
   }
 }
