@@ -58,8 +58,29 @@ Obiettivo precedente (completato): UI/UX, feature, corpus 5005 voci.
   OK (750 pagine statiche), smoke live (hub/API/ricerca/dettaglio 200,
   Meloni con link, Piantedosi senza).
 - Next: DDL Senato + atti Camera in data/reali e in UI, Corte Costituzionale
-  / EUR-Lex / Quirinale / ISTAT / Eligendo (sonde + ingest), batch storico
-  Normattiva per anno, sostituzione progressiva del sintetico.
+  / EUR-Lex / Quirinale / ISTAT / Eligendo (sonde + ingest) — fatto sotto
+  per DDL/atti/Consulta; restano EUR-Lex, Quirinale, ISTAT, Eligendo,
+  batch storico Normattiva per anno, sostituzione progressiva del sintetico.
+
+## Reali-3 (2026-09-28, commit `8aefb32`): storico, DDL/atti, Consulta
+- Workflow: 1 chiamata `workflow` con 10 subagenti (4 sonde + 1 giudice + 3
+  scrittori verticali + 2 revisori). Sonde: storico via aggiornati annuali +
+  collezioni bulk; DDL Senato + 6288 atti Camera via SPARQL; Consulta/Quirinale;
+  EUR-Lex CELLAR + ISTAT/Eligendo (giudice: Consulta subito, resto dopo).
+- Ingerito: storico 1980 (66) + collezioni (112) Normattiva, 5 DDL + 197 atti
+  Camera, 50 pronunce Consulta 2001. Totale reale: 500+ voci, corpus live 5227.
+- Fix P0 miei (revisori + verifica mia): union multi-file (storico mai in UI
+  per primo-file-vince); stati da intestazione Art. 1 formale + fine-vigenza
+  preservata (21 decaduti, 12 abrogati) + re-ingest; seed DL139 allineato
+  alla realta (abrogato L.166/2026, override aggiornati); DDL per whitelist;
+  MANIFEST/README/nav/sitemap complete; badge Dato ufficiale.
+- Scoperta chiave: DL 139 e 153/2026 davvero abrogati dalla L. 166/2026
+  (header ufficiale Art. 1) — il sistema di vigenza funziona.
+- Verifiche mie: `npm test` 396/396 OK, `typecheck`/`lint` OK, `build` OK
+  (802 pagine), smoke live (5227 totale, decaduto trovabile, DDL/Consulta
+  200, sitemap ok).
+- Next: EUR-Lex, Quirinale, ISTAT, Eligendo; storico per anno (loop finestre);
+  ministri collegati a DDL/atti; sostituzione progressiva del sintetico.
 
 ## Stato iniziale (2026-09-28, iterazione 0)
 - Repo: `/Users/mark/Projects/simple-law`, branch `master` (appena `git init`, baseline committata `5391a84`).
