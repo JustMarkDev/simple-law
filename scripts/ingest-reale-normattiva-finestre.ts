@@ -123,6 +123,8 @@ const FINESTRA_2010 = { nome: "2010", inizio: "2010-01-01", fine: "2010-12-31" }
 const FINESTRA_1970 = { nome: "1970", inizio: "1970-01-01", fine: "1970-12-31" } as const;
 const FINESTRA_2020 = { nome: "2020", inizio: "2020-01-01", fine: "2020-12-31" } as const;
 const FINESTRA_1960 = { nome: "1960", inizio: "1960-01-01", fine: "1960-12-31" } as const;
+const FINESTRA_1955 = { nome: "1955", inizio: "1955-01-01", fine: "1955-12-31" } as const;
+const FINESTRA_2015 = { nome: "2015", inizio: "2015-01-01", fine: "2015-12-31" } as const;
 const FINESTRA_1992_1993 = { nome: "1992-1993", inizio: "1992-01-01", fine: "1993-12-31" } as const;
 const FINESTRA_2005_2006 = { nome: "2005-2006", inizio: "2005-01-01", fine: "2006-12-31" } as const;
 
@@ -134,6 +136,8 @@ const FINESTRE_DISPONIBILI = {
   "1970": FINESTRA_1970,
   "2020": FINESTRA_2020,
   "1960": FINESTRA_1960,
+  "1955": FINESTRA_1955,
+  "2015": FINESTRA_2015,
   "1992-1993": FINESTRA_1992_1993,
   "2005-2006": FINESTRA_2005_2006,
 } as const;
@@ -148,6 +152,8 @@ const OUT_DEFAULT_FINESTRA: Record<NomeFinestra, string> = {
   "1970": path.join("data", "reali", "normattiva-storico-1970.json"),
   "2020": path.join("data", "reali", "normattiva-storico-2020.json"),
   "1960": path.join("data", "reali", "normattiva-storico-1960.json"),
+  "1955": path.join("data", "reali", "normattiva-storico-1955.json"),
+  "2015": path.join("data", "reali", "normattiva-storico-2015.json"),
   "1992-1993": path.join("data", "reali", "normattiva-storico-1992-1993.json"),
   "2005-2006": path.join("data", "reali", "normattiva-storico-2005-2006.json"),
 };
@@ -434,7 +440,7 @@ function aiuto(): string {
     "  npx tsx scripts/ingest-reale-normattiva-finestre.ts [opzioni]",
     "",
     "Opzioni:",
-    "  --anni=A,B            finestre da ingerire (default 1990,2000; ammessi 1990,2000,2010,1970,2020,1960,1992-1993,2005-2006)",
+    "  --anni=A,B            finestre da ingerire (default 1990,2000; ammessi 1990,2000,2010,1970,2020,1960,1992-1993,2005-2006,1955,2015)",
     "  --limite=N            atti per finestra (default 80, MAI oltre 80)",
     "  --testo-max=N         caratteri max per testo (default 2000, max 61440)",
     "  --out-1990=PATH       file JSON finestra 1990 (default data/reali/normattiva-storico-1990.json)",
@@ -443,6 +449,8 @@ function aiuto(): string {
     "  --out-1970=PATH       file JSON finestra 1970 (default data/reali/normattiva-storico-1970.json)",
     "  --out-2020=PATH       file JSON finestra 2020 (default data/reali/normattiva-storico-2020.json)",
     "  --out-1960=PATH       file JSON finestra 1960 (default data/reali/normattiva-storico-1960.json)",
+    "  --out-1955=PATH       file JSON finestra 1955 (default data/reali/normattiva-storico-1955.json)",
+    "  --out-2015=PATH       file JSON finestra 2015 (default data/reali/normattiva-storico-2015.json)",
     "  --out-1992-1993=PATH  file JSON finestra 1992-1993 (default data/reali/normattiva-storico-1992-1993.json)",
     "  --out-2005-2006=PATH  file JSON finestra 2005-2006 (default data/reali/normattiva-storico-2005-2006.json)",
     "  --api-base=URL        override base API Normattiva",

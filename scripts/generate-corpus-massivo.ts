@@ -38,7 +38,7 @@ interface Opzioni {
   output: string;
 }
 
-// Allineato a CORPUS_TOTALE (default 5000, clamp 77..20000) e CORPUS_KB_MEDIO (1..6, solo CLI).
+// Allineato a CORPUS_TOTALE (default 5000, clamp 87..20000) e CORPUS_KB_MEDIO (1..6, solo CLI).
 // Il cap 20000 protegge la memoria (~25MB raw a 5000 atti): oltre usare lo streaming
 // su shard via `scripts/corpus-100gb.ts` + `lib/corpus.ts`.
 export const TOTALE_DEFAULT = 5000;

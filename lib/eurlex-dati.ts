@@ -672,3 +672,238 @@ export async function leggiProvenanceRecepimenti(): Promise<ProvenienzaRecepimen
     return {};
   }
 }
+
+/* ---------------------------------------------------------------------------
+ * Mappa recepimenti-atti: direttive UE -> atti Camera/Normattiva che le
+ * citano esplicitamente (cache-build, mai throw). Legge
+ * `data/reali/eurlex-recepimenti-atti.json` (vedi
+ * `scripts/ingest-reale-recepimenti-atti.ts`). File assente o invalido ->
+ * `{ ok: false }` senza rompere le pagine. Direttive senza match -> assenti
+ * (non voci vuote). Solo osservati, mai inventati.
+ * ------------------------------------------------------------------------- */
+
+export type FonteAttoCollegato = "camera" | "normattiva";
+
+export interface AttoCollegato {
+  titolo: string;
+  uri?: string;
+  fonte: FonteAttoCollegato;
+  nota?: string;
+}
+
+export interface VoceAttiCollegati {
+  celexDirettiva: string;
+  annoDirettiva?: string;
+  numeroDirettiva?: string;
+  atti: AttoCollegato[];
+}
+
+export interface ProvenienzaAttiCollegati {
+  fonte?: string;
+  recuperatoIl?: string;
+  licenza?: string;
+  metodo?: string;
+  direttiveScansionate?: number;
+  attiCamera?: number;
+  attiNormattiva?: number;
+  vociConMatch?: number;
+}
+
+export type EsitoMappaAttiCollegati =
+  | { ok: true; voci: VoceAttiCollegati[]; provenance: ProvenienzaAttiCollegati }
+  | { ok: false; voci: []; provenance: ProvenienzaAttiCollegati };
+
+const PERCORSO_ATTI_COLLEGATI = "data/reali/eurlex-recepimenti-atti.json";
+
+const cacheAttiCollegati: {
+  esito: EsitoMappaAttiCollegati | null;
+} = { esito: null };
+
+/** Azzera la cache atti collegati (utile nei test). Non lancia mai. */
+export function azzeraCacheAttiCollegati(): void {
+  try {
+    cacheAttiCollegati.esito = null;
+  } catch {
+    // mai lanciare
+  }
+}
+
+function uriAttoAmmesso(value: unknown): string {
+  try {
+    const s = stringaPulita(value);
+    if (!s || s.length > 500) return "";
+    const u = new URL(s);
+    const host = u.hostname.toLowerCase();
+    if (
+      (u.protocol === "http:" || u.protocol === "https:") &&
+      (host === "dati.camera.it" || host === "www.camera.it")
+    )
+      return s;
+    if (
+      u.protocol === "https:" &&
+      (host === "www.normattiva.it" || host === "www.gazzettaufficiale.it")
+    )
+      return s;
+    return "";
+  } catch {
+    return "";
+  }
+}
+
+function aAttoCollegato(voce: unknown): AttoCollegato | null {
+  try {
+    if (!voce || typeof voce !== "object" || Array.isArray(voce)) return null;
+    const o = voce as Record<string, unknown>;
+    const titolo = stringaPulita(o["titolo"]);
+    if (titolo.length < 10) return null;
+    const fonte =
+      o["fonte"] === "camera"
+        ? "camera"
+        : o["fonte"] === "normattiva"
+          ? "normattiva"
+          : null;
+    if (!fonte) return null;
+    const atto: AttoCollegato = { titolo: titolo.slice(0, 500), fonte };
+    const uri = uriAttoAmmesso(o["uri"]);
+    if (uri) atto.uri = uri;
+    const nota = stringaPulita(o["nota"]);
+    if (nota) atto.nota = nota.slice(0, 500);
+    return atto;
+  } catch {
+    return null;
+  }
+}
+
+function aVoceAttiCollegati(voce: unknown): VoceAttiCollegati | null {
+  try {
+    if (!voce || typeof voce !== "object" || Array.isArray(voce)) return null;
+    const o = voce as Record<string, unknown>;
+    const celex = stringaPulita(o["celexDirettiva"]).toUpperCase();
+    if (!/^3\d{4}L\d{1,4}$/.test(celex)) return null;
+    const grezzi = Array.isArray(o["atti"]) ? (o["atti"] as unknown[]) : [];
+    const atti: AttoCollegato[] = [];
+    for (const g of grezzi.slice(0, 20)) {
+      const a = aAttoCollegato(g);
+      if (a) atti.push(a);
+    }
+    if (atti.length === 0) return null;
+    const uscita: VoceAttiCollegati = { celexDirettiva: celex, atti };
+    const anno = stringaPulita(o["annoDirettiva"]);
+    if (/^\d{4}$/.test(anno)) uscita.annoDirettiva = anno;
+    const numero = stringaPulita(o["numeroDirettiva"]);
+    if (/^\d{1,4}$/.test(numero)) uscita.numeroDirettiva = numero;
+    return uscita;
+  } catch {
+    return null;
+  }
+}
+
+function caricaAttiCollegati(): EsitoMappaAttiCollegati {
+  try {
+    const mod = moduliNode();
+    if (!mod) return { ok: false, voci: [], provenance: {} };
+    let base = "";
+    try {
+      base = typeof process !== "undefined" && process.cwd ? process.cwd() : "";
+    } catch {
+      return { ok: false, voci: [], provenance: {} };
+    }
+    if (!base) return { ok: false, voci: [], provenance: {} };
+    const ass = mod.join(base, PERCORSO_ATTI_COLLEGATI);
+    if (!mod.existsSync(ass)) return { ok: false, voci: [], provenance: {} };
+    const raw = mod.readFileSync(ass, "utf8");
+    if (!raw || raw.length > 500_000) return { ok: false, voci: [], provenance: {} };
+    const parsed = JSON.parse(raw) as Record<string, unknown>;
+    const prov: ProvenienzaAttiCollegati = {};
+    const p = parsed["provenance"];
+    if (p && typeof p === "object" && !Array.isArray(p)) {
+      const o = p as Record<string, unknown>;
+      for (const campo of ["fonte", "recuperatoIl", "licenza", "metodo"] as const) {
+        const v = stringaPulita(o[campo]);
+        if (v) prov[campo] = v.slice(0, 500);
+      }
+      for (const campo of [
+        "direttiveScansionate",
+        "attiCamera",
+        "attiNormattiva",
+        "vociConMatch",
+      ] as const) {
+        const v = o[campo];
+        if (typeof v === "number" && Number.isFinite(v) && v >= 0) {
+          prov[campo] = Math.floor(v);
+        }
+      }
+    }
+    const lista = Array.isArray(parsed["direttive"])
+      ? (parsed["direttive"] as unknown[])
+      : null;
+    if (!lista) return { ok: false, voci: [], provenance: prov };
+    const voci: VoceAttiCollegati[] = [];
+    const visti = new Set<string>();
+    for (const g of lista.slice(0, 50)) {
+      const v = aVoceAttiCollegati(g);
+      if (v && !visti.has(v.celexDirettiva)) {
+        visti.add(v.celexDirettiva);
+        voci.push(v);
+      }
+    }
+    return { ok: true, voci, provenance: prov };
+  } catch {
+    return { ok: false, voci: [], provenance: {} };
+  }
+}
+
+/**
+ * Mappa atti collegati (copia difensiva, mai throw). File assente/invalido ->
+ * `{ ok: false, voci: [] }` senza rompere le pagine.
+ */
+export async function tuttiAttiCollegati(): Promise<EsitoMappaAttiCollegati> {
+  try {
+    if (!cacheAttiCollegati.esito) {
+      cacheAttiCollegati.esito = caricaAttiCollegati();
+    }
+    const e = cacheAttiCollegati.esito;
+    if (!e.ok) return { ok: false, voci: [], provenance: { ...e.provenance } };
+    return {
+      ok: true,
+      voci: e.voci.map((v) => ({
+        ...v,
+        atti: v.atti.map((a) => ({ ...a })),
+      })),
+      provenance: { ...e.provenance },
+    };
+  } catch {
+    return { ok: false, voci: [], provenance: {} };
+  }
+}
+
+/**
+ * Atti Camera/Normattiva che citano esplicitamente una direttiva (CELEX,
+ * mai throw). File assente, CELEX malformato o direttiva senza match ->
+ * `[]` (onesto).
+ */
+export async function attiCollegatiPerDirettiva(
+  celex: unknown,
+): Promise<AttoCollegato[]> {
+  try {
+    const c = typeof celex === "string" ? celex.trim().toUpperCase() : "";
+    if (!/^3\d{4}L\d{1,4}$/.test(c)) return [];
+    const esito = await tuttiAttiCollegati();
+    if (!esito.ok) return [];
+    const voce = esito.voci.find((v) => v.celexDirettiva === c);
+    if (!voce) return [];
+    return voce.atti.map((a) => ({ ...a }));
+  } catch {
+    return [];
+  }
+}
+
+/** Provenance della mappa atti collegati. Mai throw. */
+export async function leggiProvenanceAttiCollegati(): Promise<ProvenienzaAttiCollegati> {
+  try {
+    const esito = await tuttiAttiCollegati();
+    return { ...esito.provenance };
+  } catch {
+    return {};
+  }
+}

@@ -28,13 +28,13 @@ describe("corpus unificato: forma e sottoinsieme seed", () => {
     }
   });
 
-  it("rispetta il totale da env quando impostato (clamp 77..20000)", () => {
+  it("rispetta il totale da env quando impostato (clamp 87..20000)", () => {
     const raw = process.env.CORPUS_TOTALE;
     const corpus = getSeedLaws();
     if (raw !== undefined && raw !== "") {
       const n = Number(raw);
       if (Number.isFinite(n)) {
-        const atteso = Math.min(20000, Math.max(77, Math.floor(n)));
+        const atteso = Math.min(20000, Math.max(87, Math.floor(n)));
         expect(corpus.length).toBe(atteso);
         return;
       }
@@ -63,13 +63,13 @@ describe("corpus unificato: forma e sottoinsieme seed", () => {
     }
   });
 
-  it("non usa numeri riservati nelle varianti sintetiche (coda dimostrativa)", () => {
+  it("non usa numeri riservati nelle varianti sintetiche (titoli Variante N)", () => {
     const corpus = getSeedLaws();
-    const coda = corpus.slice(77);
-    for (const law of coda) {
-      // Gli atti reali (dimostrativo=false) hanno numeri ufficiali veri
-      // (es. D.Lgs. 36/2023): la regola vale solo per le varianti generate.
-      if (law.dimostrativo === false) continue;
+    // Solo le varianti generate (titolo "... — Variante N"), ovunque siano
+    // nel merge con reali e curati: i numeri ufficiali veri sono legittimi.
+    const varianti = corpus.filter((law) => law.titolo.includes(" — Variante "));
+    expect(varianti.length).toBeGreaterThan(0);
+    for (const law of varianti) {
       const n = Number(law.numero);
       if (Number.isFinite(n)) {
         expect(NUMERI_RISERVATI, `numero riservato ${law.numero} in varianti`).not.toContain(
@@ -168,11 +168,11 @@ describe("mapping atti (lib/corpus-unificato)", () => {
 });
 
 describe("server unificato (lib/corpus-unificato)", () => {
-  it("applica default, trim e clamp 77..20000 da env", () => {
+  it("applica default, trim e clamp 87..20000 da env", () => {
     svuotaCacheCorpus();
     try {
       vi.stubEnv("CORPUS_TOTALE", "3");
-      expect(getCorpusUnificato()).toHaveLength(77);
+      expect(getCorpusUnificato()).toHaveLength(87);
       svuotaCacheCorpus();
       vi.stubEnv("CORPUS_TOTALE", "non-un-numero");
       vi.stubEnv("CORPUS_SEED", "");
@@ -186,7 +186,7 @@ describe("server unificato (lib/corpus-unificato)", () => {
 
   it("ELI unici, copia difensiva e cache", () => {
     const primo = getCorpusUnificato();
-    expect(primo.length).toBeGreaterThanOrEqual(77);
+    expect(primo.length).toBeGreaterThanOrEqual(87);
     expect(primo.length).toBeLessThanOrEqual(CORPUS_TOTALE_MAX);
     const chiavi = primo.map((l) => l.eli.trim().toLowerCase());
     expect(new Set(chiavi).size).toBe(primo.length);

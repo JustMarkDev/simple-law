@@ -21,10 +21,10 @@ Architettura corpose che scala da 5 atti a 100GB **senza cambiare codice**:
 | 5 leggi seed (`SEED_LAWS`) | codice (`lib/seed-*.ts`) | pochi KB | sì | sì, sempre primi |
 | 72 atti curati (`ATTI_ESPANSI`) | codice (bundle) | ~250KB di testi | sì | sì, via `convertiAttoEspanso` |
 | 5000 runtime (default) | memoria (generati da `generaCorpus`) | ~25MB raw (~18MB con testo 3,5KB) | no (solo `manifest.json` <100KB) | sì, `CORPUS_TOTALE=5000` |
-| Totale servito di default | `getCorpusUnificato()` | 5 + 72 + 4923 varianti = 5000 | solo codice + manifest | sì |
+| Totale servito di default | `getCorpusUnificato()` | 5 + 82 + 4913 varianti = 5000 | solo codice + manifest | sì |
 | Shard dimostrativi grandi | `data/corpus/incoming/` o `/tmp/` | oltre 1MB | MAI | no (solo CLI/streaming) |
 
-> In breve: 72 curati nel bundle + 5000 runtime di default = ~5077 atti curati/generati
+> In breve: 82 curati nel bundle + 5000 runtime di default = ~5087 atti curati/generati
 > di riferimento; il corpus unificato servito resta a 5000 record (`slice(0, totale)`)
 > con dedup per ELI. `data/seed-espanso.json` è solo un artefatto di build, mai letto a request.
 
@@ -35,7 +35,7 @@ Architettura corpose che scala da 5 atti a 100GB **senza cambiare codice**:
 | `CORPUS_TOTALE` | `5000` | clamp `77..20000` | totale servito da `getCorpusUnificato()` |
 | `CORPUS_SEED` | `simple-law-v1` | trim, max 80 caratteri | chiave cache `totale:seed` |
 | `CORPUS_KB_MEDIO` | `4` | `1..6`, solo CLI | dimensione testi varianti |
-| `CORPUS_MAX_MS` | `250` | timeout in ms | oltre il timeout, fallback ai 77 (5 seed + 72 curati) |
+| `CORPUS_MAX_MS` | `250` | timeout in ms | oltre il timeout, fallback ai 87 (5 seed + 82 curati) |
 | `DATABASE_URL` | (assente) | — | se presente vince sul corpus generato |
 
 Cap memoria 20000: 5000 atti × ~5KB ≈ 25MB raw, gestibile in serverless solo con
@@ -117,7 +117,7 @@ npx vitest run tests/corpus-100gb.test.ts
 - Committare solo `README.md`, codice e `manifest.json` (<100KB). Mai JSON/shard >1MB.
 - Non generare file enormi nel commit: l'output dei generatori va in `/tmp/` o in
   `data/corpus/incoming/` (gitignored), mai in `data/corpus/` radice né in `data/*.json`.
-- Default runtime 5000 atti (5 seed + 72 curati + 4923 varianti); bundle committato = 72 curati.
+- Default runtime 5000 atti (5 seed + 82 curati + 4913 varianti); bundle committato = 82 curati.
 - `NUMERI_RISERVATI [8,36,124,133,139]` mai nelle varianti generate.
 - Stima 100GB: ~2000 shard da 50MB gzip, ~8mila atti l'uno, ~16 milioni di atti.
 
@@ -134,7 +134,7 @@ npx vitest run tests/corpus-100gb.test.ts
    e l'archivio pagina con `listLaws({page, per})` (default 12, max 48), dettaglio con
    `generateStaticParams` su 200-500 recenti + ISR, sitemap con `listLawsCursor` a chunk.
 4. **Budget:** p95 <300ms warm, <800ms cold; oltre il timeout `CORPUS_MAX_MS=250`
-   scatta il fallback ai 77 (5 seed + 72 curati).
+   scatta il fallback ai 87 (5 seed + 82 curati).
 
 ## API della libreria (`lib/corpus.ts`)
 

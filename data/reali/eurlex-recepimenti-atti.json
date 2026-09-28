@@ -1,0 +1,14 @@
+{
+  "provenance": {
+    "fonte": "corpus Camera data/reali/camera-atti-leg19-*.json + corpus Normattiva data/reali/normattiva-*.json",
+    "url": "",
+    "recuperatoIl": "2026-09-28T21:31:11.066Z",
+    "licenza": "Camera OCD CC-BY 4.0 + Normattiva/GU riuso con attribuzione",
+    "metodo": "match testuale esplicito anno+numero con parola direttiva/e entro 60ch (stesse regole di ingest-reale-recepimenti.ts); zero rete; mai fuzzy; direttive senza match assenti",
+    "direttiveScansionate": 2,
+    "attiCamera": 3144,
+    "attiNormattiva": 1419,
+    "vociConMatch": 0
+  },
+  "direttive": []
+}

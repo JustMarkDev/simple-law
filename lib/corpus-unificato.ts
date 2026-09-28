@@ -25,7 +25,8 @@ import { calcGulpease } from "./readability";
 import type { LawRecord } from "./seed-data";
 
 export const CORPUS_TOTALE_DEFAULT = 5000;
-export const CORPUS_TOTALE_MIN = 77;
+/** Minimo: 5 seed + 82 curati (80 dim. + 2 riferimento), mai tagliati. */
+export const CORPUS_TOTALE_MIN = 87;
 export const CORPUS_TOTALE_MAX = 20000;
 export const CORPUS_SEED_DEFAULT = "simple-law-v1";
 
@@ -204,11 +205,11 @@ function estraiSlugEli(eli: string): string {
 }
 
 // ---------------------------------------------------------------------------
-// Generazione deterministica: 72 curati + varianti fino a `totale`.
+// Generazione deterministica: 82 curati + varianti fino a `totale`.
 // ---------------------------------------------------------------------------
 
 /**
- * Genera il corpus unificato in modo deterministico: prima i 72 atti curati
+ * Genera il corpus unificato in modo deterministico: prima gli 82 atti curati
  * mappati, poi varianti inline fino a `totale`. Never-throw (-> []).
  * Le varianti riusano titolo/testo del modello con ELI/NIR unici; i numeri
  * riservati (8, 36, 124, 133, 139) non sono mai usati nelle varianti.

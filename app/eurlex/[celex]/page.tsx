@@ -6,11 +6,15 @@ import path from 'node:path'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import {
+  attiCollegatiPerDirettiva,
+  attiPerDirettiva,
   etichettaTipo,
   leggiProvenanceEurlex,
   notaApplicabilita,
   trovaAttoUe,
   tuttiAttiUe,
+  type AttoCollegato,
+  type AttoRecepimento,
 } from '@/lib/eurlex-dati'
 
 interface DettaglioProps {
@@ -172,6 +176,20 @@ export default async function AttoUePage({ params }: DettaglioProps) {
 
   const eDirettiva = atto.tipo === 'DIR' || atto.tipo === 'DIR_IMPL' || atto.tipo === 'DIR_DEL'
   const recepimento = eDirettiva ? await leggiRecepimento(atto.celex) : null
+  let collegati: AttoRecepimento[] = []
+  try {
+    collegati = eDirettiva ? await attiPerDirettiva(atto.celex) : []
+  } catch {
+    collegati = []
+  }
+  // Atti Camera/Normattiva che citano esplicitamente la direttiva
+  // (seconda mappa, indipendente dalle notifiche NTM).
+  let collegatiAtti: AttoCollegato[] = []
+  try {
+    collegatiAtti = eDirettiva ? await attiCollegatiPerDirettiva(atto.celex) : []
+  } catch {
+    collegatiAtti = []
+  }
 
   const vigenza =
     atto.inVigore === true
@@ -321,19 +339,124 @@ export default async function AttoUePage({ params }: DettaglioProps) {
                     )
                   })}
                 </ul>
-              ) : (
+              ) : collegatiAtti.length === 0 ? (
                 <p className="mt-3 text-sm leading-relaxed text-inchiostro-soft dark:text-nebbia-soft">
                   Nessun recepimento rilevato nei dati: nel corpus italiano non risulta alcun atto collegato a questa direttiva.
                 </p>
-              )}
+              ) : null}
               {recepimento.nota && (
                 <p className="mt-3 text-xs text-inchiostro-faint dark:text-nebbia-faint">{recepimento.nota}</p>
               )}
+              {collegatiAtti.length > 0 && (
+                <>
+                  <h3 className="mt-5 text-sm font-bold uppercase tracking-wide text-inchiostro dark:text-nebbia">
+                    Atti che citano esplicitamente la direttiva
+                  </h3>
+                  <ul className="mt-2 space-y-3">
+                    {collegatiAtti.map((a, i) => (
+                      <li key={`${a.titolo}-${i}`} className="border-t border-regola pt-3 text-sm dark:border-notte-deep">
+                        {a.uri ? (
+                          <a
+                            href={a.uri}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="font-semibold text-accento underline underline-offset-2 dark:text-accento-chiara"
+                          >
+                            {a.titolo}
+                          </a>
+                        ) : (
+                          <span className="font-semibold text-inchiostro dark:text-nebbia">{a.titolo}</span>
+                        )}
+                        <span className="mt-1 block text-xs text-inchiostro-soft dark:text-nebbia-soft">
+                          {a.fonte === 'camera' ? 'Atto Camera' : 'Atto Normattiva'}
+                          {a.nota ? ` · ${a.nota}` : ''}
+                        </span>
+                      </li>
+                    ))}
+                  </ul>
+                </>
+              )}
             </>
           ) : (
-            <p className="mt-2 text-sm leading-relaxed text-inchiostro-soft dark:text-nebbia-soft">
-              Nessun recepimento rilevato nei dati: nel corpus italiano non risulta alcun atto collegato a questa direttiva.
-            </p>
+            <>
+              {collegati.length > 0 && (
+                <ul className="mt-4 space-y-3">
+                  {collegati.map((a, i) => {
+                    const titolo = a.titoloNim || a.titolo
+                    const href =
+                      a.urlGU && /^https?:\/\//i.test(a.urlGU)
+                        ? a.urlGU
+                        : a.eliNormattiva
+                          ? `/leggi/${a.eliNormattiva.replace(/^\/+/, '')}`
+                          : null
+                    return (
+                      <li key={`${a.titolo}-${i}`} className="border-t border-regola pt-3 text-sm dark:border-notte-deep">
+                        {href ? (
+                          a.urlGU ? (
+                            <a
+                              href={href}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="font-semibold text-accento underline underline-offset-2 dark:text-accento-chiara"
+                            >
+                              {titolo}
+                            </a>
+                          ) : (
+                            <Link
+                              href={href}
+                              className="font-semibold text-accento underline underline-offset-2 dark:text-accento-chiara"
+                            >
+                              {titolo}
+                            </Link>
+                          )
+                        ) : (
+                          <span className="font-semibold text-inchiostro dark:text-nebbia">{titolo}</span>
+                        )}
+                        <span className="mt-1 block text-xs text-inchiostro-soft dark:text-nebbia-soft">
+                          {a.fonte === 'cellar' ? 'Atto UE (CELLAR)' : 'Atto Normattiva'}
+                          {a.tipoNim ? ` · ${a.tipoNim}` : ''}
+                          {a.nota ? ` · ${a.nota}` : ''}
+                        </span>
+                      </li>
+                    )
+                  })}
+                </ul>
+              )}
+              {collegatiAtti.length > 0 && (
+                <>
+                  <h3 className="mt-5 text-sm font-bold uppercase tracking-wide text-inchiostro dark:text-nebbia">
+                    Atti che citano esplicitamente la direttiva
+                  </h3>
+                  <ul className="mt-2 space-y-3">
+                    {collegatiAtti.map((a, i) => (
+                      <li key={`${a.titolo}-${i}`} className="border-t border-regola pt-3 text-sm dark:border-notte-deep">
+                        {a.uri ? (
+                          <a
+                            href={a.uri}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="font-semibold text-accento underline underline-offset-2 dark:text-accento-chiara"
+                          >
+                            {a.titolo}
+                          </a>
+                        ) : (
+                          <span className="font-semibold text-inchiostro dark:text-nebbia">{a.titolo}</span>
+                        )}
+                        <span className="mt-1 block text-xs text-inchiostro-soft dark:text-nebbia-soft">
+                          {a.fonte === 'camera' ? 'Atto Camera' : 'Atto Normattiva'}
+                          {a.nota ? ` · ${a.nota}` : ''}
+                        </span>
+                      </li>
+                    ))}
+                  </ul>
+                </>
+              )}
+              {collegati.length === 0 && collegatiAtti.length === 0 && (
+                <p className="mt-2 text-sm leading-relaxed text-inchiostro-soft dark:text-nebbia-soft">
+                  Nessun recepimento rilevato nei dati: nel corpus italiano non risulta alcun atto collegato a questa direttiva.
+                </p>
+              )}
+            </>
           )}
         </section>
         )}
