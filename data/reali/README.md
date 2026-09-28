@@ -102,6 +102,15 @@ conservata in ogni record per audit.
 npx tsx scripts/ingest-reale-normattiva-storico.ts [--limite-1980=80] [--testo-max=2000]
 ```
 
+Altre finestre storiche (`normattiva-storico-1990.json`: 71 atti,
+`normattiva-storico-2000.json`: 61 atti) via
+`scripts/ingest-reale-normattiva-finestre.ts` (stesse regole di onesta:
+fine-vigenza + intestazione Art. 1, dedup contro tutti i file esistenti).
+
+```bash
+npx tsx scripts/ingest-reale-normattiva-finestre.ts
+```
+
 ## DDL e atti parlamentari — `parlamento-ddl.json` (5) + `camera-atti.json` (197)
 
 Fonti: dati.senato.it / dati.camera.it (SPARQL, leg. 19), licenze CC BY 3.0
@@ -122,6 +131,36 @@ Fonte: cortecostituzionale.it (CC BY-SA 3.0). Campione di 50 pronunce del
 ```bash
 npx tsx scripts/ingest-reale-consulta.ts
 ```
+
+## Diritto UE — `eurlex-2026.json` (50 atti)
+
+Fonte: **EUR-Lex CELLAR SPARQL**
+(`https://publications.europa.eu/webapi/rdf/sparql`), riuso con
+attribuzione Dec.2011/833/UE. Regolamenti e direttive 2026 con CELEX,
+titolo (in inglese in questa prima fase), data, tipo e link eur-lex.
+I regolamenti sono direttamente applicabili in Italia; le direttive
+richiedono recepimento: la UI non afferma mai recepimenti specifici.
+Sezione UI: `/eurlex` (route `/api/eurlex`).
+
+```bash
+npx tsx scripts/ingest-reale-eurlex.ts
+```
+
+## Quirinale — `quirinale-atti.json` (12) + `quirinale-comunicati.json` (12)
+
+Fonte: **quirinale.it** (uso non commerciale con attribuzione; fa fede la
+Gazzetta Ufficiale). Atti e comunicati della Presidenza con data, titolo,
+sintesi e URL assoluti validati. Sezione UI: `/quirinale` (route
+`/api/quirinale`).
+
+```bash
+npx tsx scripts/ingest-reale-quirinale.ts
+```
+
+## Elezioni — `docs/elezioni-piano.md` (piano, nessun dato ancora)
+
+Ricerca verificata su Eligendo/Archivio Storico Elezioni/ISTAT con URL
+provati, formati, volumi e licenze. L'ingest elettorale e' il prossimo passo.
 
 ## Cosa resta dimostrativo
 

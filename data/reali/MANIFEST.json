@@ -99,8 +99,53 @@
    "conteggio": 10,
    "recuperatoIl": "2026-09-28T18:28:36.769Z",
    "legislatura": null
+  },
+  {
+   "nome": "Normattiva bff-opendata v1 (storico 1990)",
+   "url": "https://api.normattiva.it/t/normattiva.api/bff-opendata/v1",
+   "licenza": "riproduzione consentita con menzione di fonte, carattere non autentico e gratuito (solo la GU a stampa e autentica)",
+   "file": "normattiva-storico-1990.json",
+   "conteggio": 71,
+   "recuperatoIl": "2026-09-28T19:24:38.697Z",
+   "legislatura": null
+  },
+  {
+   "nome": "Normattiva bff-opendata v1 (storico 2000)",
+   "url": "https://api.normattiva.it/t/normattiva.api/bff-opendata/v1",
+   "licenza": "riproduzione consentita con menzione di fonte, carattere non autentico e gratuito (solo la GU a stampa e autentica)",
+   "file": "normattiva-storico-2000.json",
+   "conteggio": 61,
+   "recuperatoIl": "2026-09-28T19:24:38.697Z",
+   "legislatura": null
+  },
+  {
+   "nome": "EUR-Lex CELLAR SPARQL",
+   "url": "https://publications.europa.eu/webapi/rdf/sparql",
+   "licenza": "riuso con attribuzione Dec.2011/833/UE",
+   "file": "eurlex-2026.json",
+   "conteggio": 50,
+   "recuperatoIl": "2026-09-28T19:24:31.316Z",
+   "legislatura": null
+  },
+  {
+   "nome": "Quirinale (atti)",
+   "url": "https://www.quirinale.it",
+   "licenza": "uso non commerciale con attribuzione, fa fede la Gazzetta Ufficiale",
+   "file": "quirinale-atti.json",
+   "conteggio": 12,
+   "recuperatoIl": "2026-09-28T19:25:00.000Z",
+   "legislatura": null
+  },
+  {
+   "nome": "Quirinale (comunicati)",
+   "url": "https://www.quirinale.it",
+   "licenza": "uso non commerciale con attribuzione, fa fede la Gazzetta Ufficiale",
+   "file": "quirinale-comunicati.json",
+   "conteggio": 12,
+   "recuperatoIl": "2026-09-28T19:25:00.000Z",
+   "legislatura": null
   }
  ],
- "generatoIl": "2026-09-28T19:10:00Z",
+ "generatoIl": "2026-09-28T19:30:00Z",
  "nota": "Dati ufficiali open data (11 file). I file >1MB non si committano: rigenerare via scripts/ingest-reale-*.ts. I gruppi Camera sono derivati dai deputati; le denominazioni Senato includono varianti storiche della leg. 19; i DDL/atti sono disegni e atti parlamentari, MAI leggi in vigore."
 }

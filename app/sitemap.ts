@@ -18,6 +18,8 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { url: `${BASE_URL}/parlamento/senatori`, changeFrequency: 'weekly', priority: 0.7 },
     { url: `${BASE_URL}/parlamento/gruppi`, changeFrequency: 'weekly', priority: 0.6 },
     { url: `${BASE_URL}/parlamento/ddl`, changeFrequency: 'daily', priority: 0.7 },
+    { url: `${BASE_URL}/eurlex`, changeFrequency: 'weekly', priority: 0.6 },
+    { url: `${BASE_URL}/quirinale`, changeFrequency: 'weekly', priority: 0.6 },
     { url: `${BASE_URL}/consulta`, changeFrequency: 'weekly', priority: 0.6 },
     { url: `${BASE_URL}/statistiche`, changeFrequency: 'weekly', priority: 0.6 },
     { url: `${BASE_URL}/semplifica`, changeFrequency: 'monthly', priority: 0.6 },
