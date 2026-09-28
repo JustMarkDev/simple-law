@@ -152,8 +152,26 @@ Obiettivo precedente (completato): UI/UX, feature, corpus 5005 voci.
 - Verifiche mie: `npm test` 483/483 OK, `typecheck`/`lint` OK, `build` OK
   (859 pagine), smoke live (hub senza 'Dati in preparazione', Milano
   trovata, box recepimenti onesto).
-- Next: ISTAT, referendum, altre finestre storiche, sostituzione del
-  sintetico.
+- Next: ISTAT (de-scopato, vedi sopra), Corte dei Conti/ANAC/Cassazione —
+  fatti sotto ANAC + giustizia amministrativa (CdS/TAR/CGA); restano Corte
+  dei Conti e Cassazione/Italgiure (chiuse: login/captcha), altre finestre,
+  sostituzione del sintetico.
+
+## Reali-8 (2026-09-28, commit `c7f433f`): oversight ANAC + giustizia amm.va
+- Workflow: 1 chiamata `workflow` con 10 subagenti (3 sonde + 1 giudice + 4
+  scrittori + 2 revisori). Sonde: ANAC/BDNCP via OCP (VIA LIBERA), CdS/TAR
+  via Focus giurisprudenza (VIA LIBERA), Corte dei Conti e Italgiure
+  (RIMANDATE: niente machine-readable stabile).
+- Ingerito: 60 contratti ANAC 2025 + 14 provvedimenti (7 CdS, 6 TAR, 1 CGA
+  Sicilia) con soli metadati + link ufficiali, badge "non è una legge".
+- Fix P0 miei (revisori): lib leggeva nomi file/chiavi mai scritti
+  (controllo sempre vuoto) -> allineato ai file reali; record con ente
+  punteggiato scartati (7/14 persi!) -> normalizer tollerante + CGA come
+  terzo giudice onesto; numero/anno/CIG opzionali mai inventati.
+- Verifiche mie: `npm test` 554/554 OK, `typecheck`/`lint` OK, `build` OK
+  (862 pagine), smoke live (hub/lista 200, filtri cds/tar/cga esatti).
+- Next: altre finestre storiche, recepimenti extra, Corte dei Conti se si
+  apre un canale, sostituzione del sintetico (ancora ~5000/5500+).
 
 ## Stato iniziale (2026-09-28, iterazione 0)
 - Repo: `/Users/mark/Projects/simple-law`, branch `master` (appena `git init`, baseline committata `5391a84`).
