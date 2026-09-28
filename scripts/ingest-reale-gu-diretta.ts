@@ -201,7 +201,6 @@ async function scaricaFeed(): Promise<string> {
   let ultimoErrore = "";
   for (let tentativo = 1; tentativo <= TENTATIVI; tentativo += 1) {
     if (tentativo > 1) await dormi(PAUSA_RETE_MS);
-    else await dormi(PAUSA_RETE_MS);
     const controller = new AbortController();
     const timer = setTimeout(() => controller.abort(), TIMEOUT_MS);
     try {

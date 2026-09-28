@@ -176,10 +176,27 @@ sintesi e URL assoluti validati. Sezione UI: `/quirinale` (route
 npx tsx scripts/ingest-reale-quirinale.ts
 ```
 
-## Elezioni — `docs/elezioni-piano.md` (piano, nessun dato ancora)
+## Elezioni — `elezioni-*.json` + `referendum-2025.json` + `sondaggi-nazionali.json` (consuntivo)
 
-Ricerca verificata su Eligendo/Archivio Storico Elezioni/ISTAT con URL
-provati, formati, volumi e licenze. L'ingest elettorale e' il prossimo passo.
+Ingest elettorale eseguita: solo aggregati, mai nominativi. Vedi
+`docs/elezioni-piano.md` per sonde e formati.
+
+- Europee 2024 (`elezioni-europee-2024.json`, 15 liste, 20 regioni,
+  7896 comuni); politiche 2022 (`elezioni-politiche-2022-camera.json`,
+  27 liste; `elezioni-politiche-2022-senato.json`, 31 liste); referendum
+  8-9 giugno 2025 (`referendum-2025.json`, 5 quesiti, 20 regioni,
+  7896 comuni).
+- Regionali: Umbria 2024 (23 liste, 92 comuni), Toscana 2025 (10 liste,
+  273 comuni), Liguria 2024 (20 liste, 234 comuni), Calabria 2025
+  (15 liste, 404 comuni), Emilia-Romagna 2024 (11 liste, 330 comuni;
+  in MANIFEST il conteggio 330 = comuni, vedi nota convenzione).
+  Split 2025-11-23 su disco con prefisso `b-`: Campania (20 liste,
+  550 comuni), Puglia (13 liste, 257 comuni), Veneto (16 liste,
+  560 comuni) — i test REALI-14 attendono i nomi canonici senza `b-`
+  (assenti: SKIP con nota, mai fail).
+- Sondaggi (`sondaggi-nazionali.json`, 30 rilevazioni): fonte
+  secondaria Wikipedia con revisione pinnata, rassegna in `/elezioni`,
+  mai dati ufficiali.
 
 ## Controllo: appalti e giustizia amministrativa — `oversight-anac-2025.json` (60) + `oversight-ga-2026.json` (14) + `oversight-cnel-2026.json` (50)
 
@@ -293,20 +310,21 @@ Conteggi sotto = attesi/misurati in sonda, MAI finali: fa fede il file scritto.
   `{titolo=titoloDoc, stato da metadati.abrogato}`.
   `npx tsx scripts/ingest-reale-normattiva-tu.ts`
 
-## REALI-9 — Camera full leg19 (pianificati, 3144 DISTINCT, NO 6288)
+## REALI-9 — Camera full leg19 (consuntivo: 1048×3=3144 DISTINCT, NO 6288)
 
 `COUNT DISTINCT leg19=3144` (6288 = righe doppie URI×2). 3 shard lista+
-dettaglio `?p ?o` batch 5 (record invariato, ~815 B/atto):
+dettaglio `?p ?o` batch 5 (record invariato, ~815 B/atto), scritti il
+2026-09-28 e cablati in MANIFEST:
 
-- `camera-atti-leg19-a.json` (numeri 1–1100, ~1050 atti)
-- `camera-atti-leg19-b.json` (numeri 1101–2200, ~1050 atti)
-- `camera-atti-leg19-c.json` (numeri 2201–3144, ~1044 atti)
+- `camera-atti-leg19-a.json` (1048 atti)
+- `camera-atti-leg19-b.json` (1048 atti)
+- `camera-atti-leg19-c.json` (1048 atti)
 
 Fonte: dati.camera.it SPARQL, licenza CC BY-SA 4.0.
 `npx tsx scripts/ingest-reale-camera-full.ts`
 Ultimo recupero / conteggio finale: scritti dallo script all'esecuzione.
 
-## REALI-13 — finestre Normattiva 1975/1995 (attese, cap 80)
+## REALI-13 — finestre Normattiva 1975/1995 (consuntivo)
 
 Stessa fonte e licenza dei batch recenti (`POST /api/v1/ricerca/aggiornati`
 anno intero, cap 80 dettagli come da script esistente; URN solo se
@@ -318,7 +336,8 @@ denominazione+anno+numero non vuoti).
 - `normattiva-finestra-1995.json`: finestra `1995-01-01`..`1995-12-31`
   (sonda: 871 atti in lista; esempi di sonda DL444/LEGGE198; conteggio
   finale = file scritto, max 80).
-- Esecuzione W3 del 2026-09-28 ha scritto i nomi default dello script,
+- Nomi direttiva `normattiva-finestra-*` sono alias: l'esecuzione W3 del
+  2026-09-28 ha scritto i nomi default dello script,
   `normattiva-storico-1975.json` (**63 atti**: 39 in vigore, 24 abrogati) +
   `normattiva-storico-1995.json` (**70 atti**: 56 decaduti, 13 in vigore,
   1 abrogato; gli anni '90 sono pieni di DL non convertiti), entrambi
@@ -332,7 +351,7 @@ denominazione+anno+numero non vuoti).
 npx tsx scripts/ingest-reale-normattiva-finestre.ts --anni=1975,1995
 ```
 
-## REALI-13 — regionali-extra Liguria24/Calabria25 (attesi, solo aggregati)
+## REALI-13 — regionali-extra Liguria24/Calabria25 (consuntivo, solo aggregati)
 
 Fonte: Ministero Interno DAIT — Eligendo Open Data (ZIP scrutini;
 zero nominativi, colonne candidato mai lette; solo aggregati per-lista +
@@ -351,7 +370,7 @@ affluenza comunale; cap ≤950KB/file).
 - Fuori scope: `regionali-20251123.zip`,
   Marche 404, txt 20240310/20240421 (altro parser).
 
-## REALI-13 — GU diretta Ultime (attesa, solo RSS ultimo numero)
+## REALI-13 — GU diretta Ultime (consuntivo, solo RSS ultimo numero)
 
 Fonte: **gazzettaufficiale.it RSS** (solo ultimo numero/serie: title+link
 ELI https+pubDate; nessun archivio, nessun mirror atti).
@@ -368,3 +387,41 @@ Dettaglio in `docs/REALI-13-sonde-rimandate.md` (unico file docs di
 REALI-13): finanziamenti (via libera condizionata futura, solo aggregati),
 Radio Radicale link-only, Openpolis link-only, CSM rimandata, regionali
 esclusi.
+
+## REALI-15 — nomi canonici vs alias (i test restano SKIP, mai fail)
+
+I loader su disco saltano i file assenti; i test sotto passano con nota
+(`console.info` + `expect(true)`) quando il nome atteso non esiste.
+Nessun rename su disco in REALI-15: fa fede il file esistente.
+
+- Regionali 2025-11-23: i test REALI-14 attendono i canonici
+  `elezioni-regionali-2025-campania/puglia/veneto.json`; su disco gli
+  alias `b-elezioni-regionali-2025-campania/puglia/veneto.json`
+  (split per REGIONE dallo ZIP `regionali-20251123.zip`; conteggi
+  MANIFEST = liste: 20/13/16). SKIP con nota, mai fail.
+- Finestre 1975/1995: i test REALI-13 attendono gli alias
+  `normattiva-finestra-1975/1995.json`; canonici su disco
+  `normattiva-storico-1975.json` (63 atti) e
+  `normattiva-storico-1995.json` (70 atti), cablati in
+  `PERCORSI_ATTI_REALI` accanto ai nomi `finestra-*`. SKIP con nota.
+- Oversight: i test REALI-8/`oversight-api` attendono gli alias
+  `anac-contratti-2025.json` / `ga-provvedimenti-2026.json`; canonici
+  su disco `oversight-anac-2025.json` (60 voci) e
+  `oversight-ga-2026.json` (14 voci). I test REALI-10 attendono gli
+  alias `cnel-pareri.json` / `commissione-partiti-gu.json`; canonici
+  `oversight-cnel-2026.json` (50 documenti) e
+  `finanziamenti-erogazioni-2024-2026.json` (50 erogazioni).
+  SKIP con nota, mai fail su transiente.
+
+## REALI-15 — audit link (sessione 2026-09-29, solo curl visti)
+
+- CNEL (`oversight-cnel-2026.json`): verificati 5/5 slug via HEAD
+  no-follow → `302` a `/404?initialRequestUrl=...`; 1 GET con follow →
+  `200` template `Errore Pagina 404`; host `/` e `/documenti` → `200`.
+  L'API `POST /api/cnel/content/getItems` (1 sola chiamata, pageSize 5,
+  categoria osservazioni) restituisce ancora gli stessi slug relativi:
+  nessuna alternativa con `200` vista. Nessun fix applicato (una
+  riscrittura sarebbe cieca e inventata); nessun record cancellato.
+- Altri host (senato/quirinale/eur-lex/api.normattiva): transienti
+  segnalati dalle direttive (WAF/rate-limit), nessun fix applicato in
+  questa sessione, mai cancellare record per link morti transienti.

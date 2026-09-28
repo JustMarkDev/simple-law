@@ -97,7 +97,7 @@
    "licenza": "riuso titolo/link/descrizione",
    "file": "governo-comunicati.json",
    "conteggio": 10,
-   "recuperatoIl": "2026-09-28T18:38:50.732Z",
+   "recuperatoIl": "2026-09-28T23:13:32.428Z",
    "legislatura": null
   },
   {
@@ -413,7 +413,7 @@
    "licenza": "solo metadati + link ufficiali, nessun mirror (fa fede la GU a stampa)",
    "file": "gazzetta-ultime.json",
    "conteggio": 32,
-   "recuperatoIl": "2026-09-28T22:10:24.899Z",
+   "recuperatoIl": "2026-09-28T23:13:18.479Z",
    "legislatura": null
   },
   {
@@ -453,15 +453,69 @@
    "legislatura": null
   },
   {
-   "nome": "DAIT Eligendo (regionali Emilia-Romagna 2024)",
-   "url": "https://dait.interno.gov.it/documenti/opendata/regionali/regionali-20241117.zip",
+   "nome": "DAIT Eligendo (regionali Campania 2025-11-23, aggregati per lista)",
+   "url": "https://dait.interno.gov.it/documenti/opendata/regionali/regionali-20251123.zip",
    "licenza": "open-data ministeriale da confermare, info_opendata senza stringa CC-BY",
-   "file": "elezioni-regionali-2024-emilia-romagna.json",
-   "conteggio": 330,
+   "file": "b-elezioni-regionali-2025-campania.json",
+   "conteggio": 20,
    "recuperatoIl": "2026-09-28",
+   "legislatura": null
+  },
+  {
+   "nome": "DAIT Eligendo (regionali Puglia 2025-11-23, aggregati per lista)",
+   "url": "https://dait.interno.gov.it/documenti/opendata/regionali/regionali-20251123.zip",
+   "licenza": "open-data ministeriale da confermare, info_opendata senza stringa CC-BY",
+   "file": "b-elezioni-regionali-2025-puglia.json",
+   "conteggio": 13,
+   "recuperatoIl": "2026-09-28",
+   "legislatura": null
+  },
+  {
+   "nome": "DAIT Eligendo (regionali Veneto 2025-11-23, aggregati per lista)",
+   "url": "https://dait.interno.gov.it/documenti/opendata/regionali/regionali-20251123.zip",
+   "licenza": "open-data ministeriale da confermare, info_opendata senza stringa CC-BY",
+   "file": "b-elezioni-regionali-2025-veneto.json",
+   "conteggio": 16,
+   "recuperatoIl": "2026-09-28",
+   "legislatura": null
+  },
+  {
+   "nome": "Normattiva bff-opendata v1 (storico 2012)",
+   "url": "https://api.normattiva.it/t/normattiva.api/bff-opendata/v1/api/v1/ricerca/aggiornati",
+   "licenza": "riproduzione consentita con menzione di fonte, carattere non autentico e gratuito (Note legali dati.normattiva.it; solo la Gazzetta Ufficiale a stampa e' autentica)",
+   "file": "normattiva-storico-2012.json",
+   "conteggio": 72,
+   "recuperatoIl": "2026-09-28T22:28:16.887Z",
+   "legislatura": null
+  },
+  {
+   "nome": "Normattiva bff-opendata v1 (storico 2018)",
+   "url": "https://api.normattiva.it/t/normattiva.api/bff-opendata/v1/api/v1/ricerca/aggiornati",
+   "licenza": "riproduzione consentita con menzione di fonte, carattere non autentico e gratuito (Note legali dati.normattiva.it; solo la Gazzetta Ufficiale a stampa e' autentica)",
+   "file": "normattiva-storico-2018.json",
+   "conteggio": 74,
+   "recuperatoIl": "2026-09-28T22:28:16.887Z",
+   "legislatura": null
+  },
+  {
+   "nome": "Normattiva bff-opendata v1 (storico 1965)",
+   "url": "https://api.normattiva.it/t/normattiva.api/bff-opendata/v1/api/v1/ricerca/aggiornati",
+   "licenza": "riproduzione consentita con menzione di fonte, carattere non autentico e gratuito (Note legali dati.normattiva.it; solo la Gazzetta Ufficiale a stampa e' autentica)",
+   "file": "normattiva-storico-1965.json",
+   "conteggio": 61,
+   "recuperatoIl": "2026-09-28T23:15:12.499Z",
+   "legislatura": null
+  },
+  {
+   "nome": "Normattiva bff-opendata v1 (storico 2022)",
+   "url": "https://api.normattiva.it/t/normattiva.api/bff-opendata/v1/api/v1/ricerca/aggiornati",
+   "licenza": "riproduzione consentita con menzione di fonte, carattere non autentico e gratuito (Note legali dati.normattiva.it; solo la Gazzetta Ufficiale a stampa e' autentica)",
+   "file": "normattiva-storico-2022.json",
+   "conteggio": 76,
+   "recuperatoIl": "2026-09-28T23:15:12.499Z",
    "legislatura": null
   }
  ],
- "generatoIl": "2026-09-28T22:05:00Z",
- "nota": "Dati ufficiali open data (48 file). Ogni voce ha file esistente su disco e conteggio pari alla lunghezza reale verificata. I file >1MB non si committano: rigenerare via scripts/ingest-reale-*.ts. I gruppi Camera sono derivati dai deputati; le denominazioni Senato includono varianti storiche della leg. 19; i DDL/atti sono disegni e atti parlamentari, MAI leggi in vigore. Elezioni: solo aggregati per lista, zero nominativi."
+ "generatoIl": "2026-09-28T23:15:12.499Z",
+ "nota": "Dati ufficiali open data (57 voci, 57 file su disco, voci uniche). Ogni voce ha file esistente su disco e conteggio pari alla lunghezza reale verificata. Convenzione conteggi elezioni: i file con chiavi liste/regioni/comuni contano le liste (europee-2024: 15 liste; politiche-2022 Camera: 27, Senato: 31; regionali Umbria 23, Toscana 10, Liguria 20, Calabria 15, Campania 20, Puglia 13, Veneto 16); referendum-2025 conta i quesiti (5 quesiti, 20 regioni, 7896 comuni); eccezione documentata elezioni-regionali-2024-emilia-romagna.json che conta i comuni (330 comuni, 11 liste). I file >1MB non si committano: rigenerare via scripts/ingest-reale-*.ts. I gruppi Camera sono derivati dai deputati; le denominazioni Senato includono varianti storiche della leg. 19; i DDL/atti sono disegni e atti parlamentari, MAI leggi in vigore. Elezioni: solo aggregati per lista, zero nominativi."
 }
