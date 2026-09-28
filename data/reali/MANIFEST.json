@@ -144,8 +144,35 @@
    "conteggio": 12,
    "recuperatoIl": "2026-09-28T19:25:00.000Z",
    "legislatura": null
+  },
+  {
+   "nome": "Normattiva bff-opendata v1 (storico 1970)",
+   "url": "https://api.normattiva.it/t/normattiva.api/bff-opendata/v1",
+   "licenza": "riproduzione consentita con menzione di fonte, carattere non autentico e gratuito (solo la GU a stampa e autentica)",
+   "file": "normattiva-storico-1970.json",
+   "conteggio": 66,
+   "recuperatoIl": "2026-09-28T20:17:18.486Z",
+   "legislatura": null
+  },
+  {
+   "nome": "Normattiva bff-opendata v1 (storico 2010)",
+   "url": "https://api.normattiva.it/t/normattiva.api/bff-opendata/v1",
+   "licenza": "riproduzione consentita con menzione di fonte, carattere non autentico e gratuito (solo la GU a stampa e autentica)",
+   "file": "normattiva-storico-2010.json",
+   "conteggio": 66,
+   "recuperatoIl": "2026-09-28T20:17:18.486Z",
+   "legislatura": null
+  },
+  {
+   "nome": "DAIT Eligendo (referendum 8-9 giugno 2025)",
+   "url": "https://dait.interno.gov.it/documenti/opendata/referendum/referendum-20250608.zip",
+   "licenza": "open-data ministeriale da confermare, info_opendata senza stringa CC-BY",
+   "file": "referendum-2025.json",
+   "conteggio": 5,
+   "recuperatoIl": "2026-09-28",
+   "legislatura": null
   }
  ],
- "generatoIl": "2026-09-28T19:30:00Z",
+ "generatoIl": "2026-09-28T20:17:18.486Z",
  "nota": "Dati ufficiali open data (11 file). I file >1MB non si committano: rigenerare via scripts/ingest-reale-*.ts. I gruppi Camera sono derivati dai deputati; le denominazioni Senato includono varianti storiche della leg. 19; i DDL/atti sono disegni e atti parlamentari, MAI leggi in vigore."
 }

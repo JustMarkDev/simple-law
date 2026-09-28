@@ -932,3 +932,315 @@ export async function leggiProvenanceElezioni(): Promise<ProvenanceElezioni> {
     return {};
   }
 }
+
+/* ---------------------------------------------------------------------------
+ * Referendum 2025 (quesiti SI/NO). Sezione aggiuntiva, mai tocca i loader
+ * europee/politiche sopra. I numeri nel file possono arrivare come stringhe:
+ * coercizione esplicita, mai `interoNonNegativo` diretto.
+ * ------------------------------------------------------------------------- */
+
+/** Percorso relativo (da cwd) del file referendum 2025. */
+export const PERCORSO_REFERENDUM_2025 = "data/reali/referendum-2025.json";
+
+/** Identificativo REST del referendum 2025. */
+export const ID_REFERENDUM_2025 = "referendum-2025" as const;
+
+export interface QuesitoRisultato {
+  q: number;
+  titolo: string;
+  si: number;
+  no: number;
+  validi: number;
+  bianche: number;
+  p_si: number;
+}
+
+export interface RegioneReferendum {
+  r: string;
+  e: number;
+  v: number;
+  a: number;
+  quesiti: { q: number; si: number; no: number }[];
+}
+
+export interface ComuneReferendum {
+  c: string;
+  p: string;
+  r: string;
+  e: number;
+  v: number;
+  a: number;
+}
+
+export interface Referendum2025 {
+  provenance: ProvenanceElezioni;
+  elezione: { tipo: string; data: string; e: number; v: number; b: number; a: number };
+  quesiti: QuesitoRisultato[];
+  regioni: RegioneReferendum[];
+  comuni: ComuneReferendum[];
+  metodologia: string;
+  avvertenze: string;
+}
+
+/** Coercizione numerica tollerante (stringhe DAIT incluse). Non lancia mai. */
+function numeroQualsiasi(value: unknown): number | null {
+  try {
+    if (typeof value === "number" && Number.isFinite(value)) return value;
+    if (typeof value === "string" && value.trim() !== "") {
+      const n = Number(value.replace(/\s+/g, ""));
+      if (Number.isFinite(n)) return n;
+    }
+    return null;
+  } catch {
+    return null;
+  }
+}
+
+function aQuesito(voce: unknown): QuesitoRisultato | null {
+  try {
+    if (!voce || typeof voce !== "object" || Array.isArray(voce)) return null;
+    const o = voce as Record<string, unknown>;
+    const qRaw = numeroQualsiasi(o["q"]);
+    const titolo = stringa(o["titolo"], 200);
+    const si = numeroQualsiasi(o["si"]);
+    const no = numeroQualsiasi(o["no"]);
+    if (qRaw === null || !titolo || si === null || no === null) return null;
+    const validi = numeroQualsiasi(o["validi"]) ?? si + no;
+    const bianche = numeroQualsiasi(o["bianche"]) ?? 0;
+    const pSi = numeroQualsiasi(o["p_si"]);
+    return {
+      q: Math.floor(qRaw),
+      titolo,
+      si: Math.floor(si),
+      no: Math.floor(no),
+      validi: Math.floor(validi),
+      bianche: Math.floor(bianche),
+      p_si: pSi ?? (validi > 0 ? Math.round((si / validi) * 100 * 10) / 10 : 0),
+    };
+  } catch {
+    return null;
+  }
+}
+
+function aQuesitoRegione(voce: unknown): { q: number; si: number; no: number } | null {
+  try {
+    if (!voce || typeof voce !== "object" || Array.isArray(voce)) return null;
+    const o = voce as Record<string, unknown>;
+    const q = numeroQualsiasi(o["q"]);
+    const si = numeroQualsiasi(o["si"]);
+    const no = numeroQualsiasi(o["no"]);
+    if (q === null || si === null || no === null) return null;
+    return { q: Math.floor(q), si: Math.floor(si), no: Math.floor(no) };
+  } catch {
+    return null;
+  }
+}
+
+function aRegioneReferendum(voce: unknown): RegioneReferendum | null {
+  try {
+    if (!voce || typeof voce !== "object" || Array.isArray(voce)) return null;
+    const o = voce as Record<string, unknown>;
+    const r = stringa(o["r"], 80);
+    const e = numeroQualsiasi(o["e"]);
+    const v = numeroQualsiasi(o["v"]);
+    const a = numeroQualsiasi(o["a"]);
+    if (!r || e === null || v === null || a === null) return null;
+    const quesiti: { q: number; si: number; no: number }[] = [];
+    if (Array.isArray(o["quesiti"])) {
+      for (const qv of o["quesiti"]) {
+        const q = aQuesitoRegione(qv);
+        if (q) quesiti.push(q);
+      }
+    }
+    return { r, e: Math.floor(e), v: Math.floor(v), a, quesiti };
+  } catch {
+    return null;
+  }
+}
+
+function aComuneReferendum(voce: unknown): ComuneReferendum | null {
+  try {
+    if (!voce || typeof voce !== "object" || Array.isArray(voce)) return null;
+    const o = voce as Record<string, unknown>;
+    const c = stringa(o["c"], 80);
+    const p = stringa(o["p"], 80);
+    const r = stringa(o["r"], 80);
+    const e = numeroQualsiasi(o["e"]);
+    const v = numeroQualsiasi(o["v"]);
+    const a = numeroQualsiasi(o["a"]);
+    if (!c || !p || !r || e === null || v === null || a === null) return null;
+    return { c, p, r, e: Math.floor(e), v: Math.floor(v), a };
+  } catch {
+    return null;
+  }
+}
+
+let cacheReferendum: Referendum2025 | null | undefined;
+
+/** Azzera la cache referendum (utile nei test). Non lancia mai. */
+export function azzeraCacheReferendum(): void {
+  try {
+    cacheReferendum = undefined;
+  } catch {
+    // mai lanciare
+  }
+}
+
+/**
+ * Carica il referendum 2025 (copia difensiva) o null se assente, oltre
+ * 1MB o invalido. Mai lancia, mai numeri inventati.
+ */
+export async function caricaReferendum2025(): Promise<Referendum2025 | null> {
+  try {
+    if (cacheReferendum !== undefined) {
+      return cacheReferendum ? structuredCloneLike(cacheReferendum) : null;
+    }
+    const mod = moduliNode();
+    if (!mod) {
+      cacheReferendum = null;
+      return null;
+    }
+    let base = "";
+    try {
+      base = typeof process !== "undefined" && process.cwd ? process.cwd() : "";
+    } catch {
+      cacheReferendum = null;
+      return null;
+    }
+    if (!base) {
+      cacheReferendum = null;
+      return null;
+    }
+    const ass = mod.join(base, PERCORSO_REFERENDUM_2025);
+    if (!mod.existsSync(ass)) {
+      cacheReferendum = null;
+      return null;
+    }
+    const raw = mod.readFileSync(ass, "utf8");
+    if (!raw || raw.length > MAX_JSON_BYTES) {
+      cacheReferendum = null;
+      return null;
+    }
+    const dati = validaReferendum(JSON.parse(raw) as unknown);
+    cacheReferendum = dati;
+    return dati ? structuredCloneLike(dati) : null;
+  } catch {
+    return null;
+  }
+}
+
+/** Variante Result con motivo del vuoto (mai lancia). */
+export async function caricaReferendum2025Result(): Promise<Result<Referendum2025>> {
+  try {
+    const dati = await caricaReferendum2025();
+    if (!dati) return { ok: false, errore: "dati referendum non disponibili" };
+    return { ok: true, dati };
+  } catch {
+    return { ok: false, errore: "errore imprevisto" };
+  }
+}
+
+function structuredCloneLike(dati: Referendum2025): Referendum2025 {
+  return {
+    provenance: { ...dati.provenance },
+    elezione: { ...dati.elezione },
+    quesiti: dati.quesiti.map((q) => ({ ...q })),
+    regioni: dati.regioni.map((r) => ({ ...r, quesiti: r.quesiti.map((q) => ({ ...q })) })),
+    comuni: dati.comuni.map((c) => ({ ...c })),
+    metodologia: dati.metodologia,
+    avvertenze: dati.avvertenze,
+  };
+}
+
+function validaReferendum(grezzo: unknown): Referendum2025 | null {
+  try {
+    if (!grezzo || typeof grezzo !== "object" || Array.isArray(grezzo)) return null;
+    const o = grezzo as Record<string, unknown>;
+    const elRaw = o["elezione"];
+    if (!elRaw || typeof elRaw !== "object" || Array.isArray(elRaw)) return null;
+    const el = elRaw as Record<string, unknown>;
+    const e = numeroQualsiasi(el["e"]);
+    const v = numeroQualsiasi(el["v"]);
+    const a = numeroQualsiasi(el["a"]);
+    if (e === null || v === null || a === null) return null;
+    if (!Array.isArray(o["quesiti"]) || o["quesiti"].length === 0) return null;
+    if (!Array.isArray(o["regioni"])) return null;
+    if (!Array.isArray(o["comuni"]) || o["comuni"].length > 20000) return null;
+    const quesiti: QuesitoRisultato[] = [];
+    for (const qv of o["quesiti"] as unknown[]) {
+      const q = aQuesito(qv);
+      if (!q) return null;
+      quesiti.push(q);
+    }
+    const regioni: RegioneReferendum[] = [];
+    for (const rv of o["regioni"] as unknown[]) {
+      const r = aRegioneReferendum(rv);
+      if (!r) return null;
+      regioni.push(r);
+    }
+    const comuni: ComuneReferendum[] = [];
+    for (const cv of o["comuni"] as unknown[]) {
+      const c = aComuneReferendum(cv);
+      if (!c) return null;
+      comuni.push(c);
+    }
+    return {
+      provenance: aProvenanceReferendum(o["provenance"]),
+      elezione: {
+        tipo: stringa(el["tipo"], 32) || "referendum",
+        data: stringa(el["data"], 16),
+        e: Math.floor(e),
+        v: Math.floor(v),
+        b: Math.floor(numeroQualsiasi(el["b"]) ?? 0),
+        a,
+      },
+      quesiti,
+      regioni,
+      comuni,
+      metodologia: stringa(o["metodologia"], 600),
+      avvertenze: stringa(o["avvertenze"], 600),
+    };
+  } catch {
+    return null;
+  }
+}
+
+function aProvenanceReferendum(value: unknown): ProvenanceElezioni {
+  try {
+    if (!value || typeof value !== "object" || Array.isArray(value)) return {};
+    const o = value as Record<string, unknown>;
+    const out: ProvenanceElezioni = {};
+    const fonte = stringa(o["fonte"], 160);
+    if (fonte) out.fonte = fonte;
+    const url = stringa(o["url"], 300);
+    if (/^https?:\/\//i.test(url)) out.url = url;
+    const recuperatoIl = stringa(o["recuperatoIl"], 32);
+    if (recuperatoIl) out.recuperatoIl = recuperatoIl;
+    const licenza = stringa(o["licenza"], 300);
+    if (licenza) out.licenza = licenza;
+    return out;
+  } catch {
+    return {};
+  }
+}
+
+/**
+ * Ricerca comuni del referendum per nome (contains, anche su provincia):
+ * stessi bound di cercaComune (100 ch, min 2, max 100 righe). Non lancia mai.
+ */
+export function cercaComuneReferendum(
+  comuni: readonly ComuneReferendum[],
+  q: unknown,
+): ComuneReferendum[] {
+  try {
+    if (!Array.isArray(comuni)) return [];
+    const grezza = typeof q === "string" ? q.slice(0, 100) : "";
+    const chiave = normalizza(grezza);
+    if (chiave.length < 2) return [];
+    return comuni
+      .filter((c) => normalizza(`${c?.c ?? ""} ${c?.p ?? ""} ${c?.r ?? ""}`).includes(chiave))
+      .slice(0, 100);
+  } catch {
+    return [];
+  }
+}

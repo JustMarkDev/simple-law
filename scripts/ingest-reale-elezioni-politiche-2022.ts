@@ -814,19 +814,24 @@ async function main(): Promise<void> {
     comuni: comuniSenato,
   };
 
-  const scrivi = (percorso: string, envelope: unknown, etichetta: string): number => {
+  // Serializza ENTRAMBI prima di scrivere: se uno supera il cap, nessun
+  // file viene toccato (mai parziali su disco).
+  const serializza = (envelope: unknown, etichetta: string): string => {
     const json = `${JSON.stringify(envelope)}\n`;
     const byte = Buffer.byteLength(json, "utf8");
     console.log(`[ingest-politiche-2022] output ${etichetta}: ${byte} byte (cap ${MAX_BYTE_OUT}).`);
     if (byte > MAX_BYTE_OUT) {
       throw new Error(`output ${etichetta} ${byte} byte oltre il cap di ${MAX_BYTE_OUT}: nessun file scritto`);
     }
-    mkdirSync(DIR_REALI, { recursive: true });
-    writeFileSync(percorso, json, "utf8");
-    return byte;
+    return json;
   };
-  const byteCamera = scrivi(FILE_OUT_CAMERA, envelopeCamera, "camera");
-  const byteSenato = scrivi(FILE_OUT_SENATO, envelopeSenato, "senato");
+  const jsonCamera = serializza(envelopeCamera, "camera");
+  const jsonSenato = serializza(envelopeSenato, "senato");
+  mkdirSync(DIR_REALI, { recursive: true });
+  writeFileSync(FILE_OUT_CAMERA, jsonCamera, "utf8");
+  writeFileSync(FILE_OUT_SENATO, jsonSenato, "utf8");
+  const byteCamera = Buffer.byteLength(jsonCamera, "utf8");
+  const byteSenato = Buffer.byteLength(jsonSenato, "utf8");
   console.log(
     `[ingest-politiche-2022] scritti data/reali/elezioni-politiche-2022-camera.json (${byteCamera} byte) e data/reali/elezioni-politiche-2022-senato.json (${byteSenato} byte).`,
   );

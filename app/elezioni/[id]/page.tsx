@@ -292,7 +292,7 @@ function normalizza(testo: string): string {
     return testo
       .toLowerCase()
       .normalize('NFD')
-      .replace(/[̀-ͯ]/g, '')
+      .replace(/[\u0300-\u036f]/g, '')
       .trim()
       .replace(/\s+/g, ' ')
   } catch {

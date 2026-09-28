@@ -20,6 +20,7 @@ interface VoceRegistro {
   titolo: string
   descrizione: string
   file: string
+  tipo: 'liste' | 'referendum'
 }
 
 const REGISTRO: VoceRegistro[] = [
@@ -29,6 +30,7 @@ const REGISTRO: VoceRegistro[] = [
     descrizione:
       'Affluenza nazionale, voti e percentuali delle liste, dettaglio per regione e affluenza per comune. I seggi non sono disponibili nel file ministeriale.',
     file: path.join('data', 'reali', 'elezioni-europee-2024.json'),
+    tipo: 'liste',
   },
   {
     id: 'politiche-2022-camera',
@@ -36,6 +38,7 @@ const REGISTRO: VoceRegistro[] = [
     descrizione:
       'Voto del 25 settembre 2022 per la Camera: affluenza nazionale, liste, circoscrizioni, collegi uninominali e plurinominali, affluenza per comune.',
     file: path.join('data', 'reali', 'elezioni-politiche-2022-camera.json'),
+    tipo: 'liste',
   },
   {
     id: 'politiche-2022-senato',
@@ -43,6 +46,15 @@ const REGISTRO: VoceRegistro[] = [
     descrizione:
       'Voto del 25 settembre 2022 per il Senato: affluenza nazionale, liste, circoscrizioni, collegi uninominali e plurinominali, affluenza per comune.',
     file: path.join('data', 'reali', 'elezioni-politiche-2022-senato.json'),
+    tipo: 'liste',
+  },
+  {
+    id: 'referendum-2025',
+    titolo: 'Referendum 8-9 giugno 2025 — 5 quesiti',
+    descrizione:
+      'I 5 quesiti referendari: SI e NO a livello nazionale e regionale, affluenza per comune. Solo aggregati.',
+    file: path.join('data', 'reali', 'referendum-2025.json'),
+    tipo: 'referendum',
   },
 ]
 
@@ -54,6 +66,7 @@ interface Sintesi {
   votanti: number
   affluenza: number
   totaleListe: number
+  totaleQuesiti: number
 }
 
 /** Legge solo i totali nazionali di un file (never-throw, null se assente/invalido). */
@@ -75,7 +88,8 @@ async function leggiSintesi(voce: VoceRegistro): Promise<Sintesi | null> {
     if (typeof e !== 'number' || typeof v !== 'number' || typeof a !== 'number') return null
     if (!Number.isFinite(e) || !Number.isFinite(v) || !Number.isFinite(a)) return null
     const liste = Array.isArray(o['liste']) ? o['liste'] : []
-    return { id: voce.id, elettori: Math.floor(e), votanti: Math.floor(v), affluenza: a, totaleListe: liste.length }
+    const quesiti = Array.isArray(o['quesiti']) ? o['quesiti'] : []
+    return { id: voce.id, elettori: Math.floor(e), votanti: Math.floor(v), affluenza: a, totaleListe: liste.length, totaleQuesiti: quesiti.length }
   } catch {
     return null
   }
@@ -171,8 +185,12 @@ export default async function ElezioniPage() {
                           <dd>{intero(dati.elettori)}</dd>
                         </div>
                         <div className="flex gap-2">
-                          <dt className="font-semibold text-inchiostro dark:text-nebbia">Liste:</dt>
-                          <dd>{intero(dati.totaleListe)}</dd>
+                          <dt className="font-semibold text-inchiostro dark:text-nebbia">
+                            {voce.tipo === 'referendum' ? 'Quesiti:' : 'Liste:'}
+                          </dt>
+                          <dd>
+                            {intero(voce.tipo === 'referendum' ? dati.totaleQuesiti : dati.totaleListe)}
+                          </dd>
                         </div>
                       </dl>
                     ) : (

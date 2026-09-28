@@ -20,16 +20,17 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { url: `${BASE_URL}/parlamento/ddl`, changeFrequency: 'daily', priority: 0.7 },
     { url: `${BASE_URL}/eurlex`, changeFrequency: 'weekly', priority: 0.6 },
     { url: `${BASE_URL}/quirinale`, changeFrequency: 'weekly', priority: 0.6 },
+    { url: `${BASE_URL}/elezioni`, changeFrequency: 'monthly', priority: 0.6 },
+    { url: `${BASE_URL}/elezioni/europee-2024`, changeFrequency: 'monthly', priority: 0.6 },
+    { url: `${BASE_URL}/elezioni/politiche-2022-camera`, changeFrequency: 'monthly', priority: 0.6 },
+    { url: `${BASE_URL}/elezioni/politiche-2022-senato`, changeFrequency: 'monthly', priority: 0.6 },
+    { url: `${BASE_URL}/elezioni/referendum-2025`, changeFrequency: 'monthly', priority: 0.6 },
     { url: `${BASE_URL}/consulta`, changeFrequency: 'weekly', priority: 0.6 },
     { url: `${BASE_URL}/statistiche`, changeFrequency: 'weekly', priority: 0.6 },
     { url: `${BASE_URL}/semplifica`, changeFrequency: 'monthly', priority: 0.6 },
     { url: `${BASE_URL}/salvati`, changeFrequency: 'monthly', priority: 0.5 },
     { url: `${BASE_URL}/fonti`, changeFrequency: 'monthly', priority: 0.6 },
     { url: `${BASE_URL}/metodologia`, changeFrequency: 'monthly', priority: 0.6 },
-    { url: `${BASE_URL}/elezioni`, changeFrequency: 'monthly', priority: 0.6 },
-    { url: `${BASE_URL}/elezioni/europee-2024`, changeFrequency: 'monthly', priority: 0.6 },
-    { url: `${BASE_URL}/elezioni/politiche-2022-camera`, changeFrequency: 'monthly', priority: 0.6 },
-    { url: `${BASE_URL}/elezioni/politiche-2022-senato`, changeFrequency: 'monthly', priority: 0.6 },
   ]
   try {
     const leggi = await queryLaws(

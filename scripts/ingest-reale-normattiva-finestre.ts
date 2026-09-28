@@ -1,6 +1,9 @@
 /**
- * Ingest finestre storiche Normattiva -> data/reali/normattiva-storico-1990.json
- * e data/reali/normattiva-storico-2000.json.
+ * Ingest finestre storiche Normattiva -> data/reali/normattiva-storico-<anno>.json.
+ *
+ * Finestre supportate via --anni (default "1990,2000" per compatibilita'):
+ * 1990, 2000, 2010, 1970. Ogni finestra e' bounded come le originarie
+ * (max 80 atti, dettagli a batch di 5 con pausa di 2000 ms).
  *
  * Legge atti VERI dalle API Open Data di Normattiva (bff-opendata v1) e li
  * salva con envelope di provenance. Nessun dato dimostrativo: ogni campo del
@@ -8,9 +11,7 @@
  * viene scartato. Mai inventati: codici redazionali, numeri, URL, date, stati.
  *
  * Sorgenti (bounded, MAI oltre i cap):
- *   - finestra 1990: POST /api/v1/ricerca/aggiornati su 1990-01-01..1990-12-31
- *     (max 80 atti);
- *   - finestra 2000: POST /api/v1/ricerca/aggiornati su 2000-01-01..2000-12-31
+ *   - finestra <anno>: POST /api/v1/ricerca/aggiornati su <anno>-01-01..<anno>-12-31
  *     (max 80 atti).
  * Dettaglio per ogni URN: POST /api/v1/atto/dettaglio-atto-urn {urn} con il
  * prefisso `urn:` obbligatorio, a batch di 5 con pausa di 2000 ms. Timeout
@@ -18,9 +19,11 @@
  * stop su 403/409/ERR_409.
  *
  * Dedup: gli ELI/nir gia' presenti in normattiva-recenti.json,
- * normattiva-storico-1980.json e normattiva-storico-collezioni.json
- * (match su `eli` lower+trim, fallback `nir`/`chiave`) e i duplicati tra le
- * due nuove finestre vengono esclusi: mai due record per lo stesso atto.
+ * normattiva-storico-1980.json, normattiva-storico-collezioni.json,
+ * normattiva-leggi.json e nelle finestre esistenti NON selezionate
+ * (es. 1990/2000 quando si ingeriscono 2010/1970; mai rileggere i propri
+ * output) e i duplicati tra le finestre selezionate vengono esclusi:
+ * mai due record per lo stesso atto.
  *
  * Stato onesto: `articoloDataFineVigenza` esplicita del dettaglio
  * (`99999999` = in vigore, data passata = abrogato) oppure intestazione
@@ -29,11 +32,12 @@
  *
  * Uso:
  *   npx tsx scripts/ingest-reale-normattiva-finestre.ts [--limite=80]
- *     [--testo-max=2000] [--out-1990=...] [--out-2000=...]
+ *     [--testo-max=2000] [--anni=1990,2000] [--out-1990=...] [--out-2000=...]
+ *     [--out-2010=...] [--out-1970=...]
  *     [--api-base=...] [--help]
  *
- * Esce con codice 1 (SENZA scrivere file parziali) se una delle due finestre
- * restituisce zero atti reali o se un JSON supera 950 KB.
+ * Esce con codice 1 (SENZA scrivere file parziali) se una delle finestre
+ * selezionate restituisce zero atti reali o se un JSON supera 950 KB.
  */
 
 import { mkdir, readFile, writeFile } from "node:fs/promises";
@@ -113,6 +117,26 @@ const MAX_ATTI_FINESTRA = 80;
 
 const FINESTRA_1990 = { nome: "1990", inizio: "1990-01-01", fine: "1990-12-31" } as const;
 const FINESTRA_2000 = { nome: "2000", inizio: "2000-01-01", fine: "2000-12-31" } as const;
+const FINESTRA_2010 = { nome: "2010", inizio: "2010-01-01", fine: "2010-12-31" } as const;
+const FINESTRA_1970 = { nome: "1970", inizio: "1970-01-01", fine: "1970-12-31" } as const;
+
+/** Finestre selezionabili via --anni (stesso bounded: max 80 atti). */
+const FINESTRE_DISPONIBILI = {
+  "1990": FINESTRA_1990,
+  "2000": FINESTRA_2000,
+  "2010": FINESTRA_2010,
+  "1970": FINESTRA_1970,
+} as const;
+
+type NomeFinestra = keyof typeof FINESTRE_DISPONIBILI;
+
+/** Output default per finestra (mai fuori data/reali senza --out esplicito). */
+const OUT_DEFAULT_FINESTRA: Record<NomeFinestra, string> = {
+  "1990": path.join("data", "reali", "normattiva-storico-1990.json"),
+  "2000": path.join("data", "reali", "normattiva-storico-2000.json"),
+  "2010": path.join("data", "reali", "normattiva-storico-2010.json"),
+  "1970": path.join("data", "reali", "normattiva-storico-1970.json"),
+};
 
 /** File esistenti contro cui fare dedup ELI/URN (mai rileggere i propri output). */
 const PERCORSI_ESISTENTI = [
@@ -388,16 +412,19 @@ export function dettaglioToRecordFinestra(
 
 function aiuto(): string {
   return [
-    "Ingest finestre storiche Normattiva 1990 + 2000 (dati ufficiali, mai dimostrativi).",
+    "Ingest finestre storiche Normattiva (dati ufficiali, mai dimostrativi).",
     "",
     "Uso:",
     "  npx tsx scripts/ingest-reale-normattiva-finestre.ts [opzioni]",
     "",
     "Opzioni:",
+    "  --anni=A,B            finestre da ingerire (default 1990,2000; ammessi 1990,2000,2010,1970)",
     "  --limite=N            atti per finestra (default 80, MAI oltre 80)",
     "  --testo-max=N         caratteri max per testo (default 2000, max 61440)",
     "  --out-1990=PATH       file JSON finestra 1990 (default data/reali/normattiva-storico-1990.json)",
     "  --out-2000=PATH       file JSON finestra 2000 (default data/reali/normattiva-storico-2000.json)",
+    "  --out-2010=PATH       file JSON finestra 2010 (default data/reali/normattiva-storico-2010.json)",
+    "  --out-1970=PATH       file JSON finestra 1970 (default data/reali/normattiva-storico-1970.json)",
     "  --api-base=URL        override base API Normattiva",
     "  --help                mostra questo aiuto",
   ].join("\n");
@@ -461,6 +488,24 @@ export function vociDaAggiornatiFinestra(raw: unknown): VoceFinestra[] {
   return risultato;
 }
 
+/** Errore "troppi atti" del server (limite 7000): va raffinata la ricerca. */
+export function isErroreLimiteAttiFinestra(cause: unknown): boolean {
+  return /superiore al limite|7000|raffinare la ricerca/i.test(messaggioDi(cause));
+}
+
+/** Dimezza un intervallo ISO [inizio..fine] in due sotto-intervalli per giorni. */
+export function dividiIntervalloFinestra(inizio: string, fine: string): Array<[string, string]> | null {
+  if (!isIsoDateFinestra(inizio) || !isIsoDateFinestra(fine) || inizio >= fine) return null;
+  const t0 = Date.parse(`${inizio}T00:00:00Z`);
+  const t1 = Date.parse(`${fine}T00:00:00Z`);
+  const giorni = Math.round((t1 - t0) / 86400000);
+  if (!Number.isFinite(giorni) || giorni < 1) return null;
+  const mid = new Date(t0 + Math.floor(giorni / 2) * 86400000).toISOString().slice(0, 10);
+  const dopoMid = new Date(Date.parse(`${mid}T00:00:00Z`) + 86400000).toISOString().slice(0, 10);
+  if (!(inizio <= mid && dopoMid <= fine && mid < dopoMid)) return null;
+  return [[inizio, mid], [dopoMid, fine]];
+}
+
 /** Finestra aggiornati: POST /api/v1/ricerca/aggiornati su [inizio..fine]. */
 async function listaFinestra(
   overrides: Partial<NormattivaConfig>,
@@ -473,6 +518,43 @@ async function listaFinestra(
   });
   const baseUrl = defaultNormattivaConfig(overrides).baseUrl;
   return { voci: vociDaAggiornatiFinestra(raw), url: `${baseUrl}/api/v1/ricerca/aggiornati` };
+}
+
+/**
+ * Lista con split onesto: se il server rifiuta l'intervallo perche' oltre il
+ * limite di 7000 atti, l'intervallo viene dimezzato ricorsivamente (stessa
+ * API, stessi parametri) e le voci unite con dedup URN. Mai oltre i cap.
+ */
+async function listaFinestraConSplit(
+  overrides: Partial<NormattivaConfig>,
+  inizio: string,
+  fine: string,
+): Promise<{ voci: VoceFinestra[]; url: string }> {
+  const baseUrl = defaultNormattivaConfig(overrides).baseUrl;
+  const url = `${baseUrl}/api/v1/ricerca/aggiornati`;
+  const coda: Array<[string, string]> = [[inizio, fine]];
+  const voci: VoceFinestra[] = [];
+  const visti = new Set<string>();
+  while (coda.length > 0) {
+    const [ini, fin] = coda.shift() as [string, string];
+    try {
+      const { voci: trovate } = await listaFinestra(overrides, ini, fin);
+      for (const voce of trovate) {
+        if (visti.has(voce.urn)) continue;
+        visti.add(voce.urn);
+        voci.push(voce);
+      }
+    } catch (cause) {
+      const parti = dividiIntervalloFinestra(ini, fin);
+      if (isErroreLimiteAttiFinestra(cause) && parti) {
+        console.log(`Split intervallo ${ini}..${fin} (oltre limite 7000 atti).`);
+        coda.unshift(...parti);
+        continue;
+      }
+      throw cause;
+    }
+  }
+  return { voci, url };
 }
 
 /**
@@ -526,10 +608,15 @@ async function main(): Promise<void> {
 
   const limite = intero("limite", MAX_ATTI_FINESTRA, 1, MAX_ATTI_FINESTRA);
   const testoMax = intero("testo-max", 2000, 1000, 61440);
-  const out1990 =
-    argomento("out-1990") ?? path.join("data", "reali", "normattiva-storico-1990.json");
-  const out2000 =
-    argomento("out-2000") ?? path.join("data", "reali", "normattiva-storico-2000.json");
+  const anniGrezzi = (argomento("anni") ?? "1990,2000")
+    .split(",")
+    .map((a) => a.trim())
+    .filter((a) => a in FINESTRE_DISPONIBILI) as NomeFinestra[];
+  const anni: NomeFinestra[] = [...new Set(anniGrezzi.length > 0 ? anniGrezzi : ["1990", "2000"] as NomeFinestra[])];
+  const outPerAnno = new Map<NomeFinestra, string>();
+  for (const anno of anni) {
+    outPerAnno.set(anno, argomento(`out-${anno}`) ?? OUT_DEFAULT_FINESTRA[anno]);
+  }
   const apiBase = argomento("api-base");
 
   const overridesPost: Partial<NormattivaConfig> = {
@@ -538,13 +625,19 @@ async function main(): Promise<void> {
     ...(apiBase ? { baseUrl: apiBase } : {}),
   };
 
+  const finestre = anni.map((anno) => FINESTRE_DISPONIBILI[anno]);
   console.log(
-    `Ingest finestre Normattiva: ${FINESTRA_1990.inizio}..${FINESTRA_1990.fine} + ${FINESTRA_2000.inizio}..${FINESTRA_2000.fine} (max ${limite}/finestra).`,
+    `Ingest finestre Normattiva: ${finestre.map((f) => `${f.inizio}..${f.fine}`).join(" + ")} (max ${limite}/finestra).`,
   );
 
-  const conosciuti = await caricaChiaviEsistenti(PERCORSI_ESISTENTI);
+  // Dedup vs base + finestre esistenti NON selezionate (mai i propri output).
+  const percorsiDedup: string[] = [...PERCORSI_ESISTENTI];
+  for (const nome of Object.keys(FINESTRE_DISPONIBILI) as NomeFinestra[]) {
+    if (!outPerAnno.has(nome)) percorsiDedup.push(OUT_DEFAULT_FINESTRA[nome]);
+  }
+  const conosciuti = await caricaChiaviEsistenti(percorsiDedup);
   console.log(
-    `Dedup: ${conosciuti.size} chiavi ELI/nir gia' presenti nei file esistenti (${PERCORSI_ESISTENTI.length} percorsi).`,
+    `Dedup: ${conosciuti.size} chiavi ELI/nir gia' presenti nei file esistenti (${percorsiDedup.length} percorsi).`,
   );
 
   const escludiConosciute = (voci: VoceFinestra[]): VoceFinestra[] =>
@@ -556,53 +649,44 @@ async function main(): Promise<void> {
       return true;
     });
 
-  // 1) Finestra 1990 (bounded: max 80 atti).
-  let voci1990: VoceFinestra[] = [];
-  let url1990 = "";
-  try {
-    const { voci, url } = await listaFinestra(overridesPost, FINESTRA_1990.inizio, FINESTRA_1990.fine);
-    url1990 = url;
-    console.log(`Finestra 1990: ${voci.length} voci reali.`);
-    const filtrate = escludiConosciute(voci);
-    console.log(`Finestra 1990: ${voci.length} voci, ${voci.length - filtrate.length} duplicate escluse.`);
-    voci1990 = filtrate.slice(0, limite);
-  } catch (cause) {
-    console.log(`Finestra 1990 fallita (${messaggioDi(cause)}).`);
-    if (erroreDefinitivo(cause)) {
-      console.log("Errore definitivo (403/409/ERR_409) sulla finestra 1990.");
+  // Liste per finestra (bounded: max 80 atti), con dedup incrociata cumulativa.
+  const vociPerAnno = new Map<NomeFinestra, VoceFinestra[]>();
+  const urlPerAnno = new Map<NomeFinestra, string>();
+  const urnViste = new Set<string>();
+  const eliViste = new Set<string>();
+  for (const finestra of finestre) {
+    const nome = finestra.nome as NomeFinestra;
+    try {
+      const { voci, url } = await listaFinestraConSplit(overridesPost, finestra.inizio, finestra.fine);
+      urlPerAnno.set(nome, url);
+      console.log(`Finestra ${nome}: ${voci.length} voci reali.`);
+      const filtrate = escludiConosciute(voci).filter((voce) => {
+        const urnChiave = chiaveEliFinestra(voce.urn);
+        if (urnChiave && urnViste.has(urnChiave)) return false;
+        if (eliCandidatiFinestra(voce).some((c) => eliViste.has(c))) return false;
+        return true;
+      });
+      console.log(`Finestra ${nome}: ${voci.length} voci, ${voci.length - filtrate.length} duplicate escluse.`);
+      const selezionate = filtrate.slice(0, limite);
+      vociPerAnno.set(nome, selezionate);
+      for (const voce of selezionate) {
+        urnViste.add(chiaveEliFinestra(voce.urn));
+        for (const c of eliCandidatiFinestra(voce)) eliViste.add(c);
+      }
+    } catch (cause) {
+      console.log(`Finestra ${nome} fallita (${messaggioDi(cause)}).`);
+      if (erroreDefinitivo(cause)) {
+        console.log(`Errore definitivo (403/409/ERR_409) sulla finestra ${nome}.`);
+      }
+      vociPerAnno.set(nome, []);
     }
   }
 
-  // Dedup incrociata: le voci 2000 non devono collidere con le 1990 selezionate.
-  const urn1990 = new Set(voci1990.map((v) => chiaveEliFinestra(v.urn)));
-  const eli1990 = new Set(voci1990.flatMap((v) => eliCandidatiFinestra(v)));
-
-  // 2) Finestra 2000 (bounded: max 80 atti).
-  let voci2000: VoceFinestra[] = [];
-  let url2000 = "";
-  try {
-    const { voci, url } = await listaFinestra(overridesPost, FINESTRA_2000.inizio, FINESTRA_2000.fine);
-    url2000 = url;
-    console.log(`Finestra 2000: ${voci.length} voci reali.`);
-    const filtrate = escludiConosciute(voci).filter((voce) => {
-      if (urn1990.has(chiaveEliFinestra(voce.urn))) return false;
-      return !eliCandidatiFinestra(voce).some((c) => eli1990.has(c));
-    });
-    console.log(
-      `Finestra 2000: ${voci.length} voci, ${voci.length - filtrate.length} duplicate escluse (esistenti + 1990).`,
-    );
-    voci2000 = filtrate.slice(0, limite);
-  } catch (cause) {
-    console.log(`Finestra 2000 fallita (${messaggioDi(cause)}).`);
-    if (erroreDefinitivo(cause)) {
-      console.log("Errore definitivo (403/409/ERR_409) sulla finestra 2000.");
-    }
+  const daDettagliare: Array<{ voce: VoceFinestra; gruppo: NomeFinestra }> = [];
+  for (const finestra of finestre) {
+    const nome = finestra.nome as NomeFinestra;
+    for (const voce of vociPerAnno.get(nome) ?? []) daDettagliare.push({ voce, gruppo: nome });
   }
-
-  const daDettagliare: Array<{ voce: VoceFinestra; gruppo: "1990" | "2000" }> = [
-    ...voci1990.map((voce) => ({ voce, gruppo: "1990" as const })),
-    ...voci2000.map((voce) => ({ voce, gruppo: "2000" as const })),
-  ];
   if (daDettagliare.length === 0) {
     console.error("Nessuna voce reale da dettagliare: nessun file scritto.");
     process.exitCode = 1;
@@ -610,8 +694,8 @@ async function main(): Promise<void> {
   }
   console.log(`Recupero dettagli per ${daDettagliare.length} atti (batch da ${DETTAGLI_PER_BATCH}).`);
 
-  const atti1990: LawRecord[] = [];
-  const atti2000: LawRecord[] = [];
+  const attiPerAnno = new Map<NomeFinestra, LawRecord[]>();
+  for (const finestra of finestre) attiPerAnno.set(finestra.nome as NomeFinestra, []);
   const visti = new Set<string>();
   const errori: string[] = [];
   let interrotto = false;
@@ -640,8 +724,7 @@ async function main(): Promise<void> {
           continue;
         }
         for (const impronta of impronte) visti.add(impronta);
-        if (gruppo === "1990") atti1990.push(record);
-        else atti2000.push(record);
+        attiPerAnno.get(gruppo)?.push(record);
       } catch (cause) {
         errori.push(`dettaglio ${voce.urn}: ${messaggioDi(cause)}`);
         if (erroreDefinitivo(cause)) {
@@ -657,58 +740,58 @@ async function main(): Promise<void> {
   }
 
   console.log(
-    `Dettagli OK: finestra1990=${atti1990.length} finestra2000=${atti2000.length}; scarti/errori: ${errori.length}.`,
+    `Dettagli OK: ${finestre.map((f) => `finestra${f.nome}=${attiPerAnno.get(f.nome as NomeFinestra)?.length ?? 0}`).join(" ")}; scarti/errori: ${errori.length}.`,
   );
-  // Niente parziali: entrambe le finestre devono aver prodotto atti reali.
-  if (atti1990.length === 0 || atti2000.length === 0) {
-    console.error("Una finestra ha prodotto zero atti reali: nessun file scritto.");
+  // Niente parziali: OGNI finestra selezionata deve aver prodotto atti reali.
+  const vuote = finestre.filter((f) => (attiPerAnno.get(f.nome as NomeFinestra)?.length ?? 0) === 0);
+  if (vuote.length > 0) {
+    console.error(`Finestre senza atti reali (${vuote.map((f) => f.nome).join(",")}): nessun file scritto.`);
     for (const e of errori.slice(0, 10)) console.error(`  - ${e}`);
     process.exitCode = 1;
     return;
   }
 
   const recuperatoIl = new Date().toISOString();
-  const envelope1990: Envelope = {
-    provenance: {
-      fonte: "normattiva",
-      url: url1990,
-      recuperatoIl,
-      licenza: LICENZA,
-    },
-    atti: atti1990,
-  };
-  const envelope2000: Envelope = {
-    provenance: {
-      fonte: "normattiva",
-      url: url2000,
-      recuperatoIl,
-      licenza: LICENZA,
-    },
-    atti: atti2000,
-  };
-
-  const json1990 = JSON.stringify(envelope1990, null, 2);
-  const json2000 = JSON.stringify(envelope2000, null, 2);
-  const kb1990 = Buffer.byteLength(json1990, "utf8") / DIM_KB;
-  const kb2000 = Buffer.byteLength(json2000, "utf8") / DIM_KB;
-  if (kb1990 > LIMITE_FILE_KB || kb2000 > LIMITE_FILE_KB) {
-    console.error(
-      `File oltre il limite di ${LIMITE_FILE_KB} KB ` +
-        `(1990=${kb1990.toFixed(1)} KB, 2000=${kb2000.toFixed(1)} KB): nessun file scritto.`,
-    );
-    process.exitCode = 1;
-    return;
+  const jsonPerAnno = new Map<NomeFinestra, string>();
+  for (const finestra of finestre) {
+    const nome = finestra.nome as NomeFinestra;
+    const envelope: Envelope = {
+      provenance: {
+        fonte: "normattiva",
+        url: urlPerAnno.get(nome) ?? "",
+        recuperatoIl,
+        licenza: LICENZA,
+      },
+      atti: attiPerAnno.get(nome) ?? [],
+    };
+    jsonPerAnno.set(nome, JSON.stringify(envelope, null, 2));
   }
 
-  const dest1990 = path.resolve(out1990);
-  const dest2000 = path.resolve(out2000);
-  await mkdir(path.dirname(dest1990), { recursive: true });
-  await mkdir(path.dirname(dest2000), { recursive: true });
-  await writeFile(dest1990, json1990, "utf8");
-  await writeFile(dest2000, json2000, "utf8");
+  for (const finestra of finestre) {
+    const nome = finestra.nome as NomeFinestra;
+    const kb = Buffer.byteLength(jsonPerAnno.get(nome) ?? "", "utf8") / DIM_KB;
+    if (kb > LIMITE_FILE_KB) {
+      console.error(
+        `File oltre il limite di ${LIMITE_FILE_KB} KB ` +
+          `(${finestre.map((f) => `${f.nome}=${(Buffer.byteLength(jsonPerAnno.get(f.nome as NomeFinestra) ?? "", "utf8") / DIM_KB).toFixed(1)} KB`).join(", ")}): nessun file scritto.`,
+      );
+      process.exitCode = 1;
+      return;
+    }
+  }
+
+  for (const finestra of finestre) {
+    const nome = finestra.nome as NomeFinestra;
+    const dest = path.resolve(outPerAnno.get(nome) ?? OUT_DEFAULT_FINESTRA[nome]);
+    await mkdir(path.dirname(dest), { recursive: true });
+    await writeFile(dest, jsonPerAnno.get(nome) ?? "", "utf8");
+  }
   console.log(
-    `Scritti ${atti1990.length} atti 1990 in ${dest1990} (${kb1990.toFixed(1)} KB) ` +
-      `e ${atti2000.length} atti 2000 in ${dest2000} (${kb2000.toFixed(1)} KB).`,
+    finestre.map((f) => {
+      const nome = f.nome as NomeFinestra;
+      const kb = Buffer.byteLength(jsonPerAnno.get(nome) ?? "", "utf8") / DIM_KB;
+      return `Scritti ${(attiPerAnno.get(nome) ?? []).length} atti ${nome} in ${path.resolve(outPerAnno.get(nome) ?? "")} (${kb.toFixed(1)} KB).`;
+    }).join(" "),
   );
   if (errori.length > 0) {
     console.log(`Note (${errori.length}):`);

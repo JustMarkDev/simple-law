@@ -35,7 +35,7 @@ export function slugComune(nome: string, provincia?: string): string {
     const base = `${nome}${provincia ? `-${provincia}` : ''}`
       .toLowerCase()
       .normalize('NFD')
-      .replace(/[̀-ͯ]/g, '')
+      .replace(/[\u0300-\u036f]/g, '')
       .replace(/[^a-z0-9]+/g, '-')
       .replace(/^-+|-+$/g, '')
       .slice(0, 120)
@@ -47,7 +47,7 @@ export function slugComune(nome: string, provincia?: string): string {
 
 function normalizza(testo: string): string {
   try {
-    return testo.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '').trim().replace(/\s+/g, ' ')
+    return testo.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').trim().replace(/\s+/g, ' ')
   } catch {
     return ''
   }

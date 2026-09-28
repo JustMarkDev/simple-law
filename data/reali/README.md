@@ -103,7 +103,8 @@ npx tsx scripts/ingest-reale-normattiva-storico.ts [--limite-1980=80] [--testo-m
 ```
 
 Altre finestre storiche (`normattiva-storico-1990.json`: 71 atti,
-`normattiva-storico-2000.json`: 61 atti) via
+`normattiva-storico-2000.json`: 61 atti, `normattiva-storico-1970.json`:
+66 atti, `normattiva-storico-2010.json`: 66 atti) via
 `scripts/ingest-reale-normattiva-finestre.ts` (stesse regole di onesta:
 fine-vigenza + intestazione Art. 1, dedup contro tutti i file esistenti).
 
@@ -161,6 +162,26 @@ npx tsx scripts/ingest-reale-quirinale.ts
 
 Ricerca verificata su Eligendo/Archivio Storico Elezioni/ISTAT con URL
 provati, formati, volumi e licenze. L'ingest elettorale e' il prossimo passo.
+
+## Elezioni — `elezioni-*.json` + `referendum-2025.json`
+
+Vedi `docs/elezioni-piano.md` per sonde e formati. Europee 2024, politiche
+2022 (Camera+Senato), referendum 8-9 giugno 2025 (5 quesiti SI/NO con
+affluenza nazionale, regionale e comunale). Solo aggregati, mai nominativi.
+
+```bash
+npx tsx scripts/ingest-reale-elezioni-europee-2024.ts
+npx tsx scripts/ingest-reale-elezioni-politiche-2022.ts
+npx tsx scripts/ingest-reale-referendum.ts
+```
+
+## ISTAT — rimandato (decisione documentata)
+
+Il CSV anagrafico ISTAT (`Elenco-comuni-italiani.csv`, latin-1, 1,1 MB) e'
+un registro amministrativo, non demografia; i download demo.istat.it usano
+pattern applicativi fragili e DBnomics non ha dataset elettorali. Niente
+ingest finche' non esiste un dataset demografico stabile e licenziato:
+vedi `docs/bur-ricognizione.md` per il metodo e `docs/elezioni-piano.md` §2.
 
 ## Cosa resta dimostrativo
 

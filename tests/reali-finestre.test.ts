@@ -13,7 +13,9 @@ import {
   caricaChiaviEsistenti,
   chiaveEliFinestra,
   dettaglioToRecordFinestra,
+  dividiIntervalloFinestra,
   eliCandidatiFinestra,
+  isErroreLimiteAttiFinestra,
   isIsoDateFinestra,
   normalizzaFinestra,
   statoDaFineVigenzaFinestre,
@@ -313,6 +315,194 @@ describe("integrazione tollerante finestre 1990/2000 (zero rete, disco read-only
       }
     }
     if (totale === 0) return; // nessun file: tollerante
+    expect(duplicati).toBe(0);
+  });
+});
+
+const VOCE_AGGIORNATI_2010 = {
+  numeroProvvedimento: "96",
+  denominazioneAtto: "LEGGE",
+  annoProvvedimento: "2010",
+  meseProvvedimento: "6",
+  giornoProvvedimento: "25",
+  codiceRedazionale: "010G0116",
+  dataGU: "2010-06-26",
+  numeroGU: "147",
+};
+
+const VOCE_AGGIORNATI_1970 = {
+  numeroProvvedimento: "281",
+  denominazioneAtto: "LEGGE",
+  annoProvvedimento: "1970",
+  meseProvvedimento: "5",
+  giornoProvvedimento: "16",
+  codiceRedazionale: "070U0281",
+  dataGU: "1970-05-22",
+  numeroGU: "127",
+};
+
+describe("ingest finestre Normattiva 2010/1970 (fixture inline, zero rete)", () => {
+  it("urnDaVoceFinestra costruisce URN reali 2010 e 1970", () => {
+    expect(urnDaVoceFinestra(VOCE_AGGIORNATI_2010)).toBe(
+      "urn:nir:stato:legge:2010-06-25;96",
+    );
+    expect(urnDaVoceFinestra(VOCE_AGGIORNATI_1970)).toBe(
+      "urn:nir:stato:legge:1970-05-16;281",
+    );
+  });
+
+  it("vociDaAggiornatiFinestra: dedup URN tra 2010/1970", () => {
+    const voci = vociDaAggiornatiFinestra({
+      data: { listaAtti: [VOCE_AGGIORNATI_2010, VOCE_AGGIORNATI_2010, VOCE_AGGIORNATI_1970] },
+    });
+    expect(voci).toHaveLength(2);
+  });
+
+  it("stati onesti: fine-vigenza passata=abrogato, 99999999=in_vigore, Art.1 formale", () => {
+    expect(statoDaFineVigenzaFinestre("99999999", "20260928")).toBe("in_vigore");
+    expect(statoDaFineVigenzaFinestre("19751231", "20260928")).toBe("abrogato");
+    expect(statoDaIntestazioneArt1Finestre("ART. 1 DECRETO DECADUTO - testo")).toBe("decaduto");
+    expect(statoDaIntestazioneArt1Finestre("corpo che cita abrogazione")).toBeNull();
+  });
+
+  it("dettaglioToRecordFinestra 1970: stato abrogato da fine-vigenza passata", () => {
+    const voce: VoceFinestra = {
+      urn: "urn:nir:stato:legge:1970-05-16;281",
+      codice: "070U0281",
+      dataGU: "1970-05-22",
+      numeroGU: "127",
+      eliReale: "",
+    };
+    const record = dettaglioToRecordFinestra(
+      voce,
+      {
+        data: {
+          atto: {
+            titolo: "LEGGE 16 maggio 1970, n. 281",
+            sottoTitolo: "Provvedimenti finanziari per le Regioni.",
+            articoloHtml: "<div><p>Testo di prova.</p></div>",
+            tipoProvvedimentoDescrizione: "LEGGE",
+            annoProvvedimento: 1970,
+            meseProvvedimento: 5,
+            giornoProvvedimento: 16,
+            numeroProvvedimento: 281,
+            articoloDataFineVigenza: "19751231",
+          },
+        },
+      },
+      2000,
+    );
+    expect(record?.stato).toBe("abrogato");
+    expect(record?.dataEmanazione).toBe("1970-05-16");
+  });
+
+  it("split onesto: dimezza l'anno, rifiuta intervalli invalidi", () => {
+    const parti = dividiIntervalloFinestra("2010-01-01", "2010-12-31");
+    expect(parti).not.toBeNull();
+    expect(parti).toHaveLength(2);
+    const prima = parti?.[0] as [string, string];
+    const seconda = parti?.[1] as [string, string];
+    expect(prima[0]).toBe("2010-01-01");
+    expect(seconda[1]).toBe("2010-12-31");
+    expect(prima[1] < seconda[0]).toBe(true);
+    expect(dividiIntervalloFinestra("2010-01-01", "2010-01-01")).toBeNull();
+    expect(dividiIntervalloFinestra("non-data", "2010-12-31")).toBeNull();
+    expect(isErroreLimiteAttiFinestra(new Error("Numero di atti superiore al limite consentito di 7000, raffinare la ricerca"))).toBe(true);
+    expect(isErroreLimiteAttiFinestra(new Error("altro errore"))).toBe(false);
+  });
+
+  it("unione multi-file (5+ batch): dedup ELI su tutti i batch", () => {
+    const mk = (eli: string, titolo: string) => ({
+      chiave: eli,
+      titolo,
+      tipo: "legge",
+      numero: "1",
+      dataEmanazione: "2010-01-01",
+      nir: `urn:nir:fake:${eli}`,
+      eli,
+      stato: "in_vigore",
+      sintesi: titolo,
+      fonti: {},
+    });
+    const batch = [
+      mk("/eli/id/2010/06/25/X/sg", "Atto X 2010"),
+      mk("/eli/id/2010/06/25/X/sg", "Atto X duplicato 1970"),
+      mk("/eli/id/1970/05/16/Y/sg", "Atto Y 1970"),
+      mk("/eli/id/1990/01/01/A/sg", "Atto A 1990"),
+      mk("/eli/id/2000/06/09/B/sg", "Atto B 2000"),
+      mk("/eli/id/1980/01/01/C/sg", "Atto C 1980"),
+    ];
+    const normalizzati = batch
+      .map((a) => normalizzaAttoReale(a))
+      .filter((r): r is NonNullable<typeof r> => r !== null);
+    const uniti = unisciCorpus([], normalizzati, []);
+    expect(new Set(uniti.map((r) => r.eli.toLowerCase())).size).toBe(5);
+  });
+});
+
+describe("integrazione tollerante finestre 2010/1970 (zero rete, disco read-only)", () => {
+  async function leggiAtti(percorso: string): Promise<unknown[]> {
+    const raw = await readFile(path.resolve(percorso), "utf8");
+    if (Buffer.byteLength(raw, "utf8") > 1024 * 1024) throw new Error("file oltre 1MB");
+    return estraiListaAttiReali(JSON.parse(raw) as unknown);
+  }
+
+  it("i JSON 2010/1970 (se presenti) sono envelope validi, <=80 atti, stati onesti", async () => {
+    for (const percorso of [
+      "data/reali/normattiva-storico-2010.json",
+      "data/reali/normattiva-storico-1970.json",
+    ]) {
+      let lista: unknown[];
+      try {
+        lista = await leggiAtti(percorso);
+      } catch {
+        continue;
+      }
+      expect(lista.length).toBeGreaterThan(0);
+      expect(lista.length).toBeLessThanOrEqual(80);
+      let validi = 0;
+      for (const item of lista.slice(0, 500)) {
+        const record = normalizzaAttoReale(item);
+        if (!record) continue;
+        validi += 1;
+        expect(record.titolo.length).toBeGreaterThan(0);
+        expect(record.eli.length).toBeGreaterThan(0);
+        expect(["in_vigore", "abrogato", "decaduto"]).toContain(record.stato);
+      }
+      expect(validi).toBeGreaterThan(0);
+    }
+  });
+
+  it("unione reali 7 file: nessun ELI duplicato (se i file ci sono)", async () => {
+    const percorsi = [
+      "data/reali/normattiva-recenti.json",
+      "data/reali/normattiva-storico-1980.json",
+      "data/reali/normattiva-storico-collezioni.json",
+      "data/reali/normattiva-storico-1990.json",
+      "data/reali/normattiva-storico-2000.json",
+      "data/reali/normattiva-storico-2010.json",
+      "data/reali/normattiva-storico-1970.json",
+    ];
+    const visti = new Set<string>();
+    let duplicati = 0;
+    let totale = 0;
+    for (const percorso of percorsi) {
+      let lista: unknown[];
+      try {
+        lista = await leggiAtti(percorso);
+      } catch {
+        continue;
+      }
+      for (const item of lista) {
+        const record = normalizzaAttoReale(item);
+        if (!record) continue;
+        totale += 1;
+        const chiave = record.eli.trim().toLowerCase();
+        if (visti.has(chiave)) duplicati += 1;
+        visti.add(chiave);
+      }
+    }
+    if (totale === 0) return;
     expect(duplicati).toBe(0);
   });
 });
