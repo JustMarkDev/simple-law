@@ -35,32 +35,36 @@ export default function Contatore({
   const ref = useRef<HTMLSpanElement>(null)
   const inVista = useInView(ref, { once: true, amount: 0.4 })
   const ridotto = useReducedMotion()
-  const [mostrato, setMostrato] = useState(0)
+  const [mostrato, setMostrato] = useState(() => (ridotto ? value : 0))
+
+  const valoreFinale = Number.isFinite(value) ? value : 0
+  const cifre = Number.isInteger(decimals) ? Math.min(Math.max(decimals, 0), 5) : 0
+  const durataAnimazione = Number.isFinite(durata) ? Math.min(Math.max(durata, 0), 5) : 1.1
 
   useEffect(() => {
     if (!inVista) return
-    if (ridotto) {
-      setMostrato(value)
+    if (ridotto || durataAnimazione === 0) {
+      setMostrato(valoreFinale)
       return
     }
-    const controlli = animate(0, value, {
-      duration: durata,
+    const controlli = animate(0, valoreFinale, {
+      duration: durataAnimazione,
       ease: 'easeOut',
       onUpdate: (v) => setMostrato(v),
     })
     return () => controlli.stop()
-  }, [inVista, value, ridotto, durata])
+  }, [inVista, valoreFinale, ridotto, durataAnimazione])
 
   return (
-    <span ref={ref} className={className}>
+    <span ref={ref} className={`tabular-nums ${className}`}>
       <span aria-hidden="true">
         {prefix}
-        {formatta(mostrato, decimals)}
+        {formatta(mostrato, cifre)}
         {suffix}
       </span>
       <span className="sr-only">
         {prefix}
-        {formatta(value, decimals)}
+        {formatta(valoreFinale, cifre)}
         {suffix}
       </span>
     </span>

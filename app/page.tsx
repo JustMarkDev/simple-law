@@ -35,6 +35,12 @@ const PASSI = [
   },
 ]
 
+const ESEMPI = [
+  { q: 'lavoro', label: 'Lavoro' },
+  { q: 'scuola', label: 'Scuola' },
+  { q: 'ambiente', label: 'Ambiente' },
+]
+
 export default async function HomePage({ searchParams }: HomeProps) {
   const sp = await searchParams
   const q = typeof sp.q === 'string' ? sp.q : ''
@@ -45,6 +51,7 @@ export default async function HomePage({ searchParams }: HomeProps) {
   const filtrate = base.filter((law) => personaRelevant(law, persona))
   const featured = tutte.find((law) => law.featured) ?? tutte[0]
   const resto = featured ? filtrate.filter((law) => law.eli !== featured.eli) : filtrate
+  const mostraFeatured = !q && persona === 'tutti'
 
   const conteggio = {
     verde: tutte.filter((law) => law.stato === 'verde').length,
@@ -55,54 +62,82 @@ export default async function HomePage({ searchParams }: HomeProps) {
   return (
     <>
       <Header />
-      <main id="contenuto">
+      <main id="contenuto" className="scroll-mt-24">
         <section className="border-b border-regola bg-carta-soft dark:border-notte-deep dark:bg-notte-soft">
-          <div className="mx-auto w-full max-w-editoriale px-4 py-10 sm:px-6 sm:py-14 lg:px-8">
+          <div className="mx-auto w-full max-w-editoriale px-4 py-8 sm:px-6 sm:py-10 lg:px-8">
             <p className="text-xs font-semibold uppercase tracking-[0.28em] text-accento dark:text-accento-chiara">
               Feed civico
             </p>
-            <h1 className="mt-3 max-w-3xl font-serif text-3xl font-bold leading-[1.08] text-inchiostro dark:text-nebbia sm:text-5xl lg:text-6xl">
+            <h1 className="mt-3 max-w-3xl font-serif text-3xl font-bold leading-[1.1] text-inchiostro dark:text-nebbia sm:text-4xl lg:text-5xl">
               Le leggi italiane, spiegate senza gergo.
             </h1>
-            <p className="mt-5 max-w-2xl text-base leading-relaxed text-inchiostro-soft dark:text-nebbia-soft sm:text-lg">
+            <p className="mt-4 max-w-2xl text-base leading-relaxed text-inchiostro-soft dark:text-nebbia-soft">
               Cosa cambia, per chi e se funziona già. Ogni scheda parte dalle fonti ufficiali e dice chiaramente quando
               una norma è ancora in attesa dei decreti attuativi.
             </p>
 
-            <div className="mt-7 max-w-2xl">
-              <SearchBar defaultValue={q} action="/leggi" />
+            <div className="mt-6 max-w-2xl">
+              <label
+                htmlFor="ricerca-home"
+                className="mb-2 block text-sm font-semibold text-inchiostro dark:text-nebbia"
+              >
+                Cerca una legge
+              </label>
+              <SearchBar
+                id="ricerca-home"
+                label="Cerca una legge"
+                defaultValue={q}
+                action="/leggi"
+                placeholder="Cerca una legge, un tema o una parola"
+                className="[&_button]:min-h-[44px] [&_input]:min-h-[44px]"
+              />
+              <p className="mt-2 text-xs text-inchiostro-soft dark:text-nebbia-soft">
+                Esempi: lavoro, scuola, ambiente. Minimo 2 caratteri.
+              </p>
             </div>
 
-            <dl className="mt-9 grid max-w-2xl grid-cols-2 gap-px border border-regola bg-regola dark:border-notte-deep dark:bg-notte-deep sm:grid-cols-4">
-              <div className="bg-carta p-4 dark:bg-notte">
-                <dt className="text-xs font-medium text-inchiostro-faint dark:text-nebbia-faint">Norme in feed</dt>
-                <dd className="mt-1 font-serif text-3xl font-bold text-inchiostro dark:text-nebbia">
-                  <Contatore value={tutte.length} />
-                </dd>
+            <dl className="mt-6 grid max-w-2xl grid-cols-2 gap-px border border-regola bg-regola dark:border-notte-deep dark:bg-notte-deep sm:grid-cols-4">
+              <div className="bg-carta p-0 dark:bg-notte">
+                <Link
+                  href="/leggi"
+                  aria-label={`Vedi tutte le norme in feed: ${tutte.length}`}
+                  className="block min-h-[44px] p-4 transition-colors hover:bg-carta-deep focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-[-2px] focus-visible:outline-inchiostro dark:hover:bg-notte-deep dark:focus-visible:outline-nebbia"
+                >
+                  <dt className="text-xs font-medium text-inchiostro-soft dark:text-nebbia-soft">Norme in feed</dt>
+                  <dd className="mt-1 font-serif text-3xl font-bold text-inchiostro dark:text-nebbia">
+                    <Contatore value={tutte.length} />
+                  </dd>
+                </Link>
               </div>
               {(['verde', 'giallo', 'rosso'] as const).map((stato) => (
-                <div key={stato} className="bg-carta p-4 dark:bg-notte">
-                  <dt className={`flex items-center gap-1.5 text-xs font-medium ${STATO_META[stato].text}`}>
-                    <span aria-hidden="true" className={`h-2 w-2 rounded-full ${STATO_META[stato].dot}`} />
-                    {STATO_META[stato].parole}
-                  </dt>
-                  <dd className="mt-1 font-serif text-3xl font-bold text-inchiostro dark:text-nebbia">
-                    <Contatore value={conteggio[stato]} />
-                  </dd>
+                <div key={stato} className="bg-carta p-0 dark:bg-notte">
+                  <Link
+                    href={`/leggi?stato=${stato}`}
+                    aria-label={`Vedi le norme con stato ${STATO_META[stato].label}: ${conteggio[stato]}`}
+                    className="block min-h-[44px] p-4 transition-colors hover:bg-carta-deep focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-[-2px] focus-visible:outline-inchiostro dark:hover:bg-notte-deep dark:focus-visible:outline-nebbia"
+                  >
+                    <dt className={`flex items-center gap-1.5 text-xs font-medium ${STATO_META[stato].text}`}>
+                      <span aria-hidden="true" className={`h-2 w-2 rounded-full ${STATO_META[stato].dot}`} />
+                      {STATO_META[stato].parole}
+                    </dt>
+                    <dd className="mt-1 font-serif text-3xl font-bold text-inchiostro dark:text-nebbia">
+                      <Contatore value={conteggio[stato]} />
+                    </dd>
+                  </Link>
                 </div>
               ))}
             </dl>
 
-            <div className="mt-7 flex flex-wrap gap-3">
+            <div className="mt-6 flex flex-wrap gap-3">
               <Link
                 href="/ministri"
-                className="border border-inchiostro px-4 py-2 text-xs font-semibold uppercase tracking-wide text-inchiostro transition-colors hover:bg-inchiostro hover:text-carta focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-inchiostro dark:border-nebbia dark:text-nebbia dark:hover:bg-nebbia dark:hover:text-notte dark:focus-visible:outline-nebbia"
+                className="inline-flex min-h-[44px] items-center border border-inchiostro px-4 py-2 text-xs font-semibold uppercase tracking-wide text-inchiostro transition-colors hover:bg-inchiostro hover:text-carta focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-inchiostro dark:border-nebbia dark:text-nebbia dark:hover:bg-nebbia dark:hover:text-notte dark:focus-visible:outline-nebbia"
               >
                 Chi decide: i ministri
               </Link>
               <Link
                 href="/statistiche"
-                className="border border-transparent px-4 py-2 text-xs font-semibold uppercase tracking-wide text-inchiostro-soft underline decoration-regola underline-offset-4 transition-colors hover:text-accento dark:text-nebbia-soft dark:decoration-notte-deep dark:hover:text-accento-chiara"
+                className="inline-flex min-h-[44px] items-center border border-transparent px-4 py-2 text-xs font-semibold uppercase tracking-wide text-inchiostro-soft underline decoration-regola underline-offset-4 transition-colors hover:text-accento dark:text-nebbia-soft dark:decoration-notte-deep dark:hover:text-accento-chiara"
               >
                 I numeri del corpus
               </Link>
@@ -111,21 +146,18 @@ export default async function HomePage({ searchParams }: HomeProps) {
         </section>
 
         <div className="mx-auto w-full max-w-editoriale px-4 py-10 sm:px-6 sm:py-12 lg:px-8">
-          {featured && (
-            <section aria-labelledby="in-evidenza">
-              <h2 id="in-evidenza" className="sr-only">
-                Norma in evidenza
-              </h2>
+          {mostraFeatured && featured && (
+            <section aria-labelledby="norma-in-evidenza" className="scroll-mt-24">
               <Comparsa>
                 <LawCard law={featured} featured headingLevel="h2" />
               </Comparsa>
             </section>
           )}
 
-          <section aria-labelledby="feed" className="mt-14">
+          <section aria-labelledby="feed" className="mt-12 scroll-mt-24">
             <div className="flex flex-col gap-4 border-b-2 border-inchiostro pb-4 dark:border-nebbia sm:flex-row sm:items-end sm:justify-between">
               <div>
-                <h2 id="feed" className="font-serif text-2xl font-bold text-inchiostro dark:text-nebbia sm:text-3xl">
+                <h2 id="feed" className="scroll-mt-24 font-serif text-2xl font-bold text-inchiostro dark:text-nebbia sm:text-3xl">
                   {q ? `Risultati per “${q}”` : 'Ultime leggi'}
                 </h2>
                 <p className="mt-1 text-sm text-inchiostro-soft dark:text-nebbia-soft">
@@ -138,29 +170,88 @@ export default async function HomePage({ searchParams }: HomeProps) {
 
             {resto.length > 0 ? (
               <ul className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-                {resto.map((law, index) => (
+                {resto.map((law) => (
                   <li key={law.eli} className="flex">
-                    <Comparsa className="flex w-full" delay={Math.min(index * 0.05, 0.4)}>
-                      <LawCard law={law} persona={persona} />
-                    </Comparsa>
+                    <LawCard law={law} persona={persona} headingLevel="h3" />
                   </li>
                 ))}
               </ul>
             ) : (
-              <p className="mt-6 border border-dashed border-regola bg-carta p-6 text-sm text-inchiostro-soft dark:border-notte-deep dark:bg-notte-soft dark:text-nebbia-soft">
-                Nessuna norma corrisponde a questa ricerca. Prova con un&apos;altra parola o togli il filtro.
+              <div className="mt-6 border border-dashed border-regola bg-carta p-6 dark:border-notte-deep dark:bg-notte-soft">
+                <h3 className="font-serif text-lg font-bold text-inchiostro dark:text-nebbia">
+                  Nessuna norma trovata
+                </h3>
+                <p className="mt-2 text-sm leading-relaxed text-inchiostro-soft dark:text-nebbia-soft">
+                  Nessuna norma corrisponde a questa ricerca
+                  {q ? ` per “${q}”` : ''}
+                  {persona !== 'tutti' ? ` con il filtro “${persona}”` : ''}. Prova con un&apos;altra parola o
+                  rimuovi i filtri.
+                </p>
+                {(q || persona !== 'tutti') && (
+                  <div className="mt-4 flex flex-wrap gap-2" aria-label="Filtri attivi">
+                    {q && (
+                      <Link
+                        href={persona !== 'tutti' ? `/?persona=${persona}` : '/'}
+                        className="inline-flex min-h-[44px] items-center gap-1 border border-regola bg-carta-soft px-3 py-2 text-xs font-semibold text-inchiostro transition-colors hover:border-inchiostro dark:border-notte-deep dark:bg-notte dark:text-nebbia dark:hover:border-nebbia"
+                      >
+                        Ricerca: “{q}” <span aria-hidden="true">×</span>
+                        <span className="sr-only"> (rimuovi la ricerca)</span>
+                      </Link>
+                    )}
+                    {persona !== 'tutti' && (
+                      <Link
+                        href={q ? `/?q=${encodeURIComponent(q)}` : '/'}
+                        className="inline-flex min-h-[44px] items-center gap-1 border border-regola bg-carta-soft px-3 py-2 text-xs font-semibold text-inchiostro transition-colors hover:border-inchiostro dark:border-notte-deep dark:bg-notte dark:text-nebbia dark:hover:border-nebbia"
+                      >
+                        Persona: {persona} <span aria-hidden="true">×</span>
+                        <span className="sr-only"> (rimuovi il filtro persona)</span>
+                      </Link>
+                    )}
+                  </div>
+                )}
+                <p className="mt-4 text-sm font-semibold text-inchiostro dark:text-nebbia">Prova con:</p>
+                <ul className="mt-2 flex flex-wrap gap-2">
+                  {ESEMPI.map((esempio) => (
+                    <li key={esempio.q}>
+                      <Link
+                        href={`/?q=${esempio.q}`}
+                        className="inline-flex min-h-[44px] items-center border border-regola px-3 py-2 text-sm text-inchiostro-soft transition-colors hover:border-inchiostro hover:text-inchiostro dark:border-notte-deep dark:text-nebbia-soft dark:hover:border-nebbia dark:hover:text-nebbia"
+                      >
+                        {esempio.label}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+                <p className="mt-5">
+                  <Link
+                    href="/"
+                    className="inline-flex min-h-[44px] items-center bg-inchiostro px-5 py-3 text-sm font-semibold text-carta transition-colors hover:bg-inchiostro-soft focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-inchiostro dark:bg-nebbia dark:text-notte dark:hover:bg-nebbia-soft dark:focus-visible:outline-nebbia"
+                  >
+                    Rimuovi filtri
+                  </Link>
+                </p>
+              </div>
+            )}
+            {resto.length > 0 && (
+              <p className="mt-6">
+                <Link
+                  href="/leggi"
+                  className="inline-flex min-h-[44px] items-center border border-inchiostro px-5 py-3 text-sm font-semibold text-inchiostro transition-colors hover:bg-inchiostro hover:text-carta focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-inchiostro dark:border-nebbia dark:text-nebbia dark:hover:bg-nebbia dark:hover:text-notte dark:focus-visible:outline-nebbia"
+                >
+                  Sfoglia tutte le leggi
+                </Link>
               </p>
             )}
           </section>
 
-          <section aria-labelledby="come-funziona" className="mt-16">
-            <h2 id="come-funziona" className="font-serif text-2xl font-bold text-inchiostro dark:text-nebbia sm:text-3xl">
+          <section aria-labelledby="come-funziona" className="mt-16 scroll-mt-24">
+            <h2 id="come-funziona" className="scroll-mt-24 font-serif text-2xl font-bold text-inchiostro dark:text-nebbia sm:text-3xl">
               Come funziona
             </h2>
             <ol className="mt-6 grid gap-px border border-regola bg-regola dark:border-notte-deep dark:bg-notte-deep sm:grid-cols-3">
               {PASSI.map((passo, index) => (
                 <li key={passo.titolo} className="bg-carta p-5 dark:bg-notte">
-                  <span className="font-serif text-3xl font-bold text-accento dark:text-accento-chiara">
+                  <span aria-hidden="true" className="font-serif text-3xl font-bold text-accento dark:text-accento-chiara">
                     {index + 1}
                   </span>
                   <h3 className="mt-2 text-sm font-bold uppercase tracking-wide text-inchiostro dark:text-nebbia">
@@ -183,24 +274,22 @@ export default async function HomePage({ searchParams }: HomeProps) {
           </section>
 
           {ministri.length > 0 && (
-            <section aria-labelledby="ministri" className="mt-16">
+            <section aria-labelledby="ministri" className="mt-16 scroll-mt-24">
               <div className="flex items-end justify-between gap-4 border-b border-regola pb-3 dark:border-notte-deep">
-                <h2 id="ministri" className="font-serif text-2xl font-bold text-inchiostro dark:text-nebbia sm:text-3xl">
+                <h2 id="ministri" className="scroll-mt-24 font-serif text-2xl font-bold text-inchiostro dark:text-nebbia sm:text-3xl">
                   Ministri
                 </h2>
                 <Link
                   href="/ministri"
-                  className="text-xs font-semibold uppercase tracking-wide text-accento underline underline-offset-2 dark:text-accento-chiara"
+                  className="inline-flex min-h-[44px] items-center text-xs font-semibold uppercase tracking-wide text-accento underline underline-offset-2 dark:text-accento-chiara"
                 >
                   Vedi tutti
                 </Link>
               </div>
               <ul className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-                {ministri.slice(0, 4).map((minister, index) => (
+                {ministri.slice(0, 4).map((minister) => (
                   <li key={minister.slug} className="flex">
-                    <Comparsa className="flex w-full" delay={Math.min(index * 0.05, 0.3)}>
-                      <MinisterCard minister={minister} />
-                    </Comparsa>
+                    <MinisterCard minister={minister} />
                   </li>
                 ))}
               </ul>

@@ -1,7 +1,7 @@
 'use client'
 
 import { useRouter } from 'next/navigation'
-import { useState, type FormEvent } from 'react'
+import { useState, useTransition, type FormEvent } from 'react'
 
 interface SearchBarProps {
   defaultValue?: string
@@ -10,7 +10,7 @@ interface SearchBarProps {
   id?: string
   label?: string
   className?: string
-  /** Parametri esistenti da preservare (tipo/anno/sort/persona). */
+  /** Parametri esistenti da preservare (tipo/anno/sort/persona/per/vista). */
   query?: Record<string, string>
 }
 
@@ -26,6 +26,7 @@ export default function SearchBar({
 }: SearchBarProps) {
   const router = useRouter()
   const [value, setValue] = useState(defaultValue)
+  const [inAttesa, avviaTransizione] = useTransition()
 
   function onSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault()
@@ -36,13 +37,19 @@ export default function SearchBar({
     }
     if (q) params.set('q', q)
     else params.delete('q')
+    params.delete('page')
     const qs = params.toString()
-    router.push(qs ? `${action}?${qs}` : action)
+    avviaTransizione(() => {
+      router.push(qs ? `${action}?${qs}` : action)
+    })
   }
 
   return (
-    <form role="search" onSubmit={onSubmit} className={className}>
-      <label htmlFor={id} className="sr-only">
+    <form role="search" onSubmit={onSubmit} className={className} aria-busy={inAttesa}>
+      <label
+        htmlFor={id}
+        className="mb-1 block text-xs font-semibold uppercase tracking-wide text-inchiostro-soft dark:text-nebbia-soft"
+      >
         {label}
       </label>
       <div className="flex items-center gap-2 border border-inchiostro bg-carta p-1.5 focus-within:ring-2 focus-within:ring-inchiostro/30 dark:border-nebbia/40 dark:bg-notte-soft dark:focus-within:ring-nebbia/25">
@@ -60,15 +67,22 @@ export default function SearchBar({
           placeholder={placeholder}
           autoComplete="off"
           maxLength={200}
-          className="min-w-0 flex-1 bg-transparent py-2 text-sm text-inchiostro placeholder:text-inchiostro-faint focus:outline-none dark:text-nebbia dark:placeholder:text-nebbia-faint"
+          disabled={inAttesa}
+          aria-busy={inAttesa}
+          className="min-h-[44px] min-w-0 flex-1 bg-transparent py-2 text-sm text-inchiostro placeholder:text-inchiostro-faint focus:outline-none disabled:opacity-60 dark:text-nebbia dark:placeholder:text-nebbia-faint"
         />
         <button
           type="submit"
-          className="shrink-0 bg-inchiostro px-4 py-2 text-xs font-semibold uppercase tracking-wide text-carta transition-colors hover:bg-inchiostro-soft focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-inchiostro dark:bg-nebbia dark:text-notte dark:hover:bg-nebbia-soft dark:focus-visible:outline-nebbia"
+          disabled={inAttesa}
+          aria-disabled={inAttesa}
+          className="inline-flex min-h-[44px] shrink-0 items-center bg-inchiostro px-4 py-2 text-xs font-semibold uppercase tracking-wide text-carta transition-colors hover:bg-inchiostro-soft focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-inchiostro disabled:opacity-60 dark:bg-nebbia dark:text-notte dark:hover:bg-nebbia-soft dark:focus-visible:outline-nebbia"
         >
-          Cerca
+          {inAttesa ? 'Ricerca…' : 'Cerca'}
         </button>
       </div>
+      <span aria-live="polite" className="sr-only">
+        {inAttesa ? 'Ricerca in corso, aggiornamento dei risultati.' : ''}
+      </span>
     </form>
   )
 }

@@ -2,6 +2,8 @@ import { formatEuro } from './seed-fallback'
 
 interface QualityBadgesProps {
   gulpease?: number
+  /** Indice Flesch-Vacca (0-100, facoltativo): se presente viene mediato con Gulpease. */
+  fleschVacca?: number
   /** Punteggio di qualità complessivo (euristico, 0-100). */
   qualita?: number
   soldiBloccati?: number
@@ -11,11 +13,21 @@ interface QualityBadgesProps {
   className?: string
 }
 
-function gulpeaseLabel(score: number): string {
-  if (score >= 80) return 'Molto chiaro'
-  if (score >= 60) return 'Chiaro'
-  if (score >= 40) return 'Medio'
+type LivelloLeggibilita = 'Facile' | 'Medio' | 'Difficile'
+
+function livelloLeggibilita(gulpease?: number, fleschVacca?: number): LivelloLeggibilita | null {
+  const punteggi = [gulpease, fleschVacca].filter((v): v is number => typeof v === 'number' && Number.isFinite(v))
+  if (punteggi.length === 0) return null
+  const media = punteggi.reduce((a, b) => a + b, 0) / punteggi.length
+  if (media >= 60) return 'Facile'
+  if (media >= 40) return 'Medio'
   return 'Difficile'
+}
+
+function dettaglioLeggibilita(livello: LivelloLeggibilita): string {
+  if (livello === 'Facile') return 'Facile da leggere'
+  if (livello === 'Medio') return 'Leggibilità media'
+  return 'Lettura impegnativa'
 }
 
 /**
@@ -24,6 +36,7 @@ function gulpeaseLabel(score: number): string {
  */
 export default function QualityBadges({
   gulpease,
+  fleschVacca,
   qualita,
   soldiBloccati,
   pareri,
@@ -33,12 +46,14 @@ export default function QualityBadges({
 }: QualityBadgesProps) {
   const items: { key: string; label: string; value: string; detail?: string; tone: string }[] = []
 
-  if (typeof gulpease === 'number' && gulpease > 0) {
+  const livello = livelloLeggibilita(gulpease, fleschVacca)
+  if (livello) {
+    const valore = typeof gulpease === 'number' && Number.isFinite(gulpease) ? `${Math.round(gulpease)}/100` : livello
     items.push({
-      key: 'gulpease',
+      key: 'leggibilita',
       label: 'Leggibilità',
-      value: `${gulpease}/100`,
-      detail: gulpeaseLabel(gulpease),
+      value: valore,
+      detail: `${dettaglioLeggibilita(livello)} (${livello.toLowerCase()})`,
       tone: 'bg-sky-50 text-sky-900 ring-sky-200 dark:bg-sky-950/40 dark:text-sky-200 dark:ring-sky-900',
     })
   }

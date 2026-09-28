@@ -41,8 +41,18 @@ html.dark ::selection {
 
 @layer base {
   :focus-visible {
-    outline: 2px solid currentColor;
+    outline: 3px solid #9c1f29;
     outline-offset: 2px;
+    border-radius: 2px;
+  }
+
+  html.dark :focus-visible {
+    outline-color: #e2878d;
+  }
+
+  /* Ancore mai nascoste sotto l'header fisso. */
+  [id] {
+    scroll-margin-top: 6rem;
   }
 
   h1,
@@ -53,9 +63,132 @@ html.dark ::selection {
   p {
     text-wrap: pretty;
   }
+
+  /* Barra di scorrimento sobria, coerente con carta/notte. */
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: #776c5b #eae2d2;
+  }
+
+  html.dark * {
+    scrollbar-color: #8b8172 #1b1916;
+  }
+
+  *::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+
+  *::-webkit-scrollbar-track {
+    background: #eae2d2;
+  }
+
+  html.dark *::-webkit-scrollbar-track {
+    background: #1b1916;
+  }
+
+  *::-webkit-scrollbar-thumb {
+    background: #776c5b;
+    border-radius: 8px;
+    border: 2px solid #eae2d2;
+  }
+
+  html.dark *::-webkit-scrollbar-thumb {
+    background: #8b8172;
+    border-color: #1b1916;
+  }
+
+  /* Stati di caricamento/disabilitazione annunciati ai lettori di schermo. */
+  [aria-busy="true"] {
+    cursor: progress;
+  }
+
+  [aria-disabled="true"],
+  :disabled {
+    cursor: not-allowed;
+  }
 }
 
 @layer components {
+  /* Collegamento "Vai al contenuto" visibile solo con tastiera. */
+  .salta-contenuto {
+    position: absolute;
+    left: 1rem;
+    top: -4rem;
+    z-index: 100;
+    display: inline-flex;
+    min-height: 2.75rem;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    font-weight: 600;
+    background: #1a1714;
+    color: #faf8f3;
+    border-radius: 0.375rem;
+    transition: top 0.15s ease-out;
+  }
+
+  .salta-contenuto:focus-visible {
+    top: 1rem;
+    outline: 3px solid #9c1f29;
+    outline-offset: 2px;
+  }
+
+  html.dark .salta-contenuto {
+    background: #f3efe4;
+    color: #121110;
+  }
+
+  /* Bersaglio minimo di tocco 44px per WCAG 2.5.8. */
+  .obiettivo-tocco {
+    min-height: 2.75rem;
+    min-width: 2.75rem;
+  }
+
+  /* Troncatura su 2/3 righe con ripiego per browser senza line-clamp. */
+  .tronca-2,
+  .tronca-3 {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .tronca-2 {
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+  }
+
+  .tronca-3 {
+    -webkit-line-clamp: 3;
+    line-clamp: 3;
+  }
+
+  @supports not (-webkit-line-clamp: 2) {
+    .tronca-2,
+    .tronca-3 {
+      position: relative;
+      max-height: 4.5em;
+    }
+
+    .tronca-3 {
+      max-height: 6.75em;
+    }
+
+    .tronca-2::after,
+    .tronca-3::after {
+      content: "…";
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      padding-left: 0.25rem;
+      background: inherit;
+    }
+  }
+
+  /* Liste lunghe: il browser può saltare il rendering fuori schermo. */
+  .lista-paginata {
+    content-visibility: auto;
+    contain-intrinsic-size: auto 600px;
+  }
   /* Filetto tricolore usato nelle testate e nei piè di pagina. */
   .riga-tricolore {
     display: flex;
@@ -78,10 +211,103 @@ html.dark ::selection {
     line-height: 0.8;
     font-weight: 700;
   }
+
+  /* Scheletro di caricamento per le 12 card della lista leggi. */
+  .scheletro-card {
+    border-radius: 0.5rem;
+    background: linear-gradient(100deg, #eae2d2 40%, #f3eee3 50%, #eae2d2 60%);
+    background-size: 200% 100%;
+    animation: onda-scheletro 1.4s ease-in-out infinite;
+  }
+
+  html.dark .scheletro-card {
+    background: linear-gradient(100deg, #302b24 40%, #1b1916 50%, #302b24 60%);
+    background-size: 200% 100%;
+  }
+}
+
+@keyframes onda-scheletro {
+  from {
+    background-position: 200% 0;
+  }
+  to {
+    background-position: -200% 0;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .scheletro-card {
+    animation: none;
+  }
+
+  .lista-paginata {
+    content-visibility: visible;
+  }
+}
+
+/* Stampa delle schede norma: solo il contenuto, senza navigazione. */
+@media print {
+  .salta-contenuto,
+  header,
+  footer,
+  nav,
+  aside,
+  .no-print {
+    display: none !important;
+  }
+
+  html,
+  html.dark {
+    background: #fff !important;
+  }
+
+  body {
+    background: #fff !important;
+    color: #000 !important;
+    font-size: 12pt;
+    line-height: 1.5;
+  }
+
+  main,
+  article {
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  h1,
+  h2,
+  h3 {
+    break-after: avoid;
+    break-inside: avoid;
+  }
+
+  p,
+  li {
+    orphans: 3;
+    widows: 3;
+  }
+
+  a {
+    color: #000 !important;
+    text-decoration: underline;
+  }
+
+  a[href^="http"]::after {
+    content: " (" attr(href) ")";
+    font-size: 0.85em;
+    word-break: break-all;
   }
 }

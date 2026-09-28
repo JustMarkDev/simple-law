@@ -326,13 +326,25 @@ export async function getMinisterBySlug(slug: string): Promise<MinisterRecord | 
   return ministri.find((m) => m.slug.toLowerCase() === cercato) ?? null;
 }
 
-/** Prepara i dati per l'upsert Prisma, inclusi i campi arricchiti in `extra`. Esportata per i test. */
+/** Prepara i dati per l'upsert Prisma, inclusi i campi arricchiti in `extra`. Esportata per i test.
+ * Il testo integrale NON viene mai persistito in `extra` (scala 100GB: evita TOAST
+ * explosion): si salvano solo `testoHash`/`lunghezzaTesto` (via `toPrismaScala`
+ * nel chiamante o qui se presenti su `law`). Eccezione: testi brevi <=8000
+ * caratteri restano in `extra.testo` per retrocompatibilita' con seed/UI. */
 export function toPrismaData(law: LawRecordExtra) {
   const data = new Date(`${law.dataEmanazione}T00:00:00Z`);
   const extra: Record<string, unknown> = {};
   if (law.air !== undefined) extra.air = law.air;
   if (law.attuativi !== undefined) extra.attuativi = law.attuativi;
-  if (law.testo !== undefined) extra.testo = law.testo;
+  if (typeof law.testo === "string" && law.testo) {
+    if (law.testo.length <= 8000) {
+      extra.testo = law.testo;
+    } else {
+      const scala = toPrismaScala(law);
+      if (scala.testoHash !== undefined) extra.testoHash = scala.testoHash;
+      if (scala.lunghezzaTesto !== undefined) extra.lunghezzaTesto = scala.lunghezzaTesto;
+    }
+  }
   if (law.fiducia !== undefined) extra.fiducia = law.fiducia;
   if (law.omnibus !== undefined) extra.omnibus = law.omnibus;
   if (law.dimostrativo !== undefined) extra.dimostrativo = law.dimostrativo;
@@ -354,6 +366,10 @@ export function toPrismaData(law: LawRecordExtra) {
   if (law.qualita !== undefined) extra.qualita = law.qualita;
   if (law.semplificata !== undefined) extra.semplificata = law.semplificata;
 
+  // Colonne scala: sempre valorizzate quando il testo esiste (il testo resta
+  // solo su shard; in `extra` solo se breve per retrocompatibilita').
+  const scala = toPrismaScala(law);
+
   return {
     nir: law.nir,
     tipo: law.tipo,
@@ -364,11 +380,32 @@ export function toPrismaData(law: LawRecordExtra) {
     stato: law.stato,
     gulpease: law.gulpease,
     fonti: law.fonti ? (law.fonti as unknown as Prisma.InputJsonValue) : Prisma.JsonNull,
+    testoHash: scala.testoHash ?? null,
+    lunghezzaTesto: scala.lunghezzaTesto ?? null,
     extra:
       Object.keys(extra).length > 0
         ? (extra as unknown as Prisma.InputJsonValue)
         : Prisma.JsonNull,
   };
+}
+
+/** Calcola i campi scala (`testoHash`, `lunghezzaTesto`) dal testo in `extra`. Pura. */
+export function toPrismaScala(law: LawRecordExtra): {
+  testoHash?: string;
+  lunghezzaTesto?: number;
+} {
+  try {
+    const testo = typeof law.testo === "string" ? law.testo : "";
+    if (!testo) return {};
+    const out: { testoHash?: string; lunghezzaTesto?: number } = {
+      lunghezzaTesto: testo.length,
+    };
+    const hash = sha256Hex(testo);
+    if (hash) out.testoHash = hash;
+    return out;
+  } catch {
+    return {};
+  }
 }
 
 /** Salva/aggiorna un elenco di norme. Restituisce quante ne ha scritte (0 senza DB).
@@ -387,11 +424,14 @@ export async function persistLaws(laws: LawRecordExtra[]): Promise<number> {
   let scritti = 0;
   for (const law of coda) {
     try {
-      const data = toPrismaData(law);
+      const data = toPrismaData(law) as unknown as Prisma.LawCreateInput;
+      const scala = toPrismaScala(law) as unknown as Partial<Prisma.LawCreateInput>;
+      const piena = { ...data, ...scala } as Prisma.LawCreateInput;
+      const update = { ...data, ...scala } as Prisma.LawUpdateInput;
       await prisma.law.upsert({
         where: { eli: law.eli },
-        create: { eli: law.eli, ...data },
-        update: data,
+        create: { ...piena, eli: law.eli },
+        update,
       });
       scritti += 1;
     } catch {
@@ -399,6 +439,62 @@ export async function persistLaws(laws: LawRecordExtra[]): Promise<number> {
     }
   }
   return scritti;
+}
+
+/**
+ * Persist batch per import 100GB: chunk da 500 con `createMany(skipDuplicates)`.
+ * Deduplica per ELI, scrive chunk in sequenza, mai lancia (restituisce scritti).
+ * Nota: `createMany` non aggiorna i duplicati; per l'upsert usare `persistLaws`.
+ */
+export async function persistLawsBatched(
+  laws: readonly LawRecordExtra[],
+  batchSize = BATCH_PERSIST_SIZE,
+): Promise<number> {
+  const prisma = getPrisma();
+  if (!prisma || laws.length === 0) return 0;
+  try {
+    const visti = new Set<string>();
+    const coda = laws.filter((law) => {
+      const chiave = (law.eli ?? "").trim();
+      if (!chiave || chiave.length > 500 || visti.has(chiave)) return false;
+      visti.add(chiave);
+      return true;
+    });
+    if (coda.length === 0) return 0;
+    let scritti = 0;
+    for (const gruppo of chunk(coda, batchSize)) {
+      try {
+        const righe = gruppo.map((law) => ({
+          eli: law.eli,
+          ...(toPrismaData(law) as unknown as Record<string, unknown>),
+          ...toPrismaScala(law),
+        }));
+        const res = await prisma.law.createMany({
+          data: righe as unknown as Prisma.LawCreateManyInput[],
+          skipDuplicates: true,
+        });
+        scritti += res.count;
+      } catch {
+        // fallback per-chunk a upsert sequenziale senza interrompere
+        for (const law of gruppo) {
+          try {
+            const data = toPrismaData(law) as unknown as Prisma.LawCreateInput;
+            await prisma.law.upsert({
+              where: { eli: law.eli },
+              create: { ...data, eli: law.eli },
+              update: data as unknown as Prisma.LawUpdateInput,
+            });
+            scritti += 1;
+          } catch {
+            // salta singola
+          }
+        }
+      }
+    }
+    return scritti;
+  } catch {
+    return 0;
+  }
 }
 
 /* ---------------------------------------------------------------------------
@@ -410,12 +506,17 @@ export type LawSort =
   | "data_asc"
   | "titolo_asc"
   | "gulpease_desc"
-  | "qualita_desc";
+  | "qualita_desc"
+  | "rilevanza";
 
 export interface LawFilters {
   q?: string;
   tipo?: string;
   anno?: string | number;
+  /** Filtro esatto su `stato` (es. `in_vigore`). Case-insensitive, max 60 char. */
+  stato?: string;
+  /** Soglia minima di leggibilita' Gulpease (incluso). */
+  minGulpease?: number | string;
 }
 
 export interface ListLawsParams extends LawFilters {
@@ -433,38 +534,164 @@ export interface ListLawsResult {
 
 export const MAX_PER_PAGE = 200;
 
+/** Dimensione chunk per persist/import batch (scala 100GB, `createMany` 500). */
+export const BATCH_PERSIST_SIZE = 500;
+
+/** Take massimo per pagina a cursore (`cursor=eli,take<=500`). */
+export const CURSOR_TAKE_MAX = 500;
+
+/** TTL cache in-memory per `getStats` (60s, LRU a singola chiave). */
+export const STATS_CACHE_TTL_MS = 60_000;
+
+/** Soglia oltre la quale `qualita_desc` usa fallback `data_desc` su DB (no full-scan). */
+export const QUALITA_FALLBACK_SOGLIA = 1000;
+
 interface FiltriNormalizzati {
   q: string;
   tipo: string;
   anno: string;
+  stato: string;
+  minGulpease: number | undefined;
+}
+
+function parseStato(value: unknown): string {
+  if (typeof value !== "string") return "";
+  const s = value.trim().toLowerCase().slice(0, 60);
+  // Allowlist leggera: lettere, numeri, trattini e underscore (stati canonici).
+  if (!s || !/^[a-z0-9_-]+$/.test(s)) return "";
+  return s;
+}
+
+function parseMinGulpease(value: unknown): number | undefined {
+  const n = typeof value === "string" ? Number(value.trim()) : (value as number);
+  if (typeof n !== "number" || !Number.isFinite(n)) return undefined;
+  if (n <= 0) return undefined;
+  return Math.min(100, n);
 }
 
 function normalizzaFiltri(filters: LawFilters): FiltriNormalizzati {
+  // `q`: min 2 char (fallback ILIKE sotto), max 200 char anti-abuso.
+  const grezzo = parseQuery(filters.q ?? "");
+  const qTroncata = grezzo.slice(0, 200).toLowerCase();
+  const q = qTroncata.length >= 2 ? qTroncata : "";
   return {
-    q: parseQuery(filters.q ?? "").toLowerCase(),
+    q,
     tipo: parseTipo(filters.tipo ?? ""),
     anno: parseAnno(filters.anno),
+    stato: parseStato(filters.stato),
+    minGulpease: parseMinGulpease(filters.minGulpease),
   };
 }
 
-function testiRicerca(law: LawRecordExtra): string[] {
+/** Campi testuali usati dal fallback di ricerca. Esportata per compat/test. */
+export function testiRicerca(law: LawRecordExtra): string[] {
   return (["titolo", "sintesi", "numero", "tipo", "nir", "eli"] as const)
     .map((campo) => law[campo])
     .filter((campo): campo is string => typeof campo === "string")
     .map((campo) => campo.toLowerCase());
 }
 
-/** Verifica se una norma soddisfa `q`, `tipo` e `anno`. Pura. */
+/* ---------------------------------------------------------------------------
+ * Ranking BM25-lite in memoria (fallback quando il DB e' assente).
+ * Pesi: titolo 3 > sintesi 2 > numero/tipo/nir/eli 1; frase esatta con
+ * virgolette vale doppio. Pura, mai lancia.
+ * ------------------------------------------------------------------------- */
+
+/** Estrae termini e frasi esatte (`"..."`) da una query normalizzata. */
+export function estraiTermini(q: string): { termini: string[]; frasi: string[] } {
+  try {
+    const testo = (q ?? "").toLowerCase();
+    const frasi: string[] = [];
+    const senzaFrasi = testo.replace(/"([^"]{2,200})"/g, (_, f: string) => {
+      frasi.push(f.trim());
+      return " ";
+    });
+    const termini = senzaFrasi
+      .split(/[^a-z0-9à-ÿ]+/i)
+      .map((t) => t.trim())
+      .filter((t) => t.length >= 2)
+      .slice(0, 20);
+    return { termini, frasi: frasi.filter((f) => f.length >= 2).slice(0, 5) };
+  } catch {
+    return { termini: [], frasi: [] };
+  }
+}
+
+/**
+ * Punteggio di rilevanza BM25-lite: titolo>sintesi>numero/tipo/nir/eli.
+ * Restituisce 0 se nessun termine/frase corrisponde.
+ */
+export function punteggioRilevanza(law: LawRecordExtra, q: string): number {
+  try {
+    const { termini, frasi } = estraiTermini(q);
+    if (termini.length === 0 && frasi.length === 0) return 0;
+    const titolo = (law.titolo ?? "").toLowerCase();
+    const sintesi = (law.sintesi ?? "").toLowerCase();
+    const numero = String(law.numero ?? "").toLowerCase();
+    const tipo = String(law.tipo ?? "").toLowerCase();
+    const nir = String(law.nir ?? "").toLowerCase();
+    const eli = String(law.eli ?? "").toLowerCase();
+    let punti = 0;
+    for (const frase of frasi) {
+      if (titolo.includes(frase)) punti += 6;
+      if (sintesi.includes(frase)) punti += 4;
+      if (numero.includes(frase) || tipo.includes(frase) || nir.includes(frase)) punti += 2;
+    }
+    for (const t of termini) {
+      if (titolo.includes(t)) punti += 3;
+      if (sintesi.includes(t)) punti += 2;
+      if (numero.includes(t)) punti += 1;
+      if (tipo.includes(t)) punti += 1;
+      if (nir.includes(t) || eli.includes(t)) punti += 1;
+    }
+    return punti;
+  } catch {
+    return 0;
+  }
+}
+
+/** Ordina per rilevanza BM25-lite (a parita': data desc, poi ELI). Pura. */
+export function ordinaPerRilevanza(
+  items: LawRecordExtra[],
+  q: string,
+): LawRecordExtra[] {
+  const righe = items
+    .map((law) => ({ law, punti: punteggioRilevanza(law, q) }))
+    .filter((r) => r.punti > 0);
+  righe.sort(
+    (a, b) =>
+      b.punti - a.punti ||
+      b.law.dataEmanazione.localeCompare(a.law.dataEmanazione) ||
+      a.law.eli.localeCompare(b.law.eli),
+  );
+  return righe.map((r) => r.law);
+}
+
+/** Verifica se una norma soddisfa `q`, `tipo`, `anno`, `stato` e `minGulpease`. Pura. */
 export function matchesFilters(law: LawRecordExtra, filters: LawFilters): boolean {
-  const { q, tipo, anno } = normalizzaFiltri(filters);
-  if (tipo && !law.tipo.toLowerCase().includes(tipo)) return false;
+  const { q, tipo, anno, stato, minGulpease } = normalizzaFiltri(filters);
+  if (tipo && law.tipo.toLowerCase() !== tipo) {
+    // Compat seed: confronto esatto, con fallback `includes` per valori legacy.
+    if (!law.tipo.toLowerCase().includes(tipo)) return false;
+  }
   if (anno && !law.dataEmanazione.startsWith(anno)) return false;
-  if (q && !testiRicerca(law).some((campo) => campo.includes(q))) return false;
+  if (stato && (law.stato ?? "").toLowerCase() !== stato) return false;
+  if (minGulpease !== undefined && !((law.gulpease ?? -1) >= minGulpease)) return false;
+  if (q) {
+    const { termini, frasi } = estraiTermini(q);
+    // Senza termini validi (es. query <2 char) non filtrare: fallback ILIKE del chiamante.
+    if (termini.length === 0 && frasi.length === 0) return true;
+    if (punteggioRilevanza(law, q) <= 0) return false;
+  }
   return true;
 }
 
 /** Ordina una lista di norme secondo `sort`. Pura (restituisce una copia). */
-export function sortLaws(items: LawRecordExtra[], sort: LawSort = "data_desc"): LawRecordExtra[] {
+export function sortLaws(
+  items: LawRecordExtra[],
+  sort: LawSort = "data_desc",
+  q = "",
+): LawRecordExtra[] {
   const copia = [...items];
   switch (sort) {
     case "data_asc":
@@ -483,6 +710,15 @@ export function sortLaws(items: LawRecordExtra[], sort: LawSort = "data_desc"): 
     case "qualita_desc":
       copia.sort((a, b) => (b.qualita ?? -1) - (a.qualita ?? -1) || a.eli.localeCompare(b.eli));
       break;
+    case "rilevanza": {
+      const ordinate = ordinaPerRilevanza(copia, q);
+      // Se la query non produce punteggio, mantieni l'ordine cronologico.
+      if (ordinate.length > 0) return ordinate;
+      copia.sort(
+        (a, b) => b.dataEmanazione.localeCompare(a.dataEmanazione) || a.eli.localeCompare(b.eli),
+      );
+      break;
+    }
     case "data_desc":
     default:
       copia.sort(
@@ -493,9 +729,12 @@ export function sortLaws(items: LawRecordExtra[], sort: LawSort = "data_desc"): 
 }
 
 function wherePrisma(filters: LawFilters): Prisma.LawWhereInput {
-  const { q, tipo, anno } = normalizzaFiltri(filters);
+  const { q, tipo, anno, stato, minGulpease } = normalizzaFiltri(filters);
   const where: Prisma.LawWhereInput = {};
-  if (tipo) where.tipo = { contains: tipo, mode: "insensitive" };
+  // `equals` (non `contains`) per usare gli indici su `tipo`/`stato`.
+  if (tipo) where.tipo = { equals: tipo, mode: "insensitive" };
+  if (stato) where.stato = { equals: stato, mode: "insensitive" };
+  if (minGulpease !== undefined) where.gulpease = { gte: minGulpease };
   if (anno) {
     where.dataEmanazione = {
       gte: new Date(`${anno}-01-01T00:00:00.000Z`),
@@ -523,10 +762,100 @@ function orderByPrisma(sort: LawSort): Prisma.LawOrderByWithRelationInput[] {
       return [{ titolo: "asc" }, { eli: "asc" }];
     case "gulpease_desc":
       return [{ gulpease: "desc" }, { eli: "asc" }];
+    case "rilevanza":
+      // Ranking `ts_rank` nel layer API/SQL dedicato; qui fallback cronologico
+      // indicizzato (l'ordinamento BM25-lite vive nel fallback in memoria).
+      return [{ dataEmanazione: "desc" }, { eli: "asc" }];
+    case "qualita_desc":
+      // `qualita` vive in `extra` JSON: fallback indicizzato, mai full-scan.
+      return [{ dataEmanazione: "desc" }, { eli: "asc" }];
     case "data_desc":
     default:
       return [{ dataEmanazione: "desc" }, { eli: "asc" }];
   }
+}
+
+/* ---------------------------------------------------------------------------
+ * Chunk / batch / cursore (scala 100GB). Tutti never-throw.
+ * ------------------------------------------------------------------------- */
+
+/** Divide un elenco in chunk da `size` (default 500). Pura. */
+export function chunk<T>(items: readonly T[], size = BATCH_PERSIST_SIZE): T[][] {
+  const n = Math.min(5000, Math.max(1, Math.floor(size) || BATCH_PERSIST_SIZE));
+  const out: T[][] = [];
+  for (let i = 0; i < items.length; i += n) out.push(items.slice(i, i + n));
+  return out;
+}
+
+/** Calcola un'impronta esadecimale stabile in modo sincrono; `null` se non calcolabile.
+ * Puro JS (niente `node:crypto`): funziona anche nel bundle client (LawCard ->
+ * seed-fallback -> db). Non e' uno SHA-256 crittografico ma e' deterministico
+ * e sufficiente come `testoHash` per dedup/soglie su scala 100GB. */
+export function sha256Hex(testo: string): string | null {
+  try {
+    if (typeof testo !== "string" || !testo) return null;
+    // cyrb53 x2 per 128 bit, espanso a 64 char per compat con SHA-256 hex.
+    const cyrb = (str: string, seed: number): number => {
+      let h1 = 0xdeadbeef ^ seed;
+      let h2 = 0x41c6ce57 ^ seed;
+      for (let i = 0; i < str.length; i++) {
+        const ch = str.charCodeAt(i);
+        h1 = Math.imul(h1 ^ ch, 2654435761);
+        h2 = Math.imul(h2 ^ ch, 1597334677);
+      }
+      h1 = Math.imul(h1 ^ (h1 >>> 16), 2246822507) ^ Math.imul(h2 ^ (h2 >>> 13), 3266489909);
+      h2 = Math.imul(h2 ^ (h2 >>> 16), 2246822507) ^ Math.imul(h1 ^ (h1 >>> 13), 3266489909);
+      return 4294967296 * (2097151 & h2) + (h1 >>> 0);
+    };
+    const a = cyrb(testo, 0x1234).toString(16).padStart(14, "0");
+    const b = cyrb(testo, 0xabcd).toString(16).padStart(14, "0");
+    const c = cyrb(`${testo.length}:${testo.slice(0, 512)}`, 0x55aa).toString(16).padStart(14, "0");
+    const d = cyrb(`${testo.slice(-512)}:${testo.length}`, 0x77ee).toString(16).padStart(14, "0");
+    return `${a}${b}${c}${d}`.slice(0, 64).padEnd(64, "0");
+  } catch {
+    return null;
+  }
+}
+
+export interface CursorParams extends LawFilters {
+  /** Cursore opaco `dataEmanazione|eli` (o ELI semplice per compat). */
+  cursor?: string;
+  take?: number;
+  sort?: LawSort;
+}
+
+export interface CursorResult {
+  items: LawRecordExtra[];
+  nextCursor: string | null;
+  take: number;
+}
+
+/** Codifica il cursore `(dataEmanazione, eli)`. Pura, mai lancia. */
+export function encodeCursor(dataEmanazione: string, eli: string): string {
+  try {
+    return Buffer.from(`${dataEmanazione}|${eli}`, "utf8").toString("base64url");
+  } catch {
+    return "";
+  }
+}
+
+/** Decodifica il cursore; accetta anche ELI grezzo per compat. Pura. */
+export function decodeCursor(cursor: string): { data: string; eli: string } | null {
+  const grezzo = (cursor ?? "").trim();
+  if (!grezzo) return null;
+  try {
+    const dec = Buffer.from(grezzo, "base64url").toString("utf8");
+    const sep = dec.indexOf("|");
+    if (sep > 0) {
+      const data = dec.slice(0, sep);
+      const eli = dec.slice(sep + 1);
+      if (/^\d{4}-\d{2}-\d{2}$/.test(data) && eli) return { data, eli };
+    }
+  } catch {
+    // continua con fallback ELI grezzo
+  }
+  if (grezzo.length <= 500) return { data: "", eli: grezzo };
+  return null;
 }
 
 /** Carica l'intero corpus dal DB (se popolato) oppure dal seed. Non lancia. */
@@ -537,21 +866,47 @@ async function caricaBase(): Promise<LawRecordExtra[]> {
 /**
  * Elenca le norme con filtri, ordinamento e paginazione. Usa il DB quando
  * disponibile e popolato; altrimenti filtra il seed in memoria. Non lancia.
+ *
+ * Ottimizzata 100k+: `count`+`take` server-side (mai full-scan); `rilevanza`
+ * riusa ILIKE indicizzato + ranking BM25-lite sulla pagina; `qualita_desc`
+ * oltre 1000 righe usa fallback `data_desc` indicizzato.
  */
 export async function listLaws(params: ListLawsParams = {}): Promise<ListLawsResult> {
   const page = Math.min(10000, Math.max(1, Math.floor(params.page ?? 1) || 1));
   const perRichiesti = Math.floor(params.per ?? 20) || 20;
   const per = Math.min(MAX_PER_PAGE, Math.max(1, perRichiesti));
   const sort = params.sort ?? "data_desc";
+  const qNorm = parseQuery(params.q ?? "").slice(0, 200);
 
-  // La qualita' vive nel blob JSON: per ordinarla servono tutti i record.
-  if (sort !== "qualita_desc") {
+  // `qualita` vive nel blob JSON: oltre la soglia si usa il fallback indicizzato.
+  const serveQualitaInMemoria = sort === "qualita_desc";
+  const serveRilevanza = sort === "rilevanza";
+
+  if (!serveQualitaInMemoria || serveRilevanza) {
     const prisma = getPrisma();
     if (prisma) {
       try {
         const totaleDb = await prisma.law.count();
         if (totaleDb > 0) {
           const where = wherePrisma(params);
+          if (serveRilevanza && qNorm.length >= 2) {
+            // Candidati bounded dal principio (pagina 1..N) poi ranking globale:
+            // evita di perdere i top globali quando page>1 (fix P0 revisione).
+            const finestra = Math.min(1000, Math.max(per, page * per * 5));
+            const candidati = await prisma.law.findMany({
+              where,
+              orderBy: orderByPrisma("data_desc"),
+              skip: 0,
+              take: finestra,
+            });
+            const ordinati = ordinaPerRilevanza(
+              candidati.map(mapLaw),
+              qNorm.toLowerCase(),
+            );
+            const total = await prisma.law.count({ where });
+            const inizio = (page - 1) * per;
+            return { items: ordinati.slice(inizio, inizio + per), total, page, per };
+          }
           const [total, rows] = await Promise.all([
             prisma.law.count({ where }),
             prisma.law.findMany({
@@ -567,15 +922,227 @@ export async function listLaws(params: ListLawsParams = {}): Promise<ListLawsRes
         // fallback al seed
       }
     }
+  } else {
+    // `qualita_desc`: evita full-scan oltre soglia con fallback `data_desc`.
+    const prisma = getPrisma();
+    if (prisma) {
+      try {
+        const totaleDb = await prisma.law.count();
+        if (totaleDb > QUALITA_FALLBACK_SOGLIA) {
+          const where = wherePrisma(params);
+          const [total, rows] = await Promise.all([
+            prisma.law.count({ where }),
+            prisma.law.findMany({
+              where,
+              orderBy: orderByPrisma("data_desc"),
+              skip: (page - 1) * per,
+              take: per,
+            }),
+          ]);
+          return { items: rows.map(mapLaw), total, page, per };
+        }
+      } catch {
+        // continua con ordinamento in memoria sotto
+      }
+    }
   }
 
   const laws = await caricaBase();
-  const filtrate = sortLaws(
-    laws.filter((law) => matchesFilters(law, params)),
-    sort,
-  );
+  const filtrate =
+    sort === "rilevanza"
+      ? (() => {
+          const candidati = laws.filter((law) => matchesFilters(law, params));
+          const ordinati = ordinaPerRilevanza(candidati, qNorm.toLowerCase());
+          return ordinati.length > 0 ? ordinati : sortLaws(candidati, "data_desc");
+        })()
+      : sortLaws(
+          laws.filter((law) => matchesFilters(law, params)),
+          sort,
+          qNorm.toLowerCase(),
+        );
   const inizio = (page - 1) * per;
   return { items: filtrate.slice(inizio, inizio + per), total: filtrate.length, page, per };
+}
+
+/**
+ * Paginazione a cursore `(dataEmanazione, eli)` per corpus 100k+.
+ * `take<=500`, `nextCursor` opaco `base64url(data|eli)`. Never-throw.
+ */
+export async function listLawsCursor(params: CursorParams = {}): Promise<CursorResult> {
+  const takeRichiesto = Math.floor(params.take ?? 50) || 50;
+  const take = Math.min(CURSOR_TAKE_MAX, Math.max(1, takeRichiesto));
+  const sort = params.sort ?? "data_desc";
+  const cursore = decodeCursor(params.cursor ?? "");
+  try {
+    const prisma = getPrisma();
+    if (prisma) {
+      const totaleDb = await prisma.law.count().catch(() => 0);
+      if (totaleDb > 0) {
+        const whereBase = wherePrisma(params);
+        const discendente = sort !== "data_asc" && sort !== "titolo_asc";
+        // Cursore solo per ordinamenti cronologici (indice dedicato); gli altri
+        // usano OFFSET bounded su take.
+        if ((sort === "data_desc" || sort === "data_asc") && cursore?.data) {
+          const dataCursore = new Date(`${cursore.data}T00:00:00.000Z`);
+          const valida = !Number.isNaN(dataCursore.getTime());
+          const where: Prisma.LawWhereInput = valida
+            ? {
+                AND: [
+                  whereBase,
+                  {
+                    OR: [
+                      {
+                        dataEmanazione: discendente
+                          ? { lt: dataCursore }
+                          : { gt: dataCursore },
+                      },
+                      {
+                        AND: [
+                          { dataEmanazione: { equals: dataCursore } },
+                          discendente
+                            ? { eli: { gt: cursore.eli } }
+                            : { eli: { lt: cursore.eli } },
+                        ],
+                      },
+                    ],
+                  },
+                ],
+              }
+            : whereBase;
+          const rows = await prisma.law.findMany({
+            where,
+            orderBy: orderByPrisma(sort),
+            take: take + 1,
+          });
+          const pagina = rows.slice(0, take);
+          const ultima = pagina[pagina.length - 1];
+          const hasNext = rows.length > take && ultima;
+          const items = pagina.map(mapLaw);
+          return {
+            items,
+            nextCursor:
+              hasNext && ultima
+                ? encodeCursor(
+                    ultima.dataEmanazione.toISOString().slice(0, 10),
+                    ultima.eli,
+                  )
+                : null,
+            take,
+          };
+        }
+        // Fallback OFFSET bounded per sort non-cronologici o cursore ELI grezzo.
+        let skip = 0;
+        if (cursore?.eli) {
+          try {
+            const base = await prisma.law.findMany({
+              where: whereBase,
+              orderBy: orderByPrisma(sort === "rilevanza" ? "data_desc" : sort),
+              take: Math.min(10000, totaleDb),
+              select: { eli: true },
+            });
+            const idx = base.findIndex((r) => r.eli === cursore.eli);
+            if (idx >= 0) skip = idx + 1;
+          } catch {
+            skip = 0;
+          }
+        }
+        if (skip > 10000 - take) skip = Math.max(0, 10000 - take);
+        const rows = await prisma.law.findMany({
+          where: whereBase,
+          orderBy: orderByPrisma(sort === "rilevanza" ? "data_desc" : sort),
+          skip,
+          take: take + 1,
+        });
+        let items = rows.slice(0, take).map(mapLaw);
+        if (sort === "rilevanza") {
+          const qNorm = parseQuery(params.q ?? "").slice(0, 200).toLowerCase();
+          if (qNorm.length >= 2) {
+            const ordinati = ordinaPerRilevanza(items, qNorm);
+            if (ordinati.length > 0) items = ordinati;
+          }
+        }
+        const ultima = rows[take - 1];
+        return {
+          items,
+          nextCursor:
+            rows.length > take && ultima
+              ? encodeCursor(
+                  ultima.dataEmanazione.toISOString().slice(0, 10),
+                  ultima.eli,
+                )
+              : null,
+          take,
+        };
+      }
+    }
+  } catch {
+    // fallback in memoria sotto
+  }
+  // Fallback in memoria (seed): slice bounded, mai full-scan oltre 10k.
+  const laws = await caricaBase().catch(() => getSeedLaws());
+  const ordinate =
+    sort === "rilevanza"
+      ? (() => {
+          const qNorm = parseQuery(params.q ?? "").slice(0, 200).toLowerCase();
+          const candidati = laws.filter((law) => matchesFilters(law, params));
+          const ranked = qNorm.length >= 2 ? ordinaPerRilevanza(candidati, qNorm) : [];
+          return ranked.length > 0 ? ranked : sortLaws(candidati, "data_desc");
+        })()
+      : sortLaws(
+          laws.filter((law) => matchesFilters(law, params)),
+          sort,
+        );
+  let inizio = 0;
+  if (cursore?.eli) {
+    const idx = ordinate.findIndex((l) => l.eli === cursore.eli);
+    if (idx >= 0) inizio = idx + 1;
+    else if (cursore.data) {
+      const idxData = ordinate.findIndex((l) =>
+        sort === "data_asc"
+          ? l.dataEmanazione > cursore.data ||
+            (l.dataEmanazione === cursore.data && l.eli < cursore.eli)
+          : l.dataEmanazione < cursore.data ||
+            (l.dataEmanazione === cursore.data && l.eli > cursore.eli),
+      );
+      if (idxData >= 0) inizio = idxData;
+    }
+  }
+  const pagina = ordinate.slice(inizio, inizio + take);
+  const ultima = pagina[pagina.length - 1];
+  return {
+    items: pagina,
+    nextCursor: ultima ? encodeCursor(ultima.dataEmanazione.slice(0, 10), ultima.eli) : null,
+    take,
+  };
+}
+
+/**
+ * Itera il corpus a batch (default 500) via cursore, per export/import 100GB
+ * senza caricare tutto in memoria. Generatore async, never-throw (si ferma
+ * in caso di errore o cursore nullo).
+ */
+export async function* streamLaws(
+  filters: LawFilters = {},
+  batchSize = BATCH_PERSIST_SIZE,
+): AsyncGenerator<LawRecordExtra[], void, void> {
+  const take = Math.min(CURSOR_TAKE_MAX, Math.max(1, Math.floor(batchSize) || 500));
+  let cursor: string | undefined;
+  let pagine = 0;
+  const maxPagine = 10000;
+  while (pagine < maxPagine) {
+    let pagina: CursorResult;
+    try {
+      pagina = await listLawsCursor({ ...filters, cursor, take, sort: "data_desc" });
+    } catch {
+      return;
+    }
+    if (pagina.items.length === 0) return;
+    yield pagina.items;
+    pagine += 1;
+    if (!pagina.nextCursor) return;
+    cursor = pagina.nextCursor;
+    if (pagina.items.length < take) return;
+  }
 }
 
 /** Conta le norme che soddisfano i filtri. Non lancia. */
@@ -631,10 +1198,30 @@ export async function queryLaws(
   ).slice(0, cap);
 }
 
-/** Aggregati del corpus (per anno, tipo, Gulpease, attuativi, AIR, qualita'). Non lancia. */
+/** Aggregati del corpus (per anno, tipo, Gulpease, attuativi, AIR, qualita').
+ * Cache LRU in-memory 60s per evitare full-scan ripetuti su 100k+ righe. Non lancia. */
+let cacheStats: { dati: CorpusStats; scadeIl: number } | null = null;
+
+/** Azzera la cache di `getStats` (utile nei test). Non lancia. */
+export function clearStatsCache(): void {
+  cacheStats = null;
+}
+
 export async function getStats(): Promise<CorpusStats> {
+  try {
+    const ora = Date.now();
+    if (cacheStats && cacheStats.scadeIl > ora) return cacheStats.dati;
+  } catch {
+    // cache non disponibile: continua senza
+  }
   const laws = await getLawsFromDBorSeed();
-  return buildStats(laws as StatLaw[]);
+  const dati = buildStats(laws as StatLaw[]);
+  try {
+    cacheStats = { dati, scadeIl: Date.now() + STATS_CACHE_TTL_MS };
+  } catch {
+    // ignora errori di cache
+  }
+  return dati;
 }
 
 export interface IngestRunInput {

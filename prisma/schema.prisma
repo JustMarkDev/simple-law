@@ -25,6 +25,15 @@ model Law {
   fonti          Json?
   /// Dati arricchiti dal seed: air, attuativi, testo, fiducia, omnibus, dimostrativo.
   extra          Json?
+  /// Impronta SHA-256 del testo integrale (lo shard conserva il testo, mai `Law`).
+  testoHash      String?
+  /// Lunghezza in caratteri del testo integrale (per filtro/soglie senza leggere lo shard).
+  lunghezzaTesto Int?
+  // Full-text dedicato (migrazione dedicata, opzionale):
+  // - estensione `pg_trgm` per ILIKE/trigram;
+  // - colonna generata `tsv tsvector GENERATED ALWAYS AS (to_tsvector('italian', titolo || ' ' || sintesi)) STORED`;
+  // - indice GIN `@@index([tsv], type: Gin)`.
+  // Il testo integrale resta SOLO su `data/corpus/shard-*.jsonl.gz`, mai in `Law`.
   createdAt      DateTime @default(now())
   updatedAt      DateTime @updatedAt
 
@@ -37,6 +46,13 @@ model Law {
   @@index([titolo])
   // Filtra per stato senza full-scan.
   @@index([stato])
+  // Scala 100GB: copre filtro stato + ordinamento cronologico senza full-scan.
+  @@index([stato, dataEmanazione])
+  // Scala 100GB: copre filtro/sort `minGulpease` / `gulpease_desc`.
+  @@index([gulpease])
+  // Scala 100GB: paginazione a cursore (dataEmanazione, eli) senza OFFSET profondo.
+  @@index([dataEmanazione, eli])
+  // Opzionale (migrazione dedicata): @@index([tsv], type: Gin) dopo `CREATE EXTENSION pg_trgm`.
 }
 
 /// Ministro / titolare di dicastero.

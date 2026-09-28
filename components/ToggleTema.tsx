@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect, useState } from 'react'
+import type { KeyboardEvent } from 'react'
 import { useTheme } from 'next-themes'
 
 function IconaSole() {
@@ -23,6 +24,7 @@ function IconaLuna() {
 /**
  * Interruttore chiaro/scuro. Il tema predefinito resta quello di sistema:
  * il toggle scrive una preferenza esplicita solo dopo il primo clic.
+ * Bersaglio 44px, azionabile con Invio/Spazio, stato annunciato in italiano.
  */
 export default function ToggleTema({ className = '' }: { className?: string }) {
   const { resolvedTheme, setTheme } = useTheme()
@@ -32,18 +34,31 @@ export default function ToggleTema({ className = '' }: { className?: string }) {
 
   const scuro = montato && resolvedTheme === 'dark'
   const etichetta = scuro ? 'Passa al tema chiaro' : 'Passa al tema scuro'
+  const stato = scuro ? 'Tema scuro attivo' : 'Tema chiaro attivo'
+
+  function commuta() {
+    setTheme(scuro ? 'light' : 'dark')
+  }
+
+  function allaTastiera(evento: KeyboardEvent<HTMLButtonElement>) {
+    if (evento.key === 'Enter' || evento.key === ' ') {
+      evento.preventDefault()
+      commuta()
+    }
+  }
 
   return (
     <button
       type="button"
-      onClick={() => setTheme(scuro ? 'light' : 'dark')}
+      onClick={commuta}
+      onKeyDown={allaTastiera}
       aria-label={etichetta}
       aria-pressed={scuro}
       title={etichetta}
-      className={`inline-flex h-9 w-9 items-center justify-center border border-regola bg-transparent text-inchiostro-soft transition-colors hover:border-inchiostro hover:text-inchiostro focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-inchiostro dark:border-notte-deep dark:text-nebbia-soft dark:hover:border-nebbia dark:hover:text-nebbia dark:focus-visible:outline-nebbia ${className}`}
+      className={`inline-flex min-h-tocco min-w-tocco h-11 w-11 items-center justify-center rounded border border-regola bg-transparent text-inchiostro-soft transition-colors hover:border-inchiostro hover:text-inchiostro focus-visible:outline focus-visible:outline-[3px] focus-visible:outline-offset-2 focus-visible:outline-accento dark:border-notte-deep dark:text-nebbia-soft dark:hover:border-nebbia dark:hover:text-nebbia dark:focus-visible:outline-accento-chiara ${className}`}
     >
       {scuro ? <IconaSole /> : <IconaLuna />}
-      <span className="sr-only">{scuro ? 'Tema scuro attivo' : 'Tema chiaro attivo'}</span>
+      <span className="sr-only" aria-live="polite">{stato}</span>
     </button>
   )
 }

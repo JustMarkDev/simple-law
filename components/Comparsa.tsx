@@ -19,13 +19,18 @@ interface ComparsaProps {
 export default function Comparsa({ children, className, delay = 0 }: ComparsaProps) {
   const ridotto = useReducedMotion()
 
+  // Movimento ridotto: nessun effetto, contenuto reso subito e accessibile.
+  if (ridotto) {
+    return <div className={className}>{children}</div>
+  }
+
   return (
     <motion.div
       className={className}
-      initial={ridotto ? false : { opacity: 0, y: 14 }}
-      whileInView={ridotto ? undefined : { opacity: 1, y: 0 }}
-      viewport={ridotto ? undefined : { once: true, amount: 0.15 }}
-      transition={ridotto ? undefined : { duration: 0.5, delay, ease: EASE }}
+      initial={{ opacity: 0, y: 14 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.15 }}
+      transition={{ duration: 0.5, delay, ease: EASE }}
     >
       {children}
     </motion.div>

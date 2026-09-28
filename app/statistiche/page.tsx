@@ -2,10 +2,12 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
-import Comparsa from '@/components/Comparsa'
 import Contatore from '@/components/Contatore'
 import GraficoBarre, { type BarraGrafico, type SerieGrafico } from '@/components/GraficoBarre'
-import { formatTipo, loadLaws, type Stato } from '@/components/seed-fallback'
+import { getStats } from '@/lib/db'
+import { ECONOMIA_AGGIORNATO_AL, ECONOMIA_SNAPSHOT } from '@/lib/stats'
+
+export const revalidate = 3600
 
 export const metadata: Metadata = {
   title: 'Statistiche del corpus — Stato della Repubblica',
@@ -18,78 +20,51 @@ const COLORE_VERDE = 'var(--chart-2)'
 const COLORE_ROSSO = 'var(--chart-3)'
 const COLORE_NEUTRO = 'var(--chart-neutral)'
 
+/** Ultimi anni mostrati nel grafico: resta leggibile anche con 200mila atti. */
+const MAX_ANNI_GRAFICO = 20
+/** Tipi di atto mostrati: solo i più frequenti. */
+const MAX_TIPI_GRAFICO = 10
+
 const AIR_LABEL: Record<string, string> = {
   presente: 'AIR presente',
   semplificata: 'AIR semplificata',
   esente: 'Esente da AIR',
   assente: 'AIR assente',
+  nonNoto: 'AIR non rilevata',
 }
 
-interface Indicatore {
-  chiave: string
-  etichetta: string
-  valore: number
-  decimals: number
-  prefix?: string
-  suffix: string
-  periodo: string
-  fonte: string
-  fonteUrl: string
-  nota?: string
+const TIPI_LABEL: Record<string, string> = {
+  'decreto.legge': 'Decreto-legge',
+  'decreto.legislativo': 'Decreto legislativo',
+  'decreto.presidente.repubblica': 'Decreto del Presidente della Repubblica',
+  'decreto.presidente.consiglio': 'DPCM',
+  legge: 'Legge',
+  'legge.costituzionale': 'Legge costituzionale',
+  regolamento: 'Regolamento',
 }
 
-/**
- * Istantanea curata dei principali indicatori macro. I valori non sono in tempo
- * reale: si riferiscono ai comunicati ufficiali più recenti inclusi in questa
- * edizione. Segui i link istituzionali per i dati aggiornati.
- */
-const INDICATORI: Indicatore[] = [
-  {
-    chiave: 'pil',
-    etichetta: 'Crescita del PIL reale',
-    valore: 0.5,
-    decimals: 1,
-    prefix: '+',
-    suffix: '%',
-    periodo: 'Media annua 2025',
-    fonte: 'ISTAT — Conti economici nazionali',
-    fonteUrl: 'https://www.istat.it/',
-    nota: 'Variazione reale rispetto al 2024.',
-  },
-  {
-    chiave: 'deficit',
-    etichetta: 'Indebitamento netto delle PA',
-    valore: 3.1,
-    decimals: 1,
-    suffix: '% del PIL',
-    periodo: 'Anno 2025',
-    fonte: 'ISTAT — Finanza pubblica',
-    fonteUrl: 'https://www.istat.it/',
-    nota: 'Soglia europea fissata al 3% del PIL.',
-  },
-  {
-    chiave: 'debito',
-    etichetta: 'Debito pubblico',
-    valore: 135.3,
-    decimals: 1,
-    suffix: '% del PIL',
-    periodo: 'Anno 2024',
-    fonte: 'ISTAT',
-    fonteUrl: 'https://www.istat.it/',
-    nota: 'Ultima proiezione della Banca d’Italia: 137,4% del PIL nel 2026.',
-  },
-  {
-    chiave: 'inflazione',
-    etichetta: 'Inflazione al consumo (IPCA)',
-    valore: 1.7,
-    decimals: 1,
-    suffix: '%',
-    periodo: 'Media 2025',
-    fonte: 'ISTAT — Prezzi al consumo',
-    fonteUrl: 'https://www.istat.it/',
-    nota: 'Stima provvisoria diffusa a gennaio 2026.',
-  },
-]
+/** Etichetta leggibile per il tipo di atto grezzo (es. `decreto.legge` → Decreto-legge). */
+function etichettaTipo(tipo: string): string {
+  const chiave = tipo.trim().toLowerCase()
+  if (TIPI_LABEL[chiave]) return TIPI_LABEL[chiave]
+  const parole = chiave.replace(/[._]/g, ' ').trim()
+  return parole ? parole.charAt(0).toUpperCase() + parole.slice(1) : 'Norma'
+}
+
+function intero(value: number): string {
+  return new Intl.NumberFormat('it-IT', { maximumFractionDigits: 0 }).format(
+    Number.isFinite(value) ? value : 0,
+  )
+}
+
+function percentuale(parte: number, totale: number): string {
+  if (!Number.isFinite(parte) || !Number.isFinite(totale) || totale <= 0) return '0%'
+  return `${new Intl.NumberFormat('it-IT', { maximumFractionDigits: 1 }).format((parte / totale) * 100)}%`
+}
+
+function decimale(value: number): string {
+  return new Intl.NumberFormat('it-IT', { minimumFractionDigits: 1, maximumFractionDigits: 1 }).format(value)
+}
 
 const RISORSE = [
   { label: 'ISTAT', url: 'https://www.istat.it/' },
@@ -98,116 +73,159 @@ const RISORSE = [
   { label: 'ISTAT Esplora dati', url: 'https://esploradati.istat.it/' },
 ]
 
-function media(valori: number[]): number {
-  const validi = valori.filter((v) => Number.isFinite(v))
-  if (validi.length === 0) return 0
-  return validi.reduce((acc, v) => acc + v, 0) / validi.length
-}
+const ESEMPI_RICERCA = [
+  { etichetta: 'Energia', href: '/leggi?q=energia' },
+  { etichetta: 'Concorrenza', href: '/leggi?q=concorrenza' },
+  { etichetta: 'Leggi del 2026', href: '/leggi?anno=2026' },
+]
 
-function bucketQualita(qualita: number): number {
-  if (qualita >= 85) return 0
-  if (qualita >= 70) return 1
-  if (qualita >= 55) return 2
-  if (qualita >= 40) return 3
-  return 4
-}
-
+/**
+ * Dashboard delle statistiche del corpus.
+ *
+ * Legge solo aggregati (`getStats`: conteggi e medie dal database, mai testi
+ * integrali né elenchi completi), così resta veloce anche con un corpus molto
+ * grande. I grafici mostrano al massimo gli ultimi 20 anni e i 10 tipi più
+ * frequenti; ogni barra rimanda all’archivio filtrato. Non lancia mai: in caso
+ * di errore mostra uno stato vuoto azionabile.
+ */
 export default async function StatistichePage() {
-  const leggi = await loadLaws()
-
-  const conteggioStato: Record<Stato, number> = { verde: 0, giallo: 0, rosso: 0 }
-  const perAnno = new Map<string, number>()
-  const perTipo = new Map<string, number>()
-  const airCount: Record<string, number> = { presente: 0, semplificata: 0, esente: 0, assente: 0 }
-  const qualitaBuckets = [0, 0, 0, 0, 0]
-  let attuativiAdottati = 0
-  let attuativiDaAdottare = 0
-  let attuativiScaduti = 0
-
-  for (const law of leggi) {
-    conteggioStato[law.stato] += 1
-    const anno = law.dataEmanazione.slice(0, 4) || 'n.d.'
-    perAnno.set(anno, (perAnno.get(anno) ?? 0) + 1)
-    const tipo = formatTipo(law.tipo)
-    perTipo.set(tipo, (perTipo.get(tipo) ?? 0) + 1)
-    if (law.air in airCount) airCount[law.air] += 1
-    qualitaBuckets[bucketQualita(law.qualita)] += 1
-    attuativiAdottati += law.attuativi.adottati
-    attuativiDaAdottare += law.attuativi.daAdottare
-    attuativiScaduti += law.attuativi.scaduti
+  let stats: Awaited<ReturnType<typeof getStats>> | null = null
+  try {
+    stats = await getStats()
+  } catch {
+    stats = null
   }
 
-  const gulpeaseValori = leggi
-    .filter((law) => law.gulpease > 0)
-    .sort((a, b) => a.dataEmanazione.localeCompare(b.dataEmanazione))
-    .map((law) => ({
-      etichetta: `${law.numero}/${law.dataEmanazione.slice(0, 4)}`,
-      valori: { gulpease: law.gulpease },
-      colore: law.gulpease >= 60 ? COLORE_VERDE : COLORE_ROSSO,
-      nota: formatTipo(law.tipo).slice(0, 9),
-    }))
+  if (!stats || stats.totale <= 0) {
+    return (
+      <>
+        <Header />
+        <main id="contenuto" className="mx-auto w-full max-w-editoriale px-4 py-10 sm:px-6 sm:py-12 lg:px-8">
+          <header className="border-b-2 border-inchiostro pb-5 dark:border-nebbia">
+            <p className="text-xs font-semibold uppercase tracking-[0.28em] text-accento dark:text-accento-chiara">
+              Dati aperti
+            </p>
+            <h1 className="mt-2 font-serif text-3xl font-bold text-inchiostro dark:text-nebbia sm:text-4xl">
+              Statistiche del corpus
+            </h1>
+          </header>
+          <section aria-labelledby="stato-vuoto" className="mt-8 border border-dashed border-regola bg-carta p-8 text-center dark:border-notte-deep dark:bg-notte-soft">
+            <h2 id="stato-vuoto" className="font-serif text-lg font-bold text-inchiostro dark:text-nebbia">
+              Nessuna statistica disponibile
+            </h2>
+            <p className="mx-auto mt-2 max-w-xl text-sm leading-relaxed text-inchiostro-soft dark:text-nebbia-soft">
+              Il corpus è vuoto o le statistiche non sono calcolabili al momento. Prova con una ricerca
+              nell’archivio oppure leggi come calcoliamo gli indicatori.
+            </p>
+            <ul className="mt-4 flex flex-wrap justify-center gap-2" aria-label="Ricerche di esempio">
+              {ESEMPI_RICERCA.map((esempio) => (
+                <li key={esempio.href}>
+                  <Link
+                    href={esempio.href}
+                    className="inline-flex min-h-[44px] items-center rounded-full border border-regola px-4 text-sm font-medium text-inchiostro hover:border-accento hover:text-accento dark:border-notte-deep dark:text-nebbia dark:hover:border-accento-chiara dark:hover:text-accento-chiara"
+                  >
+                    {esempio.etichetta}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+            <p className="mt-6 flex flex-wrap justify-center gap-3">
+              <Link
+                href="/leggi"
+                className="inline-flex min-h-[44px] items-center bg-accento px-6 font-semibold text-white hover:opacity-90 dark:bg-accento-chiara dark:text-notte"
+              >
+                Vai all’archivio delle leggi
+              </Link>
+              <Link
+                href="/metodologia"
+                className="inline-flex min-h-[44px] items-center border border-regola px-6 font-semibold text-inchiostro hover:border-accento hover:text-accento dark:border-notte-deep dark:text-nebbia dark:hover:border-accento-chiara dark:hover:text-accento-chiara"
+              >
+                Leggi la metodologia
+              </Link>
+            </p>
+          </section>
+        </main>
+        <Footer />
+      </>
+    )
+  }
 
-  const gulpeaseMedio = media(leggi.map((law) => law.gulpease))
-  const qualitaMedia = media(leggi.map((law) => law.qualita))
-  const attuativiMancanti = attuativiDaAdottare + attuativiScaduti
-  const airRobuste = airCount.presente + airCount.semplificata
+  const totale = stats.totale
+  const attuativi = stats.attuativiTotali
+  const attuativiMancanti = attuativi.daAdottare + attuativi.scaduti
+  const airPresente = (stats.airDistribuzione.presente ?? 0) + (stats.airDistribuzione.semplificata ?? 0)
 
-  const serieInk: SerieGrafico[] = [{ chiave: 'valore', etichetta: 'Norme', colore: COLORE_INK }]
+  const vociAnno = Object.entries(stats.perAnno)
+    .filter(([anno]) => /^\d{4}$/.test(anno))
+    .sort(([a], [b]) => a.localeCompare(b))
+  const senzaAnno = stats.perAnno['n.d.'] ?? 0
+  const ultimiAnni = vociAnno.slice(-MAX_ANNI_GRAFICO)
+
+  const vociTipo = Object.entries(stats.perTipo).sort(([, a], [, b]) => b - a)
+  const topTipi = vociTipo.slice(0, MAX_TIPI_GRAFICO)
+  const altriTipi = vociTipo.length - topTipi.length
+
+  const serieNorme: SerieGrafico[] = [{ chiave: 'valore', etichetta: 'Norme', colore: COLORE_INK }]
   const serieAttuativi: SerieGrafico[] = [
     { chiave: 'adottati', etichetta: 'Adottati', colore: COLORE_VERDE },
     { chiave: 'daAdottare', etichetta: 'Da adottare', colore: COLORE_NEUTRO },
     { chiave: 'scaduti', etichetta: 'Scaduti', colore: COLORE_ROSSO },
   ]
 
-  const barreAnno: BarraGrafico[] = [...perAnno.entries()]
-    .sort(([a], [b]) => a.localeCompare(b))
-    .map(([anno, valore]) => ({ etichetta: anno, valori: { valore } }))
+  const barreAnno: BarraGrafico[] = ultimiAnni.map(([anno, valore]) => ({
+    etichetta: anno,
+    valori: { valore },
+  }))
 
-  const barreTipo: BarraGrafico[] = [...perTipo.entries()]
-    .sort(([, a], [, b]) => b - a)
-    .map(([tipo, valore]) => ({ etichetta: tipo, valori: { valore } }))
+  const barreTipo: BarraGrafico[] = topTipi.map(([tipo, valore]) => ({
+    etichetta: etichettaTipo(tipo),
+    valori: { valore },
+  }))
 
+  const ordineAir = ['presente', 'semplificata', 'esente', 'assente', 'nonNoto']
   const coloriAir: Record<string, string> = {
     presente: COLORE_VERDE,
     semplificata: COLORE_INK,
     esente: COLORE_NEUTRO,
     assente: COLORE_ROSSO,
+    nonNoto: COLORE_NEUTRO,
   }
-  const barreAir: BarraGrafico[] = ['presente', 'semplificata', 'esente', 'assente'].map((chiave) => ({
+  const barreAir: BarraGrafico[] = ordineAir.map((chiave) => ({
     etichetta: AIR_LABEL[chiave] ?? chiave,
-    valori: { valore: airCount[chiave] ?? 0 },
+    valori: { valore: stats.airDistribuzione[chiave] ?? 0 },
     colore: coloriAir[chiave],
   }))
 
-  const etichetteQualita = ['85–100', '70–84', '55–69', '40–54', '0–39']
-  const coloriQualita = [COLORE_VERDE, COLORE_VERDE, COLORE_INK, COLORE_NEUTRO, COLORE_ROSSO]
-  const barreQualita: BarraGrafico[] = etichetteQualita.map((etichetta, index) => ({
-    etichetta,
-    valori: { valore: qualitaBuckets[index] ?? 0 },
-    colore: coloriQualita[index],
-  }))
-
-  const barreAttuativi: BarraGrafico[] = leggi
-    .slice()
-    .sort((a, b) => a.dataEmanazione.localeCompare(b.dataEmanazione))
-    .map((law) => ({
-      etichetta: `${law.numero}/${law.dataEmanazione.slice(0, 4)}`,
+  const barreAttuativi: BarraGrafico[] = [
+    {
+      etichetta: 'Decreti attuativi',
       valori: {
-        adottati: law.attuativi.adottati,
-        daAdottare: law.attuativi.daAdottare,
-        scaduti: law.attuativi.scaduti,
+        adottati: attuativi.adottati,
+        daAdottare: attuativi.daAdottare,
+        scaduti: attuativi.scaduti,
       },
-    }))
+    },
+  ]
 
   const schede = [
-    { etichetta: 'Norme nel corpus', valore: leggi.length, decimals: 0, suffix: '' },
-    { etichetta: 'Già applicabili', valore: conteggioStato.verde, decimals: 0, suffix: '' },
-    { etichetta: 'In attesa di attuativi', valore: conteggioStato.giallo, decimals: 0, suffix: '' },
-    { etichetta: 'Non ancora attive', valore: conteggioStato.rosso, decimals: 0, suffix: '' },
-    { etichetta: 'Gulpease medio', valore: gulpeaseMedio, decimals: 0, suffix: '/100' },
-    { etichetta: 'Qualità media', valore: qualitaMedia, decimals: 0, suffix: '/100' },
-    { etichetta: 'Attuativi mancanti', valore: attuativiMancanti, decimals: 0, suffix: '' },
-    { etichetta: 'Con AIR presente o semplificata', valore: airRobuste, decimals: 0, suffix: '' },
+    { etichetta: 'Norme nel corpus', valore: totale, nota: null as string | null, decimals: 0, suffix: '' },
+    { etichetta: 'Decreti adottati', valore: attuativi.adottati, nota: 'Semaforo verde', decimals: 0, suffix: '' },
+    { etichetta: 'Decreti da adottare', valore: attuativi.daAdottare, nota: 'Semaforo giallo', decimals: 0, suffix: '' },
+    { etichetta: 'Decreti scaduti', valore: attuativi.scaduti, nota: 'Semaforo rosso', decimals: 0, suffix: '' },
+    {
+      etichetta: 'Attuativi mancanti',
+      valore: attuativiMancanti,
+      nota: `${percentuale(attuativiMancanti, attuativi.totale)} dei decreti previsti`,
+      decimals: 0,
+      suffix: '',
+    },
+    {
+      etichetta: 'Con AIR presente o semplificata',
+      valore: airPresente,
+      nota: `${percentuale(airPresente, totale)} del corpus`,
+      decimals: 0,
+      suffix: '',
+    },
   ]
 
   return (
@@ -223,134 +241,227 @@ export default async function StatistichePage() {
           </h1>
           <p className="mt-3 max-w-2xl text-sm leading-relaxed text-inchiostro-soft dark:text-nebbia-soft">
             Come si distribuiscono le norme in archivio: per anno e per tipo, quanto sono leggibili, quante aspettano i
-            decreti attuativi e come si collocano sugli indicatori di qualità. Tutti i grafici sono calcolati sui dati
-            della piattaforma.
+            decreti attuativi e come si collocano sugli indicatori di qualità. I valori sono aggregati dal database e
+            aggiornati ogni ora.
           </p>
         </header>
 
-        <section aria-labelledby="numeri-chiave" className="mt-8">
-          <h2 id="numeri-chiave" className="sr-only">
+        <section aria-labelledby="numeri-chiave" className="mt-8 scroll-mt-24">
+          <h2 id="numeri-chiave" className="font-serif text-xl font-bold text-inchiostro dark:text-nebbia">
             Numeri chiave
           </h2>
-          <dl className="grid grid-cols-2 gap-px border border-regola bg-regola dark:border-notte-deep dark:bg-notte-deep sm:grid-cols-4">
+          <dl className="mt-4 grid grid-cols-2 gap-px border border-regola bg-regola dark:border-notte-deep dark:bg-notte-deep sm:grid-cols-4">
             {schede.map((scheda) => (
               <div key={scheda.etichetta} className="bg-carta p-4 dark:bg-notte">
-                <dt className="text-xs font-medium text-inchiostro-faint dark:text-nebbia-faint">{scheda.etichetta}</dt>
+                <dt className="text-xs font-medium text-inchiostro-faint dark:text-nebbia-faint">
+                  {scheda.etichetta}
+                </dt>
                 <dd className="mt-1 font-serif text-3xl font-bold text-inchiostro dark:text-nebbia">
                   <Contatore value={scheda.valore} decimals={scheda.decimals} suffix={scheda.suffix} />
                 </dd>
+                {scheda.nota && (
+                  <dd className="mt-1 text-xs text-inchiostro-faint dark:text-nebbia-faint">{scheda.nota}</dd>
+                )}
               </div>
             ))}
+            <div className="bg-carta p-4 dark:bg-notte">
+              <dt className="text-xs font-medium text-inchiostro-faint dark:text-nebbia-faint">Gulpease medio</dt>
+              <dd className="mt-1 font-serif text-3xl font-bold text-inchiostro dark:text-nebbia">
+                {stats.gulpeaseMedio === null ? (
+                  <span className="text-lg font-normal">Non disponibile</span>
+                ) : (
+                  <Contatore value={stats.gulpeaseMedio} decimals={0} suffix="/100" />
+                )}
+              </dd>
+              <dd className="mt-1 text-xs text-inchiostro-faint dark:text-nebbia-faint">
+                {stats.gulpeaseMedio === null
+                  ? 'Nessun testo valutato'
+                  : stats.gulpeaseMedio >= 60
+                    ? 'Leggibilità facile'
+                    : stats.gulpeaseMedio >= 40
+                      ? 'Leggibilità media'
+                      : 'Leggibilità difficile'}
+              </dd>
+            </div>
+            <div className="bg-carta p-4 dark:bg-notte">
+              <dt className="text-xs font-medium text-inchiostro-faint dark:text-nebbia-faint">Qualità media</dt>
+              <dd className="mt-1 font-serif text-3xl font-bold text-inchiostro dark:text-nebbia">
+                {stats.qualitaMedia === null ? (
+                  <span className="text-lg font-normal">Non disponibile</span>
+                ) : (
+                  <Contatore value={stats.qualitaMedia} decimals={0} suffix="/100" />
+                )}
+              </dd>
+              <dd className="mt-1 text-xs text-inchiostro-faint dark:text-nebbia-faint">
+                Punteggio euristico di processo, tecnica e attuazione
+              </dd>
+            </div>
           </dl>
+          <p className="mt-3 text-sm text-inchiostro-soft dark:text-nebbia-soft">
+            <Link href="/leggi?scaduti=1" className="font-semibold text-accento underline underline-offset-2 dark:text-accento-chiara">
+              Vedi le norme con attuativi scaduti
+            </Link>
+            {' · '}
+            {intero(totale)} {totale === 1 ? 'norma nel corpus' : 'norme nel corpus'}
+            {senzaAnno > 0 && ` · ${intero(senzaAnno)} senza anno di emanazione`}.
+          </p>
         </section>
 
         <div className="mt-10 grid gap-8 lg:grid-cols-2">
-          <Comparsa>
-            <section aria-labelledby="chart-anno" className="border border-regola bg-carta p-5 dark:border-notte-deep dark:bg-notte-soft">
-              <h2 id="chart-anno" className="font-serif text-lg font-bold text-inchiostro dark:text-nebbia">
-                Norme per anno di emanazione
-              </h2>
-              <p className="mt-1 text-xs text-inchiostro-faint dark:text-nebbia-faint">Numero di schede per annualità.</p>
-              <GraficoBarre
-                className="mt-4"
-                barre={barreAnno}
-                serie={serieInk}
-                ariaLabel="Numero di norme per anno di emanazione"
-                unita=""
-              />
-            </section>
-          </Comparsa>
-
-          <Comparsa delay={0.05}>
-            <section aria-labelledby="chart-tipo" className="border border-regola bg-carta p-5 dark:border-notte-deep dark:bg-notte-soft">
-              <h2 id="chart-tipo" className="font-serif text-lg font-bold text-inchiostro dark:text-nebbia">
-                Norme per tipo di atto
-              </h2>
-              <p className="mt-1 text-xs text-inchiostro-faint dark:text-nebbia-faint">
-                Decreti-legge, decreti legislativi, leggi e regolamenti nel corpus.
+          <section
+            aria-labelledby="chart-anno"
+            className="scroll-mt-24 border border-regola bg-carta p-5 dark:border-notte-deep dark:bg-notte-soft"
+            style={{ contentVisibility: 'auto', containIntrinsicSize: 'auto 420px' }}
+          >
+            <h2 id="chart-anno" className="font-serif text-lg font-bold text-inchiostro dark:text-nebbia">
+              Norme per anno di emanazione
+            </h2>
+            <p className="mt-1 text-xs text-inchiostro-faint dark:text-nebbia-faint">
+              Ultimi {ultimiAnni.length} anni su {intero(vociAnno.length)} annualità presenti nel corpus.
+            </p>
+            <GraficoBarre
+              className="mt-4"
+              barre={barreAnno}
+              serie={serieNorme}
+              ariaLabel="Numero di norme per anno di emanazione, ultimi anni"
+              unita=""
+            />
+            <nav aria-label="Filtra l’archivio per anno" className="mt-4">
+              <p className="text-xs font-semibold uppercase tracking-[0.16em] text-inchiostro-faint dark:text-nebbia-faint">
+                Apri l’archivio per anno
               </p>
-              <GraficoBarre
-                className="mt-4"
-                barre={barreTipo}
-                serie={serieInk}
-                orientamento="orizzontale"
-                ariaLabel="Numero di norme per tipo di atto"
-              />
-            </section>
-          </Comparsa>
+              <ul className="mt-2 flex flex-wrap gap-2">
+                {ultimiAnni.map(([anno, valore]) => (
+                  <li key={anno}>
+                    <Link
+                      href={`/leggi?anno=${encodeURIComponent(anno)}`}
+                      aria-label={`Vedi le ${intero(valore)} norme del ${anno} nell’archivio`}
+                      className="inline-flex min-h-[44px] min-w-[44px] items-center justify-center gap-1 border border-regola px-3 text-sm font-medium text-inchiostro hover:border-accento hover:text-accento dark:border-notte-deep dark:text-nebbia dark:hover:border-accento-chiara dark:hover:text-accento-chiara"
+                    >
+                      {anno}
+                      <span className="text-xs font-normal opacity-70">({intero(valore)})</span>
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </nav>
+          </section>
 
-          <Comparsa>
-            <section aria-labelledby="chart-gulpease" className="border border-regola bg-carta p-5 dark:border-notte-deep dark:bg-notte-soft">
-              <h2 id="chart-gulpease" className="font-serif text-lg font-bold text-inchiostro dark:text-nebbia">
-                Leggibilità per norma
-              </h2>
-              <p className="mt-1 text-xs text-inchiostro-faint dark:text-nebbia-faint">
-                Indice Gulpease (0–100). La linea tratteggiata segna la soglia B1: 60.
+          <section
+            aria-labelledby="chart-tipo"
+            className="scroll-mt-24 border border-regola bg-carta p-5 dark:border-notte-deep dark:bg-notte-soft"
+            style={{ contentVisibility: 'auto', containIntrinsicSize: 'auto 420px' }}
+          >
+            <h2 id="chart-tipo" className="font-serif text-lg font-bold text-inchiostro dark:text-nebbia">
+              Norme per tipo di atto
+            </h2>
+            <p className="mt-1 text-xs text-inchiostro-faint dark:text-nebbia-faint">
+              I {topTipi.length} tipi più frequenti
+              {altriTipi > 0 && `; altri ${intero(altriTipi)} tipi raggruppati nell’archivio`}.
+            </p>
+            <GraficoBarre
+              className="mt-4"
+              barre={barreTipo}
+              serie={serieNorme}
+              orientamento="orizzontale"
+              ariaLabel="Numero di norme per tipo di atto, tipi più frequenti"
+            />
+            <nav aria-label="Filtra l’archivio per tipo di atto" className="mt-4">
+              <p className="text-xs font-semibold uppercase tracking-[0.16em] text-inchiostro-faint dark:text-nebbia-faint">
+                Apri l’archivio per tipo
               </p>
-              <GraficoBarre
-                className="mt-4"
-                barre={gulpeaseValori}
-                serie={[{ chiave: 'gulpease', etichetta: 'Gulpease', colore: COLORE_VERDE }]}
-                riferimento={{ valore: 60, etichetta: 'soglia B1' }}
-                ariaLabel="Indice Gulpease per ogni norma"
-              />
-            </section>
-          </Comparsa>
+              <ul className="mt-2 flex flex-wrap gap-2">
+                {topTipi.map(([tipo, valore]) => (
+                  <li key={tipo}>
+                    <Link
+                      href={`/leggi?tipo=${encodeURIComponent(tipo)}`}
+                      aria-label={`Vedi le ${intero(valore)} norme di tipo ${etichettaTipo(tipo)} nell’archivio`}
+                      className="inline-flex min-h-[44px] items-center border border-regola px-3 text-sm font-medium text-inchiostro hover:border-accento hover:text-accento dark:border-notte-deep dark:text-nebbia dark:hover:border-accento-chiara dark:hover:text-accento-chiara"
+                    >
+                      {etichettaTipo(tipo)}
+                      <span className="text-xs font-normal opacity-70">({intero(valore)})</span>
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </nav>
+          </section>
 
-          <Comparsa delay={0.05}>
-            <section aria-labelledby="chart-attuativi" className="border border-regola bg-carta p-5 dark:border-notte-deep dark:bg-notte-soft">
-              <h2 id="chart-attuativi" className="font-serif text-lg font-bold text-inchiostro dark:text-nebbia">
-                Decreti attuativi per norma
-              </h2>
-              <p className="mt-1 text-xs text-inchiostro-faint dark:text-nebbia-faint">
-                Adottati, da adottare e scaduti. {attuativiAdottati} adottati in totale.
-              </p>
-              <GraficoBarre
-                className="mt-4"
-                barre={barreAttuativi}
-                serie={serieAttuativi}
-                ariaLabel="Decreti attuativi per norma, distinti in adottati, da adottare e scaduti"
-              />
-            </section>
-          </Comparsa>
+          <section
+            aria-labelledby="chart-attuativi"
+            className="scroll-mt-24 border border-regola bg-carta p-5 dark:border-notte-deep dark:bg-notte-soft"
+            style={{ contentVisibility: 'auto', containIntrinsicSize: 'auto 420px' }}
+          >
+            <h2 id="chart-attuativi" className="font-serif text-lg font-bold text-inchiostro dark:text-nebbia">
+              Decreti attuativi: stato di avanzamento
+            </h2>
+            <p className="mt-1 text-xs text-inchiostro-faint dark:text-nebbia-faint">
+              {intero(attuativi.adottati)} adottati, {intero(attuativi.daAdottare)} da adottare,{' '}
+              {intero(attuativi.scaduti)} scaduti su {intero(attuativi.totale)} decreti previsti.
+            </p>
+            <GraficoBarre
+              className="mt-4"
+              barre={barreAttuativi}
+              serie={serieAttuativi}
+              ariaLabel="Decreti attuativi distinti in adottati, da adottare e scaduti"
+            />
+            <p className="mt-4 text-sm leading-relaxed text-inchiostro-soft dark:text-nebbia-soft">
+              Mancano all’appello {intero(attuativiMancanti)} decreti (
+              {percentuale(attuativiMancanti, attuativi.totale)} di quelli previsti).{' '}
+              <Link href="/leggi?scaduti=1" className="font-semibold text-accento underline underline-offset-2 dark:text-accento-chiara">
+                Vedi le norme con attuativi scaduti
+              </Link>
+              .
+            </p>
+          </section>
 
-          <Comparsa>
-            <section aria-labelledby="chart-air" className="border border-regola bg-carta p-5 dark:border-notte-deep dark:bg-notte-soft">
-              <h2 id="chart-air" className="font-serif text-lg font-bold text-inchiostro dark:text-nebbia">
-                Analisi di impatto (AIR)
-              </h2>
-              <p className="mt-1 text-xs text-inchiostro-faint dark:text-nebbia-faint">
-                Distribuzione delle schede per stato dell’analisi di impatto.
-              </p>
-              <GraficoBarre
-                className="mt-4"
-                barre={barreAir}
-                serie={serieInk}
-                orientamento="orizzontale"
-                ariaLabel="Distribuzione delle norme per stato della analisi di impatto"
-              />
-            </section>
-          </Comparsa>
-
-          <Comparsa delay={0.05}>
-            <section aria-labelledby="chart-qualita" className="border border-regola bg-carta p-5 dark:border-notte-deep dark:bg-notte-soft">
-              <h2 id="chart-qualita" className="font-serif text-lg font-bold text-inchiostro dark:text-nebbia">
-                Distribuzione della qualità
-              </h2>
-              <p className="mt-1 text-xs text-inchiostro-faint dark:text-nebbia-faint">
-                Punteggio euristico 0–100, raggruppato in cinque fasce.
-              </p>
-              <GraficoBarre
-                className="mt-4"
-                barre={barreQualita}
-                serie={serieInk}
-                ariaLabel="Distribuzione delle norme per fascia di qualità"
-              />
-            </section>
-          </Comparsa>
+          <section
+            aria-labelledby="chart-air"
+            className="scroll-mt-24 border border-regola bg-carta p-5 dark:border-notte-deep dark:bg-notte-soft"
+            style={{ contentVisibility: 'auto', containIntrinsicSize: 'auto 420px' }}
+          >
+            <h2 id="chart-air" className="font-serif text-lg font-bold text-inchiostro dark:text-nebbia">
+              Analisi di impatto (AIR)
+            </h2>
+            <p className="mt-1 text-xs text-inchiostro-faint dark:text-nebbia-faint">
+              Copertura AIR: {intero(airPresente)} norme su {intero(totale)} (
+              {percentuale(airPresente, totale)} con analisi presente o semplificata).
+            </p>
+            <GraficoBarre
+              className="mt-4"
+              barre={barreAir}
+              serie={serieNorme}
+              orientamento="orizzontale"
+              ariaLabel="Distribuzione delle norme per stato della analisi di impatto"
+            />
+          </section>
         </div>
 
-        <section aria-labelledby="quadro-economico" className="mt-14">
+        <section aria-labelledby="esporta" className="mt-10 scroll-mt-24 border border-regola bg-carta-soft p-5 dark:border-notte-deep dark:bg-notte-soft">
+          <h2 id="esporta" className="font-serif text-lg font-bold text-inchiostro dark:text-nebbia">
+            Esporta i dati
+          </h2>
+          <p className="mt-1 max-w-2xl text-sm leading-relaxed text-inchiostro-soft dark:text-nebbia-soft">
+            Scarica l’intero corpus in formato aperto. I file includono solo le colonne essenziali (niente testi
+            integrali) e sono limitati per dimensione.
+          </p>
+          <p className="mt-4 flex flex-wrap gap-3">
+            <a
+              href="/api/export?formato=csv"
+              className="inline-flex min-h-[44px] items-center bg-accento px-6 font-semibold text-white hover:opacity-90 dark:bg-accento-chiara dark:text-notte"
+            >
+              Scarica CSV
+            </a>
+            <a
+              href="/api/export?formato=json"
+              className="inline-flex min-h-[44px] items-center border border-regola bg-carta px-6 font-semibold text-inchiostro hover:border-accento hover:text-accento dark:border-notte-deep dark:bg-notte dark:text-nebbia dark:hover:border-accento-chiara dark:hover:text-accento-chiara"
+            >
+              Scarica JSON
+            </a>
+          </p>
+        </section>
+
+        <section aria-labelledby="quadro-economico" className="mt-14 scroll-mt-24">
           <div className="border-b-2 border-inchiostro pb-4 dark:border-nebbia">
             <h2 id="quadro-economico" className="font-serif text-2xl font-bold text-inchiostro dark:text-nebbia">
               Quadro economico — istantanea
@@ -358,44 +469,33 @@ export default async function StatistichePage() {
             <p className="mt-2 max-w-3xl text-sm leading-relaxed text-inchiostro-soft dark:text-nebbia-soft">
               Valori ufficiali di riferimento inclusi in questa edizione, con il periodo a cui si riferiscono. Non sono
               aggiornati in tempo reale: per i comunicati più recenti segui i collegamenti istituzionali in fondo.
+              Aggiornato al {ECONOMIA_AGGIORNATO_AL}.
             </p>
           </div>
 
           <ul className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-            {INDICATORI.map((indicatore, index) => (
-              <li key={indicatore.chiave} className="flex">
-                <Comparsa className="flex w-full" delay={Math.min(index * 0.05, 0.2)}>
-                  <article className="flex w-full flex-col border border-regola bg-carta p-5 dark:border-notte-deep dark:bg-notte-soft">
-                    <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-inchiostro-faint dark:text-nebbia-faint">
-                      {indicatore.periodo}
-                    </p>
-                    <h3 className="mt-2 text-sm font-semibold text-inchiostro dark:text-nebbia">{indicatore.etichetta}</h3>
-                    <p className="mt-3 font-serif text-3xl font-bold text-inchiostro dark:text-nebbia">
-                      <Contatore
-                        value={indicatore.valore}
-                        decimals={indicatore.decimals}
-                        prefix={indicatore.prefix}
-                        suffix={indicatore.suffix}
-                      />
-                    </p>
-                    {indicatore.nota && (
-                      <p className="mt-2 text-xs leading-relaxed text-inchiostro-faint dark:text-nebbia-faint">
-                        {indicatore.nota}
-                      </p>
-                    )}
-                    <p className="mt-auto pt-4 text-xs text-inchiostro-soft dark:text-nebbia-soft">
-                      Fonte:{' '}
-                      <a
-                        href={indicatore.fonteUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="font-semibold text-accento underline underline-offset-2 dark:text-accento-chiara"
-                      >
-                        {indicatore.fonte}
-                      </a>
-                    </p>
-                  </article>
-                </Comparsa>
+            {ECONOMIA_SNAPSHOT.map((indicatore) => (
+              <li key={indicatore.indicatore} className="flex">
+                <article className="flex w-full flex-col border border-regola bg-carta p-5 dark:border-notte-deep dark:bg-notte-soft">
+                  <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-inchiostro-faint dark:text-nebbia-faint">
+                    {indicatore.periodo}
+                  </p>
+                  <h3 className="mt-2 text-sm font-semibold text-inchiostro dark:text-nebbia">
+                    {indicatore.indicatore}
+                  </h3>
+                  <p className="mt-3 font-serif text-3xl font-bold text-inchiostro dark:text-nebbia">
+                    <Contatore value={indicatore.valore} decimals={1} />
+                    <span className="ml-1 text-base font-normal">
+                      {indicatore.unita === 'percentuale' ? '%' : indicatore.unita}
+                    </span>
+                  </p>
+                  <p className="mt-2 text-xs leading-relaxed text-inchiostro-faint dark:text-nebbia-faint">
+                    {indicatore.nota}
+                  </p>
+                  <p className="mt-auto pt-4 text-xs text-inchiostro-soft dark:text-nebbia-soft">
+                    Fonte: {indicatore.fonte}
+                  </p>
+                </article>
               </li>
             ))}
           </ul>
@@ -406,7 +506,7 @@ export default async function StatistichePage() {
             </h3>
             <ul className="mt-3 flex flex-wrap gap-x-6 gap-y-2 text-sm">
               {RISORSE.map((risorsa) => (
-                <li key={risorsa.url}>
+                <li key={risorsa.url} className="flex min-h-[44px] items-center">
                   <a
                     href={risorsa.url}
                     target="_blank"
@@ -421,13 +521,37 @@ export default async function StatistichePage() {
           </div>
         </section>
 
-        <p className="mt-10 text-sm text-inchiostro-soft dark:text-nebbia-soft">
-          Come calcoliamo questi indicatori? Leggi la{' '}
-          <Link href="/metodologia" className="font-semibold text-accento underline underline-offset-2 dark:text-accento-chiara">
-            metodologia
-          </Link>
-          .
-        </p>
+        <section aria-labelledby="metodo-limiti" className="mt-10 scroll-mt-24 border border-regola bg-carta p-5 dark:border-notte-deep dark:bg-notte-soft">
+          <h2 id="metodo-limiti" className="font-serif text-lg font-bold text-inchiostro dark:text-nebbia">
+            Metodologia e limiti
+          </h2>
+          <ul className="mt-3 list-disc space-y-2 pl-5 text-sm leading-relaxed text-inchiostro-soft dark:text-nebbia-soft">
+            <li>
+              I conteggi e le medie sono calcolati sul database con query aggregate e aggiornati ogni ora: questa pagina
+              non scarica mai l’intero corpus.
+            </li>
+            <li>
+              I grafici mostrano gli ultimi {MAX_ANNI_GRAFICO} anni e i {MAX_TIPI_GRAFICO} tipi di atto più frequenti;
+              l’archivio resta sfogliabile per intero con i filtri per anno e tipo.
+            </li>
+            <li>
+              La leggibilità è l’indice Gulpease medio sui testi valutati
+              {stats.gulpeaseMedio !== null && ` (attuale: ${decimale(stats.gulpeaseMedio)}/100)`}: sopra 60 il testo è
+              facile, tra 40 e 60 medio, sotto 40 difficile.
+            </li>
+            <li>
+              Corpus dimostrativo: le schede possono includere atti di esempio a scopo illustrativo; i valori economici
+              sono un’istantanea curata, non dati ufficiali in tempo reale.
+            </li>
+          </ul>
+          <p className="mt-4 text-sm text-inchiostro-soft dark:text-nebbia-soft">
+            Come calcoliamo questi indicatori? Leggi la{' '}
+            <Link href="/metodologia" className="font-semibold text-accento underline underline-offset-2 dark:text-accento-chiara">
+              metodologia
+            </Link>
+            .
+          </p>
+        </section>
       </main>
       <Footer />
     </>
