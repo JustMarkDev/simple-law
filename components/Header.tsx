@@ -17,6 +17,7 @@ const NAV = [
   { href: '/quirinale', label: 'Quirinale' },
   { href: '/consulta', label: 'Consulta' },
   { href: '/controllo', label: 'Controllo' },
+  { href: '/finanziamenti', label: 'Finanziamenti' },
   { href: '/statistiche', label: 'Statistiche' },
   { href: '/elezioni', label: 'Elezioni' },
   { href: '/regionali-extra', label: 'Regionali Extra' },

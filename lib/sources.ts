@@ -222,6 +222,8 @@ const PERCORSI_ATTI_REALI = [
   "data/reali/normattiva-storico-1995.json",
   "data/reali/normattiva-finestra-1975.json",
   "data/reali/normattiva-finestra-1995.json",
+  "data/reali/normattiva-storico-2012.json",
+  "data/reali/normattiva-storico-2018.json",
 ] as const;
 
 /** Percorsi candidati per i comunicati reali (primo esistente e valido vince). */

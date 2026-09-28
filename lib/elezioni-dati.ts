@@ -1259,15 +1259,34 @@ export const PERCORSO_REGIONALI_TOSCANA_2025 =
   "data/reali/elezioni-regionali-2025-toscana.json";
 export const PERCORSO_REGIONALI_UMBRIA_2024 =
   "data/reali/elezioni-regionali-2024-umbria.json";
+/** Percorsi relativi (da cwd) dei file regionali REALI-14 (W2/W3, se presenti). */
+export const PERCORSO_REGIONALI_EMILIA_ROMAGNA_2024 =
+  "data/reali/elezioni-regionali-2024-emilia-romagna.json";
+export const PERCORSO_REGIONALI_CAMPANIA_2025 =
+  "data/reali/elezioni-regionali-2025-campania.json";
+export const PERCORSO_REGIONALI_PUGLIA_2025 =
+  "data/reali/elezioni-regionali-2025-puglia.json";
+export const PERCORSO_REGIONALI_VENETO_2025 =
+  "data/reali/elezioni-regionali-2025-veneto.json";
 
 /** Identificativi REST delle regionali. */
 export const ID_REGIONALI_TOSCANA_2025 = "regionali-2025-toscana" as const;
 export const ID_REGIONALI_UMBRIA_2024 = "regionali-2024-umbria" as const;
+/** Identificativi REST delle regionali REALI-14 (riuso parser, zero nominativi). */
+export const ID_REGIONALI_EMILIA_ROMAGNA_2024 =
+  "regionali-2024-emilia-romagna" as const;
+export const ID_REGIONALI_CAMPANIA_2025 = "regionali-2025-campania" as const;
+export const ID_REGIONALI_PUGLIA_2025 = "regionali-2025-puglia" as const;
+export const ID_REGIONALI_VENETO_2025 = "regionali-2025-veneto" as const;
 
 /** Identificativi REST delle regionali (unione dedicata, mai in IdElezione). */
 export type IdRegionale =
   | typeof ID_REGIONALI_TOSCANA_2025
-  | typeof ID_REGIONALI_UMBRIA_2024;
+  | typeof ID_REGIONALI_UMBRIA_2024
+  | typeof ID_REGIONALI_EMILIA_ROMAGNA_2024
+  | typeof ID_REGIONALI_CAMPANIA_2025
+  | typeof ID_REGIONALI_PUGLIA_2025
+  | typeof ID_REGIONALI_VENETO_2025;
 
 /** Voce del registry regionali: metadati statici, mai numeri reali. */
 export interface VoceRegistroRegionale {
@@ -1298,6 +1317,34 @@ export const REGISTRY_REGIONALI: readonly VoceRegistroRegionale[] = [
     file: PERCORSO_REGIONALI_UMBRIA_2024,
     titolo: "Elezioni regionali 2024 — Umbria",
   },
+  {
+    id: "regionali-2024-emilia-romagna",
+    tipo: "regionali",
+    data: "2024-11-17",
+    file: PERCORSO_REGIONALI_EMILIA_ROMAGNA_2024,
+    titolo: "Elezioni regionali 2024 — Emilia-Romagna",
+  },
+  {
+    id: "regionali-2025-campania",
+    tipo: "regionali",
+    data: "2025-11-23",
+    file: PERCORSO_REGIONALI_CAMPANIA_2025,
+    titolo: "Elezioni regionali 2025 — Campania",
+  },
+  {
+    id: "regionali-2025-puglia",
+    tipo: "regionali",
+    data: "2025-11-23",
+    file: PERCORSO_REGIONALI_PUGLIA_2025,
+    titolo: "Elezioni regionali 2025 — Puglia",
+  },
+  {
+    id: "regionali-2025-veneto",
+    tipo: "regionali",
+    data: "2025-11-23",
+    file: PERCORSO_REGIONALI_VENETO_2025,
+    titolo: "Elezioni regionali 2025 — Veneto",
+  },
 ];
 
 /** Normalizza un id regionale (trim, minuscole, max 64 ch). */
@@ -1307,7 +1354,11 @@ export function normalizzaIdRegionale(value: unknown): IdRegionale | null {
     const chiave = value.trim().toLowerCase().slice(0, 64);
     if (
       chiave === "regionali-2025-toscana" ||
-      chiave === "regionali-2024-umbria"
+      chiave === "regionali-2024-umbria" ||
+      chiave === "regionali-2024-emilia-romagna" ||
+      chiave === "regionali-2025-campania" ||
+      chiave === "regionali-2025-puglia" ||
+      chiave === "regionali-2025-veneto"
     )
       return chiave;
     return null;

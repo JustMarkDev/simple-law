@@ -1409,3 +1409,229 @@ describe("integrazione tollerante finestre 1975/1995 (zero rete, disco read-only
     expect(duplicati).toBe(0);
   });
 });
+
+const VOCE_AGGIORNATI_2012 = {
+  numeroProvvedimento: "234",
+  denominazioneAtto: "LEGGE",
+  annoProvvedimento: "2012",
+  meseProvvedimento: "12",
+  giornoProvvedimento: "24",
+  codiceRedazionale: "012G0256",
+  dataGU: "2012-12-29",
+  numeroGU: "304",
+};
+
+const VOCE_AGGIORNATI_2018 = {
+  numeroProvvedimento: "145",
+  denominazioneAtto: "LEGGE",
+  annoProvvedimento: "2018",
+  meseProvvedimento: "12",
+  giornoProvvedimento: "30",
+  codiceRedazionale: "18G00172",
+  dataGU: "2018-12-31",
+  numeroGU: "302",
+};
+
+describe("ingest finestre Normattiva 2012/2018 (fixture inline, zero rete)", () => {
+  it("urnDaVoceFinestra costruisce URN reali 2012 e 2018", () => {
+    expect(urnDaVoceFinestra(VOCE_AGGIORNATI_2012)).toBe(
+      "urn:nir:stato:legge:2012-12-24;234",
+    );
+    expect(urnDaVoceFinestra(VOCE_AGGIORNATI_2018)).toBe(
+      "urn:nir:stato:legge:2018-12-30;145",
+    );
+  });
+
+  it("vociDaAggiornatiFinestra: dedup URN tra 2012/2018", () => {
+    const voci = vociDaAggiornatiFinestra({
+      data: { listaAtti: [VOCE_AGGIORNATI_2012, VOCE_AGGIORNATI_2012, VOCE_AGGIORNATI_2018] },
+    });
+    expect(voci).toHaveLength(2);
+  });
+
+  it("stati onesti: fine-vigenza passata=abrogato, 99999999=in_vigore, Art.1 formale", () => {
+    expect(statoDaFineVigenzaFinestre("99999999", "20260928")).toBe("in_vigore");
+    expect(statoDaFineVigenzaFinestre("20151231", "20260928")).toBe("abrogato");
+    expect(statoDaFineVigenzaFinestre("20201231", "20260928")).toBe("abrogato");
+    expect(statoDaIntestazioneArt1Finestre("ART. 1 DECRETO DECADUTO - testo")).toBe("decaduto");
+    expect(statoDaIntestazioneArt1Finestre("corpo che cita abrogazione")).toBeNull();
+  });
+
+  it("dettaglioToRecordFinestra 2012: legge con stato da fine-vigenza", () => {
+    const voce: VoceFinestra = {
+      urn: "urn:nir:stato:legge:2012-12-24;234",
+      codice: "012G0256",
+      dataGU: "2012-12-29",
+      numeroGU: "304",
+      eliReale: "",
+    };
+    const record = dettaglioToRecordFinestra(
+      voce,
+      {
+        data: {
+          atto: {
+            titolo: "LEGGE 24 dicembre 2012, n. 234",
+            sottoTitolo: "Disposizioni di prova.",
+            articoloHtml: "<div><p>Testo di prova.</p></div>",
+            tipoProvvedimentoDescrizione: "LEGGE",
+            annoProvvedimento: 2012,
+            meseProvvedimento: 12,
+            giornoProvvedimento: 24,
+            numeroProvvedimento: 234,
+            articoloDataFineVigenza: "99999999",
+          },
+        },
+      },
+      2000,
+    );
+    expect(record?.stato).toBe("in_vigore");
+    expect(record?.dataEmanazione).toBe("2012-12-24");
+    expect(record?.articoloDataFineVigenza).toBe("99999999");
+  });
+
+  it("dettaglioToRecordFinestra 2018: DL decaduto da intestazione Art.1", () => {
+    const voce: VoceFinestra = {
+      urn: "urn:nir:stato:decreto.legge:2018-10-04;113",
+      codice: "18G00132",
+      dataGU: "",
+      numeroGU: "",
+      eliReale: "",
+    };
+    const record = dettaglioToRecordFinestra(
+      voce,
+      {
+        data: {
+          atto: {
+            titolo: "DECRETO-LEGGE 4 ottobre 2018, n. 113",
+            sottoTitolo: "Disposizioni urgenti di prova.",
+            articoloHtml: "<div><p>ART. 1 DECRETO DECADUTO - Testo di prova.</p></div>",
+            tipoProvvedimentoDescrizione: "DECRETO-LEGGE",
+            annoProvvedimento: 2018,
+            meseProvvedimento: 10,
+            giornoProvvedimento: 4,
+            numeroProvvedimento: 113,
+            articoloDataFineVigenza: "99999999",
+          },
+        },
+      },
+      2000,
+    );
+    expect(record?.stato).toBe("decaduto");
+    expect(record?.dataEmanazione).toBe("2018-10-04");
+  });
+
+  it("unione multi-file (17 batch): dedup ELI incluse 2012/2018", () => {
+    const mk = (eli: string, titolo: string, dataEmanazione: string) => ({
+      chiave: eli,
+      titolo,
+      tipo: "legge",
+      numero: "1",
+      dataEmanazione,
+      nir: `urn:nir:fake:${eli}`,
+      eli,
+      stato: "in_vigore",
+      sintesi: titolo,
+      fonti: {},
+    });
+    const batch = [
+      mk("/eli/id/2012/12/24/X/sg", "Atto X 2012", "2012-12-24"),
+      mk("/eli/id/2012/12/24/X/sg", "Atto X duplicato", "2012-12-24"),
+      mk("/eli/id/2018/12/30/Y/sg", "Atto Y 2018", "2018-12-30"),
+      mk("/eli/id/2010/06/25/A/sg", "Atto A 2010", "2010-06-25"),
+      mk("/eli/id/1970/05/16/B/sg", "Atto B 1970", "1970-05-16"),
+      mk("/eli/id/1990/01/01/C/sg", "Atto C 1990", "1990-01-01"),
+      mk("/eli/id/2000/06/09/D/sg", "Atto D 2000", "2000-06-09"),
+      mk("/eli/id/1980/01/01/E/sg", "Atto E 1980", "1980-01-01"),
+      mk("/eli/id/2020/03/17/F/sg", "Atto F 2020", "2020-03-17"),
+      mk("/eli/id/1960/10/21/G/sg", "Atto G 1960", "1960-10-21"),
+      mk("/eli/id/1955/01/01/H/sg", "Atto H 1955", "1955-01-01"),
+      mk("/eli/id/2015/01/01/I/sg", "Atto I 2015", "2015-01-01"),
+      mk("/eli/id/1948/02/12/J/sg", "Atto J 1948", "1948-02-12"),
+      mk("/eli/id/1985/02/19/K/sg", "Atto K 1985", "1985-02-19"),
+      mk("/eli/id/1975/11/29/L/sg", "Atto L 1975", "1975-11-29"),
+      mk("/eli/id/1995/12/23/M/sg", "Atto M 1995", "1995-12-23"),
+    ];
+    const normalizzati = batch
+      .map((a) => normalizzaAttoReale(a))
+      .filter((r): r is NonNullable<typeof r> => r !== null);
+    const uniti = unisciCorpus([], normalizzati, []);
+    expect(new Set(uniti.map((r) => r.eli.toLowerCase())).size).toBe(15);
+  });
+});
+
+describe("integrazione tollerante finestre 2012/2018 (zero rete, disco read-only)", () => {
+  async function leggiAtti(percorso: string): Promise<unknown[]> {
+    const raw = await readFile(path.resolve(percorso), "utf8");
+    if (Buffer.byteLength(raw, "utf8") > 1024 * 1024) throw new Error("file oltre 1MB");
+    return estraiListaAttiReali(JSON.parse(raw) as unknown);
+  }
+
+  it("i JSON 2012/2018 (se presenti) sono envelope validi, <=80 atti, stati onesti", async () => {
+    for (const percorso of [
+      "data/reali/normattiva-storico-2012.json",
+      "data/reali/normattiva-storico-2018.json",
+    ]) {
+      let lista: unknown[];
+      try {
+        lista = await leggiAtti(percorso);
+      } catch {
+        continue;
+      }
+      expect(lista.length).toBeGreaterThan(0);
+      expect(lista.length).toBeLessThanOrEqual(80);
+      let validi = 0;
+      for (const item of lista.slice(0, 500)) {
+        const record = normalizzaAttoReale(item);
+        if (!record) continue;
+        validi += 1;
+        expect(record.titolo.length).toBeGreaterThan(0);
+        expect(record.eli.length).toBeGreaterThan(0);
+        expect(["in_vigore", "abrogato", "decaduto"]).toContain(record.stato);
+      }
+      expect(validi).toBeGreaterThan(0);
+    }
+  });
+
+  it("unione reali 17 file: nessun ELI duplicato (se i file ci sono)", async () => {
+    const percorsi = [
+      "data/reali/normattiva-recenti.json",
+      "data/reali/normattiva-storico-1980.json",
+      "data/reali/normattiva-storico-collezioni.json",
+      "data/reali/normattiva-storico-1990.json",
+      "data/reali/normattiva-storico-2000.json",
+      "data/reali/normattiva-storico-2010.json",
+      "data/reali/normattiva-storico-1970.json",
+      "data/reali/normattiva-storico-2020.json",
+      "data/reali/normattiva-storico-1960.json",
+      "data/reali/normattiva-storico-1992-1993.json",
+      "data/reali/normattiva-storico-2005-2006.json",
+      "data/reali/normattiva-storico-1948.json",
+      "data/reali/normattiva-storico-1985.json",
+      "data/reali/normattiva-storico-1975.json",
+      "data/reali/normattiva-storico-1995.json",
+      "data/reali/normattiva-storico-2012.json",
+      "data/reali/normattiva-storico-2018.json",
+    ];
+    const visti = new Set<string>();
+    let duplicati = 0;
+    let totale = 0;
+    for (const percorso of percorsi) {
+      let lista: unknown[];
+      try {
+        lista = await leggiAtti(percorso);
+      } catch {
+        continue;
+      }
+      for (const item of lista) {
+        const record = normalizzaAttoReale(item);
+        if (!record) continue;
+        totale += 1;
+        const chiave = record.eli.trim().toLowerCase();
+        if (visti.has(chiave)) duplicati += 1;
+        visti.add(chiave);
+      }
+    }
+    if (totale === 0) return;
+    expect(duplicati).toBe(0);
+  });
+});

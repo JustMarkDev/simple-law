@@ -25,7 +25,8 @@
 /** Identificativi REST delle regionali-extra. */
 export type IdRegionaleExtra =
   | "regionali-2024-liguria"
-  | "regionali-2025-calabria";
+  | "regionali-2025-calabria"
+  | "regionali-2024-emilia-romagna";
 
 /** Voce del registry: metadati statici, mai numeri reali. */
 export interface VoceRegistroRegionaleExtra {
@@ -100,6 +101,11 @@ export const PERCORSO_CALABRIA_2025 =
 /** Identificativi REST delle regionali-extra. */
 export const ID_LIGURIA_2024 = "regionali-2024-liguria" as const;
 export const ID_CALABRIA_2025 = "regionali-2025-calabria" as const;
+export const ID_EMILIA_ROMAGNA_2024 = "regionali-2024-emilia-romagna" as const;
+
+/** Percorso relativo (da cwd) del file Emilia-Romagna 2024. */
+export const PERCORSO_EMILIA_ROMAGNA_2024 =
+  "data/reali/elezioni-regionali-2024-emilia-romagna.json";
 
 /**
  * Registry statico delle regionali-extra (metadati, mai numeri reali).
@@ -120,6 +126,13 @@ export const REGISTRY_REGIONALI_EXTRA: readonly VoceRegistroRegionaleExtra[] = [
     data: "2025-10-05",
     file: PERCORSO_CALABRIA_2025,
     titolo: "Elezioni regionali 2025 — Calabria",
+  },
+  {
+    id: "regionali-2024-emilia-romagna",
+    tipo: "regionali",
+    data: "2024-11-17",
+    file: PERCORSO_EMILIA_ROMAGNA_2024,
+    titolo: "Elezioni regionali 2024 — Emilia-Romagna",
   },
 ];
 
@@ -272,7 +285,8 @@ export function normalizzaIdRegionaleExtra(value: unknown): IdRegionaleExtra | n
     const chiave = value.trim().toLowerCase().slice(0, 64);
     if (
       chiave === "regionali-2024-liguria" ||
-      chiave === "regionali-2025-calabria"
+      chiave === "regionali-2025-calabria" ||
+      chiave === "regionali-2024-emilia-romagna"
     )
       return chiave;
     return null;

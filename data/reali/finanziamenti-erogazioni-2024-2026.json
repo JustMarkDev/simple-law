@@ -1,0 +1,412 @@
+{
+  "provenance": {
+    "fonte": "Camera dei deputati — Erogazioni ai partiti politici (art. 5, DL 149/2013)",
+    "url": "https://parlamento18.camera.it/199",
+    "recuperatoIl": "2026-09-28T22:48:40.978Z",
+    "licenza": "camera.it — solo riuso non commerciale con citazione fonte",
+    "hub": "https://www.camera.it/leg19/1384",
+    "relazioni": "https://www.camera.it/leg19/1234"
+  },
+  "erogazioni": [
+    {
+      "beneficiario": "LEGA PER SALVINI PREMIER",
+      "anno": 2025,
+      "n_erogazioni": 2067,
+      "totale_euro": 4614375.89,
+      "fonte_pdf": "https://parlamento18.camera.it/application/xmanager/projects/parlamento18/attachments/file_parlamento/uploads/000/000/007/ART_5_DL_149_2013_L_3_2019_dal_01012025_al_31122025_agg._11062026.pdf",
+      "lastModified": "2026-06-11T15:39:23.000Z"
+    },
+    {
+      "beneficiario": "FORZA ITALIA",
+      "anno": 2024,
+      "n_erogazioni": 959,
+      "totale_euro": 4321019.3,
+      "fonte_pdf": "https://parlamento18.camera.it/application/xmanager/projects/parlamento18/attachments/file_parlamento/uploads/000/000/006/ART_5_DL_149_2013_L_3_2019_dal_01012024_al_31122024_agg.13052025.pdf",
+      "lastModified": "2025-05-13T14:37:17.000Z"
+    },
+    {
+      "beneficiario": "LEGA PER SALVINI PREMIER",
+      "anno": 2024,
+      "n_erogazioni": 1738,
+      "totale_euro": 3826996.1,
+      "fonte_pdf": "https://parlamento18.camera.it/application/xmanager/projects/parlamento18/attachments/file_parlamento/uploads/000/000/006/ART_5_DL_149_2013_L_3_2019_dal_01012024_al_31122024_agg.13052025.pdf",
+      "lastModified": "2025-05-13T14:37:17.000Z"
+    },
+    {
+      "beneficiario": "FORZA ITALIA",
+      "anno": 2025,
+      "n_erogazioni": 884,
+      "totale_euro": 3444296.88,
+      "fonte_pdf": "https://parlamento18.camera.it/application/xmanager/projects/parlamento18/attachments/file_parlamento/uploads/000/000/007/ART_5_DL_149_2013_L_3_2019_dal_01012025_al_31122025_agg._11062026.pdf",
+      "lastModified": "2026-06-11T15:39:23.000Z"
+    },
+    {
+      "beneficiario": "MOVIMENTO 5 STELLE",
+      "anno": 2025,
+      "n_erogazioni": 2000,
+      "totale_euro": 3318276.37,
+      "fonte_pdf": "https://parlamento18.camera.it/application/xmanager/projects/parlamento18/attachments/file_parlamento/uploads/000/000/007/ART_5_DL_149_2013_L_3_2019_dal_01012025_al_31122025_agg._11062026.pdf",
+      "lastModified": "2026-06-11T15:39:23.000Z"
+    },
+    {
+      "beneficiario": "FRATELLI D'ITALIA ALLEANZA NAZIONALE",
+      "anno": 2024,
+      "n_erogazioni": 2240,
+      "totale_euro": 2716800,
+      "fonte_pdf": "https://parlamento18.camera.it/application/xmanager/projects/parlamento18/attachments/file_parlamento/uploads/000/000/006/ART_5_DL_149_2013_L_3_2019_dal_01012024_al_31122024_agg.13052025.pdf",
+      "lastModified": "2025-05-13T14:37:17.000Z"
+    },
+    {
+      "beneficiario": "MOVIMENTO 5 STELLE",
+      "anno": 2024,
+      "n_erogazioni": 1601,
+      "totale_euro": 2698315.76,
+      "fonte_pdf": "https://parlamento18.camera.it/application/xmanager/projects/parlamento18/attachments/file_parlamento/uploads/000/000/006/ART_5_DL_149_2013_L_3_2019_dal_01012024_al_31122024_agg.13052025.pdf",
+      "lastModified": "2025-05-13T14:37:17.000Z"
+    },
+    {
+      "beneficiario": "FRATELLI D'ITALIA ALLEANZA NAZIONALE",
+      "anno": 2025,
+      "n_erogazioni": 2349,
+      "totale_euro": 2472150,
+      "fonte_pdf": "https://parlamento18.camera.it/application/xmanager/projects/parlamento18/attachments/file_parlamento/uploads/000/000/007/ART_5_DL_149_2013_L_3_2019_dal_01012025_al_31122025_agg._11062026.pdf",
+      "lastModified": "2026-06-11T15:39:23.000Z"
+    },
+    {
+      "beneficiario": "LEGA PER SALVINI PREMIER",
+      "anno": 2026,
+      "n_erogazioni": 1089,
+      "totale_euro": 2335331.8,
+      "fonte_pdf": "https://parlamento18.camera.it/application/xmanager/projects/parlamento18/attachments/file_parlamento/uploads/000/000/008/ART_5_DL_149_2013_L_3_2019_dal_01012026_v._65.pdf",
+      "lastModified": "2026-09-28T07:43:07.000Z"
+    },
+    {
+      "beneficiario": "PARTITO DEMOCRATICO",
+      "anno": 2025,
+      "n_erogazioni": 1350,
+      "totale_euro": 2093757.84,
+      "fonte_pdf": "https://parlamento18.camera.it/application/xmanager/projects/parlamento18/attachments/file_parlamento/uploads/000/000/007/ART_5_DL_149_2013_L_3_2019_dal_01012025_al_31122025_agg._11062026.pdf",
+      "lastModified": "2026-06-11T15:39:23.000Z"
+    },
+    {
+      "beneficiario": "PARTITO DEMOCRATICO",
+      "anno": 2024,
+      "n_erogazioni": 1195,
+      "totale_euro": 2020795.75,
+      "fonte_pdf": "https://parlamento18.camera.it/application/xmanager/projects/parlamento18/attachments/file_parlamento/uploads/000/000/006/ART_5_DL_149_2013_L_3_2019_dal_01012024_al_31122024_agg.13052025.pdf",
+      "lastModified": "2025-05-13T14:37:17.000Z"
+    },
+    {
+      "beneficiario": "MOVIMENTO 5 STELLE",
+      "anno": 2026,
+      "n_erogazioni": 749,
+      "totale_euro": 1733190.32,
+      "fonte_pdf": "https://parlamento18.camera.it/application/xmanager/projects/parlamento18/attachments/file_parlamento/uploads/000/000/008/ART_5_DL_149_2013_L_3_2019_dal_01012026_v._65.pdf",
+      "lastModified": "2026-09-28T07:43:07.000Z"
+    },
+    {
+      "beneficiario": "FRATELLI D'ITALIA ALLEANZA NAZIONALE",
+      "anno": 2026,
+      "n_erogazioni": 1585,
+      "totale_euro": 1684730,
+      "fonte_pdf": "https://parlamento18.camera.it/application/xmanager/projects/parlamento18/attachments/file_parlamento/uploads/000/000/008/ART_5_DL_149_2013_L_3_2019_dal_01012026_v._65.pdf",
+      "lastModified": "2026-09-28T07:43:07.000Z"
+    },
+    {
+      "beneficiario": "SÜDTIROLER VOLKSPARTEI",
+      "anno": 2024,
+      "n_erogazioni": 707,
+      "totale_euro": 1658216.73,
+      "fonte_pdf": "https://parlamento18.camera.it/application/xmanager/projects/parlamento18/attachments/file_parlamento/uploads/000/000/007/ART_5_DL_149_2013_L_3_2019_dal_01012025_al_31122025_agg._11062026.pdf",
+      "lastModified": "2026-06-11T15:39:23.000Z"
+    },
+    {
+      "beneficiario": "FORZA ITALIA",
+      "anno": 2026,
+      "n_erogazioni": 483,
+      "totale_euro": 1627094.14,
+      "fonte_pdf": "https://parlamento18.camera.it/application/xmanager/projects/parlamento18/attachments/file_parlamento/uploads/000/000/008/ART_5_DL_149_2013_L_3_2019_dal_01012026_v._65.pdf",
+      "lastModified": "2026-09-28T07:43:07.000Z"
+    },
+    {
+      "beneficiario": "ITALIA VIVA",
+      "anno": 2024,
+      "n_erogazioni": 248,
+      "totale_euro": 1604702.97,
+      "fonte_pdf": "https://parlamento18.camera.it/application/xmanager/projects/parlamento18/attachments/file_parlamento/uploads/000/000/006/ART_5_DL_149_2013_L_3_2019_dal_01012024_al_31122024_agg.13052025.pdf",
+      "lastModified": "2025-05-13T14:37:17.000Z"
+    },
+    {
+      "beneficiario": "COMITATO ATTIVITA’ TERRITORIALI DEL MOVIMENTO 5 STELLE – PROGETTI E INIZIATIVE DEI GRUPPI TERRIOTORIALI – NOVA",
+      "anno": 2026,
+      "n_erogazioni": 7,
+      "totale_euro": 1530000,
+      "fonte_pdf": "https://parlamento18.camera.it/application/xmanager/projects/parlamento18/attachments/file_parlamento/uploads/000/000/008/ART_5_DL_149_2013_L_3_2019_dal_01012026_v._65.pdf",
+      "lastModified": "2026-09-28T07:43:07.000Z"
+    },
+    {
+      "beneficiario": "ITALIA VIVA",
+      "anno": 2025,
+      "n_erogazioni": 171,
+      "totale_euro": 1526095.28,
+      "fonte_pdf": "https://parlamento18.camera.it/application/xmanager/projects/parlamento18/attachments/file_parlamento/uploads/000/000/007/ART_5_DL_149_2013_L_3_2019_dal_01012025_al_31122025_agg._11062026.pdf",
+      "lastModified": "2026-06-11T15:39:23.000Z"
+    },
+    {
+      "beneficiario": "SUD CHIAMA NORD",
+      "anno": 2024,
+      "n_erogazioni": 709,
+      "totale_euro": 1440240.38,
+      "fonte_pdf": "https://parlamento18.camera.it/application/xmanager/projects/parlamento18/attachments/file_parlamento/uploads/000/000/006/ART_5_DL_149_2013_L_3_2019_dal_01012024_al_31122024_agg.13052025.pdf",
+      "lastModified": "2025-05-13T14:37:17.000Z"
+    },
+    {
+      "beneficiario": "PARTITO DEMOCRATICO",
+      "anno": 2026,
+      "n_erogazioni": 841,
+      "totale_euro": 1323612,
+      "fonte_pdf": "https://parlamento18.camera.it/application/xmanager/projects/parlamento18/attachments/file_parlamento/uploads/000/000/008/ART_5_DL_149_2013_L_3_2019_dal_01012026_v._65.pdf",
+      "lastModified": "2026-09-28T07:43:07.000Z"
+    },
+    {
+      "beneficiario": "SÜDTIROLER VOLKSPARTEI",
+      "anno": 2025,
+      "n_erogazioni": 638,
+      "totale_euro": 990117.12,
+      "fonte_pdf": "https://parlamento18.camera.it/application/xmanager/projects/parlamento18/attachments/file_parlamento/uploads/000/000/008/ART_5_DL_149_2013_L_3_2019_dal_01012026_v._65.pdf",
+      "lastModified": "2026-09-28T07:43:07.000Z"
+    },
+    {
+      "beneficiario": "COMITATO ELETTORALE DEL MOVIMENTO 5 STELLE PER LE ELEZIONI EUROPEE 2024",
+      "anno": 2024,
+      "n_erogazioni": 6,
+      "totale_euro": 911000,
+      "fonte_pdf": "https://parlamento18.camera.it/application/xmanager/projects/parlamento18/attachments/file_parlamento/uploads/000/000/006/ART_5_DL_149_2013_L_3_2019_dal_01012024_al_31122024_agg.13052025.pdf",
+      "lastModified": "2025-05-13T14:37:17.000Z"
+    },
+    {
+      "beneficiario": "LEGA LOMBARDA PER SALVINI PREMIER",
+      "anno": 2024,
+      "n_erogazioni": 589,
+      "totale_euro": 705770.37,
+      "fonte_pdf": "https://parlamento18.camera.it/application/xmanager/projects/parlamento18/attachments/file_parlamento/uploads/000/000/006/ART_5_DL_149_2013_L_3_2019_dal_01012024_al_31122024_agg.13052025.pdf",
+      "lastModified": "2025-05-13T14:37:17.000Z"
+    },
+    {
+      "beneficiario": "AZIONE",
+      "anno": 2024,
+      "n_erogazioni": 348,
+      "totale_euro": 689410.73,
+      "fonte_pdf": "https://parlamento18.camera.it/application/xmanager/projects/parlamento18/attachments/file_parlamento/uploads/000/000/006/ART_5_DL_149_2013_L_3_2019_dal_01012024_al_31122024_agg.13052025.pdf",
+      "lastModified": "2025-05-13T14:37:17.000Z"
+    },
+    {
+      "beneficiario": "LEGA LOMBARDA PER SALVINI PREMIER",
+      "anno": 2025,
+      "n_erogazioni": 541,
+      "totale_euro": 611472.13,
+      "fonte_pdf": "https://parlamento18.camera.it/application/xmanager/projects/parlamento18/attachments/file_parlamento/uploads/000/000/007/ART_5_DL_149_2013_L_3_2019_dal_01012025_al_31122025_agg._11062026.pdf",
+      "lastModified": "2026-06-11T15:39:23.000Z"
+    },
+    {
+      "beneficiario": "FRATELLI D'ITALIA ALLEANZA NAZIONALE LOMBARDIA",
+      "anno": 2026,
+      "n_erogazioni": 59,
+      "totale_euro": 533372.64,
+      "fonte_pdf": "https://parlamento18.camera.it/application/xmanager/projects/parlamento18/attachments/file_parlamento/uploads/000/000/008/ART_5_DL_149_2013_L_3_2019_dal_01012026_v._65.pdf",
+      "lastModified": "2026-09-28T07:43:07.000Z"
+    },
+    {
+      "beneficiario": "LIGA VENETA PER SALVINI PREMIER",
+      "anno": 2024,
+      "n_erogazioni": 515,
+      "totale_euro": 526115.91,
+      "fonte_pdf": "https://parlamento18.camera.it/application/xmanager/projects/parlamento18/attachments/file_parlamento/uploads/000/000/006/ART_5_DL_149_2013_L_3_2019_dal_01012024_al_31122024_agg.13052025.pdf",
+      "lastModified": "2025-05-13T14:37:17.000Z"
+    },
+    {
+      "beneficiario": "FRATELLI D'ITALIA ALLEANZA NAZIONALE LOMBARDIA",
+      "anno": 2024,
+      "n_erogazioni": 157,
+      "totale_euro": 504865.37,
+      "fonte_pdf": "https://parlamento18.camera.it/application/xmanager/projects/parlamento18/attachments/file_parlamento/uploads/000/000/006/ART_5_DL_149_2013_L_3_2019_dal_01012024_al_31122024_agg.13052025.pdf",
+      "lastModified": "2025-05-13T14:37:17.000Z"
+    },
+    {
+      "beneficiario": "FRATELLI D'ITALIA - ALLEANZA NAZIONALE TOSCANA",
+      "anno": 2024,
+      "n_erogazioni": 285,
+      "totale_euro": 482964.08,
+      "fonte_pdf": "https://parlamento18.camera.it/application/xmanager/projects/parlamento18/attachments/file_parlamento/uploads/000/000/006/ART_5_DL_149_2013_L_3_2019_dal_01012024_al_31122024_agg.13052025.pdf",
+      "lastModified": "2025-05-13T14:37:17.000Z"
+    },
+    {
+      "beneficiario": "LEGA NORD",
+      "anno": 2024,
+      "n_erogazioni": 151,
+      "totale_euro": 482215,
+      "fonte_pdf": "https://parlamento18.camera.it/application/xmanager/projects/parlamento18/attachments/file_parlamento/uploads/000/000/006/ART_5_DL_149_2013_L_3_2019_dal_01012024_al_31122024_agg.13052025.pdf",
+      "lastModified": "2025-05-13T14:37:17.000Z"
+    },
+    {
+      "beneficiario": "LEGA NORD",
+      "anno": 2025,
+      "n_erogazioni": 88,
+      "totale_euro": 454830,
+      "fonte_pdf": "https://parlamento18.camera.it/application/xmanager/projects/parlamento18/attachments/file_parlamento/uploads/000/000/007/ART_5_DL_149_2013_L_3_2019_dal_01012025_al_31122025_agg._11062026.pdf",
+      "lastModified": "2026-06-11T15:39:23.000Z"
+    },
+    {
+      "beneficiario": "FRATELLI D'ITALIA ALLEANZA NAZIONALE SARDEGNA",
+      "anno": 2024,
+      "n_erogazioni": 87,
+      "totale_euro": 418454.95,
+      "fonte_pdf": "https://parlamento18.camera.it/application/xmanager/projects/parlamento18/attachments/file_parlamento/uploads/000/000/006/ART_5_DL_149_2013_L_3_2019_dal_01012024_al_31122024_agg.13052025.pdf",
+      "lastModified": "2025-05-13T14:37:17.000Z"
+    },
+    {
+      "beneficiario": "FRATELLI D'ITALIA ALLEANZA NAZIONALE EMILIA ROMAGNA",
+      "anno": 2024,
+      "n_erogazioni": 126,
+      "totale_euro": 414262.54,
+      "fonte_pdf": "https://parlamento18.camera.it/application/xmanager/projects/parlamento18/attachments/file_parlamento/uploads/000/000/006/ART_5_DL_149_2013_L_3_2019_dal_01012024_al_31122024_agg.13052025.pdf",
+      "lastModified": "2025-05-13T14:37:17.000Z"
+    },
+    {
+      "beneficiario": "FRATELLI D'ITALIA ALLEANZA NAZIONALE LOMBARDIA",
+      "anno": 2025,
+      "n_erogazioni": 149,
+      "totale_euro": 409794.08,
+      "fonte_pdf": "https://parlamento18.camera.it/application/xmanager/projects/parlamento18/attachments/file_parlamento/uploads/000/000/007/ART_5_DL_149_2013_L_3_2019_dal_01012025_al_31122025_agg._11062026.pdf",
+      "lastModified": "2026-06-11T15:39:23.000Z"
+    },
+    {
+      "beneficiario": "NOI MODERATI (GIA' NOI CON L'ITALIA)",
+      "anno": 2026,
+      "n_erogazioni": 155,
+      "totale_euro": 409580,
+      "fonte_pdf": "https://parlamento18.camera.it/application/xmanager/projects/parlamento18/attachments/file_parlamento/uploads/000/000/008/ART_5_DL_149_2013_L_3_2019_dal_01012026_v._65.pdf",
+      "lastModified": "2026-09-28T07:43:07.000Z"
+    },
+    {
+      "beneficiario": "FRATELLI D'ITALIA ALLEANZA NAZIONALE ABRUZZO",
+      "anno": 2024,
+      "n_erogazioni": 140,
+      "totale_euro": 402136.77,
+      "fonte_pdf": "https://parlamento18.camera.it/application/xmanager/projects/parlamento18/attachments/file_parlamento/uploads/000/000/006/ART_5_DL_149_2013_L_3_2019_dal_01012024_al_31122024_agg.13052025.pdf",
+      "lastModified": "2025-05-13T14:37:17.000Z"
+    },
+    {
+      "beneficiario": "SUD CHIAMA NORD",
+      "anno": 2025,
+      "n_erogazioni": 269,
+      "totale_euro": 400193.92,
+      "fonte_pdf": "https://parlamento18.camera.it/application/xmanager/projects/parlamento18/attachments/file_parlamento/uploads/000/000/008/ART_5_DL_149_2013_L_3_2019_dal_01012026_v._65.pdf",
+      "lastModified": "2026-09-28T07:43:07.000Z"
+    },
+    {
+      "beneficiario": "FRATELLI D'ITALIA ALLEANZA NAZIONALE LAZIO",
+      "anno": 2026,
+      "n_erogazioni": 141,
+      "totale_euro": 386983.1,
+      "fonte_pdf": "https://parlamento18.camera.it/application/xmanager/projects/parlamento18/attachments/file_parlamento/uploads/000/000/008/ART_5_DL_149_2013_L_3_2019_dal_01012026_v._65.pdf",
+      "lastModified": "2026-09-28T07:43:07.000Z"
+    },
+    {
+      "beneficiario": "PARTITO DEMOCRATICO TOSCANA",
+      "anno": 2024,
+      "n_erogazioni": 375,
+      "totale_euro": 385434.05,
+      "fonte_pdf": "https://parlamento18.camera.it/application/xmanager/projects/parlamento18/attachments/file_parlamento/uploads/000/000/006/ART_5_DL_149_2013_L_3_2019_dal_01012024_al_31122024_agg.13052025.pdf",
+      "lastModified": "2025-05-13T14:37:17.000Z"
+    },
+    {
+      "beneficiario": "LEGA NORD",
+      "anno": 2026,
+      "n_erogazioni": 56,
+      "totale_euro": 376960,
+      "fonte_pdf": "https://parlamento18.camera.it/application/xmanager/projects/parlamento18/attachments/file_parlamento/uploads/000/000/008/ART_5_DL_149_2013_L_3_2019_dal_01012026_v._65.pdf",
+      "lastModified": "2026-09-28T07:43:07.000Z"
+    },
+    {
+      "beneficiario": "ASSOCIAZIONE DI PARTECIPAZIONE POLITICA \"PER ELENA PRESIDENTE\"",
+      "anno": 2024,
+      "n_erogazioni": 59,
+      "totale_euro": 365800,
+      "fonte_pdf": "https://parlamento18.camera.it/application/xmanager/projects/parlamento18/attachments/file_parlamento/uploads/000/000/006/ART_5_DL_149_2013_L_3_2019_dal_01012024_al_31122024_agg.13052025.pdf",
+      "lastModified": "2025-05-13T14:37:17.000Z"
+    },
+    {
+      "beneficiario": "FRATELLI D'ITALIA - ALLEANZA NAZIONALE TOSCANA",
+      "anno": 2025,
+      "n_erogazioni": 250,
+      "totale_euro": 364783.16,
+      "fonte_pdf": "https://parlamento18.camera.it/application/xmanager/projects/parlamento18/attachments/file_parlamento/uploads/000/000/007/ART_5_DL_149_2013_L_3_2019_dal_01012025_al_31122025_agg._11062026.pdf",
+      "lastModified": "2026-06-11T15:39:23.000Z"
+    },
+    {
+      "beneficiario": "PARTITO DEMOCRATICO TOSCANA",
+      "anno": 2025,
+      "n_erogazioni": 319,
+      "totale_euro": 361660,
+      "fonte_pdf": "https://parlamento18.camera.it/application/xmanager/projects/parlamento18/attachments/file_parlamento/uploads/000/000/007/ART_5_DL_149_2013_L_3_2019_dal_01012025_al_31122025_agg._11062026.pdf",
+      "lastModified": "2026-06-11T15:39:23.000Z"
+    },
+    {
+      "beneficiario": "PIU EUROPA",
+      "anno": 2024,
+      "n_erogazioni": 95,
+      "totale_euro": 339165,
+      "fonte_pdf": "https://parlamento18.camera.it/application/xmanager/projects/parlamento18/attachments/file_parlamento/uploads/000/000/006/ART_5_DL_149_2013_L_3_2019_dal_01012024_al_31122024_agg.13052025.pdf",
+      "lastModified": "2025-05-13T14:37:17.000Z"
+    },
+    {
+      "beneficiario": "FRATELLI D'ITALIA ALLEANZA NAZIONALE LAZIO",
+      "anno": 2024,
+      "n_erogazioni": 200,
+      "totale_euro": 325910.12,
+      "fonte_pdf": "https://parlamento18.camera.it/application/xmanager/projects/parlamento18/attachments/file_parlamento/uploads/000/000/006/ART_5_DL_149_2013_L_3_2019_dal_01012024_al_31122024_agg.13052025.pdf",
+      "lastModified": "2025-05-13T14:37:17.000Z"
+    },
+    {
+      "beneficiario": "PARTITO DEMOCRATICO EMILIA-ROMAGNA",
+      "anno": 2025,
+      "n_erogazioni": 375,
+      "totale_euro": 324134.31,
+      "fonte_pdf": "https://parlamento18.camera.it/application/xmanager/projects/parlamento18/attachments/file_parlamento/uploads/000/000/007/ART_5_DL_149_2013_L_3_2019_dal_01012025_al_31122025_agg._11062026.pdf",
+      "lastModified": "2026-06-11T15:39:23.000Z"
+    },
+    {
+      "beneficiario": "PARTITO DEMOCRATICO EMILIA-ROMAGNA",
+      "anno": 2024,
+      "n_erogazioni": 325,
+      "totale_euro": 315840,
+      "fonte_pdf": "https://parlamento18.camera.it/application/xmanager/projects/parlamento18/attachments/file_parlamento/uploads/000/000/006/ART_5_DL_149_2013_L_3_2019_dal_01012024_al_31122024_agg.13052025.pdf",
+      "lastModified": "2025-05-13T14:37:17.000Z"
+    },
+    {
+      "beneficiario": "LEGA PIEMONTE PER SALVINI PREMIER",
+      "anno": 2024,
+      "n_erogazioni": 308,
+      "totale_euro": 313785,
+      "fonte_pdf": "https://parlamento18.camera.it/application/xmanager/projects/parlamento18/attachments/file_parlamento/uploads/000/000/006/ART_5_DL_149_2013_L_3_2019_dal_01012024_al_31122024_agg.13052025.pdf",
+      "lastModified": "2025-05-13T14:37:17.000Z"
+    },
+    {
+      "beneficiario": "FRATELLI D'ITALIA ALLEANZA NAZIONALE PUGLIA",
+      "anno": 2025,
+      "n_erogazioni": 37,
+      "totale_euro": 299995.2,
+      "fonte_pdf": "https://parlamento18.camera.it/application/xmanager/projects/parlamento18/attachments/file_parlamento/uploads/000/000/007/ART_5_DL_149_2013_L_3_2019_dal_01012025_al_31122025_agg._11062026.pdf",
+      "lastModified": "2026-06-11T15:39:23.000Z"
+    },
+    {
+      "beneficiario": "LEGA LOMBARDA PER SALVINI PREMIER",
+      "anno": 2026,
+      "n_erogazioni": 227,
+      "totale_euro": 296784.92,
+      "fonte_pdf": "https://parlamento18.camera.it/application/xmanager/projects/parlamento18/attachments/file_parlamento/uploads/000/000/008/ART_5_DL_149_2013_L_3_2019_dal_01012026_v._65.pdf",
+      "lastModified": "2026-09-28T07:43:07.000Z"
+    }
+  ]
+}

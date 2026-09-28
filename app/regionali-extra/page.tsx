@@ -36,6 +36,18 @@ const REGISTRO: VoceRegistro[] = [
     descrizione:
       'Voto del 5 ottobre 2025 in Calabria (data dal nome dello ZIP DAIT): affluenza e voti per lista a livello regionale e affluenza per comune. Solo aggregati, nessun nominativo; i voti del presidente non sono pubblicati come aggregato nel tracciato.',
   },
+  {
+    id: 'regionali-2025-calabria',
+    titolo: 'Elezioni regionali 2025 — Calabria',
+    descrizione:
+      'Voto del 5 ottobre 2025 in Calabria (data dal nome dello ZIP DAIT): affluenza e voti per lista a livello regionale e affluenza per comune. Solo aggregati, nessun nominativo; i voti del presidente non sono pubblicati come aggregato nel tracciato.',
+  },
+  {
+    id: 'regionali-2024-emilia-romagna',
+    titolo: 'Elezioni regionali 2024 — Emilia-Romagna',
+    descrizione:
+      'Voto del 17 novembre 2024 in Emilia-Romagna (data dal nome dello ZIP DAIT): affluenza e voti per lista a livello regionale e affluenza per comune. Solo aggregati, nessun nominativo.',
+  },
 ]
 
 function intero(value: number): string {
@@ -90,7 +102,7 @@ export default async function RegionaliExtraPage() {
             Dati ufficiali
           </p>
           <h1 className="mt-2 font-serif text-3xl font-bold text-inchiostro dark:text-nebbia sm:text-4xl">
-            Regionali: Liguria 2024 e Calabria 2025
+            Regionali: Liguria 2024, Emilia-Romagna 2024 e Calabria 2025
           </h1>
           <p className="mt-3 max-w-2xl text-sm leading-relaxed text-inchiostro-soft dark:text-nebbia-soft">
             Risultati elettorali da open data del Ministero dell’Interno (DAIT–Eligendo).

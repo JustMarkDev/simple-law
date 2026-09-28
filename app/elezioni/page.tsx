@@ -73,6 +73,38 @@ const REGISTRO: VoceRegistro[] = [
     file: path.join('data', 'reali', 'elezioni-regionali-2024-umbria.json'),
     tipo: 'liste',
   },
+  {
+    id: 'regionali-2024-emilia-romagna',
+    titolo: 'Elezioni regionali 2024 — Emilia-Romagna',
+    descrizione:
+      'Voto del 17 novembre 2024 in Emilia-Romagna: affluenza e voti per lista a livello regionale e affluenza per comune. Solo aggregati, nessun nominativo; i voti del presidente non sono pubblicati come aggregato nel tracciato.',
+    file: path.join('data', 'reali', 'elezioni-regionali-2024-emilia-romagna.json'),
+    tipo: 'liste',
+  },
+  {
+    id: 'regionali-2025-campania',
+    titolo: 'Elezioni regionali 2025 — Campania',
+    descrizione:
+      'Voto del 23 novembre 2025 in Campania: affluenza e voti per lista a livello regionale e affluenza per comune. Solo aggregati, nessun nominativo; i voti del presidente non sono pubblicati come aggregato nel tracciato.',
+    file: path.join('data', 'reali', 'elezioni-regionali-2025-campania.json'),
+    tipo: 'liste',
+  },
+  {
+    id: 'regionali-2025-puglia',
+    titolo: 'Elezioni regionali 2025 — Puglia',
+    descrizione:
+      'Voto del 23 novembre 2025 in Puglia: affluenza e voti per lista a livello regionale e affluenza per comune. Solo aggregati, nessun nominativo; i voti del presidente non sono pubblicati come aggregato nel tracciato.',
+    file: path.join('data', 'reali', 'elezioni-regionali-2025-puglia.json'),
+    tipo: 'liste',
+  },
+  {
+    id: 'regionali-2025-veneto',
+    titolo: 'Elezioni regionali 2025 — Veneto',
+    descrizione:
+      'Voto del 23 novembre 2025 in Veneto: affluenza e voti per lista a livello regionale e affluenza per comune. Solo aggregati, nessun nominativo; i voti del presidente non sono pubblicati come aggregato nel tracciato.',
+    file: path.join('data', 'reali', 'elezioni-regionali-2025-veneto.json'),
+    tipo: 'liste',
+  },
 ]
 
 const MAX_BYTE_JSON = 1024 * 1024

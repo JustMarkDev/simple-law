@@ -9,7 +9,7 @@ import Footer from '@/components/Footer'
 export const revalidate = 3600
 
 export function generateStaticParams(): Array<{ id: string }> {
-  return [{ id: 'europee-2024' }, { id: 'politiche-2022-camera' }, { id: 'politiche-2022-senato' }, { id: 'regionali-2025-toscana' }, { id: 'regionali-2024-umbria' }]
+  return [{ id: 'europee-2024' }, { id: 'politiche-2022-camera' }, { id: 'politiche-2022-senato' }, { id: 'regionali-2025-toscana' }, { id: 'regionali-2024-umbria' }, { id: 'regionali-2024-emilia-romagna' }, { id: 'regionali-2025-campania' }, { id: 'regionali-2025-puglia' }, { id: 'regionali-2025-veneto' }]
 }
 
 /* Registro consultazioni: id statici, titoli e file. Nessun numero qui. */
@@ -62,6 +62,38 @@ const REGISTRO: VoceRegistro[] = [
     descrizione:
       'Solo aggregati DAIT–Eligendo per l’Umbria (circoscrizione unica): affluenza e voti per lista a livello regionale, affluenza per comune. Nessun nominativo, nessuna riga candidata; i voti del presidente non sono pubblicati come aggregato nel tracciato.',
     file: path.join('data', 'reali', 'elezioni-regionali-2024-umbria.json'),
+  },
+  {
+    id: 'regionali-2024-emilia-romagna',
+    titoloBreve: 'Regionali 2024 — Emilia-Romagna',
+    titolo: 'Elezioni regionali 2024 — Emilia-Romagna (17 novembre 2024)',
+    descrizione:
+      'Solo aggregati DAIT–Eligendo per l’Emilia-Romagna: affluenza e voti per lista a livello regionale, affluenza per comune. Nessun nominativo, nessuna riga candidata; i voti del presidente non sono pubblicati come aggregato nel tracciato.',
+    file: path.join('data', 'reali', 'elezioni-regionali-2024-emilia-romagna.json'),
+  },
+  {
+    id: 'regionali-2025-campania',
+    titoloBreve: 'Regionali 2025 — Campania',
+    titolo: 'Elezioni regionali 2025 — Campania (23 novembre 2025)',
+    descrizione:
+      'Solo aggregati DAIT–Eligendo per la Campania: affluenza e voti per lista a livello regionale, affluenza per comune. Nessun nominativo, nessuna riga candidata; i voti del presidente non sono pubblicati come aggregato nel tracciato.',
+    file: path.join('data', 'reali', 'elezioni-regionali-2025-campania.json'),
+  },
+  {
+    id: 'regionali-2025-puglia',
+    titoloBreve: 'Regionali 2025 — Puglia',
+    titolo: 'Elezioni regionali 2025 — Puglia (23 novembre 2025)',
+    descrizione:
+      'Solo aggregati DAIT–Eligendo per la Puglia: affluenza e voti per lista a livello regionale, affluenza per comune. Nessun nominativo, nessuna riga candidata; i voti del presidente non sono pubblicati come aggregato nel tracciato.',
+    file: path.join('data', 'reali', 'elezioni-regionali-2025-puglia.json'),
+  },
+  {
+    id: 'regionali-2025-veneto',
+    titoloBreve: 'Regionali 2025 — Veneto',
+    titolo: 'Elezioni regionali 2025 — Veneto (23 novembre 2025)',
+    descrizione:
+      'Solo aggregati DAIT–Eligendo per il Veneto: affluenza e voti per lista a livello regionale, affluenza per comune. Nessun nominativo, nessuna riga candidata; i voti del presidente non sono pubblicati come aggregato nel tracciato.',
+    file: path.join('data', 'reali', 'elezioni-regionali-2025-veneto.json'),
   },
 ]
 
@@ -373,7 +405,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 /**
- * Dettaglio generico di una consultazione (5 id di registro, resto 404).
+ * Dettaglio generico di una consultazione (9 id di registro, resto 404).
  *
  * Legge solo l'aggregato committato del registro con guardie never-throw
  * (file assente / oltre 1 MB / malformato → stato vuoto, mai numeri

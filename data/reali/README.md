@@ -222,6 +222,45 @@ istituto, fieldwork, campione e link alla fonte primaria. Mostrati in
 npx tsx scripts/fetch-sondaggi-wiki.mjs
 ```
 
+## Finanziamenti ai partiti — `finanziamenti-erogazioni-2024-2026.json` (50 coppie)
+
+Fonte: **Camera dei deputati — Erogazioni ai partiti politici iscritti nel
+registro nazionale** (art. 5, comma 3, DL 149/2013), pagina indice
+`https://parlamento18.camera.it/199` con i PDF annuali 2024 (`.../006/...`,
+Last-Modified 13/05/2025, ~5,0 MB), 2025 (`.../007/...`, 11/06/2026,
+~5,3 MB) e 2026 (`.../008/...`, 28/09/2026, ~4,2 MB). Hub di contesto
+(solo fonte-link): `https://www.camera.it/leg19/1384`, relazioni
+`https://www.camera.it/leg19/1234`. Licenza envelope:
+`camera.it — solo riuso non commerciale con citazione fonte`.
+Sezione UI: `/finanziamenti` (route `/api/finanziamenti`).
+
+- I PDF NON vengono mai ingeriti integralmente (>4MB vietati): lo script
+  ne estrae via content-stream solo data/anno/importo di riga e
+  intestazione beneficiario (regola last-wins per coordinata, verificata
+  via render); il nominativo del soggetto erogante e' scartato dal parser,
+  mai emesso. Zero nominativi in output.
+- Una riga pubblicata = una comunicazione (`n_erogazioni` = righe;
+  `totale_euro` = somma algebrica, incluse righe a zero e rettifiche
+  negative, senza giudizi). Merge (beneficiario, anno) tra file;
+  `fonte_pdf` = PDF con piu' righe per la coppia (parita' -> piu'
+  recente); `lastModified` ISO dallo header HTTP reale.
+- Scope anni 2024-2026: le righe con anno fuori intervallo (trasmissioni
+  tardive di anni precedenti) sono scartate e conteggiate, mai aggregate.
+- Misurato il 2026-09-28: 61.663 righe pubblicate totali, 56.843 in anni
+  2024-2026 (€95.099.531,98) aggregate in 985 coppie, 4.820 fuori-anni
+  scartate; pubblicate le top-50 per totale (30.042 comunicazioni,
+  €61.793.787,98: 52,9% delle righe e 65,0% degli importi in-scope).
+  File: ~20 KB. Validazione incrociata: somme al centesimo identiche tra
+  parser content-stream e pdftotext su tutti e 3 i PDF.
+
+```bash
+npx tsx scripts/ingest-reale-finanziamenti.ts [--max=50]
+```
+
+Bound: timeout 15s indice / 30s PDF, retry solo su 429/5xx x3 con
+backoff, cap 8MB per PDF, file <=1MB, exit 1 senza scrivere alcun file
+in caso di fallimento (mai parziali).
+
 ## ISTAT — rimandato (decisione documentata)
 
 Il CSV anagrafico ISTAT (`Elenco-comuni-italiani.csv`, latin-1, 1,1 MB) e'
@@ -305,7 +344,11 @@ affluenza comunale; cap ≤950KB/file).
 - `elezioni-regionali-2025-calabria.json` (**15 liste**, 404 comuni) da
   `https://dait.interno.gov.it/documenti/opendata/regionali/regionali-20251005.zip`
   (filtro `REGIONE=CALABRIA`).
-- Fuori scope REALI-13: Emilia-Romagna in 20241117, `regionali-20251123.zip`,
+- `elezioni-regionali-2024-emilia-romagna.json` (**11 liste**, 330 comuni) da
+  `https://dait.interno.gov.it/documenti/opendata/regionali/regionali-20241117.zip`
+  (tracciato candidato×sezione 20 colonne: e/v sommati 1x per sezione,
+  voti per lista; colonne candidato mai lette).
+- Fuori scope: `regionali-20251123.zip`,
   Marche 404, txt 20240310/20240421 (altro parser).
 
 ## REALI-13 — GU diretta Ultime (attesa, solo RSS ultimo numero)

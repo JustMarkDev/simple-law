@@ -6,7 +6,9 @@
  * 2005-2006 (F-B legge elettorale XIV→XV), 1955, 2015, 1948 (I legislatura,
  * tipi estinti unici regio.decreto/legge e luogotenenziali), 1985 (chiude il
  * buco 1980-1990, mix legge/DL/DPR), 1975 (LEGGE184/DPR85, 371 atti),
- * 1995 (DL444/LEGGE198, 871 atti). Ogni finestra e' bounded come le originarie
+ * 1995 (DL444/LEGGE198, 871 atti), 2012 (governo Monti, URN 980,
+ * dettaglio-ok ~75%), 2018 (transizione XVII→XVIII, URN 667,
+ * dettaglio-ok ~86%). Ogni finestra e' bounded come le originarie
  * (max 80 atti, dettagli a batch di 5 con pausa di 2000 ms).
  *
  * Legge atti VERI dalle API Open Data di Normattiva (bff-opendata v1) e li
@@ -134,6 +136,8 @@ const FINESTRA_1948 = { nome: "1948", inizio: "1948-01-01", fine: "1948-12-31" }
 const FINESTRA_1985 = { nome: "1985", inizio: "1985-01-01", fine: "1985-12-31" } as const;
 const FINESTRA_1975 = { nome: "1975", inizio: "1975-01-01", fine: "1975-12-31" } as const;
 const FINESTRA_1995 = { nome: "1995", inizio: "1995-01-01", fine: "1995-12-31" } as const;
+const FINESTRA_2012 = { nome: "2012", inizio: "2012-01-01", fine: "2012-12-31" } as const;
+const FINESTRA_2018 = { nome: "2018", inizio: "2018-01-01", fine: "2018-12-31" } as const;
 
 /** Finestre selezionabili via --anni (stesso bounded: max 80 atti). */
 const FINESTRE_DISPONIBILI = {
@@ -151,6 +155,8 @@ const FINESTRE_DISPONIBILI = {
   "1985": FINESTRA_1985,
   "1975": FINESTRA_1975,
   "1995": FINESTRA_1995,
+  "2012": FINESTRA_2012,
+  "2018": FINESTRA_2018,
 } as const;
 
 type NomeFinestra = keyof typeof FINESTRE_DISPONIBILI;
@@ -171,6 +177,8 @@ const OUT_DEFAULT_FINESTRA: Record<NomeFinestra, string> = {
   "1985": path.join("data", "reali", "normattiva-storico-1985.json"),
   "1975": path.join("data", "reali", "normattiva-storico-1975.json"),
   "1995": path.join("data", "reali", "normattiva-storico-1995.json"),
+  "2012": path.join("data", "reali", "normattiva-storico-2012.json"),
+  "2018": path.join("data", "reali", "normattiva-storico-2018.json"),
 };
 
 /** File esistenti contro cui fare dedup ELI/URN (mai rileggere i propri output). */
@@ -455,7 +463,7 @@ function aiuto(): string {
     "  npx tsx scripts/ingest-reale-normattiva-finestre.ts [opzioni]",
     "",
     "Opzioni:",
-    "  --anni=A,B            finestre da ingerire (default 1990,2000; ammessi 1990,2000,2010,1970,2020,1960,1992-1993,2005-2006,1955,2015,1948,1985,1975,1995)",
+    "  --anni=A,B            finestre da ingerire (default 1990,2000; ammessi 1990,2000,2010,1970,2020,1960,1992-1993,2005-2006,1955,2015,1948,1985,1975,1995,2012,2018)",
     "  --limite=N            atti per finestra (default 80, MAI oltre 80)",
     "  --testo-max=N         caratteri max per testo (default 2000, max 61440)",
     "  --out-1990=PATH       file JSON finestra 1990 (default data/reali/normattiva-storico-1990.json)",
@@ -472,6 +480,8 @@ function aiuto(): string {
     "  --out-1985=PATH       file JSON finestra 1985 (default data/reali/normattiva-storico-1985.json)",
     "  --out-1975=PATH       file JSON finestra 1975 (default data/reali/normattiva-storico-1975.json)",
     "  --out-1995=PATH       file JSON finestra 1995 (default data/reali/normattiva-storico-1995.json)",
+    "  --out-2012=PATH       file JSON finestra 2012 (default data/reali/normattiva-storico-2012.json)",
+    "  --out-2018=PATH       file JSON finestra 2018 (default data/reali/normattiva-storico-2018.json)",
     "  --api-base=URL        override base API Normattiva",
     "  --help                mostra questo aiuto",
   ].join("\n");

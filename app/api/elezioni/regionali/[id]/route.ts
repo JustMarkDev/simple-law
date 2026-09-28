@@ -1,6 +1,8 @@
 /**
  * GET /api/elezioni/regionali/[id] — dettaglio aggregato di una regionale.
- * Consultazioni: `regionali-2025-toscana`, `regionali-2024-umbria`
+ * Consultazioni: `regionali-2025-toscana`, `regionali-2024-umbria`,
+ * `regionali-2024-emilia-romagna`, `regionali-2025-campania`,
+ * `regionali-2025-puglia`, `regionali-2025-veneto`
  * (nazionale di regione + regione con per-lista, comuni solo affluenza,
  * mai righe candidato/nominativi; voti del presidente scartati in ingest).
  * Query: `top` (1..15, default 15), `lista` (contains sul nome lista,

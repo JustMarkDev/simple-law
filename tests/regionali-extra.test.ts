@@ -438,6 +438,7 @@ describe("regionali-extra lib — loader never-throw (MAI rete)", () => {
 describe("regionali-extra — integrazione tollerante sui JSON reali (MAI rete)", () => {
   const FILE_LIGURIA = resolve(process.cwd(), "data/reali/elezioni-regionali-2024-liguria.json");
   const FILE_CALABRIA = resolve(process.cwd(), "data/reali/elezioni-regionali-2025-calabria.json");
+  const FILE_EMILIA = resolve(process.cwd(), "data/reali/elezioni-regionali-2024-emilia-romagna.json");
   const CAP = 950 * 1024;
   const VIETATE = ["COGNOME", "NOME", "PREFERENZE", "VOTI_CANDIDATO", "NUM_CANDIDATO", "NUM_LISTA"];
 
@@ -481,16 +482,23 @@ describe("regionali-extra — integrazione tollerante sui JSON reali (MAI rete)"
     expect(chiamateFetch).toBe(0);
   });
 
+  it("envelope Emilia-Romagna 2024 valido (o assente: passa con nota)", () => {
+    verificaEnvelope(FILE_EMILIA, "2024-11-17", "EMILIA-ROMAGNA");
+    expect(chiamateFetch).toBe(0);
+  });
+
   it("lib elencaRegionaliExtra: voci presenti con file reali, mai throw", async () => {
     const lib = await modLib();
     const elenca = lib["elencaRegionaliExtra"] as () => Promise<{ id: string }[]>;
     const azzera = lib["azzeraCacheExtra"] as () => void;
     azzera();
     const voci = await elenca();
-    if (!existsSync(FILE_LIGURIA) || !existsSync(FILE_CALABRIA)) return;
-    expect(voci.map((v) => v.id).sort()).toEqual(
-      ["regionali-2024-liguria", "regionali-2025-calabria"],
-    );
+    const presenti: string[] = [];
+    if (existsSync(FILE_LIGURIA)) presenti.push("regionali-2024-liguria");
+    if (existsSync(FILE_CALABRIA)) presenti.push("regionali-2025-calabria");
+    if (existsSync(FILE_EMILIA)) presenti.push("regionali-2024-emilia-romagna");
+    if (presenti.length === 0) return;
+    expect(voci.map((v) => v.id).sort()).toEqual([...presenti].sort());
     expect(chiamateFetch).toBe(0);
   });
 });

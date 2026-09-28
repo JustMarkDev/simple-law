@@ -433,8 +433,35 @@
    "conteggio": 70,
    "recuperatoIl": "2026-09-28T22:11:08.066Z",
    "legislatura": null
+  },
+  {
+   "nome": "Camera dei deputati — Erogazioni ai partiti politici (art. 5, DL 149/2013)",
+   "url": "https://parlamento18.camera.it/199",
+   "licenza": "camera.it — solo riuso non commerciale con citazione fonte",
+   "file": "finanziamenti-erogazioni-2024-2026.json",
+   "conteggio": 50,
+   "recuperatoIl": "2026-09-28T22:48:40.978Z",
+   "legislatura": null
+  },
+  {
+   "nome": "DAIT Eligendo (regionali Emilia-Romagna 2024)",
+   "url": "https://dait.interno.gov.it/documenti/opendata/regionali/regionali-20241117.zip",
+   "licenza": "open-data ministeriale da confermare, info_opendata senza stringa CC-BY",
+   "file": "elezioni-regionali-2024-emilia-romagna.json",
+   "conteggio": 330,
+   "recuperatoIl": "2026-09-28",
+   "legislatura": null
+  },
+  {
+   "nome": "DAIT Eligendo (regionali Emilia-Romagna 2024)",
+   "url": "https://dait.interno.gov.it/documenti/opendata/regionali/regionali-20241117.zip",
+   "licenza": "open-data ministeriale da confermare, info_opendata senza stringa CC-BY",
+   "file": "elezioni-regionali-2024-emilia-romagna.json",
+   "conteggio": 330,
+   "recuperatoIl": "2026-09-28",
+   "legislatura": null
   }
  ],
- "generatoIl": "2026-09-28T22:10:24.899Z",
+ "generatoIl": "2026-09-28T22:05:00Z",
  "nota": "Dati ufficiali open data (48 file). Ogni voce ha file esistente su disco e conteggio pari alla lunghezza reale verificata. I file >1MB non si committano: rigenerare via scripts/ingest-reale-*.ts. I gruppi Camera sono derivati dai deputati; le denominazioni Senato includono varianti storiche della leg. 19; i DDL/atti sono disegni e atti parlamentari, MAI leggi in vigore. Elezioni: solo aggregati per lista, zero nominativi."
 }

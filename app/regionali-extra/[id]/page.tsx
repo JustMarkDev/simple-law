@@ -15,10 +15,15 @@ import {
 export const revalidate = 3600
 
 export function generateStaticParams(): Array<{ id: string }> {
-  return [{ id: 'regionali-2024-liguria' }, { id: 'regionali-2025-calabria' }]
+  return [{ id: 'regionali-2024-liguria' }, { id: 'regionali-2025-calabria' }, { id: 'regionali-2024-emilia-romagna' }]
 }
 
 const TITOLI: Record<string, { titolo: string; descrizione: string }> = {
+  'regionali-2024-emilia-romagna': {
+    titolo: 'Elezioni regionali 2024 — Emilia-Romagna (17 novembre 2024)',
+    descrizione:
+      'Solo aggregati DAIT–Eligendo per l’Emilia-Romagna: affluenza e voti per lista a livello regionale, affluenza per comune. Nessun nominativo, nessuna riga candidata.',
+  },
   'regionali-2024-liguria': {
     titolo: 'Elezioni regionali 2024 — Liguria (27 ottobre 2024)',
     descrizione:
