@@ -253,8 +253,24 @@ Obiettivo precedente (completato): UI/UX, feature, corpus 5005 voci.
 - Fix miei: MANIFEST url obbligatorio, sezione GU assente (solo dati).
 - Verifiche mie: `npm test` 743/743 OK, `typecheck`/`lint` OK, `build` OK,
   smoke live (regionali/GU/API 200).
-- Next: altre regioni/finestre, Corte dei Conti se si apre, riduzione del
-  sintetico via crescita reale.
+- Next: altre regioni/finestre (fatte sotto: Emilia-Romagna, Sud,
+  2012/2018), Corte dei Conti se si apre, finanziamenti (fatti sotto),
+  riduzione del sintetico via crescita reale.
+
+## Reali-14 (2026-09-29, commit `b260bce`): Emilia-R., Sud, finestre, finanze
+- Workflow: 1 chiamata `workflow` con 11 subagenti (4 sonde + 1 giudice + 4
+  scrittori + 2 revisori). Sonde: finanziamenti/CSM/regioni/finestre.
+- Ingerito: regionali Emilia-Romagna 2024 (330 comuni, 11 liste),
+  Campania/Puglia/Veneto 2025, finestre 2012 + 2018, finanziamenti partiti
+  (erogazioni 2024-2026 con PDF ufficiali). Corpus live **6766+**.
+- UI/API: hub regionali esteso, sezione `/finanziamenti` (verificata live:
+  Lega 2067 erogazioni €4,6M), MANIFEST 51 voci.
+- Fix miei: script Emilia dedicato (tracciato candidato×sezione),
+  main-guard, regex diacritici, wiring hub/dettaglio/API.
+- Verifiche mie: `npm test` 804/804 OK, `typecheck`/`lint` OK, `build` OK
+  (874 pagine), smoke live (hub/dettaglio/API/ricerca 200).
+- Next: altre regioni/finestre, Corte dei Conti/CSM se si aprono,
+  riduzione del sintetico via crescita reale.
 
 ## Stato iniziale (2026-09-28, iterazione 0)
 - Repo: `/Users/mark/Projects/simple-law`, branch `master` (appena `git init`, baseline committata `5391a84`).
