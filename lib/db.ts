@@ -230,7 +230,11 @@ function mapMinister(row: PrismaMinister, provvedimenti: Map<string, string[]>):
   };
 }
 
-/** Legge tutte le norme dal DB; se il DB manca o e' vuoto, usa il seed. */
+/** Legge tutte le norme dal DB; se il DB manca o e' vuoto, usa il seed.
+ * Con DB popolato il seed grande (5000 voci) non viene mai generato (lazy:
+ * `getSeedLaws()` e' chiamato solo nel ramo di fallback). Quando il DB e'
+ * assente il fallback e' memoizzato 30s (`DB_SEED_CACHE_TTL_MS`) per evitare
+ * di rigenerare 5000 voci a ogni request; usare `svuotaCacheDb()` nei test. */
 export async function getLawsFromDBorSeed(): Promise<LawRecordExtra[]> {
   const prisma = getPrisma();
   if (prisma) {
@@ -241,7 +245,32 @@ export async function getLawsFromDBorSeed(): Promise<LawRecordExtra[]> {
       // fallback al seed
     }
   }
-  return getSeedLaws();
+  try {
+    const ora = Date.now();
+    if (cacheSeedDbAssente && cacheSeedDbAssente.scadeIl > ora) {
+      return cacheSeedDbAssente.dati;
+    }
+  } catch {
+    // cache non disponibile: rigenera sotto
+  }
+  let seed: LawRecordExtra[];
+  try {
+    seed = getSeedLaws() as LawRecordExtra[];
+  } catch {
+    // Never-throw: se il seed non e' leggibile, riusa il dato in cache se presente.
+    try {
+      if (cacheSeedDbAssente) return cacheSeedDbAssente.dati;
+    } catch {
+      // ignora
+    }
+    return [];
+  }
+  try {
+    cacheSeedDbAssente = { dati: seed, scadeIl: Date.now() + DB_SEED_CACHE_TTL_MS };
+  } catch {
+    // ignora errori di cache
+  }
+  return seed;
 }
 
 function candidatiEli(eli: string): string[] {
@@ -542,6 +571,23 @@ export const CURSOR_TAKE_MAX = 500;
 
 /** TTL cache in-memory per `getStats` (60s, LRU a singola chiave). */
 export const STATS_CACHE_TTL_MS = 60_000;
+
+/**
+ * TTL memo-cache per il fallback seed di `getLawsFromDBorSeed` (30s).
+ * Evita di rigenerare il seed grande (5000 voci) a ogni request quando il DB
+ * e' assente/vuoto. Con DB popolato il seed non viene mai generato (lazy).
+ */
+export const DB_SEED_CACHE_TTL_MS = 30_000;
+
+let cacheSeedDbAssente: { dati: LawRecordExtra[]; scadeIl: number } | null = null;
+
+/**
+ * Azzera la memo-cache del fallback seed (utile nei test). Non lancia.
+ * Da usare nei test dopo `resetPrisma()` per isolare le rigenerazioni.
+ */
+export function svuotaCacheDb(): void {
+  cacheSeedDbAssente = null;
+}
 
 /** Soglia oltre la quale `qualita_desc` usa fallback `data_desc` su DB (no full-scan). */
 export const QUALITA_FALLBACK_SOGLIA = 1000;

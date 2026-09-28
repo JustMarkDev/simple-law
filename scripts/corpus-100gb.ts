@@ -1,11 +1,18 @@
 #!/usr/bin/env tsx
 /**
  * scripts/corpus-100gb.ts — CLI 100GB-ready: generate / verify / stats.
+ * Resta il percorso per shard grandi (streaming, oltre il cap memoria di 20000):
+ * generate scrive shard-*.jsonl.gz in streaming senza tenerli in memoria.
  * Uso:
- *   npx tsx scripts/corpus-100gb.ts generate --totale=5000 --seed=simple-law-corpus-v1 --dir=data/corpus --per-shard=8000
- *   npx tsx scripts/corpus-100gb.ts verify --dir=data/corpus --max-errori=20
- *   npx tsx scripts/corpus-100gb.ts stats --dir=data/corpus
- * Testi e messaggi sempre in italiano. Non committare shard >1MB.
+ *   npx tsx scripts/corpus-100gb.ts generate --totale=5000 --seed=simple-law-corpus-v1 --dir=data/corpus/incoming --per-shard=8000
+ *   npx tsx scripts/corpus-100gb.ts verify --dir=data/corpus/incoming --max-errori=20
+ *   npx tsx scripts/corpus-100gb.ts stats --dir=data/corpus/incoming
+ * Testi e messaggi sempre in italiano.
+ *
+ * Nota vincolante: gli shard grandi NON si committano mai (limite 1MB per file
+ * committato). Generare sempre in `data/corpus/incoming/` o `/tmp/...` (gitignored);
+ * committare solo codice + `manifest.json` <100KB + README. Per il runtime web
+ * (default CORPUS_TOTALE=5000) usare `scripts/generate-corpus-massivo.ts`.
  */
 import * as fs from 'node:fs';
 import * as path from 'node:path';
@@ -121,7 +128,7 @@ async function comandoGenerate(args: string[]): Promise<number> {
     return 1;
   }
   console.log(`Completato: ${totale} atti, ${infoShard.length} shard. Manifest aggiornato in ${path.join(dir, 'manifest.json')}.`);
-  console.log('Promemoria: non committare shard sopra 1MB (vedi data/corpus/README.md).');
+  console.log('Promemoria: non committare shard sopra 1MB (vedi data/corpus/README.md). Genera in data/corpus/incoming/ o /tmp.');
   return 0;
 }
 
@@ -206,8 +213,9 @@ async function main(): Promise<number> {
   if (comando === 'generate') return comandoGenerate(args);
   if (comando === 'verify') return comandoVerify(args);
   if (comando === 'stats') return comandoStats(args);
-  console.log('Uso: corpus-100gb.ts <generate|verify|stats> [--totale=5000] [--per-shard=8000] [--seed=...] [--dir=data/corpus]');
-  console.log('Esempio: npx tsx scripts/corpus-100gb.ts generate --totale=5000');
+  console.log('Uso: corpus-100gb.ts <generate|verify|stats> [--totale=5000] [--per-shard=8000] [--seed=...] [--dir=data/corpus/incoming]');
+  console.log('Esempio: npx tsx scripts/corpus-100gb.ts generate --totale=5000 --dir=data/corpus/incoming');
+  console.log('Nota: gli shard grandi non si committano mai; usare data/corpus/incoming/ o /tmp.');
   return comando === undefined ? 0 : 1;
 }
 

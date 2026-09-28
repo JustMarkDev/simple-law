@@ -1,4 +1,4 @@
-import { getLawsFromDBorSeed } from "@/lib/db";
+import { getLawsFromDBorSeed, listLaws } from "@/lib/db";
 
 export const dynamic = "force-dynamic";
 export const runtime = "nodejs";
@@ -38,17 +38,26 @@ function etagPer(contenuto: string): string {
 
 /**
  * GET /api/feed -> feed RSS delle ultime norme (max 50).
- * Con ETag/Last-Modified e 304 condizionale; non lancia mai 500:
- * errore inatteso -> feed vuoto 200.
+ * Legge solo una pagina server (`listLaws` page 1, per 50, data_desc):
+ * mai full-scan del corpus. Con ETag/Last-Modified e 304 condizionale;
+ * non lancia mai 500: errore inatteso -> feed vuoto 200.
  */
 export async function GET(request?: Request) {
   try {
     let items: Awaited<ReturnType<typeof getLawsFromDBorSeed>> = [];
     try {
-      const tutte = await getLawsFromDBorSeed();
-      items = (Array.isArray(tutte) ? tutte : []).slice(0, FEED_MAX);
+      const pagina = await listLaws({ page: 1, per: FEED_MAX, sort: "data_desc" });
+      items = (Array.isArray(pagina?.items) ? pagina.items : []).slice(0, FEED_MAX);
     } catch {
       items = [];
+    }
+    if (items.length === 0) {
+      try {
+        const tutte = await getLawsFromDBorSeed();
+        items = (Array.isArray(tutte) ? tutte : []).slice(0, FEED_MAX);
+      } catch {
+        items = [];
+      }
     }
 
   const base = (process.env.NEXT_PUBLIC_SITE_URL ?? "https://simplelaw.example").replace(/\/+$/, "");

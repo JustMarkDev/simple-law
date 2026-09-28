@@ -1,14 +1,23 @@
 /**
  * Generatore di corpus massivo dimostrativo a partire dal seed espanso.
  *
+ * Strategia di scaling (SENTENZA vincolante):
+ * - default --totale 5000 (5 seed + 72 curati + 4923 varianti nel corpus unificato)
+ * - cap memoria 20000: oltre solo streaming CLI via `lib/corpus.ts`
+ *   (paginaShard/cercaInShard/contaShard) su `shard-*.jsonl.gz`.
+ * - Output >1MB va in `/tmp` o `data/corpus/incoming/` (gitignored), MAI committato.
+ *   Committabili solo: codice + 72 curati + `data/corpus/manifest.json` <100KB + README.
+ *
  * Uso:
- *   npx tsx scripts/generate-corpus-massivo.ts --totale 500 --kb-medio 4 --seed simple-law-v1 --output data/corpus/shard-demo.jsonl
- *   npx tsx scripts/generate-corpus-massivo.ts --totale 200 --output data/corpus/shard-demo.jsonl.gz
+ *   npx tsx scripts/generate-corpus-massivo.ts --totale 5000 --kb-medio 4 --seed simple-law-v1 --output data/corpus/incoming/shard-demo.jsonl.gz
+ *   npx tsx scripts/generate-corpus-massivo.ts --totale 500 --output /tmp/shard-demo.jsonl.gz
  *
  * - Mai Parquet/SQLite/S3/Bloom: solo JSONL (anche gzip) con Node integrato.
  * - Deterministico: mulberry32 + FNV-1a, seme `simple-law-corpus-v1:<tema>:<tipo>:<anno>:<indice>`.
  * - ELI/NIR sempre validi e unici; numeri riservati 8,36,124,133,139 mai usati.
  * - Testi in italiano, 300-800 parole per gli atti base; le varianti restano leggibili.
+ * - `generaCorpus` / `generaVariante` sono riusabili senza CLI (import puro, mai side-effect
+ *   all'import: la scrittura avviene solo nel blocco `eseguitoComeCli`).
  */
 
 import { createWriteStream } from "node:fs";
@@ -29,24 +38,33 @@ interface Opzioni {
   output: string;
 }
 
+// Allineato a CORPUS_TOTALE (default 5000, clamp 77..20000) e CORPUS_KB_MEDIO (1..6, solo CLI).
+// Il cap 20000 protegge la memoria (~25MB raw a 5000 atti): oltre usare lo streaming
+// su shard via `scripts/corpus-100gb.ts` + `lib/corpus.ts`.
+export const TOTALE_DEFAULT = 5000;
+export const TOTALE_MASSIMO_MEMORIA = 20000;
+export const KB_MEDIO_DEFAULT = 4;
+export const KB_MEDIO_MINIMO = 1;
+export const KB_MEDIO_MASSIMO = 6;
+
 const NUMERI_VIETATI = new Set<number>([...NUMERI_RISERVATI]);
 
 function leggiOpzioni(argv: string[]): Opzioni {
   const opzioni: Opzioni = {
-    totale: 500,
-    kbMedio: 4,
+    totale: TOTALE_DEFAULT,
+    kbMedio: KB_MEDIO_DEFAULT,
     seed: "simple-law-v1",
-    output: "data/corpus/shard-demo.jsonl",
+    output: "data/corpus/incoming/shard-demo.jsonl.gz",
   };
   for (let i = 0; i < argv.length; i++) {
     const arg = argv[i] as string;
     if (arg === "--totale" && argv[i + 1]) {
       const v = Number(argv[i + 1]);
-      if (Number.isInteger(v) && v >= 1 && v <= 200000) opzioni.totale = v;
+      if (Number.isInteger(v) && v >= 1 && v <= TOTALE_MASSIMO_MEMORIA) opzioni.totale = v;
       i++;
     } else if (arg === "--kb-medio" && argv[i + 1]) {
       const v = Number(argv[i + 1]);
-      if (Number.isFinite(v) && v >= 1 && v <= 60) opzioni.kbMedio = v;
+      if (Number.isFinite(v) && v >= KB_MEDIO_MINIMO && v <= KB_MEDIO_MASSIMO) opzioni.kbMedio = v;
       i++;
     } else if (arg === "--seed" && argv[i + 1]) {
       const s = String(argv[i + 1]).trim().slice(0, 80);
@@ -121,6 +139,12 @@ function scegliFrase(rnd: () => number): string {
   return FRASI_RIEMPITIVE[Math.floor(rnd() * FRASI_RIEMPITIVE.length) % FRASI_RIEMPITIVE.length] as string;
 }
 
+/**
+ * Genera fino a `totale` atti in memoria (max 20000). Riusabile senza CLI:
+ * non legge argv, non scrive file, non lancia verso l'esterno oltre il warn
+ * di spazio esaurito. I numeri riservati [8,36,124,133,139] non compaiono mai
+ * nelle varianti (solo negli atti base curati, se presenti). ELI sempre unici.
+ */
 export function generaCorpus(totale: number, seed: string, kbMedio: number): AttoEspanso[] {
   const risultato: AttoEspanso[] = [];
   const visti = new Set<string>();
@@ -191,6 +215,19 @@ async function principale(): Promise<void> {
   console.log(
     `Corpus generato: ${atti.length} atti (${eliUnici} ELI unici), ${paroleMedie} parole medie per testo, file ${opzioni.output}.`,
   );
+  try {
+    const { statSync } = await import("node:fs");
+    const dimensione = statSync(opzioni.output).size;
+    if (dimensione > 1024 * 1024) {
+      console.log(
+        `Promemoria: il file supera 1MB (${(dimensione / 1024 / 1024).toFixed(2)} MB). ` +
+          `Tienilo in /tmp o data/corpus/incoming/ (gitignored) e non committarlo. ` +
+          `Committabili solo codice + manifest.json <100KB + README.`,
+      );
+    }
+  } catch {
+    // Stat informativo: mai un lancio verso l'esterno.
+  }
 }
 
 const eseguitoComeCli =

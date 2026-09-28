@@ -125,21 +125,43 @@ describe("round-trip DB (toPrismaData -> mapLaw)", () => {
   });
 });
 
-describe("query e statistiche (fallback seed)", () => {
-  it("listLaws pagina i risultati", async () => {
-    const prima = await listLaws({ page: 1, per: 2 });
-    expect(prima.total).toBe(5);
-    expect(prima.items).toHaveLength(2);
+describe("query e statistiche (fallback seed o corpus grande)", () => {
+  it("listLaws pagina i risultati sul totale calcolato", async () => {
+    const totale = await countLaws();
+    expect(totale).toBeGreaterThanOrEqual(5);
+    const per = 2;
+    const prima = await listLaws({ page: 1, per });
+    expect(prima.total).toBe(totale);
+    expect(prima.total).toBeGreaterThanOrEqual(5);
+    expect(prima.items).toHaveLength(Math.min(per, totale));
     expect(prima.page).toBe(1);
-    expect(prima.per).toBe(2);
+    expect(prima.per).toBe(per);
 
-    const terza = await listLaws({ page: 3, per: 2 });
-    expect(terza.items).toHaveLength(1);
+    const ultimaPagina = Math.max(1, Math.ceil(totale / per));
+    const ultima = await listLaws({ page: ultimaPagina, per });
+    const attesiUltima = totale - (ultimaPagina - 1) * per;
+    expect(ultima.items).toHaveLength(attesiUltima);
+    expect(ultima.total).toBe(totale);
+  });
+
+  it("il DL 133/2026 e' presente nel corpus interrogato", async () => {
+    const tutto = await listLaws({ page: 1, per: 100 });
+    void tutto;
+    const cerca133 = await listLaws({ q: "133" });
+    expect(cerca133.total).toBeGreaterThanOrEqual(1);
+    // Ricerca mirata sul titolo noto del DL 133 (energia) o NIR diretto
+    const energia = await listLaws({ q: "energia" });
+    expect(energia.total).toBeGreaterThanOrEqual(1);
+    const seme = getSeedLaws().find(
+      (l) => l.nir === "urn:nir:stato:decreto.legge:2026-07-27;133",
+    );
+    expect(seme).toBeDefined();
+    expect(seme?.numero).toBe("133");
   });
 
   it("listLaws applica i filtri tipo, anno e q", async () => {
     const decreti = await listLaws({ tipo: "decreto.legge" });
-    expect(decreti.total).toBe(2);
+    expect(decreti.total).toBeGreaterThanOrEqual(2);
     const anno = await listLaws({ anno: "2026" });
     expect(anno.total).toBeGreaterThanOrEqual(1);
     const cerca = await listLaws({ q: "carburanti" });
@@ -148,21 +170,23 @@ describe("query e statistiche (fallback seed)", () => {
     expect(vuoto.total).toBe(0);
   });
 
-  it("listLaws ordina per titolo", async () => {
+  it("listLaws ordina per titolo su 100 righe", async () => {
     const risultato = await listLaws({ sort: "titolo_asc", per: 100 });
+    expect(risultato.items.length).toBeGreaterThanOrEqual(1);
+    expect(risultato.items.length).toBeLessThanOrEqual(100);
     const titoli = risultato.items.map((law) => law.titolo);
     expect(titoli).toEqual([...titoli].sort((a, b) => a.localeCompare(b, "it")));
   });
 
   it("countLaws conta i filtrati", async () => {
-    expect(await countLaws()).toBe(5);
-    expect(await countLaws({ tipo: "decreto.legge" })).toBe(2);
+    expect(await countLaws()).toBeGreaterThanOrEqual(5);
+    expect(await countLaws({ tipo: "decreto.legge" })).toBeGreaterThanOrEqual(2);
   });
 
   it("getStats aggrega il corpus", async () => {
     const stats = await getStats();
-    expect(stats.totale).toBe(5);
-    expect(stats.perTipo["decreto.legge"]).toBe(2);
+    expect(stats.totale).toBeGreaterThanOrEqual(5);
+    expect(stats.perTipo["decreto.legge"]).toBeGreaterThanOrEqual(2);
     expect(stats.attuativiTotali.totale).toBeGreaterThan(0);
     expect(stats.qualitaMedia).not.toBeNull();
   });

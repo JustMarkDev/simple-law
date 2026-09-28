@@ -14,9 +14,13 @@ import type { LawRecord } from "@/lib/seed-data";
 const ELI_133 = "/eli/id/2026/07/27/26G00155/sg";
 
 describe("seed-fallback (cio' che vede la UI)", () => {
-  it("carica 5 leggi e trova la DL 133/2026", async () => {
+  it("carica il corpus (5 seed + espansi) e trova la DL 133/2026", async () => {
     const leggi = await loadLaws();
-    expect(leggi).toHaveLength(5);
+    expect(leggi.length).toBeGreaterThanOrEqual(5);
+    // I 5 seed restano i primi e vincono la dedup per ELI.
+    for (let i = 0; i < SEED_LAWS.length; i++) {
+      expect(leggi[i]?.eli).toBe(SEED_LAWS[i]?.eli);
+    }
     const dl133 = await loadLawByEli(ELI_133);
     expect(dl133?.numero).toBe("133");
   });

@@ -124,17 +124,30 @@ const TIPI_LABEL: Record<string, string> = {
 
 /** Etichetta leggibile per il tipo di atto (es. `decreto.legge` -> Decreto-legge). */
 export function formatTipo(tipo: string): string {
-  const chiave = tipo.trim().toLowerCase()
-  if (TIPI_LABEL[chiave]) return TIPI_LABEL[chiave]
-  const parole = chiave.replace(/[._]/g, ' ').trim()
-  return parole ? parole.charAt(0).toUpperCase() + parole.slice(1) : 'Norma'
+  try {
+    const grezzo = typeof tipo === 'string' ? tipo : String(tipo ?? '')
+    const chiave = grezzo.trim().toLowerCase()
+    if (!chiave) return 'Norma'
+    if (TIPI_LABEL[chiave]) return TIPI_LABEL[chiave]
+    const parole = chiave.replace(/[._]+/g, ' ').replace(/\s+/g, ' ').trim()
+    return parole ? parole.charAt(0).toUpperCase() + parole.slice(1) : 'Norma'
+  } catch {
+    return 'Norma'
+  }
 }
 
 /** Titolo breve per card: "Decreto-legge 133/2026". */
 export function tipoLabel(law: Law): string {
-  const anno = law.dataEmanazione ? law.dataEmanazione.slice(0, 4) : ''
-  const numero = law.numero ? `${law.numero}${anno ? `/${anno}` : ''}` : ''
-  return [formatTipo(law.tipo), numero].filter(Boolean).join(' ')
+  try {
+    const tipo = typeof law?.tipo === 'string' ? law.tipo : ''
+    const numero = typeof law?.numero === 'string' ? law.numero : String(law?.numero ?? '')
+    const data = typeof law?.dataEmanazione === 'string' ? law.dataEmanazione : ''
+    const anno = data ? data.slice(0, 4) : ''
+    const numeroConAnno = numero ? `${numero}${anno ? `/${anno}` : ''}` : ''
+    return [formatTipo(tipo), numeroConAnno].filter(Boolean).join(' ')
+  } catch {
+    return 'Norma'
+  }
 }
 
 const PERSONAS_BY_NUMERO: Record<string, PersonaKey[]> = {
@@ -145,43 +158,73 @@ const PERSONAS_BY_NUMERO: Record<string, PersonaKey[]> = {
   '8': ['lavoro', 'impresa'],
 }
 
-const PERSONE: PersonaKey[] = ['guida', 'lavoro', 'impresa', 'studio']
+/* PERSONE rimosso: la derivazione usa regex precompilate qui sotto. */
+
+/*
+ * Regex precompilate a scansione lineare: solo alternative semplici, senza
+ * quantificatori annidati né backtracking. Ogni test è O(k) sulla lunghezza
+ * del testo troncato (vedi sotto), quindi O(1) per record e O(N) sul corpus.
+ */
+const RE_PERSONA_GUIDA = /strada|guida|veicol|carburant|patente|trasport/
+const RE_PERSONA_LAVORO = /lavor|occupaz|previden|contratt|salario|dipendent/
+const RE_PERSONA_IMPRESA = /impres|industr|mercato|concorrenz|commerc|pmi|export/
+const RE_PERSONA_STUDIO = /scuol|studi|universit|student|istruzion|bors/
+const RE_STATO_NON_VIGORE = /non.?vigore|abrog|decad|sospes/i
+
+/** Quanti caratteri al massimo si scansionano per derivare la persona (O(1) per record). */
+const MAX_TESTO_PERSONA = 2000
 
 function derivePersone(record: LawRecord): PersonaKey[] {
-  const esplicite = PERSONAS_BY_NUMERO[record.numero]
-  if (esplicite) return esplicite
-  const testo = `${record.titolo} ${record.sintesi}`.toLowerCase()
-  const trovate = PERSONE.filter((persona) => {
-    if (persona === 'guida') return /strada|guida|veicol|carburant|patente|trasport/.test(testo)
-    if (persona === 'lavoro') return /lavor|occupaz|previden|contratt|salario|dipendent/.test(testo)
-    if (persona === 'impresa') return /impres|industr|mercato|concorrenz|commerc|pmi|export/.test(testo)
-    return /scuol|studi|universit|student|istruzion|bors/.test(testo)
-  })
-  return trovate.length > 0 ? trovate : ['lavoro', 'impresa']
+  try {
+    const numero = typeof record?.numero === 'string' ? record.numero : String(record?.numero ?? '')
+    const esplicite = PERSONAS_BY_NUMERO[numero]
+    if (esplicite) return esplicite
+    const titolo = typeof record?.titolo === 'string' ? record.titolo : ''
+    const sintesi = typeof record?.sintesi === 'string' ? record.sintesi : ''
+    const testo = `${titolo} ${sintesi}`.slice(0, MAX_TESTO_PERSONA).toLowerCase()
+    if (!testo.trim()) return ['lavoro', 'impresa']
+    const trovate: PersonaKey[] = []
+    if (RE_PERSONA_GUIDA.test(testo)) trovate.push('guida')
+    if (RE_PERSONA_LAVORO.test(testo)) trovate.push('lavoro')
+    if (RE_PERSONA_IMPRESA.test(testo)) trovate.push('impresa')
+    if (RE_PERSONA_STUDIO.test(testo)) trovate.push('studio')
+    return trovate.length > 0 ? trovate : ['lavoro', 'impresa']
+  } catch {
+    return ['lavoro', 'impresa']
+  }
+}
+
+function numeroAttuativi(valore: unknown): number {
+  return typeof valore === 'number' && Number.isFinite(valore) && valore > 0 ? Math.floor(valore) : 0
 }
 
 function deriveStato(record: LawRecord): { stato: Stato; motivo: string } {
-  const att = record.attuativi
-  const adottati = att?.adottati ?? 0
-  const daAdottare = att?.daAdottare ?? 0
-  const scaduti = att?.scaduti ?? 0
+  try {
+    const att = record?.attuativi
+    const adottati = numeroAttuativi(att?.adottati)
+    const daAdottare = numeroAttuativi(att?.daAdottare)
+    const scaduti = numeroAttuativi(att?.scaduti)
+    const statoGrezzo = typeof record?.stato === 'string' ? record.stato : 'in_vigore'
 
-  if (/non.?vigore|abrog|decad|sospes/i.test(record.stato)) {
-    return { stato: 'rosso', motivo: 'La norma non è in vigore o risulta sospesa.' }
-  }
-  if (scaduti > 0) {
-    return {
-      stato: 'rosso',
-      motivo: `${scaduti} decreti attuativi sono scaduti: la norma non è ancora pienamente applicabile.`,
+    if (RE_STATO_NON_VIGORE.test(statoGrezzo)) {
+      return { stato: 'rosso', motivo: 'La norma non è in vigore o risulta sospesa.' }
     }
-  }
-  if (daAdottare > 0 && adottati < daAdottare) {
-    return {
-      stato: 'giallo',
-      motivo: `Servono ancora ${daAdottare - adottati} decreti attuativi per applicarla del tutto.`,
+    if (scaduti > 0) {
+      return {
+        stato: 'rosso',
+        motivo: `${scaduti} decreti attuativi sono scaduti: la norma non è ancora pienamente applicabile.`,
+      }
     }
+    if (daAdottare > 0 && adottati < daAdottare) {
+      return {
+        stato: 'giallo',
+        motivo: `Servono ancora ${daAdottare - adottati} decreti attuativi per applicarla del tutto.`,
+      }
+    }
+    return { stato: 'verde', motivo: 'La norma è in vigore e già applicabile.' }
+  } catch {
+    return { stato: 'verde', motivo: 'La norma è in vigore e già applicabile.' }
   }
-  return { stato: 'verde', motivo: 'La norma è in vigore e già applicabile.' }
 }
 
 function tronca(testo: string, max = 200): string {
@@ -560,11 +603,16 @@ export function leggiDelMinistro(minister: Minister, leggi: Law[]): Law[] {
  * ------------------------------------------------------------------------- */
 
 export function normalizeText(value: string): string {
-  return value
-    .toLowerCase()
-    .normalize('NFD')
-    .replace(/[\u0300-\u036f]/g, '')
-    .trim()
+  try {
+    const grezzo = typeof value === 'string' ? value : String(value ?? '')
+    return grezzo
+      .toLowerCase()
+      .normalize('NFD')
+      .replace(/[\u0300-\u036f]/g, '')
+      .trim()
+  } catch {
+    return ''
+  }
 }
 
 function eliSegments(eli: string): string[] {

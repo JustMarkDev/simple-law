@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import { redirect } from 'next/navigation'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import SearchBar from '@/components/SearchBar'
@@ -8,7 +9,9 @@ import LawCard from '@/components/LawCard'
 import MinisterCard from '@/components/MinisterCard'
 import Comparsa from '@/components/Comparsa'
 import Contatore from '@/components/Contatore'
-import { loadLaws, loadMinisters, personaRelevant, searchLaws, STATO_META } from '@/components/seed-fallback'
+import { loadMinisters, normalizeLaw, personaRelevant, STATO_META, type Law } from '@/components/seed-fallback'
+import { countLaws, queryLaws } from '@/lib/db'
+import type { LawRecordExtra } from '@/lib/db'
 
 export const metadata: Metadata = {
   title: 'Stato della Repubblica — le leggi spiegate semplici',
@@ -41,23 +44,147 @@ const ESEMPI = [
   { q: 'ambiente', label: 'Ambiente' },
 ]
 
+/** La home non renderizza mai più di 12 schede: 1 in evidenza + 11 recenti. */
+const MAX_CARD_HOME = 12
+/** Estratto bounded per i conteggi home (semaforo + filtro persona): 5000 record max. */
+const ESTRATTO_HOME_MAX = 5000
+
+type ColoreSemaforo = 'verde' | 'giallo' | 'rosso'
+
+/**
+ * Mirror economico di `deriveStato` in `components/seed-fallback.ts` (fonte di
+ * verità per il colore). Opera sul record grezzo così i conteggi su un
+ * estratto da 5000 atti restano veloci (nessun calcolo Gulpease/qualità).
+ */
+function coloreSemaforoRecord(record: Pick<LawRecordExtra, 'stato' | 'attuativi'>): ColoreSemaforo {
+  const stato = typeof record.stato === 'string' ? record.stato : ''
+  if (/non.?vigore|abrog|decad|sospes/i.test(stato)) return 'rosso'
+  const att = record.attuativi ?? { daAdottare: 0, adottati: 0, scaduti: 0 }
+  const adottati = Number.isFinite(att.adottati) ? att.adottati : 0
+  const daAdottare = Number.isFinite(att.daAdottare) ? att.daAdottare : 0
+  const scaduti = Number.isFinite(att.scaduti) ? att.scaduti : 0
+  if (scaduti > 0) return 'rosso'
+  if (daAdottare > 0 && adottati < daAdottare) return 'giallo'
+  return 'verde'
+}
+
+const PERSONA_NUMERO_HOME: Record<string, readonly string[]> = {
+  '133': ['impresa', 'lavoro', 'guida'],
+  '139': ['guida', 'impresa', 'lavoro'],
+  '124': ['impresa', 'lavoro'],
+  '36': ['lavoro', 'impresa', 'studio'],
+  '8': ['lavoro', 'impresa'],
+}
+
+function personeDelRecord(record: Pick<LawRecordExtra, 'numero' | 'titolo' | 'sintesi'>): string[] {
+  const esplicite = PERSONA_NUMERO_HOME[String(record.numero ?? '')]
+  if (esplicite) return [...esplicite]
+  const testo = `${record.titolo ?? ''} ${record.sintesi ?? ''}`.toLowerCase()
+  const trovate = (['guida', 'lavoro', 'impresa', 'studio'] as const).filter((persona) => {
+    if (persona === 'guida') return /strada|guida|veicol|carburant|patente|trasport/.test(testo)
+    if (persona === 'lavoro') return /lavor|occupaz|previden|contratt|salario|dipendent/.test(testo)
+    if (persona === 'impresa') return /impres|industr|mercato|concorrenz|commerc|pmi|export/.test(testo)
+    return /scuol|studi|universit|student|istruzion|bors/.test(testo)
+  })
+  return trovate.length > 0 ? [...trovate] : ['lavoro', 'impresa']
+}
+
+/**
+ * Mirror economico di `personaRelevant(normalizeLaw(...))`: stesso risultato
+ * senza normalizzare l'intero estratto. Fonte di verità in
+ * `components/seed-fallback.ts` (`derivePersone` + `personaRelevant`).
+ */
+function personaRilevanteRecord(
+  record: Pick<LawRecordExtra, 'numero' | 'titolo' | 'sintesi'>,
+  persona: string,
+): boolean {
+  if (!persona || persona === 'tutti') return true
+  return personeDelRecord(record).includes(persona)
+}
+
+/** Mirror di `featured` in `normalizeLaw`: DL 133/2026 in evidenza. */
+function isFeaturedRecord(record: Pick<LawRecordExtra, 'numero' | 'tipo'>): boolean {
+  return record.numero === '133' && (record.tipo ?? '').includes('decreto.legge')
+}
+
+function normalizzaSicura(record: LawRecordExtra): Law | null {
+  try {
+    return normalizeLaw(record)
+  } catch {
+    return null
+  }
+}
+
 export default async function HomePage({ searchParams }: HomeProps) {
   const sp = await searchParams
-  const q = typeof sp.q === 'string' ? sp.q : ''
-  const persona = typeof sp.persona === 'string' ? sp.persona : 'tutti'
+  const qGrezza = typeof sp.q === 'string' ? sp.q : ''
+  const q = qGrezza.slice(0, 200).trim()
+  const persona = typeof sp.persona === 'string' && sp.persona ? sp.persona : 'tutti'
 
-  const [tutte, ministri] = await Promise.all([loadLaws(), loadMinisters()])
-  const base = q ? await searchLaws(q, tutte) : tutte
-  const filtrate = base.filter((law) => personaRelevant(law, persona))
-  const featured = tutte.find((law) => law.featured) ?? tutte[0]
-  const resto = featured ? filtrate.filter((law) => law.eli !== featured.eli) : filtrate
-  const mostraFeatured = !q && persona === 'tutti'
-
-  const conteggio = {
-    verde: tutte.filter((law) => law.stato === 'verde').length,
-    giallo: tutte.filter((law) => law.stato === 'giallo').length,
-    rosso: tutte.filter((law) => law.stato === 'rosso').length,
+  // La ricerca testuale vive in archivio (`/leggi`), dove è paginata lato
+  // server: la home con `?q` rimanda lì invece di scansionare il corpus.
+  if (q) {
+    const params = new URLSearchParams({ q })
+    if (persona !== 'tutti') params.set('persona', persona)
+    redirect(`/leggi?${params.toString()}`)
   }
+
+  // Totale reale via conteggio DB (mai scansioni triple in memoria) +
+  // estratto bounded data_desc per conteggi semaforo/persona e vetrina 12.
+  const [totaleConteggiato, estratto, ministri] = await Promise.all([
+    countLaws().catch(() => 0),
+    queryLaws({}, ESTRATTO_HOME_MAX).catch(() => [] as LawRecordExtra[]),
+    loadMinisters().catch(() => []),
+  ])
+  const totaleReale = totaleConteggiato > 0 ? totaleConteggiato : estratto.length
+  const troncato = totaleReale > estratto.length
+
+  // Un'unica passata sull'estratto: conteggi semaforo, totale filtrati per
+  // persona e candidati per la vetrina (mai più di 12 schede renderizzate).
+  let verde = 0
+  let giallo = 0
+  let rosso = 0
+  let totaleFiltrati = 0
+  let featuredRaw: LawRecordExtra | null = null
+  const recentiRaw: LawRecordExtra[] = []
+  const personaRaw: LawRecordExtra[] = []
+  for (const record of estratto) {
+    const colore = coloreSemaforoRecord(record)
+    if (colore === 'verde') verde += 1
+    else if (colore === 'giallo') giallo += 1
+    else rosso += 1
+    if (personaRilevanteRecord(record, persona)) {
+      totaleFiltrati += 1
+      if (persona !== 'tutti' && personaRaw.length < MAX_CARD_HOME) personaRaw.push(record)
+    }
+    if (!featuredRaw && isFeaturedRecord(record)) {
+      featuredRaw = record
+      continue
+    }
+    if (persona === 'tutti' && recentiRaw.length < MAX_CARD_HOME) recentiRaw.push(record)
+  }
+
+  const conteggio = { verde, giallo, rosso }
+
+  const mostraFeatured = !q && persona === 'tutti'
+  const featured = mostraFeatured && featuredRaw ? normalizzaSicura(featuredRaw) : null
+  const vetrinaRaw =
+    persona === 'tutti'
+      ? (featuredRaw ? [featuredRaw, ...recentiRaw.filter((r) => r.eli !== featuredRaw?.eli)] : recentiRaw).slice(
+          0,
+          MAX_CARD_HOME,
+        )
+      : personaRaw.slice(0, MAX_CARD_HOME)
+  const vetrina = vetrinaRaw
+    .map(normalizzaSicura)
+    .filter((law): law is Law => law !== null)
+    .filter((law) => personaRelevant(law, persona))
+  const resto = featured ? vetrina.filter((law) => law.eli !== featured.eli).slice(0, MAX_CARD_HOME - 1) : vetrina
+  const mostrate = (featured ? 1 : 0) + resto.length
+  const totaleVista = persona === 'tutti' ? totaleReale : totaleFiltrati
+  const rimanenti = Math.max(0, totaleVista - mostrate)
+  const archivioHref =
+    persona === 'tutti' ? '/leggi' : `/leggi?persona=${encodeURIComponent(persona)}`
 
   return (
     <>
@@ -100,12 +227,12 @@ export default async function HomePage({ searchParams }: HomeProps) {
               <div className="bg-carta p-0 dark:bg-notte">
                 <Link
                   href="/leggi"
-                  aria-label={`Vedi tutte le norme in feed: ${tutte.length}`}
+                  aria-label={`Vedi tutte le norme in feed: ${totaleReale}`}
                   className="block min-h-[44px] p-4 transition-colors hover:bg-carta-deep focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-[-2px] focus-visible:outline-inchiostro dark:hover:bg-notte-deep dark:focus-visible:outline-nebbia"
                 >
                   <dt className="text-xs font-medium text-inchiostro-soft dark:text-nebbia-soft">Norme in feed</dt>
                   <dd className="mt-1 font-serif text-3xl font-bold text-inchiostro dark:text-nebbia">
-                    <Contatore value={tutte.length} />
+                    <Contatore value={totaleReale} />
                   </dd>
                 </Link>
               </div>
@@ -127,6 +254,11 @@ export default async function HomePage({ searchParams }: HomeProps) {
                 </div>
               ))}
             </dl>
+            {troncato && (
+              <p className="mt-2 max-w-2xl text-xs text-inchiostro-soft dark:text-nebbia-soft">
+                Conteggi calcolati sulle {estratto.length} norme più recenti di {totaleReale} totali.
+              </p>
+            )}
 
             <div className="mt-6 flex flex-wrap gap-3">
               <Link
@@ -158,12 +290,24 @@ export default async function HomePage({ searchParams }: HomeProps) {
             <div className="flex flex-col gap-4 border-b-2 border-inchiostro pb-4 dark:border-nebbia sm:flex-row sm:items-end sm:justify-between">
               <div>
                 <h2 id="feed" className="scroll-mt-24 font-serif text-2xl font-bold text-inchiostro dark:text-nebbia sm:text-3xl">
-                  {q ? `Risultati per “${q}”` : 'Ultime leggi'}
+                  Ultime leggi
                 </h2>
-                <p className="mt-1 text-sm text-inchiostro-soft dark:text-nebbia-soft">
-                  {filtrate.length} {filtrate.length === 1 ? 'norma' : 'norme'}
-                  {persona !== 'tutti' ? ` per ${persona}` : ''}.
+                <p className="mt-1 text-sm text-inchiostro-soft dark:text-nebbia-soft" role="status" aria-live="polite">
+                  {persona === 'tutti'
+                    ? `${totaleReale} ${totaleReale === 1 ? 'norma in archivio' : 'norme in archivio'} · qui le ${mostrate} più recenti.`
+                    : `${totaleFiltrati} ${totaleFiltrati === 1 ? 'norma' : 'norme'} per ${persona} · mostrate ${mostrate}${rimanenti > 0 ? ` (+${rimanenti} ${rimanenti === 1 ? 'altra' : 'altre'})` : ''}.`}
                 </p>
+                {persona !== 'tutti' && (
+                  <p className="mt-1 text-sm text-inchiostro-soft dark:text-nebbia-soft">
+                    <Link
+                      href={archivioHref}
+                      className="font-semibold text-accento underline underline-offset-2 dark:text-accento-chiara"
+                    >
+                      Vedi tutte le norme per {persona} in archivio
+                    </Link>
+                    .
+                  </p>
+                )}
               </div>
               <PersonaFilter active={persona} basePath="/" query={q ? { q } : {}} />
             </div>
@@ -183,30 +327,18 @@ export default async function HomePage({ searchParams }: HomeProps) {
                 </h3>
                 <p className="mt-2 text-sm leading-relaxed text-inchiostro-soft dark:text-nebbia-soft">
                   Nessuna norma corrisponde a questa ricerca
-                  {q ? ` per “${q}”` : ''}
                   {persona !== 'tutti' ? ` con il filtro “${persona}”` : ''}. Prova con un&apos;altra parola o
                   rimuovi i filtri.
                 </p>
-                {(q || persona !== 'tutti') && (
+                {persona !== 'tutti' && (
                   <div className="mt-4 flex flex-wrap gap-2" aria-label="Filtri attivi">
-                    {q && (
-                      <Link
-                        href={persona !== 'tutti' ? `/?persona=${persona}` : '/'}
-                        className="inline-flex min-h-[44px] items-center gap-1 border border-regola bg-carta-soft px-3 py-2 text-xs font-semibold text-inchiostro transition-colors hover:border-inchiostro dark:border-notte-deep dark:bg-notte dark:text-nebbia dark:hover:border-nebbia"
-                      >
-                        Ricerca: “{q}” <span aria-hidden="true">×</span>
-                        <span className="sr-only"> (rimuovi la ricerca)</span>
-                      </Link>
-                    )}
-                    {persona !== 'tutti' && (
-                      <Link
-                        href={q ? `/?q=${encodeURIComponent(q)}` : '/'}
-                        className="inline-flex min-h-[44px] items-center gap-1 border border-regola bg-carta-soft px-3 py-2 text-xs font-semibold text-inchiostro transition-colors hover:border-inchiostro dark:border-notte-deep dark:bg-notte dark:text-nebbia dark:hover:border-nebbia"
-                      >
-                        Persona: {persona} <span aria-hidden="true">×</span>
-                        <span className="sr-only"> (rimuovi il filtro persona)</span>
-                      </Link>
-                    )}
+                    <Link
+                      href="/"
+                      className="inline-flex min-h-[44px] items-center gap-1 border border-regola bg-carta-soft px-3 py-2 text-xs font-semibold text-inchiostro transition-colors hover:border-inchiostro dark:border-notte-deep dark:bg-notte dark:text-nebbia dark:hover:border-nebbia"
+                    >
+                      Persona: {persona} <span aria-hidden="true">×</span>
+                      <span className="sr-only"> (rimuovi il filtro persona)</span>
+                    </Link>
                   </div>
                 )}
                 <p className="mt-4 text-sm font-semibold text-inchiostro dark:text-nebbia">Prova con:</p>
@@ -214,7 +346,7 @@ export default async function HomePage({ searchParams }: HomeProps) {
                   {ESEMPI.map((esempio) => (
                     <li key={esempio.q}>
                       <Link
-                        href={`/?q=${esempio.q}`}
+                        href={`/leggi?q=${esempio.q}`}
                         className="inline-flex min-h-[44px] items-center border border-regola px-3 py-2 text-sm text-inchiostro-soft transition-colors hover:border-inchiostro hover:text-inchiostro dark:border-notte-deep dark:text-nebbia-soft dark:hover:border-nebbia dark:hover:text-nebbia"
                       >
                         {esempio.label}
@@ -232,13 +364,15 @@ export default async function HomePage({ searchParams }: HomeProps) {
                 </p>
               </div>
             )}
-            {resto.length > 0 && (
+            {totaleVista > 0 && (
               <p className="mt-6">
                 <Link
-                  href="/leggi"
+                  href={archivioHref}
                   className="inline-flex min-h-[44px] items-center border border-inchiostro px-5 py-3 text-sm font-semibold text-inchiostro transition-colors hover:bg-inchiostro hover:text-carta focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-inchiostro dark:border-nebbia dark:text-nebbia dark:hover:bg-nebbia dark:hover:text-notte dark:focus-visible:outline-nebbia"
                 >
-                  Sfoglia tutte le leggi
+                  {persona === 'tutti'
+                    ? `Sfoglia tutte le ${totaleReale} norme`
+                    : `Sfoglia tutte le ${totaleFiltrati} norme per ${persona}`}
                 </Link>
               </p>
             )}

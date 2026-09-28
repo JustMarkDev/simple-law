@@ -1,5 +1,6 @@
 import { describe, expect, it } from "vitest";
 import { SEED_CDM, SEED_LAWS, SEED_MINISTERS } from "@/lib/seed-data";
+import { getSeedLaws } from "@/lib/sources";
 import { isValidELI, parseNIR } from "@/lib/nir";
 import { calcGulpease } from "@/lib/readability";
 
@@ -71,5 +72,45 @@ describe("integrita' del seed", () => {
 
   it("include il comunicato CdM 183", () => {
     expect(SEED_CDM.some((c) => c.numero === "183")).toBe(true);
+  });
+});
+
+describe("corpus grande: i 5 seed come sottoinsieme", () => {
+  it("il corpus contiene almeno i 5 seed puri", () => {
+    const corpus = getSeedLaws();
+    expect(corpus.length).toBeGreaterThanOrEqual(5);
+    expect(corpus.length).toBeGreaterThanOrEqual(SEED_LAWS.length);
+  });
+
+  it("i primi 5 del corpus coincidono con SEED_LAWS (vincono sempre)", () => {
+    const corpus = getSeedLaws();
+    for (let i = 0; i < SEED_LAWS.length; i++) {
+      expect(corpus[i]?.eli).toBe(SEED_LAWS[i]?.eli);
+    }
+  });
+
+  it("ogni ELI dei 5 seed esiste nel corpus", () => {
+    const eliCorpus = new Set(getSeedLaws().map((l) => l.eli));
+    for (const seed of SEED_LAWS) {
+      expect(eliCorpus.has(seed.eli)).toBe(true);
+    }
+  });
+
+  it("il DL 133/2026 resta presente nel corpus grande", () => {
+    const corpus = getSeedLaws();
+    const legge = corpus.find((l) => l.nir === "urn:nir:stato:decreto.legge:2026-07-27;133");
+    expect(legge).toBeDefined();
+    expect(legge?.eli).toBe("/eli/id/2026/07/27/26G00155/sg");
+    expect(legge?.numero).toBe("133");
+  });
+
+  it("il DL 139/2026 e la legge 124/2025 restano presenti", () => {
+    const corpus = getSeedLaws();
+    expect(
+      corpus.some((l) => l.numero === "139" && l.tipo === "decreto.legge"),
+    ).toBe(true);
+    const l124 = corpus.find((l) => l.numero === "124" && l.tipo === "legge");
+    expect(l124).toBeDefined();
+    expect(l124?.titolo.toLowerCase()).toContain("concorrenza");
   });
 });

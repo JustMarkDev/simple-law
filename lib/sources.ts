@@ -9,6 +9,11 @@
 import { normalizeEli } from "./nir";
 import { SEED_CDM, SEED_LAWS, SEED_MINISTERS } from "./seed-data";
 import type { CdmItem, LawRecord, MinisterRecord } from "./seed-data";
+// Corpus unificato (unico punto di I/O per il corpus grande). Contratto anti-ciclo:
+// `corpus-unificato` non importa mai `sources` (solo seed-data-espansa, fonti,
+// readability e tipi seed-data), quindi questo import top-level non crea
+// dipendenze circolari.
+import { getCorpusUnificato } from "./corpus-unificato";
 
 export const SOURCE_URLS = {
   normattiva: "https://www.normattiva.it",
@@ -167,16 +172,68 @@ export function sparqlSenato(query: string, options: FetchOptions = {}): Promise
 }
 
 function clonaLegge(law: LawRecord): LawRecord {
+  const fonti = Array.isArray((law as unknown as { fonti?: unknown }).fonti)
+    ? null
+    : law.fonti
+      ? { ...law.fonti }
+      : null;
   return {
     ...law,
-    fonti: law.fonti ? { ...law.fonti } : null,
+    fonti,
     attuativi: law.attuativi ? { ...law.attuativi } : undefined,
   };
 }
 
-/** Copia difensiva delle leggi seed (evita mutazioni condivise). */
+/** Chiave di dedup per ELI (stessa regola di `normalizzaChiaveEli`: trim+lowercase). */
+function chiaveEli(eli: unknown): string {
+  return String(eli ?? "").trim().toLowerCase();
+}
+
+/**
+ * Copia difensiva del corpus unificato: i 5 seed (SEED_LAWS) restano sempre i
+ * primi record e vincono la dedup per ELI. Thin-wrapper sincrono su
+ * `getCorpusUnificato()`: non lancia mai, in caso di errore o corpus vuoto
+ * ricade sui soli seed.
+ */
 export function getSeedLaws(): LawRecord[] {
-  return SEED_LAWS.map(clonaLegge);
+  try {
+    const unificato = getCorpusUnificato();
+    if (!Array.isArray(unificato) || unificato.length === 0) {
+      return SEED_LAWS.map(clonaLegge);
+    }
+    const visti = new Set<string>();
+    const risultato: LawRecord[] = [];
+    const accoda = (legge: unknown): void => {
+      if (!legge || typeof legge !== "object") return;
+      const chiave = chiaveEli((legge as LawRecord).eli);
+      if (!chiave || visti.has(chiave)) return;
+      visti.add(chiave);
+      risultato.push(clonaLegge(legge as LawRecord));
+    };
+    for (const seed of SEED_LAWS) accoda(seed);
+    for (const legge of unificato) accoda(legge);
+    return risultato.length > 0 ? risultato : SEED_LAWS.map(clonaLegge);
+  } catch {
+    return SEED_LAWS.map(clonaLegge);
+  }
+}
+
+/** Informazioni sintetiche sul corpus (base 5 seed + espansi). Non lancia mai. */
+export interface InfoCorpus {
+  base: number;
+  espansi: number;
+  totale: number;
+}
+
+export function getCorpusInfo(): InfoCorpus {
+  try {
+    const base = SEED_LAWS.length;
+    const totale = getSeedLaws().length;
+    return { base, espansi: Math.max(0, totale - base), totale };
+  } catch {
+    const base = SEED_LAWS.length;
+    return { base, espansi: 0, totale: base };
+  }
 }
 
 /** Copia difensiva dei ministri seed. */

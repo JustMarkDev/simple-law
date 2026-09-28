@@ -36,6 +36,27 @@ function parseStato(value: string | null): string {
   return (value ?? "").trim().slice(0, 80);
 }
 
+/**
+ * Colore del semaforo per un record grezzo (mirror di `deriveStato` in
+ * `components/seed-fallback.ts` e `coloreSemaforoRecord` in app/page.tsx e
+ * app/leggi/page.tsx). Puro, non lancia.
+ */
+function coloreSemaforo(item: LawRecordExtra): "verde" | "giallo" | "rosso" {
+  try {
+    const stato = typeof item.stato === "string" ? item.stato : "";
+    if (/non.?vigore|abrog|decad|sospes/i.test(stato)) return "rosso";
+    const att = item.attuativi ?? { daAdottare: 0, adottati: 0, scaduti: 0 };
+    const adottati = Number.isFinite(att.adottati) ? att.adottati : 0;
+    const daAdottare = Number.isFinite(att.daAdottare) ? att.daAdottare : 0;
+    const scaduti = Number.isFinite(att.scaduti) ? att.scaduti : 0;
+    if (scaduti > 0) return "rosso";
+    if (daAdottare > 0 && adottati < daAdottare) return "giallo";
+    return "verde";
+  } catch {
+    return "verde";
+  }
+}
+
 /** Filtro `persona`: stringa breve usata come match testuale in-memory. */
 function parsePersona(value: string | null): string {
   return (value ?? "").trim().slice(0, 80);
@@ -52,7 +73,10 @@ function parseMinGulpease(value: string | null): number | undefined {
 
 /**
  * Post-filtri in-memory di fase 1 (`stato`, `minGulpease`, `persona`).
- * Non lancia: in caso di errore restituisce la lista invariata.
+ * `stato` accetta sia lo stato record esatto (`in_vigore`, case-insensitive)
+ * sia il colore del semaforo (`verde`/`giallo`/`rosso`, stessa regola di
+ * `deriveStato` in `components/seed-fallback.ts`: fonte di verità per il
+ * colore). Non lancia: in caso di errore restituisce la lista invariata.
  */
 function filtraAggiuntivi(
   items: LawRecordExtra[],
@@ -66,7 +90,11 @@ function filtraAggiuntivi(
       try {
         if (statoNorm) {
           const s = typeof item.stato === "string" ? item.stato.toLowerCase() : "";
-          if (s !== statoNorm) return false;
+          if (statoNorm === "verde" || statoNorm === "giallo" || statoNorm === "rosso") {
+            if (coloreSemaforo(item) !== statoNorm) return false;
+          } else if (s !== statoNorm) {
+            return false;
+          }
         }
         if (minGulpease !== undefined) {
           const g = typeof item.gulpease === "number" ? item.gulpease : null;
@@ -98,7 +126,8 @@ function filtraAggiuntivi(
 /**
  * GET /api/leggi
  * Filtri: `q` (max 200, ranking se >=2 caratteri), `tipo`, `anno`,
- * `stato` (match esatto, es. `in vigore`), `minGulpease` (0-100),
+ * `stato` (stato record esatto come `in_vigore`, oppure colore del semaforo
+ * `verde`/`giallo`/`rosso`), `minGulpease` (0-100),
  * `persona` (match testuale in-memory, es. `famiglie`).
  * Paginazione: `page`, `per` (alias `limit`).
  * Ordinamento: `sort` (data_desc|data_asc|titolo_asc|gulpease_desc|qualita_desc
@@ -140,21 +169,30 @@ export async function GET(request: Request) {
       const inizio = (page - 1) * per;
       const items = ordinate.slice(inizio, inizio + per);
       const sortEffettivo = usaRilevanza ? "rilevanza" : sortLegacy;
-      return NextResponse.json({
-        items,
-        total: ordinate.length,
-        page,
-        per,
-        count: ordinate.length,
-        sort: sortEffettivo,
-      });
+      return NextResponse.json(
+        {
+          items,
+          total: ordinate.length,
+          page,
+          per,
+          count: ordinate.length,
+          sort: sortEffettivo,
+        },
+        { headers: { "X-Total-Count": String(ordinate.length) } },
+      );
     }
 
     const legacy = sortValido(searchParams.get("sort"));
     const result = await listLaws({ q, tipo, anno, page, per, sort: legacy });
 
-    return NextResponse.json({ ...result, count: result.total, sort: legacy });
+    return NextResponse.json(
+      { ...result, count: result.total, sort: legacy },
+      { headers: { "X-Total-Count": String(result.total) } },
+    );
   } catch {
-    return NextResponse.json({ items: [], total: 0, page: 1, per: 20, count: 0, sort: "data_desc" });
+    return NextResponse.json(
+      { items: [], total: 0, page: 1, per: 20, count: 0, sort: "data_desc" },
+      { headers: { "X-Total-Count": "0" } },
+    );
   }
 }

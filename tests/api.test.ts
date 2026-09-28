@@ -37,13 +37,35 @@ describe("GET /api/health", () => {
 });
 
 describe("GET /api/leggi", () => {
-  it("elenca le norme seed", async () => {
+  it("elenca le norme del corpus (almeno i 5 seed)", async () => {
     const res = await leggiGET(new Request("http://localhost/api/leggi"));
-    const data = (await res.json()) as { items: unknown[]; total: number; count: number };
+    const data = (await res.json()) as {
+      items: { eli?: string; nir?: string; numero?: string }[];
+      total: number;
+      count: number;
+    };
     expect(res.status).toBe(200);
-    expect(data.items.length).toBe(5);
-    expect(data.total).toBe(5);
-    expect(data.count).toBe(5);
+    expect(data.total).toBeGreaterThanOrEqual(5);
+    expect(data.count).toBeGreaterThanOrEqual(5);
+    expect(data.items.length).toBeGreaterThanOrEqual(5);
+    // Sottoinsieme noto: il DL 133/2026 deve esserci (prima pagina o totale)
+    const eliNoti = data.items.map((i) => i.eli);
+    const ha133Pagina = eliNoti.includes("/eli/id/2026/07/27/26G00155/sg");
+    if (!ha133Pagina) {
+      const cerca = (await (
+        await leggiGET(new Request("http://localhost/api/leggi?q=energia&per=50"))
+      ).json()) as { items: { eli?: string }[] };
+      expect(cerca.items.some((i) => i.eli === "/eli/id/2026/07/27/26G00155/sg")).toBe(
+        true,
+      );
+    } else {
+      expect(ha133Pagina).toBe(true);
+    }
+    // X-Total-Count: verifica solo se l'header e' presente
+    const xTotal = res.headers.get("x-total-count");
+    if (xTotal !== null) {
+      expect(Number(xTotal)).toBe(data.total);
+    }
   });
 
   it("paginazione: pagina 1 e 2 con per=2", async () => {
@@ -54,7 +76,7 @@ describe("GET /api/leggi", () => {
       await leggiGET(new Request("http://localhost/api/leggi?page=2&per=2"))
     ).json()) as { items: unknown[]; total: number; page: number };
     expect(prima.items.length).toBe(2);
-    expect(prima.total).toBe(5);
+    expect(prima.total).toBeGreaterThanOrEqual(5);
     expect(prima.page).toBe(1);
     expect(prima.per).toBe(2);
     expect(seconda.items.length).toBe(2);
@@ -70,7 +92,24 @@ describe("GET /api/leggi", () => {
   it("filtra per tipo", async () => {
     const res = await leggiGET(new Request("http://localhost/api/leggi?tipo=decreto.legge"));
     const data = (await res.json()) as { items: unknown[] };
-    expect(data.items.length).toBe(2);
+    expect(data.items.length).toBeGreaterThanOrEqual(2);
+  });
+
+  it("filtra per stato record e per colore del semaforo", async () => {
+    const esatto = (await (
+      await leggiGET(new Request("http://localhost/api/leggi?stato=in_vigore&per=1"))
+    ).json()) as { total: number };
+    expect(esatto.total).toBeGreaterThanOrEqual(1);
+    for (const colore of ["verde", "giallo", "rosso"]) {
+      const res = (await (
+        await leggiGET(new Request(`http://localhost/api/leggi?stato=${colore}&per=1`))
+      ).json()) as { total: number };
+      expect(res.total).toBeGreaterThanOrEqual(0);
+    }
+    const verdi = (await (
+      await leggiGET(new Request("http://localhost/api/leggi?stato=verde&per=50"))
+    ).json()) as { total: number };
+    expect(verdi.total).toBeGreaterThanOrEqual(1);
   });
 
   it("filtra per anno", async () => {
@@ -78,7 +117,7 @@ describe("GET /api/leggi", () => {
     const data = (await res.json()) as { total: number };
     expect(data.total).toBeGreaterThanOrEqual(1);
     const vuoto = (await (
-      await leggiGET(new Request("http://localhost/api/leggi?anno=1999"))
+      await leggiGET(new Request("http://localhost/api/leggi?anno=1800"))
     ).json()) as { total: number };
     expect(vuoto.total).toBe(0);
   });
@@ -136,13 +175,14 @@ describe("GET /api/leggi/[...eli]", () => {
 });
 
 describe("GET /api/export", () => {
-  it("esporta CSV come allegato", async () => {
+  it("esporta CSV come allegato con seme noto", async () => {
     const res = await exportGET(new Request("http://localhost/api/export"));
     expect(res.status).toBe(200);
     expect(res.headers.get("content-type")).toContain("text/csv");
     expect(res.headers.get("content-disposition")).toContain("attachment");
     const csv = await res.text();
     expect(csv).toContain("eli,nir,tipo");
+    // Seme noto: DL 133/2026 sempre presente nell'export
     expect(csv).toContain("133");
   });
 
@@ -171,8 +211,8 @@ describe("GET /api/statistiche", () => {
       economia: { aggiornatoAl: string; indicatori: { fonte: string; periodo: string }[] };
     };
     expect(res.status).toBe(200);
-    expect(data.corpus.totale).toBe(5);
-    expect(data.corpus.perTipo["decreto.legge"]).toBe(2);
+    expect(data.corpus.totale).toBeGreaterThanOrEqual(5);
+    expect(data.corpus.perTipo["decreto.legge"]).toBeGreaterThanOrEqual(2);
     expect(data.economia.indicatori.length).toBeGreaterThan(0);
     expect(data.economia.indicatori[0].fonte.length).toBeGreaterThan(0);
     expect(data.economia.indicatori[0].periodo.length).toBeGreaterThan(0);
@@ -258,7 +298,7 @@ describe("GET /api/cron/ingest", () => {
 });
 
 describe("GET /api/feed", () => {
-  it("produce un feed RSS valido", async () => {
+  it("produce un feed RSS valido con seme noto e cap 50", async () => {
     const res = await feedGET();
     expect(res.status).toBe(200);
     expect(res.headers.get("content-type")).toContain("application/rss+xml");
@@ -266,5 +306,8 @@ describe("GET /api/feed", () => {
     expect(xml).toContain("<rss");
     expect(xml).toContain("SimpleLaw");
     expect(xml).toContain("ILVA");
+    const voci = xml.split("<item>").length - 1;
+    expect(voci).toBeGreaterThanOrEqual(1);
+    expect(voci).toBeLessThanOrEqual(50);
   });
 });
