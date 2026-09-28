@@ -1,57 +1,77 @@
 /**
  * GET /api/elezioni — catalogo delle consultazioni con aggregati reali.
- * Mai 500: in caso di errore restituisce l'elenco vuoto con
- * licenza, disclaimer e provenance.
+ * Query opzionale `?id=` (default: tutte; retrocompatibilita': senza `id`
+ * elenca le consultazioni disponibili). Id non valido -> 404. Mai 500:
+ * in caso di errore restituisce l'elenco vuoto con licenza, disclaimer
+ * e provenance.
  */
 
 import { NextResponse } from "next/server";
 import {
-  caricaEuropee2024,
   DISCLAIMER_AGGREGATI,
-  ID_EUROPEE_2024,
+  elencaConsultazioni,
+  leggiProvenanceElezione,
   LICENZA_ELEZIONI,
+  normalizzaIdElezione,
 } from "@/lib/elezioni-dati";
 
 export const dynamic = "force-dynamic";
 export const runtime = "nodejs";
 
-export async function GET() {
+export async function GET(request: Request) {
   try {
-    let voceEuropee: {
-      id: string;
-      tipo: string;
-      data: string;
-      disponibile: boolean;
-      elettori: number;
-      votanti: number;
-      affluenza: number;
-      totaleListe: number;
-      totaleRegioni: number;
-      totaleComuni: number;
-    } | null = null;
+    let filtro: string | null = null;
+    try {
+      filtro = new URL(request.url).searchParams.get("id");
+    } catch {
+      filtro = null;
+    }
+    if (filtro !== null && filtro !== "") {
+      const valido = normalizzaIdElezione(filtro);
+      if (!valido) {
+        return NextResponse.json(
+          {
+            error: "Consultazione non trovata",
+            licenza: LICENZA_ELEZIONI,
+            disclaimerAggregati: DISCLAIMER_AGGREGATI,
+          },
+          { status: 404 },
+        );
+      }
+      let voci: Awaited<ReturnType<typeof elencaConsultazioni>> = [];
+      let provenance: unknown = {};
+      try {
+        voci = (await elencaConsultazioni()).filter((v) => v.id === valido);
+      } catch {
+        voci = [];
+      }
+      try {
+        provenance = await leggiProvenanceElezione(valido);
+      } catch {
+        provenance = {};
+      }
+      return NextResponse.json({
+        dati: voci,
+        licenza: LICENZA_ELEZIONI,
+        disclaimerAggregati: DISCLAIMER_AGGREGATI,
+        provenance,
+      });
+    }
+    let voci: Awaited<ReturnType<typeof elencaConsultazioni>> = [];
+    try {
+      voci = await elencaConsultazioni();
+    } catch {
+      voci = [];
+    }
     let provenance: unknown = {};
     try {
-      const dati = await caricaEuropee2024();
-      if (dati) {
-        provenance = { ...dati.provenance };
-        voceEuropee = {
-          id: ID_EUROPEE_2024,
-          tipo: dati.elezione.tipo,
-          data: dati.elezione.data,
-          disponibile: true,
-          elettori: dati.elezione.e,
-          votanti: dati.elezione.v,
-          affluenza: dati.elezione.a,
-          totaleListe: dati.liste.length,
-          totaleRegioni: dati.regioni.length,
-          totaleComuni: dati.comuni.length,
-        };
-      }
+      const prima = voci[0];
+      provenance = prima
+        ? await leggiProvenanceElezione(prima.id)
+        : {};
     } catch {
-      voceEuropee = null;
       provenance = {};
     }
-    const voci = voceEuropee ? [voceEuropee] : [];
     return NextResponse.json({
       dati: voci,
       licenza: LICENZA_ELEZIONI,

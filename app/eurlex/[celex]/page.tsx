@@ -1,6 +1,8 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
+import { promises as fs } from 'node:fs'
+import path from 'node:path'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import {
@@ -23,6 +25,116 @@ function dataIT(iso?: string): string {
     return d.toLocaleDateString('it-IT', { day: 'numeric', month: 'long', year: 'numeric' })
   } catch {
     return (iso ?? '').slice(0, 10)
+  }
+}
+
+/* ---------------------------------------------------------------------------
+ * Recepimento in Italia (solo dati reali da data/reali/eurlex-recepimenti.json,
+ * mai deduzioni). Loader never-throw: file assente o invalido → null.
+ * ------------------------------------------------------------------------- */
+
+interface AttoIT {
+  titoloNim: string
+  tipoNim: string
+  ojData: string
+  chiaveNormattiva?: string
+  eliNormattiva?: string
+}
+
+interface RigaRecepimento {
+  celexDirettiva: string
+  termineUE?: string
+  haNimITA: 'sì' | 'no'
+  numNimTot: number
+  attiIT: AttoIT[]
+  nota: string
+}
+
+const PERCORSO_RECEPIMENTI = path.join(process.cwd(), 'data', 'reali', 'eurlex-recepimenti.json')
+
+function stringaBreve(value: unknown, max: number): string {
+  try {
+    return typeof value === 'string' ? value.trim().slice(0, max) : ''
+  } catch {
+    return ''
+  }
+}
+
+async function leggiRecepimento(celex: string): Promise<RigaRecepimento | null> {
+  try {
+    const chiave = (celex ?? '').trim().toUpperCase()
+    if (!/^3\d{4}L\d{1,4}$/.test(chiave)) return null
+    const stat = await fs.stat(PERCORSO_RECEPIMENTI)
+    if (!stat.isFile() || stat.size > 50 * 1024) return null
+    const raw = await fs.readFile(PERCORSO_RECEPIMENTI, 'utf8')
+    const parsed: unknown = JSON.parse(raw)
+    const o0 = (typeof parsed === 'object' && parsed !== null ? parsed : {}) as Record<string, unknown>
+    const righe: unknown[] = Array.isArray(parsed)
+      ? parsed
+      : Array.isArray(o0['righe'])
+        ? (o0['righe'] as unknown[])
+        : Array.isArray(o0['direttive'])
+          ? (o0['direttive'] as unknown[])
+          : []
+    for (const voce of righe) {
+      try {
+        if (typeof voce !== 'object' || voce === null) continue
+        const o = voce as Record<string, unknown>
+        const celexRiga = stringaBreve(o['celexDirettiva'], 16).toUpperCase()
+        if (celexRiga !== chiave) continue
+        const haNim = stringaBreve(o['haNimITA'], 4).toLowerCase()
+        const numRaw = o['numNimTot']
+        const attiRaw = Array.isArray(o['attiIT'])
+          ? (o['attiIT'] as unknown[])
+          : Array.isArray(o['atti'])
+            ? (o['atti'] as unknown[])
+            : []
+        const attiIT: AttoIT[] = []
+        for (const a of attiRaw.slice(0, 50)) {
+          try {
+            if (typeof a !== 'object' || a === null) continue
+            const ao = a as Record<string, unknown>
+            const titoloNim = stringaBreve(ao['titoloNim'], 500)
+            if (!titoloNim) continue
+            attiIT.push({
+              titoloNim,
+              tipoNim: stringaBreve(ao['tipoNim'], 80),
+              ojData: stringaBreve(ao['ojData'], 16),
+              chiaveNormattiva: stringaBreve(ao['chiaveNormattiva'], 200) || undefined,
+              eliNormattiva: stringaBreve(ao['eliNormattiva'], 200) || undefined,
+            })
+          } catch {
+            continue
+          }
+        }
+        return {
+          celexDirettiva: chiave,
+          termineUE: stringaBreve(o['termineUE'], 16) || undefined,
+          haNimITA: haNim === 'sì' || haNim === 'si' ? 'sì' : 'no',
+          numNimTot: typeof numRaw === 'number' && Number.isFinite(numRaw) && numRaw >= 0 ? Math.floor(numRaw) : attiIT.length,
+          attiIT,
+          nota: stringaBreve(o['nota'], 300),
+        }
+      } catch {
+        continue
+      }
+    }
+    return null
+  } catch {
+    return null
+  }
+}
+
+/** Href interno /leggi solo da ELI/chiave osservati (mai URL inventati). */
+function hrefLegge(atto: AttoIT): string | null {
+  try {
+    for (const campo of [atto.eliNormattiva, atto.chiaveNormattiva]) {
+      const percorso = (campo ?? '').replace(/^\/+/, '').trim()
+      if (percorso && !/\s/.test(percorso) && !/^[a-z]+:/i.test(percorso)) return `/leggi/${percorso}`
+    }
+    return null
+  } catch {
+    return null
   }
 }
 
@@ -57,6 +169,9 @@ export default async function AttoUePage({ params }: DettaglioProps) {
   const { celex } = await params
   const [atto, provenance] = await Promise.all([trovaAttoUe(celex), leggiProvenanceEurlex()])
   if (!atto) notFound()
+
+  const eDirettiva = atto.tipo === 'DIR' || atto.tipo === 'DIR_IMPL' || atto.tipo === 'DIR_DEL'
+  const recepimento = eDirettiva ? await leggiRecepimento(atto.celex) : null
 
   const vigenza =
     atto.inVigore === true
@@ -154,6 +269,74 @@ export default async function AttoUePage({ params }: DettaglioProps) {
             Identificativo ELI ↗
           </a>
         </div>
+
+        {eDirettiva && (
+        <section
+          aria-labelledby="recepimento"
+          className="mt-10 border border-regola bg-carta p-5 dark:border-notte-deep dark:bg-notte-soft"
+        >
+          <h2 id="recepimento" className="font-serif text-lg font-bold text-inchiostro dark:text-nebbia">
+            Recepimento in Italia
+          </h2>
+          {recepimento ? (
+            <>
+              <dl className="mt-3 space-y-2 text-sm leading-relaxed text-inchiostro-soft dark:text-nebbia-soft">
+                <div className="flex flex-wrap gap-x-2">
+                  <dt className="font-semibold text-inchiostro dark:text-nebbia">Termine UE di recepimento:</dt>
+                  <dd>{recepimento.termineUE ? dataIT(recepimento.termineUE) : 'non rilevato'}</dd>
+                </div>
+                <div className="flex flex-wrap gap-x-2">
+                  <dt className="font-semibold text-inchiostro dark:text-nebbia">Nel corpus italiano:</dt>
+                  <dd>
+                    {recepimento.attiIT.length > 0
+                      ? `trovati ${recepimento.attiIT.length} ${recepimento.attiIT.length === 1 ? 'atto' : 'atti'}`
+                      : `nessun atto trovato${recepimento.termineUE ? ` (termine: ${dataIT(recepimento.termineUE)})` : ''}`}
+                  </dd>
+                </div>
+                <div className="flex flex-wrap gap-x-2">
+                  <dt className="font-semibold text-inchiostro dark:text-nebbia">Notifiche NTM UE:</dt>
+                  <dd>
+                    {recepimento.numNimTot} (notifiche degli Stati membri, non leggi italiane
+                    {recepimento.haNimITA === 'sì' ? '; Italia presente' : '; nessuna notifica italiana'})
+                  </dd>
+                </div>
+              </dl>
+              {recepimento.attiIT.length > 0 ? (
+                <ul className="mt-4 space-y-3">
+                  {recepimento.attiIT.map((a, i) => {
+                    const href = hrefLegge(a)
+                    return (
+                      <li key={`${a.titoloNim}-${i}`} className="border-t border-regola pt-3 text-sm dark:border-notte-deep">
+                        {href ? (
+                          <Link href={href} className="font-semibold text-accento underline underline-offset-2 dark:text-accento-chiara">
+                            {a.titoloNim}
+                          </Link>
+                        ) : (
+                          <span className="font-semibold text-inchiostro dark:text-nebbia">{a.titoloNim}</span>
+                        )}
+                        <span className="mt-1 block text-xs text-inchiostro-soft dark:text-nebbia-soft">
+                          {[a.tipoNim, a.ojData ? `GU ${a.ojData}` : ''].filter(Boolean).join(' · ') || 'estremi non rilevati'}
+                        </span>
+                      </li>
+                    )
+                  })}
+                </ul>
+              ) : (
+                <p className="mt-3 text-sm leading-relaxed text-inchiostro-soft dark:text-nebbia-soft">
+                  Nessun recepimento rilevato nei dati: nel corpus italiano non risulta alcun atto collegato a questa direttiva.
+                </p>
+              )}
+              {recepimento.nota && (
+                <p className="mt-3 text-xs text-inchiostro-faint dark:text-nebbia-faint">{recepimento.nota}</p>
+              )}
+            </>
+          ) : (
+            <p className="mt-2 text-sm leading-relaxed text-inchiostro-soft dark:text-nebbia-soft">
+              Nessun recepimento rilevato nei dati: nel corpus italiano non risulta alcun atto collegato a questa direttiva.
+            </p>
+          )}
+        </section>
+        )}
 
         <section
           aria-labelledby="fonti-licenze"

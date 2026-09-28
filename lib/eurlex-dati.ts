@@ -416,3 +416,259 @@ export async function trovaAttoUe(celex: unknown): Promise<AttoUe | null> {
     return null;
   }
 }
+
+/* ---------------------------------------------------------------------------
+ * Mappa recepimenti direttive -> atti IT (cache-build, mai throw).
+ * Legge `data/reali/eurlex-recepimenti.json` (strada ibrida A+B, vedi
+ * `scripts/ingest-reale-recepimenti.ts`). File assente o invalido ->
+ * `{ ok: false }` senza rompere le pagine. Solo osservati, mai inventati.
+ * ------------------------------------------------------------------------- */
+
+export type FonteRecepimento = "normattiva" | "cellar";
+
+export interface AttoRecepimento {
+  titolo: string;
+  titoloNim?: string;
+  tipoNim?: string;
+  ojData?: string;
+  chiaveNormattiva?: string;
+  eliNormattiva?: string;
+  eli?: string;
+  urlGU?: string;
+  fonte: FonteRecepimento;
+  nota?: string;
+}
+
+export interface VoceRecepimento {
+  celexDirettiva: string;
+  annoDirettiva?: string;
+  numeroDirettiva?: string;
+  termineUE?: string | null;
+  haNimITA?: "sì" | "no";
+  numNimTot?: number;
+  atti: AttoRecepimento[];
+  attiIT?: AttoRecepimento[];
+  nota?: string;
+}
+
+export interface ProvenienzaRecepimenti {
+  fonte?: string;
+  url?: string;
+  recuperatoIl?: string;
+  licenza?: string;
+  metodo?: string;
+  direttive?: number;
+  attiCorpus?: number;
+}
+
+export type EsitoMappaRecepimenti =
+  | { ok: true; voci: VoceRecepimento[]; provenance: ProvenienzaRecepimenti }
+  | { ok: false; voci: []; provenance: ProvenienzaRecepimenti };
+
+const PERCORSO_RECEPIMENTI = "data/reali/eurlex-recepimenti.json";
+
+const cacheRecepimenti: {
+  esito: EsitoMappaRecepimenti | null;
+} = { esito: null };
+
+/** Azzera la cache recepimenti (utile nei test). Non lancia mai. */
+export function azzeraCacheRecepimenti(): void {
+  try {
+    cacheRecepimenti.esito = null;
+  } catch {
+    // mai lanciare
+  }
+}
+
+function aAttoRecepimento(voce: unknown): AttoRecepimento | null {
+  try {
+    if (!voce || typeof voce !== "object" || Array.isArray(voce)) return null;
+    const o = voce as Record<string, unknown>;
+    const titolo = stringaPulita(o["titolo"] ?? o["titoloNim"]);
+    if (titolo.length < 10) return null;
+    const fonte =
+      o["fonte"] === "cellar" ? "cellar" : o["fonte"] === "normattiva" ? "normattiva" : null;
+    if (!fonte) return null;
+    const atto: AttoRecepimento = { titolo: titolo.slice(0, 500), fonte };
+    for (const campo of [
+      "titoloNim",
+      "tipoNim",
+      "chiaveNormattiva",
+      "eliNormattiva",
+      "nota",
+    ] as const) {
+      const v = stringaPulita(o[campo]);
+      if (v) atto[campo] = v.slice(0, 500);
+    }
+    const oj = stringaPulita(o["ojData"]).slice(0, 10);
+    if (/^\d{4}-\d{2}-\d{2}$/.test(oj)) atto.ojData = oj;
+    const eli = urlAmmesso(o["eli"]);
+    // `eli` LawRecord relativo (/eli/...) non e' un URL ammesso: si conserva
+    // solo come `eliNormattiva` sopra; qui solo URL assoluti verificati.
+    if (eli) atto.eli = eli;
+    const gu = stringaPulita(o["urlGU"]);
+    if (gu) {
+      try {
+        const u = new URL(gu);
+        if (
+          u.protocol === "https:" &&
+          (u.hostname.toLowerCase() === "www.gazzettaufficiale.it" ||
+            u.hostname.toLowerCase() === "www.normattiva.it")
+        ) {
+          atto.urlGU = gu.slice(0, 500);
+        }
+      } catch {
+        // url non valido: si omette, mai throw
+      }
+    }
+    return atto;
+  } catch {
+    return null;
+  }
+}
+
+function aVoceRecepimento(voce: unknown): VoceRecepimento | null {
+  try {
+    if (!voce || typeof voce !== "object" || Array.isArray(voce)) return null;
+    const o = voce as Record<string, unknown>;
+    const celex = stringaPulita(o["celexDirettiva"]).toUpperCase();
+    if (!/^3\d{4}L\d{1,4}$/.test(celex)) return null;
+    const grezzi = Array.isArray(o["atti"])
+      ? (o["atti"] as unknown[])
+      : Array.isArray(o["attiIT"])
+        ? (o["attiIT"] as unknown[])
+        : [];
+    const atti: AttoRecepimento[] = [];
+    for (const g of grezzi.slice(0, 20)) {
+      const a = aAttoRecepimento(g);
+      if (a) atti.push(a);
+    }
+    const uscita: VoceRecepimento = { celexDirettiva: celex, atti };
+    const anno = stringaPulita(o["annoDirettiva"]);
+    if (/^\d{4}$/.test(anno)) uscita.annoDirettiva = anno;
+    const numero = stringaPulita(o["numeroDirettiva"]);
+    if (/^\d{1,4}$/.test(numero)) uscita.numeroDirettiva = numero;
+    const termine = stringaPulita(o["termineUE"]);
+    uscita.termineUE = /^\d{4}-\d{2}-\d{2}$/.test(termine) ? termine : null;
+    const haNim = stringaPulita(o["haNimITA"]);
+    if (haNim === "sì" || haNim === "no") uscita.haNimITA = haNim;
+    const tot = o["numNimTot"];
+    if (typeof tot === "number" && Number.isFinite(tot) && tot >= 0) {
+      uscita.numNimTot = Math.floor(tot);
+    }
+    if (Array.isArray(o["attiIT"])) {
+      const duplicati: AttoRecepimento[] = [];
+      for (const g of (o["attiIT"] as unknown[]).slice(0, 20)) {
+        const a = aAttoRecepimento(g);
+        if (a) duplicati.push(a);
+      }
+      uscita.attiIT = duplicati;
+    }
+    const nota = stringaPulita(o["nota"]);
+    if (nota) uscita.nota = nota.slice(0, 500);
+    return uscita;
+  } catch {
+    return null;
+  }
+}
+
+function caricaRecepimenti(): EsitoMappaRecepimenti {
+  try {
+    const mod = moduliNode();
+    if (!mod) return { ok: false, voci: [], provenance: {} };
+    let base = "";
+    try {
+      base = typeof process !== "undefined" && process.cwd ? process.cwd() : "";
+    } catch {
+      return { ok: false, voci: [], provenance: {} };
+    }
+    if (!base) return { ok: false, voci: [], provenance: {} };
+    const ass = mod.join(base, PERCORSO_RECEPIMENTI);
+    if (!mod.existsSync(ass)) return { ok: false, voci: [], provenance: {} };
+    const raw = mod.readFileSync(ass, "utf8");
+    if (!raw || raw.length > 500_000) return { ok: false, voci: [], provenance: {} };
+    const parsed = JSON.parse(raw) as Record<string, unknown>;
+    const prov: ProvenienzaRecepimenti = {};
+    const p = parsed["provenance"];
+    if (p && typeof p === "object" && !Array.isArray(p)) {
+      const o = p as Record<string, unknown>;
+      for (const campo of ["fonte", "url", "recuperatoIl", "licenza", "metodo"] as const) {
+        const v = stringaPulita(o[campo]);
+        if (v) prov[campo] = v.slice(0, 500);
+      }
+      for (const campo of ["direttive", "attiCorpus"] as const) {
+        const v = o[campo];
+        if (typeof v === "number" && Number.isFinite(v) && v >= 0) {
+          prov[campo] = Math.floor(v);
+        }
+      }
+    }
+    const lista = Array.isArray(parsed["direttive"]) ? (parsed["direttive"] as unknown[]) : null;
+    if (!lista) return { ok: false, voci: [], provenance: prov };
+    const voci: VoceRecepimento[] = [];
+    const visti = new Set<string>();
+    for (const g of lista.slice(0, 50)) {
+      const v = aVoceRecepimento(g);
+      if (v && !visti.has(v.celexDirettiva)) {
+        visti.add(v.celexDirettiva);
+        voci.push(v);
+      }
+    }
+    return { ok: true, voci, provenance: prov };
+  } catch {
+    return { ok: false, voci: [], provenance: {} };
+  }
+}
+
+/**
+ * Mappa recepimenti (copia difensiva, mai throw). File assente/invalido ->
+ * `{ ok: false, voci: [] }` senza rompere le pagine.
+ */
+export async function tuttiRecepimenti(): Promise<EsitoMappaRecepimenti> {
+  try {
+    if (!cacheRecepimenti.esito) {
+      cacheRecepimenti.esito = caricaRecepimenti();
+    }
+    const e = cacheRecepimenti.esito;
+    if (!e.ok) return { ok: false, voci: [], provenance: { ...e.provenance } };
+    return {
+      ok: true,
+      voci: e.voci.map((v) => ({
+        ...v,
+        atti: v.atti.map((a) => ({ ...a })),
+        ...(v.attiIT ? { attiIT: v.attiIT.map((a) => ({ ...a })) } : {}),
+      })),
+      provenance: { ...e.provenance },
+    };
+  } catch {
+    return { ok: false, voci: [], provenance: {} };
+  }
+}
+
+/**
+ * Atti IT di recepimento per una direttiva (CELEX, mai throw).
+ * File assente, CELEX malformato o direttiva senza match -> `[]` (onesto).
+ */
+export async function attiPerDirettiva(celex: unknown): Promise<AttoRecepimento[]> {
+  try {
+    const c = typeof celex === "string" ? celex.trim().toUpperCase() : "";
+    if (!/^3\d{4}L\d{1,4}$/.test(c)) return [];
+    const esito = await tuttiRecepimenti();
+    if (!esito.ok) return [];
+    const voce = esito.voci.find((v) => v.celexDirettiva === c);
+    if (!voce) return [];
+    return voce.atti.map((a) => ({ ...a }));
+  } catch {
+    return [];
+  }
+}
+
+/** Provenance della mappa recepimenti. Mai throw. */
+export async function leggiProvenanceRecepimenti(): Promise<ProvenienzaRecepimenti> {
+  try {
+    const esito = await tuttiRecepimenti();
+    return { ...esito.provenance };
+  } catch {
+    return {};
+  }
+}

@@ -28,6 +28,8 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { url: `${BASE_URL}/metodologia`, changeFrequency: 'monthly', priority: 0.6 },
     { url: `${BASE_URL}/elezioni`, changeFrequency: 'monthly', priority: 0.6 },
     { url: `${BASE_URL}/elezioni/europee-2024`, changeFrequency: 'monthly', priority: 0.6 },
+    { url: `${BASE_URL}/elezioni/politiche-2022-camera`, changeFrequency: 'monthly', priority: 0.6 },
+    { url: `${BASE_URL}/elezioni/politiche-2022-senato`, changeFrequency: 'monthly', priority: 0.6 },
   ]
   try {
     const leggi = await queryLaws(

@@ -3,17 +3,19 @@
  * mai per-lista comunale, mai nominativi). Query: `q` (contains su
  * comune/provincia, max 100 ch, min 2, max 100 righe totali con filtro),
  * `regione` (match esatto, max 80 ch), `page` (1..10000), `per` (1..100,
- * default 20), `sort` (`a_asc`|`a_desc`). Id sconosciuto -> 404. Mai 500.
+ * default 20), `sort` (`a_asc`|`a_desc`), `id` (alias convalidato: se
+ * presente deve coincidere con il path, altrimenti 404). Id sconosciuto
+ * o file assente -> 404. Mai 500, mai stack leak.
  */
 
 import { NextResponse } from "next/server";
 import {
-  caricaEuropee2024,
+  caricaElezione,
   cercaComune,
   DISCLAIMER_AGGREGATI,
-  ID_EUROPEE_2024,
   LICENZA_ELEZIONI,
   normalizza,
+  normalizzaIdElezione,
   pagina,
   type ComuneRisultato,
 } from "@/lib/elezioni-dati";
@@ -46,21 +48,32 @@ function ordina(
   }
 }
 
+function errore404(messaggio: string) {
+  return NextResponse.json(
+    {
+      error: messaggio,
+      licenza: LICENZA_ELEZIONI,
+      disclaimerAggregati: DISCLAIMER_AGGREGATI,
+    },
+    { status: 404 },
+  );
+}
+
 export async function GET(request: Request, context: RouteContext) {
   try {
     const { id } = await context.params;
-    const chiave = (id ?? "").trim().toLowerCase();
-    if (chiave !== ID_EUROPEE_2024) {
-      return NextResponse.json(
-        {
-          error: "Consultazione non trovata",
-          licenza: LICENZA_ELEZIONI,
-          disclaimerAggregati: DISCLAIMER_AGGREGATI,
-        },
-        { status: 404 },
-      );
+    const chiave = normalizzaIdElezione(id);
+    if (!chiave) {
+      return errore404("Consultazione non trovata");
     }
     const { searchParams } = new URL(request.url);
+    const alias = searchParams.get("id");
+    if (alias !== null && alias !== "") {
+      const aliasChiave = normalizzaIdElezione(alias);
+      if (!aliasChiave || aliasChiave !== chiave) {
+        return errore404("Consultazione non trovata");
+      }
+    }
     const q = (searchParams.get("q") ?? "").slice(0, 100);
     const regione = normalizza((searchParams.get("regione") ?? "").slice(0, 80));
     const page = intero(searchParams.get("page"), 1, 1, 10000);
@@ -70,15 +83,20 @@ export async function GET(request: Request, context: RouteContext) {
 
     let base: ComuneRisultato[] = [];
     let provenance: unknown = {};
+    let assente = false;
     try {
-      const dati = await caricaEuropee2024();
+      const dati = await caricaElezione(chiave);
       if (dati) {
         base = dati.comuni;
         provenance = { ...dati.provenance };
+      } else {
+        assente = true;
       }
     } catch {
-      base = [];
-      provenance = {};
+      assente = true;
+    }
+    if (assente) {
+      return errore404("Dati non disponibili per questa consultazione");
     }
 
     let filtrati: ComuneRisultato[];

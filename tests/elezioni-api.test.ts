@@ -329,3 +329,168 @@ describe("elezioni api — integrazione disco tollerante (solo se W1 ha scritto 
     }
   });
 });
+
+// ---------------------------------------------------------------------------
+// W2 multi-consultazione (aggiunta, mai cancellato nulla sopra):
+// registry, 404 id ignoto, coerenza per-id. Tollerante se i JSON politiche
+// di W1 sono ancora assenti: asserisce solo disponibilita' effettiva.
+// ---------------------------------------------------------------------------
+
+describe("elezioni api — registry multi-consultazione (MAI rete, mai throw)", () => {
+  it("REGISTRY_ELEZIONI: 3 voci statiche con id/file/titolo, senza numeri reali", async () => {
+    const mod = (await import("@/lib/elezioni-dati")) as Record<string, unknown>;
+    const registry = mod["REGISTRY_ELEZIONI"] as Array<{
+      id: string;
+      tipo: string;
+      data: string;
+      file: string;
+      titolo: string;
+    }>;
+    expect(Array.isArray(registry)).toBe(true);
+    const ids = registry.map((v) => v.id).sort();
+    expect(ids).toEqual(
+      ["europee-2024", "politiche-2022-camera", "politiche-2022-senato"].sort(),
+    );
+    for (const v of registry) {
+      expect(typeof v.file).toBe("string");
+      expect(v.file.startsWith("data/reali/elezioni-")).toBe(true);
+      expect(v.titolo.length).toBeGreaterThan(0);
+      expect(typeof v.tipo).toBe("string");
+      expect(typeof v.data).toBe("string");
+    }
+    // Default retrocompatibilita': ?id= assente -> europee-2024.
+    expect(mod["DEFAULT_ID_ELEZIONE"]).toBe("europee-2024");
+    expect(chiamateFetch).toBe(0);
+  });
+
+  it("normalizzaIdElezione/isIdElezione: trim+case, ignoto -> null/false, mai throw", async () => {
+    const mod = (await import("@/lib/elezioni-dati")) as Record<string, unknown>;
+    const norm = mod["normalizzaIdElezione"] as (v: unknown) => unknown;
+    const isId = mod["isIdElezione"] as (v: unknown) => unknown;
+    expect(() => norm("  Europee-2024 ")).not.toThrow();
+    expect(norm("  Europee-2024 ")).toBe("europee-2024");
+    expect(norm("POLITICHE-2022-CAMERA")).toBe("politiche-2022-camera");
+    expect(norm("politiche-2022-senato")).toBe("politiche-2022-senato");
+    expect(norm("id-ignoto-xyz")).toBeNull();
+    expect(norm("")).toBeNull();
+    expect(norm(123)).toBeNull();
+    expect(norm(null)).toBeNull();
+    expect(isId("europee-2024")).toBe(true);
+    expect(isId("no-esiste")).toBe(false);
+    expect(chiamateFetch).toBe(0);
+  });
+
+  it("elencaConsultazioni: solo file presenti validi, mai throw, mai fetch", async () => {
+    const mod = (await import("@/lib/elezioni-dati")) as Record<string, unknown>;
+    const elenca = mod["elencaConsultazioni"] as () => Promise<
+      Array<{ id: string; disponibile: boolean }>
+    >;
+    let voci: Array<{ id: string; disponibile: boolean }> = [];
+    await expect(
+      (async () => {
+        voci = await elenca();
+      })(),
+    ).resolves.not.toThrow();
+    expect(Array.isArray(voci)).toBe(true);
+    const ids = voci.map((v) => v.id);
+    // Europee presente su disco -> sempre elencata; politiche solo se W1 ha scritto.
+    expect(ids).toContain("europee-2024");
+    for (const v of voci) {
+      expect((v as unknown as { disponibile: boolean }).disponibile).toBe(true);
+    }
+    // Nessuna voce con id fuori registry.
+    for (const id of ids) {
+      expect([
+        "europee-2024",
+        "politiche-2022-camera",
+        "politiche-2022-senato",
+      ]).toContain(id);
+    }
+    // File assente -> consultazione assente (mai throw): coerenza con disco.
+    const attesi = ["data/reali/elezioni-politiche-2022-camera.json"].map(
+      (f) =>
+        existsSync(resolve(process.cwd(), f)) ? "politiche-2022-camera" : null,
+    );
+    for (const id of attesi) {
+      if (id === null) expect(ids).not.toContain("politiche-2022-camera");
+    }
+    expect(chiamateFetch).toBe(0);
+  });
+});
+
+describe("elezioni api — 404 id ignoto e coerenza per-id (mai 500)", () => {
+  it("caricaElezione/caricaElezioneResult: id ignoto -> null/{ok:false}, mai throw", async () => {
+    const mod = (await import("@/lib/elezioni-dati")) as Record<string, unknown>;
+    const carica = mod["caricaElezione"] as (
+      id: unknown,
+    ) => Promise<unknown>;
+    const caricaResult = mod["caricaElezioneResult"] as (
+      id: unknown,
+    ) => Promise<{ ok: boolean; errore?: string }>;
+    await expect(carica("id-ignoto-xyz")).resolves.toBeNull();
+    await expect(carica("")).resolves.toBeNull();
+    await expect(carica(null)).resolves.toBeNull();
+    const esito = await caricaResult("id-ignoto-xyz");
+    expect(esito.ok).toBe(false);
+    expect(typeof esito.errore).toBe("string");
+    expect((esito.errore as string).length).toBeGreaterThan(0);
+    expect(chiamateFetch).toBe(0);
+  });
+
+  it("coerenza per-id: europee-2024 coincide con caricaEuropee2024; politiche assenti -> null", async () => {
+    const mod = (await import("@/lib/elezioni-dati")) as Record<string, unknown>;
+    const carica = mod["caricaElezione"] as (
+      id: unknown,
+    ) => Promise<Europee2024 | null>;
+    const legacy = mod["caricaEuropee2024"] as () => Promise<Europee2024 | null>;
+    const perId = await carica("europee-2024");
+    const daLegacy = await legacy();
+    if (daLegacy === null) {
+      expect(perId).toBeNull();
+    } else {
+      expect(perId).not.toBeNull();
+      expect(perId?.elezione.e).toBe(daLegacy.elezione.e);
+      expect(perId?.elezione.v).toBe(daLegacy.elezione.v);
+      expect(perId?.liste.length).toBe(daLegacy.liste.length);
+      // Helper esistenti riusabili per-id senza cambiare firma.
+      const cerca = mod["cercaComune"] as (
+        comuni: readonly ComuneAgg[],
+        q: unknown,
+      ) => ComuneAgg[];
+      const top = mod["topListe"] as (
+        liste: readonly ListaAgg[],
+        n: unknown,
+      ) => ListaAgg[];
+      const pagina = mod["pagina"] as (
+        el: readonly unknown[],
+        p: unknown,
+        per: unknown,
+      ) => unknown[];
+      expect(() => cerca(perId?.comuni ?? [], "AA")).not.toThrow();
+      expect(() => top(perId?.liste ?? [], 5)).not.toThrow();
+      expect(() => pagina(perId?.comuni ?? [], 1, 20)).not.toThrow();
+      const payload = JSON.stringify(perId);
+      for (const campo of CAMPI_VIETATI) {
+        expect(payload).not.toContain(`"${campo}"`);
+      }
+    }
+    // Politiche: null se W1 non ha ancora scritto (file assente -> assente).
+    for (const id of ["politiche-2022-camera", "politiche-2022-senato"]) {
+      const file =
+        id === "politiche-2022-camera"
+          ? "data/reali/elezioni-politiche-2022-camera.json"
+          : "data/reali/elezioni-politiche-2022-senato.json";
+      const res = await carica(id);
+      if (!existsSync(resolve(process.cwd(), file))) {
+        expect(res).toBeNull();
+      } else if (res !== null) {
+        expect(res.elezione.data).toBe("2022-09-25");
+        const payload = JSON.stringify(res);
+        for (const campo of CAMPI_VIETATI) {
+          expect(payload).not.toContain(`"${campo}"`);
+        }
+      }
+    }
+    expect(chiamateFetch).toBe(0);
+  });
+});

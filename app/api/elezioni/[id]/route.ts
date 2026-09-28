@@ -1,18 +1,21 @@
 /**
  * GET /api/elezioni/[id] — dettaglio aggregato di una consultazione.
- * v1: solo `europee-2024` (nazionale + regioni con per-lista, mai righe
- * candidato/nominativi). Query: `top` (1..15, default 15), `lista`
- * (contains sul nome lista, max 80 ch, applicato anche al per-lista
- * regionale). Id sconosciuto -> 404. Mai 500.
+ * Consultazioni: `europee-2024`, `politiche-2022-camera`,
+ * `politiche-2022-senato` (nazionale + regioni/circoscrizioni con
+ * per-lista, mai righe candidato/nominativi). Query: `top` (1..15,
+ * default 15), `lista` (contains sul nome lista, max 80 ch, applicato
+ * anche al per-lista regionale), `id` (alias convalidato: se presente
+ * deve coincidere con il path, altrimenti 404). Id sconosciuto o file
+ * assente -> 404. Mai 500, mai stack leak.
  */
 
 import { NextResponse } from "next/server";
 import {
-  caricaEuropee2024,
+  caricaElezione,
   DISCLAIMER_AGGREGATI,
-  ID_EUROPEE_2024,
   LICENZA_ELEZIONI,
   normalizza,
+  normalizzaIdElezione,
   topListe,
   type ListaRisultato,
 } from "@/lib/elezioni-dati";
@@ -44,35 +47,41 @@ function filtraListe(
   }
 }
 
+function errore404(messaggio: string) {
+  return NextResponse.json(
+    {
+      error: messaggio,
+      licenza: LICENZA_ELEZIONI,
+      disclaimerAggregati: DISCLAIMER_AGGREGATI,
+    },
+    { status: 404 },
+  );
+}
+
 export async function GET(request: Request, context: RouteContext) {
   try {
     const { id } = await context.params;
-    const chiave = (id ?? "").trim().toLowerCase();
-    if (chiave !== ID_EUROPEE_2024) {
-      return NextResponse.json(
-        {
-          error: "Consultazione non trovata",
-          licenza: LICENZA_ELEZIONI,
-          disclaimerAggregati: DISCLAIMER_AGGREGATI,
-        },
-        { status: 404 },
-      );
+    const chiave = normalizzaIdElezione(id);
+    if (!chiave) {
+      return errore404("Consultazione non trovata");
+    }
+    const { searchParams } = new URL(request.url);
+    const alias = searchParams.get("id");
+    if (alias !== null && alias !== "") {
+      const aliasChiave = normalizzaIdElezione(alias);
+      if (!aliasChiave || aliasChiave !== chiave) {
+        return errore404("Consultazione non trovata");
+      }
     }
     let dati = null;
     try {
-      dati = await caricaEuropee2024();
+      dati = await caricaElezione(chiave);
     } catch {
       dati = null;
     }
     if (!dati) {
-      return NextResponse.json({
-        dati: null,
-        licenza: LICENZA_ELEZIONI,
-        disclaimerAggregati: DISCLAIMER_AGGREGATI,
-        provenance: {},
-      });
+      return errore404("Dati non disponibili per questa consultazione");
     }
-    const { searchParams } = new URL(request.url);
     const top = intero(searchParams.get("top"), 15, 1, 15);
     const filtroLista = normalizza(
       (searchParams.get("lista") ?? "").slice(0, 80),
@@ -107,15 +116,31 @@ export async function GET(request: Request, context: RouteContext) {
             .map((l) => ({ ...l }))
         : r.liste.map((l) => ({ ...l })),
     }));
+    const corpo: Record<string, unknown> = {
+      id: chiave,
+      elezione: { ...dati.elezione },
+      liste: nazionali,
+      regioni,
+      metodologia: dati.metodologia,
+      avvertenze: dati.avvertenze,
+    };
+    if (dati.circoscrizioni) {
+      corpo["circoscrizioni"] = dati.circoscrizioni.map((c) => ({
+        r: c.r,
+        e: c.e,
+        v: c.v,
+        liste: nomi
+          ? c.liste
+              .filter((l) => nomi.has(normalizza(l.n)))
+              .map((l) => ({ ...l }))
+          : c.liste.map((l) => ({ ...l })),
+      }));
+    }
+    if (dati.collegiU) {
+      corpo["collegiU"] = dati.collegiU.map((c) => ({ ...c }));
+    }
     return NextResponse.json({
-      dati: {
-        id: ID_EUROPEE_2024,
-        elezione: { ...dati.elezione },
-        liste: nazionali,
-        regioni,
-        metodologia: dati.metodologia,
-        avvertenze: dati.avvertenze,
-      },
+      dati: corpo,
       licenza: LICENZA_ELEZIONI,
       disclaimerAggregati: DISCLAIMER_AGGREGATI,
       provenance: { ...dati.provenance },

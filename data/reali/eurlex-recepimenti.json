@@ -1,0 +1,35 @@
+{
+  "provenance": {
+    "fonte": "CELLAR SPARQL + corpus Normattiva data/reali/normattiva-*.json",
+    "url": "https://publications.europa.eu/webapi/rdf/sparql",
+    "recuperatoIl": "2026-09-28T19:52:26.409Z",
+    "licenza": "riuso con attribuzione Dec.2011/833/UE",
+    "metodo": "ibrida A+B cache-build (A best-effort, B zero-rete); mai affermare senza dati",
+    "direttive": 2,
+    "attiCorpus": 356
+  },
+  "direttive": [
+    {
+      "celexDirettiva": "32026L1472",
+      "annoDirettiva": "2026",
+      "numeroDirettiva": "1472",
+      "termineUE": null,
+      "haNimITA": "no",
+      "numNimTot": 0,
+      "attiIT": [],
+      "atti": [],
+      "nota": "NTM UE: notifiche degli Stati membri, non leggi italiane; atti IT solo se con riferimento esplicito anno+numero"
+    },
+    {
+      "celexDirettiva": "32026L1194",
+      "annoDirettiva": "2026",
+      "numeroDirettiva": "1194",
+      "termineUE": null,
+      "haNimITA": "no",
+      "numNimTot": 0,
+      "attiIT": [],
+      "atti": [],
+      "nota": "NTM UE: notifiche degli Stati membri, non leggi italiane; atti IT solo se con riferimento esplicito anno+numero"
+    }
+  ]
+}

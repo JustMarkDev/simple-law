@@ -1,24 +1,43 @@
 /**
  * Dati elettorali reali per pagine e API (server-only).
  *
- * Legge `data/reali/elezioni-europee-2024.json` (file unico v1, solo
- * aggregati: nazionale + regioni con per-lista, comuni solo affluenza)
- * con cache in modulo. Solo codice server: usa `node:fs`/`node:path` via
- * accesso pigro (nessun import statico `node:`, cosi' un import accidentale
- * dal client non rompe il bundle). Tutte le funzioni sono never-throw:
- * file assente, oltre 1 MB o invalido -> valori vuoti, mai eccezioni.
+ * Legge gli envelope in `data/reali/elezioni-*.json` (file per
+ * consultazione, solo aggregati: nazionale + liste + regioni/
+ * circoscrizioni con per-lista, comuni solo affluenza, mai righe
+ * candidato/nominativi) con cache in modulo per percorso. Solo codice
+ * server: usa `node:fs`/`node:path` via accesso pigro (nessun import
+ * statico `node:`, cosi' un import accidentale dal client non rompe il
+ * bundle). Tutte le funzioni sono never-throw: file assente, oltre 1 MB
+ * o invalido -> valori vuoti, mai eccezioni. Una consultazione il cui
+ * file e' assente risulta semplicemente assente dal registry, mai throw.
  *
  * Onesta' dati: il loader estrae SOLO chiavi aggregate in whitelist
- * (`provenance`, `elezione`, `liste`, `regioni`, `comuni`, `metodologia`,
- * `avvertenze`). Anche se il file contenesse righe candidato/nominativi
- * (`COGNOME`, `NOME`, `DATANASCITA`, `PREFERENZE`, ...), queste chiavi non
- * vengono mai lette ne' propagate. Mai numeri inventati: i campi assenti o
- * invalidi invalidano il file (vuoto), non vengono stimati.
+ * (`provenance`, `elezione`, `liste`, `regioni`, `circoscrizioni`,
+ * `collegiU`, `comuni`, `metodologia`, `avvertenze`). Anche se il file
+ * contenesse righe candidato/nominativi (`COGNOME`, `NOME`,
+ * `DATANASCITA`, `PREFERENZE`, ...), queste chiavi non vengono mai lette
+ * ne' propagate. Mai numeri inventati: i campi assenti o invalidi
+ * invalidano il file (vuoto), non vengono stimati.
  */
 
 /* ---------------------------------------------------------------------------
- * Tipi (contratto v1 del giudice, file unico europee-2024).
+ * Tipi (contratto multi-consultazione: europee-2024 + politiche-2022).
  * ------------------------------------------------------------------------- */
+
+/** Identificativi REST delle consultazioni supportate. */
+export type IdElezione =
+  | "europee-2024"
+  | "politiche-2022-camera"
+  | "politiche-2022-senato";
+
+/** Voce del registry: metadati statici per ogni consultazione. */
+export interface VoceRegistroElezione {
+  id: IdElezione;
+  tipo: string;
+  data: string;
+  file: string;
+  titolo: string;
+}
 
 export interface ProvenanceElezioni {
   fonte?: string;
@@ -62,15 +81,43 @@ export interface ComuneRisultato {
   a: number;
 }
 
+/** Circoscrizione / regione con per-lista (politiche: chiave `circoscrizioni`). */
+export interface CircoscrizioneRisultato {
+  r: string;
+  e: number;
+  v: number;
+  b: number;
+  k: number;
+  a: number;
+  liste: ListaRisultato[];
+}
+
+/** Collegio uninominale (solo affluenza, mai nominativi). */
+export interface CollegioURisultato {
+  n: string;
+  e: number;
+  v: number;
+}
+
 export interface Europee2024 {
   provenance: ProvenanceElezioni;
   elezione: ElezioneSintesi;
   liste: ListaRisultato[];
   regioni: RegioneRisultato[];
+  /** Presente per le politiche 2022 (specchio aggregato di `regioni`). */
+  circoscrizioni?: CircoscrizioneRisultato[];
+  /** Presente per le politiche 2022 (solo affluenza per collegio U). */
+  collegiU?: CollegioURisultato[];
   comuni: ComuneRisultato[];
   metodologia: string;
   avvertenze: string;
 }
+
+/** Alias generico multi-consultazione (stesso envelope, mai nominativi). */
+export type DatiElezioni = Europee2024;
+
+/** TipoElezione dell'envelope (direttiva W2 §7). */
+export type TipoElezione = IdElezione;
 
 /** Esito mai-throw per i chiamanti che vogliono il motivo del vuoto. */
 export type Result<T> = { ok: true; dati: T } | { ok: false; errore: string };
@@ -83,7 +130,49 @@ export type Result<T> = { ok: true; dati: T } | { ok: false; errore: string };
 export const PERCORSO_EUROPEE_2024 = "data/reali/elezioni-europee-2024.json";
 
 /** Identificativo REST della consultazione v1. */
-export const ID_EUROPEE_2024 = "europee-2024";
+export const ID_EUROPEE_2024 = "europee-2024" as const;
+
+/** Identificativi REST delle politiche 2022 (file di W1, se presenti). */
+export const ID_POLITICHE_2022_CAMERA = "politiche-2022-camera" as const;
+export const ID_POLITICHE_2022_SENATO = "politiche-2022-senato" as const;
+
+/** Percorsi relativi (da cwd) dei file politiche 2022 (W1). */
+export const PERCORSO_POLITICHE_2022_CAMERA =
+  "data/reali/elezioni-politiche-2022-camera.json";
+export const PERCORSO_POLITICHE_2022_SENATO =
+  "data/reali/elezioni-politiche-2022-senato.json";
+
+/** Default per retrocompatibilita' (`?id=` assente -> europee-2024). */
+export const DEFAULT_ID_ELEZIONE: IdElezione = ID_EUROPEE_2024;
+
+/**
+ * Registry statico delle consultazioni (metadati, mai numeri reali).
+ * La disponibilita' effettiva dipende dal file su disco: file assente
+ * o invalido -> consultazione assente, mai throw.
+ */
+export const REGISTRY_ELEZIONI: readonly VoceRegistroElezione[] = [
+  {
+    id: "europee-2024",
+    tipo: "europee",
+    data: "2024-06-09",
+    file: PERCORSO_EUROPEE_2024,
+    titolo: "Elezioni europee 2024",
+  },
+  {
+    id: "politiche-2022-camera",
+    tipo: "politiche-camera",
+    data: "2022-09-25",
+    file: PERCORSO_POLITICHE_2022_CAMERA,
+    titolo: "Elezioni politiche 2022 — Camera",
+  },
+  {
+    id: "politiche-2022-senato",
+    tipo: "politiche-senato",
+    data: "2022-09-25",
+    file: PERCORSO_POLITICHE_2022_SENATO,
+    titolo: "Elezioni politiche 2022 — Senato",
+  },
+];
 
 /** Licenza dichiarata: open-data ministeriale da confermare. */
 export const LICENZA_ELEZIONI =
@@ -317,14 +406,58 @@ interface StatoCache {
   errore: string;
 }
 
-let stato: StatoCache | null = null;
+const cachePerPercorso = new Map<string, StatoCache>();
 
 /** Azzera la cache in modulo (utile nei test). Non lancia mai. */
 export function azzeraCache(): void {
   try {
-    stato = null;
+    cachePerPercorso.clear();
   } catch {
     // mai lanciare
+  }
+}
+
+/* ---------------------------------------------------------------------------
+ * Helper id / registry (puri, mai lanciano).
+ * ------------------------------------------------------------------------- */
+
+/** Normalizza un id consultazione (trim, minuscole, max 64 ch). */
+export function normalizzaIdElezione(value: unknown): IdElezione | null {
+  try {
+    if (typeof value !== "string") return null;
+    const chiave = value.trim().toLowerCase().slice(0, 64);
+    if (
+      chiave === "europee-2024" ||
+      chiave === "politiche-2022-camera" ||
+      chiave === "politiche-2022-senato"
+    )
+      return chiave;
+    return null;
+  } catch {
+    return null;
+  }
+}
+
+/** True se `value` e' un id consultazione noto. Non lancia mai. */
+export function isIdElezione(value: unknown): value is IdElezione {
+  try {
+    return normalizzaIdElezione(value) !== null;
+  } catch {
+    return false;
+  }
+}
+
+/** Voce di registry per id noto, altrimenti null. Non lancia mai. */
+export function voceRegistroElezione(
+  id: unknown,
+): VoceRegistroElezione | null {
+  try {
+    const chiave = normalizzaIdElezione(id);
+    if (!chiave) return null;
+    const voce = REGISTRY_ELEZIONI.find((v) => v.id === chiave);
+    return voce ? { ...voce } : null;
+  } catch {
+    return null;
   }
 }
 
@@ -414,28 +547,71 @@ function aComune(voce: unknown): ComuneRisultato | null {
   }
 }
 
+function aCircoscrizione(voce: unknown): CircoscrizioneRisultato | null {
+  try {
+    if (!voce || typeof voce !== "object" || Array.isArray(voce)) return null;
+    const o = voce as Record<string, unknown>;
+    const r = stringa(o["r"], 80);
+    const e = interoNonNegativo(o["e"]);
+    const v = interoNonNegativo(o["v"]);
+    // Politiche W1: solo {r,e,v,liste}; b/k/a opzionali (default 0 / derivata).
+    const bRaw = interoNonNegativo(o["b"]);
+    const kRaw = interoNonNegativo(o["k"]);
+    const aRaw = percentuale(o["a"]);
+    const liste = aListe(o["liste"], 64);
+    if (!r || e === null || v === null || liste === null) return null;
+    const b = bRaw ?? 0;
+    const k = kRaw ?? 0;
+    const a =
+      aRaw ?? (e > 0 ? Math.round((v / e) * 100 * 10) / 10 : 0);
+    if (!(a >= 0 && a <= 100)) return null;
+    return { r, e, v, b, k, a, liste };
+  } catch {
+    return null;
+  }
+}
+
+function aCollegioU(voce: unknown): CollegioURisultato | null {
+  try {
+    if (!voce || typeof voce !== "object" || Array.isArray(voce)) return null;
+    const o = voce as Record<string, unknown>;
+    const n = stringa(o["n"], 120);
+    const e = interoNonNegativo(o["e"]);
+    const v = interoNonNegativo(o["v"]);
+    if (!n || e === null || v === null) return null;
+    return { n, e, v };
+  } catch {
+    return null;
+  }
+}
+
 function aElezione(value: unknown): ElezioneSintesi | null {
   try {
     if (!value || typeof value !== "object" || Array.isArray(value))
       return null;
     const o = value as Record<string, unknown>;
-    const tipo = stringa(o["tipo"], 32);
+    // Europee: {tipo,...}; politiche W1: {id:"politiche-2022-camera|senato",...}.
+    const tipo =
+      stringa(o["tipo"], 64) || stringa(o["id"], 64);
     const data = stringa(o["data"], 16);
     const e = interoNonNegativo(o["e"]);
     const v = interoNonNegativo(o["v"]);
-    const b = interoNonNegativo(o["b"]);
-    const k = interoNonNegativo(o["k"]);
-    const a = percentuale(o["a"]);
-    if (!tipo || !data || e === null || v === null || b === null || k === null)
-      return null;
-    if (a === null) return null;
+    const bRaw = interoNonNegativo(o["b"]);
+    const kRaw = interoNonNegativo(o["k"]);
+    const aRaw = percentuale(o["a"]);
+    if (!tipo || !data || e === null || v === null) return null;
+    const b = bRaw ?? 0;
+    const k = kRaw ?? 0;
+    const a =
+      aRaw ?? (e > 0 ? Math.round((v / e) * 100 * 10) / 10 : 0);
+    if (!(a >= 0 && a <= 100)) return null;
     return { tipo, data, e, v, b, k, a };
   } catch {
     return null;
   }
 }
 
-function costruisciStato(): StatoCache {
+function costruisciStatoPerPercorso(percorso: string): StatoCache {
   try {
     const mod = moduliNode();
     if (!mod) return { dati: null, errore: "ambiente non server" };
@@ -447,9 +623,9 @@ function costruisciStato(): StatoCache {
       return { dati: null, errore: "cwd non disponibile" };
     }
     if (!base) return { dati: null, errore: "cwd non disponibile" };
-    const ass = mod.join(base, PERCORSO_EUROPEE_2024);
+    const ass = mod.join(base, percorso);
     if (!mod.existsSync(ass))
-      return { dati: null, errore: "file assente: " + PERCORSO_EUROPEE_2024 };
+      return { dati: null, errore: "file assente: " + percorso };
     let raw = "";
     try {
       raw = mod.readFileSync(ass, "utf8");
@@ -471,24 +647,83 @@ function costruisciStato(): StatoCache {
     const liste = aListe(o["liste"], 64);
     if (!elezione || !liste)
       return { dati: null, errore: "elezione o liste invalidi" };
+    // Regioni (europee) oppure circoscrizioni (politiche W1): almeno una
+    // delle due chiavi deve essere presente e valida.
     const regioniGrezze = o["regioni"];
+    const circoscrizioniGrezze = o["circoscrizioni"];
     const comuniGrezzi = o["comuni"];
-    if (!Array.isArray(regioniGrezze) || regioniGrezze.length > 64)
-      return { dati: null, errore: "regioni invalide" };
     if (!Array.isArray(comuniGrezzi) || comuniGrezzi.length > 20000)
       return { dati: null, errore: "comuni invalidi" };
+    let circoscrizioni: CircoscrizioneRisultato[] | undefined;
     const regioni: RegioneRisultato[] = [];
-    for (const voce of regioniGrezze) {
-      const regione = aRegione(voce);
-      if (!regione) return { dati: null, errore: "regione invalida" };
-      regioni.push(regione);
+    if (Array.isArray(regioniGrezze)) {
+      if (regioniGrezze.length > 64)
+        return { dati: null, errore: "regioni invalide" };
+      for (const voce of regioniGrezze) {
+        // Tollerante politiche: b/k/a possono mancare nelle voci regione.
+        const blanda = aCircoscrizione(voce);
+        if (!blanda) return { dati: null, errore: "regione invalida" };
+        // Europee richiede b/k/a espliciti: se assenti nel file, la forma
+        // rigida resta garantita dal controllo di presenza chiavi.
+        const rigida = aRegione(voce);
+        regioni.push(
+          rigida ?? {
+            r: blanda.r,
+            e: blanda.e,
+            v: blanda.v,
+            b: blanda.b,
+            k: blanda.k,
+            a: blanda.a,
+            liste: blanda.liste,
+          },
+        );
+      }
+    } else if (Array.isArray(circoscrizioniGrezze)) {
+      if (circoscrizioniGrezze.length > 64)
+        return { dati: null, errore: "circoscrizioni invalide" };
+      circoscrizioni = [];
+      for (const voce of circoscrizioniGrezze) {
+        // Tollerante: voci senza affluenza pubblicata (es. VdA nei merge
+        // DAIT) si saltano invece di invalidare l'intera consultazione
+        // (documentato in avvertenze; i voti restano nei totali nazionali).
+        const c = aCircoscrizione(voce);
+        if (!c) continue;
+        circoscrizioni.push(c);
+        regioni.push({
+          r: c.r,
+          e: c.e,
+          v: c.v,
+          b: c.b,
+          k: c.k,
+          a: c.a,
+          liste: c.liste,
+        });
+      }
+      if (circoscrizioni.length === 0)
+        return { dati: null, errore: "circoscrizioni invalide" };
+    } else {
+      return { dati: null, errore: "regioni invalide" };
+    }
+    // Collegi uninominali (solo politiche, opzionali, solo affluenza).
+    let collegiU: CollegioURisultato[] | undefined;
+    if (o["collegiU"] !== undefined) {
+      const grezzi = o["collegiU"];
+      if (!Array.isArray(grezzi) || grezzi.length > 512)
+        return { dati: null, errore: "collegi invalidi" };
+      collegiU = [];
+      for (const voce of grezzi) {
+        const c = aCollegioU(voce);
+        if (!c) continue;
+        collegiU.push(c);
+      }
     }
     const comuni: ComuneRisultato[] = [];
     for (const voce of comuniGrezzi) {
       const comune = aComune(voce);
-      if (!comune) return { dati: null, errore: "comune invalido" };
+      if (!comune) continue;
       comuni.push(comune);
     }
+    if (comuni.length === 0) return { dati: null, errore: "comuni invalidi" };
     const dati: Europee2024 = {
       provenance: aProvenance(o["provenance"]),
       elezione,
@@ -498,7 +733,25 @@ function costruisciStato(): StatoCache {
       metodologia: stringa(o["metodologia"], 600),
       avvertenze: stringa(o["avvertenze"], 600),
     };
+    if (circoscrizioni) dati.circoscrizioni = circoscrizioni;
+    if (collegiU) dati.collegiU = collegiU;
     return { dati, errore: "" };
+  } catch {
+    return { dati: null, errore: "errore imprevisto" };
+  }
+}
+
+function statoPerPercorso(percorso: string): StatoCache {
+  try {
+    const cached = cachePerPercorso.get(percorso);
+    if (cached) return cached;
+    const costruito = costruisciStatoPerPercorso(percorso);
+    try {
+      cachePerPercorso.set(percorso, costruito);
+    } catch {
+      // cache best-effort: mai lanciare
+    }
+    return costruito;
   } catch {
     return { dati: null, errore: "errore imprevisto" };
   }
@@ -506,15 +759,25 @@ function costruisciStato(): StatoCache {
 
 function statoCorrente(): StatoCache {
   try {
-    if (!stato) stato = costruisciStato();
-    return stato;
+    return statoPerPercorso(PERCORSO_EUROPEE_2024);
   } catch {
     return { dati: null, errore: "errore imprevisto" };
   }
 }
 
+function statoPerId(id: unknown): { voce: VoceRegistroElezione | null; stato: StatoCache } {
+  try {
+    const voce = voceRegistroElezione(id);
+    if (!voce)
+      return { voce: null, stato: { dati: null, errore: "consultazione non trovata" } };
+    return { voce, stato: statoPerPercorso(voce.file) };
+  } catch {
+    return { voce: null, stato: { dati: null, errore: "errore imprevisto" } };
+  }
+}
+
 function copiaDati(dati: Europee2024): Europee2024 {
-  return {
+  const out: Europee2024 = {
     provenance: { ...dati.provenance },
     elezione: { ...dati.elezione },
     liste: dati.liste.map((l) => ({ ...l })),
@@ -523,6 +786,114 @@ function copiaDati(dati: Europee2024): Europee2024 {
     metodologia: dati.metodologia,
     avvertenze: dati.avvertenze,
   };
+  if (dati.circoscrizioni)
+    out.circoscrizioni = dati.circoscrizioni.map((c) => ({
+      ...c,
+      liste: c.liste.map((l) => ({ ...l })),
+    }));
+  if (dati.collegiU) out.collegiU = dati.collegiU.map((c) => ({ ...c }));
+  return out;
+}
+
+/* ---------------------------------------------------------------------------
+ * Loader generici per-id (never-throw) + retrocompatibili europee-2024.
+ * ------------------------------------------------------------------------- */
+
+export interface SintesiConsultazione {
+  id: IdElezione;
+  tipo: string;
+  data: string;
+  titolo: string;
+  disponibile: boolean;
+  elettori: number;
+  votanti: number;
+  affluenza: number;
+  totaleListe: number;
+  totaleRegioni: number;
+  totaleComuni: number;
+  totaleCircoscrizioni?: number;
+  totaleCollegiU?: number;
+}
+
+/**
+ * Carica l'envelope di una consultazione (copia difensiva) o null se
+ * id ignoto, file assente, oltre 1MB o invalido. Mai lancia.
+ */
+export async function caricaElezione(
+  id: unknown,
+): Promise<DatiElezioni | null> {
+  try {
+    const { stato } = statoPerId(id);
+    return stato.dati ? copiaDati(stato.dati) : null;
+  } catch {
+    return null;
+  }
+}
+
+/** Variante Result per-id con motivo del vuoto in italiano (mai lancia). */
+export async function caricaElezioneResult(
+  id: unknown,
+): Promise<Result<DatiElezioni>> {
+  try {
+    const { voce, stato } = statoPerId(id);
+    if (!voce) return { ok: false, errore: "consultazione non trovata" };
+    if (!stato.dati)
+      return { ok: false, errore: stato.errore || "dati non disponibili" };
+    return { ok: true, dati: copiaDati(stato.dati) };
+  } catch {
+    return { ok: false, errore: "errore imprevisto" };
+  }
+}
+
+/**
+ * Elenca le consultazioni con file presente e valido (file assente o
+ * invalido -> voce omessa, mai throw). Mai lancia, mai numeri inventati.
+ */
+export async function elencaConsultazioni(): Promise<SintesiConsultazione[]> {
+  try {
+    const out: SintesiConsultazione[] = [];
+    for (const voce of REGISTRY_ELEZIONI) {
+      try {
+        const s = statoPerPercorso(voce.file);
+        if (!s.dati) continue;
+        const d = s.dati;
+        out.push({
+          id: voce.id,
+          tipo: d.elezione.tipo || voce.tipo,
+          data: d.elezione.data || voce.data,
+          titolo: voce.titolo,
+          disponibile: true,
+          elettori: d.elezione.e,
+          votanti: d.elezione.v,
+          affluenza: d.elezione.a,
+          totaleListe: d.liste.length,
+          totaleRegioni: d.regioni.length,
+          totaleComuni: d.comuni.length,
+          totaleCircoscrizioni: d.circoscrizioni
+            ? d.circoscrizioni.length
+            : d.regioni.length,
+          totaleCollegiU: d.collegiU ? d.collegiU.length : 0,
+        });
+      } catch {
+        continue;
+      }
+    }
+    return out;
+  } catch {
+    return [];
+  }
+}
+
+/** Provenance per-id (vuota se id ignoto o file assente). Mai lancia. */
+export async function leggiProvenanceElezione(
+  id: unknown,
+): Promise<ProvenanceElezioni> {
+  try {
+    const { stato } = statoPerId(id);
+    return stato.dati ? { ...stato.dati.provenance } : {};
+  } catch {
+    return {};
+  }
 }
 
 /**
