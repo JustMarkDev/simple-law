@@ -9,9 +9,11 @@ import LawCard from '@/components/LawCard'
 import MinisterCard from '@/components/MinisterCard'
 import Comparsa from '@/components/Comparsa'
 import Contatore from '@/components/Contatore'
+import CorpusBadge from '@/components/CorpusBadge'
 import { loadMinisters, normalizeLaw, personaRelevant, STATO_META, type Law } from '@/components/seed-fallback'
 import { coloreSemaforoRecord, personaRilevanteRecord } from '@/lib/filtri-leggi'
 import { countLaws, queryLaws } from '@/lib/db'
+import { getCorpusInfo } from '@/lib/sources'
 import type { LawRecordExtra } from '@/lib/db'
 
 export const metadata: Metadata = {
@@ -58,6 +60,38 @@ function isFeaturedRecord(record: Pick<LawRecordExtra, 'numero' | 'tipo'>): bool
 function normalizzaSicura(record: LawRecordExtra): Law | null {
   try {
     return normalizeLaw(record)
+  } catch {
+    return null
+  }
+}
+
+/** Firma attesa da `getCorpusInfo` esteso (giudice): mai rompere i 3 campi base. */
+interface InfoCorpusGiudice {
+  base: number
+  espansi: number
+  totale: number
+  reali?: number
+  ufficiali?: number
+  dimostrative?: number
+}
+
+/** Composizione onesta per il badge: solo `getCorpusInfo`, mai throw, null se 0. */
+function leggiComposizione(): { totale: number; ufficiali: number; dimostrative: number } | null {
+  try {
+    const info = getCorpusInfo() as InfoCorpusGiudice
+    const totale = typeof info?.totale === 'number' && Number.isFinite(info.totale) ? Math.floor(info.totale) : 0
+    if (totale <= 0) return null
+    const grezzi = info?.ufficiali ?? info?.reali ?? 0
+    const ufficiali =
+      typeof grezzi === 'number' && Number.isFinite(grezzi)
+        ? Math.min(totale, Math.max(0, Math.floor(grezzi)))
+        : 0
+    const dimGrezzi = info?.dimostrative ?? 0
+    const dimostrative =
+      typeof dimGrezzi === 'number' && Number.isFinite(dimGrezzi)
+        ? Math.min(totale, Math.max(0, Math.floor(dimGrezzi)))
+        : 0
+    return { totale, ufficiali, dimostrative }
   } catch {
     return null
   }
@@ -113,6 +147,7 @@ export default async function HomePage({ searchParams }: HomeProps) {
   }
 
   const conteggio = { verde, giallo, rosso }
+  const composizione = leggiComposizione()
 
   const mostraFeatured = !q && persona === 'tutti'
   const featured = mostraFeatured && featuredRaw ? normalizzaSicura(featuredRaw) : null
@@ -206,6 +241,15 @@ export default async function HomePage({ searchParams }: HomeProps) {
               <p className="mt-2 max-w-2xl text-xs text-inchiostro-soft dark:text-nebbia-soft">
                 Conteggi calcolati sulle {estratto.length} norme più recenti di {totaleReale} totali.
               </p>
+            )}
+            {composizione && (
+              <div className="mt-4 max-w-2xl">
+                <CorpusBadge
+                  totale={composizione.totale}
+                  dimostrative={composizione.dimostrative}
+                  ufficiali={composizione.ufficiali}
+                />
+              </div>
             )}
 
             <div className="mt-6 flex flex-wrap gap-3">

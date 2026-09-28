@@ -646,6 +646,8 @@ describe("reali-9: nessun troncamento silenzioso dei file reali", () => {
       "data/reali/normattiva-storico-2000.json",
       "data/reali/normattiva-storico-2010.json",
       "data/reali/normattiva-storico-2020.json",
+      "data/reali/normattiva-storico-1992-1993.json",
+      "data/reali/normattiva-storico-2005-2006.json",
       "data/reali/normattiva-bulk-a-attuazione-ue.json",
       "data/reali/normattiva-bulk-b-finestra-2005.json",
     ];

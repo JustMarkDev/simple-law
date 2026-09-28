@@ -7,10 +7,12 @@ import PersonaFilter from '@/components/PersonaFilter'
 import FiltriLeggi from '@/components/FiltriLeggi'
 import PaginazioneLeggi from '@/components/PaginazioneLeggi'
 import LawCard from '@/components/LawCard'
+import CorpusBadge from '@/components/CorpusBadge'
 import { countLaws, listLaws, queryLaws, type LawSort } from '@/lib/db'
 import type { LawRecordExtra } from '@/lib/db'
 import { coloreSemaforoRecord, personaRilevanteRecord, type ColoreSemaforo } from '@/lib/filtri-leggi'
 import { normalizeLaw, STATO_META } from '@/components/seed-fallback'
+import { getCorpusInfo } from '@/lib/sources'
 
 interface LeggiProps {
   searchParams: Promise<Record<string, string | string[] | undefined>>
@@ -76,6 +78,38 @@ function hrefSenza(query: Record<string, string>, chiave: string): string {
   params.delete('page')
   const qs = params.toString()
   return qs ? `/leggi?${qs}` : '/leggi'
+}
+
+/** Firma attesa da `getCorpusInfo` esteso (giudice): mai rompere i 3 campi base. */
+interface InfoCorpusGiudice {
+  base: number
+  espansi: number
+  totale: number
+  reali?: number
+  ufficiali?: number
+  dimostrative?: number
+}
+
+/** Composizione onesta per la nota archivio: solo `getCorpusInfo`, mai throw, null se 0. */
+function leggiComposizione(): { totale: number; ufficiali: number; dimostrative: number } | null {
+  try {
+    const info = getCorpusInfo() as InfoCorpusGiudice
+    const totale = typeof info?.totale === 'number' && Number.isFinite(info.totale) ? Math.floor(info.totale) : 0
+    if (totale <= 0) return null
+    const grezzi = info?.ufficiali ?? info?.reali ?? 0
+    const ufficiali =
+      typeof grezzi === 'number' && Number.isFinite(grezzi)
+        ? Math.min(totale, Math.max(0, Math.floor(grezzi)))
+        : 0
+    const dimGrezzi = info?.dimostrative ?? 0
+    const dimostrative =
+      typeof dimGrezzi === 'number' && Number.isFinite(dimGrezzi)
+        ? Math.min(totale, Math.max(0, Math.floor(dimGrezzi)))
+        : 0
+    return { totale, ufficiali, dimostrative }
+  } catch {
+    return null
+  }
 }
 
 export default async function LeggiPage({ searchParams }: LeggiProps) {
@@ -151,6 +185,7 @@ export default async function LeggiPage({ searchParams }: LeggiProps) {
     risultati = ordinati.slice(inizio, inizio + per).map(normalizeLaw)
   }
   const estrattoTroncato = serveEstratto && totaleArchivio > estrattoFiltri.length
+  const composizione = leggiComposizione()
 
   const queryBase: Record<string, string> = {}
   if (q) queryBase.q = q
@@ -218,6 +253,15 @@ export default async function LeggiPage({ searchParams }: LeggiProps) {
           <p className="mt-2 max-w-2xl text-sm font-semibold text-inchiostro dark:text-nebbia">
             {totaleArchivio} {totaleArchivio === 1 ? 'norma totale in archivio' : 'norme totali in archivio'}.
           </p>
+          {composizione && (
+            <div className="mt-3 max-w-2xl" aria-live="polite">
+              <CorpusBadge
+                totale={composizione.totale}
+                dimostrative={composizione.dimostrative}
+                ufficiali={composizione.ufficiali}
+              />
+            </div>
+          )}
           <div className="mt-3 flex flex-wrap gap-3 text-sm">
             <a href={csvHref} className="underline underline-offset-4 hover:text-accento">
               Scarica CSV

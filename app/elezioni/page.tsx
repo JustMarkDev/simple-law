@@ -4,13 +4,14 @@ import { promises as fs } from 'node:fs'
 import path from 'node:path'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
+import { caricaSondaggi, type SondaggioNazionale } from '@/lib/sondaggi'
 
 export const revalidate = 3600
 
 export const metadata: Metadata = {
   title: 'Elezioni — Stato della Repubblica',
   description:
-    'Consultazioni elettorali con dati ufficiali aggregati del Ministero dell’Interno (DAIT–Eligendo): affluenza e risultati per lista e territorio, senza dati personali.',
+    'Consultazioni elettorali con dati ufficiali aggregati del Ministero dell’Interno (DAIT–Eligendo): affluenza e risultati per lista e territorio, senza dati personali. Più una rassegna di sondaggi nazionali sul voto di partito (fonte secondaria Wikipedia, CC BY-SA 4.0).',
 }
 
 /* Registro delle consultazioni (solo id statici, mai numeri inventati). */
@@ -115,6 +116,47 @@ function decimaleIT(value: number): string {
   }
 }
 
+/** Percentuale sondaggio (1 decimale + %) o «—» se assente. Mai numeri inventati. */
+function pctSondaggio(value: number | null): string {
+  try {
+    if (typeof value !== 'number' || !Number.isFinite(value)) return '—'
+    return `${new Intl.NumberFormat('it-IT', { minimumFractionDigits: 1, maximumFractionDigits: 1 }).format(value)}%`
+  } catch {
+    return '—'
+  }
+}
+
+const MESI_IT = ['gen', 'feb', 'mar', 'apr', 'mag', 'giu', 'lug', 'ago', 'set', 'ott', 'nov', 'dic']
+
+/** ISO YYYY-MM-DD -> «28 set 2026», mai lancia, mai inventa (fallback al grezzo). */
+function dataIT(iso: string): string {
+  try {
+    const m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(iso.trim())
+    if (!m) return iso
+    const mese = MESI_IT[Number(m[2]) - 1] ?? m[2]
+    return `${Number(m[3])} ${mese} ${m[1]}`
+  } catch {
+    return iso
+  }
+}
+
+/** Intervallo fieldwork «23–28 set 2026» o giorno singolo. Mai lancia. */
+function intervalloFieldwork(s: SondaggioNazionale): string {
+  try {
+    if (s.fieldwork_da === s.fieldwork_a) return dataIT(s.fieldwork_a)
+    const a = /^(\d{4})-(\d{2})-(\d{2})$/.exec(s.fieldwork_da)
+    const b = /^(\d{4})-(\d{2})-(\d{2})$/.exec(s.fieldwork_a)
+    if (!a || !b) return `${s.fieldwork_da} – ${s.fieldwork_a}`
+    if (a[1] === b[1] && a[2] === b[2]) {
+      const mese = MESI_IT[Number(b[2]) - 1] ?? b[2]
+      return `${Number(a[3])}–${Number(b[3])} ${mese} ${b[1]}`
+    }
+    return `${dataIT(s.fieldwork_da)} – ${dataIT(s.fieldwork_a)}`
+  } catch {
+    return s.fieldwork_a
+  }
+}
+
 const LINK_ESTERNI = [
   { label: 'Eligendo — Ministero dell’Interno', url: 'https://elezionistorico.interno.gov.it/eligendo/opendata.php' },
   { label: 'CISE — Centro Italiano Studi Elettorali', url: 'https://cise.luiss.it/' },
@@ -135,6 +177,19 @@ export default async function ElezioniPage() {
     sintesi = await Promise.all(REGISTRO.map((voce) => leggiSintesi(voce)))
   } catch {
     sintesi = REGISTRO.map(() => null)
+  }
+  let sondaggi: SondaggioNazionale[] = []
+  let sondaggiProvenance: { fonte?: string; url?: string; revid?: number; estratto_il?: string; licenza?: string; licenza_url?: string } = {}
+  let sondaggiAttribuzione = ''
+  try {
+    const envelope = await caricaSondaggi()
+    if (envelope) {
+      sondaggi = envelope.sondaggi
+      sondaggiProvenance = envelope.provenance
+      sondaggiAttribuzione = envelope.attribuzione
+    }
+  } catch {
+    sondaggi = []
   }
 
   return (
@@ -211,6 +266,110 @@ export default async function ElezioniPage() {
               )
             })}
           </ul>
+        </section>
+
+        <section aria-labelledby="sondaggi" className="mt-10">
+          <h2 id="sondaggi" className="font-serif text-xl font-bold text-inchiostro dark:text-nebbia">
+            Sondaggi nazionali — voto di partito
+          </h2>
+          <p className="mt-2 inline-flex w-fit items-center border border-regola px-2 py-0.5 text-[11px] font-semibold uppercase tracking-[0.16em] text-inchiostro-soft dark:border-notte-deep dark:text-nebbia-soft">
+            Sondaggi — non sono voti reali, non sono leggi
+          </p>
+          <p className="mt-3 max-w-2xl text-sm leading-relaxed text-inchiostro-soft dark:text-nebbia-soft">
+            Ultimi {sondaggi.length > 0 ? intero(sondaggi.length) : '—'} sondaggi nazionali sul voto di partito:
+            stime degli istituti con margine di errore, mai risultati elettorali e mai seggi.
+            Solo sezione «Party vote» nazionale; esclusi gradimenti, primarie, scenari ipotetici
+            e aggregatori di secondo livello.
+          </p>
+          {sondaggi.length > 0 ? (
+            <div className="mt-4 overflow-x-auto border border-regola dark:border-notte-deep">
+              <table className="w-full min-w-[720px] border-collapse bg-carta text-sm dark:bg-notte-soft">
+                <caption className="sr-only">
+                  Ultimi sondaggi nazionali sul voto di partito con istituto, periodo di rilevazione, campione e percentuali dei principali partiti
+                </caption>
+                <thead>
+                  <tr className="border-b border-regola text-left dark:border-notte-deep">
+                    <th scope="col" className="px-3 py-2 font-semibold text-inchiostro dark:text-nebbia">Istituto</th>
+                    <th scope="col" className="px-3 py-2 font-semibold text-inchiostro dark:text-nebbia">Rilevazione</th>
+                    <th scope="col" className="px-3 py-2 text-right font-semibold text-inchiostro dark:text-nebbia">Campione</th>
+                    <th scope="col" className="px-3 py-2 text-right font-semibold text-inchiostro dark:text-nebbia">FdI</th>
+                    <th scope="col" className="px-3 py-2 text-right font-semibold text-inchiostro dark:text-nebbia">PD</th>
+                    <th scope="col" className="px-3 py-2 text-right font-semibold text-inchiostro dark:text-nebbia">M5S</th>
+                    <th scope="col" className="px-3 py-2 text-right font-semibold text-inchiostro dark:text-nebbia">Lega</th>
+                    <th scope="col" className="px-3 py-2 text-right font-semibold text-inchiostro dark:text-nebbia">FI</th>
+                    <th scope="col" className="px-3 py-2 text-right font-semibold text-inchiostro dark:text-nebbia">Vantaggio</th>
+                    <th scope="col" className="px-3 py-2 font-semibold text-inchiostro dark:text-nebbia">Fonte</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {sondaggi.map((s, i) => (
+                    <tr key={`${s.istituto}-${s.fieldwork_a}-${i}`} className="border-b border-regola last:border-0 dark:border-notte-deep">
+                      <td className="px-3 py-2 font-medium text-inchiostro dark:text-nebbia">{s.istituto}</td>
+                      <td className="whitespace-nowrap px-3 py-2 text-inchiostro-soft dark:text-nebbia-soft">{intervalloFieldwork(s)}</td>
+                      <td className="px-3 py-2 text-right text-inchiostro-soft dark:text-nebbia-soft">
+                        {typeof s.campione_n === 'number' ? intero(s.campione_n) : '—'}
+                      </td>
+                      <td className="px-3 py-2 text-right font-semibold text-inchiostro dark:text-nebbia">{pctSondaggio(s.fdi)}</td>
+                      <td className="px-3 py-2 text-right text-inchiostro-soft dark:text-nebbia-soft">{pctSondaggio(s.pd)}</td>
+                      <td className="px-3 py-2 text-right text-inchiostro-soft dark:text-nebbia-soft">{pctSondaggio(s.m5s)}</td>
+                      <td className="px-3 py-2 text-right text-inchiostro-soft dark:text-nebbia-soft">{pctSondaggio(s.lega)}</td>
+                      <td className="px-3 py-2 text-right text-inchiostro-soft dark:text-nebbia-soft">{pctSondaggio(s.fi)}</td>
+                      <td className="px-3 py-2 text-right text-inchiostro-soft dark:text-nebbia-soft">{pctSondaggio(s.lead)}</td>
+                      <td className="px-3 py-2">
+                        <a
+                          href={s.url_fonte}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          aria-label={`Fonte originaria del sondaggio ${s.istituto} del ${intervalloFieldwork(s)} (si apre in una nuova scheda)`}
+                          className="inline-flex min-h-[44px] items-center font-medium text-accento underline underline-offset-2 hover:text-inchiostro focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-inchiostro dark:text-accento-chiara dark:hover:text-nebbia dark:focus-visible:outline-nebbia"
+                        >
+                          Istituto
+                        </a>
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          ) : (
+            <p className="mt-4 text-sm italic text-inchiostro-soft dark:text-nebbia-soft">
+              Dati in preparazione: la rassegna sondaggi non è ancora pubblicata.
+            </p>
+          )}
+          <div className="mt-4 border border-regola bg-carta p-5 text-sm leading-relaxed text-inchiostro-soft dark:border-notte-deep dark:bg-notte-soft dark:text-nebbia-soft">
+            <p>
+              Fonte secondaria:{' '}
+              {sondaggiProvenance.url ? (
+                <a
+                  href={sondaggiProvenance.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-medium text-accento underline underline-offset-2 hover:text-inchiostro focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-inchiostro dark:text-accento-chiara dark:hover:text-nebbia dark:focus-visible:outline-nebbia"
+                >
+                  Wikipedia — «Opinion polling for the next Italian general election»
+                </a>
+              ) : (
+                'Wikipedia — «Opinion polling for the next Italian general election»'
+              )}
+              {typeof sondaggiProvenance.revid === 'number' ? ` (revid ${sondaggiProvenance.revid}` : ''}
+              {sondaggiProvenance.estratto_il ? `, estratto il ${dataIT(sondaggiProvenance.estratto_il)}` : ''}
+              {typeof sondaggiProvenance.revid === 'number' ? ')' : ''}. Licenza:{' '}
+              {sondaggiProvenance.licenza_url ? (
+                <a
+                  href={sondaggiProvenance.licenza_url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-medium text-accento underline underline-offset-2 hover:text-inchiostro focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-inchiostro dark:text-accento-chiara dark:hover:text-nebbia dark:focus-visible:outline-nebbia"
+                >
+                  {sondaggiProvenance.licenza ?? 'CC BY-SA 4.0'}
+                </a>
+              ) : (
+                (sondaggiProvenance.licenza ?? 'CC BY-SA 4.0')
+              )}
+              , con attribuzione agli istituti (colonna Fonte).
+            </p>
+            {sondaggiAttribuzione ? <p className="mt-2">{sondaggiAttribuzione}</p> : null}
+          </div>
         </section>
 
         <section aria-labelledby="metodologia" className="mt-10 border border-regola bg-carta p-5 dark:border-notte-deep dark:bg-notte-soft">

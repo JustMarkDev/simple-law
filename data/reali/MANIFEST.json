@@ -234,8 +234,35 @@
    "file": "camera-atti-leg19-c.json",
    "conteggio": 1048,
    "recuperatoIl": "2026-09-28T20:53:36.825Z"
+  },
+  {
+   "nome": "Normattiva bff-opendata v1 (storico 1992-1993)",
+   "url": "https://api.normattiva.it/t/normattiva.api/bff-opendata/v1",
+   "licenza": "riproduzione consentita con menzione di fonte, carattere non autentico e gratuito (solo la GU a stampa e autentica)",
+   "file": "normattiva-storico-1992-1993.json",
+   "conteggio": 77,
+   "recuperatoIl": "2026-09-28T21:20:27.768Z",
+   "legislatura": null
+  },
+  {
+   "nome": "Normattiva bff-opendata v1 (storico 2005-2006)",
+   "url": "https://api.normattiva.it/t/normattiva.api/bff-opendata/v1",
+   "licenza": "riproduzione consentita con menzione di fonte, carattere non autentico e gratuito (solo la GU a stampa e autentica)",
+   "file": "normattiva-storico-2005-2006.json",
+   "conteggio": 49,
+   "recuperatoIl": "2026-09-28T21:20:27.768Z",
+   "legislatura": null
+  },
+  {
+   "nome": "Wikipedia Opinion polling next Italian general election (sondaggi nazionali)",
+   "url": "https://en.wikipedia.org/?curid=71355617",
+   "licenza": "CC BY-SA 4.0",
+   "file": "sondaggi-nazionali.json",
+   "conteggio": 30,
+   "recuperatoIl": "2026-09-28",
+   "legislatura": null
   }
  ],
- "generatoIl": "2026-09-28T21:05:00Z",
+ "generatoIl": "2026-09-28T21:20:27.768Z",
  "nota": "Dati ufficiali open data (11 file). I file >1MB non si committano: rigenerare via scripts/ingest-reale-*.ts. I gruppi Camera sono derivati dai deputati; le denominazioni Senato includono varianti storiche della leg. 19; i DDL/atti sono disegni e atti parlamentari, MAI leggi in vigore."
 }

@@ -104,7 +104,10 @@ npx tsx scripts/ingest-reale-normattiva-storico.ts [--limite-1980=80] [--testo-m
 
 Altre finestre storiche (`normattiva-storico-1990.json`: 71 atti,
 `normattiva-storico-2000.json`: 61 atti, `normattiva-storico-1970.json`:
-66 atti, `normattiva-storico-2010.json`: 66 atti) via
+66 atti, `normattiva-storico-2010.json`: 66 atti,
+`normattiva-storico-1960.json`: 60 atti, `normattiva-storico-2020.json`:
+68 atti, `normattiva-storico-1992-1993.json`: 77 atti,
+`normattiva-storico-2005-2006.json`: 49 atti) via
 `scripts/ingest-reale-normattiva-finestre.ts` (stesse regole di onesta:
 fine-vigenza + intestazione Art. 1, dedup contro tutti i file esistenti).
 
@@ -203,6 +206,18 @@ affluenza nazionale, regionale e comunale). Solo aggregati, mai nominativi.
 npx tsx scripts/ingest-reale-elezioni-europee-2024.ts
 npx tsx scripts/ingest-reale-elezioni-politiche-2022.ts
 npx tsx scripts/ingest-reale-referendum.ts
+```
+
+## Sondaggi nazionali — `sondaggi-nazionali.json` (30 rilevazioni)
+
+Fonte secondaria: **Wikipedia, "Opinion polling for the next Italian
+general election"** (CC BY-SA 4.0, con attribuzione e revisione pinnata
+pageid+revid per verificabilita). Intenzioni di voto per partito con
+istituto, fieldwork, campione e link alla fonte primaria. Mostrati in
+`/elezioni` come rassegna, mai come dati ufficiali.
+
+```bash
+npx tsx scripts/fetch-sondaggi-wiki.mjs
 ```
 
 ## ISTAT — rimandato (decisione documentata)

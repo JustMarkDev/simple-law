@@ -4,7 +4,11 @@ export interface CorpusBadgeProps {
   /** Numero totale di norme nel corpus. */
   totale: number
   /** Quante schede sono a scopo dimostrativo. */
-  dimostrative: number
+  dimostrative?: number
+  /** Quanti atti provengono da `data/reali/` (naming §3). */
+  ufficiali?: number
+  /** Alias futuro da `getCorpusInfo` esteso (`{base,espansi,reali,totale}`). */
+  reali?: number
 }
 
 function numeroSano(valore: unknown): number {
@@ -20,23 +24,45 @@ function formattaNumero(valore: number): string {
 }
 
 /**
- * Riepilogo del corpus: quante norme contiene e quante sono dimostrative.
+ * Riepilogo onesto del corpus: "X atti ufficiali su Y totali (Z% reale)".
  * Componente puro (solo props, nessun accesso dati): la UI lo usa nelle
- * pagine, mai dentro `LawCard` per evitare prop drilling.
+ * pagine, mai dentro `LawCard` per evitare prop drilling. Non lancia mai:
+ * se `totale` non è valido restituisce `null` (nascosto).
  */
-export default function CorpusBadge({ totale, dimostrative }: CorpusBadgeProps) {
-  const totaleSano = numeroSano(totale)
-  const dimostrativeSane = Math.min(numeroSano(dimostrative), totaleSano)
-  const etichettaNorme = totaleSano === 1 ? 'norma nel corpus' : 'norme nel corpus'
-  const etichettaDimostrative =
-    dimostrativeSane === 1 ? 'di cui 1 dimostrativa' : `di cui ${formattaNumero(dimostrativeSane)} dimostrative`
+export default function CorpusBadge({ totale, dimostrative, ufficiali, reali }: CorpusBadgeProps) {
+  try {
+    const totaleSano = numeroSano(totale)
+    if (totaleSano <= 0) return null
+    const ufficialiGrezzi = ufficiali ?? reali ?? 0
+    const ufficialiSani = Math.min(numeroSano(ufficialiGrezzi), totaleSano)
+    const dimostrativeSane = Math.min(numeroSano(dimostrative), totaleSano)
+    const percentuale =
+      ufficialiSani > 0 ? Math.min(100, Math.max(0, Math.round((ufficialiSani / totaleSano) * 100))) : 0
+    const haUfficiali = ufficialiSani > 0
+    const etichettaNorme = totaleSano === 1 ? 'norma nel corpus' : 'norme nel corpus'
+    const etichettaDimostrative =
+      dimostrativeSane === 1 ? 'di cui 1 dimostrativa' : `di cui ${formattaNumero(dimostrativeSane)} dimostrative`
 
-  return (
-    <div className="flex flex-wrap items-center gap-x-3 gap-y-2 border border-regola bg-carta px-4 py-3 text-sm text-inchiostro-soft dark:border-notte-deep dark:bg-notte-soft dark:text-nebbia-soft">
-      <p className="font-semibold text-inchiostro dark:text-nebbia">
-        {formattaNumero(totaleSano)} {etichettaNorme}
-        <span className="ml-2 font-normal text-inchiostro-soft dark:text-nebbia-soft">({etichettaDimostrative})</span>
-      </p>
+    return (
+      <div className="flex flex-wrap items-center gap-x-3 gap-y-2 border border-regola bg-carta px-4 py-3 text-sm text-inchiostro-soft dark:border-notte-deep dark:bg-notte-soft dark:text-nebbia-soft">
+        {haUfficiali ? (
+          <p className="font-semibold text-inchiostro dark:text-nebbia">
+            {formattaNumero(ufficialiSani)} atti ufficiali su {formattaNumero(totaleSano)} totali
+            <span className="ml-2 font-normal text-inchiostro-soft dark:text-nebbia-soft">
+              ({formattaNumero(percentuale)}% reale
+              {dimostrativeSane > 0 ? ` · ${etichettaDimostrative}` : ''})
+            </span>
+          </p>
+        ) : (
+          <p className="font-semibold text-inchiostro dark:text-nebbia">
+            {formattaNumero(totaleSano)} {etichettaNorme}
+            {dimostrativeSane > 0 && (
+              <span className="ml-2 font-normal text-inchiostro-soft dark:text-nebbia-soft">
+                ({etichettaDimostrative})
+              </span>
+            )}
+          </p>
+        )}
       <nav aria-label="Collegamenti al corpus" className="flex flex-wrap items-center gap-2">
         <Link
           href="/leggi"
@@ -53,5 +79,8 @@ export default function CorpusBadge({ totale, dimostrative }: CorpusBadgeProps) 
         </Link>
       </nav>
     </div>
-  )
+    )
+  } catch {
+    return null
+  }
 }

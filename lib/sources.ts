@@ -212,6 +212,8 @@ const PERCORSI_ATTI_REALI = [
   "data/reali/normattiva-storico-2020.json",
   "data/reali/normattiva-bulk-a-attuazione-ue.json",
   "data/reali/normattiva-bulk-b-finestra-2005.json",
+  "data/reali/normattiva-storico-1992-1993.json",
+  "data/reali/normattiva-storico-2005-2006.json",
 ] as const;
 
 /** Percorsi candidati per i comunicati reali (primo esistente e valido vince). */
@@ -520,9 +522,29 @@ function leggiTuttiJsonDaDisco(percorsiRelativi: readonly string[]): unknown[] {
   }
 }
 
+/** Cache dischi reali (TTL 60s, separata atti/comunicati): evita di
+ * rileggere ~15 JSON a ogni request. Mai condivise: ogni loader scrive
+ * solo la sua (niente [] altrui in cache). */
+let cacheAttiReali: { dati: LawRecord[]; scadeIl: number } | null = null;
+let cacheComunicatiReali: { dati: CdmItem[]; scadeIl: number } | null = null;
+const REALI_CACHE_TTL_MS = 60_000;
+
+/** Azzera la cache dei file reali (utile nei test). Non lancia mai. */
+export function azzeraCacheReali(): void {
+  try {
+    cacheAttiReali = null;
+    cacheComunicatiReali = null;
+  } catch {
+    // mai lanciare
+  }
+}
+
 /** Carica gli atti reali da disco (mai lancia, [] se assenti/invalidi). */
 function caricaAttiReali(): LawRecord[] {
   try {
+    if (cacheAttiReali && cacheAttiReali.scadeIl > Date.now()) {
+      return cacheAttiReali.dati;
+    }
     // Unione di tutti i batch (recenti + storici): nessuno resta escluso.
     const documenti = leggiTuttiJsonDaDisco(PERCORSI_ATTI_REALI);
     if (documenti.length === 0) return [];
@@ -540,6 +562,11 @@ function caricaAttiReali(): LawRecord[] {
         }
       }
     }
+    try {
+      cacheAttiReali = { dati: risultato, scadeIl: Date.now() + REALI_CACHE_TTL_MS };
+    } catch {
+      // cache best-effort
+    }
     return risultato;
   } catch {
     return [];
@@ -549,6 +576,9 @@ function caricaAttiReali(): LawRecord[] {
 /** Carica i comunicati reali da disco (unione dei file, mai lancia). */
 function caricaComunicatiReali(): CdmItem[] {
   try {
+    if (cacheComunicatiReali && cacheComunicatiReali.scadeIl > Date.now()) {
+      return cacheComunicatiReali.dati;
+    }
     const documenti = leggiTuttiJsonDaDisco(PERCORSI_CDM_REALI);
     if (documenti.length === 0) return [];
     const risultato: CdmItem[] = [];
@@ -562,6 +592,11 @@ function caricaComunicatiReali(): CdmItem[] {
           continue;
         }
       }
+    }
+    try {
+      cacheComunicatiReali = { dati: risultato, scadeIl: Date.now() + REALI_CACHE_TTL_MS };
+    } catch {
+      // cache best-effort
     }
     return risultato;
   } catch {
@@ -649,21 +684,42 @@ export function unisciCorpus(
   }
 }
 
-/** Informazioni sintetiche sul corpus (base 5 seed + espansi). Non lancia mai. */
+/** Informazioni sintetiche sul corpus (base 5 seed + espansi). Non lancia mai.
+ *
+ * Formula REALI-10 (documentata, legacy invariato):
+ * - `base` = SEED_LAWS.length (5 seed, sempre primi nel corpus);
+ * - `totale` = getSeedLaws().length (seed + reali + sintetico, dedup ELI);
+ * - `espansi` = totale - base (significato storico invariato: tutto cio'
+ *   che sta oltre i seed, reali + sintetico);
+ * - `reali` = record con `dimostrativo === false` in getSeedLaws()
+ *   (atti ufficiali da `data/reali/` + 2 atti di riferimento non-dimostrativi
+ *   del corpus sintetico; sottoinsieme del totale, mai rete, fallback 0).
+ * Invarianti: base + espansi == totale; 0 <= reali <= totale.
+ */
 export interface InfoCorpus {
   base: number;
   espansi: number;
+  reali: number;
   totale: number;
 }
 
 export function getCorpusInfo(): InfoCorpus {
   try {
     const base = SEED_LAWS.length;
-    const totale = getSeedLaws().length;
-    return { base, espansi: Math.max(0, totale - base), totale };
+    const leggi = getSeedLaws();
+    const totale = leggi.length;
+    let reali = 0;
+    try {
+      for (const legge of leggi) {
+        if ((legge as LawRecord).dimostrativo === false) reali += 1;
+      }
+    } catch {
+      reali = 0;
+    }
+    return { base, espansi: Math.max(0, totale - base), reali, totale };
   } catch {
     const base = SEED_LAWS.length;
-    return { base, espansi: 0, totale: base };
+    return { base, espansi: 0, reali: 0, totale: base };
   }
 }
 
