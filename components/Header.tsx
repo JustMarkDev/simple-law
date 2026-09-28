@@ -16,6 +16,7 @@ const NAV = [
   { href: '/quirinale', label: 'Quirinale' },
   { href: '/consulta', label: 'Consulta' },
   { href: '/statistiche', label: 'Statistiche' },
+  { href: '/elezioni', label: 'Elezioni' },
   { href: '/semplifica', label: 'Semplifica' },
   { href: '/salvati', label: 'Salvati' },
   { href: '/fonti', label: 'Fonti' },
