@@ -79,8 +79,28 @@ Obiettivo precedente (completato): UI/UX, feature, corpus 5005 voci.
 - Verifiche mie: `npm test` 396/396 OK, `typecheck`/`lint` OK, `build` OK
   (802 pagine), smoke live (5227 totale, decaduto trovabile, DDL/Consulta
   200, sitemap ok).
-- Next: EUR-Lex, Quirinale, ISTAT, Eligendo; storico per anno (loop finestre);
-  ministri collegati a DDL/atti; sostituzione progressiva del sintetico.
+- Next: EUR-Lex, Quirinale, ISTAT, Eligendo — fatto sotto per EUR-Lex e
+  Quirinale (+ piano elezioni verificato); restano ingest elettorale,
+  ISTAT, batch storico Normattiva per anno, sostituzione progressiva
+  del sintetico.
+
+## Reali-4 (2026-09-28, commit `5853988`): EUR-Lex, Quirinale, storico 1990/2000
+- Workflow: 1 chiamata `workflow` con 10 subagenti (3 sonde + 1 giudice + 4
+  scrittori + 2 revisori). Sonde: CELLAR SPARQL OK, Quirinale HTML stabile,
+  finestre 1990/2000 percorribili, elezioni solo recon (doc verificato).
+- Ingerito: 50 atti UE 2026 (CELEX, titoli EN fase-1 dichiarata, Dec.
+  2011/833/UE), 12 atti + 12 comunicati Quirinale, storico 1990 (71: 40
+  vigore, 28 decaduti, 3 abrogati) + 2000 (61: 46/8/7). Totale reale: 800+
+  voci su 16 file; corpus live **5359** (esatto: 5+356 reali+4998 sintetiche).
+- UI/API: `/eurlex` + `/quirinale` (nav, sitemap, licenze, mai-500),
+  finestre in PERCORSI_ATTI_REALI. Nessun P0 bloccante dai revisori.
+- Fix miei: nav/sitemap per le nuove sezioni, MANIFEST/README con conteggi
+  veri, verifica volumi e stati via smoke.
+- Verifiche mie: `npm test` 428/428 OK, `typecheck`/`lint` OK, `build` OK
+  (855 pagine), smoke live (5359 totale, EUR-Lex/Quirinale 200, 1990 live).
+- Next: ingest elettorale (da docs/elezioni-piano.md), ISTAT, altre finestre
+  storiche, recepimenti UE (link direttive->leggi italiane), sostituzione
+  progressiva del sintetico.
 
 ## Stato iniziale (2026-09-28, iterazione 0)
 - Repo: `/Users/mark/Projects/simple-law`, branch `master` (appena `git init`, baseline committata `5391a84`).
