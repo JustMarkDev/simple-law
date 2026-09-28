@@ -34,9 +34,32 @@ Obiettivo precedente (completato): UI/UX, feature, corpus 5005 voci.
   OK (120 pagine), smoke live (5049 totale, ricerca reale, export 200).
 - Next: pagina/route parlamentari (deputati/senatori/gruppi in UI con
   licenze), DDL Senato + atti Camera in `data/reali`, collegare ministri a
-  schede parlamentari reali, allargare batch Normattiva (storico per anno),
+  schede parlamentari reali (fatto sotto), allargare batch Normattiva
+  (storico per anno),
   Corte Costituzionale / EUR-Lex / Quirinale / ISTAT (sonde + ingest),
   Elezioni/Eligendo, sostituzione progressiva del sintetico.
+
+## Reali-2 (2026-09-28, commit `432114f`): Parlamento in UI, 626 schede reali
+- Workflow: 1 chiamata `workflow` con 10 subagenti (3 proposte IA concorrenti
+  + 1 giudice + 4 scrittori disgiunti + 2 revisori). Il giudice ha scelto IA A
+  (hub /parlamento + liste + dettaglio /parlamento/[camera]/[slug]).
+- Implementato: `lib/parlamento-dati.ts` (server-only, cache, never-throw),
+  5 pagine `app/parlamento/*` (hub leg19 con conteggi 414/212/13, liste 24/pag
+  con q/gruppo/page, dettaglio con JSON-LD Person, licenze CC visibili),
+  4 route `app/api/parlamento/*` (bounds, mai 500), box "Scheda parlamentare"
+  in `ministri/[slug]` solo su match esatto (Meloni sì, Piantedosi no),
+  voce Parlamento in nav.
+- Fix P0 miei (i revisori avevano ragione): W1 non aveva consegnato
+  (`parlamento-dati` + API assenti, build rotto) -> creati da me secondo il
+  contratto congelato nei test; W3 non aveva consegnato (link ministri) ->
+  implementato da me; 2 warning lint `<img>` -> disable mirati e motivati
+  (foto ufficiali remote, niente ottimizzazione remota in build).
+- Verifiche mie: `npm test` 353/353 OK, `typecheck` OK, `lint` OK, `build`
+  OK (750 pagine statiche), smoke live (hub/API/ricerca/dettaglio 200,
+  Meloni con link, Piantedosi senza).
+- Next: DDL Senato + atti Camera in data/reali e in UI, Corte Costituzionale
+  / EUR-Lex / Quirinale / ISTAT / Eligendo (sonde + ingest), batch storico
+  Normattiva per anno, sostituzione progressiva del sintetico.
 
 ## Stato iniziale (2026-09-28, iterazione 0)
 - Repo: `/Users/mark/Projects/simple-law`, branch `master` (appena `git init`, baseline committata `5391a84`).
