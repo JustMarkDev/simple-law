@@ -117,8 +117,26 @@ Obiettivo precedente (completato): UI/UX, feature, corpus 5005 voci.
 - Verifiche mie: `npm test` 446/446 OK, `typecheck`/`lint` OK, `build` OK
   (857 pagine), smoke live (hub/dettaglio/API 200, Roma trovata, totale
   5359 esatto).
-- Next: ISTAT, altre finestre storiche, recepimenti UE->leggi italiane,
-  politiche 2022 / referendum (stesso pattern), sostituzione del sintetico.
+- Next: ISTAT, referendum, altre finestre storiche — fatto sotto per le
+  politiche 2022 e i recepimenti; restano ISTAT, referendum, altre
+  finestre, sostituzione del sintetico (ancora ~5000 su 5491+).
+
+## Reali-6 (2026-09-28, commit `eba9df2`): politiche 2022 + recepimenti UE
+- Workflow: 1 chiamata `workflow` con 10 subagenti (3 sonde + 1 giudice + 4
+  scrittori + 2 revisori). Sonde: DAIT politiche live, CELLAR transposition
+  vs match testuale (scelto match esplicito anno+numero entro 60ch).
+- Ingerito: politiche 2022 Camera+Senato (118k+120k righe -> 7824/7545
+  comuni, 27/31 liste, golden C1-C3 tornati), mappa recepimenti (2 direttive
+  UE, 0 atti trovati = onesto, mai fuzzy).
+- Fix P0 miei (revisori): ingest scriveva 1 file unico vs 2 attesi (hub con
+  link morti, [id] in empty-state) -> riscritto sui 2 file per-scheda +
+  re-ingest; loader che invalidava tutto per VdA senza affluenza -> skip
+  tollerante + regression test; DDL per whitelist.
+- Verifiche mie: `npm test` 483/483 OK, `typecheck`/`lint` OK, `build` OK
+  (859 pagine), smoke live (hub senza 'Dati in preparazione', Milano
+  trovata, box recepimenti onesto).
+- Next: ISTAT, referendum, altre finestre storiche, sostituzione del
+  sintetico.
 
 ## Stato iniziale (2026-09-28, iterazione 0)
 - Repo: `/Users/mark/Projects/simple-law`, branch `master` (appena `git init`, baseline committata `5391a84`).
