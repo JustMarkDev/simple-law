@@ -7,6 +7,7 @@ import {
   getSeedLaws,
   normalizzaAttoReale,
   normalizzaComunicatoReale,
+  unisciCorpus,
 } from "@/lib/sources";
 
 const ATTO_FIXTURE = {
@@ -120,5 +121,44 @@ describe("wiring reali -> app (fixture inline, zero rete, zero disco)", () => {
     }
     items[0].titolo = "MANOMESSO";
     expect(getSeedCdm()[0]?.titolo).not.toBe("MANOMESSO");
+  });
+});
+
+describe("stati onesti e trapianto testo ufficiale (fixture inline)", () => {
+  it("conserva lo stato decaduto esplicito (mai appiattito a in_vigore)", () => {
+    const record = normalizzaAttoReale({ ...ATTO_FIXTURE, stato: "decaduto" });
+    expect(record?.stato).toBe("decaduto");
+  });
+
+  it("la fine-vigenza passata rende abrogato, 99999999 resta in vigore", () => {
+    const abrogato = normalizzaAttoReale({ ...ATTO_FIXTURE, articoloDataFineVigenza: "20200101" });
+    expect(abrogato?.stato).toBe("abrogato");
+    const vigente = normalizzaAttoReale({ ...ATTO_FIXTURE, articoloDataFineVigenza: "99999999" });
+    expect(vigente?.stato).toBe("in_vigore");
+  });
+
+  it("unisciCorpus trapianta il testo ufficiale nel seed in collisione ELI", () => {
+    const seed = SEED_LAWS[0];
+    if (!seed) throw new Error("seed vuoto");
+    const testoUfficiale = "Testo ufficiale integrale del decreto, da Normattiva.";
+    const reale = {
+      ...ATTO_FIXTURE,
+      eli: seed.eli,
+      nir: seed.nir,
+      testo: testoUfficiale,
+      gulpease: null,
+      fonti: null,
+    };
+    const uniti = unisciCorpus([seed], [reale], []);
+    expect(uniti).toHaveLength(1);
+    expect(uniti[0]?.titolo).toBe(seed.titolo);
+    expect(uniti[0]?.testo).toBe(testoUfficiale);
+    expect(uniti[0]?.gulpease).toBeNull();
+    expect(uniti[0]?.dimostrativo).not.toBe(true);
+  });
+
+  it("unisciCorpus non lancia mai, nemmeno con input malformati", () => {
+    expect(() => unisciCorpus(null as never, undefined as never, {} as never)).not.toThrow();
+    expect(unisciCorpus(null as never, undefined as never, {} as never)).toEqual([]);
   });
 });

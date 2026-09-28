@@ -59,7 +59,9 @@ interface LawRecord {
   dataGU?: string;
   numeroGU?: string;
   codiceRedazionale?: string;
-  stato: "in_vigore" | "abrogato";
+  stato: "in_vigore" | "abrogato" | "decaduto";
+  /** Data fine vigenza dal dettaglio (`YYYYMMDD`, "" se assente). Audit. */
+  articoloDataFineVigenza?: string;
   sintesi: string;
   testo?: string;
   testoTroncato?: boolean;
@@ -226,8 +228,30 @@ function dettaglioToRecord(
   const fineVigenza = stringa(interno["articoloDataFineVigenza"]);
   const fineValida = /^(\d{4})(\d{2})(\d{2})$/.exec(fineVigenza);
   const oggi = new Date().toISOString().slice(0, 10).replace(/-/g, "");
-  const stato: "in_vigore" | "abrogato" =
-    fineValida && fineValida[0] !== "99999999" && fineValida[0] < oggi ? "abrogato" : "in_vigore";
+  // Vigenza onesta: data fine esplicita passata = abrogato; intestazione
+  // formale Art. 1 (DECRETO DECADUTO / PROVVEDIMENTO ABROGATO) = status
+  // ufficiale; altrimenti in_vigore. MAI dal corpo del testo.
+  let stato: "in_vigore" | "abrogato" | "decaduto" = "in_vigore";
+  if (fineValida && fineValida[0] !== "99999999" && fineValida[0] < oggi) {
+    stato = "abrogato";
+  } else {
+    try {
+      const righe = String(testoIntegrale ?? "").split(/\r?\n/);
+      for (const riga of righe.slice(0, 8)) {
+        const pulita = riga.trim().toUpperCase();
+        if (/^ART\.\s*1\s+(\(\()?DECRETO DECADUTO\b/.test(pulita)) {
+          stato = "decaduto";
+          break;
+        }
+        if (/^ART\.\s*1\s+\(\(PROVVEDIMENTO ABROGATO\b/.test(pulita)) {
+          stato = "abrogato";
+          break;
+        }
+      }
+    } catch {
+      // stato resta in_vigore
+    }
+  }
 
   const eliReale = dto?.eli && dto.eli.startsWith("/") ? dto.eli : "";
   const eli = eliReale || (codice ? eliFromUrn(urn, codice) : "");
@@ -288,6 +312,7 @@ function dettaglioToRecord(
   if (dataGU) record.dataGU = dataGU;
   if (numeroGU) record.numeroGU = numeroGU;
   if (codice) record.codiceRedazionale = codice;
+  if (/^\d{8}$/.test(fineVigenza)) record.articoloDataFineVigenza = fineVigenza;
   if (testoPieno) record.testo = troncato ? `${testoPieno.slice(0, testoMax)} [...]` : testoPieno;
   if (troncato) record.testoTroncato = true;
   return record;

@@ -45,12 +45,13 @@ describe("seed-fallback (cio' che vede la UI)", () => {
 
   it("gli atti oltre i due di riferimento sono dimostrativi", async () => {
     const leggi = await loadLaws();
-    const perNumero = new Map(leggi.map((law) => [law.numero, law]));
-    expect(perNumero.get("133")?.dimostrativo).toBe(false);
-    expect(perNumero.get("139")?.dimostrativo).toBe(false);
-    expect(perNumero.get("124")?.dimostrativo).toBe(true);
-    expect(perNumero.get("36")?.dimostrativo).toBe(true);
-    expect(perNumero.get("8")?.dimostrativo).toBe(true);
+    // Lookup per ELI (unico): i numeri si ripetono tra atti reali e seed.
+    const perEli = new Map(leggi.map((law) => [law.eli, law]));
+    expect(perEli.get("/eli/id/2026/07/27/26G00155/sg")?.dimostrativo).toBe(false);
+    expect(perEli.get("/eli/id/2026/08/05/26G00162/sg")?.dimostrativo).toBe(false);
+    expect(perEli.get("/eli/id/2025/12/19/25G00134/sg")?.dimostrativo).toBe(true);
+    expect(perEli.get("/eli/id/2026/03/12/26G00091/sg")?.dimostrativo).toBe(true);
+    expect(perEli.get("/eli/id/2026/02/10/26G00044/sg")?.dimostrativo).toBe(true);
   });
 
   it("findLawByEli ignora maiuscole/minuscole e slash", async () => {

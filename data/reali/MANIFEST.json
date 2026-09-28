@@ -1,1 +1,106 @@
-{"fonti":[{"conteggio":46,"file":"normattiva-recenti.json","legislatura":null,"licenza":"riproduzione consentita con menzione di fonte, carattere non autentico e gratuito (solo la GU a stampa e autentica)","nome":"Normattiva bff-opendata v1","recuperatoIl":"2026-09-28T18:36:22.708Z","url":"https://api.normattiva.it/t/normattiva.api/bff-opendata/v1"},{"conteggio":414,"file":"camera-deputati.json","legislatura":"19","licenza":"CC BY-SA 4.0","nome":"dati.camera.it (deputati)","recuperatoIl":"2026-09-28T18:26:21.186Z","url":"https://dati.camera.it/sparql"},{"conteggio":13,"derivatoDa":"camera-deputati.json (conteggio per gruppo, senza nuove interrogazioni)","file":"camera-gruppi.json","legislatura":"19","licenza":"CC BY-SA 4.0","nome":"dati.camera.it (gruppi, derivati)","recuperatoIl":"2026-09-28T18:26:21.186Z","url":"https://dati.camera.it/sparql"},{"conteggio":212,"file":"senato-senatori.json","legislatura":"19","licenza":"CC BY 3.0 IT","nome":"dati.senato.it (senatori)","recuperatoIl":"2026-09-28T18:27:50.369Z","url":"https://dati.senato.it/sparql"},{"conteggio":14,"file":"senato-gruppi.json","legislatura":"19","licenza":"CC BY 3.0 IT","nome":"dati.senato.it (denominazioni gruppi leg. 19)","recuperatoIl":"2026-09-28T18:27:50.369Z","url":"https://dati.senato.it/sparql"},{"conteggio":10,"file":"governo-comunicati.json","legislatura":null,"licenza":"riuso titolo/link/descrizione","nome":"governo.it feed RSS","recuperatoIl":"2026-09-28T18:28:36.769Z","url":"https://www.governo.it/it/feed/rss"}],"generatoIl":"2026-09-28T18:36:22.708Z","nota":"Dati ufficiali open data. I file >1MB non si committano: rigenerare via scripts/ingest-reale-*.ts. I gruppi Camera sono derivati dai deputati; le denominazioni Senato includono varianti storiche della leg. 19."}
+{
+ "fonti": [
+  {
+   "nome": "Normattiva bff-opendata v1",
+   "url": "https://api.normattiva.it/t/normattiva.api/bff-opendata/v1",
+   "licenza": "riproduzione consentita con menzione di fonte, carattere non autentico e gratuito (solo la GU a stampa e autentica)",
+   "file": "normattiva-recenti.json",
+   "conteggio": 46,
+   "recuperatoIl": "2026-09-28T18:36:22.708Z",
+   "legislatura": null
+  },
+  {
+   "nome": "Normattiva bff-opendata v1 (storico 1980)",
+   "url": "https://api.normattiva.it/t/normattiva.api/bff-opendata/v1",
+   "licenza": "riproduzione consentita con menzione di fonte, carattere non autentico e gratuito (solo la GU a stampa e autentica)",
+   "file": "normattiva-storico-1980.json",
+   "conteggio": 66,
+   "recuperatoIl": "2026-09-28T19:09:21.113Z",
+   "legislatura": null
+  },
+  {
+   "nome": "Normattiva bff-opendata v1 (collezioni: Codici, Costituzionali, DelegazioneUE)",
+   "url": "https://api.normattiva.it/t/normattiva.api/bff-opendata/v1",
+   "licenza": "riproduzione consentita con menzione di fonte, carattere non autentico e gratuito (solo la GU a stampa e autentica)",
+   "file": "normattiva-storico-collezioni.json",
+   "conteggio": 112,
+   "recuperatoIl": "2026-09-28T19:09:21.113Z",
+   "legislatura": null
+  },
+  {
+   "nome": "dati.camera.it (deputati)",
+   "url": "https://dati.camera.it/sparql",
+   "licenza": "CC BY-SA 4.0",
+   "file": "camera-deputati.json",
+   "conteggio": 414,
+   "recuperatoIl": "2026-09-28T18:26:21.186Z",
+   "legislatura": "19"
+  },
+  {
+   "nome": "dati.camera.it (gruppi, derivati)",
+   "url": "https://dati.camera.it/sparql",
+   "licenza": "CC BY-SA 4.0",
+   "file": "camera-gruppi.json",
+   "conteggio": 13,
+   "recuperatoIl": "2026-09-28T18:26:21.186Z",
+   "legislatura": "19",
+   "derivatoDa": "camera-deputati.json (conteggio per gruppo, senza nuove interrogazioni)"
+  },
+  {
+   "nome": "dati.camera.it (atti leg19, campione)",
+   "url": "https://dati.camera.it/sparql",
+   "licenza": "CC BY-SA 4.0",
+   "file": "camera-atti.json",
+   "conteggio": 197,
+   "recuperatoIl": "2026-09-28T19:00:23.484357+00:00",
+   "legislatura": "19"
+  },
+  {
+   "nome": "dati.senato.it (senatori)",
+   "url": "https://dati.senato.it/sparql",
+   "licenza": "CC BY 3.0 IT",
+   "file": "senato-senatori.json",
+   "conteggio": 212,
+   "recuperatoIl": "2026-09-28T18:27:50.369Z",
+   "legislatura": "19"
+  },
+  {
+   "nome": "dati.senato.it (denominazioni gruppi leg. 19)",
+   "url": "https://dati.senato.it/sparql",
+   "licenza": "CC BY 3.0 IT",
+   "file": "senato-gruppi.json",
+   "conteggio": 14,
+   "recuperatoIl": "2026-09-28T18:27:50.369Z",
+   "legislatura": "19"
+  },
+  {
+   "nome": "dati.senato.it (DDL leg19, campione)",
+   "url": "https://dati.senato.it/sparql",
+   "licenza": "CC BY 3.0 IT",
+   "file": "parlamento-ddl.json",
+   "conteggio": 5,
+   "recuperatoIl": "2026-09-28T19:00:34.734348+00:00",
+   "legislatura": "19"
+  },
+  {
+   "nome": "Corte Costituzionale (pronunce 2001, campione)",
+   "url": "https://www.cortecostituzionale.it",
+   "licenza": "CC BY-SA 3.0",
+   "file": "consulta-pronunce-2001.json",
+   "conteggio": 50,
+   "recuperatoIl": "2026-09-28T19:00:51.268Z",
+   "legislatura": null
+  },
+  {
+   "nome": "governo.it feed RSS",
+   "url": "https://www.governo.it/it/feed/rss",
+   "licenza": "riuso titolo/link/descrizione",
+   "file": "governo-comunicati.json",
+   "conteggio": 10,
+   "recuperatoIl": "2026-09-28T18:28:36.769Z",
+   "legislatura": null
+  }
+ ],
+ "generatoIl": "2026-09-28T19:10:00Z",
+ "nota": "Dati ufficiali open data (11 file). I file >1MB non si committano: rigenerare via scripts/ingest-reale-*.ts. I gruppi Camera sono derivati dai deputati; le denominazioni Senato includono varianti storiche della leg. 19; i DDL/atti sono disegni e atti parlamentari, MAI leggi in vigore."
+}

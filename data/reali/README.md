@@ -32,7 +32,9 @@ Base: `https://api.normattiva.it/t/normattiva.api/bff-opendata/v1`.
 
 Ultima esecuzione reale: 2026-09-28 — **46 atti** (richiesti 50; 4 dettagli
 senza titolo/chiave scartati, mai inventati). Composizione: 23
-decreti-legge, 16 decreti legislativi, 7 leggi; tutti in vigore al recupero.
+decreti-legge, 16 decreti legislativi, 7 leggi; 44 in vigore, 2 abrogati
+(DL 139/2026 e DL 153/2026, abrogati dalla legge 166/2026: intestazione
+formale Art. 1 di Normattiva). Stato mai dedotto dal corpo del testo.
 File: 343,7 KB. Testi troncati a 8000 caratteri dove oltre (`testoTroncato:
 true`); sintesi entro 600 caratteri. URN in lista: 330.
 
@@ -81,6 +83,44 @@ Riuso di titolo/link/descrizione. Ultimo recupero: 2026-09-28.
 
 ```bash
 npx tsx scripts/ingest-reale-governo.ts
+```
+
+## Storico Normattiva — `normattiva-storico-1980.json` (66) + `normattiva-storico-collezioni.json` (112)
+
+Stessa fonte e licenza del batch recente. Due sorgenti bounded:
+
+- finestra `1980-01-01`..`1980-12-31` via `aggiornati` (max 80 atti);
+- 3 collezioni chiuse via download (`Codici`, `Leggi costituzionali`,
+  `Leggi di delegazione europea`; max 122 atti).
+
+Dedup per ELI/URN contro `normattiva-recenti.json` (mai due record per lo
+stesso atto). Stati onesti: 36+109 in vigore, 21 decaduti (DL non
+convertiti, intestazione Art. 1), 9+3 abrogati; `articoloDataFineVigenza`
+conservata in ogni record per audit.
+
+```bash
+npx tsx scripts/ingest-reale-normattiva-storico.ts [--limite-1980=80] [--testo-max=2000]
+```
+
+## DDL e atti parlamentari — `parlamento-ddl.json` (5) + `camera-atti.json` (197)
+
+Fonti: dati.senato.it / dati.camera.it (SPARQL, leg. 19), licenze CC BY 3.0
+IT / CC BY-SA 4.0. Disegni di legge con fase/iter e atti della Camera con
+tipo e link ufficiali. **Non sono leggi in vigore**: in UI portano sempre il
+badge "Disegno di legge — non in vigore".
+
+```bash
+npx tsx scripts/ingest-reale-ddl.ts
+```
+
+## Corte Costituzionale — `consulta-pronunce-2001.json` (50 pronunce)
+
+Fonte: cortecostituzionale.it (CC BY-SA 3.0). Campione di 50 pronunce del
+2001 con numero, data, oggetto e link ufficiale. Sezione UI: `/consulta`
+(route `/api/consulta`).
+
+```bash
+npx tsx scripts/ingest-reale-consulta.ts
 ```
 
 ## Cosa resta dimostrativo

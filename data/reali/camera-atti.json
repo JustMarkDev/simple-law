@@ -1,0 +1,1785 @@
+{
+  "provenance": {
+    "fonte": "camera",
+    "url": "https://dati.camera.it/sparql",
+    "sparql": "SELECT DISTINCT ?a ?tipo ?numero WHERE { ?a a <http://dati.camera.it/ocd/atto> ; <http://dati.camera.it/ocd/rif_leg> <http://dati.camera.it/ocd/legislatura.rdf/repubblica_19> ; <http://purl.org/dc/elements/1.1/type> ?tipo ; <http://purl.org/dc/elements/1.1/identifier> ?numero }",
+    "recuperatoIl": "2026-09-28T19:00:23.484357+00:00",
+    "licenza": "CC BY-SA 4.0"
+  },
+  "legislatura": "19",
+  "atti": [
+    {
+      "uri": "http://dati.camera.it/ocd/attocamera.rdf/ac19_1",
+      "slug": "ac19_1",
+      "tipo": "Progetto di Legge",
+      "numero": "1",
+      "titolo": "PROPOSTA DI LEGGE D'INIZIATIVA POPOLARE: \"Misure a sostegno dei disoccupati e dell'uscita anticipata dal lavoro\" (1)",
+      "label": "PROPOSTA DI LEGGE D'INIZIATIVA POPOLARE: \"Misure a sostegno dei disoccupati e dell'uscita anticipata dal lavoro\" (1)",
+      "scheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.progetto.legge:camera;19.legislatura;1"
+    },
+    {
+      "uri": "http://dati.camera.it/ocd/attocamera.rdf/ac19_10",
+      "slug": "ac19_10",
+      "tipo": "Progetto di Legge",
+      "numero": "10",
+      "titolo": "SCHULLIAN ed altri: \"Introduzione dell&rsquo;articolo 413-&lt;em&gt;bis&lt;/em&gt; del codice civile, concernente il decesso del beneficiario dell&rsquo;amministrazione di sostegno privo di eredi conosciuti\" (10)",
+      "label": "SCHULLIAN ed altri: \\\"Introduzione dell&rsquo;articolo 413-&lt;em&gt;bis&lt;/em&gt; del codice civile, concernente il decesso del beneficiario dell&rsquo;amministrazione di sostegno privo di eredi conosciuti\\\" (10) ^^http://www.w3.org/2001/XMLSchema#string",
+      "scheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.progetto.legge:camera;19.legislatura;10"
+    },
+    {
+      "uri": "http://dati.camera.it/ocd/attocamera.rdf/ac19_100",
+      "slug": "ac19_100",
+      "tipo": "Progetto di Legge",
+      "numero": "100",
+      "titolo": "CATTOI ed altri: \"Modifiche alla tabella A allegata al decreto del Presidente della Repubblica 26 ottobre 1972, n. 633, per la riduzione dell&rsquo;aliquota dell&rsquo;imposta sul valore aggiunto relativa alle cessioni di &lt;em&gt;pellet&lt;/em&gt; per uso domestico\" (100)",
+      "label": "CATTOI ed altri: \\\"Modifiche alla tabella A allegata al decreto del Presidente della Repubblica 26 ottobre 1972, n. 633, per la riduzione dell&rsquo;aliquota dell&rsquo;imposta sul valore aggiunto relativa alle cessioni di &lt;em&gt;pellet&lt;/em&gt; per uso domestico\\\" (100) ^^http://www.w3.org/2001/XMLSchema#string",
+      "scheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.progetto.legge:camera;19.legislatura;100"
+    },
+    {
+      "uri": "http://dati.camera.it/ocd/attocamera.rdf/ac19_1000",
+      "slug": "ac19_1000",
+      "tipo": "Progetto di Legge",
+      "numero": "1000",
+      "titolo": "CONTE ed altri: \"Disposizioni sperimentali concernenti la riduzione dell&rsquo;orario di lavoro mediante accordi definiti nell&rsquo;ambito della contrattazione collettiva\" (1000)",
+      "label": "CONTE ed altri: \\\"Disposizioni sperimentali concernenti la riduzione dell&rsquo;orario di lavoro mediante accordi definiti nell&rsquo;ambito della contrattazione collettiva\\\" (1000) ^^http://www.w3.org/2001/XMLSchema#string",
+      "scheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.progetto.legge:camera;19.legislatura;1000"
+    },
+    {
+      "uri": "http://dati.camera.it/ocd/attocamera.rdf/ac19_1001",
+      "slug": "ac19_1001",
+      "tipo": "Progetto di Legge",
+      "numero": "1001",
+      "titolo": "\"Ratifica ed esecuzione dell&rsquo;Accordo sullo spazio aereo comune tra l&rsquo;Unione europea e i suoi Stati membri, da una parte, e l&rsquo;Ucraina, dall&rsquo;altra, firmato a Kiev il 12 ottobre 2021\" (1001)",
+      "label": "\\\"Ratifica ed esecuzione dell&rsquo;Accordo sullo spazio aereo comune tra l&rsquo;Unione europea e i suoi Stati membri, da una parte, e l&rsquo;Ucraina, dall&rsquo;altra, firmato a Kiev il 12 ottobre 2021\\\" (1001) ^^http://www.w3.org/2001/XMLSchema#string",
+      "scheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.progetto.legge:camera;19.legislatura;1001"
+    },
+    {
+      "uri": "http://dati.camera.it/ocd/attocamera.rdf/ac19_1002",
+      "slug": "ac19_1002",
+      "tipo": "Progetto di Legge",
+      "numero": "1002",
+      "titolo": "CONSIGLIO REGIONALE DEL FRIULI VENEZIA GIULIA: \"Norme in materia di prevenzione dei danni causati dalla fauna selvatica. Modifica alla legge 11 febbraio 1992, n. 157, recante norme per la protezione della fauna selvatica omeoterma e per il prelievo venatorio\" (1002)",
+      "label": "CONSIGLIO REGIONALE DEL FRIULI VENEZIA GIULIA: \"Norme in materia di prevenzione dei danni causati dalla fauna selvatica. Modifica alla legge 11 febbraio 1992, n. 157, recante norme per la protezione della fauna selvatica omeoterma e per il prelievo venatorio\" (1002)",
+      "scheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.progetto.legge:camera;19.legislatura;1002"
+    },
+    {
+      "uri": "http://dati.camera.it/ocd/attocamera.rdf/ac19_1003",
+      "slug": "ac19_1003",
+      "tipo": "Progetto di Legge",
+      "numero": "1003",
+      "titolo": "MINARDO: &quot;Introduzione dell&rsquo;insegnamento dell&rsquo;educazione alimentare, ambientale e agli stili di vita sani nelle scuole, nelle universit&agrave; e negli enti di istruzione e formazione delle Forze armate e di polizia e del Corpo nazionale dei vigili del fuoco&quot; (1003)",
+      "label": "MINARDO: &quot;Introduzione dell&rsquo;insegnamento dell&rsquo;educazione alimentare, ambientale e agli stili di vita sani nelle scuole, nelle universit&agrave; e negli enti di istruzione e formazione delle Forze armate e di polizia e del Corpo nazionale dei vigili del fuoco&quot; (1003) ^^http://www.w3.org/2001/XMLSchema#string",
+      "scheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.progetto.legge:camera;19.legislatura;1003"
+    },
+    {
+      "uri": "http://dati.camera.it/ocd/attocamera.rdf/ac19_1004",
+      "slug": "ac19_1004",
+      "tipo": "Progetto di Legge",
+      "numero": "1004",
+      "titolo": "CERRETO ed altri: \"Modifiche al codice penale e altre disposizioni in materia di illeciti agro-alimentari\" (1004)",
+      "label": "CERRETO ed altri: \"Modifiche al codice penale e altre disposizioni in materia di illeciti agro-alimentari\" (1004)",
+      "scheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.progetto.legge:camera;19.legislatura;1004"
+    },
+    {
+      "uri": "http://dati.camera.it/ocd/attocamera.rdf/ac19_1005",
+      "slug": "ac19_1005",
+      "tipo": "Progetto di Legge",
+      "numero": "1005",
+      "titolo": "DE BERTOLDI ed altri: \"Modifiche alla legge 11 dicembre 2016, n. 232, e altre disposizioni concernenti la disciplina dei piani di risparmio a lungo termine\" (1005)",
+      "label": "DE BERTOLDI ed altri: \"Modifiche alla legge 11 dicembre 2016, n. 232, e altre disposizioni concernenti la disciplina dei piani di risparmio a lungo termine\" (1005)",
+      "scheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.progetto.legge:camera;19.legislatura;1005"
+    },
+    {
+      "uri": "http://dati.camera.it/ocd/attocamera.rdf/ac19_1006",
+      "slug": "ac19_1006",
+      "tipo": "Progetto di Legge",
+      "numero": "1006",
+      "titolo": "FOTI ed altri: \"Istituzione della festa nazionale del 17 marzo per la celebrazione della proclamazione dell&rsquo;unit&agrave; d&rsquo;Italia\" (1006)",
+      "label": "FOTI ed altri: \\\"Istituzione della festa nazionale del 17 marzo per la celebrazione della proclamazione dell&rsquo;unit&agrave; d&rsquo;Italia\\\" (1006) ^^http://www.w3.org/2001/XMLSchema#string",
+      "scheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.progetto.legge:camera;19.legislatura;1006"
+    },
+    {
+      "uri": "http://dati.camera.it/ocd/attocamera.rdf/ac19_1007",
+      "slug": "ac19_1007",
+      "tipo": "Progetto di Legge",
+      "numero": "1007",
+      "titolo": "MESSINA ed altri: &quot;Disposizioni in favore delle societ&agrave; sportive aventi sede nelle regioni Sicilia e Sardegna&quot; (1007)",
+      "label": "MESSINA ed altri: &quot;Disposizioni in favore delle societ&agrave; sportive aventi sede nelle regioni Sicilia e Sardegna&quot; (1007) ^^http://www.w3.org/2001/XMLSchema#string",
+      "scheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.progetto.legge:camera;19.legislatura;1007"
+    },
+    {
+      "uri": "http://dati.camera.it/ocd/attocamera.rdf/ac19_1008",
+      "slug": "ac19_1008",
+      "tipo": "Progetto di Legge",
+      "numero": "1008",
+      "titolo": "MESSINA ed altri: \"Modifica all&rsquo;articolo 1 del decreto-legge 31 maggio 2014, n. 83, convertito, con modificazioni, dalla legge 29 luglio 2014, n. 106, in materia di incremento del credito d&rsquo;imposta per favorire le erogazioni liberali a sostegno della cultura nelle regioni Sicilia e Sardegna\" (1008)",
+      "label": "MESSINA ed altri: \\\"Modifica all&rsquo;articolo 1 del decreto-legge 31 maggio 2014, n. 83, convertito, con modificazioni, dalla legge 29 luglio 2014, n. 106, in materia di incremento del credito d&rsquo;imposta per favorire le erogazioni liberali a sostegno della cultura nelle regioni Sicilia e Sardegna\\\" (1008) ^^http://www.w3.org/2001/XMLSchema#string",
+      "scheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.progetto.legge:camera;19.legislatura;1008"
+    },
+    {
+      "uri": "http://dati.camera.it/ocd/attocamera.rdf/ac19_1009",
+      "slug": "ac19_1009",
+      "tipo": "Progetto di Legge",
+      "numero": "1009",
+      "titolo": "MESSINA e CANNATA: &quot;Concessione di un contributo annuo in favore della Regione siciliana per il sostegno e la valorizzazione del Taobuk Festival di Taormina&quot; (1009)",
+      "label": "MESSINA e CANNATA: &quot;Concessione di un contributo annuo in favore della Regione siciliana per il sostegno e la valorizzazione del Taobuk Festival di Taormina&quot; (1009) ^^http://www.w3.org/2001/XMLSchema#string",
+      "scheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.progetto.legge:camera;19.legislatura;1009"
+    },
+    {
+      "uri": "http://dati.camera.it/ocd/attocamera.rdf/ac19_101",
+      "slug": "ac19_101",
+      "tipo": "Progetto di Legge",
+      "numero": "101",
+      "titolo": "BILLI ed altri: \"Modifiche al codice della propriet&agrave; industriale, di cui al decreto legislativo 10 febbraio 2005, n. 30, in materia di diritto di brevetto per le invenzioni dei ricercatori delle universit&agrave;, degli enti pubblici di ricerca, delle pubbliche amministrazioni e degli istituti di ricovero e cura a carattere scientifico\" (101)",
+      "label": "BILLI ed altri: \\\"Modifiche al codice della propriet&agrave; industriale, di cui al decreto legislativo 10 febbraio 2005, n. 30, in materia di diritto di brevetto per le invenzioni dei ricercatori delle universit&agrave;, degli enti pubblici di ricerca, delle pubbliche amministrazioni e degli istituti di ricovero e cura a carattere scientifico\\\" (101) ^^http://www.w3.org/2001/XMLSchema#string",
+      "scheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.progetto.legge:camera;19.legislatura;101"
+    },
+    {
+      "uri": "http://dati.camera.it/ocd/attocamera.rdf/ac19_1010",
+      "slug": "ac19_1010",
+      "tipo": "Progetto di Legge",
+      "numero": "1010",
+      "titolo": "MESSINA e CANNATA: &quot;Modifica all&rsquo;articolo 2 della legge 20 dicembre 2012, n. 238, per il sostegno e la valorizzazione del Sicilia Jazz Festival&quot; (1010)",
+      "label": "MESSINA e CANNATA: &quot;Modifica all&rsquo;articolo 2 della legge 20 dicembre 2012, n. 238, per il sostegno e la valorizzazione del Sicilia Jazz Festival&quot; (1010) ^^http://www.w3.org/2001/XMLSchema#string",
+      "scheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.progetto.legge:camera;19.legislatura;1010"
+    },
+    {
+      "uri": "http://dati.camera.it/ocd/attocamera.rdf/ac19_1011",
+      "slug": "ac19_1011",
+      "tipo": "Progetto di Legge",
+      "numero": "1011",
+      "titolo": "MESSINA e CANNATA: \"Modifica all&rsquo;articolo 2 della legge 20 dicembre 2012, n. 238, per il sostegno e la valorizzazione del Bellini International Context\" (1011)",
+      "label": "MESSINA e CANNATA: \\\"Modifica all&rsquo;articolo 2 della legge 20 dicembre 2012, n. 238, per il sostegno e la valorizzazione del Bellini International Context\\\" (1011) ^^http://www.w3.org/2001/XMLSchema#string",
+      "scheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.progetto.legge:camera;19.legislatura;1011"
+    },
+    {
+      "uri": "http://dati.camera.it/ocd/attocamera.rdf/ac19_1012",
+      "slug": "ac19_1012",
+      "tipo": "Progetto di Legge",
+      "numero": "1012",
+      "titolo": "VARCHI ed altri: \"Modifiche agli articoli 10-&lt;em&gt;bis&lt;/em&gt; e 10-&lt;em&gt;ter&lt;/em&gt; del decreto legislativo 10 marzo 2000, n. 74, concernenti l&rsquo;introduzione di una causa di non punibilit&agrave; per i reati di omesso versamento di ritenute dovute o certificate e dell&rsquo;imposta sul valore aggiunto dovuta in base alla certificazione annuale\" (1012)",
+      "label": "VARCHI ed altri: \\\"Modifiche agli articoli 10-&lt;em&gt;bis&lt;/em&gt; e 10-&lt;em&gt;ter&lt;/em&gt; del decreto legislativo 10 marzo 2000, n. 74, concernenti l&rsquo;introduzione di una causa di non punibilit&agrave; per i reati di omesso versamento di ritenute dovute o certificate e dell&rsquo;imposta sul valore aggiunto dovuta in base alla certificazione annuale\\\" (1012) ^^http://www.w3.org/2001/XMLSchema#string",
+      "scheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.progetto.legge:camera;19.legislatura;1012"
+    },
+    {
+      "uri": "http://dati.camera.it/ocd/attocamera.rdf/ac19_1013",
+      "slug": "ac19_1013",
+      "tipo": "Progetto di Legge",
+      "numero": "1013",
+      "titolo": "GARDINI ed altri: \"Disposizioni per la prevenzione delle discriminazioni e la tutela dei diritti delle persone che sono state affette da malattie oncologiche\" (1013)",
+      "label": "GARDINI ed altri: \"Disposizioni per la prevenzione delle discriminazioni e la tutela dei diritti delle persone che sono state affette da malattie oncologiche\" (1013)",
+      "scheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.progetto.legge:camera;19.legislatura;1013"
+    },
+    {
+      "uri": "http://dati.camera.it/ocd/attocamera.rdf/ac19_1014",
+      "slug": "ac19_1014",
+      "tipo": "Progetto di Legge",
+      "numero": "1014",
+      "titolo": "PROPOSTA DI LEGGE COSTITUZIONALE FOTI ed altri: \"Modifica all&rsquo;articolo 53 della Costituzione, in materia di princ&igrave;pi del sistema tributario e di limite alla pressione fiscale complessiva\" (1014)",
+      "label": "PROPOSTA DI LEGGE COSTITUZIONALE FOTI ed altri: \\\"Modifica all&rsquo;articolo 53 della Costituzione, in materia di princ&igrave;pi del sistema tributario e di limite alla pressione fiscale complessiva\\\" (1014) ^^http://www.w3.org/2001/XMLSchema#string",
+      "scheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.progetto.legge:camera;19.legislatura;1014"
+    },
+    {
+      "uri": "http://dati.camera.it/ocd/attocamera.rdf/ac19_1015",
+      "slug": "ac19_1015",
+      "tipo": "Progetto di Legge",
+      "numero": "1015",
+      "titolo": "FOTI ed altri: &quot;Modifiche alla legge 5 febbraio 1992, n. 91, per il contrasto delle pratiche di acquisto fraudolento della cittadinanza mediante matrimonio, nonch&eacute; al testo unico di cui al decreto del Presidente della Repubblica 30 maggio 2002, n. 115, sul patrocinio a spese dello Stato nei processi in materia di immigrazione&quot; (1015)",
+      "label": "FOTI ed altri: &quot;Modifiche alla legge 5 febbraio 1992, n. 91, per il contrasto delle pratiche di acquisto fraudolento della cittadinanza mediante matrimonio, nonch&eacute; al testo unico di cui al decreto del Presidente della Repubblica 30 maggio 2002, n. 115, sul patrocinio a spese dello Stato nei processi in materia di immigrazione&quot; (1015) ^^http://www.w3.org/2001/XMLSchema#string",
+      "scheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.progetto.legge:camera;19.legislatura;1015"
+    },
+    {
+      "uri": "http://dati.camera.it/ocd/attocamera.rdf/ac19_1016",
+      "slug": "ac19_1016",
+      "tipo": "Progetto di Legge",
+      "numero": "1016",
+      "titolo": "FOTI ed altri: \"Modifica all&rsquo;articolo 10 del testo unico delle leggi in materia bancaria e creditizia, di cui al decreto legislativo 1&deg; settembre 1993, n. 385, in materia di separazione tra le banche commerciali e le banche d&rsquo;affari\" (1016)",
+      "label": "FOTI ed altri: \\\"Modifica all&rsquo;articolo 10 del testo unico delle leggi in materia bancaria e creditizia, di cui al decreto legislativo 1&deg; settembre 1993, n. 385, in materia di separazione tra le banche commerciali e le banche d&rsquo;affari\\\" (1016) ^^http://www.w3.org/2001/XMLSchema#string",
+      "scheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.progetto.legge:camera;19.legislatura;1016"
+    },
+    {
+      "uri": "http://dati.camera.it/ocd/attocamera.rdf/ac19_1017",
+      "slug": "ac19_1017",
+      "tipo": "Progetto di Legge",
+      "numero": "1017",
+      "titolo": "FOTI ed altri: \"Modifiche all&rsquo;articolo 15 del testo unico delle imposte sui redditi, di cui al decreto del Presidente della Repubblica 22 dicembre 1986, n. 917, in materia di detrazione delle spese sostenute per l&rsquo;assistenza personale nei casi di non autosufficienza e per addette ai servizi domestici e familiari\" (1017)",
+      "label": "FOTI ed altri: \\\"Modifiche all&rsquo;articolo 15 del testo unico delle imposte sui redditi, di cui al decreto del Presidente della Repubblica 22 dicembre 1986, n. 917, in materia di detrazione delle spese sostenute per l&rsquo;assistenza personale nei casi di non autosufficienza e per addette ai servizi domestici e familiari\\\" (1017) ^^http://www.w3.org/2001/XMLSchema#string",
+      "scheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.progetto.legge:camera;19.legislatura;1017"
+    },
+    {
+      "uri": "http://dati.camera.it/ocd/attocamera.rdf/ac19_1018",
+      "slug": "ac19_1018",
+      "tipo": "Progetto di Legge",
+      "numero": "1018",
+      "titolo": "FOTI ed altri: \"Modifica all&rsquo;articolo 71 del codice del Terzo settore, di cui al decreto legislativo 3 luglio 2017, n. 117, in materia di compatibilit&agrave; urbanistica dell&rsquo;uso delle sedi e dei locali impiegati dalle associazioni di promozione sociale per le loro attivit&agrave;\" (1018)",
+      "label": "FOTI ed altri: \\\"Modifica all&rsquo;articolo 71 del codice del Terzo settore, di cui al decreto legislativo 3 luglio 2017, n. 117, in materia di compatibilit&agrave; urbanistica dell&rsquo;uso delle sedi e dei locali impiegati dalle associazioni di promozione sociale per le loro attivit&agrave;\\\" (1018) ^^http://www.w3.org/2001/XMLSchema#string",
+      "scheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.progetto.legge:camera;19.legislatura;1018"
+    },
+    {
+      "uri": "http://dati.camera.it/ocd/attocamera.rdf/ac19_1019",
+      "slug": "ac19_1019",
+      "tipo": "Progetto di Legge",
+      "numero": "1019",
+      "titolo": "FOTI ed altri: \"Disposizioni per la promozione della natalit&agrave;, il sostegno delle famiglie e del lavoro femminile e la sicurezza in ambito scolastico, nonch&eacute; deleghe al Governo in materia di gratuit&agrave; dei servizi educativi e delle scuole per l&rsquo;infanzia e di revisione del trattamento tributario del reddito familiare\" (1019)",
+      "label": "FOTI ed altri: \\\"Disposizioni per la promozione della natalit&agrave;, il sostegno delle famiglie e del lavoro femminile e la sicurezza in ambito scolastico, nonch&eacute; deleghe al Governo in materia di gratuit&agrave; dei servizi educativi e delle scuole per l&rsquo;infanzia e di revisione del trattamento tributario del reddito familiare\\\" (1019) ^^http://www.w3.org/2001/XMLSchema#string",
+      "scheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.progetto.legge:camera;19.legislatura;1019"
+    },
+    {
+      "uri": "http://dati.camera.it/ocd/attocamera.rdf/ac19_102",
+      "slug": "ac19_102",
+      "tipo": "Progetto di Legge",
+      "numero": "102",
+      "titolo": "BILLI ed altri: \"Introduzione dell&rsquo;articolo 200-&lt;em&gt;bis&lt;/em&gt;&nbsp;del codice della propriet&agrave; industriale, di cui al decreto legislativo 10 febbraio 2005, n. 30, in materia di procedura di opposizione nazionale\" (102)",
+      "label": "BILLI ed altri: \\\"Introduzione dell&rsquo;articolo 200-&lt;em&gt;bis&lt;/em&gt;&nbsp;del codice della propriet&agrave; industriale, di cui al decreto legislativo 10 febbraio 2005, n. 30, in materia di procedura di opposizione nazionale\\\" (102) ^^http://www.w3.org/2001/XMLSchema#string",
+      "scheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.progetto.legge:camera;19.legislatura;102"
+    },
+    {
+      "uri": "http://dati.camera.it/ocd/attocamera.rdf/ac19_1020",
+      "slug": "ac19_1020",
+      "tipo": "Progetto di Legge",
+      "numero": "1020",
+      "titolo": "BOF ed altri: \"Modifiche agli articoli 142 e 149 del codice dei beni culturali e del paesaggio, di cui al decreto legislativo 22 gennaio 2004, n. 42, in materia di aree tutelate nelle adiacenze dei fiumi, torrenti e corsi d&rsquo;acqua e di interventi non soggetti ad autorizzazione paesaggistica in tali aree, nei boschi e nelle foreste\" (1020)",
+      "label": "BOF ed altri: \\\"Modifiche agli articoli 142 e 149 del codice dei beni culturali e del paesaggio, di cui al decreto legislativo 22 gennaio 2004, n. 42, in materia di aree tutelate nelle adiacenze dei fiumi, torrenti e corsi d&rsquo;acqua e di interventi non soggetti ad autorizzazione paesaggistica in tali aree, nei boschi e nelle foreste\\\" (1020) ^^http://www.w3.org/2001/XMLSchema#string",
+      "scheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.progetto.legge:camera;19.legislatura;1020"
+    },
+    {
+      "uri": "http://dati.camera.it/ocd/attocamera.rdf/ac19_1021",
+      "slug": "ac19_1021",
+      "tipo": "Progetto di Legge",
+      "numero": "1021",
+      "titolo": "MONTEMAGNI ed altri: \"Modifica all&rsquo;articolo 149 del codice dei beni culturali e del paesaggio, di cui al decreto legislativo 22 gennaio 2004, n. 42, in materia di interventi di silvicoltura non soggetti ad autorizzazione paesaggistica\" (1021)",
+      "label": "MONTEMAGNI ed altri: \\\"Modifica all&rsquo;articolo 149 del codice dei beni culturali e del paesaggio, di cui al decreto legislativo 22 gennaio 2004, n. 42, in materia di interventi di silvicoltura non soggetti ad autorizzazione paesaggistica\\\" (1021) ^^http://www.w3.org/2001/XMLSchema#string",
+      "scheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.progetto.legge:camera;19.legislatura;1021"
+    },
+    {
+      "uri": "http://dati.camera.it/ocd/attocamera.rdf/ac19_1022",
+      "slug": "ac19_1022",
+      "tipo": "Progetto di Legge",
+      "numero": "1022",
+      "titolo": "D'ORSO ed altri: \"Modifiche all&rsquo;articolo 633 del codice penale, in materia di occupazione abusiva di edifici altrui adibiti ad abitazione, e introduzione dell&rsquo;articolo 703-&lt;em&gt;bis&lt;/em&gt; del codice di procedura civile, concernente la tutela del possesso di immobili adibiti ad abitazione\" (1022)",
+      "label": "D'ORSO ed altri: \\\"Modifiche all&rsquo;articolo 633 del codice penale, in materia di occupazione abusiva di edifici altrui adibiti ad abitazione, e introduzione dell&rsquo;articolo 703-&lt;em&gt;bis&lt;/em&gt; del codice di procedura civile, concernente la tutela del possesso di immobili adibiti ad abitazione\\\" (1022) ^^http://www.w3.org/2001/XMLSchema#string",
+      "scheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.progetto.legge:camera;19.legislatura;1022"
+    },
+    {
+      "uri": "http://dati.camera.it/ocd/attocamera.rdf/ac19_1023",
+      "slug": "ac19_1023",
+      "tipo": "Progetto di Legge",
+      "numero": "1023",
+      "titolo": "DI GIUSEPPE: \"Delega al Governo per la revisione della disciplina per l&rsquo;esercizio del diritto di voto dei cittadini italiani residenti all&rsquo;estero\" (1023)",
+      "label": "DI GIUSEPPE: \\\"Delega al Governo per la revisione della disciplina per l&rsquo;esercizio del diritto di voto dei cittadini italiani residenti all&rsquo;estero\\\" (1023) ^^http://www.w3.org/2001/XMLSchema#string",
+      "scheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.progetto.legge:camera;19.legislatura;1023"
+    },
+    {
+      "uri": "http://dati.camera.it/ocd/attocamera.rdf/ac19_1024",
+      "slug": "ac19_1024",
+      "tipo": "Progetto di Legge",
+      "numero": "1024",
+      "titolo": "SCHULLIAN: \"Modifiche alla composizione di organi parlamentari bicamerali\" (1024)",
+      "label": "SCHULLIAN: \"Modifiche alla composizione di organi parlamentari bicamerali\" (1024)",
+      "scheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.progetto.legge:camera;19.legislatura;1024"
+    },
+    {
+      "uri": "http://dati.camera.it/ocd/attocamera.rdf/ac19_1025",
+      "slug": "ac19_1025",
+      "tipo": "Progetto di Legge",
+      "numero": "1025",
+      "titolo": "PROPOSTA DI LEGGE COSTITUZIONALE GIAGONI ed altri: \"Modifica all&rsquo;articolo 14 dello Statuto speciale per la Sardegna, di cui alla legge costituzionale 26 febbraio 1948, n. 3, in materia di attribuzione del demanio marittimo alla competenza della regione\" (1025)",
+      "label": "PROPOSTA DI LEGGE COSTITUZIONALE GIAGONI ed altri: \\\"Modifica all&rsquo;articolo 14 dello Statuto speciale per la Sardegna, di cui alla legge costituzionale 26 febbraio 1948, n. 3, in materia di attribuzione del demanio marittimo alla competenza della regione\\\" (1025) ^^http://www.w3.org/2001/XMLSchema#string",
+      "scheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.progetto.legge:camera;19.legislatura;1025"
+    },
+    {
+      "uri": "http://dati.camera.it/ocd/attocamera.rdf/ac19_1026",
+      "slug": "ac19_1026",
+      "tipo": "Progetto di Legge",
+      "numero": "1026",
+      "titolo": "LUPI ed altri: \"Modifica all&rsquo;articolo 12 della legge 19 febbraio 2004, n. 40, in materia di perseguibilit&agrave; del reato di surrogazione di maternit&agrave; commesso all&rsquo;estero da cittadino italiano\" (1026)",
+      "label": "LUPI ed altri: \\\"Modifica all&rsquo;articolo 12 della legge 19 febbraio 2004, n. 40, in materia di perseguibilit&agrave; del reato di surrogazione di maternit&agrave; commesso all&rsquo;estero da cittadino italiano\\\" (1026) ^^http://www.w3.org/2001/XMLSchema#string",
+      "scheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.progetto.legge:camera;19.legislatura;1026"
+    },
+    {
+      "uri": "http://dati.camera.it/ocd/attocamera.rdf/ac19_1027",
+      "slug": "ac19_1027",
+      "tipo": "Progetto di Legge",
+      "numero": "1027",
+      "titolo": "COLOMBO ed altri: \"Istituzione della Giornata nazionale degli antichi mestieri\" (1027)",
+      "label": "COLOMBO ed altri: \"Istituzione della Giornata nazionale degli antichi mestieri\" (1027)",
+      "scheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.progetto.legge:camera;19.legislatura;1027"
+    },
+    {
+      "uri": "http://dati.camera.it/ocd/attocamera.rdf/ac19_1028",
+      "slug": "ac19_1028",
+      "tipo": "Progetto di Legge",
+      "numero": "1028",
+      "titolo": "MORFINO ed altri: \"Modifica all&rsquo;articolo 36 della legge 6 dicembre 1991, n. 394, in materia di istituzione dell&rsquo;area marina protetta del golfo di Capo Zafferano\" (1028)",
+      "label": "MORFINO ed altri: \\\"Modifica all&rsquo;articolo 36 della legge 6 dicembre 1991, n. 394, in materia di istituzione dell&rsquo;area marina protetta del golfo di Capo Zafferano\\\" (1028) ^^http://www.w3.org/2001/XMLSchema#string",
+      "scheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.progetto.legge:camera;19.legislatura;1028"
+    },
+    {
+      "uri": "http://dati.camera.it/ocd/attocamera.rdf/ac19_1029",
+      "slug": "ac19_1029",
+      "tipo": "Progetto di Legge",
+      "numero": "1029",
+      "titolo": "ANDREUZZA ed altri: \"Disciplina dell&rsquo;attivit&agrave; di guida professionale di pesca\" (1029)",
+      "label": "ANDREUZZA ed altri: \\\"Disciplina dell&rsquo;attivit&agrave; di guida professionale di pesca\\\" (1029) ^^http://www.w3.org/2001/XMLSchema#string",
+      "scheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.progetto.legge:camera;19.legislatura;1029"
+    },
+    {
+      "uri": "http://dati.camera.it/ocd/attocamera.rdf/ac19_103",
+      "slug": "ac19_103",
+      "tipo": "Progetto di Legge",
+      "numero": "103",
+      "titolo": "SERRACCHIANI ed altri: &quot;Modifiche al codice penale, al codice di procedura penale, alla legge 26 luglio 1975, n. 354, e alla legge 21 aprile 2011, n. 62, in materia di tutela del rapporto tra detenute madri e figli minori&quot; (103)",
+      "label": "SERRACCHIANI ed altri: &quot;Modifiche al codice penale, al codice di procedura penale, alla legge 26 luglio 1975, n. 354, e alla legge 21 aprile 2011, n. 62, in materia di tutela del rapporto tra detenute madri e figli minori&quot; (103) ^^http://www.w3.org/2001/XMLSchema#string",
+      "scheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.progetto.legge:camera;19.legislatura;103"
+    },
+    {
+      "uri": "http://dati.camera.it/ocd/attocamera.rdf/ac19_1030",
+      "slug": "ac19_1030",
+      "tipo": "Progetto di Legge",
+      "numero": "1030",
+      "titolo": "MASCARETTI ed altri: \"Modifiche al codice della strada, di cui al decreto legislativo 30 aprile 1992, n. 285, in materia di circolazione di monopattini elettrici, biciclette a pedalata assistita e altri mezzi a motore forniti di una o pi&ugrave; ruote\" (1030)",
+      "label": "MASCARETTI ed altri: \\\"Modifiche al codice della strada, di cui al decreto legislativo 30 aprile 1992, n. 285, in materia di circolazione di monopattini elettrici, biciclette a pedalata assistita e altri mezzi a motore forniti di una o pi&ugrave; ruote\\\" (1030) ^^http://www.w3.org/2001/XMLSchema#string",
+      "scheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.progetto.legge:camera;19.legislatura;1030"
+    },
+    {
+      "uri": "http://dati.camera.it/ocd/attocamera.rdf/ac19_1031",
+      "slug": "ac19_1031",
+      "tipo": "Progetto di Legge",
+      "numero": "1031",
+      "titolo": "PORTA ed altri: \"Introduzione del comma 659-&lt;em&gt;bis &lt;/em&gt;dell&rsquo;articolo 1 della legge 27 dicembre 2013, n. 147, concernente la riduzione della tassa sui rifiuti per gli immobili a uso abitativo di propriet&agrave; di soggetti iscritti da almeno tre anni nell&rsquo;Anagrafe degli italiani residenti all&rsquo;estero\" (1031)",
+      "label": "PORTA ed altri: \\\"Introduzione del comma 659-&lt;em&gt;bis &lt;/em&gt;dell&rsquo;articolo 1 della legge 27 dicembre 2013, n. 147, concernente la riduzione della tassa sui rifiuti per gli immobili a uso abitativo di propriet&agrave; di soggetti iscritti da almeno tre anni nell&rsquo;Anagrafe degli italiani residenti all&rsquo;estero\\\" (1031) ^^http://www.w3.org/2001/XMLSchema#string",
+      "scheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.progetto.legge:camera;19.legislatura;1031"
+    },
+    {
+      "uri": "http://dati.camera.it/ocd/attocamera.rdf/ac19_1032",
+      "slug": "ac19_1032",
+      "tipo": "Progetto di Legge",
+      "numero": "1032",
+      "titolo": "SERRACCHIANI ed altri: \"Modifiche all&rsquo;articolo 16 del decreto-legge 28 gennaio 2019, n. 4, convertito, con modificazioni, dalla legge 28 marzo 2019, n. 26, in materia di stabilizzazione del regime pensionistico denominato &ldquo;opzione donna&rdquo;\" (1032)",
+      "label": "SERRACCHIANI ed altri: \\\"Modifiche all&rsquo;articolo 16 del decreto-legge 28 gennaio 2019, n. 4, convertito, con modificazioni, dalla legge 28 marzo 2019, n. 26, in materia di stabilizzazione del regime pensionistico denominato &ldquo;opzione donna&rdquo;\\\" (1032) ^^http://www.w3.org/2001/XMLSchema#string",
+      "scheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.progetto.legge:camera;19.legislatura;1032"
+    },
+    {
+      "uri": "http://dati.camera.it/ocd/attocamera.rdf/ac19_1033",
+      "slug": "ac19_1033",
+      "tipo": "Progetto di Legge",
+      "numero": "1033",
+      "titolo": "BONELLI ed altri: \"Istituzione di una Commissione parlamentare di inchiesta sui cambiamenti climatici e sui loro effetti\" (1033)",
+      "label": "BONELLI ed altri: \"Istituzione di una Commissione parlamentare di inchiesta sui cambiamenti climatici e sui loro effetti\" (1033)",
+      "scheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.progetto.legge:camera;19.legislatura;1033"
+    },
+    {
+      "uri": "http://dati.camera.it/ocd/attocamera.rdf/ac19_1034",
+      "slug": "ac19_1034",
+      "tipo": "Progetto di Legge",
+      "numero": "1034",
+      "titolo": "LUPI ed altri: \"Istituzione della figura professionale dello psicologo di base\" (1034)",
+      "label": "LUPI ed altri: \"Istituzione della figura professionale dello psicologo di base\" (1034)",
+      "scheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.progetto.legge:camera;19.legislatura;1034"
+    },
+    {
+      "uri": "http://dati.camera.it/ocd/attocamera.rdf/ac19_1035",
+      "slug": "ac19_1035",
+      "tipo": "Progetto di Legge",
+      "numero": "1035",
+      "titolo": "COLOSIMO ed altri: \"Modifiche al codice civile e al codice di procedura civile in materia di tutela del possesso di immobili\" (1035)",
+      "label": "COLOSIMO ed altri: \"Modifiche al codice civile e al codice di procedura civile in materia di tutela del possesso di immobili\" (1035)",
+      "scheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.progetto.legge:camera;19.legislatura;1035"
+    },
+    {
+      "uri": "http://dati.camera.it/ocd/attocamera.rdf/ac19_1036",
+      "slug": "ac19_1036",
+      "tipo": "Progetto di Legge",
+      "numero": "1036",
+      "titolo": "MASCHIO ed altri: \"Modifiche al codice penale in materia di prescrizione del reato\" (1036)",
+      "label": "MASCHIO ed altri: \"Modifiche al codice penale in materia di prescrizione del reato\" (1036)",
+      "scheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.progetto.legge:camera;19.legislatura;1036"
+    },
+    {
+      "uri": "http://dati.camera.it/ocd/attocamera.rdf/ac19_1037",
+      "slug": "ac19_1037",
+      "tipo": "Progetto di Legge",
+      "numero": "1037",
+      "titolo": "MORRONE ed altri: \"Modifiche all&rsquo;articolo 146 del codice penale in materia di rinvio obbligatorio dell&rsquo;esecuzione della pena\" (1037)",
+      "label": "MORRONE ed altri: \\\"Modifiche all&rsquo;articolo 146 del codice penale in materia di rinvio obbligatorio dell&rsquo;esecuzione della pena\\\" (1037) ^^http://www.w3.org/2001/XMLSchema#string",
+      "scheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.progetto.legge:camera;19.legislatura;1037"
+    },
+    {
+      "uri": "http://dati.camera.it/ocd/attocamera.rdf/ac19_1038",
+      "slug": "ac19_1038",
+      "tipo": "Progetto di Legge",
+      "numero": "1038",
+      "titolo": "\"Delega al Governo per la riforma fiscale\" (1038)",
+      "label": "\"Delega al Governo per la riforma fiscale\" (1038)",
+      "scheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.progetto.legge:camera;19.legislatura;1038"
+    },
+    {
+      "uri": "http://dati.camera.it/ocd/attocamera.rdf/ac19_1039",
+      "slug": "ac19_1039",
+      "tipo": "Progetto di Legge",
+      "numero": "1039",
+      "titolo": "S. 453. - &quot;Ratifica ed esecuzione dell&rsquo;Accordo sulla protezione degli investimenti tra l&rsquo;Unione europea e i suoi Stati membri, da una parte, e la Repubblica socialista del Vietnam, dall&#39;altra, fatto ad Hanoi il 30 giugno 2019&quot; &lt;em&gt;(approvato dal Senato)&lt;/em&gt; (1039)",
+      "label": "S. 453. - &quot;Ratifica ed esecuzione dell&rsquo;Accordo sulla protezione degli investimenti tra l&rsquo;Unione europea e i suoi Stati membri, da una parte, e la Repubblica socialista del Vietnam, dall&#39;altra, fatto ad Hanoi il 30 giugno 2019&quot; &lt;em&gt;(approvato dal Senato)&lt;/em&gt; (1039) ^^http://www.w3.org/2001/XMLSchema#string",
+      "scheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.progetto.legge:camera;19.legislatura;1039"
+    },
+    {
+      "uri": "http://dati.camera.it/ocd/attocamera.rdf/ac19_104",
+      "slug": "ac19_104",
+      "tipo": "Progetto di Legge",
+      "numero": "104",
+      "titolo": "SERRACCHIANI e MADIA: \"Istituzione dell&rsquo;Agenzia nazionale per l&rsquo;infanzia e l&rsquo;adolescenza\" (104)",
+      "label": "SERRACCHIANI e MADIA: \\\"Istituzione dell&rsquo;Agenzia nazionale per l&rsquo;infanzia e l&rsquo;adolescenza\\\" (104) ^^http://www.w3.org/2001/XMLSchema#string",
+      "scheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.progetto.legge:camera;19.legislatura;104"
+    },
+    {
+      "uri": "http://dati.camera.it/ocd/attocamera.rdf/ac19_1040",
+      "slug": "ac19_1040",
+      "tipo": "Progetto di Legge",
+      "numero": "1040",
+      "titolo": "S. 454. - &quot;Ratifica ed esecuzione dell&rsquo;Accordo sulla protezione degli investimenti tra l&#39;Unione europea e i suoi Stati membri, da una parte, e la Repubblica di Singapore, dall&rsquo;altra, fatto a Bruxelles il 19 ottobre 2018&quot; &lt;em&gt;(approvato dal Senato)&lt;/em&gt; (1040)",
+      "label": "S. 454. - &quot;Ratifica ed esecuzione dell&rsquo;Accordo sulla protezione degli investimenti tra l&#39;Unione europea e i suoi Stati membri, da una parte, e la Repubblica di Singapore, dall&rsquo;altra, fatto a Bruxelles il 19 ottobre 2018&quot; &lt;em&gt;(approvato dal Senato)&lt;/em&gt; (1040) ^^http://www.w3.org/2001/XMLSchema#string",
+      "scheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.progetto.legge:camera;19.legislatura;1040"
+    },
+    {
+      "uri": "http://dati.camera.it/ocd/attocamera.rdf/ac19_1041",
+      "slug": "ac19_1041",
+      "tipo": "Progetto di Legge",
+      "numero": "1041",
+      "titolo": "S. 541. - &quot;Ratifica ed esecuzione dell&rsquo;Atto di Ginevra dell&rsquo;Accordo dell&rsquo;Aja concernente la registrazione internazionale dei disegni e modelli industriali, fatto a Ginevra il 2 luglio 1999&quot; &lt;em&gt;(approvato dal Senato)&nbsp;&lt;/em&gt;(1041)",
+      "label": "S. 541. - &quot;Ratifica ed esecuzione dell&rsquo;Atto di Ginevra dell&rsquo;Accordo dell&rsquo;Aja concernente la registrazione internazionale dei disegni e modelli industriali, fatto a Ginevra il 2 luglio 1999&quot; &lt;em&gt;(approvato dal Senato)&nbsp;&lt;/em&gt;(1041) ^^http://www.w3.org/2001/XMLSchema#string",
+      "scheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.progetto.legge:camera;19.legislatura;1041"
+    },
+    {
+      "uri": "http://dati.camera.it/ocd/attocamera.rdf/ac19_1042",
+      "slug": "ac19_1042",
+      "tipo": "Progetto di Legge",
+      "numero": "1042",
+      "titolo": "DI GIUSEPPE ed altri: \"Modifica all&rsquo;articolo 19 della legge 23 dicembre 1978, n. 833, e altre disposizioni in materia di assistenza sanitaria in favore dei cittadini iscritti nell&rsquo;Anagrafe degli italiani residenti all&rsquo;estero\" (1042)",
+      "label": "DI GIUSEPPE ed altri: \\\"Modifica all&rsquo;articolo 19 della legge 23 dicembre 1978, n. 833, e altre disposizioni in materia di assistenza sanitaria in favore dei cittadini iscritti nell&rsquo;Anagrafe degli italiani residenti all&rsquo;estero\\\" (1042) ^^http://www.w3.org/2001/XMLSchema#string",
+      "scheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.progetto.legge:camera;19.legislatura;1042"
+    },
+    {
+      "uri": "http://dati.camera.it/ocd/attocamera.rdf/ac19_1043",
+      "slug": "ac19_1043",
+      "tipo": "Progetto di Legge",
+      "numero": "1043",
+      "titolo": "FENU ed altri: \"Delega al Governo per la riforma fiscale\" (1043)",
+      "label": "FENU ed altri: \"Delega al Governo per la riforma fiscale\" (1043)",
+      "scheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.progetto.legge:camera;19.legislatura;1043"
+    },
+    {
+      "uri": "http://dati.camera.it/ocd/attocamera.rdf/ac19_1044",
+      "slug": "ac19_1044",
+      "tipo": "Progetto di Legge",
+      "numero": "1044",
+      "titolo": "MORGANTE ed altri: \"Modifiche alla legge 14 novembre 2016, n. 220, in materia di accessibilit&agrave; della fruizione delle opere cinematografiche alle persone con disabilit&agrave;\" (1044)",
+      "label": "MORGANTE ed altri: \\\"Modifiche alla legge 14 novembre 2016, n. 220, in materia di accessibilit&agrave; della fruizione delle opere cinematografiche alle persone con disabilit&agrave;\\\" (1044) ^^http://www.w3.org/2001/XMLSchema#string",
+      "scheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.progetto.legge:camera;19.legislatura;1044"
+    },
+    {
+      "uri": "http://dati.camera.it/ocd/attocamera.rdf/ac19_1045",
+      "slug": "ac19_1045",
+      "tipo": "Progetto di Legge",
+      "numero": "1045",
+      "titolo": "NISINI ed altri: \"Istituzione della Giornata nazionale contro la violenza nello sport\" (1045)",
+      "label": "NISINI ed altri: \"Istituzione della Giornata nazionale contro la violenza nello sport\" (1045)",
+      "scheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.progetto.legge:camera;19.legislatura;1045"
+    },
+    {
+      "uri": "http://dati.camera.it/ocd/attocamera.rdf/ac19_1046",
+      "slug": "ac19_1046",
+      "tipo": "Progetto di Legge",
+      "numero": "1046",
+      "titolo": "RUBANO: \"Contributo per l&rsquo;acquisto di dispositivi di allarme volti a prevenire l&rsquo;abbandono di bambini nei veicoli chiusi\" (1046)",
+      "label": "RUBANO: \\\"Contributo per l&rsquo;acquisto di dispositivi di allarme volti a prevenire l&rsquo;abbandono di bambini nei veicoli chiusi\\\" (1046) ^^http://www.w3.org/2001/XMLSchema#string",
+      "scheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.progetto.legge:camera;19.legislatura;1046"
+    },
+    {
+      "uri": "http://dati.camera.it/ocd/attocamera.rdf/ac19_1047",
+      "slug": "ac19_1047",
+      "tipo": "Progetto di Legge",
+      "numero": "1047",
+      "titolo": "CASO ed altri: \"Modifica all&rsquo;articolo 64 del decreto-legge 25 giugno 2008, n. 112, convertito, con modificazioni, dalla legge 6 agosto 2008, n. 133, e altre disposizioni in materia di formazione delle classi nelle scuole di ogni ordine e grado e di riorganizzazione della rete scolastica\" (1047)",
+      "label": "CASO ed altri: \\\"Modifica all&rsquo;articolo 64 del decreto-legge 25 giugno 2008, n. 112, convertito, con modificazioni, dalla legge 6 agosto 2008, n. 133, e altre disposizioni in materia di formazione delle classi nelle scuole di ogni ordine e grado e di riorganizzazione della rete scolastica\\\" (1047) ^^http://www.w3.org/2001/XMLSchema#string",
+      "scheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.progetto.legge:camera;19.legislatura;1047"
+    },
+    {
+      "uri": "http://dati.camera.it/ocd/attocamera.rdf/ac19_1048",
+      "slug": "ac19_1048",
+      "tipo": "Progetto di Legge",
+      "numero": "1048",
+      "titolo": "FOTI: &quot;Modifica all&rsquo;articolo 5 del decreto-legge 30 aprile 2019, n. 34, convertito, con modificazioni, dalla legge 28 giugno 2019, n. 58, concernente il prolungamento delle agevolazioni fiscali per i lavoratori con almeno tre figli minorenni o a carico che trasferiscono la residenza in Italia&quot; (1048)",
+      "label": "FOTI: &quot;Modifica all&rsquo;articolo 5 del decreto-legge 30 aprile 2019, n. 34, convertito, con modificazioni, dalla legge 28 giugno 2019, n. 58, concernente il prolungamento delle agevolazioni fiscali per i lavoratori con almeno tre figli minorenni o a carico che trasferiscono la residenza in Italia&quot; (1048) ^^http://www.w3.org/2001/XMLSchema#string",
+      "scheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.progetto.legge:camera;19.legislatura;1048"
+    },
+    {
+      "uri": "http://dati.camera.it/ocd/attocamera.rdf/ac19_1049",
+      "slug": "ac19_1049",
+      "tipo": "Progetto di Legge",
+      "numero": "1049",
+      "titolo": "SEMENZATO ed altri: \"Istituzione della Giornata nazionale contro la denigrazione dell&rsquo;aspetto fisico delle persone (&lt;em&gt;body shaming&lt;/em&gt;)\" (1049)",
+      "label": "SEMENZATO ed altri: \\\"Istituzione della Giornata nazionale contro la denigrazione dell&rsquo;aspetto fisico delle persone (&lt;em&gt;body shaming&lt;/em&gt;)\\\" (1049) ^^http://www.w3.org/2001/XMLSchema#string",
+      "scheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.progetto.legge:camera;19.legislatura;1049"
+    },
+    {
+      "uri": "http://dati.camera.it/ocd/attocamera.rdf/ac19_105",
+      "slug": "ac19_105",
+      "tipo": "Progetto di Legge",
+      "numero": "105",
+      "titolo": "CENTEMERO ed altri: &quot;Disciplina dell&rsquo;emissione di buoni del Tesoro poliennali speciali riservati alle persone fisiche residenti in Italia&quot; (105)",
+      "label": "CENTEMERO ed altri: &quot;Disciplina dell&rsquo;emissione di buoni del Tesoro poliennali speciali riservati alle persone fisiche residenti in Italia&quot; (105) ^^http://www.w3.org/2001/XMLSchema#string",
+      "scheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.progetto.legge:camera;19.legislatura;105"
+    },
+    {
+      "uri": "http://dati.camera.it/ocd/attocamera.rdf/ac19_1050",
+      "slug": "ac19_1050",
+      "tipo": "Progetto di Legge",
+      "numero": "1050",
+      "titolo": "ZANELLA: \"Disciplina dello stato di filiazione dei nati a seguito dell&rsquo;applicazione di tecniche di procreazione medicalmente assistita di tipo eterologo o della surrogazione di maternit&agrave;, nonch&eacute; modifiche alle leggi 19 febbraio 2004, n. 40, in materia di accesso alle tecniche e requisiti soggettivi, e 4 maggio 1983, n. 184, in materia di adozione dei minori\" (1050)",
+      "label": "ZANELLA: \\\"Disciplina dello stato di filiazione dei nati a seguito dell&rsquo;applicazione di tecniche di procreazione medicalmente assistita di tipo eterologo o della surrogazione di maternit&agrave;, nonch&eacute; modifiche alle leggi 19 febbraio 2004, n. 40, in materia di accesso alle tecniche e requisiti soggettivi, e 4 maggio 1983, n. 184, in materia di adozione dei minori\\\" (1050) ^^http://www.w3.org/2001/XMLSchema#string",
+      "scheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.progetto.legge:camera;19.legislatura;1050"
+    },
+    {
+      "uri": "http://dati.camera.it/ocd/attocamera.rdf/ac19_1051",
+      "slug": "ac19_1051",
+      "tipo": "Progetto di Legge",
+      "numero": "1051",
+      "titolo": "BICCHIELLI e ALESSANDRO COLUCCI: \"Abrogazione dei commi 14 e 15 dell&rsquo;articolo 1 della legge 9 gennaio 2019, n. 3, concernenti l&rsquo;obbligo di pubblicazione del &lt;em&gt;curriculum vitae&lt;/em&gt; e del certificato del casellario giudiziale dei candidati alle elezioni\" (1051)",
+      "label": "BICCHIELLI e ALESSANDRO COLUCCI: \\\"Abrogazione dei commi 14 e 15 dell&rsquo;articolo 1 della legge 9 gennaio 2019, n. 3, concernenti l&rsquo;obbligo di pubblicazione del &lt;em&gt;curriculum vitae&lt;/em&gt; e del certificato del casellario giudiziale dei candidati alle elezioni\\\" (1051) ^^http://www.w3.org/2001/XMLSchema#string",
+      "scheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.progetto.legge:camera;19.legislatura;1051"
+    },
+    {
+      "uri": "http://dati.camera.it/ocd/attocamera.rdf/ac19_1052",
+      "slug": "ac19_1052",
+      "tipo": "Progetto di Legge",
+      "numero": "1052",
+      "titolo": "LUCASELLI ed altri: \"Misure per prevenire e contrastare condotte di maltrattamento o di abuso, anche di natura psicologica, in danno dei minori negli asili nido e nelle scuole dell&rsquo;infanzia nonch&eacute; delle persone ospitate nelle strutture socio-sanitarie e socio-assistenziali per anziani e persone con disabilit&agrave; e delega al Governo in materia di formazione del personale\" (1052)",
+      "label": "LUCASELLI ed altri: \\\"Misure per prevenire e contrastare condotte di maltrattamento o di abuso, anche di natura psicologica, in danno dei minori negli asili nido e nelle scuole dell&rsquo;infanzia nonch&eacute; delle persone ospitate nelle strutture socio-sanitarie e socio-assistenziali per anziani e persone con disabilit&agrave; e delega al Governo in materia di formazione del personale\\\" (1052) ^^http://www.w3.org/2001/XMLSchema#string",
+      "scheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.progetto.legge:camera;19.legislatura;1052"
+    },
+    {
+      "uri": "http://dati.camera.it/ocd/attocamera.rdf/ac19_1053",
+      "slug": "ac19_1053",
+      "tipo": "Progetto di Legge",
+      "numero": "1053",
+      "titolo": "RICHETTI ed altri: &quot;Istituzione della retribuzione oraria minima&quot; (1053)",
+      "label": "RICHETTI ed altri: &quot;Istituzione della retribuzione oraria minima&quot; (1053) ^^http://www.w3.org/2001/XMLSchema#string",
+      "scheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.progetto.legge:camera;19.legislatura;1053"
+    },
+    {
+      "uri": "http://dati.camera.it/ocd/attocamera.rdf/ac19_1054",
+      "slug": "ac19_1054",
+      "tipo": "Progetto di Legge",
+      "numero": "1054",
+      "titolo": "MANZI ed altri: \"Introduzione dell&rsquo;educazione all&rsquo;affettivit&agrave; e al rispetto delle differenze nelle attivit&agrave; didattiche delle scuole del sistema nazionale di istruzione\" (1054)",
+      "label": "MANZI ed altri: \\\"Introduzione dell&rsquo;educazione all&rsquo;affettivit&agrave; e al rispetto delle differenze nelle attivit&agrave; didattiche delle scuole del sistema nazionale di istruzione\\\" (1054) ^^http://www.w3.org/2001/XMLSchema#string",
+      "scheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.progetto.legge:camera;19.legislatura;1054"
+    },
+    {
+      "uri": "http://dati.camera.it/ocd/attocamera.rdf/ac19_1055",
+      "slug": "ac19_1055",
+      "tipo": "Progetto di Legge",
+      "numero": "1055",
+      "titolo": "MARCHETTO ALIPRANDI ed altri: \"Introduzione dell&rsquo;insegnamento dell&rsquo;educazione alimentare nei corsi scolastici del primo e del secondo ciclo di istruzione\" (1055)",
+      "label": "MARCHETTO ALIPRANDI ed altri: \\\"Introduzione dell&rsquo;insegnamento dell&rsquo;educazione alimentare nei corsi scolastici del primo e del secondo ciclo di istruzione\\\" (1055) ^^http://www.w3.org/2001/XMLSchema#string",
+      "scheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.progetto.legge:camera;19.legislatura;1055"
+    },
+    {
+      "uri": "http://dati.camera.it/ocd/attocamera.rdf/ac19_1056",
+      "slug": "ac19_1056",
+      "tipo": "Progetto di Legge",
+      "numero": "1056",
+      "titolo": "NAZARIO PAGANO: \"Modifica all&rsquo;articolo 147 del decreto legislativo 3 aprile 2006, n. 152, in materia di organizzazione territoriale del servizio idrico integrato\" (1056)",
+      "label": "NAZARIO PAGANO: \\\"Modifica all&rsquo;articolo 147 del decreto legislativo 3 aprile 2006, n. 152, in materia di organizzazione territoriale del servizio idrico integrato\\\" (1056) ^^http://www.w3.org/2001/XMLSchema#string",
+      "scheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.progetto.legge:camera;19.legislatura;1056"
+    },
+    {
+      "uri": "http://dati.camera.it/ocd/attocamera.rdf/ac19_1057",
+      "slug": "ac19_1057",
+      "tipo": "Progetto di Legge",
+      "numero": "1057",
+      "titolo": "PICCOLOTTI ed altri: \"Disposizioni concernenti il concorso statale al finanziamento della spesa per la partecipazione a viaggi di istruzione e la fornitura gratuita dei libri di testo\" (1057)",
+      "label": "PICCOLOTTI ed altri: \"Disposizioni concernenti il concorso statale al finanziamento della spesa per la partecipazione a viaggi di istruzione e la fornitura gratuita dei libri di testo\" (1057)",
+      "scheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.progetto.legge:camera;19.legislatura;1057"
+    },
+    {
+      "uri": "http://dati.camera.it/ocd/attocamera.rdf/ac19_1058",
+      "slug": "ac19_1058",
+      "tipo": "Progetto di Legge",
+      "numero": "1058",
+      "titolo": "DI SANZO: \"Modifica all&rsquo;articolo 19 della legge 23 dicembre 1978, n. 833, e altre disposizioni in materia di assistenza sanitaria in favore dei cittadini iscritti nell&rsquo;Anagrafe degli italiani residenti all&rsquo;estero\" (1058)",
+      "label": "DI SANZO: \\\"Modifica all&rsquo;articolo 19 della legge 23 dicembre 1978, n. 833, e altre disposizioni in materia di assistenza sanitaria in favore dei cittadini iscritti nell&rsquo;Anagrafe degli italiani residenti all&rsquo;estero\\\" (1058) ^^http://www.w3.org/2001/XMLSchema#string",
+      "scheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.progetto.legge:camera;19.legislatura;1058"
+    },
+    {
+      "uri": "http://dati.camera.it/ocd/attocamera.rdf/ac19_1059",
+      "slug": "ac19_1059",
+      "tipo": "Progetto di Legge",
+      "numero": "1059",
+      "titolo": "TASSINARI ed altri: \"Disposizioni per lo sviluppo e la valorizzazione delle zone montane\" (1059)",
+      "label": "TASSINARI ed altri: \"Disposizioni per lo sviluppo e la valorizzazione delle zone montane\" (1059)",
+      "scheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.progetto.legge:camera;19.legislatura;1059"
+    },
+    {
+      "uri": "http://dati.camera.it/ocd/attocamera.rdf/ac19_106",
+      "slug": "ac19_106",
+      "tipo": "Progetto di Legge",
+      "numero": "106",
+      "titolo": "CENTEMERO ed altri: \"Modifiche all&rsquo;articolo 162 del testo unico delle imposte sui redditi, di cui al decreto del Presidente della Repubblica 22 dicembre 1986, n. 917, in materia di definizione della sede fissa di affari e di esclusione della rilevanza dell&rsquo;utilizzo di un gestore di investimenti per il riconoscimento della stabile organizzazione dell&#39;impresa non residente\" (106)",
+      "label": "CENTEMERO ed altri: \\\"Modifiche all&rsquo;articolo 162 del testo unico delle imposte sui redditi, di cui al decreto del Presidente della Repubblica 22 dicembre 1986, n. 917, in materia di definizione della sede fissa di affari e di esclusione della rilevanza dell&rsquo;utilizzo di un gestore di investimenti per il riconoscimento della stabile organizzazione dell&#39;impresa non residente\\\" (106) ^^http://www.w3.org/2001/XMLSchema#string",
+      "scheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.progetto.legge:camera;19.legislatura;106"
+    },
+    {
+      "uri": "http://dati.camera.it/ocd/attocamera.rdf/ac19_1060",
+      "slug": "ac19_1060",
+      "tipo": "Progetto di Legge",
+      "numero": "1060",
+      "titolo": "\"Conversione in legge del decreto-legge 30 marzo 2023, n. 34, recante misure urgenti a sostegno delle famiglie e delle imprese per l&rsquo;acquisto di energia elettrica e gas naturale, nonch&eacute; in materia di salute e adempimenti fiscali\" (1060)",
+      "label": "\\\"Conversione in legge del decreto-legge 30 marzo 2023, n. 34, recante misure urgenti a sostegno delle famiglie e delle imprese per l&rsquo;acquisto di energia elettrica e gas naturale, nonch&eacute; in materia di salute e adempimenti fiscali\\\" (1060) ^^http://www.w3.org/2001/XMLSchema#string",
+      "scheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.progetto.legge:camera;19.legislatura;1060"
+    },
+    {
+      "uri": "http://dati.camera.it/ocd/attocamera.rdf/ac19_1061",
+      "slug": "ac19_1061",
+      "tipo": "Progetto di Legge",
+      "numero": "1061",
+      "titolo": "STEFANAZZI ed altri: \"Disposizioni per la promozione e il sostegno delle &lt;em&gt;start-up&lt;/em&gt; e delle piccole e medie imprese innovative mediante agevolazioni fiscali e contributive\" (1061)",
+      "label": "STEFANAZZI ed altri: \\\"Disposizioni per la promozione e il sostegno delle &lt;em&gt;start-up&lt;/em&gt; e delle piccole e medie imprese innovative mediante agevolazioni fiscali e contributive\\\" (1061) ^^http://www.w3.org/2001/XMLSchema#string",
+      "scheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.progetto.legge:camera;19.legislatura;1061"
+    },
+    {
+      "uri": "http://dati.camera.it/ocd/attocamera.rdf/ac19_1062",
+      "slug": "ac19_1062",
+      "tipo": "Progetto di Legge",
+      "numero": "1062",
+      "titolo": "DORI: \"Modifiche agli articoli 82, 106-&lt;em&gt;bis&lt;/em&gt; e 130 del testo unico delle disposizioni legislative e regolamentari in materia di spese di giustizia, di cui al decreto del Presidente della Repubblica 30 maggio 2002, n. 115, concernenti la parificazione dei criteri per la liquidazione dei compensi del patrocinio a spese dello Stato nel processo civile, penale, amministrativo, contabile e tributario\" (1062)",
+      "label": "DORI: \\\"Modifiche agli articoli 82, 106-&lt;em&gt;bis&lt;/em&gt; e 130 del testo unico delle disposizioni legislative e regolamentari in materia di spese di giustizia, di cui al decreto del Presidente della Repubblica 30 maggio 2002, n. 115, concernenti la parificazione dei criteri per la liquidazione dei compensi del patrocinio a spese dello Stato nel processo civile, penale, amministrativo, contabile e tributario\\\" (1062) ^^http://www.w3.org/2001/XMLSchema#string",
+      "scheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.progetto.legge:camera;19.legislatura;1062"
+    },
+    {
+      "uri": "http://dati.camera.it/ocd/attocamera.rdf/ac19_1063",
+      "slug": "ac19_1063",
+      "tipo": "Progetto di Legge",
+      "numero": "1063",
+      "titolo": "MANZI ed altri: \"Istituzione di un fondo per il concorso dello Stato al finanziamento della spesa per la partecipazione a viaggi di istruzione\" (1063)",
+      "label": "MANZI ed altri: \"Istituzione di un fondo per il concorso dello Stato al finanziamento della spesa per la partecipazione a viaggi di istruzione\" (1063)",
+      "scheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.progetto.legge:camera;19.legislatura;1063"
+    },
+    {
+      "uri": "http://dati.camera.it/ocd/attocamera.rdf/ac19_1064",
+      "slug": "ac19_1064",
+      "tipo": "Progetto di Legge",
+      "numero": "1064",
+      "titolo": "MAGI ed altri: \"Istituzione delle case territoriali di reinserimento sociale nonch&eacute; modifiche alla legge 26 luglio 1975, n. 354, in materia di esecuzione della pena presso le medesime\" (1064)",
+      "label": "MAGI ed altri: \\\"Istituzione delle case territoriali di reinserimento sociale nonch&eacute; modifiche alla legge 26 luglio 1975, n. 354, in materia di esecuzione della pena presso le medesime\\\" (1064) ^^http://www.w3.org/2001/XMLSchema#string",
+      "scheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.progetto.legge:camera;19.legislatura;1064"
+    },
+    {
+      "uri": "http://dati.camera.it/ocd/attocamera.rdf/ac19_1065",
+      "slug": "ac19_1065",
+      "tipo": "Progetto di Legge",
+      "numero": "1065",
+      "titolo": "MASCHIO ed altri: \"Istituzione in Verona di una sezione distaccata della corte di appello di Venezia\" (1065)",
+      "label": "MASCHIO ed altri: \"Istituzione in Verona di una sezione distaccata della corte di appello di Venezia\" (1065)",
+      "scheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.progetto.legge:camera;19.legislatura;1065"
+    },
+    {
+      "uri": "http://dati.camera.it/ocd/attocamera.rdf/ac19_1066",
+      "slug": "ac19_1066",
+      "tipo": "Progetto di Legge",
+      "numero": "1066",
+      "titolo": "CONSIGLIO NAZIONALE DELL'ECONOMIA E DEL LAVORO: \"Tutela del diritto all&rsquo;oblio delle persone guarite da patologie oncologiche\" (1066)",
+      "label": "CONSIGLIO NAZIONALE DELL'ECONOMIA E DEL LAVORO: \\\"Tutela del diritto all&rsquo;oblio delle persone guarite da patologie oncologiche\\\" (1066) ^^http://www.w3.org/2001/XMLSchema#string",
+      "scheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.progetto.legge:camera;19.legislatura;1066"
+    },
+    {
+      "uri": "http://dati.camera.it/ocd/attocamera.rdf/ac19_1067",
+      "slug": "ac19_1067",
+      "tipo": "Progetto di Legge",
+      "numero": "1067",
+      "titolo": "&quot;Conversione in legge del decreto-legge 31 marzo 2023, n. 35, recante disposizioni urgenti per la realizzazione del collegamento stabile tra la Sicilia e la Calabria&quot; (1067)",
+      "label": "&quot;Conversione in legge del decreto-legge 31 marzo 2023, n. 35, recante disposizioni urgenti per la realizzazione del collegamento stabile tra la Sicilia e la Calabria&quot; (1067) ^^http://www.w3.org/2001/XMLSchema#string",
+      "scheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.progetto.legge:camera;19.legislatura;1067"
+    },
+    {
+      "uri": "http://dati.camera.it/ocd/attocamera.rdf/ac19_1068",
+      "slug": "ac19_1068",
+      "tipo": "Progetto di Legge",
+      "numero": "1068",
+      "titolo": "RUBANO: &quot;Disposizioni in materia di visite dei membri del Parlamento alle strutture sanitarie e socioassistenziali e alle discariche di rifiuti&quot; (1068)",
+      "label": "RUBANO: &quot;Disposizioni in materia di visite dei membri del Parlamento alle strutture sanitarie e socioassistenziali e alle discariche di rifiuti&quot; (1068) ^^http://www.w3.org/2001/XMLSchema#string",
+      "scheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.progetto.legge:camera;19.legislatura;1068"
+    },
+    {
+      "uri": "http://dati.camera.it/ocd/attocamera.rdf/ac19_1069",
+      "slug": "ac19_1069",
+      "tipo": "Progetto di Legge",
+      "numero": "1069",
+      "titolo": "RUBANO: \"Modifiche all&rsquo;articolo 3 della legge 20 agosto 2019, n. 92, concernenti l&rsquo;introduzione dell&rsquo;educazione alla salute e al benessere tra gli obiettivi di apprendimento dell&rsquo;insegnamento dell&rsquo;educazione civica\" (1069)",
+      "label": "RUBANO: \\\"Modifiche all&rsquo;articolo 3 della legge 20 agosto 2019, n. 92, concernenti l&rsquo;introduzione dell&rsquo;educazione alla salute e al benessere tra gli obiettivi di apprendimento dell&rsquo;insegnamento dell&rsquo;educazione civica\\\" (1069) ^^http://www.w3.org/2001/XMLSchema#string",
+      "scheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.progetto.legge:camera;19.legislatura;1069"
+    },
+    {
+      "uri": "http://dati.camera.it/ocd/attocamera.rdf/ac19_107",
+      "slug": "ac19_107",
+      "tipo": "Progetto di Legge",
+      "numero": "107",
+      "titolo": "CENTEMERO ed altri: &quot;Disposizioni per la promozione e lo sviluppo delle &lt;em&gt;start-up&lt;/em&gt; e delle piccole e medie imprese innovative mediante agevolazioni fiscali e incentivi agli investimenti&quot; (107)",
+      "label": "CENTEMERO ed altri: &quot;Disposizioni per la promozione e lo sviluppo delle &lt;em&gt;start-up&lt;/em&gt; e delle piccole e medie imprese innovative mediante agevolazioni fiscali e incentivi agli investimenti&quot; (107) ^^http://www.w3.org/2001/XMLSchema#string",
+      "scheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.progetto.legge:camera;19.legislatura;107"
+    },
+    {
+      "uri": "http://dati.camera.it/ocd/attocamera.rdf/ac19_1070",
+      "slug": "ac19_1070",
+      "tipo": "Progetto di Legge",
+      "numero": "1070",
+      "titolo": "LACARRA ed altri: \"Disposizioni concernenti il riconoscimento delle universit&agrave; della terza et&agrave; e il finanziamento della loro attivit&agrave;\" (1070)",
+      "label": "LACARRA ed altri: \\\"Disposizioni concernenti il riconoscimento delle universit&agrave; della terza et&agrave; e il finanziamento della loro attivit&agrave;\\\" (1070) ^^http://www.w3.org/2001/XMLSchema#string",
+      "scheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.progetto.legge:camera;19.legislatura;1070"
+    },
+    {
+      "uri": "http://dati.camera.it/ocd/attocamera.rdf/ac19_1071",
+      "slug": "ac19_1071",
+      "tipo": "Progetto di Legge",
+      "numero": "1071",
+      "titolo": "QUARTINI ed altri: \"Disposizioni per la diffusione della conoscenza delle pratiche di primo soccorso in caso di soffocamento per ostruzione o di &lt;em&gt;shock&lt;/em&gt; anafilattico in ambito scolastico, sanitario e negli esercizi di ristorazione\" (1071)",
+      "label": "QUARTINI ed altri: \\\"Disposizioni per la diffusione della conoscenza delle pratiche di primo soccorso in caso di soffocamento per ostruzione o di &lt;em&gt;shock&lt;/em&gt; anafilattico in ambito scolastico, sanitario e negli esercizi di ristorazione\\\" (1071) ^^http://www.w3.org/2001/XMLSchema#string",
+      "scheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.progetto.legge:camera;19.legislatura;1071"
+    },
+    {
+      "uri": "http://dati.camera.it/ocd/attocamera.rdf/ac19_1072",
+      "slug": "ac19_1072",
+      "tipo": "Progetto di Legge",
+      "numero": "1072",
+      "titolo": "RUBANO: \"Istituzione della professione sanitaria di podoiatra e della laurea magistrale in podoiatria\" (1072)",
+      "label": "RUBANO: \"Istituzione della professione sanitaria di podoiatra e della laurea magistrale in podoiatria\" (1072)",
+      "scheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.progetto.legge:camera;19.legislatura;1072"
+    },
+    {
+      "uri": "http://dati.camera.it/ocd/attocamera.rdf/ac19_1073",
+      "slug": "ac19_1073",
+      "tipo": "Progetto di Legge",
+      "numero": "1073",
+      "titolo": "MANZI ed altri: \"Riconoscimento della personalit&agrave; giuridica e concessione di un contributo in favore dell&rsquo;Istituto nazionale Ferruccio Parri &ndash; Rete degli istituti della storia della Resistenza e dell&rsquo;et&agrave; contemporanea\" (1073)",
+      "label": "MANZI ed altri: \\\"Riconoscimento della personalit&agrave; giuridica e concessione di un contributo in favore dell&rsquo;Istituto nazionale Ferruccio Parri &ndash; Rete degli istituti della storia della Resistenza e dell&rsquo;et&agrave; contemporanea\\\" (1073) ^^http://www.w3.org/2001/XMLSchema#string",
+      "scheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.progetto.legge:camera;19.legislatura;1073"
+    },
+    {
+      "uri": "http://dati.camera.it/ocd/attocamera.rdf/ac19_1074",
+      "slug": "ac19_1074",
+      "tipo": "Progetto di Legge",
+      "numero": "1074",
+      "titolo": "BAGNAI ed altri: \"Modifiche all&rsquo;articolo 132 del codice in materia di protezione dei dati personali, di cui al decreto legislativo 30 giugno 2003, n. 196, concernenti l&rsquo;acquisizione di dati relativi al traffico telefonico e telematico per esigenze di tutela della vita e dell&rsquo;incolumit&agrave; fisica del soggetto interessato\" (1074)",
+      "label": "BAGNAI ed altri: \\\"Modifiche all&rsquo;articolo 132 del codice in materia di protezione dei dati personali, di cui al decreto legislativo 30 giugno 2003, n. 196, concernenti l&rsquo;acquisizione di dati relativi al traffico telefonico e telematico per esigenze di tutela della vita e dell&rsquo;incolumit&agrave; fisica del soggetto interessato\\\" (1074) ^^http://www.w3.org/2001/XMLSchema#string",
+      "scheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.progetto.legge:camera;19.legislatura;1074"
+    },
+    {
+      "uri": "http://dati.camera.it/ocd/attocamera.rdf/ac19_1075",
+      "slug": "ac19_1075",
+      "tipo": "Progetto di Legge",
+      "numero": "1075",
+      "titolo": "MESSINA: &quot;Disposizioni concernenti il mantenimento in ruolo di dirigenti scolastici di cui all&rsquo;articolo 1, comma 87, della legge 13 luglio 2015, n. 107&quot; (1075)",
+      "label": "MESSINA: &quot;Disposizioni concernenti il mantenimento in ruolo di dirigenti scolastici di cui all&rsquo;articolo 1, comma 87, della legge 13 luglio 2015, n. 107&quot; (1075) ^^http://www.w3.org/2001/XMLSchema#string",
+      "scheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.progetto.legge:camera;19.legislatura;1075"
+    },
+    {
+      "uri": "http://dati.camera.it/ocd/attocamera.rdf/ac19_1076",
+      "slug": "ac19_1076",
+      "tipo": "Progetto di Legge",
+      "numero": "1076",
+      "titolo": "CONSIGLIO REGIONALE DEL VENETO: \"Disposizioni per l&rsquo;esenzione dall&rsquo;imposta sui redditi delle societ&agrave; degli esercizi commerciali ubicati nei comuni periferici con popolazione residente inferiore a 3.000 abitanti\" (1076)",
+      "label": "CONSIGLIO REGIONALE DEL VENETO: \\\"Disposizioni per l&rsquo;esenzione dall&rsquo;imposta sui redditi delle societ&agrave; degli esercizi commerciali ubicati nei comuni periferici con popolazione residente inferiore a 3.000 abitanti\\\" (1076) ^^http://www.w3.org/2001/XMLSchema#string",
+      "scheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.progetto.legge:camera;19.legislatura;1076"
+    },
+    {
+      "uri": "http://dati.camera.it/ocd/attocamera.rdf/ac19_1077",
+      "slug": "ac19_1077",
+      "tipo": "Progetto di Legge",
+      "numero": "1077",
+      "titolo": "SERGIO COSTA ed altri: \"Modifiche alla legge 27 marzo 1992, n. 257, recante norme relative alla cessazione dell&rsquo;impiego dell&rsquo;amianto\" (1077)",
+      "label": "SERGIO COSTA ed altri: \\\"Modifiche alla legge 27 marzo 1992, n. 257, recante norme relative alla cessazione dell&rsquo;impiego dell&rsquo;amianto\\\" (1077) ^^http://www.w3.org/2001/XMLSchema#string",
+      "scheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.progetto.legge:camera;19.legislatura;1077"
+    },
+    {
+      "uri": "http://dati.camera.it/ocd/attocamera.rdf/ac19_1078",
+      "slug": "ac19_1078",
+      "tipo": "Progetto di Legge",
+      "numero": "1078",
+      "titolo": "SPORTIELLO ed altri: \"Disposizioni per la prevenzione e la lotta contro il virus dell&rsquo;immunodeficienza umana (HIV) e la sindrome da immunodeficienza acquisita (AIDS)\" (1078)",
+      "label": "SPORTIELLO ed altri: \\\"Disposizioni per la prevenzione e la lotta contro il virus dell&rsquo;immunodeficienza umana (HIV) e la sindrome da immunodeficienza acquisita (AIDS)\\\" (1078) ^^http://www.w3.org/2001/XMLSchema#string",
+      "scheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.progetto.legge:camera;19.legislatura;1078"
+    },
+    {
+      "uri": "http://dati.camera.it/ocd/attocamera.rdf/ac19_1079",
+      "slug": "ac19_1079",
+      "tipo": "Progetto di Legge",
+      "numero": "1079",
+      "titolo": "ZINZI ed altri: &quot;Modifiche all&rsquo;articolo 195 del decreto legislativo 3 aprile 2006, n. 152, concernenti l&rsquo;introduzione del fattore di pressione tra i criteri di valutazione per la localizzazione delle discariche e degli impianti di recupero dei rifiuti urbani&quot; (1079)",
+      "label": "ZINZI ed altri: &quot;Modifiche all&rsquo;articolo 195 del decreto legislativo 3 aprile 2006, n. 152, concernenti l&rsquo;introduzione del fattore di pressione tra i criteri di valutazione per la localizzazione delle discariche e degli impianti di recupero dei rifiuti urbani&quot; (1079) ^^http://www.w3.org/2001/XMLSchema#string",
+      "scheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.progetto.legge:camera;19.legislatura;1079"
+    },
+    {
+      "uri": "http://dati.camera.it/ocd/attocamera.rdf/ac19_108",
+      "slug": "ac19_108",
+      "tipo": "Progetto di Legge",
+      "numero": "108",
+      "titolo": "CENTEMERO ed altri: \"Modifiche agli articoli 1 e 31 del testo unico di cui al decreto legislativo 24 febbraio 1998, n. 58, in materia di esercizio dell&rsquo;attivit&agrave; di consulente finanziario, abilitato all&rsquo;offerta fuori sede, da parte di soggetti costituiti in forma societaria\" (108)",
+      "label": "CENTEMERO ed altri: \\\"Modifiche agli articoli 1 e 31 del testo unico di cui al decreto legislativo 24 febbraio 1998, n. 58, in materia di esercizio dell&rsquo;attivit&agrave; di consulente finanziario, abilitato all&rsquo;offerta fuori sede, da parte di soggetti costituiti in forma societaria\\\" (108) ^^http://www.w3.org/2001/XMLSchema#string",
+      "scheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.progetto.legge:camera;19.legislatura;108"
+    },
+    {
+      "uri": "http://dati.camera.it/ocd/attocamera.rdf/ac19_1080",
+      "slug": "ac19_1080",
+      "tipo": "Progetto di Legge",
+      "numero": "1080",
+      "titolo": "BATTISTONI ed altri: \"Istituzione dell&rsquo;Autorit&agrave; per le lagune e le zone umide e disposizioni per la salvaguardia della laguna di Orbetello\" (1080)",
+      "label": "BATTISTONI ed altri: \\\"Istituzione dell&rsquo;Autorit&agrave; per le lagune e le zone umide e disposizioni per la salvaguardia della laguna di Orbetello\\\" (1080) ^^http://www.w3.org/2001/XMLSchema#string",
+      "scheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.progetto.legge:camera;19.legislatura;1080"
+    },
+    {
+      "uri": "http://dati.camera.it/ocd/attocamera.rdf/ac19_1081",
+      "slug": "ac19_1081",
+      "tipo": "Progetto di Legge",
+      "numero": "1081",
+      "titolo": "BOF ed altri: &quot;Disposizioni per l&rsquo;integrazione delle norme adottate in attuazione della direttiva 92/43/CEE del Consiglio, del 21 maggio 1992, relativa alla conservazione degli &lt;em&gt;habitat&lt;/em&gt; naturali e seminaturali e della flora e della fauna selvatiche, mediante introduzione di un regime di deroga per la specie &lt;em&gt;canis lupus&lt;/em&gt;&quot; (1081)",
+      "label": "BOF ed altri: &quot;Disposizioni per l&rsquo;integrazione delle norme adottate in attuazione della direttiva 92/43/CEE del Consiglio, del 21 maggio 1992, relativa alla conservazione degli &lt;em&gt;habitat&lt;/em&gt; naturali e seminaturali e della flora e della fauna selvatiche, mediante introduzione di un regime di deroga per la specie &lt;em&gt;canis lupus&lt;/em&gt;&quot; (1081) ^^http://www.w3.org/2001/XMLSchema#string",
+      "scheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.progetto.legge:camera;19.legislatura;1081"
+    },
+    {
+      "uri": "http://dati.camera.it/ocd/attocamera.rdf/ac19_1082",
+      "slug": "ac19_1082",
+      "tipo": "Progetto di Legge",
+      "numero": "1082",
+      "titolo": "ALESSANDRO COLUCCI: \"Disposizioni sulla protezione del clima\" (1082)",
+      "label": "ALESSANDRO COLUCCI: \"Disposizioni sulla protezione del clima\" (1082)",
+      "scheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.progetto.legge:camera;19.legislatura;1082"
+    },
+    {
+      "uri": "http://dati.camera.it/ocd/attocamera.rdf/ac19_1083",
+      "slug": "ac19_1083",
+      "tipo": "Progetto di Legge",
+      "numero": "1083",
+      "titolo": "FENU ed altri: \"Disposizioni concernenti l&rsquo;istituzione di zone franche montane in Sardegna\" (1083)",
+      "label": "FENU ed altri: \\\"Disposizioni concernenti l&rsquo;istituzione di zone franche montane in Sardegna\\\" (1083) ^^http://www.w3.org/2001/XMLSchema#string",
+      "scheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.progetto.legge:camera;19.legislatura;1083"
+    },
+    {
+      "uri": "http://dati.camera.it/ocd/attocamera.rdf/ac19_1084",
+      "slug": "ac19_1084",
+      "tipo": "Progetto di Legge",
+      "numero": "1084",
+      "titolo": "CENTEMERO ed altri: \"Disposizioni concernenti l&rsquo;adozione di una disciplina temporanea per la sperimentazione dell&rsquo;impiego di sistemi di intelligenza artificiale\" (1084)",
+      "label": "CENTEMERO ed altri: \\\"Disposizioni concernenti l&rsquo;adozione di una disciplina temporanea per la sperimentazione dell&rsquo;impiego di sistemi di intelligenza artificiale\\\" (1084) ^^http://www.w3.org/2001/XMLSchema#string",
+      "scheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.progetto.legge:camera;19.legislatura;1084"
+    },
+    {
+      "uri": "http://dati.camera.it/ocd/attocamera.rdf/ac19_1085",
+      "slug": "ac19_1085",
+      "tipo": "Progetto di Legge",
+      "numero": "1085",
+      "titolo": "APPENDINO: \"Delega al Governo per il riconoscimento e la disciplina della professione di mediatore interculturale\" (1085)",
+      "label": "APPENDINO: \"Delega al Governo per il riconoscimento e la disciplina della professione di mediatore interculturale\" (1085)",
+      "scheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.progetto.legge:camera;19.legislatura;1085"
+    },
+    {
+      "uri": "http://dati.camera.it/ocd/attocamera.rdf/ac19_1086",
+      "slug": "ac19_1086",
+      "tipo": "Progetto di Legge",
+      "numero": "1086",
+      "titolo": "MIELE ed altri: \"Modifica del comma 83-&lt;em&gt;bis &lt;/em&gt;dell&rsquo;articolo 1 della legge 13 luglio 2015, n. 107, in materia di esonero dall&rsquo;insegnamento per i docenti che svolgono funzioni vicarie nelle istituzioni scolastiche affidate in reggenza\" (1086)",
+      "label": "MIELE ed altri: \\\"Modifica del comma 83-&lt;em&gt;bis &lt;/em&gt;dell&rsquo;articolo 1 della legge 13 luglio 2015, n. 107, in materia di esonero dall&rsquo;insegnamento per i docenti che svolgono funzioni vicarie nelle istituzioni scolastiche affidate in reggenza\\\" (1086) ^^http://www.w3.org/2001/XMLSchema#string",
+      "scheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.progetto.legge:camera;19.legislatura;1086"
+    },
+    {
+      "uri": "http://dati.camera.it/ocd/attocamera.rdf/ac19_1087",
+      "slug": "ac19_1087",
+      "tipo": "Progetto di Legge",
+      "numero": "1087",
+      "titolo": "BONETTI: \"Disposizioni in materia di riequilibrio di genere nei procedimenti di nomina\" (1087)",
+      "label": "BONETTI: \"Disposizioni in materia di riequilibrio di genere nei procedimenti di nomina\" (1087)",
+      "scheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.progetto.legge:camera;19.legislatura;1087"
+    },
+    {
+      "uri": "http://dati.camera.it/ocd/attocamera.rdf/ac19_1088",
+      "slug": "ac19_1088",
+      "tipo": "Progetto di Legge",
+      "numero": "1088",
+      "titolo": "MONTARULI ed altri: &quot;Modifiche agli articoli 73 e 85-&lt;em&gt;bis&lt;/em&gt; del testo unico delle leggi in materia di disciplina degli stupefacenti e sostanze psicotrope, prevenzione, cura e riabilitazione dei relativi stati di tossicodipendenza, di cui al decreto del Presidente della Repubblica 9 ottobre 1990, n. 309, in materia di sanzione penale e di confisca per fatti di lieve entit&agrave; concernenti la produzione, il traffico e la detenzione illeciti di sostanze stupefacenti o psicotrope&quot; (1088)",
+      "label": "MONTARULI ed altri: &quot;Modifiche agli articoli 73 e 85-&lt;em&gt;bis&lt;/em&gt; del testo unico delle leggi in materia di disciplina degli stupefacenti e sostanze psicotrope, prevenzione, cura e riabilitazione dei relativi stati di tossicodipendenza, di cui al decreto del Presidente della Repubblica 9 ottobre 1990, n. 309, in materia di sanzione penale e di confisca per fatti di lieve entit&agrave; concernenti la produzione, il traffico e la detenzione illeciti di sostanze stupefacenti o psicotrope&quot; (1088) ^^http://www.w3.org/2001/XMLSchema#string",
+      "scheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.progetto.legge:camera;19.legislatura;1088"
+    },
+    {
+      "uri": "http://dati.camera.it/ocd/attocamera.rdf/ac19_1089",
+      "slug": "ac19_1089",
+      "tipo": "Progetto di Legge",
+      "numero": "1089",
+      "titolo": "S. 564. - &quot;Conversione in legge, con modificazioni, del decreto-legge 24 febbraio 2023, n. 13, recante disposizioni urgenti per l&#39;attuazione del Piano nazionale di ripresa e resilienza (PNRR) e del Piano nazionale degli investimenti complementari al PNRR (PNC), nonch&eacute; per l&#39;attuazione delle politiche di coesione e della politica agricola comune. Disposizioni concernenti l&rsquo;esercizio di deleghe legislative&quot;&nbsp;&lt;em&gt;(approvato dal Senato)&lt;/em&gt; (1089)",
+      "label": "S. 564. - &quot;Conversione in legge, con modificazioni, del decreto-legge 24 febbraio 2023, n. 13, recante disposizioni urgenti per l&#39;attuazione del Piano nazionale di ripresa e resilienza (PNRR) e del Piano nazionale degli investimenti complementari al PNRR (PNC), nonch&eacute; per l&#39;attuazione delle politiche di coesione e della politica agricola comune. Disposizioni concernenti l&rsquo;esercizio di deleghe legislative&quot;&nbsp;&lt;em&gt;(approvato dal Senato)&lt;/em&gt; (1089) ^^http://www.w3.org/2001/XMLSchema#string",
+      "scheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.progetto.legge:camera;19.legislatura;1089"
+    },
+    {
+      "uri": "http://dati.camera.it/ocd/attocamera.rdf/ac19_109",
+      "slug": "ac19_109",
+      "tipo": "Progetto di Legge",
+      "numero": "109",
+      "titolo": "COIN ed altri: \"Modifica all&rsquo;articolo 66 della legge 27 dicembre 2002, n. 289, in materia di accordi integrati di filiera\" (109)",
+      "label": "COIN ed altri: \\\"Modifica all&rsquo;articolo 66 della legge 27 dicembre 2002, n. 289, in materia di accordi integrati di filiera\\\" (109) ^^http://www.w3.org/2001/XMLSchema#string",
+      "scheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.progetto.legge:camera;19.legislatura;109"
+    },
+    {
+      "uri": "http://dati.camera.it/ocd/attocamera.rdf/ac19_1090",
+      "slug": "ac19_1090",
+      "tipo": "Progetto di Legge",
+      "numero": "1090",
+      "titolo": "URZI' ed altri: \"Disposizioni concernenti il porto di nebulizzatori contenenti sostanze irritanti per autodifesa nelle aree caratterizzate dalla presenza di grandi animali selvatici predatori\" (1090)",
+      "label": "URZI' ed altri: \"Disposizioni concernenti il porto di nebulizzatori contenenti sostanze irritanti per autodifesa nelle aree caratterizzate dalla presenza di grandi animali selvatici predatori\" (1090)",
+      "scheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.progetto.legge:camera;19.legislatura;1090"
+    },
+    {
+      "uri": "http://dati.camera.it/ocd/attocamera.rdf/ac19_1091",
+      "slug": "ac19_1091",
+      "tipo": "Progetto di Legge",
+      "numero": "1091",
+      "titolo": "ROMANO ed altri: \"Introduzione dell&rsquo;articolo 1857-&lt;em&gt;bis &lt;/em&gt;del codice civile e modifica all&rsquo;articolo 33 del codice di cui al decreto legislativo 6 settembre 2005, n. 206, in materia di obbligo di contrarre e recesso della banca nei rapporti di conto corrente\" (1091)",
+      "label": "ROMANO ed altri: \\\"Introduzione dell&rsquo;articolo 1857-&lt;em&gt;bis &lt;/em&gt;del codice civile e modifica all&rsquo;articolo 33 del codice di cui al decreto legislativo 6 settembre 2005, n. 206, in materia di obbligo di contrarre e recesso della banca nei rapporti di conto corrente\\\" (1091) ^^http://www.w3.org/2001/XMLSchema#string",
+      "scheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.progetto.legge:camera;19.legislatura;1091"
+    },
+    {
+      "uri": "http://dati.camera.it/ocd/attocamera.rdf/ac19_1092",
+      "slug": "ac19_1092",
+      "tipo": "Progetto di Legge",
+      "numero": "1092",
+      "titolo": "EVI ed altri: \"Disposizioni in materia di voli di aeromobili privati non di linea per il trasporto di passeggeri, per la riduzione delle emissioni climalteranti\" (1092)",
+      "label": "EVI ed altri: \"Disposizioni in materia di voli di aeromobili privati non di linea per il trasporto di passeggeri, per la riduzione delle emissioni climalteranti\" (1092)",
+      "scheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.progetto.legge:camera;19.legislatura;1092"
+    },
+    {
+      "uri": "http://dati.camera.it/ocd/attocamera.rdf/ac19_1093",
+      "slug": "ac19_1093",
+      "tipo": "Progetto di Legge",
+      "numero": "1093",
+      "titolo": "ZANELLA: \"Disposizioni in materia di cura, assistenza e formazione per la gravidanza e il parto\" (1093)",
+      "label": "ZANELLA: \"Disposizioni in materia di cura, assistenza e formazione per la gravidanza e il parto\" (1093)",
+      "scheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.progetto.legge:camera;19.legislatura;1093"
+    },
+    {
+      "uri": "http://dati.camera.it/ocd/attocamera.rdf/ac19_1094",
+      "slug": "ac19_1094",
+      "tipo": "Progetto di Legge",
+      "numero": "1094",
+      "titolo": "RUFFINO: \"Modifiche alla legge 24 giugno 2010, n. 107, in materia di diritti delle persone sordocieche\" (1094)",
+      "label": "RUFFINO: \"Modifiche alla legge 24 giugno 2010, n. 107, in materia di diritti delle persone sordocieche\" (1094)",
+      "scheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.progetto.legge:camera;19.legislatura;1094"
+    },
+    {
+      "uri": "http://dati.camera.it/ocd/attocamera.rdf/ac19_1095",
+      "slug": "ac19_1095",
+      "tipo": "Progetto di Legge",
+      "numero": "1095",
+      "titolo": "RUFFINO: \"Modifica all&rsquo;articolo 2 della legge 3 febbraio 1975, n. 18, in materia di formulazione e di firma degli atti da parte di persone affette da cecit&agrave;\" (1095)",
+      "label": "RUFFINO: \\\"Modifica all&rsquo;articolo 2 della legge 3 febbraio 1975, n. 18, in materia di formulazione e di firma degli atti da parte di persone affette da cecit&agrave;\\\" (1095) ^^http://www.w3.org/2001/XMLSchema#string",
+      "scheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.progetto.legge:camera;19.legislatura;1095"
+    },
+    {
+      "uri": "http://dati.camera.it/ocd/attocamera.rdf/ac19_1096",
+      "slug": "ac19_1096",
+      "tipo": "Progetto di Legge",
+      "numero": "1096",
+      "titolo": "RUFFINO: \"Disposizioni concernenti lo svolgimento dell&rsquo;esame di idoneit&agrave; per il conseguimento della patente di guida di categoria B presso le autoscuole\" (1096)",
+      "label": "RUFFINO: \\\"Disposizioni concernenti lo svolgimento dell&rsquo;esame di idoneit&agrave; per il conseguimento della patente di guida di categoria B presso le autoscuole\\\" (1096) ^^http://www.w3.org/2001/XMLSchema#string",
+      "scheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.progetto.legge:camera;19.legislatura;1096"
+    },
+    {
+      "uri": "http://dati.camera.it/ocd/attocamera.rdf/ac19_1097",
+      "slug": "ac19_1097",
+      "tipo": "Progetto di Legge",
+      "numero": "1097",
+      "titolo": "RUFFINO: \"Modifiche all&rsquo;articolo 37-&lt;em&gt;bis&lt;/em&gt; del testo unico delle leggi in materia bancaria e creditizia, di cui al decreto legislativo 1&deg; settembre 1993, n. 385, concernente la disciplina del gruppo bancario cooperativo\" (1097)",
+      "label": "RUFFINO: \\\"Modifiche all&rsquo;articolo 37-&lt;em&gt;bis&lt;/em&gt; del testo unico delle leggi in materia bancaria e creditizia, di cui al decreto legislativo 1&deg; settembre 1993, n. 385, concernente la disciplina del gruppo bancario cooperativo\\\" (1097) ^^http://www.w3.org/2001/XMLSchema#string",
+      "scheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.progetto.legge:camera;19.legislatura;1097"
+    },
+    {
+      "uri": "http://dati.camera.it/ocd/attocamera.rdf/ac19_1098",
+      "slug": "ac19_1098",
+      "tipo": "Progetto di Legge",
+      "numero": "1098",
+      "titolo": "SERRACCHIANI ed altri: \"Istituzione del documento di regolarit&agrave; lavorativa\" (1098)",
+      "label": "SERRACCHIANI ed altri: \\\"Istituzione del documento di regolarit&agrave; lavorativa\\\" (1098) ^^http://www.w3.org/2001/XMLSchema#string",
+      "scheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.progetto.legge:camera;19.legislatura;1098"
+    },
+    {
+      "uri": "http://dati.camera.it/ocd/attocamera.rdf/ac19_1099",
+      "slug": "ac19_1099",
+      "tipo": "Progetto di Legge",
+      "numero": "1099",
+      "titolo": "DI GIUSEPPE ed altri: \"Modifica all&rsquo;articolo 1, comma 741, della legge 27 dicembre 2019, n. 160, in materia di applicazione dell&rsquo;imposta municipale propria agli immobili posseduti nel territorio nazionale da cittadini iscritti nell&rsquo;Anagrafe degli italiani residenti all&rsquo;estero\" (1099)",
+      "label": "DI GIUSEPPE ed altri: \\\"Modifica all&rsquo;articolo 1, comma 741, della legge 27 dicembre 2019, n. 160, in materia di applicazione dell&rsquo;imposta municipale propria agli immobili posseduti nel territorio nazionale da cittadini iscritti nell&rsquo;Anagrafe degli italiani residenti all&rsquo;estero\\\" (1099) ^^http://www.w3.org/2001/XMLSchema#string",
+      "scheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.progetto.legge:camera;19.legislatura;1099"
+    },
+    {
+      "uri": "http://dati.camera.it/ocd/attocamera.rdf/ac19_11",
+      "slug": "ac19_11",
+      "tipo": "Progetto di Legge",
+      "numero": "11",
+      "titolo": "SCHULLIAN ed altri: \"Modifiche agli articoli 563 e 2655 del codice civile, in materia di rinuncia all&rsquo;azione di restituzione di beni immobili oggetto di donazione\" (11)",
+      "label": "SCHULLIAN ed altri: \\\"Modifiche agli articoli 563 e 2655 del codice civile, in materia di rinuncia all&rsquo;azione di restituzione di beni immobili oggetto di donazione\\\" (11) ^^http://www.w3.org/2001/XMLSchema#string",
+      "scheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.progetto.legge:camera;19.legislatura;11"
+    },
+    {
+      "uri": "http://dati.camera.it/ocd/attocamera.rdf/ac19_110",
+      "slug": "ac19_110",
+      "tipo": "Progetto di Legge",
+      "numero": "110",
+      "titolo": "PANIZZUT ed altri: &quot;Modifica all&rsquo;articolo 5 della legge 3 marzo 1951, n. 178, in materia di revoca delle onorificenze dell&rsquo;Ordine al merito della Repubblica italiana&quot; (110)",
+      "label": "PANIZZUT ed altri: &quot;Modifica all&rsquo;articolo 5 della legge 3 marzo 1951, n. 178, in materia di revoca delle onorificenze dell&rsquo;Ordine al merito della Repubblica italiana&quot; (110) ^^http://www.w3.org/2001/XMLSchema#string",
+      "scheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.progetto.legge:camera;19.legislatura;110"
+    },
+    {
+      "uri": "http://dati.camera.it/ocd/attocamera.rdf/ac19_1100",
+      "slug": "ac19_1100",
+      "tipo": "Progetto di Legge",
+      "numero": "1100",
+      "titolo": "CONSIGLIO REGIONALE DELLA TOSCANA: \"Disposizioni per l&rsquo;introduzione delle attivit&agrave; di lettura libera nel primo e nel secondo ciclo di istruzione. Modifica alla legge 13 febbraio 2020, n. 15, recante disposizioni per la promozione e il sostegno della lettura\" (1100)",
+      "label": "CONSIGLIO REGIONALE DELLA TOSCANA: \\\"Disposizioni per l&rsquo;introduzione delle attivit&agrave; di lettura libera nel primo e nel secondo ciclo di istruzione. Modifica alla legge 13 febbraio 2020, n. 15, recante disposizioni per la promozione e il sostegno della lettura\\\" (1100) ^^http://www.w3.org/2001/XMLSchema#string",
+      "scheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.progetto.legge:camera;19.legislatura;1100"
+    },
+    {
+      "uri": "http://dati.camera.it/ocd/attocamera.rdf/ac19_1101",
+      "slug": "ac19_1101",
+      "tipo": "Progetto di Legge",
+      "numero": "1101",
+      "titolo": "AMATO ed altri: &quot;Proroga dell&rsquo;efficacia delle graduatorie dei concorsi ordinari per il reclutamento del personale docente per posti comuni e di sostegno della scuola dell&rsquo;infanzia e primaria e della scuola secondaria di primo e secondo grado, indetti con decreti del Capo del Dipartimento per il sistema educativo di istruzione e formazione 21 aprile 2020, pubblicati nella &lt;em&gt;Gazzetta Ufficiale&lt;/em&gt;, 4&ordf; serie speciale, n. 34 del 28 aprile 2020&quot; (1101)",
+      "label": "AMATO ed altri: &quot;Proroga dell&rsquo;efficacia delle graduatorie dei concorsi ordinari per il reclutamento del personale docente per posti comuni e di sostegno della scuola dell&rsquo;infanzia e primaria e della scuola secondaria di primo e secondo grado, indetti con decreti del Capo del Dipartimento per il sistema educativo di istruzione e formazione 21 aprile 2020, pubblicati nella &lt;em&gt;Gazzetta Ufficiale&lt;/em&gt;, 4&ordf; serie speciale, n. 34 del 28 aprile 2020&quot; (1101) ^^http://www.w3.org/2001/XMLSchema#string",
+      "scheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.progetto.legge:camera;19.legislatura;1101"
+    },
+    {
+      "uri": "http://dati.camera.it/ocd/attocamera.rdf/ac19_1102",
+      "slug": "ac19_1102",
+      "tipo": "Progetto di Legge",
+      "numero": "1102",
+      "titolo": "AMATO ed altri: \"Delega al Governo per l&rsquo;introduzione, in via sperimentale, dell&rsquo;insegnamento curriculare dell&rsquo;educazione all&rsquo;immagine e al linguaggio delle arti audiovisive nelle scuole secondarie di secondo grado\" (1102)",
+      "label": "AMATO ed altri: \\\"Delega al Governo per l&rsquo;introduzione, in via sperimentale, dell&rsquo;insegnamento curriculare dell&rsquo;educazione all&rsquo;immagine e al linguaggio delle arti audiovisive nelle scuole secondarie di secondo grado\\\" (1102) ^^http://www.w3.org/2001/XMLSchema#string",
+      "scheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.progetto.legge:camera;19.legislatura;1102"
+    },
+    {
+      "uri": "http://dati.camera.it/ocd/attocamera.rdf/ac19_1103",
+      "slug": "ac19_1103",
+      "tipo": "Progetto di Legge",
+      "numero": "1103",
+      "titolo": "SIMIANI: \"Modifica all&rsquo;articolo 2 della legge 20 dicembre 2012, n. 238, concernente la concessione di un contributo al comune di Livorno e alla Fondazione &ldquo;Teatro della citt&agrave; di Livorno &ndash; Carlo Goldoni&rdquo; per la realizzazione del Mascagni Festival\" (1103)",
+      "label": "SIMIANI: \\\"Modifica all&rsquo;articolo 2 della legge 20 dicembre 2012, n. 238, concernente la concessione di un contributo al comune di Livorno e alla Fondazione &ldquo;Teatro della citt&agrave; di Livorno &ndash; Carlo Goldoni&rdquo; per la realizzazione del Mascagni Festival\\\" (1103) ^^http://www.w3.org/2001/XMLSchema#string",
+      "scheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.progetto.legge:camera;19.legislatura;1103"
+    },
+    {
+      "uri": "http://dati.camera.it/ocd/attocamera.rdf/ac19_1104",
+      "slug": "ac19_1104",
+      "tipo": "Progetto di Legge",
+      "numero": "1104",
+      "titolo": "BARZOTTI: \"Disposizioni concernenti la conservazione del posto di lavoro e i permessi retribuiti per esami e cure mediche in favore dei lavoratori affetti da malattie oncologiche, invalidanti o croniche\" (1104)",
+      "label": "BARZOTTI: \"Disposizioni concernenti la conservazione del posto di lavoro e i permessi retribuiti per esami e cure mediche in favore dei lavoratori affetti da malattie oncologiche, invalidanti o croniche\" (1104)",
+      "scheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.progetto.legge:camera;19.legislatura;1104"
+    },
+    {
+      "uri": "http://dati.camera.it/ocd/attocamera.rdf/ac19_1105",
+      "slug": "ac19_1105",
+      "tipo": "Progetto di Legge",
+      "numero": "1105",
+      "titolo": "ZANELLA: \"Modifiche alla legge 4 maggio 1983, n. 184, in materia di adozione dei minori da parte delle persone dello stesso sesso unite in unione civile, delle persone non coniugate conviventi e delle persone singole\" (1105)",
+      "label": "ZANELLA: \"Modifiche alla legge 4 maggio 1983, n. 184, in materia di adozione dei minori da parte delle persone dello stesso sesso unite in unione civile, delle persone non coniugate conviventi e delle persone singole\" (1105)",
+      "scheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.progetto.legge:camera;19.legislatura;1105"
+    },
+    {
+      "uri": "http://dati.camera.it/ocd/attocamera.rdf/ac19_1106",
+      "slug": "ac19_1106",
+      "tipo": "Progetto di Legge",
+      "numero": "1106",
+      "titolo": "CARETTA ed altri: \"Disposizioni per la promozione e la valorizzazione del patrimonio collinare e dell&rsquo;agricoltura di collina\" (1106)",
+      "label": "CARETTA ed altri: \\\"Disposizioni per la promozione e la valorizzazione del patrimonio collinare e dell&rsquo;agricoltura di collina\\\" (1106) ^^http://www.w3.org/2001/XMLSchema#string",
+      "scheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.progetto.legge:camera;19.legislatura;1106"
+    },
+    {
+      "uri": "http://dati.camera.it/ocd/attocamera.rdf/ac19_1107",
+      "slug": "ac19_1107",
+      "tipo": "Progetto di Legge",
+      "numero": "1107",
+      "titolo": "GRIMALDI ed altri: \"Modifiche al testo unico delle disposizioni legislative in materia di tutela e sostegno della maternit&agrave; e della paternit&agrave;, di cui al decreto legislativo 26 marzo 2001, n. 151, concernenti l&rsquo;incremento dell&rsquo;indennit&agrave; di maternit&agrave;, l&rsquo;introduzione del congedo di paternit&agrave; obbligatorio e l&rsquo;estensione della disciplina alle coppie omogenitoriali, nonch&eacute; delega al Governo per la determinazione dell&rsquo;indennit&agrave; di paternit&agrave; per i liberi professionisti\" (1107)",
+      "label": "GRIMALDI ed altri: \\\"Modifiche al testo unico delle disposizioni legislative in materia di tutela e sostegno della maternit&agrave; e della paternit&agrave;, di cui al decreto legislativo 26 marzo 2001, n. 151, concernenti l&rsquo;incremento dell&rsquo;indennit&agrave; di maternit&agrave;, l&rsquo;introduzione del congedo di paternit&agrave; obbligatorio e l&rsquo;estensione della disciplina alle coppie omogenitoriali, nonch&eacute; delega al Governo per la determinazione dell&rsquo;indennit&agrave; di paternit&agrave; per i liberi professionisti\\\" (1107) ^^http://www.w3.org/2001/XMLSchema#string",
+      "scheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.progetto.legge:camera;19.legislatura;1107"
+    },
+    {
+      "uri": "http://dati.camera.it/ocd/attocamera.rdf/ac19_1108",
+      "slug": "ac19_1108",
+      "tipo": "Progetto di Legge",
+      "numero": "1108",
+      "titolo": "SCARPA ed altri: \"Istituzione del servizio di supporto e assistenza psicologica presso gli istituti universitari e scolastici di ogni ordine e grado\" (1108)",
+      "label": "SCARPA ed altri: \"Istituzione del servizio di supporto e assistenza psicologica presso gli istituti universitari e scolastici di ogni ordine e grado\" (1108)",
+      "scheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.progetto.legge:camera;19.legislatura;1108"
+    },
+    {
+      "uri": "http://dati.camera.it/ocd/attocamera.rdf/ac19_1109",
+      "slug": "ac19_1109",
+      "tipo": "Progetto di Legge",
+      "numero": "1109",
+      "titolo": "BRUZZONE ed altri: \"Modifiche al codice penale e altre disposizioni in materia di reati contro gli animali, di tutela degli animali di affezione e di compagnia e di assistenza veterinaria gratuita\" (1109)",
+      "label": "BRUZZONE ed altri: \"Modifiche al codice penale e altre disposizioni in materia di reati contro gli animali, di tutela degli animali di affezione e di compagnia e di assistenza veterinaria gratuita\" (1109)",
+      "scheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.progetto.legge:camera;19.legislatura;1109"
+    },
+    {
+      "uri": "http://dati.camera.it/ocd/attocamera.rdf/ac19_111",
+      "slug": "ac19_111",
+      "tipo": "Progetto di Legge",
+      "numero": "111",
+      "titolo": "PANIZZUT ed altri: \"Introduzione degli articoli 18-&lt;em&gt;bis&lt;/em&gt; e 18-&lt;em&gt;ter&lt;/em&gt; della legge 1&deg; aprile 1999, n. 91, in materia di anonimato dei donatori di organi e di tessuti a scopo di trapianto e di coloro che li ricevono\" (111)",
+      "label": "PANIZZUT ed altri: \\\"Introduzione degli articoli 18-&lt;em&gt;bis&lt;/em&gt; e 18-&lt;em&gt;ter&lt;/em&gt; della legge 1&deg; aprile 1999, n. 91, in materia di anonimato dei donatori di organi e di tessuti a scopo di trapianto e di coloro che li ricevono\\\" (111) ^^http://www.w3.org/2001/XMLSchema#string",
+      "scheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.progetto.legge:camera;19.legislatura;111"
+    },
+    {
+      "uri": "http://dati.camera.it/ocd/attocamera.rdf/ac19_1110",
+      "slug": "ac19_1110",
+      "tipo": "Progetto di Legge",
+      "numero": "1110",
+      "titolo": "CAROTENUTO: \"Modifiche alla legge 31 luglio 1997, n. 249, e al decreto legislativo 8 novembre 2021, n. 208, e altre disposizioni in materia di composizione dell&rsquo;Autorit&agrave; per le garanzie nelle comunicazioni, di organizzazione della societ&agrave; concessionaria del servizio pubblico generale radiotelevisivo e di vigilanza sullo svolgimento del medesimo servizio\" (1110)",
+      "label": "CAROTENUTO: \\\"Modifiche alla legge 31 luglio 1997, n. 249, e al decreto legislativo 8 novembre 2021, n. 208, e altre disposizioni in materia di composizione dell&rsquo;Autorit&agrave; per le garanzie nelle comunicazioni, di organizzazione della societ&agrave; concessionaria del servizio pubblico generale radiotelevisivo e di vigilanza sullo svolgimento del medesimo servizio\\\" (1110) ^^http://www.w3.org/2001/XMLSchema#string",
+      "scheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.progetto.legge:camera;19.legislatura;1110"
+    },
+    {
+      "uri": "http://dati.camera.it/ocd/attocamera.rdf/ac19_1111",
+      "slug": "ac19_1111",
+      "tipo": "Progetto di Legge",
+      "numero": "1111",
+      "titolo": "BERRUTO ed altri: \"Delega al Governo per l&rsquo;adozione di norme volte a conciliare lo studio universitario con la pratica sportiva agonistica\" (1111)",
+      "label": "BERRUTO ed altri: \\\"Delega al Governo per l&rsquo;adozione di norme volte a conciliare lo studio universitario con la pratica sportiva agonistica\\\" (1111) ^^http://www.w3.org/2001/XMLSchema#string",
+      "scheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.progetto.legge:camera;19.legislatura;1111"
+    },
+    {
+      "uri": "http://dati.camera.it/ocd/attocamera.rdf/ac19_1112",
+      "slug": "ac19_1112",
+      "tipo": "Progetto di Legge",
+      "numero": "1112",
+      "titolo": "S. 591. - &quot;Conversione in legge, con modificazioni, del decreto-legge 10 marzo 2023, n. 20, recante disposizioni urgenti in materia di flussi di ingresso legale dei lavoratori stranieri e di prevenzione e contrasto all&#39;immigrazione irregolare&quot;&nbsp;&lt;em&gt;(approvato dal Senato)&lt;/em&gt; (1112)",
+      "label": "S. 591. - &quot;Conversione in legge, con modificazioni, del decreto-legge 10 marzo 2023, n. 20, recante disposizioni urgenti in materia di flussi di ingresso legale dei lavoratori stranieri e di prevenzione e contrasto all&#39;immigrazione irregolare&quot;&nbsp;&lt;em&gt;(approvato dal Senato)&lt;/em&gt; (1112) ^^http://www.w3.org/2001/XMLSchema#string",
+      "scheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.progetto.legge:camera;19.legislatura;1112"
+    },
+    {
+      "uri": "http://dati.camera.it/ocd/attocamera.rdf/ac19_1113",
+      "slug": "ac19_1113",
+      "tipo": "Progetto di Legge",
+      "numero": "1113",
+      "titolo": "SERRACCHIANI ed altri: \"Disposizioni in materia di tutela della salute mentale volte all&rsquo;attuazione e allo sviluppo dei princ&igrave;pi di cui alla legge 13 maggio 1978, n. 180\" (1113)",
+      "label": "SERRACCHIANI ed altri: \\\"Disposizioni in materia di tutela della salute mentale volte all&rsquo;attuazione e allo sviluppo dei princ&igrave;pi di cui alla legge 13 maggio 1978, n. 180\\\" (1113) ^^http://www.w3.org/2001/XMLSchema#string",
+      "scheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.progetto.legge:camera;19.legislatura;1113"
+    },
+    {
+      "uri": "http://dati.camera.it/ocd/attocamera.rdf/ac19_1114",
+      "slug": "ac19_1114",
+      "tipo": "Progetto di Legge",
+      "numero": "1114",
+      "titolo": "\"Conversione in legge del decreto-legge 22 aprile 2023, n. 44, recante disposizioni urgenti per il rafforzamento della capacit&agrave; amministrativa delle amministrazioni pubbliche\" (1114)",
+      "label": "\\\"Conversione in legge del decreto-legge 22 aprile 2023, n. 44, recante disposizioni urgenti per il rafforzamento della capacit&agrave; amministrativa delle amministrazioni pubbliche\\\" (1114) ^^http://www.w3.org/2001/XMLSchema#string",
+      "scheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.progetto.legge:camera;19.legislatura;1114"
+    },
+    {
+      "uri": "http://dati.camera.it/ocd/attocamera.rdf/ac19_1115",
+      "slug": "ac19_1115",
+      "tipo": "Progetto di Legge",
+      "numero": "1115",
+      "titolo": "S. 605. - \"Conversione in legge, con modificazioni, del decreto-legge 17 marzo 2023, n. 25, recante disposizioni urgenti in materia di emissioni e circolazione di determinati strumenti finanziari in forma digitale e di semplificazione della sperimentazione FinTech&raquo; &lt;em&gt;(approvato dal Senato)&lt;/em&gt;\" (1115)",
+      "label": "S. 605. - \\\"Conversione in legge, con modificazioni, del decreto-legge 17 marzo 2023, n. 25, recante disposizioni urgenti in materia di emissioni e circolazione di determinati strumenti finanziari in forma digitale e di semplificazione della sperimentazione FinTech&raquo; &lt;em&gt;(approvato dal Senato)&lt;/em&gt;\\\" (1115) ^^http://www.w3.org/2001/XMLSchema#string",
+      "scheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.progetto.legge:camera;19.legislatura;1115"
+    },
+    {
+      "uri": "http://dati.camera.it/ocd/attocamera.rdf/ac19_1116",
+      "slug": "ac19_1116",
+      "tipo": "Progetto di Legge",
+      "numero": "1116",
+      "titolo": "ZINZI ed altri: \"Abrogazione dei commi da 47 a 53 dell&rsquo;articolo 2 del decreto-legge 3 ottobre 2006, n. 262, convertito, con modificazioni, dalla legge 24 novembre 2006, n. 286. Abolizione dell&rsquo;imposta sulle successioni e donazioni\" (1116)",
+      "label": "ZINZI ed altri: \\\"Abrogazione dei commi da 47 a 53 dell&rsquo;articolo 2 del decreto-legge 3 ottobre 2006, n. 262, convertito, con modificazioni, dalla legge 24 novembre 2006, n. 286. Abolizione dell&rsquo;imposta sulle successioni e donazioni\\\" (1116) ^^http://www.w3.org/2001/XMLSchema#string",
+      "scheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.progetto.legge:camera;19.legislatura;1116"
+    },
+    {
+      "uri": "http://dati.camera.it/ocd/attocamera.rdf/ac19_1117",
+      "slug": "ac19_1117",
+      "tipo": "Progetto di Legge",
+      "numero": "1117",
+      "titolo": "ZINZI ed altri: \"Modifica all&rsquo;articolo 142 del codice dei beni culturali e del paesaggio, di cui al decreto legislativo 22 gennaio 2004, n. 42, in materia di disciplina del vincolo paesaggistico per le aree urbane comprese in parchi o riserve regionali\" (1117)",
+      "label": "ZINZI ed altri: \\\"Modifica all&rsquo;articolo 142 del codice dei beni culturali e del paesaggio, di cui al decreto legislativo 22 gennaio 2004, n. 42, in materia di disciplina del vincolo paesaggistico per le aree urbane comprese in parchi o riserve regionali\\\" (1117) ^^http://www.w3.org/2001/XMLSchema#string",
+      "scheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.progetto.legge:camera;19.legislatura;1117"
+    },
+    {
+      "uri": "http://dati.camera.it/ocd/attocamera.rdf/ac19_1118",
+      "slug": "ac19_1118",
+      "tipo": "Progetto di Legge",
+      "numero": "1118",
+      "titolo": "PENZA ed altri: \"Disposizioni in materia di visite dei membri del Parlamento alle strutture sanitarie e socioassistenziali, alle comunit&agrave; terapeutiche, alle strutture che ospitano minori, ai centri di accoglienza e permanenza di migranti e alle discariche di rifiuti\" (1118)",
+      "label": "PENZA ed altri: \\\"Disposizioni in materia di visite dei membri del Parlamento alle strutture sanitarie e socioassistenziali, alle comunit&agrave; terapeutiche, alle strutture che ospitano minori, ai centri di accoglienza e permanenza di migranti e alle discariche di rifiuti\\\" (1118) ^^http://www.w3.org/2001/XMLSchema#string",
+      "scheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.progetto.legge:camera;19.legislatura;1118"
+    },
+    {
+      "uri": "http://dati.camera.it/ocd/attocamera.rdf/ac19_1119",
+      "slug": "ac19_1119",
+      "tipo": "Progetto di Legge",
+      "numero": "1119",
+      "titolo": "MAGI: \"Modifiche al codice penale, al codice di procedura penale e alla legge 26 luglio 1975, n. 354, in materia di imputabilit&agrave; e di misure alternative alla detenzione per le persone con disabilit&agrave; psicosociale\" (1119)",
+      "label": "MAGI: \\\"Modifiche al codice penale, al codice di procedura penale e alla legge 26 luglio 1975, n. 354, in materia di imputabilit&agrave; e di misure alternative alla detenzione per le persone con disabilit&agrave; psicosociale\\\" (1119) ^^http://www.w3.org/2001/XMLSchema#string",
+      "scheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.progetto.legge:camera;19.legislatura;1119"
+    },
+    {
+      "uri": "http://dati.camera.it/ocd/attocamera.rdf/ac19_112",
+      "slug": "ac19_112",
+      "tipo": "Progetto di Legge",
+      "numero": "112",
+      "titolo": "PANIZZUT ed altri: &quot;Disposizioni in favore delle persone affette da fibromialgia e riconoscimento di essa come malattia invalidante&quot; (112)",
+      "label": "PANIZZUT ed altri: &quot;Disposizioni in favore delle persone affette da fibromialgia e riconoscimento di essa come malattia invalidante&quot; (112) ^^http://www.w3.org/2001/XMLSchema#string",
+      "scheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.progetto.legge:camera;19.legislatura;112"
+    },
+    {
+      "uri": "http://dati.camera.it/ocd/attocamera.rdf/ac19_1120",
+      "slug": "ac19_1120",
+      "tipo": "Progetto di Legge",
+      "numero": "1120",
+      "titolo": "CALDERONE ed altri: &quot;Modifiche agli articoli 610 e 615 del codice di procedura penale in materia di declaratoria di estinzione del reato per intervenuta prescrizione nel giudizio di cassazione&quot; (1120)",
+      "label": "CALDERONE ed altri: &quot;Modifiche agli articoli 610 e 615 del codice di procedura penale in materia di declaratoria di estinzione del reato per intervenuta prescrizione nel giudizio di cassazione&quot; (1120) ^^http://www.w3.org/2001/XMLSchema#string",
+      "scheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.progetto.legge:camera;19.legislatura;1120"
+    },
+    {
+      "uri": "http://dati.camera.it/ocd/attocamera.rdf/ac19_1121",
+      "slug": "ac19_1121",
+      "tipo": "Progetto di Legge",
+      "numero": "1121",
+      "titolo": "D'ORSO ed altri: \"Disposizioni per sostenere l&rsquo;accesso alla locazione di immobili abitativi e il pagamento dei canoni nei casi di morosit&agrave; incolpevole\" (1121)",
+      "label": "D'ORSO ed altri: \\\"Disposizioni per sostenere l&rsquo;accesso alla locazione di immobili abitativi e il pagamento dei canoni nei casi di morosit&agrave; incolpevole\\\" (1121) ^^http://www.w3.org/2001/XMLSchema#string",
+      "scheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.progetto.legge:camera;19.legislatura;1121"
+    },
+    {
+      "uri": "http://dati.camera.it/ocd/attocamera.rdf/ac19_1122",
+      "slug": "ac19_1122",
+      "tipo": "Progetto di Legge",
+      "numero": "1122",
+      "titolo": "ZIELLO ed altri: \"Divieto dell&rsquo;uso della catena per gli animali di affezione\" (1122)",
+      "label": "ZIELLO ed altri: \\\"Divieto dell&rsquo;uso della catena per gli animali di affezione\\\" (1122) ^^http://www.w3.org/2001/XMLSchema#string",
+      "scheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.progetto.legge:camera;19.legislatura;1122"
+    },
+    {
+      "uri": "http://dati.camera.it/ocd/attocamera.rdf/ac19_1123",
+      "slug": "ac19_1123",
+      "tipo": "Progetto di Legge",
+      "numero": "1123",
+      "titolo": "CARETTA ed altri: \"Riconoscimento della figura dell&rsquo;agricoltore e dell&rsquo;allevatore custodi dell&rsquo;ambiente e del territorio e delega al Governo per la tutela e la promozione dell&rsquo;attivit&agrave; da essi svolta\" (1123)",
+      "label": "CARETTA ed altri: \\\"Riconoscimento della figura dell&rsquo;agricoltore e dell&rsquo;allevatore custodi dell&rsquo;ambiente e del territorio e delega al Governo per la tutela e la promozione dell&rsquo;attivit&agrave; da essi svolta\\\" (1123) ^^http://www.w3.org/2001/XMLSchema#string",
+      "scheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.progetto.legge:camera;19.legislatura;1123"
+    },
+    {
+      "uri": "http://dati.camera.it/ocd/attocamera.rdf/ac19_1124",
+      "slug": "ac19_1124",
+      "tipo": "Progetto di Legge",
+      "numero": "1124",
+      "titolo": "&quot;Ratifica ed esecuzione dell&rsquo;Accordo tra il Governo della Repubblica italiana e il Governo della Repubblica di San Marino concernente il riconoscimento e l&rsquo;esecuzione delle decisioni giudiziarie di sequestro e confisca, nonch&eacute; la destinazione dei beni confiscati, fatto a Roma il 26 maggio 2021&quot; (1124)",
+      "label": "&quot;Ratifica ed esecuzione dell&rsquo;Accordo tra il Governo della Repubblica italiana e il Governo della Repubblica di San Marino concernente il riconoscimento e l&rsquo;esecuzione delle decisioni giudiziarie di sequestro e confisca, nonch&eacute; la destinazione dei beni confiscati, fatto a Roma il 26 maggio 2021&quot; (1124) ^^http://www.w3.org/2001/XMLSchema#string",
+      "scheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.progetto.legge:camera;19.legislatura;1124"
+    },
+    {
+      "uri": "http://dati.camera.it/ocd/attocamera.rdf/ac19_1125",
+      "slug": "ac19_1125",
+      "tipo": "Progetto di Legge",
+      "numero": "1125",
+      "titolo": "CARE': \"Disposizioni concernenti la gratuit&agrave; delle cure ospedaliere prestate dal Servizio sanitario nazionale ai cittadini italiani residenti all&#39;estero, temporaneamente presenti in Italia\" (1125)",
+      "label": "CARE': \\\"Disposizioni concernenti la gratuit&agrave; delle cure ospedaliere prestate dal Servizio sanitario nazionale ai cittadini italiani residenti all&#39;estero, temporaneamente presenti in Italia\\\" (1125) ^^http://www.w3.org/2001/XMLSchema#string",
+      "scheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.progetto.legge:camera;19.legislatura;1125"
+    },
+    {
+      "uri": "http://dati.camera.it/ocd/attocamera.rdf/ac19_1126",
+      "slug": "ac19_1126",
+      "tipo": "Progetto di Legge",
+      "numero": "1126",
+      "titolo": "PALOMBI: \"Modifiche al codice penale e alle disposizioni sul processo penale a carico di imputati minorenni, di cui al decreto del Presidente della Repubblica 22 settembre 1988, n. 448, in materia di reati commessi dai partecipanti a bande criminali minorili\" (1126)",
+      "label": "PALOMBI: \"Modifiche al codice penale e alle disposizioni sul processo penale a carico di imputati minorenni, di cui al decreto del Presidente della Repubblica 22 settembre 1988, n. 448, in materia di reati commessi dai partecipanti a bande criminali minorili\" (1126)",
+      "scheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.progetto.legge:camera;19.legislatura;1126"
+    },
+    {
+      "uri": "http://dati.camera.it/ocd/attocamera.rdf/ac19_1127",
+      "slug": "ac19_1127",
+      "tipo": "Progetto di Legge",
+      "numero": "1127",
+      "titolo": "LATINI e BAGNAI: \"Modifica all&rsquo;articolo 2 della legge 20 dicembre 2012, n. 238, concernente la concessione di un contributo all&rsquo;Associazione Arena Sferisterio &ndash; Teatro di tradizione, per l&rsquo;organizzazione del Macerata Opera Festival\" (1127)",
+      "label": "LATINI e BAGNAI: \\\"Modifica all&rsquo;articolo 2 della legge 20 dicembre 2012, n. 238, concernente la concessione di un contributo all&rsquo;Associazione Arena Sferisterio &ndash; Teatro di tradizione, per l&rsquo;organizzazione del Macerata Opera Festival\\\" (1127) ^^http://www.w3.org/2001/XMLSchema#string",
+      "scheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.progetto.legge:camera;19.legislatura;1127"
+    },
+    {
+      "uri": "http://dati.camera.it/ocd/attocamera.rdf/ac19_1128",
+      "slug": "ac19_1128",
+      "tipo": "Progetto di Legge",
+      "numero": "1128",
+      "titolo": "RIZZETTO e LUCASELLI: \"Delega al Governo per la modifica della normativa sul diritto alla conservazione del posto di lavoro per i lavoratori dipendenti e sull&rsquo;indennit&agrave; di malattia per i lavoratori autonomi affetti da patologie oncologiche o altre gravi malattie temporaneamente invalidanti\" (1128)",
+      "label": "RIZZETTO e LUCASELLI: \\\"Delega al Governo per la modifica della normativa sul diritto alla conservazione del posto di lavoro per i lavoratori dipendenti e sull&rsquo;indennit&agrave; di malattia per i lavoratori autonomi affetti da patologie oncologiche o altre gravi malattie temporaneamente invalidanti\\\" (1128) ^^http://www.w3.org/2001/XMLSchema#string",
+      "scheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.progetto.legge:camera;19.legislatura;1128"
+    },
+    {
+      "uri": "http://dati.camera.it/ocd/attocamera.rdf/ac19_1129",
+      "slug": "ac19_1129",
+      "tipo": "Progetto di Legge",
+      "numero": "1129",
+      "titolo": "ZINZI ed altri: \"Modifica all&rsquo;articolo 3 del testo unico di cui al decreto del Presidente della Repubblica 6 giugno 2001, n. 380, in materia di interventi di ristrutturazione edilizia\" (1129)",
+      "label": "ZINZI ed altri: \\\"Modifica all&rsquo;articolo 3 del testo unico di cui al decreto del Presidente della Repubblica 6 giugno 2001, n. 380, in materia di interventi di ristrutturazione edilizia\\\" (1129) ^^http://www.w3.org/2001/XMLSchema#string",
+      "scheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.progetto.legge:camera;19.legislatura;1129"
+    },
+    {
+      "uri": "http://dati.camera.it/ocd/attocamera.rdf/ac19_113",
+      "slug": "ac19_113",
+      "tipo": "Progetto di Legge",
+      "numero": "113",
+      "titolo": "PANIZZUT ed altri: \"Disposizioni per il riconoscimento e la promozione della mototerapia\" (113)",
+      "label": "PANIZZUT ed altri: \"Disposizioni per il riconoscimento e la promozione della mototerapia\" (113)",
+      "scheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.progetto.legge:camera;19.legislatura;113"
+    },
+    {
+      "uri": "http://dati.camera.it/ocd/attocamera.rdf/ac19_1130",
+      "slug": "ac19_1130",
+      "tipo": "Progetto di Legge",
+      "numero": "1130",
+      "titolo": "CARETTA ed altri: \"Disposizioni per il contrasto e il contenimento della diffusione del bostrico tipografo\" (1130)",
+      "label": "CARETTA ed altri: \"Disposizioni per il contrasto e il contenimento della diffusione del bostrico tipografo\" (1130)",
+      "scheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.progetto.legge:camera;19.legislatura;1130"
+    },
+    {
+      "uri": "http://dati.camera.it/ocd/attocamera.rdf/ac19_1131",
+      "slug": "ac19_1131",
+      "tipo": "Progetto di Legge",
+      "numero": "1131",
+      "titolo": "RAMPELLI ed altri: \"Modifica all&rsquo;articolo 24 del decreto-legge 6 dicembre 2011, n. 201, convertito, con modificazioni, dalla legge 22 dicembre 2011, n. 214, in materia di criteri di equilibrio attuariale nella gestione delle casse previdenziali private\" (1131)",
+      "label": "RAMPELLI ed altri: \\\"Modifica all&rsquo;articolo 24 del decreto-legge 6 dicembre 2011, n. 201, convertito, con modificazioni, dalla legge 22 dicembre 2011, n. 214, in materia di criteri di equilibrio attuariale nella gestione delle casse previdenziali private\\\" (1131) ^^http://www.w3.org/2001/XMLSchema#string",
+      "scheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.progetto.legge:camera;19.legislatura;1131"
+    },
+    {
+      "uri": "http://dati.camera.it/ocd/attocamera.rdf/ac19_1132",
+      "slug": "ac19_1132",
+      "tipo": "Progetto di Legge",
+      "numero": "1132",
+      "titolo": "MALAVASI ed altri: \"Istituzione della figura professionale dell&rsquo;infermiere di famiglia e di comunit&agrave;\" (1132)",
+      "label": "MALAVASI ed altri: \\\"Istituzione della figura professionale dell&rsquo;infermiere di famiglia e di comunit&agrave;\\\" (1132) ^^http://www.w3.org/2001/XMLSchema#string",
+      "scheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.progetto.legge:camera;19.legislatura;1132"
+    },
+    {
+      "uri": "http://dati.camera.it/ocd/attocamera.rdf/ac19_1133",
+      "slug": "ac19_1133",
+      "tipo": "Progetto di Legge",
+      "numero": "1133",
+      "titolo": "MONTEMAGNI ed altri: \"Modifica all&rsquo;articolo 147 del decreto legislativo 3 aprile 2006, n. 152, e altre disposizioni in materia di gestione autonoma del servizio idrico integrato\" (1133)",
+      "label": "MONTEMAGNI ed altri: \\\"Modifica all&rsquo;articolo 147 del decreto legislativo 3 aprile 2006, n. 152, e altre disposizioni in materia di gestione autonoma del servizio idrico integrato\\\" (1133) ^^http://www.w3.org/2001/XMLSchema#string",
+      "scheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.progetto.legge:camera;19.legislatura;1133"
+    },
+    {
+      "uri": "http://dati.camera.it/ocd/attocamera.rdf/ac19_1134",
+      "slug": "ac19_1134",
+      "tipo": "Progetto di Legge",
+      "numero": "1134",
+      "titolo": "S. 411. - &quot;Modifiche al codice della propriet&agrave; industriale, di cui al decreto legislativo 10 febbraio 2005, n. 30&quot; &lt;em&gt;(approvato dal Senato)&lt;/em&gt; (1134)",
+      "label": "S. 411. - &quot;Modifiche al codice della propriet&agrave; industriale, di cui al decreto legislativo 10 febbraio 2005, n. 30&quot; &lt;em&gt;(approvato dal Senato)&lt;/em&gt; (1134) ^^http://www.w3.org/2001/XMLSchema#string",
+      "scheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.progetto.legge:camera;19.legislatura;1134"
+    },
+    {
+      "uri": "http://dati.camera.it/ocd/attocamera.rdf/ac19_1135",
+      "slug": "ac19_1135",
+      "tipo": "Progetto di Legge",
+      "numero": "1135",
+      "titolo": "S. 377. - Senatori BONGIORNO ed altri: &quot;Modifiche al decreto legislativo 20 febbraio 2006, n. 106, concernenti i poteri del procuratore della Repubblica nei casi di violazione dell&rsquo;articolo 362, comma 1-&lt;em&gt;ter&lt;/em&gt;, del codice di procedura penale, in materia di assunzione di informazioni dalle vittime di violenza domestica e di genere&quot; &lt;em&gt;(approvata dal Senato)&lt;/em&gt; (1135)",
+      "label": "S. 377. - Senatori BONGIORNO ed altri: &quot;Modifiche al decreto legislativo 20 febbraio 2006, n. 106, concernenti i poteri del procuratore della Repubblica nei casi di violazione dell&rsquo;articolo 362, comma 1-&lt;em&gt;ter&lt;/em&gt;, del codice di procedura penale, in materia di assunzione di informazioni dalle vittime di violenza domestica e di genere&quot; &lt;em&gt;(approvata dal Senato)&lt;/em&gt; (1135) ^^http://www.w3.org/2001/XMLSchema#string",
+      "scheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.progetto.legge:camera;19.legislatura;1135"
+    },
+    {
+      "uri": "http://dati.camera.it/ocd/attocamera.rdf/ac19_1136",
+      "slug": "ac19_1136",
+      "tipo": "Progetto di Legge",
+      "numero": "1136",
+      "titolo": "MADIA e QUARTAPELLE PROCOPIO: &quot;Disposizioni per la valorizzazione del pluralismo nella composizione degli organi di amministrazione delle societ&agrave; con pi&ugrave; di cento dipendenti&quot; (1136)",
+      "label": "MADIA e QUARTAPELLE PROCOPIO: &quot;Disposizioni per la valorizzazione del pluralismo nella composizione degli organi di amministrazione delle societ&agrave; con pi&ugrave; di cento dipendenti&quot; (1136) ^^http://www.w3.org/2001/XMLSchema#string",
+      "scheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.progetto.legge:camera;19.legislatura;1136"
+    },
+    {
+      "uri": "http://dati.camera.it/ocd/attocamera.rdf/ac19_1137",
+      "slug": "ac19_1137",
+      "tipo": "Progetto di Legge",
+      "numero": "1137",
+      "titolo": "CAVO ed altri: \"Disposizioni concernenti l&rsquo;indicazione del comune di nascita, ai fini della formazione dell&rsquo;atto di nascita, per i&nbsp;figli di genitori residenti in comuni sprovvisti&nbsp;di punti nascita\" (1137)",
+      "label": "CAVO ed altri: \\\"Disposizioni concernenti l&rsquo;indicazione del comune di nascita, ai fini della formazione dell&rsquo;atto di nascita, per i&nbsp;figli di genitori residenti in comuni sprovvisti&nbsp;di punti nascita\\\" (1137) ^^http://www.w3.org/2001/XMLSchema#string",
+      "scheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.progetto.legge:camera;19.legislatura;1137"
+    },
+    {
+      "uri": "http://dati.camera.it/ocd/attocamera.rdf/ac19_1138",
+      "slug": "ac19_1138",
+      "tipo": "Progetto di Legge",
+      "numero": "1138",
+      "titolo": "CARETTA e CIABURRO: \"Disposizioni per promuovere l&rsquo;impiego di tecniche di telerilevamento mediante impulsi &lt;em&gt;laser&lt;/em&gt; per il censimento e la gestione del patrimonio forestale nazionale\" (1138)",
+      "label": "CARETTA e CIABURRO: \\\"Disposizioni per promuovere l&rsquo;impiego di tecniche di telerilevamento mediante impulsi &lt;em&gt;laser&lt;/em&gt; per il censimento e la gestione del patrimonio forestale nazionale\\\" (1138) ^^http://www.w3.org/2001/XMLSchema#string",
+      "scheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.progetto.legge:camera;19.legislatura;1138"
+    },
+    {
+      "uri": "http://dati.camera.it/ocd/attocamera.rdf/ac19_1139",
+      "slug": "ac19_1139",
+      "tipo": "Progetto di Legge",
+      "numero": "1139",
+      "titolo": "MALAVASI: &quot;Disposizioni in materia di rapporto di lavoro esclusivo degli esercenti le professioni sanitarie infermieristiche, tecniche, della riabilitazione e della prevenzione, la professione ostetrica e la professione sociosanitaria di assistente sociale, dipendenti delle aziende e degli enti del Servizio sanitario nazionale&quot; (1139)",
+      "label": "MALAVASI: &quot;Disposizioni in materia di rapporto di lavoro esclusivo degli esercenti le professioni sanitarie infermieristiche, tecniche, della riabilitazione e della prevenzione, la professione ostetrica e la professione sociosanitaria di assistente sociale, dipendenti delle aziende e degli enti del Servizio sanitario nazionale&quot; (1139) ^^http://www.w3.org/2001/XMLSchema#string",
+      "scheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.progetto.legge:camera;19.legislatura;1139"
+    },
+    {
+      "uri": "http://dati.camera.it/ocd/attocamera.rdf/ac19_114",
+      "slug": "ac19_114",
+      "tipo": "Progetto di Legge",
+      "numero": "114",
+      "titolo": "PANIZZUT ed altri: \"Disposizioni e delega al Governo per la disciplina della figura del &lt;em&gt;caregiver&lt;/em&gt; familiare e per la promozione e il sostegno dell&rsquo;attivit&agrave; di assistenza e di cura da esso svolta\" (114)",
+      "label": "PANIZZUT ed altri: \\\"Disposizioni e delega al Governo per la disciplina della figura del &lt;em&gt;caregiver&lt;/em&gt; familiare e per la promozione e il sostegno dell&rsquo;attivit&agrave; di assistenza e di cura da esso svolta\\\" (114) ^^http://www.w3.org/2001/XMLSchema#string",
+      "scheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.progetto.legge:camera;19.legislatura;114"
+    },
+    {
+      "uri": "http://dati.camera.it/ocd/attocamera.rdf/ac19_1140",
+      "slug": "ac19_1140",
+      "tipo": "Progetto di Legge",
+      "numero": "1140",
+      "titolo": "MALAVASI ed altri: \"Istituzione dello psicologo di cure primarie\" (1140)",
+      "label": "MALAVASI ed altri: \"Istituzione dello psicologo di cure primarie\" (1140)",
+      "scheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.progetto.legge:camera;19.legislatura;1140"
+    },
+    {
+      "uri": "http://dati.camera.it/ocd/attocamera.rdf/ac19_1141",
+      "slug": "ac19_1141",
+      "tipo": "Progetto di Legge",
+      "numero": "1141",
+      "titolo": "ORRICO ed altri: \"Modifiche all&rsquo;articolo 3 del decreto legislativo 29 giugno 1996, n. 367, e altre disposizioni per la tutela e la promozione della danza nell&rsquo;attivit&agrave; delle fondazioni lirico-sinfonico-coreutiche\" (1141)",
+      "label": "ORRICO ed altri: \\\"Modifiche all&rsquo;articolo 3 del decreto legislativo 29 giugno 1996, n. 367, e altre disposizioni per la tutela e la promozione della danza nell&rsquo;attivit&agrave; delle fondazioni lirico-sinfonico-coreutiche\\\" (1141) ^^http://www.w3.org/2001/XMLSchema#string",
+      "scheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.progetto.legge:camera;19.legislatura;1141"
+    },
+    {
+      "uri": "http://dati.camera.it/ocd/attocamera.rdf/ac19_1142",
+      "slug": "ac19_1142",
+      "tipo": "Progetto di Legge",
+      "numero": "1142",
+      "titolo": "NISINI ed altri: \"Modifiche all&rsquo;articolo 8 della legge 21 ottobre 2005, n. 219, in materia di concessione di contributi previdenziali figurativi ai donatori di sangue e di emocomponenti che si astengono dal lavoro per l&rsquo;intera giornata in cui effettuano la donazione, e disposizioni concernenti il limite di et&agrave; per i donatori\" (1142)",
+      "label": "NISINI ed altri: \\\"Modifiche all&rsquo;articolo 8 della legge 21 ottobre 2005, n. 219, in materia di concessione di contributi previdenziali figurativi ai donatori di sangue e di emocomponenti che si astengono dal lavoro per l&rsquo;intera giornata in cui effettuano la donazione, e disposizioni concernenti il limite di et&agrave; per i donatori\\\" (1142) ^^http://www.w3.org/2001/XMLSchema#string",
+      "scheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.progetto.legge:camera;19.legislatura;1142"
+    },
+    {
+      "uri": "http://dati.camera.it/ocd/attocamera.rdf/ac19_1143",
+      "slug": "ac19_1143",
+      "tipo": "Progetto di Legge",
+      "numero": "1143",
+      "titolo": "GHIRRA ed altri: \"Istituzione e disciplina delle palestre della salute per la qualit&agrave; e la sicurezza delle strutture destinate all&rsquo;attivit&agrave; fisico-motoria\" (1143)",
+      "label": "GHIRRA ed altri: \\\"Istituzione e disciplina delle palestre della salute per la qualit&agrave; e la sicurezza delle strutture destinate all&rsquo;attivit&agrave; fisico-motoria\\\" (1143) ^^http://www.w3.org/2001/XMLSchema#string",
+      "scheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.progetto.legge:camera;19.legislatura;1143"
+    },
+    {
+      "uri": "http://dati.camera.it/ocd/attocamera.rdf/ac19_1144",
+      "slug": "ac19_1144",
+      "tipo": "Progetto di Legge",
+      "numero": "1144",
+      "titolo": "ROMANO: \"Modifica all&rsquo;articolo 1 della legge 7 febbraio 1992, n. 150, in materia di oggetti di antiquariato realizzati con prodotti derivati da specie vegetali e animali protette\" (1144)",
+      "label": "ROMANO: \\\"Modifica all&rsquo;articolo 1 della legge 7 febbraio 1992, n. 150, in materia di oggetti di antiquariato realizzati con prodotti derivati da specie vegetali e animali protette\\\" (1144) ^^http://www.w3.org/2001/XMLSchema#string",
+      "scheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.progetto.legge:camera;19.legislatura;1144"
+    },
+    {
+      "uri": "http://dati.camera.it/ocd/attocamera.rdf/ac19_1145",
+      "slug": "ac19_1145",
+      "tipo": "Progetto di Legge",
+      "numero": "1145",
+      "titolo": "GHIRRA ed altri: \"Modifica all&rsquo;articolo 1, comma 414, della legge 30 dicembre 2020, n. 178, e disposizioni in materia di indennit&agrave; per gli esercenti la professione sanitaria di ostetrica nelle aziende ed enti del Servizio sanitario nazionale\" (1145)",
+      "label": "GHIRRA ed altri: \\\"Modifica all&rsquo;articolo 1, comma 414, della legge 30 dicembre 2020, n. 178, e disposizioni in materia di indennit&agrave; per gli esercenti la professione sanitaria di ostetrica nelle aziende ed enti del Servizio sanitario nazionale\\\" (1145) ^^http://www.w3.org/2001/XMLSchema#string",
+      "scheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.progetto.legge:camera;19.legislatura;1145"
+    },
+    {
+      "uri": "http://dati.camera.it/ocd/attocamera.rdf/ac19_1146",
+      "slug": "ac19_1146",
+      "tipo": "Progetto di Legge",
+      "numero": "1146",
+      "titolo": "QUARTAPELLE PROCOPIO ed altri: \"Disposizioni in materia di rinnovo di visti d&rsquo;ingresso e permessi di soggiorno e di rilascio del nulla osta al lavoro subordinato per i cittadini della Federazione russa esposti al rischio di persecuzione\" (1146)",
+      "label": "QUARTAPELLE PROCOPIO ed altri: \\\"Disposizioni in materia di rinnovo di visti d&rsquo;ingresso e permessi di soggiorno e di rilascio del nulla osta al lavoro subordinato per i cittadini della Federazione russa esposti al rischio di persecuzione\\\" (1146) ^^http://www.w3.org/2001/XMLSchema#string",
+      "scheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.progetto.legge:camera;19.legislatura;1146"
+    },
+    {
+      "uri": "http://dati.camera.it/ocd/attocamera.rdf/ac19_1147",
+      "slug": "ac19_1147",
+      "tipo": "Progetto di Legge",
+      "numero": "1147",
+      "titolo": "PRETTO ed altri: \"Modifica all&rsquo;articolo 2 della legge 5 febbraio 1998, n. 22, in materia di esposizione delle bandiere delle regioni\" (1147)",
+      "label": "PRETTO ed altri: \\\"Modifica all&rsquo;articolo 2 della legge 5 febbraio 1998, n. 22, in materia di esposizione delle bandiere delle regioni\\\" (1147) ^^http://www.w3.org/2001/XMLSchema#string",
+      "scheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.progetto.legge:camera;19.legislatura;1147"
+    },
+    {
+      "uri": "http://dati.camera.it/ocd/attocamera.rdf/ac19_1148",
+      "slug": "ac19_1148",
+      "tipo": "Progetto di Legge",
+      "numero": "1148",
+      "titolo": "FOTI ed altri: \"Disposizioni in materia di riconoscimento del sistema italiano delle &#39;pro loco&#39;\" (1148)",
+      "label": "FOTI ed altri: \\\"Disposizioni in materia di riconoscimento del sistema italiano delle &#39;pro loco&#39;\\\" (1148) ^^http://www.w3.org/2001/XMLSchema#string",
+      "scheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.progetto.legge:camera;19.legislatura;1148"
+    },
+    {
+      "uri": "http://dati.camera.it/ocd/attocamera.rdf/ac19_1149",
+      "slug": "ac19_1149",
+      "tipo": "Progetto di Legge",
+      "numero": "1149",
+      "titolo": "S. 613. - &quot;Ratifica ed esecuzione del Trattato di assistenza giudiziaria in materia penale tra il Governo della Repubblica italiana ed il Governo della Repubblica del Senegal, fatto a Dakar il 4 gennaio 2018&quot;&nbsp;&lt;em&gt;(approvato dal Senato)&lt;/em&gt; (1149)",
+      "label": "S. 613. - &quot;Ratifica ed esecuzione del Trattato di assistenza giudiziaria in materia penale tra il Governo della Repubblica italiana ed il Governo della Repubblica del Senegal, fatto a Dakar il 4 gennaio 2018&quot;&nbsp;&lt;em&gt;(approvato dal Senato)&lt;/em&gt; (1149) ^^http://www.w3.org/2001/XMLSchema#string",
+      "scheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.progetto.legge:camera;19.legislatura;1149"
+    },
+    {
+      "uri": "http://dati.camera.it/ocd/attocamera.rdf/ac19_115",
+      "slug": "ac19_115",
+      "tipo": "Progetto di Legge",
+      "numero": "115",
+      "titolo": "MADIA ed altri: \"Disposizioni per l&rsquo;esercizio del diritto di voto in un comune diverso da quello di residenza, in caso di impedimenti per motivi di studio, lavoro o cura\" (115)",
+      "label": "MADIA ed altri: \\\"Disposizioni per l&rsquo;esercizio del diritto di voto in un comune diverso da quello di residenza, in caso di impedimenti per motivi di studio, lavoro o cura\\\" (115) ^^http://www.w3.org/2001/XMLSchema#string",
+      "scheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.progetto.legge:camera;19.legislatura;115"
+    },
+    {
+      "uri": "http://dati.camera.it/ocd/attocamera.rdf/ac19_1150",
+      "slug": "ac19_1150",
+      "tipo": "Progetto di Legge",
+      "numero": "1150",
+      "titolo": "S. 563. - &quot;Ratifica ed esecuzione dell&#39;Accordo tra il Governo della Repubblica italiana e il Governo della Repubblica del Ghana in materia di cooperazione nel settore della difesa, fatto ad Accra il 28 novembre 2019&quot;&nbsp;&lt;em&gt;(approvato dal Senato)&lt;/em&gt; (1150)",
+      "label": "S. 563. - &quot;Ratifica ed esecuzione dell&#39;Accordo tra il Governo della Repubblica italiana e il Governo della Repubblica del Ghana in materia di cooperazione nel settore della difesa, fatto ad Accra il 28 novembre 2019&quot;&nbsp;&lt;em&gt;(approvato dal Senato)&lt;/em&gt; (1150) ^^http://www.w3.org/2001/XMLSchema#string",
+      "scheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.progetto.legge:camera;19.legislatura;1150"
+    },
+    {
+      "uri": "http://dati.camera.it/ocd/attocamera.rdf/ac19_1151",
+      "slug": "ac19_1151",
+      "tipo": "Progetto di Legge",
+      "numero": "1151",
+      "titolo": "\"Conversione in legge del decreto-legge 10 maggio 2023, n. 51, recante disposizioni urgenti in materia di amministrazione di enti pubblici, di termini legislativi e di iniziative di solidariet&agrave; sociale\" (1151)",
+      "label": "\\\"Conversione in legge del decreto-legge 10 maggio 2023, n. 51, recante disposizioni urgenti in materia di amministrazione di enti pubblici, di termini legislativi e di iniziative di solidariet&agrave; sociale\\\" (1151) ^^http://www.w3.org/2001/XMLSchema#string",
+      "scheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.progetto.legge:camera;19.legislatura;1151"
+    },
+    {
+      "uri": "http://dati.camera.it/ocd/attocamera.rdf/ac19_1152",
+      "slug": "ac19_1152",
+      "tipo": "Progetto di Legge",
+      "numero": "1152",
+      "titolo": "PRETTO ed altri: \"Modifiche al codice delle leggi antimafia e delle misure di prevenzione, di cui al decreto legislativo 6 settembre 2011, n. 159, e all&rsquo;articolo 240-&lt;em&gt;bis&lt;/em&gt; del codice penale, in materia di applicazione e impugnazione delle misure di prevenzione e dei provvedimenti di sequestro e confisca, nonch&eacute; di gestione e destinazione dei beni sequestrati e confiscati alle organizzazioni criminali\" (1152)",
+      "label": "PRETTO ed altri: \\\"Modifiche al codice delle leggi antimafia e delle misure di prevenzione, di cui al decreto legislativo 6 settembre 2011, n. 159, e all&rsquo;articolo 240-&lt;em&gt;bis&lt;/em&gt; del codice penale, in materia di applicazione e impugnazione delle misure di prevenzione e dei provvedimenti di sequestro e confisca, nonch&eacute; di gestione e destinazione dei beni sequestrati e confiscati alle organizzazioni criminali\\\" (1152) ^^http://www.w3.org/2001/XMLSchema#string",
+      "scheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.progetto.legge:camera;19.legislatura;1152"
+    },
+    {
+      "uri": "http://dati.camera.it/ocd/attocamera.rdf/ac19_1153",
+      "slug": "ac19_1153",
+      "tipo": "Progetto di Legge",
+      "numero": "1153",
+      "titolo": "FRASSINI ed altri: \"Delega al Governo per l&rsquo;introduzione di agevolazioni fiscali e misure di semplificazione destinate allo sviluppo economico e sociale dei piccoli comuni situati nelle zone montane\" (1153)",
+      "label": "FRASSINI ed altri: \\\"Delega al Governo per l&rsquo;introduzione di agevolazioni fiscali e misure di semplificazione destinate allo sviluppo economico e sociale dei piccoli comuni situati nelle zone montane\\\" (1153) ^^http://www.w3.org/2001/XMLSchema#string",
+      "scheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.progetto.legge:camera;19.legislatura;1153"
+    },
+    {
+      "uri": "http://dati.camera.it/ocd/attocamera.rdf/ac19_1154",
+      "slug": "ac19_1154",
+      "tipo": "Progetto di Legge",
+      "numero": "1154",
+      "titolo": "TORTO ed altri: \"Norme in materia di reclutamento e stato giuridico dei ricercatori universitari di ruolo a tempo indeterminato e dei ricercatori a tempo determinato e sulla programmazione del fabbisogno organico delle universit&agrave; nonch&eacute; modifiche alla disciplina relativa all&rsquo;assunzione del personale\" (1154)",
+      "label": "TORTO ed altri: \\\"Norme in materia di reclutamento e stato giuridico dei ricercatori universitari di ruolo a tempo indeterminato e dei ricercatori a tempo determinato e sulla programmazione del fabbisogno organico delle universit&agrave; nonch&eacute; modifiche alla disciplina relativa all&rsquo;assunzione del personale\\\" (1154) ^^http://www.w3.org/2001/XMLSchema#string",
+      "scheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.progetto.legge:camera;19.legislatura;1154"
+    },
+    {
+      "uri": "http://dati.camera.it/ocd/attocamera.rdf/ac19_1155",
+      "slug": "ac19_1155",
+      "tipo": "Progetto di Legge",
+      "numero": "1155",
+      "titolo": "TORTO ed altri: \"Modifiche al decreto legislativo 29 marzo 2012, n. 68, e altre disposizioni in materia di diritto allo studio universitario e di tasse e contributi universitari\" (1155)",
+      "label": "TORTO ed altri: \"Modifiche al decreto legislativo 29 marzo 2012, n. 68, e altre disposizioni in materia di diritto allo studio universitario e di tasse e contributi universitari\" (1155)",
+      "scheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.progetto.legge:camera;19.legislatura;1155"
+    },
+    {
+      "uri": "http://dati.camera.it/ocd/attocamera.rdf/ac19_1156",
+      "slug": "ac19_1156",
+      "tipo": "Progetto di Legge",
+      "numero": "1156",
+      "titolo": "PADOVANI ed altri: \"Introduzione dell&rsquo;articolo 2-&lt;em&gt;bis&lt;/em&gt; della legge 5 febbraio 1998, n. 22, in materia di tutela del decoro nell&rsquo;esposizione delle bandiere della Repubblica italiana e dell&rsquo;Unione europea\" (1156)",
+      "label": "PADOVANI ed altri: \\\"Introduzione dell&rsquo;articolo 2-&lt;em&gt;bis&lt;/em&gt; della legge 5 febbraio 1998, n. 22, in materia di tutela del decoro nell&rsquo;esposizione delle bandiere della Repubblica italiana e dell&rsquo;Unione europea\\\" (1156) ^^http://www.w3.org/2001/XMLSchema#string",
+      "scheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.progetto.legge:camera;19.legislatura;1156"
+    },
+    {
+      "uri": "http://dati.camera.it/ocd/attocamera.rdf/ac19_1157",
+      "slug": "ac19_1157",
+      "tipo": "Progetto di Legge",
+      "numero": "1157",
+      "titolo": "GIULIANO: \"Modifiche al codice della giustizia contabile, di cui all&rsquo;allegato 1 al decreto legislativo 26 agosto 2016, n. 174, in materia di incarichi di consulenza tecnica, di archiviazione e di disciplina dei procedimenti\" (1157)",
+      "label": "GIULIANO: \\\"Modifiche al codice della giustizia contabile, di cui all&rsquo;allegato 1 al decreto legislativo 26 agosto 2016, n. 174, in materia di incarichi di consulenza tecnica, di archiviazione e di disciplina dei procedimenti\\\" (1157) ^^http://www.w3.org/2001/XMLSchema#string",
+      "scheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.progetto.legge:camera;19.legislatura;1157"
+    },
+    {
+      "uri": "http://dati.camera.it/ocd/attocamera.rdf/ac19_1158",
+      "slug": "ac19_1158",
+      "tipo": "Progetto di Legge",
+      "numero": "1158",
+      "titolo": "CIABURRO e CARETTA: \"Disposizioni per la promozione del lavoro e dell&rsquo;imprenditoria femminile nel settore dell&rsquo;agricoltura, delle foreste, della pesca e dell&rsquo;acquacoltura\" (1158)",
+      "label": "CIABURRO e CARETTA: \\\"Disposizioni per la promozione del lavoro e dell&rsquo;imprenditoria femminile nel settore dell&rsquo;agricoltura, delle foreste, della pesca e dell&rsquo;acquacoltura\\\" (1158) ^^http://www.w3.org/2001/XMLSchema#string",
+      "scheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.progetto.legge:camera;19.legislatura;1158"
+    },
+    {
+      "uri": "http://dati.camera.it/ocd/attocamera.rdf/ac19_1159",
+      "slug": "ac19_1159",
+      "tipo": "Progetto di Legge",
+      "numero": "1159",
+      "titolo": "PROPOSTA DI LEGGE COSTITUZIONALE DARA ed altri: \"Modifica all&rsquo;articolo 22 della Costituzione in materia di tutela del diritto all&rsquo;identit&agrave;, anche digitale, della persona\" (1159)",
+      "label": "PROPOSTA DI LEGGE COSTITUZIONALE DARA ed altri: \\\"Modifica all&rsquo;articolo 22 della Costituzione in materia di tutela del diritto all&rsquo;identit&agrave;, anche digitale, della persona\\\" (1159) ^^http://www.w3.org/2001/XMLSchema#string",
+      "scheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.progetto.legge:camera;19.legislatura;1159"
+    },
+    {
+      "uri": "http://dati.camera.it/ocd/attocamera.rdf/ac19_116",
+      "slug": "ac19_116",
+      "tipo": "Progetto di Legge",
+      "numero": "116",
+      "titolo": "BITONCI ed altri: \"Disposizioni in materia di elezione e di indennit&agrave; degli organi degli enti locali e delega al Governo per il riordino e la razionalizzazione degli uffici periferici dell&rsquo;amministrazione dello Stato\" (116)",
+      "label": "BITONCI ed altri: \\\"Disposizioni in materia di elezione e di indennit&agrave; degli organi degli enti locali e delega al Governo per il riordino e la razionalizzazione degli uffici periferici dell&rsquo;amministrazione dello Stato\\\" (116) ^^http://www.w3.org/2001/XMLSchema#string",
+      "scheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.progetto.legge:camera;19.legislatura;116"
+    },
+    {
+      "uri": "http://dati.camera.it/ocd/attocamera.rdf/ac19_1160",
+      "slug": "ac19_1160",
+      "tipo": "Progetto di Legge",
+      "numero": "1160",
+      "titolo": "ZANELLA ed altri: \"Modifica all&rsquo;articolo 101 del decreto legislativo 3 aprile 2006, n. 152, e altre disposizioni concernenti la cessazione dell&rsquo;impiego delle sostanze polifluoroalchiliche e perfluoroalchiliche nei processi produttivi e nei prodotti industriali\" (1160)",
+      "label": "ZANELLA ed altri: \\\"Modifica all&rsquo;articolo 101 del decreto legislativo 3 aprile 2006, n. 152, e altre disposizioni concernenti la cessazione dell&rsquo;impiego delle sostanze polifluoroalchiliche e perfluoroalchiliche nei processi produttivi e nei prodotti industriali\\\" (1160) ^^http://www.w3.org/2001/XMLSchema#string",
+      "scheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.progetto.legge:camera;19.legislatura;1160"
+    },
+    {
+      "uri": "http://dati.camera.it/ocd/attocamera.rdf/ac19_1161",
+      "slug": "ac19_1161",
+      "tipo": "Progetto di Legge",
+      "numero": "1161",
+      "titolo": "CANGIANO ed altri: \"Disciplina delle attivit&agrave; subacquee e iperbariche\" (1161)",
+      "label": "CANGIANO ed altri: \\\"Disciplina delle attivit&agrave; subacquee e iperbariche\\\" (1161) ^^http://www.w3.org/2001/XMLSchema#string",
+      "scheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.progetto.legge:camera;19.legislatura;1161"
+    },
+    {
+      "uri": "http://dati.camera.it/ocd/attocamera.rdf/ac19_1162",
+      "slug": "ac19_1162",
+      "tipo": "Progetto di Legge",
+      "numero": "1162",
+      "titolo": "SERRACCHIANI ed altri: \"Modifica all&rsquo;articolo&nbsp;37 del decreto-legge 6 dicembre 2011,&nbsp;n. 201, convertito, con modificazioni, dalla&nbsp;legge 22 dicembre 2011, n. 214, in materia di soppressione del contributo versato all&rsquo;Autorit&agrave;&nbsp;di regolazione dei trasporti dagli&nbsp;operatori economici operanti nel settore&nbsp;del trasporto\" (1162)",
+      "label": "SERRACCHIANI ed altri: \\\"Modifica all&rsquo;articolo&nbsp;37 del decreto-legge 6 dicembre 2011,&nbsp;n. 201, convertito, con modificazioni, dalla&nbsp;legge 22 dicembre 2011, n. 214, in materia di soppressione del contributo versato all&rsquo;Autorit&agrave;&nbsp;di regolazione dei trasporti dagli&nbsp;operatori economici operanti nel settore&nbsp;del trasporto\\\" (1162) ^^http://www.w3.org/2001/XMLSchema#string",
+      "scheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.progetto.legge:camera;19.legislatura;1162"
+    },
+    {
+      "uri": "http://dati.camera.it/ocd/attocamera.rdf/ac19_1163",
+      "slug": "ac19_1163",
+      "tipo": "Progetto di Legge",
+      "numero": "1163",
+      "titolo": "DE PALMA: &quot;Istituzione della figura&nbsp;professionale dell&rsquo;assistente per la salute&quot; (1163)",
+      "label": "DE PALMA: &quot;Istituzione della figura&nbsp;professionale dell&rsquo;assistente per la salute&quot; (1163) ^^http://www.w3.org/2001/XMLSchema#string",
+      "scheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.progetto.legge:camera;19.legislatura;1163"
+    },
+    {
+      "uri": "http://dati.camera.it/ocd/attocamera.rdf/ac19_1164",
+      "slug": "ac19_1164",
+      "tipo": "Progetto di Legge",
+      "numero": "1164",
+      "titolo": "S. 586. - Senatori ROMEO e STEFANI: &quot;Modifica al codice penale in materia di circonvenzione di persone anziane&quot;&nbsp;&lt;em&gt;(approvata dal Senato)&lt;/em&gt; (1164)",
+      "label": "S. 586. - Senatori ROMEO e STEFANI: &quot;Modifica al codice penale in materia di circonvenzione di persone anziane&quot;&nbsp;&lt;em&gt;(approvata dal Senato)&lt;/em&gt; (1164) ^^http://www.w3.org/2001/XMLSchema#string",
+      "scheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.progetto.legge:camera;19.legislatura;1164"
+    },
+    {
+      "uri": "http://dati.camera.it/ocd/attocamera.rdf/ac19_1165",
+      "slug": "ac19_1165",
+      "tipo": "Progetto di Legge",
+      "numero": "1165",
+      "titolo": "CONSIGLIO REGIONALE DELLA SARDEGNA: \"Modifiche alla legge 24 gennaio 1979, n. 18, concernenti l&rsquo;istituzione delle circoscrizioni Sicilia e Sardegna per l&rsquo;elezione dei membri del Parlamento europeo spettanti all&rsquo;Italia\" (1165)",
+      "label": "CONSIGLIO REGIONALE DELLA SARDEGNA: \\\"Modifiche alla legge 24 gennaio 1979, n. 18, concernenti l&rsquo;istituzione delle circoscrizioni Sicilia e Sardegna per l&rsquo;elezione dei membri del Parlamento europeo spettanti all&rsquo;Italia\\\" (1165) ^^http://www.w3.org/2001/XMLSchema#string",
+      "scheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.progetto.legge:camera;19.legislatura;1165"
+    },
+    {
+      "uri": "http://dati.camera.it/ocd/attocamera.rdf/ac19_1166",
+      "slug": "ac19_1166",
+      "tipo": "Progetto di Legge",
+      "numero": "1166",
+      "titolo": "CONSIGLIO REGIONALE DELL&#39;UMBRIA: &quot;Modifiche al decreto legislativo 7 settembre 2012, n. 155, recante nuova organizzazione dei tribunali ordinari e degli uffici del pubblico ministero&quot; (1166)",
+      "label": "CONSIGLIO REGIONALE DELL&#39;UMBRIA: &quot;Modifiche al decreto legislativo 7 settembre 2012, n. 155, recante nuova organizzazione dei tribunali ordinari e degli uffici del pubblico ministero&quot; (1166) ^^http://www.w3.org/2001/XMLSchema#string",
+      "scheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.progetto.legge:camera;19.legislatura;1166"
+    },
+    {
+      "uri": "http://dati.camera.it/ocd/attocamera.rdf/ac19_1167",
+      "slug": "ac19_1167",
+      "tipo": "Progetto di Legge",
+      "numero": "1167",
+      "titolo": "MORRONE ed altri: \"Modifiche agli&nbsp;articoli 61 e 576 del codice penale in materia&nbsp;di circostanze aggravanti per reati&nbsp;commessi in danno di agenti della Polizia&nbsp;penitenziaria in servizio presso istituti di&nbsp;pena&nbsp;\" (1167)",
+      "label": "MORRONE ed altri: \\\"Modifiche agli&nbsp;articoli 61 e 576 del codice penale in materia&nbsp;di circostanze aggravanti per reati&nbsp;commessi in danno di agenti della Polizia&nbsp;penitenziaria in servizio presso istituti di&nbsp;pena&nbsp;\\\" (1167) ^^http://www.w3.org/2001/XMLSchema#string",
+      "scheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.progetto.legge:camera;19.legislatura;1167"
+    },
+    {
+      "uri": "http://dati.camera.it/ocd/attocamera.rdf/ac19_1168",
+      "slug": "ac19_1168",
+      "tipo": "Progetto di Legge",
+      "numero": "1168",
+      "titolo": "&quot;Abrogazione di norme prerepubblicane relative al periodo 1861-1870&quot; (1168)",
+      "label": "&quot;Abrogazione di norme prerepubblicane relative al periodo 1861-1870&quot; (1168) ^^http://www.w3.org/2001/XMLSchema#string",
+      "scheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.progetto.legge:camera;19.legislatura;1168"
+    },
+    {
+      "uri": "http://dati.camera.it/ocd/attocamera.rdf/ac19_1169",
+      "slug": "ac19_1169",
+      "tipo": "Progetto di Legge",
+      "numero": "1169",
+      "titolo": "FURFARO ed altri: \"Disposizioni concernenti lo sviluppo dell&rsquo;edilizia residenziale pubblica e altre misure per la riduzione del disagio abitativo per i nuclei svantaggiati\" (1169)",
+      "label": "FURFARO ed altri: \\\"Disposizioni concernenti lo sviluppo dell&rsquo;edilizia residenziale pubblica e altre misure per la riduzione del disagio abitativo per i nuclei svantaggiati\\\" (1169) ^^http://www.w3.org/2001/XMLSchema#string",
+      "scheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.progetto.legge:camera;19.legislatura;1169"
+    },
+    {
+      "uri": "http://dati.camera.it/ocd/attocamera.rdf/ac19_117",
+      "slug": "ac19_117",
+      "tipo": "Progetto di Legge",
+      "numero": "117",
+      "titolo": "BITONCI ed altri: \"Modifiche alla legge 15 dicembre 1999, n. 482, recante norme in materia di tutela delle minoranze linguistiche storiche\" (117)",
+      "label": "BITONCI ed altri: \"Modifiche alla legge 15 dicembre 1999, n. 482, recante norme in materia di tutela delle minoranze linguistiche storiche\" (117)",
+      "scheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.progetto.legge:camera;19.legislatura;117"
+    },
+    {
+      "uri": "http://dati.camera.it/ocd/attocamera.rdf/ac19_1170",
+      "slug": "ac19_1170",
+      "tipo": "Progetto di Legge",
+      "numero": "1170",
+      "titolo": "SIMIANI: \"Istituzione del Registro delle associazioni nazionali delle citt&agrave; del vino e dell&rsquo;olio\" (1170)",
+      "label": "SIMIANI: \\\"Istituzione del Registro delle associazioni nazionali delle citt&agrave; del vino e dell&rsquo;olio\\\" (1170) ^^http://www.w3.org/2001/XMLSchema#string",
+      "scheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.progetto.legge:camera;19.legislatura;1170"
+    },
+    {
+      "uri": "http://dati.camera.it/ocd/attocamera.rdf/ac19_1171",
+      "slug": "ac19_1171",
+      "tipo": "Progetto di Legge",
+      "numero": "1171",
+      "titolo": "GRAZIANO: \"Istituzione del servizio di psicologia di base nell&rsquo;ambito del Servizio sanitario nazionale\" (1171)",
+      "label": "GRAZIANO: \\\"Istituzione del servizio di psicologia di base nell&rsquo;ambito del Servizio sanitario nazionale\\\" (1171) ^^http://www.w3.org/2001/XMLSchema#string",
+      "scheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.progetto.legge:camera;19.legislatura;1171"
+    },
+    {
+      "uri": "http://dati.camera.it/ocd/attocamera.rdf/ac19_1172",
+      "slug": "ac19_1172",
+      "tipo": "Progetto di Legge",
+      "numero": "1172",
+      "titolo": "VINCI ed altri: \"Istituzione della Giornata in ricordo della battaglia di Montecassino e della canzone &ldquo;Czerwone maki na Monte Cassino&rdquo; (&ldquo;Papaveri rossi su Montecassino&rdquo;)\" (1172)",
+      "label": "VINCI ed altri: \\\"Istituzione della Giornata in ricordo della battaglia di Montecassino e della canzone &ldquo;Czerwone maki na Monte Cassino&rdquo; (&ldquo;Papaveri rossi su Montecassino&rdquo;)\\\" (1172) ^^http://www.w3.org/2001/XMLSchema#string",
+      "scheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.progetto.legge:camera;19.legislatura;1172"
+    },
+    {
+      "uri": "http://dati.camera.it/ocd/attocamera.rdf/ac19_1173",
+      "slug": "ac19_1173",
+      "tipo": "Progetto di Legge",
+      "numero": "1173",
+      "titolo": "PROPOSTA DI LEGGE COSTITUZIONALE MANES ed altri: \"Modifica all&rsquo;articolo 47 dello Statuto speciale per la Valle d&rsquo;Aosta, di cui alla legge costituzionale 26 febbraio 1948, n. 4, concernente l&rsquo;istituzione di una circoscrizione elettorale regionale per l&rsquo;elezione dei membri del Parlamento europeo spettanti all&rsquo;Italia\" (1173)",
+      "label": "PROPOSTA DI LEGGE COSTITUZIONALE MANES ed altri: \\\"Modifica all&rsquo;articolo 47 dello Statuto speciale per la Valle d&rsquo;Aosta, di cui alla legge costituzionale 26 febbraio 1948, n. 4, concernente l&rsquo;istituzione di una circoscrizione elettorale regionale per l&rsquo;elezione dei membri del Parlamento europeo spettanti all&rsquo;Italia\\\" (1173) ^^http://www.w3.org/2001/XMLSchema#string",
+      "scheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.progetto.legge:camera;19.legislatura;1173"
+    },
+    {
+      "uri": "http://dati.camera.it/ocd/attocamera.rdf/ac19_1174",
+      "slug": "ac19_1174",
+      "tipo": "Progetto di Legge",
+      "numero": "1174",
+      "titolo": "MANES ed altri: \"Modifiche alla legge 24 gennaio 1979, n. 18, concernenti l&rsquo;istituzione della circoscrizione Valle d&rsquo;Aosta per l&rsquo;elezione dei membri del Parlamento europeo spettanti all&rsquo;Italia\" (1174)",
+      "label": "MANES ed altri: \\\"Modifiche alla legge 24 gennaio 1979, n. 18, concernenti l&rsquo;istituzione della circoscrizione Valle d&rsquo;Aosta per l&rsquo;elezione dei membri del Parlamento europeo spettanti all&rsquo;Italia\\\" (1174) ^^http://www.w3.org/2001/XMLSchema#string",
+      "scheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.progetto.legge:camera;19.legislatura;1174"
+    },
+    {
+      "uri": "http://dati.camera.it/ocd/attocamera.rdf/ac19_1175",
+      "slug": "ac19_1175",
+      "tipo": "Progetto di Legge",
+      "numero": "1175",
+      "titolo": "MANES ed altri: \"Modifica all&rsquo;articolo 22 della legge 24 gennaio 1979, n. 18, in materia di elezione dei candidati delle liste di minoranza linguistica collegate, per la regione Valle d&rsquo;Aosta, nelle elezioni dei membri del Parlamento europeo spettanti all&rsquo;Italia\" (1175)",
+      "label": "MANES ed altri: \\\"Modifica all&rsquo;articolo 22 della legge 24 gennaio 1979, n. 18, in materia di elezione dei candidati delle liste di minoranza linguistica collegate, per la regione Valle d&rsquo;Aosta, nelle elezioni dei membri del Parlamento europeo spettanti all&rsquo;Italia\\\" (1175) ^^http://www.w3.org/2001/XMLSchema#string",
+      "scheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.progetto.legge:camera;19.legislatura;1175"
+    }
+  ]
+}

@@ -197,10 +197,14 @@ function chiaveEli(eli: unknown): string {
 // assenti o invalidi, il comportamento precedente resta invariato.
 // ---------------------------------------------------------------------------
 
-/** Percorsi candidati per gli atti reali (primo esistente e valido vince). */
+/** Percorsi degli atti reali: TUTTI i file esistenti e validi si uniscono
+ * (dedup per ELI nel chiamante). Mai primo-file-vince: ogni nuovo batch
+ * storico deve entrare nel corpus. */
 const PERCORSI_ATTI_REALI = [
   "data/reali/normattiva-recenti.json",
   "data/reali/normattiva-leggi.json",
+  "data/reali/normattiva-storico-collezioni.json",
+  "data/reali/normattiva-storico-1980.json",
 ] as const;
 
 /** Percorsi candidati per i comunicati reali (primo esistente e valido vince). */
@@ -324,8 +328,22 @@ export function normalizzaAttoReale(input: unknown): LawRecord | null {
     const sintesiGrezza = stringaPulita(o["sintesi"]);
     const sintesi = (sintesiGrezza || titolo).slice(0, 600);
     const testoGrezzo = typeof o["testo"] === "string" && o["testo"].trim() ? o["testo"] : sintesi;
+    // Stati onesti: abrogato/decaduto solo da segnali espliciti, mai default
+    // inventati. `decaduto` (DL non convertito) e' uno stato reale distinto.
     const statoGrezzo = stringaPulita(o["stato"]).toLowerCase();
-    const stato = /abrog/.test(statoGrezzo) ? "abrogato" : "in_vigore";
+    const fineVigenza = stringaPulita(
+      o["articoloDataFineVigenza"] ?? o["fineVigenza"] ?? o["dataFineVigenza"],
+    );
+    const fineValida = /^(\d{4})(\d{2})(\d{2})$/.exec(fineVigenza.replace(/-/g, ""));
+    const oggi = new Date().toISOString().slice(0, 10).replace(/-/g, "");
+    const finePassata =
+      !!fineValida && fineValida[0] !== "99999999" && fineValida[0] < oggi;
+    const stato =
+      /abrog/.test(statoGrezzo) || finePassata
+        ? "abrogato"
+        : /decad/.test(statoGrezzo)
+          ? "decaduto"
+          : "in_vigore";
     const record: LawRecord = {
       eli,
       nir,
@@ -446,48 +464,52 @@ function moduliNode(): { fs: { existsSync(p: string): boolean; readFileSync(p: s
   }
 }
 
-function leggiJsonDaDisco(percorsiRelativi: readonly string[]): unknown | null {
+/** Legge TUTTI i JSON esistenti e validi dai percorsi (unione, mai throw). */
+function leggiTuttiJsonDaDisco(percorsiRelativi: readonly string[]): unknown[] {
+  const risultati: unknown[] = [];
   try {
     const mod = moduliNode();
-    if (!mod) return null;
+    if (!mod) return risultati;
     let base = "";
     try {
       base = typeof process !== "undefined" && process.cwd ? process.cwd() : "";
     } catch {
-      return null;
+      return risultati;
     }
-    if (!base) return null;
+    if (!base) return risultati;
     for (const rel of percorsiRelativi) {
       try {
         const ass = mod.path.join(base, rel);
         if (!mod.fs.existsSync(ass)) continue;
         const raw = mod.fs.readFileSync(ass, "utf8");
         if (!raw || raw.length > 2_000_000) continue;
-        return JSON.parse(raw) as unknown;
+        risultati.push(JSON.parse(raw) as unknown);
       } catch {
         continue;
       }
     }
-    return null;
+    return risultati;
   } catch {
-    return null;
+    return risultati;
   }
 }
 
 /** Carica gli atti reali da disco (mai lancia, [] se assenti/invalidi). */
 function caricaAttiReali(): LawRecord[] {
   try {
-    const grezzo = leggiJsonDaDisco(PERCORSI_ATTI_REALI);
-    if (!grezzo) return [];
-    const lista = estraiListaAttiReali(grezzo);
-    if (lista.length === 0) return [];
+    // Unione di tutti i batch (recenti + storici): nessuno resta escluso.
+    const documenti = leggiTuttiJsonDaDisco(PERCORSI_ATTI_REALI);
+    if (documenti.length === 0) return [];
     const risultato: LawRecord[] = [];
-    for (const item of lista.slice(0, 200)) {
-      try {
-        const record = normalizzaAttoReale(item);
-        if (record) risultato.push(record);
-      } catch {
-        continue;
+    for (const grezzo of documenti) {
+      const lista = estraiListaAttiReali(grezzo);
+      for (const item of lista.slice(0, 500)) {
+        try {
+          const record = normalizzaAttoReale(item);
+          if (record) risultato.push(record);
+        } catch {
+          continue;
+        }
       }
     }
     return risultato;
@@ -496,20 +518,21 @@ function caricaAttiReali(): LawRecord[] {
   }
 }
 
-/** Carica i comunicati reali da disco (mai lancia, [] se assenti/invalidi). */
+/** Carica i comunicati reali da disco (unione dei file, mai lancia). */
 function caricaComunicatiReali(): CdmItem[] {
   try {
-    const grezzo = leggiJsonDaDisco(PERCORSI_CDM_REALI);
-    if (!grezzo) return [];
-    const lista = estraiListaComunicatiReali(grezzo);
-    if (lista.length === 0) return [];
+    const documenti = leggiTuttiJsonDaDisco(PERCORSI_CDM_REALI);
+    if (documenti.length === 0) return [];
     const risultato: CdmItem[] = [];
-    for (const item of lista.slice(0, 100)) {
-      try {
-        const comunicato = normalizzaComunicatoReale(item);
-        if (comunicato) risultato.push(comunicato);
-      } catch {
-        continue;
+    for (const grezzo of documenti) {
+      const lista = estraiListaComunicatiReali(grezzo);
+      for (const item of lista.slice(0, 100)) {
+        try {
+          const comunicato = normalizzaComunicatoReale(item);
+          if (comunicato) risultato.push(comunicato);
+        } catch {
+          continue;
+        }
       }
     }
     return risultato;
@@ -535,34 +558,66 @@ export function getSeedLaws(): LawRecord[] {
       if (reali.length === 0) {
         return SEED_LAWS.map(clonaLegge);
       }
-      const visti = new Set<string>();
-      const risultato: LawRecord[] = [];
-      const accoda = (legge: unknown): void => {
-        if (!legge || typeof legge !== "object") return;
-        const chiave = chiaveEli((legge as LawRecord).eli);
-        if (!chiave || visti.has(chiave)) return;
-        visti.add(chiave);
-        risultato.push(clonaLegge(legge as LawRecord));
-      };
-      for (const seed of SEED_LAWS) accoda(seed);
-      for (const legge of reali) accoda(legge);
-      return risultato.length > 0 ? risultato : SEED_LAWS.map(clonaLegge);
+      return unisciCorpus(SEED_LAWS, reali, []);
     }
-    const visti = new Set<string>();
-    const risultato: LawRecord[] = [];
-    const accoda = (legge: unknown): void => {
-      if (!legge || typeof legge !== "object") return;
-      const chiave = chiaveEli((legge as LawRecord).eli);
-      if (!chiave || visti.has(chiave)) return;
-      visti.add(chiave);
-      risultato.push(clonaLegge(legge as LawRecord));
-    };
-    for (const seed of SEED_LAWS) accoda(seed);
-    for (const legge of reali) accoda(legge);
-    for (const legge of unificato) accoda(legge);
-    return risultato.length > 0 ? risultato : SEED_LAWS.map(clonaLegge);
+    return unisciCorpus(SEED_LAWS, reali, unificato);
   } catch {
     return SEED_LAWS.map(clonaLegge);
+  }
+}
+
+/**
+ * Unisce seed + reali + sintetico con dedup per ELI (i primi vincono).
+ * Eccezione onesta: se un atto reale collide con un seed di riferimento
+ * (stesso decreto, es. DL 133/2026), il seed tiene sintesi curata e box
+ * esplicativi ma eredita il `testo` ufficiale (e ricalcolo Gulpease).
+ * Non lancia mai. Esportata per i test.
+ */
+export function unisciCorpus(
+  seeds: LawRecord[],
+  reali: LawRecord[],
+  sintetico: LawRecord[],
+): LawRecord[] {
+  const visti = new Set<string>();
+  const risultato: LawRecord[] = [];
+  const perChiave = new Map<string, LawRecord>();
+  const accoda = (legge: unknown, reale: boolean): void => {
+    try {
+      if (!legge || typeof legge !== "object") return;
+      const chiave = chiaveEli((legge as LawRecord).eli);
+      if (!chiave) return;
+      const esistente = perChiave.get(chiave);
+      if (esistente) {
+        // Stesso atto in seed e reali: testo ufficiale nel seed curato.
+        if (reale && esistente.testo !== (legge as LawRecord).testo) {
+          const testoUfficiale = (legge as LawRecord).testo;
+          if (typeof testoUfficiale === "string" && testoUfficiale.trim()) {
+            esistente.testo = testoUfficiale;
+            esistente.gulpease = null;
+          }
+        }
+        return;
+      }
+      visti.add(chiave);
+      const copia = clonaLegge(legge as LawRecord);
+      perChiave.set(chiave, copia);
+      risultato.push(copia);
+    } catch {
+      // salta il singolo record malformato
+    }
+  };
+  const liste: Array<unknown> = [seeds, reali, sintetico];
+  const realeFlags = [false, true, false];
+  for (let li = 0; li < liste.length; li += 1) {
+    const lista = liste[li];
+    if (!Array.isArray(lista)) continue;
+    const reale = realeFlags[li] === true;
+    for (const legge of lista) accoda(legge, reale);
+  }
+  try {
+    return risultato.length > 0 ? risultato : seeds.map(clonaLegge);
+  } catch {
+    return [];
   }
 }
 

@@ -12,6 +12,7 @@ const NAV = [
   { href: '/leggi', label: 'Leggi' },
   { href: '/ministri', label: 'Ministri' },
   { href: '/parlamento', label: 'Parlamento' },
+  { href: '/consulta', label: 'Consulta' },
   { href: '/statistiche', label: 'Statistiche' },
   { href: '/semplifica', label: 'Semplifica' },
   { href: '/salvati', label: 'Salvati' },

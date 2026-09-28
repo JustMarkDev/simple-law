@@ -154,7 +154,9 @@ export const SEED_LAWS: LawRecord[] = [
     titolo: "Disposizioni urgenti in materia di accise sui carburanti e di trasparenza dei prezzi",
     sintesi:
       "Il decreto interviene sui carburanti: riduce la pressione delle accise e impone maggiore trasparenza sui prezzi esposti alla pompa.",
-    stato: "in_vigore",
+    // Stato verificato su Normattiva il 2026-09-28: abrogato dalla legge
+    // 25 settembre 2026, n. 166 (conversione con abrogazione espressa).
+    stato: "abrogato",
     // Codice redazionale verificato su Normattiva/GU (DL 139/2026 = 26G00162,
     // GU n. 180 del 2026-08-05): i link alle fonti sono costruiti da dati veri.
     codiceRedazionale: "26G00162",

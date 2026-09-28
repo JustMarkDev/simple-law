@@ -49,18 +49,27 @@ describe("corpus unificato: forma e sottoinsieme seed", () => {
     expect(new Set(chiavi).size).toBe(corpus.length);
   });
 
-  it("ha gulpease valorizzato su ogni record", () => {
+  it("ha gulpease valorizzato su ogni record (o testo per ricalcolarlo)", () => {
     const corpus = getSeedLaws();
     for (const law of corpus) {
-      expect(law.gulpease, `gulpease nullo per ${law.eli}`).not.toBeNull();
-      expect(law.gulpease).not.toBeUndefined();
+      if (law.gulpease === null || law.gulpease === undefined) {
+        // Ammesso solo per seed arricchiti col testo ufficiale trapiantato:
+        // normalizeLaw ricalcola il Gulpease dal testo (vedi seed-fallback).
+        expect(
+          typeof law.testo === "string" && law.testo.trim().length > 0,
+          `gulpease nullo senza testo per ${law.eli}`,
+        ).toBe(true);
+      }
     }
   });
 
-  it("non usa numeri riservati nelle varianti (coda oltre i 77 curati)", () => {
+  it("non usa numeri riservati nelle varianti sintetiche (coda dimostrativa)", () => {
     const corpus = getSeedLaws();
     const coda = corpus.slice(77);
     for (const law of coda) {
+      // Gli atti reali (dimostrativo=false) hanno numeri ufficiali veri
+      // (es. D.Lgs. 36/2023): la regola vale solo per le varianti generate.
+      if (law.dimostrativo === false) continue;
       const n = Number(law.numero);
       if (Number.isFinite(n)) {
         expect(NUMERI_RISERVATI, `numero riservato ${law.numero} in varianti`).not.toContain(

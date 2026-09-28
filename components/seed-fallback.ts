@@ -361,22 +361,22 @@ const OVERRIDES: Record<string, Partial<SimplifiedLaw>> = {
     },
   },
   '139': {
-    in10Secondi: 'Il Governo riduce la pressione delle accise sui carburanti e impone più trasparenza sui prezzi alla pompa.',
+    in10Secondi: 'Il Governo aveva ridotto la pressione delle accise sui carburanti con più trasparenza alla pompa. Il decreto è abrogato dalla legge 166/2026: non è più in vigore.',
     perTe: {
-      guida: 'Se fai il pieno, controlla il prezzo esposto e le riduzioni applicate.',
-      lavoro: 'Se guidi per lavoro, tieni traccia delle spese per il rimborso.',
-      impresa: 'Se hai una flotta, aggiorna i contratti carburante con i fornitori.',
+      guida: 'Lo sconto non è più attivo: il decreto è abrogato.',
+      lavoro: 'Se guidavi per lavoro, le regole sono tornate alle precedenti.',
+      impresa: 'Se hai una flotta, verifica le regole vigenti dopo la legge 166/2026.',
       studio: 'Se studi, la misura non ti riguarda direttamente.',
     },
     cosaFare: [
-      'Controlla il prezzo esposto prima di fare il pieno.',
+      'Leggi la legge 25 settembre 2026, n. 166 per le regole attuali.',
+      'Conserva le ricevute del periodo di vigenza per eventuali rimborsi.',
       'Segnala prezzi non trasparenti all\'Autorità competente.',
-      'Aspetta la circolare attuativa per i rimborsi.',
     ],
-    statoLavora: { colore: 'giallo', motivo: 'Manca il provvedimento attuativo per i rimborsi.' },
+    statoLavora: { colore: 'rosso', motivo: 'Abrogato dalla legge 25 settembre 2026, n. 166: non è più in vigore.' },
     proContro: {
-      pro: ['Prezzi alla pompa più trasparenti', 'Meno pressione sui consumatori', 'Obblighi di comunicazione chiari'],
-      contro: ['Serve un attuativo per i rimborsi', 'Controlli non ancora a regime', 'Effetto limitato nel tempo'],
+      pro: ['Aveva reso i prezzi alla pompa più trasparenti', 'Aveva ridotto la pressione sui consumatori'],
+      contro: ['Abrogato: non produce più effetti', 'Durata limitata nel tempo'],
     },
   },
 }

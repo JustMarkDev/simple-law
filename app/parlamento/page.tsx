@@ -138,6 +138,22 @@ export default async function ParlamentoPage() {
               </span>
             </Link>
           </li>
+          <li className="flex">
+            <Link
+              href="/parlamento/ddl"
+              className="flex min-h-[44px] w-full flex-col gap-2 border border-regola bg-carta p-5 transition-colors hover:border-inchiostro focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-inchiostro dark:border-notte-deep dark:bg-notte-soft dark:hover:border-nebbia dark:focus-visible:outline-nebbia"
+            >
+              <span className="font-serif text-xl font-bold text-inchiostro dark:text-nebbia">
+                Disegni di legge
+              </span>
+              <span className="text-sm text-inchiostro-soft dark:text-nebbia-soft">
+                DDL e atti all&apos;esame delle Camere · non sono leggi in vigore.
+              </span>
+              <span className="mt-1 text-xs font-semibold uppercase tracking-wide text-accento dark:text-accento-chiara">
+                Vedi i disegni di legge →
+              </span>
+            </Link>
+          </li>
         </ul>
 
         {deputati.length > 0 && (
