@@ -1,6 +1,42 @@
 # GOAL-PROGRESS
 
-Obiettivo: UI/UX migliore, feature attuali migliorate + nuove feature, database reale di leggi italiane da ~5 a scala 100 GB.
+Obiettivo corrente: **dati reali, non mock** — open data ufficiali della
+Repubblica italiana (leggi, parlamento, governo, tutto cio' che e' open source).
+Obiettivo precedente (completato): UI/UX, feature, corpus 5005 voci.
+
+## Reali-1 (2026-09-28, commit `5e0bb16`): primo batch ufficiale live
+- Workflow: 1 chiamata `workflow` con 11 subagenti (3 verdetti read-only su
+  endpoint + 1 giudice + 5 scrittori su file disgiunti + 2 revisori
+  avversariali). I verdetti riusavano sonde /tmp precedenti: Normattiva
+  bff-opendata OK (collections + aggiornati + dettaglio; avanzata 500 =
+  scartata), Camera/Senato SPARQL OK (6288 atti leg19 Camera), Governo RSS OK
+  (10 item). Il giudice ha fissato envelope `{provenance, ...}`, batch e
+  policy dimostrativo=false solo con fonte.
+- Ingerito (tutto verificato da me, rete live): `data/reali/` —
+  **46 atti Normattiva** (23 DL, 16 Dlgs, 7 leggi, testi+sintesi+GU,
+  343 KB), **414 deputati + 13 gruppi** Camera leg19 (CC BY-SA 4.0),
+  **212 senatori + 14 denominazioni gruppi** Senato leg19 (CC BY 3.0 IT),
+  **10 comunicati** governo. Scripts bounded (`--limite` max 200, file
+  max 1 MB, exit 1 senza parziali).
+- Fix P0 miei post-workflow (verificati): stato `abrogato` dedotto dal
+  contenuto del testo (13/46 errati!) -> ora solo `articoloDataFineVigenza`
+  fa fede + re-ingest (46/46 in_vigore); ELI seed DL139 errato
+  (26G00161) -> codice GU reale **26G00162** + dataGU/numeroGU veri
+  (DL133 26G00155 confermato esatto dai dati reali); `fontiReali`
+  accettava qualunque https -> allowlist domini ufficiali; test fallback
+  CdM aggiornato alla catena rete->reali->seed; id comunicati ripuliti
+  (URL assoluti) + re-ingest governo; MANIFEST/README reali rigenerati
+  con conteggi veri; badge "Dato ufficiale" sulle schede reali.
+- Wiring: `getSeedLaws` = 5 seed + 46 reali + sintetico (dedup ELI, seed
+  vincono i pareggi); `getSeedCdm` = reali primi. UI live: totale **5049**,
+  atti reali con `dimostrativo: false`, dettaglio reale 200, CdM reali.
+- Verifiche mie: `npm test` 321/321 OK, `typecheck` OK, `lint` OK, `build`
+  OK (120 pagine), smoke live (5049 totale, ricerca reale, export 200).
+- Next: pagina/route parlamentari (deputati/senatori/gruppi in UI con
+  licenze), DDL Senato + atti Camera in `data/reali`, collegare ministri a
+  schede parlamentari reali, allargare batch Normattiva (storico per anno),
+  Corte Costituzionale / EUR-Lex / Quirinale / ISTAT (sonde + ingest),
+  Elezioni/Eligendo, sostituzione progressiva del sintetico.
 
 ## Stato iniziale (2026-09-28, iterazione 0)
 - Repo: `/Users/mark/Projects/simple-law`, branch `master` (appena `git init`, baseline committata `5391a84`).
