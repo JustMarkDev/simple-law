@@ -189,8 +189,24 @@ Obiettivo precedente (completato): UI/UX, feature, corpus 5005 voci.
 - Verifiche mie: `npm test` 599/599 OK, `typecheck`/`lint` OK, `build` OK
   (862 pagine), smoke live (6296 totale, 675 sconosciuti filtrabili,
   dettaglio 1910, DDL 3149, controllo 14).
-- Next: altre finestre (anni '50/'40, 2015), recepimenti extra, Corte dei
-  Conti se si apre, riduzione del sintetico.
+- Next: altre finestre (anni '50/'40, 2015) — fatte 1992/1993 e 2005/2006
+  sotto; restano recepimenti extra, Corte dei Conti se si apre, riduzione
+  del sintetico (ora ~5000/6422, 22% reale mostrato in UI).
+
+## Reali-10 (2026-09-28, commit `9a7e00e`): composizione, finestre, sondaggi
+- Workflow: 1 chiamata `workflow` con 10 subagenti (2 sonde + 1 giudice + 4
+  scrittori + 2 revisori). Sonde: vigilanza residua + sondaggi Wikipedia
+  (CC BY-SA, MediaWiki API stabile).
+- Ingerito: finestre 1992-1993 (77) + 2005-2006 (49), 30 sondaggi nazionali
+  con pageid+revid pinnati. Corpus live **6422** (reali 1419, 22% mostrato).
+- UI: "X atti ufficiali su Y (22% reale)" in home e archivio; rassegna
+  sondaggi in hub elezioni con attribuzione.
+- Fix P0 miei (revisori): PERCORSI coi nomi reali (126 atti esclusi!),
+  cache TTL reali (267ms -> memo), regression test no-troncamento.
+- Verifiche mie: `npm test` 639/639 OK, `typecheck`/`lint` OK, `build` OK,
+  smoke live (6422 esatto, sondaggi visibili, percentuali tornate).
+- Next: altre finestre, recepimenti extra, Corte dei Conti se si apre,
+  riduzione del sintetico.
 
 ## Stato iniziale (2026-09-28, iterazione 0)
 - Repo: `/Users/mark/Projects/simple-law`, branch `master` (appena `git init`, baseline committata `5391a84`).
