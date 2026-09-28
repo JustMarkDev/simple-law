@@ -170,8 +170,27 @@ Obiettivo precedente (completato): UI/UX, feature, corpus 5005 voci.
   terzo giudice onesto; numero/anno/CIG opzionali mai inventati.
 - Verifiche mie: `npm test` 554/554 OK, `typecheck`/`lint` OK, `build` OK
   (862 pagine), smoke live (hub/lista 200, filtri cds/tar/cga esatti).
-- Next: altre finestre storiche, recepimenti extra, Corte dei Conti se si
-  apre un canale, sostituzione del sintetico (ancora ~5000/5500+).
+- Next: recepimenti extra, Corte dei Conti se si apre un canale,
+  sostituzione del sintetico — fatti sotto bulk/atti/finestre; restano
+  Corte dei Conti/Italgiure (chiuse), altre finestre, riduzione sintetico
+  (ora ~5000/6296).
+
+## Reali-9 (2026-09-28, commit `fd13037`): scala reale, 6296 voci live
+- Workflow: 1 chiamata `workflow` con 10 subagenti (2 sonde + 1 giudice + 5
+  scrittori + 2 revisori). Sonde: bulk con/senza titolo, atti Camera 3144
+  DISTINCT (6288 righe doppie).
+- Ingerito: 39 atti attuazione UE + 638 atti 2005 lista-only + 3144 atti
+  Camera in 3 shard + finestre 1960/2020. Corpus live **6296** (1970 reali).
+- Fix P0 miei (revisori): 677 atti spacciati in_vigore senza dettaglio ->
+  stato "sconosciuto" (giallo); 7/14 GA persi -> CGA terzo giudice +
+  normalizer tollerante; file mai caricati (nomi) -> PERCORSI esatti;
+  slice 500/file troncava 138 atti 1907-1931 -> cap 5000 + regression test;
+  entita HTML nei titoli decode a load.
+- Verifiche mie: `npm test` 599/599 OK, `typecheck`/`lint` OK, `build` OK
+  (862 pagine), smoke live (6296 totale, 675 sconosciuti filtrabili,
+  dettaglio 1910, DDL 3149, controllo 14).
+- Next: altre finestre (anni '50/'40, 2015), recepimenti extra, Corte dei
+  Conti se si apre, riduzione del sintetico.
 
 ## Stato iniziale (2026-09-28, iterazione 0)
 - Repo: `/Users/mark/Projects/simple-law`, branch `master` (appena `git init`, baseline committata `5391a84`).
