@@ -3,10 +3,12 @@ import type { LawRecordExtra } from "@/lib/db";
 
 vi.mock("@/lib/db", () => ({
   queryLaws: vi.fn(),
+  listLaws: vi.fn(),
+  countLaws: vi.fn(),
   getLawsFromDBorSeed: vi.fn(),
 }));
 
-import { getLawsFromDBorSeed, queryLaws } from "@/lib/db";
+import { countLaws, getLawsFromDBorSeed, listLaws, queryLaws } from "@/lib/db";
 import { EXPORT_BATCH, EXPORT_CAP, GET as exportGET, azzeraLimiteExport } from "@/app/api/export/route";
 import { FEED_MAX, GET as feedGET } from "@/app/api/feed/route";
 
@@ -47,35 +49,58 @@ function richiestaExport(query: string, ip: string): Request {
 
 beforeEach(() => {
   vi.mocked(queryLaws).mockReset();
+  vi.mocked(listLaws).mockReset();
+  vi.mocked(countLaws).mockReset();
   vi.mocked(getLawsFromDBorSeed).mockReset();
   azzeraLimiteExport();
 });
 
+/** Simula il corpus per l'export paginato (listLaws a pagine + countLaws). */
+function mockRigheExport(righe: LawRecordExtra[]): void {
+  vi.mocked(countLaws).mockResolvedValue(righe.length);
+  vi.mocked(listLaws).mockImplementation(async (params) => {
+    const page = params?.page ?? 1;
+    const per = params?.per ?? 500;
+    const inizio = (page - 1) * per;
+    return { items: righe.slice(inizio, inizio + per), total: righe.length, page, per };
+  });
+}
+
 describe("export: filtri e limiti", () => {
-  it("inoltra a queryLaws i filtri troncati (q 200, tipo 80) con cap 5000", async () => {
-    vi.mocked(queryLaws).mockResolvedValue([]);
+  it("inoltra a listLaws i filtri troncati (q 200, tipo 80) a pagine da 500", async () => {
+    mockRigheExport([]);
     const qLunga = "a".repeat(300);
     const tipoLungo = "b".repeat(120);
     const res = await exportGET(
       richiestaExport(`?formato=json&q=${qLunga}&tipo=${tipoLungo}&anno=2026`, "filtri-1"),
     );
     expect(res.status).toBe(200);
-    expect(vi.mocked(queryLaws)).toHaveBeenCalledTimes(1);
-    const [filtri, limite] = vi.mocked(queryLaws).mock.calls[0] as [
-      { q: string; tipo: string; anno: string },
-      number,
-    ];
-    expect(filtri.q.length).toBeLessThanOrEqual(200);
-    expect(filtri.tipo.length).toBeLessThanOrEqual(80);
-    expect(filtri.anno).toBe("2026");
-    expect(limite).toBe(EXPORT_CAP);
+    // Lo stream e' lazy: consumarlo prima di verificare le chiamate.
+    const corpo = (await res.json()) as { items: unknown[]; total: number };
+    expect(corpo.items).toEqual([]);
+    expect(corpo.total).toBe(0);
+    expect(vi.mocked(listLaws)).toHaveBeenCalledTimes(1);
+    const params = vi.mocked(listLaws).mock.calls[0]?.[0] as {
+      q: string;
+      tipo: string;
+      anno: string;
+      page: number;
+      per: number;
+      sort: string;
+    };
+    expect(params.q.length).toBeLessThanOrEqual(200);
+    expect(params.tipo.length).toBeLessThanOrEqual(80);
+    expect(params.anno).toBe("2026");
+    expect(params.page).toBe(1);
+    expect(params.per).toBe(EXPORT_BATCH);
+    expect(params.sort).toBe("data_desc");
     expect(EXPORT_CAP).toBe(5000);
     expect(EXPORT_BATCH).toBe(500);
   });
 
   it("esporta in streaming 1200 righe con BOM, 12 colonne e header attachment/no-store", async () => {
     const attese = Array.from({ length: 1200 }, (_, i) => riga(i + 1));
-    vi.mocked(queryLaws).mockResolvedValue(attese);
+    mockRigheExport(attese);
     const res = await exportGET(richiestaExport("?formato=csv", "stream-1"));
     expect(res.status).toBe(200);
     expect(res.headers.get("content-disposition")).toContain("attachment");
@@ -97,7 +122,7 @@ describe("export: filtri e limiti", () => {
   });
 
   it("il JSON proietta solo le 12 colonne e non espone mai testo o semplificata", async () => {
-    vi.mocked(queryLaws).mockResolvedValue([riga(1), riga(2)]);
+    mockRigheExport([riga(1), riga(2)]);
     const res = await exportGET(richiestaExport("?formato=json", "json-1"));
     expect(res.status).toBe(200);
     expect(res.headers.get("content-disposition")).toContain("attachment");
@@ -137,7 +162,7 @@ describe("export: filtri e limiti", () => {
   });
 
   it("applica il rate-limit 20/min con 429 in italiano", async () => {
-    vi.mocked(queryLaws).mockResolvedValue([]);
+    mockRigheExport([]);
     const ip = "limite-1";
     let ultima: Response | null = null;
     for (let i = 0; i < 20; i += 1) {
@@ -171,7 +196,7 @@ describe("export: anti-injection CSV", () => {
       "=1,2 con virgola",
       "Titolo normale",
     ];
-    vi.mocked(queryLaws).mockResolvedValue(pericolosi.map((t, i) => riga(i + 1, t)));
+    mockRigheExport(pericolosi.map((t, i) => riga(i + 1, t)));
     const res = await exportGET(richiestaExport("?formato=csv", "injection-1"));
     const csv = await res.text();
     const resBom = await exportGET(richiestaExport("?formato=csv", "injection-1-bom"));
@@ -240,8 +265,9 @@ describe("feed RSS", () => {
 });
 
 describe("export/feed: mai 500", () => {
-  it("export risponde 200 vuoto se queryLaws lancia", async () => {
-    vi.mocked(queryLaws).mockRejectedValue(new Error("db giu"));
+  it("export risponde 200 vuoto se listLaws e countLaws lanciano", async () => {
+    vi.mocked(listLaws).mockRejectedValue(new Error("db giu"));
+    vi.mocked(countLaws).mockRejectedValue(new Error("db giu"));
     const res = await exportGET(richiestaExport("?formato=json", "mai500-1"));
     expect(res.status).toBe(200);
     const corpo = (await res.json()) as { items: unknown[]; total: number };

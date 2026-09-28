@@ -16,6 +16,7 @@ import type { CorpusStats, StatLaw } from "./stats";
 import type { AirStato, AttuativiInput } from "./quality";
 import type { SimplifiedLaw } from "./simplify";
 import type { Fonti, LawRecord, MinisterRecord } from "./seed-data";
+import { personaRilevanteRecord } from "./filtri-leggi";
 
 /**
  * Campi aggiuntivi memorizzati nel blob `extra` di `Law` e opzionali su
@@ -546,6 +547,12 @@ export interface LawFilters {
   stato?: string;
   /** Soglia minima di leggibilita' Gulpease (incluso). */
   minGulpease?: number | string;
+  /**
+   * Persona di riferimento (`guida|lavoro|impresa|studio|tutti|""`).
+   * Derivata, non colonna DB: si applica sempre in memoria e non viene
+   * mai ignorata.
+   */
+  persona?: string;
 }
 
 export interface ListLawsParams extends LawFilters {
@@ -592,12 +599,38 @@ export function svuotaCacheDb(): void {
 /** Soglia oltre la quale `qualita_desc` usa fallback `data_desc` su DB (no full-scan). */
 export const QUALITA_FALLBACK_SOGLIA = 1000;
 
+/**
+ * Tetto bounded per l'estratto persona su DB (prime 5000 schede).
+ * Con `persona` attiva il totale è calcolato su questo estratto e la nota
+ * UI `(calcolato sulle prime 5000 schede)` va mostrata oltre soglia.
+ */
+export const PERSONA_ESTRATTO_MAX = 5000;
+
 interface FiltriNormalizzati {
   q: string;
   tipo: string;
   anno: string;
   stato: string;
   minGulpease: number | undefined;
+  persona: string;
+}
+
+/**
+ * Normalizza la persona (`trim+lower+slice(0,60)`); allowlist
+ * `guida|lavoro|impresa|studio|tutti|""`, altro → `""`. Pura, mai lancia.
+ */
+export function parsePersona(value: unknown): string {
+  try {
+    const s = String(value ?? "")
+      .trim()
+      .toLowerCase()
+      .slice(0, 60);
+    if (!s || s === "tutti") return s;
+    if (s === "guida" || s === "lavoro" || s === "impresa" || s === "studio") return s;
+    return "";
+  } catch {
+    return "";
+  }
 }
 
 function parseStato(value: unknown): string {
@@ -626,6 +659,7 @@ function normalizzaFiltri(filters: LawFilters): FiltriNormalizzati {
     anno: parseAnno(filters.anno),
     stato: parseStato(filters.stato),
     minGulpease: parseMinGulpease(filters.minGulpease),
+    persona: parsePersona((filters as LawFilters)?.persona ?? ""),
   };
 }
 
@@ -713,9 +747,9 @@ export function ordinaPerRilevanza(
   return righe.map((r) => r.law);
 }
 
-/** Verifica se una norma soddisfa `q`, `tipo`, `anno`, `stato` e `minGulpease`. Pura. */
+/** Verifica se una norma soddisfa `q`, `tipo`, `anno`, `stato`, `minGulpease` e `persona`. Pura. */
 export function matchesFilters(law: LawRecordExtra, filters: LawFilters): boolean {
-  const { q, tipo, anno, stato, minGulpease } = normalizzaFiltri(filters);
+  const { q, tipo, anno, stato, minGulpease, persona } = normalizzaFiltri(filters);
   if (tipo && law.tipo.toLowerCase() !== tipo) {
     // Compat seed: confronto esatto, con fallback `includes` per valori legacy.
     if (!law.tipo.toLowerCase().includes(tipo)) return false;
@@ -723,6 +757,13 @@ export function matchesFilters(law: LawRecordExtra, filters: LawFilters): boolea
   if (anno && !law.dataEmanazione.startsWith(anno)) return false;
   if (stato && (law.stato ?? "").toLowerCase() !== stato) return false;
   if (minGulpease !== undefined && !((law.gulpease ?? -1) >= minGulpease)) return false;
+  if (persona && persona !== "tutti") {
+    try {
+      if (!personaRilevanteRecord(law, persona)) return false;
+    } catch {
+      return false;
+    }
+  }
   if (q) {
     const { termini, frasi } = estraiTermini(q);
     // Senza termini validi (es. query <2 char) non filtrare: fallback ILIKE del chiamante.
@@ -775,6 +816,8 @@ export function sortLaws(
 }
 
 function wherePrisma(filters: LawFilters): Prisma.LawWhereInput {
+  // `persona` è derivata (non colonna DB): viene IGNORATA qui e applicata
+  // in memoria sul percorso bounded (Caso C). Mai aggiungerla al `where`.
   const { q, tipo, anno, stato, minGulpease } = normalizzaFiltri(filters);
   const where: Prisma.LawWhereInput = {};
   // `equals` (non `contains`) per usare gli indici su `tipo`/`stato`.
@@ -916,6 +959,13 @@ async function caricaBase(): Promise<LawRecordExtra[]> {
  * Ottimizzata 100k+: `count`+`take` server-side (mai full-scan); `rilevanza`
  * riusa ILIKE indicizzato + ranking BM25-lite sulla pagina; `qualita_desc`
  * oltre 1000 righe usa fallback `data_desc` indicizzato.
+ *
+ * REGOLA MAI-IGNORARE (Caso C): con `persona` impostata e DB popolato si usa
+ * un estratto bounded (`where` senza persona, `orderBy:data_desc`,
+ * `take<=PERSONA_ESTRATTO_MAX`), poi filtro in memoria con
+ * `personaRilevanteRecord` (+ `matchesFilters` per `q`), ordinamento e
+ * paginazione; `total` coerente con le filtrate. Limite documentato: il
+ * totale è calcolato sulle prime 5000 schede.
  */
 export async function listLaws(params: ListLawsParams = {}): Promise<ListLawsResult> {
   const page = Math.min(10000, Math.max(1, Math.floor(params.page ?? 1) || 1));
@@ -923,6 +973,77 @@ export async function listLaws(params: ListLawsParams = {}): Promise<ListLawsRes
   const per = Math.min(MAX_PER_PAGE, Math.max(1, perRichiesti));
   const sort = params.sort ?? "data_desc";
   const qNorm = parseQuery(params.q ?? "").slice(0, 200);
+  const personaNorm = parsePersona((params as LawFilters)?.persona ?? "");
+
+  // CASO C: DB con persona → estratto bounded + filtro in memoria (mai full-scan).
+  if (personaNorm && personaNorm !== "tutti") {
+    try {
+      const prisma = getPrisma();
+      if (prisma) {
+        const totaleDb = await prisma.law.count().catch(() => 0);
+        if (totaleDb > 0) {
+          const whereSenzaPersona = wherePrisma({ ...params, persona: "" });
+          const estratto = await prisma.law.findMany({
+            where: whereSenzaPersona,
+            orderBy: [{ dataEmanazione: "desc" }, { eli: "asc" }],
+            take: PERSONA_ESTRATTO_MAX,
+          });
+          const filtrateBase = estratto
+            .map(mapLaw)
+            .filter((law) => matchesFilters(law, params));
+          let ordinate: LawRecordExtra[];
+          if (sort === "rilevanza") {
+            if (qNorm.length >= 2) {
+              const ranked = ordinaPerRilevanza(filtrateBase, qNorm.toLowerCase());
+              ordinate =
+                ranked.length > 0
+                  ? ranked
+                  : sortLaws(filtrateBase, "data_desc", qNorm.toLowerCase());
+            } else {
+              ordinate = sortLaws(filtrateBase, "data_desc", qNorm.toLowerCase());
+            }
+          } else {
+            ordinate = sortLaws(filtrateBase, sort, qNorm.toLowerCase());
+          }
+          const inizio = (page - 1) * per;
+          return {
+            items: ordinate.slice(inizio, inizio + per),
+            total: ordinate.length,
+            page,
+            per,
+          };
+        }
+      }
+    } catch {
+      // fallback al Caso A (seed) sotto
+    }
+    // CASO A con persona: seed in memoria (mai lancia).
+    try {
+      const laws = await caricaBase();
+      const filtrate = (() => {
+        const candidati = laws.filter((law) => matchesFilters(law, params));
+        if (sort === "rilevanza") {
+          if (qNorm.length >= 2) {
+            const ordinati = ordinaPerRilevanza(candidati, qNorm.toLowerCase());
+            return ordinati.length > 0
+              ? ordinati
+              : sortLaws(candidati, "data_desc", qNorm.toLowerCase());
+          }
+          return sortLaws(candidati, "data_desc", qNorm.toLowerCase());
+        }
+        return sortLaws(candidati, sort, qNorm.toLowerCase());
+      })();
+      const inizio = (page - 1) * per;
+      return {
+        items: filtrate.slice(inizio, inizio + per),
+        total: filtrate.length,
+        page,
+        per,
+      };
+    } catch {
+      return { items: [], total: 0, page, per };
+    }
+  }
 
   // `qualita` vive nel blob JSON: oltre la soglia si usa il fallback indicizzato.
   const serveQualitaInMemoria = sort === "qualita_desc";
@@ -1013,12 +1134,113 @@ export async function listLaws(params: ListLawsParams = {}): Promise<ListLawsRes
 /**
  * Paginazione a cursore `(dataEmanazione, eli)` per corpus 100k+.
  * `take<=500`, `nextCursor` opaco `base64url(data|eli)`. Never-throw.
+ *
+ * REGOLA MAI-IGNORARE (Caso C): con `persona` impostata e DB popolato si usa
+ * un estratto bounded (`where` senza persona, `orderBy:data_desc`,
+ * `take<=PERSONA_ESTRATTO_MAX`), poi filtro in memoria e cursore sulla lista
+ * filtrata. Limite documentato: prime 5000 schede.
  */
 export async function listLawsCursor(params: CursorParams = {}): Promise<CursorResult> {
   const takeRichiesto = Math.floor(params.take ?? 50) || 50;
   const take = Math.min(CURSOR_TAKE_MAX, Math.max(1, takeRichiesto));
   const sort = params.sort ?? "data_desc";
   const cursore = decodeCursor(params.cursor ?? "");
+  const personaNorm = parsePersona((params as LawFilters)?.persona ?? "");
+  // CASO C: DB con persona → estratto bounded + filtro in memoria.
+  if (personaNorm && personaNorm !== "tutti") {
+    try {
+      const prismaPersona = getPrisma();
+      if (prismaPersona) {
+        const totaleDb = await prismaPersona.law.count().catch(() => 0);
+        if (totaleDb > 0) {
+          const whereSenzaPersona = wherePrisma({ ...params, persona: "" });
+          const estratto = await prismaPersona.law.findMany({
+            where: whereSenzaPersona,
+            orderBy: [{ dataEmanazione: "desc" }, { eli: "asc" }],
+            take: PERSONA_ESTRATTO_MAX,
+          });
+          const filtrateBase = estratto
+            .map(mapLaw)
+            .filter((law) => matchesFilters(law, params));
+          let ordinate: LawRecordExtra[];
+          if (sort === "rilevanza") {
+            const qNorm = parseQuery(params.q ?? "").slice(0, 200).toLowerCase();
+            if (qNorm.length >= 2) {
+              const ranked = ordinaPerRilevanza(filtrateBase, qNorm);
+              ordinate =
+                ranked.length > 0
+                  ? ranked
+                  : sortLaws(filtrateBase, "data_desc", qNorm);
+            } else {
+              ordinate = sortLaws(filtrateBase, "data_desc", qNorm);
+            }
+          } else {
+            ordinate = sortLaws(
+              filtrateBase,
+              sort,
+              parseQuery(params.q ?? "").slice(0, 200).toLowerCase(),
+            );
+          }
+          let inizio = 0;
+          if (cursore?.eli) {
+            const idx = ordinate.findIndex((l) => l.eli === cursore.eli);
+            if (idx >= 0) inizio = idx + 1;
+          }
+          const pagina = ordinate.slice(inizio, inizio + take);
+          const ultima = pagina[pagina.length - 1];
+          const haAltre = inizio + take < ordinate.length && ultima;
+          return {
+            items: pagina,
+            nextCursor: haAltre
+              ? encodeCursor(ultima.dataEmanazione.slice(0, 10), ultima.eli)
+              : null,
+            take,
+          };
+        }
+      }
+    } catch {
+      // fallback al Caso A (seed) sotto
+    }
+    try {
+      const laws = await caricaBase().catch(() => getSeedLaws());
+      const qNormPersona = parseQuery(params.q ?? "").slice(0, 200).toLowerCase();
+      const ordinatePersona =
+        sort === "rilevanza"
+          ? (() => {
+              const candidati = laws.filter((law) => matchesFilters(law, params));
+              const ranked =
+                qNormPersona.length >= 2
+                  ? ordinaPerRilevanza(candidati, qNormPersona)
+                  : [];
+              return ranked.length > 0 ? ranked : sortLaws(candidati, "data_desc");
+            })()
+          : sortLaws(
+              laws.filter((law) => matchesFilters(law, params)),
+              sort,
+            );
+      let inizioPersona = 0;
+      if (cursore?.eli) {
+        const idx = ordinatePersona.findIndex((l) => l.eli === cursore.eli);
+        if (idx >= 0) inizioPersona = idx + 1;
+      }
+      const paginaPersona = ordinatePersona.slice(inizioPersona, inizioPersona + take);
+      const ultimaPersona = paginaPersona[paginaPersona.length - 1];
+      const haAltrePersona =
+        inizioPersona + take < ordinatePersona.length && ultimaPersona;
+      return {
+        items: paginaPersona,
+        nextCursor: haAltrePersona
+          ? encodeCursor(
+              ultimaPersona.dataEmanazione.slice(0, 10),
+              ultimaPersona.eli,
+            )
+          : null,
+        take,
+      };
+    } catch {
+      return { items: [], nextCursor: null, take };
+    }
+  }
   try {
     const prisma = getPrisma();
     if (prisma) {
@@ -1191,8 +1413,45 @@ export async function* streamLaws(
   }
 }
 
-/** Conta le norme che soddisfano i filtri. Non lancia. */
+/**
+ * Conta le norme che soddisfano i filtri. Non lancia.
+ *
+ * REGOLA MAI-IGNORARE (Caso C): con `persona` impostata e DB popolato conta
+ * sulle filtrate dell'estratto bounded (prime 5000 schede, `take` sempre
+ * presente), totale coerente con `listLaws`.
+ */
 export async function countLaws(filters: LawFilters = {}): Promise<number> {
+  const personaNorm = parsePersona((filters as LawFilters)?.persona ?? "");
+  if (personaNorm && personaNorm !== "tutti") {
+    try {
+      const prisma = getPrisma();
+      if (prisma) {
+        const totaleDb = await prisma.law.count().catch(() => 0);
+        if (totaleDb > 0) {
+          const whereSenzaPersona = wherePrisma({ ...filters, persona: "" });
+          const estratto = await prisma.law.findMany({
+            where: whereSenzaPersona,
+            orderBy: [{ dataEmanazione: "desc" }, { eli: "asc" }],
+            take: PERSONA_ESTRATTO_MAX,
+          });
+          return estratto.map(mapLaw).filter((law) => matchesFilters(law, filters))
+            .length;
+        }
+      }
+    } catch {
+      // fallback al Caso A sotto
+    }
+    try {
+      const laws = await caricaBase();
+      return laws.filter((law) => matchesFilters(law, filters)).length;
+    } catch {
+      try {
+        return getSeedLaws().filter((law) => matchesFilters(law, filters)).length;
+      } catch {
+        return 0;
+      }
+    }
+  }
   const prisma = getPrisma();
   if (prisma) {
     try {
@@ -1211,16 +1470,62 @@ export async function countLaws(filters: LawFilters = {}): Promise<number> {
 }
 
 /**
+ * Tetto massimo di righe per `queryLaws` (finestra di ricerca/ranking).
+ * Copre il corpus massimo generabile (CORPUS_TOTALE_MAX 20000 + 5 seed) con
+ * margine: totali e ranking esatti senza troncamenti silenziosi. Limite
+ * anti-DoS documentato: l'export usa `listLaws` paginato, gli estratti UI
+ * passano un `limit` esplicito minore (5000).
+ */
+export const QUERY_CAP_MASSIMO = 25000;
+
+/**
  * Restituisce tutte le norme filtrate (ordinate per data) fino a `limit`.
  * Pensata per l'export: non applica la paginazione della lista.
  * Usa il DB con filtri server-side quando disponibile (evita full-scan),
  * altrimenti filtra il seed in memoria. Non lancia mai.
+ *
+ * REGOLA MAI-IGNORARE (Caso C): con `persona` impostata e DB popolato usa
+ * l'estratto bounded (`where` senza persona, `take<=PERSONA_ESTRATTO_MAX`),
+ * poi filtro in memoria e `slice(0,min(limit,QUERY_CAP_MASSIMO))`. Limite
+ * documentato: prime 5000 schede su DB popolato, finestra intera su seed.
  */
 export async function queryLaws(
   filters: LawFilters = {},
   limit = 5000,
 ): Promise<LawRecordExtra[]> {
-  const cap = Math.min(5000, Math.max(1, Math.floor(limit) || 5000));
+  const cap = Math.min(QUERY_CAP_MASSIMO, Math.max(1, Math.floor(limit) || 5000));
+  const personaNorm = parsePersona((filters as LawFilters)?.persona ?? "");
+  if (personaNorm && personaNorm !== "tutti") {
+    try {
+      const prisma = getPrisma();
+      if (prisma) {
+        const totaleDb = await prisma.law.count().catch(() => 0);
+        if (totaleDb > 0) {
+          const whereSenzaPersona = wherePrisma({ ...filters, persona: "" });
+          const estratto = await prisma.law.findMany({
+            where: whereSenzaPersona,
+            orderBy: [{ dataEmanazione: "desc" }, { eli: "asc" }],
+            take: PERSONA_ESTRATTO_MAX,
+          });
+          return sortLaws(
+            estratto.map(mapLaw).filter((law) => matchesFilters(law, filters)),
+            "data_desc",
+          ).slice(0, cap);
+        }
+      }
+    } catch {
+      // fallback al Caso A sotto
+    }
+    try {
+      const laws = await caricaBase();
+      return sortLaws(
+        laws.filter((law) => matchesFilters(law, filters)),
+        "data_desc",
+      ).slice(0, cap);
+    } catch {
+      return [];
+    }
+  }
   const prisma = getPrisma();
   if (prisma) {
     try {

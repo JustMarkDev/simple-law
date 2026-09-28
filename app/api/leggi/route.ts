@@ -1,7 +1,11 @@
 import { NextResponse } from "next/server";
-import { listLaws, queryLaws, sortLaws } from "@/lib/db";
+import { QUERY_CAP_MASSIMO, listLaws, queryLaws, sortLaws } from "@/lib/db";
 import type { LawRecordExtra, LawSort } from "@/lib/db";
-import { normalizeIT, rankAndFilter } from "@/lib/search-rank";
+import { rankAndFilter } from "@/lib/search-rank";
+import {
+  coloreSemaforoRecord,
+  personaRilevanteRecord,
+} from "@/lib/filtri-leggi";
 
 export const dynamic = "force-dynamic";
 export const runtime = "nodejs";
@@ -36,30 +40,21 @@ function parseStato(value: string | null): string {
   return (value ?? "").trim().slice(0, 80);
 }
 
-/**
- * Colore del semaforo per un record grezzo (mirror di `deriveStato` in
- * `components/seed-fallback.ts` e `coloreSemaforoRecord` in app/page.tsx e
- * app/leggi/page.tsx). Puro, non lancia.
- */
-function coloreSemaforo(item: LawRecordExtra): "verde" | "giallo" | "rosso" {
-  try {
-    const stato = typeof item.stato === "string" ? item.stato : "";
-    if (/non.?vigore|abrog|decad|sospes/i.test(stato)) return "rosso";
-    const att = item.attuativi ?? { daAdottare: 0, adottati: 0, scaduti: 0 };
-    const adottati = Number.isFinite(att.adottati) ? att.adottati : 0;
-    const daAdottare = Number.isFinite(att.daAdottare) ? att.daAdottare : 0;
-    const scaduti = Number.isFinite(att.scaduti) ? att.scaduti : 0;
-    if (scaduti > 0) return "rosso";
-    if (daAdottare > 0 && adottati < daAdottare) return "giallo";
-    return "verde";
-  } catch {
-    return "verde";
-  }
-}
+/* ---------------------------------------------------------------------------
+ * Semaforo e persona: unica fonte di verita' `lib/filtri-leggi.ts`
+ * (stesse semantiche di pagine e data layer). Puro, never-throw.
+ * ------------------------------------------------------------------------- */
 
-/** Filtro `persona`: stringa breve usata come match testuale in-memory. */
+/**
+ * Filtro `persona`: derivata condivisa (non colonna DB). Normalizza con
+ * `trim+lower+slice(0,60)` e allowlist `guida|lavoro|impresa|studio|tutti|""`;
+ * valori fuori allowlist diventano `""` (filtro ignorato, mai errore).
+ */
 function parsePersona(value: string | null): string {
-  return (value ?? "").trim().slice(0, 80);
+  const p = (value ?? "").trim().toLowerCase().slice(0, 60);
+  if (p === "" || p === "tutti") return p;
+  if (p === "guida" || p === "lavoro" || p === "impresa" || p === "studio") return p;
+  return "";
 }
 
 /** Filtro `minGulpease`: intero 0-100, `undefined` se assente o invalido. */
@@ -75,8 +70,9 @@ function parseMinGulpease(value: string | null): number | undefined {
  * Post-filtri in-memory di fase 1 (`stato`, `minGulpease`, `persona`).
  * `stato` accetta sia lo stato record esatto (`in_vigore`, case-insensitive)
  * sia il colore del semaforo (`verde`/`giallo`/`rosso`, stessa regola di
- * `deriveStato` in `components/seed-fallback.ts`: fonte di verità per il
- * colore). Non lancia: in caso di errore restituisce la lista invariata.
+ * `coloreSemaforoRecord`). `persona` usa `personaRilevanteRecord` su
+ * `{numero,titolo,sintesi}` (mai scansione dell'intero record).
+ * Non lancia: in caso di errore restituisce la lista invariata.
  */
 function filtraAggiuntivi(
   items: LawRecordExtra[],
@@ -85,13 +81,12 @@ function filtraAggiuntivi(
   try {
     const { stato, minGulpease, persona } = filtro;
     const statoNorm = stato.toLowerCase();
-    const personaNorm = normalizeIT(persona);
     return items.filter((item) => {
       try {
         if (statoNorm) {
           const s = typeof item.stato === "string" ? item.stato.toLowerCase() : "";
           if (statoNorm === "verde" || statoNorm === "giallo" || statoNorm === "rosso") {
-            if (coloreSemaforo(item) !== statoNorm) return false;
+            if (coloreSemaforoRecord(item) !== statoNorm) return false;
           } else if (s !== statoNorm) {
             return false;
           }
@@ -100,18 +95,15 @@ function filtraAggiuntivi(
           const g = typeof item.gulpease === "number" ? item.gulpease : null;
           if (g === null || !Number.isFinite(g) || g < minGulpease) return false;
         }
-        if (personaNorm) {
-          const extra: string = (() => {
-            try {
-              return JSON.stringify(item).slice(0, 4000);
-            } catch {
-              return "";
-            }
-          })();
-          const testo = normalizeIT(
-            `${item.titolo ?? ""} ${item.sintesi ?? ""} ${item.tipo ?? ""} ${item.numero ?? ""} ${extra}`,
-          );
-          if (!testo.includes(personaNorm)) return false;
+        if (persona && persona !== "tutti") {
+          if (
+            !personaRilevanteRecord(
+              { numero: item.numero, titolo: item.titolo, sintesi: item.sintesi },
+              persona,
+            )
+          ) {
+            return false;
+          }
         }
         return true;
       } catch {
@@ -128,7 +120,7 @@ function filtraAggiuntivi(
  * Filtri: `q` (max 200, ranking se >=2 caratteri), `tipo`, `anno`,
  * `stato` (stato record esatto come `in_vigore`, oppure colore del semaforo
  * `verde`/`giallo`/`rosso`), `minGulpease` (0-100),
- * `persona` (match testuale in-memory, es. `famiglie`).
+ * `persona` (derivata condivisa `guida|lavoro|impresa|studio|tutti`, mai ignorata).
  * Paginazione: `page`, `per` (alias `limit`).
  * Ordinamento: `sort` (data_desc|data_asc|titolo_asc|gulpease_desc|qualita_desc
  *   |rilevanza, alias `relevance`). Con `q` presente il default e' `rilevanza`
@@ -158,12 +150,17 @@ export async function GET(request: Request) {
       q.trim().length >= 2 && (rilevanzaRichiesta || !sortEsplicito);
 
     if (usaRilevanza || haNuoviFiltri) {
-      // Percorso bounded (max 5000): pre-filtra sul DB per `tipo`/`anno`,
-      // poi filtri in-memory, ranking BM25-lite e paginazione.
+      // Finestra di ricerca/ranking esatta fino a QUERY_CAP_MASSIMO (copre
+      // il corpus massimo + margine: totali mai troncati in silenzio).
+      // Pre-filtra sul DB per `tipo`/`anno` (e `persona` quando supportata
+      // da `lib/db`), poi filtri in-memory con le semantiche condivise,
+      // ranking BM25-lite e paginazione.
+      // `persona` e' sempre riapplicata in memoria: mai ignorata.
       const sortLegacy = rilevanzaRichiesta || !sortEsplicito ? "data_desc" : sortValido(sortParam);
+      const conPersona = { persona } as Partial<Parameters<typeof queryLaws>[0]>;
       const base = usaRilevanza
-        ? await queryLaws({ tipo, anno }, 5000)
-        : await queryLaws({ q, tipo, anno }, 5000);
+        ? await queryLaws({ tipo, anno, ...conPersona }, QUERY_CAP_MASSIMO)
+        : await queryLaws({ q, tipo, anno, ...conPersona }, QUERY_CAP_MASSIMO);
       const filtrate = filtraAggiuntivi(base, { stato, minGulpease, persona });
       const ordinate = usaRilevanza ? rankAndFilter(filtrate, q) : sortLaws(filtrate, sortLegacy);
       const inizio = (page - 1) * per;

@@ -10,6 +10,7 @@ import MinisterCard from '@/components/MinisterCard'
 import Comparsa from '@/components/Comparsa'
 import Contatore from '@/components/Contatore'
 import { loadMinisters, normalizeLaw, personaRelevant, STATO_META, type Law } from '@/components/seed-fallback'
+import { coloreSemaforoRecord, personaRilevanteRecord } from '@/lib/filtri-leggi'
 import { countLaws, queryLaws } from '@/lib/db'
 import type { LawRecordExtra } from '@/lib/db'
 
@@ -48,59 +49,6 @@ const ESEMPI = [
 const MAX_CARD_HOME = 12
 /** Estratto bounded per i conteggi home (semaforo + filtro persona): 5000 record max. */
 const ESTRATTO_HOME_MAX = 5000
-
-type ColoreSemaforo = 'verde' | 'giallo' | 'rosso'
-
-/**
- * Mirror economico di `deriveStato` in `components/seed-fallback.ts` (fonte di
- * verità per il colore). Opera sul record grezzo così i conteggi su un
- * estratto da 5000 atti restano veloci (nessun calcolo Gulpease/qualità).
- */
-function coloreSemaforoRecord(record: Pick<LawRecordExtra, 'stato' | 'attuativi'>): ColoreSemaforo {
-  const stato = typeof record.stato === 'string' ? record.stato : ''
-  if (/non.?vigore|abrog|decad|sospes/i.test(stato)) return 'rosso'
-  const att = record.attuativi ?? { daAdottare: 0, adottati: 0, scaduti: 0 }
-  const adottati = Number.isFinite(att.adottati) ? att.adottati : 0
-  const daAdottare = Number.isFinite(att.daAdottare) ? att.daAdottare : 0
-  const scaduti = Number.isFinite(att.scaduti) ? att.scaduti : 0
-  if (scaduti > 0) return 'rosso'
-  if (daAdottare > 0 && adottati < daAdottare) return 'giallo'
-  return 'verde'
-}
-
-const PERSONA_NUMERO_HOME: Record<string, readonly string[]> = {
-  '133': ['impresa', 'lavoro', 'guida'],
-  '139': ['guida', 'impresa', 'lavoro'],
-  '124': ['impresa', 'lavoro'],
-  '36': ['lavoro', 'impresa', 'studio'],
-  '8': ['lavoro', 'impresa'],
-}
-
-function personeDelRecord(record: Pick<LawRecordExtra, 'numero' | 'titolo' | 'sintesi'>): string[] {
-  const esplicite = PERSONA_NUMERO_HOME[String(record.numero ?? '')]
-  if (esplicite) return [...esplicite]
-  const testo = `${record.titolo ?? ''} ${record.sintesi ?? ''}`.toLowerCase()
-  const trovate = (['guida', 'lavoro', 'impresa', 'studio'] as const).filter((persona) => {
-    if (persona === 'guida') return /strada|guida|veicol|carburant|patente|trasport/.test(testo)
-    if (persona === 'lavoro') return /lavor|occupaz|previden|contratt|salario|dipendent/.test(testo)
-    if (persona === 'impresa') return /impres|industr|mercato|concorrenz|commerc|pmi|export/.test(testo)
-    return /scuol|studi|universit|student|istruzion|bors/.test(testo)
-  })
-  return trovate.length > 0 ? [...trovate] : ['lavoro', 'impresa']
-}
-
-/**
- * Mirror economico di `personaRelevant(normalizeLaw(...))`: stesso risultato
- * senza normalizzare l'intero estratto. Fonte di verità in
- * `components/seed-fallback.ts` (`derivePersone` + `personaRelevant`).
- */
-function personaRilevanteRecord(
-  record: Pick<LawRecordExtra, 'numero' | 'titolo' | 'sintesi'>,
-  persona: string,
-): boolean {
-  if (!persona || persona === 'tutti') return true
-  return personeDelRecord(record).includes(persona)
-}
 
 /** Mirror di `featured` in `normalizeLaw`: DL 133/2026 in evidenza. */
 function isFeaturedRecord(record: Pick<LawRecordExtra, 'numero' | 'tipo'>): boolean {

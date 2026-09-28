@@ -2,10 +2,11 @@ import { beforeEach, describe, expect, it, vi } from "vitest";
 import type { LawRecordExtra } from "@/lib/db";
 
 vi.mock("@/lib/db", () => ({
-  queryLaws: vi.fn(),
+  listLaws: vi.fn(),
+  countLaws: vi.fn(),
 }));
 
-import { queryLaws } from "@/lib/db";
+import { countLaws, listLaws } from "@/lib/db";
 import { GET as exportGET } from "@/app/api/export/route";
 
 function row(titolo: string, numero = "1"): LawRecordExtra {
@@ -24,12 +25,24 @@ function row(titolo: string, numero = "1"): LawRecordExtra {
 }
 
 beforeEach(() => {
-  vi.mocked(queryLaws).mockReset();
+  vi.mocked(listLaws).mockReset();
+  vi.mocked(countLaws).mockReset();
 });
+
+/** Simula il corpus per l'export paginato (listLaws a pagine + countLaws). */
+function mockRighe(righe: LawRecordExtra[]): void {
+  vi.mocked(countLaws).mockResolvedValue(righe.length);
+  vi.mocked(listLaws).mockImplementation(async (params) => {
+    const page = params?.page ?? 1;
+    const per = params?.per ?? 500;
+    const inizio = (page - 1) * per;
+    return { items: righe.slice(inizio, inizio + per), total: righe.length, page, per };
+  });
+}
 
 describe("GET /api/export (CSV injection)", () => {
   it("antepone un apice alle celle che iniziano con = + - @", async () => {
-    vi.mocked(queryLaws).mockResolvedValue([
+    mockRighe([
       row("=cmd|' /C calc'!A0", "1"),
       row("+39 06 1234", "2"),
       row("-2+3", "3"),
@@ -51,7 +64,7 @@ describe("GET /api/export (CSV injection)", () => {
   });
 
   it("mantiene il quoting delle celle che contengono virgole dopo la protezione", async () => {
-    vi.mocked(queryLaws).mockResolvedValue([row("=1,2", "1")]);
+    mockRighe([row("=1,2", "1")]);
 
     const csv = await (await exportGET(new Request("http://localhost/api/export"))).text();
 

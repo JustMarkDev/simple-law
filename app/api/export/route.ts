@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { queryLaws } from "@/lib/db";
+import { countLaws, listLaws } from "@/lib/db";
 import type { LawRecordExtra } from "@/lib/db";
 
 export const dynamic = "force-dynamic";
@@ -118,12 +118,19 @@ function filtriRichiesta(searchParams: URLSearchParams): { q: string; tipo: stri
  * GET /api/export?formato=csv|json&q=&tipo=&anno=
  * Scarica un estratto del corpus (max 5000 righe) come allegato, in streaming.
  *
- * - La lettura usa `queryLaws` (never-throw) con cap 5000; l'output e'
- *   emesso a batch di 500 righe via ReadableStream, senza mai costruire
- *   l'intero corpo in memoria (scala verso 100GB).
+ * - Lettura paginata (`listLaws` a pagine da 500, `sort: data_desc` stabile):
+ *   ogni `pull` asyncaricatica una sola pagina e la proietta subito a 12
+ *   colonne (mai `testo`/`sintesi`/`semplificata`/`fonti`/`extra` in memoria
+ *   d'uscita); backpressure nativa, mai l'intero corpo in memoria.
+ * - `total` = righe esportate; `totaleReale` = righe corrispondenti ai filtri
+ *   (può superare il cap) + `troncato: true` e header `X-Export-Troncato: 1`
+ *   quando il cap taglia righe (mai silenzio sul troncamento).
  * - Proiezione a 12 colonne: mai `testo`/`semplificata` in output.
- * - CSV con BOM e protezione anti-injection; JSON in streaming.
- * - Non lancia mai 500: errore inatteso -> 200 con elenco vuoto.
+ * - CSV con BOM e protezione anti-injection; JSON con framing incrementale
+ *   senza trailing comma (valido anche a corpus vuoto).
+ * - Non lancia mai 500: errore inatteso -> 200 con elenco vuoto; errore o
+ *   abort in `pull` -> `controller.error` (mai corpo troncato spacciato per
+ *   valido: su abort il client riceve errore di rete, non 200).
  */
 export async function GET(request: Request) {
   const inizio = Date.now();
@@ -149,45 +156,124 @@ export async function GET(request: Request) {
     }
 
     const filtri = filtriRichiesta(searchParams);
-    let items: LawRecordExtra[] = [];
+    // Totale reale per il flag di troncamento (never-throw: fallback 0).
+    let totaleReale = 0;
     try {
-      items = await queryLaws(filtri, EXPORT_CAP);
+      totaleReale = await countLaws(filtri);
+      if (!Number.isFinite(totaleReale) || totaleReale < 0) totaleReale = 0;
     } catch {
-      items = [];
+      totaleReale = 0;
     }
-    if (!Array.isArray(items)) items = [];
-    const proiettate = items.slice(0, EXPORT_CAP).map(proietta);
+    const troncato = totaleReale > EXPORT_CAP;
     const generatedAt = new Date().toISOString();
 
     if (Date.now() - inizio > 500) {
-      console.warn(`[export] query lenta: ${Date.now() - inizio}ms filtri=${JSON.stringify(filtri)}`);
+      console.warn(`[export] conteggio lento: ${Date.now() - inizio}ms filtri=${JSON.stringify(filtri)}`);
     }
+
+    const segnale = request.signal;
+    const abortErrore = (): Error => {
+      try {
+        return new DOMException("Esportazione annullata dal client", "AbortError");
+      } catch {
+        return new Error("Esportazione annullata dal client");
+      }
+    };
+
+    // Sorgente paginata condivisa da CSV e JSON: carica una pagina alla
+    // volta (mai oltre EXPORT_BATCH righe in memoria d'uscita).
+    const creaSorgente = () => {
+      let pagina = 1;
+      let finite = false;
+      let scritti = 0;
+      return {
+        scritti: () => scritti,
+        async prossima(): Promise<RigaProiettata[]> {
+          if (finite || scritti >= EXPORT_CAP) {
+            finite = true;
+            return [];
+          }
+          const residuo = EXPORT_CAP - scritti;
+          const per = Math.min(EXPORT_BATCH, residuo);
+          let items: LawRecordExtra[] = [];
+          try {
+            const paginaDati = await listLaws({ ...filtri, page: pagina, per, sort: "data_desc" });
+            if (Array.isArray(paginaDati.items)) items = paginaDati.items;
+          } catch {
+            items = [];
+          }
+          pagina += 1;
+          if (items.length < per) finite = true;
+          const righe = items.slice(0, per).map(proietta);
+          scritti += righe.length;
+          if (scritti >= EXPORT_CAP) finite = true;
+          return righe;
+        },
+      };
+    };
+
+    const intestazioniComuni = {
+      "cache-control": "no-store",
+      "x-content-type-options": "nosniff",
+      "X-Export-Total": String(Math.min(totaleReale, EXPORT_CAP)),
+      "X-Export-Totale-Reale": String(totaleReale),
+      "X-Export-Troncato": troncato ? "1" : "0",
+    };
 
     if (formato === "json") {
       const encoder = new TextEncoder();
-      let indice = 0;
+      const sorgente = creaSorgente();
       let primo = true;
+      let aperto = false;
+      let chiuso = false;
       const stream = new ReadableStream<Uint8Array>({
-        start(controller) {
-          controller.enqueue(
-            encoder.encode(`{"items":[`),
-          );
-          while (indice < proiettate.length) {
-            const fine = Math.min(indice + EXPORT_BATCH, proiettate.length);
-            const pezzi: string[] = [];
-            for (let i = indice; i < fine; i += 1) {
-              pezzi.push(`${primo ? "" : ","}${JSON.stringify(proiettate[i])}`);
-              primo = false;
+        async pull(controller) {
+          try {
+            if (segnale?.aborted) {
+              controller.error(abortErrore());
+              return;
             }
-            controller.enqueue(encoder.encode(pezzi.join("")));
-            indice = fine;
+            if (chiuso) {
+              controller.close();
+              return;
+            }
+            if (!aperto) {
+              controller.enqueue(encoder.encode(`{"items":[`));
+              aperto = true;
+              return;
+            }
+            const righe = await sorgente.prossima();
+            if (segnale?.aborted) {
+              controller.error(abortErrore());
+              return;
+            }
+            if (righe.length > 0) {
+              let pezzo = "";
+              for (const riga of righe) {
+                pezzo += `${primo ? "" : ","}${JSON.stringify(riga)}`;
+                primo = false;
+              }
+              controller.enqueue(encoder.encode(pezzo));
+              return;
+            }
+            const totale = sorgente.scritti();
+            controller.enqueue(
+              encoder.encode(
+                `],"total":${totale},"totaleReale":${totaleReale},"troncato":${troncato ? "true" : "false"},"cap":${EXPORT_CAP},"generatedAt":${JSON.stringify(generatedAt)},"filtri":${JSON.stringify(filtri)}}`,
+              ),
+            );
+            chiuso = true;
+            controller.close();
+          } catch (errore) {
+            try {
+              controller.error(errore);
+            } catch {
+              // controller gia' chiuso: niente da fare
+            }
           }
-          controller.enqueue(
-            encoder.encode(
-              `],"total":${proiettate.length},"generatedAt":${JSON.stringify(generatedAt)},"filtri":${JSON.stringify(filtri)}}`,
-            ),
-          );
-          controller.close();
+        },
+        cancel() {
+          chiuso = true;
         },
       });
       return new NextResponse(stream, {
@@ -195,33 +281,56 @@ export async function GET(request: Request) {
         headers: {
           "content-type": "application/json; charset=utf-8",
           "content-disposition": 'attachment; filename="leggi-export.json"',
-          "cache-control": "no-store",
-          "x-content-type-options": "nosniff",
+          ...intestazioniComuni,
         },
       });
     }
 
     const encoder = new TextEncoder();
-    let indice = 0;
-    let primaRiga = true;
+    const sorgente = creaSorgente();
+    let intestazioneInviata = false;
+    let finitoCsv = false;
     const stream = new ReadableStream<Uint8Array>({
-      start(controller) {
-        while (indice < proiettate.length || primaRiga) {
-          if (primaRiga) {
-            controller.enqueue(encoder.encode(`\uFEFF${COLONNE.join(",")}\r\n`));
-            primaRiga = false;
-            if (proiettate.length === 0) break;
-            continue;
+      async pull(controller) {
+        try {
+          if (segnale?.aborted) {
+            controller.error(abortErrore());
+            return;
           }
-          const fine = Math.min(indice + EXPORT_BATCH, proiettate.length);
+          if (finitoCsv) {
+            controller.close();
+            return;
+          }
+          if (!intestazioneInviata) {
+            controller.enqueue(encoder.encode(`\uFEFF${COLONNE.join(",")}\r\n`));
+            intestazioneInviata = true;
+            return;
+          }
+          const righe = await sorgente.prossima();
+          if (segnale?.aborted) {
+            controller.error(abortErrore());
+            return;
+          }
+          if (righe.length === 0) {
+            finitoCsv = true;
+            controller.close();
+            return;
+          }
           const pezzi: string[] = [];
-          for (let i = indice; i < fine; i += 1) {
-            pezzi.push(rigaCsv(proiettate[i]));
+          for (const riga of righe) {
+            pezzi.push(rigaCsv(riga));
           }
           controller.enqueue(encoder.encode(`${pezzi.join("\r\n")}\r\n`));
-          indice = fine;
+        } catch (errore) {
+          try {
+            controller.error(errore);
+          } catch {
+            // controller gia' chiuso: niente da fare
+          }
         }
-        controller.close();
+      },
+      cancel() {
+        finitoCsv = true;
       },
     });
     return new NextResponse(stream, {
@@ -229,8 +338,7 @@ export async function GET(request: Request) {
       headers: {
         "content-type": "text/csv; charset=utf-8",
         "content-disposition": 'attachment; filename="leggi-export.csv"',
-        "cache-control": "no-store",
-        "x-content-type-options": "nosniff",
+        ...intestazioniComuni,
       },
     });
   } catch {

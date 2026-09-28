@@ -100,16 +100,21 @@ describe("GET /api/leggi", () => {
       await leggiGET(new Request("http://localhost/api/leggi?stato=in_vigore&per=1"))
     ).json()) as { total: number };
     expect(esatto.total).toBeGreaterThanOrEqual(1);
+    const base = (await (await leggiGET(new Request("http://localhost/api/leggi?per=1"))).json()) as {
+      total: number;
+    };
+    const perColore: Record<string, number> = {};
     for (const colore of ["verde", "giallo", "rosso"]) {
       const res = (await (
         await leggiGET(new Request(`http://localhost/api/leggi?stato=${colore}&per=1`))
       ).json()) as { total: number };
-      expect(res.total).toBeGreaterThanOrEqual(0);
+      perColore[colore] = res.total;
     }
-    const verdi = (await (
-      await leggiGET(new Request("http://localhost/api/leggi?stato=verde&per=50"))
-    ).json()) as { total: number };
-    expect(verdi.total).toBeGreaterThanOrEqual(1);
+    // Ogni record ha esattamente un colore: la partizione copre il totale.
+    expect(perColore["verde"]! + perColore["giallo"]! + perColore["rosso"]!).toBe(base.total);
+    // Il corpus contiene atti gialli (DL 133/2026) e verdi.
+    expect(perColore["verde"]).toBeGreaterThanOrEqual(1);
+    expect(perColore["giallo"]).toBeGreaterThanOrEqual(1);
   });
 
   it("filtra per anno", async () => {
@@ -130,6 +135,34 @@ describe("GET /api/leggi", () => {
     const titoli = data.items.map((item) => item.titolo);
     const ordinati = [...titoli].sort((a, b) => a.localeCompare(b, "it"));
     expect(titoli).toEqual(ordinati);
+  });
+
+  it("filtra per persona: ?persona=lavoro con totale coerente", async () => {
+    const base = (await (
+      await leggiGET(new Request("http://localhost/api/leggi?per=1"))
+    ).json()) as { total: number };
+    const lavoro = (await (
+      await leggiGET(new Request("http://localhost/api/leggi?persona=lavoro&per=1"))
+    ).json()) as { total: number; items: unknown[] };
+    expect(lavoro.total).toBeGreaterThan(0);
+    expect(lavoro.total).toBeLessThanOrEqual(base.total);
+  });
+
+  it("persona: pagina 1 e 2 coerenti con il totale", async () => {
+    const prima = (await (
+      await leggiGET(new Request("http://localhost/api/leggi?persona=lavoro&page=1&per=2"))
+    ).json()) as { items: { eli: string }[]; total: number; page: number };
+    const seconda = (await (
+      await leggiGET(new Request("http://localhost/api/leggi?persona=lavoro&page=2&per=2"))
+    ).json()) as { items: { eli: string }[]; total: number; page: number };
+    expect(prima.total).toBeGreaterThan(0);
+    expect(seconda.total).toBe(prima.total);
+    expect(prima.items.length).toBeGreaterThan(0);
+    expect(seconda.items.length).toBeGreaterThan(0);
+    const eliPrima = new Set(prima.items.map((i) => i.eli));
+    for (const item of seconda.items) {
+      expect(eliPrima.has(item.eli)).toBe(false);
+    }
   });
 });
 

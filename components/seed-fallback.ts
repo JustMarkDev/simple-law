@@ -19,6 +19,11 @@ import { scoreQuality, type AirStato, type AttuativiInput } from '@/lib/quality'
 import { calcGulpease } from '@/lib/readability'
 import { buildFonti } from '@/lib/fonti'
 import { getLawByEli, getLawsFromDBorSeed } from '@/lib/db'
+import {
+  coloreSemaforoRecord as coloreSemaforoCondiviso,
+  personaRilevanteRecord as personaRilevanteCondivisa,
+  PERSONA_NUMERI,
+} from '@/lib/filtri-leggi'
 import { PERSONAS, type PersonaKey } from './personas'
 
 export type { Fonti }
@@ -150,44 +155,32 @@ export function tipoLabel(law: Law): string {
   }
 }
 
-const PERSONAS_BY_NUMERO: Record<string, PersonaKey[]> = {
-  '133': ['impresa', 'lavoro', 'guida'],
-  '139': ['guida', 'impresa', 'lavoro'],
-  '124': ['impresa', 'lavoro'],
-  '36': ['lavoro', 'impresa', 'studio'],
-  '8': ['lavoro', 'impresa'],
-}
-
-/* PERSONE rimosso: la derivazione usa regex precompilate qui sotto. */
+/* Mappa esplicita numero→persone: unica fonte di verità in `lib/filtri-leggi`. */
 
 /*
- * Regex precompilate a scansione lineare: solo alternative semplici, senza
- * quantificatori annidati né backtracking. Ogni test è O(k) sulla lunghezza
- * del testo troncato (vedi sotto), quindi O(1) per record e O(N) sul corpus.
+ * Derivazione persone/stato: delega al modulo condiviso `lib/filtri-leggi`
+ * (unica fonte di verità per i record grezzi). `derivePersone` ricostruisce
+ * l'elenco usando `personaRilevanteRecord` per ciascuna persona; `deriveStato`
+ * usa `coloreSemaforoRecord` per il colore e produce il motivo italiano.
  */
-const RE_PERSONA_GUIDA = /strada|guida|veicol|carburant|patente|trasport/
-const RE_PERSONA_LAVORO = /lavor|occupaz|previden|contratt|salario|dipendent/
-const RE_PERSONA_IMPRESA = /impres|industr|mercato|concorrenz|commerc|pmi|export/
-const RE_PERSONA_STUDIO = /scuol|studi|universit|student|istruzion|bors/
-const RE_STATO_NON_VIGORE = /non.?vigore|abrog|decad|sospes/i
-
-/** Quanti caratteri al massimo si scansionano per derivare la persona (O(1) per record). */
-const MAX_TESTO_PERSONA = 2000
-
 function derivePersone(record: LawRecord): PersonaKey[] {
   try {
     const numero = typeof record?.numero === 'string' ? record.numero : String(record?.numero ?? '')
-    const esplicite = PERSONAS_BY_NUMERO[numero]
-    if (esplicite) return esplicite
-    const titolo = typeof record?.titolo === 'string' ? record.titolo : ''
-    const sintesi = typeof record?.sintesi === 'string' ? record.sintesi : ''
-    const testo = `${titolo} ${sintesi}`.slice(0, MAX_TESTO_PERSONA).toLowerCase()
-    if (!testo.trim()) return ['lavoro', 'impresa']
+    const esplicite = PERSONA_NUMERI[numero]
+    if (esplicite) return [...esplicite] as PersonaKey[]
+    const base = {
+      numero: record?.numero,
+      titolo: typeof record?.titolo === 'string' ? record.titolo : '',
+      sintesi: typeof record?.sintesi === 'string' ? record.sintesi : '',
+    }
     const trovate: PersonaKey[] = []
-    if (RE_PERSONA_GUIDA.test(testo)) trovate.push('guida')
-    if (RE_PERSONA_LAVORO.test(testo)) trovate.push('lavoro')
-    if (RE_PERSONA_IMPRESA.test(testo)) trovate.push('impresa')
-    if (RE_PERSONA_STUDIO.test(testo)) trovate.push('studio')
+    for (const persona of ['guida', 'lavoro', 'impresa', 'studio'] as const) {
+      try {
+        if (personaRilevanteCondivisa(base, persona)) trovate.push(persona)
+      } catch {
+        // ignora la singola persona malformata
+      }
+    }
     return trovate.length > 0 ? trovate : ['lavoro', 'impresa']
   } catch {
     return ['lavoro', 'impresa']
@@ -204,18 +197,23 @@ function deriveStato(record: LawRecord): { stato: Stato; motivo: string } {
     const adottati = numeroAttuativi(att?.adottati)
     const daAdottare = numeroAttuativi(att?.daAdottare)
     const scaduti = numeroAttuativi(att?.scaduti)
-    const statoGrezzo = typeof record?.stato === 'string' ? record.stato : 'in_vigore'
-
-    if (RE_STATO_NON_VIGORE.test(statoGrezzo)) {
-      return { stato: 'rosso', motivo: 'La norma non è in vigore o risulta sospesa.' }
-    }
-    if (scaduti > 0) {
+    const colore = coloreSemaforoCondiviso({
+      stato: record?.stato,
+      attuativi: { daAdottare, adottati, scaduti },
+    })
+    if (colore === 'rosso') {
+      const statoGrezzo = typeof record?.stato === 'string' ? record.stato : ''
+      // Stessa regola del condiviso `lib/filtri-leggi` (`non.?vig` copre
+      // sia `non vigore` sia `non vigente`).
+      if (/non.?vig|abrog|decad|sospes/i.test(statoGrezzo)) {
+        return { stato: 'rosso', motivo: 'La norma non è in vigore o risulta sospesa.' }
+      }
       return {
         stato: 'rosso',
         motivo: `${scaduti} decreti attuativi sono scaduti: la norma non è ancora pienamente applicabile.`,
       }
     }
-    if (daAdottare > 0 && adottati < daAdottare) {
+    if (colore === 'giallo') {
       return {
         stato: 'giallo',
         motivo: `Servono ancora ${daAdottare - adottati} decreti attuativi per applicarla del tutto.`,

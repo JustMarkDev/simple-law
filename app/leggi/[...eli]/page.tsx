@@ -33,6 +33,9 @@ export const dynamicParams = true
 
 const MAX_STATIC_PARAMS = 100
 
+// Nota: restano prerenderizzate solo le prime 100 schede.
+// La discoverability oltre i 100 è via sitemap + ricerca: non alzare a 5000.
+
 const AIR_LABEL: Record<string, string> = {
   presente: 'AIR presente',
   semplificata: 'AIR semplificata',

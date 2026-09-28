@@ -9,7 +9,8 @@ import PaginazioneLeggi from '@/components/PaginazioneLeggi'
 import LawCard from '@/components/LawCard'
 import { countLaws, listLaws, queryLaws, type LawSort } from '@/lib/db'
 import type { LawRecordExtra } from '@/lib/db'
-import { normalizeLaw, personaRelevant, STATO_META } from '@/components/seed-fallback'
+import { coloreSemaforoRecord, personaRilevanteRecord, type ColoreSemaforo } from '@/lib/filtri-leggi'
+import { normalizeLaw, STATO_META } from '@/components/seed-fallback'
 
 interface LeggiProps {
   searchParams: Promise<Record<string, string | string[] | undefined>>
@@ -29,30 +30,10 @@ const SORTS_UI: readonly SortUI[] = [
 const PER_OPZIONI: readonly number[] = [12, 24, 48]
 const PER_DEFAULT = 12
 
-/** Estratto bounded per i conteggi globali dei filtri persona/semaforo (max 5000). */
+/** Estratto bounded per i conteggi globali del filtro semaforo (max 5000). */
 const ESTRATTO_FILTRI_MAX = 5000
 
-type ColoreSemaforo = 'verde' | 'giallo' | 'rosso'
-
 const STATI_SEMAFORO: readonly ColoreSemaforo[] = ['verde', 'giallo', 'rosso']
-
-/**
- * Mirror economico di `deriveStato` in `components/seed-fallback.ts` (fonte di
- * verità per il colore). Stessa regola della home (`coloreSemaforoRecord` in
- * app/page.tsx): opera sul record grezzo così il filtro su un estratto da
- * 5000 atti resta veloce (nessun calcolo Gulpease/qualità).
- */
-function coloreSemaforoRecord(record: Pick<LawRecordExtra, 'stato' | 'attuativi'>): ColoreSemaforo {
-  const stato = typeof record.stato === 'string' ? record.stato : ''
-  if (/non.?vigore|abrog|decad|sospes/i.test(stato)) return 'rosso'
-  const att = record.attuativi ?? { daAdottare: 0, adottati: 0, scaduti: 0 }
-  const adottati = Number.isFinite(att.adottati) ? att.adottati : 0
-  const daAdottare = Number.isFinite(att.daAdottare) ? att.daAdottare : 0
-  const scaduti = Number.isFinite(att.scaduti) ? att.scaduti : 0
-  if (scaduti > 0) return 'rosso'
-  if (daAdottare > 0 && adottati < daAdottare) return 'giallo'
-  return 'verde'
-}
 
 const ESEMPI_RICERCA = ['carburanti', 'concorrenza', 'sicurezza informatica']
 
@@ -97,37 +78,6 @@ function hrefSenza(query: Record<string, string>, chiave: string): string {
   return qs ? `/leggi?${qs}` : '/leggi'
 }
 
-const PERSONA_NUMERO_ARCHIVIO: Record<string, readonly string[]> = {
-  '133': ['impresa', 'lavoro', 'guida'],
-  '139': ['guida', 'impresa', 'lavoro'],
-  '124': ['impresa', 'lavoro'],
-  '36': ['lavoro', 'impresa', 'studio'],
-  '8': ['lavoro', 'impresa'],
-}
-
-/**
- * Mirror economico di `personaRelevant(normalizeLaw(...))` per contare il
- * filtro persona su un estratto fino a 5000 schede senza normalizzarle tutte.
- * Fonte di verità in `components/seed-fallback.ts`.
- */
-function personaRilevanteRecord(
-  record: Pick<LawRecordExtra, 'numero' | 'titolo' | 'sintesi'>,
-  persona: string,
-): boolean {
-  if (!persona || persona === 'tutti') return true
-  const esplicite = PERSONA_NUMERO_ARCHIVIO[String(record.numero ?? '')]
-  if (esplicite) return esplicite.includes(persona)
-  const testo = `${record.titolo ?? ''} ${record.sintesi ?? ''}`.toLowerCase()
-  const trovate = (['guida', 'lavoro', 'impresa', 'studio'] as const).filter((chiave) => {
-    if (chiave === 'guida') return /strada|guida|veicol|carburant|patente|trasport/.test(testo)
-    if (chiave === 'lavoro') return /lavor|occupaz|previden|contratt|salario|dipendent/.test(testo)
-    if (chiave === 'impresa') return /impres|industr|mercato|concorrenz|commerc|pmi|export/.test(testo)
-    return /scuol|studi|universit|student|istruzion|bors/.test(testo)
-  })
-  const persone = trovate.length > 0 ? [...trovate] : ['lavoro', 'impresa']
-  return persone.includes(persona)
-}
-
 export default async function LeggiPage({ searchParams }: LeggiProps) {
   const sp = await searchParams
   const q = str(sp, 'q').slice(0, 200)
@@ -141,52 +91,36 @@ export default async function LeggiPage({ searchParams }: LeggiProps) {
   const sortRaw = str(sp, 'sort')
   const sortDefault: SortUI = q ? 'rilevanza' : 'data_desc'
   const sort: SortUI = (SORTS_UI as readonly string[]).includes(sortRaw) ? (sortRaw as SortUI) : sortDefault
-  // `rilevanza` usa il ranking titolo > sintesi > numero in lib/db (con fallback
-  // ILIKE); in attesa dell'indice tsvector, la paginazione resta server-side.
-  const sortDb: LawSort = sort === 'rilevanza' ? 'data_desc' : sort
+  // `rilevanza` è gestita server-side in lib/db (ranking BM25-lite sulla
+  // finestra + fallback ILIKE); la paginazione resta sempre server-side.
+  const sortDb: LawSort = sort
   const perRaw = Math.floor(Number(str(sp, 'per'))) || PER_DEFAULT
   const per = PER_OPZIONI.includes(perRaw) ? perRaw : PER_DEFAULT
   const vista: Vista = str(sp, 'vista') === 'lista' ? 'lista' : 'griglia'
   const paginaMax = Math.max(1, Math.floor(10000 / per))
   const page = Math.min(paginaMax, Math.max(1, Math.floor(Number(str(sp, 'page'))) || 1))
 
-  // Paginazione sempre server-side: nessun fetch allargato + slice client, così
-  // la pagina resta veloce anche con un corpus da 5000 atti. Il totale
-  // dell'archivio e l'estratto bounded per i filtri persona/semaforo (max 5000
-  // schede) viaggiano in parallelo alla pagina corrente.
-  const serveEstratto = persona !== 'tutti' || stato !== ''
+  // Paginazione sempre server-side con filtro persona diretto in lib/db
+  // (Caso C): la pagina è già corretta, nessun filtro solo-pagina. Solo il
+  // filtro semaforo (derivato) usa l'estratto bounded in-memory (max 5000).
+  const serveEstratto = stato !== ''
   const [paginata, totaleArchivio, estrattoFiltri] = await Promise.all([
-    listLaws({ q, tipo, anno, sort: sortDb, page, per }),
+    listLaws({ q, tipo, anno, persona, sort: sortDb, page, per }),
     countLaws().catch(() => 0),
     serveEstratto
-      ? queryLaws({ q, tipo, anno }, ESTRATTO_FILTRI_MAX).catch(() => [] as LawRecordExtra[])
+      ? queryLaws({ q, tipo, anno, persona }, ESTRATTO_FILTRI_MAX).catch(() => [] as LawRecordExtra[])
       : Promise.resolve([] as LawRecordExtra[]),
   ])
-  const base = paginata.items.map(normalizeLaw)
-  // Il filtro persona è applicato alle schede della pagina corrente in attesa
-  // del filtro server-side (extra->persone / LawPersona) in lib/db.
-  let risultati =
-    persona === 'tutti' ? base : base.filter((law) => personaRelevant(law, persona))
+  // Risultati già filtrati server-side per persona: nessuna rifinitura locale.
+  let risultati = paginata.items.map(normalizeLaw)
   let totale = paginata.total
   const paginaCorrente = stato !== '' ? page : paginata.page
 
-  let totalePersona = risultati.length
-  if (persona !== 'tutti' && stato === '') {
-    let conteggio = 0
-    for (const record of estrattoFiltri) {
-      try {
-        if (personaRilevanteRecord(record, persona)) conteggio += 1
-      } catch {
-        // salta il singolo record malformato senza rompere il conteggio
-      }
-    }
-    totalePersona = conteggio
-  }
-
   // Filtro semaforo (link dalla home, es. `/leggi?stato=verde`): opera
-  // sull'estratto bounded con paginazione in-memory, come il conteggio
-  // persona. `qualita_desc` e `rilevanza` ricadono su `data_desc` in questo
-  // ramo (stessa regola del fallback DB per la qualità nel blob JSON).
+  // sull'estratto bounded con paginazione in-memory usando il modulo
+  // condiviso `lib/filtri-leggi`. `qualita_desc` e `rilevanza` ricadono su
+  // `data_desc` in questo ramo (stessa regola del fallback DB per la qualità
+  // nel blob JSON).
   if (stato !== '') {
     const perStato = estrattoFiltri.filter((record) => {
       try {
@@ -214,9 +148,7 @@ export default async function LeggiPage({ searchParams }: LeggiProps) {
     })
     totale = ordinati.length
     const inizio = (page - 1) * per
-    const baseStato = ordinati.slice(inizio, inizio + per).map(normalizeLaw)
-    risultati = persona === 'tutti' ? baseStato : baseStato.filter((law) => personaRelevant(law, persona))
-    totalePersona = persona === 'tutti' ? risultati.length : ordinati.length
+    risultati = ordinati.slice(inizio, inizio + per).map(normalizeLaw)
   }
   const estrattoTroncato = serveEstratto && totaleArchivio > estrattoFiltri.length
 
@@ -330,14 +262,6 @@ export default async function LeggiPage({ searchParams }: LeggiProps) {
             <p className="mt-1 text-sm text-inchiostro-faint dark:text-nebbia-faint">
               Filtro semaforo “{STATO_META[stato]?.label ?? stato}”{persona !== 'tutti' ? ` + persona ${persona}` : ''}
               {estrattoTroncato ? ` (calcolato sulle prime ${ESTRATTO_FILTRI_MAX} schede)` : ''}.
-            </p>
-          )}
-          {persona !== 'tutti' && (
-            <p className="mt-1 text-sm text-inchiostro-faint dark:text-nebbia-faint">
-              Il filtro persona rifinisce le schede di questa pagina: {totalePersona}{' '}
-              {totalePersona === 1 ? 'norma' : 'norme'} per {persona} nel corpus
-              {estrattoTroncato ? ` (conteggio sulle prime ${ESTRATTO_FILTRI_MAX} schede)` : ''} · {totaleArchivio}{' '}
-              {totaleArchivio === 1 ? 'norma totale' : 'norme totali'} in archivio.
             </p>
           )}
 

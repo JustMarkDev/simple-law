@@ -1,6 +1,14 @@
 import { beforeEach, describe, expect, it, vi } from "vitest";
 import type { Law as PrismaLaw } from "@prisma/client";
-import { countLaws, getStats, listLaws, mapLaw, resetPrisma, toPrismaData } from "@/lib/db";
+import {
+  countLaws,
+  getStats,
+  listLaws,
+  mapLaw,
+  queryLaws,
+  resetPrisma,
+  toPrismaData,
+} from "@/lib/db";
 import { getSeedLaws } from "@/lib/sources";
 
 beforeEach(() => {
@@ -189,5 +197,46 @@ describe("query e statistiche (fallback seed o corpus grande)", () => {
     expect(stats.perTipo["decreto.legge"]).toBeGreaterThanOrEqual(2);
     expect(stats.attuativiTotali.totale).toBeGreaterThan(0);
     expect(stats.qualitaMedia).not.toBeNull();
+  });
+});
+
+describe("persona server-side (filtro derivato, seed senza DB)", () => {
+  it("listLaws/queryLaws/countLaws con persona hanno totale coerente", async () => {
+    const filtroPersona = { persona: "lavoro" } as unknown as Parameters<
+      typeof listLaws
+    >[0];
+    const totaleBase = await countLaws();
+    const totalePersona = await countLaws(filtroPersona);
+    expect(totalePersona).toBeGreaterThan(0);
+    expect(totalePersona).toBeLessThanOrEqual(totaleBase);
+
+    const pagina = await listLaws({ ...filtroPersona, page: 1, per: 20 });
+    expect(pagina.total).toBe(totalePersona);
+
+    const tutte = await queryLaws(
+      filtroPersona,
+      Math.min(5000, Math.max(totalePersona, 1)),
+    );
+    // queryLaws ha cap 5000: coerenza bounded con il totale
+    expect(tutte.length).toBe(Math.min(totalePersona, 5000));
+  });
+
+  it("pagina piena con persona: prima pagina completa e totali stabili", async () => {
+    const filtroPersona = { persona: "lavoro" } as unknown as Parameters<
+      typeof listLaws
+    >[0];
+    const per = 2;
+    const prima = await listLaws({ ...filtroPersona, page: 1, per });
+    expect(prima.total).toBeGreaterThanOrEqual(1);
+    expect(prima.items).toHaveLength(Math.min(per, prima.total));
+    const seconda = await listLaws({ ...filtroPersona, page: 2, per });
+    expect(seconda.total).toBe(prima.total);
+    if (prima.total > per) {
+      expect(seconda.items.length).toBeGreaterThan(0);
+      const eliPrima = new Set(prima.items.map((l) => l.eli));
+      for (const law of seconda.items) {
+        expect(eliPrima.has(law.eli)).toBe(false);
+      }
+    }
   });
 });
