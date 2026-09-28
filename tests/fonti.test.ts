@@ -127,11 +127,13 @@ describe("fonti del seed", () => {
     expect(dl133?.fonti?.governo).toBe(GOVERNO_ARCHIVIO_URL);
   });
 
-  it("il DL 139/2026 non include una GU ELI inventata", () => {
+  it("il DL 139/2026 espone solo link verificati (codice GU reale 26G00162)", () => {
     const dl139 = SEED_LAWS.find((law) => law.numero === "139" && law.tipo === "decreto.legge");
     expect(dl139).toBeDefined();
     expect(dl139?.fonti?.normattiva).toBe(NORMATTIVA_DL139);
-    expect(dl139?.fonti?.gazzetta).toBeUndefined();
+    // Codice redazionale verificato su Normattiva/GU: il link GU e' reale.
+    expect(dl139?.fonti?.gazzetta).toContain("26G00162");
+    // Il vecchio codice errato non deve comparire da nessuna parte.
     expect(JSON.stringify(dl139?.fonti)).not.toContain("26G00161");
   });
 

@@ -1,0 +1,2495 @@
+{
+  "provenance": {
+    "fonte": "dati.camera.it",
+    "url": "https://dati.camera.it/sparql",
+    "recuperatoIl": "2026-09-28T18:26:21.186Z",
+    "licenza": "CC BY-SA 4.0"
+  },
+  "legislatura": "19",
+  "deputati": [
+    {
+      "slug": "d307394_19",
+      "nome": "DAVIDE AIELLO",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;307394",
+      "gruppo": "MOVIMENTO 5 STELLE"
+    },
+    {
+      "slug": "d308421_19",
+      "nome": "LUCIA ALBANO",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;308421",
+      "gruppo": "FRATELLI D'ITALIA"
+    },
+    {
+      "slug": "d308872_19",
+      "nome": "ENRICA ALIFANO",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;308872",
+      "gruppo": "MOVIMENTO 5 STELLE"
+    },
+    {
+      "slug": "d308910_19",
+      "nome": "CRISTINA ALMICI",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;308910",
+      "gruppo": "FRATELLI D'ITALIA"
+    },
+    {
+      "slug": "d308849_19",
+      "nome": "GAETANO AMATO",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;308849",
+      "gruppo": "MOVIMENTO 5 STELLE"
+    },
+    {
+      "slug": "d308832_19",
+      "nome": "ALESSIA AMBROSI",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;308832",
+      "gruppo": "FRATELLI D'ITALIA"
+    },
+    {
+      "slug": "d305931_19",
+      "nome": "VINCENZO AMENDOLA",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;305931",
+      "gruppo": "PARTITO DEMOCRATICO - ITALIA DEMOCRATICA E PROGRESSISTA"
+    },
+    {
+      "slug": "d308825_19",
+      "nome": "VINCENZO AMICH",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;308825",
+      "gruppo": "FRATELLI D'ITALIA"
+    },
+    {
+      "slug": "d308884_19",
+      "nome": "ALESSANDRO AMORESE",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;308884",
+      "gruppo": "FRATELLI D'ITALIA"
+    },
+    {
+      "slug": "d307686_19",
+      "nome": "GIORGIA ANDREUZZA",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;307686",
+      "gruppo": "LEGA - SALVINI PREMIER"
+    },
+    {
+      "slug": "d302942_19",
+      "nome": "ANTONIO ANGELUCCI",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;302942",
+      "gruppo": "LEGA - SALVINI PREMIER"
+    },
+    {
+      "slug": "d308909_19",
+      "nome": "ALFREDO ANTONIOZZI",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;308909",
+      "gruppo": "FRATELLI D'ITALIA"
+    },
+    {
+      "slug": "d308824_19",
+      "nome": "CHIARA APPENDINO",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;308824",
+      "gruppo": "MOVIMENTO 5 STELLE"
+    },
+    {
+      "slug": "d308906_19",
+      "nome": "GIOVANNI ARRUZZOLO",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;308906",
+      "gruppo": "FORZA ITALIA - BERLUSCONI PRESIDENTE - PPE"
+    },
+    {
+      "slug": "d305704_19",
+      "nome": "ANNA ASCANI",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;305704",
+      "gruppo": "PARTITO DEMOCRATICO - ITALIA DEMOCRATICA E PROGRESSISTA"
+    },
+    {
+      "slug": "d307302_19",
+      "nome": "STEFANIA ASCARI",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;307302",
+      "gruppo": "MOVIMENTO 5 STELLE"
+    },
+    {
+      "slug": "d308846_19",
+      "nome": "CARMELA AURIEMMA",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;308846",
+      "gruppo": "MOVIMENTO 5 STELLE"
+    },
+    {
+      "slug": "d307749_19",
+      "nome": "ALBERTO BAGNAI",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;307749",
+      "gruppo": "LEGA - SALVINI PREMIER"
+    },
+    {
+      "slug": "d307134_19",
+      "nome": "ROBERTO BAGNASCO",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;307134",
+      "gruppo": "FORZA ITALIA - BERLUSCONI PRESIDENTE - PPE"
+    },
+    {
+      "slug": "d308931_19",
+      "nome": "OUIDAD BAKKALI",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;308931",
+      "gruppo": "PARTITO DEMOCRATICO - ITALIA DEMOCRATICA E PROGRESSISTA"
+    },
+    {
+      "slug": "d308805_19",
+      "nome": "ANTONIO BALDELLI",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;308805",
+      "gruppo": "FRATELLI D'ITALIA"
+    },
+    {
+      "slug": "d307435_19",
+      "nome": "VITTORIA BALDINO",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;307435",
+      "gruppo": "MOVIMENTO 5 STELLE"
+    },
+    {
+      "slug": "d308890_19",
+      "nome": "ANDREA BARABOTTI",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;308890",
+      "gruppo": "LEGA - SALVINI PREMIER"
+    },
+    {
+      "slug": "d308902_19",
+      "nome": "ANTHONY EMANUELE BARBAGALLO",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;308902",
+      "gruppo": "PARTITO DEMOCRATICO - ITALIA DEMOCRATICA E PROGRESSISTA"
+    },
+    {
+      "slug": "d300497_19",
+      "nome": "PAOLO BARELLI",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;300497",
+      "gruppo": "FORZA ITALIA - BERLUSCONI PRESIDENTE - PPE"
+    },
+    {
+      "slug": "d308001_19",
+      "nome": "VALENTINA BARZOTTI",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;308001",
+      "gruppo": "MOVIMENTO 5 STELLE"
+    },
+    {
+      "slug": "d307456_19",
+      "nome": "ALESSANDRO BATTILOCCHIO",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;307456",
+      "gruppo": "FORZA ITALIA - BERLUSCONI PRESIDENTE - PPE"
+    },
+    {
+      "slug": "d307752_19",
+      "nome": "FRANCESCO BATTISTONI",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;307752",
+      "gruppo": "FORZA ITALIA - BERLUSCONI PRESIDENTE - PPE"
+    },
+    {
+      "slug": "d308830_19",
+      "nome": "DAVIDE BELLOMO",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;308830",
+      "gruppo": "FORZA ITALIA - BERLUSCONI PRESIDENTE - PPE"
+    },
+    {
+      "slug": "d307426_19",
+      "nome": "MARIA TERESA BELLUCCI",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;307426",
+      "gruppo": "FRATELLI D'ITALIA"
+    },
+    {
+      "slug": "d307604_19",
+      "nome": "STEFANO BENIGNI",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;307604",
+      "gruppo": "FORZA ITALIA - BERLUSCONI PRESIDENTE - PPE"
+    },
+    {
+      "slug": "d308762_19",
+      "nome": "STEFANO MARIA BENVENUTI GOSTOLI",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;308762",
+      "gruppo": "FRATELLI D'ITALIA"
+    },
+    {
+      "slug": "d307471_19",
+      "nome": "ALESSANDRO MANUEL BENVENUTO",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;307471",
+      "gruppo": "LEGA - SALVINI PREMIER"
+    },
+    {
+      "slug": "d308913_19",
+      "nome": "FABRIZIO BENZONI",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;308913",
+      "gruppo": "AZIONE - ITALIA VIVA - RENEW EUROPE"
+    },
+    {
+      "slug": "d308928_19",
+      "nome": "DAVIDE BERGAMINI",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;308928",
+      "gruppo": "MISTO"
+    },
+    {
+      "slug": "d302867_19",
+      "nome": "DEBORAH BERGAMINI",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;302867",
+      "gruppo": "FORZA ITALIA - BERLUSCONI PRESIDENTE - PPE"
+    },
+    {
+      "slug": "d308815_19",
+      "nome": "MAURO BERRUTO",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;308815",
+      "gruppo": "PARTITO DEMOCRATICO - ITALIA DEMOCRATICA E PROGRESSISTA"
+    },
+    {
+      "slug": "d308790_19",
+      "nome": "GIUSEPPE BICCHIELLI",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;308790",
+      "gruppo": "FORZA ITALIA - BERLUSCONI PRESIDENTE - PPE"
+    },
+    {
+      "slug": "d307298_19",
+      "nome": "GALEAZZO BIGNAMI",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;307298",
+      "gruppo": "FRATELLI D'ITALIA"
+    },
+    {
+      "slug": "d307151_19",
+      "nome": "SIMONE BILLI",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;307151",
+      "gruppo": "LEGA - SALVINI PREMIER"
+    },
+    {
+      "slug": "d307689_19",
+      "nome": "INGRID BISA",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;307689",
+      "gruppo": "LEGA - SALVINI PREMIER"
+    },
+    {
+      "slug": "d302824_19",
+      "nome": "MASSIMO BITONCI",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;302824",
+      "gruppo": "LEGA - SALVINI PREMIER"
+    },
+    {
+      "slug": "d308801_19",
+      "nome": "GIANANGELO BOF",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;308801",
+      "gruppo": "MISTO"
+    },
+    {
+      "slug": "d305757_19",
+      "nome": "LAURA BOLDRINI",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;305757",
+      "gruppo": "PARTITO DEMOCRATICO - ITALIA DEMOCRATICA E PROGRESSISTA"
+    },
+    {
+      "slug": "d305549_19",
+      "nome": "SIMONA BONAFE'",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;305549",
+      "gruppo": "PARTITO DEMOCRATICO - ITALIA DEMOCRATICA E PROGRESSISTA"
+    },
+    {
+      "slug": "d302080_19",
+      "nome": "ANGELO BONELLI",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;302080",
+      "gruppo": "ALLEANZA VERDI E SINISTRA"
+    },
+    {
+      "slug": "d308244_19",
+      "nome": "ELENA BONETTI",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;308244",
+      "gruppo": "AZIONE - ITALIA VIVA - RENEW EUROPE"
+    },
+    {
+      "slug": "d306003_19",
+      "nome": "FRANCESCO BONIFAZI",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;306003",
+      "gruppo": "ITALIA VIVA-IL CENTRO-RENEW EUROPE"
+    },
+    {
+      "slug": "d307601_19",
+      "nome": "SIMONA BORDONALI",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;307601",
+      "gruppo": "LEGA - SALVINI PREMIER"
+    },
+    {
+      "slug": "d308857_19",
+      "nome": "FRANCESCO EMILIO BORRELLI",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;308857",
+      "gruppo": "ALLEANZA VERDI E SINISTRA"
+    },
+    {
+      "slug": "d309161_19",
+      "nome": "MARIA PAOLA BOSCAINI",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;309161",
+      "gruppo": "FORZA ITALIA - BERLUSCONI PRESIDENTE - PPE"
+    },
+    {
+      "slug": "d306160_19",
+      "nome": "MARIA ELENA BOSCHI",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;306160",
+      "gruppo": "ITALIA VIVA-IL CENTRO-RENEW EUROPE"
+    },
+    {
+      "slug": "d32460_19",
+      "nome": "UMBERTO BOSSI",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;32460",
+      "gruppo": "LEGA - SALVINI PREMIER"
+    },
+    {
+      "slug": "d302754_19",
+      "nome": "CHIARA BRAGA",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;302754",
+      "gruppo": "PARTITO DEMOCRATICO - ITALIA DEMOCRATICA E PROGRESSISTA"
+    },
+    {
+      "slug": "d302838_19",
+      "nome": "MICHELA VITTORIA BRAMBILLA",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;302838",
+      "gruppo": "NOI MODERATI (NOI CON L'ITALIA, CORAGGIO ITALIA, UDC, ITALIA AL CENTRO)-MAIE"
+    },
+    {
+      "slug": "d307193_19",
+      "nome": "RAFFAELE BRUNO",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;307193",
+      "gruppo": "MOVIMENTO 5 STELLE"
+    },
+    {
+      "slug": "d307762_19",
+      "nome": "FRANCESCO BRUZZONE",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;307762",
+      "gruppo": "LEGA - SALVINI PREMIER"
+    },
+    {
+      "slug": "d308937_19",
+      "nome": "ALICE BUONGUERRIERI",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;308937",
+      "gruppo": "FRATELLI D'ITALIA"
+    },
+    {
+      "slug": "d308933_19",
+      "nome": "FEDERICO CAFIERO DE RAHO",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;308933",
+      "gruppo": "MOVIMENTO 5 STELLE"
+    },
+    {
+      "slug": "d307162_19",
+      "nome": "SALVATORE CAIATA",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;307162",
+      "gruppo": "FRATELLI D'ITALIA"
+    },
+    {
+      "slug": "d308766_19",
+      "nome": "TOMMASO ANTONINO CALDERONE",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;308766",
+      "gruppo": "MISTO"
+    },
+    {
+      "slug": "d308794_19",
+      "nome": "GIANGIACOMO CALOVINI",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;308794",
+      "gruppo": "FRATELLI D'ITALIA"
+    },
+    {
+      "slug": "d306349_19",
+      "nome": "STEFANO CANDIANI",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;306349",
+      "gruppo": "LEGA - SALVINI PREMIER"
+    },
+    {
+      "slug": "d308786_19",
+      "nome": "GEROLAMO CANGIANO",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;308786",
+      "gruppo": "FRATELLI D'ITALIA"
+    },
+    {
+      "slug": "d308765_19",
+      "nome": "GIOVANNI LUCA CANNATA",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;308765",
+      "gruppo": "FRATELLI D'ITALIA"
+    },
+    {
+      "slug": "d307568_19",
+      "nome": "FRANCESCO CANNIZZARO",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;307568",
+      "gruppo": "FORZA ITALIA - BERLUSCONI PRESIDENTE - PPE"
+    },
+    {
+      "slug": "d307416_19",
+      "nome": "LUCIANO CANTONE",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;307416",
+      "gruppo": "MOVIMENTO 5 STELLE"
+    },
+    {
+      "slug": "d307420_19",
+      "nome": "VIRGINIO CAPARVI",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;307420",
+      "gruppo": "LEGA - SALVINI PREMIER"
+    },
+    {
+      "slug": "d307215_19",
+      "nome": "UGO CAPPELLACCI",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;307215",
+      "gruppo": "FORZA ITALIA - BERLUSCONI PRESIDENTE - PPE"
+    },
+    {
+      "slug": "d306352_19",
+      "nome": "ENRICO CAPPELLETTI",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;306352",
+      "gruppo": "MOVIMENTO 5 STELLE"
+    },
+    {
+      "slug": "d308819_19",
+      "nome": "GIANLUCA CARAMANNA",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;308819",
+      "gruppo": "FRATELLI D'ITALIA"
+    },
+    {
+      "slug": "d308854_19",
+      "nome": "ALESSANDRO CARAMIELLO",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;308854",
+      "gruppo": "MOVIMENTO 5 STELLE"
+    },
+    {
+      "slug": "d307161_19",
+      "nome": "NICOLA CARE'",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;307161",
+      "gruppo": "PARTITO DEMOCRATICO - ITALIA DEMOCRATICA E PROGRESSISTA"
+    },
+    {
+      "slug": "d307573_19",
+      "nome": "MARIA CRISTINA CARETTA",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;307573",
+      "gruppo": "FRATELLI D'ITALIA"
+    },
+    {
+      "slug": "d301531_19",
+      "nome": "MARIA ROSARIA CARFAGNA",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;301531",
+      "gruppo": "NOI MODERATI (NOI CON L'ITALIA, CORAGGIO ITALIA, UDC E ITALIA AL CENTRO)-MAIE-CENTRO POPOLARE"
+    },
+    {
+      "slug": "d308763_19",
+      "nome": "MIRCO CARLONI",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;308763",
+      "gruppo": "LEGA - SALVINI PREMIER"
+    },
+    {
+      "slug": "d308820_19",
+      "nome": "IDA CARMINA",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;308820",
+      "gruppo": "MOVIMENTO 5 STELLE"
+    },
+    {
+      "slug": "d308807_19",
+      "nome": "ANDREA CAROPPO",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;308807",
+      "gruppo": "FORZA ITALIA - BERLUSCONI PRESIDENTE - PPE"
+    },
+    {
+      "slug": "d308844_19",
+      "nome": "DARIO CAROTENUTO",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;308844",
+      "gruppo": "MOVIMENTO 5 STELLE"
+    },
+    {
+      "slug": "d308900_19",
+      "nome": "ANASTASIO CARRA'",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;308900",
+      "gruppo": "LEGA - SALVINI PREMIER"
+    },
+    {
+      "slug": "d308793_19",
+      "nome": "MAURIZIO CASASCO",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;308793",
+      "gruppo": "FORZA ITALIA - BERLUSCONI PRESIDENTE - PPE"
+    },
+    {
+      "slug": "d308840_19",
+      "nome": "ANTONIO CASO",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;308840",
+      "gruppo": "MOVIMENTO 5 STELLE"
+    },
+    {
+      "slug": "d306158_19",
+      "nome": "GIUSEPPE CASTIGLIONE",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;306158",
+      "gruppo": "FORZA ITALIA - BERLUSCONI PRESIDENTE - PPE"
+    },
+    {
+      "slug": "d308600_19",
+      "nome": "ANDREA CASU",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;308600",
+      "gruppo": "PARTITO DEMOCRATICO - ITALIA DEMOCRATICA E PROGRESSISTA"
+    },
+    {
+      "slug": "d307657_19",
+      "nome": "ALESSANDRO CATTANEO",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;307657",
+      "gruppo": "FORZA ITALIA - BERLUSCONI PRESIDENTE - PPE"
+    },
+    {
+      "slug": "d307716_19",
+      "nome": "VANESSA CATTOI",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;307716",
+      "gruppo": "LEGA - SALVINI PREMIER"
+    },
+    {
+      "slug": "d307285_19",
+      "nome": "LAURA CAVANDOLI",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;307285",
+      "gruppo": "LEGA - SALVINI PREMIER"
+    },
+    {
+      "slug": "d308785_19",
+      "nome": "ILARIA CAVO",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;308785",
+      "gruppo": "NOI MODERATI"
+    },
+    {
+      "slug": "d307680_19",
+      "nome": "FABRIZIO CECCHETTI",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;307680",
+      "gruppo": "LEGA - SALVINI PREMIER"
+    },
+    {
+      "slug": "d307632_19",
+      "nome": "GIULIO CENTEMERO",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;307632",
+      "gruppo": "LEGA - SALVINI PREMIER"
+    },
+    {
+      "slug": "d309321_19",
+      "nome": "GIULIO CENTENARO",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;309321",
+      "gruppo": "LEGA - SALVINI PREMIER"
+    },
+    {
+      "slug": "d308874_19",
+      "nome": "MARCO CERRETO",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;308874",
+      "gruppo": "FRATELLI D'ITALIA"
+    },
+    {
+      "slug": "d301439_19",
+      "nome": "LORENZO CESA",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;301439",
+      "gruppo": "MISTO"
+    },
+    {
+      "slug": "d308858_19",
+      "nome": "SUSANNA CHERCHI",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;308858",
+      "gruppo": "MOVIMENTO 5 STELLE"
+    },
+    {
+      "slug": "d308915_19",
+      "nome": "PAOLA MARIA CHIESA",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;308915",
+      "gruppo": "FRATELLI D'ITALIA"
+    },
+    {
+      "slug": "d307511_19",
+      "nome": "MONICA CIABURRO",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;307511",
+      "gruppo": "FRATELLI D'ITALIA"
+    },
+    {
+      "slug": "d308764_19",
+      "nome": "FRANCESCO MARIA SALVATORE CIANCITTO",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;308764",
+      "gruppo": "FRATELLI D'ITALIA"
+    },
+    {
+      "slug": "d308835_19",
+      "nome": "PAOLO CIANI",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;308835",
+      "gruppo": "PARTITO DEMOCRATICO - ITALIA DEMOCRATICA E PROGRESSISTA"
+    },
+    {
+      "slug": "d35980_19",
+      "nome": "LUCIANO CIOCCHETTI",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;35980",
+      "gruppo": "FRATELLI D'ITALIA"
+    },
+    {
+      "slug": "d300319_19",
+      "nome": "EDMONDO CIRIELLI",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;300319",
+      "gruppo": "FRATELLI D'ITALIA"
+    },
+    {
+      "slug": "d307688_19",
+      "nome": "DIMITRI COIN",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;307688",
+      "gruppo": "LEGA - SALVINI PREMIER"
+    },
+    {
+      "slug": "d308926_19",
+      "nome": "BEATRIZ COLOMBO",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;308926",
+      "gruppo": "FRATELLI D'ITALIA"
+    },
+    {
+      "slug": "d308917_19",
+      "nome": "CHIARA COLOSIMO",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;308917",
+      "gruppo": "FRATELLI D'ITALIA"
+    },
+    {
+      "slug": "d307603_19",
+      "nome": "ALESSANDRO COLUCCI",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;307603",
+      "gruppo": "NOI MODERATI"
+    },
+    {
+      "slug": "d308841_19",
+      "nome": "ALFONSO COLUCCI",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;308841",
+      "gruppo": "MOVIMENTO 5 STELLE"
+    },
+    {
+      "slug": "d302764_19",
+      "nome": "SILVANA ANDREINA COMAROLI",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;302764",
+      "gruppo": "LEGA - SALVINI PREMIER"
+    },
+    {
+      "slug": "d308826_19",
+      "nome": "FABRIZIO COMBA",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;308826",
+      "gruppo": "FRATELLI D'ITALIA"
+    },
+    {
+      "slug": "d308833_19",
+      "nome": "SAVERIO CONGEDO",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;308833",
+      "gruppo": "FRATELLI D'ITALIA"
+    },
+    {
+      "slug": "d307926_19",
+      "nome": "GIUSEPPE CONTE",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;307926",
+      "gruppo": "MOVIMENTO 5 STELLE"
+    },
+    {
+      "slug": "d308796_19",
+      "nome": "MARCELLO COPPO",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;308796",
+      "gruppo": "FRATELLI D'ITALIA"
+    },
+    {
+      "slug": "d307580_19",
+      "nome": "PIERGIORGIO CORTELAZZO",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;307580",
+      "gruppo": "FORZA ITALIA - BERLUSCONI PRESIDENTE - PPE"
+    },
+    {
+      "slug": "d301541_19",
+      "nome": "ENRICO COSTA",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;301541",
+      "gruppo": "FORZA ITALIA - BERLUSCONI PRESIDENTE - PPE"
+    },
+    {
+      "slug": "d307922_19",
+      "nome": "SERGIO COSTA",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;307922",
+      "gruppo": "MOVIMENTO 5 STELLE"
+    },
+    {
+      "slug": "d307639_19",
+      "nome": "ANDREA CRIPPA",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;307639",
+      "gruppo": "LEGA - SALVINI PREMIER"
+    },
+    {
+      "slug": "d302422_19",
+      "nome": "GIOVANNI CUPERLO",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;302422",
+      "gruppo": "PARTITO DEMOCRATICO - ITALIA DEMOCRATICA E PROGRESSISTA"
+    },
+    {
+      "slug": "d308804_19",
+      "nome": "AUGUSTO CURTI",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;308804",
+      "gruppo": "PARTITO DEMOCRATICO - ITALIA DEMOCRATICA E PROGRESSISTA"
+    },
+    {
+      "slug": "d308875_19",
+      "nome": "ANTONIO D'ALESSIO",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;308875",
+      "gruppo": "AZIONE - ITALIA VIVA - RENEW EUROPE"
+    },
+    {
+      "slug": "d307782_19",
+      "nome": "LUCIANO D'ALFONSO",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;307782",
+      "gruppo": "PARTITO DEMOCRATICO - ITALIA DEMOCRATICA E PROGRESSISTA"
+    },
+    {
+      "slug": "d307312_19",
+      "nome": "MAURO D'ATTIS",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;307312",
+      "gruppo": "FORZA ITALIA - BERLUSCONI PRESIDENTE - PPE"
+    },
+    {
+      "slug": "d307388_19",
+      "nome": "VALENTINA D'ORSO",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;307388",
+      "gruppo": "MOVIMENTO 5 STELLE"
+    },
+    {
+      "slug": "d308829_19",
+      "nome": "RITA DALLA CHIESA",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;308829",
+      "gruppo": "FORZA ITALIA - BERLUSCONI PRESIDENTE - PPE"
+    },
+    {
+      "slug": "d307683_19",
+      "nome": "ANDREA DARA",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;307683",
+      "gruppo": "LEGA - SALVINI PREMIER"
+    },
+    {
+      "slug": "d307918_19",
+      "nome": "ANDREA DE BERTOLDI",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;307918",
+      "gruppo": "LEGA - SALVINI PREMIER"
+    },
+    {
+      "slug": "d200291_19",
+      "nome": "RICCARDO DE CORATO",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;200291",
+      "gruppo": "FRATELLI D'ITALIA"
+    },
+    {
+      "slug": "d307561_19",
+      "nome": "PIERO DE LUCA",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;307561",
+      "gruppo": "PARTITO DEMOCRATICO - ITALIA DEMOCRATICA E PROGRESSISTA"
+    },
+    {
+      "slug": "d305698_19",
+      "nome": "ANDREA DE MARIA",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;305698",
+      "gruppo": "PARTITO DEMOCRATICO - ITALIA DEMOCRATICA E PROGRESSISTA"
+    },
+    {
+      "slug": "d302856_19",
+      "nome": "PAOLA DE MICHELI",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;302856",
+      "gruppo": "PARTITO DEMOCRATICO - ITALIA DEMOCRATICA E PROGRESSISTA"
+    },
+    {
+      "slug": "d306379_19",
+      "nome": "ISABELLA DE MONTE",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;306379",
+      "gruppo": "FORZA ITALIA - BERLUSCONI PRESIDENTE - PPE"
+    },
+    {
+      "slug": "d308806_19",
+      "nome": "VITO DE PALMA",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;308806",
+      "gruppo": "FORZA ITALIA - BERLUSCONI PRESIDENTE - PPE"
+    },
+    {
+      "slug": "d307219_19",
+      "nome": "SALVATORE DEIDDA",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;307219",
+      "gruppo": "FRATELLI D'ITALIA"
+    },
+    {
+      "slug": "d306382_19",
+      "nome": "MAURO DEL BARBA",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;306382",
+      "gruppo": "ITALIA VIVA-IL CENTRO-RENEW EUROPE"
+    },
+    {
+      "slug": "d307790_19",
+      "nome": "GIANMAURO DELL'OLIO",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;307790",
+      "gruppo": "MOVIMENTO 5 STELLE"
+    },
+    {
+      "slug": "d301577_19",
+      "nome": "BENEDETTO DELLA VEDOVA",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;301577",
+      "gruppo": "MISTO"
+    },
+    {
+      "slug": "d307479_19",
+      "nome": "ANDREA DELMASTRO DELLE VEDOVE",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;307479",
+      "gruppo": "FRATELLI D'ITALIA"
+    },
+    {
+      "slug": "d308843_19",
+      "nome": "MICHELA DI BIASE",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;308843",
+      "gruppo": "PARTITO DEMOCRATICO - ITALIA DEMOCRATICA E PROGRESSISTA"
+    },
+    {
+      "slug": "d308784_19",
+      "nome": "ANDREA DI GIUSEPPE",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;308784",
+      "gruppo": "FRATELLI D'ITALIA"
+    },
+    {
+      "slug": "d307210_19",
+      "nome": "CARMELA DI LAURO",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;307210",
+      "gruppo": "MOVIMENTO 5 STELLE"
+    },
+    {
+      "slug": "d308888_19",
+      "nome": "GRAZIA DI MAGGIO",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;308888",
+      "gruppo": "FRATELLI D'ITALIA"
+    },
+    {
+      "slug": "d308808_19",
+      "nome": "SALVATORE MARCELLO DI MATTINA",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;308808",
+      "gruppo": "LEGA - SALVINI PREMIER"
+    },
+    {
+      "slug": "d309320_19",
+      "nome": "ALBERTO DI RUBBA",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;309320",
+      "gruppo": "LEGA - SALVINI PREMIER"
+    },
+    {
+      "slug": "d308783_19",
+      "nome": "CHRISTIAN DIEGO DI SANZO",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;308783",
+      "gruppo": "PARTITO DEMOCRATICO - ITALIA DEMOCRATICA E PROGRESSISTA"
+    },
+    {
+      "slug": "d308935_19",
+      "nome": "DANIELA DONDI",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;308935",
+      "gruppo": "FRATELLI D'ITALIA"
+    },
+    {
+      "slug": "d307348_19",
+      "nome": "LEONARDO DONNO",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;307348",
+      "gruppo": "MOVIMENTO 5 STELLE"
+    },
+    {
+      "slug": "d307246_19",
+      "nome": "GIOVANNI DONZELLI",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;307246",
+      "gruppo": "FRATELLI D'ITALIA"
+    },
+    {
+      "slug": "d307634_19",
+      "nome": "DEVIS DORI",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;307634",
+      "gruppo": "ALLEANZA VERDI E SINISTRA"
+    },
+    {
+      "slug": "d308893_19",
+      "nome": "ELEONORA EVI",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;308893",
+      "gruppo": "PARTITO DEMOCRATICO - ITALIA DEMOCRATICA E PROGRESSISTA"
+    },
+    {
+      "slug": "d306005_19",
+      "nome": "DAVIDE FARAONE",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;306005",
+      "gruppo": "ITALIA VIVA-IL CENTRO-RENEW EUROPE"
+    },
+    {
+      "slug": "d307185_19",
+      "nome": "MARTA ANTONIA FASCINA",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;307185",
+      "gruppo": "FORZA ITALIA - BERLUSCONI PRESIDENTE - PPE"
+    },
+    {
+      "slug": "d36500_19",
+      "nome": "PIERO FRANCO FASSINO",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;36500",
+      "gruppo": "PARTITO DEMOCRATICO - ITALIA DEMOCRATICA E PROGRESSISTA"
+    },
+    {
+      "slug": "d307803_19",
+      "nome": "GIORGIO FEDE",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;307803",
+      "gruppo": "MOVIMENTO 5 STELLE"
+    },
+    {
+      "slug": "d307804_19",
+      "nome": "EMILIANO FENU",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;307804",
+      "gruppo": "MOVIMENTO 5 STELLE"
+    },
+    {
+      "slug": "d308876_19",
+      "nome": "TULLIO FERRANTE",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;308876",
+      "gruppo": "FORZA ITALIA - BERLUSCONI PRESIDENTE - PPE"
+    },
+    {
+      "slug": "d309140_19",
+      "nome": "ANTONIO FERRARA",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;309140",
+      "gruppo": "MOVIMENTO 5 STELLE"
+    },
+    {
+      "slug": "d308834_19",
+      "nome": "SARA FERRARI",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;308834",
+      "gruppo": "PARTITO DEMOCRATICO - ITALIA DEMOCRATICA E PROGRESSISTA"
+    },
+    {
+      "slug": "d307567_19",
+      "nome": "WANDA FERRO",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;307567",
+      "gruppo": "FRATELLI D'ITALIA"
+    },
+    {
+      "slug": "d308799_19",
+      "nome": "FRANCESCO FILINI",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;308799",
+      "gruppo": "FRATELLI D'ITALIA"
+    },
+    {
+      "slug": "d306395_19",
+      "nome": "ROSANNA FILIPPIN",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;306395",
+      "gruppo": "PARTITO DEMOCRATICO - ITALIA DEMOCRATICA E PROGRESSISTA"
+    },
+    {
+      "slug": "d301551_19",
+      "nome": "RAFFAELE FITTO",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;301551",
+      "gruppo": "FRATELLI D'ITALIA"
+    },
+    {
+      "slug": "d307459_19",
+      "nome": "ILARIA FONTANA",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;307459",
+      "gruppo": "MOVIMENTO 5 STELLE"
+    },
+    {
+      "slug": "d307591_19",
+      "nome": "LORENZO FONTANA",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;307591",
+      "gruppo": "LEGA - SALVINI PREMIER"
+    },
+    {
+      "slug": "d308916_19",
+      "nome": "ANTONELLA FORATTINI",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;308916",
+      "gruppo": "PARTITO DEMOCRATICO - ITALIA DEMOCRATICA E PROGRESSISTA"
+    },
+    {
+      "slug": "d307602_19",
+      "nome": "PAOLO FORMENTINI",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;307602",
+      "gruppo": "LEGA - SALVINI PREMIER"
+    },
+    {
+      "slug": "d306398_19",
+      "nome": "FEDERICO FORNARO",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;306398",
+      "gruppo": "PARTITO DEMOCRATICO - ITALIA DEMOCRATICA E PROGRESSISTA"
+    },
+    {
+      "slug": "d308881_19",
+      "nome": "EMILIANO FOSSI",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;308881",
+      "gruppo": "PARTITO DEMOCRATICO - ITALIA DEMOCRATICA E PROGRESSISTA"
+    },
+    {
+      "slug": "d50204_19",
+      "nome": "TOMMASO FOTI",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;50204",
+      "gruppo": "FRATELLI D'ITALIA"
+    },
+    {
+      "slug": "d301457_19",
+      "nome": "PAOLA FRASSINETTI",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;301457",
+      "gruppo": "FRATELLI D'ITALIA"
+    },
+    {
+      "slug": "d307630_19",
+      "nome": "REBECCA FRASSINI",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;307630",
+      "gruppo": "LEGA - SALVINI PREMIER"
+    },
+    {
+      "slug": "d305880_19",
+      "nome": "NICOLA FRATOIANNI",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;305880",
+      "gruppo": "ALLEANZA VERDI E SINISTRA"
+    },
+    {
+      "slug": "d308837_19",
+      "nome": "FEDERICO FRENI",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;308837",
+      "gruppo": "LEGA - SALVINI PREMIER"
+    },
+    {
+      "slug": "d308870_19",
+      "nome": "MARIA GRAZIA FRIJIA",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;308870",
+      "gruppo": "FRATELLI D'ITALIA"
+    },
+    {
+      "slug": "d308892_19",
+      "nome": "MARCO FURFARO",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;308892",
+      "gruppo": "PARTITO DEMOCRATICO - ITALIA DEMOCRATICA E PROGRESSISTA"
+    },
+    {
+      "slug": "d307718_19",
+      "nome": "DOMENICO FURGIUELE",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;307718",
+      "gruppo": "MISTO"
+    },
+    {
+      "slug": "d309200_19",
+      "nome": "ANTONIO MARIA GABELLONE",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;309200",
+      "gruppo": "FRATELLI D'ITALIA"
+    },
+    {
+      "slug": "d305553_19",
+      "nome": "MARIA CHIARA GADDA",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;305553",
+      "gruppo": "ITALIA VIVA-IL CENTRO-RENEW EUROPE"
+    },
+    {
+      "slug": "d308767_19",
+      "nome": "FRANCESCO GALLO",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;308767",
+      "gruppo": "MISTO"
+    },
+    {
+      "slug": "d301558_19",
+      "nome": "ELISABETTA GARDINI",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;301558",
+      "gruppo": "FRATELLI D'ITALIA"
+    },
+    {
+      "slug": "d308827_19",
+      "nome": "GIACOMO DIEGO GATTA",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;308827",
+      "gruppo": "FORZA ITALIA - BERLUSCONI PRESIDENTE - PPE"
+    },
+    {
+      "slug": "d307138_19",
+      "nome": "VANNIA GAVA",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;307138",
+      "gruppo": "LEGA - SALVINI PREMIER"
+    },
+    {
+      "slug": "d305580_19",
+      "nome": "RENATE GEBHARD",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;305580",
+      "gruppo": "MISTO"
+    },
+    {
+      "slug": "d307332_19",
+      "nome": "MARCELLO GEMMATO",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;307332",
+      "gruppo": "FRATELLI D'ITALIA"
+    },
+    {
+      "slug": "d308620_19",
+      "nome": "ANDREA GENTILE",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;308620",
+      "gruppo": "FORZA ITALIA - BERLUSCONI PRESIDENTE - PPE"
+    },
+    {
+      "slug": "d308871_19",
+      "nome": "VALENTINA GHIO",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;308871",
+      "gruppo": "PARTITO DEMOCRATICO - ITALIA DEMOCRATICA E PROGRESSISTA"
+    },
+    {
+      "slug": "d308861_19",
+      "nome": "FRANCESCA GHIRRA",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;308861",
+      "gruppo": "ALLEANZA VERDI E SINISTRA"
+    },
+    {
+      "slug": "d307508_19",
+      "nome": "ANDREA GIACCONE",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;307508",
+      "gruppo": "LEGA - SALVINI PREMIER"
+    },
+    {
+      "slug": "d300480_19",
+      "nome": "ROBERTO GIACHETTI",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;300480",
+      "gruppo": "ITALIA VIVA-IL CENTRO-RENEW EUROPE"
+    },
+    {
+      "slug": "d308770_19",
+      "nome": "DARIO GIAGONI",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;308770",
+      "gruppo": "LEGA - SALVINI PREMIER"
+    },
+    {
+      "slug": "d308880_19",
+      "nome": "FEDERICO GIANASSI",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;308880",
+      "gruppo": "PARTITO DEMOCRATICO - ITALIA DEMOCRATICA E PROGRESSISTA"
+    },
+    {
+      "slug": "d307502_19",
+      "nome": "ALESSANDRO GIGLIO VIGNA",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;307502",
+      "gruppo": "LEGA - SALVINI PREMIER"
+    },
+    {
+      "slug": "d308823_19",
+      "nome": "ANTONIO GIORDANO",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;308823",
+      "gruppo": "FRATELLI D'ITALIA"
+    },
+    {
+      "slug": "d50115_19",
+      "nome": "GIANCARLO GIORGETTI",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;50115",
+      "gruppo": "LEGA - SALVINI PREMIER"
+    },
+    {
+      "slug": "d308787_19",
+      "nome": "CARMEN LETIZIA GIORGIANNI",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;308787",
+      "gruppo": "FRATELLI D'ITALIA"
+    },
+    {
+      "slug": "d308855_19",
+      "nome": "SILVIO GIOVINE",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;308855",
+      "gruppo": "FRATELLI D'ITALIA"
+    },
+    {
+      "slug": "d308912_19",
+      "nome": "GIAN ANTONIO GIRELLI",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;308912",
+      "gruppo": "PARTITO DEMOCRATICO - ITALIA DEMOCRATICA E PROGRESSISTA"
+    },
+    {
+      "slug": "d307370_19",
+      "nome": "CARLA GIULIANO",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;307370",
+      "gruppo": "MOVIMENTO 5 STELLE"
+    },
+    {
+      "slug": "d308932_19",
+      "nome": "ANDREA GNASSI",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;308932",
+      "gruppo": "PARTITO DEMOCRATICO - ITALIA DEMOCRATICA E PROGRESSISTA"
+    },
+    {
+      "slug": "d309260_19",
+      "nome": "IRENE GORI",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;309260",
+      "gruppo": "FRATELLI D'ITALIA"
+    },
+    {
+      "slug": "d302818_19",
+      "nome": "STEFANO GRAZIANO",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;302818",
+      "gruppo": "PARTITO DEMOCRATICO - ITALIA DEMOCRATICA E PROGRESSISTA"
+    },
+    {
+      "slug": "d306008_19",
+      "nome": "CHIARA GRIBAUDO",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;306008",
+      "gruppo": "PARTITO DEMOCRATICO - ITALIA DEMOCRATICA E PROGRESSISTA"
+    },
+    {
+      "slug": "d308810_19",
+      "nome": "MARCO GRIMALDI",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;308810",
+      "gruppo": "ALLEANZA VERDI E SINISTRA"
+    },
+    {
+      "slug": "d308802_19",
+      "nome": "VALENTINA GRIPPO",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;308802",
+      "gruppo": "AZIONE - ITALIA VIVA - RENEW EUROPE"
+    },
+    {
+      "slug": "d308924_19",
+      "nome": "NAIKE GRUPPIONI",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;308924",
+      "gruppo": "FRATELLI D'ITALIA"
+    },
+    {
+      "slug": "d307531_19",
+      "nome": "MICHELE GUBITOSA",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;307531",
+      "gruppo": "MOVIMENTO 5 STELLE"
+    },
+    {
+      "slug": "d305624_19",
+      "nome": "LORENZO GUERINI",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;305624",
+      "gruppo": "PARTITO DEMOCRATICO - ITALIA DEMOCRATICA E PROGRESSISTA"
+    },
+    {
+      "slug": "d306412_19",
+      "nome": "MARIA CECILIA GUERRA",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;306412",
+      "gruppo": "PARTITO DEMOCRATICO - ITALIA DEMOCRATICA E PROGRESSISTA"
+    },
+    {
+      "slug": "d307475_19",
+      "nome": "ALBERTO LUIGI GUSMEROLI",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;307475",
+      "gruppo": "LEGA - SALVINI PREMIER"
+    },
+    {
+      "slug": "d308821_19",
+      "nome": "GIOVANNA IACONO",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;308821",
+      "gruppo": "PARTITO DEMOCRATICO - ITALIA DEMOCRATICA E PROGRESSISTA"
+    },
+    {
+      "slug": "d308831_19",
+      "nome": "DARIO IAIA",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;308831",
+      "gruppo": "FRATELLI D'ITALIA"
+    },
+    {
+      "slug": "d308809_19",
+      "nome": "ANTONINO IARIA",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;308809",
+      "gruppo": "MOVIMENTO 5 STELLE"
+    },
+    {
+      "slug": "d307641_19",
+      "nome": "IGOR GIANCARLO IEZZI",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;307641",
+      "gruppo": "LEGA - SALVINI PREMIER"
+    },
+    {
+      "slug": "d308904_19",
+      "nome": "SARA KELANY",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;308904",
+      "gruppo": "FRATELLI D'ITALIA"
+    },
+    {
+      "slug": "d307822_19",
+      "nome": "PASQUA L'ABBATE",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;307822",
+      "gruppo": "MOVIMENTO 5 STELLE"
+    },
+    {
+      "slug": "d308883_19",
+      "nome": "CHIARA LA PORTA",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;308883",
+      "gruppo": "FRATELLI D'ITALIA"
+    },
+    {
+      "slug": "d308811_19",
+      "nome": "GIANDONATO LA SALANDRA",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;308811",
+      "gruppo": "FRATELLI D'ITALIA"
+    },
+    {
+      "slug": "d307308_19",
+      "nome": "MARCO LACARRA",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;307308",
+      "gruppo": "PARTITO DEMOCRATICO - ITALIA DEMOCRATICA E PROGRESSISTA"
+    },
+    {
+      "slug": "d306417_19",
+      "nome": "BACHISIO SILVIO LAI",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;306417",
+      "gruppo": "PARTITO DEMOCRATICO - ITALIA DEMOCRATICA E PROGRESSISTA"
+    },
+    {
+      "slug": "d308768_19",
+      "nome": "GIANNI LAMPIS",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;308768",
+      "gruppo": "FRATELLI D'ITALIA"
+    },
+    {
+      "slug": "d308920_19",
+      "nome": "ELISABETTA CHRISTIANA LANCELLOTTA",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;308920",
+      "gruppo": "FRATELLI D'ITALIA"
+    },
+    {
+      "slug": "d307173_19",
+      "nome": "GIORGIA LATINI",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;307173",
+      "gruppo": "LEGA - SALVINI PREMIER"
+    },
+    {
+      "slug": "d307826_19",
+      "nome": "MAURO ANTONIO DONATO LAUS",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;307826",
+      "gruppo": "PARTITO DEMOCRATICO - ITALIA DEMOCRATICA E PROGRESSISTA"
+    },
+    {
+      "slug": "d307570_19",
+      "nome": "ARIANNA LAZZARINI",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;307570",
+      "gruppo": "LEGA - SALVINI PREMIER"
+    },
+    {
+      "slug": "d300444_19",
+      "nome": "MAURIZIO LEO",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;300444",
+      "gruppo": "FRATELLI D'ITALIA"
+    },
+    {
+      "slug": "d300127_19",
+      "nome": "ENRICO LETTA",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;300127",
+      "gruppo": "PARTITO DEMOCRATICO - ITALIA DEMOCRATICA E PROGRESSISTA"
+    },
+    {
+      "slug": "d308911_19",
+      "nome": "SIMONA LOIZZO",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;308911",
+      "gruppo": "LEGA - SALVINI PREMIER"
+    },
+    {
+      "slug": "d307463_19",
+      "nome": "FRANCESCO LOLLOBRIGIDA",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;307463",
+      "gruppo": "FRATELLI D'ITALIA"
+    },
+    {
+      "slug": "d307829_19",
+      "nome": "ARNALDO LOMUTI",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;307829",
+      "gruppo": "MOVIMENTO 5 STELLE"
+    },
+    {
+      "slug": "d308898_19",
+      "nome": "ELIANA LONGI",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;308898",
+      "gruppo": "FRATELLI D'ITALIA"
+    },
+    {
+      "slug": "d308940_19",
+      "nome": "EMANUELE LOPERFIDO",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;308940",
+      "gruppo": "FRATELLI D'ITALIA"
+    },
+    {
+      "slug": "d307356_19",
+      "nome": "GIORGIO LOVECCHIO",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;307356",
+      "gruppo": "FORZA ITALIA - BERLUSCONI PRESIDENTE - PPE"
+    },
+    {
+      "slug": "d307340_19",
+      "nome": "YLENJA LUCASELLI",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;307340",
+      "gruppo": "FRATELLI D'ITALIA"
+    },
+    {
+      "slug": "d300447_19",
+      "nome": "MAURIZIO ENZO LUPI",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;300447",
+      "gruppo": "NOI MODERATI"
+    },
+    {
+      "slug": "d302980_19",
+      "nome": "ELENA MACCANTI",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;302980",
+      "gruppo": "LEGA - SALVINI PREMIER"
+    },
+    {
+      "slug": "d308914_19",
+      "nome": "CARLO MACCARI",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;308914",
+      "gruppo": "FRATELLI D'ITALIA"
+    },
+    {
+      "slug": "d302789_19",
+      "nome": "MARIA ANNA MADIA",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;302789",
+      "gruppo": "ITALIA VIVA-IL CENTRO-RENEW EUROPE"
+    },
+    {
+      "slug": "d308905_19",
+      "nome": "NOVO UMBERTO MAERNA",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;308905",
+      "gruppo": "FRATELLI D'ITALIA"
+    },
+    {
+      "slug": "d309300_19",
+      "nome": "MANUELA MAFFIOLI",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;309300",
+      "gruppo": "LEGA - SALVINI PREMIER"
+    },
+    {
+      "slug": "d307436_19",
+      "nome": "RICCARDO MAGI",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;307436",
+      "gruppo": "MISTO"
+    },
+    {
+      "slug": "d308814_19",
+      "nome": "LUIGI GIOVANNI MAIORANO",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;308814",
+      "gruppo": "FRATELLI D'ITALIA"
+    },
+    {
+      "slug": "d308886_19",
+      "nome": "LORENZO MALAGOLA",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;308886",
+      "gruppo": "FRATELLI D'ITALIA"
+    },
+    {
+      "slug": "d308938_19",
+      "nome": "MAURO MALAGUTI",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;308938",
+      "gruppo": "FRATELLI D'ITALIA"
+    },
+    {
+      "slug": "d308934_19",
+      "nome": "ILENIA MALAVASI",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;308934",
+      "gruppo": "PARTITO DEMOCRATICO - ITALIA DEMOCRATICA E PROGRESSISTA"
+    },
+    {
+      "slug": "d307481_19",
+      "nome": "CLAUDIO MANCINI",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;307481",
+      "gruppo": "PARTITO DEMOCRATICO - ITALIA DEMOCRATICA E PROGRESSISTA"
+    },
+    {
+      "slug": "d308760_19",
+      "nome": "FRANCO MANES",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;308760",
+      "gruppo": "MISTO"
+    },
+    {
+      "slug": "d307837_19",
+      "nome": "GIUSEPPE TOMMASO VINCENZO MANGIALAVORI",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;307837",
+      "gruppo": "FORZA ITALIA - BERLUSCONI PRESIDENTE - PPE"
+    },
+    {
+      "slug": "d308101_19",
+      "nome": "LUCREZIA MARIA BENEDETTA MANTOVANI",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;308101",
+      "gruppo": "FRATELLI D'ITALIA"
+    },
+    {
+      "slug": "d305771_19",
+      "nome": "IRENE MANZI",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;305771",
+      "gruppo": "PARTITO DEMOCRATICO - ITALIA DEMOCRATICA E PROGRESSISTA"
+    },
+    {
+      "slug": "d307328_19",
+      "nome": "LUIGI MARATTIN",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;307328",
+      "gruppo": "MISTO"
+    },
+    {
+      "slug": "d307453_19",
+      "nome": "RICCARDO AUGUSTO MARCHETTI",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;307453",
+      "gruppo": "LEGA - SALVINI PREMIER"
+    },
+    {
+      "slug": "d308800_19",
+      "nome": "MARINA MARCHETTO",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;308800",
+      "gruppo": "FRATELLI D'ITALIA"
+    },
+    {
+      "slug": "d308869_19",
+      "nome": "FRANCESCO MARI",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;308869",
+      "gruppo": "ALLEANZA VERDI E SINISTRA"
+    },
+    {
+      "slug": "d308901_19",
+      "nome": "MARIA STEFANIA MARINO",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;308901",
+      "gruppo": "PARTITO DEMOCRATICO - ITALIA DEMOCRATICA E PROGRESSISTA"
+    },
+    {
+      "slug": "d307466_19",
+      "nome": "PATRIZIA MARROCCO",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;307466",
+      "gruppo": "FORZA ITALIA - BERLUSCONI PRESIDENTE - PPE"
+    },
+    {
+      "slug": "d308903_19",
+      "nome": "ANDREA MASCARETTI",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;308903",
+      "gruppo": "FRATELLI D'ITALIA"
+    },
+    {
+      "slug": "d307575_19",
+      "nome": "CIRO MASCHIO",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;307575",
+      "gruppo": "FRATELLI D'ITALIA"
+    },
+    {
+      "slug": "d308828_19",
+      "nome": "MARIANGELA MATERA",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;308828",
+      "gruppo": "FRATELLI D'ITALIA"
+    },
+    {
+      "slug": "d308836_19",
+      "nome": "SIMONETTA MATONE",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;308836",
+      "gruppo": "LEGA - SALVINI PREMIER"
+    },
+    {
+      "slug": "d308941_19",
+      "nome": "NICOLE MATTEONI",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;308941",
+      "gruppo": "FRATELLI D'ITALIA"
+    },
+    {
+      "slug": "d308939_19",
+      "nome": "ALDO MATTIA",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;308939",
+      "gruppo": "FRATELLI D'ITALIA"
+    },
+    {
+      "slug": "d308885_19",
+      "nome": "STEFANO GIOVANNI MAULLU",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;308885",
+      "gruppo": "FRATELLI D'ITALIA"
+    },
+    {
+      "slug": "d306176_19",
+      "nome": "MATTEO MAURI",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;306176",
+      "gruppo": "PARTITO DEMOCRATICO - ITALIA DEMOCRATICA E PROGRESSISTA"
+    },
+    {
+      "slug": "d307248_19",
+      "nome": "ERICA MAZZETTI",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;307248",
+      "gruppo": "FORZA ITALIA - BERLUSCONI PRESIDENTE - PPE"
+    },
+    {
+      "slug": "d308860_19",
+      "nome": "GIANMARCO MAZZI",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;308860",
+      "gruppo": "FRATELLI D'ITALIA"
+    },
+    {
+      "slug": "d302103_19",
+      "nome": "GIORGIA MELONI",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;302103",
+      "gruppo": "FRATELLI D'ITALIA"
+    },
+    {
+      "slug": "d308936_19",
+      "nome": "VIRGINIO MEROLA",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;308936",
+      "gruppo": "PARTITO DEMOCRATICO - ITALIA DEMOCRATICA E PROGRESSISTA"
+    },
+    {
+      "slug": "d308897_19",
+      "nome": "MANLIO MESSINA",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;308897",
+      "gruppo": "MISTO"
+    },
+    {
+      "slug": "d308887_19",
+      "nome": "FRANCESCO MICHELOTTI",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;308887",
+      "gruppo": "FRATELLI D'ITALIA"
+    },
+    {
+      "slug": "d308921_19",
+      "nome": "GIOVANNA MIELE",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;308921",
+      "gruppo": "LEGA - SALVINI PREMIER"
+    },
+    {
+      "slug": "d308922_19",
+      "nome": "MASSIMO MILANI",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;308922",
+      "gruppo": "FRATELLI D'ITALIA"
+    },
+    {
+      "slug": "d302913_19",
+      "nome": "ANTONINO MINARDO",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;302913",
+      "gruppo": "FORZA ITALIA - BERLUSCONI PRESIDENTE - PPE"
+    },
+    {
+      "slug": "d307507_19",
+      "nome": "RICCARDO MOLINARI",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;307507",
+      "gruppo": "LEGA - SALVINI PREMIER"
+    },
+    {
+      "slug": "d307424_19",
+      "nome": "FEDERICO MOLLICONE",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;307424",
+      "gruppo": "FRATELLI D'ITALIA"
+    },
+    {
+      "slug": "d302762_19",
+      "nome": "NICOLA MOLTENI",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;302762",
+      "gruppo": "LEGA - SALVINI PREMIER"
+    },
+    {
+      "slug": "d307464_19",
+      "nome": "AUGUSTA MONTARULI",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;307464",
+      "gruppo": "FRATELLI D'ITALIA"
+    },
+    {
+      "slug": "d308878_19",
+      "nome": "ELISA MONTEMAGNI",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;308878",
+      "gruppo": "LEGA - SALVINI PREMIER"
+    },
+    {
+      "slug": "d302794_19",
+      "nome": "ROBERTO MORASSUT",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;302794",
+      "gruppo": "PARTITO DEMOCRATICO - ITALIA DEMOCRATICA E PROGRESSISTA"
+    },
+    {
+      "slug": "d308818_19",
+      "nome": "DANIELA MORFINO",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;308818",
+      "gruppo": "MOVIMENTO 5 STELLE"
+    },
+    {
+      "slug": "d308863_19",
+      "nome": "MADDALENA MORGANTE",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;308863",
+      "gruppo": "FRATELLI D'ITALIA"
+    },
+    {
+      "slug": "d307300_19",
+      "nome": "JACOPO MORRONE",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;307300",
+      "gruppo": "LEGA - SALVINI PREMIER"
+    },
+    {
+      "slug": "d307130_19",
+      "nome": "GIORGIO MULE'",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;307130",
+      "gruppo": "FORZA ITALIA - BERLUSCONI PRESIDENTE - PPE"
+    },
+    {
+      "slug": "d308859_19",
+      "nome": "FRANCESCO MURA",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;308859",
+      "gruppo": "FRATELLI D'ITALIA"
+    },
+    {
+      "slug": "d307454_19",
+      "nome": "RAFFAELE NEVI",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;307454",
+      "gruppo": "FORZA ITALIA - BERLUSCONI PRESIDENTE - PPE"
+    },
+    {
+      "slug": "d307851_19",
+      "nome": "TIZIANA NISINI",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;307851",
+      "gruppo": "LEGA - SALVINI PREMIER"
+    },
+    {
+      "slug": "d308798_19",
+      "nome": "CARLO NORDIO",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;308798",
+      "gruppo": "FRATELLI D'ITALIA"
+    },
+    {
+      "slug": "d308781_19",
+      "nome": "FEDERICA ONORI",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;308781",
+      "gruppo": "AZIONE-POPOLARI EUROPEISTI RIFORMATORI-RENEW EUROPE"
+    },
+    {
+      "slug": "d305815_19",
+      "nome": "MATTEO ORFINI",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;305815",
+      "gruppo": "PARTITO DEMOCRATICO - ITALIA DEMOCRATICA E PROGRESSISTA"
+    },
+    {
+      "slug": "d301463_19",
+      "nome": "ANDREA ORLANDO",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;301463",
+      "gruppo": "PARTITO DEMOCRATICO - ITALIA DEMOCRATICA E PROGRESSISTA"
+    },
+    {
+      "slug": "d307564_19",
+      "nome": "ANNA LAURA ORRICO",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;307564",
+      "gruppo": "MOVIMENTO 5 STELLE"
+    },
+    {
+      "slug": "d300299_19",
+      "nome": "ANDREA GIORGIO FELICE MARIA ORSINI",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;300299",
+      "gruppo": "FORZA ITALIA - BERLUSCONI PRESIDENTE - PPE"
+    },
+    {
+      "slug": "d307612_19",
+      "nome": "MARCO OSNATO",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;307612",
+      "gruppo": "FRATELLI D'ITALIA"
+    },
+    {
+      "slug": "d308918_19",
+      "nome": "NICOLA OTTAVIANI",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;308918",
+      "gruppo": "LEGA - SALVINI PREMIER"
+    },
+    {
+      "slug": "d308864_19",
+      "nome": "MARCO PADOVANI",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;308864",
+      "gruppo": "FRATELLI D'ITALIA"
+    },
+    {
+      "slug": "d307857_19",
+      "nome": "NAZARIO PAGANO",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;307857",
+      "gruppo": "FORZA ITALIA - BERLUSCONI PRESIDENTE - PPE"
+    },
+    {
+      "slug": "d307304_19",
+      "nome": "UBALDO PAGANO",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;307304",
+      "gruppo": "PARTITO DEMOCRATICO - ITALIA DEMOCRATICA E PROGRESSISTA"
+    },
+    {
+      "slug": "d308839_19",
+      "nome": "ALESSANDRO PALOMBI",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;308839",
+      "gruppo": "FRATELLI D'ITALIA"
+    },
+    {
+      "slug": "d309220_19",
+      "nome": "ALBERTO PANDOLFO",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;309220",
+      "gruppo": "PARTITO DEMOCRATICO - ITALIA DEMOCRATICA E PROGRESSISTA"
+    },
+    {
+      "slug": "d307376_19",
+      "nome": "MASSIMILIANO PANIZZUT",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;307376",
+      "gruppo": "LEGA - SALVINI PREMIER"
+    },
+    {
+      "slug": "d308895_19",
+      "nome": "GIULIA PASTORELLA",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;308895",
+      "gruppo": "AZIONE - ITALIA VIVA - RENEW EUROPE"
+    },
+    {
+      "slug": "d305733_19",
+      "nome": "LUCA PASTORINO",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;305733",
+      "gruppo": "MISTO"
+    },
+    {
+      "slug": "d308852_19",
+      "nome": "ANNARITA PATRIARCA",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;308852",
+      "gruppo": "FORZA ITALIA - BERLUSCONI PRESIDENTE - PPE"
+    },
+    {
+      "slug": "d308221_19",
+      "nome": "EMMA PAVANELLI",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;308221",
+      "gruppo": "MOVIMENTO 5 STELLE"
+    },
+    {
+      "slug": "d307496_19",
+      "nome": "ROBERTO PELLA",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;307496",
+      "gruppo": "FORZA ITALIA - BERLUSCONI PRESIDENTE - PPE"
+    },
+    {
+      "slug": "d307863_19",
+      "nome": "MARCO PELLEGRINI",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;307863",
+      "gruppo": "MOVIMENTO 5 STELLE"
+    },
+    {
+      "slug": "d308792_19",
+      "nome": "ANDREA PELLICINI",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;308792",
+      "gruppo": "FRATELLI D'ITALIA"
+    },
+    {
+      "slug": "d302746_19",
+      "nome": "VINICIO GIUSEPPE GUIDO PELUFFO",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;302746",
+      "gruppo": "PARTITO DEMOCRATICO - ITALIA DEMOCRATICA E PROGRESSISTA"
+    },
+    {
+      "slug": "d308845_19",
+      "nome": "PASQUALINO PENZA",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;308845",
+      "gruppo": "MOVIMENTO 5 STELLE"
+    },
+    {
+      "slug": "d307109_19",
+      "nome": "MARIO PERANTONI",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;307109",
+      "gruppo": "MOVIMENTO 5 STELLE"
+    },
+    {
+      "slug": "d308812_19",
+      "nome": "MARCO PERISSA",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;308812",
+      "gruppo": "FRATELLI D'ITALIA"
+    },
+    {
+      "slug": "d308816_19",
+      "nome": "ELISABETTA PICCOLOTTI",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;308816",
+      "gruppo": "ALLEANZA VERDI E SINISTRA"
+    },
+    {
+      "slug": "d303089_19",
+      "nome": "GILBERTO PICHETTO FRATIN",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;303089",
+      "gruppo": "FORZA ITALIA - BERLUSCONI PRESIDENTE - PPE"
+    },
+    {
+      "slug": "d308791_19",
+      "nome": "ATTILIO PIERRO",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;308791",
+      "gruppo": "MISTO"
+    },
+    {
+      "slug": "d308889_19",
+      "nome": "FABIO PIETRELLA",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;308889",
+      "gruppo": "FRATELLI D'ITALIA"
+    },
+    {
+      "slug": "d308761_19",
+      "nome": "CALOGERO PISANO",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;308761",
+      "gruppo": "FRATELLI D'ITALIA"
+    },
+    {
+      "slug": "d307223_19",
+      "nome": "PIETRO PITTALIS",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;307223",
+      "gruppo": "FORZA ITALIA - BERLUSCONI PRESIDENTE - PPE"
+    },
+    {
+      "slug": "d308942_19",
+      "nome": "GRAZIANO PIZZIMENTI",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;308942",
+      "gruppo": "LEGA - SALVINI PREMIER"
+    },
+    {
+      "slug": "d302968_19",
+      "nome": "CATIA POLIDORI",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;302968",
+      "gruppo": "FORZA ITALIA - BERLUSCONI PRESIDENTE - PPE"
+    },
+    {
+      "slug": "d308769_19",
+      "nome": "BARBARA POLO",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;308769",
+      "gruppo": "FRATELLI D'ITALIA"
+    },
+    {
+      "slug": "d302902_19",
+      "nome": "FABIO PORTA",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;302902",
+      "gruppo": "PARTITO DEMOCRATICO - ITALIA DEMOCRATICA E PROGRESSISTA"
+    },
+    {
+      "slug": "d308822_19",
+      "nome": "EMANUELE POZZOLO",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;308822",
+      "gruppo": "MISTO"
+    },
+    {
+      "slug": "d307430_19",
+      "nome": "PATRIZIA PRESTIPINO",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;307430",
+      "gruppo": "PARTITO DEMOCRATICO - ITALIA DEMOCRATICA E PROGRESSISTA"
+    },
+    {
+      "slug": "d307585_19",
+      "nome": "ERIK UMBERTO PRETTO",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;307585",
+      "gruppo": "FORZA ITALIA - BERLUSCONI PRESIDENTE - PPE"
+    },
+    {
+      "slug": "d307452_19",
+      "nome": "EMANUELE PRISCO",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;307452",
+      "gruppo": "FRATELLI D'ITALIA"
+    },
+    {
+      "slug": "d308243_19",
+      "nome": "GIUSEPPE LUCIANO CALOGERO PROVENZANO",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;308243",
+      "gruppo": "PARTITO DEMOCRATICO - ITALIA DEMOCRATICA E PROGRESSISTA"
+    },
+    {
+      "slug": "d308923_19",
+      "nome": "PAOLO PULCIANI",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;308923",
+      "gruppo": "FRATELLI D'ITALIA"
+    },
+    {
+      "slug": "d306189_19",
+      "nome": "LIA QUARTAPELLE PROCOPIO",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;306189",
+      "gruppo": "PARTITO DEMOCRATICO - ITALIA DEMOCRATICA E PROGRESSISTA"
+    },
+    {
+      "slug": "d308896_19",
+      "nome": "ANDREA QUARTINI",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;308896",
+      "gruppo": "MOVIMENTO 5 STELLE"
+    },
+    {
+      "slug": "d307406_19",
+      "nome": "ANGELA RAFFA",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;307406",
+      "gruppo": "MOVIMENTO 5 STELLE"
+    },
+    {
+      "slug": "d308795_19",
+      "nome": "CARMINE FABIO RAIMONDO",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;308795",
+      "gruppo": "FRATELLI D'ITALIA"
+    },
+    {
+      "slug": "d301436_19",
+      "nome": "FABIO RAMPELLI",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;301436",
+      "gruppo": "FRATELLI D'ITALIA"
+    },
+    {
+      "slug": "d301459_19",
+      "nome": "LAURA RAVETTO",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;301459",
+      "gruppo": "MISTO"
+    },
+    {
+      "slug": "d308853_19",
+      "nome": "MARIANNA RICCIARDI",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;308853",
+      "gruppo": "MOVIMENTO 5 STELLE"
+    },
+    {
+      "slug": "d307250_19",
+      "nome": "RICCARDO RICCIARDI",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;307250",
+      "gruppo": "MOVIMENTO 5 STELLE"
+    },
+    {
+      "slug": "d308780_19",
+      "nome": "TONI RICCIARDI",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;308780",
+      "gruppo": "PARTITO DEMOCRATICO - ITALIA DEMOCRATICA E PROGRESSISTA"
+    },
+    {
+      "slug": "d305708_19",
+      "nome": "MATTEO RICHETTI",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;305708",
+      "gruppo": "AZIONE - ITALIA VIVA - RENEW EUROPE"
+    },
+    {
+      "slug": "d304521_19",
+      "nome": "EDOARDO RIXI",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;304521",
+      "gruppo": "LEGA - SALVINI PREMIER"
+    },
+    {
+      "slug": "d305688_19",
+      "nome": "WALTER RIZZETTO",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;305688",
+      "gruppo": "FRATELLI D'ITALIA"
+    },
+    {
+      "slug": "d302748_19",
+      "nome": "EUGENIA MARIA ROCCELLA",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;302748",
+      "gruppo": "FRATELLI D'ITALIA"
+    },
+    {
+      "slug": "d308891_19",
+      "nome": "SILVIA ROGGIANI",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;308891",
+      "gruppo": "PARTITO DEMOCRATICO - ITALIA DEMOCRATICA E PROGRESSISTA"
+    },
+    {
+      "slug": "d300369_19",
+      "nome": "FRANCESCO SAVERIO ROMANO",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;300369",
+      "gruppo": "NOI MODERATI"
+    },
+    {
+      "slug": "d309160_19",
+      "nome": "NADIA ROMEO",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;309160",
+      "gruppo": "PARTITO DEMOCRATICO - ITALIA DEMOCRATICA E PROGRESSISTA"
+    },
+    {
+      "slug": "d300674_19",
+      "nome": "ETTORE ROSATO",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;300674",
+      "gruppo": "AZIONE - ITALIA VIVA - RENEW EUROPE"
+    },
+    {
+      "slug": "d308867_19",
+      "nome": "FABIO ROSCANI",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;308867",
+      "gruppo": "FRATELLI D'ITALIA"
+    },
+    {
+      "slug": "d307678_19",
+      "nome": "CRISTINA ROSSELLO",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;307678",
+      "gruppo": "FORZA ITALIA - BERLUSCONI PRESIDENTE - PPE"
+    },
+    {
+      "slug": "d307306_19",
+      "nome": "ANDREA ROSSI",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;307306",
+      "gruppo": "PARTITO DEMOCRATICO - ITALIA DEMOCRATICA E PROGRESSISTA"
+    },
+    {
+      "slug": "d308848_19",
+      "nome": "ANGELO ROSSI",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;308848",
+      "gruppo": "FRATELLI D'ITALIA"
+    },
+    {
+      "slug": "d308877_19",
+      "nome": "FABRIZIO ROSSI",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;308877",
+      "gruppo": "FRATELLI D'ITALIA"
+    },
+    {
+      "slug": "d308868_19",
+      "nome": "MATTEO ROSSO",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;308868",
+      "gruppo": "FRATELLI D'ITALIA"
+    },
+    {
+      "slug": "d307455_19",
+      "nome": "MAURO ROTELLI",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;307455",
+      "gruppo": "FRATELLI D'ITALIA"
+    },
+    {
+      "slug": "d38560_19",
+      "nome": "GIANFRANCO ROTONDI",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;38560",
+      "gruppo": "FRATELLI D'ITALIA"
+    },
+    {
+      "slug": "d308788_19",
+      "nome": "FRANCESCO MARIA RUBANO",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;308788",
+      "gruppo": "FORZA ITALIA - BERLUSCONI PRESIDENTE - PPE"
+    },
+    {
+      "slug": "d307478_19",
+      "nome": "DANIELA RUFFINO",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;307478",
+      "gruppo": "AZIONE - ITALIA VIVA - RENEW EUROPE"
+    },
+    {
+      "slug": "d307889_19",
+      "nome": "MASSIMO RUSPANDINI",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;307889",
+      "gruppo": "FRATELLI D'ITALIA"
+    },
+    {
+      "slug": "d308927_19",
+      "nome": "GAETANA RUSSO",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;308927",
+      "gruppo": "FRATELLI D'ITALIA"
+    },
+    {
+      "slug": "d308899_19",
+      "nome": "PAOLO EMILIO RUSSO",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;308899",
+      "gruppo": "FORZA ITALIA - BERLUSCONI PRESIDENTE - PPE"
+    },
+    {
+      "slug": "d307659_19",
+      "nome": "GLORIA SACCANI",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;307659",
+      "gruppo": "FORZA ITALIA - BERLUSCONI PRESIDENTE - PPE"
+    },
+    {
+      "slug": "d308882_19",
+      "nome": "FABRIZIO SALA",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;308882",
+      "gruppo": "FORZA ITALIA - BERLUSCONI PRESIDENTE - PPE"
+    },
+    {
+      "slug": "d307892_19",
+      "nome": "AGOSTINO SANTILLO",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;307892",
+      "gruppo": "MOVIMENTO 5 STELLE"
+    },
+    {
+      "slug": "d308856_19",
+      "nome": "MARCO SARRACINO",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;308856",
+      "gruppo": "PARTITO DEMOCRATICO - ITALIA DEMOCRATICA E PROGRESSISTA"
+    },
+    {
+      "slug": "d307360_19",
+      "nome": "ROSSANO SASSO",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;307360",
+      "gruppo": "MISTO"
+    },
+    {
+      "slug": "d308908_19",
+      "nome": "LUCA SBARDELLA",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;308908",
+      "gruppo": "FRATELLI D'ITALIA"
+    },
+    {
+      "slug": "d308803_19",
+      "nome": "RACHELE SCARPA",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;308803",
+      "gruppo": "PARTITO DEMOCRATICO - ITALIA DEMOCRATICA E PROGRESSISTA"
+    },
+    {
+      "slug": "d307418_19",
+      "nome": "FILIPPO SCERRA",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;307418",
+      "gruppo": "MOVIMENTO 5 STELLE"
+    },
+    {
+      "slug": "d308850_19",
+      "nome": "MICHELE SCHIANO DI VISCONTI",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;308850",
+      "gruppo": "FRATELLI D'ITALIA"
+    },
+    {
+      "slug": "d308851_19",
+      "nome": "MARTA SCHIFONE",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;308851",
+      "gruppo": "FRATELLI D'ITALIA"
+    },
+    {
+      "slug": "d308930_19",
+      "nome": "ELENA ETHEL SCHLEIN",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;308930",
+      "gruppo": "PARTITO DEMOCRATICO - ITALIA DEMOCRATICA E PROGRESSISTA"
+    },
+    {
+      "slug": "d305586_19",
+      "nome": "MANFRED SCHULLIAN",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;305586",
+      "gruppo": "MISTO"
+    },
+    {
+      "slug": "d302069_19",
+      "nome": "ARTURO SCOTTO",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;302069",
+      "gruppo": "PARTITO DEMOCRATICO - ITALIA DEMOCRATICA E PROGRESSISTA"
+    },
+    {
+      "slug": "d307722_19",
+      "nome": "ELISA SCUTELLA'",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;307722",
+      "gruppo": "MOVIMENTO 5 STELLE"
+    },
+    {
+      "slug": "d308797_19",
+      "nome": "MARTINA SEMENZATO",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;308797",
+      "gruppo": "NOI MODERATI"
+    },
+    {
+      "slug": "d307374_19",
+      "nome": "DEBORA SERRACCHIANI",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;307374",
+      "gruppo": "PARTITO DEMOCRATICO - ITALIA DEMOCRATICA E PROGRESSISTA"
+    },
+    {
+      "slug": "d307447_19",
+      "nome": "FRANCESCO SILVESTRI",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;307447",
+      "gruppo": "MOVIMENTO 5 STELLE"
+    },
+    {
+      "slug": "d307175_19",
+      "nome": "RACHELE SILVESTRI",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;307175",
+      "gruppo": "FRATELLI D'ITALIA"
+    },
+    {
+      "slug": "d308894_19",
+      "nome": "MARCO SIMIANI",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;308894",
+      "gruppo": "PARTITO DEMOCRATICO - ITALIA DEMOCRATICA E PROGRESSISTA"
+    },
+    {
+      "slug": "d307402_19",
+      "nome": "MATILDE SIRACUSANO",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;307402",
+      "gruppo": "FORZA ITALIA - BERLUSCONI PRESIDENTE - PPE"
+    },
+    {
+      "slug": "d307608_19",
+      "nome": "ALESSANDRO SORTE",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;307608",
+      "gruppo": "FORZA ITALIA - BERLUSCONI PRESIDENTE - PPE"
+    },
+    {
+      "slug": "d306064_19",
+      "nome": "GIULIO CESARE SOTTANELLI",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;306064",
+      "gruppo": "AZIONE - ITALIA VIVA - RENEW EUROPE"
+    },
+    {
+      "slug": "d308929_19",
+      "nome": "ABOUBAKAR SOUMAHORO",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;308929",
+      "gruppo": "MISTO"
+    },
+    {
+      "slug": "d305974_19",
+      "nome": "ROBERTO SPERANZA",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;305974",
+      "gruppo": "PARTITO DEMOCRATICO - ITALIA DEMOCRATICA E PROGRESSISTA"
+    },
+    {
+      "slug": "d307202_19",
+      "nome": "GILDA SPORTIELLO",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;307202",
+      "gruppo": "MOVIMENTO 5 STELLE"
+    },
+    {
+      "slug": "d306214_19",
+      "nome": "LUCA SQUERI",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;306214",
+      "gruppo": "FORZA ITALIA - BERLUSCONI PRESIDENTE - PPE"
+    },
+    {
+      "slug": "d308817_19",
+      "nome": "CLAUDIO MICHELE STEFANAZZI",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;308817",
+      "gruppo": "PARTITO DEMOCRATICO - ITALIA DEMOCRATICA E PROGRESSISTA"
+    },
+    {
+      "slug": "d307571_19",
+      "nome": "ALBERTO STEFANI",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;307571",
+      "gruppo": "LEGA - SALVINI PREMIER"
+    },
+    {
+      "slug": "d307902_19",
+      "nome": "DIETER STEGER",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;307902",
+      "gruppo": "MISTO"
+    },
+    {
+      "slug": "d306139_19",
+      "nome": "NICOLA STUMPO",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;306139",
+      "gruppo": "PARTITO DEMOCRATICO - ITALIA DEMOCRATICA E PROGRESSISTA"
+    },
+    {
+      "slug": "d307903_19",
+      "nome": "VALERIA CARMELA MARIA SUDANO",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;307903",
+      "gruppo": "LEGA - SALVINI PREMIER"
+    },
+    {
+      "slug": "d34580_19",
+      "nome": "BRUNO TABACCI",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;34580",
+      "gruppo": "MISTO"
+    },
+    {
+      "slug": "d308838_19",
+      "nome": "ANTONIO TAJANI",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;308838",
+      "gruppo": "FORZA ITALIA - BERLUSCONI PRESIDENTE - PPE"
+    },
+    {
+      "slug": "d308925_19",
+      "nome": "ROSARIA TASSINARI",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;308925",
+      "gruppo": "FORZA ITALIA - BERLUSCONI PRESIDENTE - PPE"
+    },
+    {
+      "slug": "d308879_19",
+      "nome": "CHIARA TENERINI",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;308879",
+      "gruppo": "FORZA ITALIA - BERLUSCONI PRESIDENTE - PPE"
+    },
+    {
+      "slug": "d308866_19",
+      "nome": "GUERINO TESTA",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;308866",
+      "gruppo": "FRATELLI D'ITALIA"
+    },
+    {
+      "slug": "d308782_19",
+      "nome": "FRANCO TIRELLI",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;308782",
+      "gruppo": "NOI MODERATI"
+    },
+    {
+      "slug": "d307983_19",
+      "nome": "LUCA TOCCALINI",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;307983",
+      "gruppo": "LEGA - SALVINI PREMIER"
+    },
+    {
+      "slug": "d308270_19",
+      "nome": "ALESSANDRA TODDE",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;308270",
+      "gruppo": "MOVIMENTO 5 STELLE"
+    },
+    {
+      "slug": "d307234_19",
+      "nome": "DANIELA TORTO",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;307234",
+      "gruppo": "MOVIMENTO 5 STELLE"
+    },
+    {
+      "slug": "d308865_19",
+      "nome": "FLAVIO TOSI",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;308865",
+      "gruppo": "FORZA ITALIA - BERLUSCONI PRESIDENTE - PPE"
+    },
+    {
+      "slug": "d307457_19",
+      "nome": "PAOLO TRANCASSINI",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;307457",
+      "gruppo": "FRATELLI D'ITALIA"
+    },
+    {
+      "slug": "d307132_19",
+      "nome": "ROBERTO TRAVERSI",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;307132",
+      "gruppo": "FRATELLI D'ITALIA"
+    },
+    {
+      "slug": "d308907_19",
+      "nome": "ANDREA TREMAGLIA",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;308907",
+      "gruppo": "FRATELLI D'ITALIA"
+    },
+    {
+      "slug": "d39130_19",
+      "nome": "GIULIO CARLO DANILO TREMONTI",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;39130",
+      "gruppo": "FRATELLI D'ITALIA"
+    },
+    {
+      "slug": "d307726_19",
+      "nome": "RICCARDO TUCCI",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;307726",
+      "gruppo": "MOVIMENTO 5 STELLE"
+    },
+    {
+      "slug": "d308862_19",
+      "nome": "ALESSANDRO URZI'",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;308862",
+      "gruppo": "FRATELLI D'ITALIA"
+    },
+    {
+      "slug": "d306497_19",
+      "nome": "STEFANO VACCARI",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;306497",
+      "gruppo": "PARTITO DEMOCRATICO - ITALIA DEMOCRATICA E PROGRESSISTA"
+    },
+    {
+      "slug": "d307400_19",
+      "nome": "MARIA CAROLINA VARCHI",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;307400",
+      "gruppo": "FRATELLI D'ITALIA"
+    },
+    {
+      "slug": "d308789_19",
+      "nome": "MARIA IMMACOLATA VIETRI",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;308789",
+      "gruppo": "FRATELLI D'ITALIA"
+    },
+    {
+      "slug": "d309280_19",
+      "nome": "FRANCESCA VIGGIANO",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;309280",
+      "gruppo": "PARTITO DEMOCRATICO - ITALIA DEMOCRATICA E PROGRESSISTA"
+    },
+    {
+      "slug": "d307334_19",
+      "nome": "GIANLUCA VINCI",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;307334",
+      "gruppo": "FRATELLI D'ITALIA"
+    },
+    {
+      "slug": "d308847_19",
+      "nome": "ANDREA VOLPI",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;308847",
+      "gruppo": "FRATELLI D'ITALIA"
+    },
+    {
+      "slug": "d306272_19",
+      "nome": "ALESSANDRO ZAN",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;306272",
+      "gruppo": "PARTITO DEMOCRATICO - ITALIA DEMOCRATICA E PROGRESSISTA"
+    },
+    {
+      "slug": "d300469_19",
+      "nome": "LUANA ZANELLA",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;300469",
+      "gruppo": "ALLEANZA VERDI E SINISTRA"
+    },
+    {
+      "slug": "d306521_19",
+      "nome": "FILIBERTO ZARATTI",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;306521",
+      "gruppo": "ALLEANZA VERDI E SINISTRA"
+    },
+    {
+      "slug": "d307143_19",
+      "nome": "EDOARDO ZIELLO",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;307143",
+      "gruppo": "MISTO"
+    },
+    {
+      "slug": "d308842_19",
+      "nome": "NICOLA ZINGARETTI",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;308842",
+      "gruppo": "PARTITO DEMOCRATICO - ITALIA DEMOCRATICA E PROGRESSISTA"
+    },
+    {
+      "slug": "d308873_19",
+      "nome": "GIANPIERO ZINZI",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;308873",
+      "gruppo": "LEGA - SALVINI PREMIER"
+    },
+    {
+      "slug": "d307616_19",
+      "nome": "EUGENIO ZOFFILI",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;307616",
+      "gruppo": "LEGA - SALVINI PREMIER"
+    },
+    {
+      "slug": "d307142_19",
+      "nome": "RICCARDO ZUCCONI",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;307142",
+      "gruppo": "FRATELLI D'ITALIA"
+    },
+    {
+      "slug": "d308813_19",
+      "nome": "IMMACOLATA ZURZOLO",
+      "urlScheda": "http://www.camera.it/uri-res/N2Ls?urn:camera-it:parlamento:scheda.personale:camera;19.legislatura;308813",
+      "gruppo": "FRATELLI D'ITALIA"
+    }
+  ]
+}

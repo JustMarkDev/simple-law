@@ -1,0 +1,1283 @@
+{
+  "provenance": {
+    "fonte": "dati.senato.it",
+    "url": "https://dati.senato.it/sparql",
+    "recuperatoIl": "2026-09-28T18:27:50.369Z",
+    "licenza": "CC BY 3.0 IT"
+  },
+  "legislatura": "19",
+  "senatori": [
+    {
+      "slug": "32",
+      "nome": "Maria Elisabetta Alberti Casellati",
+      "gruppo": "Forza Italia - Berlusconi Presidente - PPE",
+      "foto": "http://www.senato.it/leg/19/Immagini/Senatori/00000032.jpg"
+    },
+    {
+      "slug": "32578",
+      "nome": "Alessandro Alfieri",
+      "gruppo": "Partito Democratico - Italia Democratica e Progressista",
+      "foto": "http://www.senato.it/leg/19/Immagini/Senatori/00032578.jpg"
+    },
+    {
+      "slug": "36381",
+      "nome": "Vincenza Aloisio",
+      "gruppo": "MoVimento 5 Stelle",
+      "foto": "http://www.senato.it/leg/19/Immagini/Senatori/00036381.jpg"
+    },
+    {
+      "slug": "36382",
+      "nome": "Paola Ambrogio",
+      "gruppo": "Fratelli d'Italia",
+      "foto": "http://www.senato.it/leg/19/Immagini/Senatori/00036382.jpg"
+    },
+    {
+      "slug": "31010",
+      "nome": "Bartolomeo Amidei",
+      "gruppo": "Fratelli d'Italia",
+      "foto": "http://www.senato.it/leg/19/Immagini/Senatori/00031010.jpg"
+    },
+    {
+      "slug": "36383",
+      "nome": "Renato Ancorotti",
+      "gruppo": "Fratelli d'Italia",
+      "foto": "http://www.senato.it/leg/19/Immagini/Senatori/00036383.jpg"
+    },
+    {
+      "slug": "29040",
+      "nome": "Bruno Astorre",
+      "gruppo": "Partito Democratico - Italia Democratica e Progressista",
+      "foto": "http://www.senato.it/leg/19/Immagini/Senatori/00029040.jpg"
+    },
+    {
+      "slug": "22707",
+      "nome": "Andrea Augello",
+      "gruppo": "Fratelli d'Italia",
+      "foto": "http://www.senato.it/leg/19/Immagini/Senatori/00022707.jpg"
+    },
+    {
+      "slug": "17542",
+      "nome": "Alberto Balboni",
+      "gruppo": "Fratelli d'Italia",
+      "foto": "http://www.senato.it/leg/19/Immagini/Senatori/00017542.jpg"
+    },
+    {
+      "slug": "32583",
+      "nome": "Alberto Barachini",
+      "gruppo": "Forza Italia - Berlusconi Presidente - PPE",
+      "foto": "http://www.senato.it/leg/19/Immagini/Senatori/00032583.jpg"
+    },
+    {
+      "slug": "36431",
+      "nome": "Michele Barcaiuolo",
+      "gruppo": "Fratelli d'Italia",
+      "foto": "http://www.senato.it/leg/19/Immagini/Senatori/00036431.jpg"
+    },
+    {
+      "slug": "29270",
+      "nome": "Lorenzo Basso",
+      "gruppo": "Partito Democratico - Italia Democratica e Progressista",
+      "foto": "http://www.senato.it/leg/19/Immagini/Senatori/00029270.jpg"
+    },
+    {
+      "slug": "29273",
+      "nome": "Alfredo Bazoli",
+      "gruppo": "Partito Democratico - Italia Democratica e Progressista",
+      "foto": "http://www.senato.it/leg/19/Immagini/Senatori/00029273.jpg"
+    },
+    {
+      "slug": "32586",
+      "nome": "Giorgio Maria Bergesio",
+      "gruppo": "Lega Salvini Premier - Partito Sardo d'Azione",
+      "foto": "http://www.senato.it/leg/19/Immagini/Senatori/00032586.jpg"
+    },
+    {
+      "slug": "227",
+      "nome": "Silvio Berlusconi",
+      "gruppo": "Forza Italia - Berlusconi Presidente - PPE",
+      "foto": "http://www.senato.it/leg/19/Immagini/Senatori/00000227.jpg"
+    },
+    {
+      "slug": "25558",
+      "nome": "Anna Maria Bernini",
+      "gruppo": "Forza Italia - Berlusconi Presidente - PPE",
+      "foto": "http://www.senato.it/leg/19/Immagini/Senatori/00025558.jpg"
+    },
+    {
+      "slug": "36384",
+      "nome": "Gianni Berrino",
+      "gruppo": "Fratelli d'Italia",
+      "foto": "http://www.senato.it/leg/19/Immagini/Senatori/00036384.jpg"
+    },
+    {
+      "slug": "36385",
+      "nome": "Dolores Bevilacqua",
+      "gruppo": "MoVimento 5 Stelle",
+      "foto": "http://www.senato.it/leg/19/Immagini/Senatori/00036385.jpg"
+    },
+    {
+      "slug": "22871",
+      "nome": "Michaela Biancofiore",
+      "gruppo": "Civici d'Italia-UDC-Noi Moderati (Noi con l'Italia, Coraggio Italia, Italia al Centro)-MAIE-Centro Popolare",
+      "foto": "http://www.senato.it/leg/19/Immagini/Senatori/00022871.jpg"
+    },
+    {
+      "slug": "32851",
+      "nome": "Anna Bilotti",
+      "gruppo": "MoVimento 5 Stelle",
+      "foto": "http://www.senato.it/leg/19/Immagini/Senatori/00032851.jpg"
+    },
+    {
+      "slug": "36386",
+      "nome": "Mara Bizzotto",
+      "gruppo": "Lega Salvini Premier - Partito Sardo d'Azione",
+      "foto": "http://www.senato.it/leg/19/Immagini/Senatori/00036386.jpg"
+    },
+    {
+      "slug": "25555",
+      "nome": "Francesco Boccia",
+      "gruppo": "Partito Democratico - Italia Democratica e Progressista",
+      "foto": "http://www.senato.it/leg/19/Immagini/Senatori/00025555.jpg"
+    },
+    {
+      "slug": "22877",
+      "nome": "Giulia Bongiorno",
+      "gruppo": "Lega Salvini Premier - Partito Sardo d'Azione",
+      "foto": "http://www.senato.it/leg/19/Immagini/Senatori/00022877.jpg"
+    },
+    {
+      "slug": "29291",
+      "nome": "Mario Alejandro Borghese",
+      "gruppo": "Civici d'Italia-UDC-Noi Moderati (Noi con l'Italia, Coraggio Italia, Italia al Centro)-MAIE-Centro Popolare",
+      "foto": "http://www.senato.it/leg/19/Immagini/Senatori/00029291.jpg"
+    },
+    {
+      "slug": "29292",
+      "nome": "Stefano Borghesi",
+      "gruppo": "Lega Salvini Premier - Partito Sardo d'Azione",
+      "foto": "http://www.senato.it/leg/19/Immagini/Senatori/00029292.jpg"
+    },
+    {
+      "slug": "33070",
+      "nome": "Claudio Borghi",
+      "gruppo": "Lega Salvini Premier - Partito Sardo d'Azione",
+      "foto": "http://www.senato.it/leg/19/Immagini/Senatori/00033070.jpg"
+    },
+    {
+      "slug": "29293",
+      "nome": "Enrico Borghi",
+      "gruppo": "Italia Viva - Casa Riformista",
+      "foto": "http://www.senato.it/leg/19/Immagini/Senatori/00029293.jpg"
+    },
+    {
+      "slug": "32590",
+      "nome": "Lucia Borgonzoni",
+      "gruppo": "Lega Salvini Premier - Partito Sardo d'Azione",
+      "foto": "http://www.senato.it/leg/19/Immagini/Senatori/00032590.jpg"
+    },
+    {
+      "slug": "32856",
+      "nome": "Carmela Bucalo",
+      "gruppo": "Fratelli d'Italia",
+      "foto": "http://www.senato.it/leg/19/Immagini/Senatori/00032856.jpg"
+    },
+    {
+      "slug": "407",
+      "nome": "Alessio Butti",
+      "gruppo": "Fratelli d'Italia",
+      "foto": "http://www.senato.it/leg/19/Immagini/Senatori/00000407.jpg"
+    },
+    {
+      "slug": "34485",
+      "nome": "Nicola Calandrini",
+      "gruppo": "Fratelli d'Italia",
+      "foto": "http://www.senato.it/leg/19/Immagini/Senatori/00034485.jpg"
+    },
+    {
+      "slug": "422",
+      "nome": "Roberto Calderoli",
+      "gruppo": "Lega Salvini Premier - Partito Sardo d'Azione",
+      "foto": "http://www.senato.it/leg/19/Immagini/Senatori/00000422.jpg"
+    },
+    {
+      "slug": "30110",
+      "nome": "Carlo Calenda",
+      "gruppo": "Misto",
+      "foto": "http://www.senato.it/leg/19/Immagini/Senatori/00030110.jpg"
+    },
+    {
+      "slug": "36432",
+      "nome": "Susanna Donatella Campione",
+      "gruppo": "Fratelli d'Italia",
+      "foto": "http://www.senato.it/leg/19/Immagini/Senatori/00036432.jpg"
+    },
+    {
+      "slug": "36392",
+      "nome": "Susanna Lina Giulia Camusso",
+      "gruppo": "Partito Democratico - Italia Democratica e Progressista",
+      "foto": "http://www.senato.it/leg/19/Immagini/Senatori/00036392.jpg"
+    },
+    {
+      "slug": "32862",
+      "nome": "Gianluca Cantalamessa",
+      "gruppo": "Lega Salvini Premier - Partito Sardo d'Azione",
+      "foto": "http://www.senato.it/leg/19/Immagini/Senatori/00032862.jpg"
+    },
+    {
+      "slug": "32598",
+      "nome": "Maria Cristina Cantu'",
+      "gruppo": "Lega Salvini Premier - Partito Sardo d'Azione",
+      "foto": "http://www.senato.it/leg/19/Immagini/Senatori/00032598.jpg"
+    },
+    {
+      "slug": "520",
+      "nome": "Pier Ferdinando Casini",
+      "gruppo": "Partito Democratico - Italia Democratica e Progressista",
+      "foto": "http://www.senato.it/leg/19/Immagini/Senatori/00000520.jpg"
+    },
+    {
+      "slug": "36388",
+      "nome": "Guido Castelli",
+      "gruppo": "Fratelli d'Italia",
+      "foto": "http://www.senato.it/leg/19/Immagini/Senatori/00036388.jpg"
+    },
+    {
+      "slug": "32600",
+      "nome": "Maria Domenica Castellone",
+      "gruppo": "MoVimento 5 Stelle",
+      "foto": "http://www.senato.it/leg/19/Immagini/Senatori/00032600.jpg"
+    },
+    {
+      "slug": "32601",
+      "nome": "Francesco Castiello",
+      "gruppo": "MoVimento 5 Stelle",
+      "foto": "http://www.senato.it/leg/19/Immagini/Senatori/00032601.jpg"
+    },
+    {
+      "slug": "33065",
+      "nome": "Roberto Cataldi",
+      "gruppo": "MoVimento 5 Stelle",
+      "foto": "http://www.senato.it/leg/19/Immagini/Senatori/00033065.jpg"
+    },
+    {
+      "slug": "30511",
+      "nome": "Elena Cattaneo",
+      "gruppo": "Per le Autonomie (SVP-PATT, Campobase)",
+      "foto": "http://www.senato.it/leg/19/Immagini/Senatori/00030511.jpg"
+    },
+    {
+      "slug": "29067",
+      "nome": "Gian Marco Centinaio",
+      "gruppo": "Lega Salvini Premier - Partito Sardo d'Azione",
+      "foto": "http://www.senato.it/leg/19/Immagini/Senatori/00029067.jpg"
+    },
+    {
+      "slug": "32603",
+      "nome": "Luca Ciriani",
+      "gruppo": "Fratelli d'Italia",
+      "foto": "http://www.senato.it/leg/19/Immagini/Senatori/00032603.jpg"
+    },
+    {
+      "slug": "22910",
+      "nome": "Giulia Cosenza",
+      "gruppo": "Fratelli d'Italia",
+      "foto": "http://www.senato.it/leg/19/Immagini/Senatori/00022910.jpg"
+    },
+    {
+      "slug": "36389",
+      "nome": "Carlo Cottarelli",
+      "gruppo": "Partito Democratico - Italia Democratica e Progressista",
+      "foto": "http://www.senato.it/leg/19/Immagini/Senatori/00036389.jpg"
+    },
+    {
+      "slug": "22914",
+      "nome": "Stefania Gabriella Anastasia Craxi",
+      "gruppo": "Forza Italia - Berlusconi Presidente - PPE",
+      "foto": "http://www.senato.it/leg/19/Immagini/Senatori/00022914.jpg"
+    },
+    {
+      "slug": "36387",
+      "nome": "Andrea Crisanti",
+      "gruppo": "Partito Democratico - Italia Democratica e Progressista",
+      "foto": "http://www.senato.it/leg/19/Immagini/Senatori/00036387.jpg"
+    },
+    {
+      "slug": "32608",
+      "nome": "Marco Croatti",
+      "gruppo": "MoVimento 5 Stelle",
+      "foto": "http://www.senato.it/leg/19/Immagini/Senatori/00032608.jpg"
+    },
+    {
+      "slug": "36390",
+      "nome": "Ilaria Cucchi",
+      "gruppo": "Misto",
+      "foto": "http://www.senato.it/leg/19/Immagini/Senatori/00036390.jpg"
+    },
+    {
+      "slug": "31875",
+      "nome": "Cecilia D'Elia",
+      "gruppo": "Partito Democratico - Italia Democratica e Progressista",
+      "foto": "http://www.senato.it/leg/19/Immagini/Senatori/00031875.jpg"
+    },
+    {
+      "slug": "36391",
+      "nome": "Concetta Damante",
+      "gruppo": "MoVimento 5 Stelle",
+      "foto": "http://www.senato.it/leg/19/Immagini/Senatori/00036391.jpg"
+    },
+    {
+      "slug": "32747",
+      "nome": "Dario Damiani",
+      "gruppo": "Forza Italia - Berlusconi Presidente - PPE",
+      "foto": "http://www.senato.it/leg/19/Immagini/Senatori/00032747.jpg"
+    },
+    {
+      "slug": "32898",
+      "nome": "Luca De Carlo",
+      "gruppo": "Fratelli d'Italia",
+      "foto": "http://www.senato.it/leg/19/Immagini/Senatori/00032898.jpg"
+    },
+    {
+      "slug": "22918",
+      "nome": "Peppe De Cristofaro",
+      "gruppo": "Misto",
+      "foto": "http://www.senato.it/leg/19/Immagini/Senatori/00022918.jpg"
+    },
+    {
+      "slug": "22814",
+      "nome": "Antonio De Poli",
+      "gruppo": "Civici d'Italia-UDC-Noi Moderati (Noi con l'Italia, Coraggio Italia, Italia al Centro)-MAIE-Centro Popolare",
+      "foto": "http://www.senato.it/leg/19/Immagini/Senatori/00022814.jpg"
+    },
+    {
+      "slug": "36393",
+      "nome": "Andrea De Priamo",
+      "gruppo": "Fratelli d'Italia",
+      "foto": "http://www.senato.it/leg/19/Immagini/Senatori/00036393.jpg"
+    },
+    {
+      "slug": "36394",
+      "nome": "Raffaele De Rosa",
+      "gruppo": "Forza Italia - Berlusconi Presidente - PPE",
+      "foto": "http://www.senato.it/leg/19/Immagini/Senatori/00036394.jpg"
+    },
+    {
+      "slug": "36395",
+      "nome": "Costanzo Della Porta",
+      "gruppo": "Fratelli d'Italia",
+      "foto": "http://www.senato.it/leg/19/Immagini/Senatori/00036395.jpg"
+    },
+    {
+      "slug": "28670",
+      "nome": "Graziano Delrio",
+      "gruppo": "Partito Democratico - Italia Democratica e Progressista",
+      "foto": "http://www.senato.it/leg/19/Immagini/Senatori/00028670.jpg"
+    },
+    {
+      "slug": "32619",
+      "nome": "Gabriella Di Girolamo",
+      "gruppo": "MoVimento 5 Stelle",
+      "foto": "http://www.senato.it/leg/19/Immagini/Senatori/00032619.jpg"
+    },
+    {
+      "slug": "36396",
+      "nome": "Marco Dreosto",
+      "gruppo": "Lega Salvini Premier - Partito Sardo d'Azione",
+      "foto": "http://www.senato.it/leg/19/Immagini/Senatori/00036396.jpg"
+    },
+    {
+      "slug": "33096",
+      "nome": "Claudio Durigon",
+      "gruppo": "Lega Salvini Premier - Partito Sardo d'Azione",
+      "foto": "http://www.senato.it/leg/19/Immagini/Senatori/00033096.jpg"
+    },
+    {
+      "slug": "32624",
+      "nome": "Meinhard Durnwalder",
+      "gruppo": "Per le Autonomie (SVP-PATT, Campobase)",
+      "foto": "http://www.senato.it/leg/19/Immagini/Senatori/00032624.jpg"
+    },
+    {
+      "slug": "36398",
+      "nome": "Anna Maria Fallucchi",
+      "gruppo": "Fratelli d'Italia",
+      "foto": "http://www.senato.it/leg/19/Immagini/Senatori/00036398.jpg"
+    },
+    {
+      "slug": "36397",
+      "nome": "Marta Farolfi",
+      "gruppo": "Fratelli d'Italia",
+      "foto": "http://www.senato.it/leg/19/Immagini/Senatori/00036397.jpg"
+    },
+    {
+      "slug": "32628",
+      "nome": "Giovanbattista Fazzolari",
+      "gruppo": "Fratelli d'Italia",
+      "foto": "http://www.senato.it/leg/19/Immagini/Senatori/00032628.jpg"
+    },
+    {
+      "slug": "4192",
+      "nome": "Claudio Fazzone",
+      "gruppo": "Forza Italia - Berlusconi Presidente - PPE",
+      "foto": "http://www.senato.it/leg/19/Immagini/Senatori/00004192.jpg"
+    },
+    {
+      "slug": "30294",
+      "nome": "Michele Fina",
+      "gruppo": "Partito Democratico - Italia Democratica e Progressista",
+      "foto": "http://www.senato.it/leg/19/Immagini/Senatori/00030294.jpg"
+    },
+    {
+      "slug": "36399",
+      "nome": "Aurora Floridia",
+      "gruppo": "Per le Autonomie (SVP-PATT, Campobase)",
+      "foto": "http://www.senato.it/leg/19/Immagini/Senatori/00036399.jpg"
+    },
+    {
+      "slug": "32634",
+      "nome": "Barbara Floridia",
+      "gruppo": "MoVimento 5 Stelle",
+      "foto": "http://www.senato.it/leg/19/Immagini/Senatori/00032634.jpg"
+    },
+    {
+      "slug": "36400",
+      "nome": "Silvio Franceschelli",
+      "gruppo": "Partito Democratico - Italia Democratica e Progressista",
+      "foto": "http://www.senato.it/leg/19/Immagini/Senatori/00036400.jpg"
+    },
+    {
+      "slug": "5799",
+      "nome": "Dario Franceschini",
+      "gruppo": "Partito Democratico - Italia Democratica e Progressista",
+      "foto": "http://www.senato.it/leg/19/Immagini/Senatori/00005799.jpg"
+    },
+    {
+      "slug": "29406",
+      "nome": "Silvia Fregolent",
+      "gruppo": "Italia Viva - Casa Riformista",
+      "foto": "http://www.senato.it/leg/19/Immagini/Senatori/00029406.jpg"
+    },
+    {
+      "slug": "31725",
+      "nome": "Annamaria Furlan",
+      "gruppo": "Italia Viva - Casa Riformista",
+      "foto": "http://www.senato.it/leg/19/Immagini/Senatori/00031725.jpg"
+    },
+    {
+      "slug": "32637",
+      "nome": "Adriano Galliani",
+      "gruppo": "Forza Italia - Berlusconi Presidente - PPE",
+      "foto": "http://www.senato.it/leg/19/Immagini/Senatori/00032637.jpg"
+    },
+    {
+      "slug": "22963",
+      "nome": "Massimo Garavaglia",
+      "gruppo": "Lega Salvini Premier - Partito Sardo d'Azione",
+      "foto": "http://www.senato.it/leg/19/Immagini/Senatori/00022963.jpg"
+    },
+    {
+      "slug": "18121",
+      "nome": "Daniela Garnero Santanche'",
+      "gruppo": "Fratelli d'Italia",
+      "foto": "http://www.senato.it/leg/19/Immagini/Senatori/00018121.jpg"
+    },
+    {
+      "slug": "1103",
+      "nome": "Maurizio Gasparri",
+      "gruppo": "Forza Italia - Berlusconi Presidente - PPE",
+      "foto": "http://www.senato.it/leg/19/Immagini/Senatori/00001103.jpg"
+    },
+    {
+      "slug": "32640",
+      "nome": "Felicia Gaudiano",
+      "gruppo": "MoVimento 5 Stelle",
+      "foto": "http://www.senato.it/leg/19/Immagini/Senatori/00032640.jpg"
+    },
+    {
+      "slug": "36433",
+      "nome": "Matteo Gelmetti",
+      "gruppo": "Fratelli d'Italia",
+      "foto": "http://www.senato.it/leg/19/Immagini/Senatori/00036433.jpg"
+    },
+    {
+      "slug": "22966",
+      "nome": "Mariastella Gelmini",
+      "gruppo": "Civici d'Italia-UDC-Noi Moderati (Noi con l'Italia, Coraggio Italia, Italia al Centro)-MAIE-Centro Popolare",
+      "foto": "http://www.senato.it/leg/19/Immagini/Senatori/00022966.jpg"
+    },
+    {
+      "slug": "1116",
+      "nome": "Antonino Germana'",
+      "gruppo": "Lega Salvini Premier - Partito Sardo d'Azione",
+      "foto": "http://www.senato.it/leg/19/Immagini/Senatori/00001116.jpg"
+    },
+    {
+      "slug": "29105",
+      "nome": "Francesco Giacobbe",
+      "gruppo": "Partito Democratico - Italia Democratica e Progressista",
+      "foto": "http://www.senato.it/leg/19/Immagini/Senatori/00029105.jpg"
+    },
+    {
+      "slug": "29425",
+      "nome": "Andrea Giorgis",
+      "gruppo": "Partito Democratico - Italia Democratica e Progressista",
+      "foto": "http://www.senato.it/leg/19/Immagini/Senatori/00029425.jpg"
+    },
+    {
+      "slug": "1227",
+      "nome": "Antonio Guidi",
+      "gruppo": "Civici d'Italia-UDC-Noi Moderati (Noi con l'Italia, Coraggio Italia, Italia al Centro)-MAIE-Centro Popolare",
+      "foto": "http://www.senato.it/leg/19/Immagini/Senatori/00001227.jpg"
+    },
+    {
+      "slug": "32644",
+      "nome": "Barbara Guidolin",
+      "gruppo": "MoVimento 5 Stelle",
+      "foto": "http://www.senato.it/leg/19/Immagini/Senatori/00032644.jpg"
+    },
+    {
+      "slug": "32645",
+      "nome": "Antonio Iannone",
+      "gruppo": "Fratelli d'Italia",
+      "foto": "http://www.senato.it/leg/19/Immagini/Senatori/00032645.jpg"
+    },
+    {
+      "slug": "36401",
+      "nome": "Nicola Irto",
+      "gruppo": "Partito Democratico - Italia Democratica e Progressista",
+      "foto": "http://www.senato.it/leg/19/Immagini/Senatori/00036401.jpg"
+    },
+    {
+      "slug": "29447",
+      "nome": "Francesca La Marca",
+      "gruppo": "Partito Democratico - Italia Democratica e Progressista",
+      "foto": "http://www.senato.it/leg/19/Immagini/Senatori/00029447.jpg"
+    },
+    {
+      "slug": "32650",
+      "nome": "Patrizio Giacomo La Pietra",
+      "gruppo": "Fratelli d'Italia",
+      "foto": "http://www.senato.it/leg/19/Immagini/Senatori/00032650.jpg"
+    },
+    {
+      "slug": "1275",
+      "nome": "Ignazio La Russa",
+      "gruppo": "Fratelli d'Italia",
+      "foto": "http://www.senato.it/leg/19/Immagini/Senatori/00001275.jpg"
+    },
+    {
+      "slug": "36402",
+      "nome": "Elena Leonardi",
+      "gruppo": "Fratelli d'Italia",
+      "foto": "http://www.senato.it/leg/19/Immagini/Senatori/00036402.jpg"
+    },
+    {
+      "slug": "32653",
+      "nome": "Ettore Antonio Licheri",
+      "gruppo": "MoVimento 5 Stelle",
+      "foto": "http://www.senato.it/leg/19/Immagini/Senatori/00032653.jpg"
+    },
+    {
+      "slug": "36434",
+      "nome": "Sabrina Licheri",
+      "gruppo": "MoVimento 5 Stelle",
+      "foto": "http://www.senato.it/leg/19/Immagini/Senatori/00036434.jpg"
+    },
+    {
+      "slug": "36403",
+      "nome": "Guido Quintino Liris",
+      "gruppo": "Fratelli d'Italia",
+      "foto": "http://www.senato.it/leg/19/Immagini/Senatori/00036403.jpg"
+    },
+    {
+      "slug": "36435",
+      "nome": "Marco Lisei",
+      "gruppo": "Fratelli d'Italia",
+      "foto": "http://www.senato.it/leg/19/Immagini/Senatori/00036435.jpg"
+    },
+    {
+      "slug": "36436",
+      "nome": "Marco Lombardo",
+      "gruppo": "Misto",
+      "foto": "http://www.senato.it/leg/19/Immagini/Senatori/00036436.jpg"
+    },
+    {
+      "slug": "36404",
+      "nome": "Ada Lopreiato",
+      "gruppo": "MoVimento 5 Stelle",
+      "foto": "http://www.senato.it/leg/19/Immagini/Senatori/00036404.jpg"
+    },
+    {
+      "slug": "32655",
+      "nome": "Pietro Lorefice",
+      "gruppo": "MoVimento 5 Stelle",
+      "foto": "http://www.senato.it/leg/19/Immagini/Senatori/00032655.jpg"
+    },
+    {
+      "slug": "25474",
+      "nome": "Beatrice Lorenzin",
+      "gruppo": "Partito Democratico - Italia Democratica e Progressista",
+      "foto": "http://www.senato.it/leg/19/Immagini/Senatori/00025474.jpg"
+    },
+    {
+      "slug": "18055",
+      "nome": "Alberto Losacco",
+      "gruppo": "Partito Democratico - Italia Democratica e Progressista",
+      "foto": "http://www.senato.it/leg/19/Immagini/Senatori/00018055.jpg"
+    },
+    {
+      "slug": "36405",
+      "nome": "Claudio Lotito",
+      "gruppo": "Forza Italia - Berlusconi Presidente - PPE",
+      "foto": "http://www.senato.it/leg/19/Immagini/Senatori/00036405.jpg"
+    },
+    {
+      "slug": "33946",
+      "nome": "Gianpietro Maffoni",
+      "gruppo": "Fratelli d'Italia",
+      "foto": "http://www.senato.it/leg/19/Immagini/Senatori/00033946.jpg"
+    },
+    {
+      "slug": "36437",
+      "nome": "Tino Magni",
+      "gruppo": "Misto",
+      "foto": "http://www.senato.it/leg/19/Immagini/Senatori/00036437.jpg"
+    },
+    {
+      "slug": "32658",
+      "nome": "Alessandra Maiorino",
+      "gruppo": "MoVimento 5 Stelle",
+      "foto": "http://www.senato.it/leg/19/Immagini/Senatori/00032658.jpg"
+    },
+    {
+      "slug": "1407",
+      "nome": "Lucio Malan",
+      "gruppo": "Fratelli d'Italia",
+      "foto": "http://www.senato.it/leg/19/Immagini/Senatori/00001407.jpg"
+    },
+    {
+      "slug": "29467",
+      "nome": "Simona Flavia Malpezzi",
+      "gruppo": "Partito Democratico - Italia Democratica e Progressista",
+      "foto": "http://www.senato.it/leg/19/Immagini/Senatori/00029467.jpg"
+    },
+    {
+      "slug": "32660",
+      "nome": "Daniele Manca",
+      "gruppo": "Partito Democratico - Italia Democratica e Progressista",
+      "foto": "http://www.senato.it/leg/19/Immagini/Senatori/00032660.jpg"
+    },
+    {
+      "slug": "36438",
+      "nome": "Paola Mancini",
+      "gruppo": "Fratelli d'Italia",
+      "foto": "http://www.senato.it/leg/19/Immagini/Senatori/00036438.jpg"
+    },
+    {
+      "slug": "36439",
+      "nome": "Paolo Marcheschi",
+      "gruppo": "Fratelli d'Italia",
+      "foto": "http://www.senato.it/leg/19/Immagini/Senatori/00036439.jpg"
+    },
+    {
+      "slug": "17924",
+      "nome": "Andrea Martella",
+      "gruppo": "Partito Democratico - Italia Democratica e Progressista",
+      "foto": "http://www.senato.it/leg/19/Immagini/Senatori/00017924.jpg"
+    },
+    {
+      "slug": "29480",
+      "nome": "Roberto Marti",
+      "gruppo": "Lega Salvini Premier - Partito Sardo d'Azione",
+      "foto": "http://www.senato.it/leg/19/Immagini/Senatori/00029480.jpg"
+    },
+    {
+      "slug": "29132",
+      "nome": "Bruno Marton",
+      "gruppo": "MoVimento 5 Stelle",
+      "foto": "http://www.senato.it/leg/19/Immagini/Senatori/00029132.jpg"
+    },
+    {
+      "slug": "36440",
+      "nome": "Domenico Matera",
+      "gruppo": "Fratelli d'Italia",
+      "foto": "http://www.senato.it/leg/19/Immagini/Senatori/00036440.jpg"
+    },
+    {
+      "slug": "36406",
+      "nome": "Orfeo Mazzella",
+      "gruppo": "MoVimento 5 Stelle",
+      "foto": "http://www.senato.it/leg/19/Immagini/Senatori/00036406.jpg"
+    },
+    {
+      "slug": "36407",
+      "nome": "Filippo Melchiorre",
+      "gruppo": "Fratelli d'Italia",
+      "foto": "http://www.senato.it/leg/19/Immagini/Senatori/00036407.jpg"
+    },
+    {
+      "slug": "29490",
+      "nome": "Marco Meloni",
+      "gruppo": "Partito Democratico - Italia Democratica e Progressista",
+      "foto": "http://www.senato.it/leg/19/Immagini/Senatori/00029490.jpg"
+    },
+    {
+      "slug": "1558",
+      "nome": "Roberto Menia",
+      "gruppo": "Fratelli d'Italia",
+      "foto": "http://www.senato.it/leg/19/Immagini/Senatori/00001558.jpg"
+    },
+    {
+      "slug": "34558",
+      "nome": "Lavinia Mennuni",
+      "gruppo": "Fratelli d'Italia",
+      "foto": "http://www.senato.it/leg/19/Immagini/Senatori/00034558.jpg"
+    },
+    {
+      "slug": "1579",
+      "nome": "Gianfranco Micciche'",
+      "gruppo": "Forza Italia - Berlusconi Presidente - PPE",
+      "foto": "http://www.senato.it/leg/19/Immagini/Senatori/00001579.jpg"
+    },
+    {
+      "slug": "36408",
+      "nome": "Ester Mieli",
+      "gruppo": "Fratelli d'Italia",
+      "foto": "http://www.senato.it/leg/19/Immagini/Senatori/00036408.jpg"
+    },
+    {
+      "slug": "36013",
+      "nome": "Tilde Minasi",
+      "gruppo": "Lega Salvini Premier - Partito Sardo d'Azione",
+      "foto": "http://www.senato.it/leg/19/Immagini/Senatori/00036013.jpg"
+    },
+    {
+      "slug": "29138",
+      "nome": "Franco Mirabelli",
+      "gruppo": "Partito Democratico - Italia Democratica e Progressista",
+      "foto": "http://www.senato.it/leg/19/Immagini/Senatori/00029138.jpg"
+    },
+    {
+      "slug": "23011",
+      "nome": "Antonio Misiani",
+      "gruppo": "Partito Democratico - Italia Democratica e Progressista",
+      "foto": "http://www.senato.it/leg/19/Immagini/Senatori/00023011.jpg"
+    },
+    {
+      "slug": "28543",
+      "nome": "Mario Monti",
+      "gruppo": "Misto",
+      "foto": "http://www.senato.it/leg/19/Immagini/Senatori/00028543.jpg"
+    },
+    {
+      "slug": "32988",
+      "nome": "Alessandro Morelli",
+      "gruppo": "Lega Salvini Premier - Partito Sardo d'Azione",
+      "foto": "http://www.senato.it/leg/19/Immagini/Senatori/00032988.jpg"
+    },
+    {
+      "slug": "33110",
+      "nome": "Elena Murelli",
+      "gruppo": "Lega Salvini Premier - Partito Sardo d'Azione",
+      "foto": "http://www.senato.it/leg/19/Immagini/Senatori/00033110.jpg"
+    },
+    {
+      "slug": "36409",
+      "nome": "Dafne Musolino",
+      "gruppo": "Italia Viva - Casa Riformista",
+      "foto": "http://www.senato.it/leg/19/Immagini/Senatori/00036409.jpg"
+    },
+    {
+      "slug": "28306",
+      "nome": "Nello Musumeci",
+      "gruppo": "Fratelli d'Italia",
+      "foto": "http://www.senato.it/leg/19/Immagini/Senatori/00028306.jpg"
+    },
+    {
+      "slug": "1672",
+      "nome": "Giorgio Napolitano",
+      "gruppo": "Per le Autonomie (SVP-PATT, Campobase)",
+      "foto": "http://www.senato.it/leg/19/Immagini/Senatori/00001672.jpg"
+    },
+    {
+      "slug": "25446",
+      "nome": "Gaetano Nastri",
+      "gruppo": "Fratelli d'Italia",
+      "foto": "http://www.senato.it/leg/19/Immagini/Senatori/00025446.jpg"
+    },
+    {
+      "slug": "32673",
+      "nome": "Gisella Naturale",
+      "gruppo": "MoVimento 5 Stelle",
+      "foto": "http://www.senato.it/leg/19/Immagini/Senatori/00032673.jpg"
+    },
+    {
+      "slug": "36410",
+      "nome": "Luigi Nave",
+      "gruppo": "MoVimento 5 Stelle",
+      "foto": "http://www.senato.it/leg/19/Immagini/Senatori/00036410.jpg"
+    },
+    {
+      "slug": "36411",
+      "nome": "Antonio Nicita",
+      "gruppo": "Partito Democratico - Italia Democratica e Progressista",
+      "foto": "http://www.senato.it/leg/19/Immagini/Senatori/00036411.jpg"
+    },
+    {
+      "slug": "36412",
+      "nome": "Vita Maria Nocco",
+      "gruppo": "Fratelli d'Italia",
+      "foto": "http://www.senato.it/leg/19/Immagini/Senatori/00036412.jpg"
+    },
+    {
+      "slug": "36413",
+      "nome": "Mario Occhiuto",
+      "gruppo": "Forza Italia - Berlusconi Presidente - PPE",
+      "foto": "http://www.senato.it/leg/19/Immagini/Senatori/00036413.jpg"
+    },
+    {
+      "slug": "36414",
+      "nome": "Fausto Orsomarso",
+      "gruppo": "Fratelli d'Italia",
+      "foto": "http://www.senato.it/leg/19/Immagini/Senatori/00036414.jpg"
+    },
+    {
+      "slug": "32677",
+      "nome": "Andrea Ostellari",
+      "gruppo": "Lega Salvini Premier - Partito Sardo d'Azione",
+      "foto": "http://www.senato.it/leg/19/Immagini/Senatori/00032677.jpg"
+    },
+    {
+      "slug": "34243",
+      "nome": "Andrea Paganella",
+      "gruppo": "Lega Salvini Premier - Partito Sardo d'Azione",
+      "foto": "http://www.senato.it/leg/19/Immagini/Senatori/00034243.jpg"
+    },
+    {
+      "slug": "33005",
+      "nome": "Raffaella Paita",
+      "gruppo": "Italia Viva - Casa Riformista",
+      "foto": "http://www.senato.it/leg/19/Immagini/Senatori/00033005.jpg"
+    },
+    {
+      "slug": "4512",
+      "nome": "Adriano Paroli",
+      "gruppo": "Forza Italia - Berlusconi Presidente - PPE",
+      "foto": "http://www.senato.it/leg/19/Immagini/Senatori/00004512.jpg"
+    },
+    {
+      "slug": "29521",
+      "nome": "Dario Parrini",
+      "gruppo": "Partito Democratico - Italia Democratica e Progressista",
+      "foto": "http://www.senato.it/leg/19/Immagini/Senatori/00029521.jpg"
+    },
+    {
+      "slug": "36415",
+      "nome": "Pietro Patton",
+      "gruppo": "Per le Autonomie (SVP-PATT, Campobase)",
+      "foto": "http://www.senato.it/leg/19/Immagini/Senatori/00036415.jpg"
+    },
+    {
+      "slug": "32681",
+      "nome": "Stefano Patuanelli",
+      "gruppo": "MoVimento 5 Stelle",
+      "foto": "http://www.senato.it/leg/19/Immagini/Senatori/00032681.jpg"
+    },
+    {
+      "slug": "35489",
+      "nome": "Cinzia Pellegrino",
+      "gruppo": "Fratelli d'Italia",
+      "foto": "http://www.senato.it/leg/19/Immagini/Senatori/00035489.jpg"
+    },
+    {
+      "slug": "3900",
+      "nome": "Marcello Pera",
+      "gruppo": "Fratelli d'Italia",
+      "foto": "http://www.senato.it/leg/19/Immagini/Senatori/00003900.jpg"
+    },
+    {
+      "slug": "25429",
+      "nome": "Giovanna Petrenga",
+      "gruppo": "Civici d'Italia-UDC-Noi Moderati (Noi con l'Italia, Coraggio Italia, Italia al Centro)-MAIE-Centro Popolare",
+      "foto": "http://www.senato.it/leg/19/Immagini/Senatori/00025429.jpg"
+    },
+    {
+      "slug": "36416",
+      "nome": "Simona Petrucci",
+      "gruppo": "Fratelli d'Italia",
+      "foto": "http://www.senato.it/leg/19/Immagini/Senatori/00036416.jpg"
+    },
+    {
+      "slug": "30512",
+      "nome": "Renzo Piano",
+      "gruppo": "Misto",
+      "foto": "http://www.senato.it/leg/19/Immagini/Senatori/00030512.jpg"
+    },
+    {
+      "slug": "36417",
+      "nome": "Luca Pirondini",
+      "gruppo": "MoVimento 5 Stelle",
+      "foto": "http://www.senato.it/leg/19/Immagini/Senatori/00036417.jpg"
+    },
+    {
+      "slug": "18562",
+      "nome": "Daisy Pirovano",
+      "gruppo": "Lega Salvini Premier - Partito Sardo d'Azione",
+      "foto": "http://www.senato.it/leg/19/Immagini/Senatori/00018562.jpg"
+    },
+    {
+      "slug": "32691",
+      "nome": "Elisa Pirro",
+      "gruppo": "MoVimento 5 Stelle",
+      "foto": "http://www.senato.it/leg/19/Immagini/Senatori/00032691.jpg"
+    },
+    {
+      "slug": "36441",
+      "nome": "Salvo Pogliese",
+      "gruppo": "Fratelli d'Italia",
+      "foto": "http://www.senato.it/leg/19/Immagini/Senatori/00036441.jpg"
+    },
+    {
+      "slug": "33022",
+      "nome": "Manfredi Potenti",
+      "gruppo": "Lega Salvini Premier - Partito Sardo d'Azione",
+      "foto": "http://www.senato.it/leg/19/Immagini/Senatori/00033022.jpg"
+    },
+    {
+      "slug": "32697",
+      "nome": "Stefania Pucciarelli",
+      "gruppo": "Lega Salvini Premier - Partito Sardo d'Azione",
+      "foto": "http://www.senato.it/leg/19/Immagini/Senatori/00032697.jpg"
+    },
+    {
+      "slug": "36418",
+      "nome": "Vincenza Rando",
+      "gruppo": "Partito Democratico - Italia Democratica e Progressista",
+      "foto": "http://www.senato.it/leg/19/Immagini/Senatori/00036418.jpg"
+    },
+    {
+      "slug": "36419",
+      "nome": "Ernesto Rapani",
+      "gruppo": "Fratelli d'Italia",
+      "foto": "http://www.senato.it/leg/19/Immagini/Senatori/00036419.jpg"
+    },
+    {
+      "slug": "36442",
+      "nome": "Sergio Rastrelli",
+      "gruppo": "Fratelli d'Italia",
+      "foto": "http://www.senato.it/leg/19/Immagini/Senatori/00036442.jpg"
+    },
+    {
+      "slug": "32699",
+      "nome": "Isabella Rauti",
+      "gruppo": "Fratelli d'Italia",
+      "foto": "http://www.senato.it/leg/19/Immagini/Senatori/00032699.jpg"
+    },
+    {
+      "slug": "30742",
+      "nome": "Matteo Renzi",
+      "gruppo": "Italia Viva - Casa Riformista",
+      "foto": "http://www.senato.it/leg/19/Immagini/Senatori/00030742.jpg"
+    },
+    {
+      "slug": "32703",
+      "nome": "Tatjana Rojc",
+      "gruppo": "Partito Democratico - Italia Democratica e Progressista",
+      "foto": "http://www.senato.it/leg/19/Immagini/Senatori/00032703.jpg"
+    },
+    {
+      "slug": "32706",
+      "nome": "Massimiliano Romeo",
+      "gruppo": "Lega Salvini Premier - Partito Sardo d'Azione",
+      "foto": "http://www.senato.it/leg/19/Immagini/Senatori/00032706.jpg"
+    },
+    {
+      "slug": "32707",
+      "nome": "Licia Ronzulli",
+      "gruppo": "Forza Italia - Berlusconi Presidente - PPE",
+      "foto": "http://www.senato.it/leg/19/Immagini/Senatori/00032707.jpg"
+    },
+    {
+      "slug": "36420",
+      "nome": "Gianni Rosa",
+      "gruppo": "Fratelli d'Italia",
+      "foto": "http://www.senato.it/leg/19/Immagini/Senatori/00036420.jpg"
+    },
+    {
+      "slug": "32779",
+      "nome": "Roberto Rosso",
+      "gruppo": "Forza Italia - Berlusconi Presidente - PPE",
+      "foto": "http://www.senato.it/leg/19/Immagini/Senatori/00032779.jpg"
+    },
+    {
+      "slug": "25411",
+      "nome": "Anna Rossomando",
+      "gruppo": "Partito Democratico - Italia Democratica e Progressista",
+      "foto": "http://www.senato.it/leg/19/Immagini/Senatori/00025411.jpg"
+    },
+    {
+      "slug": "30510",
+      "nome": "Carlo Rubbia",
+      "gruppo": "Per le Autonomie (SVP-PATT, Campobase)",
+      "foto": "http://www.senato.it/leg/19/Immagini/Senatori/00030510.jpg"
+    },
+    {
+      "slug": "36421",
+      "nome": "Raoul Russo",
+      "gruppo": "Fratelli d'Italia",
+      "foto": "http://www.senato.it/leg/19/Immagini/Senatori/00036421.jpg"
+    },
+    {
+      "slug": "36422",
+      "nome": "Salvatore Sallemi",
+      "gruppo": "Fratelli d'Italia",
+      "foto": "http://www.senato.it/leg/19/Immagini/Senatori/00036422.jpg"
+    },
+    {
+      "slug": "25407",
+      "nome": "Matteo Salvini",
+      "gruppo": "Lega Salvini Premier - Partito Sardo d'Azione",
+      "foto": "http://www.senato.it/leg/19/Immagini/Senatori/00025407.jpg"
+    },
+    {
+      "slug": "36443",
+      "nome": "Giorgio Salvitti",
+      "gruppo": "Civici d'Italia-UDC-Noi Moderati (Noi con l'Italia, Coraggio Italia, Italia al Centro)-MAIE-Centro Popolare",
+      "foto": "http://www.senato.it/leg/19/Immagini/Senatori/00036443.jpg"
+    },
+    {
+      "slug": "36444",
+      "nome": "Giovanni Satta",
+      "gruppo": "Fratelli d'Italia",
+      "foto": "http://www.senato.it/leg/19/Immagini/Senatori/00036444.jpg"
+    },
+    {
+      "slug": "25402",
+      "nome": "Daniela Sbrollini",
+      "gruppo": "Italia Viva - Casa Riformista",
+      "foto": "http://www.senato.it/leg/19/Immagini/Senatori/00025402.jpg"
+    },
+    {
+      "slug": "29573",
+      "nome": "Ivan Scalfarotto",
+      "gruppo": "Italia Viva - Casa Riformista",
+      "foto": "http://www.senato.it/leg/19/Immagini/Senatori/00029573.jpg"
+    },
+    {
+      "slug": "36423",
+      "nome": "Roberto Maria Ferdinando Scarpinato",
+      "gruppo": "MoVimento 5 Stelle",
+      "foto": "http://www.senato.it/leg/19/Immagini/Senatori/00036423.jpg"
+    },
+    {
+      "slug": "33863",
+      "nome": "Marco Scurria",
+      "gruppo": "Fratelli d'Italia",
+      "foto": "http://www.senato.it/leg/19/Immagini/Senatori/00033863.jpg"
+    },
+    {
+      "slug": "32435",
+      "nome": "Liliana Segre",
+      "gruppo": "Misto",
+      "foto": "http://www.senato.it/leg/19/Immagini/Senatori/00032435.jpg"
+    },
+    {
+      "slug": "27622",
+      "nome": "Filippo Sensi",
+      "gruppo": "Partito Democratico - Italia Democratica e Progressista",
+      "foto": "http://www.senato.it/leg/19/Immagini/Senatori/00027622.jpg"
+    },
+    {
+      "slug": "36424",
+      "nome": "Etelwardo Sigismondi",
+      "gruppo": "Fratelli d'Italia",
+      "foto": "http://www.senato.it/leg/19/Immagini/Senatori/00036424.jpg"
+    },
+    {
+      "slug": "36445",
+      "nome": "Francesco Silvestro",
+      "gruppo": "Forza Italia - Berlusconi Presidente - PPE",
+      "foto": "http://www.senato.it/leg/19/Immagini/Senatori/00036445.jpg"
+    },
+    {
+      "slug": "33137",
+      "nome": "Marco Silvestroni",
+      "gruppo": "Fratelli d'Italia",
+      "foto": "http://www.senato.it/leg/19/Immagini/Senatori/00033137.jpg"
+    },
+    {
+      "slug": "36425",
+      "nome": "Elena Sironi",
+      "gruppo": "MoVimento 5 Stelle",
+      "foto": "http://www.senato.it/leg/19/Immagini/Senatori/00036425.jpg"
+    },
+    {
+      "slug": "36446",
+      "nome": "Sandro Sisler",
+      "gruppo": "Fratelli d'Italia",
+      "foto": "http://www.senato.it/leg/19/Immagini/Senatori/00036446.jpg"
+    },
+    {
+      "slug": "22263",
+      "nome": "Francesco Paolo Sisto",
+      "gruppo": "Forza Italia - Berlusconi Presidente - PPE",
+      "foto": "http://www.senato.it/leg/19/Immagini/Senatori/00022263.jpg"
+    },
+    {
+      "slug": "36426",
+      "nome": "Luigi Spagnolli",
+      "gruppo": "Per le Autonomie (SVP-PATT, Campobase)",
+      "foto": "http://www.senato.it/leg/19/Immagini/Senatori/00036426.jpg"
+    },
+    {
+      "slug": "36427",
+      "nome": "Nicoletta Spelgatti",
+      "gruppo": "Lega Salvini Premier - Partito Sardo d'Azione",
+      "foto": "http://www.senato.it/leg/19/Immagini/Senatori/00036427.jpg"
+    },
+    {
+      "slug": "36428",
+      "nome": "Raffaele Speranzon",
+      "gruppo": "Fratelli d'Italia",
+      "foto": "http://www.senato.it/leg/19/Immagini/Senatori/00036428.jpg"
+    },
+    {
+      "slug": "36447",
+      "nome": "Domenica Spinelli",
+      "gruppo": "Fratelli d'Italia",
+      "foto": "http://www.senato.it/leg/19/Immagini/Senatori/00036447.jpg"
+    },
+    {
+      "slug": "29185",
+      "nome": "Erika Stefani",
+      "gruppo": "Lega Salvini Premier - Partito Sardo d'Azione",
+      "foto": "http://www.senato.it/leg/19/Immagini/Senatori/00029185.jpg"
+    },
+    {
+      "slug": "37739",
+      "nome": "Cristina Tajani",
+      "gruppo": "Partito Democratico - Italia Democratica e Progressista",
+      "foto": "http://www.senato.it/leg/19/Immagini/Senatori/00037739.jpg"
+    },
+    {
+      "slug": "37415",
+      "nome": "Daniela Ternullo",
+      "gruppo": "Forza Italia - Berlusconi Presidente - PPE",
+      "foto": "http://www.senato.it/leg/19/Immagini/Senatori/00037415.jpg"
+    },
+    {
+      "slug": "28550",
+      "nome": "Giuliomaria Terzi Di Sant'Agata",
+      "gruppo": "Fratelli d'Italia",
+      "foto": "http://www.senato.it/leg/19/Immagini/Senatori/00028550.jpg"
+    },
+    {
+      "slug": "32721",
+      "nome": "Elena Testor",
+      "gruppo": "Lega Salvini Premier - Partito Sardo d'Azione",
+      "foto": "http://www.senato.it/leg/19/Immagini/Senatori/00032721.jpg"
+    },
+    {
+      "slug": "30915",
+      "nome": "Paolo Tosato",
+      "gruppo": "Lega Salvini Premier - Partito Sardo d'Azione",
+      "foto": "http://www.senato.it/leg/19/Immagini/Senatori/00030915.jpg"
+    },
+    {
+      "slug": "36448",
+      "nome": "Antonio Salvatore Trevisi",
+      "gruppo": "Forza Italia - Berlusconi Presidente - PPE",
+      "foto": "http://www.senato.it/leg/19/Immagini/Senatori/00036448.jpg"
+    },
+    {
+      "slug": "36449",
+      "nome": "Francesca Tubetti",
+      "gruppo": "Fratelli d'Italia",
+      "foto": "http://www.senato.it/leg/19/Immagini/Senatori/00036449.jpg"
+    },
+    {
+      "slug": "32726",
+      "nome": "Mario Turco",
+      "gruppo": "MoVimento 5 Stelle",
+      "foto": "http://www.senato.it/leg/19/Immagini/Senatori/00032726.jpg"
+    },
+    {
+      "slug": "32727",
+      "nome": "Julia Unterberger",
+      "gruppo": "Per le Autonomie (SVP-PATT, Campobase)",
+      "foto": "http://www.senato.it/leg/19/Immagini/Senatori/00032727.jpg"
+    },
+    {
+      "slug": "2444",
+      "nome": "Adolfo Urso",
+      "gruppo": "Fratelli d'Italia",
+      "foto": "http://www.senato.it/leg/19/Immagini/Senatori/00002444.jpg"
+    },
+    {
+      "slug": "29604",
+      "nome": "Valeria Valente",
+      "gruppo": "Partito Democratico - Italia Democratica e Progressista",
+      "foto": "http://www.senato.it/leg/19/Immagini/Senatori/00029604.jpg"
+    },
+    {
+      "slug": "28924",
+      "nome": "Francesco Verducci",
+      "gruppo": "Partito Democratico - Italia Democratica e Progressista",
+      "foto": "http://www.senato.it/leg/19/Immagini/Senatori/00028924.jpg"
+    },
+    {
+      "slug": "25377",
+      "nome": "Walter Verini",
+      "gruppo": "Partito Democratico - Italia Democratica e Progressista",
+      "foto": "http://www.senato.it/leg/19/Immagini/Senatori/00025377.jpg"
+    },
+    {
+      "slug": "33027",
+      "nome": "Giusy Versace",
+      "gruppo": "Civici d'Italia-UDC-Noi Moderati (Noi con l'Italia, Coraggio Italia, Italia al Centro)-MAIE-Centro Popolare",
+      "foto": "http://www.senato.it/leg/19/Immagini/Senatori/00033027.jpg"
+    },
+    {
+      "slug": "32732",
+      "nome": "Francesco Zaffini",
+      "gruppo": "Fratelli d'Italia",
+      "foto": "http://www.senato.it/leg/19/Immagini/Senatori/00032732.jpg"
+    },
+    {
+      "slug": "36429",
+      "nome": "Ylenia Zambito",
+      "gruppo": "Partito Democratico - Italia Democratica e Progressista",
+      "foto": "http://www.senato.it/leg/19/Immagini/Senatori/00036429.jpg"
+    },
+    {
+      "slug": "24016",
+      "nome": "Sandra Zampa",
+      "gruppo": "Partito Democratico - Italia Democratica e Progressista",
+      "foto": "http://www.senato.it/leg/19/Immagini/Senatori/00024016.jpg"
+    },
+    {
+      "slug": "17811",
+      "nome": "Pierantonio Zanettin",
+      "gruppo": "Forza Italia - Berlusconi Presidente - PPE",
+      "foto": "http://www.senato.it/leg/19/Immagini/Senatori/00017811.jpg"
+    },
+    {
+      "slug": "33038",
+      "nome": "Paolo Zangrillo",
+      "gruppo": "Forza Italia - Berlusconi Presidente - PPE",
+      "foto": "http://www.senato.it/leg/19/Immagini/Senatori/00033038.jpg"
+    },
+    {
+      "slug": "36430",
+      "nome": "Antonella Zedda",
+      "gruppo": "Fratelli d'Italia",
+      "foto": "http://www.senato.it/leg/19/Immagini/Senatori/00036430.jpg"
+    },
+    {
+      "slug": "36450",
+      "nome": "Ignazio Zullo",
+      "gruppo": "Fratelli d'Italia",
+      "foto": "http://www.senato.it/leg/19/Immagini/Senatori/00036450.jpg"
+    }
+  ]
+}

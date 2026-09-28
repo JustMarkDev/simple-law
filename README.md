@@ -136,3 +136,25 @@ AI, sorgenti (con fetch simulato), layer DB (senza database reale) e smoke test 
   per `/api/sync/storico` e `/api/sync/recente`.
 - Gli archivi bulk di Normattiva sono accettati fino a **250 MB**: oltre il limite il
   download viene interrotto (errore non ritentabile) e il limite e' annotato nel report.
+
+## Dati reali (open data ufficiali)
+
+I file in `data/reali/` sostituiscono progressivamente il corpus dimostrativo con dati
+ufficiali verificati. Ogni file ha envelope `provenance` (fonte, url, recuperatoIl ISO-8601,
+licenza): senza `provenance` completa il file resta dimostrativo.
+
+| fonte | endpoint | file | licenza | rigenerazione |
+| ----- | -------- | ---- | ------- | ------------- |
+| normattiva.it | `POST /api/v1/ricerca/listaAtti` + `POST /api/v1/atto/dettaglio-atto-urn` (fallback `GET /collections/collection-predefinite`) | `data/reali/normattiva-leggi.json` | attribuzione + link Normattiva/GU per atto (no mirror bulk) | `scripts/ingest-reale-*.ts` |
+| dati.camera.it | `GET https://dati.camera.it/sparql` | `data/reali/camera-deputati.json` | CC BY-SA 4.0 | `scripts/ingest-reale-*.ts` |
+| dati.senato.it (senatori) | `GET https://dati.senato.it/sparql` | `data/reali/senato-senatori.json` | CC BY 3.0 IT | `scripts/ingest-reale-*.ts` |
+| dati.senato.it (DDL) | `GET https://dati.senato.it/sparql` | `data/reali/senato-ddl.json` | CC BY 3.0 IT | `scripts/ingest-reale-*.ts` |
+| governo.it/it/feed/rss | `GET https://www.governo.it/it/feed/rss` | `data/reali/governo-cdm.json` | riuso titolo/link/descrizione | `scripts/ingest-reale-*.ts` |
+| dati.camera.it + dati.senato.it (gruppi) | `GET https://dati.camera.it/sparql`, `GET https://dati.senato.it/sparql` | `data/reali/gruppi-parlamentari.json` | CC BY-SA 4.0, CC BY 3.0 IT | `scripts/ingest-reale-*.ts` |
+
+Stato e manifest: `data/reali/MANIFEST.json` riporta per ogni file conteggio e `recuperatoIl`
+(`null` = in attesa del primo ingest, nessun numero inventato). I file oltre 1 MB non si
+committano: rigenerarli via `scripts/ingest-reale-*.ts`.
+
+Resta dimostrativo: il corpus sintetico da circa 5000 atti e' in via di sostituzione dai file
+in `data/reali/`; finche' il manifest indica `in attesa primo ingest`, l'app usa il fallback seed.

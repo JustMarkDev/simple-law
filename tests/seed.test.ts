@@ -35,7 +35,7 @@ describe("integrita' del seed", () => {
   it("include il DL 139/2026", () => {
     const legge = SEED_LAWS.find((l) => l.numero === "139" && l.tipo === "decreto.legge");
     expect(legge).toBeDefined();
-    expect(legge?.eli).toBe("/eli/id/2026/08/05/26G00161/sg");
+    expect(legge?.eli).toBe("/eli/id/2026/08/05/26G00162/sg");
   });
 
   it("include la legge 124/2025 sulla concorrenza", () => {

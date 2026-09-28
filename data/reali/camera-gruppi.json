@@ -1,0 +1,64 @@
+{
+  "provenance": {
+    "fonte": "dati.camera.it",
+    "url": "https://dati.camera.it/sparql",
+    "recuperatoIl": "2026-09-28T18:26:21.186Z",
+    "licenza": "CC BY-SA 4.0",
+    "derivatoDa": "camera-deputati.json (conteggio componenti per gruppo, senza nuove interrogazioni)"
+  },
+  "legislatura": "19",
+  "gruppi": [
+    {
+      "nome": "FRATELLI D'ITALIA",
+      "componenti": 120
+    },
+    {
+      "nome": "PARTITO DEMOCRATICO - ITALIA DEMOCRATICA E PROGRESSISTA",
+      "componenti": 73
+    },
+    {
+      "nome": "LEGA - SALVINI PREMIER",
+      "componenti": 60
+    },
+    {
+      "nome": "FORZA ITALIA - BERLUSCONI PRESIDENTE - PPE",
+      "componenti": 53
+    },
+    {
+      "nome": "MOVIMENTO 5 STELLE",
+      "componenti": 51
+    },
+    {
+      "nome": "MISTO",
+      "componenti": 22
+    },
+    {
+      "nome": "ALLEANZA VERDI E SINISTRA",
+      "componenti": 10
+    },
+    {
+      "nome": "AZIONE - ITALIA VIVA - RENEW EUROPE",
+      "componenti": 9
+    },
+    {
+      "nome": "ITALIA VIVA-IL CENTRO-RENEW EUROPE",
+      "componenti": 7
+    },
+    {
+      "nome": "NOI MODERATI",
+      "componenti": 6
+    },
+    {
+      "nome": "NOI MODERATI (NOI CON L'ITALIA, CORAGGIO ITALIA, UDC, ITALIA AL CENTRO)-MAIE",
+      "componenti": 1
+    },
+    {
+      "nome": "NOI MODERATI (NOI CON L'ITALIA, CORAGGIO ITALIA, UDC E ITALIA AL CENTRO)-MAIE-CENTRO POPOLARE",
+      "componenti": 1
+    },
+    {
+      "nome": "AZIONE-POPOLARI EUROPEISTI RIFORMATORI-RENEW EUROPE",
+      "componenti": 1
+    }
+  ]
+}

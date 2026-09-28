@@ -79,10 +79,18 @@ describe("fetchGovernoComunicati", () => {
     expect(items[0].sintesi).not.toContain("<b>");
   });
 
-  it("ricade sul seed se la rete fallisce", async () => {
+  it("se la rete fallisce ricade sui reali e poi sul seed (mai errore)", async () => {
     const items = await fetchGovernoComunicati(5, { fetchImpl: fetchCheFallisce() });
     expect(items.length).toBeGreaterThanOrEqual(1);
-    expect(items[0].id).toBe("cdm-183-2026");
+    // Catena onesta: rete -> file reali (se presenti nel repo) -> seed.
+    // In ogni caso forma valida e mai throw.
+    for (const item of items) {
+      expect(typeof item.id).toBe("string");
+      expect(item.id.length).toBeGreaterThan(0);
+      expect(typeof item.titolo).toBe("string");
+      expect(typeof item.url).toBe("string");
+    }
+    expect(items.length).toBeLessThanOrEqual(5);
   });
 
   it("rispetta il limite", async () => {

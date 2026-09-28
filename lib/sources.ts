@@ -7,6 +7,8 @@
  */
 
 import { normalizeEli } from "./nir";
+import { buildFonti } from "./fonti";
+import { calcGulpease } from "./readability";
 import { SEED_CDM, SEED_LAWS, SEED_MINISTERS } from "./seed-data";
 import type { CdmItem, LawRecord, MinisterRecord } from "./seed-data";
 // Corpus unificato (unico punto di I/O per il corpus grande). Contratto anti-ciclo:
@@ -189,17 +191,362 @@ function chiaveEli(eli: unknown): string {
   return String(eli ?? "").trim().toLowerCase();
 }
 
+// ---------------------------------------------------------------------------
+// Wiring REALI -> app (difensivo: i file data/reali/ potrebbero non esistere).
+// Contratto: mai lanciare, mai inventare codici/numeri/URL/date. Se i file sono
+// assenti o invalidi, il comportamento precedente resta invariato.
+// ---------------------------------------------------------------------------
+
+/** Percorsi candidati per gli atti reali (primo esistente e valido vince). */
+const PERCORSI_ATTI_REALI = [
+  "data/reali/normattiva-recenti.json",
+  "data/reali/normattiva-leggi.json",
+] as const;
+
+/** Percorsi candidati per i comunicati reali (primo esistente e valido vince). */
+const PERCORSI_CDM_REALI = [
+  "data/reali/governo-comunicati.json",
+  "data/reali/governo-cdm.json",
+] as const;
+
+function stringaPulita(valore: unknown): string {
+  return typeof valore === "string" ? valore.trim() : "";
+}
+
+function dataIsoReale(grezza: unknown): string {
+  try {
+    const testo = stringaPulita(grezza);
+    if (!testo) return "";
+    if (/^\d{4}-\d{2}-\d{2}$/.test(testo)) return testo;
+    const parsed = new Date(testo);
+    return Number.isNaN(parsed.getTime()) ? "" : parsed.toISOString().slice(0, 10);
+  } catch {
+    return "";
+  }
+}
+
+function gulpeaseReale(testo: string, sintesi: string): number | null {
+  try {
+    const indice = calcGulpease(testo || sintesi || "norma").indice;
+    return Number.isFinite(indice) ? indice : null;
+  } catch {
+    return null;
+  }
+}
+
+/** Domini ufficiali ammessi per gli URL provenienti dai file reali. */
+const DOMINI_FONTUANTE_AMMESSI = [
+  "normattiva.it",
+  "www.normattiva.it",
+  "dati.normattiva.it",
+  "gazzettaufficiale.it",
+  "www.gazzettaufficiale.it",
+  "governo.it",
+  "www.governo.it",
+  "camera.it",
+  "www.camera.it",
+  "dati.camera.it",
+  "senato.it",
+  "www.senato.it",
+  "dati.senato.it",
+  "parlamento.it",
+  "www.parlamento.it",
+  "quirinale.it",
+  "www.quirinale.it",
+  "eur-lex.europa.eu",
+  "cortecostituzionale.it",
+  "www.cortecostituzionale.it",
+] as const;
+
+/** `true` solo per URL https verso domini ufficiali (anti-spoofing dei file). */
+function urlFonteAmmesso(url: string): boolean {
+  try {
+    const parsed = new URL(url);
+    if (parsed.protocol !== "https:") return false;
+    const host = parsed.hostname.toLowerCase();
+    return (DOMINI_FONTUANTE_AMMESSI as readonly string[]).includes(host);
+  } catch {
+    return false;
+  }
+}
+
+function fontiReali(input: Record<string, unknown>, tipo: string, numero: string, dataEmanazione: string): LawRecord["fonti"] {
+  try {
+    const costruite = buildFonti({
+      tipo,
+      numero,
+      dataEmanazione,
+      codiceRedazionale: stringaPulita(input["codiceRedazionale"]) || undefined,
+      dataGU: stringaPulita(input["dataGU"]) || undefined,
+      numeroGU: stringaPulita(input["numeroGU"]) || undefined,
+      legislatura: stringaPulita(input["legislatura"]) || undefined,
+      cameraId: stringaPulita(input["cameraId"]) || undefined,
+      senatoDid: stringaPulita(input["senatoDid"]) || undefined,
+    });
+    // Conserva solo URL verificati verso domini ufficiali eventualmente
+    // già presenti nel file (un file manomesso non può iniettare URL esterni).
+    const grezze = input["fonti"];
+    if (grezze && typeof grezze === "object" && !Array.isArray(grezze)) {
+      const g = grezze as Record<string, unknown>;
+      for (const chiave of ["normattiva", "gazzetta", "camera", "senato", "governo"] as const) {
+        const url = stringaPulita(g[chiave]);
+        if (urlFonteAmmesso(url) && !(costruite as Record<string, string | undefined>)[chiave]) {
+          (costruite as Record<string, string>)[chiave] = url;
+        }
+      }
+    }
+    return costruite;
+  } catch {
+    try {
+      return buildFonti({ tipo, numero, dataEmanazione });
+    } catch {
+      return { governo: SOURCE_URLS.governo };
+    }
+  }
+}
+
 /**
- * Copia difensiva del corpus unificato: i 5 seed (SEED_LAWS) restano sempre i
- * primi record e vincono la dedup per ELI. Thin-wrapper sincrono su
- * `getCorpusUnificato()`: non lancia mai, in caso di errore o corpus vuoto
- * ricade sui soli seed.
+ * Normalizza un atto reale in `LawRecord`. Restituisce `null` se mancano i
+ * campi minimi verificati (`titolo` + `eli`). `dimostrativo=false` forzato.
+ * Non lancia mai, non inventa mai codici/numeri/URL/date.
+ */
+export function normalizzaAttoReale(input: unknown): LawRecord | null {
+  try {
+    if (!input || typeof input !== "object" || Array.isArray(input)) return null;
+    const o = input as Record<string, unknown>;
+    const titolo = stringaPulita(o["titolo"]);
+    const eli = stringaPulita(o["eli"]);
+    if (!titolo || !eli) return null;
+    const tipo = stringaPulita(o["tipo"]) || "legge";
+    const numero = stringaPulita(o["numero"]);
+    const dataEmanazione = dataIsoReale(o["dataEmanazione"]);
+    const nir = stringaPulita(o["nir"]);
+    const sintesiGrezza = stringaPulita(o["sintesi"]);
+    const sintesi = (sintesiGrezza || titolo).slice(0, 600);
+    const testoGrezzo = typeof o["testo"] === "string" && o["testo"].trim() ? o["testo"] : sintesi;
+    const statoGrezzo = stringaPulita(o["stato"]).toLowerCase();
+    const stato = /abrog/.test(statoGrezzo) ? "abrogato" : "in_vigore";
+    const record: LawRecord = {
+      eli,
+      nir,
+      tipo,
+      numero,
+      dataEmanazione,
+      titolo,
+      sintesi,
+      stato,
+      gulpease: gulpeaseReale(testoGrezzo, sintesi),
+      fonti: fontiReali(o, tipo, numero, dataEmanazione),
+      dimostrativo: false,
+    };
+    const testo = typeof o["testo"] === "string" && o["testo"].trim() ? o["testo"] : undefined;
+    if (testo) record.testo = testo;
+    for (const chiave of ["codiceRedazionale", "dataGU", "numeroGU", "legislatura", "cameraId", "senatoDid"] as const) {
+      const v = stringaPulita(o[chiave]);
+      if (v) (record as unknown as Record<string, unknown>)[chiave] = v;
+    }
+    return record;
+  } catch {
+    return null;
+  }
+}
+
+/**
+ * Normalizza un comunicato reale in `CdmItem`. Restituisce `null` se mancano
+ * `id`, `titolo` o `url`. Non lancia mai, non inventa mai URL/date.
+ */
+export function normalizzaComunicatoReale(input: unknown): CdmItem | null {
+  try {
+    if (!input || typeof input !== "object" || Array.isArray(input)) return null;
+    const o = input as Record<string, unknown>;
+    const id = stringaPulita(o["id"]);
+    const titolo = stringaPulita(o["titolo"]);
+    const url = stringaPulita(o["url"] ?? o["link"]);
+    if (!id || !titolo || !url) return null;
+    if (!/^https?:\/\//i.test(url)) return null;
+    return {
+      id,
+      data: dataIsoReale(o["data"]),
+      numero: stringaPulita(o["numero"]),
+      titolo,
+      sintesi: stringaPulita(o["sintesi"]).slice(0, 2000),
+      url,
+    };
+  } catch {
+    return null;
+  }
+}
+
+/**
+ * Estrae la lista di atti da envelope (`{leggi}` / `{dati}` / `{atti}`) o da
+ * array diretto. Non lancia mai.
+ */
+export function estraiListaAttiReali(grezzo: unknown): unknown[] {
+  try {
+    if (Array.isArray(grezzo)) return grezzo;
+    if (grezzo && typeof grezzo === "object") {
+      const o = grezzo as Record<string, unknown>;
+      if (Array.isArray(o["leggi"])) return o["leggi"] as unknown[];
+      if (Array.isArray(o["dati"])) return o["dati"] as unknown[];
+      if (Array.isArray(o["atti"])) return o["atti"] as unknown[];
+    }
+    return [];
+  } catch {
+    return [];
+  }
+}
+
+/**
+ * Estrae la lista di comunicati da envelope (`{comunicati}` / `{dati}` /
+ * `{items}`) o da array diretto. Non lancia mai.
+ */
+export function estraiListaComunicatiReali(grezzo: unknown): unknown[] {
+  try {
+    if (Array.isArray(grezzo)) return grezzo;
+    if (grezzo && typeof grezzo === "object") {
+      const o = grezzo as Record<string, unknown>;
+      if (Array.isArray(o["comunicati"])) return o["comunicati"] as unknown[];
+      if (Array.isArray(o["dati"])) return o["dati"] as unknown[];
+      if (Array.isArray(o["items"])) return o["items"] as unknown[];
+    }
+    return [];
+  } catch {
+    return [];
+  }
+}
+
+function moduliNode(): { fs: { existsSync(p: string): boolean; readFileSync(p: string, enc: string): string }; path: { join(...p: string[]): string } } | null {
+  try {
+    if (typeof process === "undefined") return null;
+    if (typeof window !== "undefined") return null;
+    const g = globalThis as unknown as { process?: { getBuiltinModule?: (m: string) => unknown }; require?: (m: string) => unknown };
+    try {
+      const proc = g.process;
+      if (proc && typeof proc.getBuiltinModule === "function") {
+        const fs = proc.getBuiltinModule("node:fs") as { existsSync(p: string): boolean; readFileSync(p: string, enc: string): string };
+        const path = proc.getBuiltinModule("node:path") as { join(...p: string[]): string };
+        if (fs && path && typeof fs.readFileSync === "function") return { fs, path };
+      }
+    } catch {
+      // continua con require
+    }
+    try {
+      const req = g.require;
+      if (typeof req === "function") {
+        const fs = req("node:fs") as { existsSync(p: string): boolean; readFileSync(p: string, enc: string): string };
+        const path = req("node:path") as { join(...p: string[]): string };
+        if (fs && path) return { fs, path };
+      }
+    } catch {
+      // nessun modulo node disponibile (es. browser): comportamento precedente
+    }
+    return null;
+  } catch {
+    return null;
+  }
+}
+
+function leggiJsonDaDisco(percorsiRelativi: readonly string[]): unknown | null {
+  try {
+    const mod = moduliNode();
+    if (!mod) return null;
+    let base = "";
+    try {
+      base = typeof process !== "undefined" && process.cwd ? process.cwd() : "";
+    } catch {
+      return null;
+    }
+    if (!base) return null;
+    for (const rel of percorsiRelativi) {
+      try {
+        const ass = mod.path.join(base, rel);
+        if (!mod.fs.existsSync(ass)) continue;
+        const raw = mod.fs.readFileSync(ass, "utf8");
+        if (!raw || raw.length > 2_000_000) continue;
+        return JSON.parse(raw) as unknown;
+      } catch {
+        continue;
+      }
+    }
+    return null;
+  } catch {
+    return null;
+  }
+}
+
+/** Carica gli atti reali da disco (mai lancia, [] se assenti/invalidi). */
+function caricaAttiReali(): LawRecord[] {
+  try {
+    const grezzo = leggiJsonDaDisco(PERCORSI_ATTI_REALI);
+    if (!grezzo) return [];
+    const lista = estraiListaAttiReali(grezzo);
+    if (lista.length === 0) return [];
+    const risultato: LawRecord[] = [];
+    for (const item of lista.slice(0, 200)) {
+      try {
+        const record = normalizzaAttoReale(item);
+        if (record) risultato.push(record);
+      } catch {
+        continue;
+      }
+    }
+    return risultato;
+  } catch {
+    return [];
+  }
+}
+
+/** Carica i comunicati reali da disco (mai lancia, [] se assenti/invalidi). */
+function caricaComunicatiReali(): CdmItem[] {
+  try {
+    const grezzo = leggiJsonDaDisco(PERCORSI_CDM_REALI);
+    if (!grezzo) return [];
+    const lista = estraiListaComunicatiReali(grezzo);
+    if (lista.length === 0) return [];
+    const risultato: CdmItem[] = [];
+    for (const item of lista.slice(0, 100)) {
+      try {
+        const comunicato = normalizzaComunicatoReale(item);
+        if (comunicato) risultato.push(comunicato);
+      } catch {
+        continue;
+      }
+    }
+    return risultato;
+  } catch {
+    return [];
+  }
+}
+
+/**
+ * Copia difensiva del corpus unificato + atti reali: i 5 seed (SEED_LAWS)
+ * restano sempre i primi record e vincono la dedup per ELI, seguono gli atti
+ * reali (`dimostrativo=false` forzato, solo se con titolo+eli verificati) e
+ * poi il resto sintetico come prima. Thin-wrapper sincrono: non lancia mai,
+ * in caso di errore o corpus vuoto ricade sui soli seed. Se i file
+ * `data/reali/` sono assenti o invalidi, il comportamento precedente resta
+ * invariato.
  */
 export function getSeedLaws(): LawRecord[] {
   try {
     const unificato = getCorpusUnificato();
+    const reali = caricaAttiReali();
     if (!Array.isArray(unificato) || unificato.length === 0) {
-      return SEED_LAWS.map(clonaLegge);
+      if (reali.length === 0) {
+        return SEED_LAWS.map(clonaLegge);
+      }
+      const visti = new Set<string>();
+      const risultato: LawRecord[] = [];
+      const accoda = (legge: unknown): void => {
+        if (!legge || typeof legge !== "object") return;
+        const chiave = chiaveEli((legge as LawRecord).eli);
+        if (!chiave || visti.has(chiave)) return;
+        visti.add(chiave);
+        risultato.push(clonaLegge(legge as LawRecord));
+      };
+      for (const seed of SEED_LAWS) accoda(seed);
+      for (const legge of reali) accoda(legge);
+      return risultato.length > 0 ? risultato : SEED_LAWS.map(clonaLegge);
     }
     const visti = new Set<string>();
     const risultato: LawRecord[] = [];
@@ -211,6 +558,7 @@ export function getSeedLaws(): LawRecord[] {
       risultato.push(clonaLegge(legge as LawRecord));
     };
     for (const seed of SEED_LAWS) accoda(seed);
+    for (const legge of reali) accoda(legge);
     for (const legge of unificato) accoda(legge);
     return risultato.length > 0 ? risultato : SEED_LAWS.map(clonaLegge);
   } catch {
@@ -241,9 +589,15 @@ export function getSeedMinisters(): MinisterRecord[] {
   return SEED_MINISTERS.map((m) => ({ ...m, competenze: [...m.competenze], provvedimenti: [...m.provvedimenti] }));
 }
 
-/** Copia difensiva dei comunicati CdM seed. */
+/** Copia difensiva dei comunicati CdM: reali primi se presenti e validi, altrimenti seed. Non lancia mai. */
 export function getSeedCdm(): CdmItem[] {
-  return SEED_CDM.map((c) => ({ ...c }));
+  try {
+    const reali = caricaComunicatiReali();
+    if (reali.length > 0) return reali.map((c) => ({ ...c }));
+    return SEED_CDM.map((c) => ({ ...c }));
+  } catch {
+    return SEED_CDM.map((c) => ({ ...c }));
+  }
 }
 
 /** Ricerca testuale (case-insensitive) nelle leggi seed. */

@@ -1,0 +1,100 @@
+{
+  "provenance": {
+    "fonte": "dati.senato.it",
+    "url": "https://dati.senato.it/sparql",
+    "recuperatoIl": "2026-09-28T18:27:50.369Z",
+    "licenza": "CC BY 3.0 IT"
+  },
+  "legislatura": "19",
+  "gruppi": [
+    {
+      "uri": "http://dati.senato.it/gruppo/91",
+      "nome": "Azione-ItaliaViva-RenewEurope",
+      "breve": "Az-IV-RE",
+      "inizio": "2022-10-13",
+      "fine": "2023-11-08"
+    },
+    {
+      "uri": "http://dati.senato.it/gruppo/92",
+      "nome": "Civici d'Italia - Noi Moderati (UDC - Coraggio Italia - Noi con l'Italia - Italia al Centro) - MAIE",
+      "breve": "Cd'I-NM (UDC-CI-NcI-IaC)-MAIE",
+      "inizio": "2022-10-13",
+      "fine": "2024-10-29"
+    },
+    {
+      "uri": "http://dati.senato.it/gruppo/92",
+      "nome": "Civici d'Italia-UDC-Noi Moderati (Noi con l'Italia, Coraggio Italia, Italia al Centro)-MAIE-Centro Popolare",
+      "breve": "Cd'I-UDC-NM (NcI, CI, IaC)-MAIE-CP",
+      "inizio": "2024-10-30"
+    },
+    {
+      "uri": "http://dati.senato.it/gruppo/56",
+      "nome": "Forza Italia - Berlusconi Presidente - PPE",
+      "breve": "FI-BP-PPE",
+      "inizio": "2022-10-19"
+    },
+    {
+      "uri": "http://dati.senato.it/gruppo/56",
+      "nome": "Forza Italia Berlusconi Presidente",
+      "breve": "FIBP",
+      "inizio": "2022-10-13",
+      "fine": "2022-10-18"
+    },
+    {
+      "uri": "http://dati.senato.it/gruppo/85",
+      "nome": "Fratelli d'Italia",
+      "breve": "FdI",
+      "inizio": "2018-03-23"
+    },
+    {
+      "uri": "http://dati.senato.it/gruppo/91",
+      "nome": "Italia Viva - Casa Riformista",
+      "breve": "IV-CR",
+      "inizio": "2026-06-15"
+    },
+    {
+      "uri": "http://dati.senato.it/gruppo/91",
+      "nome": "Italia Viva - Il Centro - Renew Europe",
+      "breve": "IV-C-RE",
+      "inizio": "2023-11-09",
+      "fine": "2026-06-14"
+    },
+    {
+      "uri": "http://dati.senato.it/gruppo/33",
+      "nome": "Lega Salvini Premier - Partito Sardo d'Azione",
+      "breve": "LSP-PSd'Az",
+      "inizio": "2022-10-13"
+    },
+    {
+      "uri": "http://dati.senato.it/gruppo/9",
+      "nome": "Misto",
+      "breve": "Misto",
+      "inizio": "1946-06-25"
+    },
+    {
+      "uri": "http://dati.senato.it/gruppo/71",
+      "nome": "MoVimento 5 Stelle",
+      "breve": "M5S",
+      "inizio": "2018-03-23"
+    },
+    {
+      "uri": "http://dati.senato.it/gruppo/49",
+      "nome": "Partito Democratico - Italia Democratica e Progressista",
+      "breve": "PD-IDP",
+      "inizio": "2022-10-13"
+    },
+    {
+      "uri": "http://dati.senato.it/gruppo/69",
+      "nome": "Per le Autonomie (SVP-Patt, Campobase, Sud Chiama Nord)",
+      "breve": "Aut (SVP-Patt, Cb, SCN)",
+      "inizio": "2022-10-13",
+      "fine": "2023-11-06"
+    },
+    {
+      "uri": "http://dati.senato.it/gruppo/69",
+      "nome": "Per le Autonomie (SVP-PATT, Campobase)",
+      "breve": "Aut (SVP-PATT, Cb)",
+      "inizio": "2023-11-07"
+    }
+  ]
+}

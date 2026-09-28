@@ -196,9 +196,13 @@ export default async function LeggePage({ params }: LeggeProps) {
             <span className="bg-inchiostro px-3 py-1 font-semibold uppercase tracking-[0.14em] text-carta dark:bg-nebbia dark:text-notte">
               {formatTipo(law.tipo)} {law.numero}/{anno}
             </span>
-            {law.dimostrativo && (
+            {law.dimostrativo ? (
               <span className="border border-amber-400 px-3 py-1 font-semibold text-amber-800 dark:border-amber-500/60 dark:text-amber-300">
                 Scheda dimostrativa: dati di esempio, non ufficiali
+              </span>
+            ) : (
+              <span className="border border-emerald-600 px-3 py-1 font-semibold text-emerald-800 dark:border-emerald-500/60 dark:text-emerald-300">
+                Dato ufficiale: da open data istituzionali (vedi Fonti ufficiali)
               </span>
             )}
             <span className={`inline-flex items-center gap-1.5 px-3 py-1 font-semibold ring-1 ${meta.bg} ${meta.text} ${meta.ring}`}>
@@ -278,7 +282,7 @@ export default async function LeggePage({ params }: LeggeProps) {
             </p>
             {!law.dimostrativo && (
               <p className="mt-3 text-xs leading-relaxed text-inchiostro-faint dark:text-nebbia-faint">
-                Cifre e date dai comunicati del Consiglio dei ministri e dalla Gazzetta Ufficiale (vedi Fonti ufficiali).
+                Cifre e date dalle fonti elencate sotto (vedi Fonti ufficiali).
               </p>
             )}
             <details className="mt-4 border border-regola bg-carta-soft p-3 dark:border-notte-deep dark:bg-notte">

@@ -146,7 +146,7 @@ export const SEED_LAWS: LawRecord[] = [
     testo: TESTO_DL133,
   }),
   conGulpease({
-    eli: "/eli/id/2026/08/05/26G00161/sg",
+    eli: "/eli/id/2026/08/05/26G00162/sg",
     nir: "urn:nir:stato:decreto.legge:2026-08-05;139",
     tipo: "decreto.legge",
     numero: "139",
@@ -155,10 +155,18 @@ export const SEED_LAWS: LawRecord[] = [
     sintesi:
       "Il decreto interviene sui carburanti: riduce la pressione delle accise e impone maggiore trasparenza sui prezzi esposti alla pompa.",
     stato: "in_vigore",
+    // Codice redazionale verificato su Normattiva/GU (DL 139/2026 = 26G00162,
+    // GU n. 180 del 2026-08-05): i link alle fonti sono costruiti da dati veri.
+    codiceRedazionale: "26G00162",
+    dataGU: "2026-08-05",
+    numeroGU: "180",
     fonti: buildFonti({
       tipo: "decreto.legge",
       numero: "139",
       dataEmanazione: "2026-08-05",
+      codiceRedazionale: "26G00162",
+      dataGU: "2026-08-05",
+      numeroGU: "180",
     }),
     air: "esente",
     attuativi: { daAdottare: 1, adottati: 0, scaduti: 0 },
