@@ -2,7 +2,7 @@
  * Ingest finestre storiche Normattiva -> data/reali/normattiva-storico-<anno>.json.
  *
  * Finestre supportate via --anni (default "1990,2000" per compatibilita'):
- * 1990, 2000, 2010, 1970. Ogni finestra e' bounded come le originarie
+ * 1990, 2000, 2010, 1970, 2020, 1960. Ogni finestra e' bounded come le originarie
  * (max 80 atti, dettagli a batch di 5 con pausa di 2000 ms).
  *
  * Legge atti VERI dalle API Open Data di Normattiva (bff-opendata v1) e li
@@ -33,7 +33,7 @@
  * Uso:
  *   npx tsx scripts/ingest-reale-normattiva-finestre.ts [--limite=80]
  *     [--testo-max=2000] [--anni=1990,2000] [--out-1990=...] [--out-2000=...]
- *     [--out-2010=...] [--out-1970=...]
+ *     [--out-2010=...] [--out-1970=...] [--out-2020=...] [--out-1960=...]
  *     [--api-base=...] [--help]
  *
  * Esce con codice 1 (SENZA scrivere file parziali) se una delle finestre
@@ -119,6 +119,8 @@ const FINESTRA_1990 = { nome: "1990", inizio: "1990-01-01", fine: "1990-12-31" }
 const FINESTRA_2000 = { nome: "2000", inizio: "2000-01-01", fine: "2000-12-31" } as const;
 const FINESTRA_2010 = { nome: "2010", inizio: "2010-01-01", fine: "2010-12-31" } as const;
 const FINESTRA_1970 = { nome: "1970", inizio: "1970-01-01", fine: "1970-12-31" } as const;
+const FINESTRA_2020 = { nome: "2020", inizio: "2020-01-01", fine: "2020-12-31" } as const;
+const FINESTRA_1960 = { nome: "1960", inizio: "1960-01-01", fine: "1960-12-31" } as const;
 
 /** Finestre selezionabili via --anni (stesso bounded: max 80 atti). */
 const FINESTRE_DISPONIBILI = {
@@ -126,6 +128,8 @@ const FINESTRE_DISPONIBILI = {
   "2000": FINESTRA_2000,
   "2010": FINESTRA_2010,
   "1970": FINESTRA_1970,
+  "2020": FINESTRA_2020,
+  "1960": FINESTRA_1960,
 } as const;
 
 type NomeFinestra = keyof typeof FINESTRE_DISPONIBILI;
@@ -136,6 +140,8 @@ const OUT_DEFAULT_FINESTRA: Record<NomeFinestra, string> = {
   "2000": path.join("data", "reali", "normattiva-storico-2000.json"),
   "2010": path.join("data", "reali", "normattiva-storico-2010.json"),
   "1970": path.join("data", "reali", "normattiva-storico-1970.json"),
+  "2020": path.join("data", "reali", "normattiva-storico-2020.json"),
+  "1960": path.join("data", "reali", "normattiva-storico-1960.json"),
 };
 
 /** File esistenti contro cui fare dedup ELI/URN (mai rileggere i propri output). */
@@ -418,13 +424,15 @@ function aiuto(): string {
     "  npx tsx scripts/ingest-reale-normattiva-finestre.ts [opzioni]",
     "",
     "Opzioni:",
-    "  --anni=A,B            finestre da ingerire (default 1990,2000; ammessi 1990,2000,2010,1970)",
+    "  --anni=A,B            finestre da ingerire (default 1990,2000; ammessi 1990,2000,2010,1970,2020,1960)",
     "  --limite=N            atti per finestra (default 80, MAI oltre 80)",
     "  --testo-max=N         caratteri max per testo (default 2000, max 61440)",
     "  --out-1990=PATH       file JSON finestra 1990 (default data/reali/normattiva-storico-1990.json)",
     "  --out-2000=PATH       file JSON finestra 2000 (default data/reali/normattiva-storico-2000.json)",
     "  --out-2010=PATH       file JSON finestra 2010 (default data/reali/normattiva-storico-2010.json)",
     "  --out-1970=PATH       file JSON finestra 1970 (default data/reali/normattiva-storico-1970.json)",
+    "  --out-2020=PATH       file JSON finestra 2020 (default data/reali/normattiva-storico-2020.json)",
+    "  --out-1960=PATH       file JSON finestra 1960 (default data/reali/normattiva-storico-1960.json)",
     "  --api-base=URL        override base API Normattiva",
     "  --help                mostra questo aiuto",
   ].join("\n");

@@ -1,0 +1,515 @@
+{
+  "provenance": {
+    "fonte": "data.open-contracting.org (ANAC/BDNCP via OCP Data Registry)",
+    "url": "https://data.open-contracting.org/en/publication/117/download?name=2025.jsonl.gz",
+    "paginaDati": "https://data.open-contracting.org/en/publication/117",
+    "recuperatoIl": "2026-09-28T20:35:11.979Z",
+    "licenza": "CC BY 4.0"
+  },
+  "voci": [
+    {
+      "id": "ocds-hu01ve-3913112",
+      "titolo": "SPESA PROPEDEUTICO PER INCARICO PROGETTAZIONE PRELIMINARE, DEFINITIVA, ESECUTIVA RELATIVAMENTE AL LAVORO TO-E-1271 M",
+      "data": "2010-09-28",
+      "url": "https://data.open-contracting.org/en/publication/117/download?name=2025.jsonl.gz",
+      "ente": "AGENZIA INTERREGIONALE PER IL FIUME PO AIPO",
+      "numero": "3913112"
+    },
+    {
+      "id": "ocds-hu01ve-7889089",
+      "titolo": "MANUTENZIONE STRAORDINARIA STRADE E MARCIAPIEDI",
+      "data": "2022-07-13",
+      "url": "https://data.open-contracting.org/en/publication/117/download?name=2025.jsonl.gz",
+      "ente": "COMUNE DI SAN GIULIANO MILANESE",
+      "numero": "7889089"
+    },
+    {
+      "id": "ocds-hu01ve-8114164",
+      "titolo": "SERVIZIO TRIENNALE DI SUPPORTO ALLA GESTIONE DELLE FUNZIONI TECNICO - AMMINISTRATIVE IN MATERIA DI DEMANIO MARITTIMO",
+      "data": "2022-02-04",
+      "url": "https://data.open-contracting.org/en/publication/117/download?name=2025.jsonl.gz",
+      "ente": "COMUNE DI TRANI",
+      "numero": "8114164"
+    },
+    {
+      "id": "ocds-hu01ve-8315069",
+      "titolo": "LAVORI DI MANUTENZIONE STRAORDINARIA DELLE RETI VIARIE E INFRASTRUTTURE ACCESSORIE PER RIDURRE IL RISCHIO IDROGEOLOGICO",
+      "data": "2022-04-12",
+      "url": "https://data.open-contracting.org/en/publication/117/download?name=2025.jsonl.gz",
+      "ente": "COMUNE DI TIGGIANO",
+      "numero": "8315069"
+    },
+    {
+      "id": "ocds-hu01ve-8365650",
+      "titolo": "CONCESSIONE MISTA AVENTE AD OGGETTO PRINCIPALE IL SERVIZIO DI REFEZIONE SCOLASTICA PERIODO 01 SETTEMBRE 2022 - 31 LUGLIO 2031 NEL RISPETTO DEI CRITERI AMBIENTALI MINIMI (CAM) PREVISTI DAL PAN GGP D.M. 10 MARZO 2020 ED A TITOLO ACCESSORIO LAVORI FUNZIONALI ALL'EROGAZIONE DEL SERVI",
+      "data": "2022-07-18",
+      "url": "https://data.open-contracting.org/en/publication/117/download?name=2025.jsonl.gz",
+      "ente": "COMUNE DI REGGELLO",
+      "numero": "8365650"
+    },
+    {
+      "id": "ocds-hu01ve-8369884",
+      "titolo": "CODICE OPERA 150158 - PROGETTO ESECUTIVO N. L1458/2021 DENOMINATO 'COMPLESSO IMMOBILIARE DI VIA DELL'ANGUILLARA - DIREZIONE PATRIMONIO - RESTAURO COPERTURE, COMPRESA REALIZZAZIONE LINEE-VITA - FASE 1',",
+      "data": "2022-12-22",
+      "url": "https://data.open-contracting.org/en/publication/117/download?name=2025.jsonl.gz",
+      "ente": "COMUNE DI FIRENZE",
+      "numero": "8369884"
+    },
+    {
+      "id": "ocds-hu01ve-8383079",
+      "titolo": "INTERVENTI MANUTENZIONE DEI LOCALI SPOGLIATOIO DEL PO DEI PELLEGRINI DI NAPOLI",
+      "data": "2022-09-15",
+      "url": "https://data.open-contracting.org/en/publication/117/download?name=2025.jsonl.gz",
+      "ente": "AZIENDA SANITARIA LOCALE NAPOLI 1 CENTRO",
+      "numero": "8383079"
+    },
+    {
+      "id": "ocds-hu01ve-8385320",
+      "titolo": "PORTO DI BARI. LAVORI DI REALIZZAZIONE DI UN TERMINAL PASSEGGERI SULLA BANCHINA 10.",
+      "data": "2023-02-02",
+      "url": "https://data.open-contracting.org/en/publication/117/download?name=2025.jsonl.gz",
+      "ente": "AUTORITA' DI SISTEMA PORTUALE DEL MARE ADRIATICO MERIDIONALE",
+      "numero": "8385320"
+    },
+    {
+      "id": "ocds-hu01ve-8390739",
+      "titolo": "ADEGUAMENTO BANCHINE OPERATIVE 3^ STRALCIO - LOTTI 1, 2, 3, 4",
+      "data": "2022-05-13",
+      "url": "https://data.open-contracting.org/en/publication/117/download?name=2025.jsonl.gz",
+      "ente": "AUTORITA' DI SISTEMA PORTUALE DEL MARE ADRIATICO CENTRO-SETTENTRIONALE",
+      "oggetto": "LOTTO 1_SAPIR 5-7",
+      "numero": "8390739"
+    },
+    {
+      "id": "ocds-hu01ve-8390960",
+      "titolo": "CONTROLLO DELLA VEGETAZIONE RIPARIALE E MOVIMENTAZIONE DEPOSITI FLUVIALI LUNGO IL RETICOLO DI GESTIONE NEI COMUNI DI RIGNANO S.A., REGGELLO, CASTELFRANCO PIANDISCÒ E TERRANUOVA BRACCIOLINI (AR) (PROG. 292/2021, C07_11)",
+      "data": "2022-02-09",
+      "url": "https://data.open-contracting.org/en/publication/117/download?name=2025.jsonl.gz",
+      "ente": "UNIONE DEI COMUNI DEL PRATOMAGNO",
+      "numero": "8390960"
+    },
+    {
+      "id": "ocds-hu01ve-8391662",
+      "titolo": "INTERVENTO DI RIQUALIFICAZIONE E TRASFORMAZIONE A GAS METANO DELLA CENTRALE TERMICA A SERVIZIO BOCCIODROMO",
+      "data": "2022-05-17",
+      "url": "https://data.open-contracting.org/en/publication/117/download?name=2025.jsonl.gz",
+      "ente": "COMUNE DI FIORENZUOLA D ARDA",
+      "numero": "8391662"
+    },
+    {
+      "id": "ocds-hu01ve-8394326",
+      "titolo": "INTERVENTO STRAORDINARIO DI SISTEMAZIONE E ADEGUAMENTO IMPIANTISTICO DI SICUREZZA DI PALAZZO UFFICI CON REALIZZAZIONE IMPIANTO DI CLIMATIZZAZIONE - LOTTO 3",
+      "data": "2022-03-21",
+      "url": "https://data.open-contracting.org/en/publication/117/download?name=2025.jsonl.gz",
+      "ente": "COMUNE DI BERGAMO",
+      "numero": "8394326"
+    },
+    {
+      "id": "ocds-hu01ve-8395181",
+      "titolo": "LAVORI DI RIFACIMENTO DI PORZIONI VETRATE DELLA COPERTURA DEL CASTELLO DI USSEL A CHÂTILLON- BENE TUTELATO AI SENSI DEL D.LGS. 42/2004.",
+      "data": "2022-04-04",
+      "url": "https://data.open-contracting.org/en/publication/117/download?name=2025.jsonl.gz",
+      "ente": "REGIONE AUTONOMA VALLE D'AOSTA",
+      "numero": "8395181"
+    },
+    {
+      "id": "ocds-hu01ve-8393566",
+      "titolo": "COMPLETAMENTO DEL VILLAGGIO PER L'ACCOGLIENZA DELLE FAMIGLIE DEI BAMBINI MALATI ONCOLOGICI - AGEBEO & AMICI DI VINCENZO ONLUS - 1^ TRAVERSA DI VIA CAMILLO ROSALBA - BARI. PRIMO CONTRATTO ATTUATIVO",
+      "data": "2022-05-02",
+      "url": "https://data.open-contracting.org/en/publication/117/download?name=2025.jsonl.gz",
+      "ente": "COMUNE DI BARI",
+      "oggetto": "'COMPLETAMENTO DEL VILLAGGIO PER L'ACCOGLIENZA DELLE FAMIGLIE DEI BAMBINI MALATI ONCOLOGICI - AGEBEO & AMICI DI VINCENZO ONLUS' - 1^ TRAVERSA DI VIA CAMILLO ROSALBA - BARI. PRIMO CONTRATTO ATTUATIVO",
+      "numero": "8393566"
+    },
+    {
+      "id": "ocds-hu01ve-8393918",
+      "titolo": "ACCORDO QUADRO - AI SENSI DELL'ART. 54 COMMA 3 DEL D.LGS N. 50/2016 - PER LAVORI DI MANUTENZIONE ORDINARIA AGLI IMPIANTI ELETTRICI DELLE STRUTTURE COMUNALI CON L'UTILIZZO DEL MERCATO ELETTRONICO DELLA PUBBLICA AMMINISTRAZIONE",
+      "data": "2022-07-05",
+      "url": "https://data.open-contracting.org/en/publication/117/download?name=2025.jsonl.gz",
+      "ente": "COMUNE DI SALERNO",
+      "numero": "8393918"
+    },
+    {
+      "id": "ocds-hu01ve-8398353",
+      "titolo": "REALIZZAZIONE DI INTERVENTI CONCERNENTI LA SICUREZZA DELLA CIRCOLAZIONE CICLISTICA CITTADINA E LA REALIZZAZIONE DI CORSIE CICLABILI (EX DM 12 AGOSTO 2020)",
+      "data": "2022-09-09",
+      "url": "https://data.open-contracting.org/en/publication/117/download?name=2025.jsonl.gz",
+      "ente": "COMUNE DI CAMPOBASSO",
+      "numero": "8398353"
+    },
+    {
+      "id": "ocds-hu01ve-8402443",
+      "titolo": "SERVIZI PROFESSIONALI PER LA REDAZIONE DELLA PROGETTAZIONE DEFINITIVA, ESECUTIVA, DIREZIONE LAVORI, CERTIFICATO DI REGOLARE ESECUZIONE RELATIVAMENTE AL RIFACIMENTO DELL'IMPIANTO TERMICO A SERVIZIO DELLA SCUOLA PRIMARIA C.BATTISTI E DELL'EDIFICIO ADIACENTE SEDE DEGLI UFFICI COMUNA",
+      "data": "2022-05-19",
+      "url": "https://data.open-contracting.org/en/publication/117/download?name=2025.jsonl.gz",
+      "ente": "COMUNE DI MALNATE",
+      "oggetto": "SERVIZI PROFESSIONALI PER LA REDAZIONE DELLA PROGETTAZIONE DEFINITIVA, ESECUTIVA, DIREZIONE LAVORI E CERTIFICATO DI REGOLARE ESECUZIONE RELATIVAMENTE AL RIFACIMENTO DELL'IMPIANTO TERMICO A SERVIZIO DELLA SCUOLA PRIMARIA C.BATTISTI E DELL'EDIFICO COMUNALE SITI IN VIA DE MOHR",
+      "numero": "8402443"
+    },
+    {
+      "id": "ocds-hu01ve-8404112",
+      "titolo": "LAVORI DI MANUTENZIONE STRAORDINARIA DEGLI IMMOBILI E DELLA VIABILITÀ PEDONALE PRESSO LA CASCATA DELLE MARMORE",
+      "data": "2022-06-29",
+      "url": "https://data.open-contracting.org/en/publication/117/download?name=2025.jsonl.gz",
+      "ente": "COMUNE DI TERNI",
+      "numero": "8404112"
+    },
+    {
+      "id": "ocds-hu01ve-8405878",
+      "titolo": "MANUTENZIONE STRAORDINARIA DI RIFACIMENTO INTONACI E TINTEGGIATURA VARI EDIFICI COMUNALE '",
+      "data": "2022-11-10",
+      "url": "https://data.open-contracting.org/en/publication/117/download?name=2025.jsonl.gz",
+      "ente": "COMUNE DI PONCARALE",
+      "numero": "8405878"
+    },
+    {
+      "id": "ocds-hu01ve-8403070",
+      "titolo": "ATTRAVERSAMENTI PEDONALI LUMINOSI",
+      "data": "2022-05-30",
+      "url": "https://data.open-contracting.org/en/publication/117/download?name=2025.jsonl.gz",
+      "ente": "COMUNE DI CORMANO",
+      "numero": "8403070"
+    },
+    {
+      "id": "ocds-hu01ve-8412896",
+      "titolo": "GARA PROGETTAZIONE - NORD OVEST",
+      "data": "2022-01-07",
+      "url": "https://data.open-contracting.org/en/publication/117/download?name=2025.jsonl.gz",
+      "ente": "ENEL ITALIA SPA",
+      "oggetto": "LOTTO 3 - SARDEGNA - GARA PROGETTAZIONE - NORD OVEST",
+      "numero": "8412896"
+    },
+    {
+      "id": "ocds-hu01ve-8413354",
+      "titolo": "GARA PROGETTAZIONE - SUD 2",
+      "data": "2022-01-07",
+      "url": "https://data.open-contracting.org/en/publication/117/download?name=2025.jsonl.gz",
+      "ente": "ENEL ITALIA SPA",
+      "oggetto": "LOTTO 1 - SICILIA - GARA PROGETTAZIONE - SUD 2",
+      "numero": "8413354"
+    },
+    {
+      "id": "ocds-hu01ve-8414190",
+      "titolo": "FORNITURA CARBURANTE PER AUTOTRAZIONE",
+      "data": "2022-01-19",
+      "url": "https://data.open-contracting.org/en/publication/117/download?name=2025.jsonl.gz",
+      "ente": "APM - AZIENDA PULISERVIZI MONTEROTONDO",
+      "numero": "8414190"
+    },
+    {
+      "id": "ocds-hu01ve-8416438",
+      "titolo": "PROGETTAZIONE E LAVORI PER LA RICONVERSIONE A RESIDENCE UNIVERSITARIE DELL'EX HOTEL RIVIERA",
+      "data": "2022-01-25",
+      "url": "https://data.open-contracting.org/en/publication/117/download?name=2025.jsonl.gz",
+      "ente": "UNIVERSITA DEGLI STUDI DI MESSINA",
+      "numero": "8416438"
+    },
+    {
+      "id": "ocds-hu01ve-8417514",
+      "titolo": "SERVIZIO DI PORTIERATO E SERVIZI AUSILIARI DI INFORMAZIONE ED ACCOGLIENZA PRESSO LE SEDI MUNICIPALI - DURATA 7 ANNI",
+      "data": "2022-07-21",
+      "url": "https://data.open-contracting.org/en/publication/117/download?name=2025.jsonl.gz",
+      "ente": "COMUNE DI COLOGNO MONZESE",
+      "numero": "8417514"
+    },
+    {
+      "id": "ocds-hu01ve-8417734",
+      "titolo": "LAVORI MANUTENZIONE STRAORDINARIA DA EFFETTUARSI NEI FABBRICATI SCOLASTICI DI COMPETENZA PROVINCIALE - OPERE EDILI ED AFFINI - ANNO 2021",
+      "data": "2022-04-14",
+      "url": "https://data.open-contracting.org/en/publication/117/download?name=2025.jsonl.gz",
+      "ente": "PROVINCIA DI PADOVA",
+      "numero": "8417734"
+    },
+    {
+      "id": "ocds-hu01ve-8418554",
+      "titolo": "LAVORI DI ADEGUMENTO NORMATIVA ANTINCENDIO CASERMA DEI CARABINIERI",
+      "data": "2022-03-02",
+      "url": "https://data.open-contracting.org/en/publication/117/download?name=2025.jsonl.gz",
+      "ente": "COMUNE DI CITTADELLA",
+      "numero": "8418554"
+    },
+    {
+      "id": "ocds-hu01ve-8419083",
+      "titolo": "CA 14 BO/2022 SCALO BOLOGNA SAN DONATO: LAVORI ALL’ARMAMENTO PER LA REALIZZAZIONE DI UN CAMPO PROVA PRESSO LA TECHNICAL ACADEMY, AMBITO UNITÀ TERRITORIALE BOLOGNA NODO – 1^FASE",
+      "data": "2022-01-27",
+      "url": "https://data.open-contracting.org/en/publication/117/download?name=2025.jsonl.gz",
+      "ente": "RETE FERROVIARIA ITALIANA - SOCIETA PER AZIONI",
+      "numero": "8419083"
+    },
+    {
+      "id": "ocds-hu01ve-8419592",
+      "titolo": "(LP-03-21) RIQUALIFICAZIONE PASSEGGIATA ORIENTALE E MARCIAPIEDI DEL CENTRO URBANO - I STRALCIO FUNZIONALE.",
+      "data": "2022-02-15",
+      "url": "https://data.open-contracting.org/en/publication/117/download?name=2025.jsonl.gz",
+      "ente": "COMUNE DI ORTONA",
+      "numero": "8419592"
+    },
+    {
+      "id": "ocds-hu01ve-8420020",
+      "titolo": "LAVORI MANUTENZIONE STRAORDINARIA STRADE COMUNALI ANNO 2022.",
+      "data": "2022-04-08",
+      "url": "https://data.open-contracting.org/en/publication/117/download?name=2025.jsonl.gz",
+      "ente": "COMUNE DI REGGIO EMILIA",
+      "numero": "8420020"
+    },
+    {
+      "id": "ocds-hu01ve-8419371",
+      "titolo": "AQ 619_ CA 8 _INSTALLAZIONE SISTEMA DI MONITORAGGIO TM ZAERA IN CORRISPONDENZA DEI BINARI DI CORSA P+D CATANIA E D PALERMO, PROGETTAZIONE ESECUTIVA DELLE OPERE DI SOSTEGNO PROVVISIONALE DELLE TM ZAERA - UT CATANIA",
+      "data": "2022-05-13",
+      "url": "https://data.open-contracting.org/en/publication/117/download?name=2025.jsonl.gz",
+      "ente": "RETE FERROVIARIA ITALIANA - SOCIETA PER AZIONI",
+      "numero": "8419371"
+    },
+    {
+      "id": "ocds-hu01ve-8421728",
+      "titolo": "FORNITURA FARMACI, PARAFARMACI E ALTRI BENI PER L'ATTIVITÀ COMMERCIALE DELLA FARMACIA COMUNALE",
+      "data": "2022-01-19",
+      "url": "https://data.open-contracting.org/en/publication/117/download?name=2025.jsonl.gz",
+      "ente": "COMUNE DI MELDOLA",
+      "oggetto": "FORNITURA FARMACI, PARAFARMACI E ALTRI BENI PER L'ATTIVITÀ COMMERCIALE DELLA FARMACIA COMUNALE - MAGAZZINO 1",
+      "numero": "8421728"
+    },
+    {
+      "id": "ocds-hu01ve-8422715",
+      "titolo": "FORNITURA URGENTE DI TEST IMMUNOCROMATOGRAFICI RAPIDI DI I GENERAZIONE PER LA RILEVAZIONE QUALITATIVA DI ANTIGENI DEL VIRUS SARS-COV-2 SU TAMPONE NASALE IN AUTO-ESECUZIONE (SELF-TEST) PER LA DURATA DI 6 MESI",
+      "data": "2022-02-01",
+      "url": "https://data.open-contracting.org/en/publication/117/download?name=2025.jsonl.gz",
+      "ente": "SANITAETSBETRIEB DER AUTONOMEN PROVINZ BOZEN",
+      "numero": "8422715"
+    },
+    {
+      "id": "ocds-hu01ve-8422967",
+      "titolo": "AFFIDAMENTO DEL 'SERVIZIO DI SOMMINISTRAZIONE DI LAVORO A TEMPO DETERMINATO E SERVIZI CONNESSI' DA DESTINARE AL SERVIZIO DI STATISTICA E TOPONOMASTICA",
+      "data": "2022-03-15",
+      "url": "https://data.open-contracting.org/en/publication/117/download?name=2025.jsonl.gz",
+      "ente": "COMUNE DI OLBIA",
+      "numero": "8422967"
+    },
+    {
+      "id": "ocds-hu01ve-8423630",
+      "titolo": "FORNITURA DISPOSITIVI LAPAROSCOPICI DIVERSI",
+      "data": "2022-02-09",
+      "url": "https://data.open-contracting.org/en/publication/117/download?name=2025.jsonl.gz",
+      "ente": "UNITA SANITARIA LOCALE REGIONE VALLE D AOSTA",
+      "numero": "8423630"
+    },
+    {
+      "id": "ocds-hu01ve-8425283",
+      "titolo": "ACQUISIZIONE LICENZE AUTODESK PER LA CONSULENZA TECNICA EDILIZIA E IL CENTRO PROTESI DI VIGORSO DI BUDRIO",
+      "data": "2022-03-16",
+      "url": "https://data.open-contracting.org/en/publication/117/download?name=2025.jsonl.gz",
+      "ente": "ISTITUTO NAZIONALE PERL'ASSICURAZIONE CONTRO GLI INFORTUNI SUL LAVORO",
+      "numero": "8425283"
+    },
+    {
+      "id": "ocds-hu01ve-8425085",
+      "titolo": "ADESIONE ACCORDO QUADRO CONSIP PER LA FORNITURA DI CARBURANTE PER AUTOTRAZIONE MEDIANTE FUEL CARD",
+      "data": "2022-01-20",
+      "url": "https://data.open-contracting.org/en/publication/117/download?name=2025.jsonl.gz",
+      "ente": "AGENZIA FORESTALE REGIONALE",
+      "numero": "8425085"
+    },
+    {
+      "id": "ocds-hu01ve-8425675",
+      "titolo": "LAVORI DI MANUTENZIONE ORDINARIA PER IL RIPRISTINO DELLA FUNZIONALITÀ DEGLI IMPIANTI TECNOLOGICI E RIFACIMENTO DEL MANTO IMPERMEABILE IN COPERTURA DELL'INCUBATORE DI IMPRESE DI TERMINI IMERESE (PA) EDIFICIO A - AGGLOMERATO INDUSTRIALE LOCALITÀ CANNE MASCHE",
+      "data": "2022-04-13",
+      "url": "https://data.open-contracting.org/en/publication/117/download?name=2025.jsonl.gz",
+      "ente": "AGENZIA NAZIONALE PER L ATTRAZIONE DEGLI INVESTIMENTI E LO SVILUPPO D IMPRESA S.P.A.",
+      "numero": "8425675"
+    },
+    {
+      "id": "ocds-hu01ve-8425392",
+      "titolo": "SERVIZIO DI INGEGNERIA PER LA PROGETTAZIONE DEFINITIVA ED ESECUTIVA DEL 1^ LOTTO COMPRENDENTE N. 38 ELEMENTI ANTINTRUSIONE A PROTEZIONE DELLE PILE DEI MANUFATTI E DELLE RELATIVE TRANSIZIONI CON LE BARRIERE DI SICUREZZA IN ESERCIZIO. P. 151 - REALIZZAZIONE ELEMENTI ANTINTRUSIONE E",
+      "data": "2022-03-03",
+      "url": "https://data.open-contracting.org/en/publication/117/download?name=2025.jsonl.gz",
+      "ente": "SOCIETA' AUTOSTRADE ALTO ADRIATICO S.P.A.",
+      "numero": "8425392"
+    },
+    {
+      "id": "ocds-hu01ve-8427761",
+      "titolo": "AQ 370 2021 CA 22 2022 - CMC - INTERVENTI DI ADEGUAMENTO DELL’IMMOBILE DI RFI SPA EX PALESTRA UBICATO IN VIA PORRO A GENOVA, AI SENSI DEL PROTOCOLLO QUADRO SIGLATO TRA RFI, HITACHI RAILS E COMUNE DI GENOVA, PER LA REALIZZAZIONE DI PROGETTI A VALENZA SOCIALE PER IL SOSTEGNO DELLA ",
+      "data": "2022-02-10",
+      "url": "https://data.open-contracting.org/en/publication/117/download?name=2025.jsonl.gz",
+      "ente": "RETE FERROVIARIA ITALIANA - SOCIETA PER AZIONI",
+      "oggetto": "AQ 370 2021 CA 22-2022 - CMC - INTERVENTI DI ADEGUAMENTO DELL’IMMOBILE DI RFI SPA EX PALESTRA UBICATO IN VIA PORRO A GENOVA, AI SENSI DEL PROTOCOLLO QUADRO SIGLATO TRA RFI, HITACHI RAILS E COMUNE DI GENOVA, PER LA REALIZZAZIONE DI PROGETTI A VALENZA SOCIALE PER IL SOSTEGNO DELLA ",
+      "numero": "8427761"
+    },
+    {
+      "id": "ocds-hu01ve-8427930",
+      "titolo": "AQ 36 2021 CA 1 2022 MICOS GALLERIE - “INTERVENTI DI MANUTENZIONE STRAORDINARIA DI MESSA IN SICUREZZA DI ALCUNI VERSANTI SITI AGLI IMBOCCHI/AREE DI TRIAGE DELLE GALLERIE PRÈ DI ME E RONCO PER LA RISOLUZIONE DI CRITICITÀ IDROGEOLOGICHE”",
+      "data": "2022-02-03",
+      "url": "https://data.open-contracting.org/en/publication/117/download?name=2025.jsonl.gz",
+      "ente": "RETE FERROVIARIA ITALIANA - SOCIETA PER AZIONI",
+      "numero": "8427930"
+    },
+    {
+      "id": "ocds-hu01ve-8428013",
+      "titolo": "LAVORI COMPLETAMENTO RESIDENZA INTEGRATA PER ANZIANI ED EFFICIENTAMENTO ENERGETICO IN EDIFICIO NZEB - LOTTO N.1",
+      "data": "2022-02-03",
+      "url": "https://data.open-contracting.org/en/publication/117/download?name=2025.jsonl.gz",
+      "ente": "COMUNE DI MORGONGIORI",
+      "numero": "8428013"
+    },
+    {
+      "id": "ocds-hu01ve-8428824",
+      "titolo": "XIII TRANCHE-GALAPAGOS",
+      "data": "2022-02-07",
+      "url": "https://data.open-contracting.org/en/publication/117/download?name=2025.jsonl.gz",
+      "ente": "AZIENDA USL RMF",
+      "numero": "8428824"
+    },
+    {
+      "id": "ocds-hu01ve-8430677",
+      "titolo": "ADESIONE ALLA PROCEDURA REGIONALE N^G14554 DEL 25/11/2021 AVENTE AD OGGETTO: APPALTO SPECIFICO PER L'ACQUISIZIONE DI FARMACI OCCORRENTI ALLE AZIENDE SANITARIE DELLA REGIONE LAZIO - FARMACI 2021_DECIMA TRANCHE, NELL'AMBITO DEL BANDO ISTITUTIVO AVENTE AD OGGETTO IL SISTEMA DINAMICO",
+      "data": "2022-02-18",
+      "url": "https://data.open-contracting.org/en/publication/117/download?name=2025.jsonl.gz",
+      "ente": "AZIENDA OSPEDALIERA SANT ANDREA",
+      "oggetto": "G14554/21 NITROGLICERINA NIGLINA 10 MG/24H 15 CEROTTI",
+      "numero": "8430677"
+    },
+    {
+      "id": "ocds-hu01ve-8430685",
+      "titolo": "ADESIONE ALLA PROCEDURA REGIONALE N^G14554 DEL 25/11/2021 AVENTE AD OGGETTO: APPALTO SPECIFICO PER L'ACQUISIZIONE DI FARMACI OCCORRENTI ALLE AZIENDE SANITARIE DELLA REGIONE LAZIO - FARMACI 2021_DECIMA TRANCHE, NELL'AMBITO DEL BANDO ISTITUTIVO AVENTE AD OGGETTO IL SISTEMA DINAMICO",
+      "data": "2022-02-18",
+      "url": "https://data.open-contracting.org/en/publication/117/download?name=2025.jsonl.gz",
+      "ente": "AZIENDA OSPEDALIERA SANT ANDREA",
+      "oggetto": "G14554/21 NITROGLICERINA NIGLINA 15 MG/24H 15 CEROTTI",
+      "numero": "8430685"
+    },
+    {
+      "id": "ocds-hu01ve-8430694",
+      "titolo": "ADESIONE ALLA PROCEDURA REGIONALE N^G14554 DEL 25/11/2021 AVENTE AD OGGETTO: APPALTO SPECIFICO PER L'ACQUISIZIONE DI FARMACI OCCORRENTI ALLE AZIENDE SANITARIE DELLA REGIONE LAZIO - FARMACI 2021_DECIMA TRANCHE, NELL'AMBITO DEL BANDO ISTITUTIVO AVENTE AD OGGETTO IL SISTEMA DINAMICO",
+      "data": "2022-02-18",
+      "url": "https://data.open-contracting.org/en/publication/117/download?name=2025.jsonl.gz",
+      "ente": "AZIENDA OSPEDALIERA SANT ANDREA",
+      "oggetto": "G14554/21 NITROGLICERINA NIGLINA 5 MG/24H 15 CEROTTI",
+      "numero": "8430694"
+    },
+    {
+      "id": "ocds-hu01ve-8430705",
+      "titolo": "ADESIONE ALLA PROCEDURA REGIONALE N^G14554 DEL 25/11/2021 AVENTE AD OGGETTO: APPALTO SPECIFICO PER L'ACQUISIZIONE DI FARMACI OCCORRENTI ALLE AZIENDE SANITARIE DELLA REGIONE LAZIO - FARMACI 2021_DECIMA TRANCHE, NELL'AMBITO DEL BANDO ISTITUTIVO AVENTE AD OGGETTO IL SISTEMA DINAMICO",
+      "data": "2022-02-18",
+      "url": "https://data.open-contracting.org/en/publication/117/download?name=2025.jsonl.gz",
+      "ente": "AZIENDA OSPEDALIERA SANT ANDREA",
+      "oggetto": "G14554/21 OXICODONE/PARACETAMOLO DEPALGOS 10MG+325MG CPR RIVESTITE CON FILM 28 CPR",
+      "numero": "8430705"
+    },
+    {
+      "id": "ocds-hu01ve-8430412",
+      "titolo": "ADESIONE ALLA PROCEDURA REGIONALE N^G14554 DEL 25/11/2021 AVENTE AD OGGETTO: APPALTO SPECIFICO PER L'ACQUISIZIONE DI FARMACI OCCORRENTI ALLE AZIENDE SANITARIE DELLA REGIONE LAZIO - FARMACI 2021_DECIMA TRANCHE, NELL'AMBITO DEL BANDO ISTITUTIVO AVENTE AD OGGETTO IL SISTEMA DINAMICO",
+      "data": "2022-02-18",
+      "url": "https://data.open-contracting.org/en/publication/117/download?name=2025.jsonl.gz",
+      "ente": "AZIENDA OSPEDALIERA SANT ANDREA",
+      "oggetto": "G14554/21 GEMCITABINA GEMSOL*INF 1FL 1G 25ML 40MG/ML",
+      "numero": "8430412"
+    },
+    {
+      "id": "ocds-hu01ve-8430420",
+      "titolo": "ADESIONE ALLA PROCEDURA REGIONALE N^G14554 DEL 25/11/2021 AVENTE AD OGGETTO: APPALTO SPECIFICO PER L'ACQUISIZIONE DI FARMACI OCCORRENTI ALLE AZIENDE SANITARIE DELLA REGIONE LAZIO - FARMACI 2021_DECIMA TRANCHE, NELL'AMBITO DEL BANDO ISTITUTIVO AVENTE AD OGGETTO IL SISTEMA DINAMICO",
+      "data": "2022-02-18",
+      "url": "https://data.open-contracting.org/en/publication/117/download?name=2025.jsonl.gz",
+      "ente": "AZIENDA OSPEDALIERA SANT ANDREA",
+      "oggetto": "G14554/21 INSULINA LISPRO DA DNA RICOMBINANTE HUMALOG KWIKPEN*100U/ML",
+      "numero": "8430420"
+    },
+    {
+      "id": "ocds-hu01ve-8430427",
+      "titolo": "ADESIONE ALLA PROCEDURA REGIONALE N^G14554 DEL 25/11/2021 AVENTE AD OGGETTO: APPALTO SPECIFICO PER L'ACQUISIZIONE DI FARMACI OCCORRENTI ALLE AZIENDE SANITARIE DELLA REGIONE LAZIO - FARMACI 2021_DECIMA TRANCHE, NELL'AMBITO DEL BANDO ISTITUTIVO AVENTE AD OGGETTO IL SISTEMA DINAMICO",
+      "data": "2022-02-18",
+      "url": "https://data.open-contracting.org/en/publication/117/download?name=2025.jsonl.gz",
+      "ente": "AZIENDA OSPEDALIERA SANT ANDREA",
+      "oggetto": "G14554/21 INSULINA LISPRO DA DNA RICOMBINANTE HUMALOG*1 FL 10ML 100U/ML",
+      "numero": "8430427"
+    },
+    {
+      "id": "ocds-hu01ve-8430434",
+      "titolo": "ADESIONE ALLA PROCEDURA REGIONALE N^G14554 DEL 25/11/2021 AVENTE AD OGGETTO: APPALTO SPECIFICO PER L'ACQUISIZIONE DI FARMACI OCCORRENTI ALLE AZIENDE SANITARIE DELLA REGIONE LAZIO - FARMACI 2021_DECIMA TRANCHE, NELL'AMBITO DEL BANDO ISTITUTIVO AVENTE AD OGGETTO IL SISTEMA DINAMICO",
+      "data": "2022-02-18",
+      "url": "https://data.open-contracting.org/en/publication/117/download?name=2025.jsonl.gz",
+      "ente": "AZIENDA OSPEDALIERA SANT ANDREA",
+      "oggetto": "G14554/21 IOPAMIDOLO IOPAMIRO 370 1 FLAC 100ML",
+      "numero": "8430434"
+    },
+    {
+      "id": "ocds-hu01ve-8430308",
+      "titolo": "ADESIONE ALLA PROCEDURA REGIONALE N^G14554 DEL 25/11/2021 AVENTE AD OGGETTO: APPALTO SPECIFICO PER L'ACQUISIZIONE DI FARMACI OCCORRENTI ALLE AZIENDE SANITARIE DELLA REGIONE LAZIO - FARMACI 2021_DECIMA TRANCHE, NELL'AMBITO DEL BANDO ISTITUTIVO AVENTE AD OGGETTO IL SISTEMA DINAMICO",
+      "data": "2022-02-18",
+      "url": "https://data.open-contracting.org/en/publication/117/download?name=2025.jsonl.gz",
+      "ente": "AZIENDA OSPEDALIERA SANT ANDREA",
+      "oggetto": "G14554/21 BOSUTINIB BOSULIF 100MG FCT 28CPR",
+      "numero": "8430308"
+    },
+    {
+      "id": "ocds-hu01ve-8430320",
+      "titolo": "ADESIONE ALLA PROCEDURA REGIONALE N^G14554 DEL 25/11/2021 AVENTE AD OGGETTO: APPALTO SPECIFICO PER L'ACQUISIZIONE DI FARMACI OCCORRENTI ALLE AZIENDE SANITARIE DELLA REGIONE LAZIO - FARMACI 2021_DECIMA TRANCHE, NELL'AMBITO DEL BANDO ISTITUTIVO AVENTE AD OGGETTO IL SISTEMA DINAMICO",
+      "data": "2022-02-18",
+      "url": "https://data.open-contracting.org/en/publication/117/download?name=2025.jsonl.gz",
+      "ente": "AZIENDA OSPEDALIERA SANT ANDREA",
+      "oggetto": "G14554/21 CRIZOTINIB XALKORI 250MG 60CPS",
+      "numero": "8430320"
+    },
+    {
+      "id": "ocds-hu01ve-8430326",
+      "titolo": "ADESIONE ALLA PROCEDURA REGIONALE N^G14554 DEL 25/11/2021 AVENTE AD OGGETTO: APPALTO SPECIFICO PER L'ACQUISIZIONE DI FARMACI OCCORRENTI ALLE AZIENDE SANITARIE DELLA REGIONE LAZIO - FARMACI 2021_DECIMA TRANCHE, NELL'AMBITO DEL BANDO ISTITUTIVO AVENTE AD OGGETTO IL SISTEMA DINAMICO",
+      "data": "2022-02-18",
+      "url": "https://data.open-contracting.org/en/publication/117/download?name=2025.jsonl.gz",
+      "ente": "AZIENDA OSPEDALIERA SANT ANDREA",
+      "oggetto": "G14554/21 ALECTINIB ALECENSA 150MG",
+      "numero": "8430326"
+    },
+    {
+      "id": "ocds-hu01ve-8430334",
+      "titolo": "ADESIONE ALLA PROCEDURA REGIONALE N^G14554 DEL 25/11/2021 AVENTE AD OGGETTO: APPALTO SPECIFICO PER L'ACQUISIZIONE DI FARMACI OCCORRENTI ALLE AZIENDE SANITARIE DELLA REGIONE LAZIO - FARMACI 2021_DECIMA TRANCHE, NELL'AMBITO DEL BANDO ISTITUTIVO AVENTE AD OGGETTO IL SISTEMA DINAMICO",
+      "data": "2022-02-18",
+      "url": "https://data.open-contracting.org/en/publication/117/download?name=2025.jsonl.gz",
+      "ente": "AZIENDA OSPEDALIERA SANT ANDREA",
+      "oggetto": "G14554/21 MIDOSTAURINA RYDAPT 25MG",
+      "numero": "8430334"
+    },
+    {
+      "id": "ocds-hu01ve-8430345",
+      "titolo": "ADESIONE ALLA PROCEDURA REGIONALE N^G14554 DEL 25/11/2021 AVENTE AD OGGETTO: APPALTO SPECIFICO PER L'ACQUISIZIONE DI FARMACI OCCORRENTI ALLE AZIENDE SANITARIE DELLA REGIONE LAZIO - FARMACI 2021_DECIMA TRANCHE, NELL'AMBITO DEL BANDO ISTITUTIVO AVENTE AD OGGETTO IL SISTEMA DINAMICO",
+      "data": "2022-02-18",
+      "url": "https://data.open-contracting.org/en/publication/117/download?name=2025.jsonl.gz",
+      "ente": "AZIENDA OSPEDALIERA SANT ANDREA",
+      "oggetto": "G14554/21 AMIODARONE CLORIDRATO AMIODARONE HIKMA",
+      "numero": "8430345"
+    },
+    {
+      "id": "ocds-hu01ve-8430347",
+      "titolo": "ADESIONE ALLA PROCEDURA REGIONALE N^G14554 DEL 25/11/2021 AVENTE AD OGGETTO: APPALTO SPECIFICO PER L'ACQUISIZIONE DI FARMACI OCCORRENTI ALLE AZIENDE SANITARIE DELLA REGIONE LAZIO - FARMACI 2021_DECIMA TRANCHE, NELL'AMBITO DEL BANDO ISTITUTIVO AVENTE AD OGGETTO IL SISTEMA DINAMICO",
+      "data": "2022-02-18",
+      "url": "https://data.open-contracting.org/en/publication/117/download?name=2025.jsonl.gz",
+      "ente": "AZIENDA OSPEDALIERA SANT ANDREA",
+      "oggetto": "G14554/21 AMPICILLINA/SULBACTAM AMPICILLINA E SULBACTAM IBI 10 FLACONCINI 2 G + 1 G, POLVERE PER SOLUZIONE INIETTABILE IM/EV",
+      "numero": "8430347"
+    },
+    {
+      "id": "ocds-hu01ve-8430355",
+      "titolo": "ADESIONE ALLA PROCEDURA REGIONALE N^G14554 DEL 25/11/2021 AVENTE AD OGGETTO: APPALTO SPECIFICO PER L'ACQUISIZIONE DI FARMACI OCCORRENTI ALLE AZIENDE SANITARIE DELLA REGIONE LAZIO - FARMACI 2021_DECIMA TRANCHE, NELL'AMBITO DEL BANDO ISTITUTIVO AVENTE AD OGGETTO IL SISTEMA DINAMICO",
+      "data": "2022-02-18",
+      "url": "https://data.open-contracting.org/en/publication/117/download?name=2025.jsonl.gz",
+      "ente": "AZIENDA OSPEDALIERA SANT ANDREA",
+      "oggetto": "G14554/21 AMPICILLINA/SULBACTAM AMPICILLINA E SULBACTAM IBI 1 FLACONCINO 500 MG + 250 MG/1,6 ML, POLVERE + FIALA SOLV. PER SOLUZIONE INIETTABILE IM/EV",
+      "numero": "8430355"
+    },
+    {
+      "id": "ocds-hu01ve-8430362",
+      "titolo": "ADESIONE ALLA PROCEDURA REGIONALE N^G14554 DEL 25/11/2021 AVENTE AD OGGETTO: APPALTO SPECIFICO PER L'ACQUISIZIONE DI FARMACI OCCORRENTI ALLE AZIENDE SANITARIE DELLA REGIONE LAZIO - FARMACI 2021_DECIMA TRANCHE, NELL'AMBITO DEL BANDO ISTITUTIVO AVENTE AD OGGETTO IL SISTEMA DINAMICO",
+      "data": "2022-02-18",
+      "url": "https://data.open-contracting.org/en/publication/117/download?name=2025.jsonl.gz",
+      "ente": "AZIENDA OSPEDALIERA SANT ANDREA",
+      "oggetto": "G14554/21 FENILEFRINA CLORIDRATO FENILEFRINA AGUETTANT 50MCG/ML 10 SIRINGHE DA 10ML",
+      "numero": "8430362"
+    },
+    {
+      "id": "ocds-hu01ve-8430374",
+      "titolo": "ADESIONE ALLA PROCEDURA REGIONALE N^G14554 DEL 25/11/2021 AVENTE AD OGGETTO: APPALTO SPECIFICO PER L'ACQUISIZIONE DI FARMACI OCCORRENTI ALLE AZIENDE SANITARIE DELLA REGIONE LAZIO - FARMACI 2021_DECIMA TRANCHE, NELL'AMBITO DEL BANDO ISTITUTIVO AVENTE AD OGGETTO IL SISTEMA DINAMICO",
+      "data": "2022-02-18",
+      "url": "https://data.open-contracting.org/en/publication/117/download?name=2025.jsonl.gz",
+      "ente": "AZIENDA OSPEDALIERA SANT ANDREA",
+      "oggetto": "G14554/21 EFEDRINA SOLFATO EFEDRINA AGUETTANT 3MG/ML 10 SIRINGHE DA 10ML",
+      "numero": "8430374"
+    }
+  ]
+}

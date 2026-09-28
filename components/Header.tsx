@@ -15,6 +15,7 @@ const NAV = [
   { href: '/eurlex', label: 'Diritto UE' },
   { href: '/quirinale', label: 'Quirinale' },
   { href: '/consulta', label: 'Consulta' },
+  { href: '/controllo', label: 'Controllo' },
   { href: '/statistiche', label: 'Statistiche' },
   { href: '/elezioni', label: 'Elezioni' },
   { href: '/semplifica', label: 'Semplifica' },

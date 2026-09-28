@@ -506,3 +506,238 @@ describe("integrazione tollerante finestre 2010/1970 (zero rete, disco read-only
     expect(duplicati).toBe(0);
   });
 });
+
+const VOCE_AGGIORNATI_2020 = {
+  numeroProvvedimento: "27",
+  denominazioneAtto: "DECRETO-LEGGE",
+  annoProvvedimento: "2020",
+  meseProvvedimento: "3",
+  giornoProvvedimento: "17",
+  codiceRedazionale: "020G0033",
+  dataGU: "2020-03-17",
+  numeroGU: "70",
+};
+
+const VOCE_AGGIORNATI_1960 = {
+  numeroProvvedimento: "1084",
+  denominazioneAtto: "LEGGE",
+  annoProvvedimento: "1960",
+  meseProvvedimento: "10",
+  giornoProvvedimento: "21",
+  codiceRedazionale: "060U1084",
+  dataGU: "1960-11-02",
+  numeroGU: "270",
+};
+
+describe("ingest finestre Normattiva 2020/1960 (fixture inline, zero rete)", () => {
+  it("urnDaVoceFinestra costruisce URN reali 2020 e 1960", () => {
+    expect(urnDaVoceFinestra(VOCE_AGGIORNATI_2020)).toBe(
+      "urn:nir:stato:decreto.legge:2020-03-17;27",
+    );
+    expect(urnDaVoceFinestra(VOCE_AGGIORNATI_1960)).toBe(
+      "urn:nir:stato:legge:1960-10-21;1084",
+    );
+  });
+
+  it("vociDaAggiornatiFinestra: dedup URN tra 2020/1960", () => {
+    const voci = vociDaAggiornatiFinestra({
+      data: { listaAtti: [VOCE_AGGIORNATI_2020, VOCE_AGGIORNATI_2020, VOCE_AGGIORNATI_1960] },
+    });
+    expect(voci).toHaveLength(2);
+  });
+
+  it("stati onesti: fine-vigenza passata=abrogato, 99999999=in_vigore, Art.1 formale", () => {
+    expect(statoDaFineVigenzaFinestre("99999999", "20260928")).toBe("in_vigore");
+    expect(statoDaFineVigenzaFinestre("20201231", "20260928")).toBe("abrogato");
+    expect(statoDaFineVigenzaFinestre("19651231", "20260928")).toBe("abrogato");
+    expect(statoDaIntestazioneArt1Finestre("ART. 1 DECRETO DECADUTO - testo")).toBe("decaduto");
+    expect(statoDaIntestazioneArt1Finestre("corpo che cita abrogazione")).toBeNull();
+  });
+
+  it("dettaglioToRecordFinestra 2020: DL Cura Italia con stato da fine-vigenza", () => {
+    const voce: VoceFinestra = {
+      urn: "urn:nir:stato:decreto.legge:2020-03-17;18",
+      codice: "020G0033",
+      dataGU: "2020-03-17",
+      numeroGU: "70",
+      eliReale: "",
+    };
+    const record = dettaglioToRecordFinestra(
+      voce,
+      {
+        data: {
+          atto: {
+            titolo: "DECRETO-LEGGE 17 marzo 2020, n. 18",
+            sottoTitolo: "Misure di potenziamento del Servizio sanitario nazionale.",
+            articoloHtml: "<div><p>Testo di prova.</p></div>",
+            tipoProvvedimentoDescrizione: "DECRETO-LEGGE",
+            annoProvvedimento: 2020,
+            meseProvvedimento: 3,
+            giornoProvvedimento: 17,
+            numeroProvvedimento: 18,
+            articoloDataFineVigenza: "99999999",
+          },
+        },
+      },
+      2000,
+    );
+    expect(record?.stato).toBe("in_vigore");
+    expect(record?.dataEmanazione).toBe("2020-03-17");
+    expect(record?.nir).toBe("urn:nir:stato:decreto.legge:2020-03-17;18");
+  });
+
+  it("dettaglioToRecordFinestra 1960: stato abrogato da fine-vigenza passata", () => {
+    const voce: VoceFinestra = {
+      urn: "urn:nir:stato:legge:1960-10-21;1084",
+      codice: "060U1084",
+      dataGU: "1960-11-02",
+      numeroGU: "270",
+      eliReale: "",
+    };
+    const record = dettaglioToRecordFinestra(
+      voce,
+      {
+        data: {
+          atto: {
+            titolo: "LEGGE 21 ottobre 1960, n. 1084",
+            sottoTitolo: "Disposizioni di prova.",
+            articoloHtml: "<div><p>Testo di prova.</p></div>",
+            tipoProvvedimentoDescrizione: "LEGGE",
+            annoProvvedimento: 1960,
+            meseProvvedimento: 10,
+            giornoProvvedimento: 21,
+            numeroProvvedimento: 1084,
+            articoloDataFineVigenza: "19651231",
+          },
+        },
+      },
+      2000,
+    );
+    expect(record?.stato).toBe("abrogato");
+    expect(record?.dataEmanazione).toBe("1960-10-21");
+  });
+
+  it("unione multi-file (7+ batch): dedup ELI su tutti i batch inclusi 2020/1960", () => {
+    const mk = (eli: string, titolo: string, dataEmanazione: string) => ({
+      chiave: eli,
+      titolo,
+      tipo: "legge",
+      numero: "1",
+      dataEmanazione,
+      nir: `urn:nir:fake:${eli}`,
+      eli,
+      stato: "in_vigore",
+      sintesi: titolo,
+      fonti: {},
+    });
+    const batch = [
+      mk("/eli/id/2020/03/17/X/sg", "Atto X 2020", "2020-03-17"),
+      mk("/eli/id/2020/03/17/X/sg", "Atto X duplicato 2020", "2020-03-17"),
+      mk("/eli/id/1960/10/21/Y/sg", "Atto Y 1960", "1960-10-21"),
+      mk("/eli/id/2010/06/25/A/sg", "Atto A 2010", "2010-06-25"),
+      mk("/eli/id/1970/05/16/B/sg", "Atto B 1970", "1970-05-16"),
+      mk("/eli/id/1990/01/01/C/sg", "Atto C 1990", "1990-01-01"),
+      mk("/eli/id/2000/06/09/D/sg", "Atto D 2000", "2000-06-09"),
+      mk("/eli/id/1980/01/01/E/sg", "Atto E 1980", "1980-01-01"),
+    ];
+    const normalizzati = batch
+      .map((a) => normalizzaAttoReale(a))
+      .filter((r): r is NonNullable<typeof r> => r !== null);
+    const uniti = unisciCorpus([], normalizzati, []);
+    expect(new Set(uniti.map((r) => r.eli.toLowerCase())).size).toBe(7);
+  });
+
+  it("dedup cross-file: ELI 2020/1960 contro batch esistenti", () => {
+    const mk = (eli: string, titolo: string) => ({
+      chiave: eli,
+      titolo,
+      tipo: "legge",
+      numero: "1",
+      dataEmanazione: "2020-01-01",
+      nir: `urn:nir:fake:${eli}`,
+      eli,
+      stato: "in_vigore",
+      sintesi: titolo,
+      fonti: {},
+    });
+    const esistenti = [mk("/eli/id/2020/03/17/X/sg", "Atto X esistente")];
+    const nuovi = [
+      mk("/eli/id/2020/03/17/X/sg", "Atto X duplicato nuova finestra"),
+      mk("/eli/id/1960/10/21/Y/sg", "Atto Y nuovo"),
+    ];
+    const normalizzati = [...esistenti, ...nuovi]
+      .map((a) => normalizzaAttoReale(a))
+      .filter((r): r is NonNullable<typeof r> => r !== null);
+    const uniti = unisciCorpus([], normalizzati, []);
+    expect(new Set(uniti.map((r) => r.eli.toLowerCase())).size).toBe(2);
+  });
+});
+
+describe("integrazione tollerante finestre 2020/1960 (zero rete, disco read-only)", () => {
+  async function leggiAtti(percorso: string): Promise<unknown[]> {
+    const raw = await readFile(path.resolve(percorso), "utf8");
+    if (Buffer.byteLength(raw, "utf8") > 1024 * 1024) throw new Error("file oltre 1MB");
+    return estraiListaAttiReali(JSON.parse(raw) as unknown);
+  }
+
+  it("i JSON 2020/1960 (se presenti) sono envelope validi, <=80 atti, stati onesti", async () => {
+    for (const percorso of [
+      "data/reali/normattiva-storico-2020.json",
+      "data/reali/normattiva-storico-1960.json",
+    ]) {
+      let lista: unknown[];
+      try {
+        lista = await leggiAtti(percorso);
+      } catch {
+        continue;
+      }
+      expect(lista.length).toBeGreaterThan(0);
+      expect(lista.length).toBeLessThanOrEqual(80);
+      let validi = 0;
+      for (const item of lista.slice(0, 500)) {
+        const record = normalizzaAttoReale(item);
+        if (!record) continue;
+        validi += 1;
+        expect(record.titolo.length).toBeGreaterThan(0);
+        expect(record.eli.length).toBeGreaterThan(0);
+        expect(["in_vigore", "abrogato", "decaduto"]).toContain(record.stato);
+      }
+      expect(validi).toBeGreaterThan(0);
+    }
+  });
+
+  it("unione reali 9 file: nessun ELI duplicato (se i file ci sono)", async () => {
+    const percorsi = [
+      "data/reali/normattiva-recenti.json",
+      "data/reali/normattiva-storico-1980.json",
+      "data/reali/normattiva-storico-collezioni.json",
+      "data/reali/normattiva-storico-1990.json",
+      "data/reali/normattiva-storico-2000.json",
+      "data/reali/normattiva-storico-2010.json",
+      "data/reali/normattiva-storico-1970.json",
+      "data/reali/normattiva-storico-2020.json",
+      "data/reali/normattiva-storico-1960.json",
+    ];
+    const visti = new Set<string>();
+    let duplicati = 0;
+    let totale = 0;
+    for (const percorso of percorsi) {
+      let lista: unknown[];
+      try {
+        lista = await leggiAtti(percorso);
+      } catch {
+        continue;
+      }
+      for (const item of lista) {
+        const record = normalizzaAttoReale(item);
+        if (!record) continue;
+        totale += 1;
+        const chiave = record.eli.trim().toLowerCase();
+        if (visti.has(chiave)) duplicati += 1;
+        visti.add(chiave);
+      }
+    }
+    if (totale === 0) return;
+    expect(duplicati).toBe(0);
+  });
+});

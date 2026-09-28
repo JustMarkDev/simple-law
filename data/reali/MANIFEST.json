@@ -171,8 +171,26 @@
    "conteggio": 5,
    "recuperatoIl": "2026-09-28",
    "legislatura": null
+  },
+  {
+   "nome": "ANAC/BDNCP via OCP Data Registry (contratti 2025)",
+   "url": "https://data.open-contracting.org/en/publication/117",
+   "licenza": "CC BY 4.0",
+   "file": "oversight-anac-2025.json",
+   "conteggio": 60,
+   "recuperatoIl": "2026-09-28T20:35:11.979Z",
+   "legislatura": null
+  },
+  {
+   "nome": "giustizia-amministrativa.it Focus Giurisprudenza (CdS/TAR/CGA)",
+   "url": "https://www.giustizia-amministrativa.it/web/guest/ricerca",
+   "licenza": "solo metadati + link ufficiali, nessun mirror (licenza non dichiarata nella pagina)",
+   "file": "oversight-ga-2026.json",
+   "conteggio": 14,
+   "recuperatoIl": "2026-09-28T20:35:15.499Z",
+   "legislatura": null
   }
  ],
- "generatoIl": "2026-09-28T20:17:18.486Z",
+ "generatoIl": "2026-09-28T20:35:15.499Z",
  "nota": "Dati ufficiali open data (11 file). I file >1MB non si committano: rigenerare via scripts/ingest-reale-*.ts. I gruppi Camera sono derivati dai deputati; le denominazioni Senato includono varianti storiche della leg. 19; i DDL/atti sono disegni e atti parlamentari, MAI leggi in vigore."
 }

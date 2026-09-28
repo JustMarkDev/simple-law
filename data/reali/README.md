@@ -163,6 +163,21 @@ npx tsx scripts/ingest-reale-quirinale.ts
 Ricerca verificata su Eligendo/Archivio Storico Elezioni/ISTAT con URL
 provati, formati, volumi e licenze. L'ingest elettorale e' il prossimo passo.
 
+## Controllo: appalti e giustizia amministrativa — `oversight-anac-2025.json` (60) + `oversight-ga-2026.json` (14)
+
+- **ANAC/BDNCP via OCP Data Registry** (CC BY 4.0): 60 contratti 2025 con
+  OCID, CIG, stazione appaltante, oggetto, data. Sezione UI: `/controllo`
+  (route `/api/controllo`).
+- **giustizia-amministrativa.it, Focus di Giurisprudenza** (solo metadati +
+  link ufficiali): 14 provvedimenti 2026 di Consiglio di Stato (7), TAR (6)
+  e CGA Sicilia (1). Giudice derivato dall'ente, sezione dopo la virgola;
+  numero/anno solo se espliciti, mai inventati.
+- Sono documenti di controllo, **mai leggi**: badge dedicato in UI e API.
+
+```bash
+npx tsx scripts/ingest-reale-oversight.ts
+```
+
 ## Elezioni — `elezioni-*.json` + `referendum-2025.json`
 
 Vedi `docs/elezioni-piano.md` per sonde e formati. Europee 2024, politiche
