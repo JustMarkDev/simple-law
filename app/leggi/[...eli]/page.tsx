@@ -59,6 +59,42 @@ const GLOSSARIO: { termine: string; definizione: string }[] = [
   { termine: 'Fiducia', definizione: 'Voto che lega l’approvazione della norma alla permanenza del Governo.' },
 ]
 
+const DOMINI_AMMESSI_JSONLD: readonly string[] = [
+  'normattiva.it',
+  'gazzettaufficiale.it',
+  'governo.it',
+  'camera.it',
+  'senato.it',
+]
+
+/** Stesse regole di `FontiList`: solo https verso domini ufficiali. Mai throw. */
+function stessiAmmessi(fonti: Record<string, unknown>): string[] {
+  try {
+    const out: string[] = []
+    for (const valore of Object.values(fonti ?? {})) {
+      if (typeof valore !== 'string' || !valore || valore.length > 2000) continue
+      const testo = valore.trim()
+      const minuscolo = testo.toLowerCase()
+      if (minuscolo.startsWith('javascript:') || minuscolo.startsWith('data:') || minuscolo.startsWith('vbscript:')) {
+        continue
+      }
+      try {
+        const parsed = new URL(testo)
+        if (parsed.protocol !== 'https:') continue
+        const ok = DOMINI_AMMESSI_JSONLD.some(
+          (d) => parsed.hostname === d || parsed.hostname.endsWith(`.${d}`),
+        )
+        if (ok) out.push(testo)
+      } catch {
+        continue
+      }
+    }
+    return out.slice(0, 5)
+  } catch {
+    return []
+  }
+}
+
 export async function generateStaticParams() {
   const leggi = await loadLaws()
   return leggi.slice(0, MAX_STATIC_PARAMS).map((law) => ({ eli: eliPath(law) }))
@@ -159,11 +195,12 @@ export default async function LeggePage({ params }: LeggeProps) {
     '@context': 'https://schema.org',
     '@type': 'Legislation',
     name: law.titolo,
-    legislationIdentifier: law.eli,
+    legislationIdentifier: law.nir || law.eli,
     datePublished: law.dataEmanazione,
-    inForceStatus: law.stato,
+    inForceStatus: meta.label,
     abstract: law.sintesi,
     legislationType: formatTipo(law.tipo),
+    sameAs: stessiAmmessi(law.fonti as unknown as Record<string, unknown>),
   }
 
   return (
@@ -369,7 +406,39 @@ export default async function LeggePage({ params }: LeggeProps) {
           </Riquadro>
         </div>
 
-        <div className="mt-8 grid gap-4 lg:grid-cols-2">
+        <div className="mt-6 grid gap-3 lg:grid-cols-2">
+          <section aria-labelledby="stato-attuativo-titolo" className="scroll-mt-24 border border-regola bg-carta p-5 dark:border-notte-deep dark:bg-notte-soft sm:p-6">
+            <h2 id="stato-attuativo-titolo" className="font-serif text-lg font-bold text-inchiostro dark:text-nebbia">
+              Stato attuativo
+            </h2>
+            <p className="mt-1 text-sm leading-relaxed text-inchiostro-soft dark:text-nebbia-soft">
+              {attuativiRiepilogo(law.attuativi)}
+            </p>
+            <dl className="mt-4 grid grid-cols-3 gap-px border border-regola bg-regola dark:border-notte-deep dark:bg-notte-deep">
+              <div className="bg-carta p-3 dark:bg-notte">
+                <dt className="text-xs text-inchiostro-soft dark:text-nebbia-soft">Adottati</dt>
+                <dd className="mt-1 font-serif text-lg font-bold tabular-nums text-inchiostro dark:text-nebbia">
+                  {law.attuativi.adottati}
+                </dd>
+              </div>
+              <div className="bg-carta p-3 dark:bg-notte">
+                <dt className="text-xs text-inchiostro-soft dark:text-nebbia-soft">Da adottare</dt>
+                <dd className="mt-1 font-serif text-lg font-bold tabular-nums text-inchiostro dark:text-nebbia">
+                  {law.attuativi.daAdottare}
+                </dd>
+              </div>
+              <div className="bg-carta p-3 dark:bg-notte">
+                <dt className="text-xs text-inchiostro-soft dark:text-nebbia-soft">Scaduti</dt>
+                <dd className="mt-1 font-serif text-lg font-bold tabular-nums text-inchiostro dark:text-nebbia">
+                  {law.attuativi.scaduti}
+                </dd>
+              </div>
+            </dl>
+            <p className="mt-3 text-xs leading-relaxed text-inchiostro-soft dark:text-nebbia-soft">
+              {meta.label}: {semplificata.statoLavora.motivo}
+            </p>
+          </section>
+
           <section aria-labelledby="fonti-ufficiali" className="scroll-mt-24 border border-regola bg-carta p-5 dark:border-notte-deep dark:bg-notte-soft sm:p-6">
             <h2 id="fonti-ufficiali" className="font-serif text-lg font-bold text-inchiostro dark:text-nebbia">
               Fonti ufficiali

@@ -38,14 +38,11 @@ export default function LawCard({ law, featured = false, persona, headingLevel =
         </span>
 
         <div className="flex flex-wrap items-center gap-2">
-          <span className="bg-inchiostro px-3 py-1.5 text-xs font-semibold uppercase tracking-[0.16em] text-carta dark:bg-nebbia dark:text-notte">
-            In evidenza
-          </span>
           <span className="border border-regola px-3 py-1.5 text-xs font-medium text-inchiostro-soft dark:border-notte-deep dark:text-nebbia-soft">
             {tipoLabel(law)}
           </span>
           {law.dimostrativo && (
-            <span className="border border-amber-400 bg-amber-50 px-3 py-1.5 text-xs font-semibold text-amber-800 dark:border-amber-500/60 dark:bg-amber-950/40 dark:text-amber-300">
+            <span className="border border-regola px-3 py-1.5 text-xs font-medium text-inchiostro-soft dark:border-notte-deep dark:text-nebbia-soft">
               Scheda dimostrativa
             </span>
           )}
@@ -114,7 +111,7 @@ export default function LawCard({ law, featured = false, persona, headingLevel =
   return (
     <article
       style={{ contentVisibility: 'auto', containIntrinsicSize: 'auto 320px' }}
-      className="group relative flex h-full scroll-mt-24 flex-col gap-3 border border-regola bg-carta p-5 transition-all hover:-translate-y-0.5 hover:border-inchiostro hover:shadow-md focus-within:border-inchiostro focus-within:shadow-md motion-reduce:transform-none motion-reduce:transition-none dark:border-notte-deep dark:bg-notte-soft dark:hover:border-nebbia dark:focus-within:border-nebbia"
+      className="group relative flex h-full scroll-mt-24 flex-col gap-3 border border-regola bg-carta p-5 transition-colors hover:border-inchiostro focus-within:border-inchiostro motion-reduce:transition-none dark:border-notte-deep dark:bg-notte-soft dark:hover:border-nebbia dark:focus-within:border-nebbia"
     >
       <div className="flex flex-wrap items-center justify-between gap-2">
         <span className="flex flex-wrap items-center gap-2">
@@ -122,7 +119,7 @@ export default function LawCard({ law, featured = false, persona, headingLevel =
             {tipoLabel(law)}
           </span>
           {law.dimostrativo && (
-            <span className="border border-amber-400 bg-amber-50 px-2.5 py-1.5 text-xs font-semibold text-amber-800 dark:border-amber-500/60 dark:bg-amber-950/40 dark:text-amber-300">
+            <span className="border border-regola px-2.5 py-1.5 text-xs font-medium text-inchiostro-soft dark:border-notte-deep dark:text-nebbia-soft">
               Scheda dimostrativa
             </span>
           )}

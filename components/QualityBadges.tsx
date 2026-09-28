@@ -54,7 +54,7 @@ export default function QualityBadges({
       label: 'Leggibilità',
       value: valore,
       detail: `${dettaglioLeggibilita(livello)} (${livello.toLowerCase()})`,
-      tone: 'bg-sky-50 text-sky-900 ring-sky-200 dark:bg-sky-950/40 dark:text-sky-200 dark:ring-sky-900',
+      tone: 'bg-carta text-inchiostro-soft ring-regola dark:bg-notte dark:text-nebbia-soft dark:ring-notte-deep',
     })
   }
 
@@ -64,7 +64,7 @@ export default function QualityBadges({
       label: 'Qualità',
       value: `${qualita}/100`,
       detail: 'Indicatore euristico',
-      tone: 'bg-carta-deep text-inchiostro ring-regola dark:bg-notte-deep dark:text-nebbia dark:ring-notte-deep',
+      tone: 'bg-carta text-inchiostro-soft ring-regola dark:bg-notte dark:text-nebbia-soft dark:ring-notte-deep',
     })
   }
 
@@ -74,7 +74,7 @@ export default function QualityBadges({
       label: 'Fonti ufficiali',
       value: String(fontiCount),
       detail: 'Collegate',
-      tone: 'bg-emerald-50 text-emerald-900 ring-emerald-200 dark:bg-emerald-950/40 dark:text-emerald-200 dark:ring-emerald-900',
+      tone: 'bg-carta text-inchiostro-soft ring-regola dark:bg-notte dark:text-nebbia-soft dark:ring-notte-deep',
     })
   }
 
@@ -84,7 +84,7 @@ export default function QualityBadges({
       label: 'Fondi in attesa',
       value: formatEuro(soldiBloccati),
       detail: 'Richiedono attuativi',
-      tone: 'bg-amber-50 text-amber-900 ring-amber-200 dark:bg-amber-950/40 dark:text-amber-200 dark:ring-amber-900',
+      tone: 'bg-carta text-inchiostro-soft ring-regola dark:bg-notte dark:text-nebbia-soft dark:ring-notte-deep',
     })
   }
 
@@ -94,7 +94,7 @@ export default function QualityBadges({
       label: 'Attuativi mancanti',
       value: String(attuativiCount),
       detail: 'Prima di applicare la norma',
-      tone: 'bg-red-50 text-red-900 ring-red-200 dark:bg-red-950/40 dark:text-red-200 dark:ring-red-900',
+      tone: 'bg-carta text-accento ring-accento dark:bg-notte dark:text-accento-chiara dark:ring-accento-chiara',
     })
   }
 
@@ -104,7 +104,7 @@ export default function QualityBadges({
       label: 'Pareri',
       value: String(pareri.length),
       detail: 'Raccolti',
-      tone: 'bg-carta-deep text-inchiostro-soft ring-regola dark:bg-notte-deep dark:text-nebbia-soft dark:ring-notte-deep',
+      tone: 'bg-carta text-inchiostro-soft ring-regola dark:bg-notte dark:text-nebbia-soft dark:ring-notte-deep',
     })
   }
 
@@ -113,11 +113,10 @@ export default function QualityBadges({
   return (
     <ul className={`flex flex-wrap gap-1.5 ${className}`} aria-label="Indicatori di qualità">
       {items.map((item) => (
-        <li key={item.key} className={`px-2.5 py-1.5 text-xs ring-1 ${item.tone}`}>
+        <li key={item.key} className={`border px-2 py-1 text-[11px] leading-tight ring-1 ${item.tone}`}>
           <span className="font-semibold">{item.label}:</span>{' '}
-          <span className="font-bold">{item.value}</span>
+          <span className="font-bold tabular-nums">{item.value}</span>
           {item.detail && <span className="sr-only"> — {item.detail}</span>}
-          {item.detail && <span className="ml-1 text-[11px] opacity-80">{item.detail}</span>}
         </li>
       ))}
     </ul>

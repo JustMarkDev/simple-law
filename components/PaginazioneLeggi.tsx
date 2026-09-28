@@ -44,10 +44,10 @@ export default function PaginazioneLeggi({ page, per, total, query, basePath = '
   const next = corrente < pagine ? corrente + 1 : null
 
   const btn =
-    'inline-flex min-h-[44px] min-w-[44px] items-center justify-center border border-regola px-4 py-2 text-xs font-semibold uppercase tracking-wide text-inchiostro-soft transition-colors hover:border-inchiostro hover:text-inchiostro dark:border-notte-deep dark:text-nebbia-soft dark:hover:border-nebbia dark:hover:text-nebbia'
+    'inline-flex min-h-[44px] min-w-[44px] items-center justify-center border border-regola px-4 py-2 text-xs font-semibold uppercase tracking-wide text-inchiostro-soft transition-colors hover:border-accento hover:text-accento dark:border-notte-deep dark:text-nebbia-soft dark:hover:border-accento-chiara dark:hover:text-accento-chiara'
   const disabile = 'pointer-events-none opacity-40'
   const attivo =
-    'inline-flex min-h-[44px] min-w-[44px] items-center justify-center border border-inchiostro bg-inchiostro px-3 py-2 text-xs font-bold text-carta dark:border-nebbia dark:bg-nebbia dark:text-notte'
+    'inline-flex min-h-[44px] min-w-[44px] items-center justify-center border border-accento bg-accento px-3 py-2 text-xs font-bold tabular-nums text-carta dark:border-accento-chiara dark:bg-accento-chiara dark:text-notte'
 
   const filtroNascosti = Object.entries(query).filter(([k, v]) => k !== 'page' && v)
 

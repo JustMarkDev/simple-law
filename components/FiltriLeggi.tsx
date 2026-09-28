@@ -13,6 +13,10 @@ interface FiltriLeggiProps {
   per?: number
   /** Vista corrente della griglia risultati. */
   vista?: Vista
+  /** Vigenza reale: '' | in_vigore | sconosciuto | abrogato | decaduto. */
+  vigenza?: string
+  /** Origine scheda: '' | ufficiali | dimostrative. */
+  origine?: string
   query: Record<string, string>
   basePath?: string
 }
@@ -35,6 +39,20 @@ const SORTS = [
 
 const PER_OPZIONI = [12, 24, 48]
 
+const VIGENZE = [
+  { value: '', label: 'Tutte le vigenze' },
+  { value: 'in_vigore', label: 'In vigore' },
+  { value: 'sconosciuto', label: 'Vigenza non verificata' },
+  { value: 'abrogato', label: 'Abrogate' },
+  { value: 'decaduto', label: 'Decadute' },
+]
+
+const ORIGINI = [
+  { value: '', label: 'Tutte le schede' },
+  { value: 'ufficiali', label: 'Solo ufficiali' },
+  { value: 'dimostrative', label: 'Solo dimostrative' },
+]
+
 function anni(): { value: string; label: string }[] {
   const corrente = new Date().getFullYear()
   const lista = [{ value: '', label: 'Tutti gli anni' }]
@@ -44,13 +62,15 @@ function anni(): { value: string; label: string }[] {
   return lista
 }
 
-/** Filtri server-side (tipo/anno/ordinamento/per/vista): preservano q/persona/page. */
+/** Filtri server-side (tipo/anno/vigenza/origine/ordinamento/per/vista): preservano q/persona/page. */
 export default function FiltriLeggi({
   tipo,
   anno,
   sort,
   per = 12,
   vista = 'griglia',
+  vigenza = '',
+  origine = '',
   query,
   basePath = '/leggi',
 }: FiltriLeggiProps) {
@@ -133,6 +153,44 @@ export default function FiltriLeggi({
           {SORTS.map((s) => (
             <option key={s.value} value={s.value}>
               {s.label}
+            </option>
+          ))}
+        </select>
+      </div>
+
+      <div className="flex flex-col gap-1">
+        <label htmlFor="filtro-vigenza" className={labelClass}>
+          Vigenza
+        </label>
+        <select
+          id="filtro-vigenza"
+          value={vigenza}
+          disabled={inAttesa}
+          onChange={(e) => cambia('vigenza', e.target.value)}
+          className={selectClass}
+        >
+          {VIGENZE.map((v) => (
+            <option key={v.value || 'tutte'} value={v.value}>
+              {v.label}
+            </option>
+          ))}
+        </select>
+      </div>
+
+      <div className="flex flex-col gap-1">
+        <label htmlFor="filtro-origine" className={labelClass}>
+          Origine
+        </label>
+        <select
+          id="filtro-origine"
+          value={origine}
+          disabled={inAttesa}
+          onChange={(e) => cambia('origine', e.target.value)}
+          className={selectClass}
+        >
+          {ORIGINI.map((o) => (
+            <option key={o.value || 'tutte'} value={o.value}>
+              {o.label}
             </option>
           ))}
         </select>

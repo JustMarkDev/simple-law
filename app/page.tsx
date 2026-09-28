@@ -41,12 +41,6 @@ const PASSI = [
   },
 ]
 
-const ESEMPI = [
-  { q: 'lavoro', label: 'Lavoro' },
-  { q: 'scuola', label: 'Scuola' },
-  { q: 'ambiente', label: 'Ambiente' },
-]
-
 /** La home non renderizza mai più di 12 schede: 1 in evidenza + 11 recenti. */
 const MAX_CARD_HOME = 12
 /** Estratto bounded per i conteggi home (semaforo + filtro persona): 5000 record max. */
@@ -187,12 +181,6 @@ export default async function HomePage({ searchParams }: HomeProps) {
             </p>
 
             <div className="mt-6 max-w-2xl">
-              <label
-                htmlFor="ricerca-home"
-                className="mb-2 block text-sm font-semibold text-inchiostro dark:text-nebbia"
-              >
-                Cerca una legge
-              </label>
               <SearchBar
                 id="ricerca-home"
                 label="Cerca una legge"
@@ -205,6 +193,15 @@ export default async function HomePage({ searchParams }: HomeProps) {
                 Esempi: lavoro, scuola, ambiente. Minimo 2 caratteri.
               </p>
             </div>
+
+            {totaleReale <= 0 && (
+              <p
+                role="alert"
+                className="mt-4 max-w-2xl border border-regola bg-carta px-4 py-3 text-sm text-inchiostro dark:border-notte-deep dark:bg-notte dark:text-nebbia"
+              >
+                Dati non disponibili al momento. Riprova più tardi o sfoglia l’archivio.
+              </p>
+            )}
 
             <dl className="mt-6 grid max-w-2xl grid-cols-2 gap-px border border-regola bg-regola dark:border-notte-deep dark:bg-notte-deep sm:grid-cols-4">
               <div className="bg-carta p-0 dark:bg-notte">
@@ -255,13 +252,13 @@ export default async function HomePage({ searchParams }: HomeProps) {
             <div className="mt-6 flex flex-wrap gap-3">
               <Link
                 href="/ministri"
-                className="inline-flex min-h-[44px] items-center border border-inchiostro px-4 py-2 text-xs font-semibold uppercase tracking-wide text-inchiostro transition-colors hover:bg-inchiostro hover:text-carta focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-inchiostro dark:border-nebbia dark:text-nebbia dark:hover:bg-nebbia dark:hover:text-notte dark:focus-visible:outline-nebbia"
+                className="inline-flex min-h-[44px] items-center bg-inchiostro px-4 py-2 text-xs font-semibold uppercase tracking-wide text-carta transition-colors hover:bg-inchiostro-soft focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-inchiostro dark:bg-nebbia dark:text-notte dark:hover:bg-nebbia-soft dark:focus-visible:outline-nebbia"
               >
                 Chi decide: i ministri
               </Link>
               <Link
                 href="/statistiche"
-                className="inline-flex min-h-[44px] items-center border border-transparent px-4 py-2 text-xs font-semibold uppercase tracking-wide text-inchiostro-soft underline decoration-regola underline-offset-4 transition-colors hover:text-accento dark:text-nebbia-soft dark:decoration-notte-deep dark:hover:text-accento-chiara"
+                className="inline-flex min-h-[44px] items-center px-4 py-2 text-xs font-semibold uppercase tracking-wide text-inchiostro-soft underline decoration-regola underline-offset-4 transition-colors hover:text-accento dark:text-nebbia-soft dark:decoration-notte-deep dark:hover:text-accento-chiara"
               >
                 I numeri del corpus
               </Link>
@@ -272,6 +269,9 @@ export default async function HomePage({ searchParams }: HomeProps) {
         <div className="mx-auto w-full max-w-editoriale px-4 py-10 sm:px-6 sm:py-12 lg:px-8">
           {mostraFeatured && featured && (
             <section aria-labelledby="norma-in-evidenza" className="scroll-mt-24">
+              <h2 id="norma-in-evidenza" className="sr-only">
+                Norma in evidenza
+              </h2>
               <Comparsa>
                 <LawCard law={featured} featured headingLevel="h2" />
               </Comparsa>
@@ -312,6 +312,13 @@ export default async function HomePage({ searchParams }: HomeProps) {
                   </li>
                 ))}
               </ul>
+            ) : totaleReale <= 0 ? (
+              <p
+                role="alert"
+                className="mt-6 border border-regola bg-carta p-6 text-sm leading-relaxed text-inchiostro dark:border-notte-deep dark:bg-notte-soft dark:text-nebbia"
+              >
+                Dati non disponibili al momento. Riprova più tardi o sfoglia l’archivio.
+              </p>
             ) : (
               <div className="mt-6 border border-dashed border-regola bg-carta p-6 dark:border-notte-deep dark:bg-notte-soft">
                 <h3 className="font-serif text-lg font-bold text-inchiostro dark:text-nebbia">
@@ -322,30 +329,6 @@ export default async function HomePage({ searchParams }: HomeProps) {
                   {persona !== 'tutti' ? ` con il filtro “${persona}”` : ''}. Prova con un&apos;altra parola o
                   rimuovi i filtri.
                 </p>
-                {persona !== 'tutti' && (
-                  <div className="mt-4 flex flex-wrap gap-2" aria-label="Filtri attivi">
-                    <Link
-                      href="/"
-                      className="inline-flex min-h-[44px] items-center gap-1 border border-regola bg-carta-soft px-3 py-2 text-xs font-semibold text-inchiostro transition-colors hover:border-inchiostro dark:border-notte-deep dark:bg-notte dark:text-nebbia dark:hover:border-nebbia"
-                    >
-                      Persona: {persona} <span aria-hidden="true">×</span>
-                      <span className="sr-only"> (rimuovi il filtro persona)</span>
-                    </Link>
-                  </div>
-                )}
-                <p className="mt-4 text-sm font-semibold text-inchiostro dark:text-nebbia">Prova con:</p>
-                <ul className="mt-2 flex flex-wrap gap-2">
-                  {ESEMPI.map((esempio) => (
-                    <li key={esempio.q}>
-                      <Link
-                        href={`/leggi?q=${esempio.q}`}
-                        className="inline-flex min-h-[44px] items-center border border-regola px-3 py-2 text-sm text-inchiostro-soft transition-colors hover:border-inchiostro hover:text-inchiostro dark:border-notte-deep dark:text-nebbia-soft dark:hover:border-nebbia dark:hover:text-nebbia"
-                      >
-                        {esempio.label}
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
                 <p className="mt-5">
                   <Link
                     href="/"

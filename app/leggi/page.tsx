@@ -37,6 +37,9 @@ const ESTRATTO_FILTRI_MAX = 5000
 
 const STATI_SEMAFORO: readonly ColoreSemaforo[] = ['verde', 'giallo', 'rosso']
 
+const VIGENZE_REALI: readonly string[] = ['in_vigore', 'sconosciuto', 'abrogato', 'decaduto']
+const ORIGINI_ONESTE: readonly string[] = ['ufficiali', 'dimostrative']
+
 const ESEMPI_RICERCA = ['carburanti', 'concorrenza', 'sicurezza informatica']
 
 function str(sp: Record<string, string | string[] | undefined>, nome: string): string {
@@ -122,6 +125,10 @@ export default async function LeggiPage({ searchParams }: LeggiProps) {
   const stato: '' | ColoreSemaforo = (STATI_SEMAFORO as readonly string[]).includes(statoParam)
     ? (statoParam as ColoreSemaforo)
     : ''
+  const vigenzaRaw = str(sp, 'vigenza').toLowerCase().slice(0, 60)
+  const vigenza = (VIGENZE_REALI as readonly string[]).includes(vigenzaRaw) ? vigenzaRaw : ''
+  const origineRaw = str(sp, 'origine').toLowerCase().slice(0, 60)
+  const origine = (ORIGINI_ONESTE as readonly string[]).includes(origineRaw) ? origineRaw : ''
   const sortRaw = str(sp, 'sort')
   const sortDefault: SortUI = q ? 'rilevanza' : 'data_desc'
   const sort: SortUI = (SORTS_UI as readonly string[]).includes(sortRaw) ? (sortRaw as SortUI) : sortDefault
@@ -135,38 +142,64 @@ export default async function LeggiPage({ searchParams }: LeggiProps) {
   const page = Math.min(paginaMax, Math.max(1, Math.floor(Number(str(sp, 'page'))) || 1))
 
   // Paginazione sempre server-side con filtro persona diretto in lib/db
-  // (Caso C): la pagina è già corretta, nessun filtro solo-pagina. Solo il
-  // filtro semaforo (derivato) usa l'estratto bounded in-memory (max 5000).
-  const serveEstratto = stato !== ''
-  const [paginata, totaleArchivio, estrattoFiltri] = await Promise.all([
-    listLaws({ q, tipo, anno, persona, sort: sortDb, page, per }),
-    countLaws().catch(() => 0),
-    serveEstratto
-      ? queryLaws({ q, tipo, anno, persona }, ESTRATTO_FILTRI_MAX).catch(() => [] as LawRecordExtra[])
-      : Promise.resolve([] as LawRecordExtra[]),
-  ])
-  // Risultati già filtrati server-side per persona: nessuna rifinitura locale.
+  // (Caso C): la pagina è già corretta, nessun filtro solo-pagina. Il filtro
+  // semaforo (derivato) e il filtro origine (dimostrativo) usano l'estratto
+  // bounded in-memory (max 5000); la vigenza reale passa come `stato` al DB
+  // (filtro onesto, mai inventato). Mai 500: ogni accesso è never-throw.
+  const serveEstratto = stato !== '' || origine !== ''
+  let paginata = { items: [] as LawRecordExtra[], total: 0, page }
+  let totaleArchivio = 0
+  let estrattoFiltri: LawRecordExtra[] = []
+  let erroreCaricamento = false
+  try {
+    const [pag, tot, estr] = await Promise.all([
+      listLaws({ q, tipo, anno, persona, stato: vigenza || undefined, sort: sortDb, page, per }),
+      countLaws().catch(() => 0),
+      serveEstratto
+        ? queryLaws({ q, tipo, anno, persona, stato: vigenza || undefined }, ESTRATTO_FILTRI_MAX).catch(
+            () => [] as LawRecordExtra[],
+          )
+        : Promise.resolve([] as LawRecordExtra[]),
+    ])
+    paginata = pag
+    totaleArchivio = tot
+    estrattoFiltri = estr
+  } catch {
+    erroreCaricamento = true
+  }
+  // Risultati già filtrati server-side per persona e vigenza: nessuna
+  // rifinitura locale salvo semaforo/origine.
   let risultati = paginata.items.map(normalizeLaw)
   let totale = paginata.total
-  const paginaCorrente = stato !== '' ? page : paginata.page
+  const paginaCorrente = serveEstratto ? page : paginata.page
 
-  // Filtro semaforo (link dalla home, es. `/leggi?stato=verde`): opera
-  // sull'estratto bounded con paginazione in-memory usando il modulo
+  // Filtro semaforo (link dalla home, es. `/leggi?stato=verde`) + filtro
+  // origine onesto (`ufficiali`/`dimostrative` su `dimostrativo` reale):
+  // operano sull'estratto bounded con paginazione in-memory usando il modulo
   // condiviso `lib/filtri-leggi`. `qualita_desc` e `rilevanza` ricadono su
   // `data_desc` in questo ramo (stessa regola del fallback DB per la qualità
   // nel blob JSON).
-  if (stato !== '') {
-    const perStato = estrattoFiltri.filter((record) => {
-      try {
-        return coloreSemaforoRecord(record) === stato
-      } catch {
-        return false
-      }
-    })
+  if (serveEstratto) {
+    const perStato =
+      stato !== ''
+        ? estrattoFiltri.filter((record) => {
+            try {
+              return coloreSemaforoRecord(record) === stato
+            } catch {
+              return false
+            }
+          })
+        : estrattoFiltri
+    const perOrigine =
+      origine === 'ufficiali'
+        ? perStato.filter((record) => (record as LawRecordExtra).dimostrativo !== true)
+        : origine === 'dimostrative'
+          ? perStato.filter((record) => (record as LawRecordExtra).dimostrativo === true)
+          : perStato
     const perEntrambi =
       persona === 'tutti'
-        ? perStato
-        : perStato.filter((record) => {
+        ? perOrigine
+        : perOrigine.filter((record) => {
             try {
               return personaRilevanteRecord(record, persona)
             } catch {
@@ -192,6 +225,8 @@ export default async function LeggiPage({ searchParams }: LeggiProps) {
   if (tipo) queryBase.tipo = tipo
   if (anno) queryBase.anno = anno
   if (stato !== '') queryBase.stato = stato
+  if (vigenza !== '') queryBase.vigenza = vigenza
+  if (origine !== '') queryBase.origine = origine
   if (sort !== sortDefault) queryBase.sort = sort
   if (persona !== 'tutti') queryBase.persona = persona
   if (per !== PER_DEFAULT) queryBase.per = String(per)
@@ -217,6 +252,8 @@ export default async function LeggiPage({ searchParams }: LeggiProps) {
   if (anno) filtriAttivi.push({ chiave: 'anno', etichetta: `Anno: ${anno}` })
   if (stato !== '')
     filtriAttivi.push({ chiave: 'stato', etichetta: `Semaforo: ${STATO_META[stato]?.parole ?? stato}` })
+  if (vigenza !== '') filtriAttivi.push({ chiave: 'vigenza', etichetta: `Vigenza: ${vigenza.replace('_', ' ')}` })
+  if (origine !== '') filtriAttivi.push({ chiave: 'origine', etichetta: `Origine: ${origine}` })
   if (persona !== 'tutti') filtriAttivi.push({ chiave: 'persona', etichetta: `Persona: ${persona}` })
   if (sort !== sortDefault)
     filtriAttivi.push({ chiave: 'sort', etichetta: `Ordine: ${sort === 'rilevanza' ? 'rilevanza' : sort}` })
@@ -224,7 +261,7 @@ export default async function LeggiPage({ searchParams }: LeggiProps) {
   return (
     <>
       <Header />
-      <main id="contenuto" className="mx-auto w-full max-w-editoriale px-4 py-10 sm:px-6 sm:py-12 lg:px-8">
+      <main id="contenuto" className="mx-auto w-full max-w-editoriale px-4 py-8 sm:px-6 lg:px-8">
         <nav aria-label="Percorso" className="text-sm text-inchiostro-soft dark:text-nebbia-soft">
           <ol className="flex items-center gap-2">
             <li>
@@ -246,11 +283,11 @@ export default async function LeggiPage({ searchParams }: LeggiProps) {
           <h1 className="mt-2 font-serif text-3xl font-bold text-inchiostro dark:text-nebbia sm:text-4xl">
             Tutte le leggi
           </h1>
-          <p className="mt-3 max-w-2xl text-sm leading-relaxed text-inchiostro-soft dark:text-nebbia-soft">
-            Cerca per parola chiave oppure filtra per la tua situazione. Ogni scheda ha il template a 5 riquadri e il
-            semaforo di attuazione.
+          <p className="mt-2 max-w-2xl text-sm leading-relaxed text-inchiostro-soft dark:text-nebbia-soft">
+            Cerca per parola chiave oppure filtra per la tua situazione. Ogni scheda indica vigenza reale e origine
+            dei dati.
           </p>
-          <p className="mt-2 max-w-2xl text-sm font-semibold text-inchiostro dark:text-nebbia">
+          <p className="mt-2 max-w-2xl text-sm font-semibold tabular-nums text-inchiostro dark:text-nebbia">
             {totaleArchivio} {totaleArchivio === 1 ? 'norma totale in archivio' : 'norme totali in archivio'}.
           </p>
           {composizione && (
@@ -262,24 +299,24 @@ export default async function LeggiPage({ searchParams }: LeggiProps) {
               />
             </div>
           )}
-          <div className="mt-3 flex flex-wrap gap-3 text-sm">
-            <a href={csvHref} className="underline underline-offset-4 hover:text-accento">
+          <div className="mt-3 flex flex-wrap gap-x-4 gap-y-2 text-sm">
+            <a href={csvHref} className="underline underline-offset-4 hover:text-accento dark:hover:text-accento-chiara">
               Scarica CSV
             </a>
-            <a href={jsonHref} className="underline underline-offset-4 hover:text-accento">
+            <a href={jsonHref} className="underline underline-offset-4 hover:text-accento dark:hover:text-accento-chiara">
               Scarica JSON
             </a>
-            <a href="/api/feed" className="underline underline-offset-4 hover:text-accento">
+            <a href="/api/feed" className="underline underline-offset-4 hover:text-accento dark:hover:text-accento-chiara">
               Feed RSS
             </a>
-            <Link href="/salvati" className="underline underline-offset-4 hover:text-accento">
+            <Link href="/salvati" className="underline underline-offset-4 hover:text-accento dark:hover:text-accento-chiara">
               I tuoi salvati ★
             </Link>
           </div>
         </header>
 
-        <div className="sticky top-0 z-20 -mx-4 border-b border-regola bg-carta/95 px-4 py-3 backdrop-blur sm:-mx-6 sm:px-6 lg:-mx-8 lg:px-8 dark:border-notte-deep dark:bg-notte/95">
-          <div className="grid gap-3 lg:grid-cols-[minmax(0,1fr)_auto] lg:items-end">
+        <div className="sticky top-0 z-20 -mx-4 border-b border-regola bg-carta/95 px-4 py-2.5 backdrop-blur sm:-mx-6 sm:px-6 lg:-mx-8 lg:px-8 dark:border-notte-deep dark:bg-notte/95">
+          <div className="grid gap-2.5 lg:grid-cols-[minmax(0,1fr)_auto] lg:items-end">
             <SearchBar
               id="ricerca-legge-archivio"
               defaultValue={q}
@@ -288,23 +325,36 @@ export default async function LeggiPage({ searchParams }: LeggiProps) {
             />
             <PersonaFilter active={persona} basePath="/leggi" query={queryBase} />
           </div>
-          <div className="mt-3">
-            <FiltriLeggi tipo={tipo} anno={anno} sort={sort} per={per} vista={vista} query={queryBase} />
+          <div className="mt-2.5">
+            <FiltriLeggi tipo={tipo} anno={anno} sort={sort} per={per} vista={vista} vigenza={vigenza} origine={origine} query={queryBase} />
           </div>
         </div>
 
-        <section aria-label="Risultati dell’archivio" className="scroll-mt-24">
-          <p className="mt-6 text-sm text-inchiostro-soft dark:text-nebbia-soft" role="status" aria-live="polite">
+        <section aria-labelledby="risultati-archivio-titolo" className="scroll-mt-24">
+          <h2 id="risultati-archivio-titolo" className="sr-only">
+            Risultati dell’archivio
+          </h2>
+          {erroreCaricamento && (
+            <p role="alert" className="mt-4 border border-regola bg-carta-soft px-4 py-3 text-sm text-inchiostro dark:border-notte-deep dark:bg-notte-soft dark:text-nebbia">
+              Archivio momentaneamente non disponibile. Riprova tra poco o semplifica i filtri.
+            </p>
+          )}
+          <p className="mt-4 text-sm tabular-nums text-inchiostro-soft dark:text-nebbia-soft" role="status" aria-live="polite">
             {totale} {totale === 1 ? 'norma trovata' : 'norme trovate'}
             {q ? ` per “${q}”` : ''}
             {tipo ? ` · tipo: ${tipo}` : ''}
             {anno ? ` · anno: ${anno}` : ''}
+            {vigenza ? ` · vigenza: ${vigenza.replace('_', ' ')}` : ''}
+            {origine ? ` · origine: ${origine}` : ''}
             {stato !== '' ? ` · semaforo: ${STATO_META[stato]?.parole ?? stato}` : ''}
             {persona !== 'tutti' ? ` — filtro: ${persona}` : ''}.
           </p>
-          {stato !== '' && (
-            <p className="mt-1 text-sm text-inchiostro-faint dark:text-nebbia-faint">
-              Filtro semaforo “{STATO_META[stato]?.label ?? stato}”{persona !== 'tutti' ? ` + persona ${persona}` : ''}
+          {serveEstratto && (
+            <p className="mt-1 text-xs text-inchiostro-soft dark:text-nebbia-soft">
+              {stato !== '' ? `Semaforo “${STATO_META[stato]?.label ?? stato}”` : 'Origine schede'}
+              {persona !== 'tutti' ? ` + persona ${persona}` : ''}
+              {vigenza ? ` · vigenza reale: ${vigenza.replace('_', ' ')}` : ''}
+              {origine ? ` · origine: ${origine}` : ''}
               {estrattoTroncato ? ` (calcolato sulle prime ${ESTRATTO_FILTRI_MAX} schede)` : ''}.
             </p>
           )}
@@ -313,8 +363,8 @@ export default async function LeggiPage({ searchParams }: LeggiProps) {
             <ul
               className={
                 vista === 'lista'
-                  ? 'mt-4 grid grid-cols-1 gap-4'
-                  : 'mt-4 grid gap-4 sm:grid-cols-2 lg:grid-cols-3'
+                  ? 'mt-3 grid grid-cols-1 gap-3'
+                  : 'mt-3 grid gap-3 sm:grid-cols-2 lg:grid-cols-3'
               }
             >
               {risultati.map((law) => (
@@ -328,7 +378,7 @@ export default async function LeggiPage({ searchParams }: LeggiProps) {
               ))}
             </ul>
           ) : (
-            <div className="mt-4 border border-dashed border-regola bg-carta p-8 text-center dark:border-notte-deep dark:bg-notte-soft">
+            <div role="status" className="mt-3 border border-dashed border-regola bg-carta p-6 text-center sm:p-8 dark:border-notte-deep dark:bg-notte-soft">
               <p className="text-sm font-medium text-inchiostro dark:text-nebbia">
                 Nessuna norma trovata con questi filtri.
               </p>

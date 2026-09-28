@@ -4,6 +4,8 @@
 
 :root {
   color-scheme: light;
+  --accento: #9c1f29;
+  --accento-chiara: #e2878d;
   --chart-1: #1a1714;
   --chart-2: #007a3d;
   --chart-3: #b0222e;
@@ -13,6 +15,8 @@
 
 html.dark {
   color-scheme: dark;
+  --accento: #e2878d;
+  --accento-chiara: #e2878d;
   --chart-1: #f3efe4;
   --chart-2: #3fbf74;
   --chart-3: #e27079;
@@ -41,13 +45,13 @@ html.dark ::selection {
 
 @layer base {
   :focus-visible {
-    outline: 3px solid #9c1f29;
+    outline: 3px solid var(--accento, #9c1f29);
     outline-offset: 2px;
     border-radius: 2px;
   }
 
   html.dark :focus-visible {
-    outline-color: #e2878d;
+    outline-color: var(--accento, #e2878d);
   }
 
   /* Ancore mai nascoste sotto l'header fisso. */
@@ -129,7 +133,7 @@ html.dark ::selection {
 
   .salta-contenuto:focus-visible {
     top: 1rem;
-    outline: 3px solid #9c1f29;
+    outline: 3px solid var(--accento, #9c1f29);
     outline-offset: 2px;
   }
 
