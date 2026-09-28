@@ -225,6 +225,23 @@ Obiettivo precedente (completato): UI/UX, feature, corpus 5005 voci.
 - Next: altre finestre, Corte dei Conti se si apre, riduzione del sintetico
   via crescita reale (mai tagli cosmetici).
 
+## Reali-12 (2026-09-28, commit `4158767`): regionali, finestre 1948/1985, CNEL
+- Workflow: 1 chiamata `workflow` con 10 subagenti (3 sonde + 1 giudice + 4
+  scrittori + 2 revisori). Sonde: regionali DAIT, finanziamenti/CNEL/CSM,
+  finestre dense.
+- Ingerito: regionali Toscana 2025 + Umbria 2024 (liste+affluenza verificate
+  C1-C3), finestre 1948 (28: 15 vigore/13 abrogati) + 1985 (74: 47/8/19),
+  50 documenti CNEL (solo metadati + link).
+- UI/API: hub 6 consultazioni senza link morti, dettaglio comune per
+  regionali/referendum, sezione CNEL (?tipo=cnel) con badge non-legge.
+- Fix miei: europee main-guard anti side-effect, slice 500/file che
+  troncava 138 atti 1907-1931 (ora cap 5000 + regression test), regex
+  diacritici con escape, MANIFEST/README completi.
+- Verifiche mie: `npm test` 693/693 OK, `typecheck`/`lint` OK, `build` OK
+  (864 pagine), smoke live (hub/lista/API CNEL, filtri cds/tar/cga).
+- Next: altre finestre/regioni, Corte dei Conti se si apre, riduzione del
+  sintetico via crescita reale.
+
 ## Stato iniziale (2026-09-28, iterazione 0)
 - Repo: `/Users/mark/Projects/simple-law`, branch `master` (appena `git init`, baseline committata `5391a84`).
 - Stack: Next.js 15 App Router, TS strict, Tailwind, Prisma+Postgres con fallback seed, Vitest, Vercel Cron.
