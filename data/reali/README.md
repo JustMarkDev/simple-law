@@ -266,3 +266,62 @@ dettaglio `?p ?o` batch 5 (record invariato, ~815 B/atto):
 Fonte: dati.camera.it SPARQL, licenza CC BY-SA 4.0.
 `npx tsx scripts/ingest-reale-camera-full.ts`
 Ultimo recupero / conteggio finale: scritti dallo script all'esecuzione.
+
+## REALI-13 — finestre Normattiva 1975/1995 (attese, cap 80)
+
+Stessa fonte e licenza dei batch recenti (`POST /api/v1/ricerca/aggiornati`
+anno intero, cap 80 dettagli come da script esistente; URN solo se
+denominazione+anno+numero non vuoti).
+
+- `normattiva-finestra-1975.json`: finestra `1975-01-01`..`1975-12-31`
+  (sonda: 371 atti in lista; esempi di sonda LEGGE184/DPR85; conteggio
+  finale = file scritto, max 80).
+- `normattiva-finestra-1995.json`: finestra `1995-01-01`..`1995-12-31`
+  (sonda: 871 atti in lista; esempi di sonda DL444/LEGGE198; conteggio
+  finale = file scritto, max 80).
+- Esecuzione W3 del 2026-09-28 ha scritto i nomi default dello script,
+  `normattiva-storico-1975.json` (**63 atti**: 39 in vigore, 24 abrogati) +
+  `normattiva-storico-1995.json` (**70 atti**: 56 decaduti, 13 in vigore,
+  1 abrogato; gli anni '90 sono pieni di DL non convertiti), entrambi
+  cablati in `PERCORSI_ATTI_REALI` accanto ai nomi `normattiva-finestra-*`
+  (loader salta gli assenti).
+- Cablate in `PERCORSI_ATTI_REALI` (`lib/sources.ts`); il loader salta i
+  file assenti, quindi il corpus resta invariato finche' W3 non li genera.
+- Riserva 1965 (337 in sonda) NON ingerita in REALI-13.
+
+```bash
+npx tsx scripts/ingest-reale-normattiva-finestre.ts --anni=1975,1995
+```
+
+## REALI-13 — regionali-extra Liguria24/Calabria25 (attesi, solo aggregati)
+
+Fonte: Ministero Interno DAIT — Eligendo Open Data (ZIP scrutini;
+zero nominativi, colonne candidato mai lette; solo aggregati per-lista +
+affluenza comunale; cap ≤950KB/file).
+
+- `elezioni-regionali-2024-liguria.json` (**20 liste**, 234 comuni) da
+  `https://dait.interno.gov.it/documenti/opendata/regionali/regionali-20241027.zip`
+  (filtro `REGIONE=LIGURIA`).
+- `elezioni-regionali-2025-calabria.json` (**15 liste**, 404 comuni) da
+  `https://dait.interno.gov.it/documenti/opendata/regionali/regionali-20251005.zip`
+  (filtro `REGIONE=CALABRIA`).
+- Fuori scope REALI-13: Emilia-Romagna in 20241117, `regionali-20251123.zip`,
+  Marche 404, txt 20240310/20240421 (altro parser).
+
+## REALI-13 — GU diretta Ultime (attesa, solo RSS ultimo numero)
+
+Fonte: **gazzettaufficiale.it RSS** (solo ultimo numero/serie: title+link
+ELI https+pubDate; nessun archivio, nessun mirror atti).
+
+- `gazzetta-ultime.json` (**32 atti**) da `https://www.gazzettaufficiale.it/rss/SG`
+  (sonda: Serie Generale n.225 del 28-09-2026, 32 item) + serie S1/S2/S3/S4/S5/P2
+  solo se entro cap (≤1 numero/serie, ≤84 item/serie; file ≤1MB).
+- Normalizzare http→https; ELI noto
+  `https://www.gazzettaufficiale.it/eli/id/2026/08/26/26G00173/sg`.
+
+## REALI-13 — sonde rimandate (solo docs)
+
+Dettaglio in `docs/REALI-13-sonde-rimandate.md` (unico file docs di
+REALI-13): finanziamenti (via libera condizionata futura, solo aggregati),
+Radio Radicale link-only, Openpolis link-only, CSM rimandata, regionali
+esclusi.

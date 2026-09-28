@@ -77,6 +77,13 @@ Tutte le route rispondono JSON e non restituiscono 500 se il DB manca.
 | GET    | `/api/cron/ingest`           | ingest da Vercel Cron (sempre 200)                      |
 | GET    | `/api/sync/storico`          | bulk storico Normattiva (`limit`, `maxPages` <= 10, `denominazioni`, `collezioni`) |
 | GET    | `/api/sync/recente`          | atti aggiornati (`dal`, `al`, `limit`)                  |
+| GET    | `/api/parlamento...`         | deputati, senatori, gruppi, DDL leg19 (`q`, `gruppo`, `page`, `per`<=100; mai 500) |
+| GET    | `/api/elezioni...`           | consultazioni, dettaglio, comuni (`q`, `page`, `per`<=100; mai 500) |
+| GET    | `/api/eurlex...`             | atti UE CELLAR con recepimenti (`q`, `tipo`, `page`, `per`; mai 500) |
+| GET    | `/api/quirinale`             | atti e comunicati del Quirinale (mai 500)               |
+| GET    | `/api/consulta...`           | pronunce Corte Costituzionale (mai 500)                 |
+| GET    | `/api/controllo...`          | contratti ANAC, provvedimenti GA, documenti CNEL (`tipo`, `q`; mai 500) |
+| GET    | `/api/gazzetta`              | ultima GU: solo metadati + link ufficiali (mai 500)     |
 
 Le route `/api/sync/storico` e `/api/sync/recente`, come `/api/cron/ingest`, richiedono
 `Authorization: Bearer <CRON_SECRET>` **se** `CRON_SECRET` e' impostato; senza la

@@ -12,6 +12,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const statiche: MetadataRoute.Sitemap = [
     { url: `${BASE_URL}/`, changeFrequency: 'weekly', priority: 1.0 },
     { url: `${BASE_URL}/leggi`, changeFrequency: 'daily', priority: 0.9 },
+    { url: `${BASE_URL}/gazzetta`, changeFrequency: 'daily', priority: 0.8 },
     { url: `${BASE_URL}/ministri`, changeFrequency: 'monthly', priority: 0.6 },
     { url: `${BASE_URL}/parlamento`, changeFrequency: 'weekly', priority: 0.8 },
     { url: `${BASE_URL}/parlamento/deputati`, changeFrequency: 'weekly', priority: 0.7 },
@@ -25,6 +26,9 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { url: `${BASE_URL}/elezioni/politiche-2022-camera`, changeFrequency: 'monthly', priority: 0.6 },
     { url: `${BASE_URL}/elezioni/politiche-2022-senato`, changeFrequency: 'monthly', priority: 0.6 },
     { url: `${BASE_URL}/elezioni/referendum-2025`, changeFrequency: 'monthly', priority: 0.6 },
+    { url: `${BASE_URL}/regionali-extra`, changeFrequency: 'monthly', priority: 0.6 },
+    { url: `${BASE_URL}/regionali-extra/regionali-2024-liguria`, changeFrequency: 'monthly', priority: 0.6 },
+    { url: `${BASE_URL}/regionali-extra/regionali-2025-calabria`, changeFrequency: 'monthly', priority: 0.6 },
     { url: `${BASE_URL}/consulta`, changeFrequency: 'weekly', priority: 0.6 },
     { url: `${BASE_URL}/controllo`, changeFrequency: 'weekly', priority: 0.6 },
     { url: `${BASE_URL}/controllo/lista`, changeFrequency: 'daily', priority: 0.6 },

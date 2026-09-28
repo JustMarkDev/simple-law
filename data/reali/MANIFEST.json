@@ -2,26 +2,26 @@
  "fonti": [
   {
    "nome": "Normattiva bff-opendata v1",
-   "url": "https://api.normattiva.it/t/normattiva.api/bff-opendata/v1",
-   "licenza": "riproduzione consentita con menzione di fonte, carattere non autentico e gratuito (solo la GU a stampa e autentica)",
+   "url": "https://api.normattiva.it/t/normattiva.api/bff-opendata/v1/api/v1/ricerca/aggiornati",
+   "licenza": "riproduzione consentita con menzione di fonte, carattere non autentico e gratuito (Note legali dati.normattiva.it; solo la Gazzetta Ufficiale a stampa e' autentica)",
    "file": "normattiva-recenti.json",
    "conteggio": 46,
-   "recuperatoIl": "2026-09-28T18:36:22.708Z",
+   "recuperatoIl": "2026-09-28T19:08:27.309Z",
    "legislatura": null
   },
   {
    "nome": "Normattiva bff-opendata v1 (storico 1980)",
-   "url": "https://api.normattiva.it/t/normattiva.api/bff-opendata/v1",
-   "licenza": "riproduzione consentita con menzione di fonte, carattere non autentico e gratuito (solo la GU a stampa e autentica)",
+   "url": "https://api.normattiva.it/t/normattiva.api/bff-opendata/v1/api/v1/ricerca/aggiornati",
+   "licenza": "riproduzione consentita con menzione di fonte, carattere non autentico e gratuito (Note legali dati.normattiva.it; solo la Gazzetta Ufficiale a stampa e' autentica)",
    "file": "normattiva-storico-1980.json",
    "conteggio": 66,
    "recuperatoIl": "2026-09-28T19:09:21.113Z",
    "legislatura": null
   },
   {
-   "nome": "Normattiva bff-opendata v1 (collezioni: Codici, Costituzionali, DelegazioneUE)",
-   "url": "https://api.normattiva.it/t/normattiva.api/bff-opendata/v1",
-   "licenza": "riproduzione consentita con menzione di fonte, carattere non autentico e gratuito (solo la GU a stampa e autentica)",
+   "nome": "Normattiva file-download v1 (collezioni: Codici, Costituzionali, DelegazioneUE)",
+   "url": "https://api.normattiva.it/t/normattiva.api/file-download/v1/download/cuBGdVwSFur2lUWm-U_b5RQWfMbjeQCMnkOs_-ny7wzpYKBIvTJL77PWO1nG0FIqkZoLl0WDJ3bu7axa6FpDzPVFCd12jxoyH7hXiqsPr2HGoFEU9sfwE65rP-J8k6LgIfmxI6RqF4HnEA6rwaizhCUfQckTJX_CSGaOAgErZHFkuGMlAs6nSMJKOTv1DnTKtEyZeO1YDKBx9uZ7YOeKlvvgZDG9iD8JKcc",
+   "licenza": "riproduzione consentita con menzione di fonte, carattere non autentico e gratuito (Note legali dati.normattiva.it; solo la Gazzetta Ufficiale a stampa e' autentica)",
    "file": "normattiva-storico-collezioni.json",
    "conteggio": 112,
    "recuperatoIl": "2026-09-28T19:09:21.113Z",
@@ -84,7 +84,7 @@
   },
   {
    "nome": "Corte Costituzionale (pronunce 2001, campione)",
-   "url": "https://www.cortecostituzionale.it",
+   "url": "https://dati.cortecostituzionale.it/opendata/distribuzione/pronunce/P_json2001_oggi.zip",
    "licenza": "CC BY-SA 3.0",
    "file": "consulta-pronunce-2001.json",
    "conteggio": 50,
@@ -97,13 +97,13 @@
    "licenza": "riuso titolo/link/descrizione",
    "file": "governo-comunicati.json",
    "conteggio": 10,
-   "recuperatoIl": "2026-09-28T18:28:36.769Z",
+   "recuperatoIl": "2026-09-28T18:38:50.732Z",
    "legislatura": null
   },
   {
    "nome": "Normattiva bff-opendata v1 (storico 1990)",
-   "url": "https://api.normattiva.it/t/normattiva.api/bff-opendata/v1",
-   "licenza": "riproduzione consentita con menzione di fonte, carattere non autentico e gratuito (solo la GU a stampa e autentica)",
+   "url": "https://api.normattiva.it/t/normattiva.api/bff-opendata/v1/api/v1/ricerca/aggiornati",
+   "licenza": "riproduzione consentita con menzione di fonte, carattere non autentico e gratuito (Note legali dati.normattiva.it; solo la Gazzetta Ufficiale a stampa e' autentica)",
    "file": "normattiva-storico-1990.json",
    "conteggio": 71,
    "recuperatoIl": "2026-09-28T19:24:38.697Z",
@@ -111,8 +111,8 @@
   },
   {
    "nome": "Normattiva bff-opendata v1 (storico 2000)",
-   "url": "https://api.normattiva.it/t/normattiva.api/bff-opendata/v1",
-   "licenza": "riproduzione consentita con menzione di fonte, carattere non autentico e gratuito (solo la GU a stampa e autentica)",
+   "url": "https://api.normattiva.it/t/normattiva.api/bff-opendata/v1/api/v1/ricerca/aggiornati",
+   "licenza": "riproduzione consentita con menzione di fonte, carattere non autentico e gratuito (Note legali dati.normattiva.it; solo la Gazzetta Ufficiale a stampa e' autentica)",
    "file": "normattiva-storico-2000.json",
    "conteggio": 61,
    "recuperatoIl": "2026-09-28T19:24:38.697Z",
@@ -129,7 +129,7 @@
   },
   {
    "nome": "Quirinale (atti)",
-   "url": "https://www.quirinale.it",
+   "url": "https://www.quirinale.it/ricerca/atti",
    "licenza": "uso non commerciale con attribuzione, fa fede la Gazzetta Ufficiale",
    "file": "quirinale-atti.json",
    "conteggio": 12,
@@ -138,7 +138,7 @@
   },
   {
    "nome": "Quirinale (comunicati)",
-   "url": "https://www.quirinale.it",
+   "url": "https://www.quirinale.it/ricerca/comunicati",
    "licenza": "uso non commerciale con attribuzione, fa fede la Gazzetta Ufficiale",
    "file": "quirinale-comunicati.json",
    "conteggio": 12,
@@ -147,8 +147,8 @@
   },
   {
    "nome": "Normattiva bff-opendata v1 (storico 1970)",
-   "url": "https://api.normattiva.it/t/normattiva.api/bff-opendata/v1",
-   "licenza": "riproduzione consentita con menzione di fonte, carattere non autentico e gratuito (solo la GU a stampa e autentica)",
+   "url": "https://api.normattiva.it/t/normattiva.api/bff-opendata/v1/api/v1/ricerca/aggiornati",
+   "licenza": "riproduzione consentita con menzione di fonte, carattere non autentico e gratuito (Note legali dati.normattiva.it; solo la Gazzetta Ufficiale a stampa e' autentica)",
    "file": "normattiva-storico-1970.json",
    "conteggio": 66,
    "recuperatoIl": "2026-09-28T20:17:18.486Z",
@@ -156,15 +156,15 @@
   },
   {
    "nome": "Normattiva bff-opendata v1 (storico 2010)",
-   "url": "https://api.normattiva.it/t/normattiva.api/bff-opendata/v1",
-   "licenza": "riproduzione consentita con menzione di fonte, carattere non autentico e gratuito (solo la GU a stampa e autentica)",
+   "url": "https://api.normattiva.it/t/normattiva.api/bff-opendata/v1/api/v1/ricerca/aggiornati",
+   "licenza": "riproduzione consentita con menzione di fonte, carattere non autentico e gratuito (Note legali dati.normattiva.it; solo la Gazzetta Ufficiale a stampa e' autentica)",
    "file": "normattiva-storico-2010.json",
    "conteggio": 66,
    "recuperatoIl": "2026-09-28T20:17:18.486Z",
    "legislatura": null
   },
   {
-   "nome": "DAIT Eligendo (referendum 8-9 giugno 2025)",
+   "nome": "DAIT Eligendo (referendum 8-9 giugno 2025, 5 quesiti)",
    "url": "https://dait.interno.gov.it/documenti/opendata/referendum/referendum-20250608.zip",
    "licenza": "open-data ministeriale da confermare, info_opendata senza stringa CC-BY",
    "file": "referendum-2025.json",
@@ -174,7 +174,7 @@
   },
   {
    "nome": "ANAC/BDNCP via OCP Data Registry (contratti 2025)",
-   "url": "https://data.open-contracting.org/en/publication/117",
+   "url": "https://data.open-contracting.org/en/publication/117/download?name=2025.jsonl.gz",
    "licenza": "CC BY 4.0",
    "file": "oversight-anac-2025.json",
    "conteggio": 60,
@@ -191,25 +191,25 @@
    "legislatura": null
   },
   {
-   "nome": "Normattiva bulk: attuazione regolamenti UE (lista+metadati)",
-   "url": "https://api.normattiva.it/t/normattiva.api/bff-opendata/v1 (collezione bulk Atti di attuazione Regolamenti UE; URL di download con token monouso, non stabile)",
-   "licenza": "riproduzione consentita con menzione di fonte, carattere non autentico e gratuito (solo la GU a stampa e autentica)",
+   "nome": "Normattiva file-download v1 (bulk attuazione regolamenti UE, lista+metadati)",
+   "url": "https://api.normattiva.it/t/normattiva.api/bff-opendata/v1/api/v1/ricerca/aggiornati",
+   "licenza": "riproduzione consentita con menzione di fonte, carattere non autentico e gratuito (Note legali dati.normattiva.it; solo la Gazzetta Ufficiale a stampa e' autentica)",
    "file": "normattiva-bulk-a-attuazione-ue.json",
    "conteggio": 39,
-   "recuperatoIl": "2026-09-28",
+   "recuperatoIl": "2026-09-28T20:51:38.759Z",
    "legislatura": null
   },
   {
    "nome": "Normattiva finestra aggiornati 2005 (lista-only, stato sconosciuto)",
-   "url": "https://api.normattiva.it/t/normattiva.api/bff-opendata/v1",
-   "licenza": "riproduzione consentita con menzione di fonte, carattere non autentico e gratuito (solo la GU a stampa e autentica)",
+   "url": "https://api.normattiva.it/t/normattiva.api/bff-opendata/v1/api/v1/ricerca/aggiornati",
+   "licenza": "riproduzione consentita con menzione di fonte, carattere non autentico e gratuito (Note legali dati.normattiva.it; solo la Gazzetta Ufficiale a stampa e' autentica)",
    "file": "normattiva-bulk-b-finestra-2005.json",
    "conteggio": 638,
-   "recuperatoIl": "2026-09-28",
+   "recuperatoIl": "2026-09-28T20:49:29.615Z",
    "legislatura": null
   },
   {
-   "nome": "dati.camera.it (atti leg19, shard)",
+   "nome": "dati.camera.it (atti leg19, shard a)",
    "url": "https://dati.camera.it/sparql",
    "licenza": "CC BY-SA 4.0",
    "legislatura": "19",
@@ -218,7 +218,7 @@
    "recuperatoIl": "2026-09-28T20:53:36.825Z"
   },
   {
-   "nome": "dati.camera.it (atti leg19, shard)",
+   "nome": "dati.camera.it (atti leg19, shard b)",
    "url": "https://dati.camera.it/sparql",
    "licenza": "CC BY-SA 4.0",
    "legislatura": "19",
@@ -227,7 +227,7 @@
    "recuperatoIl": "2026-09-28T20:53:36.825Z"
   },
   {
-   "nome": "dati.camera.it (atti leg19, shard)",
+   "nome": "dati.camera.it (atti leg19, shard c)",
    "url": "https://dati.camera.it/sparql",
    "licenza": "CC BY-SA 4.0",
    "legislatura": "19",
@@ -237,8 +237,8 @@
   },
   {
    "nome": "Normattiva bff-opendata v1 (storico 1992-1993)",
-   "url": "https://api.normattiva.it/t/normattiva.api/bff-opendata/v1",
-   "licenza": "riproduzione consentita con menzione di fonte, carattere non autentico e gratuito (solo la GU a stampa e autentica)",
+   "url": "https://api.normattiva.it/t/normattiva.api/bff-opendata/v1/api/v1/ricerca/aggiornati",
+   "licenza": "riproduzione consentita con menzione di fonte, carattere non autentico e gratuito (Note legali dati.normattiva.it; solo la Gazzetta Ufficiale a stampa e' autentica)",
    "file": "normattiva-storico-1992-1993.json",
    "conteggio": 77,
    "recuperatoIl": "2026-09-28T21:20:27.768Z",
@@ -246,8 +246,8 @@
   },
   {
    "nome": "Normattiva bff-opendata v1 (storico 2005-2006)",
-   "url": "https://api.normattiva.it/t/normattiva.api/bff-opendata/v1",
-   "licenza": "riproduzione consentita con menzione di fonte, carattere non autentico e gratuito (solo la GU a stampa e autentica)",
+   "url": "https://api.normattiva.it/t/normattiva.api/bff-opendata/v1/api/v1/ricerca/aggiornati",
+   "licenza": "riproduzione consentita con menzione di fonte, carattere non autentico e gratuito (Note legali dati.normattiva.it; solo la Gazzetta Ufficiale a stampa e' autentica)",
    "file": "normattiva-storico-2005-2006.json",
    "conteggio": 49,
    "recuperatoIl": "2026-09-28T21:20:27.768Z",
@@ -268,10 +268,173 @@
    "licenza": "solo metadati + link ufficiali, nessun mirror (licenza aperta non dichiarata nelle pagine)",
    "file": "oversight-cnel-2026.json",
    "conteggio": 50,
-   "recuperatoIl": "2026-09-28T20:35:15.499Z",
+   "recuperatoIl": "2026-09-28T21:50:45.710Z",
+   "legislatura": null
+  },
+  {
+   "nome": "Normattiva bff-opendata v1 (storico 1960)",
+   "url": "https://api.normattiva.it/t/normattiva.api/bff-opendata/v1/api/v1/ricerca/aggiornati",
+   "licenza": "riproduzione consentita con menzione di fonte, carattere non autentico e gratuito (Note legali dati.normattiva.it; solo la Gazzetta Ufficiale a stampa e' autentica)",
+   "file": "normattiva-storico-1960.json",
+   "conteggio": 60,
+   "recuperatoIl": "2026-09-28T20:32:32.939Z",
+   "legislatura": null
+  },
+  {
+   "nome": "Normattiva bff-opendata v1 (storico 2020)",
+   "url": "https://api.normattiva.it/t/normattiva.api/bff-opendata/v1/api/v1/ricerca/aggiornati",
+   "licenza": "riproduzione consentita con menzione di fonte, carattere non autentico e gratuito (Note legali dati.normattiva.it; solo la Gazzetta Ufficiale a stampa e' autentica)",
+   "file": "normattiva-storico-2020.json",
+   "conteggio": 68,
+   "recuperatoIl": "2026-09-28T20:32:32.939Z",
+   "legislatura": null
+  },
+  {
+   "nome": "Normattiva bff-opendata v1 (storico 1955)",
+   "url": "https://api.normattiva.it/t/normattiva.api/bff-opendata/v1/api/v1/ricerca/aggiornati",
+   "licenza": "riproduzione consentita con menzione di fonte, carattere non autentico e gratuito (Note legali dati.normattiva.it; solo la Gazzetta Ufficiale a stampa e' autentica)",
+   "file": "normattiva-storico-1955.json",
+   "conteggio": 35,
+   "recuperatoIl": "2026-09-28T21:35:45.733Z",
+   "legislatura": null
+  },
+  {
+   "nome": "Normattiva bff-opendata v1 (storico 2015)",
+   "url": "https://api.normattiva.it/t/normattiva.api/bff-opendata/v1/api/v1/ricerca/aggiornati",
+   "licenza": "riproduzione consentita con menzione di fonte, carattere non autentico e gratuito (Note legali dati.normattiva.it; solo la Gazzetta Ufficiale a stampa e' autentica)",
+   "file": "normattiva-storico-2015.json",
+   "conteggio": 74,
+   "recuperatoIl": "2026-09-28T21:35:45.733Z",
+   "legislatura": null
+  },
+  {
+   "nome": "Normattiva bff-opendata v1 (storico 1948)",
+   "url": "https://api.normattiva.it/t/normattiva.api/bff-opendata/v1/api/v1/ricerca/aggiornati",
+   "licenza": "riproduzione consentita con menzione di fonte, carattere non autentico e gratuito (Note legali dati.normattiva.it; solo la Gazzetta Ufficiale a stampa e' autentica)",
+   "file": "normattiva-storico-1948.json",
+   "conteggio": 28,
+   "recuperatoIl": "2026-09-28T21:53:00.168Z",
+   "legislatura": null
+  },
+  {
+   "nome": "Normattiva bff-opendata v1 (storico 1985)",
+   "url": "https://api.normattiva.it/t/normattiva.api/bff-opendata/v1/api/v1/ricerca/aggiornati",
+   "licenza": "riproduzione consentita con menzione di fonte, carattere non autentico e gratuito (Note legali dati.normattiva.it; solo la Gazzetta Ufficiale a stampa e' autentica)",
+   "file": "normattiva-storico-1985.json",
+   "conteggio": 74,
+   "recuperatoIl": "2026-09-28T21:53:00.168Z",
+   "legislatura": null
+  },
+  {
+   "nome": "DAIT Eligendo (europee 2024, aggregati per lista)",
+   "url": "https://dait.interno.gov.it/documenti/opendata/catalogoagid/europee-2024-italia-livcomune.csv",
+   "licenza": "open-data ministeriale da confermare, info_opendata senza stringa CC-BY",
+   "file": "elezioni-europee-2024.json",
+   "conteggio": 15,
+   "recuperatoIl": "2026-09-28",
+   "legislatura": null
+  },
+  {
+   "nome": "DAIT Eligendo (politiche 2022 Camera, aggregati per lista)",
+   "url": "https://dait.interno.gov.it/documenti/opendata/catalogoagid/camera-2022-Italia-livcomune.csv",
+   "licenza": "open-data ministeriale da confermare, info_opendata senza stringa CC-BY",
+   "file": "elezioni-politiche-2022-camera.json",
+   "conteggio": 27,
+   "recuperatoIl": "2026-09-28",
+   "legislatura": null
+  },
+  {
+   "nome": "DAIT Eligendo (politiche 2022 Senato, aggregati per lista)",
+   "url": "https://dait.interno.gov.it/documenti/opendata/catalogoagid/senato-2022-italia-livcomune.csv",
+   "licenza": "open-data ministeriale da confermare, info_opendata senza stringa CC-BY",
+   "file": "elezioni-politiche-2022-senato.json",
+   "conteggio": 31,
+   "recuperatoIl": "2026-09-28",
+   "legislatura": null
+  },
+  {
+   "nome": "DAIT Eligendo (regionali Umbria 2024-11-17, aggregati per lista)",
+   "url": "https://dait.interno.gov.it/documenti/opendata/regionali/regionali-20241117.zip",
+   "licenza": "open-data ministeriale da confermare, info_opendata senza stringa CC-BY",
+   "file": "elezioni-regionali-2024-umbria.json",
+   "conteggio": 23,
+   "recuperatoIl": "2026-09-28",
+   "legislatura": null
+  },
+  {
+   "nome": "DAIT Eligendo (regionali Toscana 2025-10-12, aggregati per lista)",
+   "url": "https://dait.interno.gov.it/documenti/opendata/regionali/regionali-20251012.zip",
+   "licenza": "open-data ministeriale da confermare, info_opendata senza stringa CC-BY",
+   "file": "elezioni-regionali-2025-toscana.json",
+   "conteggio": 10,
+   "recuperatoIl": "2026-09-28",
+   "legislatura": null
+  },
+  {
+   "nome": "EUR-Lex CELLAR + corpus Normattiva (recepimenti, 2 direttive)",
+   "url": "https://publications.europa.eu/webapi/rdf/sparql",
+   "licenza": "riuso con attribuzione Dec.2011/833/UE",
+   "file": "eurlex-recepimenti.json",
+   "conteggio": 2,
+   "recuperatoIl": "2026-09-28T19:52:26.409Z",
+   "legislatura": null
+  },
+  {
+   "nome": "Corpus Camera + Normattiva (recepimenti-atti, zero match)",
+   "url": "https://dati.camera.it/sparql",
+   "licenza": "Camera OCD CC-BY 4.0 + Normattiva/GU riuso con attribuzione",
+   "file": "eurlex-recepimenti-atti.json",
+   "conteggio": 0,
+   "recuperatoIl": "2026-09-28T21:31:11.066Z",
+   "legislatura": null,
+   "derivatoDa": "calcolato localmente da data/reali/camera-atti-leg19-*.json + data/reali/normattiva-*.json (match esplicito anno+numero, zero match trovati)"
+  },
+  {
+   "nome": "DAIT Eligendo (regionali Liguria 2024-10-27, aggregati per lista)",
+   "url": "https://dait.interno.gov.it/documenti/opendata/regionali/regionali-20241027.zip",
+   "licenza": "open-data ministeriale da confermare, info_opendata senza stringa CC-BY",
+   "file": "elezioni-regionali-2024-liguria.json",
+   "conteggio": 20,
+   "recuperatoIl": "2026-09-28",
+   "legislatura": null
+  },
+  {
+   "nome": "DAIT Eligendo (regionali Calabria 2025-10-05, aggregati per lista)",
+   "url": "https://dait.interno.gov.it/documenti/opendata/regionali/regionali-20251005.zip",
+   "licenza": "open-data ministeriale da confermare, info_opendata senza stringa CC-BY",
+   "file": "elezioni-regionali-2025-calabria.json",
+   "conteggio": 15,
+   "recuperatoIl": "2026-09-28",
+   "legislatura": null
+  },
+  {
+   "nome": "gazzettaufficiale.it RSS Serie Generale (ultimo numero, solo metadati + link)",
+   "url": "https://www.gazzettaufficiale.it/rss/SG",
+   "licenza": "solo metadati + link ufficiali, nessun mirror (fa fede la GU a stampa)",
+   "file": "gazzetta-ultime.json",
+   "conteggio": 32,
+   "recuperatoIl": "2026-09-28T22:10:24.899Z",
+   "legislatura": null
+  },
+  {
+   "nome": "Normattiva bff-opendata v1 (storico 1975)",
+   "url": "https://api.normattiva.it/t/normattiva.api/bff-opendata/v1/api/v1/ricerca/aggiornati",
+   "licenza": "riproduzione consentita con menzione di fonte, carattere non autentico e gratuito (Note legali dati.normattiva.it; solo la Gazzetta Ufficiale a stampa e' autentica)",
+   "file": "normattiva-storico-1975.json",
+   "conteggio": 63,
+   "recuperatoIl": "2026-09-28T22:11:08.066Z",
+   "legislatura": null
+  },
+  {
+   "nome": "Normattiva bff-opendata v1 (storico 1995)",
+   "url": "https://api.normattiva.it/t/normattiva.api/bff-opendata/v1/api/v1/ricerca/aggiornati",
+   "licenza": "riproduzione consentita con menzione di fonte, carattere non autentico e gratuito (Note legali dati.normattiva.it; solo la Gazzetta Ufficiale a stampa e' autentica)",
+   "file": "normattiva-storico-1995.json",
+   "conteggio": 70,
+   "recuperatoIl": "2026-09-28T22:11:08.066Z",
    "legislatura": null
   }
  ],
- "generatoIl": "2026-09-28T20:35:15.499Z",
- "nota": "Dati ufficiali open data (11 file). I file >1MB non si committano: rigenerare via scripts/ingest-reale-*.ts. I gruppi Camera sono derivati dai deputati; le denominazioni Senato includono varianti storiche della leg. 19; i DDL/atti sono disegni e atti parlamentari, MAI leggi in vigore."
+ "generatoIl": "2026-09-28T22:10:24.899Z",
+ "nota": "Dati ufficiali open data (48 file). Ogni voce ha file esistente su disco e conteggio pari alla lunghezza reale verificata. I file >1MB non si committano: rigenerare via scripts/ingest-reale-*.ts. I gruppi Camera sono derivati dai deputati; le denominazioni Senato includono varianti storiche della leg. 19; i DDL/atti sono disegni e atti parlamentari, MAI leggi in vigore. Elezioni: solo aggregati per lista, zero nominativi."
 }
