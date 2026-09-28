@@ -205,8 +205,25 @@ Obiettivo precedente (completato): UI/UX, feature, corpus 5005 voci.
   cache TTL reali (267ms -> memo), regression test no-troncamento.
 - Verifiche mie: `npm test` 639/639 OK, `typecheck`/`lint` OK, `build` OK,
   smoke live (6422 esatto, sondaggi visibili, percentuali tornate).
-- Next: altre finestre, recepimenti extra, Corte dei Conti se si apre,
-  riduzione del sintetico.
+- Next: recepimenti extra (atti Camera) — fatto sotto (mappa con 0 match
+  onesti + box in UI che legge entrambe le mappe); restano altre finestre,
+  Corte dei Conti se si apre, riduzione del sintetico.
+
+## Reali-11 (2026-09-28, commit `78e7ac6`): finestre 1955/2015, atti collegati
+- Workflow: 1 chiamata `workflow` con 10 subagenti (3 proposte + 1 giudice +
+  4 scrittori + 2 revisori). Decisione documentata: default sintetico
+  INVARIATO (il ranking BM25 surfacia gia i reali; tagliare sarebbe
+  cosmetico) — si cresce solo con dati veri.
+- Ingerito: finestre 1955 (35) + 2015 (74, 7 decaduti). Mappa atti collegati
+  UE (0 match: direttive 2026 troppo recenti, onesto).
+- UI: box recepimenti legge entrambe le mappe (NIM + atti Camera/Normattiva).
+- Fix miei (revisori): conti 82 curati (non 72) in codice/README/test/MIN
+  87; type mismatch mappe recepimenti.
+- Verifiche mie: `npm test` 645/645 OK, `typecheck`/`lint` OK, `build` OK,
+  smoke live (dettaglio direttiva onesto; doppio rendering escluso: HTML +
+  flight payload).
+- Next: altre finestre, Corte dei Conti se si apre, riduzione del sintetico
+  via crescita reale (mai tagli cosmetici).
 
 ## Stato iniziale (2026-09-28, iterazione 0)
 - Repo: `/Users/mark/Projects/simple-law`, branch `master` (appena `git init`, baseline committata `5391a84`).
