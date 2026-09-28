@@ -98,9 +98,26 @@ Obiettivo precedente (completato): UI/UX, feature, corpus 5005 voci.
   veri, verifica volumi e stati via smoke.
 - Verifiche mie: `npm test` 428/428 OK, `typecheck`/`lint` OK, `build` OK
   (855 pagine), smoke live (5359 totale, EUR-Lex/Quirinale 200, 1990 live).
-- Next: ingest elettorale (da docs/elezioni-piano.md) — fatto sotto;
-  restano ISTAT, altre finestre storiche, recepimenti UE (link
-  direttive->leggi italiane), sostituzione progressiva del sintetico.
+- Next: ISTAT (de-scopato onestamente: anagrafiche latin-1 fragili, niente
+  dataset demografico stabile — vedi README reali), altre finestre
+  storiche — fatte 1970+2010; restano referendum — fatto sotto —,
+  sostituzione progressiva del sintetico.
+
+## Reali-7 (2026-09-28, commit `c77fcec`): referendum + storico 1970/2010 + BUR
+- Workflow: 1 chiamata `workflow` con 11 subagenti (3 sonde + 1 giudice + 5
+  scrittori + 2 revisori). Sonde: referendum DAIT (XLSX!), ISTAT fragile,
+  BUR senza fonte unica (confermato con tabella per regione).
+- Ingerito: referendum 8-9 giugno 2025 (5 quesiti SI/NO, 7896 comuni;
+  controlli C1-C3 del revisore tornati), storico 1970 (28 vigore, 1
+  decaduto, 37 abrogati) + 2010 (59/3/4). Corpus live **5491** esatto.
+- UI/API: `/elezioni/referendum-2025` + API con barre SI/NO, hub card con
+  "Quesiti: 5", sitemap. BUR solo documentato (`docs/bur-ricognizione.md`).
+- Fix miei: politiche scrittura atomica 2 file, regex diacritici con escape
+  \u0300-\u036f, sitemap dedup, ISTAT de-scope documentato.
+- Verifiche mie: `npm test` 504/504 OK, `typecheck`/`lint` OK, `build` OK,
+  smoke live (referendum/API/hub 200, Q1 SI 89,1%, totale 5491).
+- Next: altre finestre storiche, recepimenti extra (atti Camera),
+  sostituzione del sintetico, Corte dei Conti/ANAC se programmabili.
 
 ## Reali-5 (2026-09-28, commit `64e6ea5`): elezioni europee 2024 in UI
 - Workflow: 1 chiamata `workflow` con 10 subagenti (3 proposte + 1 giudice +
