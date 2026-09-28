@@ -98,9 +98,27 @@ Obiettivo precedente (completato): UI/UX, feature, corpus 5005 voci.
   veri, verifica volumi e stati via smoke.
 - Verifiche mie: `npm test` 428/428 OK, `typecheck`/`lint` OK, `build` OK
   (855 pagine), smoke live (5359 totale, EUR-Lex/Quirinale 200, 1990 live).
-- Next: ingest elettorale (da docs/elezioni-piano.md), ISTAT, altre finestre
-  storiche, recepimenti UE (link direttive->leggi italiane), sostituzione
-  progressiva del sintetico.
+- Next: ingest elettorale (da docs/elezioni-piano.md) — fatto sotto;
+  restano ISTAT, altre finestre storiche, recepimenti UE (link
+  direttive->leggi italiane), sostituzione progressiva del sintetico.
+
+## Reali-5 (2026-09-28, commit `64e6ea5`): elezioni europee 2024 in UI
+- Workflow: 1 chiamata `workflow` con 10 subagenti (3 proposte + 1 giudice +
+  4 scrittori + 2 revisori). Giudice: ibrida (nazionale+regioni con liste,
+  comuni solo affluenza; niente per-lista comunale, niente seggi).
+- Ingerito: europee 2024 DAIT (93.984 righe -> 7.896 comuni + 20 regioni +
+  15 liste, 616 KB); controlli numerici del revisore rifatti e tornati
+  (affluenza 49,7 nazionale, 56,6 Piemonte).
+- UI/API: `/elezioni` + `/elezioni/europee-2024` (+ ricerca comune) con
+  licenza+disclaimer aggregati, nav, mai-500. Zero nominativi ovunque.
+- Fix miei: test conformita lib (forma Result vs dati), normalizza fragile
+  + q senza cap in pagina [id], tmp CSV mai rimosso + cap download solo a
+  fine scaricamento (ora in streaming con cleanup).
+- Verifiche mie: `npm test` 446/446 OK, `typecheck`/`lint` OK, `build` OK
+  (857 pagine), smoke live (hub/dettaglio/API 200, Roma trovata, totale
+  5359 esatto).
+- Next: ISTAT, altre finestre storiche, recepimenti UE->leggi italiane,
+  politiche 2022 / referendum (stesso pattern), sostituzione del sintetico.
 
 ## Stato iniziale (2026-09-28, iterazione 0)
 - Repo: `/Users/mark/Projects/simple-law`, branch `master` (appena `git init`, baseline committata `5391a84`).
