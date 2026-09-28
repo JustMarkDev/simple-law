@@ -239,7 +239,21 @@ Obiettivo precedente (completato): UI/UX, feature, corpus 5005 voci.
   diacritici con escape, MANIFEST/README completi.
 - Verifiche mie: `npm test` 693/693 OK, `typecheck`/`lint` OK, `build` OK
   (864 pagine), smoke live (hub/lista/API CNEL, filtri cds/tar/cga).
-- Next: altre finestre/regioni, Corte dei Conti se si apre, riduzione del
+- Next: altre finestre/regioni (fatte sotto: Liguria, Calabria, 1975,
+  1995, GU diretta), Corte dei Conti se si apre, riduzione del sintetico.
+
+## Reali-13 (2026-09-28, commit `c073b8b`): regionali, finestre, GU diretta
+- Workflow: 1 chiamata `workflow` con 11 subagenti (4 sonde + 1 giudice + 4
+  scrittori + 2 revisori). Sonde: regionali DAIT, finanziamenti/CSM,
+  GU RSS, finestre dense.
+- Ingerito: regionali Liguria 2024 + Calabria 2025, finestre 1975 + 1995,
+  GU n.225 del giorno stesso (32 atti, DL 167/2026). Corpus live **6766**.
+- UI/API: hub elezioni esteso, sezione `/gazzetta` (metadati + link),
+  MANIFEST 48 voci zero orfani/fantasmi, README API completo.
+- Fix miei: MANIFEST url obbligatorio, sezione GU assente (solo dati).
+- Verifiche mie: `npm test` 743/743 OK, `typecheck`/`lint` OK, `build` OK,
+  smoke live (regionali/GU/API 200).
+- Next: altre regioni/finestre, Corte dei Conti se si apre, riduzione del
   sintetico via crescita reale.
 
 ## Stato iniziale (2026-09-28, iterazione 0)
