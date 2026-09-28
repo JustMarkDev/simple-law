@@ -1,0 +1,48 @@
+{
+  "name": "simple-law-italia",
+  "version": "0.1.0",
+  "private": true,
+  "description": "SimpleLaw Italia - Dati politici italiani + semplificatore di leggi con AI.",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint . --max-warnings=0",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "prisma:generate": "prisma generate",
+    "prisma:push": "prisma db push",
+    "db:seed": "tsx prisma/seed.ts",
+    "db:seed:espanso": "tsx scripts/seed-espanso.ts",
+    "sync:storico": "tsx scripts/sync-storico.ts",
+    "postinstall": "prisma generate"
+  },
+  "dependencies": {
+    "@prisma/client": "6.19.3",
+    "effect": "3.22.2",
+    "motion": "13.4.4",
+    "next": "15.5.26",
+    "next-themes": "0.4.6",
+    "react": "19.3.0",
+    "react-dom": "19.3.0"
+  },
+  "devDependencies": {
+    "@eslint/eslintrc": "3.3.7",
+    "@types/node": "20.19.43",
+    "@types/react": "19.3.0",
+    "@types/react-dom": "19.3.0",
+    "autoprefixer": "10.6.1",
+    "eslint": "9.39.5",
+    "eslint-config-next": "15.5.26",
+    "postcss": "8.5.28",
+    "prisma": "6.19.3",
+    "tailwindcss": "3.4.19",
+    "tsx": "4.23.15",
+    "typescript": "5.9.3",
+    "vitest": "3.2.7"
+  }
+}

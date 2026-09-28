@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Stato della Repubblica">
+  <rect width="64" height="64" rx="12" fill="#0f4a92" />
+  <g transform="translate(10 10)">
+    <rect width="14.66" height="44" fill="#009246" />
+    <rect x="14.66" width="14.66" height="44" fill="#ffffff" />
+    <rect x="29.33" width="14.66" height="44" fill="#ce2b37" />
+  </g>
+</svg>

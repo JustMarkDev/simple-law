@@ -1,0 +1,65 @@
+// SimpleLaw Italia - schema dati
+// Provider: PostgreSQL (Neon / Vercel Postgres).
+// L'app funziona anche SENZA database: in quel caso usa il fallback su dati seed.
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+/// Atto normativo italiano (legge, decreto-legge, decreto legislativo, ...).
+model Law {
+  eli            String   @id // identificativo ELI, es. /eli/id/2026/07/27/26G00155/sg
+  nir            String // URN NIR, es. urn:nir:stato:decreto.legge:2026-07-27;133
+  tipo           String // decreto.legge | legge | decreto.legislativo | ...
+  numero         String
+  dataEmanazione DateTime
+  titolo         String
+  sintesi        String
+  stato          String // in_vigore | in_esame | abrogato | ...
+  gulpease       Float?
+  fonti          Json?
+  /// Dati arricchiti dal seed: air, attuativi, testo, fiducia, omnibus, dimostrativo.
+  extra          Json?
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+
+  @@index([tipo])
+  @@index([dataEmanazione])
+  @@index([tipo, dataEmanazione])
+  @@index([nir])
+  // Ordina per titolo senza full-scan; la ricerca full-text resta ILIKE
+  // (pg_trgm/tsvector in migrazione dedicata, non in questo change minimale).
+  @@index([titolo])
+  // Filtra per stato senza full-scan.
+  @@index([stato])
+}
+
+/// Ministro / titolare di dicastero.
+model Minister {
+  slug       String   @id
+  nome       String
+  dicastero  String
+  partito    String?
+  competenze String[]
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+
+  @@index([dicastero])
+}
+
+/// Tracciamento delle esecuzioni di ingest (cron).
+model IngestRun {
+  id         String    @id @default(cuid())
+  source     String
+  startedAt  DateTime  @default(now())
+  finishedAt DateTime?
+  status     String // ok | error | skipped
+  detail     String?
+
+  @@index([source, startedAt])
+}

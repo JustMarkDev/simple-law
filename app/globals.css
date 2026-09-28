@@ -1,0 +1,87 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+  --chart-1: #1a1714;
+  --chart-2: #007a3d;
+  --chart-3: #b0222e;
+  --chart-neutral: #cdc4b4;
+  --chart-grid: #ddd5c6;
+}
+
+html.dark {
+  color-scheme: dark;
+  --chart-1: #f3efe4;
+  --chart-2: #3fbf74;
+  --chart-3: #e27079;
+  --chart-neutral: #3a342c;
+  --chart-grid: #302b24;
+}
+
+html {
+  scroll-behavior: smooth;
+  background-color: #faf8f3;
+}
+
+html.dark {
+  background-color: #121110;
+}
+
+::selection {
+  background-color: #f0d9a0;
+  color: #1a1714;
+}
+
+html.dark ::selection {
+  background-color: #3a342c;
+  color: #f3efe4;
+}
+
+@layer base {
+  :focus-visible {
+    outline: 2px solid currentColor;
+    outline-offset: 2px;
+  }
+
+  h1,
+  h2 {
+    text-wrap: balance;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+}
+
+@layer components {
+  /* Filetto tricolore usato nelle testate e nei piè di pagina. */
+  .riga-tricolore {
+    display: flex;
+    height: 3px;
+    width: 100%;
+  }
+
+  .riga-tricolore > span {
+    flex: 1 1 0%;
+    height: 100%;
+  }
+
+  /* Capolettera per il riquadro "In 10 secondi". */
+  .capolettera::first-letter {
+    float: left;
+    margin-right: 0.5rem;
+    margin-top: 0.3rem;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 3.1rem;
+    line-height: 0.8;
+    font-weight: 700;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}

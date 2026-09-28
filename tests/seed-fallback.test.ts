@@ -1,0 +1,112 @@
+import { describe, expect, it } from "vitest";
+import {
+  attuativiRiepilogo,
+  findLawByEli,
+  formatDate,
+  formatTipo,
+  loadLawByEli,
+  loadLaws,
+  normalizeLaw,
+} from "@/components/seed-fallback";
+import { SEED_LAWS } from "@/lib/seed-data";
+import type { LawRecord } from "@/lib/seed-data";
+
+const ELI_133 = "/eli/id/2026/07/27/26G00155/sg";
+
+describe("seed-fallback (cio' che vede la UI)", () => {
+  it("carica 5 leggi e trova la DL 133/2026", async () => {
+    const leggi = await loadLaws();
+    expect(leggi).toHaveLength(5);
+    const dl133 = await loadLawByEli(ELI_133);
+    expect(dl133?.numero).toBe("133");
+  });
+
+  it("la scheda 133 riporta diesel e ILVA con semaforo giallo", async () => {
+    const dl133 = await loadLawByEli(ELI_133);
+    expect(dl133?.semplificata.in10Secondi).toMatch(/diesel/i);
+    expect(dl133?.semplificata.in10Secondi).toMatch(/ILVA/);
+    expect(dl133?.stato).toBe("giallo");
+    expect(dl133?.dimostrativo).toBe(false);
+  });
+
+  it("le chiavi perTe sono guida/lavoro/impresa/studio", async () => {
+    const dl133 = await loadLawByEli(ELI_133);
+    expect(Object.keys(dl133?.semplificata.perTe ?? {}).sort()).toEqual([
+      "guida",
+      "impresa",
+      "lavoro",
+      "studio",
+    ]);
+  });
+
+  it("gli atti oltre i due di riferimento sono dimostrativi", async () => {
+    const leggi = await loadLaws();
+    const perNumero = new Map(leggi.map((law) => [law.numero, law]));
+    expect(perNumero.get("133")?.dimostrativo).toBe(false);
+    expect(perNumero.get("139")?.dimostrativo).toBe(false);
+    expect(perNumero.get("124")?.dimostrativo).toBe(true);
+    expect(perNumero.get("36")?.dimostrativo).toBe(true);
+    expect(perNumero.get("8")?.dimostrativo).toBe(true);
+  });
+
+  it("findLawByEli ignora maiuscole/minuscole e slash", async () => {
+    const leggi = await loadLaws();
+    expect(findLawByEli(leggi, "/ELI/ID/2026/07/27/26G00155/SG")?.numero).toBe("133");
+    expect(findLawByEli(leggi, `${ELI_133}/`)?.numero).toBe("133");
+  });
+
+  it("formatDate usa il fuso UTC (niente slittamenti di giorno)", () => {
+    expect(formatDate("2026-07-27")).toMatch(/luglio.*2026|2026.*luglio/i);
+  });
+
+  it("attuativiRiepilogo descrive i decreti mancanti", () => {
+    expect(attuativiRiepilogo({ daAdottare: 2, adottati: 0, scaduti: 0 })).toMatch(
+      /2 da adottare/,
+    );
+  });
+
+  it("formatTipo produce etichette leggibili", () => {
+    expect(formatTipo("decreto.legge")).toBe("Decreto-legge");
+    expect(formatTipo("legge")).toBe("Legge");
+  });
+});
+
+function recordSenzaOverride(): LawRecord {
+  const record = SEED_LAWS.find((law) => law.numero === "124");
+  if (!record) throw new Error("seed 124 assente");
+  return record;
+}
+
+describe("parita' stored-vs-derived", () => {
+  it("preferisce la qualita' memorizzata, altrimenti ricalcola", () => {
+    const base = recordSenzaOverride();
+    expect(normalizeLaw({ ...base, qualita: 77 } as LawRecord).qualita).toBe(77);
+
+    const ricalcolata = normalizeLaw(base).qualita;
+    expect(normalizeLaw({ ...base, qualita: Number.NaN } as LawRecord).qualita).toBe(ricalcolata);
+  });
+
+  it("completa le chiavi perTe mancanti dalla versione derivata", () => {
+    const base = recordSenzaOverride();
+    const parziale = {
+      ...base,
+      semplificata: {
+        in10Secondi: "Parziale",
+        perTe: { guida: "solo guida" },
+        cosaFare: ["x"],
+        statoLavora: { colore: "verde", motivo: "ok" },
+        proContro: { pro: ["p"], contro: ["c"] },
+        gulpease: 50,
+      },
+    } as unknown as LawRecord;
+
+    const normalizzata = normalizeLaw(parziale);
+    expect(Object.keys(normalizzata.semplificata.perTe).sort()).toEqual([
+      "guida",
+      "impresa",
+      "lavoro",
+      "studio",
+    ]);
+    expect(normalizzata.semplificata.perTe.guida).toBe("solo guida");
+  });
+});
