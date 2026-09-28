@@ -11,6 +11,7 @@ import {
   loadMinisterBySlug,
   loadMinisters,
 } from '@/components/seed-fallback'
+import { trovaParlamentare, tuttiDeputati, tuttiSenatori } from '@/lib/parlamento-dati'
 
 interface MinistroProps {
   params: Promise<{ slug: string }>
@@ -38,6 +39,27 @@ export default async function MinistroPage({ params }: MinistroProps) {
 
   const leggi = await loadLaws()
   const collegate = leggiDelMinistro(minister, leggi)
+
+  // Collegamento alla scheda parlamentare reale (match esatto sul nome;
+  // nessun link se assente o ambiguo: mai inventare).
+  let boxParlamentare: { hrefInterno: string; hrefEsterno: string | null; gruppo?: string } | null = null
+  try {
+    const [deputati, senatori] = await Promise.all([tuttiDeputati(), tuttiSenatori()])
+    const trovato = trovaParlamentare(minister.nome, [...deputati, ...senatori])
+    if (trovato) {
+      const camera = trovato.camera === 'senato' ? 'senatori' : 'deputati'
+      boxParlamentare = {
+        hrefInterno: `/parlamento/${camera}/${encodeURIComponent(trovato.slug)}`,
+        hrefEsterno:
+          typeof trovato.urlScheda === 'string' && trovato.urlScheda.startsWith('http')
+            ? trovato.urlScheda
+            : null,
+        gruppo: trovato.gruppo,
+      }
+    }
+  } catch {
+    boxParlamentare = null
+  }
 
   return (
     <>
@@ -83,8 +105,34 @@ export default async function MinistroPage({ params }: MinistroProps) {
                 Gruppo politico: {minister.partito}
               </p>
             )}
+            {boxParlamentare && (
+              <p className="mt-3 flex flex-wrap items-center gap-x-3 gap-y-1 text-xs">
+                <Link
+                  href={boxParlamentare.hrefInterno}
+                  className="inline-flex min-h-[44px] items-center font-semibold text-accento underline underline-offset-2 dark:text-accento-chiara"
+                >
+                  Scheda parlamentare
+                  {boxParlamentare.gruppo ? ` (${boxParlamentare.gruppo})` : ''}
+                </Link>
+                {boxParlamentare.hrefEsterno && (
+                  <a
+                    href={boxParlamentare.hrefEsterno}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex min-h-[44px] items-center text-inchiostro-soft underline underline-offset-2 hover:text-accento dark:text-nebbia-soft dark:hover:text-accento-chiara"
+                  >
+                    Scheda ufficiale su camera.it/senato.it
+                  </a>
+                )}
+              </p>
+            )}
           </div>
         </header>
+
+        <p className="mt-4 text-xs text-inchiostro-faint dark:text-nebbia-faint">
+          I collegamenti parlamentari usano gli open data di Camera (CC BY-SA 4.0) e Senato (CC BY 3.0 IT),
+          legislatura 19.
+        </p>
 
         <div className="mt-8 grid gap-4 lg:grid-cols-3">
           <section
