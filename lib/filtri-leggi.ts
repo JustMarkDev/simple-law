@@ -40,7 +40,8 @@ function numeroAttuativi(v: unknown): number {
 
 /**
  * Colore del semaforo per un record grezzo. Never-throw (fallback `verde`).
- * Ordine: non-vigore → scaduti>0 → daAdottare>0&&adottati<daAdottare → verde.
+ * Ordine: sconosciuto -> giallo (vigenza non verificata) -> non-vigore ->
+ * scaduti>0 -> daAdottare>0&&adottati<daAdottare -> verde.
  */
 export function coloreSemaforoRecord(r: {
   stato?: unknown;
@@ -53,6 +54,8 @@ export function coloreSemaforoRecord(r: {
     });
     const stato =
       typeof rec.stato === 'string' ? rec.stato : String(rec.stato ?? '');
+    // Atti lista-only (vigenza non verificata): mai verde.
+    if (stato.trim().toLowerCase() === 'sconosciuto') return 'giallo';
     if (stato && RE_NON_VIGORE.test(stato)) return 'rosso';
     const att = ((rec.attuativi ?? {}) as {
       daAdottare?: unknown;

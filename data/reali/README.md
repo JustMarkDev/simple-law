@@ -112,6 +112,21 @@ fine-vigenza + intestazione Art. 1, dedup contro tutti i file esistenti).
 npx tsx scripts/ingest-reale-normattiva-finestre.ts
 ```
 
+## Bulk Normattiva — `normattiva-bulk-a-attuazione-ue.json` (39) + `normattiva-bulk-b-finestra-2005.json` (638)
+
+- Attuazione regolamenti UE da collezione bulk preconfezionata (metadati
+  con flag `abrogato` esplicito dove presente; URL di download con token
+  monouso, non stabile: fa fede l'API bff-opendata).
+- Finestra aggiornati 2005, atti **lista-only** (`dettaglio: false`, senza
+  testo): tipo/data/nir derivati dall'URN verificato, `stato:
+  "sconosciuto"` (vigenza non verificabile, semaforo giallo in UI).
+  Mai `in_vigore` inventato.
+
+```bash
+npx tsx scripts/ingest-reale-normattiva-bulk-a.ts
+npx tsx scripts/ingest-reale-normattiva-bulk-b.ts
+```
+
 ## DDL e atti parlamentari — `parlamento-ddl.json` (5) + `camera-atti.json` (197)
 
 Fonti: dati.senato.it / dati.camera.it (SPARQL, leg. 19), licenze CC BY 3.0
@@ -204,3 +219,33 @@ Il corpus sintetico (`lib/seed-data.ts`, `lib/seed-data-espansa.ts`,
 varianti generate, snapshot economico in `lib/stats.ts`) resta dimostrativo
 ed e' etichettato in UI. Gli atti e comunicati di questa cartella sono gli
 unici con `dimostrativo: false`.
+
+## REALI-9 — finestre lista-only (pianificati, conteggi attesi non finali)
+
+Stesso schema `§1` lista-only (`titoloAtto`, mai rubrica dettaglio;
+`stato:"in_vigore"` + `limite:"stato non rilevabile da lista"`).
+Conteggi sotto = attesi/misurati in sonda, MAI finali: fa fede il file scritto.
+
+- `normattiva-finestra-2015.json` (~529 atti): `POST aggiornati` anno=2015,
+  1 chiamata. `npx tsx scripts/ingest-reale-normattiva-f2015.ts`
+- `normattiva-finestra-2005.json` (~672 atti): `POST aggiornati` anno=2005,
+  1 chiamata. `npx tsx scripts/ingest-reale-normattiva-f2005.ts`
+- `normattiva-finestra-1995.json` + `normattiva-finestra-2010.json`:
+  stesso pattern, 1 POST/anno; conteggio letto da `numeroAttiTrovati` live.
+  `npx tsx scripts/ingest-reale-normattiva-fextra.ts`
+- `normattiva-testi-unici.json` (257 atti, ZIP `Testi Unici` 8,2 MB):
+  `{titolo=titoloDoc, stato da metadati.abrogato}`.
+  `npx tsx scripts/ingest-reale-normattiva-tu.ts`
+
+## REALI-9 — Camera full leg19 (pianificati, 3144 DISTINCT, NO 6288)
+
+`COUNT DISTINCT leg19=3144` (6288 = righe doppie URI×2). 3 shard lista+
+dettaglio `?p ?o` batch 5 (record invariato, ~815 B/atto):
+
+- `camera-atti-leg19-a.json` (numeri 1–1100, ~1050 atti)
+- `camera-atti-leg19-b.json` (numeri 1101–2200, ~1050 atti)
+- `camera-atti-leg19-c.json` (numeri 2201–3144, ~1044 atti)
+
+Fonte: dati.camera.it SPARQL, licenza CC BY-SA 4.0.
+`npx tsx scripts/ingest-reale-camera-full.ts`
+Ultimo recupero / conteggio finale: scritti dallo script all'esecuzione.

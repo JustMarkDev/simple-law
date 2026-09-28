@@ -1,8 +1,11 @@
 /**
  * Dati DDL/atti (Senato + Camera, legislatura 19) per pagine e API.
  *
- * Legge `data/reali/parlamento-ddl.json` (DDL Senato) e
- * `data/reali/camera-atti.json` (atti Camera) con cache in modulo.
+ * Legge `data/reali/parlamento-ddl.json` (DDL Senato),
+ * `data/reali/camera-atti.json` (atti Camera, sample legacy) e gli shard
+ * `data/reali/camera-atti-leg19-*.json` (atti Camera full, legislatura 19)
+ * con cache in modulo. Unione con dedup per URI: gli shard contengono il
+ * corpus completo, il legacy resta supportato e i duplicati vengono scartati.
  * Solo codice server: usa `node:fs`/`node:path` via accesso pigro (nessun
  * import statico `node:`, cosi' un import accidentale dal client non rompe
  * il bundle). Tutte le funzioni sono never-throw: file assenti o invalidi
@@ -102,6 +105,76 @@ function stringaPulita(value: unknown): string {
   return typeof value === "string" ? value.trim() : "";
 }
 
+/**
+ * Decodifica le entita' HTML delle label SPARQL della Camera
+ * (`maternit&agrave;` -> `maternità`). Copre named comuni, decimali ed
+ * esadecimali; il resto resta verbatim. Non lancia mai.
+ */
+export function decodificaEntitaHtml(testo: string): string {
+  try {
+    if (!testo || typeof testo !== "string") return "";
+    const nominate: Record<string, string> = {
+      amp: "&",
+      lt: "<",
+      gt: ">",
+      quot: '"',
+      apos: "'",
+      nbsp: " ",
+      agrave: "à",
+      egrave: "è",
+      igrave: "ì",
+      ograve: "ò",
+      ugrave: "ù",
+      aacute: "á",
+      eacute: "é",
+      iacute: "í",
+      oacute: "ó",
+      uacute: "ú",
+      acirc: "â",
+      ecirc: "ê",
+      icirc: "î",
+      ocirc: "ô",
+      ucirc: "û",
+      auml: "ä",
+      euml: "ë",
+      iuml: "ï",
+      ouml: "ö",
+      uuml: "ü",
+      ccedil: "ç",
+      ntild: "ñ",
+      rsquo: "’",
+      lsquo: "‘",
+      rdquo: "”",
+      ldquo: "“",
+      ndash: "–",
+      mdash: "—",
+      hellip: "…",
+    };
+    return testo
+      .replace(/&#(\d{1,7});/g, (_m, codice: string) => {
+        try {
+          const n = Number.parseInt(codice, 10);
+          if (!Number.isFinite(n) || n <= 0 || n > 0x10ffff) return _m;
+          return String.fromCodePoint(n);
+        } catch {
+          return _m;
+        }
+      })
+      .replace(/&#x([0-9a-fA-F]{1,6});/g, (_m, codice: string) => {
+        try {
+          const n = Number.parseInt(codice, 16);
+          if (!Number.isFinite(n) || n <= 0 || n > 0x10ffff) return _m;
+          return String.fromCodePoint(n);
+        } catch {
+          return _m;
+        }
+      })
+      .replace(/&([a-zA-Z][a-zA-Z0-9]+);/g, (m, nome: string) => nominate[nome] ?? m);
+  } catch {
+    return typeof testo === "string" ? testo : "";
+  }
+}
+
 function urlHttp(value: unknown): string {
   const s = stringaPulita(value);
   return /^https?:\/\//i.test(s) ? s : "";
@@ -129,7 +202,7 @@ export function voceDaDdlSenato(voce: unknown): VoceDdl | null {
     if (!voce || typeof voce !== "object" || Array.isArray(voce)) return null;
     const o = voce as Record<string, unknown>;
     const uri = urlHttp(o["uri"]);
-    const titolo = stringaPulita(o["titolo"]);
+    const titolo = decodificaEntitaHtml(stringaPulita(o["titolo"]));
     const numero = stringaPulita(o["numeroFaseCompatto"]);
     if (!uri || !titolo || !numero) return null;
     const ramo = normalizzaRamo(o["ramo"]);
@@ -164,7 +237,9 @@ export function voceDaAttoCamera(voce: unknown): VoceDdl | null {
     const o = voce as Record<string, unknown>;
     const uri = urlHttp(o["uri"]);
     const numero = stringaPulita(o["numero"]);
-    const titolo = stringaPulita(o["titolo"]) || stringaPulita(o["label"]);
+    const titolo = decodificaEntitaHtml(
+      stringaPulita(o["titolo"]) || stringaPulita(o["label"]),
+    );
     if (!uri || !titolo || !numero) return null;
     const risultato: VoceDdl = {
       fonte: "camera",
@@ -269,6 +344,7 @@ export function fasiDistinte(voci: readonly VoceDdl[]): string[] {
 interface ModuliNode {
   existsSync(p: string): boolean;
   readFileSync(p: string, enc: string): string;
+  readdirSync(p: string): string[];
   join(...p: string[]): string;
 }
 
@@ -284,12 +360,20 @@ function moduliNode(): ModuliNode | null {
       const fs = proc.getBuiltinModule("node:fs") as {
         existsSync(p: string): boolean;
         readFileSync(p: string, enc: string): string;
+        readdirSync(p: string): string[];
       };
       const path = proc.getBuiltinModule("node:path") as {
         join(...p: string[]): string;
       };
       if (fs && path && typeof fs.readFileSync === "function") {
-        return { existsSync: fs.existsSync, readFileSync: fs.readFileSync, join: path.join };
+        const readdir =
+          typeof fs.readdirSync === "function" ? fs.readdirSync.bind(fs) : () => [];
+        return {
+          existsSync: fs.existsSync,
+          readFileSync: fs.readFileSync,
+          readdirSync: readdir,
+          join: path.join,
+        };
       }
     }
   } catch {
@@ -299,7 +383,47 @@ function moduliNode(): ModuliNode | null {
 }
 
 const PERCORSO_SENATO = "data/reali/parlamento-ddl.json";
-const PERCORSO_CAMERA = "data/reali/camera-atti.json";
+const PERCORSO_CAMERA_LEGACY = "data/reali/camera-atti.json";
+const DIR_REALI = "data/reali";
+const PREFISSO_SHARD_CAMERA = "camera-atti-leg19-";
+
+/**
+ * Percorsi degli shard Camera full (`camera-atti-leg19-*.json`), ordinati.
+ * Elenco scoperto dal vivo via `readdirSync` (mai inventato): se la
+ * directory manca o non e' leggibile -> lista vuota. Non lancia mai.
+ */
+function percorsiShardCamera(): string[] {
+  try {
+    const mod = moduliNode();
+    if (!mod) return [];
+    let base = "";
+    try {
+      base = typeof process !== "undefined" && process.cwd ? process.cwd() : "";
+    } catch {
+      return [];
+    }
+    if (!base) return [];
+    const dir = mod.join(base, DIR_REALI);
+    let voci: string[];
+    try {
+      voci = mod.readdirSync(dir);
+    } catch {
+      return [];
+    }
+    if (!Array.isArray(voci)) return [];
+    return voci
+      .filter(
+        (v) =>
+          typeof v === "string" &&
+          v.startsWith(PREFISSO_SHARD_CAMERA) &&
+          v.endsWith(".json"),
+      )
+      .sort()
+      .map((v) => `${DIR_REALI}/${v}`);
+  } catch {
+    return [];
+  }
+}
 
 interface CacheDdl {
   voci: VoceDdl[] | null;
@@ -375,19 +499,47 @@ function provenanceDi(grezzo: unknown): ProvenienzaDdl | null {
 
 function caricaTutto(): { voci: VoceDdl[]; provenance: ProvenanceDdl } {
   const grezzoSenato = leggiJson(PERCORSO_SENATO);
-  const grezzoCamera = leggiJson(PERCORSO_CAMERA);
+  const grezzoCameraLegacy = leggiJson(PERCORSO_CAMERA_LEGACY);
+  const percorsiShard = percorsiShardCamera();
+  const grezziShard = percorsiShard.map((p) => leggiJson(p));
   const voci: VoceDdl[] = [];
   for (const record of estraiLista(grezzoSenato, ["ddl", "voci", "dati", "items"])) {
     const voce = voceDaDdlSenato(record);
     if (voce) voci.push(voce);
   }
-  for (const record of estraiLista(grezzoCamera, ["atti", "voci", "dati", "items"])) {
-    const voce = voceDaAttoCamera(record);
-    if (voce) voci.push(voce);
+  // Unione Camera con dedup per URI: prima gli shard (corpus completo),
+  // poi il legacy (sample); i duplicati vengono scartati, mai contati due
+  // volte. I record senza titolo osservato restano esclusi (come prima).
+  const vistiCamera = new Set<string>();
+  const aggiungiCamera = (record: unknown): void => {
+    try {
+      const voce = voceDaAttoCamera(record);
+      if (!voce || vistiCamera.has(voce.uri)) return;
+      vistiCamera.add(voce.uri);
+      voci.push(voce);
+    } catch {
+      // mai lanciare
+    }
+  };
+  for (const grezzo of grezziShard) {
+    for (const record of estraiLista(grezzo, ["atti", "voci", "dati", "items"])) {
+      aggiungiCamera(record);
+    }
+  }
+  for (const record of estraiLista(grezzoCameraLegacy, ["atti", "voci", "dati", "items"])) {
+    aggiungiCamera(record);
+  }
+  let provenanceCamera: ProvenienzaDdl | null = null;
+  for (const grezzo of [...grezziShard, grezzoCameraLegacy]) {
+    const prov = provenanceDi(grezzo);
+    if (prov) {
+      provenanceCamera = prov;
+      break;
+    }
   }
   return {
     voci,
-    provenance: { senato: provenanceDi(grezzoSenato), camera: provenanceDi(grezzoCamera) },
+    provenance: { senato: provenanceDi(grezzoSenato), camera: provenanceCamera },
   };
 }
 

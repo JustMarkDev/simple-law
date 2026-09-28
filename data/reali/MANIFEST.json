@@ -189,8 +189,53 @@
    "conteggio": 14,
    "recuperatoIl": "2026-09-28T20:35:15.499Z",
    "legislatura": null
+  },
+  {
+   "nome": "Normattiva bulk: attuazione regolamenti UE (lista+metadati)",
+   "url": "https://api.normattiva.it/t/normattiva.api/bff-opendata/v1 (collezione bulk Atti di attuazione Regolamenti UE; URL di download con token monouso, non stabile)",
+   "licenza": "riproduzione consentita con menzione di fonte, carattere non autentico e gratuito (solo la GU a stampa e autentica)",
+   "file": "normattiva-bulk-a-attuazione-ue.json",
+   "conteggio": 39,
+   "recuperatoIl": "2026-09-28",
+   "legislatura": null
+  },
+  {
+   "nome": "Normattiva finestra aggiornati 2005 (lista-only, stato sconosciuto)",
+   "url": "https://api.normattiva.it/t/normattiva.api/bff-opendata/v1",
+   "licenza": "riproduzione consentita con menzione di fonte, carattere non autentico e gratuito (solo la GU a stampa e autentica)",
+   "file": "normattiva-bulk-b-finestra-2005.json",
+   "conteggio": 638,
+   "recuperatoIl": "2026-09-28",
+   "legislatura": null
+  },
+  {
+   "nome": "dati.camera.it (atti leg19, shard)",
+   "url": "https://dati.camera.it/sparql",
+   "licenza": "CC BY-SA 4.0",
+   "legislatura": "19",
+   "file": "camera-atti-leg19-a.json",
+   "conteggio": 1048,
+   "recuperatoIl": "2026-09-28T20:53:36.825Z"
+  },
+  {
+   "nome": "dati.camera.it (atti leg19, shard)",
+   "url": "https://dati.camera.it/sparql",
+   "licenza": "CC BY-SA 4.0",
+   "legislatura": "19",
+   "file": "camera-atti-leg19-b.json",
+   "conteggio": 1048,
+   "recuperatoIl": "2026-09-28T20:53:36.825Z"
+  },
+  {
+   "nome": "dati.camera.it (atti leg19, shard)",
+   "url": "https://dati.camera.it/sparql",
+   "licenza": "CC BY-SA 4.0",
+   "legislatura": "19",
+   "file": "camera-atti-leg19-c.json",
+   "conteggio": 1048,
+   "recuperatoIl": "2026-09-28T20:53:36.825Z"
   }
  ],
- "generatoIl": "2026-09-28T20:35:15.499Z",
+ "generatoIl": "2026-09-28T21:05:00Z",
  "nota": "Dati ufficiali open data (11 file). I file >1MB non si committano: rigenerare via scripts/ingest-reale-*.ts. I gruppi Camera sono derivati dai deputati; le denominazioni Senato includono varianti storiche della leg. 19; i DDL/atti sono disegni e atti parlamentari, MAI leggi in vigore."
 }

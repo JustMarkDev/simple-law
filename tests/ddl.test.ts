@@ -21,9 +21,11 @@ import {
   fasiDistinte,
   filtraPerFase,
   filtraPerRamo,
+  leggiProvenanceDdl,
   normalizzaDdl,
   normalizzaRamo,
   paginaDdl,
+  tuttiDdl,
   voceDaAttoCamera,
   voceDaDdlSenato,
   type VoceDdl,
@@ -406,5 +408,183 @@ describe("integrazione disco DDL (solo se data/reali presente)", () => {
     } catch {
       return;
     }
+  });
+});
+
+/* ---------------------------------------------------------------------------
+ * REALI-9 W3: shard Camera full (`camera-atti-leg19-a/b/c.json`) + loader
+ * multi-shard con dedup. Mai rete, mai scritture: legge solo il disco e la
+ * tolera l'assenza (skip) come i test disco esistenti. I numeri attesi
+ * (3144 distinti) sono il COUNT DISTINCT leg19 osservato dal vivo su
+ * `dati.camera.it` il 2026-09-28 (6288 righe doppie, ogni URI x2); se
+ * l'endpoint cresce, rieseguire l'ingest e aggiornare.
+ * ------------------------------------------------------------------------- */
+
+const SHARD_CAMERA_W3 = ["a", "b", "c"].map(
+  (s) => `${RADICE}/data/reali/camera-atti-leg19-${s}.json`,
+);
+// COUNT DISTINCT leg19 osservato dal vivo il 2026-09-28 (ingest --camera-full).
+const TOTALE_ATTI_CAMERA_LEG19 = 3144;
+const SHARD_CAP_W3 = 972_800;
+
+interface ShardCameraW3 {
+  provenance: {
+    fonte?: string;
+    url?: string;
+    sparql?: string;
+    recuperatoIl?: string;
+    licenza?: string;
+  };
+  legislatura?: string | number;
+  atti?: Record<string, unknown>[];
+}
+
+async function leggiShardW3(): Promise<ShardCameraW3[] | null> {
+  const lista: ShardCameraW3[] = [];
+  for (const percorso of SHARD_CAMERA_W3) {
+    const shard = await leggiJsonDisco<ShardCameraW3>(percorso);
+    if (!shard) return null;
+    lista.push(shard);
+  }
+  return lista;
+}
+
+describe("camera full shard W3 (solo se gli shard esistono)", () => {
+  it("ogni shard <=950KB (e <=1MB hard cap)", async () => {
+    const fs = await import("node:fs");
+    let visti = 0;
+    for (const percorso of SHARD_CAMERA_W3) {
+      if (!fs.existsSync(percorso)) continue;
+      visti += 1;
+      const size = fs.statSync(percorso).size;
+      expect(size).toBeLessThanOrEqual(SHARD_CAP_W3);
+      expect(size).toBeLessThanOrEqual(1_048_576);
+    }
+    if (visti === 0) return;
+    expect(visti).toBe(3);
+  });
+
+  it("envelope con provenance completa + legislatura 19, record solo osservati", async () => {
+    const shard = await leggiShardW3();
+    if (!shard) return;
+    for (const s of shard) {
+      expect(s.legislatura).toBe("19");
+      expect(typeof s.provenance?.fonte).toBe("string");
+      expect(s.provenance?.url).toMatch(/^https?:\/\//);
+      expect(typeof s.provenance?.sparql).toBe("string");
+      expect(typeof s.provenance?.recuperatoIl).toBe("string");
+      expect(s.provenance?.licenza).toBe("CC BY-SA 4.0");
+      expect(Array.isArray(s.atti)).toBe(true);
+      expect(s.atti?.length ?? 0).toBeGreaterThan(0);
+      for (const a of s.atti ?? []) {
+        expect(typeof a["uri"]).toBe("string");
+        expect(a["uri"] as string).toMatch(/^https?:\/\//);
+        expect(a["slug"]).toMatch(/^ac19_[A-Za-z0-9-]+$/);
+        expect(a["uri"] as string).toContain(a["slug"] as string);
+        expect(typeof a["tipo"]).toBe("string");
+        expect((a["tipo"] as string).length).toBeGreaterThan(0);
+        expect(typeof a["numero"]).toBe("string");
+        expect((a["numero"] as string).length).toBeGreaterThan(0);
+        // Titolo osservato (dc:title o fallback rdfs:label): mai inventato.
+        const titolo = `${a["titolo"] ?? ""}${a["label"] ?? ""}`.trim();
+        expect(titolo.length).toBeGreaterThan(0);
+        // Mai ELI/stati/codici/GU sui DDL (non sono leggi in vigore).
+        expect(a["eli"]).toBeUndefined();
+        expect(a["stato"]).toBeUndefined();
+        expect(a["codiceRedazionale"]).toBeUndefined();
+        expect(a["numeroGU"]).toBeUndefined();
+      }
+    }
+  });
+
+  it("shard disgiunti, unione = 3144 URI distinti, legacy contenuto", async () => {
+    const shard = await leggiShardW3();
+    if (!shard) return;
+    const uris = new Set<string>();
+    let somma = 0;
+    for (const s of shard) {
+      const atti = s.atti ?? [];
+      somma += atti.length;
+      for (const a of atti) uris.add(a["uri"] as string);
+    }
+    // Disgiunti: nessun URI contato due volte.
+    expect(uris.size).toBe(somma);
+    expect(somma).toBe(TOTALE_ATTI_CAMERA_LEG19);
+    // Il legacy (sample 197) e' interamente contenuto negli shard.
+    const legacy = await leggiJsonDisco<{ atti?: { uri: string }[] }>(FILE_CAMERA);
+    if (legacy?.atti) {
+      for (const a of legacy.atti) expect(uris.has(a.uri)).toBe(true);
+    }
+  });
+});
+
+describe("loader multi-shard W3 (unione + dedup + never-throw)", () => {
+  it("unisce shard+legacy senza duplicati URI; copie difensive", async () => {
+    const shard = await leggiShardW3();
+    if (!shard) return;
+    azzeraCacheDdl();
+    const voci = await tuttiDdl();
+    const camera = voci.filter((v) => v.fonte === "camera");
+    const uris = new Set(camera.map((v) => v.uri));
+    // Nessun duplicato dopo l'unione (i 197 legacy sono negli shard).
+    expect(uris.size).toBe(camera.length);
+    // Tutti gli URI degli shard con titolo osservato sono caricati.
+    const attesi = new Set<string>();
+    for (const s of shard) {
+      for (const a of s.atti ?? []) {
+        if (`${a["titolo"] ?? ""}${a["label"] ?? ""}`.trim()) {
+          attesi.add(a["uri"] as string);
+        }
+      }
+    }
+    expect(uris.size).toBe(attesi.size);
+    for (const u of attesi) expect(uris.has(u)).toBe(true);
+    for (const v of camera) {
+      expect(v.disegnoDiLegge).toBe(true);
+      expect(v.ramo).toBe("C");
+    }
+    // Copia difensiva: mutare il risultato non corrompe la cache.
+    const prima = voci.length;
+    voci.push({
+      fonte: "camera",
+      uri: "http://esempio.invalid/x",
+      titolo: "X",
+      ramo: "C",
+      numero: "0",
+      disegnoDiLegge: true,
+    });
+    expect((await tuttiDdl()).length).toBe(prima);
+    azzeraCacheDdl();
+  });
+
+  it("provenance camera presente e never-throw su file assenti", async () => {
+    azzeraCacheDdl();
+    const prov = await leggiProvenanceDdl();
+    expect(prov).toBeDefined();
+    if (await leggiShardW3()) {
+      expect(prov.camera?.licenza).toBe("CC BY-SA 4.0");
+    }
+    // Helper puri mai throw anche con cache azzerata e input assurdi.
+    azzeraCacheDdl();
+    await expect(tuttiDdl()).resolves.toBeInstanceOf(Array);
+    await expect(leggiProvenanceDdl()).resolves.toBeDefined();
+    azzeraCacheDdl();
+  });
+
+  it("filtro+pagina su N voci resta veloce (filtro prima, pagina dopo)", async () => {
+    const shard = await leggiShardW3();
+    if (!shard) return;
+    azzeraCacheDdl();
+    const voci = await tuttiDdl();
+    expect(voci.length).toBeGreaterThan(3000);
+    const inizio = Date.now();
+    const filtrati = cercaDdl(filtraPerRamo(voci, "C"), "legge");
+    const pagina = paginaDdl(filtrati, 3, 20);
+    const ms = Date.now() - inizio;
+    expect(pagina.length).toBeLessThanOrEqual(20);
+    expect(filtrati.length).toBeGreaterThanOrEqual(pagina.length);
+    // Soglia generosa anti-flake: l'operazione reale e' ~4ms.
+    expect(ms).toBeLessThan(1000);
+    azzeraCacheDdl();
   });
 });

@@ -193,6 +193,11 @@ function numeroAttuativi(valore: unknown): number {
 
 function deriveStato(record: LawRecord): { stato: Stato; motivo: string } {
   try {
+    const statoGrezzo = typeof record?.stato === 'string' ? record.stato : ''
+    // Atti lista-only (vigenza non verificata): semaforo giallo, mai verde.
+    if (statoGrezzo.trim().toLowerCase() === 'sconosciuto') {
+      return { stato: 'giallo', motivo: 'Vigenza non verificata: scheda da elenco senza testo ufficiale.' }
+    }
     const att = record?.attuativi
     const adottati = numeroAttuativi(att?.adottati)
     const daAdottare = numeroAttuativi(att?.daAdottare)
@@ -202,7 +207,6 @@ function deriveStato(record: LawRecord): { stato: Stato; motivo: string } {
       attuativi: { daAdottare, adottati, scaduti },
     })
     if (colore === 'rosso') {
-      const statoGrezzo = typeof record?.stato === 'string' ? record.stato : ''
       // Stessa regola del condiviso `lib/filtri-leggi` (`non.?vig` copre
       // sia `non vigore` sia `non vigente`).
       if (/non.?vig|abrog|decad|sospes/i.test(statoGrezzo)) {

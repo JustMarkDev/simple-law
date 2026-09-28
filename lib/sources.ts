@@ -6,7 +6,7 @@
  * i dati seed inclusi nel bundle.
  */
 
-import { normalizeEli } from "./nir";
+import { normalizeEli, parseNIR } from "./nir";
 import { buildFonti } from "./fonti";
 import { calcGulpease } from "./readability";
 import { SEED_CDM, SEED_LAWS, SEED_MINISTERS } from "./seed-data";
@@ -202,15 +202,16 @@ function chiaveEli(eli: unknown): string {
  * storico deve entrare nel corpus. */
 const PERCORSI_ATTI_REALI = [
   "data/reali/normattiva-recenti.json",
-  "data/reali/normattiva-leggi.json",
   "data/reali/normattiva-storico-collezioni.json",
+  "data/reali/normattiva-storico-1960.json",
+  "data/reali/normattiva-storico-1970.json",
   "data/reali/normattiva-storico-1980.json",
   "data/reali/normattiva-storico-1990.json",
   "data/reali/normattiva-storico-2000.json",
   "data/reali/normattiva-storico-2010.json",
-  "data/reali/normattiva-storico-1970.json",
   "data/reali/normattiva-storico-2020.json",
-  "data/reali/normattiva-storico-1960.json",
+  "data/reali/normattiva-bulk-a-attuazione-ue.json",
+  "data/reali/normattiva-bulk-b-finestra-2005.json",
 ] as const;
 
 /** Percorsi candidati per i comunicati reali (primo esistente e valido vince). */
@@ -319,6 +320,12 @@ function fontiReali(input: Record<string, unknown>, tipo: string, numero: string
  * Normalizza un atto reale in `LawRecord`. Restituisce `null` se mancano i
  * campi minimi verificati (`titolo` + `eli`). `dimostrativo=false` forzato.
  * Non lancia mai, non inventa mai codici/numeri/URL/date.
+ *
+ * Onesta dei campi mancanti: `tipo`/`dataEmanazione`/`nir` assenti si
+ * derivano dall'URN NIR verificato (`parseNIR`), mai inventati; se
+ * nemmeno l'URN basta, il record e' scartato (null). Atti lista-only
+ * (`dettaglio: false` esplicito, senza testo ne' fine-vigenza) ottengono
+ * `stato: "sconosciuto"` (vigenza non verificata), mai `in_vigore`.
  */
 export function normalizzaAttoReale(input: unknown): LawRecord | null {
   try {
@@ -327,15 +334,23 @@ export function normalizzaAttoReale(input: unknown): LawRecord | null {
     const titolo = stringaPulita(o["titolo"]);
     const eli = stringaPulita(o["eli"]);
     if (!titolo || !eli) return null;
-    const tipo = stringaPulita(o["tipo"]) || "legge";
-    const numero = stringaPulita(o["numero"]);
-    const dataEmanazione = dataIsoReale(o["dataEmanazione"]);
-    const nir = stringaPulita(o["nir"]);
+    const urnCandidata = stringaPulita(o["urn"]);
+    const nirVerificata = parseNIR(urnCandidata);
+    const tipo =
+      stringaPulita(o["tipo"]) || (nirVerificata ? nirVerificata.tipo : "");
+    const numero =
+      stringaPulita(o["numero"]) || (nirVerificata ? nirVerificata.numero : "");
+    const dataEmanazione =
+      dataIsoReale(o["dataEmanazione"]) ||
+      (nirVerificata ? nirVerificata.data : "");
+    if (!tipo || !numero || !dataEmanazione) return null;
+    const nir = stringaPulita(o["nir"]) || (nirVerificata ? urnCandidata : "");
     const sintesiGrezza = stringaPulita(o["sintesi"]);
     const sintesi = (sintesiGrezza || titolo).slice(0, 600);
     const testoGrezzo = typeof o["testo"] === "string" && o["testo"].trim() ? o["testo"] : sintesi;
-    // Stati onesti: abrogato/decaduto solo da segnali espliciti, mai default
-    // inventati. `decaduto` (DL non convertito) e' uno stato reale distinto.
+    // Stati onesti: abrogato/decaduto solo da segnali espliciti; gli atti
+    // lista-only (dettaglio False, senza testo verificato) restano
+    // "sconosciuto": la vigenza non e' verificabile, mai `in_vigore`.
     const statoGrezzo = stringaPulita(o["stato"]).toLowerCase();
     const fineVigenza = stringaPulita(
       o["articoloDataFineVigenza"] ?? o["fineVigenza"] ?? o["dataFineVigenza"],
@@ -344,12 +359,17 @@ export function normalizzaAttoReale(input: unknown): LawRecord | null {
     const oggi = new Date().toISOString().slice(0, 10).replace(/-/g, "");
     const finePassata =
       !!fineValida && fineValida[0] !== "99999999" && fineValida[0] < oggi;
+    const dettaglioAssente = o["dettaglio"] === false;
+    const haTestoVerificato =
+      typeof o["testo"] === "string" && o["testo"].trim().length > 0;
     const stato =
       /abrog/.test(statoGrezzo) || finePassata
         ? "abrogato"
         : /decad/.test(statoGrezzo)
           ? "decaduto"
-          : "in_vigore";
+          : statoGrezzo === "sconosciuto" || (dettaglioAssente && !haTestoVerificato)
+            ? "sconosciuto"
+            : "in_vigore";
     const record: LawRecord = {
       eli,
       nir,
@@ -365,7 +385,7 @@ export function normalizzaAttoReale(input: unknown): LawRecord | null {
     };
     const testo = typeof o["testo"] === "string" && o["testo"].trim() ? o["testo"] : undefined;
     if (testo) record.testo = testo;
-    for (const chiave of ["codiceRedazionale", "dataGU", "numeroGU", "legislatura", "cameraId", "senatoDid"] as const) {
+    for (const chiave of ["codiceRedazionale", "dataGU", "numeroGU", "legislatura", "cameraId", "senatoDid", "articoloDataFineVigenza"] as const) {
       const v = stringaPulita(o[chiave]);
       if (v) (record as unknown as Record<string, unknown>)[chiave] = v;
     }
@@ -509,7 +529,9 @@ function caricaAttiReali(): LawRecord[] {
     const risultato: LawRecord[] = [];
     for (const grezzo of documenti) {
       const lista = estraiListaAttiReali(grezzo);
-      for (const item of lista.slice(0, 500)) {
+      // Cap anti-patologico per file (i file reali sono <= ~700 atti;
+      // leggiTuttiJsonDaDisco scarta gia file oltre 2MB).
+      for (const item of lista.slice(0, 5000)) {
         try {
           const record = normalizzaAttoReale(item);
           if (record) risultato.push(record);
