@@ -357,3 +357,19 @@ Obiettivo precedente (completato): UI/UX, feature, corpus 5005 voci.
   1949-54/56-59/1961-64/1966-69/1971-74/1976-79/1981-84/1986-89/1991/1994/
   1996-99/2001-04/2007-09/2011/2013-14/2016-17/2019 ancora scoperta.
 - Next: finestre storiche mancanti, audit foto/eyebrow residui, E2E a11y.
+
+## Storico-totale (2026-09-29): copertura 1948-2025 completa, 4019 atti veri
+- Workflow: 1 chiamata `workflow` con 5 ingestor paralleli (A-E, anni
+  disgiunti, niente tocchi a lib/MANIFEST/test). Rete OK per tutti.
+- Ingerito: 53 nuovi file annuali, 1703 atti veri (379+357+421+248+298),
+  stati solo fine-vigenza/Art.1, zero dash, ELI unici globali (3294/3294).
+  Scarti solo onesti (fetch failed / atto non trovato, mai inventati).
+- Wiring mio: PERCORSI +53, MANIFEST 61->114 voci (conteggi veri dal
+  provenance), README sezione copertura, gate
+  `tests/reali-16-copertura.test.ts` (falliva onestamente su 2026:
+  dichiarato coperto da recenti+GU, non da annata chiusa).
+- Verifiche mie: tsc OK, eslint OK, 861/861 test OK, build OK
+  (874 pagine), smoke live (200, ricerca "lavoro" trova RD 387/1922 vero).
+- Next: finestre dense per gli anni magri (<30 atti: 1966-74, 1996-2001),
+  eyebrow multipli residui (controllo/statistiche/semplifica), foto reali,
+  E2E a11y, freschezza 2026 continua.
