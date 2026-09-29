@@ -1,0 +1,451 @@
+{
+  "provenance": {
+    "fonte": "normattiva",
+    "url": "https://api.normattiva.it/t/normattiva.api/bff-opendata/v1/api/v1/ricerca/aggiornati",
+    "recuperatoIl": "2026-09-29T01:55:58.574Z",
+    "licenza": "riproduzione consentita con menzione di fonte, carattere non autentico e gratuito (Note legali dati.normattiva.it; solo la Gazzetta Ufficiale a stampa e' autentica)"
+  },
+  "atti": [
+    {
+      "chiave": "/eli/id/1861/12/08/061U0356/sg",
+      "titolo": "REGIO DECRETO 8 dicembre 1861, n. 356",
+      "tipo": "regio.decreto",
+      "numero": "356",
+      "dataEmanazione": "1861-12-08",
+      "nir": "urn:nir:stato:regio.decreto:1861-12-08;356",
+      "eli": "/eli/id/1861/12/08/061U0356/sg",
+      "stato": "abrogato",
+      "sintesi": "Che instituisce una Commissione speciale per riconoscere l'attitudine alla carriera e grado ottenuto dei Funzionarii ed Impiegati nei vari rami d'Amministrazione appartenenti al Corpo dei Volontari dell'Esercito Meridionale. (061U0356)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1861-12-08;356",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1861/12/14/061U0356/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1861-12-14",
+      "numeroGU": "303",
+      "codiceRedazionale": "061U0356",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.P.R. 13 DICEMBRE 2010, N. 248 ))"
+    },
+    {
+      "chiave": "/eli/id/1861/11/24/061U0334/sg",
+      "titolo": "REGIO DECRETO 24 novembre 1861, n. 334",
+      "tipo": "regio.decreto",
+      "numero": "334",
+      "dataEmanazione": "1861-11-24",
+      "nir": "urn:nir:stato:regio.decreto:1861-11-24;334",
+      "eli": "/eli/id/1861/11/24/061U0334/sg",
+      "stato": "abrogato",
+      "sintesi": "Che determina provvisoriamente il numero, le sedi e le circoscrizioni territoriali delle Autorita' Giudiziarie nelle Provincie Siciliane. (061U0334)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1861-11-24;334",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1861/11/28/061U0334/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1861-11-28",
+      "numeroGU": "289",
+      "codiceRedazionale": "061U0334",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.P.R. 13 DICEMBRE 2010, N. 248 ))"
+    },
+    {
+      "chiave": "/eli/id/1861/10/09/061U0330/sg",
+      "titolo": "REGIO DECRETO 9 ottobre 1861, n. 330",
+      "tipo": "regio.decreto",
+      "numero": "330",
+      "dataEmanazione": "1861-10-09",
+      "nir": "urn:nir:stato:regio.decreto:1861-10-09;330",
+      "eli": "/eli/id/1861/10/09/061U0330/sg",
+      "stato": "abrogato",
+      "sintesi": "Che istituisce speciali Uffizi di Ricevitorie per la riscossione dei redditi e crediti della Cassa Ecclesiastica. (061U0330)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1861-10-09;330",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1861/11/13/061U0330/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1861-11-13",
+      "numeroGU": "276",
+      "codiceRedazionale": "061U0330",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.P.R. 13 DICEMBRE 2010, N. 248 ))"
+    },
+    {
+      "chiave": "/eli/id/1861/11/03/061U0303/sg",
+      "titolo": "REGIO DECRETO 3 novembre 1861, n. 303",
+      "tipo": "regio.decreto",
+      "numero": "303",
+      "dataEmanazione": "1861-11-03",
+      "nir": "urn:nir:stato:regio.decreto:1861-11-03;303",
+      "eli": "/eli/id/1861/11/03/061U0303/sg",
+      "stato": "abrogato",
+      "sintesi": "Col quale vengono soppressi gli Uffizi di Contabilita' Generale in Napoli, Palermo e Firenze, ed approvato un regolamento per l'applicazione del Regio Decreto d'oggi n.° 302 nelle Provincie Toscane, Napolitane e Siciliane. (061U0303)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1861-11-03;303",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1861/11/11/061U0303/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1861-11-11",
+      "numeroGU": "274",
+      "codiceRedazionale": "061U0303",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.P.R. 13 DICEMBRE 2010, N. 248 ))"
+    },
+    {
+      "chiave": "/eli/id/1861/11/03/061U0302/sg",
+      "titolo": "REGIO DECRETO 3 novembre 1861, n. 302",
+      "tipo": "regio.decreto",
+      "numero": "302",
+      "dataEmanazione": "1861-11-03",
+      "nir": "urn:nir:stato:regio.decreto:1861-11-03;302",
+      "eli": "/eli/id/1861/11/03/061U0302/sg",
+      "stato": "abrogato",
+      "sintesi": "Sulla Contabilita' generale dello Stato. (061U0302)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1861-11-03;302",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1861/11/11/061U0302/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1861-11-11",
+      "numeroGU": "274",
+      "codiceRedazionale": "061U0302",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.P.R. 13 DICEMBRE 2010, N. 248 ))"
+    },
+    {
+      "chiave": "/eli/id/1861/10/29/061U0304/sg",
+      "titolo": "REGIO DECRETO 29 ottobre 1861, n. 304",
+      "tipo": "regio.decreto",
+      "numero": "304",
+      "dataEmanazione": "1861-10-29",
+      "nir": "urn:nir:stato:regio.decreto:1861-10-29;304",
+      "eli": "/eli/id/1861/10/29/061U0304/sg",
+      "stato": "abrogato",
+      "sintesi": "Di approvazione di un nuovo regolamento doganale. (061U0304)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1861-10-29;304",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1861/11/08/061U0304/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1861-11-08",
+      "numeroGU": "272",
+      "codiceRedazionale": "061U0304",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.P.R. 13 DICEMBRE 2010, N. 248 ))"
+    },
+    {
+      "chiave": "/eli/id/1861/10/20/061U0285/sg",
+      "titolo": "REGIO DECRETO 20 ottobre 1861, n. 285",
+      "tipo": "regio.decreto",
+      "numero": "285",
+      "dataEmanazione": "1861-10-20",
+      "nir": "urn:nir:stato:regio.decreto:1861-10-20;285",
+      "eli": "/eli/id/1861/10/20/061U0285/sg",
+      "stato": "abrogato",
+      "sintesi": "Col quale e' aumentato il Personale del Ministero per gli Affari Esteri. (061U0285)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1861-10-20;285",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1861/11/06/061U0285/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1861-11-06",
+      "numeroGU": "270",
+      "codiceRedazionale": "061U0285",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.P.R. 13 DICEMBRE 2010, N. 248 ))"
+    },
+    {
+      "chiave": "/eli/id/1861/10/20/061U0288/sg",
+      "titolo": "REGIO DECRETO 20 ottobre 1861, n. 288",
+      "tipo": "regio.decreto",
+      "numero": "288",
+      "dataEmanazione": "1861-10-20",
+      "nir": "urn:nir:stato:regio.decreto:1861-10-20;288",
+      "eli": "/eli/id/1861/10/20/061U0288/sg",
+      "stato": "in_vigore",
+      "sintesi": "Relativo alla fabbricazione delle monete d'oro e d'argento in tutte le Zecche dello Stato (061U0288)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1861-10-20;288",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1861/10/30/061U0288/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1861-10-30",
+      "numeroGU": "264",
+      "codiceRedazionale": "061U0288",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "VITTORIO EMANUELE II Per grazia di Dio e per Volont&agrave; della Nazione RE D'ITALIA Visto l'art. 23 della Legge 13 novembre 1859, num. 3747; Visto il R. Decreto 2 maggio 1861, num. 16 ; Sulla proposta del Nostro Ministro Segretario di Stato per l'Agricoltura, Industria e Commercio, Abbiamo ordinato ed ordiniamo quanto segue: Art. 1 La fabbricazione delle monete d'oro e d'argento sar&agrave; eseguita in tutte le zecche dello Stato col sistema d'appalto a seguito di pubblico concorso."
+    },
+    {
+      "chiave": "/eli/id/1861/10/27/061U0289/sg",
+      "titolo": "REGIO DECRETO 27 ottobre 1861, n. 289",
+      "tipo": "regio.decreto",
+      "numero": "289",
+      "dataEmanazione": "1861-10-27",
+      "nir": "urn:nir:stato:regio.decreto:1861-10-27;289",
+      "eli": "/eli/id/1861/10/27/061U0289/sg",
+      "stato": "abrogato",
+      "sintesi": "Col quale si mantiene fino ad ulteriore provvedimento lo stipendio annesso alla carica soppressa dei Vicegovernatori. (061U0289)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1861-10-27;289",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1861/10/28/061U0289/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1861-10-28",
+      "numeroGU": "262",
+      "codiceRedazionale": "061U0289",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.P.R. 13 DICEMBRE 2010, N. 248 ))"
+    },
+    {
+      "chiave": "/eli/id/1861/10/22/061U0282/sg",
+      "titolo": "REGIO DECRETO 22 ottobre 1861, n. 282",
+      "tipo": "regio.decreto",
+      "numero": "282",
+      "dataEmanazione": "1861-10-22",
+      "nir": "urn:nir:stato:regio.decreto:1861-10-22;282",
+      "eli": "/eli/id/1861/10/22/061U0282/sg",
+      "stato": "abrogato",
+      "sintesi": "Col quale e' concessa facolta' ai possessori di titoli provvisori della rendita italiana di pagare in quattro rate i due quinti tuttora dovuti del prezzo della medesima. (061U0282)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1861-10-22;282",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1861/10/23/061U0282/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1861-10-23",
+      "numeroGU": "258",
+      "codiceRedazionale": "061U0282",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DALLA L. 7 APRILE 2025, N. 56 ))"
+    },
+    {
+      "chiave": "/eli/id/1861/10/09/061U0294/sg",
+      "titolo": "REGIO DECRETO 9 ottobre 1861, n. 294",
+      "tipo": "regio.decreto",
+      "numero": "294",
+      "dataEmanazione": "1861-10-09",
+      "nir": "urn:nir:stato:regio.decreto:1861-10-09;294",
+      "eli": "/eli/id/1861/10/09/061U0294/sg",
+      "stato": "abrogato",
+      "sintesi": "Col quale e' instituita una Divisione di Statistica Generale presso il Ministero di Agricoltura, Industria e Commercio (061U0294)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1861-10-09;294",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1861/10/22/061U0294/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1861-10-22",
+      "numeroGU": "257",
+      "codiceRedazionale": "061U0294",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.P.R. 13 DICEMBRE 2010, N. 248 ))"
+    },
+    {
+      "chiave": "/eli/id/1861/07/17/061U0267/sg",
+      "titolo": "LEGGE 17 luglio 1861, n. 267",
+      "tipo": "legge",
+      "numero": "267",
+      "dataEmanazione": "1861-07-17",
+      "nir": "urn:nir:stato:legge:1861-07-17;267",
+      "eli": "/eli/id/1861/07/17/061U0267/sg",
+      "stato": "abrogato",
+      "sintesi": "Sulle tasse marittime. (061U0267)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1861-07-17;267",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1861/10/17/061U0267/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1861-10-17",
+      "numeroGU": "253",
+      "codiceRedazionale": "061U0267",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.L. 22 DICEMBRE 2008, N. 200 , CONVERTITO CON MODIFICAZIONI DALLA L. 18 FEBBRAIO 2009, N. 9 ))"
+    },
+    {
+      "chiave": "/eli/id/1861/10/13/061U0266/sg",
+      "titolo": "REGIO DECRETO 13 ottobre 1861, n. 266",
+      "tipo": "regio.decreto",
+      "numero": "266",
+      "dataEmanazione": "1861-10-13",
+      "nir": "urn:nir:stato:regio.decreto:1861-10-13;266",
+      "eli": "/eli/id/1861/10/13/061U0266/sg",
+      "stato": "abrogato",
+      "sintesi": "Che ordina la riconvocazione del Collegio elettorale di Arezzo. (061U0266)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1861-10-13;266",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1861/10/15/061U0266/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1861-10-15",
+      "numeroGU": "251",
+      "codiceRedazionale": "061U0266",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.P.R. 13 DICEMBRE 2010, N. 248 ))"
+    },
+    {
+      "chiave": "/eli/id/1861/09/29/061U0247/sg",
+      "titolo": "REGIO DECRETO 29 settembre 1861, n. 247",
+      "tipo": "regio.decreto",
+      "numero": "247",
+      "dataEmanazione": "1861-09-29",
+      "nir": "urn:nir:stato:regio.decreto:1861-09-29;247",
+      "eli": "/eli/id/1861/09/29/061U0247/sg",
+      "stato": "abrogato",
+      "sintesi": "Di convocazione del Collegio elettorale di Fossano. (061U0247)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1861-09-29;247",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1861/10/02/061U0247/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1861-10-02",
+      "numeroGU": "240",
+      "codiceRedazionale": "061U0247",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.P.R. 13 DICEMBRE 2010, N. 248 ))"
+    },
+    {
+      "chiave": "/eli/id/1861/09/08/061U0227/sg",
+      "titolo": "REGIO DECRETO 8 settembre 1861, n. 227",
+      "tipo": "regio.decreto",
+      "numero": "227",
+      "dataEmanazione": "1861-09-08",
+      "nir": "urn:nir:stato:regio.decreto:1861-09-08;227",
+      "eli": "/eli/id/1861/09/08/061U0227/sg",
+      "stato": "abrogato",
+      "sintesi": "Che ordina il censimento della popolazione del Regno d'Italia. (061U0227)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1861-09-08;227",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1861/09/14/061U0227/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1861-09-14",
+      "numeroGU": "225",
+      "codiceRedazionale": "061U0227",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.LGS. 13 DICEMBRE 2010, N. 212 ))"
+    },
+    {
+      "chiave": "/eli/id/1861/09/08/061U0210/sg",
+      "titolo": "REGIO DECRETO 8 settembre 1861, n. 210",
+      "tipo": "regio.decreto",
+      "numero": "210",
+      "dataEmanazione": "1861-09-08",
+      "nir": "urn:nir:stato:regio.decreto:1861-09-08;210",
+      "eli": "/eli/id/1861/09/08/061U0210/sg",
+      "stato": "abrogato",
+      "sintesi": "Per condono generale delle pene incorse dai graduati e militi della Guardia Nazionale del Regno. (061U0210)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1861-09-08;210",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1861/09/09/061U0210/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1861-09-09",
+      "numeroGU": "220",
+      "codiceRedazionale": "061U0210",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.LGS. 13 DICEMBRE 2010, N. 212 ))"
+    },
+    {
+      "chiave": "/eli/id/1861/07/28/061U0163/sg",
+      "titolo": "REGIO DECRETO 28 luglio 1861, n. 163",
+      "tipo": "regio.decreto",
+      "numero": "163",
+      "dataEmanazione": "1861-07-28",
+      "nir": "urn:nir:stato:regio.decreto:1861-07-28;163",
+      "eli": "/eli/id/1861/07/28/061U0163/sg",
+      "stato": "abrogato",
+      "sintesi": "Che approva il Regolamento pel servizio dei pesi e delle misure. (061U0163)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1861-07-28;163",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1861/08/21/061U0163/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1861-08-21",
+      "numeroGU": "204",
+      "codiceRedazionale": "061U0163",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.P.R. 13 DICEMBRE 2010, N. 248 ))"
+    },
+    {
+      "chiave": "/eli/id/1861/08/11/061U0162/sg",
+      "titolo": "REGIO DECRETO 11 agosto 1861, n. 162",
+      "tipo": "regio.decreto",
+      "numero": "162",
+      "dataEmanazione": "1861-08-11",
+      "nir": "urn:nir:stato:regio.decreto:1861-08-11;162",
+      "eli": "/eli/id/1861/08/11/061U0162/sg",
+      "stato": "abrogato",
+      "sintesi": "Col quale e' instituita una Societa' allo scopo di promuovere, ogni anno, uno o piu' tiri a segno nazionali. (061U0162)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1861-08-11;162",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1861/08/19/061U0162/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1861-08-19",
+      "numeroGU": "202",
+      "codiceRedazionale": "061U0162",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.P.R. 13 DICEMBRE 2010, N. 248 ))"
+    },
+    {
+      "chiave": "/eli/id/1861/07/21/061U0099/sg",
+      "titolo": "REGIO DECRETO 21 luglio 1861, n. 99",
+      "tipo": "regio.decreto",
+      "numero": "99",
+      "dataEmanazione": "1861-07-21",
+      "nir": "urn:nir:stato:regio.decreto:1861-07-21;99",
+      "eli": "/eli/id/1861/07/21/061U0099/sg",
+      "stato": "abrogato",
+      "sintesi": "Che determina le norme per l'imprestito di 500 milioni di lire approvato con legge 17 luglio 1861. (061U0099)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1861-07-21;99",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1861/07/23/061U0099/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1861-07-23",
+      "numeroGU": "178",
+      "codiceRedazionale": "061U0099",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.P.R. 13 DICEMBRE 2010, N. 248 ))"
+    },
+    {
+      "chiave": "/eli/id/1861/06/23/061U0055/sg",
+      "titolo": "REGIO DECRETO 23 giugno 1861, n. 55",
+      "tipo": "regio.decreto",
+      "numero": "55",
+      "dataEmanazione": "1861-06-23",
+      "nir": "urn:nir:stato:regio.decreto:1861-06-23;55",
+      "eli": "/eli/id/1861/06/23/061U0055/sg",
+      "stato": "abrogato",
+      "sintesi": "Che ordina la convocazione del Collegio elettorale di Cuorgne'. (061U0055)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1861-06-23;55",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1861/06/24/061U0055/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1861-06-24",
+      "numeroGU": "152",
+      "codiceRedazionale": "061U0055",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.P.R. 13 DICEMBRE 2010, N. 248 ))"
+    },
+    {
+      "chiave": "/eli/id/1861/05/05/061U0011/sg",
+      "titolo": "REGIO DECRETO 5 maggio 1861, n. 11",
+      "tipo": "regio.decreto",
+      "numero": "11",
+      "dataEmanazione": "1861-05-05",
+      "nir": "urn:nir:stato:regio.decreto:1861-05-05;11",
+      "eli": "/eli/id/1861/05/05/061U0011/sg",
+      "stato": "abrogato",
+      "sintesi": "Che determina gli affari che devono essere deferiti all'Amministrazione centrale o spediti immediatamente dalla Luogotenenza Generale di Napoli. (061U0011)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1861-05-05;11",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1861/05/07/061U0011/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1861-05-07",
+      "numeroGU": "113",
+      "codiceRedazionale": "061U0011",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.LGS. 13 DICEMBRE 2010, N. 212 ))"
+    }
+  ]
+}

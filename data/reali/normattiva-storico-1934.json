@@ -1,0 +1,157 @@
+{
+  "provenance": {
+    "fonte": "normattiva",
+    "url": "https://api.normattiva.it/t/normattiva.api/bff-opendata/v1/api/v1/ricerca/aggiornati",
+    "recuperatoIl": "2026-09-29T01:41:05.716Z",
+    "licenza": "riproduzione consentita con menzione di fonte, carattere non autentico e gratuito (Note legali dati.normattiva.it; solo la Gazzetta Ufficiale a stampa e' autentica)"
+  },
+  "atti": [
+    {
+      "chiave": "/eli/id/1934/10/11/034U1731/sg",
+      "titolo": "REGIO DECRETO 11 ottobre 1934, n. 1731",
+      "tipo": "regio.decreto",
+      "numero": "1731",
+      "dataEmanazione": "1934-10-11",
+      "nir": "urn:nir:stato:regio.decreto:1934-10-11;1731",
+      "eli": "/eli/id/1934/10/11/034U1731/sg",
+      "stato": "abrogato",
+      "sintesi": "Variazioni ai ruoli degli ispettori del Demanio e delle Tasse sugli affari e dei procuratori del Registro e soppressione di taluni Uffici del registro di limitata importanza. (034U1731)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1934-10-11;1731",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1934/11/05/034U1731/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1934-11-05",
+      "numeroGU": "259",
+      "codiceRedazionale": "034U1731",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.P.R. 13 DICEMBRE 2010, N. 248 ))"
+    },
+    {
+      "chiave": "/eli/id/1934/06/21/034U1093/sg",
+      "titolo": "LEGGE 21 giugno 1934, n. 1093",
+      "tipo": "legge",
+      "numero": "1093",
+      "dataEmanazione": "1934-06-21",
+      "nir": "urn:nir:stato:legge:1934-06-21;1093",
+      "eli": "/eli/id/1934/06/21/034U1093/sg",
+      "stato": "abrogato",
+      "sintesi": "Modificazioni al testo unico delle leggi sullo stato dei sottufficiali del Regio esercito, approvato con R. decreto 15 settembre 1932, n. 1514, e istituzione di un ruolo di impiegati d'ordine del gruppo C per l'Amministrazione centrale della guerra. (034U1093)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1934-06-21;1093",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1934/07/17/034U1093/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1934-07-17",
+      "numeroGU": "166",
+      "codiceRedazionale": "034U1093",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.LGS. 15 MARZO 2010, N. 66 ))"
+    },
+    {
+      "chiave": "/eli/id/1934/06/21/034U0988/sg",
+      "titolo": "REGIO DECRETO 21 giugno 1934, n. 988",
+      "tipo": "regio.decreto",
+      "numero": "988",
+      "dataEmanazione": "1934-06-21",
+      "nir": "urn:nir:stato:regio.decreto:1934-06-21;988",
+      "eli": "/eli/id/1934/06/21/034U0988/sg",
+      "stato": "abrogato",
+      "sintesi": "Norme per la valutazione dei servizi prestati e delle qualita' dei tenenti colonnelli, dei maggiori e dei capitani delle varie armi e corpi del Regio esercito ai fini dell'avanzamento. (034U0988)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1934-06-21;988",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1934/07/03/034U0988/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1934-07-03",
+      "numeroGU": "154",
+      "codiceRedazionale": "034U0988",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.LGS. 13 DICEMBRE 2010, N. 212 ))"
+    },
+    {
+      "chiave": "/eli/id/1934/03/08/034U0702/sg",
+      "titolo": "REGIO DECRETO 8 marzo 1934, n. 702",
+      "tipo": "regio.decreto",
+      "numero": "702",
+      "dataEmanazione": "1934-03-08",
+      "nir": "urn:nir:stato:regio.decreto:1934-03-08;702",
+      "eli": "/eli/id/1934/03/08/034U0702/sg",
+      "stato": "abrogato",
+      "sintesi": "Autorizzazione alla Regia universita' di Roma ad accettare una donazione per l'istituzione di un premio. (034U0702)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1934-03-08;702",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1934/05/04/034U0702/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1934-05-04",
+      "numeroGU": "106",
+      "codiceRedazionale": "034U0702",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.P.R. 13 DICEMBRE 2010, N. 248 ))"
+    },
+    {
+      "chiave": "/eli/id/1934/03/29/034U0689/sg",
+      "titolo": "REGIO DECRETO 29 marzo 1934, n. 689",
+      "tipo": "regio.decreto",
+      "numero": "689",
+      "dataEmanazione": "1934-03-29",
+      "nir": "urn:nir:stato:regio.decreto:1934-03-29;689",
+      "eli": "/eli/id/1934/03/29/034U0689/sg",
+      "stato": "abrogato",
+      "sintesi": "Emissione di speciali francobolli commemorativi del 1° Centenario della istituzione delle medaglie al valor militare. (034U0689)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1934-03-29;689",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1934/05/03/034U0689/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1934-05-03",
+      "numeroGU": "105",
+      "codiceRedazionale": "034U0689",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.P.R. 13 DICEMBRE 2010, N. 248 ))"
+    },
+    {
+      "chiave": "/eli/id/1934/03/01/034U0630/sg",
+      "titolo": "REGIO DECRETO 1 marzo 1934, n. 630",
+      "tipo": "regio.decreto",
+      "numero": "630",
+      "dataEmanazione": "1934-03-01",
+      "nir": "urn:nir:stato:regio.decreto:1934-03-01;630",
+      "eli": "/eli/id/1934/03/01/034U0630/sg",
+      "stato": "abrogato",
+      "sintesi": "Nuovo elenco di industrie sottoposte al regime della preventiva autorizzazione, ai sensi della legge 12 gennaio 1933, n. 141. (034U0630)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1934-03-01;630",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1934/04/26/034U0630/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1934-04-26",
+      "numeroGU": "97",
+      "codiceRedazionale": "034U0630",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.LGS. 13 DICEMBRE 2010, N. 212 ))"
+    },
+    {
+      "chiave": "/eli/id/1934/01/18/034U0544/sg",
+      "titolo": "REGIO DECRETO 18 gennaio 1934, n. 544",
+      "tipo": "regio.decreto",
+      "numero": "544",
+      "dataEmanazione": "1934-01-18",
+      "nir": "urn:nir:stato:regio.decreto:1934-01-18;544",
+      "eli": "/eli/id/1934/01/18/034U0544/sg",
+      "stato": "abrogato",
+      "sintesi": "Determinazione del numero dei membri delle Fabbricerie di 27 Chiese della provincia di Pisa. (034U0544)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1934-01-18;544",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1934/04/13/034U0544/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1934-04-13",
+      "numeroGU": "87",
+      "codiceRedazionale": "034U0544",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DALLA L. 7 APRILE 2025, N. 56 ))"
+    }
+  ]
+}

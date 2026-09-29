@@ -1,0 +1,283 @@
+{
+  "provenance": {
+    "fonte": "normattiva",
+    "url": "https://api.normattiva.it/t/normattiva.api/bff-opendata/v1/api/v1/ricerca/aggiornati",
+    "recuperatoIl": "2026-09-29T01:41:05.716Z",
+    "licenza": "riproduzione consentita con menzione di fonte, carattere non autentico e gratuito (Note legali dati.normattiva.it; solo la Gazzetta Ufficiale a stampa e' autentica)"
+  },
+  "atti": [
+    {
+      "chiave": "/eli/id/1925/07/10/025U1740/sg",
+      "titolo": "REGIO DECRETO 10 luglio 1925, n. 1740",
+      "tipo": "regio.decreto",
+      "numero": "1740",
+      "dataEmanazione": "1925-07-10",
+      "nir": "urn:nir:stato:regio.decreto:1925-07-10;1740",
+      "eli": "/eli/id/1925/07/10/025U1740/sg",
+      "stato": "abrogato",
+      "sintesi": "Estensione all'Oltregiuba dell'ordinamento giudiziario della Somalia. (025U1740)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1925-07-10;1740",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1925/10/16/025U1740/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1925-10-16",
+      "numeroGU": "241",
+      "codiceRedazionale": "025U1740",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.LGS. 13 DICEMBRE 2010, N. 212 ))"
+    },
+    {
+      "chiave": "/eli/id/1925/08/07/025U1503/sg",
+      "titolo": "REGIO DECRETO 7 agosto 1925, n. 1503",
+      "tipo": "regio.decreto",
+      "numero": "1503",
+      "dataEmanazione": "1925-08-07",
+      "nir": "urn:nir:stato:regio.decreto:1925-08-07;1503",
+      "eli": "/eli/id/1925/08/07/025U1503/sg",
+      "stato": "abrogato",
+      "sintesi": "Circoscrizione militare territoriale della Regia aeronautica e giurisdizione degli Enti territoriali aeronautici. (025U1503)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1925-08-07;1503",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1925/08/31/025U1503/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1925-08-31",
+      "numeroGU": "201",
+      "codiceRedazionale": "025U1503",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.LGS. 13 DICEMBRE 2010, N. 212 ))"
+    },
+    {
+      "chiave": "/eli/id/1925/07/29/025U1456/sg",
+      "titolo": "REGIO DECRETO 29 luglio 1925, n. 1456",
+      "tipo": "regio.decreto",
+      "numero": "1456",
+      "dataEmanazione": "1925-07-29",
+      "nir": "urn:nir:stato:regio.decreto:1925-07-29;1456",
+      "eli": "/eli/id/1925/07/29/025U1456/sg",
+      "stato": "abrogato",
+      "sintesi": "Approvazione del nuovo testo unico delle leggi sul lotto. (025U1456)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1925-07-29;1456",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1925/08/27/025U1456/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1925-08-27",
+      "numeroGU": "198",
+      "codiceRedazionale": "025U1456",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.LGS. 13 DICEMBRE 2010, N. 212 ))"
+    },
+    {
+      "chiave": "/eli/id/1925/05/24/025U1075/sg",
+      "titolo": "REGIO DECRETO 24 maggio 1925, n. 1075",
+      "tipo": "regio.decreto",
+      "numero": "1075",
+      "dataEmanazione": "1925-05-24",
+      "nir": "urn:nir:stato:regio.decreto:1925-05-24;1075",
+      "eli": "/eli/id/1925/05/24/025U1075/sg",
+      "stato": "abrogato",
+      "sintesi": "Riordinamento della Regia scuola popolare operaia per arti e mestieri di Reggio Emilia. (025U1075)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1925-05-24;1075",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1925/07/07/025U1075/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1925-07-07",
+      "numeroGU": "155",
+      "codiceRedazionale": "025U1075",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.LGS. 13 DICEMBRE 2010, N. 212 ))"
+    },
+    {
+      "chiave": "/eli/id/1925/06/11/025U0869/sg",
+      "titolo": "LEGGE 11 giugno 1925, n. 869",
+      "tipo": "legge",
+      "numero": "869",
+      "dataEmanazione": "1925-06-11",
+      "nir": "urn:nir:stato:legge:1925-06-11;869",
+      "eli": "/eli/id/1925/06/11/025U0869/sg",
+      "stato": "abrogato",
+      "sintesi": "Stato di previsione della spesa del Ministero delle finanze per l'esercizio finanziario dal 1° luglio 1925 al 30 giugno 1926. (025U0869)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1925-06-11;869",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1925/06/23/025U0869/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1925-06-23",
+      "numeroGU": "144",
+      "codiceRedazionale": "025U0869",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.L. 22 DICEMBRE 2008, N. 200 , CONVERTITO CON MODIFICAZIONI DALLA L. 18 FEBBRAIO 2009, N. 9 ))"
+    },
+    {
+      "chiave": "/eli/id/1925/05/24/025U0933/sg",
+      "titolo": "REGIO DECRETO 24 maggio 1925, n. 933",
+      "tipo": "regio.decreto",
+      "numero": "933",
+      "dataEmanazione": "1925-05-24",
+      "nir": "urn:nir:stato:regio.decreto:1925-05-24;933",
+      "eli": "/eli/id/1925/05/24/025U0933/sg",
+      "stato": "abrogato",
+      "sintesi": "Maggiori assegnazioni, per pensioni ordinarie e stipendi al personale, nello stato di previsione della spesa del Ministero dell'interno, per l'esercizio finanziario 1924-25. (025U0933)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1925-05-24;933",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1925/06/22/025U0933/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1925-06-22",
+      "numeroGU": "143",
+      "codiceRedazionale": "025U0933",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.LGS. 13 DICEMBRE 2010, N. 212 ))"
+    },
+    {
+      "chiave": "/eli/id/1925/05/24/025U0863/sg",
+      "titolo": "REGIO DECRETO 24 maggio 1925, n. 863",
+      "tipo": "regio.decreto",
+      "numero": "863",
+      "dataEmanazione": "1925-05-24",
+      "nir": "urn:nir:stato:regio.decreto:1925-05-24;863",
+      "eli": "/eli/id/1925/05/24/025U0863/sg",
+      "stato": "abrogato",
+      "sintesi": "Nomina del Commissario straordinario per la gestione temporanea dell'Istituto case popolari in Bari. (025U0863)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1925-05-24;863",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1925/06/18/025U0863/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1925-06-18",
+      "numeroGU": "140",
+      "codiceRedazionale": "025U0863",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.LGS. 13 DICEMBRE 2010, N. 212 ))"
+    },
+    {
+      "chiave": "/eli/id/1925/06/11/025U0868/sg",
+      "titolo": "LEGGE 11 giugno 1925, n. 868",
+      "tipo": "legge",
+      "numero": "868",
+      "dataEmanazione": "1925-06-11",
+      "nir": "urn:nir:stato:legge:1925-06-11;868",
+      "eli": "/eli/id/1925/06/11/025U0868/sg",
+      "stato": "abrogato",
+      "sintesi": "Stato di previsione della spesa del Ministero dell'economia nazionale, per l'esercizio finanziario dal lº luglio 1925 al 30 giugno 1926. (025U0868)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1925-06-11;868",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1925/06/17/025U0868/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1925-06-17",
+      "numeroGU": "139",
+      "codiceRedazionale": "025U0868",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.L. 22 DICEMBRE 2008, N. 200 , CONVERTITO CON MODIFICAZIONI DALLA L. 18 FEBBRAIO 2009, N. 9 ))"
+    },
+    {
+      "chiave": "/eli/id/1925/03/31/025U0684/sg",
+      "titolo": "REGIO DECRETO 31 marzo 1925, n. 684",
+      "tipo": "regio.decreto",
+      "numero": "684",
+      "dataEmanazione": "1925-03-31",
+      "nir": "urn:nir:stato:regio.decreto:1925-03-31;684",
+      "eli": "/eli/id/1925/03/31/025U0684/sg",
+      "stato": "abrogato",
+      "sintesi": "Disposizioni per gli ufficiali esonerati d'autorita' dal comando mobilitato durante la guerra. (025U0684)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1925-03-31;684",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1925/05/27/025U0684/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1925-05-27",
+      "numeroGU": "122",
+      "codiceRedazionale": "025U0684",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.LGS. 13 DICEMBRE 2010, N. 212 ))"
+    },
+    {
+      "chiave": "/eli/id/1925/05/01/025U0660/sg",
+      "titolo": "REGIO DECRETO 1 maggio 1925, n. 660",
+      "tipo": "regio.decreto",
+      "numero": "660",
+      "dataEmanazione": "1925-05-01",
+      "nir": "urn:nir:stato:regio.decreto:1925-05-01;660",
+      "eli": "/eli/id/1925/05/01/025U0660/sg",
+      "stato": "abrogato",
+      "sintesi": "Variazione della circoscrizione dei comandi della Regia guardia di finanza. (025U0660)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1925-05-01;660",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1925/05/23/025U0660/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1925-05-23",
+      "numeroGU": "119",
+      "codiceRedazionale": "025U0660",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.LGS. 13 DICEMBRE 2010, N. 212 ))"
+    },
+    {
+      "chiave": "/eli/id/1925/01/18/025U0593/sg",
+      "titolo": "REGIO DECRETO 18 gennaio 1925, n. 593",
+      "tipo": "regio.decreto",
+      "numero": "593",
+      "dataEmanazione": "1925-01-18",
+      "nir": "urn:nir:stato:regio.decreto:1925-01-18;593",
+      "eli": "/eli/id/1925/01/18/025U0593/sg",
+      "stato": "abrogato",
+      "sintesi": "Riordinamento della Regia scuola industriale, in Palermo. (025U0593)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1925-01-18;593",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1925/05/18/025U0593/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1925-05-18",
+      "numeroGU": "115",
+      "codiceRedazionale": "025U0593",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.LGS. 13 DICEMBRE 2010, N. 212 ))"
+    },
+    {
+      "chiave": "/eli/id/1925/02/01/025U0556/sg",
+      "titolo": "REGIO DECRETO 1 febbraio 1925, n. 556",
+      "tipo": "regio.decreto",
+      "numero": "556",
+      "dataEmanazione": "1925-02-01",
+      "nir": "urn:nir:stato:regio.decreto:1925-02-01;556",
+      "eli": "/eli/id/1925/02/01/025U0556/sg",
+      "stato": "abrogato",
+      "sintesi": "Estensione al territorio di Fiume delle disposizioni concernenti la requisizione dei quadrupedi e dei veicoli per il Regio esercito e per la Regia marina. (025U0556)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1925-02-01;556",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1925/05/09/025U0556/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1925-05-09",
+      "numeroGU": "108",
+      "codiceRedazionale": "025U0556",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.LGS. 13 DICEMBRE 2010, N. 212 ))"
+    },
+    {
+      "chiave": "/eli/id/1925/04/17/025U0473/sg",
+      "titolo": "LEGGE 17 aprile 1925, n. 473",
+      "tipo": "legge",
+      "numero": "473",
+      "dataEmanazione": "1925-04-17",
+      "nir": "urn:nir:stato:legge:1925-04-17;473",
+      "eli": "/eli/id/1925/04/17/025U0473/sg",
+      "stato": "in_vigore",
+      "sintesi": "Conversione in legge con approvazione complessiva, di decreti Luogotenenziali e Regi aventi per oggetto argomenti diversi. (025U0473)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1925-04-17;473",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1925/05/05/025U0473/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1925-05-05",
+      "numeroGU": "104",
+      "codiceRedazionale": "025U0473",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 VITTORIO EMANUELE III PER GRAZIA DI DIO E PER VOLONT&Agrave; DELLA NAZIONE RE D'ITALIA Il Senato e la Camera dei deputati hanno approvato; Noi abbiamo sanzionato e promulghiamo quanto segue: Articolo unico. Sono convertiti in legge i decreti Luogotenenziali e i decreti-legge, emanati sino al 23 maggio 1924, indicati nella tabella A annessa alla presente legge, salvi gli effetti di modifica o di revoca adottati in virt&ugrave; di delegazione di poteri legislativi. Sono altres&igrave; convalidati i decreti Reali, emanati sino alla data predetta, indicati nella tabella B annessa alla presente legge, per prelevamenti di somme dal fondo di riserva per le spese impreviste. Ordiniamo che la presente, munita del sigillo dello Stato, sia inserta nella raccolta ufficiale delle leggi e dei decreti del Regno d'Italia, mandando a chiunque spetti di osservarla e di farla osservare come legge dello Stato. Data a Roma, add&igrave; 17 aprile 1925. VITTORIO EMANUELE. Mussolini. Visto, il Guardasigilli: Rocco."
+    }
+  ]
+}

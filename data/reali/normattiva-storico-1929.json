@@ -1,0 +1,178 @@
+{
+  "provenance": {
+    "fonte": "normattiva",
+    "url": "https://api.normattiva.it/t/normattiva.api/bff-opendata/v1/api/v1/ricerca/aggiornati",
+    "recuperatoIl": "2026-09-29T01:41:05.716Z",
+    "licenza": "riproduzione consentita con menzione di fonte, carattere non autentico e gratuito (Note legali dati.normattiva.it; solo la Gazzetta Ufficiale a stampa e' autentica)"
+  },
+  "atti": [
+    {
+      "chiave": "/eli/id/1929/08/09/029U1744/sg",
+      "titolo": "REGIO DECRETO 9 agosto 1929, n. 1744",
+      "tipo": "regio.decreto",
+      "numero": "1744",
+      "dataEmanazione": "1929-08-09",
+      "nir": "urn:nir:stato:regio.decreto:1929-08-09;1744",
+      "eli": "/eli/id/1929/08/09/029U1744/sg",
+      "stato": "abrogato",
+      "sintesi": "Approvazione del regolamento sugli assegni speciali di bordo. (029U1744)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1929-08-09;1744",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1929/10/23/029U1744/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1929-10-23",
+      "numeroGU": "247",
+      "codiceRedazionale": "029U1744",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL REGIO DECRETO 15 LUGLIO 1938, N. 1156))"
+    },
+    {
+      "chiave": "/eli/id/1929/06/27/029U1144/sg",
+      "titolo": "LEGGE 27 giugno 1929, n. 1144",
+      "tipo": "legge",
+      "numero": "1144",
+      "dataEmanazione": "1929-06-27",
+      "nir": "urn:nir:stato:legge:1929-06-27;1144",
+      "eli": "/eli/id/1929/06/27/029U1144/sg",
+      "stato": "abrogato",
+      "sintesi": "Modificazioni al testo unico delle leggi sul reclutamento del Regio esercito, approvato con R. decreto 5 agosto 1927, n. 1437. (029U1144)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1929-06-27;1144",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1929/07/12/029U1144/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1929-07-12",
+      "numeroGU": "161",
+      "codiceRedazionale": "029U1144",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.L. 22 DICEMBRE 2008, N. 200 , CONVERTITO CON MODIFICAZIONI DALLA L. 18 FEBBRAIO 2009, N. 9 ))"
+    },
+    {
+      "chiave": "/eli/id/1929/04/11/029U1086/sg",
+      "titolo": "REGIO DECRETO 11 aprile 1929, n. 1086",
+      "tipo": "regio.decreto",
+      "numero": "1086",
+      "dataEmanazione": "1929-04-11",
+      "nir": "urn:nir:stato:regio.decreto:1929-04-11;1086",
+      "eli": "/eli/id/1929/04/11/029U1086/sg",
+      "stato": "abrogato",
+      "sintesi": "Approvazione del regolamento per l'esecuzione della legge 18 febbraio 1923, n. 396, sulla repressione dell'abusivo commercio di sostanze velenose aventi azione stupefacente. (029U1086)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1929-04-11;1086",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1929/07/08/029U1086/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1929-07-08",
+      "numeroGU": "157",
+      "codiceRedazionale": "029U1086",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DALLA L. 7 APRILE 2025, N. 56 ))"
+    },
+    {
+      "chiave": "/eli/id/1929/06/13/029U1075/sg",
+      "titolo": "REGIO DECRETO 13 giugno 1929, n. 1075",
+      "tipo": "regio.decreto",
+      "numero": "1075",
+      "dataEmanazione": "1929-06-13",
+      "nir": "urn:nir:stato:regio.decreto:1929-06-13;1075",
+      "eli": "/eli/id/1929/06/13/029U1075/sg",
+      "stato": "abrogato",
+      "sintesi": "Coordinamento dei servizi radioelettrici dello Stato. (029U1075)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1929-06-13;1075",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1929/07/04/029U1075/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1929-07-04",
+      "numeroGU": "154",
+      "codiceRedazionale": "029U1075",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.L. 25 GIUGNO 2008, N. 112 , CONVERTITO CON MODIFICAZIONI DALLA L. 6 AGOSTO 2008, N. 133 ))"
+    },
+    {
+      "chiave": "/eli/id/1929/03/21/029U0547/sg",
+      "titolo": "REGIO DECRETO 21 marzo 1929, n. 547",
+      "tipo": "regio.decreto",
+      "numero": "547",
+      "dataEmanazione": "1929-03-21",
+      "nir": "urn:nir:stato:regio.decreto:1929-03-21;547",
+      "eli": "/eli/id/1929/03/21/029U0547/sg",
+      "stato": "abrogato",
+      "sintesi": "Approvazione del regolamento per l'esecuzione del testo unico 26 aprile 1928, n. 1313, recante le norme di coordinamento della legge sugli Ordini dei sanitari con la legge 3 aprile 1926, n. 563. (029U0547)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1929-03-21;547",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1929/04/26/029U0547/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1929-04-26",
+      "numeroGU": "98",
+      "codiceRedazionale": "029U0547",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.LGS. 13 DICEMBRE 2010, N. 212 ))"
+    },
+    {
+      "chiave": "/eli/id/1929/04/08/029U0514/sg",
+      "titolo": "REGIO DECRETO 8 aprile 1929, n. 514",
+      "tipo": "regio.decreto",
+      "numero": "514",
+      "dataEmanazione": "1929-04-08",
+      "nir": "urn:nir:stato:regio.decreto:1929-04-08;514",
+      "eli": "/eli/id/1929/04/08/029U0514/sg",
+      "stato": "abrogato",
+      "sintesi": "16a prelevazione dal fondo di riserva per le spese impreviste dell'esercizio finanziario 1928-29. (029U0514)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1929-04-08;514",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1929/04/24/029U0514/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1929-04-24",
+      "numeroGU": "96",
+      "codiceRedazionale": "029U0514",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.LGS. 13 DICEMBRE 2010, N. 212 ))"
+    },
+    {
+      "chiave": "/eli/id/1928/11/29/028U3496/sg",
+      "titolo": "REGIO DECRETO 29 novembre 1928, n. 3496",
+      "tipo": "regio.decreto",
+      "numero": "3496",
+      "dataEmanazione": "1928-11-29",
+      "nir": "urn:nir:stato:regio.decreto:1928-11-29;3496",
+      "eli": "/eli/id/1928/11/29/028U3496/sg",
+      "stato": "abrogato",
+      "sintesi": "Liquidazione coatta del Consorzio calabrese fra le cooperative di produzione e lavoro, con sede in Catanzaro. (028U3496)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1928-11-29;3496",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1929/04/05/028U3496/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1929-04-05",
+      "numeroGU": "80",
+      "codiceRedazionale": "028U3496",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.LGS. 13 DICEMBRE 2010, N. 212 ))"
+    },
+    {
+      "chiave": "/eli/id/1929/03/14/029U0326/sg",
+      "titolo": "REGIO DECRETO 14 marzo 1929, n. 326",
+      "tipo": "regio.decreto",
+      "numero": "326",
+      "dataEmanazione": "1929-03-14",
+      "nir": "urn:nir:stato:regio.decreto:1929-03-14;326",
+      "eli": "/eli/id/1929/03/14/029U0326/sg",
+      "stato": "abrogato",
+      "sintesi": "15ª prelevazione dal fondo di riserva per le spese impreviste dell'esercizio finanziario 1928-29. (029U0326)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1929-03-14;326",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1929/03/23/029U0326/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1929-03-23",
+      "numeroGU": "69",
+      "codiceRedazionale": "029U0326",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.LGS. 13 DICEMBRE 2010, N. 212 ))"
+    }
+  ]
+}

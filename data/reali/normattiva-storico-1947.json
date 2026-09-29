@@ -1,0 +1,221 @@
+{
+  "provenance": {
+    "fonte": "normattiva",
+    "url": "https://api.normattiva.it/t/normattiva.api/bff-opendata/v1/api/v1/ricerca/aggiornati",
+    "recuperatoIl": "2026-09-29T01:49:36.113Z",
+    "licenza": "riproduzione consentita con menzione di fonte, carattere non autentico e gratuito (Note legali dati.normattiva.it; solo la Gazzetta Ufficiale a stampa e' autentica)"
+  },
+  "atti": [
+    {
+      "chiave": "/eli/id/1947/09/22/047U1146/sg",
+      "titolo": "DECRETO DEL CAPO PROVVISORIO DELLO STATO 22 settembre 1947, n. 1146",
+      "tipo": "decreto.del.capo.provvisorio.dello.stato",
+      "numero": "1146",
+      "dataEmanazione": "1947-09-22",
+      "nir": "urn:nir:stato:decreto.del.capo.provvisorio.dello.stato:1947-09-22;1146",
+      "eli": "/eli/id/1947/09/22/047U1146/sg",
+      "stato": "abrogato",
+      "sintesi": "Ruoli dei personali provinciali del Tesoro e modificazioni al regio decreto 23 marzo 1933, n. 185, concernente il regolamento per il personale degli uffici dipendenti dal Ministero delle finanze e per l'ordinamento degli Uffici direttivi finanziari.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.del.capo.provvisorio.dello.stato:1947-09-22;1146",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1947/10/30/047U1146/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1947-10-30",
+      "numeroGU": "250",
+      "codiceRedazionale": "047U1146",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.L. 22 DICEMBRE 2008, N. 200 , CONVERTITO, CON MODIFICAZIONI, DALLA L. 18 FEBBRAIO 2009, N. 9 ))"
+    },
+    {
+      "chiave": "/eli/id/1947/01/03/047U0019/sg",
+      "titolo": "DECRETO DEL CAPO PROVVISORIO DELLO STATO 3 gennaio 1947, n. 19",
+      "tipo": "decreto.del.capo.provvisorio.dello.stato",
+      "numero": "19",
+      "dataEmanazione": "1947-01-03",
+      "nir": "urn:nir:stato:decreto.del.capo.provvisorio.dello.stato:1947-01-03;19",
+      "eli": "/eli/id/1947/01/03/047U0019/sg",
+      "stato": "abrogato",
+      "sintesi": "Aliquote dei contrammiragli e degli ufficiali superiori ed inferiori in servizio permanente effettivo e del ruolo speciale di complemento della Marina militare, che possono essere collocati in ausiliaria o dispensati dal servizio, per la prima applicazione del regio decreto legislativo 14 maggio 1946, n. 384, e del regio decreto legislativo 31 maggio 1946, n. 490.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.del.capo.provvisorio.dello.stato:1947-01-03;19",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1947/02/14/047U0019/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1947-02-14",
+      "numeroGU": "37",
+      "codiceRedazionale": "047U0019",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.L. 22 DICEMBRE 2008, N. 200 , CONVERTITO, CON MODIFICAZIONI DALLA L. 18 FEBBRAIO 2009, N. 9 ))"
+    },
+    {
+      "chiave": "/eli/id/1946/06/27/046U0035/sg",
+      "titolo": "DECRETO LEGISLATIVO PRESIDENZIALE 27 giugno 1946, n. 35",
+      "tipo": "decreto.legislativo.presidenziale",
+      "numero": "35",
+      "dataEmanazione": "1946-06-27",
+      "nir": "urn:nir:stato:decreto.legislativo.presidenziale:1946-06-27;35",
+      "eli": "/eli/id/1946/06/27/046U0035/sg",
+      "stato": "in_vigore",
+      "sintesi": "Riparazione e ricostruzione degli edifici di culto e di quelli degli enti pubblici di beneficenza danneggiati o distrutti da offese belliche.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legislativo.presidenziale:1946-06-27;35",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1946/08/02/046U0035/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1946-08-02",
+      "numeroGU": "172",
+      "codiceRedazionale": "046U0035",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "IL PRESIDENTE DEL CONSIGLIO DEI MINISTRI In virt&ugrave; dei poteri di Capo provvisorio dello Stato, conferitigli dall' art. 2, quarto comma, del decreto legislativo luogotenenziale 16 marzo 1946, n. 98 ; Visto l' art. 27 della legge 26 ottobre 1940, n. 1543 ; Visto il decreto-legge luogotenenziale 25 giugno 1944, n. 151 ; Visti il decreto legislative luogotenenziale 1° febbraio 1945, n. 58 ed il decreto legislativo Presidenziale 19 giugno 1946, n. 1 ; Vista la deliberazione del Consiglio dei Ministri; Sulla proposta del Ministro Segretario di Stato per i lavori pubblici, di concerto con i Ministri Segretari di Stato per l'interno, per le finanze e per il tesoro; HA SANZIONATO E PROMULGA: Art. 1 &Egrave; autorizzata la spesa di due miliardi, da iscriversi nello stato di previsione della spesa del Ministero dei lavori pubblici a misura del bisogno per provvedere ai lavori da eseguirsi a totale carico dello Stato per la riparazione e ricostruzione, esclusi ogni ampliamento e ogni abbellimento che non sia parte integrante dell'organismo architettonico di edifici di culto e di quelli destinati ad uso di beneficenza o assistenza di cui ai successivi articoli 2 e 3, danneggiati o distrutti da offese belliche, nonch&egrave; alla ricostruzione del mobilio che li arredava limitatamente ai bisogni indispensabili per l'esercizio del culto e della beneficenza o assistenza, compresi l'organo e il quadro o statua del titolare della chiesa ed escluso in ogni caso le altre opere d'arte, le suppellettili ed i parati sacri, i libri liturgici, la biancheria, la posateria, il vasellame e simili. Le varianti agli edifici riguardanti la forma esteriore, la struttura o l'interno sono ammesse in quanto compatibili con le limitazioni suddette. ((Nella ricostruzione degli edifici di culto indicati nel successivo articolo 2 l'Autorit&agrave; ecclesiastica pu&ograve; unificare pi&ugrave; edifici, scinderli in due o pi&ugrave; edifici, ricostruirli con maggiori dimensioni o cambiarne la ubicazi [...]",
+      "testoTroncato": true
+    },
+    {
+      "chiave": "/eli/id/1946/04/12/046U0585/sg",
+      "titolo": "DECRETO LEGISLATIVO LUOGOTENENZIALE 12 aprile 1946, n. 585",
+      "tipo": "decreto.legislativo.luogotenenziale",
+      "numero": "585",
+      "dataEmanazione": "1946-04-12",
+      "nir": "urn:nir:stato:decreto.legislativo.luogotenenziale:1946-04-12;585",
+      "eli": "/eli/id/1946/04/12/046U0585/sg",
+      "stato": "abrogato",
+      "sintesi": "Reclutamento degli ufficiali in servizio permanente dell'Arma dei carabinieri reali.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legislativo.luogotenenziale:1946-04-12;585",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1946/07/15/046U0585/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1946-07-15",
+      "numeroGU": "156",
+      "codiceRedazionale": "046U0585",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.LGS. 15 MARZO 2010, N. 66 ))"
+    },
+    {
+      "chiave": "/eli/id/1946/04/26/046U0564/sg",
+      "titolo": "DECRETO LEGISLATIVO LUOGOTENENZIALE 26 aprile 1946, n. 564",
+      "tipo": "decreto.legislativo.luogotenenziale",
+      "numero": "564",
+      "dataEmanazione": "1946-04-26",
+      "nir": "urn:nir:stato:decreto.legislativo.luogotenenziale:1946-04-26;564",
+      "eli": "/eli/id/1946/04/26/046U0564/sg",
+      "stato": "abrogato",
+      "sintesi": "Norme integrative e modificative del decreto legislativo Luogotenenziale 18 gennaio 1945, n. 7, contenente disposizioni circa il funzionamento delle societa' commerciali e i bilanci degli enti o istituti di diritto pubblico.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legislativo.luogotenenziale:1946-04-26;564",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1946/07/08/046U0564/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1946-07-08",
+      "numeroGU": "150",
+      "codiceRedazionale": "046U0564",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.L. 22 DICEMBRE 2008, N. 200 , CONVERTITO CON MODIFICAZIONI, DALLA L. 18 FEBBRAIO 2009, N. 9 ))"
+    },
+    {
+      "chiave": "/eli/id/1946/05/27/046U0558/sg",
+      "titolo": "REGIO DECRETO LEGISLATIVO 27 maggio 1946, n. 558",
+      "tipo": "regio.decreto.legislativo",
+      "numero": "558",
+      "dataEmanazione": "1946-05-27",
+      "nir": "urn:nir:stato:regio.decreto.legislativo:1946-05-27;558",
+      "eli": "/eli/id/1946/05/27/046U0558/sg",
+      "stato": "in_vigore",
+      "sintesi": "Trattamento economico degli insegnanti elementari non di ruolo delle scuole di Stato.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto.legislativo:1946-05-27;558",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1946/07/04/046U0558/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1946-07-04",
+      "numeroGU": "147",
+      "codiceRedazionale": "046U0558",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "UMBERTO II RE D'ITALIA Visto il testo unico delle leggi sull'istruzione elementare, approvato con R. decreto 5 febbraio 1928, n. 577 ; Visto il regolamento generale sui servizi dell'istruzione elementare, approvato con R. decreto 26 aprile 1928, n. 1297 ; Vista la legge 1° giugno 1942, n. 675 ; Visto il R. decreto 24 agosto 1942, n. 1192 ; Visto il decreto-legge Luogotenenziale 25 giugno 1944, n. 151 ; Visto il decreto legislativo Luogotenenziale 1° febbraio 1945, n. 58 ; Visto il decreto legislativo Luogotenenziale 21 novembre 1945, n. 722 ; Visto il R. decreto legislativo 10 maggio 1946, n. 262 ; Vista la deliberazione del Consiglio dei Ministri; Sulla proposta del Ministro per la pubblica istruzione, di concerto col Ministro per il tesoro; Abbiamo sanzionato e promulghiamo quanto segue: Art. 1 Agli insegnanti provvisori delle scuole elementari di Stato spetta una retribuzione pari allo stipendio annuo iniziale del grado 12° dell'ordinamento gerarchico delle Amministrazioni dello Stato, ripartito in dodicesimi, nonch&egrave; l'indennit&agrave; mensile di caro-vita nella misura e alle condizioni previste dal decreto legislativo Luogotenenziale 21 novembre 1945, n. 722 ."
+    },
+    {
+      "chiave": "/eli/id/1946/05/17/046U0483/sg",
+      "titolo": "REGIO DECRETO 17 maggio 1946, n. 483",
+      "tipo": "regio.decreto",
+      "numero": "483",
+      "dataEmanazione": "1946-05-17",
+      "nir": "urn:nir:stato:regio.decreto:1946-05-17;483",
+      "eli": "/eli/id/1946/05/17/046U0483/sg",
+      "stato": "abrogato",
+      "sintesi": "Modificazione dell'art. 3 del decreto Luogotenenziale 23 novembre 1945, n. 793, riguardante il Consiglio di amministrazione dell'Azienda Rilievo Alienazione Residuati (A.R.A.R.).",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1946-05-17;483",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1946/06/10/046U0483/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1946-06-10",
+      "numeroGU": "133",
+      "codiceRedazionale": "046U0483",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DALLA L. 7 APRILE 2025, N. 56 ))"
+    },
+    {
+      "chiave": "/eli/id/1946/05/30/046U0459/sg",
+      "titolo": "REGIO DECRETO 30 maggio 1946, n. 459",
+      "tipo": "regio.decreto",
+      "numero": "459",
+      "dataEmanazione": "1946-05-30",
+      "nir": "urn:nir:stato:regio.decreto:1946-05-30;459",
+      "eli": "/eli/id/1946/05/30/046U0459/sg",
+      "stato": "abrogato",
+      "sintesi": "Ordinamento del Ministero del commercio con l'estero.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1946-05-30;459",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1946/06/10/046U0459/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1946-06-10",
+      "numeroGU": "133",
+      "codiceRedazionale": "046U0459",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.LGS. 13 DICEMBRE 2010, N. 212 ))"
+    },
+    {
+      "chiave": "/eli/id/1946/05/08/046U0449/sg",
+      "titolo": "DECRETO LEGISLATIVO LUOGOTENENZIALE 8 maggio 1946, n. 449",
+      "tipo": "decreto.legislativo.luogotenenziale",
+      "numero": "449",
+      "dataEmanazione": "1946-05-08",
+      "nir": "urn:nir:stato:decreto.legislativo.luogotenenziale:1946-05-08;449",
+      "eli": "/eli/id/1946/05/08/046U0449/sg",
+      "stato": "in_vigore",
+      "sintesi": "Finanziamenti per il ripristino e la riconversione di imprese industriali di interesse generale o di particolare utilita economica e sociale.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legislativo.luogotenenziale:1946-05-08;449",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1946/06/10/046U0449/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1946-06-10",
+      "numeroGU": "133",
+      "codiceRedazionale": "046U0449",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "UMBERTO DI SAVOIA PRINCIPE DI PIEMONTE LUOGOTENENTE GENERALE DEL REGNO In virt&ugrave; dell'autorit&agrave; a Noi delegata; Visto il decreto-legge Luogotenenziale 25 giugno 1944, n. 151 ; Visto il decreto legislativo Luogotenenziale 1° novembre 1944, n. 367 ; Visto il decreto legislativo Luogotenenziale 1° febbraio 1945, n. 58 ; Vista la deliberazione del Consiglio dei Ministri; Sulla proposta del Ministro per il tesoro, di concerto con i Ministri per la grazia e giustizia, per le finanze e per l'industria e commercio; Abbiamo sanzionato e promulghiamo quanto segue: Art. 1 L'Istituto Mobiliare Italiano &egrave; autorizzato, anche in deroga alle norme di legge e di statuto che lo regolano, a concedere finanziamenti, entro il limite di tre miliardi di lire, ad imprese industriali le quali non abbiano la possibilit&agrave; di avvalersi, in tutto o in parte, delle provvidenze stabilite dal decreto legislativo Luogotenenziale 1° novembre 1944, n. 367 e successive modificazioni, al fine di consentire alle imprese stesse il ripristino, la riconversione e la continuazione della propria attivit&agrave; con riguardo all'interesse generale ed a particolari necessit&agrave; di carattere economico e sociale."
+    },
+    {
+      "chiave": "/eli/id/1946/04/09/046U0386/sg",
+      "titolo": "DECRETO LEGISLATIVO LUOGOTENENZIALE 9 aprile 1946, n. 386",
+      "tipo": "decreto.legislativo.luogotenenziale",
+      "numero": "386",
+      "dataEmanazione": "1946-04-09",
+      "nir": "urn:nir:stato:decreto.legislativo.luogotenenziale:1946-04-09;386",
+      "eli": "/eli/id/1946/04/09/046U0386/sg",
+      "stato": "abrogato",
+      "sintesi": "Aumento del limite fissato dall'art. 27 del R. decreto 21 maggio 1934, n. 1073, per l'esenzione dal diritti e dall tasse riguardanti i giudizi e gli atti nelle controversie individuali di lavoro.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legislativo.luogotenenziale:1946-04-09;386",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1946/06/03/046U0386/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1946-06-03",
+      "numeroGU": "127",
+      "codiceRedazionale": "046U0386",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.L. 22 DICEMBRE 2008, N. 200 , CONVERTITO CON MODIFICAZIONI, DALLA L. 18 FEBBRAIO 2009, N. 9 ))"
+    }
+  ]
+}

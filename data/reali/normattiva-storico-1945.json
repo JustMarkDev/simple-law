@@ -1,0 +1,621 @@
+{
+  "provenance": {
+    "fonte": "normattiva",
+    "url": "https://api.normattiva.it/t/normattiva.api/bff-opendata/v1/api/v1/ricerca/aggiornati",
+    "recuperatoIl": "2026-09-29T01:49:36.113Z",
+    "licenza": "riproduzione consentita con menzione di fonte, carattere non autentico e gratuito (Note legali dati.normattiva.it; solo la Gazzetta Ufficiale a stampa e' autentica)"
+  },
+  "atti": [
+    {
+      "chiave": "/eli/id/1945/10/29/045U0683/sg",
+      "titolo": "DECRETO LEGISLATIVO LUOGOTENENZIALE 29 ottobre 1945, n. 683",
+      "tipo": "decreto.legislativo.luogotenenziale",
+      "numero": "683",
+      "dataEmanazione": "1945-10-29",
+      "nir": "urn:nir:stato:decreto.legislativo.luogotenenziale:1945-10-29;683",
+      "eli": "/eli/id/1945/10/29/045U0683/sg",
+      "stato": "abrogato",
+      "sintesi": "Creazione, presso il Ministero della ricostruzione, di una Azienda autonoma per i residuati di guerra. (045U0683)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legislativo.luogotenenziale:1945-10-29;683",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1945/11/06/045U0683/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1945-11-06",
+      "numeroGU": "133",
+      "codiceRedazionale": "045U0683",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.L. 22 DICEMBRE 2008, N. 200 , CONVERTITO CON MODIFICAZIONI DALLA L. 18 FEBBRAIO 2009, N. 9 ))"
+    },
+    {
+      "chiave": "/eli/id/1945/09/07/045U0574/sg",
+      "titolo": "DECRETO LEGISLATIVO LUOGOTENENZIALE 7 settembre 1945, n. 574",
+      "tipo": "decreto.legislativo.luogotenenziale",
+      "numero": "574",
+      "dataEmanazione": "1945-09-07",
+      "nir": "urn:nir:stato:decreto.legislativo.luogotenenziale:1945-09-07;574",
+      "eli": "/eli/id/1945/09/07/045U0574/sg",
+      "stato": "in_vigore",
+      "sintesi": "Aumento temporaneo della indennita' militare per gli ufficiali e sottufficiali in servizio permanente effettivo del Regio esercito, della Regia marina, della Regia aeronautica e della Regia guardia di finanza, e la concessione di una indennita' mensile ai graduati e militari di truppa delle anzidette forze armate. (045U0574)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legislativo.luogotenenziale:1945-09-07;574",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1945/09/25/045U0574/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1945-09-25",
+      "numeroGU": "115",
+      "codiceRedazionale": "045U0574",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 PROVVEDIMENTO ABROGATO DAL D.LGS. 5 MAGGIO 1948, N. 814 ((5)) --------- AGGIORNAMENTO (5) Il D.Lgs. 13 febbraio 1948, n. 673 , ha disposto (con l'articolo unico, comma 1) che a decorrere dal 1 settembre 1946, resta soppressa l'indennit&agrave; mensile di L. 120, concessa con il presente articolo."
+    },
+    {
+      "chiave": "/eli/id/1945/06/17/045U0405/sg",
+      "titolo": "DECRETO LEGISLATIVO LUOGOTENENZIALE 17 giugno 1945, n. 405",
+      "tipo": "decreto.legislativo.luogotenenziale",
+      "numero": "405",
+      "dataEmanazione": "1945-06-17",
+      "nir": "urn:nir:stato:decreto.legislativo.luogotenenziale:1945-06-17;405",
+      "eli": "/eli/id/1945/06/17/045U0405/sg",
+      "stato": "abrogato",
+      "sintesi": "Riorganizzazione del personale dell'Associazione italiana della Croce Rossa. (045U0405)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legislativo.luogotenenziale:1945-06-17;405",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1945/07/26/045U0405/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1945-07-26",
+      "numeroGU": "89",
+      "codiceRedazionale": "045U0405",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.L. 22 DICEMBRE 2008, N. 200 , CONVERTITO CON MODIFICAZIONI DALLA L. 18 FEBBRAIO 2009, N. 9 ))"
+    },
+    {
+      "chiave": "/eli/id/1945/06/14/045U0365/sg",
+      "titolo": "DECRETO LEGISLATIVO LUOGOTENENZIALE 14 giugno 1945, n. 365",
+      "tipo": "decreto.legislativo.luogotenenziale",
+      "numero": "365",
+      "dataEmanazione": "1945-06-14",
+      "nir": "urn:nir:stato:decreto.legislativo.luogotenenziale:1945-06-14;365",
+      "eli": "/eli/id/1945/06/14/045U0365/sg",
+      "stato": "abrogato",
+      "sintesi": "Autorizzazione alla concessione di anticipazioni per un miliardo di lire a favore delle aziende industriali di importanza nazionale creditrici dello Stato. (045U0365)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legislativo.luogotenenziale:1945-06-14;365",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1945/07/14/045U0365/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1945-07-14",
+      "numeroGU": "84",
+      "codiceRedazionale": "045U0365",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.L. 22 DICEMBRE 2008, N. 200 CONVERTITO CON MODIFICAZIONI DALLA L. 18 FEBBRAIO 2009, N. 9 ))"
+    },
+    {
+      "chiave": "/eli/id/1945/06/28/045U0363/sg",
+      "titolo": "DECRETO LEGISLATIVO LUOGOTENENZIALE 28 giugno 1945, n. 363",
+      "tipo": "decreto.legislativo.luogotenenziale",
+      "numero": "363",
+      "dataEmanazione": "1945-06-28",
+      "nir": "urn:nir:stato:decreto.legislativo.luogotenenziale:1945-06-28;363",
+      "eli": "/eli/id/1945/06/28/045U0363/sg",
+      "stato": "abrogato",
+      "sintesi": "Estensione alle provincie del Nord Italia della sottoscrizione ai buoni del Tesoro quinquennali 5% a premi - 1° aprile 1950 - emessi con decreto legislativo Luogotenenziale 12 marzo 1945, n. 70. (045U0363)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legislativo.luogotenenziale:1945-06-28;363",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1945/07/14/045U0363/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1945-07-14",
+      "numeroGU": "84",
+      "codiceRedazionale": "045U0363",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.L. 22 DICEMBRE 2008, N. 200 , CONVERTITO, CON MODIFICAZIONI, DALLA L. 18 FEBBRAIO 2009, N. 9 ))"
+    },
+    {
+      "chiave": "/eli/id/1945/06/07/045U0337/sg",
+      "titolo": "DECRETO LEGISLATIVO LUOGOTENENZIALE 7 giugno 1945, n. 337",
+      "tipo": "decreto.legislativo.luogotenenziale",
+      "numero": "337",
+      "dataEmanazione": "1945-06-07",
+      "nir": "urn:nir:stato:decreto.legislativo.luogotenenziale:1945-06-07;337",
+      "eli": "/eli/id/1945/06/07/045U0337/sg",
+      "stato": "abrogato",
+      "sintesi": "Proroga dei termini per il deposito delle opere dell'ingegno e dei prodotti tutelati dalla legge 22 aprile 1941, n. 633. (045U0337)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legislativo.luogotenenziale:1945-06-07;337",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1945/07/05/045U0337/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1945-07-05",
+      "numeroGU": "80",
+      "codiceRedazionale": "045U0337",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DALLA L. 7 APRILE 2025, N. 56 ))"
+    },
+    {
+      "chiave": "/eli/id/1945/04/26/045U0195/sg",
+      "titolo": "DECRETO LEGISLATIVO LUOGOTENENZIALE 26 aprile 1945, n. 195",
+      "tipo": "decreto.legislativo.luogotenenziale",
+      "numero": "195",
+      "dataEmanazione": "1945-04-26",
+      "nir": "urn:nir:stato:decreto.legislativo.luogotenenziale:1945-04-26;195",
+      "eli": "/eli/id/1945/04/26/045U0195/sg",
+      "stato": "abrogato",
+      "sintesi": "Punizione dell'attivita' fascista nell'Italia liberata. (045U0195)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legislativo.luogotenenziale:1945-04-26;195",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1945/05/15/045U0195/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1945-05-15",
+      "numeroGU": "58",
+      "codiceRedazionale": "045U0195",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.L. 22 DICEMBRE 2008, N. 200 , CONVERTITO CON MODIFICAZIONI DALLA L. 18 FEBBRAIO 2009, N. 9 ))"
+    },
+    {
+      "chiave": "/eli/id/1945/03/01/045U0177/sg",
+      "titolo": "DECRETO LEGISLATIVO LUOGOTENENZIALE 1 marzo 1945, n. 177",
+      "tipo": "decreto.legislativo.luogotenenziale",
+      "numero": "177",
+      "dataEmanazione": "1945-03-01",
+      "nir": "urn:nir:stato:decreto.legislativo.luogotenenziale:1945-03-01;177",
+      "eli": "/eli/id/1945/03/01/045U0177/sg",
+      "stato": "abrogato",
+      "sintesi": "Corresponsione di assegni integrativi delle <em><strong>((pensioni di invalidita' e vecchiaia e per i superstiti))</strong></em> e delle altre prestazioni delle assicurazioni sociali. (045U0177)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legislativo.luogotenenziale:1945-03-01;177",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1945/05/12/045U0177/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1945-05-12",
+      "numeroGU": "57",
+      "codiceRedazionale": "045U0177",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.L. 22 DICEMBRE 2008, N. 200 , CONVERTITO CON MODIFICAZIONI DALLA L. 18 FEBBRAIO 2009, N. 9 ))"
+    },
+    {
+      "chiave": "/eli/id/1945/04/14/045U0147/sg",
+      "titolo": "DECRETO LEGISLATIVO LUOGOTENENZIALE 14 aprile 1945, n. 147",
+      "tipo": "decreto.legislativo.luogotenenziale",
+      "numero": "147",
+      "dataEmanazione": "1945-04-14",
+      "nir": "urn:nir:stato:decreto.legislativo.luogotenenziale:1945-04-14;147",
+      "eli": "/eli/id/1945/04/14/045U0147/sg",
+      "stato": "abrogato",
+      "sintesi": "Costituzione della Delegazione del Governo italiano presso la Missione italiana dell'U.N.R.R.A. e dei relativi servizi. (045U0147)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legislativo.luogotenenziale:1945-04-14;147",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1945/04/28/045U0147/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1945-04-28",
+      "numeroGU": "51",
+      "codiceRedazionale": "045U0147",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.L. 22 DICEMBRE 2008, N. 200 , CONVERTITO, CON MODIFICAZIONI DALLA L. 18 FEBBRAIO 2009, N. 9 ))"
+    },
+    {
+      "chiave": "/eli/id/1945/04/22/045U0142/sg",
+      "titolo": "DECRETO LEGISLATIVO LUOGOTENENZIALE 22 aprile 1945, n. 142",
+      "tipo": "decreto.legislativo.luogotenenziale",
+      "numero": "142",
+      "dataEmanazione": "1945-04-22",
+      "nir": "urn:nir:stato:decreto.legislativo.luogotenenziale:1945-04-22;142",
+      "eli": "/eli/id/1945/04/22/045U0142/sg",
+      "stato": "abrogato",
+      "sintesi": "Istituzione di Corti straordinarie di Assise per i reati di collaborazione con i tedeschi. (045U0142)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legislativo.luogotenenziale:1945-04-22;142",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1945/04/24/045U0142/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1945-04-24",
+      "numeroGU": "49",
+      "codiceRedazionale": "045U0142",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.L. 22 DICEMBRE 2008, N. 200 , CONVERTITO CON MODIFICAZIONI DALLA L. 18 FEBBRAIO 2009, n. 9 ))"
+    },
+    {
+      "chiave": "/eli/id/1945/03/15/045U0140/sg",
+      "titolo": "DECRETO LUOGOTENENZIALE 15 marzo 1945, n. 140",
+      "tipo": "decreto.luogotenenziale",
+      "numero": "140",
+      "dataEmanazione": "1945-03-15",
+      "nir": "urn:nir:stato:decreto.luogotenenziale:1945-03-15;140",
+      "eli": "/eli/id/1945/03/15/045U0140/sg",
+      "stato": "abrogato",
+      "sintesi": "Istituzione della Ragioneria centrale per i servizi del Ministero dell'Italia occupata. (045U0140)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.luogotenenziale:1945-03-15;140",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1945/04/21/045U0140/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1945-04-21",
+      "numeroGU": "48",
+      "codiceRedazionale": "045U0140",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DALLA L. 7 APRILE 2025, N. 56 ))"
+    },
+    {
+      "chiave": "/eli/id/1945/03/08/045U0072/sg",
+      "titolo": "DECRETO LEGISLATIVO LUOGOTENENZIALE 8 marzo 1945, n. 72",
+      "tipo": "decreto.legislativo.luogotenenziale",
+      "numero": "72",
+      "dataEmanazione": "1945-03-08",
+      "nir": "urn:nir:stato:decreto.legislativo.luogotenenziale:1945-03-08;72",
+      "eli": "/eli/id/1945/03/08/045U0072/sg",
+      "stato": "abrogato",
+      "sintesi": "Fondo di solidarieta' nazionale. (045U0072)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legislativo.luogotenenziale:1945-03-08;72",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1945/03/24/045U0072/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1945-03-24",
+      "numeroGU": "36",
+      "codiceRedazionale": "045U0072",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.L. 22 DICEMBRE 2008, N. 200 , CONVERTITO CON MODIFICAZIONI DALLA L. 18 FEBBRAIO 2009, N. 9 ))"
+    },
+    {
+      "chiave": "/eli/id/1945/01/11/045U0051/sg",
+      "titolo": "DECRETO LEGISLATIVO LUOGOTENENZIALE 11 gennaio 1945, n. 51",
+      "tipo": "decreto.legislativo.luogotenenziale",
+      "numero": "51",
+      "dataEmanazione": "1945-01-11",
+      "nir": "urn:nir:stato:decreto.legislativo.luogotenenziale:1945-01-11;51",
+      "eli": "/eli/id/1945/01/11/045U0051/sg",
+      "stato": "abrogato",
+      "sintesi": "Norme per la concessione dei mutui per il pareggio economico dei bilanci delle Amministrazioni provinciali e comunali. (045U0051)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legislativo.luogotenenziale:1945-01-11;51",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1945/03/15/045U0051/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1945-03-15",
+      "numeroGU": "32",
+      "codiceRedazionale": "045U0051",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DALLA L. 7 APRILE 2025, N. 56 ))"
+    },
+    {
+      "chiave": "/eli/id/1945/02/23/045U0044/sg",
+      "titolo": "DECRETO LEGISLATIVO LUOGOTENENZIALE 23 febbraio 1945, n. 44",
+      "tipo": "decreto.legislativo.luogotenenziale",
+      "numero": "44",
+      "dataEmanazione": "1945-02-23",
+      "nir": "urn:nir:stato:decreto.legislativo.luogotenenziale:1945-02-23;44",
+      "eli": "/eli/id/1945/02/23/045U0044/sg",
+      "stato": "abrogato",
+      "sintesi": "Modificazioni ed aggiunte alle disposizioni legislative per l'epurazione dell'Amministrazione. (045U0044)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legislativo.luogotenenziale:1945-02-23;44",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1945/03/08/045U0044/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1945-03-08",
+      "numeroGU": "29",
+      "codiceRedazionale": "045U0044",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.L. 22 DICEMBRE 2008, N. 200 , CONVERTITO CON MODIFICAZIONI DALLA L. 18 FEBBRAIO 2009, N. 9 ))"
+    },
+    {
+      "chiave": "/eli/id/1944/11/16/044U0425/sg",
+      "titolo": "DECRETO LEGISLATIVO LUOGOTENENZIALE 16 novembre 1944, n. 425",
+      "tipo": "decreto.legislativo.luogotenenziale",
+      "numero": "425",
+      "dataEmanazione": "1944-11-16",
+      "nir": "urn:nir:stato:decreto.legislativo.luogotenenziale:1944-11-16;425",
+      "eli": "/eli/id/1944/11/16/044U0425/sg",
+      "stato": "abrogato",
+      "sintesi": "Decadenza dalle assegnazioni di alloggi di cooperative edilizie e ricupero dei contributi dello Stato. (044U0425)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legislativo.luogotenenziale:1944-11-16;425",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1945/01/20/044U0425/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1945-01-20",
+      "numeroGU": "9",
+      "codiceRedazionale": "044U0425",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.L. 22 DICEMBRE 2008, N. 200 , CONVERTITO CON MODIFICAZIONI DALLA L. 18 FEBBRAIO 2009, N. 9 ))"
+    },
+    {
+      "chiave": "/eli/id/1944/11/03/044U0386/sg",
+      "titolo": "DECRETO LEGISLATIVO LUOGOTENENZIALE 3 novembre 1944, n. 386",
+      "tipo": "decreto.legislativo.luogotenenziale",
+      "numero": "386",
+      "dataEmanazione": "1944-11-03",
+      "nir": "urn:nir:stato:decreto.legislativo.luogotenenziale:1944-11-03;386",
+      "eli": "/eli/id/1944/11/03/044U0386/sg",
+      "stato": "abrogato",
+      "sintesi": "Disposizioni concernenti le missioni continuative dei dipendenti statali. (044U0386)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legislativo.luogotenenziale:1944-11-03;386",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1944/12/26/044U0386/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1944-12-26",
+      "numeroGU": "99",
+      "codiceRedazionale": "044U0386",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.L. 22 DICEMBRE 2008, N. 200 , CONVERTITO CON MODIFICAZIONI DALLA L. 18 FEBBRAIO 2009, N. 9 ))"
+    },
+    {
+      "chiave": "/eli/id/1944/10/19/044U0360/sg",
+      "titolo": "DECRETO LEGISLATIVO LUOGOTENENZIALE 19 ottobre 1944, n. 360",
+      "tipo": "decreto.legislativo.luogotenenziale",
+      "numero": "360",
+      "dataEmanazione": "1944-10-19",
+      "nir": "urn:nir:stato:decreto.legislativo.luogotenenziale:1944-10-19;360",
+      "eli": "/eli/id/1944/10/19/044U0360/sg",
+      "stato": "in_vigore",
+      "sintesi": "Aumento del compenso giornaliero spettante ai componenti le Commissioni per gli esami di maturita' e abilitazione. (044U0360)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legislativo.luogotenenziale:1944-10-19;360",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1944/12/09/044U0360/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1944-12-09",
+      "numeroGU": "92",
+      "codiceRedazionale": "044U0360",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((IL D.L. 22 DICEMBRE 2008, N. 200 , CONVERTITO CON MODIFICAZIONI DALLA L. 18 FEBBRAIO 2009, N. 9 , HA CONFERMATO L'ABROGAZIONE DEL PRESENTE PROVVEDIMENTO))"
+    },
+    {
+      "chiave": "/eli/id/1944/11/18/044U0328/sg",
+      "titolo": "DECRETO LEGISLATIVO LUOGOTENENZIALE 18 novembre 1944, n. 328",
+      "tipo": "decreto.legislativo.luogotenenziale",
+      "numero": "328",
+      "dataEmanazione": "1944-11-18",
+      "nir": "urn:nir:stato:decreto.legislativo.luogotenenziale:1944-11-18;328",
+      "eli": "/eli/id/1944/11/18/044U0328/sg",
+      "stato": "in_vigore",
+      "sintesi": "Miglioramenti economici a favore del personale statale e dei dipendenti dagli Enti pubblici locali e parastatali. (044U0328)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legislativo.luogotenenziale:1944-11-18;328",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1944/11/25/044U0328/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1944-11-25",
+      "numeroGU": "86",
+      "codiceRedazionale": "044U0328",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "UMBERTO DI SAVOIA Principe di Piemonte Luogotenente Generale del Regno In virt&ugrave; dell'autorit&agrave; a Noi delegata; Vista la legge 20 aprile 1939, n. 591 , concernente aumento degli stipendi, paghe e retribuzioni e dei supplementi di servizio attivo a favore dei dipendenti dallo Stato o da Enti pubblici o maggiorazione delle pensioni a carico dello Stato o del Fondo pensioni dello ferrovie dello Stato e successive modificazioni; Vista la legge 16 aprile 1940, n. 237 , recante miglioramenti economici a favore dei dipendenti dallo Stato e dagli Enti pubblici nonch&egrave; a favore dei pensionati a carico dello Stato e del Fondo pensioni delle ferrovie dello stato; Visti i Regi decreti-legge 14 luglio 1941, n. 616 - convertito nella legge 1l dicembre 1941, n. 1414 - e 8 luglio 1943, n. 610, recanti miglioramenti economici di carattere temporaneo, in dipendenza della guerra, a favore del personale statale in attivit&agrave; ed in quiescenza e dei dipendenti dagli Enti ausiliari dello Stato e di diritto pubblico; Visto il R. decreto-legge 6 dicembre 1943, n. 18/B , recante miglioramenti economici di carattere temporaneo a favore del personale statale o dei dipendenti dagli Enti ausiliari dello Stato e di diritto pubblico; Visto il R. decreto-legge 30 ottobre 1943, n. 2/B ; Visto il R. decreto-legge 29 maggio 1944, n. 141 ; Visto il decreto-legge Luogotenenziale 25 giugno 1944 n. 151 ; Vista la deliberazione del Consiglio dei Ministri; Sulla proposta del Presidente del Consiglio dei Ministri e del Ministro Segretario di Stato per il tesoro; Abbiamo sanzionato e promulghiamo quanto segue: Art. 1 I supplementi di servizio attivo previsti per i dipendenti dalle Amministrazioni statali, comprese quelle con ordinamento autonomo, dalle tabelle annesse alla legge 20 aprile 1939, n. 591 , e successive modificazioni ed estensioni le sovrapaghe non utili a pensione degli appartenenti alle Forze armate ed ai Corpi organizzati militarmente a servizio dello Stato, stabilite da [...]",
+      "testoTroncato": true
+    },
+    {
+      "chiave": "/eli/id/1944/10/23/044U0285/sg",
+      "titolo": "DECRETO LEGISLATIVO LUOGOTENENZIALE 23 ottobre 1944, n. 285",
+      "tipo": "decreto.legislativo.luogotenenziale",
+      "numero": "285",
+      "dataEmanazione": "1944-10-23",
+      "nir": "urn:nir:stato:decreto.legislativo.luogotenenziale:1944-10-23;285",
+      "eli": "/eli/id/1944/10/23/044U0285/sg",
+      "stato": "abrogato",
+      "sintesi": "Norme Integrative e di attuazione del decreto legislativo 7 luglio 1944, n. 159, per la parte riguardante l'epurazione dell'Amministrazione. (044U0285)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legislativo.luogotenenziale:1944-10-23;285",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1944/11/07/044U0285/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1944-11-07",
+      "numeroGU": "78",
+      "codiceRedazionale": "044U0285",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.L. 22 DICEMBRE 2008, N. 200 , CONVERTITO CON MODIFICAZIONI DALLA L. 18 FEBBRAIO 2009, N. 9 ))"
+    },
+    {
+      "chiave": "/eli/id/1944/10/26/044U0262/sg",
+      "titolo": "DECRETO LEGISLATIVO LUOGOTENENZIALE 26 ottobre 1944, n. 262",
+      "tipo": "decreto.legislativo.luogotenenziale",
+      "numero": "262",
+      "dataEmanazione": "1944-10-26",
+      "nir": "urn:nir:stato:decreto.legislativo.luogotenenziale:1944-10-26;262",
+      "eli": "/eli/id/1944/10/26/044U0262/sg",
+      "stato": "in_vigore",
+      "sintesi": "Concessione di amnistia e indulto per i reati in materia finanziaria. (044U0262)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legislativo.luogotenenziale:1944-10-26;262",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1944/10/28/044U0262/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1944-10-28",
+      "numeroGU": "74",
+      "codiceRedazionale": "044U0262",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "UMBERTO DI SAVOIA PRINCIPE DI PIEMONTE LUOGOTENENTE GENERALE DEL REGNO In virt&ugrave; dell'autorit&agrave; a Noi delegata; Visto l'art. 8 dello Statuto del Regno; Vista la deliberazione del Consiglio dei Ministri; Sulla proposta del Ministro per le finanze, di concerto con quello per la grazia e, la giustizia; Abbiamo decretato e decretiamo: Art. 1 &Egrave; concessa amnistia per le violazioni punite ai termini degli articoli seguenti del R. decreto 17 settembre 1931, n. 1 .608 A) articoli 15 e 24 n. 4, per omessa dichiarazione dei redditi; B) art. 19, per occultamento da parte degli operai al datore di lavoro del proprio stato di celibato, ovvero per la dichiarazione, al datore od all'ufficio delle imposte di una et&agrave; diversa dalla vera ; C) art. 20, per mancata ottemperanza alle disposizioni date od alle richieste fatte dall'ufficio delle imposte e dalle commissioni amministrative nell'esercizio di alcuna delle facolt&agrave; loro conferite dalle singole leggi d'imposta; D) art. 27, per morosit&agrave; per sei rate successivo d'imposte. Sono altres&igrave; amnistiate le violazioni relative alla omissione delle dichiarazioni prevedute dalle seguenti leggi e loro successive aggiunte e modificazioni: a) decreto-legge 7 settembre 1935, n. 1627 , istitutivo della imposta cedolare, convertito nella leggo 13 gennaio 1936, n. 76; b) R. decreto-legge 5 ottobre 1936, n. 1743 , riguardante la emissione di un prestito redimibile 5% e la istituzione dell'imposta straordinaria immobiliare, convertito nella legge 14 gennaio 1937, n. 151 ; c) R. decreto-legge 5 ottobre 1936, n. 1744 , concernente l'imposta straordinaria progressiva sui dividendi delle societ&agrave; commerciali, convertito nella legge 14 gennaio 1937, n. 91 ; d) R. decreto-legge 19 ottobre 1937, n. 1729 , istitutivo di una imposta straordinaria sul capitale delle societ&agrave; per azioni, convertito nella legge 18 gennaio 1938, n.19 ; e) R. decreto-legge 19 novembre 1938, n. 1720 , istitutivo di una impost [...]",
+      "testoTroncato": true
+    },
+    {
+      "chiave": "/eli/id/1944/10/05/044U0249/sg",
+      "titolo": "DECRETO LEGISLATIVO LUOGOTENENZIALE 5 ottobre 1944, n. 249",
+      "tipo": "decreto.legislativo.luogotenenziale",
+      "numero": "249",
+      "dataEmanazione": "1944-10-05",
+      "nir": "urn:nir:stato:decreto.legislativo.luogotenenziale:1944-10-05;249",
+      "eli": "/eli/id/1944/10/05/044U0249/sg",
+      "stato": "abrogato",
+      "sintesi": "Assetto della legislazione nei territori liberati. (044U0249)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legislativo.luogotenenziale:1944-10-05;249",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1944/10/18/044U0249/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1944-10-18",
+      "numeroGU": "70",
+      "codiceRedazionale": "044U0249",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.LGS. 13 DICEMBRE 2010, N. 212 ))"
+    },
+    {
+      "chiave": "/eli/id/1944/08/24/044U0211/sg",
+      "titolo": "DECRETO LEGISLATIVO LUOGOTENENZIALE 24 agosto 1944, n. 211",
+      "tipo": "decreto.legislativo.luogotenenziale",
+      "numero": "211",
+      "dataEmanazione": "1944-08-24",
+      "nir": "urn:nir:stato:decreto.legislativo.luogotenenziale:1944-08-24;211",
+      "eli": "/eli/id/1944/08/24/044U0211/sg",
+      "stato": "abrogato",
+      "sintesi": "Integrazione dei disavanzi economici dei bilanci delle Amministrazioni provinciali e comunali. (044U0211)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legislativo.luogotenenziale:1944-08-24;211",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1944/09/26/044U0211/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1944-09-26",
+      "numeroGU": "60",
+      "codiceRedazionale": "044U0211",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DALLA L. 7 APRILE 2025, N. 56 ))"
+    },
+    {
+      "chiave": "/eli/id/1944/08/10/044U0194/sg",
+      "titolo": "DECRETO LEGISLATIVO LUOGOTENENZIALE 10 agosto 1944, n. 194",
+      "tipo": "decreto.legislativo.luogotenenziale",
+      "numero": "194",
+      "dataEmanazione": "1944-08-10",
+      "nir": "urn:nir:stato:decreto.legislativo.luogotenenziale:1944-08-10;194",
+      "eli": "/eli/id/1944/08/10/044U0194/sg",
+      "stato": "abrogato",
+      "sintesi": "Temporanea limitazione dei casi di arresto e di mandato di cattura e della custodia preventiva. (044U0194)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legislativo.luogotenenziale:1944-08-10;194",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1944/09/14/044U0194/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1944-09-14",
+      "numeroGU": "55",
+      "codiceRedazionale": "044U0194",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.L. 22 DICEMBRE 2008, N. 200 , CONVERTITO CON MODIFICAZIONI DALLA L. 18 FEBBRAIO 2009, N. 9 ))"
+    },
+    {
+      "chiave": "/eli/id/1944/07/03/044U0163/sg",
+      "titolo": "DECRETO LEGISLATIVO LUOGOTENENZIALE 3 luglio 1944, n. 163",
+      "tipo": "decreto.legislativo.luogotenenziale",
+      "numero": "163",
+      "dataEmanazione": "1944-07-03",
+      "nir": "urn:nir:stato:decreto.legislativo.luogotenenziale:1944-07-03;163",
+      "eli": "/eli/id/1944/07/03/044U0163/sg",
+      "stato": "abrogato",
+      "sintesi": "Soppressione del Ministero,per la cultura popolare e istituzione di un Sottosegretariato per la stampa e le informazioni. (044U0163)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legislativo.luogotenenziale:1944-07-03;163",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1944/08/01/044U0163/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1944-08-01",
+      "numeroGU": "42",
+      "codiceRedazionale": "044U0163",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DALLA L. 7 APRILE 2025, N. 56 ))"
+    },
+    {
+      "chiave": "/eli/id/1944/03/09/044U0149/sg",
+      "titolo": "REGIO DECRETO 9 marzo 1944, n. 149",
+      "tipo": "regio.decreto",
+      "numero": "149",
+      "dataEmanazione": "1944-03-09",
+      "nir": "urn:nir:stato:regio.decreto:1944-03-09;149",
+      "eli": "/eli/id/1944/03/09/044U0149/sg",
+      "stato": "abrogato",
+      "sintesi": "Istituzione in Salerno di un Istituto Superiore di Magistero. (044U0149)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1944-03-09;149",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1944/07/05/044U0149/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1944-07-05",
+      "numeroGU": "38",
+      "codiceRedazionale": "044U0149",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.P.R. 13 DICEMBRE 2010, N. 248 ))"
+    },
+    {
+      "chiave": "/eli/id/1944/02/17/044U0073/sg",
+      "titolo": "REGIO DECRETO 17 febbraio 1944, n. 73",
+      "tipo": "regio.decreto",
+      "numero": "73",
+      "dataEmanazione": "1944-02-17",
+      "nir": "urn:nir:stato:regio.decreto:1944-02-17;73",
+      "eli": "/eli/id/1944/02/17/044U0073/sg",
+      "stato": "in_vigore",
+      "sintesi": "Composizione della Commissione superiore di avanzamento per gli Ufficiali della R. Aeronautica, darante il periodo di guerra. (044U0073)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1944-02-17;73",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1944/03/18/044U0073/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1944-03-18",
+      "numeroGU": "13",
+      "codiceRedazionale": "044U0073",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((IL D.P.R. 13 DICEMBRE 2010, N. 248 HA CONFERMATO L'ABROGAZIONE DEL PRESENTE PROVVEDIMENTO))"
+    },
+    {
+      "chiave": "/eli/id/1943/03/22/043U0502/sg",
+      "titolo": "LEGGE 22 marzo 1943, n. 502",
+      "tipo": "legge",
+      "numero": "502",
+      "dataEmanazione": "1943-03-22",
+      "nir": "urn:nir:stato:legge:1943-03-22;502",
+      "eli": "/eli/id/1943/03/22/043U0502/sg",
+      "stato": "in_vigore",
+      "sintesi": "Estensione delle facilitazioni previste dal R decreto-legge 9 settembre 1937-XV, n. 2041, concernente agevolazioni in materia di tasse radiofoniche a favore di organizzazione direttamente dipendenti dal Partito Nazionale. (043U0502)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1943-03-22;502",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1943/06/23/043U0502/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1943-06-23",
+      "numeroGU": "145",
+      "codiceRedazionale": "043U0502",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((IL D.L. 22 DICEMBRE 2008, N. 200 CONVERTITO CON MODIFICAZIONI DALLA L. 18 FEBBRAIO 2009, N. 9 HA CONFERMATO L'ABROGAZIONE DEL PRESENTE PROVVEDIMENTO))"
+    },
+    {
+      "chiave": "/eli/id/1942/08/08/042U1881/sg",
+      "titolo": "REGIO DECRETO 8 agosto 1942, n. 1881",
+      "tipo": "regio.decreto",
+      "numero": "1881",
+      "dataEmanazione": "1942-08-08",
+      "nir": "urn:nir:stato:regio.decreto:1942-08-08;1881",
+      "eli": "/eli/id/1942/08/08/042U1881/sg",
+      "stato": "abrogato",
+      "sintesi": "Determinazione delle piante organiche del personale di cancellerie e segreterie giudiziarie addetto al Ministero ed agli uffici giudiziari del Regno. (042U1881)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1942-08-08;1881",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1943/06/21/042U1881/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1943-06-21",
+      "numeroGU": "143",
+      "codiceRedazionale": "042U1881",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.P.R. 13 DICEMBRE 2010, N. 248 ))"
+    },
+    {
+      "chiave": "/eli/id/1943/01/11/043U0019/sg",
+      "titolo": "LEGGE 11 gennaio 1943, n. 19",
+      "tipo": "legge",
+      "numero": "19",
+      "dataEmanazione": "1943-01-11",
+      "nir": "urn:nir:stato:legge:1943-01-11;19",
+      "eli": "/eli/id/1943/01/11/043U0019/sg",
+      "stato": "abrogato",
+      "sintesi": "Creazione in Roma di un «Istituto di studi sugli scrittori politici italiani». (043U0019)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1943-01-11;19",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1943/02/10/043U0019/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1943-02-10",
+      "numeroGU": "33",
+      "codiceRedazionale": "043U0019",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.L. 22 DICEMBRE 2008, N. 200 , CONVERTITO CON MODIFICAZIONI DALLA L. 18 FEBBRAIO 2009, N. 9 ))"
+    }
+  ]
+}

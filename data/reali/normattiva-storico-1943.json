@@ -1,0 +1,199 @@
+{
+  "provenance": {
+    "fonte": "normattiva",
+    "url": "https://api.normattiva.it/t/normattiva.api/bff-opendata/v1/api/v1/ricerca/aggiornati",
+    "recuperatoIl": "2026-09-29T01:49:36.113Z",
+    "licenza": "riproduzione consentita con menzione di fonte, carattere non autentico e gratuito (Note legali dati.normattiva.it; solo la Gazzetta Ufficiale a stampa e' autentica)"
+  },
+  "atti": [
+    {
+      "chiave": "/eli/id/1943/06/03/043U0598/sg",
+      "titolo": "REGIO DECRETO 3 giugno 1943, n. 598",
+      "tipo": "regio.decreto",
+      "numero": "598",
+      "dataEmanazione": "1943-06-03",
+      "nir": "urn:nir:stato:regio.decreto:1943-06-03;598",
+      "eli": "/eli/id/1943/06/03/043U0598/sg",
+      "stato": "abrogato",
+      "sintesi": "Approvazione del testo unico delle leggi in materia di imposta straordinaria sui maggiori utili relativi allo stato di guerra. (043U0598)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1943-06-03;598",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1943/07/09/043U0598/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1943-07-09",
+      "numeroGU": "157",
+      "codiceRedazionale": "043U0598",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.P.R. 13 DICEMBRE 2010, N. 248 ))"
+    },
+    {
+      "chiave": "/eli/id/1943/04/05/043U0214/sg",
+      "titolo": "LEGGE 5 aprile 1943, n. 214",
+      "tipo": "legge",
+      "numero": "214",
+      "dataEmanazione": "1943-04-05",
+      "nir": "urn:nir:stato:legge:1943-04-05;214",
+      "eli": "/eli/id/1943/04/05/043U0214/sg",
+      "stato": "abrogato",
+      "sintesi": "Conversione in legge, con modificazione, del R. decreto-legge 14 dicembre 1942-XXI, n. 1476, concernente proroga dei benefici tributari per le fusioni, concentrazioni e trasformazioni di societa'. (043U0214)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1943-04-05;214",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1943/04/20/043U0214/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1943-04-20",
+      "numeroGU": "91",
+      "codiceRedazionale": "043U0214",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.L. 22 DICEMBRE 2008, N. 200 , CONVERTITO CON MODIFICAZIONI DALLA L. 18 FEBBRAIO 2009, N. 9 ))"
+    },
+    {
+      "chiave": "/eli/id/1943/01/25/043U0004/sg",
+      "titolo": "REGIO DECRETO 25 gennaio 1943, n. 4",
+      "tipo": "regio.decreto",
+      "numero": "4",
+      "dataEmanazione": "1943-01-25",
+      "nir": "urn:nir:stato:regio.decreto:1943-01-25;4",
+      "eli": "/eli/id/1943/01/25/043U0004/sg",
+      "stato": "in_vigore",
+      "sintesi": "Istituzione presso il Ministero dell'interno dell'Intendenza generale per i servizi di guerra. (043U0004)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1943-01-25;4",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1943/01/30/043U0004/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1943-01-30",
+      "numeroGU": "24",
+      "codiceRedazionale": "043U0004",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((IL D.LGS. 13 DICEMBRE 2010, N. 212 HA CONFERMATO L'ABROGAZIONE DEL PRESENTE PROVVEDIMENTO))"
+    },
+    {
+      "chiave": "/eli/id/1942/12/03/042U1549/sg",
+      "titolo": "LEGGE 3 dicembre 1942, n. 1549",
+      "tipo": "legge",
+      "numero": "1549",
+      "dataEmanazione": "1942-12-03",
+      "nir": "urn:nir:stato:legge:1942-12-03;1549",
+      "eli": "/eli/id/1942/12/03/042U1549/sg",
+      "stato": "abrogato",
+      "sintesi": "Conversione in legge, con modificazioni, del R. decreto-legge 11 giugno 1942-XX, n. 584, contenente disposizioni penali per la durata dello stato di guerra. (042U1549)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1942-12-03;1549",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1943/01/09/042U1549/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1943-01-09",
+      "numeroGU": "6",
+      "codiceRedazionale": "042U1549",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.L. 22 DICEMBRE 2008, N. 200 CONVERTITO CON MODIFICAZIONI DALLA L. 18 FEBBRAIO 2009, N. 9 ))"
+    },
+    {
+      "chiave": "/eli/id/1942/12/03/042U1417/sg",
+      "titolo": "LEGGE 3 dicembre 1942, n. 1417",
+      "tipo": "legge",
+      "numero": "1417",
+      "dataEmanazione": "1942-12-03",
+      "nir": "urn:nir:stato:legge:1942-12-03;1417",
+      "eli": "/eli/id/1942/12/03/042U1417/sg",
+      "stato": "abrogato",
+      "sintesi": "Istituzione di due ruoli speciali di ufficiali del servizio permanente effettivo e varianti agli organici dei Corpi militari della Regia marina. (042U1417)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1942-12-03;1417",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1942/12/16/042U1417/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1942-12-16",
+      "numeroGU": "297",
+      "codiceRedazionale": "042U1417",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.L. 22 DICEMBRE 2008, N. 200 , CONVERTITO CON MODIFICAZIONI, DALLA L. 18 FEBBRAIO 2009, N. 9 ))"
+    },
+    {
+      "chiave": "/eli/id/1942/10/18/042U1293/sg",
+      "titolo": "REGIO DECRETO 18 ottobre 1942, n. 1293",
+      "tipo": "regio.decreto",
+      "numero": "1293",
+      "dataEmanazione": "1942-10-18",
+      "nir": "urn:nir:stato:regio.decreto:1942-10-18;1293",
+      "eli": "/eli/id/1942/10/18/042U1293/sg",
+      "stato": "abrogato",
+      "sintesi": "6ª Prelevazione dal fondo di riserva per le spese impreviste dello stato di previsione della spesa del Ministero delle finanze per l'esercizio finanziario 1942-43. (042U1293)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1942-10-18;1293",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1942/11/17/042U1293/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1942-11-17",
+      "numeroGU": "272",
+      "codiceRedazionale": "042U1293",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.LGS. 13 DICEMBRE 2010, N. 212 ))"
+    },
+    {
+      "chiave": "/eli/id/1942/09/26/042U1170/sg",
+      "titolo": "REGIO DECRETO 26 settembre 1942, n. 1170",
+      "tipo": "regio.decreto",
+      "numero": "1170",
+      "dataEmanazione": "1942-09-26",
+      "nir": "urn:nir:stato:regio.decreto:1942-09-26;1170",
+      "eli": "/eli/id/1942/09/26/042U1170/sg",
+      "stato": "abrogato",
+      "sintesi": "5ª Prelevazione dal fondo di riserva per le spese impreviste dello stato di previsione della spesa del Ministero delle finanze per l'esercizio finanziario 1942-43. (042U1170)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1942-09-26;1170",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1942/10/21/042U1170/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1942-10-21",
+      "numeroGU": "249",
+      "codiceRedazionale": "042U1170",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.LGS. 13 DICEMBRE 2010, N. 212 ))"
+    },
+    {
+      "chiave": "/eli/id/1942/08/24/042U1138/sg",
+      "titolo": "REGIO DECRETO 24 agosto 1942, n. 1138",
+      "tipo": "regio.decreto",
+      "numero": "1138",
+      "dataEmanazione": "1942-08-24",
+      "nir": "urn:nir:stato:regio.decreto:1942-08-24;1138",
+      "eli": "/eli/id/1942/08/24/042U1138/sg",
+      "stato": "abrogato",
+      "sintesi": "3ª Prelevazione dal fondo di riserva per le spese impreviste dell'esercizio finanziario 1942-43. (042U1138)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1942-08-24;1138",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1942/10/12/042U1138/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1942-10-12",
+      "numeroGU": "240",
+      "codiceRedazionale": "042U1138",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.LGS. 13 DICEMBRE 2010, N. 212 ))"
+    },
+    {
+      "chiave": "/eli/id/1942/08/24/042U1087/sg",
+      "titolo": "REGIO DECRETO 24 agosto 1942, n. 1087",
+      "tipo": "regio.decreto",
+      "numero": "1087",
+      "dataEmanazione": "1942-08-24",
+      "nir": "urn:nir:stato:regio.decreto:1942-08-24;1087",
+      "eli": "/eli/id/1942/08/24/042U1087/sg",
+      "stato": "abrogato",
+      "sintesi": "Modificazioni al R. decreto 3 giugno 1938-XVI, n. 819, relativo alla corresponsione di premi di operosita' al personale delle Ferrovie dello Stato. (042U1087)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1942-08-24;1087",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1942/09/29/042U1087/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1942-09-29",
+      "numeroGU": "229",
+      "codiceRedazionale": "042U1087",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.LGS. 13 DICEMBRE 2010, N. 212 ))"
+    }
+  ]
+}

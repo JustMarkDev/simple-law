@@ -1,0 +1,619 @@
+{
+  "provenance": {
+    "fonte": "normattiva",
+    "url": "https://api.normattiva.it/t/normattiva.api/bff-opendata/v1/api/v1/ricerca/aggiornati",
+    "recuperatoIl": "2026-09-29T01:55:58.574Z",
+    "licenza": "riproduzione consentita con menzione di fonte, carattere non autentico e gratuito (Note legali dati.normattiva.it; solo la Gazzetta Ufficiale a stampa e' autentica)"
+  },
+  "atti": [
+    {
+      "chiave": "/eli/id/1872/11/27/072U1099/sg",
+      "titolo": "REGIO DECRETO 27 novembre 1872, n. 1099",
+      "tipo": "regio.decreto",
+      "numero": "1099",
+      "dataEmanazione": "1872-11-27",
+      "nir": "urn:nir:stato:regio.decreto:1872-11-27;1099",
+      "eli": "/eli/id/1872/11/27/072U1099/sg",
+      "stato": "abrogato",
+      "sintesi": "Che approva alcune modificazioni ed aggiunte al Regolamento 4 settembre 1870, n. 5852, per l'esecuzione della Legge 22 aprile 1869, n. 5026, sulla Amministrazione del patrimonio dello Stato e sulla Contabilita' generale. (072U1099)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1872-11-27;1099",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1872/11/29/072U1099/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1872-11-29",
+      "numeroGU": "330",
+      "codiceRedazionale": "072U1099",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.P.R. 13 DICEMBRE 2010, N. 248 ))"
+    },
+    {
+      "chiave": "/eli/id/1872/11/18/072U1105/sg",
+      "titolo": "REGIO DECRETO 18 novembre 1872, n. 1105",
+      "tipo": "regio.decreto",
+      "numero": "1105",
+      "dataEmanazione": "1872-11-18",
+      "nir": "urn:nir:stato:regio.decreto:1872-11-18;1105",
+      "eli": "/eli/id/1872/11/18/072U1105/sg",
+      "stato": "abrogato",
+      "sintesi": "Che dal fondo delle spese impreviste ordina una settima prelevazione nella somma di lire due milioni cento diecimila. (072U1105)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1872-11-18;1105",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1872/11/19/072U1105/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1872-11-19",
+      "numeroGU": "320",
+      "codiceRedazionale": "072U1105",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.LGS. 13 DICEMBRE 2010, N. 212 ))"
+    },
+    {
+      "chiave": "/eli/id/1872/09/29/072U1043/sg",
+      "titolo": "REGIO DECRETO 29 settembre 1872, n. 1043",
+      "tipo": "regio.decreto",
+      "numero": "1043",
+      "dataEmanazione": "1872-09-29",
+      "nir": "urn:nir:stato:regio.decreto:1872-09-29;1043",
+      "eli": "/eli/id/1872/09/29/072U1043/sg",
+      "stato": "abrogato",
+      "sintesi": "Che aumenta il personale della Direzione generale del Debito Pubblico. (072U1043)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1872-09-29;1043",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1872/10/18/072U1043/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1872-10-18",
+      "numeroGU": "288",
+      "codiceRedazionale": "072U1043",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.P.R. 13 DICEMBRE 2010, N. 248 ))"
+    },
+    {
+      "chiave": "/eli/id/1872/08/01/072U0939/sg",
+      "titolo": "REGIO DECRETO 1 agosto 1872, n. 939",
+      "tipo": "regio.decreto",
+      "numero": "939",
+      "dataEmanazione": "1872-08-01",
+      "nir": "urn:nir:stato:regio.decreto:1872-08-01;939",
+      "eli": "/eli/id/1872/08/01/072U0939/sg",
+      "stato": "abrogato",
+      "sintesi": "Che sospende la scadenza dei pagamenti delle imposte dirette nei Comuni di Massa di Somma e S. Sebastiano danneggiati dal Vesuvio. (072U0939)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1872-08-01;939",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1872/08/11/072U0939/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1872-08-11",
+      "numeroGU": "221",
+      "codiceRedazionale": "072U0939",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.LGS. 13 DICEMBRE 2010, N. 212 ))"
+    },
+    {
+      "chiave": "/eli/id/1872/05/01/072U0793/sg",
+      "titolo": "REGIO DECRETO 1 maggio 1872, n. 793",
+      "tipo": "regio.decreto",
+      "numero": "793",
+      "dataEmanazione": "1872-05-01",
+      "nir": "urn:nir:stato:regio.decreto:1872-05-01;793",
+      "eli": "/eli/id/1872/05/01/072U0793/sg",
+      "stato": "abrogato",
+      "sintesi": "Col quale sono abrogate le disposizioni contenute nell'articolo 5 del Regio Decreto 25 giugno 4871 sul macinato, ed e' prorogata la durata delle licenze speciali concesse prima della pubblicazione del Decreto stesso. (072U0793)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1872-05-01;793",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1872/05/09/072U0793/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1872-05-09",
+      "numeroGU": "129",
+      "codiceRedazionale": "072U0793",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.LGS. 13 DICEMBRE 2010, N. 212 ))"
+    },
+    {
+      "chiave": "/eli/id/1872/04/28/072U0782/sg",
+      "titolo": "REGIO DECRETO 28 aprile 1872, n. 782",
+      "tipo": "regio.decreto",
+      "numero": "782",
+      "dataEmanazione": "1872-04-28",
+      "nir": "urn:nir:stato:regio.decreto:1872-04-28;782",
+      "eli": "/eli/id/1872/04/28/072U0782/sg",
+      "stato": "abrogato",
+      "sintesi": "Che proroga il termine per la pubblicazione dell'estimo catastale riveduto dei terreni nella Provincia di Roma. (072U0782)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1872-04-28;782",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1872/05/03/072U0782/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1872-05-03",
+      "numeroGU": "123",
+      "codiceRedazionale": "072U0782",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.LGS. 13 DICEMBRE 2010, N. 212 ))"
+    },
+    {
+      "chiave": "/eli/id/1872/04/11/072U0773/sg",
+      "titolo": "REGIO DECRETO 11 aprile 1872, n. 773",
+      "tipo": "regio.decreto",
+      "numero": "773",
+      "dataEmanazione": "1872-04-11",
+      "nir": "urn:nir:stato:regio.decreto:1872-04-11;773",
+      "eli": "/eli/id/1872/04/11/072U0773/sg",
+      "stato": "abrogato",
+      "sintesi": "Col quale l'Amministrazione del Collegio Caccia e' autorizzata a concedere pensioni sulle sue rendite, anche a favore dei giovani che siano ammessi negl'Istituti superiori militari e marittimi. (072U0773)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1872-04-11;773",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1872/05/03/072U0773/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1872-05-03",
+      "numeroGU": "123",
+      "codiceRedazionale": "072U0773",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.P.R. 13 DICEMBRE 2010, N. 248 ))"
+    },
+    {
+      "chiave": "/eli/id/1871/12/30/071U0619/sg",
+      "titolo": "REGIO DECRETO 30 dicembre 1871, n. 619",
+      "tipo": "regio.decreto",
+      "numero": "619",
+      "dataEmanazione": "1871-12-30",
+      "nir": "urn:nir:stato:regio.decreto:1871-12-30;619",
+      "eli": "/eli/id/1871/12/30/071U0619/sg",
+      "stato": "abrogato",
+      "sintesi": "Che approva la Pianta del personale ed i Distretti territoriali del Corpo Reale delle Miniere. (071U0619)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1871-12-30;619",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1872/01/25/071U0619/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1872-01-25",
+      "numeroGU": "25",
+      "codiceRedazionale": "071U0619",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.P.R. 13 DICEMBRE 2010, N. 248 ))"
+    },
+    {
+      "chiave": "/eli/id/1871/12/30/071U0577/sg",
+      "titolo": "LEGGE 30 dicembre 1871, n. 577",
+      "tipo": "legge",
+      "numero": "577",
+      "dataEmanazione": "1871-12-30",
+      "nir": "urn:nir:stato:legge:1871-12-30;577",
+      "eli": "/eli/id/1871/12/30/071U0577/sg",
+      "stato": "abrogato",
+      "sintesi": "Colla quale fino all'approvazione del bilancio definitivo per l'anno 1872, il Governo e' autorizzato a far pagare le spese ordinarie e straordinarie del Ministero delle Finanze in conformita' allo Stato di prima previsione annesso alla presente. (071U0577)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1871-12-30;577",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1871/12/30/071U0577/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1871-12-30",
+      "numeroGU": "356",
+      "codiceRedazionale": "071U0577",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.L. 22 DICEMBRE 2008, N. 200 , CONVERTITO CON MODIFICAZIONI DALLA L. 18 FEBBRAIO 2009, N. 9 ))"
+    },
+    {
+      "chiave": "/eli/id/1871/10/25/071U0523/sg",
+      "titolo": "REGIO DECRETO 25 ottobre 1871, n. 523",
+      "tipo": "regio.decreto",
+      "numero": "523",
+      "dataEmanazione": "1871-10-25",
+      "nir": "urn:nir:stato:regio.decreto:1871-10-25;523",
+      "eli": "/eli/id/1871/10/25/071U0523/sg",
+      "stato": "abrogato",
+      "sintesi": "Col quale dal fondo per le spese impreviste sono prelevate L. 35.000 per indennita' fisse agli Ispettori delle Imposte dirette. (071U0523)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1871-10-25;523",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1871/11/22/071U0523/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1871-11-22",
+      "numeroGU": "319",
+      "codiceRedazionale": "071U0523",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.LGS. 13 DICEMBRE 2010, N. 212 ))"
+    },
+    {
+      "chiave": "/eli/id/1871/10/01/071U0481/sg",
+      "titolo": "REGIO DECRETO 1 ottobre 1871, n. 481",
+      "tipo": "regio.decreto",
+      "numero": "481",
+      "dataEmanazione": "1871-10-01",
+      "nir": "urn:nir:stato:regio.decreto:1871-10-01;481",
+      "eli": "/eli/id/1871/10/01/071U0481/sg",
+      "stato": "abrogato",
+      "sintesi": "Con cui viene prelevata dal bilancio del Ministero delle Finanze la somma di lire 100,000, per essere applicata al capitolo 98 del bilancio dei Lavori Pubblici. (071U0481)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1871-10-01;481",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1871/10/21/071U0481/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1871-10-21",
+      "numeroGU": "288",
+      "codiceRedazionale": "071U0481",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.LGS. 13 DICEMBRE 2010, N. 212 ))"
+    },
+    {
+      "chiave": "/eli/id/1871/09/17/071U0450/sg",
+      "titolo": "REGIO DECRETO 17 settembre 1871, n. 450",
+      "tipo": "regio.decreto",
+      "numero": "450",
+      "dataEmanazione": "1871-09-17",
+      "nir": "urn:nir:stato:regio.decreto:1871-09-17;450",
+      "eli": "/eli/id/1871/09/17/071U0450/sg",
+      "stato": "abrogato",
+      "sintesi": "Col quale dal fondo per le spese impreviste e' prelevata la somma di L. 15,000 per acquisto di casse in servizio del lotto. (071U0450)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1871-09-17;450",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1871/09/27/071U0450/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1871-09-27",
+      "numeroGU": "264",
+      "codiceRedazionale": "071U0450",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.LGS. 13 DICEMBRE 2010, N. 212 ))"
+    },
+    {
+      "chiave": "/eli/id/1871/07/31/071U0393/sg",
+      "titolo": "LEGGE 31 luglio 1871, n. 393",
+      "tipo": "legge",
+      "numero": "393",
+      "dataEmanazione": "1871-07-31",
+      "nir": "urn:nir:stato:legge:1871-07-31;393",
+      "eli": "/eli/id/1871/07/31/071U0393/sg",
+      "stato": "abrogato",
+      "sintesi": "Portante disposizioni pei matrimoni degli Ufficiali dell'Esercito ed Impiegati assimilati. (071U0393)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1871-07-31;393",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1871/08/19/071U0393/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1871-08-19",
+      "numeroGU": "225",
+      "codiceRedazionale": "071U0393",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.L. 22 DICEMBRE 2008, N. 200 , CONVERTITO CON MODIFICAZIONI DALLA L. 18 FEBBRAIO 2009, N. 9 ))"
+    },
+    {
+      "chiave": "/eli/id/1871/07/19/071U0370/sg",
+      "titolo": "REGIO DECRETO 19 luglio 1871, n. 370",
+      "tipo": "regio.decreto",
+      "numero": "370",
+      "dataEmanazione": "1871-07-19",
+      "nir": "urn:nir:stato:regio.decreto:1871-07-19;370",
+      "eli": "/eli/id/1871/07/19/071U0370/sg",
+      "stato": "abrogato",
+      "sintesi": "Che stabilisce il prezzo massimo per l'affrancazione dal servizio militare di prima categoria. (071U0370)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1871-07-19;370",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1871/08/06/071U0370/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1871-08-06",
+      "numeroGU": "213",
+      "codiceRedazionale": "071U0370",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.LGS. 13 DICEMBRE 2010, N. 212 ))"
+    },
+    {
+      "chiave": "/eli/id/1871/07/03/071U0338/sg",
+      "titolo": "REGIO DECRETO 3 luglio 1871, n. 338",
+      "tipo": "regio.decreto",
+      "numero": "338",
+      "dataEmanazione": "1871-07-03",
+      "nir": "urn:nir:stato:regio.decreto:1871-07-03;338",
+      "eli": "/eli/id/1871/07/03/071U0338/sg",
+      "stato": "abrogato",
+      "sintesi": "Col quale dal fondo per le spese impreviste, inscritto nel bilancio 1871 del Ministero delle Finanze, sono prelevate lire 300,000 ed applicate al capitolo 203. (071U0338)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1871-07-03;338",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1871/07/14/071U0338/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1871-07-14",
+      "numeroGU": "190",
+      "codiceRedazionale": "071U0338",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.LGS. 13 DICEMBRE 2010, N. 212 ))"
+    },
+    {
+      "chiave": "/eli/id/1871/07/03/071U0326/sg",
+      "titolo": "REGIO DECRETO 3 luglio 1871, n. 326",
+      "tipo": "regio.decreto",
+      "numero": "326",
+      "dataEmanazione": "1871-07-03",
+      "nir": "urn:nir:stato:regio.decreto:1871-07-03;326",
+      "eli": "/eli/id/1871/07/03/071U0326/sg",
+      "stato": "abrogato",
+      "sintesi": "Che ordina la coniazione di una Medaglia in bronzo a ricordanza della inaugurazione della Capitale a Roma. (071U0326)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1871-07-03;326",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1871/07/14/071U0326/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1871-07-14",
+      "numeroGU": "190",
+      "codiceRedazionale": "071U0326",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.P.R. 13 DICEMBRE 2010, N. 248 ))"
+    },
+    {
+      "chiave": "/eli/id/1871/03/15/071U0150/sg",
+      "titolo": "REGIO DECRETO 15 marzo 1871, n. 150",
+      "tipo": "regio.decreto",
+      "numero": "150",
+      "dataEmanazione": "1871-03-15",
+      "nir": "urn:nir:stato:regio.decreto:1871-03-15;150",
+      "eli": "/eli/id/1871/03/15/071U0150/sg",
+      "stato": "abrogato",
+      "sintesi": "Che approva il Regolamento pei Magazzini generali di Ancona. (071U0150)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1871-03-15;150",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1871/04/05/071U0150/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1871-04-05",
+      "numeroGU": "95",
+      "codiceRedazionale": "071U0150",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.P.R. 13 DICEMBRE 2010, N. 248 ))"
+    },
+    {
+      "chiave": "/eli/id/1871/03/10/071U0113/sg",
+      "titolo": "REGIO DECRETO 10 marzo 1871, n. 113",
+      "tipo": "regio.decreto",
+      "numero": "113",
+      "dataEmanazione": "1871-03-10",
+      "nir": "urn:nir:stato:regio.decreto:1871-03-10;113",
+      "eli": "/eli/id/1871/03/10/071U0113/sg",
+      "stato": "abrogato",
+      "sintesi": "Concernente gli Impiegati della Amministrazione carceraria. (071U0113)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1871-03-10;113",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1871/03/25/071U0113/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1871-03-25",
+      "numeroGU": "84",
+      "codiceRedazionale": "071U0113",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.LGS. 13 DICEMBRE 2010, N. 212 ))"
+    },
+    {
+      "chiave": "/eli/id/1870/12/29/070U6189/sg",
+      "titolo": "REGIO DECRETO 29 dicembre 1870, n. 6189",
+      "tipo": "regio.decreto",
+      "numero": "6189",
+      "dataEmanazione": "1870-12-29",
+      "nir": "urn:nir:stato:regio.decreto:1870-12-29;6189",
+      "eli": "/eli/id/1870/12/29/070U6189/sg",
+      "stato": "abrogato",
+      "sintesi": "Concernente il riordinamento dell'Amministrazione delle Poste. (070U6189)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1870-12-29;6189",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1871/01/18/070U6189/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1871-01-18",
+      "numeroGU": "18",
+      "codiceRedazionale": "070U6189",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.LGS. 13 DICEMBRE 2010, N. 212 ))"
+    },
+    {
+      "chiave": "/eli/id/1869/05/27/069U5108/sg",
+      "titolo": "REGIO DECRETO 27 maggio 1869, n. 5108",
+      "tipo": "regio.decreto",
+      "numero": "5108",
+      "dataEmanazione": "1869-05-27",
+      "nir": "urn:nir:stato:regio.decreto:1869-05-27;5108",
+      "eli": "/eli/id/1869/05/27/069U5108/sg",
+      "stato": "abrogato",
+      "sintesi": "Riguardante il personale del Corpo sanitario militare marittimo. (069U5108)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1869-05-27;5108",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1869/06/26/069U5108/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1869-06-26",
+      "numeroGU": "172",
+      "codiceRedazionale": "069U5108",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.LGS. 13 DICEMBRE 2010, N. 212 ))"
+    },
+    {
+      "chiave": "/eli/id/1869/05/13/069U5091/sg",
+      "titolo": "REGIO DECRETO 13 maggio 1869, n. 5091",
+      "tipo": "regio.decreto",
+      "numero": "5091",
+      "dataEmanazione": "1869-05-13",
+      "nir": "urn:nir:stato:regio.decreto:1869-05-13;5091",
+      "eli": "/eli/id/1869/05/13/069U5091/sg",
+      "stato": "abrogato",
+      "sintesi": "Col quale si sostituisce una nuova marca da bollo da centesimi cinque a quella ora in uso. (069U5091)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1869-05-13;5091",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1869/05/29/069U5091/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1869-05-29",
+      "numeroGU": "145",
+      "codiceRedazionale": "069U5091",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.LGS. 13 DICEMBRE 2010, N. 212 ))"
+    },
+    {
+      "chiave": "/eli/id/1868/12/30/068U4786/sg",
+      "titolo": "REGIO DECRETO 30 dicembre 1868, n. 4786",
+      "tipo": "regio.decreto",
+      "numero": "4786",
+      "dataEmanazione": "1868-12-30",
+      "nir": "urn:nir:stato:regio.decreto:1868-12-30;4786",
+      "eli": "/eli/id/1868/12/30/068U4786/sg",
+      "stato": "abrogato",
+      "sintesi": "Che approva il Ruolo degli Ispettori e Vice-Ispettori governativi pei tabacchi. (068U4786)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1868-12-30;4786",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1869/01/14/068U4786/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1869-01-14",
+      "numeroGU": "14",
+      "codiceRedazionale": "068U4786",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.LGS. 13 DICEMBRE 2010, N. 212 ))"
+    },
+    {
+      "chiave": "/eli/id/1868/11/15/068U4710/sg",
+      "titolo": "REGIO DECRETO 15 novembre 1868, n. 4710",
+      "tipo": "regio.decreto",
+      "numero": "4710",
+      "dataEmanazione": "1868-11-15",
+      "nir": "urn:nir:stato:regio.decreto:1868-11-15;4710",
+      "eli": "/eli/id/1868/11/15/068U4710/sg",
+      "stato": "abrogato",
+      "sintesi": "Che approva il nuovo Ruolo degli Impiegati del Museo nazionale di Napoli, dell'Officina de' Papiri Ercolanesi e degli scavi d'antichita' nelle Provincie Napoletane. (068U4710)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1868-11-15;4710",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1868/12/24/068U4710/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1868-12-24",
+      "numeroGU": "350",
+      "codiceRedazionale": "068U4710",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.LGS. 13 DICEMBRE 2010, N. 212 ))"
+    },
+    {
+      "chiave": "/eli/id/1868/09/13/6802047R/sg",
+      "titolo": "REGIO DECRETO 13 settembre 1868, n. 2047",
+      "tipo": "regio.decreto",
+      "numero": "2047",
+      "dataEmanazione": "1868-09-13",
+      "nir": "urn:nir:stato:regio.decreto:1868-09-13;2047",
+      "eli": "/eli/id/1868/09/13/6802047R/sg",
+      "stato": "in_vigore",
+      "sintesi": "Col quale la Societa' denominata The Sun Fire Office Company, per le assicurazioni contro l'incendio, e' ammessa ad operare nel Regno d'Italia. (6802047R)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1868-09-13;2047",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1868/10/14/6802047R/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1868-10-14",
+      "numeroGU": "280",
+      "codiceRedazionale": "6802047R",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 (( PROVVEDIMENTO REVOCATO DAL REGIO DECRETO 28 APRILE 1872, N. CCLXXVIII (278) ))"
+    },
+    {
+      "chiave": "/eli/id/1868/08/26/068U4547/sg",
+      "titolo": "LEGGE 26 agosto 1868, n. 4547",
+      "tipo": "legge",
+      "numero": "4547",
+      "dataEmanazione": "1868-08-26",
+      "nir": "urn:nir:stato:legge:1868-08-26;4547",
+      "eli": "/eli/id/1868/08/26/068U4547/sg",
+      "stato": "in_vigore",
+      "sintesi": "Per la dotazione immobiliare della Corona. (068U4547)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1868-08-26;4547",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1868/09/03/068U4547/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1868-09-03",
+      "numeroGU": "240",
+      "codiceRedazionale": "068U4547",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 La dotazione immobiliare della Corona &egrave; composta degli stabili compresi nell'unito Elenco."
+    },
+    {
+      "chiave": "/eli/id/1867/03/24/6701884R/sg",
+      "titolo": "REGIO DECRETO 24 marzo 1867, n. 1884",
+      "tipo": "regio.decreto",
+      "numero": "1884",
+      "dataEmanazione": "1867-03-24",
+      "nir": "urn:nir:stato:regio.decreto:1867-03-24;1884",
+      "eli": "/eli/id/1867/03/24/6701884R/sg",
+      "stato": "abrogato",
+      "sintesi": "Regio Decreto che autorizza la Camera di commercio ed arti di Cagliari ad imporre un'annua tassa sugli industriali e commercianti del territorio da essa dipendente. (6701884R)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1867-03-24;1884",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1867/04/11/6701884R/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1867-04-11",
+      "numeroGU": "101",
+      "codiceRedazionale": "6701884R",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DALLA L. 7 APRILE 2025, N. 56 ))"
+    },
+    {
+      "chiave": "/eli/id/1865/02/07/065U2153/sg",
+      "titolo": "REGIO DECRETO 7 febbraio 1865, n. 2153",
+      "tipo": "regio.decreto",
+      "numero": "2153",
+      "dataEmanazione": "1865-02-07",
+      "nir": "urn:nir:stato:regio.decreto:1865-02-07;2153",
+      "eli": "/eli/id/1865/02/07/065U2153/sg",
+      "stato": "abrogato",
+      "sintesi": "Col quale si approva la Pianta numerica degli Impiegati e dei Serventi negli Stabilimenti scientifici dell'Universita' di Messina. (065U2153)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1865-02-07;2153",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1865/02/25/065U2153/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1865-02-25",
+      "numeroGU": "49",
+      "codiceRedazionale": "065U2153",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.LGS. 13 DICEMBRE 2010, N. 212 ))"
+    },
+    {
+      "chiave": "/eli/id/1863/08/22/6300861R/sg",
+      "titolo": "REGIO DECRETO 22 agosto 1863, n. 861",
+      "tipo": "regio.decreto",
+      "numero": "861",
+      "dataEmanazione": "1863-08-22",
+      "nir": "urn:nir:stato:regio.decreto:1863-08-22;861",
+      "eli": "/eli/id/1863/08/22/6300861R/sg",
+      "stato": "abrogato",
+      "sintesi": "Che pone la Scuola di declamazione di Firenze sotto la vigilanza del Presidente dell'Accademia di Belle Arti di quella citta'. (6300861R)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1863-08-22;861",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1863/09/12/6300861R/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1863-09-12",
+      "numeroGU": "216",
+      "codiceRedazionale": "6300861R",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DALLA L. 7 APRILE 2025, N. 56 ))"
+    },
+    {
+      "chiave": "/eli/id/1863/06/18/6300786R/sg",
+      "titolo": "REGIO DECRETO 18 giugno 1863, n. 786",
+      "tipo": "regio.decreto",
+      "numero": "786",
+      "dataEmanazione": "1863-06-18",
+      "nir": "urn:nir:stato:regio.decreto:1863-06-18;786",
+      "eli": "/eli/id/1863/06/18/6300786R/sg",
+      "stato": "abrogato",
+      "sintesi": "Col quale e' approvato il Regolamento per il Convitto Nazionale Vittorio Emanuele in Palermo. (6300786R)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1863-06-18;786",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1863/07/25/6300786R/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1863-07-25",
+      "numeroGU": "175",
+      "codiceRedazionale": "6300786R",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DALLA L. 7 APRILE 2025, N. 56 ))"
+    }
+  ]
+}

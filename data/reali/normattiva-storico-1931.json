@@ -1,0 +1,241 @@
+{
+  "provenance": {
+    "fonte": "normattiva",
+    "url": "https://api.normattiva.it/t/normattiva.api/bff-opendata/v1/api/v1/ricerca/aggiornati",
+    "recuperatoIl": "2026-09-29T01:41:05.716Z",
+    "licenza": "riproduzione consentita con menzione di fonte, carattere non autentico e gratuito (Note legali dati.normattiva.it; solo la Gazzetta Ufficiale a stampa e' autentica)"
+  },
+  "atti": [
+    {
+      "chiave": "/eli/id/1931/08/14/031U1354/sg",
+      "titolo": "REGIO DECRETO 14 agosto 1931, n. 1354",
+      "tipo": "regio.decreto",
+      "numero": "1354",
+      "dataEmanazione": "1931-08-14",
+      "nir": "urn:nir:stato:regio.decreto:1931-08-14;1354",
+      "eli": "/eli/id/1931/08/14/031U1354/sg",
+      "stato": "abrogato",
+      "sintesi": "Approvazione di nuovi ruoli organici del Ministero degli affari esteri. (031U1354)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1931-08-14;1354",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1931/11/18/031U1354/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1931-11-18",
+      "numeroGU": "266",
+      "codiceRedazionale": "031U1354",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.P.R. 13 DICEMBRE 2010, N. 248 ))"
+    },
+    {
+      "chiave": "/eli/id/1931/05/18/031U0820/sg",
+      "titolo": "REGIO DECRETO 18 maggio 1931, n. 820",
+      "tipo": "regio.decreto",
+      "numero": "820",
+      "dataEmanazione": "1931-05-18",
+      "nir": "urn:nir:stato:regio.decreto:1931-05-18;820",
+      "eli": "/eli/id/1931/05/18/031U0820/sg",
+      "stato": "abrogato",
+      "sintesi": "Nuovo ruolo organico del personale subalterno dell'Amministrazione centrale del Ministero della giustizia. (031U0820)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1931-05-18;820",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1931/07/04/031U0820/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1931-07-04",
+      "numeroGU": "152",
+      "codiceRedazionale": "031U0820",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.P.R. 13 DICEMBRE 2010, N. 248 ))"
+    },
+    {
+      "chiave": "/eli/id/1930/12/11/030U1982/sg",
+      "titolo": "REGIO DECRETO 11 dicembre 1930, n. 1982",
+      "tipo": "regio.decreto",
+      "numero": "1982",
+      "dataEmanazione": "1930-12-11",
+      "nir": "urn:nir:stato:regio.decreto:1930-12-11;1982",
+      "eli": "/eli/id/1930/12/11/030U1982/sg",
+      "stato": "abrogato",
+      "sintesi": "Approvazione dello statuto del Regio istituto superiore di medicina veterinaria di Pisa. (030U1982)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1930-12-11;1982",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1931/06/01/030U1982/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1931-06-01",
+      "numeroGU": "125",
+      "codiceRedazionale": "030U1982",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.P.R. 13 DICEMBRE 2010, N. 248 ))"
+    },
+    {
+      "chiave": "/eli/id/1930/12/11/030U1976/sg",
+      "titolo": "REGIO DECRETO 11 dicembre 1930, n. 1976",
+      "tipo": "regio.decreto",
+      "numero": "1976",
+      "dataEmanazione": "1930-12-11",
+      "nir": "urn:nir:stato:regio.decreto:1930-12-11;1976",
+      "eli": "/eli/id/1930/12/11/030U1976/sg",
+      "stato": "abrogato",
+      "sintesi": "Approvazione dello statuto del Regio istituto superiore di medicina veterinaria di Perugia. (030U1976)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1930-12-11;1976",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1931/05/13/030U1976/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1931-05-13",
+      "numeroGU": "110",
+      "codiceRedazionale": "030U1976",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.P.R. 13 DICEMBRE 2010, N. 248 ))"
+    },
+    {
+      "chiave": "/eli/id/1931/04/23/031U0479/sg",
+      "titolo": "REGIO DECRETO 23 aprile 1931, n. 479",
+      "tipo": "regio.decreto",
+      "numero": "479",
+      "dataEmanazione": "1931-04-23",
+      "nir": "urn:nir:stato:regio.decreto:1931-04-23;479",
+      "eli": "/eli/id/1931/04/23/031U0479/sg",
+      "stato": "abrogato",
+      "sintesi": "18° prelevazione dal fondo di riserva per le spese impreviste dell'esercizio finanziario 1930-31. (031U0479)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1931-04-23;479",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1931/05/12/031U0479/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1931-05-12",
+      "numeroGU": "109",
+      "codiceRedazionale": "031U0479",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.LGS. 13 DICEMBRE 2010, N. 212 ))"
+    },
+    {
+      "chiave": "/eli/id/1930/12/11/030U1962/sg",
+      "titolo": "REGIO DECRETO 11 dicembre 1930, n. 1962",
+      "tipo": "regio.decreto",
+      "numero": "1962",
+      "dataEmanazione": "1930-12-11",
+      "nir": "urn:nir:stato:regio.decreto:1930-12-11;1962",
+      "eli": "/eli/id/1930/12/11/030U1962/sg",
+      "stato": "abrogato",
+      "sintesi": "Approvazione dello statuto del Regio istituto superiore agrario e forestale di Firenze. (030U1962)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1930-12-11;1962",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1931/04/27/030U1962/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1931-04-27",
+      "numeroGU": "96",
+      "codiceRedazionale": "030U1962",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.P.R. 13 DICEMBRE 2010, N. 248 ))"
+    },
+    {
+      "chiave": "/eli/id/1931/03/26/031U0307/sg",
+      "titolo": "LEGGE 26 marzo 1931, n. 307",
+      "tipo": "legge",
+      "numero": "307",
+      "dataEmanazione": "1931-03-26",
+      "nir": "urn:nir:stato:legge:1931-03-26;307",
+      "eli": "/eli/id/1931/03/26/031U0307/sg",
+      "stato": "abrogato",
+      "sintesi": "Stato di previsione delle spese del Ministero dei lavori pubblici per l'esercizio finanziario dal 1° luglio 1931 al 30 giugno 1932. (031U0307)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1931-03-26;307",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1931/04/20/031U0307/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1931-04-20",
+      "numeroGU": "91",
+      "codiceRedazionale": "031U0307",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.L. 22 DICEMBRE 2008, N. 200 , CONVERTITO CON MODIFICAZIONI DALLA L. 18 FEBBRAIO 2009, N. 9 ))"
+    },
+    {
+      "chiave": "/eli/id/1931/03/23/031U0312/sg",
+      "titolo": "REGIO DECRETO 23 marzo 1931, n. 312",
+      "tipo": "regio.decreto",
+      "numero": "312",
+      "dataEmanazione": "1931-03-23",
+      "nir": "urn:nir:stato:regio.decreto:1931-03-23;312",
+      "eli": "/eli/id/1931/03/23/031U0312/sg",
+      "stato": "abrogato",
+      "sintesi": "16a prelevazione dal fondo di riserva per le spese impreviste dell'esercizio finanziario 1930-31. (031U0312)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1931-03-23;312",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1931/04/10/031U0312/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1931-04-10",
+      "numeroGU": "83",
+      "codiceRedazionale": "031U0312",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.LGS. 13 DICEMBRE 2010, N. 212 ))"
+    },
+    {
+      "chiave": "/eli/id/1931/03/23/031U0259/sg",
+      "titolo": "LEGGE 23 marzo 1931, n. 259",
+      "tipo": "legge",
+      "numero": "259",
+      "dataEmanazione": "1931-03-23",
+      "nir": "urn:nir:stato:legge:1931-03-23;259",
+      "eli": "/eli/id/1931/03/23/031U0259/sg",
+      "stato": "abrogato",
+      "sintesi": "Stato di previsione della spesa del Ministero delle colonie per l'esercizio finanziario dal 1° luglio 1931 al 30 giugno 1932. (031U0259)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1931-03-23;259",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1931/04/04/031U0259/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1931-04-04",
+      "numeroGU": "78",
+      "codiceRedazionale": "031U0259",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.L. 22 DICEMBRE 2008, N. 200 , CONVERTITO CON MODIFICAZIONI DALLA L. 18 FEBBRAIO 2009, N. 9 ))"
+    },
+    {
+      "chiave": "/eli/id/1930/09/18/030U1955/sg",
+      "titolo": "REGIO DECRETO 18 settembre 1930, n. 1955",
+      "tipo": "regio.decreto",
+      "numero": "1955",
+      "dataEmanazione": "1930-09-18",
+      "nir": "urn:nir:stato:regio.decreto:1930-09-18;1955",
+      "eli": "/eli/id/1930/09/18/030U1955/sg",
+      "stato": "abrogato",
+      "sintesi": "Consolidamento del contributo annuale dovuto dallo Stato al comune di Verolanuova ai sensi dell'art. 11 della legge 14 giugno 1928, n. 1482, per la diretta amministrazione delle scuole elementari dell'ex comune di Cadignano. (030U1955)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1930-09-18;1955",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1931/04/02/030U1955/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1931-04-02",
+      "numeroGU": "76",
+      "codiceRedazionale": "030U1955",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.LGS. 13 DICEMBRE 2010, N. 212 ))"
+    },
+    {
+      "chiave": "/eli/id/1931/03/19/031U0247/sg",
+      "titolo": "REGIO DECRETO 19 marzo 1931, n. 247",
+      "tipo": "regio.decreto",
+      "numero": "247",
+      "dataEmanazione": "1931-03-19",
+      "nir": "urn:nir:stato:regio.decreto:1931-03-19;247",
+      "eli": "/eli/id/1931/03/19/031U0247/sg",
+      "stato": "abrogato",
+      "sintesi": "Approvazione dei nuovi ruoli organici dei personali dipendenti dal Ministero dell'agricoltura e delle foreste. (031U0247)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1931-03-19;247",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1931/03/27/031U0247/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1931-03-27",
+      "numeroGU": "71",
+      "codiceRedazionale": "031U0247",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.P.R. 13 DICEMBRE 2010, N. 248 ))"
+    }
+  ]
+}

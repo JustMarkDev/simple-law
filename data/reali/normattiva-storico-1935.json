@@ -1,0 +1,115 @@
+{
+  "provenance": {
+    "fonte": "normattiva",
+    "url": "https://api.normattiva.it/t/normattiva.api/bff-opendata/v1/api/v1/ricerca/aggiornati",
+    "recuperatoIl": "2026-09-29T01:49:36.113Z",
+    "licenza": "riproduzione consentita con menzione di fonte, carattere non autentico e gratuito (Note legali dati.normattiva.it; solo la Gazzetta Ufficiale a stampa e' autentica)"
+  },
+  "atti": [
+    {
+      "chiave": "/eli/id/1935/06/13/035U1184/sg",
+      "titolo": "LEGGE 13 giugno 1935, n. 1184",
+      "tipo": "legge",
+      "numero": "1184",
+      "dataEmanazione": "1935-06-13",
+      "nir": "urn:nir:stato:legge:1935-06-13;1184",
+      "eli": "/eli/id/1935/06/13/035U1184/sg",
+      "stato": "abrogato",
+      "sintesi": "Provvedimenti a favore della Reale Accademia di Santa Cecilia. (035U1184)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1935-06-13;1184",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1935/07/11/035U1184/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1935-07-11",
+      "numeroGU": "160",
+      "codiceRedazionale": "035U1184",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.L. 22 DICEMBRE 2008, N. 200 , CONVERTITO CON MODIFICAZIONI DALLA L. 18 FEBBRAIO 2009, N. 9 ))"
+    },
+    {
+      "chiave": "/eli/id/1935/05/13/035U0908/sg",
+      "titolo": "REGIO DECRETO 13 maggio 1935, n. 908",
+      "tipo": "regio.decreto",
+      "numero": "908",
+      "dataEmanazione": "1935-05-13",
+      "nir": "urn:nir:stato:regio.decreto:1935-05-13;908",
+      "eli": "/eli/id/1935/05/13/035U0908/sg",
+      "stato": "abrogato",
+      "sintesi": "Istituzione della «Medaglia militare al merito di lungo comando». (035U0908)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1935-05-13;908",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1935/06/18/035U0908/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1935-06-18",
+      "numeroGU": "142",
+      "codiceRedazionale": "035U0908",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.LGS. 15 MARZO 2010, N. 66 ))"
+    },
+    {
+      "chiave": "/eli/id/1935/04/29/035U0750/sg",
+      "titolo": "REGIO DECRETO 29 aprile 1935, n. 750",
+      "tipo": "regio.decreto",
+      "numero": "750",
+      "dataEmanazione": "1935-04-29",
+      "nir": "urn:nir:stato:regio.decreto:1935-04-29;750",
+      "eli": "/eli/id/1935/04/29/035U0750/sg",
+      "stato": "abrogato",
+      "sintesi": "Facolta' al Ministro per la marina di richiamare in servizio sottocapi e comuni del Corpo Reale equipaggi marittimi. (035U0750)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1935-04-29;750",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1935/06/04/035U0750/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1935-06-04",
+      "numeroGU": "130",
+      "codiceRedazionale": "035U0750",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.LGS. 13 DICEMBRE 2010, N. 212 ))"
+    },
+    {
+      "chiave": "/eli/id/1935/04/18/035U0542/sg",
+      "titolo": "LEGGE 18 aprile 1935, n. 542",
+      "tipo": "legge",
+      "numero": "542",
+      "dataEmanazione": "1935-04-18",
+      "nir": "urn:nir:stato:legge:1935-04-18;542",
+      "eli": "/eli/id/1935/04/18/035U0542/sg",
+      "stato": "abrogato",
+      "sintesi": "Stato di previsione della spesa del Ministero della guerra per l'esercizio finanziario dal 1° luglio 1935 al 30 giugno 1936. (035U0542)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1935-04-18;542",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1935/05/09/035U0542/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1935-05-09",
+      "numeroGU": "109",
+      "codiceRedazionale": "035U0542",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.L. 22 DICEMBRE 2008, N. 200 , CONVERTITO CON MODIFICAZIONI DALLA L. 18 FEBBRAIO 2009, N. 9 ))"
+    },
+    {
+      "chiave": "/eli/id/1935/04/01/035U0459/sg",
+      "titolo": "REGIO DECRETO 1 aprile 1935, n. 459",
+      "tipo": "regio.decreto",
+      "numero": "459",
+      "dataEmanazione": "1935-04-01",
+      "nir": "urn:nir:stato:regio.decreto:1935-04-01;459",
+      "eli": "/eli/id/1935/04/01/035U0459/sg",
+      "stato": "abrogato",
+      "sintesi": "Modifiche all'ordinamento del Comitato per le pensioni privilegiate ordinarie. (035U0459)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1935-04-01;459",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1935/04/30/035U0459/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1935-04-30",
+      "numeroGU": "101",
+      "codiceRedazionale": "035U0459",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DALLA L. 7 APRILE 2025, N. 56 ))"
+    }
+  ]
+}

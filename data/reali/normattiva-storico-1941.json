@@ -1,0 +1,199 @@
+{
+  "provenance": {
+    "fonte": "normattiva",
+    "url": "https://api.normattiva.it/t/normattiva.api/bff-opendata/v1/api/v1/ricerca/aggiornati",
+    "recuperatoIl": "2026-09-29T01:49:36.113Z",
+    "licenza": "riproduzione consentita con menzione di fonte, carattere non autentico e gratuito (Note legali dati.normattiva.it; solo la Gazzetta Ufficiale a stampa e' autentica)"
+  },
+  "atti": [
+    {
+      "chiave": "/eli/id/1941/07/11/041U0675/sg",
+      "titolo": "REGIO DECRETO 11 luglio 1941, n. 675",
+      "tipo": "regio.decreto",
+      "numero": "675",
+      "dataEmanazione": "1941-07-11",
+      "nir": "urn:nir:stato:regio.decreto:1941-07-11;675",
+      "eli": "/eli/id/1941/07/11/041U0675/sg",
+      "stato": "abrogato",
+      "sintesi": "Approvazione dei nuovi ruoli organici del personale dell'Amministrazione dei lavori pubblici. (041U0675)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1941-07-11;675",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1941/07/26/041U0675/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1941-07-26",
+      "numeroGU": "175",
+      "codiceRedazionale": "041U0675",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.P.R. 13 DICEMBRE 2010, N. 248 ))"
+    },
+    {
+      "chiave": "/eli/id/1941/06/21/041U0574/sg",
+      "titolo": "REGIO DECRETO 21 giugno 1941, n. 574",
+      "tipo": "regio.decreto",
+      "numero": "574",
+      "dataEmanazione": "1941-06-21",
+      "nir": "urn:nir:stato:regio.decreto:1941-06-21;574",
+      "eli": "/eli/id/1941/06/21/041U0574/sg",
+      "stato": "abrogato",
+      "sintesi": "19ª Prelevazione dal Fondo di riserva per le spese impreviste dell'esercizio finanziario 1940-41. (041U0574)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1941-06-21;574",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1941/06/30/041U0574/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1941-06-30",
+      "numeroGU": "151",
+      "codiceRedazionale": "041U0574",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.LGS. 13 DICEMBRE 2010, N. 212 ))"
+    },
+    {
+      "chiave": "/eli/id/1941/04/03/041U0499/sg",
+      "titolo": "LEGGE 3 aprile 1941, n. 499",
+      "tipo": "legge",
+      "numero": "499",
+      "dataEmanazione": "1941-04-03",
+      "nir": "urn:nir:stato:legge:1941-04-03;499",
+      "eli": "/eli/id/1941/04/03/041U0499/sg",
+      "stato": "abrogato",
+      "sintesi": "Assicurazione obbligatoria contro i rischi di guerra delle navi di nazionalita' italiana e delle navi in costruzione e disposizioni integrative del R. decreto-legge 23 novembre 1939-XVIII, n. 1939. (041U0499)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1941-04-03;499",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1941/06/18/041U0499/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1941-06-18",
+      "numeroGU": "141",
+      "codiceRedazionale": "041U0499",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.L. 25 GIUGNO 2008, N. 112 , CONVERTITO CON MODIFICAZIONI DALLA L. 6 AGOSTO 2008, N. 133 ))"
+    },
+    {
+      "chiave": "/eli/id/1941/04/10/041U0244/sg",
+      "titolo": "REGIO DECRETO 10 aprile 1941, n. 244",
+      "tipo": "regio.decreto",
+      "numero": "244",
+      "dataEmanazione": "1941-04-10",
+      "nir": "urn:nir:stato:regio.decreto:1941-04-10;244",
+      "eli": "/eli/id/1941/04/10/041U0244/sg",
+      "stato": "abrogato",
+      "sintesi": "15° Prelevazione dal fondo di riserva per le spese impreviste dell'esercizio finanziario 1940-41. (041U0244)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1941-04-10;244",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1941/04/25/041U0244/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1941-04-25",
+      "numeroGU": "98",
+      "codiceRedazionale": "041U0244",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.LGS. 13 DICEMBRE 2010, N. 212 ))"
+    },
+    {
+      "chiave": "/eli/id/1941/01/13/041U0062/sg",
+      "titolo": "REGIO DECRETO 13 gennaio 1941, n. 62",
+      "tipo": "regio.decreto",
+      "numero": "62",
+      "dataEmanazione": "1941-01-13",
+      "nir": "urn:nir:stato:regio.decreto:1941-01-13;62",
+      "eli": "/eli/id/1941/01/13/041U0062/sg",
+      "stato": "abrogato",
+      "sintesi": "13ª Prelevazione dal fondo di riserva per le spese impreviste dell'esercizio finanziario 1940-41. (041U0062)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1941-01-13;62",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1941/02/25/041U0062/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1941-02-25",
+      "numeroGU": "48",
+      "codiceRedazionale": "041U0062",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.LGS. 13 DICEMBRE 2010, N. 212 ))"
+    },
+    {
+      "chiave": "/eli/id/1941/01/02/041U0010/sg",
+      "titolo": "REGIO DECRETO 2 gennaio 1941, n. 10",
+      "tipo": "regio.decreto",
+      "numero": "10",
+      "dataEmanazione": "1941-01-02",
+      "nir": "urn:nir:stato:regio.decreto:1941-01-02;10",
+      "eli": "/eli/id/1941/01/02/041U0010/sg",
+      "stato": "abrogato",
+      "sintesi": "12a Prelevazione dal fondo di riserva per le spese impreviste dell'esercizio finanziario 1940-41. (041U0010)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1941-01-02;10",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1941/02/01/041U0010/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1941-02-01",
+      "numeroGU": "26",
+      "codiceRedazionale": "041U0010",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.LGS. 13 DICEMBRE 2010, N. 212 ))"
+    },
+    {
+      "chiave": "/eli/id/1940/12/16/040U1924/sg",
+      "titolo": "REGIO DECRETO 16 dicembre 1940, n. 1924",
+      "tipo": "regio.decreto",
+      "numero": "1924",
+      "dataEmanazione": "1940-12-16",
+      "nir": "urn:nir:stato:regio.decreto:1940-12-16;1924",
+      "eli": "/eli/id/1940/12/16/040U1924/sg",
+      "stato": "abrogato",
+      "sintesi": "11ª Prelevazione dal fondo di riserva per le spese impreviste dell'esercizio finanziario 1940-41. (040U1924)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1940-12-16;1924",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1941/02/01/040U1924/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1941-02-01",
+      "numeroGU": "26",
+      "codiceRedazionale": "040U1924",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.LGS. 13 DICEMBRE 2010, N. 212 ))"
+    },
+    {
+      "chiave": "/eli/id/1941/01/27/041U0009/sg",
+      "titolo": "REGIO DECRETO 27 gennaio 1941, n. 9",
+      "tipo": "regio.decreto",
+      "numero": "9",
+      "dataEmanazione": "1941-01-27",
+      "nir": "urn:nir:stato:regio.decreto:1941-01-27;9",
+      "eli": "/eli/id/1941/01/27/041U0009/sg",
+      "stato": "abrogato",
+      "sintesi": "Approvazione del testo del Codice della navigazione. (041U0009)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1941-01-27;9",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1941/01/31/041U0009/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1941-01-31",
+      "numeroGU": "25",
+      "codiceRedazionale": "041U0009",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DALLA L. 7 APRILE 2025, N. 56 ))"
+    },
+    {
+      "chiave": "/eli/id/1940/12/16/040U1902/sg",
+      "titolo": "LEGGE 16 dicembre 1940, n. 1902",
+      "tipo": "legge",
+      "numero": "1902",
+      "dataEmanazione": "1940-12-16",
+      "nir": "urn:nir:stato:legge:1940-12-16;1902",
+      "eli": "/eli/id/1940/12/16/040U1902/sg",
+      "stato": "in_vigore",
+      "sintesi": "Variazioni ed aggiunte al R. decreto 8 luglio 1938-XVI, n. 1415, che approva le leggi di guerra e di neutralita' ed al testo delle leggi medesime. (040U1902)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1940-12-16;1902",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1941/01/30/040U1902/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1941-01-30",
+      "numeroGU": "24",
+      "codiceRedazionale": "040U1902",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 Fra il primo ed il secondo comma dell'art. 5 del R. decreto 8 luglio 1938-XVI, n. 1415, che approva le leggi di guerra e di neutralit&agrave;, &egrave; aggiunto il seguente comma: &laquo;Per l'adozione dei provvedimenti e delle misure indicati nel comma precedente, il Ministro per l'Africa Italiana ha facolt&agrave; di delegare il competente Governatore generale ed il Ministro per gli affari esteri il Governatore dei Possedimenti italiani&raquo;."
+    }
+  ]
+}

@@ -1,0 +1,325 @@
+{
+  "provenance": {
+    "fonte": "normattiva",
+    "url": "https://api.normattiva.it/t/normattiva.api/bff-opendata/v1/api/v1/ricerca/aggiornati",
+    "recuperatoIl": "2026-09-29T01:41:05.716Z",
+    "licenza": "riproduzione consentita con menzione di fonte, carattere non autentico e gratuito (Note legali dati.normattiva.it; solo la Gazzetta Ufficiale a stampa e' autentica)"
+  },
+  "atti": [
+    {
+      "chiave": "/eli/id/1926/11/06/026U1848/sg",
+      "titolo": "REGIO DECRETO 6 novembre 1926, n. 1848",
+      "tipo": "regio.decreto",
+      "numero": "1848",
+      "dataEmanazione": "1926-11-06",
+      "nir": "urn:nir:stato:regio.decreto:1926-11-06;1848",
+      "eli": "/eli/id/1926/11/06/026U1848/sg",
+      "stato": "abrogato",
+      "sintesi": "Approvazione del testo unico delle leggi di pubblica sicurezza. (026U1848)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1926-11-06;1848",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1926/11/08/026U1848/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1926-11-08",
+      "numeroGU": "257",
+      "codiceRedazionale": "026U1848",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.LGS. 13 DICEMBRE 2010, N. 212 ))"
+    },
+    {
+      "chiave": "/eli/id/1926/06/25/026U1603/sg",
+      "titolo": "REGIO DECRETO 25 giugno 1926, n. 1603",
+      "tipo": "regio.decreto",
+      "numero": "1603",
+      "dataEmanazione": "1926-06-25",
+      "nir": "urn:nir:stato:regio.decreto:1926-06-25;1603",
+      "eli": "/eli/id/1926/06/25/026U1603/sg",
+      "stato": "abrogato",
+      "sintesi": "Riordinamento del Regio istituto industriale Quintino Sella di Biella. (026U1603)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1926-06-25;1603",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1926/09/23/026U1603/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1926-09-23",
+      "numeroGU": "221",
+      "codiceRedazionale": "026U1603",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.LGS. 13 DICEMBRE 2010, N. 212 ))"
+    },
+    {
+      "chiave": "/eli/id/1926/06/25/026U1307/sg",
+      "titolo": "REGIO DECRETO 25 giugno 1926, n. 1307",
+      "tipo": "regio.decreto",
+      "numero": "1307",
+      "dataEmanazione": "1926-06-25",
+      "nir": "urn:nir:stato:regio.decreto:1926-06-25;1307",
+      "eli": "/eli/id/1926/06/25/026U1307/sg",
+      "stato": "abrogato",
+      "sintesi": "Proroga del termine assegnato ai poteri conferiti al commissario straordinario presso l'Istituto case popolari livornesi, in Livorno. (026U1307)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1926-06-25;1307",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1926/08/05/026U1307/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1926-08-05",
+      "numeroGU": "180",
+      "codiceRedazionale": "026U1307",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.LGS. 13 DICEMBRE 2010, N. 212 ))"
+    },
+    {
+      "chiave": "/eli/id/1926/07/01/026U1237/sg",
+      "titolo": "REGIO DECRETO 1 luglio 1926, n. 1237",
+      "tipo": "regio.decreto",
+      "numero": "1237",
+      "dataEmanazione": "1926-07-01",
+      "nir": "urn:nir:stato:regio.decreto:1926-07-01;1237",
+      "eli": "/eli/id/1926/07/01/026U1237/sg",
+      "stato": "abrogato",
+      "sintesi": "Variazioni ai ruoli organici del personale delle privative. (026U1237)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1926-07-01;1237",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1926/07/24/026U1237/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1926-07-24",
+      "numeroGU": "170",
+      "codiceRedazionale": "026U1237",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.P.R. 13 DICEMBRE 2010, N. 248 ))"
+    },
+    {
+      "chiave": "/eli/id/1926/06/10/026U1219/sg",
+      "titolo": "REGIO DECRETO 10 giugno 1926, n. 1219",
+      "tipo": "regio.decreto",
+      "numero": "1219",
+      "dataEmanazione": "1926-06-10",
+      "nir": "urn:nir:stato:regio.decreto:1926-06-10;1219",
+      "eli": "/eli/id/1926/06/10/026U1219/sg",
+      "stato": "abrogato",
+      "sintesi": "Soppressione del Collegio di probiviri per l'industria dello zolfo, in <em><strong>((Cesena))</strong></em>. (026U1219)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1926-06-10;1219",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1926/07/22/026U1219/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1926-07-22",
+      "numeroGU": "168",
+      "codiceRedazionale": "026U1219",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.LGS. 13 DICEMBRE 2010, N. 212 ))"
+    },
+    {
+      "chiave": "/eli/id/1926/07/01/026U1130/sg",
+      "titolo": "REGIO DECRETO 1 luglio 1926, n. 1130",
+      "tipo": "regio.decreto",
+      "numero": "1130",
+      "dataEmanazione": "1926-07-01",
+      "nir": "urn:nir:stato:regio.decreto:1926-07-01;1130",
+      "eli": "/eli/id/1926/07/01/026U1130/sg",
+      "stato": "abrogato",
+      "sintesi": "Norme per l'attuazione della legge 3 aprile 1926, n. 563, sulla disciplina giuridica dei rapporti collettivi del lavoro. (026U1130)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1926-07-01;1130",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1926/07/07/026U1130/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1926-07-07",
+      "numeroGU": "155",
+      "codiceRedazionale": "026U1130",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DALLA L. 7 APRILE 2025, N. 56 ))"
+    },
+    {
+      "chiave": "/eli/id/1926/06/22/026U1067/sg",
+      "titolo": "REGIO DECRETO 22 giugno 1926, n. 1067",
+      "tipo": "regio.decreto",
+      "numero": "1067",
+      "dataEmanazione": "1926-06-22",
+      "nir": "urn:nir:stato:regio.decreto:1926-06-22;1067",
+      "eli": "/eli/id/1926/06/22/026U1067/sg",
+      "stato": "abrogato",
+      "sintesi": "Approvazione del regolamento per l'esecuzione della legge 11 marzo 1926, n. 416, relativa alle nuove disposizioni sulle procedure da eseguirsi negli accertamenti medico-legali delle ferite, lesioni ed infermita' dei personali dipendenti dalle Amministrazioni militari e da altre Amministrazioni dello Stato. (026U1067)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1926-06-22;1067",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1926/07/01/026U1067/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1926-07-01",
+      "numeroGU": "150",
+      "codiceRedazionale": "026U1067",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL REGIO DECRETO 15 APRILE 1928, N. 1024))"
+    },
+    {
+      "chiave": "/eli/id/1926/06/07/026U1057/sg",
+      "titolo": "REGIO DECRETO 7 giugno 1926, n. 1057",
+      "tipo": "regio.decreto",
+      "numero": "1057",
+      "dataEmanazione": "1926-06-07",
+      "nir": "urn:nir:stato:regio.decreto:1926-06-07;1057",
+      "eli": "/eli/id/1926/06/07/026U1057/sg",
+      "stato": "abrogato",
+      "sintesi": "Dichiarazione di pubblica utilita' delle opere necessarie per l'ampliamento dell'Aeroscalo di Boscomantico. (026U1057)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1926-06-07;1057",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1926/06/30/026U1057/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1926-06-30",
+      "numeroGU": "149",
+      "codiceRedazionale": "026U1057",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.P.R. 13 DICEMBRE 2010, N. 248 ))"
+    },
+    {
+      "chiave": "/eli/id/1926/05/20/026U0871/sg",
+      "titolo": "REGIO DECRETO 20 maggio 1926, n. 871",
+      "tipo": "regio.decreto",
+      "numero": "871",
+      "dataEmanazione": "1926-05-20",
+      "nir": "urn:nir:stato:regio.decreto:1926-05-20;871",
+      "eli": "/eli/id/1926/05/20/026U0871/sg",
+      "stato": "abrogato",
+      "sintesi": "Modificazioni ai Regi decreto-legge 25 settembre 1924, n. 1460, e 14 giugno 1925, n. 884, riflettenti il personale telefonico. (026U0871)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1926-05-20;871",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1926/06/01/026U0871/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1926-06-01",
+      "numeroGU": "126",
+      "codiceRedazionale": "026U0871",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.LGS. 13 DICEMBRE 2010, N. 212 ))"
+    },
+    {
+      "chiave": "/eli/id/1926/04/03/026U0746/sg",
+      "titolo": "REGIO DECRETO 3 aprile 1926, n. 746",
+      "tipo": "regio.decreto",
+      "numero": "746",
+      "dataEmanazione": "1926-04-03",
+      "nir": "urn:nir:stato:regio.decreto:1926-04-03;746",
+      "eli": "/eli/id/1926/04/03/026U0746/sg",
+      "stato": "in_vigore",
+      "sintesi": "Approvazione del regolamento sul servizio automobilistico per le Amministrazioni dello Stato. (026U0746)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1926-04-03;746",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1926/05/10/026U0746/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1926-05-10",
+      "numeroGU": "108",
+      "codiceRedazionale": "026U0746",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 VITTORIO EMANUELE III PER GRAZIA DI DIO E PER VOLONT&Agrave; DELLA NAZIONE RE D'ITALIA Veduto il R. decreto 13 luglio 1922, n. 1136 ; Veduto il R. decreto 18 gennaio 1923; Veduto il R. decreto 24 giugno 1923, n. 1348 ; Veduto il R. decreto 11 novembre 1923, n. 2395 ; Veduto il R. decreto 18 novembre 1923, n. 2440 ; Veduto il R. decreto 23 maggio 1924, n. 827 ; Veduto il R. decreto 11 ottobre 1925, n. 1895 ; Veduto il R. decreto 11 febbraio 1926, n. 224 ; Ritenuta la necessit&agrave; di coordinare e completare le norme che disciplinano l'uso degli auto-veicoli da parte delle Amministrazioni dello Stato; Sentito il parere del Consiglio di Stato; Udito il Consiglio dei Ministri; Sulla proposta del Capo del Governo Primo Ministro Segretario di Stato, di concerto con il Nostro Ministro Segretario di Stato per le finanze; Abbiamo decretato e decretiamo: &Egrave; approvato l'annesso regolamento sul servizio automobilistico per le Amministrazioni dello Stato, firmato, d'ordine Nostro, dai Ministri proponenti. Sono abrogate le disposizioni contrarie al presente regolamento. Ordiniamo che il presente decreto, munito del sigillo dello Stato, sia inserto nella raccolta ufficiale delle leggi e dei decreti del Regno d'Italia, mandando a chiunque spetti di osservarlo e di farlo osservare. Dato a San Rossore, add&igrave; 3 aprile 1926. VITTORIO EMANUELE. Mussolini - Volpi. Visto, il Guardasigilli: Rocco. Registrato alla Corte dei conti, add&igrave; 8 maggio 1926. Atti del Governo, registro 248, foglio 43. - Coop."
+    },
+    {
+      "chiave": "/eli/id/1926/03/04/026U0678/sg",
+      "titolo": "REGIO DECRETO 4 marzo 1926, n. 678",
+      "tipo": "regio.decreto",
+      "numero": "678",
+      "dataEmanazione": "1926-03-04",
+      "nir": "urn:nir:stato:regio.decreto:1926-03-04;678",
+      "eli": "/eli/id/1926/03/04/026U0678/sg",
+      "stato": "abrogato",
+      "sintesi": "Conferimento al Commissario straordinario per la gestione temporanea dell'Istituto case popolari livornesi, con sede in Livorno, dei poteri spettanti al Consiglio di amministrazione e di quelli spettanti all'assemblea dei soci. (026U0678)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1926-03-04;678",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1926/04/29/026U0678/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1926-04-29",
+      "numeroGU": "99",
+      "codiceRedazionale": "026U0678",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.LGS. 13 DICEMBRE 2010, N. 212 ))"
+    },
+    {
+      "chiave": "/eli/id/1926/04/03/026U0619/sg",
+      "titolo": "REGIO DECRETO 3 aprile 1926, n. 619",
+      "tipo": "regio.decreto",
+      "numero": "619",
+      "dataEmanazione": "1926-04-03",
+      "nir": "urn:nir:stato:regio.decreto:1926-04-03;619",
+      "eli": "/eli/id/1926/04/03/026U0619/sg",
+      "stato": "abrogato",
+      "sintesi": "Disposizioni per le ammissioni alla Scuola allievi sottufficiali dei carabinieri Reali. (026U0619)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1926-04-03;619",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1926/04/19/026U0619/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1926-04-19",
+      "numeroGU": "91",
+      "codiceRedazionale": "026U0619",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.LGS. 13 DICEMBRE 2010, N. 212 ))"
+    },
+    {
+      "chiave": "/eli/id/1926/04/03/026U0566/sg",
+      "titolo": "REGIO DECRETO 3 aprile 1926, n. 566",
+      "tipo": "regio.decreto",
+      "numero": "566",
+      "dataEmanazione": "1926-04-03",
+      "nir": "urn:nir:stato:regio.decreto:1926-04-03;566",
+      "eli": "/eli/id/1926/04/03/026U0566/sg",
+      "stato": "abrogato",
+      "sintesi": "52ª prelevazione dal fondo di riserva per le spese impreviste, inscritto nello stato di previsione della spesa del Ministero delle finanze, per l'esercizio finanziario 1925-26. (026U0566)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1926-04-03;566",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1926/04/14/026U0566/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1926-04-14",
+      "numeroGU": "87",
+      "codiceRedazionale": "026U0566",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.LGS. 13 DICEMBRE 2010, N. 212 ))"
+    },
+    {
+      "chiave": "/eli/id/1926/04/03/026U0565/sg",
+      "titolo": "REGIO DECRETO 3 aprile 1926, n. 565",
+      "tipo": "regio.decreto",
+      "numero": "565",
+      "dataEmanazione": "1926-04-03",
+      "nir": "urn:nir:stato:regio.decreto:1926-04-03;565",
+      "eli": "/eli/id/1926/04/03/026U0565/sg",
+      "stato": "abrogato",
+      "sintesi": "50ª prelevazione dal fondo di riserva per le spese impreviste, inscritto nello stato di previsione della spesa dei Ministero delle finanze, per l'esercizio finanziario 1925-26. (026U0565)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1926-04-03;565",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1926/04/14/026U0565/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1926-04-14",
+      "numeroGU": "87",
+      "codiceRedazionale": "026U0565",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.LGS. 13 DICEMBRE 2010, N. 212 ))"
+    },
+    {
+      "chiave": "/eli/id/1926/03/25/026U0548/sg",
+      "titolo": "REGIO DECRETO 25 marzo 1926, n. 548",
+      "tipo": "regio.decreto",
+      "numero": "548",
+      "dataEmanazione": "1926-03-25",
+      "nir": "urn:nir:stato:regio.decreto:1926-03-25;548",
+      "eli": "/eli/id/1926/03/25/026U0548/sg",
+      "stato": "abrogato",
+      "sintesi": "Istituzione presso il Ministero dei lavori pubblici della «Direzione generale delle Nuove costruzioni ferroviarie». (026U0548)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1926-03-25;548",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1926/04/12/026U0548/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1926-04-12",
+      "numeroGU": "85",
+      "codiceRedazionale": "026U0548",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.P.R. 13 DICEMBRE 2010, N. 248 ))"
+    }
+  ]
+}

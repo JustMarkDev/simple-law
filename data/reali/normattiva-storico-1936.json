@@ -1,0 +1,115 @@
+{
+  "provenance": {
+    "fonte": "normattiva",
+    "url": "https://api.normattiva.it/t/normattiva.api/bff-opendata/v1/api/v1/ricerca/aggiornati",
+    "recuperatoIl": "2026-09-29T01:49:36.113Z",
+    "licenza": "riproduzione consentita con menzione di fonte, carattere non autentico e gratuito (Note legali dati.normattiva.it; solo la Gazzetta Ufficiale a stampa e' autentica)"
+  },
+  "atti": [
+    {
+      "chiave": "/eli/id/1936/04/06/036U0927/sg",
+      "titolo": "REGIO DECRETO 6 aprile 1936, n. 927",
+      "tipo": "regio.decreto",
+      "numero": "927",
+      "dataEmanazione": "1936-04-06",
+      "nir": "urn:nir:stato:regio.decreto:1936-04-06;927",
+      "eli": "/eli/id/1936/04/06/036U0927/sg",
+      "stato": "abrogato",
+      "sintesi": "Nuove denominazioni delle unita' indigene dell'Eritrea. (036U0927)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1936-04-06;927",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1936/05/30/036U0927/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1936-05-30",
+      "numeroGU": "125",
+      "codiceRedazionale": "036U0927",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.P.R. 13 DICEMBRE 2010, N. 248 ))"
+    },
+    {
+      "chiave": "/eli/id/1936/03/30/036U0925/sg",
+      "titolo": "REGIO DECRETO 30 marzo 1936, n. 925",
+      "tipo": "regio.decreto",
+      "numero": "925",
+      "dataEmanazione": "1936-03-30",
+      "nir": "urn:nir:stato:regio.decreto:1936-03-30;925",
+      "eli": "/eli/id/1936/03/30/036U0925/sg",
+      "stato": "abrogato",
+      "sintesi": "Indennita' di carica agli ufficiali aventi comando di truppa indigena in Africa Orientale. (036U0925)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1936-03-30;925",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1936/05/30/036U0925/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1936-05-30",
+      "numeroGU": "125",
+      "codiceRedazionale": "036U0925",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.LGS. 13 DICEMBRE 2010, N. 212 ))"
+    },
+    {
+      "chiave": "/eli/id/1936/02/13/036U0922/sg",
+      "titolo": "REGIO DECRETO 13 febbraio 1936, n. 922",
+      "tipo": "regio.decreto",
+      "numero": "922",
+      "dataEmanazione": "1936-02-13",
+      "nir": "urn:nir:stato:regio.decreto:1936-02-13;922",
+      "eli": "/eli/id/1936/02/13/036U0922/sg",
+      "stato": "abrogato",
+      "sintesi": "Indennita' giornaliera di operazioni ai militari indigeni in servizio in Eritrea ed in Somalia. (036U0922)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1936-02-13;922",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1936/05/30/036U0922/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1936-05-30",
+      "numeroGU": "125",
+      "codiceRedazionale": "036U0922",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.LGS. 13 DICEMBRE 2010, N. 212 ))"
+    },
+    {
+      "chiave": "/eli/id/1936/04/06/036U0871/sg",
+      "titolo": "LEGGE 6 aprile 1936, n. 871",
+      "tipo": "legge",
+      "numero": "871",
+      "dataEmanazione": "1936-04-06",
+      "nir": "urn:nir:stato:legge:1936-04-06;871",
+      "eli": "/eli/id/1936/04/06/036U0871/sg",
+      "stato": "abrogato",
+      "sintesi": "Sistemazione matricolare dei militari della Regia guardia di finanza. (036U0871)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1936-04-06;871",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1936/05/25/036U0871/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1936-05-25",
+      "numeroGU": "120",
+      "codiceRedazionale": "036U0871",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.L. 22 DICEMBRE 2008, N. 200 , CONVERTITO CON MODIFICAZIONI DALLA L. 18 FEBBRAIO 2009, N. 9 ))"
+    },
+    {
+      "chiave": "/eli/id/1936/04/06/036U0648/sg",
+      "titolo": "REGIO DECRETO 6 aprile 1936, n. 648",
+      "tipo": "regio.decreto",
+      "numero": "648",
+      "dataEmanazione": "1936-04-06",
+      "nir": "urn:nir:stato:regio.decreto:1936-04-06;648",
+      "eli": "/eli/id/1936/04/06/036U0648/sg",
+      "stato": "abrogato",
+      "sintesi": "Contabilita' dei materiali militari relativi ai servizi delle truppe di terra operanti nelle Colonie dell'Africa Orientale. (036U0648)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1936-04-06;648",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1936/04/29/036U0648/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1936-04-29",
+      "numeroGU": "99",
+      "codiceRedazionale": "036U0648",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.P.R. 13 DICEMBRE 2010, N. 248 ))"
+    }
+  ]
+}

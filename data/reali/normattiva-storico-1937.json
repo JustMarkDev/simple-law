@@ -1,0 +1,115 @@
+{
+  "provenance": {
+    "fonte": "normattiva",
+    "url": "https://api.normattiva.it/t/normattiva.api/bff-opendata/v1/api/v1/ricerca/aggiornati",
+    "recuperatoIl": "2026-09-29T01:49:36.113Z",
+    "licenza": "riproduzione consentita con menzione di fonte, carattere non autentico e gratuito (Note legali dati.normattiva.it; solo la Gazzetta Ufficiale a stampa e' autentica)"
+  },
+  "atti": [
+    {
+      "chiave": "/eli/id/1937/09/23/037U1778/sg",
+      "titolo": "REGIO DECRETO 23 settembre 1937, n. 1778",
+      "tipo": "regio.decreto",
+      "numero": "1778",
+      "dataEmanazione": "1937-09-23",
+      "nir": "urn:nir:stato:regio.decreto:1937-09-23;1778",
+      "eli": "/eli/id/1937/09/23/037U1778/sg",
+      "stato": "abrogato",
+      "sintesi": "Erezione in ente morale dell'Istituto fascista autonomo per le case popolari della provincia di Savona ed approvazione del relativo statuto. (037U1778)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1937-09-23;1778",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1937/10/27/037U1778/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1937-10-27",
+      "numeroGU": "251",
+      "codiceRedazionale": "037U1778",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.P.R. 13 DICEMBRE 2010, N. 248 ))"
+    },
+    {
+      "chiave": "/eli/id/1937/07/01/037U1421/sg",
+      "titolo": "REGIO DECRETO 1 luglio 1937, n. 1421",
+      "tipo": "regio.decreto",
+      "numero": "1421",
+      "dataEmanazione": "1937-07-01",
+      "nir": "urn:nir:stato:regio.decreto:1937-07-01;1421",
+      "eli": "/eli/id/1937/07/01/037U1421/sg",
+      "stato": "abrogato",
+      "sintesi": "Emissione di francobolli commemorativi a ricordo dei centenari di Giotto, Leopardi, Pergolesi, Spontini e Stradivari. (037U1421)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1937-07-01;1421",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1937/08/27/037U1421/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1937-08-27",
+      "numeroGU": "199",
+      "codiceRedazionale": "037U1421",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.P.R. 13 DICEMBRE 2010, N. 248 ))"
+    },
+    {
+      "chiave": "/eli/id/1937/06/10/037U1211/sg",
+      "titolo": "REGIO DECRETO 10 giugno 1937, n. 1211",
+      "tipo": "regio.decreto",
+      "numero": "1211",
+      "dataEmanazione": "1937-06-10",
+      "nir": "urn:nir:stato:regio.decreto:1937-06-10;1211",
+      "eli": "/eli/id/1937/06/10/037U1211/sg",
+      "stato": "abrogato",
+      "sintesi": "Regolamento organico del Corpo della polizia coloniale. (037U1211)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1937-06-10;1211",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1937/07/29/037U1211/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1937-07-29",
+      "numeroGU": "174",
+      "codiceRedazionale": "037U1211",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.P.R. 13 DICEMBRE 2010, N. 248 ))"
+    },
+    {
+      "chiave": "/eli/id/1937/06/07/037U0873/sg",
+      "titolo": "LEGGE 7 giugno 1937, n. 873",
+      "tipo": "legge",
+      "numero": "873",
+      "dataEmanazione": "1937-06-07",
+      "nir": "urn:nir:stato:legge:1937-06-07;873",
+      "eli": "/eli/id/1937/06/07/037U0873/sg",
+      "stato": "abrogato",
+      "sintesi": "Stato di previsione della spesa del Ministero degli affari esteri, per l'esercizio finanziario dal 1° luglio 1937 al 30 giugno 1938. (037U0873)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1937-06-07;873",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1937/06/22/037U0873/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1937-06-22",
+      "numeroGU": "143",
+      "codiceRedazionale": "037U0873",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.L. 22 DICEMBRE 2008, N. 200 , CONVERTITO CON MODIFICAZIONI DALLA L. 18 FEBBRAIO 2009, N. 9 ))"
+    },
+    {
+      "chiave": "/eli/id/1937/03/25/037U0372/sg",
+      "titolo": "REGIO DECRETO 25 marzo 1937, n. 372",
+      "tipo": "regio.decreto",
+      "numero": "372",
+      "dataEmanazione": "1937-03-25",
+      "nir": "urn:nir:stato:regio.decreto:1937-03-25;372",
+      "eli": "/eli/id/1937/03/25/037U0372/sg",
+      "stato": "abrogato",
+      "sintesi": "10ª prelevazione dal fondo di riserva per le spese impreviste dell'esercizio finanziario 1936-37. (037U0372)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1937-03-25;372",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1937/04/08/037U0372/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1937-04-08",
+      "numeroGU": "82",
+      "codiceRedazionale": "037U0372",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.P.R. 13 DICEMBRE 2010, N. 248 ))"
+    }
+  ]
+}

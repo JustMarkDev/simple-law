@@ -1,0 +1,368 @@
+{
+  "provenance": {
+    "fonte": "normattiva",
+    "url": "https://api.normattiva.it/t/normattiva.api/bff-opendata/v1/api/v1/ricerca/aggiornati",
+    "recuperatoIl": "2026-09-29T01:41:05.716Z",
+    "licenza": "riproduzione consentita con menzione di fonte, carattere non autentico e gratuito (Note legali dati.normattiva.it; solo la Gazzetta Ufficiale a stampa e' autentica)"
+  },
+  "atti": [
+    {
+      "chiave": "/eli/id/1924/10/30/024U1938/sg",
+      "titolo": "REGIO DECRETO 30 ottobre 1924, n. 1938",
+      "tipo": "regio.decreto",
+      "numero": "1938",
+      "dataEmanazione": "1924-10-30",
+      "nir": "urn:nir:stato:regio.decreto:1924-10-30;1938",
+      "eli": "/eli/id/1924/10/30/024U1938/sg",
+      "stato": "in_vigore",
+      "sintesi": "Disposizioni circa l'impiego delle materie coloranti nelle sostanze alimentari e negli oggetti d'uso personale e domestico. (024U1938)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1924-10-30;1938",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1924/12/12/024U1938/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1924-12-12",
+      "numeroGU": "289",
+      "codiceRedazionale": "024U1938",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "VITTORIO EMANUELE III PER GRAZIA DI DIO E PER VOLONT&Agrave; DELLA NAZIONE RE D'ITALIA Veduti gli articoli 115 e 218 del testo unico delle leggi sanitarie , approvato con R. decreto 1° agosto 1907, n. 626 ; Veduto il R. decreto 3 febbraio 1901, n. 45 , che approva regolamento per la esecuzione della legge sulla tutela dell'igiene e della sanit&agrave; pubblica; Veduto il R. decreto 7 gennaio 1923, n. 76 , sui colori nocivi; Ritenuta la necessit&agrave; di disciplinare in modo pi&ugrave; rispondente alle necessit&agrave; della pratica e pi&ugrave; conforme alle attuali cognizioni scientifiche, le norme per l'impiego dei coloranti nelle sostanze alimentari e negli oggetti di uso; Udito il parere del Consiglio superiore di sanit&agrave;; Udito il parere del Consiglio di Stato; Udito il Consiglio dei Ministri; Sulla proposta del Nostro Ministro Segretario di Stato per gli affari dell'interno; Abbiamo decretato e decretiamo: Art. 1 Sono ritenuti nocivi tutti i coloranti artificiali organici eccetto i seguenti: A) Giallo naftolo S. (Giallo acido - Citronina A) - Sale sodico o potassico dell'acido dinitronaftolsulfonico. B) Crisoidina - Cloridrato di diaminoazobenzolo. C) Sudan I. (Arancio G. - Arancio solubile nei grassi - Arancio insolubile di anilina)- Anilinazo &#x03b2; naftolo). D) Tartrazina (Giallo di idrazina - Giallo tartarico) - Sale sodico dell'acido 3. carbossi - 5. Pirazolone - 1. p. fenilsulfonico - 4. idrazon p. fenilsulfonico. E) Arancio I. (Arancio S. - Arancio n. 1. - Arancio R. extra - Naftolarancio) - Sale sodico dell'acido p. sulfanilazo a naftolo. F) Bordeaux B (Rosso solido B) - Sale sodico dell'acido naftilaminazo - 2. naftol - 3. 6. disulfonico. G) Ponceau 2R. (Rossoxilidina - Ponceau xilidina) - Sale sadico dell'acido xilidinazonaftol - 3. 6. disulfonico. H) Ponceau 3R. (Rosso cumudina - Ponceau cumidina) - Sale sodico dell'acido pseudocumidinazo 2. naftol 3. 6. disulfonico. I) Rosso scarlatto Vittoria (Ponceau 4R. - Scarlatto Vittoria 4R. extra)  [...]",
+      "testoTroncato": true
+    },
+    {
+      "chiave": "/eli/id/1924/09/04/024U1740/sg",
+      "titolo": "REGIO DECRETO 4 settembre 1924, n. 1740",
+      "tipo": "regio.decreto",
+      "numero": "1740",
+      "dataEmanazione": "1924-09-04",
+      "nir": "urn:nir:stato:regio.decreto:1924-09-04;1740",
+      "eli": "/eli/id/1924/09/04/024U1740/sg",
+      "stato": "abrogato",
+      "sintesi": "Autorizzazione alla Camera di commercio e industria di Genova a riscuotere diritti di segreteria. (024U1740)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1924-09-04;1740",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1924/11/15/024U1740/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1924-11-15",
+      "numeroGU": "267",
+      "codiceRedazionale": "024U1740",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.LGS. 13 DICEMBRE 2010, N. 212 ))"
+    },
+    {
+      "chiave": "/eli/id/1924/08/21/024U1525/sg",
+      "titolo": "REGIO DECRETO 21 agosto 1924, n. 1525",
+      "tipo": "regio.decreto",
+      "numero": "1525",
+      "dataEmanazione": "1924-08-21",
+      "nir": "urn:nir:stato:regio.decreto:1924-08-21;1525",
+      "eli": "/eli/id/1924/08/21/024U1525/sg",
+      "stato": "abrogato",
+      "sintesi": "Approvazione del testo unico delle disposizioni legislative riguardanti l'ordinamento del Corpo Reale equipaggi e lo stato giuridico dei sottufficiali della Regia marina. (024U1525)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1924-08-21;1525",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1924/10/09/024U1525/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1924-10-09",
+      "numeroGU": "237",
+      "codiceRedazionale": "024U1525",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.LGS. 13 DICEMBRE 2010, N. 212 ))"
+    },
+    {
+      "chiave": "/eli/id/1924/08/28/024U1422/sg",
+      "titolo": "REGIO DECRETO 28 agosto 1924, n. 1422",
+      "tipo": "regio.decreto",
+      "numero": "1422",
+      "dataEmanazione": "1924-08-28",
+      "nir": "urn:nir:stato:regio.decreto:1924-08-28;1422",
+      "eli": "/eli/id/1924/08/28/024U1422/sg",
+      "stato": "in_vigore",
+      "sintesi": "Approvazione del regolamento per la esecuzione del R. decreto 30 dicembre 1923, n. 3184, concernente provvedimenti per l'assicurazione obbligatoria contro l'invalidita' e la vecchiaia. (024U1422)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1924-08-28;1422",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1924/09/26/024U1422/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1924-09-26",
+      "numeroGU": "226",
+      "codiceRedazionale": "024U1422",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "VITTORIO EMANUELE III PER GRAZIA DI DIO E PER VOLONT&Agrave; DELLA NAZIONE RE D'ITALIA Veduto il R. decreto 30 dicembre 1923, n. 3184 , concernente provvedimenti per l'assicurazione obbligatoria contro la invalidit&agrave; e la vecchiaia; Sentito il Consiglio di Stato; Sentito il Consiglio dei Ministri; Sulla proposta del Nostro Ministro Segretario di Stato per l'economia nazionale; Abbiamo decretato e decretiamo: Art. 1 Articolo unico. &Egrave; approvato l'unito regolamento per l'esecuzione del Regio decreto 30 dicembre 1923, n. 3184 , concernente provvedimenti per l'assicurazione obbligatoria contro la invalidit&agrave; e la vecchiaia, visto, d'ordine Nostro, dal Ministro proponente. Ordiniamo che il presente decreto, munito del sigillo dello Stato, sia inserto nella raccolta ufficiale delle leggi e dei decreti del Regno d'Italia, mandando a chiunque spetti di osservarlo e di farlo osservare. Dato a San Rossore, add&igrave; 28 agosto 1924. VITTORIO EMANUELE. Mussolini - Nava. Visto, il Guardasigilli: Oviglio. Registrato alla Corte dei conti, add&igrave; 22 settembre 1924. Atti del Governo, registro 228, foglio 118. - Casati."
+    },
+    {
+      "chiave": "/eli/id/1924/06/29/024U1388/sg",
+      "titolo": "REGIO DECRETO 29 giugno 1924, n. 1388",
+      "tipo": "regio.decreto",
+      "numero": "1388",
+      "dataEmanazione": "1924-06-29",
+      "nir": "urn:nir:stato:regio.decreto:1924-06-29;1388",
+      "eli": "/eli/id/1924/06/29/024U1388/sg",
+      "stato": "abrogato",
+      "sintesi": "Approvazione del regolamento per gli esami di Stato di abilitazione all'esercizio delle professioni di medico-chirurgo, odontoiatra, chimico, farmacista, ingegnere ed architetto. (024U1388)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1924-06-29;1388",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1924/09/22/024U1388/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1924-09-22",
+      "numeroGU": "222",
+      "codiceRedazionale": "024U1388",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.LGS. 13 DICEMBRE 2010, N. 212 ))"
+    },
+    {
+      "chiave": "/eli/id/1924/08/08/024U1265/sg",
+      "titolo": "REGIO DECRETO 8 agosto 1924, n. 1265",
+      "tipo": "regio.decreto",
+      "numero": "1265",
+      "dataEmanazione": "1924-08-08",
+      "nir": "urn:nir:stato:regio.decreto:1924-08-08;1265",
+      "eli": "/eli/id/1924/08/08/024U1265/sg",
+      "stato": "abrogato",
+      "sintesi": "Modificazione del R. decreto 23 ottobre 1922, n. 1517, concernente la ripartizione del Ministero delle colonie in uffici centrali. (024U1265)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1924-08-08;1265",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1924/08/26/024U1265/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1924-08-26",
+      "numeroGU": "200",
+      "codiceRedazionale": "024U1265",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.LGS. 13 DICEMBRE 2010, N. 212 ))"
+    },
+    {
+      "chiave": "/eli/id/1924/06/29/024U1086/sg",
+      "titolo": "REGIO DECRETO 29 giugno 1924, n. 1086",
+      "tipo": "regio.decreto",
+      "numero": "1086",
+      "dataEmanazione": "1924-06-29",
+      "nir": "urn:nir:stato:regio.decreto:1924-06-29;1086",
+      "eli": "/eli/id/1924/06/29/024U1086/sg",
+      "stato": "abrogato",
+      "sintesi": "Riordinamento dei servizi dipendenti dalla soppressa Direzione generale del Fondo per il culto. (024U1086)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1924-06-29;1086",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1924/07/14/024U1086/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1924-07-14",
+      "numeroGU": "164",
+      "codiceRedazionale": "024U1086",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.P.R. 13 DICEMBRE 2010, N. 248 ))"
+    },
+    {
+      "chiave": "/eli/id/1924/06/26/024U1058/sg",
+      "titolo": "REGIO DECRETO 26 giugno 1924, n. 1058",
+      "tipo": "regio.decreto",
+      "numero": "1058",
+      "dataEmanazione": "1924-06-26",
+      "nir": "urn:nir:stato:regio.decreto:1924-06-26;1058",
+      "eli": "/eli/id/1924/06/26/024U1058/sg",
+      "stato": "abrogato",
+      "sintesi": "Approvazione del testo unico delle leggi sulla Giunta provinciale amministrativa in sede giurisdizionale. (024U1058)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1924-06-26;1058",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1924/07/07/024U1058/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1924-07-07",
+      "numeroGU": "158",
+      "codiceRedazionale": "024U1058",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.LGS. 2 LUGLIO 2010, N. 104 ))"
+    },
+    {
+      "chiave": "/eli/id/1924/06/28/024U1001/sg",
+      "titolo": "LEGGE 28 giugno 1924, n. 1001",
+      "tipo": "legge",
+      "numero": "1001",
+      "dataEmanazione": "1924-06-28",
+      "nir": "urn:nir:stato:legge:1924-06-28;1001",
+      "eli": "/eli/id/1924/06/28/024U1001/sg",
+      "stato": "abrogato",
+      "sintesi": "Autorizzazione all'esercizio provvisorio degli stati di previsione dell'entrata e della spesa, nell'anno finanziario dal 1° luglio 1924 al 30 giugno 1925, fino a quando siano approvati per legge e non oltre il 31 dicembre 1924. (024U1001)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1924-06-28;1001",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1924/06/28/024U1001/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1924-06-28",
+      "numeroGU": "151",
+      "codiceRedazionale": "024U1001",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.L. 22 DICEMBRE 2008, N. 200 , CONVERTITO CON MODIFICAZIONI DALLA L. 18 FEBBRAIO 2009, N. 9 ))"
+    },
+    {
+      "chiave": "/eli/id/1924/05/11/024U0878/sg",
+      "titolo": "REGIO DECRETO 11 maggio 1924, n. 878",
+      "tipo": "regio.decreto",
+      "numero": "878",
+      "dataEmanazione": "1924-05-11",
+      "nir": "urn:nir:stato:regio.decreto:1924-05-11;878",
+      "eli": "/eli/id/1924/05/11/024U0878/sg",
+      "stato": "abrogato",
+      "sintesi": "Contributo della provincia dell'Istria per il mantenimento del Regio istituto tecnico di Rovigno. (024U0878)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1924-05-11;878",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1924/06/10/024U0878/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1924-06-10",
+      "numeroGU": "136",
+      "codiceRedazionale": "024U0878",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.LGS. 13 DICEMBRE 2010, N. 212 ))"
+    },
+    {
+      "chiave": "/eli/id/1924/05/08/024U0843/sg",
+      "titolo": "REGIO DECRETO 8 maggio 1924, n. 843",
+      "tipo": "regio.decreto",
+      "numero": "843",
+      "dataEmanazione": "1924-05-08",
+      "nir": "urn:nir:stato:regio.decreto:1924-05-08;843",
+      "eli": "/eli/id/1924/05/08/024U0843/sg",
+      "stato": "abrogato",
+      "sintesi": "Aggiunte al R. decreto 11 novembre 1923, n. 2395, e successive modificazioni, sull'ordinamento gerarchico delle Amministrazioni dello Stato. (024U0843)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1924-05-08;843",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1924/06/04/024U0843/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1924-06-04",
+      "numeroGU": "131",
+      "codiceRedazionale": "024U0843",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.LGS. 13 DICEMBRE 2010, N. 212 ))"
+    },
+    {
+      "chiave": "/eli/id/1924/05/01/024U0727/sg",
+      "titolo": "REGIO DECRETO 1 maggio 1924, n. 727",
+      "tipo": "regio.decreto",
+      "numero": "727",
+      "dataEmanazione": "1924-05-01",
+      "nir": "urn:nir:stato:regio.decreto:1924-05-01;727",
+      "eli": "/eli/id/1924/05/01/024U0727/sg",
+      "stato": "abrogato",
+      "sintesi": "Corresponsione del cambio sulle competenze mensili degli insegnanti comandati in scuole italiane, istituti superiori od universita' indigene nella Bulgaria, Cecoslovacchia, Jugoslavia, Polonia, Rumania ed Ungheria. (024U0727)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1924-05-01;727",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1924/05/22/024U0727/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1924-05-22",
+      "numeroGU": "121",
+      "codiceRedazionale": "024U0727",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.LGS. 13 DICEMBRE 2010, N. 212 ))"
+    },
+    {
+      "chiave": "/eli/id/1924/05/08/024U0691/sg",
+      "titolo": "REGIO DECRETO 8 maggio 1924, n. 691",
+      "tipo": "regio.decreto",
+      "numero": "691",
+      "dataEmanazione": "1924-05-08",
+      "nir": "urn:nir:stato:regio.decreto:1924-05-08;691",
+      "eli": "/eli/id/1924/05/08/024U0691/sg",
+      "stato": "abrogato",
+      "sintesi": "59ª prelevazione dal fondo di riserva per le spese impreviste stanziato nel bilancio del Ministero delle finanze, per l'esercizio finanziario 1923-24. (024U0691)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1924-05-08;691",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1924/05/21/024U0691/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1924-05-21",
+      "numeroGU": "120",
+      "codiceRedazionale": "024U0691",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.LGS. 13 DICEMBRE 2010, N. 212 ))"
+    },
+    {
+      "chiave": "/eli/id/1923/12/30/023U3276/sg",
+      "titolo": "REGIO DECRETO 30 dicembre 1923, n. 3276",
+      "tipo": "regio.decreto",
+      "numero": "3276",
+      "dataEmanazione": "1923-12-30",
+      "nir": "urn:nir:stato:regio.decreto:1923-12-30;3276",
+      "eli": "/eli/id/1923/12/30/023U3276/sg",
+      "stato": "abrogato",
+      "sintesi": "Approvazione del testo di legge dei diritti erariali sugli spettacoli. (023U3276)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1923-12-30;3276",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1924/05/17/023U3276/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1924-05-17",
+      "numeroGU": "117",
+      "codiceRedazionale": "023U3276",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.L. 25 GIUGNO 2008, N. 112 , CONVERTITO CON MODIFICAZIONI DALLA L. 6 AGOSTO 2008, N. 133 ))"
+    },
+    {
+      "chiave": "/eli/id/1923/12/30/023U3273/sg",
+      "titolo": "REGIO DECRETO 30 dicembre 1923, n. 3273",
+      "tipo": "regio.decreto",
+      "numero": "3273",
+      "dataEmanazione": "1923-12-30",
+      "nir": "urn:nir:stato:regio.decreto:1923-12-30;3273",
+      "eli": "/eli/id/1923/12/30/023U3273/sg",
+      "stato": "abrogato",
+      "sintesi": "Approvazione del testo di legge della tassa sugli scambi. (023U3273)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1923-12-30;3273",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1924/05/17/023U3273/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1924-05-17",
+      "numeroGU": "117",
+      "codiceRedazionale": "023U3273",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.LGS. 13 DICEMBRE 2010, N. 212 ))"
+    },
+    {
+      "chiave": "/eli/id/1924/03/27/024U0518/sg",
+      "titolo": "REGIO DECRETO 27 marzo 1924, n. 518",
+      "tipo": "regio.decreto",
+      "numero": "518",
+      "dataEmanazione": "1924-03-27",
+      "nir": "urn:nir:stato:regio.decreto:1924-03-27;518",
+      "eli": "/eli/id/1924/03/27/024U0518/sg",
+      "stato": "abrogato",
+      "sintesi": "Ordinamento organico del Commissariato per i servizi della marina mercantile. (024U0518)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1924-03-27;518",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1924/04/26/024U0518/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1924-04-26",
+      "numeroGU": "99",
+      "codiceRedazionale": "024U0518",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.P.R. 13 DICEMBRE 2010, N. 248 ))"
+    },
+    {
+      "chiave": "/eli/id/1924/03/09/024U0407/sg",
+      "titolo": "REGIO DECRETO 9 marzo 1924, n. 407",
+      "tipo": "regio.decreto",
+      "numero": "407",
+      "dataEmanazione": "1924-03-09",
+      "nir": "urn:nir:stato:regio.decreto:1924-03-09;407",
+      "eli": "/eli/id/1924/03/09/024U0407/sg",
+      "stato": "in_vigore",
+      "sintesi": "Accettazione della donazione, fatta allo Stato, della Bibbia di Borso d'Este. (024U0407)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1924-03-09;407",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1924/04/05/024U0407/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1924-04-05",
+      "numeroGU": "82",
+      "codiceRedazionale": "024U0407",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 N. 407. R. decreto 9 marzo 1924, col quale, sulla proposta del Ministro per la pubblica istruzione, viene accettata la donazione, fatta allo Stato, dal grand'ufficiale Giovanni Treccani, della Bibbia di Borso d'Este, che sar&agrave; conservata nella Regia galleria estense in Modena. Visto, il Guardasigilli: Oviglio. Registrato alla Corte dei conti, add&igrave; 1&deg; aprile 1924."
+    }
+  ]
+}

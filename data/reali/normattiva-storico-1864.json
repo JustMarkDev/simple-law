@@ -1,0 +1,283 @@
+{
+  "provenance": {
+    "fonte": "normattiva",
+    "url": "https://api.normattiva.it/t/normattiva.api/bff-opendata/v1/api/v1/ricerca/aggiornati",
+    "recuperatoIl": "2026-09-29T01:55:58.574Z",
+    "licenza": "riproduzione consentita con menzione di fonte, carattere non autentico e gratuito (Note legali dati.normattiva.it; solo la Gazzetta Ufficiale a stampa e' autentica)"
+  },
+  "atti": [
+    {
+      "chiave": "/eli/id/1864/12/04/064U2047/sg",
+      "titolo": "REGIO DECRETO 4 dicembre 1864, n. 2047",
+      "tipo": "regio.decreto",
+      "numero": "2047",
+      "dataEmanazione": "1864-12-04",
+      "nir": "urn:nir:stato:regio.decreto:1864-12-04;2047",
+      "eli": "/eli/id/1864/12/04/064U2047/sg",
+      "stato": "abrogato",
+      "sintesi": "Col quale sono soppressi gli Uffici di Stralcio degli affari delle abolite Direzioni Generali del Registro e Bollo, e della Cassa d'Ammortizzazione e Demanio in Napoli. (064U2047)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1864-12-04;2047",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1864/12/19/064U2047/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1864-12-19",
+      "numeroGU": "299",
+      "codiceRedazionale": "064U2047",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.LGS. 13 DICEMBRE 2010, N. 212 ))"
+    },
+    {
+      "chiave": "/eli/id/1864/09/27/064U1934/sg",
+      "titolo": "REGIO DECRETO 27 settembre 1864, n. 1934",
+      "tipo": "regio.decreto",
+      "numero": "1934",
+      "dataEmanazione": "1864-09-27",
+      "nir": "urn:nir:stato:regio.decreto:1864-09-27;1934",
+      "eli": "/eli/id/1864/09/27/064U1934/sg",
+      "stato": "abrogato",
+      "sintesi": "Il Senato e la Camera dei Deputati sono riconvocati pel giorno 24 ottobre 1864 (064U1934)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1864-09-27;1934",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1864/09/28/064U1934/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1864-09-28",
+      "numeroGU": "230",
+      "codiceRedazionale": "064U1934",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.LGS. 13 DICEMBRE 2010, N. 212 ))"
+    },
+    {
+      "chiave": "/eli/id/1864/08/14/064U1895/sg",
+      "titolo": "REGIO DECRETO 14 agosto 1864, n. 1895",
+      "tipo": "regio.decreto",
+      "numero": "1895",
+      "dataEmanazione": "1864-08-14",
+      "nir": "urn:nir:stato:regio.decreto:1864-08-14;1895",
+      "eli": "/eli/id/1864/08/14/064U1895/sg",
+      "stato": "abrogato",
+      "sintesi": "Che approva la tavola dei Consorzi comunali per la legge d'imposta sui redditi della ricchezza mobile. (064U1895)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1864-08-14;1895",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1864/08/27/064U1895/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1864-08-27",
+      "numeroGU": "204",
+      "codiceRedazionale": "064U1895",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.LGS. 13 DICEMBRE 2010, N. 212 ))"
+    },
+    {
+      "chiave": "/eli/id/1864/08/14/064U1884/sg",
+      "titolo": "REGIO DECRETO 14 agosto 1864, n. 1884",
+      "tipo": "regio.decreto",
+      "numero": "1884",
+      "dataEmanazione": "1864-08-14",
+      "nir": "urn:nir:stato:regio.decreto:1864-08-14;1884",
+      "eli": "/eli/id/1864/08/14/064U1884/sg",
+      "stato": "abrogato",
+      "sintesi": "Che approva il Regolamento per l'esecuzione della Legge d'imposta sui redditi della ricchezza mobile. (064U1884)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1864-08-14;1884",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1864/08/23/064U1884/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1864-08-23",
+      "numeroGU": "200",
+      "codiceRedazionale": "064U1884",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.LGS. 13 DICEMBRE 2010, N. 212 ))"
+    },
+    {
+      "chiave": "/eli/id/1864/08/06/064U1880/sg",
+      "titolo": "REGIO DECRETO 6 agosto 1864, n. 1880",
+      "tipo": "regio.decreto",
+      "numero": "1880",
+      "dataEmanazione": "1864-08-06",
+      "nir": "urn:nir:stato:regio.decreto:1864-08-06;1880",
+      "eli": "/eli/id/1864/08/06/064U1880/sg",
+      "stato": "abrogato",
+      "sintesi": "Col quale e' fissato un termine pel ritiramento e cambio di varie monete d'oro, d'argento e di biglione ancora in corso in alcune Provincie del Regno. (064U1880)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1864-08-06;1880",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1864/08/22/064U1880/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1864-08-22",
+      "numeroGU": "199",
+      "codiceRedazionale": "064U1880",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.LGS. 13 DICEMBRE 2010, N. 212 ))"
+    },
+    {
+      "chiave": "/eli/id/1864/07/25/064U1844/sg",
+      "titolo": "LEGGE 25 luglio 1864, n. 1844",
+      "tipo": "legge",
+      "numero": "1844",
+      "dataEmanazione": "1864-07-25",
+      "nir": "urn:nir:stato:legge:1864-07-25;1844",
+      "eli": "/eli/id/1864/07/25/064U1844/sg",
+      "stato": "abrogato",
+      "sintesi": "Per l'apertura di un nuovo concorso straordinario per l'ammissione a cento posti nella Scuola suppletiva degli allievi a Guardia Marina. (064U1844)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1864-07-25;1844",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1864/07/28/064U1844/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1864-07-28",
+      "numeroGU": "178",
+      "codiceRedazionale": "064U1844",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.L. 22 DICEMBRE 2008, N. 200 , CONVERTITO CON MODIFICAZIONI DALLA L. 18 FEBBRAIO 2009, N. 9 ))"
+    },
+    {
+      "chiave": "/eli/id/1864/05/01/6401189R/sg",
+      "titolo": "REGIO DECRETO 1 maggio 1864, n. 1189",
+      "tipo": "regio.decreto",
+      "numero": "1189",
+      "dataEmanazione": "1864-05-01",
+      "nir": "urn:nir:stato:regio.decreto:1864-05-01;1189",
+      "eli": "/eli/id/1864/05/01/6401189R/sg",
+      "stato": "abrogato",
+      "sintesi": "Approvativo della Societa' anonima costituitasi sotto il titolo di Societa' generale dei Zolfi in Sicilia. (6401189R)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1864-05-01;1189",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1864/06/14/6401189R/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1864-06-14",
+      "numeroGU": "140",
+      "codiceRedazionale": "6401189R",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DALLA L. 7 APRILE 2025, N. 56 ))"
+    },
+    {
+      "chiave": "/eli/id/1864/04/28/064U1748/sg",
+      "titolo": "LEGGE 28 aprile 1864, n. 1748",
+      "tipo": "legge",
+      "numero": "1748",
+      "dataEmanazione": "1864-04-28",
+      "nir": "urn:nir:stato:legge:1864-04-28;1748",
+      "eli": "/eli/id/1864/04/28/064U1748/sg",
+      "stato": "abrogato",
+      "sintesi": "Che autorizza una maggiore spesa per l'impianto di nuovi Uffici del Debito pubblico e per l'unificazione dei diversi debiti dello Stato. (064U1748)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1864-04-28;1748",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1864/05/06/064U1748/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1864-05-06",
+      "numeroGU": "108",
+      "codiceRedazionale": "064U1748",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.L. 22 DICEMBRE 2008, N. 200 , CONVERTITO CON MODIFICAZIONI DALLA L. 18 FEBBRAIO 2009, N. 9 ))"
+    },
+    {
+      "chiave": "/eli/id/1864/02/07/064U1661/sg",
+      "titolo": "LEGGE 7 febbraio 1864, n. 1661",
+      "tipo": "legge",
+      "numero": "1661",
+      "dataEmanazione": "1864-02-07",
+      "nir": "urn:nir:stato:legge:1864-02-07;1661",
+      "eli": "/eli/id/1864/02/07/064U1661/sg",
+      "stato": "abrogato",
+      "sintesi": "Contenente disposizioni dirette alla repressione del brigantaggio nelle Provincie Napolitane. (064U1661)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1864-02-07;1661",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1864/02/13/064U1661/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1864-02-13",
+      "numeroGU": "38",
+      "codiceRedazionale": "064U1661",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.L. 22 DICEMBRE 2008, N. 200 , CONVERTITO CON MODIFICAZIONI DALLA L. 18 FEBBRAIO 2009, N. 9 ))"
+    },
+    {
+      "chiave": "/eli/id/1864/01/21/064U1648/sg",
+      "titolo": "REGIO DECRETO 21 gennaio 1864, n. 1648",
+      "tipo": "regio.decreto",
+      "numero": "1648",
+      "dataEmanazione": "1864-01-21",
+      "nir": "urn:nir:stato:regio.decreto:1864-01-21;1648",
+      "eli": "/eli/id/1864/01/21/064U1648/sg",
+      "stato": "abrogato",
+      "sintesi": "Con cui e' prescritta la cessazione del corso legale delle monete d'argento e di biglione di conio austriaco nella Lombardia. (064U1648)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1864-01-21;1648",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1864/01/30/064U1648/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1864-01-30",
+      "numeroGU": "26",
+      "codiceRedazionale": "064U1648",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.LGS. 13 DICEMBRE 2010, N. 212 ))"
+    },
+    {
+      "chiave": "/eli/id/1864/01/14/064U1645/sg",
+      "titolo": "REGIO DECRETO 14 gennaio 1864, n. 1645",
+      "tipo": "regio.decreto",
+      "numero": "1645",
+      "dataEmanazione": "1864-01-14",
+      "nir": "urn:nir:stato:regio.decreto:1864-01-14;1645",
+      "eli": "/eli/id/1864/01/14/064U1645/sg",
+      "stato": "abrogato",
+      "sintesi": "Col quale e' stabilita definitivamente l'Amministrazione del Banco di Napoli. (064U1645)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1864-01-14;1645",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1864/01/30/064U1645/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1864-01-30",
+      "numeroGU": "26",
+      "codiceRedazionale": "064U1645",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.LGS. 13 DICEMBRE 2010, N. 212 ))"
+    },
+    {
+      "chiave": "/eli/id/1863/12/27/063U1621/sg",
+      "titolo": "REGIO DECRETO 27 dicembre 1863, n. 1621",
+      "tipo": "regio.decreto",
+      "numero": "1621",
+      "dataEmanazione": "1863-12-27",
+      "nir": "urn:nir:stato:regio.decreto:1863-12-27;1621",
+      "eli": "/eli/id/1863/12/27/063U1621/sg",
+      "stato": "abrogato",
+      "sintesi": "Che stabilisce un termine pel ritiramento e cambio delle monete di rame di conio Sardo. (063U1621)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1863-12-27;1621",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1864/01/16/063U1621/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1864-01-16",
+      "numeroGU": "14",
+      "codiceRedazionale": "063U1621",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.LGS. 13 DICEMBRE 2010, N. 212 ))"
+    },
+    {
+      "chiave": "/eli/id/1863/12/17/6301029R/sg",
+      "titolo": "REGIO DECRETO 17 dicembre 1863, n. 1029",
+      "tipo": "regio.decreto",
+      "numero": "1029",
+      "dataEmanazione": "1863-12-17",
+      "nir": "urn:nir:stato:regio.decreto:1863-12-17;1029",
+      "eli": "/eli/id/1863/12/17/6301029R/sg",
+      "stato": "abrogato",
+      "sintesi": "Che autorizza la costituzione della Societa' anonima col titolo di Societa' Nazionale italiana per la manifattura delle buste e della carta. (6301029R)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1863-12-17;1029",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1864/01/14/6301029R/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1864-01-14",
+      "numeroGU": "12",
+      "codiceRedazionale": "6301029R",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DALLA L. 7 APRILE 2025, N. 56 ))"
+    }
+  ]
+}

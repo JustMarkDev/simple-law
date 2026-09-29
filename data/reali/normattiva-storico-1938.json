@@ -1,0 +1,199 @@
+{
+  "provenance": {
+    "fonte": "normattiva",
+    "url": "https://api.normattiva.it/t/normattiva.api/bff-opendata/v1/api/v1/ricerca/aggiornati",
+    "recuperatoIl": "2026-09-29T01:49:36.113Z",
+    "licenza": "riproduzione consentita con menzione di fonte, carattere non autentico e gratuito (Note legali dati.normattiva.it; solo la Gazzetta Ufficiale a stampa e' autentica)"
+  },
+  "atti": [
+    {
+      "chiave": "/eli/id/1938/07/24/038U1742/sg",
+      "titolo": "REGIO DECRETO 24 luglio 1938, n. 1742",
+      "tipo": "regio.decreto",
+      "numero": "1742",
+      "dataEmanazione": "1938-07-24",
+      "nir": "urn:nir:stato:regio.decreto:1938-07-24;1742",
+      "eli": "/eli/id/1938/07/24/038U1742/sg",
+      "stato": "abrogato",
+      "sintesi": "Modificazioni agli statuti e tabelle organiche di n. 22 Regie scuole tecniche a indirizzo commerciale. (038U1742)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1938-07-24;1742",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1938/11/22/038U1742/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1938-11-22",
+      "numeroGU": "266",
+      "codiceRedazionale": "038U1742",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.P.R. 13 DICEMBRE 2010, N. 248 ))"
+    },
+    {
+      "chiave": "/eli/id/1938/09/05/038U1390/sg",
+      "titolo": "REGIO DECRETO 5 settembre 1938, n. 1390",
+      "tipo": "regio.decreto",
+      "numero": "1390",
+      "dataEmanazione": "1938-09-05",
+      "nir": "urn:nir:stato:regio.decreto:1938-09-05;1390",
+      "eli": "/eli/id/1938/09/05/038U1390/sg",
+      "stato": "abrogato",
+      "sintesi": "Provvedimenti per la difesa della razza nella scuola fascista. (038U1390)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1938-09-05;1390",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1938/09/13/038U1390/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1938-09-13",
+      "numeroGU": "209",
+      "codiceRedazionale": "038U1390",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.L. 22 DICEMBRE 2008, N. 200 , CONVERTITO CON MODIFICAZIONI DALLA L. 18 FEBBRAIO 2009, N. 9 ))"
+    },
+    {
+      "chiave": "/eli/id/1938/07/29/038U1291/sg",
+      "titolo": "REGIO DECRETO 29 luglio 1938, n. 1291",
+      "tipo": "regio.decreto",
+      "numero": "1291",
+      "dataEmanazione": "1938-07-29",
+      "nir": "urn:nir:stato:regio.decreto:1938-07-29;1291",
+      "eli": "/eli/id/1938/07/29/038U1291/sg",
+      "stato": "abrogato",
+      "sintesi": "Modificazione delle piante organiche della Magistratura per i tribunali di Lucca e di Napoli. (038U1291)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1938-07-29;1291",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1938/08/29/038U1291/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1938-08-29",
+      "numeroGU": "196",
+      "codiceRedazionale": "038U1291",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.P.R. 13 DICEMBRE 2010, N. 248 ))"
+    },
+    {
+      "chiave": "/eli/id/1938/06/23/038U1224/sg",
+      "titolo": "REGIO DECRETO 23 giugno 1938, n. 1224",
+      "tipo": "regio.decreto",
+      "numero": "1224",
+      "dataEmanazione": "1938-06-23",
+      "nir": "urn:nir:stato:regio.decreto:1938-06-23;1224",
+      "eli": "/eli/id/1938/06/23/038U1224/sg",
+      "stato": "abrogato",
+      "sintesi": "Regolamento per i Servizi di ragioneria dei Regi provveditorati agli studi. (038U1224)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1938-06-23;1224",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1938/08/16/038U1224/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1938-08-16",
+      "numeroGU": "185",
+      "codiceRedazionale": "038U1224",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.L. 22 DICEMBRE 2008, N. 200 , CONVERTITO CON MODIFICAZIONI DALLA L. 18 FEBBRAIO 2009, N. 9 ))"
+    },
+    {
+      "chiave": "/eli/id/1938/05/12/038U0911/sg",
+      "titolo": "REGIO DECRETO 12 maggio 1938, n. 911",
+      "tipo": "regio.decreto",
+      "numero": "911",
+      "dataEmanazione": "1938-05-12",
+      "nir": "urn:nir:stato:regio.decreto:1938-05-12;911",
+      "eli": "/eli/id/1938/05/12/038U0911/sg",
+      "stato": "abrogato",
+      "sintesi": "Modificazioni al bando di arruolamento degli agenti nazionali nel Corpo della polizia coloniale. (038U0911)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1938-05-12;911",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1938/07/08/038U0911/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1938-07-08",
+      "numeroGU": "153",
+      "codiceRedazionale": "038U0911",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.LGS. 13 DICEMBRE 2010, N. 212 ))"
+    },
+    {
+      "chiave": "/eli/id/1938/04/15/038U0384/sg",
+      "titolo": "REGIO DECRETO 15 aprile 1938, n. 384",
+      "tipo": "regio.decreto",
+      "numero": "384",
+      "dataEmanazione": "1938-04-15",
+      "nir": "urn:nir:stato:regio.decreto:1938-04-15;384",
+      "eli": "/eli/id/1938/04/15/038U0384/sg",
+      "stato": "abrogato",
+      "sintesi": "14ª Prelevazione dal fondo di riserva per le spese impreviste dell'esercizio finanziario 1937-38. (038U0384)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1938-04-15;384",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1938/04/30/038U0384/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1938-04-30",
+      "numeroGU": "99",
+      "codiceRedazionale": "038U0384",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.LGS. 13 DICEMBRE 2010, N. 212 ))"
+    },
+    {
+      "chiave": "/eli/id/1938/03/17/038U0288/sg",
+      "titolo": "REGIO DECRETO 17 marzo 1938, n. 288",
+      "tipo": "regio.decreto",
+      "numero": "288",
+      "dataEmanazione": "1938-03-17",
+      "nir": "urn:nir:stato:regio.decreto:1938-03-17;288",
+      "eli": "/eli/id/1938/03/17/038U0288/sg",
+      "stato": "abrogato",
+      "sintesi": "13ª Prelevazione dal fondo di riserva per le spese impreviste dell'esercizio finanziario 1937-38. (038U0288)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1938-03-17;288",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1938/04/13/038U0288/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1938-04-13",
+      "numeroGU": "85",
+      "codiceRedazionale": "038U0288",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.LGS. 13 DICEMBRE 2010, N. 212 ))"
+    },
+    {
+      "chiave": "/eli/id/1938/04/02/038U0269/sg",
+      "titolo": "REGIO DECRETO 2 aprile 1938, n. 269",
+      "tipo": "regio.decreto",
+      "numero": "269",
+      "dataEmanazione": "1938-04-02",
+      "nir": "urn:nir:stato:regio.decreto:1938-04-02;269",
+      "eli": "/eli/id/1938/04/02/038U0269/sg",
+      "stato": "abrogato",
+      "sintesi": "Istituzione di quattro Direzioni generali del Ministero per gli scambi e per le valute. (038U0269)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1938-04-02;269",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1938/04/09/038U0269/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1938-04-09",
+      "numeroGU": "82",
+      "codiceRedazionale": "038U0269",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.LGS. 13 DICEMBRE 2010, N. 212 ))"
+    },
+    {
+      "chiave": "/eli/id/1938/01/20/038U0226/sg",
+      "titolo": "REGIO DECRETO 20 gennaio 1938, n. 226",
+      "tipo": "regio.decreto",
+      "numero": "226",
+      "dataEmanazione": "1938-01-20",
+      "nir": "urn:nir:stato:regio.decreto:1938-01-20;226",
+      "eli": "/eli/id/1938/01/20/038U0226/sg",
+      "stato": "abrogato",
+      "sintesi": "Approvazione del regolamento per l'esecuzione della legge 7 giugno 1934-XII, n. 899, sull'avanzamento degli ufficiali del Regio esercito. (038U0226)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1938-01-20;226",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1938/03/31/038U0226/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1938-03-31",
+      "numeroGU": "74",
+      "codiceRedazionale": "038U0226",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.LGS. 13 DICEMBRE 2010, N. 212 ))"
+    }
+  ]
+}

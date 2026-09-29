@@ -1,0 +1,619 @@
+{
+  "provenance": {
+    "fonte": "normattiva",
+    "url": "https://api.normattiva.it/t/normattiva.api/bff-opendata/v1/api/v1/ricerca/aggiornati",
+    "recuperatoIl": "2026-09-29T01:55:58.574Z",
+    "licenza": "riproduzione consentita con menzione di fonte, carattere non autentico e gratuito (Note legali dati.normattiva.it; solo la Gazzetta Ufficiale a stampa e' autentica)"
+  },
+  "atti": [
+    {
+      "chiave": "/eli/id/1865/11/26/065U2599/sg",
+      "titolo": "REGIO DECRETO 26 novembre 1865, n. 2599",
+      "tipo": "regio.decreto",
+      "numero": "2599",
+      "dataEmanazione": "1865-11-26",
+      "nir": "urn:nir:stato:regio.decreto:1865-11-26;2599",
+      "eli": "/eli/id/1865/11/26/065U2599/sg",
+      "stato": "abrogato",
+      "sintesi": "Col quale sono apportate alcune modificazioni al Codice Penale. (065U2599)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1865-11-26;2599",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1865/11/28/065U2599/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1865-11-28",
+      "numeroGU": "306",
+      "codiceRedazionale": "065U2599",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.LGS. 13 DICEMBRE 2010, N. 212 ))"
+    },
+    {
+      "chiave": "/eli/id/1865/10/23/065U2586/sg",
+      "titolo": "REGIO DECRETO 23 ottobre 1865, n. 2586",
+      "tipo": "regio.decreto",
+      "numero": "2586",
+      "dataEmanazione": "1865-10-23",
+      "nir": "urn:nir:stato:regio.decreto:1865-10-23;2586",
+      "eli": "/eli/id/1865/10/23/065U2586/sg",
+      "stato": "abrogato",
+      "sintesi": "Che approva la Convenzione pel passaggio alla Banca d'Italia del servizio di Tesoreria in tutto lo Stato. (065U2586)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1865-10-23;2586",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1865/11/08/065U2586/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1865-11-08",
+      "numeroGU": "286",
+      "codiceRedazionale": "065U2586",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.LGS. 13 DICEMBRE 2010, N. 212 ))"
+    },
+    {
+      "chiave": "/eli/id/1865/09/07/065U2505/sg",
+      "titolo": "REGIO DECRETO 7 settembre 1865, n. 2505",
+      "tipo": "regio.decreto",
+      "numero": "2505",
+      "dataEmanazione": "1865-09-07",
+      "nir": "urn:nir:stato:regio.decreto:1865-09-07;2505",
+      "eli": "/eli/id/1865/09/07/065U2505/sg",
+      "stato": "abrogato",
+      "sintesi": "Con cui sono instituiti Commissarii Ispettori a disposizione del Ministero dei Lavori Pubblici per l'alta sorveglianza del servizio delle ferrovie concesse all'industria privata. (065U2505)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1865-09-07;2505",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1865/10/07/065U2505/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1865-10-07",
+      "numeroGU": "255",
+      "codiceRedazionale": "065U2505",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.LGS. 13 DICEMBRE 2010, N. 212 ))"
+    },
+    {
+      "chiave": "/eli/id/1865/09/01/065U2466/sg",
+      "titolo": "LEGGE 1 settembre 1865, n. 2466",
+      "tipo": "legge",
+      "numero": "2466",
+      "dataEmanazione": "1865-09-01",
+      "nir": "urn:nir:stato:legge:1865-09-01;2466",
+      "eli": "/eli/id/1865/09/01/065U2466/sg",
+      "stato": "abrogato",
+      "sintesi": "Concernente la concessione di una derivazione d'acqua dal fiume Musone a favore della citta' di Ancona. (065U2466)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1865-09-01;2466",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1865/09/08/065U2466/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1865-09-08",
+      "numeroGU": "226",
+      "codiceRedazionale": "065U2466",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.L. 22 DICEMBRE 2008, N. 200 , CONVERTITO CON MODIFICAZIONI DALLA L. 18 FEBBRAIO 2009, N. 9 ))"
+    },
+    {
+      "chiave": "/eli/id/1865/07/26/065U2455/sg",
+      "titolo": "REGIO DECRETO 26 luglio 1865, n. 2455",
+      "tipo": "regio.decreto",
+      "numero": "2455",
+      "dataEmanazione": "1865-07-26",
+      "nir": "urn:nir:stato:regio.decreto:1865-07-26;2455",
+      "eli": "/eli/id/1865/07/26/065U2455/sg",
+      "stato": "abrogato",
+      "sintesi": "Che unisce gli Uffici del Catasto all'Amministrazione delle Tasse e del Demanio, ed organizza gli Uffici dell'Amministrazione stessa. (065U2455)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1865-07-26;2455",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1865/09/08/065U2455/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1865-09-08",
+      "numeroGU": "226",
+      "codiceRedazionale": "065U2455",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.LGS. 13 DICEMBRE 2010, N. 212 ))"
+    },
+    {
+      "chiave": "/eli/id/1865/09/07/065U2462/sg",
+      "titolo": "REGIO DECRETO 7 settembre 1865, n. 2462",
+      "tipo": "regio.decreto",
+      "numero": "2462",
+      "dataEmanazione": "1865-09-07",
+      "nir": "urn:nir:stato:regio.decreto:1865-09-07;2462",
+      "eli": "/eli/id/1865/09/07/065U2462/sg",
+      "stato": "abrogato",
+      "sintesi": "che scioglie la Camera dei Deputati, fissa il giorno delle nuove elezioni generali, e convoca il Parlamento Nazionale in Firenze. (065U2462)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1865-09-07;2462",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1865/09/07/065U2462/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1865-09-07",
+      "numeroGU": "225",
+      "codiceRedazionale": "065U2462",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.LGS. 13 DICEMBRE 2010, N. 212 ))"
+    },
+    {
+      "chiave": "/eli/id/1865/06/25/065U2361/sg",
+      "titolo": "REGIO DECRETO 25 giugno 1865, n. 2361",
+      "tipo": "regio.decreto",
+      "numero": "2361",
+      "dataEmanazione": "1865-06-25",
+      "nir": "urn:nir:stato:regio.decreto:1865-06-25;2361",
+      "eli": "/eli/id/1865/06/25/065U2361/sg",
+      "stato": "in_vigore",
+      "sintesi": "Che approva il Regolamento per l'esecuzione della Legge sul contenzioso amministrativo. (065U2361)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1865-06-25;2361",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1865/07/22/065U2361/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1865-07-22",
+      "numeroGU": "179",
+      "codiceRedazionale": "065U2361",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "VITTORIO EMANUELE II PER GRAZIA DI DIO E PER VOLONT&Agrave; DELLA NAZIONE RE D'ITALIA Vista la Legge sul contenzioso amministrativo (Allegato E della Legge 20 marzo 1865); Sulla proposta del Ministro Guardasigilli e di quello dell'interno di concerto cogli altri Ministri; Abbiamo decretato e decretiamo: Art. 1 Articolo unico. &Egrave; approvato il Regolamento visto d'ordine Nostro dal Ministro Guardasigilli e da quello dell'interno per l'esecuzione della Legge sul contenzioso amministrativo (Allegato E della Legge 29 marzo 1865). Ordiniamo che il presente Decreto, munito del Sigillo dello Stato, sia inserto nella raccolta ufficiale delle leggi e dei decreti del Regno d'Italia, mandando a chiunque spetti di osservarlo e di farlo osservare. Dato a Firenze add&igrave; 25 giugno 1865. VITTORIO EMANUELE Registrato alla Corte dei conti add&igrave; 18 luglio 1863 Reg.&deg; 33 Atti del Governo a c. 89. Ayres. Luogo del Sigillo. V. Il Guardasigilli Vacca. G. Vacca. G. Lanza."
+    },
+    {
+      "chiave": "/eli/id/1865/06/28/065U2436/sg",
+      "titolo": "REGIO DECRETO 28 giugno 1865, n. 2436",
+      "tipo": "regio.decreto",
+      "numero": "2436",
+      "dataEmanazione": "1865-06-28",
+      "nir": "urn:nir:stato:regio.decreto:1865-06-28;2436",
+      "eli": "/eli/id/1865/06/28/065U2436/sg",
+      "stato": "abrogato",
+      "sintesi": "Col quale e' soppresso il 3.° Gran Dipartimento militare e quattro Sotto-Divisioni militari. (065U2436)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1865-06-28;2436",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1865/07/20/065U2436/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1865-07-20",
+      "numeroGU": "177",
+      "codiceRedazionale": "065U2436",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.LGS. 13 DICEMBRE 2010, N. 212 ))"
+    },
+    {
+      "chiave": "/eli/id/1865/06/22/065U2375/sg",
+      "titolo": "REGIO DECRETO 22 giugno 1865, n. 2375",
+      "tipo": "regio.decreto",
+      "numero": "2375",
+      "dataEmanazione": "1865-06-22",
+      "nir": "urn:nir:stato:regio.decreto:1865-06-22;2375",
+      "eli": "/eli/id/1865/06/22/065U2375/sg",
+      "stato": "abrogato",
+      "sintesi": "Che istituisce in Firenze una Commissione per la verifica dei titoli relativi alle interruzioni di servizio sofferte da militari provenienti dagli Eserciti dei Governi provvisori del 1848 e 1849. (065U2375)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1865-06-22;2375",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1865/07/18/065U2375/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1865-07-18",
+      "numeroGU": "175",
+      "codiceRedazionale": "065U2375",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.LGS. 13 DICEMBRE 2010, N. 212 ))"
+    },
+    {
+      "chiave": "/eli/id/1865/06/25/065U2337/sg",
+      "titolo": "LEGGE 25 giugno 1865, n. 2337",
+      "tipo": "legge",
+      "numero": "2337",
+      "dataEmanazione": "1865-06-25",
+      "nir": "urn:nir:stato:legge:1865-06-25;2337",
+      "eli": "/eli/id/1865/06/25/065U2337/sg",
+      "stato": "abrogato",
+      "sintesi": "Sui diritti spettanti agli Autori delle opere dell'ingegno. (065U2337)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1865-06-25;2337",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1865/07/05/065U2337/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1865-07-05",
+      "numeroGU": "162",
+      "codiceRedazionale": "065U2337",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.L. 22 DICEMBRE 2008, N. 200 , CONVERTITO CON MODIFICAZIONI DALLA L. 18 FEBBRAIO 2009, N. 9 ))"
+    },
+    {
+      "chiave": "/eli/id/1865/05/25/065U2319/sg",
+      "titolo": "REGIO DECRETO 25 maggio 1865, n. 2319",
+      "tipo": "regio.decreto",
+      "numero": "2319",
+      "dataEmanazione": "1865-05-25",
+      "nir": "urn:nir:stato:regio.decreto:1865-05-25;2319",
+      "eli": "/eli/id/1865/05/25/065U2319/sg",
+      "stato": "abrogato",
+      "sintesi": "Che approva il Regolamento per l'esecuzione della legge di unificazione dell'imposta sui fabbricati. (065U2319)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1865-05-25;2319",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1865/06/11/065U2319/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1865-06-11",
+      "numeroGU": "139",
+      "codiceRedazionale": "065U2319",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.LGS. 13 DICEMBRE 2010, N. 212 ))"
+    },
+    {
+      "chiave": "/eli/id/1865/05/14/065U2279/sg",
+      "titolo": "LEGGE 14 maggio 1865, n. 2279",
+      "tipo": "legge",
+      "numero": "2279",
+      "dataEmanazione": "1865-05-14",
+      "nir": "urn:nir:stato:legge:1865-05-14;2279",
+      "eli": "/eli/id/1865/05/14/065U2279/sg",
+      "stato": "abrogato",
+      "sintesi": "Pel riordinamento ed ampliazione delle strade ferrate del Regno, colla cessione di quelle governative. (065U2279)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1865-05-14;2279",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1865/05/15/065U2279/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1865-05-15",
+      "numeroGU": "116",
+      "codiceRedazionale": "065U2279",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.L. 22 DICEMBRE 2008, N. 200 , CONVERTITO CON MODIFICAZIONI DALLA L. 18 FEBBRAIO 2009, N. 9 ))"
+    },
+    {
+      "chiave": "/eli/id/1865/02/26/065U2182/sg",
+      "titolo": "REGIO DECRETO 26 febbraio 1865, n. 2182",
+      "tipo": "regio.decreto",
+      "numero": "2182",
+      "dataEmanazione": "1865-02-26",
+      "nir": "urn:nir:stato:regio.decreto:1865-02-26;2182",
+      "eli": "/eli/id/1865/02/26/065U2182/sg",
+      "stato": "abrogato",
+      "sintesi": "Circa l'accettazione delle cauzioni gia' prestate dai Magazzinieri delle privative nelle Romagne, nelle Marche e nell'Umbria. (065U2182)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1865-02-26;2182",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1865/03/17/065U2182/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1865-03-17",
+      "numeroGU": "66",
+      "codiceRedazionale": "065U2182",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.LGS. 13 DICEMBRE 2010, N. 212 ))"
+    },
+    {
+      "chiave": "/eli/id/1865/01/26/065U2167/sg",
+      "titolo": "REGIO DECRETO 26 gennaio 1865, n. 2167",
+      "tipo": "regio.decreto",
+      "numero": "2167",
+      "dataEmanazione": "1865-01-26",
+      "nir": "urn:nir:stato:regio.decreto:1865-01-26;2167",
+      "eli": "/eli/id/1865/01/26/065U2167/sg",
+      "stato": "abrogato",
+      "sintesi": "Col quale e' approvato il Capitolato esecutivo della Convenzione colla Societa' anonima dei Canali Italiani d'irrigazione (Canale Cavour). (065U2167)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1865-01-26;2167",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1865/03/08/065U2167/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1865-03-08",
+      "numeroGU": "58",
+      "codiceRedazionale": "065U2167",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.LGS. 13 DICEMBRE 2010, N. 212 ))"
+    },
+    {
+      "chiave": "/eli/id/1864/12/24/064U2061/sg",
+      "titolo": "LEGGE 24 dicembre 1864, n. 2061",
+      "tipo": "legge",
+      "numero": "2061",
+      "dataEmanazione": "1864-12-24",
+      "nir": "urn:nir:stato:legge:1864-12-24;2061",
+      "eli": "/eli/id/1864/12/24/064U2061/sg",
+      "stato": "abrogato",
+      "sintesi": "È prorogata a tutto l'anno 1865 quella del 7 febbraio 1864, n.° 1661, contenente disposizioni dirette alla repressione del brigantaggio. (064U2061)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1864-12-24;2061",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1864/12/26/064U2061/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1864-12-26",
+      "numeroGU": "305",
+      "codiceRedazionale": "064U2061",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.L. 22 DICEMBRE 2008, N. 200 , CONVERTITO CON MODIFICAZIONI DALLA L. 18 FEBBRAIO 2009, N. 9 ))"
+    },
+    {
+      "chiave": "/eli/id/1864/10/23/6401400R/sg",
+      "titolo": "REGIO DECRETO 23 ottobre 1864, n. 1400",
+      "tipo": "regio.decreto",
+      "numero": "1400",
+      "dataEmanazione": "1864-10-23",
+      "nir": "urn:nir:stato:regio.decreto:1864-10-23;1400",
+      "eli": "/eli/id/1864/10/23/6401400R/sg",
+      "stato": "abrogato",
+      "sintesi": "Con cui e' autorizzata la Societa' italiana per acquisto di beni demaniali costituitasi in Torino. (6401400R)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1864-10-23;1400",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1864/11/23/6401400R/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1864-11-23",
+      "numeroGU": "277",
+      "codiceRedazionale": "6401400R",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DALLA L. 7 APRILE 2025, N. 56 ))"
+    },
+    {
+      "chiave": "/eli/id/1864/07/14/064U1831/sg",
+      "titolo": "LEGGE 14 luglio 1864, n. 1831",
+      "tipo": "legge",
+      "numero": "1831",
+      "dataEmanazione": "1864-07-14",
+      "nir": "urn:nir:stato:legge:1864-07-14;1831",
+      "eli": "/eli/id/1864/07/14/064U1831/sg",
+      "stato": "abrogato",
+      "sintesi": "Pel conguaglio dell'imposta fondiaria fra le diverse Provincie dello Stato. (064U1831)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1864-07-14;1831",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1864/07/23/064U1831/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1864-07-23",
+      "numeroGU": "174",
+      "codiceRedazionale": "064U1831",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.L. 22 DICEMBRE 2008, N. 200 , CONVERTITO CON MODIFICAZIONI DALLA L. 18 FEBBRAIO 2009, N. 9 ))"
+    },
+    {
+      "chiave": "/eli/id/1864/03/20/6401142R/sg",
+      "titolo": "REGIO DECRETO 20 marzo 1864, n. 1142",
+      "tipo": "regio.decreto",
+      "numero": "1142",
+      "dataEmanazione": "1864-03-20",
+      "nir": "urn:nir:stato:regio.decreto:1864-03-20;1142",
+      "eli": "/eli/id/1864/03/20/6401142R/sg",
+      "stato": "abrogato",
+      "sintesi": "Approvativo della Societa' anonima denominata Sartoria Nazionale in Milano. (6401142R)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1864-03-20;1142",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1864/04/13/6401142R/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1864-04-13",
+      "numeroGU": "89",
+      "codiceRedazionale": "6401142R",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DALLA L. 7 APRILE 2025, N. 56 ))"
+    },
+    {
+      "chiave": "/eli/id/1864/02/11/064U1663/sg",
+      "titolo": "REGIO DECRETO 11 febbraio 1864, n. 1663",
+      "tipo": "regio.decreto",
+      "numero": "1663",
+      "dataEmanazione": "1864-02-11",
+      "nir": "urn:nir:stato:regio.decreto:1864-02-11;1663",
+      "eli": "/eli/id/1864/02/11/064U1663/sg",
+      "stato": "abrogato",
+      "sintesi": "Che approva il regolamento per l'esecuzione dell'art. 6 della legge 7 febbraio 1864, n.° 1661. (064U1663)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1864-02-11;1663",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1864/02/13/064U1663/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1864-02-13",
+      "numeroGU": "38",
+      "codiceRedazionale": "064U1663",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.LGS. 13 DICEMBRE 2010, N. 212 ))"
+    },
+    {
+      "chiave": "/eli/id/1864/02/11/064U1662/sg",
+      "titolo": "REGIO DECRETO 11 febbraio 1864, n. 1662",
+      "tipo": "regio.decreto",
+      "numero": "1662",
+      "dataEmanazione": "1864-02-11",
+      "nir": "urn:nir:stato:regio.decreto:1864-02-11;1662",
+      "eli": "/eli/id/1864/02/11/064U1662/sg",
+      "stato": "abrogato",
+      "sintesi": "Col quale sono designate le Provincie Napolitane infestate dal brigantaggio, in esecuzione dell'art. 1 della legge 7 febbraio 1864, n.° 1661. (064U1662)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1864-02-11;1662",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1864/02/13/064U1662/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1864-02-13",
+      "numeroGU": "38",
+      "codiceRedazionale": "064U1662",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.LGS. 13 DICEMBRE 2010, N. 212 ))"
+    },
+    {
+      "chiave": "/eli/id/1863/12/06/063U1572/sg",
+      "titolo": "REGIO DECRETO 6 dicembre 1863, n. 1572",
+      "tipo": "regio.decreto",
+      "numero": "1572",
+      "dataEmanazione": "1863-12-06",
+      "nir": "urn:nir:stato:regio.decreto:1863-12-06;1572",
+      "eli": "/eli/id/1863/12/06/063U1572/sg",
+      "stato": "abrogato",
+      "sintesi": "Col quale l'Archivista del Grande Archivio di Napoli, e quelli degli Archivi Provinciali delle Provincie Napolitane sono incaricati della formazione delle copie delle sentenze e delle deliberazioni dei Collegi giudiziari che debbono servire per copie esecutive. (063U1572)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1863-12-06;1572",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1863/12/23/063U1572/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1863-12-23",
+      "numeroGU": "303",
+      "codiceRedazionale": "063U1572",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.LGS. 13 DICEMBRE 2010, N. 212 ))"
+    },
+    {
+      "chiave": "/eli/id/1863/11/05/063U1535/sg",
+      "titolo": "REGIO DECRETO 5 novembre 1863, n. 1535",
+      "tipo": "regio.decreto",
+      "numero": "1535",
+      "dataEmanazione": "1863-11-05",
+      "nir": "urn:nir:stato:regio.decreto:1863-11-05;1535",
+      "eli": "/eli/id/1863/11/05/063U1535/sg",
+      "stato": "abrogato",
+      "sintesi": "Contenente disposizioni per gl'Impiegati del Lotto che rimangano in disponibilita' all'attuazione del nuovo ordinamento del medesimo. (063U1535)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1863-11-05;1535",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1863/11/16/063U1535/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1863-11-16",
+      "numeroGU": "271",
+      "codiceRedazionale": "063U1535",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.LGS. 13 DICEMBRE 2010, N. 212 ))"
+    },
+    {
+      "chiave": "/eli/id/1863/10/11/6300924R/sg",
+      "titolo": "REGIO DECRETO 11 ottobre 1863, n. 924",
+      "tipo": "regio.decreto",
+      "numero": "924",
+      "dataEmanazione": "1863-10-11",
+      "nir": "urn:nir:stato:regio.decreto:1863-10-11;924",
+      "eli": "/eli/id/1863/10/11/6300924R/sg",
+      "stato": "abrogato",
+      "sintesi": "Col quale vengono assoggettati ad una sovraimposta a favore della Camera di commercio e d'arti di Messina i contratti di assicurazione marittima conchiusi nel territorio dipendente dalla sua giurisdizione. (6300924R)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1863-10-11;924",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1863/11/03/6300924R/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1863-11-03",
+      "numeroGU": "260",
+      "codiceRedazionale": "6300924R",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DALLA L. 7 APRILE 2025, N. 56 ))"
+    },
+    {
+      "chiave": "/eli/id/1863/04/24/6300719R/sg",
+      "titolo": "REGIO DECRETO 24 aprile 1863, n. 719",
+      "tipo": "regio.decreto",
+      "numero": "719",
+      "dataEmanazione": "1863-04-24",
+      "nir": "urn:nir:stato:regio.decreto:1863-04-24;719",
+      "eli": "/eli/id/1863/04/24/6300719R/sg",
+      "stato": "abrogato",
+      "sintesi": "Col quale e' autorizzata la Societa' anonima costituitasi in Torino sotto la denominazione di Banca di Credito Italiano. (6300719R)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1863-04-24;719",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1863/05/07/6300719R/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1863-05-07",
+      "numeroGU": "109",
+      "codiceRedazionale": "6300719R",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DALLA L. 7 APRILE 2025, N. 56 ))"
+    },
+    {
+      "chiave": "/eli/id/1863/03/01/063U1171/sg",
+      "titolo": "REGIO DECRETO 1 marzo 1863, n. 1171",
+      "tipo": "regio.decreto",
+      "numero": "1171",
+      "dataEmanazione": "1863-03-01",
+      "nir": "urn:nir:stato:regio.decreto:1863-03-01;1171",
+      "eli": "/eli/id/1863/03/01/063U1171/sg",
+      "stato": "abrogato",
+      "sintesi": "Contenente l'ordinamento dello Stato Maggiore dei porti. (063U1171)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1863-03-01;1171",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1863/03/28/063U1171/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1863-03-28",
+      "numeroGU": "75",
+      "codiceRedazionale": "063U1171",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.P.R. 13 DICEMBRE 2010, N. 248 ))"
+    },
+    {
+      "chiave": "/eli/id/1862/10/30/062U1022/sg",
+      "titolo": "REGIO DECRETO 30 ottobre 1862, n. 1022",
+      "tipo": "regio.decreto",
+      "numero": "1022",
+      "dataEmanazione": "1862-10-30",
+      "nir": "urn:nir:stato:regio.decreto:1862-10-30;1022",
+      "eli": "/eli/id/1862/10/30/062U1022/sg",
+      "stato": "abrogato",
+      "sintesi": "Con cui e' approvato il regolamento per la polizia, sicurezza e regolarita' dell'esercizio delle ferrovie. (062U1022)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1862-10-30;1022",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1862/12/23/062U1022/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1862-12-23",
+      "numeroGU": "303",
+      "codiceRedazionale": "062U1022",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.P.R. 13 DICEMBRE 2010, N. 248 ))"
+    },
+    {
+      "chiave": "/eli/id/1862/08/17/062U0771/sg",
+      "titolo": "REGIO DECRETO 17 agosto 1862, n. 771",
+      "tipo": "regio.decreto",
+      "numero": "771",
+      "dataEmanazione": "1862-08-17",
+      "nir": "urn:nir:stato:regio.decreto:1862-08-17;771",
+      "eli": "/eli/id/1862/08/17/062U0771/sg",
+      "stato": "abrogato",
+      "sintesi": "Che approva il Regolamento per la Regia Scuola Normale di Pisa. (062U0771)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1862-08-17;771",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1862/08/26/062U0771/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1862-08-26",
+      "numeroGU": "202",
+      "codiceRedazionale": "062U0771",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.P.R. 13 DICEMBRE 2010, N. 248 ))"
+    },
+    {
+      "chiave": "/eli/id/1862/05/06/062U0593/sg",
+      "titolo": "LEGGE 6 maggio 1862, n. 593",
+      "tipo": "legge",
+      "numero": "593",
+      "dataEmanazione": "1862-05-06",
+      "nir": "urn:nir:stato:legge:1862-05-06;593",
+      "eli": "/eli/id/1862/05/06/062U0593/sg",
+      "stato": "abrogato",
+      "sintesi": "Sulle tasse ipotecarie. (062U0593)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1862-05-06;593",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1862/05/22/062U0593/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1862-05-22",
+      "numeroGU": "122",
+      "codiceRedazionale": "062U0593",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.L. 22 DICEMBRE 2008, N. 200 , CONVERTITO CON MODIFICAZIONI DALLA L. 18 FEBBRAIO 2009, N. 9 ))"
+    },
+    {
+      "chiave": "/eli/id/1861/07/17/061U0100/sg",
+      "titolo": "LEGGE 17 luglio 1861, n. 100",
+      "tipo": "legge",
+      "numero": "100",
+      "dataEmanazione": "1861-07-17",
+      "nir": "urn:nir:stato:legge:1861-07-17;100",
+      "eli": "/eli/id/1861/07/17/061U0100/sg",
+      "stato": "abrogato",
+      "sintesi": "Che approva la concessione di una strada ferrata da Vigevano a Milano. (061U0100)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1861-07-17;100",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1861/08/09/061U0100/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1861-08-09",
+      "numeroGU": "194",
+      "codiceRedazionale": "061U0100",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.L. 22 DICEMBRE 2008, N. 200 , CONVERTITO CON MODIFICAZIONI DALLA L. 18 FEBBRAIO 2009, N. 9 ))"
+    }
+  ]
+}

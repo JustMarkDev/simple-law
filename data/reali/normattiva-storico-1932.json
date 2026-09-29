@@ -1,0 +1,325 @@
+{
+  "provenance": {
+    "fonte": "normattiva",
+    "url": "https://api.normattiva.it/t/normattiva.api/bff-opendata/v1/api/v1/ricerca/aggiornati",
+    "recuperatoIl": "2026-09-29T01:41:05.716Z",
+    "licenza": "riproduzione consentita con menzione di fonte, carattere non autentico e gratuito (Note legali dati.normattiva.it; solo la Gazzetta Ufficiale a stampa e' autentica)"
+  },
+  "atti": [
+    {
+      "chiave": "/eli/id/1932/12/01/032U1551/sg",
+      "titolo": "REGIO DECRETO 1 dicembre 1932, n. 1551",
+      "tipo": "regio.decreto",
+      "numero": "1551",
+      "dataEmanazione": "1932-12-01",
+      "nir": "urn:nir:stato:regio.decreto:1932-12-01;1551",
+      "eli": "/eli/id/1932/12/01/032U1551/sg",
+      "stato": "abrogato",
+      "sintesi": "Nuovi ruoli degli amministratori giudiziari presso i tribunali del Regno. (032U1551)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1932-12-01;1551",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1932/12/12/032U1551/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1932-12-12",
+      "numeroGU": "285",
+      "codiceRedazionale": "032U1551",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.LGS. 13 DICEMBRE 2010, N. 212 ))"
+    },
+    {
+      "chiave": "/eli/id/1932/11/05/032U1407/sg",
+      "titolo": "REGIO DECRETO 5 novembre 1932, n. 1407",
+      "tipo": "regio.decreto",
+      "numero": "1407",
+      "dataEmanazione": "1932-11-05",
+      "nir": "urn:nir:stato:regio.decreto:1932-11-05;1407",
+      "eli": "/eli/id/1932/11/05/032U1407/sg",
+      "stato": "in_vigore",
+      "sintesi": "Provvedimenti di clemenza per mancanze commesse da militari del Regio esercito, della Regia marina e della Regia aeronautica. (032U1407)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1932-11-05;1407",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1932/11/08/032U1407/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1932-11-08",
+      "numeroGU": "257",
+      "codiceRedazionale": "032U1407",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 Sono condonate le seguenti punizioni, gi&agrave; inflitte o da infliggersi, relative a mancanze commesse dal 29 ottobre 1927-VI a tutto il 28 ottobre 1932-X da militari del Regio esercito, della Regia marina e della Regia aeronautica, in Patria e nelle Colonie o nelle isole dell'Egeo: a) sospensione dall'impiego (esclusa quella di cui all'articolo 66 della legge sullo stato degli ufficiali 11 marzo 1926, n. 397, e successive modificazioni); b) sospensione dal grado (esclusa quella di carattere precauzionale o inerente a condanna per reato che non sia compreso nell'amnistia di cui al R. decreto 5 novembre 1932-XI, n. 1403); c) retrocessione dal grado: ai sensi della lettera a), del paragrafo 85 del regolamento sullo stato dei sottufficiali del Regio esercito, approvato con R. decreto 21 gennaio 1907, n. 115 , e successive modificazioni, o del n. 687 del regolamento di disciplina militane per il Regio esercito 24 giugno 1929; o ai sensi della lettera a) n. 1 dell'art. 92 dell'ordinamento del Corpo Reale equipaggi marittimi e stato giuridico dei sottufficiali della Regia marina, approvato con R. decreto 8 giugno 1931, n. 914, o della lettera d) n. 8 dell'articolo 216 del regolamento di disciplina per i corpi militari della Regia marina; o ai sensi del 1° comma dell'art. 6 del R. decreto 31 gennaio 1926, n. 220 , relativo ai sottufficiali e militari di truppa della Regia aeronautica. Tale condono &egrave; limitato solo al conferimento del grado senza dar luogo a riammissione in servizio; d) passaggio alle compagnie di correzione, purch&egrave; esso non sia stato disposto per mancanze di carattere indecoroso, o contro le patrie istituzioni."
+    },
+    {
+      "chiave": "/eli/id/1932/07/28/032U1277/sg",
+      "titolo": "REGIO DECRETO 28 luglio 1932, n. 1277",
+      "tipo": "regio.decreto",
+      "numero": "1277",
+      "dataEmanazione": "1932-07-28",
+      "nir": "urn:nir:stato:regio.decreto:1932-07-28;1277",
+      "eli": "/eli/id/1932/07/28/032U1277/sg",
+      "stato": "abrogato",
+      "sintesi": "Modifiche allo statuto della Regia accademia navale. (032U1277)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1932-07-28;1277",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1932/10/07/032U1277/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1932-10-07",
+      "numeroGU": "233",
+      "codiceRedazionale": "032U1277",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.P.R. 13 DICEMBRE 2010, N. 248 ))"
+    },
+    {
+      "chiave": "/eli/id/1932/06/06/032U0806/sg",
+      "titolo": "LEGGE 6 giugno 1932, n. 806",
+      "tipo": "legge",
+      "numero": "806",
+      "dataEmanazione": "1932-06-06",
+      "nir": "urn:nir:stato:legge:1932-06-06;806",
+      "eli": "/eli/id/1932/06/06/032U0806/sg",
+      "stato": "abrogato",
+      "sintesi": "Modificazione all'art. 20 del R. decreto-legge 5 luglio 1928, n. 1817, che istitui' l'Istituto per il credito navale. (032U0806)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1932-06-06;806",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1932/07/15/032U0806/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1932-07-15",
+      "numeroGU": "162",
+      "codiceRedazionale": "032U0806",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.L. 22 DICEMBRE 2008, N. 200 , CONVERTITO CON MODIFICAZIONI DALLA L. 18 FEBBRAIO 2009, N. 9 ))"
+    },
+    {
+      "chiave": "/eli/id/1932/05/30/032U0720/sg",
+      "titolo": "LEGGE 30 maggio 1932, n. 720",
+      "tipo": "legge",
+      "numero": "720",
+      "dataEmanazione": "1932-05-30",
+      "nir": "urn:nir:stato:legge:1932-05-30;720",
+      "eli": "/eli/id/1932/05/30/032U0720/sg",
+      "stato": "abrogato",
+      "sintesi": "Provvidenze dirette ad agevolare la costruzione e l'attrezzamento di sylos e di magazzini da cereali. (032U0720)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1932-05-30;720",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1932/07/01/032U0720/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1932-07-01",
+      "numeroGU": "150",
+      "codiceRedazionale": "032U0720",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.L. 25 GIUGNO 2008, N. 112 , CONVERTITO CON MODIFICAZIONI DALLA L. 6 AGOSTO 2008, N. 133 ))"
+    },
+    {
+      "chiave": "/eli/id/1932/06/16/032U0711/sg",
+      "titolo": "LEGGE 16 giugno 1932, n. 711",
+      "tipo": "legge",
+      "numero": "711",
+      "dataEmanazione": "1932-06-16",
+      "nir": "urn:nir:stato:legge:1932-06-16;711",
+      "eli": "/eli/id/1932/06/16/032U0711/sg",
+      "stato": "abrogato",
+      "sintesi": "Stato di previsione della spesa del Ministero delle finanze e stato di previsione dell'entrata, per l'esercizio finanziario dal 1° luglio 1932 al 30 giugno 1933. (032U0711)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1932-06-16;711",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1932/06/30/032U0711/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1932-06-30",
+      "numeroGU": "149",
+      "codiceRedazionale": "032U0711",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.L. 22 DICEMBRE 2008, N. 200 , CONVERTITO CON MODIFICAZIONI DALLA L. 18 FEBBRAIO 2009, N. 9 ))"
+    },
+    {
+      "chiave": "/eli/id/1932/04/11/032U0440/sg",
+      "titolo": "REGIO DECRETO 11 aprile 1932, n. 440",
+      "tipo": "regio.decreto",
+      "numero": "440",
+      "dataEmanazione": "1932-04-11",
+      "nir": "urn:nir:stato:regio.decreto:1932-04-11;440",
+      "eli": "/eli/id/1932/04/11/032U0440/sg",
+      "stato": "abrogato",
+      "sintesi": "Classificazione della strada Gardesana occidentale fra le strade statali e declassificazione di un tratto della strada del Caffaro. (032U0440)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1932-04-11;440",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1932/05/11/032U0440/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1932-05-11",
+      "numeroGU": "108",
+      "codiceRedazionale": "032U0440",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.LGS. 13 DICEMBRE 2010, N. 212 ))"
+    },
+    {
+      "chiave": "/eli/id/1932/04/07/032U0378/sg",
+      "titolo": "REGIO DECRETO 7 aprile 1932, n. 378",
+      "tipo": "regio.decreto",
+      "numero": "378",
+      "dataEmanazione": "1932-04-07",
+      "nir": "urn:nir:stato:regio.decreto:1932-04-07;378",
+      "eli": "/eli/id/1932/04/07/032U0378/sg",
+      "stato": "abrogato",
+      "sintesi": "17ª prelevazione dal fondo di riserva per le spese impreviste dell'esercizio finanziario 1931-32. (032U0378)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1932-04-07;378",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1932/04/29/032U0378/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1932-04-29",
+      "numeroGU": "99",
+      "codiceRedazionale": "032U0378",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.LGS. 13 DICEMBRE 2010, N. 212 ))"
+    },
+    {
+      "chiave": "/eli/id/1932/03/24/032U0262/sg",
+      "titolo": "REGIO DECRETO 24 marzo 1932, n. 262",
+      "tipo": "regio.decreto",
+      "numero": "262",
+      "dataEmanazione": "1932-03-24",
+      "nir": "urn:nir:stato:regio.decreto:1932-03-24;262",
+      "eli": "/eli/id/1932/03/24/032U0262/sg",
+      "stato": "abrogato",
+      "sintesi": "16ª prelevazione dal Fondo di riserva per le spese impreviste dell'esercizio finanziario 1931-32. (032U0262)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1932-03-24;262",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1932/04/06/032U0262/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1932-04-06",
+      "numeroGU": "80",
+      "codiceRedazionale": "032U0262",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.LGS. 13 DICEMBRE 2010, N. 212 ))"
+    },
+    {
+      "chiave": "/eli/id/1932/02/18/032U0123/sg",
+      "titolo": "REGIO DECRETO 18 febbraio 1932, n. 123",
+      "tipo": "regio.decreto",
+      "numero": "123",
+      "dataEmanazione": "1932-02-18",
+      "nir": "urn:nir:stato:regio.decreto:1932-02-18;123",
+      "eli": "/eli/id/1932/02/18/032U0123/sg",
+      "stato": "abrogato",
+      "sintesi": "148 prelevazione dal fondo di riserva per le spese impreviste dell'esercizio finanziario 1931-32. (032U0123)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1932-02-18;123",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1932/03/07/032U0123/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1932-03-07",
+      "numeroGU": "55",
+      "codiceRedazionale": "032U0123",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.LGS. 13 DICEMBRE 2010, N. 212 ))"
+    },
+    {
+      "chiave": "/eli/id/1932/02/18/032U0121/sg",
+      "titolo": "REGIO DECRETO 18 febbraio 1932, n. 121",
+      "tipo": "regio.decreto",
+      "numero": "121",
+      "dataEmanazione": "1932-02-18",
+      "nir": "urn:nir:stato:regio.decreto:1932-02-18;121",
+      "eli": "/eli/id/1932/02/18/032U0121/sg",
+      "stato": "abrogato",
+      "sintesi": "13ª prelevazione dal fondo di riserva per le spese impreviste dell'esercizio finanziario 1931-32. (032U0121)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1932-02-18;121",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1932/03/07/032U0121/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1932-03-07",
+      "numeroGU": "55",
+      "codiceRedazionale": "032U0121",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.LGS. 13 DICEMBRE 2010, N. 212 ))"
+    },
+    {
+      "chiave": "/eli/id/1932/02/08/032U0039/sg",
+      "titolo": "REGIO DECRETO 8 febbraio 1932, n. 39",
+      "tipo": "regio.decreto",
+      "numero": "39",
+      "dataEmanazione": "1932-02-08",
+      "nir": "urn:nir:stato:regio.decreto:1932-02-08;39",
+      "eli": "/eli/id/1932/02/08/032U0039/sg",
+      "stato": "abrogato",
+      "sintesi": "12ª prelevazione dal fondo di riserva per le spese impreviste dell'esercizio finanziario 1931-32. Relazione di S. E. il Ministro Segretario di Stato per le finanze a Sua Maesta' il Re, in udienza dell'8 febbraio 1932-X, sul decreto che autorizza una 12ª prelevazione dal fondo di riserva per le spese impreviste dell'esercizio finanziario 1931-32. (032U0039)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1932-02-08;39",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1932/02/12/032U0039/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1932-02-12",
+      "numeroGU": "35",
+      "codiceRedazionale": "032U0039",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.LGS. 13 DICEMBRE 2010, N. 212 ))"
+    },
+    {
+      "chiave": "/eli/id/1931/12/31/031U1806/sg",
+      "titolo": "LEGGE 31 dicembre 1931, n. 1806",
+      "tipo": "legge",
+      "numero": "1806",
+      "dataEmanazione": "1931-12-31",
+      "nir": "urn:nir:stato:legge:1931-12-31;1806",
+      "eli": "/eli/id/1931/12/31/031U1806/sg",
+      "stato": "abrogato",
+      "sintesi": "Istituzione di albi per gli esportatori di prodotti ortofrutticoli agrumari. (031U1806)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1931-12-31;1806",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1932/02/12/031U1806/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1932-02-12",
+      "numeroGU": "35",
+      "codiceRedazionale": "031U1806",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.LGS. 13 DICEMBRE 2010, N. 212 ))"
+    },
+    {
+      "chiave": "/eli/id/1931/12/17/031U1786/sg",
+      "titolo": "REGIO DECRETO 17 dicembre 1931, n. 1786",
+      "tipo": "regio.decreto",
+      "numero": "1786",
+      "dataEmanazione": "1931-12-17",
+      "nir": "urn:nir:stato:regio.decreto:1931-12-17;1786",
+      "eli": "/eli/id/1931/12/17/031U1786/sg",
+      "stato": "abrogato",
+      "sintesi": "Ordinamento militare per il Regio corpo di truppe coloniali dell'Eritrea. (031U1786)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1931-12-17;1786",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1932/02/10/031U1786/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1932-02-10",
+      "numeroGU": "33",
+      "codiceRedazionale": "031U1786",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.LGS. 13 DICEMBRE 2010, N. 212 ))"
+    },
+    {
+      "chiave": "/eli/id/1931/11/09/031U1799/sg",
+      "titolo": "REGIO DECRETO 9 novembre 1931, n. 1799",
+      "tipo": "regio.decreto",
+      "numero": "1799",
+      "dataEmanazione": "1931-11-09",
+      "nir": "urn:nir:stato:regio.decreto:1931-11-09;1799",
+      "eli": "/eli/id/1931/11/09/031U1799/sg",
+      "stato": "abrogato",
+      "sintesi": "Istituzione in Roma di un Centro nazionale di informazioni bibliografiche. (031U1799)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1931-11-09;1799",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1932/02/09/031U1799/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1932-02-09",
+      "numeroGU": "32",
+      "codiceRedazionale": "031U1799",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.P.R. 13 DICEMBRE 2010, N. 248 ))"
+    }
+  ]
+}

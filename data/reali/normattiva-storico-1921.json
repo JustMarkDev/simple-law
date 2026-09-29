@@ -1,0 +1,346 @@
+{
+  "provenance": {
+    "fonte": "normattiva",
+    "url": "https://api.normattiva.it/t/normattiva.api/bff-opendata/v1/api/v1/ricerca/aggiornati",
+    "recuperatoIl": "2026-09-29T01:41:05.716Z",
+    "licenza": "riproduzione consentita con menzione di fonte, carattere non autentico e gratuito (Note legali dati.normattiva.it; solo la Gazzetta Ufficiale a stampa e' autentica)"
+  },
+  "atti": [
+    {
+      "chiave": "/eli/id/1921/05/01/021U0858/sg",
+      "titolo": "REGIO DECRETO 1 maggio 1921, n. 858",
+      "tipo": "regio.decreto",
+      "numero": "858",
+      "dataEmanazione": "1921-05-01",
+      "nir": "urn:nir:stato:regio.decreto:1921-05-01;858",
+      "eli": "/eli/id/1921/05/01/021U0858/sg",
+      "stato": "abrogato",
+      "sintesi": "Concernente lo stato giuridico ed economico degli interpreti coloniali. (021U0858)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1921-05-01;858",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1921/07/14/021U0858/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1921-07-14",
+      "numeroGU": "165",
+      "codiceRedazionale": "021U0858",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.LGS. 13 DICEMBRE 2010, N. 212 ))"
+    },
+    {
+      "chiave": "/eli/id/1921/06/12/021U0847/sg",
+      "titolo": "REGIO DECRETO 12 giugno 1921, n. 847",
+      "tipo": "regio.decreto",
+      "numero": "847",
+      "dataEmanazione": "1921-06-12",
+      "nir": "urn:nir:stato:regio.decreto:1921-06-12;847",
+      "eli": "/eli/id/1921/06/12/021U0847/sg",
+      "stato": "abrogato",
+      "sintesi": "Contenente disposizioni circa il conferimento della libera decenza. (021U0847)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1921-06-12;847",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1921/07/07/021U0847/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1921-07-07",
+      "numeroGU": "159",
+      "codiceRedazionale": "021U0847",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.LGS. 13 DICEMBRE 2010, N. 212 ))"
+    },
+    {
+      "chiave": "/eli/id/1921/07/03/021U0846/sg",
+      "titolo": "LEGGE 3 luglio 1921, n. 846",
+      "tipo": "legge",
+      "numero": "846",
+      "dataEmanazione": "1921-07-03",
+      "nir": "urn:nir:stato:legge:1921-07-03;846",
+      "eli": "/eli/id/1921/07/03/021U0846/sg",
+      "stato": "abrogato",
+      "sintesi": "Che autorizza l'esercizio provvisorio degli stati di previsione dell'entrata e della spesa del fondo per l'emigrazione per l'anno finanziario 1920-921, a non oltre il 31 luglio 1921. (021U0846)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1921-07-03;846",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1921/07/06/021U0846/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1921-07-06",
+      "numeroGU": "158",
+      "codiceRedazionale": "021U0846",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.L. 22 DICEMBRE 2008, N. 200 , CONVERTITO CON MODIFICAZIONI DALLA L. 18 FEBBRAIO 2009, N. 9 ))"
+    },
+    {
+      "chiave": "/eli/id/1921/06/09/021U0834/sg",
+      "titolo": "REGIO DECRETO 9 giugno 1921, n. 834",
+      "tipo": "regio.decreto",
+      "numero": "834",
+      "dataEmanazione": "1921-06-09",
+      "nir": "urn:nir:stato:regio.decreto:1921-06-09;834",
+      "eli": "/eli/id/1921/06/09/021U0834/sg",
+      "stato": "abrogato",
+      "sintesi": "Che stabilisce norme per l'applicazione della legge 24 settembre 1920, n. 1297, circa l'obbligatorieta' della conversione in nominativi di tutti i titoli al portatore emessi, dalle Province, dai Comuni, dalle Societa' per azioni e da qualsiasi altro Ente. (021U0834)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1921-06-09;834",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1921/07/02/021U0834/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1921-07-02",
+      "numeroGU": "155",
+      "codiceRedazionale": "021U0834",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.LGS. 13 DICEMBRE 2010, N. 212 ))"
+    },
+    {
+      "chiave": "/eli/id/1921/06/29/021U0809/sg",
+      "titolo": "LEGGE 29 giugno 1921, n. 809",
+      "tipo": "legge",
+      "numero": "809",
+      "dataEmanazione": "1921-06-29",
+      "nir": "urn:nir:stato:legge:1921-06-29;809",
+      "eli": "/eli/id/1921/06/29/021U0809/sg",
+      "stato": "abrogato",
+      "sintesi": "Che autorizza l'esercizio provvisorio degli stati di previsione dell'entrata e della spesa dell'anno finanziario 1921-922 fino a quando siano approvati per legge e non oltre il 31 luglio 1921. (021U0809)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1921-06-29;809",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1921/06/29/021U0809/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1921-06-29",
+      "numeroGU": "152",
+      "codiceRedazionale": "021U0809",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.L. 22 DICEMBRE 2008, N. 200 , CONVERTITO CON MODIFICAZIONI DALLA L. 18 FEBBRAIO 2009, N. 9 ))"
+    },
+    {
+      "chiave": "/eli/id/1921/04/07/021U0647/sg",
+      "titolo": "LEGGE 7 aprile 1921, n. 647",
+      "tipo": "legge",
+      "numero": "647",
+      "dataEmanazione": "1921-04-07",
+      "nir": "urn:nir:stato:legge:1921-04-07;647",
+      "eli": "/eli/id/1921/04/07/021U0647/sg",
+      "stato": "abrogato",
+      "sintesi": "Concernente la ricostituzione degli organi amministrativi della Camera agrumaria per la Sicilia e la Calabria, e provvedimenti vari relativi al funzionamento dell'Istituto medesimo. (021U0647)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1921-04-07;647",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1921/06/02/021U0647/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1921-06-02",
+      "numeroGU": "129",
+      "codiceRedazionale": "021U0647",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.L. 22 DICEMBRE 2008, N. 200 , CONVERTITO CON MODIFICAZIONI DALLA L. 18 FEBBRAIO 2009, N. 9 ))"
+    },
+    {
+      "chiave": "/eli/id/1921/04/21/021U0596/sg",
+      "titolo": "LEGGE 21 aprile 1921, n. 596",
+      "tipo": "legge",
+      "numero": "596",
+      "dataEmanazione": "1921-04-21",
+      "nir": "urn:nir:stato:legge:1921-04-21;596",
+      "eli": "/eli/id/1921/04/21/021U0596/sg",
+      "stato": "abrogato",
+      "sintesi": "Che converte in legge taluni decreti relativi ad agevolezze per l'esecuzione di opere igieniche. (021U0596)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1921-04-21;596",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1921/05/18/021U0596/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1921-05-18",
+      "numeroGU": "116",
+      "codiceRedazionale": "021U0596",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.L. 22 DICEMBRE 2008, N. 200 , CONVERTITO CON MODIFICAZIONI DALLA L. 18 FEBBRAIO 2009, N. 9 ))"
+    },
+    {
+      "chiave": "/eli/id/1921/04/07/021U0557/sg",
+      "titolo": "REGIO DECRETO 7 aprile 1921, n. 558",
+      "tipo": "regio.decreto",
+      "numero": "558",
+      "dataEmanazione": "1921-04-07",
+      "nir": "urn:nir:stato:regio.decreto:1921-04-07;558",
+      "eli": "/eli/id/1921/04/07/021U0557/sg",
+      "stato": "in_vigore",
+      "sintesi": "Erezioni in Ente morale. (021U0557)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1921-04-07;558",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1921/05/16/021U0557/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1921-05-16",
+      "numeroGU": "114",
+      "codiceRedazionale": "021U0557",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 N. 558. R. decreto 7 aprile 1921, col quale, sulla proposta del ministro dall'interno, presidente del Consiglio dei ministri, l'Asilo infantile &laquo;Giuseppe Garibaldi&raquo; di Taormina, viene eretto in Ente morale con amministrazione autonoma. --------------- Nota redazionale Il testo riportato &egrave; gi&agrave; integrato con le correzioni apportate dall'errata-corrige pubblicato in G.U. 17/05/1921, n. 115 durante il periodo di \"vacatio legis\". &Egrave; possibile visualizzare il testo originario accedendo alla versione pdf della relativa Gazzetta di pubblicazione."
+    },
+    {
+      "chiave": "/eli/id/1921/03/24/021U0375/sg",
+      "titolo": "LEGGE 24 marzo 1921, n. 375",
+      "tipo": "legge",
+      "numero": "375",
+      "dataEmanazione": "1921-03-24",
+      "nir": "urn:nir:stato:legge:1921-03-24;375",
+      "eli": "/eli/id/1921/03/24/021U0375/sg",
+      "stato": "abrogato",
+      "sintesi": "Che reca provvedimenti per l'Ente autonomo «Volturno» in Napoli. (021U0375)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1921-03-24;375",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1921/05/03/021U0375/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1921-05-03",
+      "numeroGU": "104",
+      "codiceRedazionale": "021U0375",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.L. 22 DICEMBRE 2008, N. 200 , CONVERTITO CON MODIFICAZIONI DALLA L. 18 FEBBRAIO 2009, N. 9 ))"
+    },
+    {
+      "chiave": "/eli/id/1921/04/14/021U0489/sg",
+      "titolo": "LEGGE 14 aprile 1921, n. 489",
+      "tipo": "legge",
+      "numero": "489",
+      "dataEmanazione": "1921-04-14",
+      "nir": "urn:nir:stato:legge:1921-04-14;489",
+      "eli": "/eli/id/1921/04/14/021U0489/sg",
+      "stato": "abrogato",
+      "sintesi": "Che reca disposizioni per la costruzione della linea navigabile di 3ª classe Parma - Colorno - Po. (021U0489)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1921-04-14;489",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1921/04/27/021U0489/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1921-04-27",
+      "numeroGU": "99",
+      "codiceRedazionale": "021U0489",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.L. 22 DICEMBRE 2008, N. 200 , CONVERTITO CON MODIFICAZIONI DALLA L. 18 FEBBRAIO 2009, N. 9 ))"
+    },
+    {
+      "chiave": "/eli/id/1921/04/07/021U0464/sg",
+      "titolo": "LEGGE 7 aprile 1921, n. 464",
+      "tipo": "legge",
+      "numero": "464",
+      "dataEmanazione": "1921-04-07",
+      "nir": "urn:nir:stato:legge:1921-04-07;464",
+      "eli": "/eli/id/1921/04/07/021U0464/sg",
+      "stato": "abrogato",
+      "sintesi": "Concernente il trattamento di pensione agli ufficiali della riserva. (021U0464)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1921-04-07;464",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1921/04/23/021U0464/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1921-04-23",
+      "numeroGU": "96",
+      "codiceRedazionale": "021U0464",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.L. 22 DICEMBRE 2008, N. 200 , CONVERTITO CON MODIFICAZIONI DALLA L. 18 FEBBRAIO 2009, N. 9 ))"
+    },
+    {
+      "chiave": "/eli/id/1921/03/24/021U0312/sg",
+      "titolo": "LEGGE 24 marzo 1921, n. 312",
+      "tipo": "legge",
+      "numero": "312",
+      "dataEmanazione": "1921-03-24",
+      "nir": "urn:nir:stato:legge:1921-03-24;312",
+      "eli": "/eli/id/1921/03/24/021U0312/sg",
+      "stato": "abrogato",
+      "sintesi": "Che reca provvedimenti in favore della pesca e dei pescatori. (021U0312)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1921-03-24;312",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1921/04/02/021U0312/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1921-04-02",
+      "numeroGU": "78",
+      "codiceRedazionale": "021U0312",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.L. 25 GIUGNO 2008, N. 112 , CONVERTITO CON MODIFICAZIONI DALLA L. 6 AGOSTO 2008, N. 133 ))"
+    },
+    {
+      "chiave": "/eli/id/1921/02/06/021U0218/sg",
+      "titolo": "REGIO DECRETO 6 febbraio 1921, n. 218",
+      "tipo": "regio.decreto",
+      "numero": "218",
+      "dataEmanazione": "1921-02-06",
+      "nir": "urn:nir:stato:regio.decreto:1921-02-06;218",
+      "eli": "/eli/id/1921/02/06/021U0218/sg",
+      "stato": "abrogato",
+      "sintesi": "Che modifica l'art. 2 del regolamento per il R. Istituto orientale di Napoli, approvato con R. decreto 8 settembre 1913, n. 1116. (021U0218)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1921-02-06;218",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1921/03/15/021U0218/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1921-03-15",
+      "numeroGU": "62",
+      "codiceRedazionale": "021U0218",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.P.R. 13 DICEMBRE 2010, N. 248 ))"
+    },
+    {
+      "chiave": "/eli/id/1921/02/17/021U0187/sg",
+      "titolo": "REGIO DECRETO 17 febbraio 1921, n. 187",
+      "tipo": "regio.decreto",
+      "numero": "187",
+      "dataEmanazione": "1921-02-17",
+      "nir": "urn:nir:stato:regio.decreto:1921-02-17;187",
+      "eli": "/eli/id/1921/02/17/021U0187/sg",
+      "stato": "abrogato",
+      "sintesi": "Che approva il regolamento per l'applicazione del R. decreto 8 luglio 1919, n. 1586, relativo al trasferimento in Universita' o in Istituti superiori universitari del Regno, di professori italiani che esercitino presso Universita' estere insegnamento a titolo pubblico. (021U0187)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1921-02-17;187",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1921/03/08/021U0187/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1921-03-08",
+      "numeroGU": "56",
+      "codiceRedazionale": "021U0187",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.LGS. 13 DICEMBRE 2010, N. 212 ))"
+    },
+    {
+      "chiave": "/eli/id/1920/12/23/020U1921/sg",
+      "titolo": "REGIO DECRETO 23 dicembre 1920, n. 1921",
+      "tipo": "regio.decreto",
+      "numero": "1921",
+      "dataEmanazione": "1920-12-23",
+      "nir": "urn:nir:stato:regio.decreto:1920-12-23;1921",
+      "eli": "/eli/id/1920/12/23/020U1921/sg",
+      "stato": "abrogato",
+      "sintesi": "Che approva il regolamento per il corpo degli agenti di custodia delle carceri. (020U1921)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1920-12-23;1921",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1921/03/08/020U1921/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1921-03-08",
+      "numeroGU": "56",
+      "codiceRedazionale": "020U1921",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.LGS. 13 DICEMBRE 2010, N. 212 ))"
+    },
+    {
+      "chiave": "/eli/id/1921/02/27/021U0145/sg",
+      "titolo": "LEGGE 27 febbraio 1921, n. 145",
+      "tipo": "legge",
+      "numero": "145",
+      "dataEmanazione": "1921-02-27",
+      "nir": "urn:nir:stato:legge:1921-02-27;145",
+      "eli": "/eli/id/1921/02/27/021U0145/sg",
+      "stato": "abrogato",
+      "sintesi": "Contenente disposizioni per la sistemazione della gestione statale dei cereali. (021U0145)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1921-02-27;145",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1921/02/28/021U0145/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1921-02-28",
+      "numeroGU": "49",
+      "codiceRedazionale": "021U0145",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.L. 22 DICEMBRE 2008, N. 200 , CONVERTITO CON MODIFICAZIONI DALLA L. 18 FEBBRAIO 2009, N. 9 ))"
+    }
+  ]
+}

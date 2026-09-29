@@ -1,0 +1,430 @@
+{
+  "provenance": {
+    "fonte": "normattiva",
+    "url": "https://api.normattiva.it/t/normattiva.api/bff-opendata/v1/api/v1/ricerca/aggiornati",
+    "recuperatoIl": "2026-09-29T01:41:05.716Z",
+    "licenza": "riproduzione consentita con menzione di fonte, carattere non autentico e gratuito (Note legali dati.normattiva.it; solo la Gazzetta Ufficiale a stampa e' autentica)"
+  },
+  "atti": [
+    {
+      "chiave": "/eli/id/1922/12/03/022U1593/sg",
+      "titolo": "REGIO DECRETO 3 dicembre 1922, n. 1593",
+      "tipo": "regio.decreto",
+      "numero": "1593",
+      "dataEmanazione": "1922-12-03",
+      "nir": "urn:nir:stato:regio.decreto:1922-12-03;1593",
+      "eli": "/eli/id/1922/12/03/022U1593/sg",
+      "stato": "abrogato",
+      "sintesi": "Che approva la tabella degli stipendi dei professori ordinari e straordinari delle Regie Universita' e dei Regi Istituti di istruzione superiore. (022U1593)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1922-12-03;1593",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1922/12/14/022U1593/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1922-12-14",
+      "numeroGU": "292",
+      "codiceRedazionale": "022U1593",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.LGS. 13 DICEMBRE 2010, N. 212 ))"
+    },
+    {
+      "chiave": "/eli/id/1922/09/04/022U1311/sg",
+      "titolo": "REGIO DECRETO 4 settembre 1922, n. 1311",
+      "tipo": "regio.decreto",
+      "numero": "1311",
+      "dataEmanazione": "1922-09-04",
+      "nir": "urn:nir:stato:regio.decreto:1922-09-04;1311",
+      "eli": "/eli/id/1922/09/04/022U1311/sg",
+      "stato": "abrogato",
+      "sintesi": "Che provvede alla rinnovazione delle Commissioni di primo grado per le imposte sulla industria e sulla rendita nelle nuove Provincie. (022U1311)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1922-09-04;1311",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1922/10/17/022U1311/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1922-10-17",
+      "numeroGU": "244",
+      "codiceRedazionale": "022U1311",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.LGS. 13 DICEMBRE 2010, N. 212 ))"
+    },
+    {
+      "chiave": "/eli/id/1922/06/29/022U1223/sg",
+      "titolo": "REGIO DECRETO 29 giugno 1922, n. 1223",
+      "tipo": "regio.decreto",
+      "numero": "1223",
+      "dataEmanazione": "1922-06-29",
+      "nir": "urn:nir:stato:regio.decreto:1922-06-29;1223",
+      "eli": "/eli/id/1922/06/29/022U1223/sg",
+      "stato": "abrogato",
+      "sintesi": "Che estende ai personali civili della Eritrea e della Somalia talune disposizioni della legge 13 agosto 1921, n. 1080, per la riforma della burocrazia. (022U1223)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1922-06-29;1223",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1922/09/11/022U1223/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1922-09-11",
+      "numeroGU": "214",
+      "codiceRedazionale": "022U1223",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.LGS. 13 DICEMBRE 2010, N. 212 ))"
+    },
+    {
+      "chiave": "/eli/id/1922/08/24/022U1212/sg",
+      "titolo": "LEGGE 24 agosto 1922, n. 1212",
+      "tipo": "legge",
+      "numero": "1212",
+      "dataEmanazione": "1922-08-24",
+      "nir": "urn:nir:stato:legge:1922-08-24;1212",
+      "eli": "/eli/id/1922/08/24/022U1212/sg",
+      "stato": "abrogato",
+      "sintesi": "Che proroga l'esercizio provvisorio del bilancio del Fondo per l'emigrazione per l'esercizio finanziario 1922-923. (022U1212)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1922-08-24;1212",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1922/09/06/022U1212/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1922-09-06",
+      "numeroGU": "210",
+      "codiceRedazionale": "022U1212",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.L. 22 DICEMBRE 2008, N. 200 , CONVERTITO CON MODIFICAZIONI DALLA L. 18 FEBBRAIO 2009, N. 9 ))"
+    },
+    {
+      "chiave": "/eli/id/1922/07/24/022U1036/sg",
+      "titolo": "REGIO DECRETO 24 luglio 1922, n. 1036",
+      "tipo": "regio.decreto",
+      "numero": "1036",
+      "dataEmanazione": "1922-07-24",
+      "nir": "urn:nir:stato:regio.decreto:1922-07-24;1036",
+      "eli": "/eli/id/1922/07/24/022U1036/sg",
+      "stato": "abrogato",
+      "sintesi": "Contenente le norme definitive e le disposizioni transitorie e di attuazione in applicazione della legge 9 luglio 1922, n. 1035, sul Procedimento per ingiunzione. (022U1036)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1922-07-24;1036",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1922/08/01/022U1036/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1922-08-01",
+      "numeroGU": "180",
+      "codiceRedazionale": "022U1036",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL REGIO DECRETO 7 AGOSTO 1936, N. 1531))"
+    },
+    {
+      "chiave": "/eli/id/1922/06/18/022U0820/sg",
+      "titolo": "LEGGE 18 giugno 1922, n. 820",
+      "tipo": "legge",
+      "numero": "820",
+      "dataEmanazione": "1922-06-18",
+      "nir": "urn:nir:stato:legge:1922-06-18;820",
+      "eli": "/eli/id/1922/06/18/022U0820/sg",
+      "stato": "abrogato",
+      "sintesi": "Che autorizza a far pagare le spese ordinarie e straordinarie del Ministero dell'interno, per l'esercizio finanziario dal 1° luglio 1922 al 30 giugno 1923. (022U0820)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1922-06-18;820",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1922/06/27/022U0820/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1922-06-27",
+      "numeroGU": "150",
+      "codiceRedazionale": "022U0820",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.L. 22 DICEMBRE 2008, N. 200 , CONVERTITO CON MODIFICAZIONI DALLA L. 18 FEBBRAIO 2009, N. 9 ))"
+    },
+    {
+      "chiave": "/eli/id/1922/06/11/022U0778/sg",
+      "titolo": "LEGGE 11 giugno 1922, n. 778",
+      "tipo": "legge",
+      "numero": "778",
+      "dataEmanazione": "1922-06-11",
+      "nir": "urn:nir:stato:legge:1922-06-11;778",
+      "eli": "/eli/id/1922/06/11/022U0778/sg",
+      "stato": "abrogato",
+      "sintesi": "Per la tutela delle bellezze naturali e degli immobili di particolare interesse storico. (022U0778)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1922-06-11;778",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1922/06/24/022U0778/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1922-06-24",
+      "numeroGU": "148",
+      "codiceRedazionale": "022U0778",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.L. 22 DICEMBRE 2008, N. 200 , CONVERTITO CON MODIFICAZIONI DALLA L. 18 FEBBRAIO 2009, N. 9 ))"
+    },
+    {
+      "chiave": "/eli/id/1922/05/14/022U0743/sg",
+      "titolo": "REGIO DECRETO 14 maggio 1922, n. 743",
+      "tipo": "regio.decreto",
+      "numero": "743",
+      "dataEmanazione": "1922-05-14",
+      "nir": "urn:nir:stato:regio.decreto:1922-05-14;743",
+      "eli": "/eli/id/1922/05/14/022U0743/sg",
+      "stato": "abrogato",
+      "sintesi": "Che estende ai pensionati del cessato regime i provvedimenti contenuti nel R. decreto-legge 29 dicembre 1921, n. 1964. (022U0743)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1922-05-14;743",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1922/06/21/022U0743/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1922-06-21",
+      "numeroGU": "145",
+      "codiceRedazionale": "022U0743",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.LGS. 13 DICEMBRE 2010, N. 212 ))"
+    },
+    {
+      "chiave": "/eli/id/1922/05/14/022U0699/sg",
+      "titolo": "REGIO DECRETO 14 maggio 1922, n. 699",
+      "tipo": "regio.decreto",
+      "numero": "699",
+      "dataEmanazione": "1922-05-14",
+      "nir": "urn:nir:stato:regio.decreto:1922-05-14;699",
+      "eli": "/eli/id/1922/05/14/022U0699/sg",
+      "stato": "abrogato",
+      "sintesi": "Che modifica alcune disposizioni del regolamento comunale per la Dalmazia. (022U0699)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1922-05-14;699",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1922/06/07/022U0699/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1922-06-07",
+      "numeroGU": "133",
+      "codiceRedazionale": "022U0699",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.LGS. 13 DICEMBRE 2010, N. 212 ))"
+    },
+    {
+      "chiave": "/eli/id/1922/05/04/022U0641/sg",
+      "titolo": "REGIO DECRETO 4 maggio 1922, n. 641",
+      "tipo": "regio.decreto",
+      "numero": "641",
+      "dataEmanazione": "1922-05-04",
+      "nir": "urn:nir:stato:regio.decreto:1922-05-04;641",
+      "eli": "/eli/id/1922/05/04/022U0641/sg",
+      "stato": "abrogato",
+      "sintesi": "Che concede al Governo della Cirenaica la facolta' di imporre diritti d'uscita su taluni prodotti. (022U0641)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1922-05-04;641",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1922/05/30/022U0641/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1922-05-30",
+      "numeroGU": "126",
+      "codiceRedazionale": "022U0641",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.LGS. 13 DICEMBRE 2010, N. 212 ))"
+    },
+    {
+      "chiave": "/eli/id/1922/03/30/022U0526/sg",
+      "titolo": "REGIO DECRETO 30 marzo 1922, n. 526",
+      "tipo": "regio.decreto",
+      "numero": "526",
+      "dataEmanazione": "1922-03-30",
+      "nir": "urn:nir:stato:regio.decreto:1922-03-30;526",
+      "eli": "/eli/id/1922/03/30/022U0526/sg",
+      "stato": "in_vigore",
+      "sintesi": "Erezione in Ente morale. (022U0526)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1922-03-30;526",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1922/05/01/022U0526/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1922-05-01",
+      "numeroGU": "102",
+      "codiceRedazionale": "022U0526",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO REVOCATO DAL REGIO DECRETO 11 LUGLIO 1942, N. 933))"
+    },
+    {
+      "chiave": "/eli/id/1922/04/02/022U0474/sg",
+      "titolo": "LEGGE 2 aprile 1922, n. 474",
+      "tipo": "legge",
+      "numero": "474",
+      "dataEmanazione": "1922-04-02",
+      "nir": "urn:nir:stato:legge:1922-04-02;474",
+      "eli": "/eli/id/1922/04/02/022U0474/sg",
+      "stato": "abrogato",
+      "sintesi": "Concernente la conversione in legge del R. decreto 25 novembre 1919, n.2212, che abroga i decreti Luogotenenziali 7 febbraio, 3 settembre e 9 novembre 1916, rispettivamente nn.123, 1108 e 1646, relativi alla distribuzione dei dividendi delle Societa' commerciali, stabilendo norme per la devoluzione e denuncia della riserva speciale e le penalita' pei contravventori. (022U0474)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1922-04-02;474",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1922/04/20/022U0474/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1922-04-20",
+      "numeroGU": "93",
+      "codiceRedazionale": "022U0474",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.L. 22 DICEMBRE 2008, N. 200 , CONVERTITO CON MODIFICAZIONI DALLA L. 18 FEBBRAIO 2009, N. 9 ))"
+    },
+    {
+      "chiave": "/eli/id/1922/03/26/022U0425/sg",
+      "titolo": "REGIO DECRETO 26 marzo 1922, n. 425",
+      "tipo": "regio.decreto",
+      "numero": "425",
+      "dataEmanazione": "1922-03-26",
+      "nir": "urn:nir:stato:regio.decreto:1922-03-26;425",
+      "eli": "/eli/id/1922/03/26/022U0425/sg",
+      "stato": "abrogato",
+      "sintesi": "Che proroga il termine entro il quale la Commissione incaricata di esaminare le domande di concessione dei servizi radiotelefonici e radiotelegrafici dovra' presentare le sue proposte. (022U0425)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1922-03-26;425",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1922/04/14/022U0425/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1922-04-14",
+      "numeroGU": "88",
+      "codiceRedazionale": "022U0425",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.LGS. 13 DICEMBRE 2010, N. 212 ))"
+    },
+    {
+      "chiave": "/eli/id/1922/03/26/022U0424/sg",
+      "titolo": "REGIO DECRETO 26 marzo 1922, n. 424",
+      "tipo": "regio.decreto",
+      "numero": "424",
+      "dataEmanazione": "1922-03-26",
+      "nir": "urn:nir:stato:regio.decreto:1922-03-26;424",
+      "eli": "/eli/id/1922/03/26/022U0424/sg",
+      "stato": "abrogato",
+      "sintesi": "Che reca modificazioni ed aggiunte a quello 16 novembre 1921, contenente norme per la franchigia postale e telegrafica. (022U0424)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1922-03-26;424",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1922/04/14/022U0424/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1922-04-14",
+      "numeroGU": "88",
+      "codiceRedazionale": "022U0424",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.LGS. 13 DICEMBRE 2010, N. 212 ))"
+    },
+    {
+      "chiave": "/eli/id/1922/02/19/022U0253/sg",
+      "titolo": "REGIO DECRETO 19 febbraio 1922, n. 253",
+      "tipo": "regio.decreto",
+      "numero": "253",
+      "dataEmanazione": "1922-02-19",
+      "nir": "urn:nir:stato:regio.decreto:1922-02-19;253",
+      "eli": "/eli/id/1922/02/19/022U0253/sg",
+      "stato": "abrogato",
+      "sintesi": "Che approva lo statuto dell'istituto nazionale di credito per la cooperazione, con sede centrale in Roma. (022U0253)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1922-02-19;253",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1922/03/28/022U0253/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1922-03-28",
+      "numeroGU": "73",
+      "codiceRedazionale": "022U0253",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.P.R. 13 DICEMBRE 2010, N. 248 ))"
+    },
+    {
+      "chiave": "/eli/id/1922/02/05/022U0209/sg",
+      "titolo": "REGIO DECRETO 5 febbraio 1922, n. 209",
+      "tipo": "regio.decreto",
+      "numero": "209",
+      "dataEmanazione": "1922-02-05",
+      "nir": "urn:nir:stato:regio.decreto:1922-02-05;209",
+      "eli": "/eli/id/1922/02/05/022U0209/sg",
+      "stato": "abrogato",
+      "sintesi": "Che estende nei territori annessi la legislazione vigente nel Regno sul collocamento e sulla disoccupazione. (022U0209)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1922-02-05;209",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1922/03/14/022U0209/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1922-03-14",
+      "numeroGU": "61",
+      "codiceRedazionale": "022U0209",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.LGS. 13 DICEMBRE 2010, N. 212 ))"
+    },
+    {
+      "chiave": "/eli/id/1922/01/19/022U0128/sg",
+      "titolo": "REGIO DECRETO 19 gennaio 1922, n. 128",
+      "tipo": "regio.decreto",
+      "numero": "128",
+      "dataEmanazione": "1922-01-19",
+      "nir": "urn:nir:stato:regio.decreto:1922-01-19;128",
+      "eli": "/eli/id/1922/01/19/022U0128/sg",
+      "stato": "abrogato",
+      "sintesi": "Che estende al personale delle Dogane e Imposte indirette alcune disposizioni contenute nel R. decreto-legge 23 ottobre 1919, n. 1971, sullo stato giuridico ed economico del personale delle Amministrazioni centrali dello Stato. (022U0128)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1922-01-19;128",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1922/02/22/022U0128/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1922-02-22",
+      "numeroGU": "44",
+      "codiceRedazionale": "022U0128",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.LGS. 13 DICEMBRE 2010, N. 212 ))"
+    },
+    {
+      "chiave": "/eli/id/1922/01/22/022U0082/sg",
+      "titolo": "REGIO DECRETO 22 gennaio 1922, n. 82",
+      "tipo": "regio.decreto",
+      "numero": "82",
+      "dataEmanazione": "1922-01-22",
+      "nir": "urn:nir:stato:regio.decreto:1922-01-22;82",
+      "eli": "/eli/id/1922/01/22/022U0082/sg",
+      "stato": "abrogato",
+      "sintesi": "Relativo all'aumento transitorio delle indennita' di trasferta dovute al personale navigante dello Stato. (022U0082)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1922-01-22;82",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1922/02/16/022U0082/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1922-02-16",
+      "numeroGU": "39",
+      "codiceRedazionale": "022U0082",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.LGS. 13 DICEMBRE 2010, N. 212 ))"
+    },
+    {
+      "chiave": "/eli/id/1921/12/11/021U2083/sg",
+      "titolo": "REGIO DECRETO 11 dicembre 1921, n. 2083",
+      "tipo": "regio.decreto",
+      "numero": "2083",
+      "dataEmanazione": "1921-12-11",
+      "nir": "urn:nir:stato:regio.decreto:1921-12-11;2083",
+      "eli": "/eli/id/1921/12/11/021U2083/sg",
+      "stato": "abrogato",
+      "sintesi": "Che proroga i poteri della Commissione incaricata di esaminare le domande di concessione di servizi radiotelegrafici e radiotelefonici. (021U2083)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1921-12-11;2083",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1922/02/09/021U2083/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1922-02-09",
+      "numeroGU": "33",
+      "codiceRedazionale": "021U2083",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.LGS. 13 DICEMBRE 2010, N. 212 ))"
+    },
+    {
+      "chiave": "/eli/id/1921/12/15/021U2047/sg",
+      "titolo": "REGIO DECRETO 15 dicembre 1921, n. 2047",
+      "tipo": "regio.decreto",
+      "numero": "2047",
+      "dataEmanazione": "1921-12-15",
+      "nir": "urn:nir:stato:regio.decreto:1921-12-15;2047",
+      "eli": "/eli/id/1921/12/15/021U2047/sg",
+      "stato": "abrogato",
+      "sintesi": "Che approva il testo unico delle leggi per la concessione delle terre. (021U2047)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1921-12-15;2047",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1922/01/31/021U2047/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1922-01-31",
+      "numeroGU": "25",
+      "codiceRedazionale": "021U2047",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.LGS. 13 DICEMBRE 2010, N. 212 ))"
+    }
+  ]
+}

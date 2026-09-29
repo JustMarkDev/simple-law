@@ -1,0 +1,346 @@
+{
+  "provenance": {
+    "fonte": "normattiva",
+    "url": "https://api.normattiva.it/t/normattiva.api/bff-opendata/v1/api/v1/ricerca/aggiornati",
+    "recuperatoIl": "2026-09-29T01:49:36.113Z",
+    "licenza": "riproduzione consentita con menzione di fonte, carattere non autentico e gratuito (Note legali dati.normattiva.it; solo la Gazzetta Ufficiale a stampa e' autentica)"
+  },
+  "atti": [
+    {
+      "chiave": "/eli/id/1940/06/21/040U1135/sg",
+      "titolo": "LEGGE 21 giugno 1940, n. 1135",
+      "tipo": "legge",
+      "numero": "1135",
+      "dataEmanazione": "1940-06-21",
+      "nir": "urn:nir:stato:legge:1940-06-21;1135",
+      "eli": "/eli/id/1940/06/21/040U1135/sg",
+      "stato": "abrogato",
+      "sintesi": "Mezzi finanziari per l'esecuzione di lavori in Albania. (040U1135)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1940-06-21;1135",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1940/08/20/040U1135/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1940-08-20",
+      "numeroGU": "194",
+      "codiceRedazionale": "040U1135",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.L. 22 DICEMBRE 2008, N. 200 , CONVERTITO CON MODIFICAZIONI DALLA L. 18 FEBBRAIO 2009, N. 9 ))"
+    },
+    {
+      "chiave": "/eli/id/1940/04/15/040U0990/sg",
+      "titolo": "REGIO DECRETO 15 aprile 1940, n. 990",
+      "tipo": "regio.decreto",
+      "numero": "990",
+      "dataEmanazione": "1940-04-15",
+      "nir": "urn:nir:stato:regio.decreto:1940-04-15;990",
+      "eli": "/eli/id/1940/04/15/040U0990/sg",
+      "stato": "abrogato",
+      "sintesi": "Scioglimento del Consiglio di amministrazione dell'Istituto nazionale per le opere pubbliche dei comuni e nomina di un commissario governativo per il riordinamento dell'Istituto medesimo. (040U0990)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1940-04-15;990",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1940/08/03/040U0990/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1940-08-03",
+      "numeroGU": "181",
+      "codiceRedazionale": "040U0990",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.LGS. 13 DICEMBRE 2010, N. 212 ))"
+    },
+    {
+      "chiave": "/eli/id/1940/07/09/040U0938/sg",
+      "titolo": "LEGGE 9 luglio 1940, n. 938",
+      "tipo": "legge",
+      "numero": "938",
+      "dataEmanazione": "1940-07-09",
+      "nir": "urn:nir:stato:legge:1940-07-09;938",
+      "eli": "/eli/id/1940/07/09/040U0938/sg",
+      "stato": "abrogato",
+      "sintesi": "Interventi di pronto soccorso per la riparazione di opere pubbliche danneggiate in conseguenza di azioni belliche. (040U0938)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1940-07-09;938",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1940/07/29/040U0938/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1940-07-29",
+      "numeroGU": "176",
+      "codiceRedazionale": "040U0938",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.L. 22 DICEMBRE 2008, N. 200 , CONVERTITO CON MODIFICAZIONI DALLA L. 18 FEBBRAIO 2009, N. 9 ))"
+    },
+    {
+      "chiave": "/eli/id/1940/07/06/040U0814/sg",
+      "titolo": "LEGGE 6 luglio 1940, n. 814",
+      "tipo": "legge",
+      "numero": "814",
+      "dataEmanazione": "1940-07-06",
+      "nir": "urn:nir:stato:legge:1940-07-06;814",
+      "eli": "/eli/id/1940/07/06/040U0814/sg",
+      "stato": "abrogato",
+      "sintesi": "Finanziamento delle spese straordinarie per il rafforzamento dell'efficienza bellica del Regio esercito. (040U0814)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1940-07-06;814",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1940/07/16/040U0814/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1940-07-16",
+      "numeroGU": "165",
+      "codiceRedazionale": "040U0814",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.L. 22 DICEMBRE 2008, N. 200 , CONVERTITO CON MODIFICAZIONI DALLA L. 18 FEBBRAIO 2009, N. 9 ))"
+    },
+    {
+      "chiave": "/eli/id/1940/06/19/040U0659/sg",
+      "titolo": "LEGGE 19 giugno 1940, n. 659",
+      "tipo": "legge",
+      "numero": "659",
+      "dataEmanazione": "1940-06-19",
+      "nir": "urn:nir:stato:legge:1940-06-19;659",
+      "eli": "/eli/id/1940/06/19/040U0659/sg",
+      "stato": "abrogato",
+      "sintesi": "Variazioni allo stato di previsione dell'entrata, a quelli della spesa dei diversi Ministeri, nonche' ai bilanci di talune Aziende autonome per l'esercizio finanziario 1939-40 ed altri provvedimenti di carattere finanziario. (040U0659)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1940-06-19;659",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1940/06/28/040U0659/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1940-06-28",
+      "numeroGU": "151",
+      "codiceRedazionale": "040U0659",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.L. 22 DICEMBRE 2008, N. 200 , CONVERTITO CON MODIFICAZIONI DALLA L. 18 FEBBRAIO 2009, N. 9 ))"
+    },
+    {
+      "chiave": "/eli/id/1940/05/06/040U0575/sg",
+      "titolo": "REGIO DECRETO 6 maggio 1940, n. 575",
+      "tipo": "regio.decreto",
+      "numero": "575",
+      "dataEmanazione": "1940-05-06",
+      "nir": "urn:nir:stato:regio.decreto:1940-05-06;575",
+      "eli": "/eli/id/1940/05/06/040U0575/sg",
+      "stato": "abrogato",
+      "sintesi": "16ª Prelevazione dal fondo di riserva per le spese impreviste dell'esercizio finanziario 1939-40. (040U0575)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1940-05-06;575",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1940/06/17/040U0575/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1940-06-17",
+      "numeroGU": "141",
+      "codiceRedazionale": "040U0575",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.LGS. 13 DICEMBRE 2010, N. 212 ))"
+    },
+    {
+      "chiave": "/eli/id/1940/05/23/040U0546/sg",
+      "titolo": "LEGGE 23 maggio 1940, n. 546",
+      "tipo": "legge",
+      "numero": "546",
+      "dataEmanazione": "1940-05-23",
+      "nir": "urn:nir:stato:legge:1940-05-23;546",
+      "eli": "/eli/id/1940/05/23/040U0546/sg",
+      "stato": "abrogato",
+      "sintesi": "Stato di previsione della spesa del Ministero dell'interno per l'esercizio finanziario dal 1° luglio 1940-XVIII al 30 giugno 1941-XIX. (040U0546)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1940-05-23;546",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1940/06/13/040U0546/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1940-06-13",
+      "numeroGU": "137",
+      "codiceRedazionale": "040U0546",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.L. 22 DICEMBRE 2008, N. 200 , CONVERTITO CON MODIFICAZIONI DALLA L. 18 FEBBRAIO 2009, N. 9 ))"
+    },
+    {
+      "chiave": "/eli/id/1940/05/24/040U0461/sg",
+      "titolo": "LEGGE 24 maggio 1940, n. 461",
+      "tipo": "legge",
+      "numero": "461",
+      "dataEmanazione": "1940-05-24",
+      "nir": "urn:nir:stato:legge:1940-05-24;461",
+      "eli": "/eli/id/1940/05/24/040U0461/sg",
+      "stato": "abrogato",
+      "sintesi": "Disciplina dei cittadini in tempo di guerra. (040U0461)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1940-05-24;461",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1940/05/30/040U0461/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1940-05-30",
+      "numeroGU": "125",
+      "codiceRedazionale": "040U0461",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.L. 22 DICEMBRE 2008, N. 200 , CONVERTITO CON MODIFICAZIONI DALLA L. 18 FEBBRAIO 2009, N. 9 ))"
+    },
+    {
+      "chiave": "/eli/id/1940/05/23/040U0460/sg",
+      "titolo": "LEGGE 23 maggio 1940, n. 460",
+      "tipo": "legge",
+      "numero": "460",
+      "dataEmanazione": "1940-05-23",
+      "nir": "urn:nir:stato:legge:1940-05-23;460",
+      "eli": "/eli/id/1940/05/23/040U0460/sg",
+      "stato": "abrogato",
+      "sintesi": "Variazioni allo stato di previsione dell'entrata, a quelli della spesa dei diversi Ministeri, nonche' ai bilanci di talune Aziende autonome, per l'esercizio finanziario 1939-40 ed altri provvedimenti di carattere finanziario. (040U0460)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1940-05-23;460",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1940/05/30/040U0460/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1940-05-30",
+      "numeroGU": "125",
+      "codiceRedazionale": "040U0460",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.L. 22 DICEMBRE 2008, N. 200 , CONVERTITO CON MODIFICAZIONI DALLA L. 18 FEBBRAIO 2009, N. 9 ))"
+    },
+    {
+      "chiave": "/eli/id/1940/04/18/040U0442/sg",
+      "titolo": "LEGGE 18 aprile 1940, n. 442",
+      "tipo": "legge",
+      "numero": "442",
+      "dataEmanazione": "1940-04-18",
+      "nir": "urn:nir:stato:legge:1940-04-18;442",
+      "eli": "/eli/id/1940/04/18/040U0442/sg",
+      "stato": "abrogato",
+      "sintesi": "Istituzione di una «indennita' di approntamento» per il personale militare e militarizzato approntato per speciali emergenze. (040U0442)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1940-04-18;442",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1940/05/27/040U0442/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1940-05-27",
+      "numeroGU": "122",
+      "codiceRedazionale": "040U0442",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.L. 22 DICEMBRE 2008, N. 200 , CONVERTITO CON MODIFICAZIONI DALLA L. 18 FEBBRAIO 2009, N. 9 ))"
+    },
+    {
+      "chiave": "/eli/id/1940/05/09/040U0369/sg",
+      "titolo": "LEGGE 9 maggio 1940, n. 369",
+      "tipo": "legge",
+      "numero": "369",
+      "dataEmanazione": "1940-05-09",
+      "nir": "urn:nir:stato:legge:1940-05-09;369",
+      "eli": "/eli/id/1940/05/09/040U0369/sg",
+      "stato": "abrogato",
+      "sintesi": "Stato degli ufficiali del Regio esercito. (040U0369)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1940-05-09;369",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1940/05/15/040U0369/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1940-05-15",
+      "numeroGU": "113",
+      "codiceRedazionale": "040U0369",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.L. 22 DICEMBRE 2008, N. 200 , CONVERTITO CON MODIFICAZIONI DALLA L. 18 FEBBRAIO 2009, N. 9 ))"
+    },
+    {
+      "chiave": "/eli/id/1940/03/07/040U0340/sg",
+      "titolo": "REGIO DECRETO 7 marzo 1940, n. 340",
+      "tipo": "regio.decreto",
+      "numero": "340",
+      "dataEmanazione": "1940-03-07",
+      "nir": "urn:nir:stato:regio.decreto:1940-03-07;340",
+      "eli": "/eli/id/1940/03/07/040U0340/sg",
+      "stato": "abrogato",
+      "sintesi": "Cessazione dal piede di guerra per il personale del Corpo di spedizione in Albania. (040U0340)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1940-03-07;340",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1940/05/10/040U0340/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1940-05-10",
+      "numeroGU": "109",
+      "codiceRedazionale": "040U0340",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.LGS. 13 DICEMBRE 2010, N. 212 ))"
+    },
+    {
+      "chiave": "/eli/id/1940/03/23/040U0285/sg",
+      "titolo": "LEGGE 23 marzo 1940, n. 285",
+      "tipo": "legge",
+      "numero": "285",
+      "dataEmanazione": "1940-03-23",
+      "nir": "urn:nir:stato:legge:1940-03-23;285",
+      "eli": "/eli/id/1940/03/23/040U0285/sg",
+      "stato": "abrogato",
+      "sintesi": "Agevolazioni fiscali a favore della industria e del commercio dei marmi nelle provincie di Apuania e di Lucca. (040U0285)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1940-03-23;285",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1940/04/30/040U0285/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1940-04-30",
+      "numeroGU": "102",
+      "codiceRedazionale": "040U0285",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.L. 22 DICEMBRE 2008, N. 200 , CONVERTITO CON MODIFICAZIONI DALLA L. 18 FEBBRAIO 2009, N. 9 ))"
+    },
+    {
+      "chiave": "/eli/id/1939/11/27/039U2099/sg",
+      "titolo": "LEGGE 27 novembre 1939, n. 2099",
+      "tipo": "legge",
+      "numero": "2099",
+      "dataEmanazione": "1939-11-27",
+      "nir": "urn:nir:stato:legge:1939-11-27;2099",
+      "eli": "/eli/id/1939/11/27/039U2099/sg",
+      "stato": "abrogato",
+      "sintesi": "Maggiori poteri al Governatore generale dell'Africa Orientale Italiana nella gestione del bilancio per l'esercizio finanziario 1939-40. (039U2099)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1939-11-27;2099",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1940/02/01/039U2099/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1940-02-01",
+      "numeroGU": "26",
+      "codiceRedazionale": "039U2099",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.L. 22 DICEMBRE 2008, N. 200 , CONVERTITO CON MODIFICAZIONI DALLA L. 18 FEBBRAIO 2009, N. 9 ))"
+    },
+    {
+      "chiave": "/eli/id/1939/11/23/039U2008/sg",
+      "titolo": "REGIO DECRETO 23 novembre 1939, n. 2008",
+      "tipo": "regio.decreto",
+      "numero": "2008",
+      "dataEmanazione": "1939-11-23",
+      "nir": "urn:nir:stato:regio.decreto:1939-11-23;2008",
+      "eli": "/eli/id/1939/11/23/039U2008/sg",
+      "stato": "abrogato",
+      "sintesi": "Erezione in ente morale dell'Istituto fascista autonomo per le case popolari della provincia di Nuoro. (039U2008)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1939-11-23;2008",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1940/01/17/039U2008/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1940-01-17",
+      "numeroGU": "13",
+      "codiceRedazionale": "039U2008",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL REGIO DECRETO 11 APRILE 1940, N. 1071))"
+    },
+    {
+      "chiave": "/eli/id/1939/11/23/039U1989/sg",
+      "titolo": "REGIO DECRETO 23 novembre 1939, n. 1989",
+      "tipo": "regio.decreto",
+      "numero": "1989",
+      "dataEmanazione": "1939-11-23",
+      "nir": "urn:nir:stato:regio.decreto:1939-11-23;1989",
+      "eli": "/eli/id/1939/11/23/039U1989/sg",
+      "stato": "abrogato",
+      "sintesi": "Approvazione dei nuovi ruoli organici del personale dell'Amministrazione centrale dei lavori pubblici e del Corpo Reale del genio civile. (039U1989)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1939-11-23;1989",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1940/01/13/039U1989/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1940-01-13",
+      "numeroGU": "10",
+      "codiceRedazionale": "039U1989",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.P.R. 13 DICEMBRE 2010, N. 248 ))"
+    }
+  ]
+}

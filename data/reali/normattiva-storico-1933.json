@@ -1,0 +1,199 @@
+{
+  "provenance": {
+    "fonte": "normattiva",
+    "url": "https://api.normattiva.it/t/normattiva.api/bff-opendata/v1/api/v1/ricerca/aggiornati",
+    "recuperatoIl": "2026-09-29T01:41:05.716Z",
+    "licenza": "riproduzione consentita con menzione di fonte, carattere non autentico e gratuito (Note legali dati.normattiva.it; solo la Gazzetta Ufficiale a stampa e' autentica)"
+  },
+  "atti": [
+    {
+      "chiave": "/eli/id/1933/12/05/033U1669/sg",
+      "titolo": "REGIO DECRETO 5 dicembre 1933, n. 1669",
+      "tipo": "regio.decreto",
+      "numero": "1669",
+      "dataEmanazione": "1933-12-05",
+      "nir": "urn:nir:stato:regio.decreto:1933-12-05;1669",
+      "eli": "/eli/id/1933/12/05/033U1669/sg",
+      "stato": "in_vigore",
+      "sintesi": "Modificazioni alle norme sulla cambiale e sul vaglia cambiario. (033U1669)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1933-12-05;1669",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1933/12/19/033U1669/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1933-12-19",
+      "numeroGU": "292",
+      "codiceRedazionale": "033U1669",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "VITTORIO EMANUELE III PER GRAZIA DI DIO E PER VOLONT&Agrave; DELLA NAZIONE RE D'ITALIA Visto il R. decreto-legge 25 agosto 1932, n. 1130 , col quale vennero rese esecutive le convenzioni sulla cambiale ed il vaglia cambiario, stipulate a Ginevra il 7 giugno 1930; Visti l'art. 2 della legge 30 dicembre 1923, n .2814, e l'articolo unico della legge 4 giugno 1931, n. 659 ; Sentito il parere della Commissione parlamentare a termini del predetto art. 2; Udite il Consiglio dei Ministri; Sulla proposta del Nostro Guardasigilli Ministro Segretario di Stato per la grazia e giustizia; Abbiamo decretato e decretiamo: Art. 1 Alle disposizioni contenute nel codice di commercio concernenti la cambiale sono sostituite le norme sulla cambiale e sul vaglia cambiario allegate al presente decreto e firmate d'ordine Nostro dal Ministro Guardasigilli. Restano abrogate le disposizioni di leggi speciali concernenti la materia regolata dalle anzidette norme."
+    },
+    {
+      "chiave": "/eli/id/1933/08/18/033U1057/sg",
+      "titolo": "REGIO DECRETO 18 agosto 1933, n. 1057",
+      "tipo": "regio.decreto",
+      "numero": "1057",
+      "dataEmanazione": "1933-08-18",
+      "nir": "urn:nir:stato:regio.decreto:1933-08-18;1057",
+      "eli": "/eli/id/1933/08/18/033U1057/sg",
+      "stato": "abrogato",
+      "sintesi": "Ricostituzione del Consiglio di amministrazione dell'Istituto nazionale L.U.C.E. (033U1057)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1933-08-18;1057",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1933/08/26/033U1057/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1933-08-26",
+      "numeroGU": "198",
+      "codiceRedazionale": "033U1057",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.LGS. 13 DICEMBRE 2010, N. 212 ))"
+    },
+    {
+      "chiave": "/eli/id/1933/06/27/033U0703/sg",
+      "titolo": "REGIO DECRETO 27 giugno 1933, n. 703",
+      "tipo": "regio.decreto",
+      "numero": "703",
+      "dataEmanazione": "1933-06-27",
+      "nir": "urn:nir:stato:regio.decreto:1933-06-27;703",
+      "eli": "/eli/id/1933/06/27/033U0703/sg",
+      "stato": "in_vigore",
+      "sintesi": "Norme per la liquidazione delle pensioni presso l'Amministrazione dello Stato e per il relativo controllo della Corte dei conti. (033U0703)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1933-06-27;703",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1933/07/04/033U0703/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1933-07-04",
+      "numeroGU": "153",
+      "codiceRedazionale": "033U0703",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "VITTORIO EMANUELE III PER GRAZIA DI DIO E PER VOLONT&Agrave; DELLA NAZIONE RE D'ITALIA Visto l' articolo 31 della legge 3 aprile 1933, n. 255 ; Sentita la Corte dei conti; Udito il Consiglio dei Ministri; Sulla proposta del Nostro Ministro Segretario di Stato per le finanze; Abbiamo decretato e decretiamo: Art. 1 La liquidazione delle pensioni, degli assegni e delle indennit&agrave; per una sola volta, nonch&egrave; il riscatto dei servizi ai fini di quiescenza, gi&agrave; affidati alla Corte dei conti, sono trasferiti all'Amministrazione."
+    },
+    {
+      "chiave": "/eli/id/1933/06/05/033U0628/sg",
+      "titolo": "REGIO DECRETO 5 giugno 1933, n. 628",
+      "tipo": "regio.decreto",
+      "numero": "628",
+      "dataEmanazione": "1933-06-05",
+      "nir": "urn:nir:stato:regio.decreto:1933-06-05;628",
+      "eli": "/eli/id/1933/06/05/033U0628/sg",
+      "stato": "abrogato",
+      "sintesi": "Norme per l'applicazione dell'art. 11, 2° comma, del R. decreto-legge 26 gennaio 1933, n. 11, recante provvedimenti in materia di terremoti. (033U0628)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1933-06-05;628",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1933/06/21/033U0628/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1933-06-21",
+      "numeroGU": "143",
+      "codiceRedazionale": "033U0628",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.P.R. 13 DICEMBRE 2010, N. 248 ))"
+    },
+    {
+      "chiave": "/eli/id/1933/05/29/033U0516/sg",
+      "titolo": "REGIO DECRETO 29 maggio 1933, n. 516",
+      "tipo": "regio.decreto",
+      "numero": "516",
+      "dataEmanazione": "1933-05-29",
+      "nir": "urn:nir:stato:regio.decreto:1933-05-29;516",
+      "eli": "/eli/id/1933/05/29/033U0516/sg",
+      "stato": "abrogato",
+      "sintesi": "Norme per la liquidazione dei Sindacati di assicurazione mutua contro gli infortuni sul lavoro. (033U0516)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1933-05-29;516",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1933/06/02/033U0516/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1933-06-02",
+      "numeroGU": "128",
+      "codiceRedazionale": "033U0516",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.LGS. 13 DICEMBRE 2010, N. 212 ))"
+    },
+    {
+      "chiave": "/eli/id/1933/05/15/033U0491/sg",
+      "titolo": "REGIO DECRETO 15 maggio 1933, n. 491",
+      "tipo": "regio.decreto",
+      "numero": "491",
+      "dataEmanazione": "1933-05-15",
+      "nir": "urn:nir:stato:regio.decreto:1933-05-15;491",
+      "eli": "/eli/id/1933/05/15/033U0491/sg",
+      "stato": "abrogato",
+      "sintesi": "Approvazione dei programmi, degli orari e del raggruppamenti di materie delle Scuole e degli Istituti d'istruzione tecnica. (033U0491)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1933-05-15;491",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1933/05/30/033U0491/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1933-05-30",
+      "numeroGU": "125",
+      "codiceRedazionale": "033U0491",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.LGS. 13 DICEMBRE 2010, N. 212 ))"
+    },
+    {
+      "chiave": "/eli/id/1932/12/05/032U2064/sg",
+      "titolo": "REGIO DECRETO 5 dicembre 1932, n. 2064",
+      "tipo": "regio.decreto",
+      "numero": "2064",
+      "dataEmanazione": "1932-12-05",
+      "nir": "urn:nir:stato:regio.decreto:1932-12-05;2064",
+      "eli": "/eli/id/1932/12/05/032U2064/sg",
+      "stato": "abrogato",
+      "sintesi": "Rettifica dei dati relativi alla popolazione censita il 21 aprile 1931. (032U2064)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1932-12-05;2064",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1933/04/06/032U2064/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1933-04-06",
+      "numeroGU": "81",
+      "codiceRedazionale": "032U2064",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.P.R. 13 DICEMBRE 2010, N. 248 ))"
+    },
+    {
+      "chiave": "/eli/id/1933/01/27/033U0153/sg",
+      "titolo": "REGIO DECRETO 27 gennaio 1933, n. 153",
+      "tipo": "regio.decreto",
+      "numero": "153",
+      "dataEmanazione": "1933-01-27",
+      "nir": "urn:nir:stato:regio.decreto:1933-01-27;153",
+      "eli": "/eli/id/1933/01/27/033U0153/sg",
+      "stato": "abrogato",
+      "sintesi": "Approvazione del regolamento per i concorsi ai posti di direttore, insegnante ed istruttore pratico nelle Regie scuole e nei Regi corsi secondari di avviamento professionale. (033U0153)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1933-01-27;153",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1933/03/18/033U0153/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1933-03-18",
+      "numeroGU": "65",
+      "codiceRedazionale": "033U0153",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.L. 22 DICEMBRE 2008, N. 200 , CONVERTITO CON MODIFICAZIONI DALLA L. 18 FEBBRAIO 2009, N. 9 ))"
+    },
+    {
+      "chiave": "/eli/id/1933/02/16/033U0108/sg",
+      "titolo": "REGIO DECRETO 16 febbraio 1933, n. 108",
+      "tipo": "regio.decreto",
+      "numero": "108",
+      "dataEmanazione": "1933-02-16",
+      "nir": "urn:nir:stato:regio.decreto:1933-02-16;108",
+      "eli": "/eli/id/1933/02/16/033U0108/sg",
+      "stato": "abrogato",
+      "sintesi": "12ª prelevazione dal fondo di riserva per le spese impreviste dell'esercizio finanziario 1932-33. (033U0108)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1933-02-16;108",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1933/03/04/033U0108/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1933-03-04",
+      "numeroGU": "53",
+      "codiceRedazionale": "033U0108",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.LGS. 13 DICEMBRE 2010, N. 212 ))"
+    }
+  ]
+}

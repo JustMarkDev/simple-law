@@ -1,0 +1,241 @@
+{
+  "provenance": {
+    "fonte": "normattiva",
+    "url": "https://api.normattiva.it/t/normattiva.api/bff-opendata/v1/api/v1/ricerca/aggiornati",
+    "recuperatoIl": "2026-09-29T01:49:36.113Z",
+    "licenza": "riproduzione consentita con menzione di fonte, carattere non autentico e gratuito (Note legali dati.normattiva.it; solo la Gazzetta Ufficiale a stampa e' autentica)"
+  },
+  "atti": [
+    {
+      "chiave": "/eli/id/1942/06/27/042U0842/sg",
+      "titolo": "LEGGE 27 giugno 1942, n. 842",
+      "tipo": "legge",
+      "numero": "842",
+      "dataEmanazione": "1942-06-27",
+      "nir": "urn:nir:stato:legge:1942-06-27;842",
+      "eli": "/eli/id/1942/06/27/042U0842/sg",
+      "stato": "abrogato",
+      "sintesi": "Reclutamento degli ufficiali di Stato Maggiore ed ordinamento dello Stato Maggiore del Regio esercito. (042U0842)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1942-06-27;842",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1942/08/05/042U0842/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1942-08-05",
+      "numeroGU": "183",
+      "codiceRedazionale": "042U0842",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.L. 22 DICEMBRE 2008, N. 200 , CONVERTITO CON MODIFICAZIONI, DALLA L. 18 FEBBRAIO 2009, N. 9 ))"
+    },
+    {
+      "chiave": "/eli/id/1942/06/21/042U0830/sg",
+      "titolo": "LEGGE 21 giugno 1942, n. 830",
+      "tipo": "legge",
+      "numero": "830",
+      "dataEmanazione": "1942-06-21",
+      "nir": "urn:nir:stato:legge:1942-06-21;830",
+      "eli": "/eli/id/1942/06/21/042U0830/sg",
+      "stato": "abrogato",
+      "sintesi": "Conversione in legge, con modificazioni, del R. decreto-legge 5 marzo 1942-XX, n. 192, recante provvedimenti tributari in materia di fusione, concentrazione e trasformazione di societa'. (042U0830)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1942-06-21;830",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1942/08/03/042U0830/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1942-08-03",
+      "numeroGU": "181",
+      "codiceRedazionale": "042U0830",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.L. 22 DICEMBRE 2008, N. 200 , CONVERTITO CON MODIFICAZIONI, DALLA L. 18 FEBBRAIO 2009, N. 9 ))"
+    },
+    {
+      "chiave": "/eli/id/1942/03/16/042U0699/sg",
+      "titolo": "REGIO DECRETO 16 marzo 1942, n. 699",
+      "tipo": "regio.decreto",
+      "numero": "699",
+      "dataEmanazione": "1942-03-16",
+      "nir": "urn:nir:stato:regio.decreto:1942-03-16;699",
+      "eli": "/eli/id/1942/03/16/042U0699/sg",
+      "stato": "in_vigore",
+      "sintesi": "Norme sullo stato giuridico e sul trattamento economico del personale non statale del Corpo nazionale dei vigili del fuoco. (042U0699)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1942-03-16;699",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1942/06/30/042U0699/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1942-06-30",
+      "numeroGU": "152",
+      "codiceRedazionale": "042U0699",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "VITTORIO EMANUELE III PER GRAZIA DI DIO E PER VOLONT&Agrave; DELLA NAZIONE RE D'ITALIA E DI ALBANIA IMPERATORE D'ETIOPIA Visti gli articoli 12 e 17 della legge 27 dicembre 1941-XX, n. 1570, contenente nuove norme per l'organizzazione dei servizi antincendi; Visto l'art. 1 della legge 31 gennaio 1926-IV, n. 100; Udito il parere del Consiglio di Stato; Sentito il Consiglio dei Ministri; Sulla proposta del DUCE del Fascismo, Capo del Governo, Ministro per l'interno e per la guerra, di concerto col Ministro per le finanze; Abbiamo decretato e decretiamo: Art. 1 ((ARTICOLO ABROGATO DAL D.LGS. 8 MARZO 2006, N. 139 ))"
+    },
+    {
+      "chiave": "/eli/id/1942/05/04/042U0629/sg",
+      "titolo": "REGIO DECRETO 4 maggio 1942, n. 629",
+      "tipo": "regio.decreto",
+      "numero": "629",
+      "dataEmanazione": "1942-05-04",
+      "nir": "urn:nir:stato:regio.decreto:1942-05-04;629",
+      "eli": "/eli/id/1942/05/04/042U0629/sg",
+      "stato": "abrogato",
+      "sintesi": "Erezione in ente morale della Fondazione «Bruno Mussolini» e approvazione del relativo statuto organico. (042U0629)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1942-05-04;629",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1942/06/19/042U0629/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1942-06-19",
+      "numeroGU": "144",
+      "codiceRedazionale": "042U0629",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DALLA L. 7 APRILE 2025, N. 56 ))"
+    },
+    {
+      "chiave": "/eli/id/1942/05/04/042U0558/sg",
+      "titolo": "REGIO DECRETO 4 maggio 1942, n. 558",
+      "tipo": "regio.decreto",
+      "numero": "558",
+      "dataEmanazione": "1942-05-04",
+      "nir": "urn:nir:stato:regio.decreto:1942-05-04;558",
+      "eli": "/eli/id/1942/05/04/042U0558/sg",
+      "stato": "abrogato",
+      "sintesi": "Costituzione del Consiglio di amministrazione dell'lstituto nazionale L.U.C.E. per il biennio l942-43. (042U0558)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1942-05-04;558",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1942/06/06/042U0558/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1942-06-06",
+      "numeroGU": "133",
+      "codiceRedazionale": "042U0558",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.LGS. 13 DICEMBRE 2010, N. 212 ))"
+    },
+    {
+      "chiave": "/eli/id/1942/05/04/042U0518/sg",
+      "titolo": "LEGGE 4 maggio 1942, n. 518",
+      "tipo": "legge",
+      "numero": "518",
+      "dataEmanazione": "1942-05-04",
+      "nir": "urn:nir:stato:legge:1942-05-04;518",
+      "eli": "/eli/id/1942/05/04/042U0518/sg",
+      "stato": "abrogato",
+      "sintesi": "Variazioni allo stato di previsione dell'entrata, a quelli della spesa di diversi Ministeri ed ai bilanci di talune Aziende autonome per l'esercizio finanziario 1941-42 ed altri provvedimenti di carattere finanziario. (042U0518)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1942-05-04;518",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1942/05/28/042U0518/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1942-05-28",
+      "numeroGU": "126",
+      "codiceRedazionale": "042U0518",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.L. 22 DICEMBRE 2008, N. 200 , CONVERTITO, CON MODIFICAZIONI, DALLA L. 18 FEBBRAIO 2009, N. 9 ))"
+    },
+    {
+      "chiave": "/eli/id/1942/02/12/042U0224/sg",
+      "titolo": "REGIO DECRETO 12 febbraio 1942, n. 224",
+      "tipo": "regio.decreto",
+      "numero": "224",
+      "dataEmanazione": "1942-02-12",
+      "nir": "urn:nir:stato:regio.decreto:1942-02-12;224",
+      "eli": "/eli/id/1942/02/12/042U0224/sg",
+      "stato": "abrogato",
+      "sintesi": "Istituzione temporanea di un secondo posto di 1° segretario presso la Regia ambasciata in Berlino. (042U0224)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1942-02-12;224",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1942/03/28/042U0224/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1942-03-28",
+      "numeroGU": "72",
+      "codiceRedazionale": "042U0224",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.LGS. 13 DICEMBRE 2010, N. 212 ))"
+    },
+    {
+      "chiave": "/eli/id/1942/02/23/042U0211/sg",
+      "titolo": "REGIO DECRETO 23 febbraio 1942, n. 211",
+      "tipo": "regio.decreto",
+      "numero": "211",
+      "dataEmanazione": "1942-02-23",
+      "nir": "urn:nir:stato:regio.decreto:1942-02-23;211",
+      "eli": "/eli/id/1942/02/23/042U0211/sg",
+      "stato": "abrogato",
+      "sintesi": "6° Prelevazione dal fondo dl riserva per le spese impreviste per l'esercizio finanziario 1941-42. (042U0211)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1942-02-23;211",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1942/03/26/042U0211/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1942-03-26",
+      "numeroGU": "70",
+      "codiceRedazionale": "042U0211",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.LGS. 13 DICEMBRE 2010, N. 212 ))"
+    },
+    {
+      "chiave": "/eli/id/1942/02/12/042U0166/sg",
+      "titolo": "LEGGE 12 febbraio 1942, n. 166",
+      "tipo": "legge",
+      "numero": "166",
+      "dataEmanazione": "1942-02-12",
+      "nir": "urn:nir:stato:legge:1942-02-12;166",
+      "eli": "/eli/id/1942/02/12/042U0166/sg",
+      "stato": "abrogato",
+      "sintesi": "Autorizzazione di spesa per l'esecuzione in Dalmazia di opere di bonifica integrale. (042U0166)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1942-02-12;166",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1942/03/20/042U0166/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1942-03-20",
+      "numeroGU": "65",
+      "codiceRedazionale": "042U0166",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.L. 22 DICEMBRE 2008, N. 200 , CONVERTITO CON MODIFICAZIONI, DALLA L. 18 FEBBRAIO 2009, N. 9 ))"
+    },
+    {
+      "chiave": "/eli/id/1942/01/15/042U0114/sg",
+      "titolo": "REGIO DECRETO 15 gennaio 1942, n. 114",
+      "tipo": "regio.decreto",
+      "numero": "114",
+      "dataEmanazione": "1942-01-15",
+      "nir": "urn:nir:stato:regio.decreto:1942-01-15;114",
+      "eli": "/eli/id/1942/01/15/042U0114/sg",
+      "stato": "abrogato",
+      "sintesi": "Composizione della Commissione superiore di avanzamento per gli ufficiali della Regia aeronautica durante il periodo di guerra. (042U0114)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1942-01-15;114",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1942/03/09/042U0114/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1942-03-09",
+      "numeroGU": "56",
+      "codiceRedazionale": "042U0114",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.LGS. 13 DICEMBRE 2010, N. 212 ))"
+    },
+    {
+      "chiave": "/eli/id/1942/02/16/042U0071/sg",
+      "titolo": "REGIO DECRETO 16 febbraio 1942, n. 71",
+      "tipo": "regio.decreto",
+      "numero": "71",
+      "dataEmanazione": "1942-02-16",
+      "nir": "urn:nir:stato:regio.decreto:1942-02-16;71",
+      "eli": "/eli/id/1942/02/16/042U0071/sg",
+      "stato": "abrogato",
+      "sintesi": "Disposizioni per l'attuazione del Libro del Codice civile \"Del lavoro\" e disposizioni transitorie. (042U0071)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1942-02-16;71",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1942/02/27/042U0071/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1942-02-27",
+      "numeroGU": "48",
+      "codiceRedazionale": "042U0071",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DALLA L. 7 APRILE 2025, N. 56 ))"
+    }
+  ]
+}

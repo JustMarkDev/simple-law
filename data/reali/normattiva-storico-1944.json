@@ -1,0 +1,241 @@
+{
+  "provenance": {
+    "fonte": "normattiva",
+    "url": "https://api.normattiva.it/t/normattiva.api/bff-opendata/v1/api/v1/ricerca/aggiornati",
+    "recuperatoIl": "2026-09-29T01:49:36.113Z",
+    "licenza": "riproduzione consentita con menzione di fonte, carattere non autentico e gratuito (Note legali dati.normattiva.it; solo la Gazzetta Ufficiale a stampa e' autentica)"
+  },
+  "atti": [
+    {
+      "chiave": "/eli/id/1944/11/23/044U0369/sg",
+      "titolo": "DECRETO LEGISLATIVO LUOGOTENENZIALE 23 novembre 1944, n. 369",
+      "tipo": "decreto.legislativo.luogotenenziale",
+      "numero": "369",
+      "dataEmanazione": "1944-11-23",
+      "nir": "urn:nir:stato:decreto.legislativo.luogotenenziale:1944-11-23;369",
+      "eli": "/eli/id/1944/11/23/044U0369/sg",
+      "stato": "in_vigore",
+      "sintesi": "Soppressione delle organizzazioni sindacali fasciste e liquidazione dei rispettivi patrimoni. (044U0369)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legislativo.luogotenenziale:1944-11-23;369",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1944/12/16/044U0369/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1944-12-16",
+      "numeroGU": "95",
+      "codiceRedazionale": "044U0369",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "UMBERTO DI SAVOIA Principe di Piemonte Luogotenente Generale del Regno In virt&ugrave; dell'autorit&agrave; a Noi delegata; Vista la legge 3 aprile 1926, n. 563 , sulla disciplina giuridica dei rapporti collettivi di lavoro, nonch&egrave; il R. decreto 1° luglio 1926, n. 1130 , contenente norme per l'attuazione della legge predetta, e le successive modificazioni; Visto il decreto-legge Luogotenenziale 25 giugno 1944, n. 151 , relativo all'assemblea per la nuova costituzione dello Stato, al giuramento dei membri del Governo e alla facolt&agrave; del Governo di emanare norme giuridiche; Visto il R. decreto-legge 30 ottobre 1943, n. 2/B , modificato con R. decreto-legge 29 maggio 1944, n. 141 , riguardante la sospensione delle norme relative all'emanazione, promulgazione, registrazione e pubblicazione di Regi decreti e di altri provvedimenti; Vista la deliberazione del Consiglio dei Ministri; Sulla proposta dei Ministro per l'industria, commercio e lavoro, di concerto con il Ministro per l'interno, con quello per la grazia e giustizia, con quello per le finanze e con quello per il tesoro; Abbiamo sanzionato e promulghiamo quanto segue: Art. 1 ((ARTICOLO ABROGATO DAL D.LGS. 13 DICEMBRE 2010, N. 212 )) --------------- AGGIORNAMENTO (2) Il D.Lgs. del Capo Provvisorio dello Stato 1 dicembre 1947, n. 1611 ha disposto (con l'art. 5, comma 1) che \" Le operazioni di liquidazione degli enti indicati all' art. 1 del decreto legislativo luogotenenziale 23 novembre 1944, n. 369 , dovranno essere chiuse entro tre mesi dalla data di entrata, in vigore del presente decreto\"."
+    },
+    {
+      "chiave": "/eli/id/1944/09/05/044U0202/sg",
+      "titolo": "DECRETO LUOGOTENENZIALE 5 settembre 1944, n. 202",
+      "tipo": "decreto.luogotenenziale",
+      "numero": "202",
+      "dataEmanazione": "1944-09-05",
+      "nir": "urn:nir:stato:decreto.luogotenenziale:1944-09-05;202",
+      "eli": "/eli/id/1944/09/05/044U0202/sg",
+      "stato": "abrogato",
+      "sintesi": "Ripartizione delle attribuzioni e del personale fra i Ministeri delle finanze e del tesoro. (044U0202)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.luogotenenziale:1944-09-05;202",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1944/09/16/044U0202/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1944-09-16",
+      "numeroGU": "56",
+      "codiceRedazionale": "044U0202",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.P.R. 26 MARZO 2001, N. 107 ))"
+    },
+    {
+      "chiave": "/eli/id/1944/08/06/044U0170/sg",
+      "titolo": "DECRETO LEGISLATIVO LUOGOTENENZIALE 6 agosto 1944, n. 170",
+      "tipo": "decreto.legislativo.luogotenenziale",
+      "numero": "170",
+      "dataEmanazione": "1944-08-06",
+      "nir": "urn:nir:stato:decreto.legislativo.luogotenenziale:1944-08-06;170",
+      "eli": "/eli/id/1944/08/06/044U0170/sg",
+      "stato": "abrogato",
+      "sintesi": "Norme per la costituzione delle Corti di Assise. (044U0170)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legislativo.luogotenenziale:1944-08-06;170",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1944/08/18/044U0170/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1944-08-18",
+      "numeroGU": "47",
+      "codiceRedazionale": "044U0170",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.L. 22 DICEMBRE 2008, N. 200 , CONVERTITO CON MODIFICAZIONI DALLA L. 18 FEBBRAIO 2009, N. 9 ))"
+    },
+    {
+      "chiave": "/eli/id/1944/07/20/044U0161/sg",
+      "titolo": "DECRETO LEGISLATIVO LUOGOTENENZIALE 20 luglio 1944, n. 161",
+      "tipo": "decreto.legislativo.luogotenenziale",
+      "numero": "161",
+      "dataEmanazione": "1944-07-20",
+      "nir": "urn:nir:stato:decreto.legislativo.luogotenenziale:1944-07-20;161",
+      "eli": "/eli/id/1944/07/20/044U0161/sg",
+      "stato": "abrogato",
+      "sintesi": "Provvedimenti in materia economica e finanziaria per i territori sottoposti all'Amministrazione del Governo italiano. (044U0161)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legislativo.luogotenenziale:1944-07-20;161",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1944/08/01/044U0161/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1944-08-01",
+      "numeroGU": "42",
+      "codiceRedazionale": "044U0161",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.L. 22 DICEMBRE 2008, N. 200 , CONVERTITO CON MODIFICAZIONI DALLA L. 18 FEBBRAIO 2009, N. 9 ))"
+    },
+    {
+      "chiave": "/eli/id/1944/07/27/044U0159/sg",
+      "titolo": "DECRETO LEGISLATIVO LUOGOTENENZIALE 27 luglio 1944, n. 159",
+      "tipo": "decreto.legislativo.luogotenenziale",
+      "numero": "159",
+      "dataEmanazione": "1944-07-27",
+      "nir": "urn:nir:stato:decreto.legislativo.luogotenenziale:1944-07-27;159",
+      "eli": "/eli/id/1944/07/27/044U0159/sg",
+      "stato": "in_vigore",
+      "sintesi": "Sanzioni contro il fascismo. (044U0159)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legislativo.luogotenenziale:1944-07-27;159",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1944/07/29/044U0159/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1944-07-29",
+      "numeroGU": "41",
+      "codiceRedazionale": "044U0159",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "UMBERTO DI SAVOIA PRINCIPE DI PIEMONTE LUOGOTENENTE GENERALE DEL REGNO In virt&ugrave; dell'autorit&agrave;, a Noi delegata; Visto il decreto-legge 2 agosto 1943, n. 704 , che sopprime il partito nazionale fascista; Visto il R. decreto-legge 9 agosto 1943, n. 720 , riguardante la devoluzione allo Stato dei patrimoni di non giustificata provenienza: Visto il R. decreto-legge 28 dicembre 1943, n. 29/B , per la defascistizzazione delle Amministrazioni dello Stato, degli Enti locali e parastatali, degli Enti comunque sottoposti a vigilanza o tutela dello Stato e delle Aziende private esercenti servizi pubblici o di interesse nazionale; Visto il R. decreto-legge 26 maggio 1944, n. 134 , per la, punizione dei delitti e degli illeciti del fascismo; Visto il R. decreto-legge 12 aprile 1944, n. 101 , recante norme integrative dei Regi decreti legge 28 dicembre 1943, n. 29/B , e 6 gennaio 1944, n. 9 ; Visto il decreto-legge Luogotenenziale 25 giugno 1944, n. 151 , concernente l'Assemblea per la nuova costituzione dello Stato, il giuramento dei Memibri del Governo e la facolt&agrave;, del Governo di emanare norme giuridiche; Visto il R. decreto-legge 30 ottobre 1943, n. 2/B , riguardante la sospensione delle norme relative all'emanazione, promulgazione, registrazione e pubblicazione dei Regi decreti e di altri provvedimenti; Visto il R. decreto-legge 29 maggio 1944, n. 141 , che istituisce presso la sede del Governo una Sezione speciale di controllo della, Corte dei conti; Vista la deliberazione del Consiglio dei Ministri; Sulla proposta del Presidente del Consiglio dei Ministri, Primo Ministro Segretario di Stato, di concerto con tutti i Ministri; Abbiamo sanzionato e promulghiamo quanto segue: Art. 1 ((ARTICOLO ABROGATO DAL D.LGS. 13 DICEMBRE 2010, N. 212 ))"
+    },
+    {
+      "chiave": "/eli/id/1944/03/15/044U0120/sg",
+      "titolo": "REGIO DECRETO 15 marzo 1944, n. 120",
+      "tipo": "regio.decreto",
+      "numero": "120",
+      "dataEmanazione": "1944-03-15",
+      "nir": "urn:nir:stato:regio.decreto:1944-03-15;120",
+      "eli": "/eli/id/1944/03/15/044U0120/sg",
+      "stato": "abrogato",
+      "sintesi": "Nomina di una Commissione Reale per la riforma della Previdenza Sociale. (044U0120)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1944-03-15;120",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1944/04/29/044U0120/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1944-04-29",
+      "numeroGU": "23",
+      "codiceRedazionale": "044U0120",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.P.R. 13 DICEMBRE 2010, N. 248 ))"
+    },
+    {
+      "chiave": "/eli/id/1944/04/05/044U0096/sg",
+      "titolo": "REGIO DECRETO 5 aprile 1944, n. 96",
+      "tipo": "regio.decreto",
+      "numero": "96",
+      "dataEmanazione": "1944-04-05",
+      "nir": "urn:nir:stato:regio.decreto:1944-04-05;96",
+      "eli": "/eli/id/1944/04/05/044U0096/sg",
+      "stato": "in_vigore",
+      "sintesi": "Amnistia e indulto per reati comuni, militari ed annonari. (044U0096)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1944-04-05;96",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1944/04/05/044U0096/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1944-04-05",
+      "numeroGU": "17",
+      "codiceRedazionale": "044U0096",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "VITTORIO EMANUELE III PER GRAZIA DI DIO E PER VOLONT&Agrave; DELLA NAZIONE RE D'ITALIA Visto l'art. 8 dello Statuto del Regno; Sentito il Consiglio dei Ministri; Sulla proposta del Ministro Segretario di Stato per la Grazia e Giustizia, di concerto con il Capo del Governo e con i Ministri dell'Interno, della Guerra, della Marina, dell'Aeronautica e delle Finanze; Abbiamo decretato e decretiamo: Art. 1 &Egrave; concessa amnistia per tutti i reati, quando il fine che li ha determinati sia stato quello di liberare la Patria dall'occupazione tedesca, ovvero quello di ridare al popolo italiano le libert&agrave; soppresse e conculcate dal regime fascista. Ove sia stata pronunziata condanna e dalla sentenza e dagli atti del procedimento non apparisca sufficientemente stabilito se il fatto sia compreso nell'amnistia, il giudice competente ad emettere la declaratoria dispone gli opportuni accertamenti. Gli stessi accertamenti disporr&agrave; la Suprema Corte di Cassazione, ove penda ricorso. ((2)) --------------- AGGIORNAMENTO (2) Il Decreto Luogotenenziale 8 giugno 1945, n. 455 ha disposto (con l'art. 1, comma 1) che \"Le disposizioni degli articoli 1 e 2 del R. decreto 5 aprile 1944, n. 96 , che ha concesso amnistia e indulto si applicano nei territori liberati dal nemico dopo il 4 aprile 1944, ai reati ivi commessi non oltre il giorno in cui ha avuto inizio, per ciascun territorio, la amministrazione alleata\"."
+    },
+    {
+      "chiave": "/eli/id/1944/02/17/044U0068/sg",
+      "titolo": "REGIO DECRETO 17 febbraio 1944, n. 68",
+      "tipo": "regio.decreto",
+      "numero": "68",
+      "dataEmanazione": "1944-02-17",
+      "nir": "urn:nir:stato:regio.decreto:1944-02-17;68",
+      "eli": "/eli/id/1944/02/17/044U0068/sg",
+      "stato": "in_vigore",
+      "sintesi": "Denominazione Comune Arborea. (044U0068)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1944-02-17;68",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1944/03/08/044U0068/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1944-03-08",
+      "numeroGU": "12",
+      "codiceRedazionale": "044U0068",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "VITTORIO EMANUELE PER GRAZIA DI DIO E PER VOLONT&Agrave; DELLA NAZIONE RE D'ITALIA Veduta la istanza in data 1° ottobre 1943, con la quale il Commissario Prefettizio del Comune di Mussolinia, in provincia di Cagliari, chiede, in esecuzione della propria deliberazione di pari data, l'autorizzazione a mutare la denominazione del Comune in &laquo;Arborea&raquo;; Veduto il parere favorevole espresso dal Commissario Prefettizio dell'Amministrazione della Provincia di Cagliari, con deliberazione del 1° ottobre 1941; Veduto l'art. 266 del T.U. della Legge Comunale e Provinciale, approvato con Nostro Decreto ((3 marzo 1934)), n. 383; Veduto il R. decreto-legge 30 ottobre 1943, n. 2 / B; Sulla proposta del Ministro Segretario di Stato per gli affari dell'Interno; Abbiamo decretato e decretiamo: Art. 1 Articolo unico Il Comune di Mussolinia, in Provincia di Cagliari, &egrave; autorizzato a mutare la propria denominazione in quella di &laquo;Arborea&raquo;. Il presente decreto ha effetto dalla data della sua pubblicazione nella Gazzetta Ufficiale del Regno. Ordiniamo, a chiunque spetti, di osservare il presente decreto e di farlo osservare come legge dello Stato. Dato a Salerno, il 17 febbraio 1944. VITTORIO EMANUELE REALE Visto: il Guardasigilli: CASATI"
+    },
+    {
+      "chiave": "/eli/id/1943/03/08/043U0175/sg",
+      "titolo": "REGIO DECRETO 8 marzo 1943, n. 175",
+      "tipo": "regio.decreto",
+      "numero": "175",
+      "dataEmanazione": "1943-03-08",
+      "nir": "urn:nir:stato:regio.decreto:1943-03-08;175",
+      "eli": "/eli/id/1943/03/08/043U0175/sg",
+      "stato": "abrogato",
+      "sintesi": "Autorizzazione al Regio Istituto tecnico industriale «Quintino Sella» di Biella ad accettare una donazione. (043U0175)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1943-03-08;175",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1943/04/12/043U0175/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1943-04-12",
+      "numeroGU": "84",
+      "codiceRedazionale": "043U0175",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.LGS. 13 DICEMBRE 2010, N. 212 ))"
+    },
+    {
+      "chiave": "/eli/id/1942/10/09/042U1420/sg",
+      "titolo": "LEGGE 9 ottobre 1942, n. 1420",
+      "tipo": "legge",
+      "numero": "1420",
+      "dataEmanazione": "1942-10-09",
+      "nir": "urn:nir:stato:legge:1942-10-09;1420",
+      "eli": "/eli/id/1942/10/09/042U1420/sg",
+      "stato": "in_vigore",
+      "sintesi": "Limitazioni di capacita' degli appartenenti alla razza ebraica residenti in Libia. (042U1420)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1942-10-09;1420",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1942/12/17/042U1420/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1942-12-17",
+      "numeroGU": "298",
+      "codiceRedazionale": "042U1420",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((IL REGIO D.L. 20 GENNAIO 1944, N. 26 , PUBBLICATO IN ALLEGATO AL D.LGS. LUOGOTENENZIALE 5 OTTOBRE 1944, N. 252 HA CONFERMATO L'ABROGAZIONE DEL PRESENTE PROVVEDIMENTO))"
+    },
+    {
+      "chiave": "/eli/id/1942/08/24/042U1071/sg",
+      "titolo": "REGIO DECRETO 24 agosto 1942, n. 1071",
+      "tipo": "regio.decreto",
+      "numero": "1071",
+      "dataEmanazione": "1942-08-24",
+      "nir": "urn:nir:stato:regio.decreto:1942-08-24;1071",
+      "eli": "/eli/id/1942/08/24/042U1071/sg",
+      "stato": "abrogato",
+      "sintesi": "Integrazione e modifica di alcune disposizioni del R. decreto 14 marzo 1942-XX, n. 172, sull'istituzione dell'Ordine cavalleresco dell'Aquila Romana. (042U1071)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1942-08-24;1071",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1942/09/25/042U1071/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1942-09-25",
+      "numeroGU": "226",
+      "codiceRedazionale": "042U1071",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.LGS. 13 DICEMBRE 2010, N. 212 ))"
+    }
+  ]
+}

@@ -1,0 +1,682 @@
+{
+  "provenance": {
+    "fonte": "normattiva",
+    "url": "https://api.normattiva.it/t/normattiva.api/bff-opendata/v1/api/v1/ricerca/aggiornati",
+    "recuperatoIl": "2026-09-29T01:55:58.574Z",
+    "licenza": "riproduzione consentita con menzione di fonte, carattere non autentico e gratuito (Note legali dati.normattiva.it; solo la Gazzetta Ufficiale a stampa e' autentica)"
+  },
+  "atti": [
+    {
+      "chiave": "/eli/id/1869/10/17/069U5314/sg",
+      "titolo": "REGIO DECRETO 17 ottobre 1869, n. 5314",
+      "tipo": "regio.decreto",
+      "numero": "5314",
+      "dataEmanazione": "1869-10-17",
+      "nir": "urn:nir:stato:regio.decreto:1869-10-17;5314",
+      "eli": "/eli/id/1869/10/17/069U5314/sg",
+      "stato": "abrogato",
+      "sintesi": "Concernente la prova di esame per conseguire la patente ai diversi gradi della Marina mercantile. (069U5314)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1869-10-17;5314",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1869/11/05/069U5314/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1869-11-05",
+      "numeroGU": "302",
+      "codiceRedazionale": "069U5314",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.LGS. 13 DICEMBRE 2010, N. 212 ))"
+    },
+    {
+      "chiave": "/eli/id/1869/10/28/069U5322/sg",
+      "titolo": "DECRETO MINISTERIALE 28 ottobre 1869, n. 5322",
+      "tipo": "decreto.ministeriale",
+      "numero": "5322",
+      "dataEmanazione": "1869-10-28",
+      "nir": "urn:nir:stato:decreto.ministeriale:1869-10-28;5322",
+      "eli": "/eli/id/1869/10/28/069U5322/sg",
+      "stato": "abrogato",
+      "sintesi": "Che fissa il periodo in cui dovra' effettuarsi la sottoscrizione all'Estero delle Obbligazioni al portatore, create in esecuzione della Legge 15 agosto 1867. (069U5322)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.ministeriale:1869-10-28;5322",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1869/10/29/069U5322/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1869-10-29",
+      "numeroGU": "296",
+      "codiceRedazionale": "069U5322",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.P.R. 13 DICEMBRE 2010, N. 248 ))"
+    },
+    {
+      "chiave": "/eli/id/1869/09/30/069U5299/sg",
+      "titolo": "REGIO DECRETO 30 settembre 1869, n. 5299",
+      "tipo": "regio.decreto",
+      "numero": "5299",
+      "dataEmanazione": "1869-09-30",
+      "nir": "urn:nir:stato:regio.decreto:1869-09-30;5299",
+      "eli": "/eli/id/1869/09/30/069U5299/sg",
+      "stato": "abrogato",
+      "sintesi": "Che determina i rapporti di dipendenza dell'Amministrazione del Fondo per il culto dal Ministero di Grazia e Giustizia. (069U5299)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1869-09-30;5299",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1869/10/14/069U5299/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1869-10-14",
+      "numeroGU": "281",
+      "codiceRedazionale": "069U5299",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.LGS. 13 DICEMBRE 2010, N. 212 ))"
+    },
+    {
+      "chiave": "/eli/id/1869/04/26/6902135R/sg",
+      "titolo": "REGIO DECRETO 26 aprile 1869, n. 2135",
+      "tipo": "regio.decreto",
+      "numero": "2135",
+      "dataEmanazione": "1869-04-26",
+      "nir": "urn:nir:stato:regio.decreto:1869-04-26;2135",
+      "eli": "/eli/id/1869/04/26/6902135R/sg",
+      "stato": "abrogato",
+      "sintesi": "Che autorizza la Banca dell'associazione commerciale di Firenze ad aumentare il suo capitale. (6902135R)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1869-04-26;2135",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1869/06/20/6902135R/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1869-06-20",
+      "numeroGU": "166",
+      "codiceRedazionale": "6902135R",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DALLA L. 7 APRILE 2025, N. 56 ))"
+    },
+    {
+      "chiave": "/eli/id/1869/05/18/069U5085/sg",
+      "titolo": "REGIO DECRETO 18 maggio 1869, n. 5085",
+      "tipo": "regio.decreto",
+      "numero": "5085",
+      "dataEmanazione": "1869-05-18",
+      "nir": "urn:nir:stato:regio.decreto:1869-05-18;5085",
+      "eli": "/eli/id/1869/05/18/069U5085/sg",
+      "stato": "abrogato",
+      "sintesi": "Di convocazione del Collegio elettorale di Casalmaggiore. (069U5085)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1869-05-18;5085",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1869/05/20/069U5085/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1869-05-20",
+      "numeroGU": "137",
+      "codiceRedazionale": "069U5085",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.LGS. 13 DICEMBRE 2010, N. 212 ))"
+    },
+    {
+      "chiave": "/eli/id/1869/05/18/069U5082/sg",
+      "titolo": "REGIO DECRETO 18 maggio 1869, n. 5082",
+      "tipo": "regio.decreto",
+      "numero": "5082",
+      "dataEmanazione": "1869-05-18",
+      "nir": "urn:nir:stato:regio.decreto:1869-05-18;5082",
+      "eli": "/eli/id/1869/05/18/069U5082/sg",
+      "stato": "abrogato",
+      "sintesi": "Di convocazione del Collegio elettorale di Bologna. (069U5082)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1869-05-18;5082",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1869/05/20/069U5082/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1869-05-20",
+      "numeroGU": "137",
+      "codiceRedazionale": "069U5082",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.LGS. 13 DICEMBRE 2010, N. 212 ))"
+    },
+    {
+      "chiave": "/eli/id/1869/05/02/069U5040/sg",
+      "titolo": "REGIO DECRETO 2 maggio 1869, n. 5040",
+      "tipo": "regio.decreto",
+      "numero": "5040",
+      "dataEmanazione": "1869-05-02",
+      "nir": "urn:nir:stato:regio.decreto:1869-05-02;5040",
+      "eli": "/eli/id/1869/05/02/069U5040/sg",
+      "stato": "abrogato",
+      "sintesi": "Che istituisce un Consolato a Porto Stanley (America Meridionale). (069U5040)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1869-05-02;5040",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1869/05/19/069U5040/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1869-05-19",
+      "numeroGU": "136",
+      "codiceRedazionale": "069U5040",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.P.R. 13 DICEMBRE 2010, N. 248 ))"
+    },
+    {
+      "chiave": "/eli/id/1869/02/14/069U4896/sg",
+      "titolo": "REGIO DECRETO 14 febbraio 1869, n. 4896",
+      "tipo": "regio.decreto",
+      "numero": "4896",
+      "dataEmanazione": "1869-02-14",
+      "nir": "urn:nir:stato:regio.decreto:1869-02-14;4896",
+      "eli": "/eli/id/1869/02/14/069U4896/sg",
+      "stato": "abrogato",
+      "sintesi": "Per la inscrizione di rendite 5 per cento sul Gran Libro del Debito Pubblico, per effetto della conversione di beni immobili di Enti morali ecclesiastici. (069U4896)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1869-02-14;4896",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1869/03/10/069U4896/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1869-03-10",
+      "numeroGU": "69",
+      "codiceRedazionale": "069U4896",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.LGS. 13 DICEMBRE 2010, N. 212 ))"
+    },
+    {
+      "chiave": "/eli/id/1868/12/24/068U4789/sg",
+      "titolo": "REGIO DECRETO 24 dicembre 1868, n. 4789",
+      "tipo": "regio.decreto",
+      "numero": "4789",
+      "dataEmanazione": "1868-12-24",
+      "nir": "urn:nir:stato:regio.decreto:1868-12-24;4789",
+      "eli": "/eli/id/1868/12/24/068U4789/sg",
+      "stato": "abrogato",
+      "sintesi": "Che sopprime i Comuni di Dairago, Arconate e Villa Cortese, aggregandoli a quello di Busto Garolfo. (068U4789)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1868-12-24;4789",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1869/01/24/068U4789/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1869-01-24",
+      "numeroGU": "24",
+      "codiceRedazionale": "068U4789",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DALLA L. 7 APRILE 2025, N. 56 ))"
+    },
+    {
+      "chiave": "/eli/id/1868/11/08/068U4683/sg",
+      "titolo": "REGIO DECRETO 8 novembre 1868, n. 4683",
+      "tipo": "regio.decreto",
+      "numero": "4683",
+      "dataEmanazione": "1868-11-08",
+      "nir": "urn:nir:stato:regio.decreto:1868-11-08;4683",
+      "eli": "/eli/id/1868/11/08/068U4683/sg",
+      "stato": "abrogato",
+      "sintesi": "Che provvede all'annullamento delle cedole emesse col Regio Decreto 26 maggio 1868, n. 4682. (068U4683)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1868-11-08;4683",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1868/11/19/068U4683/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1868-11-19",
+      "numeroGU": "315",
+      "codiceRedazionale": "068U4683",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.LGS. 13 DICEMBRE 2010, N. 212 ))"
+    },
+    {
+      "chiave": "/eli/id/1868/08/29/068U4596/sg",
+      "titolo": "REGIO DECRETO 29 agosto 1868, n. 4596",
+      "tipo": "regio.decreto",
+      "numero": "4596",
+      "dataEmanazione": "1868-08-29",
+      "nir": "urn:nir:stato:regio.decreto:1868-08-29;4596",
+      "eli": "/eli/id/1868/08/29/068U4596/sg",
+      "stato": "abrogato",
+      "sintesi": "Che approva il Regolamento per la coltivazione del riso nella Provincia di Lucca. (068U4596)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1868-08-29;4596",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1868/10/03/068U4596/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1868-10-03",
+      "numeroGU": "269",
+      "codiceRedazionale": "068U4596",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.LGS. 13 DICEMBRE 2010, N. 212 ))"
+    },
+    {
+      "chiave": "/eli/id/1868/07/19/068U4491/sg",
+      "titolo": "REGIO DECRETO 19 luglio 1868, n. 4491",
+      "tipo": "regio.decreto",
+      "numero": "4491",
+      "dataEmanazione": "1868-07-19",
+      "nir": "urn:nir:stato:regio.decreto:1868-07-19;4491",
+      "eli": "/eli/id/1868/07/19/068U4491/sg",
+      "stato": "abrogato",
+      "sintesi": "Che approva il Regolamento per l'applicazione della tassa sulla macinazione dei cereali. (068U4491)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1868-07-19;4491",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1868/08/01/068U4491/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1868-08-01",
+      "numeroGU": "208",
+      "codiceRedazionale": "068U4491",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.LGS. 13 DICEMBRE 2010, N. 212 ))"
+    },
+    {
+      "chiave": "/eli/id/1868/03/29/6801983R/sg",
+      "titolo": "REGIO DECRETO 29 marzo 1868, n. 1983",
+      "tipo": "regio.decreto",
+      "numero": "1983",
+      "dataEmanazione": "1868-03-29",
+      "nir": "urn:nir:stato:regio.decreto:1868-03-29;1983",
+      "eli": "/eli/id/1868/03/29/6801983R/sg",
+      "stato": "abrogato",
+      "sintesi": "Col quale e' aumentato il capitale della Banca popolare piacentina. (6801983R)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1868-03-29;1983",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1868/04/24/6801983R/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1868-04-24",
+      "numeroGU": "113",
+      "codiceRedazionale": "6801983R",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DALLA L. 7 APRILE 2025, N. 56 ))"
+    },
+    {
+      "chiave": "/eli/id/1868/01/09/068U4252/sg",
+      "titolo": "REGIO DECRETO 9 gennaio 1868, n. 4252",
+      "tipo": "regio.decreto",
+      "numero": "4252",
+      "dataEmanazione": "1868-01-09",
+      "nir": "urn:nir:stato:regio.decreto:1868-01-09;4252",
+      "eli": "/eli/id/1868/01/09/068U4252/sg",
+      "stato": "abrogato",
+      "sintesi": "Col quale sono istituiti nelle Provincie della Venezia e di Mantova gli Uffizi di verificazione dei pesi e delle misure, e ne e' modificata la circoscrizione nelle altre Provincie del Regno. (068U4252)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1868-01-09;4252",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1868/03/09/068U4252/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1868-03-09",
+      "numeroGU": "68",
+      "codiceRedazionale": "068U4252",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.LGS. 13 DICEMBRE 2010, N. 212 ))"
+    },
+    {
+      "chiave": "/eli/id/1867/10/20/067U4002/sg",
+      "titolo": "REGIO DECRETO 20 ottobre 1867, n. 4002",
+      "tipo": "regio.decreto",
+      "numero": "4002",
+      "dataEmanazione": "1867-10-20",
+      "nir": "urn:nir:stato:regio.decreto:1867-10-20;4002",
+      "eli": "/eli/id/1867/10/20/067U4002/sg",
+      "stato": "abrogato",
+      "sintesi": "Portante riduzione del personale del Ministero di Agricoltura, Industria e Commercio. (067U4002)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1867-10-20;4002",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1867/11/16/067U4002/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1867-11-16",
+      "numeroGU": "314",
+      "codiceRedazionale": "067U4002",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.LGS. 13 DICEMBRE 2010, N. 212 ))"
+    },
+    {
+      "chiave": "/eli/id/1867/04/25/067U3691/sg",
+      "titolo": "REGIO DECRETO 25 aprile 1867, n. 3691",
+      "tipo": "regio.decreto",
+      "numero": "3691",
+      "dataEmanazione": "1867-04-25",
+      "nir": "urn:nir:stato:regio.decreto:1867-04-25;3691",
+      "eli": "/eli/id/1867/04/25/067U3691/sg",
+      "stato": "abrogato",
+      "sintesi": "Col quale e' approvato il Regolamento per la coltivazione del riso nella Provincia di Cremona. (067U3691)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1867-04-25;3691",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1867/05/22/067U3691/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1867-05-22",
+      "numeroGU": "141",
+      "codiceRedazionale": "067U3691",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.LGS. 13 DICEMBRE 2010, N. 212 ))"
+    },
+    {
+      "chiave": "/eli/id/1867/04/14/067U3668/sg",
+      "titolo": "REGIO DECRETO 14 aprile 1867, n. 3668",
+      "tipo": "regio.decreto",
+      "numero": "3668",
+      "dataEmanazione": "1867-04-14",
+      "nir": "urn:nir:stato:regio.decreto:1867-04-14;3668",
+      "eli": "/eli/id/1867/04/14/067U3668/sg",
+      "stato": "abrogato",
+      "sintesi": "Col quale e' ridotto il compenso accordato ai Verificatori dei pesi e delle misure per le spese di trasporto di campioni in occasione della verificazione periodica. (067U3668)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1867-04-14;3668",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1867/05/03/067U3668/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1867-05-03",
+      "numeroGU": "122",
+      "codiceRedazionale": "067U3668",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.LGS. 13 DICEMBRE 2010, N. 212 ))"
+    },
+    {
+      "chiave": "/eli/id/1866/11/29/066U3463/sg",
+      "titolo": "REGIO DECRETO 29 novembre 1866, n. 3463",
+      "tipo": "regio.decreto",
+      "numero": "3463",
+      "dataEmanazione": "1866-11-29",
+      "nir": "urn:nir:stato:regio.decreto:1866-11-29;3463",
+      "eli": "/eli/id/1866/11/29/066U3463/sg",
+      "stato": "abrogato",
+      "sintesi": "Portante disposizioni provvisorie circa le formalita' e tassazioni per gli atti civili, giudiziali e di commercio che abbiano effetto, o di cui occorra fare uso in una Provincia regolata da legislazione in materia di tasse diversa da quella della Provincia, da cui proviene l'atto. (066U3463)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1866-11-29;3463",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1867/01/17/066U3463/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1867-01-17",
+      "numeroGU": "17",
+      "codiceRedazionale": "066U3463",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.LGS. 13 DICEMBRE 2010, N. 212 ))"
+    },
+    {
+      "chiave": "/eli/id/1866/11/25/6601833R/sg",
+      "titolo": "REGIO DECRETO 25 novembre 1866, n. 1833",
+      "tipo": "regio.decreto",
+      "numero": "1833",
+      "dataEmanazione": "1866-11-25",
+      "nir": "urn:nir:stato:regio.decreto:1866-11-25;1833",
+      "eli": "/eli/id/1866/11/25/6601833R/sg",
+      "stato": "abrogato",
+      "sintesi": "Che approva il Regolamento dei magazzini generali del Municipio di Torino. (6601833R)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1866-11-25;1833",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1866/12/20/6601833R/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1866-12-20",
+      "numeroGU": "349",
+      "codiceRedazionale": "6601833R",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DALLA L. 7 APRILE 2025, N. 56 ))"
+    },
+    {
+      "chiave": "/eli/id/1866/09/19/6601803R/sg",
+      "titolo": "REGIO DECRETO 19 settembre 1866, n. 1803",
+      "tipo": "regio.decreto",
+      "numero": "1803",
+      "dataEmanazione": "1866-09-19",
+      "nir": "urn:nir:stato:regio.decreto:1866-09-19;1803",
+      "eli": "/eli/id/1866/09/19/6601803R/sg",
+      "stato": "in_vigore",
+      "sintesi": "Che autorizza la Camera di Commercio ed Arti di Napoli ad imporre un'annua tassa sugli esercenti commercio ed industria nel territorio dipendente dalla medesima. (6601803R)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1866-09-19;1803",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1866/10/06/6601803R/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1866-10-06",
+      "numeroGU": "275",
+      "codiceRedazionale": "6601803R",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 (( PROVVEDIMENTO ABROGATO DAL REGIO DECRETO 23 MAGGIO 1869, N. MMCXLVII (2147) ))"
+    },
+    {
+      "chiave": "/eli/id/1866/08/18/066U3187/sg",
+      "titolo": "REGIO DECRETO 18 agosto 1866, n. 3187",
+      "tipo": "regio.decreto",
+      "numero": "3187",
+      "dataEmanazione": "1866-08-18",
+      "nir": "urn:nir:stato:regio.decreto:1866-08-18;3187",
+      "eli": "/eli/id/1866/08/18/066U3187/sg",
+      "stato": "abrogato",
+      "sintesi": "Contenente disposizioni per l'applicazione delle tasse di bollo. (066U3187)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1866-08-18;3187",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1866/09/14/066U3187/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1866-09-14",
+      "numeroGU": "253",
+      "codiceRedazionale": "066U3187",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.LGS. 13 DICEMBRE 2010, N. 212 ))"
+    },
+    {
+      "chiave": "/eli/id/1866/06/10/066U2977/sg",
+      "titolo": "REGIO DECRETO 10 giugno 1866, n. 2977",
+      "tipo": "regio.decreto",
+      "numero": "2977",
+      "dataEmanazione": "1866-06-10",
+      "nir": "urn:nir:stato:regio.decreto:1866-06-10;2977",
+      "eli": "/eli/id/1866/06/10/066U2977/sg",
+      "stato": "abrogato",
+      "sintesi": "Con cui il servizio dei pesi e delle misure e' posto nelle attribuzioni dell'Amministrazione delle Tasse e del Demanio. (066U2977)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1866-06-10;2977",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1866/06/21/066U2977/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1866-06-21",
+      "numeroGU": "170",
+      "codiceRedazionale": "066U2977",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.LGS. 13 DICEMBRE 2010, N. 212 ))"
+    },
+    {
+      "chiave": "/eli/id/1866/04/09/6601732R/sg",
+      "titolo": "REGIO DECRETO 9 aprile 1866, n. 1732",
+      "tipo": "regio.decreto",
+      "numero": "1732",
+      "dataEmanazione": "1866-04-09",
+      "nir": "urn:nir:stato:regio.decreto:1866-04-09;1732",
+      "eli": "/eli/id/1866/04/09/6601732R/sg",
+      "stato": "in_vigore",
+      "sintesi": "Che autorizza la Camera di commercio di Catanzaro ad imporre un'annua tassa sugli esercenti commercio ed industria in quel territorio. (6601732R)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1866-04-09;1732",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1866/04/20/6601732R/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1866-04-20",
+      "numeroGU": "109",
+      "codiceRedazionale": "6601732R",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 (( IL REGIO DECRETO 26 DICEMBRE 1907, N. DLXXIII (573) HA CONFERMATO L'ABROGAZIONE DEL PRESENTE PROVVEDIMENTO))"
+    },
+    {
+      "chiave": "/eli/id/1866/02/11/066U2808/sg",
+      "titolo": "REGIO DECRETO 11 febbraio 1866, n. 2808",
+      "tipo": "regio.decreto",
+      "numero": "2808",
+      "dataEmanazione": "1866-02-11",
+      "nir": "urn:nir:stato:regio.decreto:1866-02-11;2808",
+      "eli": "/eli/id/1866/02/11/066U2808/sg",
+      "stato": "abrogato",
+      "sintesi": "Che fissa il tempo in cui saranno aperti gli esami degli aspiranti ai gradi della Marina mercantile e che determina le materie sulle quali dovranno detti esami versare. (066U2808)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1866-02-11;2808",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1866/03/06/066U2808/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1866-03-06",
+      "numeroGU": "65",
+      "codiceRedazionale": "066U2808",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.LGS. 13 DICEMBRE 2010, N. 212 ))"
+    },
+    {
+      "chiave": "/eli/id/1865/08/13/065U2486/sg",
+      "titolo": "REGIO DECRETO 13 agosto 1865, n. 2486",
+      "tipo": "regio.decreto",
+      "numero": "2486",
+      "dataEmanazione": "1865-08-13",
+      "nir": "urn:nir:stato:regio.decreto:1865-08-13;2486",
+      "eli": "/eli/id/1865/08/13/065U2486/sg",
+      "stato": "abrogato",
+      "sintesi": "Che approva il Regolamento per le licenze temporarie agli individui dei Corpi e delle Amministrazioni della Marina Militare. (065U2486)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1865-08-13;2486",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1865/09/26/065U2486/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1865-09-26",
+      "numeroGU": "244",
+      "codiceRedazionale": "065U2486",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.LGS. 13 DICEMBRE 2010, N. 212 ))"
+    },
+    {
+      "chiave": "/eli/id/1865/07/16/065U2419/sg",
+      "titolo": "REGIO DECRETO 16 luglio 1865, n. 2419",
+      "tipo": "regio.decreto",
+      "numero": "2419",
+      "dataEmanazione": "1865-07-16",
+      "nir": "urn:nir:stato:regio.decreto:1865-07-16;2419",
+      "eli": "/eli/id/1865/07/16/065U2419/sg",
+      "stato": "abrogato",
+      "sintesi": "Che approva il Regolamento per gli esami di abilitazione degli aspiranti all' ufficio d'insegnanti nelle due classi superiori del Ginnasio. (065U2419)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1865-07-16;2419",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1865/08/16/065U2419/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1865-08-16",
+      "numeroGU": "203",
+      "codiceRedazionale": "065U2419",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.LGS. 13 DICEMBRE 2010, N. 212 ))"
+    },
+    {
+      "chiave": "/eli/id/1864/07/30/6401291R/sg",
+      "titolo": "REGIO DECRETO 30 luglio 1864, n. 1291",
+      "tipo": "regio.decreto",
+      "numero": "1291",
+      "dataEmanazione": "1864-07-30",
+      "nir": "urn:nir:stato:regio.decreto:1864-07-30;1291",
+      "eli": "/eli/id/1864/07/30/6401291R/sg",
+      "stato": "in_vigore",
+      "sintesi": "Che autorizza la Camera di commercio e d'arti di Caserta ad imporre un' annua tassa sugli esercenti arti, commerci ed industrie nel suo distretto. (6401291R)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1864-07-30;1291",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1864/08/22/6401291R/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1864-08-22",
+      "numeroGU": "199",
+      "codiceRedazionale": "6401291R",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 (( PROVVEDIMENTO ABROGATO DAL REGIO DECRETO 2 DICEMBRE 1897, N. CCCLXXIX (379) ))"
+    },
+    {
+      "chiave": "/eli/id/1863/06/14/063U1345/sg",
+      "titolo": "REGIO DECRETO 14 giugno 1863, n. 1345",
+      "tipo": "regio.decreto",
+      "numero": "1345",
+      "dataEmanazione": "1863-06-14",
+      "nir": "urn:nir:stato:regio.decreto:1863-06-14;1345",
+      "eli": "/eli/id/1863/06/14/063U1345/sg",
+      "stato": "abrogato",
+      "sintesi": "Che approva il Regolamento sull'armamento del Naviglio dello Stato e sulle competenze di bordo. (063U1345)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1863-06-14;1345",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1863/07/25/063U1345/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1863-07-25",
+      "numeroGU": "175",
+      "codiceRedazionale": "063U1345",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.LGS. 13 DICEMBRE 2010, N. 212 ))"
+    },
+    {
+      "chiave": "/eli/id/1863/05/31/6300785R/sg",
+      "titolo": "REGIO DECRETO 31 maggio 1863, n. 785",
+      "tipo": "regio.decreto",
+      "numero": "785",
+      "dataEmanazione": "1863-05-31",
+      "nir": "urn:nir:stato:regio.decreto:1863-05-31;785",
+      "eli": "/eli/id/1863/05/31/6300785R/sg",
+      "stato": "in_vigore",
+      "sintesi": "Che approva lo Statuto dell'Istituto di Belle Arti delle Marche. (6300785R)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1863-05-31;785",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1863/07/18/6300785R/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1863-07-18",
+      "numeroGU": "169",
+      "codiceRedazionale": "6300785R",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 (( PROVVEDIMENTO ABROGATO DAL REGIO DECRETO 5 GENNAIO 1893, N. CXIV (114) ))"
+    },
+    {
+      "chiave": "/eli/id/1863/06/14/063U1329/sg",
+      "titolo": "REGIO DECRETO 14 giugno 1863, n. 1329",
+      "tipo": "regio.decreto",
+      "numero": "1329",
+      "dataEmanazione": "1863-06-14",
+      "nir": "urn:nir:stato:regio.decreto:1863-06-14;1329",
+      "eli": "/eli/id/1863/06/14/063U1329/sg",
+      "stato": "abrogato",
+      "sintesi": "Con cui e' approvato il Regolamento per gli esami d'abilitazione degli aspiranti all'ufficio d'insegnanti nelle classi inferiori ginnasiali. (063U1329)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1863-06-14;1329",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1863/07/07/063U1329/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1863-07-07",
+      "numeroGU": "159",
+      "codiceRedazionale": "063U1329",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.LGS. 13 DICEMBRE 2010, N. 212 ))"
+    },
+    {
+      "chiave": "/eli/id/1863/02/01/063U1143/sg",
+      "titolo": "REGIO DECRETO 1 febbraio 1863, n. 1143",
+      "tipo": "regio.decreto",
+      "numero": "1143",
+      "dataEmanazione": "1863-02-01",
+      "nir": "urn:nir:stato:regio.decreto:1863-02-01;1143",
+      "eli": "/eli/id/1863/02/01/063U1143/sg",
+      "stato": "abrogato",
+      "sintesi": "che approva il regolamento che stabilisce le norme per evitare gli abbordi in mare. (063U1143)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1863-02-01;1143",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1863/03/05/063U1143/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1863-03-05",
+      "numeroGU": "55",
+      "codiceRedazionale": "063U1143",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.P.R. 13 DICEMBRE 2010, N. 248 ))"
+    },
+    {
+      "chiave": "/eli/id/1862/08/14/062U0800/sg",
+      "titolo": "LEGGE 14 agosto 1862, n. 800",
+      "tipo": "legge",
+      "numero": "800",
+      "dataEmanazione": "1862-08-14",
+      "nir": "urn:nir:stato:legge:1862-08-14;800",
+      "eli": "/eli/id/1862/08/14/062U0800/sg",
+      "stato": "in_vigore",
+      "sintesi": "Per l'instituzione della Corte dei conti del Regno d'Italia. (062U0800)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1862-08-14;800",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1862/09/10/062U0800/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1862-09-10",
+      "numeroGU": "214",
+      "codiceRedazionale": "062U0800",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 &Egrave; instituita la Corte dei conti del Regno d'Italia."
+    }
+  ]
+}

@@ -1,5 +1,5 @@
 /**
- * REALI-16 — copertura storica 1948-2026 (zero rete).
+ * REALI-16 — copertura storica 1861-2026 (zero rete).
  * Ogni anno deve comparire in un file `normattiva-storico-*.json`
  * (singolo o range 1992-1993/2005-2006) cablato nel loader, con atti
  * veri e ELI unici. Mai inventare anni: il test fallisce se manca copertura.
@@ -21,13 +21,13 @@ function anniCoperti(nome: string): number[] {
   return out;
 }
 
-describe('reali-16: copertura storica completa 1948-2026', () => {
-  it('ogni anno 1948-2025 ha una finestra storica dedicata (2026 via recenti+GU)', () => {
+describe('reali-16: copertura storica completa 1861-2026', () => {
+  it('ogni anno 1861-2025 ha una finestra storica dedicata (2026 via recenti+GU)', () => {
     const files = readdirSync(DIR_REALI).filter((f) => f.startsWith('normattiva-storico-'));
     const coperti = new Set<number>();
     for (const f of files) for (const y of anniCoperti(f)) coperti.add(y);
     const mancanti: number[] = [];
-    for (let y = 1948; y <= 2025; y += 1) if (!coperti.has(y)) mancanti.push(y);
+    for (let y = 1861; y <= 2025; y += 1) if (!coperti.has(y)) mancanti.push(y);
     expect(mancanti).toEqual([]);
     // Il 2026 corrente e' coperto come finestra modifiche + GU del giorno,
     // non come annata storica chiusa.

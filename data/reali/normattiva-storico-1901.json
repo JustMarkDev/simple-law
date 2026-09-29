@@ -1,0 +1,682 @@
+{
+  "provenance": {
+    "fonte": "normattiva",
+    "url": "https://api.normattiva.it/t/normattiva.api/bff-opendata/v1/api/v1/ricerca/aggiornati",
+    "recuperatoIl": "2026-09-29T01:54:45.687Z",
+    "licenza": "riproduzione consentita con menzione di fonte, carattere non autentico e gratuito (Note legali dati.normattiva.it; solo la Gazzetta Ufficiale a stampa e' autentica)"
+  },
+  "atti": [
+    {
+      "chiave": "/eli/id/1901/11/08/001U0467/sg",
+      "titolo": "REGIO DECRETO 8 novembre 1901, n. 467",
+      "tipo": "regio.decreto",
+      "numero": "467",
+      "dataEmanazione": "1901-11-08",
+      "nir": "urn:nir:stato:regio.decreto:1901-11-08;467",
+      "eli": "/eli/id/1901/11/08/001U0467/sg",
+      "stato": "abrogato",
+      "sintesi": "Relativo al riordinamento del personale dei vari Uffici dipendenti dal Ministero della Pubblica Istruzione. (001U0467)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1901-11-08;467",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1901/11/18/001U0467/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1901-11-18",
+      "numeroGU": "273",
+      "codiceRedazionale": "001U0467",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.P.R. 13 DICEMBRE 2010, N. 248 ))"
+    },
+    {
+      "chiave": "/eli/id/1901/07/10/001U0375/sg",
+      "titolo": "REGIO DECRETO 10 luglio 1901, n. 375",
+      "tipo": "regio.decreto",
+      "numero": "375",
+      "dataEmanazione": "1901-07-10",
+      "nir": "urn:nir:stato:regio.decreto:1901-07-10;375",
+      "eli": "/eli/id/1901/07/10/001U0375/sg",
+      "stato": "abrogato",
+      "sintesi": "Che manda in vigore la legge n. 23, del 31 gennaio 1901, sull'emigrazione ed approva il relativo Regolamento. (001U0375)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1901-07-10;375",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1901/08/13/001U0375/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1901-08-13",
+      "numeroGU": "193",
+      "codiceRedazionale": "001U0375",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.L. 25 GIUGNO 2008, N. 112 , CONVERTITO CON MODIFICAZIONI DALLA L. 6 AGOSTO 2008, N. 133 ))"
+    },
+    {
+      "chiave": "/eli/id/1901/04/28/001U0155/sg",
+      "titolo": "REGIO DECRETO 28 aprile 1901, n. 155",
+      "tipo": "regio.decreto",
+      "numero": "155",
+      "dataEmanazione": "1901-04-28",
+      "nir": "urn:nir:stato:regio.decreto:1901-04-28;155",
+      "eli": "/eli/id/1901/04/28/001U0155/sg",
+      "stato": "abrogato",
+      "sintesi": "Che autorizza un prelevamento di somma dal fondo di riserva per le «spese impreviste» del bilancio passivo del Ministero del Tesoro (esercizio 1900-901). (001U0155)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1901-04-28;155",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1901/05/11/001U0155/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1901-05-11",
+      "numeroGU": "112",
+      "codiceRedazionale": "001U0155",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.LGS. 13 DICEMBRE 2010, N. 212 ))"
+    },
+    {
+      "chiave": "/eli/id/1901/04/25/001U0144/sg",
+      "titolo": "REGIO DECRETO 25 aprile 1901, n. 144",
+      "tipo": "regio.decreto",
+      "numero": "144",
+      "dataEmanazione": "1901-04-25",
+      "nir": "urn:nir:stato:regio.decreto:1901-04-25;144",
+      "eli": "/eli/id/1901/04/25/001U0144/sg",
+      "stato": "abrogato",
+      "sintesi": "Prelevamento di somma dal fondo di riserva per le «spese impreviste» del bilancio passivo del Ministero del Tesoro per l'esercizio finanziario 1900-901. (001U0144)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1901-04-25;144",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1901/05/10/001U0144/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1901-05-10",
+      "numeroGU": "111",
+      "codiceRedazionale": "001U0144",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.LGS. 13 DICEMBRE 2010, N. 212 ))"
+    },
+    {
+      "chiave": "/eli/id/1901/04/25/001U0143/sg",
+      "titolo": "REGIO DECRETO 25 aprile 1901, n. 143",
+      "tipo": "regio.decreto",
+      "numero": "143",
+      "dataEmanazione": "1901-04-25",
+      "nir": "urn:nir:stato:regio.decreto:1901-04-25;143",
+      "eli": "/eli/id/1901/04/25/001U0143/sg",
+      "stato": "abrogato",
+      "sintesi": "Prelevamento di somma dal fondo di riserva per le «spese impreviste» del bilancio passivo del Ministero del Tesoro per l'esercizio finanziario 1900-901. (001U0143)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1901-04-25;143",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1901/05/10/001U0143/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1901-05-10",
+      "numeroGU": "111",
+      "codiceRedazionale": "001U0143",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.LGS. 13 DICEMBRE 2010, N. 212 ))"
+    },
+    {
+      "chiave": "/eli/id/1901/04/25/001U0141/sg",
+      "titolo": "REGIO DECRETO 25 aprile 1901, n. 141",
+      "tipo": "regio.decreto",
+      "numero": "141",
+      "dataEmanazione": "1901-04-25",
+      "nir": "urn:nir:stato:regio.decreto:1901-04-25;141",
+      "eli": "/eli/id/1901/04/25/001U0141/sg",
+      "stato": "abrogato",
+      "sintesi": "Riflettenti prelevazioni di somme dal fondo di riserva per le spese impreviste» del bilancio passivo del Ministero del Tesoro (esercizi 1900-901). (001U0141)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1901-04-25;141",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1901/05/09/001U0141/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1901-05-09",
+      "numeroGU": "110",
+      "codiceRedazionale": "001U0141",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.LGS. 13 DICEMBRE 2010, N. 212 ))"
+    },
+    {
+      "chiave": "/eli/id/1901/03/31/001U0107/sg",
+      "titolo": "LEGGE 31 marzo 1901, n. 107",
+      "tipo": "legge",
+      "numero": "107",
+      "dataEmanazione": "1901-03-31",
+      "nir": "urn:nir:stato:legge:1901-03-31;107",
+      "eli": "/eli/id/1901/03/31/001U0107/sg",
+      "stato": "abrogato",
+      "sintesi": "Che riforma il procedimento sommario. (001U0107)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1901-03-31;107",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1901/04/08/001U0107/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1901-04-08",
+      "numeroGU": "83",
+      "codiceRedazionale": "001U0107",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.L. 22 DICEMBRE 2008, N. 200 , CONVERTITO CON MODIFICAZIONI DALLA L. 18 FEBBRAIO 2009, N. 9 ))"
+    },
+    {
+      "chiave": "/eli/id/1901/02/21/001U0066/sg",
+      "titolo": "REGIO DECRETO 21 febbraio 1901, n. 66",
+      "tipo": "regio.decreto",
+      "numero": "66",
+      "dataEmanazione": "1901-02-21",
+      "nir": "urn:nir:stato:regio.decreto:1901-02-21;66",
+      "eli": "/eli/id/1901/02/21/001U0066/sg",
+      "stato": "abrogato",
+      "sintesi": "Per prelevamento di somma dal fondo di riserva per le «spese impreviste» del bilancio passivo del Ministero del Tesoro (esercizio finanziario 1900-901). (001U0066)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1901-02-21;66",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1901/03/02/001U0066/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1901-03-02",
+      "numeroGU": "52",
+      "codiceRedazionale": "001U0066",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.LGS. 13 DICEMBRE 2010, N. 212 ))"
+    },
+    {
+      "chiave": "/eli/id/1901/02/17/001U0058/sg",
+      "titolo": "REGIO DECRETO 17 febbraio 1901, n. 58",
+      "tipo": "regio.decreto",
+      "numero": "58",
+      "dataEmanazione": "1901-02-17",
+      "nir": "urn:nir:stato:regio.decreto:1901-02-17;58",
+      "eli": "/eli/id/1901/02/17/001U0058/sg",
+      "stato": "abrogato",
+      "sintesi": "Autorizzante prelevazione di somma dal fondo di riserva per le «spese impreviste» del bilancio passivo del Ministero del Tesoro (esercizio 1900-901). (001U0058)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1901-02-17;58",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1901/02/27/001U0058/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1901-02-27",
+      "numeroGU": "49",
+      "codiceRedazionale": "001U0058",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.LGS. 13 DICEMBRE 2010, N. 212 ))"
+    },
+    {
+      "chiave": "/eli/id/1901/01/31/001U0036/sg",
+      "titolo": "REGIO DECRETO 31 gennaio 1901, n. 36",
+      "tipo": "regio.decreto",
+      "numero": "36",
+      "dataEmanazione": "1901-01-31",
+      "nir": "urn:nir:stato:regio.decreto:1901-01-31;36",
+      "eli": "/eli/id/1901/01/31/001U0036/sg",
+      "stato": "abrogato",
+      "sintesi": "Circa il rilascio dei passaporti per l'estero. (001U0036)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1901-01-31;36",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1901/02/14/001U0036/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1901-02-14",
+      "numeroGU": "38",
+      "codiceRedazionale": "001U0036",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DALLA L. 7 APRILE 2025, N. 56 ))"
+    },
+    {
+      "chiave": "/eli/id/1901/01/31/001U0023/sg",
+      "titolo": "LEGGE 31 gennaio 1901, n. 23",
+      "tipo": "legge",
+      "numero": "23",
+      "dataEmanazione": "1901-01-31",
+      "nir": "urn:nir:stato:legge:1901-01-31;23",
+      "eli": "/eli/id/1901/01/31/001U0023/sg",
+      "stato": "abrogato",
+      "sintesi": "Disposizioni sull'emigrazione. (001U0023)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1901-01-31;23",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1901/02/04/001U0023/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1901-02-04",
+      "numeroGU": "29",
+      "codiceRedazionale": "001U0023",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.L. 25 GIUGNO 2008, N. 112 , CONVERTITO CON MODIFICAZIONI DALLA L. 6 AGOSTO 2008, N. 133 ))"
+    },
+    {
+      "chiave": "/eli/id/1900/12/23/0000386R/sg",
+      "titolo": "REGIO DECRETO 23 dicembre 1900, n. 386",
+      "tipo": "regio.decreto",
+      "numero": "386",
+      "dataEmanazione": "1900-12-23",
+      "nir": "urn:nir:stato:regio.decreto:1900-12-23;386",
+      "eli": "/eli/id/1900/12/23/0000386R/sg",
+      "stato": "abrogato",
+      "sintesi": "Che erige in ente morale le fondazioni Mariantonio Ricco e Rosina Cafiero in Margherita di Savoia. (0000386R)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1900-12-23;386",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1901/01/22/0000386R/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1901-01-22",
+      "numeroGU": "18",
+      "codiceRedazionale": "0000386R",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DALLA L. 7 APRILE 2025, N. 56 ))"
+    },
+    {
+      "chiave": "/eli/id/1900/12/30/000U0499/sg",
+      "titolo": "REGIO DECRETO 30 dicembre 1900, n. 499",
+      "tipo": "regio.decreto",
+      "numero": "499",
+      "dataEmanazione": "1900-12-30",
+      "nir": "urn:nir:stato:regio.decreto:1900-12-30;499",
+      "eli": "/eli/id/1900/12/30/000U0499/sg",
+      "stato": "abrogato",
+      "sintesi": "Autorizzante la prelevazione di una somma dal fondo di riserva per le «spese impreviste», del bilancio passivo del Ministero del Tesoro per l'esercizio finanziario 1900-901. (000U0499)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1900-12-30;499",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1901/01/18/000U0499/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1901-01-18",
+      "numeroGU": "15",
+      "codiceRedazionale": "000U0499",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.LGS. 13 DICEMBRE 2010, N. 212 ))"
+    },
+    {
+      "chiave": "/eli/id/1900/12/30/000U0465/sg",
+      "titolo": "LEGGE 30 dicembre 1900, n. 465",
+      "tipo": "legge",
+      "numero": "465",
+      "dataEmanazione": "1900-12-30",
+      "nir": "urn:nir:stato:legge:1900-12-30;465",
+      "eli": "/eli/id/1900/12/30/000U0465/sg",
+      "stato": "abrogato",
+      "sintesi": "approvazione di eccedenze d'impegni verificatesi sulle assegnazioni di alcuni capitoli degli stati di previsione di varii Ministeri (000U0465)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1900-12-30;465",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1901/01/04/000U0465/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1901-01-04",
+      "numeroGU": "3",
+      "codiceRedazionale": "000U0465",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.L. 22 DICEMBRE 2008, N. 200 , CONVERTITO CON MODIFICAZIONI DALLA L. 18 FEBBRAIO 2009, N. 9 ))"
+    },
+    {
+      "chiave": "/eli/id/1900/12/30/000U0458/sg",
+      "titolo": "LEGGE 30 dicembre 1900, n. 458",
+      "tipo": "legge",
+      "numero": "458",
+      "dataEmanazione": "1900-12-30",
+      "nir": "urn:nir:stato:legge:1900-12-30;458",
+      "eli": "/eli/id/1900/12/30/000U0458/sg",
+      "stato": "abrogato",
+      "sintesi": "Che approva lo stato di previsione della spesa dell'Entrata. (000U0458)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1900-12-30;458",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1900/12/31/000U0458/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1900-12-31",
+      "numeroGU": "302",
+      "codiceRedazionale": "000U0458",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.L. 22 DICEMBRE 2008, N. 200 , CONVERTITO CON MODIFICAZIONI DALLA L. 18 FEBBRAIO 2009, N. 9 ))"
+    },
+    {
+      "chiave": "/eli/id/1900/12/30/000U0457/sg",
+      "titolo": "LEGGE 30 dicembre 1900, n. 457",
+      "tipo": "legge",
+      "numero": "457",
+      "dataEmanazione": "1900-12-30",
+      "nir": "urn:nir:stato:legge:1900-12-30;457",
+      "eli": "/eli/id/1900/12/30/000U0457/sg",
+      "stato": "abrogato",
+      "sintesi": "Che approva lo stato di previsione della spesa del Ministero della Marina. (000U0457)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1900-12-30;457",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1900/12/31/000U0457/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1900-12-31",
+      "numeroGU": "302",
+      "codiceRedazionale": "000U0457",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.L. 22 DICEMBRE 2008, N. 200 , CONVERTITO CON MODIFICAZIONI DALLA L. 18 FEBBRAIO 2009, N. 9 ))"
+    },
+    {
+      "chiave": "/eli/id/1900/11/18/000U0399/sg",
+      "titolo": "REGIO DECRETO 18 novembre 1900, n. 399",
+      "tipo": "regio.decreto",
+      "numero": "399",
+      "dataEmanazione": "1900-11-18",
+      "nir": "urn:nir:stato:regio.decreto:1900-11-18;399",
+      "eli": "/eli/id/1900/11/18/000U0399/sg",
+      "stato": "abrogato",
+      "sintesi": "Sul riordinamento del Consiglio d'Agricoltura. (000U0399)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1900-11-18;399",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1900/12/14/000U0399/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1900-12-14",
+      "numeroGU": "289",
+      "codiceRedazionale": "000U0399",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.LGS. 13 DICEMBRE 2010, N. 212 ))"
+    },
+    {
+      "chiave": "/eli/id/1900/11/15/000U0384/sg",
+      "titolo": "REGIO DECRETO 15 novembre 1900, n. 384",
+      "tipo": "regio.decreto",
+      "numero": "384",
+      "dataEmanazione": "1900-11-15",
+      "nir": "urn:nir:stato:regio.decreto:1900-11-15;384",
+      "eli": "/eli/id/1900/11/15/000U0384/sg",
+      "stato": "abrogato",
+      "sintesi": "Prelevamento di somma dal fondo di riserva per le «spese impreviste» del bilancio passivo del Ministero del Tesoro, per l'esercizio finanziario 1900-901. (000U0384)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1900-11-15;384",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1900/11/27/000U0384/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1900-11-27",
+      "numeroGU": "275",
+      "codiceRedazionale": "000U0384",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.LGS. 13 DICEMBRE 2010, N. 212 ))"
+    },
+    {
+      "chiave": "/eli/id/1900/11/16/000U0377/sg",
+      "titolo": "REGIO DECRETO 16 novembre 1900, n. 377",
+      "tipo": "regio.decreto",
+      "numero": "377",
+      "dataEmanazione": "1900-11-16",
+      "nir": "urn:nir:stato:regio.decreto:1900-11-16;377",
+      "eli": "/eli/id/1900/11/16/000U0377/sg",
+      "stato": "abrogato",
+      "sintesi": "Sui provvedimenti per la Marina mercantile. (000U0377)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1900-11-16;377",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1900/11/20/000U0377/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1900-11-20",
+      "numeroGU": "269",
+      "codiceRedazionale": "000U0377",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.LGS. 13 DICEMBRE 2010, N. 212 ))"
+    },
+    {
+      "chiave": "/eli/id/1900/10/09/000U0365/sg",
+      "titolo": "REGIO DECRETO 9 ottobre 1900, n. 365",
+      "tipo": "regio.decreto",
+      "numero": "365",
+      "dataEmanazione": "1900-10-09",
+      "nir": "urn:nir:stato:regio.decreto:1900-10-09;365",
+      "eli": "/eli/id/1900/10/09/000U0365/sg",
+      "stato": "abrogato",
+      "sintesi": "Col quale si approva il Regolamento per l'attuazione della legge 15 luglio 1900 sugli alunni delle cancellerie e segreterie giudiziarie. (000U0365)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1900-10-09;365",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1900/11/13/000U0365/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1900-11-13",
+      "numeroGU": "263",
+      "codiceRedazionale": "000U0365",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.LGS. 13 DICEMBRE 2010, N. 212 ))"
+    },
+    {
+      "chiave": "/eli/id/1900/10/17/0000309R/sg",
+      "titolo": "REGIO DECRETO 17 ottobre 1900, n. 309",
+      "tipo": "regio.decreto",
+      "numero": "309",
+      "dataEmanazione": "1900-10-17",
+      "nir": "urn:nir:stato:regio.decreto:1900-10-17;309",
+      "eli": "/eli/id/1900/10/17/0000309R/sg",
+      "stato": "in_vigore",
+      "sintesi": "Che respinge la domanda del comune di Grosseto per l'applicazione della tassa sul bestiame. (0000309R)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1900-10-17;309",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1900/11/05/0000309R/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1900-11-05",
+      "numeroGU": "255",
+      "codiceRedazionale": "0000309R",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO REVOCATO DAL REGIO DECRETO 16 DICEMBRE 1900, N. CCCLXV (365) ))"
+    },
+    {
+      "chiave": "/eli/id/1900/09/18/000U0345/sg",
+      "titolo": "REGIO DECRETO 18 settembre 1900, n. 345",
+      "tipo": "regio.decreto",
+      "numero": "345",
+      "dataEmanazione": "1900-09-18",
+      "nir": "urn:nir:stato:regio.decreto:1900-09-18;345",
+      "eli": "/eli/id/1900/09/18/000U0345/sg",
+      "stato": "abrogato",
+      "sintesi": "Riflettente prelevamenti di somme dal fondo di riserva per le «spese impreviste» del bilancio passivo del Ministero del Tesoro (esercizio 1900-901). (000U0345)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1900-09-18;345",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1900/10/11/000U0345/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1900-10-11",
+      "numeroGU": "235",
+      "codiceRedazionale": "000U0345",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.LGS. 13 DICEMBRE 2010, N. 212 ))"
+    },
+    {
+      "chiave": "/eli/id/1900/07/15/000U0269/sg",
+      "titolo": "REGIO DECRETO 15 luglio 1900, n. 269",
+      "tipo": "regio.decreto",
+      "numero": "269",
+      "dataEmanazione": "1900-07-15",
+      "nir": "urn:nir:stato:regio.decreto:1900-07-15;269",
+      "eli": "/eli/id/1900/07/15/000U0269/sg",
+      "stato": "abrogato",
+      "sintesi": "Concernente prelevazione di somma dal fondo di riserva per le «spese impreviste» del bilancio passivo del Ministero del Tesoro (esercizio finanziario 1900-901). (000U0269)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1900-07-15;269",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1900/07/25/000U0269/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1900-07-25",
+      "numeroGU": "172",
+      "codiceRedazionale": "000U0269",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.LGS. 13 DICEMBRE 2010, N. 212 ))"
+    },
+    {
+      "chiave": "/eli/id/1900/07/15/000U0249/sg",
+      "titolo": "LEGGE 15 luglio 1900, n. 249",
+      "tipo": "legge",
+      "numero": "249",
+      "dataEmanazione": "1900-07-15",
+      "nir": "urn:nir:stato:legge:1900-07-15;249",
+      "eli": "/eli/id/1900/07/15/000U0249/sg",
+      "stato": "abrogato",
+      "sintesi": "Circa la retribuzione degli alunni delle cancellerie e segreterie giudiziarie. (000U0249)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1900-07-15;249",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1900/07/17/000U0249/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1900-07-17",
+      "numeroGU": "165",
+      "codiceRedazionale": "000U0249",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.L. 22 DICEMBRE 2008, N. 200 , CONVERTITO CON MODIFICAZIONI DALLA L. 18 FEBBRAIO 2009, N. 9 ))"
+    },
+    {
+      "chiave": "/eli/id/1900/06/10/000U0210/sg",
+      "titolo": "REGIO DECRETO 10 giugno 1900, n. 210",
+      "tipo": "regio.decreto",
+      "numero": "210",
+      "dataEmanazione": "1900-06-10",
+      "nir": "urn:nir:stato:regio.decreto:1900-06-10;210",
+      "eli": "/eli/id/1900/06/10/000U0210/sg",
+      "stato": "abrogato",
+      "sintesi": "Che approva la proroga della scadenza del Trattato di commercio e navigazione fra l'Italia ed il Montenegro (000U0210)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1900-06-10;210",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1900/06/13/000U0210/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1900-06-13",
+      "numeroGU": "138",
+      "codiceRedazionale": "000U0210",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DALLA L. 7 APRILE 2025, N. 56 ))"
+    },
+    {
+      "chiave": "/eli/id/1900/05/13/000U0177/sg",
+      "titolo": "REGIO DECRETO 13 maggio 1900, n. 177",
+      "tipo": "regio.decreto",
+      "numero": "177",
+      "dataEmanazione": "1900-05-13",
+      "nir": "urn:nir:stato:regio.decreto:1900-05-13;177",
+      "eli": "/eli/id/1900/05/13/000U0177/sg",
+      "stato": "abrogato",
+      "sintesi": "Autorizzante prelevazione di somma dal fondo di riserva per le «spese impreviste» del bilancio passivo del Ministero del Tesoro (esercizio finanziario 1899-1900). (000U0177)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1900-05-13;177",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1900/05/23/000U0177/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1900-05-23",
+      "numeroGU": "121",
+      "codiceRedazionale": "000U0177",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.LGS. 13 DICEMBRE 2010, N. 212 ))"
+    },
+    {
+      "chiave": "/eli/id/1900/04/26/000U0167/sg",
+      "titolo": "REGIO DECRETO 26 aprile 1900, n. 167",
+      "tipo": "regio.decreto",
+      "numero": "167",
+      "dataEmanazione": "1900-04-26",
+      "nir": "urn:nir:stato:regio.decreto:1900-04-26;167",
+      "eli": "/eli/id/1900/04/26/000U0167/sg",
+      "stato": "abrogato",
+      "sintesi": "Autorizzante un prelevamento di somma dal fondo di riserva per le «spese impreviste» dello stato di previsione del Ministero del tesoro (esercizio 1899-1900). (000U0167)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1900-04-26;167",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1900/05/11/000U0167/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1900-05-11",
+      "numeroGU": "111",
+      "codiceRedazionale": "000U0167",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.LGS. 13 DICEMBRE 2010, N. 212 ))"
+    },
+    {
+      "chiave": "/eli/id/1900/04/22/000U0156/sg",
+      "titolo": "REGIO DECRETO 22 aprile 1900, n. 156",
+      "tipo": "regio.decreto",
+      "numero": "156",
+      "dataEmanazione": "1900-04-22",
+      "nir": "urn:nir:stato:regio.decreto:1900-04-22;156",
+      "eli": "/eli/id/1900/04/22/000U0156/sg",
+      "stato": "abrogato",
+      "sintesi": "Prelevazioni di somme dal fondo di riserva delle spese «impreviste» dei bilanci dei Ministeri dei Lavori Pubblici e del Tesoro. (000U0156)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1900-04-22;156",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1900/05/02/000U0156/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1900-05-02",
+      "numeroGU": "103",
+      "codiceRedazionale": "000U0156",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.LGS. 13 DICEMBRE 2010, N. 212 ))"
+    },
+    {
+      "chiave": "/eli/id/1900/04/01/0000103R/sg",
+      "titolo": "REGIO DECRETO 1 aprile 1900, n. 103",
+      "tipo": "regio.decreto",
+      "numero": "103",
+      "dataEmanazione": "1900-04-01",
+      "nir": "urn:nir:stato:regio.decreto:1900-04-01;103",
+      "eli": "/eli/id/1900/04/01/0000103R/sg",
+      "stato": "abrogato",
+      "sintesi": "Che istituisce dieci sezioni elettorali pel collegio di probi-viri in Arezzo. (0000103R)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1900-04-01;103",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1900/04/21/0000103R/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1900-04-21",
+      "numeroGU": "94",
+      "codiceRedazionale": "0000103R",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DALLA L. 7 APRILE 2025, N. 56 ))"
+    },
+    {
+      "chiave": "/eli/id/1900/04/05/000U0134/sg",
+      "titolo": "REGIO DECRETO 5 aprile 1900, n. 134",
+      "tipo": "regio.decreto",
+      "numero": "134",
+      "dataEmanazione": "1900-04-05",
+      "nir": "urn:nir:stato:regio.decreto:1900-04-05;134",
+      "eli": "/eli/id/1900/04/05/000U0134/sg",
+      "stato": "abrogato",
+      "sintesi": "Col quale viene modificato il Ruolo organico del personale del Ministero delle Finanze. (000U0134)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1900-04-05;134",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1900/04/19/000U0134/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1900-04-19",
+      "numeroGU": "92",
+      "codiceRedazionale": "000U0134",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.P.R. 13 DICEMBRE 2010, N. 248 ))"
+    },
+    {
+      "chiave": "/eli/id/1900/04/08/000U0124/sg",
+      "titolo": "REGIO DECRETO 8 aprile 1900, n. 124",
+      "tipo": "regio.decreto",
+      "numero": "124",
+      "dataEmanazione": "1900-04-08",
+      "nir": "urn:nir:stato:regio.decreto:1900-04-08;124",
+      "eli": "/eli/id/1900/04/08/000U0124/sg",
+      "stato": "abrogato",
+      "sintesi": "Autorizzante prelevamenti di somme dal fondo di riserva per le «spese impreviste» dello stato di previsione della spesa del Ministero del Tesoro (esercizio finanziario 1899-1900). (000U0124)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1900-04-08;124",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1900/04/13/000U0124/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1900-04-13",
+      "numeroGU": "87",
+      "codiceRedazionale": "000U0124",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.LGS. 13 DICEMBRE 2010, N. 212 ))"
+    },
+    {
+      "chiave": "/eli/id/1900/03/25/000U0100/sg",
+      "titolo": "LEGGE 25 marzo 1900, n. 100",
+      "tipo": "legge",
+      "numero": "100",
+      "dataEmanazione": "1900-03-25",
+      "nir": "urn:nir:stato:legge:1900-03-25;100",
+      "eli": "/eli/id/1900/03/25/000U0100/sg",
+      "stato": "abrogato",
+      "sintesi": "Concernente disposizioni per combattere le frodi nella preparazione e nel commercio dei vini. (000U0100)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1900-03-25;100",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1900/03/31/000U0100/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1900-03-31",
+      "numeroGU": "76",
+      "codiceRedazionale": "000U0100",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.L. 22 DICEMBRE 2008, N. 200 , CONVERTITO CON MODIFICAZIONI DALLA L. 18 FEBBRAIO 2009, N. 9 ))"
+    }
+  ]
+}

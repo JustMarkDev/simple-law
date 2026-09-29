@@ -1,0 +1,241 @@
+{
+  "provenance": {
+    "fonte": "normattiva",
+    "url": "https://api.normattiva.it/t/normattiva.api/bff-opendata/v1/api/v1/ricerca/aggiornati",
+    "recuperatoIl": "2026-09-29T01:41:05.716Z",
+    "licenza": "riproduzione consentita con menzione di fonte, carattere non autentico e gratuito (Note legali dati.normattiva.it; solo la Gazzetta Ufficiale a stampa e' autentica)"
+  },
+  "atti": [
+    {
+      "chiave": "/eli/id/1927/07/29/027U1814/sg",
+      "titolo": "REGIO DECRETO 29 luglio 1927, n. 1814",
+      "tipo": "regio.decreto",
+      "numero": "1814",
+      "dataEmanazione": "1927-07-29",
+      "nir": "urn:nir:stato:regio.decreto:1927-07-29;1814",
+      "eli": "/eli/id/1927/07/29/027U1814/sg",
+      "stato": "in_vigore",
+      "sintesi": "Disposizioni di attuazione e transitorie del R. decreto-legge 15 marzo 1927, n. 436, concernente la disciplina dei contratti di compra-vendita degli autoveicoli e l'istituzione del pubblico registro automobilistico presso le sedi dell'Automobile Club d'Italia. (027U1814)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1927-07-29;1814",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1927/10/05/027U1814/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1927-10-05",
+      "numeroGU": "230",
+      "codiceRedazionale": "027U1814",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "VITTORIO EMANUELE III PER GRAZIA DI DIO E PER VOLONT&Agrave; DELLA NAZIONE RE D'ITALIA Visto l' art. 30 del R. decreto-legge 15 marzo 1927, n. 436 , riguardante la disciplina dei contratti di compra-vendita degli autoveicoli e l'istituzione del pubblico registro automobilistico presso le sedi dell'Automobile Club d'Italia; Visto l' art. 3, n. 1, della legge 31 gennaio 1926, n. 100 , sulla facolt&agrave; del potere esecutivo di emanare norme giuridiche; Sentito il Consiglio dei Ministri; Sulla proposta del Nostro Ministro Segretario di Stato per le finanze, di concerto coi Ministri per l'interno, per la giustizia e gli affari di culto, per i lavori pubblici, per l'economia nazionale e per le comunicazioni; Abbiamo decretato e decretiamo: Art. 1 Presso ogni sede provinciale dell'A. C. I. sono istituiti tre registri: 1° il registro per le autovetture, gli autocarri e gli altri veicoli assimilabili ai predetti; 2° il registro per i motocicli e le motocarrozzette; 3° il registro per le trattrici agricole. Ogni registro pu&ograve; constare di pi&ugrave; volumi, distinti con numero progressivo. ((I rimorchi con massa uguale o superiore a 3,5 tonnellate sono iscritti nel registro di cui al numero 1 del primo comma, in appositi volumi, con fogli aventi numerazione progressiva propria, distinta da quella dei volumi per le autovetture, gli autocarri e gli altri veicoli ad essi assimilabili)) ."
+    },
+    {
+      "chiave": "/eli/id/1927/06/30/027U1254/sg",
+      "titolo": "REGIO DECRETO 30 giugno 1927, n. 1254",
+      "tipo": "regio.decreto",
+      "numero": "1254",
+      "dataEmanazione": "1927-06-30",
+      "nir": "urn:nir:stato:regio.decreto:1927-06-30;1254",
+      "eli": "/eli/id/1927/06/30/027U1254/sg",
+      "stato": "abrogato",
+      "sintesi": "Scioglimento del Consiglio di amministrazione dell'Istituto autonomo per le case popolari di Catania e nomina del commissario straordinario. (027U1254)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1927-06-30;1254",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1927/07/26/027U1254/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1927-07-26",
+      "numeroGU": "171",
+      "codiceRedazionale": "027U1254",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.LGS. 13 DICEMBRE 2010, N. 212 ))"
+    },
+    {
+      "chiave": "/eli/id/1927/06/16/027U0943/sg",
+      "titolo": "LEGGE 16 giugno 1927, n. 943",
+      "tipo": "legge",
+      "numero": "943",
+      "dataEmanazione": "1927-06-16",
+      "nir": "urn:nir:stato:legge:1927-06-16;943",
+      "eli": "/eli/id/1927/06/16/027U0943/sg",
+      "stato": "abrogato",
+      "sintesi": "Stato di previsione della spesa del Ministero delle finanze e stato di previsione dell'entrata per l'esercizio finanziario dal 1° luglio 1927 al 30 giugno 1928. (027U0943)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1927-06-16;943",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1927/06/25/027U0943/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1927-06-25",
+      "numeroGU": "146",
+      "codiceRedazionale": "027U0943",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.L. 22 DICEMBRE 2008, N. 200 , CONVERTITO CON MODIFICAZIONI DALLA L. 18 FEBBRAIO 2009, N. 9 ))"
+    },
+    {
+      "chiave": "/eli/id/1927/04/17/027U0630/sg",
+      "titolo": "REGIO DECRETO 17 aprile 1927, n. 630",
+      "tipo": "regio.decreto",
+      "numero": "630",
+      "dataEmanazione": "1927-04-17",
+      "nir": "urn:nir:stato:regio.decreto:1927-04-17;630",
+      "eli": "/eli/id/1927/04/17/027U0630/sg",
+      "stato": "abrogato",
+      "sintesi": "Proroga della facolta' di provvedere con personale del Genio civile attualmente in pensione al servizio di ispezione delle opere pubbliche nelle Colonie. (027U0630)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1927-04-17;630",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1927/05/07/027U0630/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1927-05-07",
+      "numeroGU": "106",
+      "codiceRedazionale": "027U0630",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.LGS. 13 DICEMBRE 2010, N. 212 ))"
+    },
+    {
+      "chiave": "/eli/id/1927/04/03/027U0601/sg",
+      "titolo": "REGIO DECRETO 3 aprile 1927, n. 601",
+      "tipo": "regio.decreto",
+      "numero": "601",
+      "dataEmanazione": "1927-04-03",
+      "nir": "urn:nir:stato:regio.decreto:1927-04-03;601",
+      "eli": "/eli/id/1927/04/03/027U0601/sg",
+      "stato": "abrogato",
+      "sintesi": "Dichiarazione di pubblica utilita' di una zona di territorio necessaria per la costituzione di una piazza d'armi in Ferrara. (027U0601)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1927-04-03;601",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1927/05/03/027U0601/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1927-05-03",
+      "numeroGU": "102",
+      "codiceRedazionale": "027U0601",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.P.R. 13 DICEMBRE 2010, N. 248 ))"
+    },
+    {
+      "chiave": "/eli/id/1927/04/21/027U0565/sg",
+      "titolo": "REGIO DECRETO 21 aprile 1927, n. 565",
+      "tipo": "regio.decreto",
+      "numero": "565",
+      "dataEmanazione": "1927-04-21",
+      "nir": "urn:nir:stato:regio.decreto:1927-04-21;565",
+      "eli": "/eli/id/1927/04/21/027U0565/sg",
+      "stato": "abrogato",
+      "sintesi": "Conferimento dei posti disponibili nel grado 7º del gruppo A, e riscatto del servizio di scrivano prestato dal personale del gruppo C nell'Amministrazione civile dell'interno. (027U0565)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1927-04-21;565",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1927/04/28/027U0565/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1927-04-28",
+      "numeroGU": "98",
+      "codiceRedazionale": "027U0565",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.LGS. 13 DICEMBRE 2010, N. 212 ))"
+    },
+    {
+      "chiave": "/eli/id/1927/03/06/027U0406/sg",
+      "titolo": "REGIO DECRETO 6 marzo 1927, n. 406",
+      "tipo": "regio.decreto",
+      "numero": "406",
+      "dataEmanazione": "1927-03-06",
+      "nir": "urn:nir:stato:regio.decreto:1927-03-06;406",
+      "eli": "/eli/id/1927/03/06/027U0406/sg",
+      "stato": "abrogato",
+      "sintesi": "Proroga dei poteri conferiti al Commissario dell'Istituto delle case popolari livornesi, in Livorno. (027U0406)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1927-03-06;406",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1927/04/05/027U0406/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1927-04-05",
+      "numeroGU": "79",
+      "codiceRedazionale": "027U0406",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.LGS. 13 DICEMBRE 2010, N. 212 ))"
+    },
+    {
+      "chiave": "/eli/id/1927/02/24/027U0241/sg",
+      "titolo": "REGIO DECRETO 24 febbraio 1927, n. 241",
+      "tipo": "regio.decreto",
+      "numero": "241",
+      "dataEmanazione": "1927-02-24",
+      "nir": "urn:nir:stato:regio.decreto:1927-02-24;241",
+      "eli": "/eli/id/1927/02/24/027U0241/sg",
+      "stato": "abrogato",
+      "sintesi": "Norme transitorie relative alle denuncie ed ai contributi sindacali obbligatori per l'anno 1927. (027U0241)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1927-02-24;241",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1927/03/08/027U0241/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1927-03-08",
+      "numeroGU": "55",
+      "codiceRedazionale": "027U0241",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.LGS. 13 DICEMBRE 2010, N. 212 ))"
+    },
+    {
+      "chiave": "/eli/id/1926/11/18/026U2445/sg",
+      "titolo": "REGIO DECRETO 18 novembre 1926, n. 2445",
+      "tipo": "regio.decreto",
+      "numero": "2445",
+      "dataEmanazione": "1926-11-18",
+      "nir": "urn:nir:stato:regio.decreto:1926-11-18;2445",
+      "eli": "/eli/id/1926/11/18/026U2445/sg",
+      "stato": "abrogato",
+      "sintesi": "Contributi scolastici dovuti dai Comuni delle provincie di Caltanissetta, Catania, Girgenti, Messina, Palermo, Siracusa e Trapani, per il quinquennio 1° aprile 1925-31 marzo 1930, in applicazione dell'art. 19 del R. decreto-legge 4 settembre 1925, n. 1722. (026U2445)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1926-11-18;2445",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1927/02/22/026U2445/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1927-02-22",
+      "numeroGU": "43",
+      "codiceRedazionale": "026U2445",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.LGS. 13 DICEMBRE 2010, N. 212 ))"
+    },
+    {
+      "chiave": "/eli/id/1927/02/13/027U0140/sg",
+      "titolo": "REGIO DECRETO 13 febbraio 1927, n. 140",
+      "tipo": "regio.decreto",
+      "numero": "140",
+      "dataEmanazione": "1927-02-13",
+      "nir": "urn:nir:stato:regio.decreto:1927-02-13;140",
+      "eli": "/eli/id/1927/02/13/027U0140/sg",
+      "stato": "abrogato",
+      "sintesi": "34ª prelevazione dal fondo di riserva per le spese impreviste dell'esercizio finanziario 1926-27. (027U0140)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1927-02-13;140",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1927/02/21/027U0140/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1927-02-21",
+      "numeroGU": "42",
+      "codiceRedazionale": "027U0140",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.LGS. 13 DICEMBRE 2010, N. 212 ))"
+    },
+    {
+      "chiave": "/eli/id/1927/02/10/027U0138/sg",
+      "titolo": "REGIO DECRETO 10 febbraio 1927, n. 138",
+      "tipo": "regio.decreto",
+      "numero": "138",
+      "dataEmanazione": "1927-02-10",
+      "nir": "urn:nir:stato:regio.decreto:1927-02-10;138",
+      "eli": "/eli/id/1927/02/10/027U0138/sg",
+      "stato": "abrogato",
+      "sintesi": "32ª prelevazione dal fondo di riserva per le spese impreviste dell'esercizio finanziario 1926-27. (027U0138)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1927-02-10;138",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1927/02/19/027U0138/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1927-02-19",
+      "numeroGU": "41",
+      "codiceRedazionale": "027U0138",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.LGS. 13 DICEMBRE 2010, N. 212 ))"
+    }
+  ]
+}

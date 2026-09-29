@@ -1,0 +1,283 @@
+{
+  "provenance": {
+    "fonte": "normattiva",
+    "url": "https://api.normattiva.it/t/normattiva.api/bff-opendata/v1/api/v1/ricerca/aggiornati",
+    "recuperatoIl": "2026-09-29T01:41:05.716Z",
+    "licenza": "riproduzione consentita con menzione di fonte, carattere non autentico e gratuito (Note legali dati.normattiva.it; solo la Gazzetta Ufficiale a stampa e' autentica)"
+  },
+  "atti": [
+    {
+      "chiave": "/eli/id/1930/07/30/030U1039/sg",
+      "titolo": "REGIO DECRETO 30 luglio 1930, n. 1039",
+      "tipo": "regio.decreto",
+      "numero": "1039",
+      "dataEmanazione": "1930-07-30",
+      "nir": "urn:nir:stato:regio.decreto:1930-07-30;1039",
+      "eli": "/eli/id/1930/07/30/030U1039/sg",
+      "stato": "abrogato",
+      "sintesi": "5ª prelevazione dal fondo di riserva per le spese impreviste dell'esercizio finanziario 1930-31. (030U1039)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1930-07-30;1039",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1930/08/08/030U1039/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1930-08-08",
+      "numeroGU": "185",
+      "codiceRedazionale": "030U1039",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.LGS. 13 DICEMBRE 2010, N. 212 ))"
+    },
+    {
+      "chiave": "/eli/id/1930/07/30/030U1038/sg",
+      "titolo": "REGIO DECRETO 30 luglio 1930, n. 1038",
+      "tipo": "regio.decreto",
+      "numero": "1038",
+      "dataEmanazione": "1930-07-30",
+      "nir": "urn:nir:stato:regio.decreto:1930-07-30;1038",
+      "eli": "/eli/id/1930/07/30/030U1038/sg",
+      "stato": "abrogato",
+      "sintesi": "4ª prelevazione dal fondo di riserva per le spese impreviste dell'esercizio finanziario 1930-31. (030U1038)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1930-07-30;1038",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1930/08/08/030U1038/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1930-08-08",
+      "numeroGU": "185",
+      "codiceRedazionale": "030U1038",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.LGS. 13 DICEMBRE 2010, N. 212 ))"
+    },
+    {
+      "chiave": "/eli/id/1930/07/28/030U1022/sg",
+      "titolo": "REGIO DECRETO 28 luglio 1930, n. 1022",
+      "tipo": "regio.decreto",
+      "numero": "1022",
+      "dataEmanazione": "1930-07-28",
+      "nir": "urn:nir:stato:regio.decreto:1930-07-28;1022",
+      "eli": "/eli/id/1930/07/28/030U1022/sg",
+      "stato": "abrogato",
+      "sintesi": "3ª prelevazione dal fondo di riserva per le spese impreviste dell'esercizio finanziario 1930-31. (030U1022)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1930-07-28;1022",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1930/08/06/030U1022/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1930-08-06",
+      "numeroGU": "183",
+      "codiceRedazionale": "030U1022",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.LGS. 13 DICEMBRE 2010, N. 212 ))"
+    },
+    {
+      "chiave": "/eli/id/1930/07/24/030U1020/sg",
+      "titolo": "REGIO DECRETO 24 luglio 1930, n. 1020",
+      "tipo": "regio.decreto",
+      "numero": "1020",
+      "dataEmanazione": "1930-07-24",
+      "nir": "urn:nir:stato:regio.decreto:1930-07-24;1020",
+      "eli": "/eli/id/1930/07/24/030U1020/sg",
+      "stato": "abrogato",
+      "sintesi": "1ª prelevazione dal fondo di riserva per le spese impreviste dell'esercizio finanziario 1930-31. (030U1020)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1930-07-24;1020",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1930/08/06/030U1020/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1930-08-06",
+      "numeroGU": "183",
+      "codiceRedazionale": "030U1020",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.LGS. 13 DICEMBRE 2010, N. 212 ))"
+    },
+    {
+      "chiave": "/eli/id/1930/06/02/030U0836/sg",
+      "titolo": "REGIO DECRETO 2 giugno 1930, n. 836",
+      "tipo": "regio.decreto",
+      "numero": "836",
+      "dataEmanazione": "1930-06-02",
+      "nir": "urn:nir:stato:regio.decreto:1930-06-02;836",
+      "eli": "/eli/id/1930/06/02/030U0836/sg",
+      "stato": "abrogato",
+      "sintesi": "Sospensione dell'inscrizione della Regia nave cisterna « Nettuno » nel quadro del Regio naviglio. (030U0836)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1930-06-02;836",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1930/07/02/030U0836/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1930-07-02",
+      "numeroGU": "153",
+      "codiceRedazionale": "030U0836",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.P.R. 13 DICEMBRE 2010, N. 248 ))"
+    },
+    {
+      "chiave": "/eli/id/1930/06/02/030U0712/sg",
+      "titolo": "LEGGE 2 giugno 1930, n. 712",
+      "tipo": "legge",
+      "numero": "712",
+      "dataEmanazione": "1930-06-02",
+      "nir": "urn:nir:stato:legge:1930-06-02;712",
+      "eli": "/eli/id/1930/06/02/030U0712/sg",
+      "stato": "abrogato",
+      "sintesi": "Stato di previsione della spesa del Ministero dei lavori pubblici, per l'esercizio finanziario dal 1° luglio 1930 al 30 giugno 1931. (030U0712)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1930-06-02;712",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1930/06/13/030U0712/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1930-06-13",
+      "numeroGU": "138",
+      "codiceRedazionale": "030U0712",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.L. 22 DICEMBRE 2008, N. 200 , CONVERTITO CON MODIFICAZIONI DALLA L. 18 FEBBRAIO 2009, N. 9 ))"
+    },
+    {
+      "chiave": "/eli/id/1930/04/17/030U0705/sg",
+      "titolo": "LEGGE 17 aprile 1930, n. 705",
+      "tipo": "legge",
+      "numero": "705",
+      "dataEmanazione": "1930-04-17",
+      "nir": "urn:nir:stato:legge:1930-04-17;705",
+      "eli": "/eli/id/1930/04/17/030U0705/sg",
+      "stato": "abrogato",
+      "sintesi": "Provvedimenti in dipendenza delle alluvioni, frane e mareggiate dell'autunno-inverno 1929-30. (030U0705)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1930-04-17;705",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1930/06/09/030U0705/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1930-06-09",
+      "numeroGU": "134",
+      "codiceRedazionale": "030U0705",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.L. 22 DICEMBRE 2008, N. 200 , CONVERTITO CON MODIFICAZIONI DALLA L. 18 FEBBRAIO 2009, N. 9 ))"
+    },
+    {
+      "chiave": "/eli/id/1930/05/01/030U0621/sg",
+      "titolo": "REGIO DECRETO 1 maggio 1930, n. 621",
+      "tipo": "regio.decreto",
+      "numero": "621",
+      "dataEmanazione": "1930-05-01",
+      "nir": "urn:nir:stato:regio.decreto:1930-05-01;621",
+      "eli": "/eli/id/1930/05/01/030U0621/sg",
+      "stato": "abrogato",
+      "sintesi": "17ª prelevazione dal fondo di riserva per le spese impreviste dell'esercizio finanziario 1929-1930. (030U0621)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1930-05-01;621",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1930/05/27/030U0621/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1930-05-27",
+      "numeroGU": "124",
+      "codiceRedazionale": "030U0621",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.LGS. 13 DICEMBRE 2010, N. 212 ))"
+    },
+    {
+      "chiave": "/eli/id/1930/05/01/030U0597/sg",
+      "titolo": "REGIO DECRETO 1 maggio 1930, n. 597",
+      "tipo": "regio.decreto",
+      "numero": "597",
+      "dataEmanazione": "1930-05-01",
+      "nir": "urn:nir:stato:regio.decreto:1930-05-01;597",
+      "eli": "/eli/id/1930/05/01/030U0597/sg",
+      "stato": "abrogato",
+      "sintesi": "18ª prelevazione dal fondo di riserva per le spese impreviste dell'esercizio finanziario 1929-30. (030U0597)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1930-05-01;597",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1930/05/26/030U0597/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1930-05-26",
+      "numeroGU": "123",
+      "codiceRedazionale": "030U0597",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DALLA L. 7 APRILE 2025, N. 56 ))"
+    },
+    {
+      "chiave": "/eli/id/1930/03/27/030U0284/sg",
+      "titolo": "LEGGE 27 marzo 1930, n. 284",
+      "tipo": "legge",
+      "numero": "284",
+      "dataEmanazione": "1930-03-27",
+      "nir": "urn:nir:stato:legge:1930-03-27;284",
+      "eli": "/eli/id/1930/03/27/030U0284/sg",
+      "stato": "abrogato",
+      "sintesi": "Stato di previsione della spesa del Ministero della guerra per l'esercizio finanziario dal 1° luglio 1930 al 30 giugno 1931. (030U0284)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1930-03-27;284",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1930/04/11/030U0284/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1930-04-11",
+      "numeroGU": "86",
+      "codiceRedazionale": "030U0284",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.L. 22 DICEMBRE 2008, N. 200 , CONVERTITO CON MODIFICAZIONI DALLA L. 18 FEBBRAIO 2009, N. 9 ))"
+    },
+    {
+      "chiave": "/eli/id/1930/03/17/030U0237/sg",
+      "titolo": "REGIO DECRETO 17 marzo 1930, n. 237",
+      "tipo": "regio.decreto",
+      "numero": "237",
+      "dataEmanazione": "1930-03-17",
+      "nir": "urn:nir:stato:regio.decreto:1930-03-17;237",
+      "eli": "/eli/id/1930/03/17/030U0237/sg",
+      "stato": "abrogato",
+      "sintesi": "15ª prelevazione dal fondo di riserva per le spese impreviste dell'esercizio finanziario 1929-30. (030U0237)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1930-03-17;237",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1930/04/02/030U0237/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1930-04-02",
+      "numeroGU": "78",
+      "codiceRedazionale": "030U0237",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.LGS. 13 DICEMBRE 2010, N. 212 ))"
+    },
+    {
+      "chiave": "/eli/id/1930/03/21/030U0219/sg",
+      "titolo": "REGIO DECRETO 21 marzo 1930, n. 219",
+      "tipo": "regio.decreto",
+      "numero": "219",
+      "dataEmanazione": "1930-03-21",
+      "nir": "urn:nir:stato:regio.decreto:1930-03-21;219",
+      "eli": "/eli/id/1930/03/21/030U0219/sg",
+      "stato": "abrogato",
+      "sintesi": "Approvazione dei ruoli dei personali finanziari in applicazione del R. decreto 9 agosto 1929, n. 1457. (030U0219)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1930-03-21;219",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1930/03/31/030U0219/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1930-03-31",
+      "numeroGU": "76",
+      "codiceRedazionale": "030U0219",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DALLA L. 7 APRILE 2025, N. 56 ))"
+    },
+    {
+      "chiave": "/eli/id/1930/02/22/030U0133/sg",
+      "titolo": "REGIO DECRETO 22 febbraio 1930, n. 133",
+      "tipo": "regio.decreto",
+      "numero": "133",
+      "dataEmanazione": "1930-02-22",
+      "nir": "urn:nir:stato:regio.decreto:1930-02-22;133",
+      "eli": "/eli/id/1930/02/22/030U0133/sg",
+      "stato": "abrogato",
+      "sintesi": "Programma per l'insegnamento dell'agraria e della computisteria rurale nei corsi superiori di alcuni istituti magistrali. (030U0133)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1930-02-22;133",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1930/03/17/030U0133/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1930-03-17",
+      "numeroGU": "63",
+      "codiceRedazionale": "030U0133",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.LGS. 13 DICEMBRE 2010, N. 212 ))"
+    }
+  ]
+}
