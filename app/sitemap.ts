@@ -1,12 +1,54 @@
 import type { MetadataRoute } from 'next'
 
-import { queryLaws } from '@/lib/db'
+import { QUERY_CAP_MASSIMO, queryLaws } from '@/lib/db'
+import { getCorpusInfo, getSeedLaws } from '@/lib/sources'
 
 const BASE_URL = (process.env.NEXT_PUBLIC_SITE_URL ?? 'https://simple-law.it').replace(/\/+$/, '')
 
-// Numero di schede legge incluse nella sitemap.
-// Se la build risulta troppo lenta, ridurre a 2000.
-const LIMITE_SITEMAP = 5000
+/**
+ * Totale reale del corpus a build time (mai hardcoded).
+ * Fonte primaria `getCorpusInfo().totale`, fallback `getSeedLaws().length`.
+ * Never-throw (-> 0): il chiamante usa il cap massimo in caso di 0.
+ */
+function totaleCorpusBuildTime(): number {
+  try {
+    const totale = getCorpusInfo()?.totale
+    if (typeof totale === 'number' && Number.isFinite(totale) && totale > 0) {
+      return Math.floor(totale)
+    }
+  } catch {
+    // fallback sotto
+  }
+  try {
+    const n = getSeedLaws().length
+    if (typeof n === 'number' && Number.isFinite(n) && n > 0) return Math.floor(n)
+  } catch {
+    // fallback a 0
+  }
+  return 0
+}
+
+/**
+ * Percorso ELI slugificato per /leggi/[...eli], stesse regole di `lawHref`
+ * (trim, strip slash, split, encode per segmento). Ritorna null se ELI
+ * assente/malformato: la voce viene saltata (mai 500). Never-throw.
+ */
+function slugPercorsoEli(eli: unknown): string | null {
+  try {
+    if (typeof eli !== 'string') return null
+    const pulito = eli.trim().replace(/^\/+/, '').replace(/\/+$/, '')
+    if (!pulito) return null
+    const segmenti = pulito
+      .split('/')
+      .map((s) => s.trim())
+      .filter(Boolean)
+    if (segmenti.length === 0) return null
+    const encoded = segmenti.map((s) => encodeURIComponent(s)).join('/')
+    return encoded || null
+  } catch {
+    return null
+  }
+}
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const statiche: MetadataRoute.Sitemap = [
@@ -40,16 +82,32 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { url: `${BASE_URL}/metodologia`, changeFrequency: 'monthly', priority: 0.6 },
   ]
   try {
+    // Limite dinamico = intero corpus reale (mai troncamento sotto il totale).
+    // Clamp al cap anti-DoS di queryLaws; se il totale non e' leggibile,
+    // usa il cap massimo (copre comunque l'intero corpus).
+    const totale = totaleCorpusBuildTime()
+    const limite = totale > 0 ? Math.min(QUERY_CAP_MASSIMO, totale) : QUERY_CAP_MASSIMO
     const leggi = await queryLaws(
       { sort: 'data_desc' } as unknown as Parameters<typeof queryLaws>[0],
-      LIMITE_SITEMAP,
+      limite,
     )
-    const dinamiche: MetadataRoute.Sitemap = leggi.map((law) => ({
-      // Usa law.eli così com'è, togliendo solo eventuali slash iniziali
-      // per evitare doppi slash in /leggi//...
-      url: `${BASE_URL}/leggi/${law.eli.replace(/^\/+/, '')}`,
-      lastModified: law.dataEmanazione,
-    }))
+    const visti = new Set<string>()
+    const dinamiche: MetadataRoute.Sitemap = []
+    for (const law of leggi) {
+      try {
+        const slug = slugPercorsoEli((law as { eli?: unknown })?.eli)
+        if (!slug) continue
+        const chiave = slug.toLowerCase()
+        if (visti.has(chiave)) continue
+        visti.add(chiave)
+        dinamiche.push({
+          url: `${BASE_URL}/leggi/${slug}`,
+          lastModified: law.dataEmanazione,
+        })
+      } catch {
+        continue
+      }
+    }
     return [...statiche, ...dinamiche]
   } catch {
     return statiche

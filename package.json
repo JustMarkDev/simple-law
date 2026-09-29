@@ -20,6 +20,7 @@
     "prisma:push": "prisma db push",
     "db:seed": "tsx prisma/seed.ts",
     "db:seed:espanso": "tsx scripts/seed-espanso.ts",
+    "smoke": "node scripts/smoke-live.mjs",
     "sync:storico": "tsx scripts/sync-storico.ts",
     "postinstall": "prisma generate"
   },
