@@ -76,13 +76,13 @@ export default async function GruppiPage() {
           <p className="mt-3 flex flex-wrap gap-3 text-sm">
             <a
               href="#camera"
-              className="inline-flex min-h-[44px] items-center font-semibold text-accento underline underline-offset-2 dark:text-accento-chiara"
+              className="inline-flex min-h-[48px] items-center font-semibold text-accento underline underline-offset-2 dark:text-accento-chiara"
             >
               Gruppi della Camera
             </a>
             <a
               href="#senato"
-              className="inline-flex min-h-[44px] items-center font-semibold text-accento underline underline-offset-2 dark:text-accento-chiara"
+              className="inline-flex min-h-[48px] items-center font-semibold text-accento underline underline-offset-2 dark:text-accento-chiara"
             >
               Gruppi del Senato
             </a>
@@ -113,7 +113,7 @@ export default async function GruppiPage() {
                   <Link
                     href={`/parlamento/deputati?gruppo=${encodeURIComponent(g.nome)}`}
                     aria-label={`Vedi i deputati del gruppo ${g.nome}`}
-                    className="inline-flex min-h-[44px] shrink-0 items-center border border-inchiostro px-3 py-2 text-xs font-semibold uppercase tracking-wide text-inchiostro transition-colors hover:bg-inchiostro hover:text-carta focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-inchiostro dark:border-nebbia dark:text-nebbia dark:hover:bg-nebbia dark:hover:text-notte dark:focus-visible:outline-nebbia"
+                    className="inline-flex min-h-[48px] shrink-0 items-center border border-inchiostro px-3 py-2 text-xs font-semibold uppercase tracking-wide text-inchiostro transition-colors hover:bg-inchiostro hover:text-carta focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-inchiostro dark:border-nebbia dark:text-nebbia dark:hover:bg-nebbia dark:hover:text-notte dark:focus-visible:outline-nebbia"
                   >
                     Vedi →
                   </Link>
@@ -156,7 +156,7 @@ export default async function GruppiPage() {
                   <Link
                     href={`/parlamento/senatori?gruppo=${encodeURIComponent(g.nome)}`}
                     aria-label={`Vedi i senatori del gruppo ${g.nome}`}
-                    className="inline-flex min-h-[44px] shrink-0 items-center border border-inchiostro px-3 py-2 text-xs font-semibold uppercase tracking-wide text-inchiostro transition-colors hover:bg-inchiostro hover:text-carta focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-inchiostro dark:border-nebbia dark:text-nebbia dark:hover:bg-nebbia dark:hover:text-notte dark:focus-visible:outline-nebbia"
+                    className="inline-flex min-h-[48px] shrink-0 items-center border border-inchiostro px-3 py-2 text-xs font-semibold uppercase tracking-wide text-inchiostro transition-colors hover:bg-inchiostro hover:text-carta focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-inchiostro dark:border-nebbia dark:text-nebbia dark:hover:bg-nebbia dark:hover:text-notte dark:focus-visible:outline-nebbia"
                   >
                     Vedi →
                   </Link>

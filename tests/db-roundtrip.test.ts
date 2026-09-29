@@ -215,10 +215,10 @@ describe("persona server-side (filtro derivato, seed senza DB)", () => {
 
     const tutte = await queryLaws(
       filtroPersona,
-      Math.min(5000, Math.max(totalePersona, 1)),
+      Math.min(10000, Math.max(totalePersona, 1)),
     );
-    // queryLaws ha cap 5000: coerenza bounded con il totale
-    expect(tutte.length).toBe(Math.min(totalePersona, 5000));
+    // queryLaws ha cap 10000: coerenza bounded con il totale
+    expect(tutte.length).toBe(Math.min(totalePersona, 10000));
   });
 
   it("pagina piena con persona: prima pagina completa e totali stabili", async () => {

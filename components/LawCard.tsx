@@ -9,7 +9,7 @@ import PulsantePreferito from './PulsantePreferito'
 import { formatDate, lawHref, STATO_META, tipoLabel, type Law } from './seed-fallback'
 
 interface LawCardProps {
-  law: Law
+  law: Law & { testoTroncato?: boolean }
   featured?: boolean
   persona?: string
   headingLevel?: 'h2' | 'h3'
@@ -38,6 +38,7 @@ export default function LawCard({ law, featured = false, persona, headingLevel =
   const personaTesto = persona && persona !== 'tutti' ? law.semplificata.perTe[persona] : undefined
   const titoloId = `titolo-${law.eli.replace(/[^a-zA-Z0-9]+/g, '-').replace(/^-+|-+$/g, '').slice(0, 80) || 'norma'}`
   const mancanti = passiMancanti(law)
+  const troncato = law.testoTroncato === true
 
   if (featured) {
     const corpo = (
@@ -68,6 +69,12 @@ export default function LawCard({ law, featured = false, persona, headingLevel =
         <p className="mt-3 max-w-3xl text-sm leading-relaxed text-inchiostro-soft dark:text-nebbia-soft sm:text-base">
           {law.sintesi}
         </p>
+
+        {troncato && (
+          <p className="mt-2 max-w-3xl text-xs leading-relaxed text-inchiostro-soft dark:text-nebbia-soft">
+            Qui vedi solo un pezzo di testo. Leggi tutto nella fonte ufficiale.
+          </p>
+        )}
 
         <p className="mt-4 rounded-xl border-l-4 border-accento bg-carta px-4 py-3 text-sm font-medium leading-relaxed text-inchiostro dark:bg-notte dark:text-nebbia">
           <span className="mr-1 font-bold">In 10 secondi:</span>
@@ -179,6 +186,12 @@ export default function LawCard({ law, featured = false, persona, headingLevel =
         <Evidenzia testo={law.sintesi} q={evidenzia} />
       </p>
 
+      {troncato && (
+        <p className="text-xs leading-relaxed text-inchiostro-soft dark:text-nebbia-soft">
+          Qui vedi solo un pezzo di testo. Leggi tutto nella fonte ufficiale.
+        </p>
+      )}
+
       {personaTesto && (
         <p className="line-clamp-3 rounded-xl border-l-4 border-accento bg-carta-soft px-3 py-2 text-sm leading-relaxed text-inchiostro-soft dark:bg-notte dark:text-nebbia-soft">
           <span className="font-bold">Per te:</span> {personaTesto}
@@ -207,10 +220,10 @@ export default function LawCard({ law, featured = false, persona, headingLevel =
       <div className="flex min-h-[48px] items-center justify-between gap-2">
         <Link
           href={href}
-          aria-label={`Apri la scheda: ${law.titolo}`}
+          aria-label={`Leggi la scheda: ${law.titolo}`}
           className="inline-flex min-h-[48px] items-center gap-1.5 rounded-xl px-3 py-2 text-sm font-bold text-accento transition-colors hover:bg-accento/10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accento dark:text-accento-chiara dark:hover:bg-accento-chiara/10 dark:focus-visible:outline-accento-chiara"
         >
-          Apri
+          Leggi la scheda
           <ArrowRight01Icon size={18} strokeWidth={2} aria-hidden="true" />
         </Link>
         <span className="inline-flex min-h-[48px] items-center" title={`Salva "${law.titolo}" tra i salvati`}>

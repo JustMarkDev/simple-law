@@ -157,7 +157,7 @@ export default async function RegionaliExtraPage() {
                     <p className="mt-4">
                       <Link
                         href={`/regionali-extra/${voce.id}`}
-                        className="inline-flex min-h-[44px] items-center bg-accento px-6 font-semibold text-white hover:opacity-90 dark:bg-accento-chiara dark:text-notte"
+                        className="inline-flex min-h-[48px] items-center bg-accento px-6 font-semibold text-white hover:opacity-90 dark:bg-accento-chiara dark:text-notte"
                       >
                         Vedi i risultati
                       </Link>

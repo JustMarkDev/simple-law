@@ -134,7 +134,7 @@ function SchedaSenatore({ membro }: { membro: Membro }) {
             href={membro.urlScheda}
             target="_blank"
             rel="noopener"
-            className="relative z-10 inline-flex min-h-[44px] items-center font-semibold text-accento underline underline-offset-2 dark:text-accento-chiara"
+            className="relative z-10 inline-flex min-h-[48px] items-center font-semibold text-accento underline underline-offset-2 dark:text-accento-chiara"
           >
             Scheda ufficiale ↗
           </a>
@@ -247,7 +247,7 @@ export default async function SenatoriPage({ searchParams }: SenatoriProps) {
               maxLength={100}
               placeholder="Es. Casellati"
               autoComplete="off"
-              className="min-h-[44px] w-full border border-inchiostro bg-carta px-3 py-2 text-sm text-inchiostro placeholder:text-inchiostro-faint focus:outline-none focus:ring-2 focus:ring-inchiostro/30 dark:border-nebbia/40 dark:bg-notte dark:text-nebbia dark:placeholder:text-nebbia-faint"
+              className="min-h-[48px] w-full border border-inchiostro bg-carta px-3 py-2 text-sm text-inchiostro placeholder:text-inchiostro-faint focus:outline-none focus:ring-2 focus:ring-inchiostro/30 dark:border-nebbia/40 dark:bg-notte dark:text-nebbia dark:placeholder:text-nebbia-faint"
             />
           </div>
           <div>
@@ -261,7 +261,7 @@ export default async function SenatoriPage({ searchParams }: SenatoriProps) {
               id="gruppo-senatori"
               name="gruppo"
               defaultValue={gruppo}
-              className="min-h-[44px] w-full border border-inchiostro bg-carta px-3 py-2 text-sm text-inchiostro dark:border-nebbia/40 dark:bg-notte dark:text-nebbia"
+              className="min-h-[48px] w-full border border-inchiostro bg-carta px-3 py-2 text-sm text-inchiostro dark:border-nebbia/40 dark:bg-notte dark:text-nebbia"
             >
               <option value="">Tutti i gruppi</option>
               {gruppi.map((g) => (
@@ -282,7 +282,7 @@ export default async function SenatoriPage({ searchParams }: SenatoriProps) {
               id="per-senatori"
               name="per"
               defaultValue={String(per)}
-              className="min-h-[44px] w-full border border-inchiostro bg-carta px-3 py-2 text-sm text-inchiostro dark:border-nebbia/40 dark:bg-notte dark:text-nebbia"
+              className="min-h-[48px] w-full border border-inchiostro bg-carta px-3 py-2 text-sm text-inchiostro dark:border-nebbia/40 dark:bg-notte dark:text-nebbia"
             >
               <option value="12">12</option>
               <option value="24">24</option>
@@ -291,7 +291,7 @@ export default async function SenatoriPage({ searchParams }: SenatoriProps) {
           <div className="sm:col-span-3">
             <button
               type="submit"
-              className="inline-flex min-h-[44px] items-center bg-inchiostro px-5 py-2 text-xs font-semibold uppercase tracking-wide text-carta transition-colors hover:bg-inchiostro-soft focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-inchiostro dark:bg-nebbia dark:text-notte dark:hover:bg-nebbia-soft dark:focus-visible:outline-nebbia"
+              className="inline-flex min-h-[48px] items-center bg-inchiostro px-5 py-2 text-xs font-semibold uppercase tracking-wide text-carta transition-colors hover:bg-inchiostro-soft focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-inchiostro dark:bg-nebbia dark:text-notte dark:hover:bg-nebbia-soft dark:focus-visible:outline-nebbia"
             >
               Filtra
             </button>
@@ -311,7 +311,7 @@ export default async function SenatoriPage({ searchParams }: SenatoriProps) {
                 <Link
                   href={hrefSenza(queryBase, f.chiave)}
                   aria-label={`Rimuovi il filtro ${f.etichetta}`}
-                  className="inline-flex min-h-[44px] items-center gap-1 border border-regola bg-carta-soft px-3 py-2 text-xs font-medium text-inchiostro-soft hover:border-inchiostro hover:text-inchiostro dark:border-notte-deep dark:bg-notte dark:text-nebbia-soft dark:hover:border-nebbia dark:hover:text-nebbia"
+                  className="inline-flex min-h-[48px] items-center gap-1 border border-regola bg-carta-soft px-3 py-2 text-xs font-medium text-inchiostro-soft hover:border-inchiostro hover:text-inchiostro dark:border-notte-deep dark:bg-notte dark:text-nebbia-soft dark:hover:border-nebbia dark:hover:text-nebbia"
                 >
                   {f.etichetta} <span aria-hidden="true">×</span>
                 </Link>
@@ -336,7 +336,7 @@ export default async function SenatoriPage({ searchParams }: SenatoriProps) {
             <p className="mt-6">
               <Link
                 href="/parlamento/senatori"
-                className="inline-flex min-h-[44px] items-center bg-inchiostro px-5 py-2 text-xs font-semibold uppercase tracking-wide text-carta hover:bg-inchiostro-soft focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-inchiostro dark:bg-nebbia dark:text-notte dark:hover:bg-nebbia-soft dark:focus-visible:outline-nebbia"
+                className="inline-flex min-h-[48px] items-center bg-inchiostro px-5 py-2 text-xs font-semibold uppercase tracking-wide text-carta hover:bg-inchiostro-soft focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-inchiostro dark:bg-nebbia dark:text-notte dark:hover:bg-nebbia-soft dark:focus-visible:outline-nebbia"
               >
                 Rimuovi filtri
               </Link>
@@ -349,14 +349,14 @@ export default async function SenatoriPage({ searchParams }: SenatoriProps) {
             {page > 1 ? (
               <Link
                 href={hrefPagina(page - 1)}
-                className="inline-flex min-h-[44px] items-center border border-inchiostro px-4 py-2 text-xs font-semibold uppercase tracking-wide text-inchiostro hover:bg-inchiostro hover:text-carta dark:border-nebbia dark:text-nebbia dark:hover:bg-nebbia dark:hover:text-notte"
+                className="inline-flex min-h-[48px] items-center border border-inchiostro px-4 py-2 text-xs font-semibold uppercase tracking-wide text-inchiostro hover:bg-inchiostro hover:text-carta dark:border-nebbia dark:text-nebbia dark:hover:bg-nebbia dark:hover:text-notte"
               >
                 ← Precedente
               </Link>
             ) : (
               <span
                 aria-disabled="true"
-                className="inline-flex min-h-[44px] cursor-not-allowed items-center border border-regola px-4 py-2 text-xs font-semibold uppercase tracking-wide text-inchiostro-faint dark:border-notte-deep dark:text-nebbia-faint"
+                className="inline-flex min-h-[48px] cursor-not-allowed items-center border border-regola px-4 py-2 text-xs font-semibold uppercase tracking-wide text-inchiostro-faint dark:border-notte-deep dark:text-nebbia-faint"
               >
                 ← Precedente
               </span>
@@ -367,14 +367,14 @@ export default async function SenatoriPage({ searchParams }: SenatoriProps) {
             {page < totPagine ? (
               <Link
                 href={hrefPagina(page + 1)}
-                className="inline-flex min-h-[44px] items-center border border-inchiostro px-4 py-2 text-xs font-semibold uppercase tracking-wide text-inchiostro hover:bg-inchiostro hover:text-carta dark:border-nebbia dark:text-nebbia dark:hover:bg-nebbia dark:hover:text-notte"
+                className="inline-flex min-h-[48px] items-center border border-inchiostro px-4 py-2 text-xs font-semibold uppercase tracking-wide text-inchiostro hover:bg-inchiostro hover:text-carta dark:border-nebbia dark:text-nebbia dark:hover:bg-nebbia dark:hover:text-notte"
               >
                 Successiva →
               </Link>
             ) : (
               <span
                 aria-disabled="true"
-                className="inline-flex min-h-[44px] cursor-not-allowed items-center border border-regola px-4 py-2 text-xs font-semibold uppercase tracking-wide text-inchiostro-faint dark:border-notte-deep dark:text-nebbia-faint"
+                className="inline-flex min-h-[48px] cursor-not-allowed items-center border border-regola px-4 py-2 text-xs font-semibold uppercase tracking-wide text-inchiostro-faint dark:border-notte-deep dark:text-nebbia-faint"
               >
                 Successiva →
               </span>

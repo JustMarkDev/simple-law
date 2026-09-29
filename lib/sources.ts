@@ -586,7 +586,7 @@ export function normalizzaAttoReale(input: unknown): LawRecord | null {
     const finePassata = !!fineValida && fineValida[0] !== '99999999' && fineValida[0] < oggi;
     const dettaglioAssente = o['dettaglio'] === false;
     const haTestoVerificato = typeof o['testo'] === 'string' && o['testo'].trim().length > 0;
-    const stato =
+    let stato =
       /abrog/.test(statoGrezzo) || finePassata
         ? 'abrogato'
         : /decad/.test(statoGrezzo)
@@ -594,6 +594,29 @@ export function normalizzaAttoReale(input: unknown): LawRecord | null {
           : statoGrezzo === 'sconosciuto' || (dettaglioAssente && !haTestoVerificato)
             ? 'sconosciuto'
             : 'in_vigore';
+    // Guard testata formale: l'ingest storico marcava in_vigore atti il cui
+    // testo apre con header di abrogazione/decadenza formale. La regex di
+    // ingest (`^ART. 1 ((PROVVEDIMENTO ABROGATO`) non tollerava lo spazio
+    // dopo `((` ne' "Articolo unico." interposto (es. L. 142/1990:
+    // "Art. 1 (( PROVVEDIMENTO ABROGATO..."). Solo upgrade in_vigore ->
+    // abrogato/decaduto su segnale `((` doppia-paren formale; MAI toccare
+    // "ARTICOLO ABROGATO" singolo (resta in_vigore) e MAI retrocedere
+    // abrogato/decaduto/sconosciuto.
+    if (stato === 'in_vigore') {
+      try {
+        const testoMaiusc = testoGrezzo.toUpperCase();
+        if (/\(\(\s*PROVVEDIMENTO ABROGATO/.test(testoMaiusc)) {
+          stato = 'abrogato';
+        } else if (
+          /\(\(\s*(PROVVEDIMENTO|DECRETO) DECADUT[OA]/.test(testoMaiusc) ||
+          /DECRETO DECADUTO/.test(testoMaiusc)
+        ) {
+          stato = 'decaduto';
+        }
+      } catch {
+        // stato resta in_vigore
+      }
+    }
     const record: LawRecord = {
       eli,
       nir,

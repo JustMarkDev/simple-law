@@ -288,7 +288,7 @@
       "dataEmanazione": "1985-09-24",
       "nir": "urn:nir:stato:decreto.legge:1985-09-24;479",
       "eli": "/eli/id/1985/09/24/085U0479/sg",
-      "stato": "in_vigore",
+      "stato": "abrogato",
       "sintesi": "Disposizioni urgenti per l'ente E.U.R.",
       "fonti": {
         "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legge:1985-09-24;479",
@@ -1010,7 +1010,7 @@
       "dataEmanazione": "1985-02-20",
       "nir": "urn:nir:stato:legge:1985-02-20;41",
       "eli": "/eli/id/1985/02/20/085U0041/sg",
-      "stato": "in_vigore",
+      "stato": "abrogato",
       "sintesi": "Norme sull'esplorazione e la coltivazione delle risorse minerali dei fondi marini.",
       "fonti": {
         "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1985-02-20;41",
@@ -1286,7 +1286,7 @@
       "dataEmanazione": "1984-12-22",
       "nir": "urn:nir:stato:decreto.legge:1984-12-22;901",
       "eli": "/eli/id/1984/12/22/084U0901/sg",
-      "stato": "in_vigore",
+      "stato": "abrogato",
       "sintesi": "Proroga della vigenza di taluni termini in materia di lavori pubblici.",
       "fonti": {
         "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legge:1984-12-22;901",

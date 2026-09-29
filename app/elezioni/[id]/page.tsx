@@ -472,7 +472,7 @@ export default async function ElezionePage({ params, searchParams }: Props) {
             <p className="mt-6 flex flex-wrap justify-center gap-3">
               <Link
                 href="/elezioni"
-                className="inline-flex min-h-[44px] items-center bg-accento px-6 font-semibold text-white hover:opacity-90 dark:bg-accento-chiara dark:text-notte"
+                className="inline-flex min-h-[48px] items-center bg-accento px-6 font-semibold text-white hover:opacity-90 dark:bg-accento-chiara dark:text-notte"
               >
                 Torna alle elezioni
               </Link>
@@ -480,7 +480,7 @@ export default async function ElezionePage({ params, searchParams }: Props) {
                 href="https://elezionistorico.interno.gov.it/eligendo/opendata.php"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex min-h-[44px] items-center border border-regola px-6 font-semibold text-inchiostro hover:border-accento hover:text-accento dark:border-notte-deep dark:text-nebbia dark:hover:border-accento-chiara dark:hover:text-accento-chiara"
+                className="inline-flex min-h-[48px] items-center border border-regola px-6 font-semibold text-inchiostro hover:border-accento hover:text-accento dark:border-notte-deep dark:text-nebbia dark:hover:border-accento-chiara dark:hover:text-accento-chiara"
               >
                 Open data Eligendo
               </a>
@@ -777,7 +777,7 @@ export default async function ElezionePage({ params, searchParams }: Props) {
                 minLength={2}
                 autoComplete="off"
                 placeholder="Es. Acqui Terme (minimo 2 caratteri)"
-                className="mt-2 min-h-[44px] w-full border border-regola bg-carta px-3 py-2 text-sm text-inchiostro placeholder:text-inchiostro-faint focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-inchiostro dark:border-notte-deep dark:bg-notte dark:text-nebbia dark:placeholder:text-nebbia-faint dark:focus-visible:outline-nebbia"
+                className="mt-2 min-h-[48px] w-full border border-regola bg-carta px-3 py-2 text-sm text-inchiostro placeholder:text-inchiostro-faint focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-inchiostro dark:border-notte-deep dark:bg-notte dark:text-nebbia dark:placeholder:text-nebbia-faint dark:focus-visible:outline-nebbia"
               />
             </div>
             <div>
@@ -788,7 +788,7 @@ export default async function ElezionePage({ params, searchParams }: Props) {
                 id="ord-comune"
                 name="ord"
                 defaultValue={ord}
-                className="mt-2 min-h-[44px] border border-regola bg-carta px-3 py-2 text-sm text-inchiostro focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-inchiostro dark:border-notte-deep dark:bg-notte dark:text-nebbia dark:focus-visible:outline-nebbia"
+                className="mt-2 min-h-[48px] border border-regola bg-carta px-3 py-2 text-sm text-inchiostro focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-inchiostro dark:border-notte-deep dark:bg-notte dark:text-nebbia dark:focus-visible:outline-nebbia"
               >
                 <option value="a_desc">Dalla più alta</option>
                 <option value="a_asc">Dalla più bassa</option>
@@ -796,14 +796,14 @@ export default async function ElezionePage({ params, searchParams }: Props) {
             </div>
             <button
               type="submit"
-              className="inline-flex min-h-[44px] items-center bg-accento px-6 font-semibold text-white hover:opacity-90 dark:bg-accento-chiara dark:text-notte"
+              className="inline-flex min-h-[48px] items-center bg-accento px-6 font-semibold text-white hover:opacity-90 dark:bg-accento-chiara dark:text-notte"
             >
               Cerca
             </button>
             {query.length > 0 && (
               <Link
                 href={azioneForm}
-                className="inline-flex min-h-[44px] items-center border border-regola px-6 font-semibold text-inchiostro hover:border-accento hover:text-accento dark:border-notte-deep dark:text-nebbia dark:hover:border-accento-chiara dark:hover:text-accento-chiara"
+                className="inline-flex min-h-[48px] items-center border border-regola px-6 font-semibold text-inchiostro hover:border-accento hover:text-accento dark:border-notte-deep dark:text-nebbia dark:hover:border-accento-chiara dark:hover:text-accento-chiara"
               >
                 Mostra tutti
               </Link>
@@ -932,7 +932,7 @@ export default async function ElezionePage({ params, searchParams }: Props) {
           <nav aria-label="Collegamenti esterni elettorali" className="mt-4">
             <ul className="flex flex-wrap gap-x-6 gap-y-2 text-sm">
               {LINK_ESTERNI.map((link) => (
-                <li key={link.url} className="flex min-h-[44px] items-center">
+                <li key={link.url} className="flex min-h-[48px] items-center">
                   <a
                     href={link.url}
                     target="_blank"

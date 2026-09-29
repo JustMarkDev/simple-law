@@ -241,21 +241,21 @@ export default async function HomePage({ searchParams }: HomeProps) {
               </div>
             )}
 
-            <div className="max-w-2xl">
-              <p className="mb-2 text-sm font-bold text-inchiostro dark:text-nebbia">
+            <div className="max-w-2xl rounded-2xl border border-regola bg-carta px-4 py-3 dark:border-notte-deep dark:bg-notte">
+              <p className="text-sm font-bold text-inchiostro dark:text-nebbia">
                 A che punto è:
               </p>
-              <dl className="grid grid-cols-2 gap-3 sm:grid-cols-4">
-                <div className="rounded-2xl border border-regola bg-carta p-1 dark:border-notte-deep dark:bg-notte">
+              <dl className="mt-2 flex flex-wrap gap-2">
+                <div className="rounded-xl border border-regola bg-carta-soft dark:border-notte-deep dark:bg-notte-soft">
                   <Link
                     href="/leggi"
                     aria-label={`Vedi tutte le norme: ${totaleReale}`}
-                    className="block min-h-[48px] rounded-xl p-3 transition-colors hover:bg-carta-soft focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accento dark:hover:bg-notte-deep dark:focus-visible:outline-accento-chiara"
+                    className="flex min-h-[48px] items-center gap-2 px-3 py-2 transition-colors hover:bg-carta-soft focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accento dark:hover:bg-notte-deep dark:focus-visible:outline-accento-chiara"
                   >
                     <dt className="text-xs font-bold text-inchiostro-soft dark:text-nebbia-soft">
                       Norme qui
                     </dt>
-                    <dd className="mt-1 text-3xl font-extrabold text-inchiostro dark:text-nebbia">
+                    <dd className="text-xl font-extrabold text-inchiostro dark:text-nebbia">
                       <Contatore value={totaleReale} />
                     </dd>
                   </Link>
@@ -263,12 +263,12 @@ export default async function HomePage({ searchParams }: HomeProps) {
                 {(['verde', 'giallo', 'rosso'] as const).map((stato) => (
                   <div
                     key={stato}
-                    className="rounded-2xl border border-regola bg-carta p-1 dark:border-notte-deep dark:bg-notte"
+                    className="rounded-xl border border-regola bg-carta-soft dark:border-notte-deep dark:bg-notte-soft"
                   >
                     <Link
                       href={`/leggi?stato=${stato}`}
                       aria-label={`Vedi le norme: ${STATO_META[stato].label}, ${conteggio[stato]}`}
-                      className="block min-h-[48px] rounded-xl p-3 transition-colors hover:bg-carta-soft focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accento dark:hover:bg-notte-deep dark:focus-visible:outline-accento-chiara"
+                      className="flex min-h-[48px] items-center gap-2 px-3 py-2 transition-colors hover:bg-carta-soft focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accento dark:hover:bg-notte-deep dark:focus-visible:outline-accento-chiara"
                     >
                       <dt
                         className={`flex items-center gap-1.5 text-xs font-bold ${STATO_META[stato].text}`}
@@ -279,7 +279,7 @@ export default async function HomePage({ searchParams }: HomeProps) {
                         />
                         {STATO_META[stato].parole}
                       </dt>
-                      <dd className="mt-1 text-3xl font-extrabold text-inchiostro dark:text-nebbia">
+                      <dd className="text-xl font-extrabold text-inchiostro dark:text-nebbia">
                         <Contatore value={conteggio[stato]} />
                       </dd>
                     </Link>
@@ -291,17 +291,16 @@ export default async function HomePage({ searchParams }: HomeProps) {
                   Guardiamo le {estratto.length} norme più recenti su {totaleReale} totali.
                 </p>
               )}
+              {composizione && (
+                <div className="mt-2">
+                  <CorpusBadge
+                    totale={composizione.totale}
+                    dimostrative={composizione.dimostrative}
+                    ufficiali={composizione.ufficiali}
+                  />
+                </div>
+              )}
             </div>
-
-            {composizione && (
-              <div className="max-w-2xl">
-                <CorpusBadge
-                  totale={composizione.totale}
-                  dimostrative={composizione.dimostrative}
-                  ufficiali={composizione.ufficiali}
-                />
-              </div>
-            )}
 
             <div className="flex max-w-2xl flex-wrap items-center gap-x-5 gap-y-3">
               <Link

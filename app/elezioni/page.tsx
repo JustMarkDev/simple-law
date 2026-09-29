@@ -304,7 +304,7 @@ export default async function ElezioniPage() {
                     <p className="mt-4">
                       <Link
                         href={`/elezioni/${voce.id}`}
-                        className="inline-flex min-h-[44px] items-center bg-accento px-6 font-semibold text-white hover:opacity-90 dark:bg-accento-chiara dark:text-notte"
+                        className="inline-flex min-h-[48px] items-center bg-accento px-6 font-semibold text-white hover:opacity-90 dark:bg-accento-chiara dark:text-notte"
                       >
                         Vedi i risultati
                       </Link>
@@ -369,7 +369,7 @@ export default async function ElezioniPage() {
                           target="_blank"
                           rel="noopener noreferrer"
                           aria-label={`Fonte originaria del sondaggio ${s.istituto} del ${intervalloFieldwork(s)} (si apre in una nuova scheda)`}
-                          className="inline-flex min-h-[44px] items-center font-medium text-accento underline underline-offset-2 hover:text-inchiostro focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-inchiostro dark:text-accento-chiara dark:hover:text-nebbia dark:focus-visible:outline-nebbia"
+                          className="inline-flex min-h-[48px] items-center font-medium text-accento underline underline-offset-2 hover:text-inchiostro focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-inchiostro dark:text-accento-chiara dark:hover:text-nebbia dark:focus-visible:outline-nebbia"
                         >
                           Istituto
                         </a>
@@ -469,7 +469,7 @@ export default async function ElezioniPage() {
             </p>
             <ul className="mt-2 flex flex-wrap gap-x-6 gap-y-2 text-sm">
               {LINK_ESTERNI.map((link) => (
-                <li key={link.url} className="flex min-h-[44px] items-center">
+                <li key={link.url} className="flex min-h-[48px] items-center">
                   <a
                     href={link.url}
                     target="_blank"

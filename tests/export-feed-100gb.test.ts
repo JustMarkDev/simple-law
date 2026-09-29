@@ -94,7 +94,7 @@ describe("export: filtri e limiti", () => {
     expect(params.page).toBe(1);
     expect(params.per).toBe(EXPORT_BATCH);
     expect(params.sort).toBe("data_desc");
-    expect(EXPORT_CAP).toBe(5000);
+    expect(EXPORT_CAP).toBe(10000);
     expect(EXPORT_BATCH).toBe(500);
   });
 

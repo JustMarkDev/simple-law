@@ -6,7 +6,7 @@ export const dynamic = "force-dynamic";
 export const runtime = "nodejs";
 
 /** Numero massimo di righe esportabili in una singola richiesta. */
-export const EXPORT_CAP = 5000;
+export const EXPORT_CAP = 10000;
 
 /** Dimensione del batch di streaming (righe per chunk in output). */
 export const EXPORT_BATCH = 500;
@@ -116,7 +116,7 @@ function filtriRichiesta(searchParams: URLSearchParams): { q: string; tipo: stri
 
 /**
  * GET /api/export?formato=csv|json&q=&tipo=&anno=
- * Scarica un estratto del corpus (max 5000 righe) come allegato, in streaming.
+ * Scarica un estratto del corpus (max 10000 righe) come allegato, in streaming.
  *
  * - Lettura paginata (`listLaws` a pagine da 500, `sort: data_desc` stabile):
  *   ogni `pull` asyncaricatica una sola pagina e la proietta subito a 12

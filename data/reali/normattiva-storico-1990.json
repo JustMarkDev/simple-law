@@ -100,7 +100,7 @@
       "dataEmanazione": "1990-10-05",
       "nir": "urn:nir:stato:decreto.legge:1990-10-05;279",
       "eli": "/eli/id/1990/10/05/090G0333/sg",
-      "stato": "in_vigore",
+      "stato": "abrogato",
       "sintesi": "Interventi urgenti per la torre di Pisa.",
       "fonti": {
         "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legge:1990-10-05;279",
@@ -354,7 +354,7 @@
       "dataEmanazione": "1990-09-20",
       "nir": "urn:nir:stato:decreto.legge:1990-09-20;263",
       "eli": "/eli/id/1990/09/20/090G0313/sg",
-      "stato": "in_vigore",
+      "stato": "abrogato",
       "sintesi": "<em><strong>((Piano di interventi bilaterali a favore dei Paesi maggiormente colpiti dall'invasione del Kuwait e dalla conseguente situazione di crisi determinatasi nel Golfo Arabico-Persico))</strong></em>.",
       "fonti": {
         "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legge:1990-09-20;263",
@@ -375,7 +375,7 @@
       "dataEmanazione": "1990-09-15",
       "nir": "urn:nir:stato:decreto.legge:1990-09-15;262",
       "eli": "/eli/id/1990/09/15/090G0311/sg",
-      "stato": "in_vigore",
+      "stato": "abrogato",
       "sintesi": "Misure urgenti per il finanziamento del saldo della maggiore spesa sanitaria relativa agli anni 1987 e 1988 e disposizioni per il finanziamento della maggiore spesa sanitaria relativa all'anno 1990.",
       "fonti": {
         "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legge:1990-09-15;262",
@@ -846,7 +846,7 @@
       "dataEmanazione": "1990-06-08",
       "nir": "urn:nir:stato:legge:1990-06-08;142",
       "eli": "/eli/id/1990/06/08/090G0189/sg",
-      "stato": "in_vigore",
+      "stato": "abrogato",
       "sintesi": "Ordinamento delle autonomie locali.",
       "fonti": {
         "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1990-06-08;142",

@@ -1481,7 +1481,8 @@ export async function countLaws(filters: LawFilters = {}): Promise<number> {
 export const QUERY_CAP_MASSIMO = 25000;
 
 /**
- * Restituisce tutte le norme filtrate (ordinate per data) fino a `limit`.
+ * Restituisce tutte le norme filtrate (ordinate per data) fino a `limit`
+ * (default 10000, coerente con EXPORT_CAP e PERSONA_ESTRATTO_MAX).
  * Pensata per l'export: non applica la paginazione della lista.
  * Usa il DB con filtri server-side quando disponibile (evita full-scan),
  * altrimenti filtra il seed in memoria. Non lancia mai.
@@ -1493,9 +1494,9 @@ export const QUERY_CAP_MASSIMO = 25000;
  */
 export async function queryLaws(
   filters: LawFilters = {},
-  limit = 5000,
+  limit = 10000,
 ): Promise<LawRecordExtra[]> {
-  const cap = Math.min(QUERY_CAP_MASSIMO, Math.max(1, Math.floor(limit) || 5000));
+  const cap = Math.min(QUERY_CAP_MASSIMO, Math.max(1, Math.floor(limit) || 10000));
   const personaNorm = parsePersona((filters as LawFilters)?.persona ?? "");
   if (personaNorm && personaNorm !== "tutti") {
     try {

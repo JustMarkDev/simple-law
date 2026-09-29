@@ -213,7 +213,7 @@ export default async function DettaglioParlamentare({ params }: DettaglioProps) 
                   href={membro.urlScheda}
                   target="_blank"
                   rel="noopener"
-                  className="inline-flex min-h-[44px] items-center border border-inchiostro px-4 py-2 text-xs font-semibold uppercase tracking-wide text-inchiostro transition-colors hover:bg-inchiostro hover:text-carta focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-inchiostro dark:border-nebbia dark:text-nebbia dark:hover:bg-nebbia dark:hover:text-notte dark:focus-visible:outline-nebbia"
+                  className="inline-flex min-h-[48px] items-center border border-inchiostro px-4 py-2 text-xs font-semibold uppercase tracking-wide text-inchiostro transition-colors hover:bg-inchiostro hover:text-carta focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-inchiostro dark:border-nebbia dark:text-nebbia dark:hover:bg-nebbia dark:hover:text-notte dark:focus-visible:outline-nebbia"
                 >
                   Scheda ufficiale ↗
                 </a>
@@ -238,7 +238,7 @@ export default async function DettaglioParlamentare({ params }: DettaglioProps) 
         <p className="mt-10">
           <Link
             href={camera === 'deputati' ? '/parlamento/deputati' : '/parlamento/senatori'}
-            className="inline-flex min-h-[44px] items-center gap-2 text-sm font-semibold text-accento underline underline-offset-2 dark:text-accento-chiara"
+            className="inline-flex min-h-[48px] items-center gap-2 text-sm font-semibold text-accento underline underline-offset-2 dark:text-accento-chiara"
           >
             Torna ai {etichettaCamera.toLowerCase()}
           </Link>
