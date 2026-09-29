@@ -411,3 +411,12 @@ Obiettivo precedente (completato): UI/UX, feature, corpus 5005 voci.
   come casi veri non bloccanti (eurlex/consulta/parlamento).
 - Verifiche mie: tsc OK, 868/868 test OK, build OK, smoke live.
 - Next: foto reali, E2E con server, densita anni magri residui.
+
+## Conta-esatti (2026-09-29): bound 10000, semaforo su 5941 reali
+- Workflow: 1 chiamata `workflow` con 2 agenti (bounds + dotline).
+- B1: bound 5000->10000 (misurato 157ms, heap invariato); conteggi
+  esatti 3289/676/1976; nota troncamento condizionale.
+- B2: 8 righe a 2 dot -> max 1 su eurlex/consulta/parlamento/ddl/gruppi.
+- Verifiche mie: tsc OK, eslint OK, 868/868 test OK, build OK,
+  smoke live (home 5941 visibile, API 200).
+- Next: foto reali, E2E con server, anni magri terzo passaggio.
