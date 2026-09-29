@@ -319,3 +319,41 @@ Obiettivo precedente (completato): UI/UX, feature, corpus 5005 voci.
   4. Test con riferimenti a moduli mai creati (`mappa-atti`, `corpus-unificato.server`, soft-skip che nascondevano il vuoto) -> riscritti contro il modulo reale; migrati `seed-fallback` (`toHaveLength(5)` -> sottoinsieme) e `api` (`anno=1999` -> `anno=1800` per il caso vuoto).
 - Verifiche mie: `npm test` 283/283 OK, `typecheck` OK, `lint` OK, `build` OK (119 pagine statiche), smoke su server live: `/api/health` seed OK, `/api/leggi` totale 5005, statistiche 1948-2026, dettaglio variante 200, `/leggi?stato=verde` 200, API `stato=giallo` totale 240, home con 5005, export CSV 200.
 - Next: unificare i 4 mirror `coloreSemaforo`/`personaRilevante` (home, archivio, API) in un'unica funzione esportata da `seed-fallback`; filtro persona server-side in `lib/db` (oggi filtra solo la pagina corrente); export streaming a pagine da 500 senza materializzare 5000; `generateStaticParams` oltre i 100; sitemap.xml; menu mobile con focus-trap; test perf con 20k atti.
+
+## Cozy-1 (2026-09-29, commit real-only+cozy): solo leggi vere, footer dusk, cozy ovunque
+- Direzione utente (override skill): minimale, accogliente, font cozy
+  (Nunito), angoli arrotondati mai pill, liquid-glass approssimato onesto,
+  motion.dev, Hugeicons gratis, base Next.js fullstack + toolchain
+  (prettier/format, eslint, vitest su vite), parole semplici per tutti.
+- Design Read: compagna civica accogliente per italiani non tecnici,
+  minimalismo caldo, Tailwind + Nunito + motion/react + Hugeicons.
+  Dials VARIANCE 5 / MOTION 5 / DENSITY 3.
+- Workflow: proposte Ax3 (design audit) + BxC parallele + giudice, poi
+  scrittori W1-W3 (sobrio, committato a10f367), C1-C5 cozy paralleli,
+  W4 real-only + W5 backfill + F1 footer paralleli, 2 revisori avversariali.
+- REAL-ONLY (richiesta esplicita utente, niente schede di prova):
+  `getSeedLaws()` default = 2 seed curati + reali + 2 riferimenti;
+  sintetico solo con CORPUS_SINTETICO=1. Live: 2316 atti veri, 0
+  "Variante", 0 dimostrativi. Disclaimer riscritto senza "di prova".
+- Backfill: 2021 (71) + 2023 (59) + 2024 (70) + 2025 (68) = 268 atti
+  veri via bff-opendata; MANIFEST 61 voci; PERCORSI cablati da me
+  (W5 non poteva per scope); entita HTML decodificate a load da me
+  (P1 revisore A); README coda recente aggiunto da me.
+- Footer editoriale stile "offline" richiesto: wordmark + tagline +
+  3 colonne, blocco blu notte dusk in puro CSS (niente picsum remoto
+  dopo P1/P0 revisori: tracking, AA, lock tinta; resta l'unico color
+  block documentato), rounded-t-2xl, contrasto AA su fondo solido.
+- Skill-compliance mia: 265 em/en-dash in testi (codice+dati envelope,
+  mai testi ufficiali), 1 intento CTA ("Vedi tutte le norme"),
+  max 1 middle-dot/riga (helper fraseRisultati/fraseEstratto),
+  PulsantePreferito/ListaSalvati senza glifi stella, InfoCorpus +
+  dimostrative reali (P2 revisore A).
+- Verifiche mie: tsc OK, eslint OK, 858/858 test OK, build OK
+  (874 pagine), smoke live (/, /leggi, /api/leggi 200, DL 153/2026 vero).
+- Noto e rimandato: eyebrow multipli in controllo/statistiche/semplifica
+  (P1 rev B fuori perimetro), puntini singoli e step "1 -" in semplifica
+  (conformi ma da rivedere), nessuna foto reale hero (niente image-gen
+  in ambiente: slot aperti picsum o scatti istituzionali), coda storica
+  1949-54/56-59/1961-64/1966-69/1971-74/1976-79/1981-84/1986-89/1991/1994/
+  1996-99/2001-04/2007-09/2011/2013-14/2016-17/2019 ancora scoperta.
+- Next: finestre storiche mancanti, audit foto/eyebrow residui, E2E a11y.
