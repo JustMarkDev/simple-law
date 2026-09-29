@@ -2,7 +2,7 @@
   "provenance": {
     "fonte": "normattiva",
     "url": "https://api.normattiva.it/t/normattiva.api/bff-opendata/v1/api/v1/ricerca/aggiornati",
-    "recuperatoIl": "2026-09-29T00:19:06.001Z",
+    "recuperatoIl": "2026-09-29T00:53:04.875Z",
     "licenza": "riproduzione consentita con menzione di fonte, carattere non autentico e gratuito (Note legali dati.normattiva.it; solo la Gazzetta Ufficiale a stampa e' autentica)"
   },
   "atti": [
@@ -509,6 +509,619 @@
       "codiceRedazionale": "064U0308",
       "articoloDataFineVigenza": "99999999",
       "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.LGS. 13 DICEMBRE 2010, N. 212 ))"
+    },
+    {
+      "chiave": "/eli/id/1965/12/23/065U1417/sg",
+      "titolo": "LEGGE 23 dicembre 1965, n. 1417",
+      "tipo": "legge",
+      "numero": "1417",
+      "dataEmanazione": "1965-12-23",
+      "nir": "urn:nir:stato:legge:1965-12-23;1417",
+      "eli": "/eli/id/1965/12/23/065U1417/sg",
+      "stato": "abrogato",
+      "sintesi": "Proroga dei termini della legge 21 ottobre 1950, n. 943, e dell'articolo 37 della legge 9 febbraio 1963, n. 82, recanti provvedimenti a favore dell'Ente portuale Savona-Piemonte.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1965-12-23;1417",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1965/12/31/065U1417/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1965-12-31",
+      "numeroGU": "325",
+      "codiceRedazionale": "065U1417",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.L. 25 GIUGNO 2008 N. 112 , CONVERTITO CON MODIFICAZIONI, DALLA L. 6 AGOSTO 2008 N. 133 ))"
+    },
+    {
+      "chiave": "/eli/id/1920/04/18/020U0551/sg",
+      "titolo": "REGIO DECRETO 18 aprile 1920, n. 551",
+      "tipo": "regio.decreto",
+      "numero": "551",
+      "dataEmanazione": "1920-04-18",
+      "nir": "urn:nir:stato:regio.decreto:1920-04-18;551",
+      "eli": "/eli/id/1920/04/18/020U0551/sg",
+      "stato": "abrogato",
+      "sintesi": "Autorizzazione per accettazione di donazione. (020U0551)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1920-04-18;551",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1920/05/18/020U0551/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1920-05-18",
+      "numeroGU": "116",
+      "codiceRedazionale": "020U0551",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.P.R. 13 DICEMBRE 2010, N. 248 ))"
+    },
+    {
+      "chiave": "/eli/id/1916/01/27/016U0202/sg",
+      "titolo": "DECRETO LUOGOTENENZIALE 27 gennaio 1916, n. 202",
+      "tipo": "decreto.luogotenenziale",
+      "numero": "202",
+      "dataEmanazione": "1916-01-27",
+      "nir": "urn:nir:stato:decreto.luogotenenziale:1916-01-27;202",
+      "eli": "/eli/id/1916/01/27/016U0202/sg",
+      "stato": "abrogato",
+      "sintesi": "Col quale e' approvato l'annesso regolamento contenente le norme per la stazzatura delle navi (016U0202)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.luogotenenziale:1916-01-27;202",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1916/04/03/016U0202/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1916-04-03",
+      "numeroGU": "78",
+      "codiceRedazionale": "016U0202",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DALLA L. 7 APRILE 2025, N. 56 ))"
+    },
+    {
+      "chiave": "/eli/id/1966/12/23/066U1142/sg",
+      "titolo": "LEGGE 23 dicembre 1966, n. 1142",
+      "tipo": "legge",
+      "numero": "1142",
+      "dataEmanazione": "1966-12-23",
+      "nir": "urn:nir:stato:legge:1966-12-23;1142",
+      "eli": "/eli/id/1966/12/23/066U1142/sg",
+      "stato": "in_vigore",
+      "sintesi": "Conversione in legge, con modificazioni, del decreto-legge 18 novembre 1966, n. 976, concernente ulteriori interventi e provvidenze per la ricostruzione e per la ripresa economica nei territori colpiti dalle alluvioni e mareggiate dell'autunno 1966.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1966-12-23;1142",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1966/12/30/066U1142/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1966-12-30",
+      "numeroGU": "328",
+      "codiceRedazionale": "066U1142",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "La Camera dei deputati ed il Senato della Repubblica hanno approvato; IL PRESIDENTE DELLA REPUBBLICA PROMULGA la seguente legge: Art. 1 &Egrave; convertito in legge il decreto-legge 18 novembre 1966, n. 976 , concernente ulteriori interventi e provvidenze per la ricostruzione e per la ripresa economica nei territori colpiti dalle alluvioni e mareggiate dell'autunno 1966, con le seguenti modificazioni: L'articolo 1 &egrave; sostituito dal seguente: \"&Egrave; autorizzata la spesa di lire 148.000 milioni, da iscriversi nello stato di previsione del Ministero dei lavori pubblici, per provvedere, in conseguenza delle alluvioni, mareggiate e frane verificatesi nell'autunno 1966: a) alle esigenze indicate nell' articolo 1, lettere b) , d) , e) , f) , g) , h), della legge 9 aprile 1955, n. 279 ; b) alla riparazione e ricostruzione di ospedali clinicizzati, policlinici e cliniche universitarie, nonch&egrave; di scuole statali di ogni ordine e grado; c) al ripristino, a totale carico dello Stato, di ogni altra opera di interesse degli enti locali e delle istituzioni pubbliche di assistenza e beneficenza e loro consorzi; d) al ripristino delle opere di conto dello Stato e delle opere di interesse degli enti locali e delle istituzioni pubbliche di assistenza e beneficenza e loro consorzi, comunque finanziate, in corso di esecuzione al momento degli eventi calamitosi e limitatamente alla parte di lavori gi&agrave; eseguita; e) al ripristino, a totale carico dello Stato, delle opere idrauliche di seconda, terza, quarta e quinta categoria e delle naturali difese lungo i corsi d'acqua non classificati; f) alla costruzione di case ai sensi della legge 9 agosto 1954, n. 640 , da assegnarsi in locazione alle famiglie non abbienti e rimaste senza tetto. Per l'attuazione dei programmi di cui alla presente lettera si applicano le disposizioni contenute nell' articolo 2 della legge 1 novembre 1965, n. 1179 ; g) al ripristino di marginamenti e di opere di altra natura interessanti le Lagun [...]",
+      "testoTroncato": true
+    },
+    {
+      "chiave": "/eli/id/1966/07/22/066U0614/sg",
+      "titolo": "LEGGE 22 luglio 1966, n. 614",
+      "tipo": "legge",
+      "numero": "614",
+      "dataEmanazione": "1966-07-22",
+      "nir": "urn:nir:stato:legge:1966-07-22;614",
+      "eli": "/eli/id/1966/07/22/066U0614/sg",
+      "stato": "in_vigore",
+      "sintesi": "interventi straordinari a favore dei territori depressi dell'Italia settentrionale e centrale.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1966-07-22;614",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1966/08/12/066U0614/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1966-08-12",
+      "numeroGU": "200",
+      "codiceRedazionale": "066U0614",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "La Camera dei deputati ed il Senato della Repubblica hanno approvato; IL PRESIDENTE DELLA REPUBBLICA PROMULGA la seguente legge: Art. 1 Delimitazione delle zone e piani quinquennali Sulla base delle indicazioni del programma economico nazionale, il Comitato interministeriale per la ricostruzione provvede, su proposta del Comitato di cui al successivo terzo comma, alla delimitazione di zone depresse dell'Italia settentrionale e centrale, diverse dai territori indicati nell' articolo 3 della legge 10 agosto 1950, n. 646 , e successive modificazioni e integrazioni, caratterizzate: da depauperamento delle forze di lavoro derivante o da sensibile invecchiamento della popolazione residente o da accentuati fenomeni di esodo; da livelli di reddito pro capite della popolazione inferiori alla media nazionale e tali da escludere lo spontaneo riequilibrio rispetto alla media stessa; da bassi livelli di produttivit&agrave; in dipendenza di problemi di riconversione dell'agricoltura o di un insufficiente sviluppo delle attivit&agrave; industriali. Tali zone riguardano ambiti territoriali sufficientemente ampi, che possono anche riferirsi, quando ci&ograve; sia indispensabile, a territori facenti parte di pi&ugrave; Province. Il Comitato interministeriale per la ricostruzione approva piani quinquennali per la realizzazione coordinata, nelle zone delimitate ai sensi del precedente comma e nei territori montani di cui all'articolo 9, degli interventi straordinari previsti dalla presente legge con quelli a carattere ordinario. I piani predisposti d'intesa con le Amministrazioni statali e regionali interessate, sono formulati da un Comitato di Ministri, costituito in seno al Comitato interministeriale per la ricostruzione e formato dai Ministri per il bilancio, per le finanze, per il tesoro, per i lavori pubblici, per l'agricoltura e foreste, per l'industria e commercio, per il lavoro e la previdenza sociale, per le partecipazioni statali, per il turismo e lo spettacolo e dal Ministro [...]",
+      "testoTroncato": true
+    },
+    {
+      "chiave": "/eli/id/1955/10/24/055U0990/sg",
+      "titolo": "LEGGE 24 ottobre 1955, n. 990",
+      "tipo": "legge",
+      "numero": "990",
+      "dataEmanazione": "1955-10-24",
+      "nir": "urn:nir:stato:legge:1955-10-24;990",
+      "eli": "/eli/id/1955/10/24/055U0990/sg",
+      "stato": "in_vigore",
+      "sintesi": "Istituzione della Cassa nazionale di previdenza ed assistenza a favore dei geometri.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1955-10-24;990",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1955/11/07/055U0990/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1955-11-07",
+      "numeroGU": "256",
+      "codiceRedazionale": "055U0990",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "La Camera dei deputati ed il senato della Repubblica hanno approvato; IL PRESIDENTE DELLA REPUBBLICA PROMULGA la seguente legge: Art. 1 &Egrave; istituita la \"Cassa nazionale di previdenza ed assistenza a favore dei geometri\" allo scopo di provvedere a trattamenti di previdenza ed assistenza. La Cassa, con sede in Roma, ha personalit&agrave; giuridica di diritto pubblico."
+    },
+    {
+      "chiave": "/eli/id/1951/04/02/051U0226/sg",
+      "titolo": "LEGGE 2 aprile 1951, n. 226",
+      "tipo": "legge",
+      "numero": "226",
+      "dataEmanazione": "1951-04-02",
+      "nir": "urn:nir:stato:legge:1951-04-02;226",
+      "eli": "/eli/id/1951/04/02/051U0226/sg",
+      "stato": "abrogato",
+      "sintesi": "Modificazione delle aliquote dei diritti erariali sugli spettacoli di solo cinematografo e spettacoli misti con avanspettacolo.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1951-04-02;226",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1951/04/16/051U0226/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1951-04-16",
+      "numeroGU": "87",
+      "codiceRedazionale": "051U0226",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.L. 25 GIUGNO 2008, N.112 , CONVERTITO, CON MODIFICAZIONI, DALLA L. 6 AGOSTO 2008, N. 133 ))"
+    },
+    {
+      "chiave": "/eli/id/1939/10/26/039U1760/sg",
+      "titolo": "REGIO DECRETO 26 ottobre 1939, n. 1760",
+      "tipo": "regio.decreto",
+      "numero": "1760",
+      "dataEmanazione": "1939-10-26",
+      "nir": "urn:nir:stato:regio.decreto:1939-10-26;1760",
+      "eli": "/eli/id/1939/10/26/039U1760/sg",
+      "stato": "abrogato",
+      "sintesi": "Pareggiamento dell'Istituto superiore di magistero «Maria SS. Assunta» in Roma e approvazione del relativo statuto. (039U1760)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1939-10-26;1760",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1939/12/07/039U1760/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1939-12-07",
+      "numeroGU": "284",
+      "codiceRedazionale": "039U1760",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.P.R. 13 DICEMBRE 2010, N. 248 ))"
+    },
+    {
+      "chiave": "/eli/id/1963/02/18/063U0377/sg",
+      "titolo": "LEGGE 18 febbraio 1963, n. 377",
+      "tipo": "legge",
+      "numero": "377",
+      "dataEmanazione": "1963-02-18",
+      "nir": "urn:nir:stato:legge:1963-02-18;377",
+      "eli": "/eli/id/1963/02/18/063U0377/sg",
+      "stato": "in_vigore",
+      "sintesi": "Modifiche alla legge 26 gennaio 1962, n. 16, concernente provvidenze a favore del personale insegnante delle Universita' e del personale scientifico degli Osservatori astronomici e dell'Osservatorio vesuviano.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1963-02-18;377",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1963/04/03/063U0377/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1963-04-03",
+      "numeroGU": "90",
+      "codiceRedazionale": "063U0377",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "La Camera dei deputati ed il Senato della Repubblica hanno approvato; IL PRESIDENTE DELLA REPUBBLICA PROMULGA la seguente legge: Art. 1 I sottoindicati articoli della legge 20 gennaio 1962, n. 16 sono sostituiti e modificati come segue: Art. 2. - &Egrave; sostituito dal seguente: \"Il primo e il secondo comma dell'articolo 21 della legge 18 marzo 1958, n. 311 , sono sostituiti dai seguenti: \"Coloro ai quali &egrave; conferito un incarico di insegnamento presso le Universit&agrave; e gli Istituti di istruzione superiore, quando non ricoprano un ufficio con retribuzione a carico del bilancio dello Stato, di Ente pubblico o privato o, comunque, non fruiscono di redditi di lavoro subordinato, sono considerati incaricati esterni. Ad essi &egrave; corrisposta una retribuzione iniziale annua lorda, di lire 1.700.000, pari al coefficiente 380, se compresi in una terna, di concorsi a cattedre universitarie se liberi docenti confermati, ovvero incaricati della direzione di un istituto; una retribuzione iniziale annua lorda di lire 1 milione 500.000, pari al coefficiente 500, se liberi docenti; una retribuzione iniziale anni lorda, di lire 927.000, pari al coefficiente 309, se cultori della materia\". Art. 5. - Il comma terzo dell'articolo &egrave; sostituito dal seguente: \"Oltre ai termini previsti dai precedenti commi si pu&ograve; provvedere al conferimento di incarico d'insegnamento in casi di morte, di dimissioni, o rinuncia di un professore ufficiale o di trasferimento di un professore di ruolo. Negli altri casi, l'incarico neo si intende rinnovato con le modalit&agrave; previste dai successivi commi, al professore che l'ha svolto nell'anno accademico precedente sulla base delle relative delibere dei competenti organi accademici. Le Direzioni provinciali del Tesoro, ricevuta comunicazione del rinnovo dell'incarico da parto dei rettori dell'Universit&agrave;, proseguono i pagamenti sulla, base del ruolo di spesa fissa relativo all'anno accademico precedente\". Art. 21. - &Eg [...]",
+      "testoTroncato": true
+    },
+    {
+      "chiave": "/eli/id/1962/04/30/062U0265/sg",
+      "titolo": "LEGGE 30 aprile 1962, n. 265",
+      "tipo": "legge",
+      "numero": "265",
+      "dataEmanazione": "1962-04-30",
+      "nir": "urn:nir:stato:legge:1962-04-30;265",
+      "eli": "/eli/id/1962/04/30/062U0265/sg",
+      "stato": "in_vigore",
+      "sintesi": "Norme modificative ed integrative sull'attivita' dell'Istituto centrale per il credito a medio termine.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1962-04-30;265",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1962/05/26/062U0265/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1962-05-26",
+      "numeroGU": "133",
+      "codiceRedazionale": "062U0265",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((IL D.LGS. 1 SETTEMBRE 1993, N. 385 , COME MODIFICATO DALL' AVVISO DI RETTFICA, HA DISPOSTO L'ABROGAZIONE DELL'INTERO PROVVEDIMENTO))"
+    },
+    {
+      "chiave": "/eli/id/1945/07/12/045U0432/sg",
+      "titolo": "DECRETO LUOGOTENENZIALE 12 luglio 1945, n. 432",
+      "tipo": "decreto.luogotenenziale",
+      "numero": "432",
+      "dataEmanazione": "1945-07-12",
+      "nir": "urn:nir:stato:decreto.luogotenenziale:1945-07-12;432",
+      "eli": "/eli/id/1945/07/12/045U0432/sg",
+      "stato": "abrogato",
+      "sintesi": "Attribuzioni e ordinamento del Ministero della ricostruzione. (045U0432)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.luogotenenziale:1945-07-12;432",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1945/08/09/045U0432/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1945-08-09",
+      "numeroGU": "95",
+      "codiceRedazionale": "045U0432",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DALLA L. 7 APRILE 2025, N. 56 ))"
+    },
+    {
+      "chiave": "/eli/id/1945/04/12/045U0203/sg",
+      "titolo": "DECRETO LEGISLATIVO LUOGOTENENZIALE 12 aprile 1945, n. 203",
+      "tipo": "decreto.legislativo.luogotenenziale",
+      "numero": "203",
+      "dataEmanazione": "1945-04-12",
+      "nir": "urn:nir:stato:decreto.legislativo.luogotenenziale:1945-04-12;203",
+      "eli": "/eli/id/1945/04/12/045U0203/sg",
+      "stato": "abrogato",
+      "sintesi": "Norme integrative del decreto legislativo Luogotenenziale 4 aprile 1944, n. 111, per quanto riguarda la composizione della Giunta provinciale amministrativa in sede giurisdizionale e per la risoluzione dei ricorsi in materia di tributi locali. (045U0203)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legislativo.luogotenenziale:1945-04-12;203",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1945/05/17/045U0203/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1945-05-17",
+      "numeroGU": "59",
+      "codiceRedazionale": "045U0203",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.L. 22 DICEMBRE 2008, N. 200 , CONVERTITO CON MODIFICAZIONI DALLA L. 18 FEBBRAIO 2009, N. 9 ))"
+    },
+    {
+      "chiave": "/eli/id/1940/03/23/040U0217/sg",
+      "titolo": "LEGGE 23 marzo 1940, n. 217",
+      "tipo": "legge",
+      "numero": "217",
+      "dataEmanazione": "1940-03-23",
+      "nir": "urn:nir:stato:legge:1940-03-23;217",
+      "eli": "/eli/id/1940/03/23/040U0217/sg",
+      "stato": "abrogato",
+      "sintesi": "Riforma della tassa di concessione governativa sulle licenze che autorizzano all'esercizio delle scommesse. (040U0217)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1940-03-23;217",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1940/04/15/040U0217/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1940-04-15",
+      "numeroGU": "89",
+      "codiceRedazionale": "040U0217",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.L. 22 DICEMBRE 2008, N. 200 , CONVERTITO CON MODIFICAZIONI DALLA L. 18 FEBBRAIO 2009, N. 9 ))"
+    },
+    {
+      "chiave": "/eli/id/1967/04/24/067U0261/sg",
+      "titolo": "LEGGE 24 aprile 1967, n. 261",
+      "tipo": "legge",
+      "numero": "261",
+      "dataEmanazione": "1967-04-24",
+      "nir": "urn:nir:stato:legge:1967-04-24;261",
+      "eli": "/eli/id/1967/04/24/067U0261/sg",
+      "stato": "in_vigore",
+      "sintesi": "Integrazioni e modificazioni della legislazione a favore dei perseguitati politici italiani antifascisti o razziali e dei loro familiari superstiti.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1967-04-24;261",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1967/05/16/067U0261/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1967-05-16",
+      "numeroGU": "122",
+      "codiceRedazionale": "067U0261",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "La Camera dei deputati ed il Senato della Repubblica hanno approvato; IL PRESIDENTE DELLA REPUBBLICA PROMULGA la seguente legge: Art. 1 Il primo comma dell'articolo 1 della legge 10 marzo 1955, n. 96 , &egrave; sostituito dal seguente: \"Ai cittadini italiani, i quali siano stati perseguitati, a seguito dell'attivit&agrave; politica da loro svolta contro il fascismo anteriormente all'8 settembre 1943, e abbiano subito una perdita della capacit&agrave; lavorativa in misura non inferiore al 30 per cento, verr&agrave; concesso, a carico del bilancio dello Stato, un assegno vitalizio di benemerenza in misura pari a quello previsto dalla tabella C annessa alla legge 10 agosto 1950, n. 648 , compresi i relativi assegni accessori, per il raggruppamento gradi: ufficiali inferiori\". Al secondo comma del medesimo articolo 1 la lettera c) &egrave; sostituita dalla seguente: \"c) atti di violenza o sevizie subiti in Italia o all'estero ad opera di persone alle dipendenze dello Stato o appartenenti a formazioni militari o paramilitari fasciste, o di emissari del partito fascista\"."
+    },
+    {
+      "chiave": "/eli/id/1967/03/17/067U0081/sg",
+      "titolo": "DECRETO-LEGGE 17 marzo 1967, n. 81",
+      "tipo": "decreto.legge",
+      "numero": "81",
+      "dataEmanazione": "1967-03-17",
+      "nir": "urn:nir:stato:decreto.legge:1967-03-17;81",
+      "eli": "/eli/id/1967/03/17/067U0081/sg",
+      "stato": "in_vigore",
+      "sintesi": "Organizzazione del controllo per l'applicazione delle norme comunitarie di qualita' dei prodotti ortofrutticoli.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legge:1967-03-17;81",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1967/03/17/067U0081/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1967-03-17",
+      "numeroGU": "69",
+      "codiceRedazionale": "067U0081",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((IL D.L. 25 GIUGNO 2008, N. 112 , CONVERTITO, CON MODIFICAZIONI, DALLA L. 6 AGOSTO 2008, N. 133 HA CONFERMATO L'ABROGAZIONE DEL PRESENTE PROVVEDIMENTO))"
+    },
+    {
+      "chiave": "/eli/id/1966/12/23/066U1139/sg",
+      "titolo": "LEGGE 23 dicembre 1966, n. 1139",
+      "tipo": "legge",
+      "numero": "1139",
+      "dataEmanazione": "1966-12-23",
+      "nir": "urn:nir:stato:legge:1966-12-23;1139",
+      "eli": "/eli/id/1966/12/23/066U1139/sg",
+      "stato": "abrogato",
+      "sintesi": "Condono di sanzioni non aventi natura penale in materia tributaria.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1966-12-23;1139",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1966/12/30/066U1139/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1966-12-30",
+      "numeroGU": "328",
+      "codiceRedazionale": "066U1139",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.L. 25 GIUGNO 2008, N. 112 , CONVERTITO, CON MODIFICAZIONI, DALLA L. 6 AGOSTO 2008, N. 133 ))"
+    },
+    {
+      "chiave": "/eli/id/1965/03/05/065U0164/sg",
+      "titolo": "LEGGE 5 marzo 1965, n. 164",
+      "tipo": "legge",
+      "numero": "164",
+      "dataEmanazione": "1965-03-05",
+      "nir": "urn:nir:stato:legge:1965-03-05;164",
+      "eli": "/eli/id/1965/03/05/065U0164/sg",
+      "stato": "abrogato",
+      "sintesi": "Integrazione della legge 25 gennaio 1962, n. 12, relativamente agli orfani di guerra studenti universitari nel caso di cessazione del trattamento pensionistico alla madre per morte o per altre cause.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1965-03-05;164",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1965/03/24/065U0164/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1965-03-24",
+      "numeroGU": "74",
+      "codiceRedazionale": "065U0164",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DALLA L. 18 MAGGIO 1967, N. 318 ))"
+    },
+    {
+      "chiave": "/eli/id/1964/11/25/064U1266/sg",
+      "titolo": "LEGGE 25 novembre 1964, n. 1266",
+      "tipo": "legge",
+      "numero": "1266",
+      "dataEmanazione": "1964-11-25",
+      "nir": "urn:nir:stato:legge:1964-11-25;1266",
+      "eli": "/eli/id/1964/11/25/064U1266/sg",
+      "stato": "in_vigore",
+      "sintesi": "Nuove provvidenze in materia di pensioni di guerra.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1964-11-25;1266",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1964/12/07/064U1266/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1964-12-07",
+      "numeroGU": "303",
+      "codiceRedazionale": "064U1266",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "La Camera dei deputati ed il Senato della Repubblica hanno approvato; IL PRESIDENTE DELLA REPUBBLICA PROMULGA la seguente legge: Art. 1 ((ARTICOLO SOPPRESSO DALLA L. 18 MAGGIO 1967, N. 318 ))"
+    },
+    {
+      "chiave": "/eli/id/1963/02/09/063U0248/sg",
+      "titolo": "LEGGE 9 febbraio 1963, n. 248",
+      "tipo": "legge",
+      "numero": "248",
+      "dataEmanazione": "1963-02-09",
+      "nir": "urn:nir:stato:legge:1963-02-09;248",
+      "eli": "/eli/id/1963/02/09/063U0248/sg",
+      "stato": "abrogato",
+      "sintesi": "Norme sul trattamento economico dei professori e degli assistenti dell'Accademia navale, dell'Accademia aeronautica e dell'Istituto idrografico della Marina.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1963-02-09;248",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1963/03/22/063U0248/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1963-03-22",
+      "numeroGU": "78",
+      "codiceRedazionale": "063U0248",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.LGS. 15 MARZO 2010, N. 66 ))"
+    },
+    {
+      "chiave": "/eli/id/1963/02/09/063U0132/sg",
+      "titolo": "LEGGE 9 febbraio 1963, n. 132",
+      "tipo": "legge",
+      "numero": "132",
+      "dataEmanazione": "1963-02-09",
+      "nir": "urn:nir:stato:legge:1963-02-09;132",
+      "eli": "/eli/id/1963/02/09/063U0132/sg",
+      "stato": "abrogato",
+      "sintesi": "Istituzione di un Collegio di revisori di conti presso l'Opera nazionale per la protezione della maternita' e dell'infanzia.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1963-02-09;132",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1963/03/02/063U0132/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1963-03-02",
+      "numeroGU": "59",
+      "codiceRedazionale": "063U0132",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.LGS. 13 DICEMBRE 2010, N. 212 ))"
+    },
+    {
+      "chiave": "/eli/id/1962/11/14/062U1616/sg",
+      "titolo": "LEGGE 14 novembre 1962, n. 1616",
+      "tipo": "legge",
+      "numero": "1616",
+      "dataEmanazione": "1962-11-14",
+      "nir": "urn:nir:stato:legge:1962-11-14;1616",
+      "eli": "/eli/id/1962/11/14/062U1616/sg",
+      "stato": "abrogato",
+      "sintesi": "Provvedimenti a favore delle nuove costruzioni nonche' per i miglioramenti al naviglio, agli impianti e alle attrezzature della navigazione interna.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1962-11-14;1616",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1962/11/30/062U1616/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1962-11-30",
+      "numeroGU": "305",
+      "codiceRedazionale": "062U1616",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.L. 25 GIUGNO 2008, N.112 , CONVERTITO, CON MODIFICAZIONI, DALLA L. 6 AGOSTO 2008, N. 133 ))"
+    },
+    {
+      "chiave": "/eli/id/1962/01/25/062U0012/sg",
+      "titolo": "LEGGE 25 gennaio 1962, n. 12",
+      "tipo": "legge",
+      "numero": "12",
+      "dataEmanazione": "1962-01-25",
+      "nir": "urn:nir:stato:legge:1962-01-25;12",
+      "eli": "/eli/id/1962/01/25/062U0012/sg",
+      "stato": "in_vigore",
+      "sintesi": "Adeguamento delle pensioni di guerra indirette.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1962-01-25;12",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1962/02/09/062U0012/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1962-02-09",
+      "numeroGU": "36",
+      "codiceRedazionale": "062U0012",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "La Camera dei deputati ed il Senato della Repubblica hanno approvato; IL PRESIDENTE DELLA REPUBBLICA PROMULGA la seguente legge: Art. 1 Alle vedove in possesso della pensione di guerra in base alla tabella G, annessa alla legge 10 agosto 1950, n. 648 , &egrave; concesso un aumento che sar&agrave; progressivamente elevato come in appresso: L. 15.500 annue dal 1° gennaio 1962: L. 40.000 annue dal 1° luglio 1962; L. 60.000 annue dal 1° luglio 1963. Ai genitori collaterali ed assimilati, in possesso della pensione di guerra in base alla tabella M annessa alla legge 10 agosto 1950, n. 648 , &egrave; concesso un aumento che sar&agrave; progressivamente elevato come in appresso: L. 9.500 annue dal 1° gennaio 1962; L. 24.000 annue dal 1° luglio 1962; L. 36.000 annue dal 1° luglio 1963. Alle vedove ed orfani in possesso della pensione di guerra in base alla tabella I annessa alla legge 10 agosto 1950, n. 648 , ed ai genitori, collaterali ed assimilati, in possesso della pensione di guerra in base alla tabella O, annessa alla legge stessa, &egrave; concessa, in aggiunta agli aumenti di cui ai commi precedenti, una ulteriore maggiorazione della pensione che sar&agrave; progressivamente elevata come in appresso: L. 6.000 annue dal 1° luglio 1962; L. 15.000 annue dal 1° luglio 1963."
+    },
+    {
+      "chiave": "/eli/id/1961/04/03/061U0284/sg",
+      "titolo": "LEGGE 3 aprile 1961, n. 284",
+      "tipo": "legge",
+      "numero": "284",
+      "dataEmanazione": "1961-04-03",
+      "nir": "urn:nir:stato:legge:1961-04-03;284",
+      "eli": "/eli/id/1961/04/03/061U0284/sg",
+      "stato": "in_vigore",
+      "sintesi": "Modifiche alle norme della legge 10 marzo 1955, n. 96, e della legge 8 novembre 1956, n. 1317, concernenti provvidenze a favore dei perseguitati politici italiani antifascisti o razziali e dei loro familiari superstiti.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1961-04-03;284",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1961/04/27/061U0284/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1961-04-27",
+      "numeroGU": "103",
+      "codiceRedazionale": "061U0284",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "La Camera dei deputati ed il Senato della Repubblica hanno approvato: IL PRESIDENTE DELLA REPUBBLICA PROMULGA la seguente legge: Art. 1 La prima parte del secondo comma dell'articolo 1 della, legge 10 marzo 1955, n. 96 , &egrave; sostituita con la seguente: \"Tale assegno sar&agrave; attribuito qualora causa della perdita della capacit&agrave; lavorativa siano stati\"."
+    },
+    {
+      "chiave": "/eli/id/1960/07/28/060U0778/sg",
+      "titolo": "LEGGE 28 luglio 1960, n. 778",
+      "tipo": "legge",
+      "numero": "778",
+      "dataEmanazione": "1960-07-28",
+      "nir": "urn:nir:stato:legge:1960-07-28;778",
+      "eli": "/eli/id/1960/07/28/060U0778/sg",
+      "stato": "in_vigore",
+      "sintesi": "Modifiche alla legge 14 luglio 1957, n. 594, sul collocamento obbligatorio dei centralinisti ciechi.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1960-07-28;778",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1960/08/09/060U0778/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1960-08-09",
+      "numeroGU": "194",
+      "codiceRedazionale": "060U0778",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "La Camera dei deputati ed il Senato della Repubblica hanno approvato; IL PRESIDENTE DELLA REPUBBLICA PROMULGA la seguente legge: Art. 1 L' art. 1 della, legge 14 luglio 1957, n. 594 , &egrave; sostituito dal seguente: \"Le pubbliche Amministrazioni, gli enti pubblici e le aziende di Stato, anche in deroga all' articolo 6 del decreto-legge 5 febbraio 1948, n. 61 e all' articolo 12 del decreto-legge 7 aprile 1948, n. 262 , nonch&egrave; alle disposizioni ministeriali che fanno divieto di assunzione di personale, sono tenuti ad assumere per ogni ufficio, sede, stabilimento alla sola condizione che questi siano dotati di centralino telefonico, un privo della vista abilitato alle funzioni di centralinista telefonico. Gli aventi diritto al collocamento obbligatorio sono assunti sino all'et&agrave; di 50 anni, e, semprech&egrave; siano in possesso dei requisiti richiesti dalle vigenti disposizioni per l'assunzione ai pubblici impieghi, debbono essere inquadrati direttamente nei posti iniziali del personale impiegatizio della carriera esecutiva o di carriera equipollente, indipendentemente dall'esistenza in organico del posto di centralinista telefonico o telefonista. ((In via subordinata, nel solo caso di completezza del ruolo organico e fino a quando non si verifichino vacanze nelle qualifiche iniziali della carriera esecutiva menzionata o di carriera equipollente, detti centralinisti debbono essere assunti in qualit&agrave; di avventizi o nella corrispondente categoria del personale non di ruolo)) . Il possesso dell'abilitazione alle funzioni di centralinista telefonico conseguita ai sensi dell'art. 2 costituisce, anche in mancanza del prescritto titolo di studio, requisito valido per l'inquadramento di cui al comma precedente. L'obbligo dell'assunzione di centralinisti telefonici ciechi, in caso di nuove assunzioni di centralinisti, riguarda anche i privati datori di lavoro, i cui uffici, sedi o stabilimenti abbiano un centralino di smistamento a pi&ugrave; di un posto d [...]",
+      "testoTroncato": true
+    },
+    {
+      "chiave": "/eli/id/1956/11/08/056U1317/sg",
+      "titolo": "LEGGE 8 novembre 1956, n. 1317",
+      "tipo": "legge",
+      "numero": "1317",
+      "dataEmanazione": "1956-11-08",
+      "nir": "urn:nir:stato:legge:1956-11-08;1317",
+      "eli": "/eli/id/1956/11/08/056U1317/sg",
+      "stato": "in_vigore",
+      "sintesi": "Aggiunte, e modifiche alla legge 10 marzo 1955, n. 96, concernente provvidenze a favore dei perseguitati politici italiani antifascisti o razziali e dei loro familiari superstiti.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1956-11-08;1317",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1956/11/29/056U1317/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1956-11-29",
+      "numeroGU": "302",
+      "codiceRedazionale": "056U1317",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "La Camera dei deputati ed il Senato della Repubblica hanno approvato; IL PRESIDENTE DELLA REPUBBLICA PROMULGA la seguente legge: Art. 1 All' art. 3 della legge 10 marzo 1955, n. 96 , sono aggiunti i seguenti commi: \"Con l'assegno vitalizio di benemerenza sono concessi tutti gli assegni accessori previsti dalla legge 10 agosto 1950, n. 648 , e successive modificazioni. L'assegno stesso &egrave; riversibile. L'assegno previsto dagli articoli 1 e 2 non &egrave; cumulabile con la eventuale pensione di guerra concessa per lo stesso titolo. &Egrave; in facolt&agrave; degli interessati di optare per il trattamento pi&ugrave; favorevole\"."
+    },
+    {
+      "chiave": "/eli/id/1925/07/02/025U1196/sg",
+      "titolo": "REGIO DECRETO 2 luglio 1925, n. 1196",
+      "tipo": "regio.decreto",
+      "numero": "1196",
+      "dataEmanazione": "1925-07-02",
+      "nir": "urn:nir:stato:regio.decreto:1925-07-02;1196",
+      "eli": "/eli/id/1925/07/02/025U1196/sg",
+      "stato": "abrogato",
+      "sintesi": "Attribuzioni del direttore generale dell'Amministrazione delle poste e dei telegrafi relative all'esercizio del bilancio. (025U1196)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1925-07-02;1196",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1925/07/22/025U1196/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1925-07-22",
+      "numeroGU": "168",
+      "codiceRedazionale": "025U1196",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.L. 25 GIUGNO 2008, N. 112 , CONVERTITO CON MODIFICAZIONI DALLA L. 6 AGOSTO 2008, N. 133 ))"
+    },
+    {
+      "chiave": "/eli/id/1923/12/30/023U3167/sg",
+      "titolo": "REGIO DECRETO 30 dicembre 1923, n. 3167",
+      "tipo": "regio.decreto",
+      "numero": "3167",
+      "dataEmanazione": "1923-12-30",
+      "nir": "urn:nir:stato:regio.decreto:1923-12-30;3167",
+      "eli": "/eli/id/1923/12/30/023U3167/sg",
+      "stato": "abrogato",
+      "sintesi": "Istituzione della decorazione della «Stella al merito del lavoro». (023U3167)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1923-12-30;3167",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1924/02/12/023U3167/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1924-02-12",
+      "numeroGU": "36",
+      "codiceRedazionale": "023U3167",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.LGS. 13 DICEMBRE 2010, N. 212 ))"
+    },
+    {
+      "chiave": "/eli/id/1967/04/24/067U0222/sg",
+      "titolo": "DECRETO-LEGGE 24 aprile 1967, n. 222",
+      "tipo": "decreto.legge",
+      "numero": "222",
+      "dataEmanazione": "1967-04-24",
+      "nir": "urn:nir:stato:decreto.legge:1967-04-24;222",
+      "eli": "/eli/id/1967/04/24/067U0222/sg",
+      "stato": "abrogato",
+      "sintesi": "Norme sul divieto di rapporti economici con la Rhodesia del Sud.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legge:1967-04-24;222",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1967/04/28/067U0222/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1967-04-28",
+      "numeroGU": "106",
+      "codiceRedazionale": "067U0222",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.L. 3 OTTOBRE 1968, N. 1007 , CONVERTITO, CON MODIFICAZIONI, DALLA L. 19 NOVEMBRE 1968, N. 1188 ))"
+    },
+    {
+      "chiave": "/eli/id/1959/06/03/059U0403/sg",
+      "titolo": "LEGGE 3 giugno 1959, n. 403",
+      "tipo": "legge",
+      "numero": "403",
+      "dataEmanazione": "1959-06-03",
+      "nir": "urn:nir:stato:legge:1959-06-03;403",
+      "eli": "/eli/id/1959/06/03/059U0403/sg",
+      "stato": "abrogato",
+      "sintesi": "Norme sul trattamento economico delle suore addette agli stabilimenti sanitari militari ed agli ospedali convenzionati.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1959-06-03;403",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1959/06/25/059U0403/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1959-06-25",
+      "numeroGU": "149",
+      "codiceRedazionale": "059U0403",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.LGS. 15 MARZO 2010, N. 66 ))"
     }
   ]
 }

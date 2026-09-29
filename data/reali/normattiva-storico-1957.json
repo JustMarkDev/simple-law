@@ -2,7 +2,7 @@
   "provenance": {
     "fonte": "normattiva",
     "url": "https://api.normattiva.it/t/normattiva.api/bff-opendata/v1/api/v1/ricerca/aggiornati",
-    "recuperatoIl": "2026-09-29T00:32:15.359Z",
+    "recuperatoIl": "2026-09-29T00:53:04.875Z",
     "licenza": "riproduzione consentita con menzione di fonte, carattere non autentico e gratuito (Note legali dati.normattiva.it; solo la Gazzetta Ufficiale a stampa e' autentica)"
   },
   "atti": [
@@ -595,6 +595,639 @@
       "codiceRedazionale": "051U1316",
       "articoloDataFineVigenza": "99999999",
       "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.LGS. 26 MARZO 2010, n. 59 , COME MODIFICATO DAL D.LGS. 6 AGOSTO 2012, n. 147 ))"
+    },
+    {
+      "chiave": "/eli/id/1934/07/27/034U1265/sg",
+      "titolo": "REGIO DECRETO 27 luglio 1934, n. 1265",
+      "tipo": "regio.decreto",
+      "numero": "1265",
+      "dataEmanazione": "1934-07-27",
+      "nir": "urn:nir:stato:regio.decreto:1934-07-27;1265",
+      "eli": "/eli/id/1934/07/27/034U1265/sg",
+      "stato": "in_vigore",
+      "sintesi": "Approvazione del testo unico delle leggi sanitarie. (034U1265)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1934-07-27;1265",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1934/08/09/034U1265/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1934-08-09",
+      "numeroGU": "186",
+      "codiceRedazionale": "034U1265",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 VITTORIO EMANUELE III PER GRAZIA DI DIO E PER VOLONT&Agrave; DELLA NAZIONE RE D'ITALIA Vista la legge 6 luglio 1933, n. 947 ; Udito il parere del Consiglio di Stato; Sentito il Consiglio dei Ministri; Sulla proposta del Capo del Governo, Primo Ministro Segretario di Stato, Ministro Segretario di Stato per l'Interno; Abbiamo decretato e decretiamo: &Egrave; approvato l'unito testo unico delle leggi sanitarie composto di 394 articoli e otto tabelle allegate, visto, d'ordine Nostro, dal Capo del Governo, Primo Ministro Segretario di Stato, Ministro Segretario di Stato per l'Interno. Ordiniamo che il presente decreto, munito del sigillo dello Stato, sia inserto nella raccolta ufficiale delle leggi e dei decreti del Regno d'Italia, mandando a chiunque spetti di osservarlo e di farlo osservare. Dato a Sant'Anna di Valdieri, add&igrave; 27 luglio 1934 - XII VITTORIO EMANUELE Mussolini. Visto, il Guardasigilli: De Francisci. Registrato alla Corte dei conti, add&igrave; 8 agosto 1934 - Anno XII Atti del Governo, registro 350, foglio 37. - Giagheddu."
+    },
+    {
+      "chiave": "/eli/id/1931/11/19/031U1488/sg",
+      "titolo": "REGIO DECRETO 19 novembre 1931, n. 1488",
+      "tipo": "regio.decreto",
+      "numero": "1488",
+      "dataEmanazione": "1931-11-19",
+      "nir": "urn:nir:stato:regio.decreto:1931-11-19;1488",
+      "eli": "/eli/id/1931/11/19/031U1488/sg",
+      "stato": "abrogato",
+      "sintesi": "Istituzione di un Comitato per le Regie stazioni sperimentali per l'industria. (031U1488)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1931-11-19;1488",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1931/12/17/031U1488/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1931-12-17",
+      "numeroGU": "290",
+      "codiceRedazionale": "031U1488",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.P.R. 13 DICEMBRE 2010, N. 248 ))"
+    },
+    {
+      "chiave": "/eli/id/1908/07/09/008U0445/sg",
+      "titolo": "LEGGE 9 luglio 1908, n. 445",
+      "tipo": "legge",
+      "numero": "445",
+      "dataEmanazione": "1908-07-09",
+      "nir": "urn:nir:stato:legge:1908-07-09;445",
+      "eli": "/eli/id/1908/07/09/008U0445/sg",
+      "stato": "in_vigore",
+      "sintesi": "Sui provvedimenti per la Basilicata e la Calabria. (008U0445)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1908-07-09;445",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1908/07/30/008U0445/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1908-07-30",
+      "numeroGU": "177",
+      "codiceRedazionale": "008U0445",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 Agli articoli 1 , 6 , 9 , 14 , 16 e 24 della legge 31 marzo 1904, n. 140 , portante provvedimenti speciali a favore della provincia di Basilicata, sono sostituiti i seguenti: Art. 1. - &Egrave; istituita una Cassa provinciale di credito agrario per la Basilicata con sede a Potenza. Essa costituisce un ente morale autonomo, &egrave; compresa tra gli Istituti coi quali pu&ograve; contrattare e operare l'Amministrazione speciale istituita per il credito agrario presso il Banco di Napoli; ed ha per oggetto: a) di fare anticipazioni in danaro, in attrezzi o in scorta ai Monti frumentari, alle Casse agrarie e ai Consorzi agrari; nei casi o nei modi preveduti dalla presente legge e dal regolamento; b) di fare anticipazioni agli enfiteuti, di cui negli articoli seguenti, e alle Societ&agrave; cooperative agrarie riconosciute, che abbiano intrapreso industrie agrarie o affini, purch&egrave; le anticipazioni servano esclusivamente: 1° alla costruzione di case coloniche, di dalle razionali, di strade poderali, di opere per provvedere i fondi di acqua potabile e di irrigazione o alla chiusura, con muri e siepi, dei terreni aperti; 2° a piantagioni legnose agrarie o a rimboschimenti; 3° ad acquisto di bestiame; 4° all'acquisto di strumenti di lavoro, di materie prime e in generale di scorte. Le anticipazioni, di cui al presente numero, potranno essere somministrate in natura, computando gli oggetti al prezzo di costo; c) di fare anticipazioni ai proprietari e conduttori di terre, per gli scopi di cui ai nn. 1, 2, 3 dalla lettera b). Le anticipazioni per la costruzione di case coloniche e di stallo razionali saranno fatte a misura che procedono i lavori, n&egrave; potranno per ciascun proprietario o conduttore di terre superare un limite massimo da fissarsi ogni anno dal Consiglio d'amministrazione della Cassa, con l'approvazione del Ministero d'agricoltura, industria e commercio. Le anticipazioni saranno garantite dal privilegio speciale o da ipoteca a norma delle leggi 2 [...]",
+      "testoTroncato": true
+    },
+    {
+      "chiave": "/eli/id/1903/06/18/003U0304/sg",
+      "titolo": "REGIO DECRETO 18 giugno 1903, n. 304",
+      "tipo": "regio.decreto",
+      "numero": "304",
+      "dataEmanazione": "1903-06-18",
+      "nir": "urn:nir:stato:regio.decreto:1903-06-18;304",
+      "eli": "/eli/id/1903/06/18/003U0304/sg",
+      "stato": "abrogato",
+      "sintesi": "Dichiarazione e delimitazione di zone malariche nella provincia di Bari. (003U0304)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1903-06-18;304",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1903/07/24/003U0304/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1903-07-24",
+      "numeroGU": "173",
+      "codiceRedazionale": "003U0304",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.LGS. 13 DICEMBRE 2010, N. 212 ))"
+    },
+    {
+      "chiave": "/eli/id/1903/03/19/003U0117/sg",
+      "titolo": "REGIO DECRETO 19 marzo 1903, n. 117",
+      "tipo": "regio.decreto",
+      "numero": "117",
+      "dataEmanazione": "1903-03-19",
+      "nir": "urn:nir:stato:regio.decreto:1903-03-19;117",
+      "eli": "/eli/id/1903/03/19/003U0117/sg",
+      "stato": "abrogato",
+      "sintesi": "Determinazione delle zone malariche esistenti nella provincia di Bari. (003U0117)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1903-03-19;117",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1903/04/09/003U0117/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1903-04-09",
+      "numeroGU": "83",
+      "codiceRedazionale": "003U0117",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.LGS. 13 DICEMBRE 2010, N. 212 ))"
+    },
+    {
+      "chiave": "/eli/id/1896/02/13/096U0065/sg",
+      "titolo": "REGIO DECRETO 13 febbraio 1896, n. 65",
+      "tipo": "regio.decreto",
+      "numero": "65",
+      "dataEmanazione": "1896-02-13",
+      "nir": "urn:nir:stato:regio.decreto:1896-02-13;65",
+      "eli": "/eli/id/1896/02/13/096U0065/sg",
+      "stato": "abrogato",
+      "sintesi": "Che approva il Regolamento per l'esecuzione del testo unico delle leggi doganali. (096U0065)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1896-02-13;65",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1896/03/17/096U0065/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1896-03-17",
+      "numeroGU": "64",
+      "codiceRedazionale": "096U0065",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.LGS. 26 SETTEMBRE 2024, N. 141 ))"
+    },
+    {
+      "chiave": "/eli/id/1955/03/10/055U0095/sg",
+      "titolo": "LEGGE 10 marzo 1955, n. 95",
+      "tipo": "legge",
+      "numero": "95",
+      "dataEmanazione": "1955-03-10",
+      "nir": "urn:nir:stato:legge:1955-03-10;95",
+      "eli": "/eli/id/1955/03/10/055U0095/sg",
+      "stato": "abrogato",
+      "sintesi": "Nuove norme sulle indennita' da corrispondere ai componenti le Commissioni per gli esami di maturita' nei Licei classici, scientifici ed artistici, di abilitazione negli Istituti magistrali e tecnici e di diploma nei Conservatori di musica.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1955-03-10;95",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1955/03/26/055U0095/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1955-03-26",
+      "numeroGU": "70",
+      "codiceRedazionale": "055U0095",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.LGS. 13 DICEMBRE 2010, N. 212 ))"
+    },
+    {
+      "chiave": "/eli/id/1946/03/12/046U0211/sg",
+      "titolo": "DECRETO LEGISLATIVO LUOGOTENENZIALE 12 marzo 1946, n. 211",
+      "tipo": "decreto.legislativo.luogotenenziale",
+      "numero": "211",
+      "dataEmanazione": "1946-03-12",
+      "nir": "urn:nir:stato:decreto.legislativo.luogotenenziale:1946-03-12;211",
+      "eli": "/eli/id/1946/03/12/046U0211/sg",
+      "stato": "in_vigore",
+      "sintesi": "Disciplina delle iniziative industriali e istituzione di una Commissione centrale dell'industria.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legislativo.luogotenenziale:1946-03-12;211",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1946/04/30/046U0211/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1946-04-30",
+      "numeroGU": "100",
+      "codiceRedazionale": "046U0211",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "UMBERTO DI SAVOIA PRINCIPE DI PIEMONTE LUOGOTENENTE GENERALE DEL REGNO In virt&ugrave; dell'autorit&agrave; a Noi delegata; Visto il R. decreto-legge 3 novembre 1927, n. 2107 , concernente norme per l'impianto di stabilimenti industriali, convertito nella legge 20 maggio 1928, n. 1130 ; Visto il R. decreto-legge 18 novembre 1929, n. 2488 . convertito nella legge 18 dicembre 1930, n. 1808 , sulla disciplina della fabbricazione di prodotti essenziali alla difesa del lo Stato; Visti i Regi decreti 18 luglio 1930, n. 1455 e 29 giugno 1932, n. 2067 , contenenti, rispettivamente, un elenco delle industrie fondamentali per la fabbricazione di prodotti essenziali per la difesa dello Stato e norme interpretative; Vista la legge 12 gennaio 1933, n. 141 , con la quale furono delegati al Governo i poteri per sottoporre ad autorizzazione i nuovi impianti industriali; Visto il R. decreto 15 maggio 1933, n. 590 , contenente le norme per l'attuazione della legge 12 gennaio 1933, n. 141 ; Visti i Regi decreti 12 aprile 1937, n. 841 e 5 febbraio 1940, n. 258 , contenenti modificazioni ed aggiunte all'elenco delle industrie sottoposte a preventiva autorizzazione governativa:; Visto l'art. 6° del R. decreto-legge 19 giugno 1940, n. 953 , sull blocco dei prezzi delle merci e dei servizi, delle costruzioni edilizie, degli impianti industriali e delle pigioni, convertito, con modifiche, nella legge 28 novembre 1940, n. 1727 , e prorogato con Regi decreti legge 12 marzo 1941, n. 142 e 11 marzo 1943, n. 100 ; Visto il R. decreto-legge 18 febbraio 1943, n. 95 , concernente la disciplina degli atti diretti a trasferire, dare in locazione o in uso opere edilizie facenti parte di stabilimenti industriali; Visto l' art. 1 del decreto legislativo Luogotenenziale 27 novembre 1944, n. 422 , riguardante la revoca del divieto della costruzione di edifici privati di cui al R. decreto-legge 14 novembre 1944, n. 1231 ; Visto l' art. 4 del decreto-legge Luogotenenziale 25 giugno 1944, n. 151 , concernent [...]",
+      "testoTroncato": true
+    },
+    {
+      "chiave": "/eli/id/1936/07/16/036U1423/sg",
+      "titolo": "REGIO DECRETO 16 luglio 1936, n. 1423",
+      "tipo": "regio.decreto",
+      "numero": "1423",
+      "dataEmanazione": "1936-07-16",
+      "nir": "urn:nir:stato:regio.decreto:1936-07-16;1423",
+      "eli": "/eli/id/1936/07/16/036U1423/sg",
+      "stato": "abrogato",
+      "sintesi": "Erezione in ente morale dell'Osservatorio Italiano di diritto agrario, con sede in Roma. (036U1423)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1936-07-16;1423",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1936/07/29/036U1423/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1936-07-29",
+      "numeroGU": "174",
+      "codiceRedazionale": "036U1423",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.P.R. 13 DICEMBRE 2010, N. 248 ))"
+    },
+    {
+      "chiave": "/eli/id/1914/02/19/014U0142/sg",
+      "titolo": "REGIO DECRETO 19 febbraio 1914, n. 142",
+      "tipo": "regio.decreto",
+      "numero": "142",
+      "dataEmanazione": "1914-02-19",
+      "nir": "urn:nir:stato:regio.decreto:1914-02-19;142",
+      "eli": "/eli/id/1914/02/19/014U0142/sg",
+      "stato": "abrogato",
+      "sintesi": "Col quale viene provveduto alla modificazione di una zona malarica nel territorio della provincia di Lecce. (014U0142)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1914-02-19;142",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1914/03/13/014U0142/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1914-03-13",
+      "numeroGU": "61",
+      "codiceRedazionale": "014U0142",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.P.R. 13 DICEMBRE 2010, N. 248 ))"
+    },
+    {
+      "chiave": "/eli/id/1905/06/01/005U0311/sg",
+      "titolo": "REGIO DECRETO 1 giugno 1905, n. 311",
+      "tipo": "regio.decreto",
+      "numero": "311",
+      "dataEmanazione": "1905-06-01",
+      "nir": "urn:nir:stato:regio.decreto:1905-06-01;311",
+      "eli": "/eli/id/1905/06/01/005U0311/sg",
+      "stato": "abrogato",
+      "sintesi": "Che dichiara zone malariche talune porzioni di territorio nella provincia di Lecce. (005U0311)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1905-06-01;311",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1905/07/08/005U0311/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1905-07-08",
+      "numeroGU": "159",
+      "codiceRedazionale": "005U0311",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.LGS. 13 DICEMBRE 2010, N. 212 ))"
+    },
+    {
+      "chiave": "/eli/id/1904/08/29/004U0499/sg",
+      "titolo": "REGIO DECRETO 29 agosto 1904, n. 499",
+      "tipo": "regio.decreto",
+      "numero": "499",
+      "dataEmanazione": "1904-08-29",
+      "nir": "urn:nir:stato:regio.decreto:1904-08-29;499",
+      "eli": "/eli/id/1904/08/29/004U0499/sg",
+      "stato": "abrogato",
+      "sintesi": "Che dichiara zone malariche talune porzioni di territorio nella provincia di Lecce. (004U0499)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1904-08-29;499",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1904/09/26/004U0499/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1904-09-26",
+      "numeroGU": "224",
+      "codiceRedazionale": "004U0499",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.LGS. 13 DICEMBRE 2010, N. 212 ))"
+    },
+    {
+      "chiave": "/eli/id/1904/01/28/004U0028/sg",
+      "titolo": "REGIO DECRETO 28 gennaio 1904, n. 28",
+      "tipo": "regio.decreto",
+      "numero": "28",
+      "dataEmanazione": "1904-01-28",
+      "nir": "urn:nir:stato:regio.decreto:1904-01-28;28",
+      "eli": "/eli/id/1904/01/28/004U0028/sg",
+      "stato": "abrogato",
+      "sintesi": "Col quale si designano talune zone malariche del territorio della provincia di Lecce. (004U0028)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1904-01-28;28",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1904/02/17/004U0028/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1904-02-17",
+      "numeroGU": "39",
+      "codiceRedazionale": "004U0028",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.LGS. 13 DICEMBRE 2010, N. 212 ))"
+    },
+    {
+      "chiave": "/eli/id/1903/06/14/003U0268/sg",
+      "titolo": "REGIO DECRETO 14 giugno 1903, n. 268",
+      "tipo": "regio.decreto",
+      "numero": "268",
+      "dataEmanazione": "1903-06-14",
+      "nir": "urn:nir:stato:regio.decreto:1903-06-14;268",
+      "eli": "/eli/id/1903/06/14/003U0268/sg",
+      "stato": "abrogato",
+      "sintesi": "Dichiarazione e delimitazione di zone malariche nelle Provincie di Lecce (003U0268)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1903-06-14;268",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1903/07/13/003U0268/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1903-07-13",
+      "numeroGU": "163",
+      "codiceRedazionale": "003U0268",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.LGS. 13 DICEMBRE 2010, N. 212 ))"
+    },
+    {
+      "chiave": "/eli/id/1950/11/04/050U1069/sg",
+      "titolo": "LEGGE 4 novembre 1950, n. 1069",
+      "tipo": "legge",
+      "numero": "1069",
+      "dataEmanazione": "1950-11-04",
+      "nir": "urn:nir:stato:legge:1950-11-04;1069",
+      "eli": "/eli/id/1950/11/04/050U1069/sg",
+      "stato": "abrogato",
+      "sintesi": "Norme relative al territorio di produzione ed alle caratteristiche dei vini tipici denominati \"Marsala\".",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1950-11-04;1069",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1951/01/11/050U1069/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1951-01-11",
+      "numeroGU": "8",
+      "codiceRedazionale": "050U1069",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DALLA L. 28 NOVEMBRE 1984, N. 851 ))"
+    },
+    {
+      "chiave": "/eli/id/1934/09/28/034U1820/sg",
+      "titolo": "REGIO DECRETO 28 settembre 1934, n. 1820",
+      "tipo": "regio.decreto",
+      "numero": "1820",
+      "dataEmanazione": "1934-09-28",
+      "nir": "urn:nir:stato:regio.decreto:1934-09-28;1820",
+      "eli": "/eli/id/1934/09/28/034U1820/sg",
+      "stato": "abrogato",
+      "sintesi": "Istituzione di distintivi di onore per feriti, mutilati e deceduti per causa di servizio. (034U1820)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1934-09-28;1820",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1934/11/19/034U1820/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1934-11-19",
+      "numeroGU": "271",
+      "codiceRedazionale": "034U1820",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DALLA L. 7 APRILE 2025, N. 56 ))"
+    },
+    {
+      "chiave": "/eli/id/1956/12/29/056U1533/sg",
+      "titolo": "LEGGE 29 dicembre 1956, n. 1533",
+      "tipo": "legge",
+      "numero": "1533",
+      "dataEmanazione": "1956-12-29",
+      "nir": "urn:nir:stato:legge:1956-12-29;1533",
+      "eli": "/eli/id/1956/12/29/056U1533/sg",
+      "stato": "abrogato",
+      "sintesi": "Assicurazione obbligatoria contro le malattie per gli artigiani.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1956-12-29;1533",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1957/01/18/056U1533/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1957-01-18",
+      "numeroGU": "16",
+      "codiceRedazionale": "056U1533",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.LGS. 13 DICEMBRE 2010, N. 212 ))"
+    },
+    {
+      "chiave": "/eli/id/1941/07/19/041U1198/sg",
+      "titolo": "REGIO DECRETO 19 luglio 1941, n. 1198",
+      "tipo": "regio.decreto",
+      "numero": "1198",
+      "dataEmanazione": "1941-07-19",
+      "nir": "urn:nir:stato:regio.decreto:1941-07-19;1198",
+      "eli": "/eli/id/1941/07/19/041U1198/sg",
+      "stato": "in_vigore",
+      "sintesi": "Approvazione del regolamento di esecuzione dei titoli I, II e III del libro II della legge postale e delle telecomunicazioni. (041U1198)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1941-07-19;1198",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1941/11/12/041U1198/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1941-11-12",
+      "numeroGU": "267",
+      "codiceRedazionale": "041U1198",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "VITTORIO EMANUELE III PER GRAZIA DI DIO E PER VOLONT&Agrave; DELLA NAZIONE RE D'ITALIA E DI ALBANIA IMPERATORE D'ETIOPIA Visto il R. decreto-legge 23 aprile 1925-III, n. 520, convertito nella legge 21 marzo 1926-IV, n. 597, riguardante l'ordinamento dell'Amministrazione postale e telegrafica; Visto il R. decreto-legge 14 giugno 1925-III, n. 884, convertito nella legge 18 marzo 1926-IV, n. 562; Visto l'art. 344 della legge postale e delle telecomunicazioni, approvata con R. decreto 27 febbraio 1936-XIV, n. 645, con cui venne fissato al 1° luglio 1936-XIV, il termine per la pubblicazione dei regolamenti di esecuzione della legge stessa; Visto l'art. 1 del R. decreto-legge 9 luglio 1936-XIV, n. 1501, convertito nella legge 31 dicembre 1936-XV, n. 2393, che prorog&ograve; al 1° luglio 1937-XV, il termine suindicato; Visto l'art. 2 del R. decreto-legge 1° luglio 1937-XV, n. 1382, convertito nelle legge 23 dicembre 1937-XVI, n. 2594, con cui fu conferita al Governo del Re la facolt&agrave; di provvedere alla emanazione dei regolamenti per l'esecuzione della legge postale e delle telecomunicazioni anche separatamente per i singoli servizi ed oltre il termine previsto dall'art. 1 del R. decreto-legge 9 luglio 1936-XIV, n. 1501, e visto l'art. 3 dello stesso Regio decreto-legge, col quale il Governo del Re &egrave; altres&igrave; autorizzato a trasferire nei regolamenti suddetti norme giuridiche rientranti nella facolt&agrave; del potere esecutivo, ed emanate nella forma di legge anche posteriormente alla legge 31 gennaio 1926-IV, n. 100; Visto il testo unico delle leggi sulle acque e gli impianti elettrici approvato con R. decreto 11 dicembre 1933-XII, n. 1775; Visto l'art. 1 della legge 31 gennaio 1926-IV, n. 100; Ritenuta l'opportunit&agrave; di provvedere con separato regolamento alla esecuzione delle norme contenute nei titoli I, II e III del libro II della legge postale e delle telecomunicazioni sopra cennata; Sentito il Consiglio di amministrazione delle poste e dei t [...]",
+      "testoTroncato": true
+    },
+    {
+      "chiave": "/eli/id/1938/02/24/038U0329/sg",
+      "titolo": "REGIO DECRETO 24 febbraio 1938, n. 329",
+      "tipo": "regio.decreto",
+      "numero": "329",
+      "dataEmanazione": "1938-02-24",
+      "nir": "urn:nir:stato:regio.decreto:1938-02-24;329",
+      "eli": "/eli/id/1938/02/24/038U0329/sg",
+      "stato": "abrogato",
+      "sintesi": "Testo unico delle disposizioni legislative sul reclutamento del Regio esercito. (038U0329)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1938-02-24;329",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1938/04/16/038U0329/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1938-04-16",
+      "numeroGU": "88",
+      "codiceRedazionale": "038U0329",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.LGS. 15 MARZO 2010, N. 66 ))"
+    },
+    {
+      "chiave": "/eli/id/1933/11/02/033U2418/sg",
+      "titolo": "REGIO DECRETO 2 novembre 1933, n. 2418",
+      "tipo": "regio.decreto",
+      "numero": "2418",
+      "dataEmanazione": "1933-11-02",
+      "nir": "urn:nir:stato:regio.decreto:1933-11-02;2418",
+      "eli": "/eli/id/1933/11/02/033U2418/sg",
+      "stato": "abrogato",
+      "sintesi": "Estensione ai salariati degli Enti locali dell'obbligo della iscrizione all'I.N.I.E.L. e modifiche all'ordinamento dell'Istituto stesso. (033U2418)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1933-11-02;2418",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1934/04/26/033U2418/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1934-04-26",
+      "numeroGU": "97",
+      "codiceRedazionale": "033U2418",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.LGS. 13 DICEMBRE 2010, N. 212 ))"
+    },
+    {
+      "chiave": "/eli/id/1954/04/10/054U0164/sg",
+      "titolo": "LEGGE 10 aprile 1954, n. 164",
+      "tipo": "legge",
+      "numero": "164",
+      "dataEmanazione": "1954-04-10",
+      "nir": "urn:nir:stato:legge:1954-04-10;164",
+      "eli": "/eli/id/1954/04/10/054U0164/sg",
+      "stato": "in_vigore",
+      "sintesi": "Ruolo organico del personale direttivo ed ispettivo per le scuole elementari.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1954-04-10;164",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1954/05/10/054U0164/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1954-05-10",
+      "numeroGU": "106",
+      "codiceRedazionale": "054U0164",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "La Camera dei deputati ed il Senato della Repubblica, hanno approvato; IL PRESIDENTE DELLA REPUBBLICA IL PRESIDENTE DELLA REPUBBLICA la seguente legge: Art. 1 Il ruolo organico del personale direttivo ed ispettivo delle scuole elementari, stabilito col decreto legislativo 25 febbraio 1948, n. 264 , &egrave; modificato come appresso, in base al numero dei posti fissati dal decreto interministeriale 27 luglio 1950, in applicazione dell' art. 15 del decreto legislativo del Capo provvisorio dello Stato 16 maggio 1947, n. 555 : Grado Qualifica Posti ----------------------------------------------------------------- 6° - Ispettori scolastici . . . . . . . . . . . . . . . n. 281 7°-8° - Direttori didattici. . . . . . . . . . . . . . \" 2.121 ------ n. 2.402 ------ (( 1 )) Ai direttori didattici durante il periodo di prova &egrave; attribuito lo stipendio massimo del grado 8°. Superato il periodo di prova sono promossi al grado 7°. Gli ispettori scolastici sono iscritti nel ruolo al grado 6°. Al grado di ispettore scolastico sono promossi, per merito comparativo, i direttori didattici di grado 7° che abbiano almeno quattro anni di anzianit&agrave; in questo grado. --------------- AGGIORNAMENTO (1) Il D.P.R. 10 gennaio 1957, n. 362 ha disposto (con l'art. 6, comma 4) che \"l'organico dei direttori didattici di cui alla legge 10 aprile 1954, n. 164 , &egrave; stabilito in 2371 posti dal 1 ottobre 1957, in 2621 posti dal 1 ottobre 1958 e in 2871 posti dal 1 ottobre 1959\""
+    },
+    {
+      "chiave": "/eli/id/1952/06/24/052U0649/sg",
+      "titolo": "DECRETO-LEGGE 24 giugno 1952, n. 649",
+      "tipo": "decreto.legge",
+      "numero": "649",
+      "dataEmanazione": "1952-06-24",
+      "nir": "urn:nir:stato:decreto.legge:1952-06-24;649",
+      "eli": "/eli/id/1952/06/24/052U0649/sg",
+      "stato": "abrogato",
+      "sintesi": "Disposizioni sull'esame di maturita' e di abilitazione a conclusione degli studi nelle scuole secondarie superiori.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legge:1952-06-24;649",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1952/06/24/052U0649/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1952-06-24",
+      "numeroGU": "144",
+      "codiceRedazionale": "052U0649",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.LGS. 13 DICEMBRE 2010, N. 212 ))"
+    },
+    {
+      "chiave": "/eli/id/1940/10/16/040U1973/sg",
+      "titolo": "REGIO DECRETO 16 ottobre 1940, n. 1973",
+      "tipo": "regio.decreto",
+      "numero": "1973",
+      "dataEmanazione": "1940-10-16",
+      "nir": "urn:nir:stato:regio.decreto:1940-10-16;1973",
+      "eli": "/eli/id/1940/10/16/040U1973/sg",
+      "stato": "in_vigore",
+      "sintesi": "Istituzione, trasformazione e soppressione di Scuole e Istituti di istruzione tecnica a decorrere dal 16 ottobre 1939-XVII. (040U1973)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1940-10-16;1973",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1941/02/14/040U1973/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1941-02-14",
+      "numeroGU": "39",
+      "codiceRedazionale": "040U1973",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "VITTORIO EMANUELE III PER GRAZIA DI DIO E PER VOLONT&Agrave; DELLA NAZIONE RE D'ITALIA E DI ALBANIA IMPERATORE D'ETIOPIA Veduta la legge 15 giugno 1931-IX, n. 889; Veduta la legge 28 dicembre 1931-X, n. 1771, nella quale &egrave; stato convertito il R. decreto 3 agosto 1031-IX, n. 1069; Veduta la legge 22 aprile 1932-X, n. 490; Veduto il R. decreto 14 settembre 1931-IX, n. 1175; Veduto il R. decreto 3 marzo 1934-XII, n. 383; Veduto il R. decreto-legge 28 settembre 1934-XII, n. 1662; Veduto il R. decreto-legge 10 aprile 1936-XIV, n. 634; Veduto l'art. 9 del R. decreto-legge 21 settembre 1938-XVI, n. 2038; Veduti i Regi decreti 30 novembre 1924-III, n. 2362, e 2 maggio 1926-IV, n. 992, concernenti il riordinamento delle Regie scuole di avviamento al lavoro con annessi laboratori-scuola di Catanzaro e Volterra; Sulla proposta del Nostro Ministro Segretario di Stato per l'educazione nazionale, di concerto con quelli per l'interno, per le finanze e per le corporazioni; Abbiamo decretato e decretiamo: Art. 1 Sono istituiti le Scuole e gli Istituti d'istruzione tecnica elencati nelle tabelle A, prospetti 1 e 3; B, prospetti 1 e 4; C, annesse al presente decreto, viste e firmate, d'ordine Nostro, dal Ministro per l'educazione nazionale e da quello per le finanze. Nelle dette tabelle sono altres&igrave; indicati, per ciascuna scuola o istituto d'istruzione tecnica, i corsi completi, le sezioni, le specializzazioni, gli indirizzi specializzati ed i posti di ruolo."
+    },
+    {
+      "chiave": "/eli/id/1957/05/03/057U0262/sg",
+      "titolo": "DECRETO-LEGGE 3 maggio 1957, n. 262",
+      "tipo": "decreto.legge",
+      "numero": "262",
+      "dataEmanazione": "1957-05-03",
+      "nir": "urn:nir:stato:decreto.legge:1957-05-03;262",
+      "eli": "/eli/id/1957/05/03/057U0262/sg",
+      "stato": "abrogato",
+      "sintesi": "Misure per assicurare l'utilizzo di oli minerali distillati aventi particolari caratteristiche allo scopo di ottenere maggiori disponibilita' di olio combustibile, nonche' delle eccedenze di gas di petrolio liquefatti.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legge:1957-05-03;262",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1957/05/04/057U0262/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1957-05-04",
+      "numeroGU": "113",
+      "codiceRedazionale": "057U0262",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.L. 25 GIUGNO 2008, N. 112 , CONVERTITO, CON MODIFICAZIONI, DALLA L. 6 AGOSTO 2008, N. 133 ))"
+    },
+    {
+      "chiave": "/eli/id/1955/08/04/055U0691/sg",
+      "titolo": "LEGGE 4 agosto 1955, n. 691",
+      "tipo": "legge",
+      "numero": "691",
+      "dataEmanazione": "1955-08-04",
+      "nir": "urn:nir:stato:legge:1955-08-04;691",
+      "eli": "/eli/id/1955/08/04/055U0691/sg",
+      "stato": "in_vigore",
+      "sintesi": "Provvidenze a favore dell'industria alberghiera.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1955-08-04;691",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1955/08/18/055U0691/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1955-08-18",
+      "numeroGU": "189",
+      "codiceRedazionale": "055U0691",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "La Camera dei deputati ed il Senato della Repubblica hanno approvato; IL PRESIDENTE DELLA REPUBBLICA PROMULGA la seguente legge: Art. 1 &Egrave; costituito presso il Commissariato per il turismo, che ne cura la gestione, un Fondo di rotazione destinato: a) alla concessione di mutui venticinquennali per la costruzione, la ricostruzione, l'ampliamento e l'adattamento di immobili ad uso di alberghi e di pensioni a tipo alberghiero; b) alla concessione di mutui di durata non superiore a dieci anni per l'arredamento delle aziende di cui alla precedente lettera a), nonch&egrave; per l'ammodernamento e il rinnovo dell'arredamento di alberghi e pensioni a tipo alberghiero esistenti. ((1)) --------------- AGGIORNAMENTO (1) La L. 24 luglio 1959, n.622 ha disposto (con l'art. 55, comma 1) che \"Il fondo di rotazione previsto dall' articolo 1 della legge 4 agosto 1955, n. 691 , &egrave; incrementato della somma di lire 4 miliardi."
+    },
+    {
+      "chiave": "/eli/id/1906/09/14/006U0639/sg",
+      "titolo": "REGIO DECRETO 14 settembre 1906, n. 639",
+      "tipo": "regio.decreto",
+      "numero": "639",
+      "dataEmanazione": "1906-09-14",
+      "nir": "urn:nir:stato:regio.decreto:1906-09-14;639",
+      "eli": "/eli/id/1906/09/14/006U0639/sg",
+      "stato": "abrogato",
+      "sintesi": "Che dichiara zone malariche nuove porzioni di territorio della provincia di Avellino (006U0639)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1906-09-14;639",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1907/01/02/006U0639/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1907-01-02",
+      "numeroGU": "1",
+      "codiceRedazionale": "006U0639",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.LGS. 13 DICEMBRE 2010, N. 212 ))"
+    },
+    {
+      "chiave": "/eli/id/1905/11/10/005U0558/sg",
+      "titolo": "REGIO DECRETO 10 novembre 1905, n. 558",
+      "tipo": "regio.decreto",
+      "numero": "558",
+      "dataEmanazione": "1905-11-10",
+      "nir": "urn:nir:stato:regio.decreto:1905-11-10;558",
+      "eli": "/eli/id/1905/11/10/005U0558/sg",
+      "stato": "abrogato",
+      "sintesi": "Col quale vengono dichiarate zone malariche porzioni di territorio nella provincia di Avellino. (005U0558)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1905-11-10;558",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1905/12/11/005U0558/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1905-12-11",
+      "numeroGU": "287",
+      "codiceRedazionale": "005U0558",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.LGS. 13 DICEMBRE 2010, N. 212 ))"
+    },
+    {
+      "chiave": "/eli/id/1904/08/04/004U0468/sg",
+      "titolo": "REGIO DECRETO 4 agosto 1904, n. 468",
+      "tipo": "regio.decreto",
+      "numero": "468",
+      "dataEmanazione": "1904-08-04",
+      "nir": "urn:nir:stato:regio.decreto:1904-08-04;468",
+      "eli": "/eli/id/1904/08/04/004U0468/sg",
+      "stato": "abrogato",
+      "sintesi": "Che dichiara zone malariche talune porzioni di territorio della provincia di Avellino. (004U0468)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1904-08-04;468",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1904/09/05/004U0468/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1904-09-05",
+      "numeroGU": "208",
+      "codiceRedazionale": "004U0468",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.LGS. 13 DICEMBRE 2010, N. 212 ))"
+    },
+    {
+      "chiave": "/eli/id/1904/02/14/004U0070/sg",
+      "titolo": "REGIO DECRETO 14 febbraio 1904, n. 70",
+      "tipo": "regio.decreto",
+      "numero": "70",
+      "dataEmanazione": "1904-02-14",
+      "nir": "urn:nir:stato:regio.decreto:1904-02-14;70",
+      "eli": "/eli/id/1904/02/14/004U0070/sg",
+      "stato": "abrogato",
+      "sintesi": "Dichiarante zone malariche porzioni di territorio in provincia di Avellino. (004U0070)",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1904-02-14;70",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1904/03/15/004U0070/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1904-03-15",
+      "numeroGU": "62",
+      "codiceRedazionale": "004U0070",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.LGS. 13 DICEMBRE 2010, N. 212 ))"
+    },
+    {
+      "chiave": "/eli/id/1956/07/31/056U1037/sg",
+      "titolo": "LEGGE 31 luglio 1956, n. 1037",
+      "tipo": "legge",
+      "numero": "1037",
+      "dataEmanazione": "1956-07-31",
+      "nir": "urn:nir:stato:legge:1956-07-31;1037",
+      "eli": "/eli/id/1956/07/31/056U1037/sg",
+      "stato": "in_vigore",
+      "sintesi": "Proroga del termine stabilito per i versamenti al Fondo per l'indennita' agli impiegati e per l'adeguamento dei contratti di assicurazione e capitalizzazione.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1956-07-31;1037",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1956/09/15/056U1037/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1956-09-15",
+      "numeroGU": "233",
+      "codiceRedazionale": "056U1037",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "La Camera dei deputati ed il Senato della Repubblica hanno approvato; IL PRESIDENTE DELLA REPUBBLICA PROMULGA la seguente legge: Art. 1 Articolo unico. &Egrave; prorogato al 30 giugno 1957 il termine stabilito con la legge 14 luglio 1955, n. 617 , per il versamento al Fondo per l'indennit&agrave; agli impiegati, da parte dei datori di lavoro, degli accantonamenti dovuti a norma del decreto-legge 8 gennaio 1942, n. 5 , convertito, con modificazioni, nella legge 2 ottobre 1942, n. 1251 , e per l'adeguamento dei contratti di assicurazione e capitalizzazione, previsto dall'art. 5 dello stesso decreto, alle disposizioni contenute nell'art. 4 del decreto medesimo. ((1)) La presente legge, munita del sigillo dello Stato, sar&agrave; inserta nella Raccolta ufficiale delle leggi e dei decreti della Repubblica italiana. &Egrave; fatto obbligo a chiunque spetti di osservarla e di farla osservare come legge dello Stato. Data a Roma, add&igrave; 31 luglio 1956 GRONCHI SEGNI - VIGORELLI Visto, il Guardasigilli: MORO ------------------ AGGIORNAMENTO (1) La L. 2 agosto 1957, n. 680 , ha disposto (con l'art. 1) che \" &Egrave; prorogato fino al 31 dicembre 1958 il termine stabilito, con la legge 31 luglio 1956, n. 1037 , per il versamento al Fondo per l'indennit&agrave; agli impiegati, da parte dei datori di lavoro, degli accantonamenti dovuti a norma del decreto-legge 8 gennaio 1942, n. 5 , convertito, con modificazioni, nella legge 2 ottobre 1942, n. 1251 , e per l'adeguamento dei contratti di assicurazione e capitalizzazione, previsto dall'art. 5 dello stesso decreto alle disposizioni contenute nell'art. 4 del decreto medesimo.\" Ha inoltre disposto (con l'art. 2) che la modifica ha effetto dal 1 luglio 1957."
     }
   ]
 }

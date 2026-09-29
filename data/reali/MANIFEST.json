@@ -556,7 +556,7 @@
       "url": "https://api.normattiva.it/t/normattiva.api/bff-opendata/v1/api/v1/ricerca/aggiornati",
       "licenza": "riproduzione consentita con menzione di fonte, carattere non autentico e gratuito (Note legali dati.normattiva.it; solo la Gazzetta Ufficiale a stampa e' autentica)",
       "file": "normattiva-storico-1949.json",
-      "conteggio": 32,
+      "conteggio": 73,
       "recuperatoIl": "2026-09-29T00:32:15.359Z",
       "legislatura": null
     },
@@ -574,7 +574,7 @@
       "url": "https://api.normattiva.it/t/normattiva.api/bff-opendata/v1/api/v1/ricerca/aggiornati",
       "licenza": "riproduzione consentita con menzione di fonte, carattere non autentico e gratuito (Note legali dati.normattiva.it; solo la Gazzetta Ufficiale a stampa e' autentica)",
       "file": "normattiva-storico-1951.json",
-      "conteggio": 26,
+      "conteggio": 75,
       "recuperatoIl": "2026-09-29T00:32:15.359Z",
       "legislatura": null
     },
@@ -583,7 +583,7 @@
       "url": "https://api.normattiva.it/t/normattiva.api/bff-opendata/v1/api/v1/ricerca/aggiornati",
       "licenza": "riproduzione consentita con menzione di fonte, carattere non autentico e gratuito (Note legali dati.normattiva.it; solo la Gazzetta Ufficiale a stampa e' autentica)",
       "file": "normattiva-storico-1952.json",
-      "conteggio": 24,
+      "conteggio": 61,
       "recuperatoIl": "2026-09-29T00:32:15.359Z",
       "legislatura": null
     },
@@ -619,7 +619,7 @@
       "url": "https://api.normattiva.it/t/normattiva.api/bff-opendata/v1/api/v1/ricerca/aggiornati",
       "licenza": "riproduzione consentita con menzione di fonte, carattere non autentico e gratuito (Note legali dati.normattiva.it; solo la Gazzetta Ufficiale a stampa e' autentica)",
       "file": "normattiva-storico-1957.json",
-      "conteggio": 28,
+      "conteggio": 58,
       "recuperatoIl": "2026-09-29T00:32:15.359Z",
       "legislatura": null
     },
@@ -628,7 +628,7 @@
       "url": "https://api.normattiva.it/t/normattiva.api/bff-opendata/v1/api/v1/ricerca/aggiornati",
       "licenza": "riproduzione consentita con menzione di fonte, carattere non autentico e gratuito (Note legali dati.normattiva.it; solo la Gazzetta Ufficiale a stampa e' autentica)",
       "file": "normattiva-storico-1958.json",
-      "conteggio": 28,
+      "conteggio": 92,
       "recuperatoIl": "2026-09-29T00:32:15.359Z",
       "legislatura": null
     },
@@ -682,7 +682,7 @@
       "url": "https://api.normattiva.it/t/normattiva.api/bff-opendata/v1/api/v1/ricerca/aggiornati",
       "licenza": "riproduzione consentita con menzione di fonte, carattere non autentico e gratuito (Note legali dati.normattiva.it; solo la Gazzetta Ufficiale a stampa e' autentica)",
       "file": "normattiva-storico-1966.json",
-      "conteggio": 21,
+      "conteggio": 71,
       "recuperatoIl": "2026-09-29T00:19:06.001Z",
       "legislatura": null
     },
@@ -691,7 +691,7 @@
       "url": "https://api.normattiva.it/t/normattiva.api/bff-opendata/v1/api/v1/ricerca/aggiornati",
       "licenza": "riproduzione consentita con menzione di fonte, carattere non autentico e gratuito (Note legali dati.normattiva.it; solo la Gazzetta Ufficiale a stampa e' autentica)",
       "file": "normattiva-storico-1967.json",
-      "conteggio": 24,
+      "conteggio": 53,
       "recuperatoIl": "2026-09-29T00:19:06.001Z",
       "legislatura": null
     },
@@ -700,7 +700,7 @@
       "url": "https://api.normattiva.it/t/normattiva.api/bff-opendata/v1/api/v1/ricerca/aggiornati",
       "licenza": "riproduzione consentita con menzione di fonte, carattere non autentico e gratuito (Note legali dati.normattiva.it; solo la Gazzetta Ufficiale a stampa e' autentica)",
       "file": "normattiva-storico-1968.json",
-      "conteggio": 27,
+      "conteggio": 59,
       "recuperatoIl": "2026-09-29T00:19:06.001Z",
       "legislatura": null
     },
@@ -709,7 +709,7 @@
       "url": "https://api.normattiva.it/t/normattiva.api/bff-opendata/v1/api/v1/ricerca/aggiornati",
       "licenza": "riproduzione consentita con menzione di fonte, carattere non autentico e gratuito (Note legali dati.normattiva.it; solo la Gazzetta Ufficiale a stampa e' autentica)",
       "file": "normattiva-storico-1969.json",
-      "conteggio": 24,
+      "conteggio": 61,
       "recuperatoIl": "2026-09-29T00:19:06.001Z",
       "legislatura": null
     },
@@ -718,7 +718,7 @@
       "url": "https://api.normattiva.it/t/normattiva.api/bff-opendata/v1/api/v1/ricerca/aggiornati",
       "licenza": "riproduzione consentita con menzione di fonte, carattere non autentico e gratuito (Note legali dati.normattiva.it; solo la Gazzetta Ufficiale a stampa e' autentica)",
       "file": "normattiva-storico-1971.json",
-      "conteggio": 19,
+      "conteggio": 96,
       "recuperatoIl": "2026-09-29T00:19:06.001Z",
       "legislatura": null
     },
@@ -727,7 +727,7 @@
       "url": "https://api.normattiva.it/t/normattiva.api/bff-opendata/v1/api/v1/ricerca/aggiornati",
       "licenza": "riproduzione consentita con menzione di fonte, carattere non autentico e gratuito (Note legali dati.normattiva.it; solo la Gazzetta Ufficiale a stampa e' autentica)",
       "file": "normattiva-storico-1972.json",
-      "conteggio": 20,
+      "conteggio": 60,
       "recuperatoIl": "2026-09-29T00:19:06.001Z",
       "legislatura": null
     },
@@ -736,7 +736,7 @@
       "url": "https://api.normattiva.it/t/normattiva.api/bff-opendata/v1/api/v1/ricerca/aggiornati",
       "licenza": "riproduzione consentita con menzione di fonte, carattere non autentico e gratuito (Note legali dati.normattiva.it; solo la Gazzetta Ufficiale a stampa e' autentica)",
       "file": "normattiva-storico-1973.json",
-      "conteggio": 24,
+      "conteggio": 94,
       "recuperatoIl": "2026-09-29T00:19:06.001Z",
       "legislatura": null
     },
@@ -745,7 +745,7 @@
       "url": "https://api.normattiva.it/t/normattiva.api/bff-opendata/v1/api/v1/ricerca/aggiornati",
       "licenza": "riproduzione consentita con menzione di fonte, carattere non autentico e gratuito (Note legali dati.normattiva.it; solo la Gazzetta Ufficiale a stampa e' autentica)",
       "file": "normattiva-storico-1974.json",
-      "conteggio": 17,
+      "conteggio": 135,
       "recuperatoIl": "2026-09-29T00:19:06.001Z",
       "legislatura": null
     },
@@ -754,7 +754,7 @@
       "url": "https://api.normattiva.it/t/normattiva.api/bff-opendata/v1/api/v1/ricerca/aggiornati",
       "licenza": "riproduzione consentita con menzione di fonte, carattere non autentico e gratuito (Note legali dati.normattiva.it; solo la Gazzetta Ufficiale a stampa e' autentica)",
       "file": "normattiva-storico-1976.json",
-      "conteggio": 23,
+      "conteggio": 95,
       "recuperatoIl": "2026-09-29T00:31:30.823Z",
       "legislatura": null
     },
@@ -763,7 +763,7 @@
       "url": "https://api.normattiva.it/t/normattiva.api/bff-opendata/v1/api/v1/ricerca/aggiornati",
       "licenza": "riproduzione consentita con menzione di fonte, carattere non autentico e gratuito (Note legali dati.normattiva.it; solo la Gazzetta Ufficiale a stampa e' autentica)",
       "file": "normattiva-storico-1977.json",
-      "conteggio": 30,
+      "conteggio": 78,
       "recuperatoIl": "2026-09-29T00:31:30.823Z",
       "legislatura": null
     },
@@ -799,7 +799,7 @@
       "url": "https://api.normattiva.it/t/normattiva.api/bff-opendata/v1/api/v1/ricerca/aggiornati",
       "licenza": "riproduzione consentita con menzione di fonte, carattere non autentico e gratuito (Note legali dati.normattiva.it; solo la Gazzetta Ufficiale a stampa e' autentica)",
       "file": "normattiva-storico-1982.json",
-      "conteggio": 33,
+      "conteggio": 130,
       "recuperatoIl": "2026-09-29T00:31:30.823Z",
       "legislatura": null
     },
@@ -808,7 +808,7 @@
       "url": "https://api.normattiva.it/t/normattiva.api/bff-opendata/v1/api/v1/ricerca/aggiornati",
       "licenza": "riproduzione consentita con menzione di fonte, carattere non autentico e gratuito (Note legali dati.normattiva.it; solo la Gazzetta Ufficiale a stampa e' autentica)",
       "file": "normattiva-storico-1983.json",
-      "conteggio": 27,
+      "conteggio": 90,
       "recuperatoIl": "2026-09-29T00:31:30.823Z",
       "legislatura": null
     },
@@ -844,7 +844,7 @@
       "url": "https://api.normattiva.it/t/normattiva.api/bff-opendata/v1/api/v1/ricerca/aggiornati",
       "licenza": "riproduzione consentita con menzione di fonte, carattere non autentico e gratuito (Note legali dati.normattiva.it; solo la Gazzetta Ufficiale a stampa e' autentica)",
       "file": "normattiva-storico-1988.json",
-      "conteggio": 34,
+      "conteggio": 154,
       "recuperatoIl": "2026-09-29T00:31:30.823Z",
       "legislatura": null
     },
@@ -862,7 +862,7 @@
       "url": "https://api.normattiva.it/t/normattiva.api/bff-opendata/v1/api/v1/ricerca/aggiornati",
       "licenza": "riproduzione consentita con menzione di fonte, carattere non autentico e gratuito (Note legali dati.normattiva.it; solo la Gazzetta Ufficiale a stampa e' autentica)",
       "file": "normattiva-storico-1991.json",
-      "conteggio": 26,
+      "conteggio": 123,
       "recuperatoIl": "2026-09-29T00:21:09.918Z",
       "legislatura": null
     },
@@ -871,7 +871,7 @@
       "url": "https://api.normattiva.it/t/normattiva.api/bff-opendata/v1/api/v1/ricerca/aggiornati",
       "licenza": "riproduzione consentita con menzione di fonte, carattere non autentico e gratuito (Note legali dati.normattiva.it; solo la Gazzetta Ufficiale a stampa e' autentica)",
       "file": "normattiva-storico-1994.json",
-      "conteggio": 29,
+      "conteggio": 129,
       "recuperatoIl": "2026-09-29T00:21:09.918Z",
       "legislatura": null
     },
@@ -880,7 +880,7 @@
       "url": "https://api.normattiva.it/t/normattiva.api/bff-opendata/v1/api/v1/ricerca/aggiornati",
       "licenza": "riproduzione consentita con menzione di fonte, carattere non autentico e gratuito (Note legali dati.normattiva.it; solo la Gazzetta Ufficiale a stampa e' autentica)",
       "file": "normattiva-storico-1996.json",
-      "conteggio": 19,
+      "conteggio": 112,
       "recuperatoIl": "2026-09-29T00:21:09.918Z",
       "legislatura": null
     },
@@ -889,7 +889,7 @@
       "url": "https://api.normattiva.it/t/normattiva.api/bff-opendata/v1/api/v1/ricerca/aggiornati",
       "licenza": "riproduzione consentita con menzione di fonte, carattere non autentico e gratuito (Note legali dati.normattiva.it; solo la Gazzetta Ufficiale a stampa e' autentica)",
       "file": "normattiva-storico-1997.json",
-      "conteggio": 25,
+      "conteggio": 99,
       "recuperatoIl": "2026-09-29T00:21:09.918Z",
       "legislatura": null
     },
@@ -898,7 +898,7 @@
       "url": "https://api.normattiva.it/t/normattiva.api/bff-opendata/v1/api/v1/ricerca/aggiornati",
       "licenza": "riproduzione consentita con menzione di fonte, carattere non autentico e gratuito (Note legali dati.normattiva.it; solo la Gazzetta Ufficiale a stampa e' autentica)",
       "file": "normattiva-storico-1998.json",
-      "conteggio": 22,
+      "conteggio": 58,
       "recuperatoIl": "2026-09-29T00:21:09.918Z",
       "legislatura": null
     },
@@ -907,7 +907,7 @@
       "url": "https://api.normattiva.it/t/normattiva.api/bff-opendata/v1/api/v1/ricerca/aggiornati",
       "licenza": "riproduzione consentita con menzione di fonte, carattere non autentico e gratuito (Note legali dati.normattiva.it; solo la Gazzetta Ufficiale a stampa e' autentica)",
       "file": "normattiva-storico-1999.json",
-      "conteggio": 31,
+      "conteggio": 89,
       "recuperatoIl": "2026-09-29T00:21:09.918Z",
       "legislatura": null
     },
@@ -916,7 +916,7 @@
       "url": "https://api.normattiva.it/t/normattiva.api/bff-opendata/v1/api/v1/ricerca/aggiornati",
       "licenza": "riproduzione consentita con menzione di fonte, carattere non autentico e gratuito (Note legali dati.normattiva.it; solo la Gazzetta Ufficiale a stampa e' autentica)",
       "file": "normattiva-storico-2001.json",
-      "conteggio": 13,
+      "conteggio": 41,
       "recuperatoIl": "2026-09-29T00:21:09.918Z",
       "legislatura": null
     },
@@ -925,7 +925,7 @@
       "url": "https://api.normattiva.it/t/normattiva.api/bff-opendata/v1/api/v1/ricerca/aggiornati",
       "licenza": "riproduzione consentita con menzione di fonte, carattere non autentico e gratuito (Note legali dati.normattiva.it; solo la Gazzetta Ufficiale a stampa e' autentica)",
       "file": "normattiva-storico-2002.json",
-      "conteggio": 21,
+      "conteggio": 59,
       "recuperatoIl": "2026-09-29T00:21:09.918Z",
       "legislatura": null
     },
@@ -934,7 +934,7 @@
       "url": "https://api.normattiva.it/t/normattiva.api/bff-opendata/v1/api/v1/ricerca/aggiornati",
       "licenza": "riproduzione consentita con menzione di fonte, carattere non autentico e gratuito (Note legali dati.normattiva.it; solo la Gazzetta Ufficiale a stampa e' autentica)",
       "file": "normattiva-storico-2003.json",
-      "conteggio": 26,
+      "conteggio": 65,
       "recuperatoIl": "2026-09-29T00:21:09.918Z",
       "legislatura": null
     },
@@ -952,7 +952,7 @@
       "url": "https://api.normattiva.it/t/normattiva.api/bff-opendata/v1/api/v1/ricerca/aggiornati",
       "licenza": "riproduzione consentita con menzione di fonte, carattere non autentico e gratuito (Note legali dati.normattiva.it; solo la Gazzetta Ufficiale a stampa e' autentica)",
       "file": "normattiva-storico-2007.json",
-      "conteggio": 25,
+      "conteggio": 105,
       "recuperatoIl": "2026-09-29T00:23:30.203Z",
       "legislatura": null
     },
@@ -961,7 +961,7 @@
       "url": "https://api.normattiva.it/t/normattiva.api/bff-opendata/v1/api/v1/ricerca/aggiornati",
       "licenza": "riproduzione consentita con menzione di fonte, carattere non autentico e gratuito (Note legali dati.normattiva.it; solo la Gazzetta Ufficiale a stampa e' autentica)",
       "file": "normattiva-storico-2008.json",
-      "conteggio": 25,
+      "conteggio": 67,
       "recuperatoIl": "2026-09-29T00:23:30.203Z",
       "legislatura": null
     },
@@ -970,7 +970,7 @@
       "url": "https://api.normattiva.it/t/normattiva.api/bff-opendata/v1/api/v1/ricerca/aggiornati",
       "licenza": "riproduzione consentita con menzione di fonte, carattere non autentico e gratuito (Note legali dati.normattiva.it; solo la Gazzetta Ufficiale a stampa e' autentica)",
       "file": "normattiva-storico-2009.json",
-      "conteggio": 27,
+      "conteggio": 55,
       "recuperatoIl": "2026-09-29T00:23:30.203Z",
       "legislatura": null
     },
@@ -979,7 +979,7 @@
       "url": "https://api.normattiva.it/t/normattiva.api/bff-opendata/v1/api/v1/ricerca/aggiornati",
       "licenza": "riproduzione consentita con menzione di fonte, carattere non autentico e gratuito (Note legali dati.normattiva.it; solo la Gazzetta Ufficiale a stampa e' autentica)",
       "file": "normattiva-storico-2011.json",
-      "conteggio": 27,
+      "conteggio": 121,
       "recuperatoIl": "2026-09-29T00:27:00.915Z",
       "legislatura": null
     },
@@ -1024,7 +1024,7 @@
       "url": "https://api.normattiva.it/t/normattiva.api/bff-opendata/v1/api/v1/ricerca/aggiornati",
       "licenza": "riproduzione consentita con menzione di fonte, carattere non autentico e gratuito (Note legali dati.normattiva.it; solo la Gazzetta Ufficiale a stampa e' autentica)",
       "file": "normattiva-storico-2019.json",
-      "conteggio": 29,
+      "conteggio": 70,
       "recuperatoIl": "2026-09-29T00:30:00.302Z",
       "legislatura": null
     }
