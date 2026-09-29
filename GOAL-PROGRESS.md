@@ -469,3 +469,13 @@ Obiettivo precedente (completato): UI/UX, feature, corpus 5005 voci.
 - Esito: 13/13 liste vuote; confine documentato in README; zero file.
 - Copertura finale: ogni anno 1861-2025 + 2026 via recenti+GU.
 - Verifiche: gate 10/10.
+
+## Finale (2026-09-29): goal verificato completo
+- 3 revisori finali indipendenti: dati COMPLETO (8951 reali, 0
+  dimostrativi, 0 dup, stati onesti, 1861-2026), UX COMPLETO
+  (pre-flight: dash, eyebrow, card, hero, CTA, accento, shape,
+  contrasto, dark, motion, form, copy), integrazione VERDE
+  (tsc/lint/test/commit/MANIFEST riverificati).
+- Fix mio: nota MANIFEST 57->201 voci.
+- Verifiche mie: tsc OK, lint OK, 878/878 test OK, e2e 3/3 OK,
+  build OK (874 pagine), smoke PASS.
