@@ -128,6 +128,13 @@ Chiude la coda 2020-2022-recenti: 2021 (71: 55 in vigore, 16 abrogati),
 npx tsx scripts/ingest-reale-finestra-2021-2025.ts --anni=2025,2024,2023,2021 --limite=80 --testo-max=2000
 ```
 
+## Confine 1861: prima non c'e niente da ingerire (verificato 2026-09-29)
+
+Sonda `POST aggiornati` 1848-1860: 13/13 liste vuote
+(`numeroAttiTrovati=0`), controllo positivo 1861 = 22 atti. Il confine
+e il dato Normattiva, non la volonta. Nessun file pre-1861 per scelta
+onesta (mai URN inventati).
+
 ## Copertura totale 1948-2025 — ogni anno ha la sua finestra (1703 atti, batch 2026-09-29)
 
 Backfill completo via `scripts/ingest-reale-finestra-anni-{A,B,C,D,E}.ts`
