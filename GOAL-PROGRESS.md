@@ -463,3 +463,9 @@ Obiettivo precedente (completato): UI/UX, feature, corpus 5005 voci.
   attribuzioni (Montecitorio hero, Madama footer, pagina /fonti).
 - Verifiche mie: tsc/eslint OK, 878/878 + e2e 3/3 OK, build OK, smoke.
 - Next: freschezza continua, terzo passaggio magri.
+
+## Confine-1861 (2026-09-29): prima del 1861 non c'e dato
+- Workflow: 1 sonda (1848-1860 via aggiornati, controllo positivo 1861).
+- Esito: 13/13 liste vuote; confine documentato in README; zero file.
+- Copertura finale: ogni anno 1861-2025 + 2026 via recenti+GU.
+- Verifiche: gate 10/10.
