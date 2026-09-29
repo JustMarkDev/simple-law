@@ -1,5 +1,5 @@
 /**
- * GET /api/elezioni — catalogo delle consultazioni con aggregati reali.
+ * GET /api/elezioni - catalogo delle consultazioni con aggregati reali.
  * Query opzionale `?id=` (default: tutte; retrocompatibilita': senza `id`
  * elenca le consultazioni disponibili). Id non valido -> 404. Mai 500:
  * in caso di errore restituisce l'elenco vuoto con licenza, disclaimer

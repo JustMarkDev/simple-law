@@ -1,5 +1,5 @@
 /**
- * Deputati della Camera, legislatura 19 — dati reali da `dati.camera.it`.
+ * Deputati della Camera, legislatura 19 - dati reali da `dati.camera.it`.
  *
  * Il modulo e' diviso in due livelli:
  *  - **mapping puri**: funzioni deterministiche che estraggono

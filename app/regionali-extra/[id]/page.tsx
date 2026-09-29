@@ -20,19 +20,19 @@ export function generateStaticParams(): Array<{ id: string }> {
 
 const TITOLI: Record<string, { titolo: string; descrizione: string }> = {
   'regionali-2024-emilia-romagna': {
-    titolo: 'Elezioni regionali 2024 — Emilia-Romagna (17 novembre 2024)',
+    titolo: 'Elezioni regionali 2024 - Emilia-Romagna (17 novembre 2024)',
     descrizione:
-      'Solo aggregati DAIT–Eligendo per l’Emilia-Romagna: affluenza e voti per lista a livello regionale, affluenza per comune. Nessun nominativo, nessuna riga candidata.',
+      'Solo aggregati DAIT-Eligendo per l’Emilia-Romagna: affluenza e voti per lista a livello regionale, affluenza per comune. Nessun nominativo, nessuna riga candidata.',
   },
   'regionali-2024-liguria': {
-    titolo: 'Elezioni regionali 2024 — Liguria (27 ottobre 2024)',
+    titolo: 'Elezioni regionali 2024 - Liguria (27 ottobre 2024)',
     descrizione:
-      'Solo aggregati DAIT–Eligendo per la Liguria: affluenza e voti per lista a livello regionale, affluenza per comune. Nessun nominativo, nessuna riga candidata; i voti del presidente non sono pubblicati come aggregato nel tracciato.',
+      'Solo aggregati DAIT-Eligendo per la Liguria: affluenza e voti per lista a livello regionale, affluenza per comune. Nessun nominativo, nessuna riga candidata; i voti del presidente non sono pubblicati come aggregato nel tracciato.',
   },
   'regionali-2025-calabria': {
-    titolo: 'Elezioni regionali 2025 — Calabria (5 ottobre 2025)',
+    titolo: 'Elezioni regionali 2025 - Calabria (5 ottobre 2025)',
     descrizione:
-      'Solo aggregati DAIT–Eligendo per la Calabria: affluenza e voti per lista a livello regionale, affluenza per comune. Nessun nominativo, nessuna riga candidata; i voti del presidente non sono pubblicati come aggregato nel tracciato.',
+      'Solo aggregati DAIT-Eligendo per la Calabria: affluenza e voti per lista a livello regionale, affluenza per comune. Nessun nominativo, nessuna riga candidata; i voti del presidente non sono pubblicati come aggregato nel tracciato.',
   },
 }
 
@@ -42,13 +42,13 @@ export async function generateMetadata(
   try {
     const { id } = await params
     const voce = TITOLI[id] ?? null
-    if (!voce) return { title: 'Consultazione non trovata — Stato della Repubblica' }
+    if (!voce) return { title: 'Consultazione non trovata - Stato della Repubblica' }
     return {
-      title: `${voce.titolo} — Stato della Repubblica`,
+      title: `${voce.titolo} - Stato della Repubblica`,
       description: voce.descrizione,
     }
   } catch {
-    return { title: 'Regionali extra — Stato della Repubblica' }
+    return { title: 'Regionali extra - Stato della Repubblica' }
   }
 }
 
@@ -337,7 +337,7 @@ export default async function RegionaleExtraDettaglioPage(
                 )
               </>
             ) : null}
-            {dati.provenance.licenza ? ` — ${dati.provenance.licenza}.` : '.'}
+            {dati.provenance.licenza ? ` - ${dati.provenance.licenza}.` : '.'}
           </p>
         </section>
       </main>

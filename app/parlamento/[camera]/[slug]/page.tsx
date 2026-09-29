@@ -49,18 +49,18 @@ export async function generateStaticParams() {
 
 export async function generateMetadata({ params }: DettaglioProps): Promise<Metadata> {
   const { camera, slug } = await params
-  if (!isCameraParam(camera)) return { title: 'Pagina non trovata — Stato della Repubblica' }
+  if (!isCameraParam(camera)) return { title: 'Pagina non trovata - Stato della Repubblica' }
   try {
     const membri = camera === 'deputati' ? await tuttiDeputati() : await tuttiSenatori()
     const membro = membri.find((m) => m.slug === slug)
-    if (!membro) return { title: 'Parlamentare non trovato — Stato della Repubblica' }
+    if (!membro) return { title: 'Parlamentare non trovato - Stato della Repubblica' }
     const etichetta = camera === 'deputati' ? 'Deputato' : 'Senatore'
     return {
-      title: `${membro.nome} — ${etichetta} — Stato della Repubblica`,
+      title: `${membro.nome} - ${etichetta} - Stato della Repubblica`,
       description: `${membro.nome}${membro.gruppo ? `, ${membro.gruppo}` : ''}: scheda della legislatura 19.`,
     }
   } catch {
-    return { title: 'Parlamento — Stato della Repubblica' }
+    return { title: 'Parlamento - Stato della Repubblica' }
   }
 }
 
@@ -229,7 +229,7 @@ export default async function DettaglioParlamentare({ params }: DettaglioProps) 
               Fonte
             </h2>
             <p className="mt-3 text-sm leading-relaxed text-inchiostro-soft dark:text-nebbia-soft">
-              {fonte} — {licenza} · legislatura 19
+              {fonte} - {licenza} · legislatura 19
               {recuperatoIl ? ` · aggiornato al ${dataIT(recuperatoIl)}` : ''}.
             </p>
           </section>

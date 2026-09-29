@@ -6,7 +6,7 @@ import Comparsa from '@/components/Comparsa'
 import { loadMinisters } from '@/components/seed-fallback'
 
 export const metadata: Metadata = {
-  title: 'Ministri — Stato della Repubblica',
+  title: 'Ministri - Stato della Repubblica',
   description: 'Chi guida i dicasteri, di quali materie si occupa e quali provvedimenti segue.',
 }
 

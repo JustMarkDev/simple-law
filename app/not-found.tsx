@@ -4,7 +4,7 @@ import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 
 export const metadata: Metadata = {
-  title: 'Pagina non trovata — Stato della Repubblica',
+  title: 'Pagina non trovata - Stato della Repubblica',
   description: 'La pagina cercata non esiste o è stata spostata.',
 }
 

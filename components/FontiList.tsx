@@ -1,3 +1,4 @@
+import { LinkSquare01Icon } from 'hugeicons-react'
 import type { Fonti } from './seed-fallback'
 import { FONTI_LABELS } from '@/lib/fonti'
 
@@ -8,11 +9,11 @@ interface FontiListProps {
 }
 
 const SOURCES: { key: keyof Fonti; descrizione: string }[] = [
-  { key: 'normattiva', descrizione: 'Testo consolidato della norma' },
-  { key: 'gazzetta', descrizione: 'Pubblicazione ufficiale' },
-  { key: 'governo', descrizione: 'Archivio dei comunicati del Consiglio dei ministri' },
-  { key: 'camera', descrizione: 'Lavori e dossier parlamentari' },
-  { key: 'senato', descrizione: 'Lavori e dossier parlamentari' },
+  { key: 'normattiva', descrizione: 'Il testo della norma, aggiornato' },
+  { key: 'gazzetta', descrizione: 'La prima pubblicazione ufficiale' },
+  { key: 'governo', descrizione: 'Le notizie dal Governo' },
+  { key: 'camera', descrizione: 'I lavori alla Camera' },
+  { key: 'senato', descrizione: 'I lavori al Senato' },
 ]
 
 const DOMINI_CONSENTITI = ['normattiva.it', 'gazzettaufficiale.it', 'governo.it', 'camera.it', 'senato.it']
@@ -33,15 +34,14 @@ function fonteSicura(url: unknown): boolean {
   }
 }
 
-/** Elenco delle fonti ufficiali di una norma, con link esterni accessibili. */
+/** Elenco dei testi veri di una norma, con icona di link esterno. */
 export default function FontiList({ fonti, modalita = 'inline', className = '' }: FontiListProps) {
   const disponibili = SOURCES.filter((source) => fonteSicura(fonti[source.key]))
 
   if (disponibili.length === 0) {
     return (
       <p role="status" className={`text-sm leading-relaxed text-inchiostro-soft dark:text-nebbia-soft ${className}`}>
-        Fonti ufficiali non ancora collegate per questa scheda. Controlla il testo su Normattiva o in Gazzetta
-        Ufficiale cercando numero e anno della norma.
+        Per ora non ci sono link diretti. Cerca numero e anno della norma su Normattiva o in Gazzetta Ufficiale.
       </p>
     )
   }
@@ -54,11 +54,13 @@ export default function FontiList({ fonti, modalita = 'inline', className = '' }
             href={fonti[source.key] as string}
             target="_blank"
             rel="noopener noreferrer"
-            className="group -mx-2 inline-flex min-h-[44px] items-start gap-2 rounded px-2 py-2 transition-colors hover:bg-carta-soft focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-inchiostro dark:hover:bg-notte dark:focus-visible:outline-nebbia"
+            className="group -mx-2 inline-flex min-h-[48px] items-start gap-2 rounded-xl px-2 py-2 transition-colors hover:bg-carta-soft focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-inchiostro dark:hover:bg-notte dark:focus-visible:outline-nebbia"
           >
-            <svg aria-hidden="true" viewBox="0 0 24 24" className="mt-1 h-4 w-4 shrink-0 text-inchiostro-faint group-hover:text-accento dark:text-nebbia-faint dark:group-hover:text-accento-chiara" fill="none" stroke="currentColor" strokeWidth="1.8">
-              <path strokeLinecap="round" strokeLinejoin="round" d="M14 4h6m0 0v6m0-6L10 14m-4-6H5a1 1 0 0 0-1 1v10a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1v-1" />
-            </svg>
+            <LinkSquare01Icon
+              size={18}
+              aria-hidden="true"
+              className="mt-0.5 h-[18px] w-[18px] shrink-0 text-inchiostro-faint group-hover:text-accento dark:text-nebbia-faint dark:group-hover:text-accento-chiara"
+            />
             <span className="min-w-0">
               <span className="text-sm font-semibold text-inchiostro underline decoration-regola underline-offset-2 group-hover:text-accento group-hover:decoration-accento dark:text-nebbia dark:decoration-notte-deep dark:group-hover:text-accento-chiara dark:group-hover:decoration-accento-chiara">
                 {FONTI_LABELS[source.key]}

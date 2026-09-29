@@ -39,14 +39,14 @@ export async function generateMetadata({ params }: DettaglioProps): Promise<Meta
   const { anno, numero } = await params
   try {
     const p = await trovaPronuncia(anno, numero)
-    if (!p) return { title: 'Pronuncia non trovata — Stato della Repubblica' }
+    if (!p) return { title: 'Pronuncia non trovata - Stato della Repubblica' }
     const tipo = tipoLungo(p.tipologia)
     return {
-      title: `${tipo} n. ${p.numero}/${p.anno} — Corte Costituzionale — Stato della Repubblica`,
+      title: `${tipo} n. ${p.numero}/${p.anno} - Corte Costituzionale - Stato della Repubblica`,
       description: `${tipo} n. ${p.numero} del ${p.anno} della Corte Costituzionale${p.ecli ? ` (${p.ecli})` : ''}: epigrafe e dispositivo dai dati aperti ufficiali.`,
     }
   } catch {
-    return { title: 'Corte Costituzionale — Stato della Repubblica' }
+    return { title: 'Corte Costituzionale - Stato della Repubblica' }
   }
 }
 
@@ -69,7 +69,7 @@ export default async function DettaglioPronuncia({ params }: DettaglioProps) {
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'Article',
-    headline: `${tipo} n. ${p.numero}/${p.anno} — Corte Costituzionale`,
+    headline: `${tipo} n. ${p.numero}/${p.anno} - Corte Costituzionale`,
     ...(p.dataDeposito ? { datePublished: p.dataDeposito } : {}),
     ...(p.ecli ? { identifier: p.ecli } : {}),
     url: p.scheda,
@@ -111,7 +111,7 @@ export default async function DettaglioPronuncia({ params }: DettaglioProps) {
             {p.ecli ? ` · ${p.ecli}` : ''}
           </p>
           <p className="mt-2 inline-flex items-center border border-regola px-2 py-1 text-[11px] font-semibold uppercase tracking-wide text-inchiostro-soft dark:border-notte-deep dark:text-nebbia-soft">
-            Giurisprudenza — non è una legge in vigore
+            Giurisprudenza - non è una legge in vigore
           </p>
         </header>
 
@@ -175,7 +175,7 @@ export default async function DettaglioPronuncia({ params }: DettaglioProps) {
               Fonte
             </h2>
             <p className="mt-3 text-sm leading-relaxed text-inchiostro-soft dark:text-nebbia-soft">
-              dati.cortecostituzionale.it — {licenza}
+              dati.cortecostituzionale.it - {licenza}
               {recuperatoIl ? ` · aggiornato al ${dataIT(recuperatoIl.slice(0, 10))}` : ''}.
             </p>
             {p.testo_troncato && (

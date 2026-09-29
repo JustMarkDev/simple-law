@@ -3,6 +3,7 @@
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { useEffect, useRef, useState } from 'react'
+import { ArrowDown01Icon, Cancel01Icon, Menu01Icon, Search01Icon } from 'hugeicons-react'
 import DataOdierna from './DataOdierna'
 import ToggleTema from './ToggleTema'
 
@@ -72,6 +73,9 @@ function isIndiceAttivo(pathname: string): boolean {
 const ID_MENU_MOBILE = 'menu-mobile-pannello'
 const ID_INDICE_DESKTOP = 'indice-completo-pannello'
 
+const FUOCO_LINK =
+  'focus-visible:outline focus-visible:outline-[3px] focus-visible:outline-offset-2 focus-visible:outline-accento dark:focus-visible:outline-accento-chiara'
+
 /** Pannello "Tutto": indice completo ad alta densità, chiudibile con ESC e click fuori. */
 function IndiceCompletoDesktop({ pathname }: { pathname: string }) {
   const [aperto, setAperto] = useState(false)
@@ -118,34 +122,29 @@ function IndiceCompletoDesktop({ pathname }: { pathname: string }) {
         aria-expanded={aperto}
         aria-controls={ID_INDICE_DESKTOP}
         onClick={() => setAperto((v) => !v)}
-        className={`flex min-h-[44px] items-center gap-1.5 border-b-2 px-3 py-2.5 text-xs font-semibold uppercase tracking-[0.14em] transition-colors focus-visible:outline focus-visible:outline-[3px] focus-visible:outline-offset-2 focus-visible:outline-accento dark:focus-visible:outline-accento-chiara ${
+        className={`flex min-h-[48px] items-center gap-1.5 rounded-xl px-4 py-3 text-sm font-semibold transition-colors ${FUOCO_LINK} ${
           aperto || attivo
-            ? 'border-accento text-inchiostro dark:border-accento-chiara dark:text-nebbia'
-            : 'border-transparent text-inchiostro-soft hover:text-inchiostro dark:text-nebbia-soft dark:hover:text-nebbia'
+            ? 'bg-accento/10 text-accento dark:bg-notte-deep dark:text-accento-chiara'
+            : 'text-inchiostro-soft hover:bg-carta-deep/70 hover:text-inchiostro dark:text-nebbia-soft dark:hover:bg-notte-deep/70 dark:hover:text-nebbia'
         }`}
       >
         Tutto
-        <svg
+        <ArrowDown01Icon
+          size={16}
           aria-hidden="true"
-          viewBox="0 0 16 16"
-          className={`h-3 w-3 transition-transform ${aperto ? 'rotate-180' : ''}`}
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="2"
-        >
-          <path strokeLinecap="round" strokeLinejoin="round" d="m4 6 4 4 4-4" />
-        </svg>
+          className={`h-4 w-4 transition-transform ${aperto ? 'rotate-180' : ''}`}
+        />
       </button>
       {aperto && (
         <div
           ref={rifPannello}
           id={ID_INDICE_DESKTOP}
-          className="absolute right-0 z-50 mt-1 w-[36rem] max-w-[calc(100vw-2rem)] border border-regola bg-carta shadow-lg dark:border-notte-deep dark:bg-notte-soft"
+          className="absolute right-0 z-50 mt-2 w-[36rem] max-w-[calc(100vw-2rem)] rounded-2xl border border-regola bg-carta shadow-[0_16px_40px_-20px_rgba(26,23,20,0.35)] dark:border-notte-deep dark:bg-notte-soft"
         >
           <div className="grid grid-cols-2 gap-x-6 gap-y-5 p-5 sm:grid-cols-4">
             {INDICE_COMPLETO.map((gruppo) => (
               <div key={gruppo.titolo}>
-                <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-inchiostro-faint dark:text-nebbia-faint">
+                <p className="text-xs font-semibold tracking-wide text-inchiostro-faint dark:text-nebbia-faint">
                   {gruppo.titolo}
                 </p>
                 <ul className="mt-2 space-y-0.5">
@@ -157,10 +156,10 @@ function IndiceCompletoDesktop({ pathname }: { pathname: string }) {
                           href={voce.href}
                           aria-current={attiva ? 'page' : undefined}
                           onClick={() => setAperto(false)}
-                          className={`block rounded-sm py-1.5 text-sm transition-colors focus-visible:outline focus-visible:outline-[3px] focus-visible:outline-offset-2 focus-visible:outline-accento dark:focus-visible:outline-accento-chiara ${
+                          className={`block min-h-[48px] rounded-xl px-3 py-3 text-sm transition-colors ${FUOCO_LINK} ${
                             attiva
-                              ? 'font-semibold text-accento dark:text-accento-chiara'
-                              : 'text-inchiostro-soft hover:text-accento dark:text-nebbia-soft dark:hover:text-accento-chiara'
+                              ? 'bg-accento/10 font-semibold text-accento dark:bg-notte-deep dark:text-accento-chiara'
+                              : 'text-inchiostro-soft hover:bg-carta-deep/70 hover:text-accento dark:text-nebbia-soft dark:hover:bg-notte-deep/70 dark:hover:text-accento-chiara'
                           }`}
                         >
                           {voce.label}
@@ -265,11 +264,13 @@ function MenuMobile({ pathname }: { pathname: string }) {
         aria-haspopup="dialog"
         aria-label={aperto ? 'Chiudi il menu' : 'Apri il menu'}
         onClick={() => setAperto((valore) => !valore)}
-        className="flex min-h-[44px] cursor-pointer items-center gap-2 border border-regola px-3 py-2 text-xs font-semibold uppercase tracking-wide text-inchiostro-soft transition-colors hover:border-inchiostro hover:text-inchiostro focus-visible:outline focus-visible:outline-[3px] focus-visible:outline-offset-2 focus-visible:outline-accento dark:border-notte-deep dark:text-nebbia-soft dark:hover:border-nebbia dark:hover:text-nebbia dark:focus-visible:outline-accento-chiara"
+        className={`flex min-h-[48px] cursor-pointer items-center gap-2 rounded-xl border border-regola bg-carta px-4 py-3 text-sm font-semibold text-inchiostro-soft transition-colors hover:border-inchiostro hover:text-inchiostro dark:border-notte-deep dark:bg-notte-soft dark:text-nebbia-soft dark:hover:border-nebbia dark:hover:text-nebbia ${FUOCO_LINK}`}
       >
-        <svg aria-hidden="true" viewBox="0 0 24 24" className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="2">
-          <path strokeLinecap="round" d="M4 7h16M4 12h16M4 17h16" />
-        </svg>
+        {aperto ? (
+          <Cancel01Icon size={20} aria-hidden="true" className="h-5 w-5" />
+        ) : (
+          <Menu01Icon size={20} aria-hidden="true" className="h-5 w-5" />
+        )}
         Menu
       </button>
       {aperto && (
@@ -279,9 +280,9 @@ function MenuMobile({ pathname }: { pathname: string }) {
           aria-modal="false"
           aria-label="Navigazione principale"
           id={ID_MENU_MOBILE}
-          className="absolute right-0 z-50 mt-2 max-h-[70vh] w-72 max-w-[calc(100vw-2rem)] overflow-y-auto border border-regola bg-carta p-2 shadow-lg dark:border-notte-deep dark:bg-notte-soft"
+          className="absolute right-0 z-50 mt-2 max-h-[70vh] w-72 max-w-[calc(100vw-2rem)] overflow-y-auto rounded-2xl border border-regola bg-carta p-2 shadow-[0_16px_40px_-20px_rgba(26,23,20,0.35)] dark:border-notte-deep dark:bg-notte-soft"
         >
-          <ul className="flex flex-col">
+          <ul className="flex flex-col gap-0.5">
             {NAV_PRINCIPALE.map((voce, indice) => {
               const attiva = isAttiva(pathname, voce.href)
               return (
@@ -291,10 +292,10 @@ function MenuMobile({ pathname }: { pathname: string }) {
                     href={voce.href}
                     aria-current={attiva ? 'page' : undefined}
                     onClick={() => setAperto(false)}
-                    className={`block min-h-[44px] px-3 py-2.5 text-sm font-medium transition-colors focus-visible:outline focus-visible:outline-[3px] focus-visible:outline-offset-2 focus-visible:outline-accento dark:focus-visible:outline-accento-chiara ${
+                    className={`block min-h-[48px] rounded-xl px-4 py-3 text-sm font-medium transition-colors ${FUOCO_LINK} ${
                       attiva
-                        ? 'bg-carta-deep font-semibold text-inchiostro dark:bg-notte-deep dark:text-nebbia'
-                        : 'text-inchiostro-soft hover:bg-carta-deep hover:text-inchiostro dark:text-nebbia-soft dark:hover:bg-notte-deep dark:hover:text-nebbia'
+                        ? 'bg-accento/10 font-semibold text-accento dark:bg-notte-deep dark:text-accento-chiara'
+                        : 'text-inchiostro-soft hover:bg-carta-deep/70 hover:text-inchiostro dark:text-nebbia-soft dark:hover:bg-notte-deep/70 dark:hover:text-nebbia'
                     }`}
                   >
                     {voce.label}
@@ -303,10 +304,10 @@ function MenuMobile({ pathname }: { pathname: string }) {
               )
             })}
           </ul>
-          <p className="mt-2 border-t border-regola px-3 pb-1 pt-3 text-[11px] font-semibold uppercase tracking-[0.16em] text-inchiostro-faint dark:border-notte-deep dark:text-nebbia-faint">
+          <p className="mt-2 border-t border-regola px-4 pb-1 pt-3 text-xs font-semibold tracking-wide text-inchiostro-faint dark:border-notte-deep dark:text-nebbia-faint">
             Indice completo
           </p>
-          <ul className="flex flex-col pb-1">
+          <ul className="flex flex-col gap-0.5 pb-1">
             {VOCI_INDICE_PIATTE.filter((v) => !NAV_PRINCIPALE.some((p) => p.href === v.href)).map((voce) => {
               const attiva = isAttiva(pathname, voce.href)
               return (
@@ -315,10 +316,10 @@ function MenuMobile({ pathname }: { pathname: string }) {
                     href={voce.href}
                     aria-current={attiva ? 'page' : undefined}
                     onClick={() => setAperto(false)}
-                    className={`block min-h-[44px] px-3 py-2.5 text-sm transition-colors focus-visible:outline focus-visible:outline-[3px] focus-visible:outline-offset-2 focus-visible:outline-accento dark:focus-visible:outline-accento-chiara ${
+                    className={`block min-h-[48px] rounded-xl px-4 py-3 text-sm transition-colors ${FUOCO_LINK} ${
                       attiva
-                        ? 'font-semibold text-accento dark:text-accento-chiara'
-                        : 'text-inchiostro-soft hover:bg-carta-deep hover:text-inchiostro dark:text-nebbia-soft dark:hover:bg-notte-deep dark:hover:text-nebbia'
+                        ? 'bg-accento/10 font-semibold text-accento dark:bg-notte-deep dark:text-accento-chiara'
+                        : 'text-inchiostro-soft hover:bg-carta-deep/70 hover:text-inchiostro dark:text-nebbia-soft dark:hover:bg-notte-deep/70 dark:hover:text-nebbia'
                     }`}
                   >
                     {voce.label}
@@ -333,15 +334,21 @@ function MenuMobile({ pathname }: { pathname: string }) {
   )
 }
 
-/** Testata editoriale-istituzionale: filetto tricolore, testata densa, icona di ricerca, 5 voci + indice. */
+/**
+ * Testata accogliente: header fisso in vetro caldo (.vetro da C1 in
+ * app/globals.css - onesto: nessuna libreria liquid-glass ufficiale, solo
+ * backdrop-blur + tinta calda traslucida + bordo chiaro + ombra interna
+ * sottile, con tinta piena sotto prefers-reduced-transparency e se
+ * backdrop-filter manca). 5 voci + indice, tutto a 48px.
+ */
 export default function Header() {
   const pathname = usePathname()
 
   return (
-    <header className="sticky top-0 z-40 border-b border-regola bg-carta/95 backdrop-blur dark:border-notte-deep dark:bg-notte/95">
+    <header className="vetro sticky top-0 z-40 border-b border-regola/70 dark:border-notte-deep/70">
       <a
         href="#contenuto"
-        className="sr-only focus:not-sr-only focus:absolute focus:left-3 focus:top-3 focus:z-50 focus:border focus:border-inchiostro focus:bg-inchiostro focus:px-4 focus:py-2 focus:text-sm focus:font-semibold focus:text-carta dark:focus:border-nebbia dark:focus:bg-nebbia dark:focus:text-notte"
+        className="sr-only focus:not-sr-only focus:absolute focus:left-3 focus:top-3 focus:z-50 focus:min-h-[48px] focus:items-center focus:rounded-xl focus:border focus:border-inchiostro focus:bg-inchiostro focus:px-4 focus:py-3 focus:text-sm focus:font-semibold focus:text-carta dark:focus:border-nebbia dark:focus:bg-nebbia dark:focus:text-notte"
       >
         Salta al contenuto
       </a>
@@ -356,36 +363,33 @@ export default function Header() {
         <Link
           href="/"
           aria-current={pathname === '/' ? 'page' : undefined}
-          className="group flex min-w-0 items-baseline gap-3 rounded-sm focus-visible:outline focus-visible:outline-[3px] focus-visible:outline-offset-2 focus-visible:outline-accento dark:focus-visible:outline-accento-chiara"
+          className={`group flex min-h-[48px] min-w-0 items-center gap-3 rounded-xl px-2 py-2 ${FUOCO_LINK}`}
         >
           <span className="font-serif text-lg font-bold leading-none tracking-tight text-inchiostro dark:text-nebbia sm:text-xl">
             Stato della Repubblica
           </span>
-          <span className="hidden text-[10px] uppercase tracking-[0.22em] text-inchiostro-faint dark:text-nebbia-faint lg:inline">
+          <span className="hidden text-xs text-inchiostro-faint dark:text-nebbia-faint lg:inline">
             le leggi spiegate semplici
           </span>
         </Link>
 
-        <div className="ml-auto flex shrink-0 items-center gap-1.5">
+        <div className="ml-auto flex shrink-0 items-center gap-2">
           <DataOdierna className="mr-1 hidden text-xs text-inchiostro-soft dark:text-nebbia-soft xl:block" />
           <Link
             href="/leggi"
             aria-label="Cerca nelle leggi"
             title="Cerca nelle leggi"
-            className="inline-flex h-11 min-h-tocco w-11 min-w-tocco items-center justify-center rounded border border-transparent text-inchiostro-soft transition-colors hover:border-regola hover:text-inchiostro focus-visible:outline focus-visible:outline-[3px] focus-visible:outline-offset-2 focus-visible:outline-accento dark:text-nebbia-soft dark:hover:border-notte-deep dark:hover:text-nebbia dark:focus-visible:outline-accento-chiara"
+            className={`inline-flex h-12 min-h-[48px] w-12 min-w-[48px] items-center justify-center rounded-xl border border-transparent text-inchiostro-soft transition-colors hover:bg-carta-deep/70 hover:text-inchiostro dark:text-nebbia-soft dark:hover:bg-notte-deep/70 dark:hover:text-nebbia ${FUOCO_LINK}`}
           >
-            <svg aria-hidden="true" viewBox="0 0 24 24" className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth="2">
-              <circle cx="11" cy="11" r="7" />
-              <path strokeLinecap="round" d="m20 20-3.5-3.5" />
-            </svg>
+            <Search01Icon size={20} aria-hidden="true" className="h-5 w-5" />
           </Link>
           <ToggleTema />
           <MenuMobile pathname={pathname} />
         </div>
       </div>
 
-      <nav aria-label="Navigazione principale" className="hidden border-t border-regola dark:border-notte-deep md:block">
-        <ul className="mx-auto flex w-full max-w-editoriale flex-wrap items-center gap-1 px-4 sm:px-6 lg:px-8">
+      <nav aria-label="Navigazione principale" className="hidden border-t border-regola/70 dark:border-notte-deep/70 md:block">
+        <ul className="mx-auto flex w-full max-w-editoriale flex-wrap items-center gap-1 px-4 py-1 sm:px-6 lg:px-8">
           {NAV_PRINCIPALE.map((item) => {
             const attiva = isAttiva(pathname, item.href)
             return (
@@ -393,10 +397,10 @@ export default function Header() {
                 <Link
                   href={item.href}
                   aria-current={attiva ? 'page' : undefined}
-                  className={`block min-h-[44px] border-b-2 px-3 py-2.5 text-xs font-semibold uppercase tracking-[0.14em] transition-colors focus-visible:outline focus-visible:outline-[3px] focus-visible:outline-offset-2 focus-visible:outline-accento dark:focus-visible:outline-accento-chiara ${
+                  className={`flex min-h-[48px] items-center rounded-xl px-4 py-3 text-sm font-semibold transition-colors ${FUOCO_LINK} ${
                     attiva
-                      ? 'border-accento text-inchiostro dark:border-accento-chiara dark:text-nebbia'
-                      : 'border-transparent text-inchiostro-soft hover:text-inchiostro dark:text-nebbia-soft dark:hover:text-nebbia'
+                      ? 'bg-accento/10 text-accento dark:bg-notte-deep dark:text-accento-chiara'
+                      : 'text-inchiostro-soft hover:bg-carta-deep/70 hover:text-inchiostro dark:text-nebbia-soft dark:hover:bg-notte-deep/70 dark:hover:text-nebbia'
                   }`}
                 >
                   {item.label}

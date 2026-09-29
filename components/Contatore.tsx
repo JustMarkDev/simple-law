@@ -22,7 +22,7 @@ function formatta(value: number, decimals: number): string {
 /**
  * Numero che sale da 0 al valore finale quando entra nel viewport.
  * Con `prefers-reduced-motion` mostra subito il valore finale; per i lettori
- * di schermo il valore finale è sempre annunciato.
+ * di schermo il valore finale è sempre annunciato. Cifre in mono tabellare.
  */
 export default function Contatore({
   value,
@@ -56,7 +56,7 @@ export default function Contatore({
   }, [inVista, valoreFinale, ridotto, durataAnimazione])
 
   return (
-    <span ref={ref} className={`tabular-nums ${className}`}>
+    <span ref={ref} className={`font-mono tabular-nums ${className}`}>
       <span aria-hidden="true">
         {prefix}
         {formatta(mostrato, cifre)}

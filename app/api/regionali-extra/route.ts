@@ -1,5 +1,5 @@
 /**
- * GET /api/regionali-extra — catalogo delle regionali-extra con aggregati reali.
+ * GET /api/regionali-extra - catalogo delle regionali-extra con aggregati reali.
  * Query opzionale `?id=` (default: tutte; senza `id` elenca le regionali-extra
  * disponibili). Id non valido -> 404. Mai 500: in caso di errore restituisce
  * l'elenco vuoto con licenza, disclaimer e provenance.

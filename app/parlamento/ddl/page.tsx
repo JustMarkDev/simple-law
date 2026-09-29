@@ -20,7 +20,7 @@ interface DdlProps {
 
 const PER_OPZIONI = [10, 20, 50] as const
 const PER_DEFAULT = 20
-const BADGE_DDL = 'Disegno di legge — non in vigore'
+const BADGE_DDL = 'Disegno di legge - non in vigore'
 
 function str(sp: Record<string, string | string[] | undefined>, nome: string): string {
   const v = sp[nome]
@@ -47,7 +47,7 @@ function hrefSenza(query: Record<string, string>, chiave: string): string {
 
 export async function generateMetadata({ searchParams }: DdlProps): Promise<Metadata> {
   const base: Metadata = {
-    title: 'Disegni di legge — Legislatura 19 — Stato della Repubblica',
+    title: 'Disegni di legge - Legislatura 19 - Stato della Repubblica',
     description:
       'Disegni di legge del Senato e atti della Camera (legislatura 19): iter in corso, non in vigore. Mai confondere con le leggi.',
   }
@@ -65,9 +65,9 @@ export async function generateMetadata({ searchParams }: DdlProps): Promise<Meta
     if (qValida) pezzi.push(`“${qValida}”`)
     if (fase.trim()) pezzi.push(`fase ${fase.trim()}`)
     if (ramo === 'S' || ramo === 'C') pezzi.push(`ramo ${ramo}`)
-    const dettaglio = pezzi.length > 0 ? ` — ${pezzi.join(' · ')}` : ''
+    const dettaglio = pezzi.length > 0 ? ` - ${pezzi.join(' · ')}` : ''
     return {
-      title: `Disegni di legge (${filtrati.length})${dettaglio} — Stato della Repubblica`,
+      title: `Disegni di legge (${filtrati.length})${dettaglio} - Stato della Repubblica`,
       description: `Archivio di ${filtrati.length} disegni di legge e atti della legislatura 19${dettaglio}: iter in corso, non in vigore.`,
     }
   } catch {
@@ -207,10 +207,10 @@ export default async function DdlPage({ searchParams }: DdlProps) {
 
         <header className="mt-4 border-b-2 border-inchiostro pb-5 dark:border-nebbia">
           <p className="inline-flex items-center border border-accento px-2 py-1 text-xs font-bold uppercase tracking-[0.2em] text-accento dark:border-accento-chiara dark:text-accento-chiara">
-            DDL — non in vigore / iter in corso
+            DDL - non in vigore / iter in corso
           </p>
           <h1 className="mt-3 font-serif text-3xl font-bold text-inchiostro dark:text-nebbia sm:text-4xl">
-            Disegni di legge — Legislatura 19
+            Disegni di legge - Legislatura 19
           </h1>
           <p className="mt-3 max-w-2xl text-sm leading-relaxed text-inchiostro-soft dark:text-nebbia-soft">
             Disegni di legge del Senato e atti della Camera dai dati aperti reali: sono proposte in iter,
@@ -416,7 +416,7 @@ export default async function DdlPage({ searchParams }: DdlProps) {
             Fonti e licenze
           </h2>
           <p className="mt-2 text-sm leading-relaxed text-inchiostro-soft dark:text-nebbia-soft">
-            Senato: dati.senato.it — CC BY 3.0 IT · Camera: dati.camera.it — CC BY-SA 4.0 · legislatura 19
+            Senato: dati.senato.it - CC BY 3.0 IT · Camera: dati.camera.it - CC BY-SA 4.0 · legislatura 19
             {prov.senato?.recuperatoIl ? ` · dati Senato aggiornati al ${dataIT(prov.senato.recuperatoIl)}` : ''}
             {prov.camera?.recuperatoIl ? ` · dati Camera aggiornati al ${dataIT(prov.camera.recuperatoIl)}` : ''}.
           </p>

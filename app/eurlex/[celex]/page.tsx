@@ -153,7 +153,7 @@ export async function generateStaticParams(): Promise<{ celex: string }[]> {
 
 export async function generateMetadata({ params }: DettaglioProps): Promise<Metadata> {
   const base: Metadata = {
-    title: 'Atto UE — Stato della Repubblica',
+    title: 'Atto UE - Stato della Repubblica',
     description: 'Scheda di un atto UE 2026 dai dati ufficiali EUR-Lex CELLAR, con link al testo ufficiale.',
   }
   try {
@@ -161,7 +161,7 @@ export async function generateMetadata({ params }: DettaglioProps): Promise<Meta
     const atto = await trovaAttoUe(celex)
     if (!atto) return base
     return {
-      title: `${atto.celex} — ${etichettaTipo(atto.tipo)} — Stato della Repubblica`,
+      title: `${atto.celex} - ${etichettaTipo(atto.tipo)} - Stato della Repubblica`,
       description: `Scheda ${atto.celex} (${etichettaTipo(atto.tipo)}, ${dataIT(atto.data)}): metadati ufficiali CELLAR e link al testo su EUR-Lex.`,
     }
   } catch {
@@ -469,7 +469,7 @@ export default async function AttoUePage({ params }: DettaglioProps) {
             Fonte e licenza
           </h2>
           <p className="mt-2 text-sm leading-relaxed text-inchiostro-soft dark:text-nebbia-soft">
-            Fonte: {provenance.fonte ?? 'EUR-Lex CELLAR SPARQL'} — licenza{' '}
+            Fonte: {provenance.fonte ?? 'EUR-Lex CELLAR SPARQL'} - licenza{' '}
             {provenance.licenza ?? 'riuso con attribuzione Dec.2011/833/UE'}
             {provenance.recuperatoIl ? ` · dati aggiornati al ${dataIT(provenance.recuperatoIl.slice(0, 10))}` : ''}.
             Fa fede il testo ufficiale su EUR-Lex.

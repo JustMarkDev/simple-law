@@ -118,21 +118,21 @@ export const REGISTRY_REGIONALI_EXTRA: readonly VoceRegistroRegionaleExtra[] = [
     tipo: "regionali",
     data: "2024-10-27",
     file: PERCORSO_LIGURIA_2024,
-    titolo: "Elezioni regionali 2024 — Liguria",
+    titolo: "Elezioni regionali 2024 - Liguria",
   },
   {
     id: "regionali-2025-calabria",
     tipo: "regionali",
     data: "2025-10-05",
     file: PERCORSO_CALABRIA_2025,
-    titolo: "Elezioni regionali 2025 — Calabria",
+    titolo: "Elezioni regionali 2025 - Calabria",
   },
   {
     id: "regionali-2024-emilia-romagna",
     tipo: "regionali",
     data: "2024-11-17",
     file: PERCORSO_EMILIA_ROMAGNA_2024,
-    titolo: "Elezioni regionali 2024 — Emilia-Romagna",
+    titolo: "Elezioni regionali 2024 - Emilia-Romagna",
   },
 ];
 

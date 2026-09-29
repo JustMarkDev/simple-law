@@ -95,14 +95,23 @@ describe("wiring reali -> app (fixture inline, zero rete, zero disco)", () => {
     expect(() => estraiListaComunicatiReali("x")).not.toThrow();
   });
 
-  it("getSeedLaws non lancia e tiene i 5 seed primi (file assenti -> invariato)", () => {
+  it("getSeedLaws non lancia e tiene i seed curati primi (dimostrativi esclusi)", () => {
     let leggi: ReturnType<typeof getSeedLaws> = [];
     expect(() => {
       leggi = getSeedLaws();
     }).not.toThrow();
-    expect(leggi.length).toBeGreaterThanOrEqual(5);
-    for (let i = 0; i < SEED_LAWS.length; i++) {
-      expect(leggi[i]?.eli).toBe(SEED_LAWS[i]?.eli);
+    // Real-only di default: i 3 seed dimostrativi inventati sono esclusi,
+    // restano DL 133/2026 e DL 139/2026 curati come primi record.
+    const attesi = SEED_LAWS.filter((l) => l.dimostrativo !== true);
+    expect(leggi.length).toBeGreaterThanOrEqual(attesi.length);
+    for (let i = 0; i < attesi.length; i++) {
+      expect(leggi[i]?.eli).toBe(attesi[i]?.eli);
+    }
+    for (const seed of SEED_LAWS.filter((l) => l.dimostrativo === true)) {
+      expect(
+        leggi.some((l) => l.eli === seed.eli),
+        `seed dimostrativo presente in default: ${seed.eli}`,
+      ).toBe(false);
     }
     const chiavi = leggi.map((l) => String(l.eli).trim().toLowerCase());
     expect(new Set(chiavi).size).toBe(chiavi.length);

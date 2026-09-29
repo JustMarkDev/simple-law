@@ -1,5 +1,5 @@
 /**
- * Seed espanso realistico — 72 atti curati (1948-2026).
+ * Seed espanso realistico - 72 atti curati (1948-2026).
  *
  * - 2 atti di riferimento con `dimostrativo: false` (Costituzione, Codice della strada).
  * - 70 atti dimostrativi con `dimostrativo: true`.

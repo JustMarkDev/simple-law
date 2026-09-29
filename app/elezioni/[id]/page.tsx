@@ -26,73 +26,73 @@ const REGISTRO: VoceRegistro[] = [
   {
     id: 'europee-2024',
     titoloBreve: 'Europee 2024',
-    titolo: 'Elezioni europee — 9 giugno 2024',
+    titolo: 'Elezioni europee - 9 giugno 2024',
     descrizione:
-      'Solo aggregati da open data del Ministero dell’Interno (DAIT–Eligendo): affluenza e voti per lista a livello nazionale e regionale, affluenza per comune. I seggi non sono disponibili nel file ministeriale e non vengono mostrati.',
+      'Solo aggregati da open data del Ministero dell’Interno (DAIT-Eligendo): affluenza e voti per lista a livello nazionale e regionale, affluenza per comune. I seggi non sono disponibili nel file ministeriale e non vengono mostrati.',
     file: path.join('data', 'reali', 'elezioni-europee-2024.json'),
   },
   {
     id: 'politiche-2022-camera',
-    titoloBreve: 'Politiche 2022 — Camera',
-    titolo: 'Elezioni politiche 2022 — Camera dei deputati (25 settembre 2022)',
+    titoloBreve: 'Politiche 2022 - Camera',
+    titolo: 'Elezioni politiche 2022 - Camera dei deputati (25 settembre 2022)',
     descrizione:
-      'Solo aggregati DAIT–Eligendo per la Camera: affluenza e voti per lista a livello nazionale, per circoscrizione e collegio, affluenza per comune. Nessun nominativo, nessuna riga candidata.',
+      'Solo aggregati DAIT-Eligendo per la Camera: affluenza e voti per lista a livello nazionale, per circoscrizione e collegio, affluenza per comune. Nessun nominativo, nessuna riga candidata.',
     file: path.join('data', 'reali', 'elezioni-politiche-2022-camera.json'),
   },
   {
     id: 'politiche-2022-senato',
-    titoloBreve: 'Politiche 2022 — Senato',
-    titolo: 'Elezioni politiche 2022 — Senato della Repubblica (25 settembre 2022)',
+    titoloBreve: 'Politiche 2022 - Senato',
+    titolo: 'Elezioni politiche 2022 - Senato della Repubblica (25 settembre 2022)',
     descrizione:
-      'Solo aggregati DAIT–Eligendo per il Senato: affluenza e voti per lista a livello nazionale, per circoscrizione e collegio, affluenza per comune. Nessun nominativo, nessuna riga candidata.',
+      'Solo aggregati DAIT-Eligendo per il Senato: affluenza e voti per lista a livello nazionale, per circoscrizione e collegio, affluenza per comune. Nessun nominativo, nessuna riga candidata.',
     file: path.join('data', 'reali', 'elezioni-politiche-2022-senato.json'),
   },
   {
     id: 'regionali-2025-toscana',
-    titoloBreve: 'Regionali 2025 — Toscana',
-    titolo: 'Elezioni regionali 2025 — Toscana (12 ottobre 2025)',
+    titoloBreve: 'Regionali 2025 - Toscana',
+    titolo: 'Elezioni regionali 2025 - Toscana (12 ottobre 2025)',
     descrizione:
-      'Solo aggregati DAIT–Eligendo per la Toscana: affluenza e voti per lista a livello regionale, affluenza per comune. Nessun nominativo, nessuna riga candidata; i voti del presidente non sono pubblicati come aggregato nel tracciato.',
+      'Solo aggregati DAIT-Eligendo per la Toscana: affluenza e voti per lista a livello regionale, affluenza per comune. Nessun nominativo, nessuna riga candidata; i voti del presidente non sono pubblicati come aggregato nel tracciato.',
     file: path.join('data', 'reali', 'elezioni-regionali-2025-toscana.json'),
   },
   {
     id: 'regionali-2024-umbria',
-    titoloBreve: 'Regionali 2024 — Umbria',
-    titolo: 'Elezioni regionali 2024 — Umbria (17 novembre 2024)',
+    titoloBreve: 'Regionali 2024 - Umbria',
+    titolo: 'Elezioni regionali 2024 - Umbria (17 novembre 2024)',
     descrizione:
-      'Solo aggregati DAIT–Eligendo per l’Umbria (circoscrizione unica): affluenza e voti per lista a livello regionale, affluenza per comune. Nessun nominativo, nessuna riga candidata; i voti del presidente non sono pubblicati come aggregato nel tracciato.',
+      'Solo aggregati DAIT-Eligendo per l’Umbria (circoscrizione unica): affluenza e voti per lista a livello regionale, affluenza per comune. Nessun nominativo, nessuna riga candidata; i voti del presidente non sono pubblicati come aggregato nel tracciato.',
     file: path.join('data', 'reali', 'elezioni-regionali-2024-umbria.json'),
   },
   {
     id: 'regionali-2024-emilia-romagna',
-    titoloBreve: 'Regionali 2024 — Emilia-Romagna',
-    titolo: 'Elezioni regionali 2024 — Emilia-Romagna (17 novembre 2024)',
+    titoloBreve: 'Regionali 2024 - Emilia-Romagna',
+    titolo: 'Elezioni regionali 2024 - Emilia-Romagna (17 novembre 2024)',
     descrizione:
-      'Solo aggregati DAIT–Eligendo per l’Emilia-Romagna: affluenza e voti per lista a livello regionale, affluenza per comune. Nessun nominativo, nessuna riga candidata; i voti del presidente non sono pubblicati come aggregato nel tracciato.',
+      'Solo aggregati DAIT-Eligendo per l’Emilia-Romagna: affluenza e voti per lista a livello regionale, affluenza per comune. Nessun nominativo, nessuna riga candidata; i voti del presidente non sono pubblicati come aggregato nel tracciato.',
     file: path.join('data', 'reali', 'elezioni-regionali-2024-emilia-romagna.json'),
   },
   {
     id: 'regionali-2025-campania',
-    titoloBreve: 'Regionali 2025 — Campania',
-    titolo: 'Elezioni regionali 2025 — Campania (23 novembre 2025)',
+    titoloBreve: 'Regionali 2025 - Campania',
+    titolo: 'Elezioni regionali 2025 - Campania (23 novembre 2025)',
     descrizione:
-      'Solo aggregati DAIT–Eligendo per la Campania: affluenza e voti per lista a livello regionale, affluenza per comune. Nessun nominativo, nessuna riga candidata; i voti del presidente non sono pubblicati come aggregato nel tracciato.',
+      'Solo aggregati DAIT-Eligendo per la Campania: affluenza e voti per lista a livello regionale, affluenza per comune. Nessun nominativo, nessuna riga candidata; i voti del presidente non sono pubblicati come aggregato nel tracciato.',
     file: path.join('data', 'reali', 'elezioni-regionali-2025-campania.json'),
   },
   {
     id: 'regionali-2025-puglia',
-    titoloBreve: 'Regionali 2025 — Puglia',
-    titolo: 'Elezioni regionali 2025 — Puglia (23 novembre 2025)',
+    titoloBreve: 'Regionali 2025 - Puglia',
+    titolo: 'Elezioni regionali 2025 - Puglia (23 novembre 2025)',
     descrizione:
-      'Solo aggregati DAIT–Eligendo per la Puglia: affluenza e voti per lista a livello regionale, affluenza per comune. Nessun nominativo, nessuna riga candidata; i voti del presidente non sono pubblicati come aggregato nel tracciato.',
+      'Solo aggregati DAIT-Eligendo per la Puglia: affluenza e voti per lista a livello regionale, affluenza per comune. Nessun nominativo, nessuna riga candidata; i voti del presidente non sono pubblicati come aggregato nel tracciato.',
     file: path.join('data', 'reali', 'elezioni-regionali-2025-puglia.json'),
   },
   {
     id: 'regionali-2025-veneto',
-    titoloBreve: 'Regionali 2025 — Veneto',
-    titolo: 'Elezioni regionali 2025 — Veneto (23 novembre 2025)',
+    titoloBreve: 'Regionali 2025 - Veneto',
+    titolo: 'Elezioni regionali 2025 - Veneto (23 novembre 2025)',
     descrizione:
-      'Solo aggregati DAIT–Eligendo per il Veneto: affluenza e voti per lista a livello regionale, affluenza per comune. Nessun nominativo, nessuna riga candidata; i voti del presidente non sono pubblicati come aggregato nel tracciato.',
+      'Solo aggregati DAIT-Eligendo per il Veneto: affluenza e voti per lista a livello regionale, affluenza per comune. Nessun nominativo, nessuna riga candidata; i voti del presidente non sono pubblicati come aggregato nel tracciato.',
     file: path.join('data', 'reali', 'elezioni-regionali-2025-veneto.json'),
   },
 ]
@@ -156,7 +156,7 @@ const MAX_BYTE_JSON = 1024 * 1024
 const MAX_RIGHE_COMUNI = 100
 
 const LINK_ESTERNI = [
-  { label: 'Eligendo — open data DAIT', url: 'https://elezionistorico.interno.gov.it/eligendo/opendata.php' },
+  { label: 'Eligendo - open data DAIT', url: 'https://elezionistorico.interno.gov.it/eligendo/opendata.php' },
   { label: 'CISE', url: 'https://cise.luiss.it/' },
   { label: 'YouTrend', url: 'https://www.youtrend.it/' },
 ]
@@ -388,18 +388,18 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   }
   const voce = voceRegistro(id)
   if (!voce) {
-    return { title: 'Elezione non trovata — Stato della Repubblica' }
+    return { title: 'Elezione non trovata - Stato della Repubblica' }
   }
   const dati = await leggiDati(id)
   if (!dati) {
     return {
-      title: `${voce.titolo} — Stato della Repubblica`,
-      description: `Risultati aggregati DAIT–Eligendo per ${voce.titoloBreve}. Dati in preparazione.`,
+      title: `${voce.titolo} - Stato della Repubblica`,
+      description: `Risultati aggregati DAIT-Eligendo per ${voce.titoloBreve}. Dati in preparazione.`,
     }
   }
   const { e, v, a } = dati.elezione
   return {
-    title: `${voce.titolo} — Stato della Repubblica`,
+    title: `${voce.titolo} - Stato della Repubblica`,
     description: `Risultati aggregati DAIT per ${voce.titoloBreve}: affluenza ${decimaleIT(a)}% su ${intero(e)} elettori e ${intero(v)} votanti, voti per lista e per territorio.`,
   }
 }
@@ -567,7 +567,7 @@ export default async function ElezionePage({ params, searchParams }: Props) {
 
         <section aria-labelledby="liste" className="mt-10">
           <h2 id="liste" className="font-serif text-xl font-bold text-inchiostro dark:text-nebbia">
-            Liste — voti e percentuali nazionali
+            Liste - voti e percentuali nazionali
           </h2>
           <p className="mt-1 text-xs text-inchiostro-faint dark:text-nebbia-faint">
             {listeOrdinate.length} liste a livello nazionale.
@@ -615,7 +615,7 @@ export default async function ElezionePage({ params, searchParams }: Props) {
 
         <section aria-labelledby="territori" className="mt-10">
           <h2 id="territori" className="font-serif text-xl font-bold text-inchiostro dark:text-nebbia">
-            {etichettaTerritori} — affluenza e prima lista
+            {etichettaTerritori} - affluenza e prima lista
           </h2>
           <p className="mt-1 text-xs text-inchiostro-faint dark:text-nebbia-faint">
             {territoriOrdinati.length} {etichettaTerritori.toLowerCase()}. Il dettaglio per lista di ogni territorio è nell’aggregato;
@@ -666,7 +666,7 @@ export default async function ElezionePage({ params, searchParams }: Props) {
                           {decimaleIT(territorio.a)}%
                         </td>
                         <td className="px-4 py-2.5 text-left text-inchiostro-soft dark:text-nebbia-soft">
-                          {prima ? `${prima.n} (${decimaleIT(prima.p)}%)` : '—'}
+                          {prima ? `${prima.n} (${decimaleIT(prima.p)}%)` : '-'}
                         </td>
                       </tr>
                     )
@@ -680,7 +680,7 @@ export default async function ElezionePage({ params, searchParams }: Props) {
         {(collegiU.length > 0 || collegiP.length > 0) && (
           <section aria-labelledby="collegi" className="mt-10">
             <h2 id="collegi" className="font-serif text-xl font-bold text-inchiostro dark:text-nebbia">
-              Collegi — affluenza
+              Collegi - affluenza
             </h2>
             <p className="mt-1 text-xs text-inchiostro-faint dark:text-nebbia-faint">
               {collegiU.length > 0 && `${collegiU.length} collegi uninominali`}
@@ -758,7 +758,7 @@ export default async function ElezionePage({ params, searchParams }: Props) {
 
         <section aria-labelledby="comuni" className="mt-10">
           <h2 id="comuni" className="font-serif text-xl font-bold text-inchiostro dark:text-nebbia">
-            Comuni — affluenza
+            Comuni - affluenza
           </h2>
           <p className="mt-1 text-xs text-inchiostro-faint dark:text-nebbia-faint">
             {intero(comuni.length)} comuni nell’aggregato. Solo affluenza, senza dettaglio per lista.
@@ -814,9 +814,9 @@ export default async function ElezionePage({ params, searchParams }: Props) {
             {ricercaAttiva
               ? totaleFiltrati === 0
                 ? `Nessun comune trovato per «${query}».`
-                : `${intero(totaleFiltrati)} ${totaleFiltrati === 1 ? 'comune trovato' : 'comuni trovati'} per «${query}» — ${totaleFiltrati > MAX_RIGHE_COMUNI ? `prime ${MAX_RIGHE_COMUNI} righe mostrate` : 'tutte le righe mostrate'}.`
+                : `${intero(totaleFiltrati)} ${totaleFiltrati === 1 ? 'comune trovato' : 'comuni trovati'} per «${query}» - ${totaleFiltrati > MAX_RIGHE_COMUNI ? `prime ${MAX_RIGHE_COMUNI} righe mostrate` : 'tutte le righe mostrate'}.`
               : query.length > 0
-                ? `Scrivi almeno 2 caratteri per filtrare — prime ${MAX_RIGHE_COMUNI} righe su ${intero(comuni.length)} comuni.`
+                ? `Scrivi almeno 2 caratteri per filtrare - prime ${MAX_RIGHE_COMUNI} righe su ${intero(comuni.length)} comuni.`
                 : `Prime ${MAX_RIGHE_COMUNI} righe su ${intero(comuni.length)} comuni. Usa la ricerca per filtrare.`}
           </p>
 
@@ -893,7 +893,7 @@ export default async function ElezionePage({ params, searchParams }: Props) {
             {provenance.fonte && (
               <div className="flex flex-wrap gap-x-2">
                 <dt className="font-semibold text-inchiostro dark:text-nebbia">Fonte:</dt>
-                <dd>{provenance.fonte}{provenance.recuperatoIl ? ` — recuperato il ${provenance.recuperatoIl}.` : '.'}</dd>
+                <dd>{provenance.fonte}{provenance.recuperatoIl ? ` - recuperato il ${provenance.recuperatoIl}.` : '.'}</dd>
               </div>
             )}
             {provenance.licenza && (

@@ -1,5 +1,5 @@
 /**
- * GET /api/gazzetta — ultima Gazzetta Ufficiale (solo metadati + link).
+ * GET /api/gazzetta - ultima Gazzetta Ufficiale (solo metadati + link).
  * Mai 500: in caso di errore restituisce payload vuoto.
  */
 

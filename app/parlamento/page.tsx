@@ -10,7 +10,7 @@ import {
 } from '@/lib/parlamento-dati'
 
 export const metadata: Metadata = {
-  title: 'Parlamento — Legislatura 19 — Stato della Repubblica',
+  title: 'Parlamento - Legislatura 19 - Stato della Repubblica',
   description:
     'Camera e Senato della legislatura 19: 414 deputati, 212 senatori e i gruppi parlamentari, dai dati reali di Camera e Senato.',
 }
@@ -79,7 +79,7 @@ export default async function ParlamentoPage() {
             Legislatura 19
           </p>
           <h1 className="mt-2 font-serif text-3xl font-bold text-inchiostro dark:text-nebbia sm:text-4xl">
-            Parlamento — Legislatura 19
+            Parlamento - Legislatura 19
           </h1>
           <p className="mt-3 max-w-2xl text-sm leading-relaxed text-inchiostro-soft dark:text-nebbia-soft">
             I membri di Camera e Senato dai dati reali aperti, senza duplicati né stime.
@@ -203,7 +203,7 @@ export default async function ParlamentoPage() {
             Fonti e licenze
           </h2>
           <p className="mt-2 text-sm leading-relaxed text-inchiostro-soft dark:text-nebbia-soft">
-            Camera: dati.camera.it — CC BY-SA 4.0 · Senato: dati.senato.it — CC BY 3.0 IT · legislatura 19
+            Camera: dati.camera.it - CC BY-SA 4.0 · Senato: dati.senato.it - CC BY 3.0 IT · legislatura 19
             {provCamera?.recuperatoIl ? ` · dati Camera aggiornati al ${dataIT(provCamera.recuperatoIl)}` : ''}
             {provSenato?.recuperatoIl ? ` · dati Senato aggiornati al ${dataIT(provSenato.recuperatoIl)}` : ''}.
           </p>

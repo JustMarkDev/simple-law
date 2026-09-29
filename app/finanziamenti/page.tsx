@@ -11,7 +11,7 @@ import {
 } from '@/lib/finanziamenti-dati'
 
 export const metadata: Metadata = {
-  title: 'Finanziamenti ai partiti politici 2024-2026 — Stato della Repubblica',
+  title: 'Finanziamenti ai partiti politici 2024-2026 - Stato della Repubblica',
   description:
     'Erogazioni sopra soglia comunicate alla Camera dei deputati (art. 5 DL 149/2013): solo aggregati per beneficiario e anno, zero nominativi. Non sono leggi in vigore.',
 }
@@ -180,7 +180,7 @@ export default async function FinanziamentiPage() {
                 rel="noopener noreferrer"
                 className="underline hover:text-accento dark:hover:text-accento-chiara"
               >
-                parlamento18.camera.it/199 — Erogazioni ai partiti politici
+                parlamento18.camera.it/199 - Erogazioni ai partiti politici
               </a>
               {provenance.recuperatoIl ? ` (dati recuperati il ${dataIT(provenance.recuperatoIl)})` : ''}.
             </li>
@@ -192,7 +192,7 @@ export default async function FinanziamentiPage() {
                 rel="noopener noreferrer"
                 className="underline hover:text-accento dark:hover:text-accento-chiara"
               >
-                Camera — Partiti e Gruppi parlamentari
+                Camera - Partiti e Gruppi parlamentari
               </a>
               {' · '}
               <a

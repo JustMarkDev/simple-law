@@ -5,7 +5,7 @@ import Footer from '@/components/Footer'
 import { caricaGazzettaUltima } from '@/lib/gazzetta-dati'
 
 export const metadata: Metadata = {
-  title: 'Ultima Gazzetta Ufficiale — Stato della Repubblica',
+  title: 'Ultima Gazzetta Ufficiale - Stato della Repubblica',
   description:
     'L’ultimo numero uscito della Gazzetta Ufficiale: atti pubblicati con link ai testi ufficiali. Fa fede la Gazzetta a stampa.',
 }
@@ -97,7 +97,7 @@ export default async function GazzettaPage() {
             Fonte
           </h2>
           <p className="mt-2 text-sm leading-relaxed text-inchiostro-soft dark:text-nebbia-soft">
-            Fonte: {dati?.provenance.fonte ?? 'gazzettaufficiale.it (RSS Serie Generale)'} —{' '}
+            Fonte: {dati?.provenance.fonte ?? 'gazzettaufficiale.it (RSS Serie Generale)'} -{' '}
             {dati?.provenance.licenza ?? 'solo metadati + link ufficiali, nessun mirror'}.
             Fa fede esclusivamente la Gazzetta Ufficiale a stampa.
           </p>

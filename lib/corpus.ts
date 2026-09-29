@@ -1,6 +1,6 @@
 // lib/corpus.ts
 // Architettura corpus 100GB-ready: generatore deterministico + loader streaming.
-// Contratto: never-throw per l'accesso dati — ogni funzione fallibile restituisce Esito<T>.
+// Contratto: never-throw per l'accesso dati - ogni funzione fallibile restituisce Esito<T>.
 // Lo shard non viene mai caricato intero in memoria: solo stream (readline + zlib).
 // Manifest committabile (<100KB); shard *.jsonl.gz mai committati sopra 1MB.
 //
@@ -223,7 +223,7 @@ export function generaRecord(indice: number, seedBase: string = VERSIONE_CORPUS)
 
   const oggetto = scegliCasuale(casuale, temaInfo.oggetti);
   const dataEmanazione = giornoMeseDeterministico(casuale, anno);
-  const titolo = `${tipoInfo.nome} n. ${numero} del ${anno} — ${temaInfo.etichetta}: ${oggetto}`;
+  const titolo = `${tipoInfo.nome} n. ${numero} del ${anno} - ${temaInfo.etichetta}: ${oggetto}`;
   const sintesi =
     `Provvedimento in materia di ${oggetto}. ` +
     `Disciplina finalità, ambito di applicazione e adempimenti per le amministrazioni e i destinatari.`;
@@ -245,7 +245,7 @@ export function generaRecord(indice: number, seedBase: string = VERSIONE_CORPUS)
   let numeroArticolo = 1;
   let byteCorrenti = Buffer.byteLength(righe.join('\n'), 'utf8');
   while (byteCorrenti < obiettivoByte && numeroArticolo <= 40) {
-    righe.push(`Art. ${numeroArticolo} — (Oggetto e ambito di applicazione)`);
+    righe.push(`Art. ${numeroArticolo} - (Oggetto e ambito di applicazione)`);
     const commi = interoCasuale(casuale, 2, 4);
     for (let c = 1; c <= commi; c++) {
       const frase = scegliCasuale(casuale, FRASI_ARTICOLO);

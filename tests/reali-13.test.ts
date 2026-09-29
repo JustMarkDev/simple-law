@@ -9,13 +9,12 @@
  *
  * Nuovi file REALI-13 (assegnazione disgiunta):
  * - W3 finestre Normattiva (cap 80, URN solo se denominazione+anno+numero non vuoti):
- *   normattiva-finestra-1975.json (sonda lista 371; esempi sonda LEGGE184/DPR85),
- *   normattiva-finestra-1995.json (sonda lista 871; esempi sonda DL444/LEGGE198).
- *   Sonda != finale: fa fede il file scritto (max 80). Riserva 1965 NON ingerita.
  *   Nomi reali scritti da W3 il 2026-09-28 (default dello script):
  *   normattiva-storico-1975.json (63 atti verificati) +
- *   normattiva-storico-1995.json (70 atti verificati); il wiring copre
- *   entrambi i nomi (loader salta gli assenti).
+ *   normattiva-storico-1995.json (70 atti verificati). I nomi direttiva
+ *   normattiva-finestra-1975/1995.json non sono mai esistiti (fantasmi
+ *   rimossi dal wiring W4 real-only): i controlli envelope restano
+ *   tolleranti (skip se assenti).
  * - W1 regionali-extra (solo aggregati per-lista + affluenza comunale, zero nominativi,
  *   colonne candidato mai lette, cap <=950KB/file):
  *   elezioni-regionali-2024-liguria.json (da regionali-20241027.zip, filtro LIGURIA),
@@ -142,10 +141,18 @@ const PERCORSI_STORICI_13 = [
   "data/reali/normattiva-storico-1985.json",
 ];
 
-/** Nuovi percorsi atti che il wiring REALI-13 deve registrare (nomi direttiva + reali). */
+/** Nuovi percorsi atti che il wiring REALI-13 deve registrare (nomi reali). */
 const PERCORSI_FINESTRE_13_ATTESI = [
   "data/reali/normattiva-storico-1975.json",
   "data/reali/normattiva-storico-1995.json",
+];
+
+/**
+ * Fantasmi REALI-13 rimossi (W4 real-only): `normattiva-finestra-1975.json`
+ * e `normattiva-finestra-1995.json` non sono mai esistiti su disco e non
+ * devono stare in PERCORSI_ATTI_REALI.
+ */
+const PERCORSI_FANTASMI_RIMOSSI_13 = [
   "data/reali/normattiva-finestra-1975.json",
   "data/reali/normattiva-finestra-1995.json",
 ];
@@ -457,7 +464,7 @@ describe("reali-13: GU diretta Ultime (skip se assente)", () => {
 // ---------------------------------------------------------------------------
 
 describe("reali-13: wiring percorsi + dedup finestre", () => {
-  it("PERCORSI_ATTI_REALI contiene le 2 finestre e conserva gli storici", async () => {
+  it("PERCORSI_ATTI_REALI contiene le 2 finestre reali, senza fantasmi, e conserva gli storici", async () => {
     let testo: string;
     try {
       testo = await readFile(FILE_SOURCES, "utf8");
@@ -468,6 +475,9 @@ describe("reali-13: wiring percorsi + dedup finestre", () => {
     }
     for (const p of PERCORSI_FINESTRE_13_ATTESI) {
       expect(testo.includes(p), `PERCORSI_ATTI_REALI senza ${p}`).toBe(true);
+    }
+    for (const p of PERCORSI_FANTASMI_RIMOSSI_13) {
+      expect(testo.includes(p), `PERCORSI_ATTI_REALI contiene il fantasma ${p}`).toBe(false);
     }
     for (const p of PERCORSI_STORICI_13) {
       expect(testo.includes(p), `PERCORSI_ATTI_REALI ha perso ${p}`).toBe(true);

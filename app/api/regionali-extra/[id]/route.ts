@@ -1,5 +1,5 @@
 /**
- * GET /api/regionali-extra/[id] — dettaglio aggregato di una regionale-extra.
+ * GET /api/regionali-extra/[id] - dettaglio aggregato di una regionale-extra.
  * Consultazioni: `regionali-2024-liguria`, `regionali-2025-calabria`
  * (regione con per-lista, comuni solo affluenza, mai righe
  * candidato/nominativi; voti del presidente scartati in ingest).

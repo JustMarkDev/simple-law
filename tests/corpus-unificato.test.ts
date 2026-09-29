@@ -1,6 +1,6 @@
 import { beforeEach, describe, expect, it, vi } from "vitest";
 import { SEED_LAWS } from "@/lib/seed-data";
-import { getSeedLaws } from "@/lib/sources";
+import { azzeraCacheReali, getSeedLaws } from "@/lib/sources";
 import { countLaws, getStats, listLaws, resetPrisma } from "@/lib/db";
 import {
   attoEspansoToLawRecord,
@@ -17,14 +17,35 @@ beforeEach(() => {
   resetPrisma();
 });
 
+/**
+ * Opt-in legacy per le prove sul corpus sintetico: real-only di default,
+ * con `CORPUS_SINTETICO=1` si ripristinano 5 seed primi + varianti.
+ */
+function abilitaSintetico(): void {
+  vi.stubEnv("CORPUS_SINTETICO", "1");
+  azzeraCacheReali();
+  svuotaCacheCorpus();
+}
+
+function disabilitaSintetico(): void {
+  vi.stubEnv("CORPUS_SINTETICO", "");
+  azzeraCacheReali();
+  svuotaCacheCorpus();
+}
+
 const NUMERI_RISERVATI = [8, 36, 124, 133, 139];
 
 describe("corpus unificato: forma e sottoinsieme seed", () => {
-  it("ha totale >= 5 e primi 5 ELI == SEED_LAWS", () => {
-    const corpus = getSeedLaws();
-    expect(corpus.length).toBeGreaterThanOrEqual(5);
-    for (let i = 0; i < SEED_LAWS.length; i++) {
-      expect(corpus[i]?.eli).toBe(SEED_LAWS[i]?.eli);
+  it("ha totale >= 5 e primi 5 ELI == SEED_LAWS (opt-in sintetico)", () => {
+    abilitaSintetico();
+    try {
+      const corpus = getSeedLaws();
+      expect(corpus.length).toBeGreaterThanOrEqual(5);
+      for (let i = 0; i < SEED_LAWS.length; i++) {
+        expect(corpus[i]?.eli).toBe(SEED_LAWS[i]?.eli);
+      }
+    } finally {
+      disabilitaSintetico();
     }
   });
 
@@ -63,19 +84,24 @@ describe("corpus unificato: forma e sottoinsieme seed", () => {
     }
   });
 
-  it("non usa numeri riservati nelle varianti sintetiche (titoli Variante N)", () => {
-    const corpus = getSeedLaws();
-    // Solo le varianti generate (titolo "... — Variante N"), ovunque siano
-    // nel merge con reali e curati: i numeri ufficiali veri sono legittimi.
-    const varianti = corpus.filter((law) => law.titolo.includes(" — Variante "));
-    expect(varianti.length).toBeGreaterThan(0);
-    for (const law of varianti) {
-      const n = Number(law.numero);
-      if (Number.isFinite(n)) {
-        expect(NUMERI_RISERVATI, `numero riservato ${law.numero} in varianti`).not.toContain(
-          n,
-        );
+  it("non usa numeri riservati nelle varianti sintetiche (titoli Variante N, opt-in)", () => {
+    abilitaSintetico();
+    try {
+      const corpus = getSeedLaws();
+      // Solo le varianti generate (titolo "... Variante N"), ovunque siano
+      // nel merge con reali e curati: i numeri ufficiali veri sono legittimi.
+      const varianti = corpus.filter((law) => law.titolo.includes("Variante "));
+      expect(varianti.length).toBeGreaterThan(0);
+      for (const law of varianti) {
+        const n = Number(law.numero);
+        if (Number.isFinite(n)) {
+          expect(NUMERI_RISERVATI, `numero riservato ${law.numero} in varianti`).not.toContain(
+            n,
+          );
+        }
       }
+    } finally {
+      disabilitaSintetico();
     }
   });
 

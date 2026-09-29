@@ -9,7 +9,7 @@ import {
 } from '@/lib/quirinale-dati'
 
 export const metadata: Metadata = {
-  title: 'Quirinale — Atti firmati — Stato della Repubblica',
+  title: 'Quirinale - Atti firmati - Stato della Repubblica',
   description:
     'Gli atti recenti firmati dal Presidente della Repubblica da quirinale.it: decreti, disegni di legge autorizzati, nomine. Schede sintetiche, non testi di legge.',
 }
@@ -67,12 +67,12 @@ export default async function QuirinaleAttiPage({
             Presidenza della Repubblica
           </p>
           <h1 className="mt-2 font-serif text-3xl font-bold text-inchiostro dark:text-nebbia sm:text-4xl">
-            Quirinale — Atti recenti
+            Quirinale - Atti recenti
           </h1>
           <p className="mt-3 max-w-2xl text-sm leading-relaxed text-inchiostro-soft dark:text-nebbia-soft">
             Gli atti recenti del Presidente (emanazione di decreti, autorizzazioni a disegni di
-            legge, nomine) come elencati su quirinale.it. Sono schede sintetiche di una riga —
-            spesso «in attesa di pubblicazione» — non testi normativi completi.
+            legge, nomine) come elencati su quirinale.it. Sono schede sintetiche di una riga -
+            spesso «in attesa di pubblicazione» - non testi normativi completi.
           </p>
           <p className="mt-2 flex flex-wrap items-center gap-2 text-sm font-semibold text-inchiostro dark:text-nebbia" role="status">
             <span>{filtrati.length} atti mostrati · {tutte.length} caricati dalla pagina 1</span>
@@ -170,7 +170,7 @@ export default async function QuirinaleAttiPage({
             Fonte e licenza
           </h2>
           <p className="mt-2 text-sm leading-relaxed text-inchiostro-soft dark:text-nebbia-soft">
-            Fonte: {provenance.fonte ?? 'quirinale.it'} — {provenance.licenza ?? 'uso non commerciale con attribuzione, fa fede la Gazzetta Ufficiale'}
+            Fonte: {provenance.fonte ?? 'quirinale.it'} - {provenance.licenza ?? 'uso non commerciale con attribuzione, fa fede la Gazzetta Ufficiale'}
             {provenance.recuperatoIl ? ` · dati aggiornati al ${dataIT(provenance.recuperatoIl.slice(0, 10))}` : ''}.
             Pagina 1 dell&apos;archivio atti (schede di una riga, senza numero né stato: per i testi autentici fa fede la Gazzetta Ufficiale).
           </p>

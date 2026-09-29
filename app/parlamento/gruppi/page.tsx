@@ -5,7 +5,7 @@ import Footer from '@/components/Footer'
 import { tuttiDeputati, tuttiSenatori, contaPerGruppo, leggiProvenance } from '@/lib/parlamento-dati'
 
 export const metadata: Metadata = {
-  title: 'Gruppi parlamentari — Legislatura 19 — Stato della Repubblica',
+  title: 'Gruppi parlamentari - Legislatura 19 - Stato della Repubblica',
   description:
     'I gruppi della Camera con la consistenza contata dai dati e i gruppi correnti del Senato, legislatura 19.',
 }
@@ -137,7 +137,7 @@ export default async function GruppiPage() {
           </p>
           <p className="mt-2 max-w-2xl text-xs leading-relaxed text-inchiostro-faint dark:text-nebbia-faint">
             Nota: l&apos;archivio del Senato conserva 14 denominazioni storiche con date di inizio e fine
-            (2022–2024): non sono il conteggio corrente. Qui sotto solo i gruppi correnti, aggregati dai{' '}
+            (2022-2024): non sono il conteggio corrente. Qui sotto solo i gruppi correnti, aggregati dai{' '}
             {senatori.length} senatori.
           </p>
           {ordinatiSenato.length > 0 ? (
@@ -178,7 +178,7 @@ export default async function GruppiPage() {
             Fonti e licenze
           </h2>
           <p className="mt-2 text-sm leading-relaxed text-inchiostro-soft dark:text-nebbia-soft">
-            Camera: dati.camera.it — CC BY-SA 4.0 · Senato: dati.senato.it — CC BY 3.0 IT · legislatura 19
+            Camera: dati.camera.it - CC BY-SA 4.0 · Senato: dati.senato.it - CC BY 3.0 IT · legislatura 19
             {provCamera?.recuperatoIl ? ` · dati Camera aggiornati al ${dataIT(provCamera.recuperatoIl)}` : ''}
             {provSenato?.recuperatoIl ? ` · dati Senato aggiornati al ${dataIT(provSenato.recuperatoIl)}` : ''}.
           </p>

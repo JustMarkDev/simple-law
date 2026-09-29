@@ -53,7 +53,7 @@ function hrefSenza(query: Record<string, string>, chiave: string): string {
 
 export async function generateMetadata({ searchParams }: SenatoriProps): Promise<Metadata> {
   const base: Metadata = {
-    title: 'Senatori — Legislatura 19 — Stato della Repubblica',
+    title: 'Senatori - Legislatura 19 - Stato della Repubblica',
     description: 'I 212 senatori della Repubblica, legislatura 19: cerca per nome o filtra per gruppo.',
   }
   try {
@@ -70,9 +70,9 @@ export async function generateMetadata({ searchParams }: SenatoriProps): Promise
     const pezzi: string[] = []
     if (qValida) pezzi.push(`“${qValida}”`)
     if (gruppoValido) pezzi.push(gruppoValido)
-    const dettaglio = pezzi.length > 0 ? ` — ${pezzi.join(' · ')}` : ''
+    const dettaglio = pezzi.length > 0 ? ` - ${pezzi.join(' · ')}` : ''
     return {
-      title: `Senatori (${filtrati.length})${dettaglio} — Stato della Repubblica`,
+      title: `Senatori (${filtrati.length})${dettaglio} - Stato della Repubblica`,
       description: `Archivio di ${filtrati.length} senatori della legislatura 19${dettaglio}.`,
     }
   } catch {
@@ -383,7 +383,7 @@ export default async function SenatoriPage({ searchParams }: SenatoriProps) {
         )}
 
         <p className="mt-10 border-t border-regola pt-4 text-xs leading-relaxed text-inchiostro-soft dark:border-notte-deep dark:text-nebbia-soft">
-          Senato: dati.senato.it — CC BY 3.0 IT · legislatura 19
+          Senato: dati.senato.it - CC BY 3.0 IT · legislatura 19
           {provSenato?.recuperatoIl ? ` · aggiornati al ${dataIT(provSenato.recuperatoIl)}` : ''}.
         </p>
       </main>

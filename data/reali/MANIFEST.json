@@ -435,9 +435,9 @@
    "legislatura": null
   },
   {
-   "nome": "Camera dei deputati — Erogazioni ai partiti politici (art. 5, DL 149/2013)",
+   "nome": "Camera dei deputati - Erogazioni ai partiti politici (art. 5, DL 149/2013)",
    "url": "https://parlamento18.camera.it/199",
-   "licenza": "camera.it — solo riuso non commerciale con citazione fonte",
+   "licenza": "camera.it - solo riuso non commerciale con citazione fonte",
    "file": "finanziamenti-erogazioni-2024-2026.json",
    "conteggio": 50,
    "recuperatoIl": "2026-09-28T22:48:40.978Z",
@@ -514,8 +514,44 @@
    "conteggio": 76,
    "recuperatoIl": "2026-09-28T23:15:12.499Z",
    "legislatura": null
+  },
+  {
+   "nome": "Normattiva bff-opendata v1 (storico 2021)",
+   "url": "https://api.normattiva.it/t/normattiva.api/bff-opendata/v1/api/v1/ricerca/aggiornati",
+   "licenza": "riproduzione consentita con menzione di fonte, carattere non autentico e gratuito (Note legali dati.normattiva.it; solo la Gazzetta Ufficiale a stampa e' autentica)",
+   "file": "normattiva-storico-2021.json",
+   "conteggio": 71,
+   "recuperatoIl": "2026-09-28T23:48:25.306Z",
+   "legislatura": null
+  },
+  {
+   "nome": "Normattiva bff-opendata v1 (storico 2023)",
+   "url": "https://api.normattiva.it/t/normattiva.api/bff-opendata/v1/api/v1/ricerca/aggiornati",
+   "licenza": "riproduzione consentita con menzione di fonte, carattere non autentico e gratuito (Note legali dati.normattiva.it; solo la Gazzetta Ufficiale a stampa e' autentica)",
+   "file": "normattiva-storico-2023.json",
+   "conteggio": 59,
+   "recuperatoIl": "2026-09-28T23:48:25.306Z",
+   "legislatura": null
+  },
+  {
+   "nome": "Normattiva bff-opendata v1 (storico 2024)",
+   "url": "https://api.normattiva.it/t/normattiva.api/bff-opendata/v1/api/v1/ricerca/aggiornati",
+   "licenza": "riproduzione consentita con menzione di fonte, carattere non autentico e gratuito (Note legali dati.normattiva.it; solo la Gazzetta Ufficiale a stampa e' autentica)",
+   "file": "normattiva-storico-2024.json",
+   "conteggio": 70,
+   "recuperatoIl": "2026-09-28T23:48:25.306Z",
+   "legislatura": null
+  },
+  {
+   "nome": "Normattiva bff-opendata v1 (storico 2025)",
+   "url": "https://api.normattiva.it/t/normattiva.api/bff-opendata/v1/api/v1/ricerca/aggiornati",
+   "licenza": "riproduzione consentita con menzione di fonte, carattere non autentico e gratuito (Note legali dati.normattiva.it; solo la Gazzetta Ufficiale a stampa e' autentica)",
+   "file": "normattiva-storico-2025.json",
+   "conteggio": 68,
+   "recuperatoIl": "2026-09-28T23:48:25.306Z",
+   "legislatura": null
   }
  ],
- "generatoIl": "2026-09-28T23:15:12.499Z",
+ "generatoIl": "2026-09-28T23:48:25.306Z",
  "nota": "Dati ufficiali open data (57 voci, 57 file su disco, voci uniche). Ogni voce ha file esistente su disco e conteggio pari alla lunghezza reale verificata. Convenzione conteggi elezioni: i file con chiavi liste/regioni/comuni contano le liste (europee-2024: 15 liste; politiche-2022 Camera: 27, Senato: 31; regionali Umbria 23, Toscana 10, Liguria 20, Calabria 15, Campania 20, Puglia 13, Veneto 16); referendum-2025 conta i quesiti (5 quesiti, 20 regioni, 7896 comuni); eccezione documentata elezioni-regionali-2024-emilia-romagna.json che conta i comuni (330 comuni, 11 liste). I file >1MB non si committano: rigenerare via scripts/ingest-reale-*.ts. I gruppi Camera sono derivati dai deputati; le denominazioni Senato includono varianti storiche della leg. 19; i DDL/atti sono disegni e atti parlamentari, MAI leggi in vigore. Elezioni: solo aggregati per lista, zero nominativi."
 }

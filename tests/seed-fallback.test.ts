@@ -1,4 +1,4 @@
-import { describe, expect, it } from "vitest";
+import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import {
   attuativiRiepilogo,
   findLawByEli,
@@ -10,10 +10,28 @@ import {
 } from "@/components/seed-fallback";
 import { SEED_LAWS } from "@/lib/seed-data";
 import type { LawRecord } from "@/lib/seed-data";
+import { azzeraCacheReali } from "@/lib/sources";
+import { svuotaCacheCorpus } from "@/lib/corpus-unificato";
+import { svuotaCacheDb } from "@/lib/db";
 
 const ELI_133 = "/eli/id/2026/07/27/26G00155/sg";
 
 describe("seed-fallback (cio' che vede la UI)", () => {
+  // Queste prove verificano cio' che vede la UI col corpus legacy completo
+  // (5 seed primi + espansi): real-only di default, quindi opt-in.
+  beforeEach(() => {
+    vi.stubEnv("CORPUS_SINTETICO", "1");
+    azzeraCacheReali();
+    svuotaCacheCorpus();
+    svuotaCacheDb();
+  });
+  afterEach(() => {
+    vi.unstubAllEnvs();
+    azzeraCacheReali();
+    svuotaCacheCorpus();
+    svuotaCacheDb();
+  });
+
   it("carica il corpus (5 seed + espansi) e trova la DL 133/2026", async () => {
     const leggi = await loadLaws();
     expect(leggi.length).toBeGreaterThanOrEqual(5);

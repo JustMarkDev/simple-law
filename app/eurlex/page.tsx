@@ -15,7 +15,7 @@ import {
 } from '@/lib/eurlex-dati'
 
 export const metadata: Metadata = {
-  title: 'Diritto UE 2026 — Regolamenti e direttive — Stato della Repubblica',
+  title: 'Diritto UE 2026 - Regolamenti e direttive - Stato della Repubblica',
   description:
     'I 50 atti UE più recenti del 2026 da EUR-Lex CELLAR (dati ufficiali, riuso con attribuzione): regolamenti direttamente applicabili in Italia e direttive da recepire, con link alla scheda EUR-Lex.',
 }
@@ -156,7 +156,7 @@ export default async function EuropaPage({
             Unione europea · Anno 2026
           </p>
           <h1 className="mt-2 font-serif text-3xl font-bold text-inchiostro dark:text-nebbia sm:text-4xl">
-            Diritto UE rilevante per l&apos;Italia — 2026
+            Diritto UE rilevante per l&apos;Italia - 2026
           </h1>
           <p className="mt-3 max-w-2xl text-sm leading-relaxed text-inchiostro-soft dark:text-nebbia-soft">
             I 50 atti UE più recenti del 2026 dai dati ufficiali CELLAR: i regolamenti sono
@@ -282,10 +282,10 @@ export default async function EuropaPage({
             Fonte e licenza
           </h2>
           <p className="mt-2 text-sm leading-relaxed text-inchiostro-soft dark:text-nebbia-soft">
-            Fonte: {provenance.fonte ?? 'EUR-Lex CELLAR SPARQL'} — licenza{' '}
+            Fonte: {provenance.fonte ?? 'EUR-Lex CELLAR SPARQL'} - licenza{' '}
             {provenance.licenza ?? 'riuso con attribuzione Dec.2011/833/UE'} · universo 2026:{' '}
-            {provenance.universo2026 ?? '—'} atti (REG 2025–2026: {provenance.reg2025_2026 ?? '—'} ·
-            famiglia direttive 2024–2026: {provenance.dir2024_2026 ?? '—'}), qui i primi {tutte.length}
+            {provenance.universo2026 ?? '-'} atti (REG 2025-2026: {provenance.reg2025_2026 ?? '-'} ·
+            famiglia direttive 2024-2026: {provenance.dir2024_2026 ?? '-'}), qui i primi {tutte.length}
             {provenance.recuperatoIl ? ` · dati aggiornati al ${dataIT(provenance.recuperatoIl.slice(0, 10))}` : ''}.
           </p>
           <p className="mt-2 text-xs leading-relaxed text-inchiostro-faint dark:text-nebbia-faint">

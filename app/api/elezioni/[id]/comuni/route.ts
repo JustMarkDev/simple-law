@@ -1,5 +1,5 @@
 /**
- * GET /api/elezioni/[id]/comuni — affluenza comunale (solo aggregati,
+ * GET /api/elezioni/[id]/comuni - affluenza comunale (solo aggregati,
  * mai per-lista comunale, mai nominativi). Query: `q` (contains su
  * comune/provincia, max 100 ch, min 2, max 100 righe totali con filtro),
  * `regione` (match esatto, max 80 ch), `page` (1..10000), `per` (1..100,

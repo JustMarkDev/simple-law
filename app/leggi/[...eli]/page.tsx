@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import type { ReactNode } from 'react'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
+import { ArrowLeft01Icon, ArrowRight01Icon } from 'hugeicons-react'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import TrafficLight from '@/components/TrafficLight'
@@ -51,12 +52,10 @@ const PERSONA_LABEL: Record<string, string> = {
 }
 
 const GLOSSARIO: { termine: string; definizione: string }[] = [
-  { termine: 'ELI', definizione: 'Identificatore europeo delle norme: il codice univoco della scheda.' },
-  { termine: 'NIR', definizione: 'Identificatore nazionale della norma negli archivi italiani.' },
   { termine: 'AIR', definizione: 'Analisi di impatto: documento che stima costi e benefici della norma.' },
-  { termine: 'Attuativi', definizione: 'Decreti o regole successive senza cui la norma non si applica del tutto.' },
-  { termine: 'Omnibus', definizione: 'Testo che raccoglie materie diverse in un unico provvedimento.' },
-  { termine: 'Fiducia', definizione: 'Voto che lega l’approvazione della norma alla permanenza del Governo.' },
+  { termine: 'Attuativi', definizione: 'Regole successive senza cui la norma non vale del tutto.' },
+  { termine: 'Omnibus', definizione: 'Testo che raccoglie temi diversi in un unico provvedimento.' },
+  { termine: 'Fiducia', definizione: 'Voto che lega l’approvazione della norma al Governo in carica.' },
 ]
 
 const DOMINI_AMMESSI_JSONLD: readonly string[] = [
@@ -103,9 +102,9 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }: LeggeProps): Promise<Metadata> {
   const { eli } = await params
   const law = await loadLawByEli(eli.join('/'))
-  if (!law) return { title: 'Norma non trovata — Stato della Repubblica' }
+  if (!law) return { title: 'Norma non trovata - Stato della Repubblica' }
   const anno = law.dataEmanazione.slice(0, 4)
-  const titolo = `${law.titolo} — ${formatTipo(law.tipo)} ${law.numero}/${anno}`
+  const titolo = `${law.titolo} - ${formatTipo(law.tipo)} ${law.numero}/${anno}`
   return {
     title: titolo,
     description: law.sintesi,
@@ -132,7 +131,7 @@ function Riquadro({
 }) {
   const anchor = id ?? `riquadro-${numero}`
   return (
-    <section aria-labelledby={anchor} className={`scroll-mt-24 border p-5 sm:p-6 ${sfondo}`}>
+    <section aria-labelledby={anchor} className={`scroll-mt-24 rounded-2xl border p-5 sm:p-6 ${sfondo}`}>
       <h2 id={anchor} className="flex items-baseline gap-3">
         <span aria-hidden="true" className="font-serif text-3xl font-bold leading-none text-accento dark:text-accento-chiara">
           {String(numero).padStart(2, '0')}
@@ -157,7 +156,7 @@ function TabsPersona({ perTe, persone }: { perTe: Record<string, string>; person
     <div>
       <ul className="space-y-3">
         {attive.map((persona) => (
-          <li key={persona} className="border-l-2 border-regola bg-carta-soft p-4 dark:border-notte-deep dark:bg-notte">
+          <li key={persona} className="rounded-xl border-l-2 border-regola bg-carta-soft p-4 dark:border-notte-deep dark:bg-notte">
             <h3 className="text-sm font-semibold text-inchiostro dark:text-nebbia">{PERSONA_LABEL[persona] ?? persona}</h3>
             <p className="mt-1 text-sm leading-relaxed text-inchiostro-soft dark:text-nebbia-soft">{perTe[persona]}</p>
           </li>
@@ -211,70 +210,64 @@ export default async function LeggePage({ params }: LeggeProps) {
         <nav aria-label="Percorso" className="text-xs text-inchiostro-faint dark:text-nebbia-faint">
           <ol className="flex flex-wrap items-center gap-2">
             <li>
-              <Link href="/" className="inline-flex min-h-[44px] min-w-[44px] items-center hover:text-accento dark:hover:text-accento-chiara">
+              <Link href="/" className="inline-flex min-h-[48px] min-w-[48px] items-center rounded-xl hover:text-accento dark:hover:text-accento-chiara">
                 Home
               </Link>
             </li>
             <li aria-hidden="true">/</li>
             <li>
-              <Link href="/leggi" className="inline-flex min-h-[44px] min-w-[44px] items-center hover:text-accento dark:hover:text-accento-chiara">
+              <Link href="/leggi" className="inline-flex min-h-[48px] min-w-[48px] items-center rounded-xl hover:text-accento dark:hover:text-accento-chiara">
                 Leggi
               </Link>
             </li>
             <li aria-hidden="true">/</li>
-            <li aria-current="page" className="inline-flex min-h-[44px] items-center font-medium text-inchiostro dark:text-nebbia">
+            <li aria-current="page" className="inline-flex min-h-[48px] items-center font-medium text-inchiostro dark:text-nebbia">
               {formatTipo(law.tipo)} {law.numero}/{anno}
             </li>
           </ol>
         </nav>
 
-        <header className="mt-4 border-b-2 border-inchiostro pb-6 dark:border-nebbia">
+        <header className="mt-4 animate-comparsa-su rounded-2xl border border-regola bg-carta-soft p-6 dark:border-notte-deep dark:bg-notte-soft sm:p-8">
           <div className="flex flex-wrap items-center gap-2 text-xs">
-            <span className="bg-inchiostro px-3 py-1 font-semibold uppercase tracking-[0.14em] text-carta dark:bg-nebbia dark:text-notte">
+            <span className="rounded-lg bg-inchiostro px-3 py-1 font-semibold uppercase tracking-[0.14em] text-carta dark:bg-nebbia dark:text-notte">
               {formatTipo(law.tipo)} {law.numero}/{anno}
             </span>
             {law.dimostrativo ? (
-              <span className="border border-amber-400 px-3 py-1 font-semibold text-amber-800 dark:border-amber-500/60 dark:text-amber-300">
-                Scheda dimostrativa: dati di esempio, non ufficiali
+              <span className="rounded-lg border border-amber-400 px-3 py-1 font-semibold text-amber-800 dark:border-amber-500/60 dark:text-amber-300">
+                Scheda di esempio: dati inventati per provare
               </span>
             ) : (
-              <span className="border border-emerald-600 px-3 py-1 font-semibold text-emerald-800 dark:border-emerald-500/60 dark:text-emerald-300">
-                Dato ufficiale: da open data istituzionali (vedi Fonti ufficiali)
+              <span className="rounded-lg border border-emerald-600 px-3 py-1 font-semibold text-emerald-800 dark:border-emerald-500/60 dark:text-emerald-300">
+                Testo vero: dai dati ufficiali (vedi sotto)
               </span>
             )}
-            <span className={`inline-flex items-center gap-1.5 px-3 py-1 font-semibold ring-1 ${meta.bg} ${meta.text} ${meta.ring}`}>
+            <span className={`inline-flex items-center gap-1.5 rounded-lg px-3 py-1 font-semibold ring-1 ${meta.bg} ${meta.text} ${meta.ring}`}>
               <span aria-hidden="true" className={`h-2 w-2 rounded-full ${meta.dot}`} />
               {meta.label}
             </span>
           </div>
-          <h1 id="titolo-scheda" tabIndex={-1} className="mt-5 max-w-4xl font-serif text-2xl font-bold leading-tight text-inchiostro outline-none focus-visible:outline focus-visible:outline-2 focus-visible:outline-inchiostro dark:text-nebbia dark:focus-visible:outline-nebbia sm:text-3xl lg:text-4xl">
+          <h1 id="titolo-scheda" tabIndex={-1} className="mt-5 max-w-4xl text-2xl font-bold leading-tight text-inchiostro outline-none focus-visible:outline focus-visible:outline-2 focus-visible:outline-inchiostro dark:text-nebbia dark:focus-visible:outline-nebbia sm:text-3xl lg:text-4xl">
             {law.titolo}
           </h1>
           <dl className="mt-4 flex flex-wrap gap-x-6 gap-y-2 text-xs text-inchiostro-soft dark:text-nebbia-soft">
             <div className="flex gap-1.5">
-              <dt className="font-semibold">Emanazione:</dt>
+              <dt className="font-semibold">Data:</dt>
               <dd>
                 <time dateTime={law.dataEmanazione}>{formatDate(law.dataEmanazione)}</time>
               </dd>
             </div>
             <div className="flex gap-1.5">
-              <dt className="font-semibold">Stato:</dt>
+              <dt className="font-semibold">A che punto è:</dt>
               <dd>{meta.label}</dd>
             </div>
             <div className="flex gap-1.5">
-              <dt className="font-semibold">Leggibilità:</dt>
-              <dd>{law.gulpease}/100</dd>
+              <dt className="font-semibold">Lettura:</dt>
+              <dd className="font-mono tabular-nums">{law.gulpease}/100</dd>
             </div>
             <div className="flex gap-1.5">
-              <dt className="font-semibold">Qualità:</dt>
-              <dd>{law.qualita}/100</dd>
+              <dt className="font-semibold">Scheda:</dt>
+              <dd className="font-mono tabular-nums">{law.qualita}/100</dd>
             </div>
-            {law.nir && (
-              <div className="flex min-w-0 gap-1.5">
-                <dt className="font-semibold">NIR:</dt>
-                <dd className="break-all font-mono text-[11px]">{law.nir}</dd>
-              </div>
-            )}
           </dl>
           <div className="mt-5">
             <QualityBadges
@@ -286,14 +279,14 @@ export default async function LeggePage({ params }: LeggeProps) {
           </div>
           <nav aria-label="Sommario della scheda" className="mt-5 flex flex-wrap gap-2 text-xs print:hidden">
             {[
-              ['in-10-secondi', 'In 10 secondi'],
+              ['in-10-secondi', 'Cosa dice'],
               ['riguarda-te', 'Riguarda te'],
               ['cosa-fare', 'Cosa fare'],
-              ['funziona', 'Funziona già'],
-              ['pro-contro', 'Bene o male'],
-              ['fonti', 'Fonti'],
+              ['funziona', 'A che punto è'],
+              ['pro-contro', 'Cosa va e cosa no'],
+              ['fonti', 'Testi veri'],
             ].map(([id, label]) => (
-              <a key={id} href={`#${id}`} className="inline-flex min-h-[44px] min-w-[44px] items-center border border-regola px-3 py-2 hover:border-inchiostro focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-inchiostro dark:border-notte-deep dark:hover:border-nebbia dark:focus-visible:outline-nebbia">
+              <a key={id} href={`#${id}`} className="inline-flex min-h-[48px] min-w-[48px] items-center rounded-xl border border-regola px-3 py-2 hover:border-inchiostro focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-inchiostro dark:border-notte-deep dark:hover:border-nebbia dark:focus-visible:outline-nebbia">
                 {label}
               </a>
             ))}
@@ -302,28 +295,27 @@ export default async function LeggePage({ params }: LeggeProps) {
             <CondividiStampa titolo={law.titolo} />
             <PulsantePreferito eli={law.eli} />
           </div>
-          <p className="mt-4 flex items-start gap-2 border-l-2 border-regola pl-3 text-xs leading-relaxed text-inchiostro-faint dark:border-notte-deep dark:text-nebbia-faint">
+          <p className="mt-4 flex items-start gap-2 rounded-xl border-l-2 border-regola bg-carta py-2 pl-3 pr-3 text-xs leading-relaxed text-inchiostro-faint dark:border-notte-deep dark:bg-notte dark:text-nebbia-faint">
             <span className="font-semibold uppercase tracking-wide text-inchiostro-soft dark:text-nebbia-soft">
-              Semplificazione automatica.
+              Testo semplificato.
             </span>
-            I cinque riquadri sono derivati dai dati della scheda e, quando disponibili, dal testo memorizzato. Nessun
-            servizio esterno, nessuna chiave richiesta.
+            I riquadri sotto nascono dai dati della scheda. Nessun servizio esterno, nessuna chiave richiesta.
           </p>
           <Disclaimer variant="compact" className="mt-3" />
         </header>
 
         <div className="mt-8 grid gap-4 lg:grid-cols-2">
-          <Riquadro numero={1} titolo="In 10 secondi" id="in-10-secondi">
-            <p className="capolettera text-lg font-semibold leading-snug text-inchiostro dark:text-nebbia">
+          <Riquadro numero={1} titolo="Cosa dice" id="in-10-secondi">
+            <p className="text-lg font-semibold leading-snug text-inchiostro dark:text-nebbia">
               {semplificata.in10Secondi}
             </p>
             {!law.dimostrativo && (
               <p className="mt-3 text-xs leading-relaxed text-inchiostro-faint dark:text-nebbia-faint">
-                Cifre e date dalle fonti elencate sotto (vedi Fonti ufficiali).
+                Cifre e date dai testi veri elencati sotto.
               </p>
             )}
-            <details className="mt-4 border border-regola bg-carta-soft p-3 dark:border-notte-deep dark:bg-notte">
-              <summary className="inline-flex min-h-[44px] cursor-pointer items-center text-sm font-semibold text-inchiostro focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-inchiostro dark:text-nebbia dark:focus-visible:outline-nebbia">
+            <details className="mt-4 rounded-xl border border-regola bg-carta-soft p-3 dark:border-notte-deep dark:bg-notte">
+              <summary className="inline-flex min-h-[48px] cursor-pointer items-center rounded-xl text-sm font-semibold text-inchiostro focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-inchiostro dark:text-nebbia dark:focus-visible:outline-nebbia">
                 Parole da conoscere
               </summary>
               <dl className="mt-2 space-y-2">
@@ -351,85 +343,85 @@ export default async function LeggePage({ params }: LeggeProps) {
 
           <Riquadro
             numero={4}
-            titolo="Funziona già?"
+            titolo="A che punto è"
             id="funziona"
             sfondo={`border-transparent ring-1 ${meta.bg} ${meta.ring}`}
           >
             <TrafficLight stato={law.stato} motivo={semplificata.statoLavora.motivo} />
             <p className="mt-4 text-sm leading-relaxed text-inchiostro-soft dark:text-nebbia-soft">
-              <dfn title="Decreti o regole successive senza cui la norma non si applica del tutto">Attuativi</dfn>:{" "}
+              <dfn title="Regole successive senza cui la norma non vale del tutto">Attuativi</dfn>:{" "}
               {attuativiRiepilogo(law.attuativi)}
             </p>
           </Riquadro>
         </div>
 
         <div className="mt-4">
-          <Riquadro numero={5} titolo="Bene o male?" id="pro-contro">
+          <Riquadro numero={5} titolo="Cosa va e cosa no" id="pro-contro">
             <div className="grid gap-6 sm:grid-cols-2">
               <div>
-                <h3 className="text-sm font-semibold text-emerald-700 dark:text-emerald-300">Punti a favore</h3>
+                <h3 className="text-sm font-semibold text-emerald-700 dark:text-emerald-300">Cosa va</h3>
                 <ul className="mt-2 space-y-2">
                   {semplificata.proContro.pro.map((voce) => (
                     <li key={voce} className="flex gap-2 text-sm leading-relaxed text-inchiostro-soft dark:text-nebbia-soft">
-                      <span aria-hidden="true" className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-emerald-500" />
+                      <span aria-hidden="true" className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-[2px] bg-emerald-500" />
                       {voce}
                     </li>
                   ))}
                 </ul>
               </div>
               <div>
-                <h3 className="text-sm font-semibold text-red-700 dark:text-red-300">Punti critici</h3>
+                <h3 className="text-sm font-semibold text-red-700 dark:text-red-300">Cosa non va</h3>
                 <ul className="mt-2 space-y-2">
                   {semplificata.proContro.contro.map((voce) => (
                     <li key={voce} className="flex gap-2 text-sm leading-relaxed text-inchiostro-soft dark:text-nebbia-soft">
-                      <span aria-hidden="true" className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-red-500" />
+                      <span aria-hidden="true" className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-[2px] bg-red-500" />
                       {voce}
                     </li>
                   ))}
                 </ul>
               </div>
             </div>
-            <dl className="mt-6 grid gap-px border border-regola bg-regola pt-0 dark:border-notte-deep dark:bg-notte-deep sm:grid-cols-3">
+            <dl className="mt-6 grid gap-px overflow-hidden rounded-xl border border-regola bg-regola pt-0 dark:border-notte-deep dark:bg-notte-deep sm:grid-cols-3">
               <div className="bg-carta p-3 dark:bg-notte">
-                <dt className="text-xs font-semibold text-inchiostro-soft dark:text-nebbia-soft">Qualità complessiva</dt>
-                <dd className="mt-1 font-serif text-lg font-bold text-inchiostro dark:text-nebbia">{law.qualita}/100</dd>
+                <dt className="text-xs font-semibold text-inchiostro-soft dark:text-nebbia-soft">Scheda completa</dt>
+                <dd className="mt-1 font-mono text-lg font-bold tabular-nums text-inchiostro dark:text-nebbia">{law.qualita}/100</dd>
               </div>
               <div className="bg-carta p-3 dark:bg-notte">
-                <dt className="text-xs font-semibold text-inchiostro-soft dark:text-nebbia-soft">Leggibilità Gulpease</dt>
-                <dd className="mt-1 font-serif text-lg font-bold text-inchiostro dark:text-nebbia">{law.gulpease}/100</dd>
+                <dt className="text-xs font-semibold text-inchiostro-soft dark:text-nebbia-soft">Facile da leggere</dt>
+                <dd className="mt-1 font-mono text-lg font-bold tabular-nums text-inchiostro dark:text-nebbia">{law.gulpease}/100</dd>
               </div>
               <div className="bg-carta p-3 dark:bg-notte">
-                <dt className="text-xs font-semibold text-inchiostro-soft dark:text-nebbia-soft">Attuativi mancanti</dt>
-                <dd className="mt-1 font-serif text-lg font-bold text-inchiostro dark:text-nebbia">{attuativiMancanti}</dd>
+                <dt className="text-xs font-semibold text-inchiostro-soft dark:text-nebbia-soft">Passaggi mancanti</dt>
+                <dd className="mt-1 font-mono text-lg font-bold tabular-nums text-inchiostro dark:text-nebbia">{attuativiMancanti}</dd>
               </div>
             </dl>
           </Riquadro>
         </div>
 
         <div className="mt-6 grid gap-3 lg:grid-cols-2">
-          <section aria-labelledby="stato-attuativo-titolo" className="scroll-mt-24 border border-regola bg-carta p-5 dark:border-notte-deep dark:bg-notte-soft sm:p-6">
-            <h2 id="stato-attuativo-titolo" className="font-serif text-lg font-bold text-inchiostro dark:text-nebbia">
-              Stato attuativo
+          <section aria-labelledby="stato-attuativo-titolo" className="scroll-mt-24 rounded-2xl border border-regola bg-carta p-5 dark:border-notte-deep dark:bg-notte-soft sm:p-6">
+            <h2 id="stato-attuativo-titolo" className="text-lg font-bold text-inchiostro dark:text-nebbia">
+              Vale già?
             </h2>
             <p className="mt-1 text-sm leading-relaxed text-inchiostro-soft dark:text-nebbia-soft">
               {attuativiRiepilogo(law.attuativi)}
             </p>
-            <dl className="mt-4 grid grid-cols-3 gap-px border border-regola bg-regola dark:border-notte-deep dark:bg-notte-deep">
+            <dl className="mt-4 grid grid-cols-3 gap-px overflow-hidden rounded-xl border border-regola bg-regola dark:border-notte-deep dark:bg-notte-deep">
               <div className="bg-carta p-3 dark:bg-notte">
-                <dt className="text-xs text-inchiostro-soft dark:text-nebbia-soft">Adottati</dt>
-                <dd className="mt-1 font-serif text-lg font-bold tabular-nums text-inchiostro dark:text-nebbia">
+                <dt className="text-xs text-inchiostro-soft dark:text-nebbia-soft">Pronti</dt>
+                <dd className="mt-1 font-mono text-lg font-bold tabular-nums text-inchiostro dark:text-nebbia">
                   {law.attuativi.adottati}
                 </dd>
               </div>
               <div className="bg-carta p-3 dark:bg-notte">
-                <dt className="text-xs text-inchiostro-soft dark:text-nebbia-soft">Da adottare</dt>
-                <dd className="mt-1 font-serif text-lg font-bold tabular-nums text-inchiostro dark:text-nebbia">
+                <dt className="text-xs text-inchiostro-soft dark:text-nebbia-soft">Da fare</dt>
+                <dd className="mt-1 font-mono text-lg font-bold tabular-nums text-inchiostro dark:text-nebbia">
                   {law.attuativi.daAdottare}
                 </dd>
               </div>
               <div className="bg-carta p-3 dark:bg-notte">
                 <dt className="text-xs text-inchiostro-soft dark:text-nebbia-soft">Scaduti</dt>
-                <dd className="mt-1 font-serif text-lg font-bold tabular-nums text-inchiostro dark:text-nebbia">
+                <dd className="mt-1 font-mono text-lg font-bold tabular-nums text-inchiostro dark:text-nebbia">
                   {law.attuativi.scaduti}
                 </dd>
               </div>
@@ -439,21 +431,21 @@ export default async function LeggePage({ params }: LeggeProps) {
             </p>
           </section>
 
-          <section aria-labelledby="fonti-ufficiali" className="scroll-mt-24 border border-regola bg-carta p-5 dark:border-notte-deep dark:bg-notte-soft sm:p-6">
-            <h2 id="fonti-ufficiali" className="font-serif text-lg font-bold text-inchiostro dark:text-nebbia">
+          <section aria-labelledby="fonti-ufficiali" className="scroll-mt-24 rounded-2xl border border-regola bg-carta p-5 dark:border-notte-deep dark:bg-notte-soft sm:p-6">
+            <h2 id="fonti-ufficiali" className="text-lg font-bold text-inchiostro dark:text-nebbia">
               Fonti ufficiali
             </h2>
             <p className="mt-1 text-sm text-inchiostro-soft dark:text-nebbia-soft">
-              Apri i testi originali. I link si aprono in una nuova scheda.
+              Apri i testi veri. Si aprono in una nuova pagina.
             </p>
             <FontiList fonti={law.fonti} modalita="block" className="mt-4" />
           </section>
 
-          <section aria-labelledby="trasparenza-iter" className="scroll-mt-24 border border-regola bg-carta p-5 dark:border-notte-deep dark:bg-notte-soft sm:p-6">
-            <h2 id="trasparenza-iter" className="font-serif text-lg font-bold text-inchiostro dark:text-nebbia">Trasparenza dell’iter</h2>
+          <section aria-labelledby="trasparenza-iter" className="scroll-mt-24 rounded-2xl border border-regola bg-carta p-5 dark:border-notte-deep dark:bg-notte-soft sm:p-6">
+            <h2 id="trasparenza-iter" className="text-lg font-bold text-inchiostro dark:text-nebbia">Come è nata</h2>
             <dl className="mt-4 space-y-3 text-sm">
               <div className="flex items-center justify-between gap-4 border-b border-regola pb-3 dark:border-notte-deep">
-                <dt className="text-inchiostro-soft dark:text-nebbia-soft">Analisi di impatto</dt>
+                <dt className="text-inchiostro-soft dark:text-nebbia-soft">Studio prima della legge</dt>
                 <dd className="font-semibold text-inchiostro dark:text-nebbia">{AIR_LABEL[law.air] ?? law.air}</dd>
               </div>
               <div className="flex items-center justify-between gap-4 border-b border-regola pb-3 dark:border-notte-deep">
@@ -461,12 +453,12 @@ export default async function LeggePage({ params }: LeggeProps) {
                 <dd className="font-semibold text-inchiostro dark:text-nebbia">{law.fiducia ? 'Sì' : 'No'}</dd>
               </div>
               <div className="flex items-center justify-between gap-4 border-b border-regola pb-3 dark:border-notte-deep">
-                <dt className="text-inchiostro-soft dark:text-nebbia-soft">Testo omnibus</dt>
+                <dt className="text-inchiostro-soft dark:text-nebbia-soft">Testo con molti temi</dt>
                 <dd className="font-semibold text-inchiostro dark:text-nebbia">{law.omnibus ? 'Sì' : 'No'}</dd>
               </div>
               <div className="flex items-center justify-between gap-4">
-                <dt className="text-inchiostro-soft dark:text-nebbia-soft">Punteggio qualità</dt>
-                <dd className="font-semibold text-inchiostro dark:text-nebbia">{law.qualita}/100</dd>
+                <dt className="text-inchiostro-soft dark:text-nebbia-soft">Scheda completa</dt>
+                <dd className="font-mono font-semibold tabular-nums text-inchiostro dark:text-nebbia">{law.qualita}/100</dd>
               </div>
             </dl>
           </section>
@@ -474,7 +466,7 @@ export default async function LeggePage({ params }: LeggeProps) {
 
         {ministriCollegati.length > 0 && (
           <section aria-labelledby="ministri-collegati" className="mt-8 scroll-mt-24">
-            <h2 id="ministri-collegati" className="font-serif text-lg font-bold text-inchiostro dark:text-nebbia">
+            <h2 id="ministri-collegati" className="text-lg font-bold text-inchiostro dark:text-nebbia">
               Ministri collegati
             </h2>
             <ul className="mt-4 flex flex-wrap gap-2">
@@ -482,7 +474,7 @@ export default async function LeggePage({ params }: LeggeProps) {
                 <li key={minister.slug}>
                   <Link
                     href={ministerHref(minister)}
-                    className="inline-flex min-h-[44px] flex-col justify-center border border-regola bg-carta px-4 py-2 transition-colors hover:border-inchiostro focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-inchiostro dark:border-notte-deep dark:bg-notte-soft dark:hover:border-nebbia dark:focus-visible:outline-nebbia"
+                    className="inline-flex min-h-[48px] flex-col justify-center rounded-xl border border-regola bg-carta px-4 py-2 transition-colors hover:border-inchiostro focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-inchiostro dark:border-notte-deep dark:bg-notte-soft dark:hover:border-nebbia dark:focus-visible:outline-nebbia"
                   >
                     <span className="text-sm font-semibold text-inchiostro dark:text-nebbia">{minister.nome}</span>
                     <span className="text-xs text-inchiostro-faint dark:text-nebbia-faint">{minister.dicastero}</span>
@@ -495,12 +487,12 @@ export default async function LeggePage({ params }: LeggeProps) {
 
         {collegate.length > 0 && (
           <section aria-labelledby="collegate" className="mt-10 scroll-mt-24">
-            <h2 id="collegate" className="font-serif text-lg font-bold text-inchiostro dark:text-nebbia">
-              Norme collegate
+            <h2 id="collegate" className="text-lg font-bold text-inchiostro dark:text-nebbia">
+              Norme vicine
             </h2>
             <ul className="mt-4 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
               {collegate.map((altra) => (
-                <li key={altra.eli} className="flex" style={{ contentVisibility: 'auto' }}>
+                <li key={altra.eli} className="flex overflow-hidden rounded-2xl" style={{ contentVisibility: 'auto' }}>
                   <LawCard law={altra} headingLevel="h3" />
                 </li>
               ))}
@@ -513,15 +505,18 @@ export default async function LeggePage({ params }: LeggeProps) {
             <Link
               href={`/leggi/${precedente.eli}`}
               rel="prev"
-              className="inline-flex min-h-[44px] flex-col justify-center border border-regola px-4 py-3 hover:border-inchiostro focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-inchiostro dark:border-notte-deep dark:hover:border-nebbia dark:focus-visible:outline-nebbia"
+              className="inline-flex min-h-[48px] flex-col justify-center rounded-xl border border-regola px-4 py-3 hover:border-inchiostro focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-inchiostro dark:border-notte-deep dark:hover:border-nebbia dark:focus-visible:outline-nebbia"
             >
-              <span className="text-xs uppercase tracking-wide text-inchiostro-faint dark:text-nebbia-faint">← Precedente per data</span>
+              <span className="inline-flex items-center gap-1.5 text-xs uppercase tracking-wide text-inchiostro-faint dark:text-nebbia-faint">
+                <ArrowLeft01Icon size={14} aria-hidden="true" />
+                Prima di questa
+              </span>
               <span className="mt-1 text-sm font-semibold text-inchiostro dark:text-nebbia">
                 {formatTipo(precedente.tipo)} {precedente.numero}/{precedente.dataEmanazione.slice(0, 4)}
               </span>
             </Link>
           ) : (
-            <span className="inline-flex min-h-[44px] items-center px-4 py-3 text-xs text-inchiostro-faint dark:text-nebbia-faint">
+            <span className="inline-flex min-h-[48px] items-center rounded-xl px-4 py-3 text-xs text-inchiostro-faint dark:text-nebbia-faint">
               È la norma meno recente dell’elenco.
             </span>
           )}
@@ -529,15 +524,18 @@ export default async function LeggePage({ params }: LeggeProps) {
             <Link
               href={`/leggi/${successiva.eli}`}
               rel="next"
-              className="inline-flex min-h-[44px] flex-col justify-center border border-regola px-4 py-3 text-right hover:border-inchiostro focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-inchiostro dark:border-notte-deep dark:hover:border-nebbia dark:focus-visible:outline-nebbia"
+              className="inline-flex min-h-[48px] flex-col justify-center rounded-xl border border-regola px-4 py-3 text-right hover:border-inchiostro focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-inchiostro dark:border-notte-deep dark:hover:border-nebbia dark:focus-visible:outline-nebbia"
             >
-              <span className="text-xs uppercase tracking-wide text-inchiostro-faint dark:text-nebbia-faint">Successiva per data →</span>
+              <span className="inline-flex items-center justify-end gap-1.5 text-xs uppercase tracking-wide text-inchiostro-faint dark:text-nebbia-faint">
+                Dopo questa
+                <ArrowRight01Icon size={14} aria-hidden="true" />
+              </span>
               <span className="mt-1 text-sm font-semibold text-inchiostro dark:text-nebbia">
                 {formatTipo(successiva.tipo)} {successiva.numero}/{successiva.dataEmanazione.slice(0, 4)}
               </span>
             </Link>
           ) : (
-            <span className="inline-flex min-h-[44px] items-center justify-end px-4 py-3 text-xs text-inchiostro-faint dark:text-nebbia-faint">
+            <span className="inline-flex min-h-[48px] items-center justify-end rounded-xl px-4 py-3 text-xs text-inchiostro-faint dark:text-nebbia-faint">
               È la norma più recente dell’elenco.
             </span>
           )}
@@ -546,16 +544,11 @@ export default async function LeggePage({ params }: LeggeProps) {
         <div className="mt-6 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
           <Link
             href="/leggi"
-            className="inline-flex min-h-[44px] min-w-[44px] items-center gap-2 text-sm font-semibold text-accento underline underline-offset-2 dark:text-accento-chiara"
+            className="inline-flex min-h-[48px] min-w-[48px] items-center gap-2 rounded-xl text-sm font-semibold text-accento underline underline-offset-2 dark:text-accento-chiara"
           >
-            <svg aria-hidden="true" viewBox="0 0 24 24" className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="2">
-              <path strokeLinecap="round" strokeLinejoin="round" d="M19 12H5m6 6-6-6 6-6" />
-            </svg>
+            <ArrowLeft01Icon size={16} aria-hidden="true" />
             Torna all’elenco
           </Link>
-          <p className="text-xs text-inchiostro-faint dark:text-nebbia-faint">
-            Identificatore ELI: <span className="break-all font-mono">{law.eli}</span>
-          </p>
         </div>
       </main>
       <Footer />

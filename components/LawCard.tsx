@@ -1,6 +1,9 @@
+'use client'
+
 import Link from 'next/link'
+import { motion, useReducedMotion } from 'motion/react'
+import { ArrowRight01Icon } from 'hugeicons-react'
 import TrafficLight from './TrafficLight'
-import QualityBadges from './QualityBadges'
 import Evidenzia from './Evidenzia'
 import PulsantePreferito from './PulsantePreferito'
 import { formatDate, lawHref, STATO_META, tipoLabel, type Law } from './seed-fallback'
@@ -13,48 +16,50 @@ interface LawCardProps {
   evidenzia?: string
 }
 
-function attuativiMancanti(law: Law): number {
+function passiMancanti(law: Law): number {
   return law.attuativi.daAdottare + law.attuativi.scaduti
 }
 
-/** Card di una legge. Solo il titolo è cliccabile (mai stretched-link). Lista con `contentVisibility: auto`. */
+/*
+ * Liquid-glass approssimato (onesto: nessuna libreria ufficiale).
+ * Solo backdrop-blur + tinta calda traslucida + bordo 1px bianco/40 +
+ * ombra interna sottile. Fallback tinta piena quando backdrop-filter
+ * manca (supports-*) e con prefers-reduced-transparency.
+ */
+const VETRO_CLASSE =
+  'border-white/40 bg-carta-soft/80 supports-[backdrop-filter]:bg-carta-soft/70 supports-[backdrop-filter]:backdrop-blur-md shadow-[inset_0_1px_0_rgba(255,255,255,0.4),0_12px_32px_rgba(26,23,20,0.08)] [@media(prefers-reduced-transparency:reduce)]:bg-carta-soft [@media(prefers-reduced-transparency:reduce)]:backdrop-blur-0 [@media(prefers-reduced-transparency:reduce)]:shadow-none dark:border-white/10 dark:bg-notte-soft/85 dark:supports-[backdrop-filter]:bg-notte-soft/75 dark:supports-[backdrop-filter]:backdrop-blur-md dark:[@media(prefers-reduced-transparency:reduce)]:bg-notte-soft'
+
+/** Card di una legge. Solo il titolo è cliccabile più una CTA esplicita. */
 export default function LawCard({ law, featured = false, persona, headingLevel = 'h3', evidenzia = '' }: LawCardProps) {
   const Heading = headingLevel
   const href = lawHref(law)
   const meta = STATO_META[law.stato]
+  const ridotto = useReducedMotion()
   const personaTesto = persona && persona !== 'tutti' ? law.semplificata.perTe[persona] : undefined
   const titoloId = `titolo-${law.eli.replace(/[^a-zA-Z0-9]+/g, '-').replace(/^-+|-+$/g, '').slice(0, 80) || 'norma'}`
+  const mancanti = passiMancanti(law)
 
   if (featured) {
-    return (
-      <article
-        aria-labelledby={titoloId}
-        className="relative scroll-mt-24 overflow-hidden border border-inchiostro bg-carta-soft p-6 pl-8 dark:border-notte-deep dark:bg-notte-soft sm:p-8 sm:pl-10"
-      >
-        <span aria-hidden="true" className="absolute inset-y-0 left-0 flex w-2 flex-col">
-          <span className="flex-1 bg-tricolore-verde" />
-          <span className="flex-1 bg-tricolore-bianco" />
-          <span className="flex-1 bg-tricolore-rosso" />
-        </span>
-
+    const corpo = (
+      <>
         <div className="flex flex-wrap items-center gap-2">
-          <span className="border border-regola px-3 py-1.5 text-xs font-medium text-inchiostro-soft dark:border-notte-deep dark:text-nebbia-soft">
+          <span className="rounded-lg bg-white/60 px-3 py-1.5 text-xs font-bold text-inchiostro-soft dark:bg-black/30 dark:text-nebbia-soft">
             {tipoLabel(law)}
           </span>
           {law.dimostrativo && (
-            <span className="border border-regola px-3 py-1.5 text-xs font-medium text-inchiostro-soft dark:border-notte-deep dark:text-nebbia-soft">
-              Scheda dimostrativa
+            <span className="rounded-lg border border-regola px-3 py-1.5 text-xs font-semibold text-inchiostro-soft dark:border-notte-deep dark:text-nebbia-soft">
+              Scheda di prova
             </span>
           )}
         </div>
 
         <Heading
           id={titoloId}
-          className="mt-4 font-serif text-2xl font-bold leading-tight text-inchiostro dark:text-nebbia sm:text-3xl"
+          className="mt-4 text-2xl font-extrabold leading-tight text-inchiostro dark:text-nebbia sm:text-3xl"
         >
           <Link
             href={href}
-            className="underline-offset-4 hover:text-accento hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-inchiostro dark:hover:text-accento-chiara dark:focus-visible:outline-nebbia"
+            className="underline-offset-4 hover:text-accento hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accento dark:hover:text-accento-chiara dark:focus-visible:outline-accento-chiara"
           >
             {law.titolo}
           </Link>
@@ -64,21 +69,21 @@ export default function LawCard({ law, featured = false, persona, headingLevel =
           {law.sintesi}
         </p>
 
-        <p className="mt-4 border-l-2 border-tricolore-rosso bg-carta px-4 py-3 text-sm font-medium leading-relaxed text-inchiostro dark:bg-notte dark:text-nebbia">
+        <p className="mt-4 rounded-xl border-l-4 border-accento bg-carta px-4 py-3 text-sm font-medium leading-relaxed text-inchiostro dark:bg-notte dark:text-nebbia">
           <span className="mr-1 font-bold">In 10 secondi:</span>
           {law.semplificata.in10Secondi}
         </p>
 
         <div className="mt-5 flex flex-wrap items-center gap-x-6 gap-y-3">
-          <span className="inline-flex items-center gap-2 rounded bg-white p-1.5 ring-1 ring-regola dark:bg-black dark:ring-notte-deep">
+          <span className="inline-flex items-center gap-2 rounded-xl bg-white p-2 ring-1 ring-regola dark:bg-black dark:ring-notte-deep">
             <TrafficLight stato={law.stato} showLabel={false} />
-            <span className="inline-flex items-center gap-1.5 pr-1 text-sm font-semibold text-inchiostro dark:text-nebbia">
+            <span className="inline-flex items-center gap-1.5 pr-1 text-sm font-bold text-inchiostro dark:text-nebbia">
               <span aria-hidden="true" className={`h-2 w-2 rounded-full ${meta.dot}`} />
-              {meta.label}
+              A che punto è: {meta.label}
             </span>
           </span>
           <span className="text-sm text-inchiostro-soft dark:text-nebbia-soft">
-            <span className="sr-only">Data di emanazione: </span>
+            <span className="sr-only">Data: </span>
             <time dateTime={law.dataEmanazione}>{formatDate(law.dataEmanazione)}</time>
           </span>
         </div>
@@ -87,53 +92,84 @@ export default function LawCard({ law, featured = false, persona, headingLevel =
           {law.semplificata.statoLavora.motivo}
         </p>
 
-        <div className="mt-6 flex flex-wrap items-center gap-3">
-          <Link
-            href={href}
-            className="inline-flex min-h-[44px] items-center gap-2 bg-inchiostro px-5 py-3 text-sm font-semibold text-carta transition-colors hover:bg-inchiostro-soft focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-inchiostro dark:bg-nebbia dark:text-notte dark:hover:bg-nebbia-soft dark:focus-visible:outline-nebbia"
-          >
-            Leggi la scheda
-            <svg aria-hidden="true" viewBox="0 0 24 24" className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="2">
-              <path strokeLinecap="round" strokeLinejoin="round" d="M5 12h14m-6-6 6 6-6 6" />
-            </svg>
-          </Link>
+        <div className="mt-6 flex flex-wrap items-center gap-4">
+          {ridotto ? (
+            <Link
+              href={href}
+              className="inline-flex min-h-[48px] items-center gap-2 rounded-xl bg-accento px-6 py-3 text-sm font-bold text-white transition-colors hover:brightness-110 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accento dark:bg-accento-chiara dark:text-notte dark:focus-visible:outline-accento-chiara"
+            >
+              Leggi la scheda
+              <ArrowRight01Icon size={18} strokeWidth={2} aria-hidden="true" />
+            </Link>
+          ) : (
+            <motion.span whileTap={{ scale: 0.97 }} transition={{ duration: 0.15, ease: 'easeOut' }} className="inline-flex">
+              <Link
+                href={href}
+                className="inline-flex min-h-[48px] items-center gap-2 rounded-xl bg-accento px-6 py-3 text-sm font-bold text-white transition-colors hover:brightness-110 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accento dark:bg-accento-chiara dark:text-notte dark:focus-visible:outline-accento-chiara"
+              >
+                Leggi la scheda
+                <ArrowRight01Icon size={18} strokeWidth={2} aria-hidden="true" />
+              </Link>
+            </motion.span>
+          )}
           <Link
             href="/leggi"
-            className="inline-flex min-h-[44px] items-center border border-inchiostro px-5 py-3 text-sm font-semibold text-inchiostro transition-colors hover:bg-inchiostro hover:text-carta focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-inchiostro dark:border-nebbia dark:text-nebbia dark:hover:bg-nebbia dark:hover:text-notte dark:focus-visible:outline-nebbia"
+            className="inline-flex min-h-[48px] items-center text-sm font-bold text-inchiostro-soft underline underline-offset-4 transition-colors hover:text-accento dark:text-nebbia-soft dark:hover:text-accento-chiara"
           >
-            Vedi tutte le leggi
+            Vedi tutte le norme
           </Link>
         </div>
-      </article>
+      </>
+    )
+
+    if (ridotto) {
+      return (
+        <article
+          aria-labelledby={titoloId}
+          className={`relative scroll-mt-24 overflow-hidden rounded-2xl border p-6 sm:p-8 ${VETRO_CLASSE}`}
+        >
+          {corpo}
+        </article>
+      )
+    }
+
+    return (
+      <motion.article
+        aria-labelledby={titoloId}
+        initial={{ opacity: 0, y: 16 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.2 }}
+        transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+        className={`relative scroll-mt-24 overflow-hidden rounded-2xl border p-6 sm:p-8 ${VETRO_CLASSE}`}
+      >
+        {corpo}
+      </motion.article>
     )
   }
 
-  return (
-    <article
-      style={{ contentVisibility: 'auto', containIntrinsicSize: 'auto 320px' }}
-      className="group relative flex h-full scroll-mt-24 flex-col gap-3 border border-regola bg-carta p-5 transition-colors hover:border-inchiostro focus-within:border-inchiostro motion-reduce:transition-none dark:border-notte-deep dark:bg-notte-soft dark:hover:border-nebbia dark:focus-within:border-nebbia"
-    >
+  const corpo = (
+    <>
       <div className="flex flex-wrap items-center justify-between gap-2">
         <span className="flex flex-wrap items-center gap-2">
-          <span className="bg-inchiostro/5 px-2.5 py-1.5 text-xs font-semibold text-inchiostro-soft dark:bg-notte-deep dark:text-nebbia-soft">
+          <span className="rounded-lg bg-inchiostro/5 px-2.5 py-1.5 text-xs font-bold text-inchiostro-soft dark:bg-notte-deep dark:text-nebbia-soft">
             {tipoLabel(law)}
           </span>
           {law.dimostrativo && (
-            <span className="border border-regola px-2.5 py-1.5 text-xs font-medium text-inchiostro-soft dark:border-notte-deep dark:text-nebbia-soft">
-              Scheda dimostrativa
+            <span className="rounded-lg border border-regola px-2.5 py-1.5 text-xs font-semibold text-inchiostro-soft dark:border-notte-deep dark:text-nebbia-soft">
+              Di prova
             </span>
           )}
         </span>
         <span className="text-xs text-inchiostro-soft dark:text-nebbia-soft">
-          <span className="sr-only">Data di emanazione: </span>
+          <span className="sr-only">Data: </span>
           <time dateTime={law.dataEmanazione}>{formatDate(law.dataEmanazione)}</time>
         </span>
       </div>
 
-      <Heading className="line-clamp-3 font-serif text-base font-bold leading-snug text-inchiostro dark:text-nebbia sm:text-lg">
+      <Heading className="line-clamp-3 text-base font-extrabold leading-snug text-inchiostro dark:text-nebbia sm:text-lg">
         <Link
           href={href}
-          className="underline-offset-4 hover:text-accento hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-inchiostro dark:hover:text-accento-chiara dark:focus-visible:outline-nebbia"
+          className="underline-offset-4 hover:text-accento hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accento dark:hover:text-accento-chiara dark:focus-visible:outline-accento-chiara"
         >
           <Evidenzia testo={law.titolo} q={evidenzia} />
         </Link>
@@ -144,30 +180,67 @@ export default function LawCard({ law, featured = false, persona, headingLevel =
       </p>
 
       {personaTesto && (
-        <p className="line-clamp-3 border-l-2 border-inchiostro bg-carta-soft px-3 py-2 text-sm leading-relaxed text-inchiostro-soft dark:border-nebbia dark:bg-notte dark:text-nebbia-soft">
-          <span className="font-semibold">Per te:</span> {personaTesto}
+        <p className="line-clamp-3 rounded-xl border-l-4 border-accento bg-carta-soft px-3 py-2 text-sm leading-relaxed text-inchiostro-soft dark:bg-notte dark:text-nebbia-soft">
+          <span className="font-bold">Per te:</span> {personaTesto}
         </p>
       )}
 
-      <div className="mt-auto flex flex-wrap items-center justify-between gap-2 pt-2">
-        <span className="inline-flex rounded bg-white p-1 ring-1 ring-regola dark:bg-black dark:ring-notte-deep">
+      <div className="mt-auto flex flex-wrap items-center gap-2 pt-2">
+        <span className="inline-flex items-center gap-2 rounded-xl bg-white px-2 py-1.5 ring-1 ring-regola dark:bg-black dark:ring-notte-deep">
           <TrafficLight stato={law.stato} size="sm" showLabel={false} />
-          <span className="sr-only">{meta.label}: {meta.descrizione}</span>
-        </span>
-        <span className="flex min-h-[44px] items-center gap-2">
-          <span
-            className="inline-flex min-h-[44px] items-center"
-            title={`Salva "${law.titolo}" tra i preferiti`}
-          >
-            <PulsantePreferito eli={law.eli} />
+          <span className="inline-flex items-center gap-1.5 text-xs font-bold text-inchiostro dark:text-nebbia">
+            <span aria-hidden="true" className={`h-2 w-2 rounded-full ${meta.dot}`} />
+            {meta.label}
           </span>
-          <QualityBadges
-            gulpease={law.gulpease}
-            qualita={law.qualita}
-            attuativiCount={attuativiMancanti(law)}
-          />
+        </span>
+        <span className="sr-only">
+          {meta.label}: {meta.descrizione}
         </span>
       </div>
-    </article>
+
+      {mancanti > 0 && (
+        <p className="text-xs leading-relaxed text-inchiostro-soft dark:text-nebbia-soft">
+          Mancano {mancanti} {mancanti === 1 ? 'passo' : 'passi'} prima che valga del tutto.
+        </p>
+      )}
+
+      <div className="flex min-h-[48px] items-center justify-between gap-2">
+        <Link
+          href={href}
+          aria-label={`Apri la scheda: ${law.titolo}`}
+          className="inline-flex min-h-[48px] items-center gap-1.5 rounded-xl px-3 py-2 text-sm font-bold text-accento transition-colors hover:bg-accento/10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accento dark:text-accento-chiara dark:hover:bg-accento-chiara/10 dark:focus-visible:outline-accento-chiara"
+        >
+          Apri
+          <ArrowRight01Icon size={18} strokeWidth={2} aria-hidden="true" />
+        </Link>
+        <span className="inline-flex min-h-[48px] items-center" title={`Salva "${law.titolo}" tra i salvati`}>
+          <PulsantePreferito eli={law.eli} />
+        </span>
+      </div>
+    </>
+  )
+
+  if (ridotto) {
+    return (
+      <article
+        style={{ contentVisibility: 'auto', containIntrinsicSize: 'auto 320px' }}
+        className="relative flex h-full scroll-mt-24 flex-col gap-3 rounded-2xl border border-regola bg-carta p-5 transition-colors hover:border-inchiostro/40 focus-within:border-inchiostro/40 dark:border-notte-deep dark:bg-notte-soft dark:hover:border-nebbia/40 dark:focus-within:border-nebbia/40"
+      >
+        {corpo}
+      </article>
+    )
+  }
+
+  return (
+    <motion.article
+      style={{ contentVisibility: 'auto', containIntrinsicSize: 'auto 320px' }}
+      initial={{ opacity: 0, y: 16 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.15 }}
+      transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
+      className="relative flex h-full scroll-mt-24 flex-col gap-3 rounded-2xl border border-regola bg-carta p-5 transition-colors hover:border-inchiostro/40 focus-within:border-inchiostro/40 dark:border-notte-deep dark:bg-notte-soft dark:hover:border-nebbia/40 dark:focus-within:border-nebbia/40"
+    >
+      {corpo}
+    </motion.article>
   )
 }

@@ -53,7 +53,7 @@ function hrefSenza(query: Record<string, string>, chiave: string): string {
 
 export async function generateMetadata({ searchParams }: DeputatiProps): Promise<Metadata> {
   const base: Metadata = {
-    title: 'Deputati — Legislatura 19 — Stato della Repubblica',
+    title: 'Deputati - Legislatura 19 - Stato della Repubblica',
     description: 'I 414 deputati della Camera, legislatura 19: cerca per nome o filtra per gruppo.',
   }
   try {
@@ -70,9 +70,9 @@ export async function generateMetadata({ searchParams }: DeputatiProps): Promise
     const pezzi: string[] = []
     if (qValida) pezzi.push(`“${qValida}”`)
     if (gruppoValido) pezzi.push(gruppoValido)
-    const dettaglio = pezzi.length > 0 ? ` — ${pezzi.join(' · ')}` : ''
+    const dettaglio = pezzi.length > 0 ? ` - ${pezzi.join(' · ')}` : ''
     return {
-      title: `Deputati (${filtrati.length})${dettaglio} — Stato della Repubblica`,
+      title: `Deputati (${filtrati.length})${dettaglio} - Stato della Repubblica`,
       description: `Archivio di ${filtrati.length} deputati della legislatura 19${dettaglio}.`,
     }
   } catch {
@@ -371,7 +371,7 @@ export default async function DeputatiPage({ searchParams }: DeputatiProps) {
         )}
 
         <p className="mt-10 border-t border-regola pt-4 text-xs leading-relaxed text-inchiostro-soft dark:border-notte-deep dark:text-nebbia-soft">
-          Camera: dati.camera.it — CC BY-SA 4.0 · legislatura 19
+          Camera: dati.camera.it - CC BY-SA 4.0 · legislatura 19
           {provCamera?.recuperatoIl ? ` · aggiornati al ${dataIT(provCamera.recuperatoIl)}` : ''}.
         </p>
       </main>

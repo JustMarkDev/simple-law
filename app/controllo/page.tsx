@@ -11,7 +11,7 @@ import {
 } from '@/lib/oversight-dati'
 
 export const metadata: Metadata = {
-  title: 'Controllo pubblico — Contratti, giustizia amministrativa e CNEL — Stato della Repubblica',
+  title: 'Controllo pubblico - Contratti, giustizia amministrativa e CNEL - Stato della Repubblica',
   description:
     'Contratti pubblici ANAC 2025, provvedimenti del Consiglio di Stato, dei TAR e CGA Sicilia 2026 e documenti CNEL dai dati ufficiali: documenti di controllo, non sono leggi in vigore.',
 }
@@ -77,7 +77,7 @@ export default async function ControlloPage() {
             className="border border-regola bg-carta p-5 dark:border-notte-deep dark:bg-notte-soft"
           >
             <p className="inline-flex items-center border border-inchiostro px-2 py-1 text-[11px] font-bold uppercase tracking-wide text-inchiostro dark:border-nebbia dark:text-nebbia">
-              Contratto pubblico — non è una legge
+              Contratto pubblico - non è una legge
             </p>
             <h2 id="titolo-contratti" className="mt-3 font-serif text-xl font-bold text-inchiostro dark:text-nebbia">
               Contratti ANAC 2025
@@ -106,7 +106,7 @@ export default async function ControlloPage() {
             className="border border-regola bg-carta p-5 dark:border-notte-deep dark:bg-notte-soft"
           >
             <p className="inline-flex items-center border border-inchiostro px-2 py-1 text-[11px] font-bold uppercase tracking-wide text-inchiostro dark:border-nebbia dark:text-nebbia">
-              Provvedimento GA — non è una legge
+              Provvedimento GA - non è una legge
             </p>
             <h2 id="titolo-ga" className="mt-3 font-serif text-xl font-bold text-inchiostro dark:text-nebbia">
               Giustizia amministrativa 2026
@@ -135,7 +135,7 @@ export default async function ControlloPage() {
             className="border border-regola bg-carta p-5 dark:border-notte-deep dark:bg-notte-soft"
           >
             <p className="inline-flex items-center border border-inchiostro px-2 py-1 text-[11px] font-bold uppercase tracking-wide text-inchiostro dark:border-nebbia dark:text-nebbia">
-              Documento CNEL — non è una legge
+              Documento CNEL - non è una legge
             </p>
             <h2 id="titolo-cnel" className="mt-3 font-serif text-xl font-bold text-inchiostro dark:text-nebbia">
               CNEL 2026
@@ -172,7 +172,7 @@ export default async function ControlloPage() {
           </p>
           <ul className="mt-3 list-disc space-y-1 pl-5 text-sm text-inchiostro-soft dark:text-nebbia-soft">
             <li>
-              Contratti: {provAnac.fonte ?? 'ANAC/BDNCP'} — licenza {provAnac.licenza ?? 'da confermare nel file'}
+              Contratti: {provAnac.fonte ?? 'ANAC/BDNCP'} - licenza {provAnac.licenza ?? 'da confermare nel file'}
               {provAnac.url ? (
                 <>
                   {' · '}
@@ -184,7 +184,7 @@ export default async function ControlloPage() {
               .
             </li>
             <li>
-              Provvedimenti: {provGa.fonte ?? 'Giustizia Amministrativa'} — licenza {provGa.licenza ?? 'da confermare nel file'}
+              Provvedimenti: {provGa.fonte ?? 'Giustizia Amministrativa'} - licenza {provGa.licenza ?? 'da confermare nel file'}
               {provGa.url ? (
                 <>
                   {' · '}
@@ -196,7 +196,7 @@ export default async function ControlloPage() {
               .
             </li>
             <li>
-              Documenti CNEL: {provCnel.fonte ?? 'CNEL'} — licenza {provCnel.licenza ?? 'da confermare nel file'}
+              Documenti CNEL: {provCnel.fonte ?? 'CNEL'} - licenza {provCnel.licenza ?? 'da confermare nel file'}
               {provCnel.url ? (
                 <>
                   {' · '}

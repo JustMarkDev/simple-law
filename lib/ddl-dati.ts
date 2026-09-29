@@ -146,8 +146,8 @@ export function decodificaEntitaHtml(testo: string): string {
       lsquo: "‘",
       rdquo: "”",
       ldquo: "“",
-      ndash: "–",
-      mdash: "—",
+      ndash: "-",
+      mdash: "-",
       hellip: "…",
     };
     return testo

@@ -6,33 +6,35 @@
  * i dati seed inclusi nel bundle.
  */
 
-import { normalizeEli, parseNIR } from "./nir";
-import { buildFonti } from "./fonti";
-import { calcGulpease } from "./readability";
-import { SEED_CDM, SEED_LAWS, SEED_MINISTERS } from "./seed-data";
-import type { CdmItem, LawRecord, MinisterRecord } from "./seed-data";
+import { normalizeEli, parseNIR } from './nir';
+import { buildFonti } from './fonti';
+import { calcGulpease } from './readability';
+import { SEED_CDM, SEED_LAWS, SEED_MINISTERS } from './seed-data';
+import type { CdmItem, LawRecord, MinisterRecord } from './seed-data';
 // Corpus unificato (unico punto di I/O per il corpus grande). Contratto anti-ciclo:
 // `corpus-unificato` non importa mai `sources` (solo seed-data-espansa, fonti,
 // readability e tipi seed-data), quindi questo import top-level non crea
 // dipendenze circolari.
-import { getCorpusUnificato } from "./corpus-unificato";
+import {
+  getCorpusRiferimenti,
+  getCorpusUnificato,
+  isCorpusSinteticoAbilitato,
+} from './corpus-unificato';
 
 export const SOURCE_URLS = {
-  normattiva: "https://www.normattiva.it",
-  normattivaEli: "https://www.normattiva.it/eli/id",
-  gazzetta: "https://www.gazzettaufficiale.it",
-  governo: "https://www.governo.it",
-  governoFeed: "https://www.governo.it/en/feed",
-  camera: "https://www.camera.it",
-  cameraSparql: "https://dati.camera.it/sparql",
-  senato: "https://www.senato.it",
-  senatoSparql: "https://dati.senato.it/sparql",
-  eligendo: "https://elezioni.interno.gov.it",
+  normattiva: 'https://www.normattiva.it',
+  normattivaEli: 'https://www.normattiva.it/eli/id',
+  gazzetta: 'https://www.gazzettaufficiale.it',
+  governo: 'https://www.governo.it',
+  governoFeed: 'https://www.governo.it/en/feed',
+  camera: 'https://www.camera.it',
+  cameraSparql: 'https://dati.camera.it/sparql',
+  senato: 'https://www.senato.it',
+  senatoSparql: 'https://dati.senato.it/sparql',
+  eligendo: 'https://elezioni.interno.gov.it',
 } as const;
 
-export type SparqlResult =
-  | { ok: true; data: unknown }
-  | { ok: false; error: string };
+export type SparqlResult = { ok: true; data: unknown } | { ok: false; error: string };
 
 export interface FetchOptions {
   fetchImpl?: typeof fetch;
@@ -41,7 +43,11 @@ export interface FetchOptions {
 
 const DEFAULT_TIMEOUT_MS = 8000;
 
-async function fetchConTimeout(url: string, options: FetchOptions, init?: RequestInit): Promise<Response> {
+async function fetchConTimeout(
+  url: string,
+  options: FetchOptions,
+  init?: RequestInit,
+): Promise<Response> {
   const fetchImpl = options.fetchImpl ?? fetch;
   const timeoutMs = options.timeoutMs ?? DEFAULT_TIMEOUT_MS;
   const controller = new AbortController();
@@ -59,45 +65,96 @@ async function fetchConTimeout(url: string, options: FetchOptions, init?: Reques
  * (usa `/CONSOLIDATED`), quindi viene rimosso per evitare link rotti.
  */
 export function fetchNormattivaELI(eli: string): string {
-  const path = normalizeEli(eli || "");
-  if (!path || path === "/") return SOURCE_URLS.normattiva;
-  const senzaVersioneSg = path.replace(/\/sg$/i, "");
-  if (senzaVersioneSg.startsWith("/eli/")) return `${SOURCE_URLS.normattiva}${senzaVersioneSg}`;
+  const path = normalizeEli(eli || '');
+  if (!path || path === '/') return SOURCE_URLS.normattiva;
+  const senzaVersioneSg = path.replace(/\/sg$/i, '');
+  if (senzaVersioneSg.startsWith('/eli/')) return `${SOURCE_URLS.normattiva}${senzaVersioneSg}`;
   return `${SOURCE_URLS.normattiva}/eli/id${senzaVersioneSg}`;
 }
 
 function decodificaEntita(testo: string): string {
   return testo
-    .replace(/<!\[CDATA\[([\s\S]*?)\]\]>/g, "$1")
+    .replace(/<!\[CDATA\[([\s\S]*?)\]\]>/g, '$1')
     .replace(/&#(\d+);/g, (_m, codice: string) => String.fromCodePoint(Number(codice)))
-    .replace(/&#x([0-9a-f]+);/gi, (_m, codice: string) => String.fromCodePoint(parseInt(codice, 16)))
-    .replace(/&nbsp;/g, " ")
+    .replace(/&#x([0-9a-f]+);/gi, (_m, codice: string) =>
+      String.fromCodePoint(parseInt(codice, 16)),
+    )
+    .replace(/&nbsp;/g, ' ')
     .replace(/&quot;/g, '"')
     .replace(/&apos;/g, "'")
-    .replace(/&lt;/g, "<")
-    .replace(/&gt;/g, ">")
-    .replace(/&amp;/g, "&");
+    .replace(/&lt;/g, '<')
+    .replace(/&gt;/g, '>')
+    .replace(/&amp;/g, '&');
+}
+
+/** Entita nominate latin-1 frequenti nei testi Normattiva (mai inventare testo). */
+const ENTITA_NOMINATE: Record<string, string> = {
+  '&agrave;': 'à',
+  '&egrave;': 'è',
+  '&igrave;': 'ì',
+  '&ograve;': 'ò',
+  '&ugrave;': 'ù',
+  '&Agrave;': 'À',
+  '&Egrave;': 'È',
+  '&Igrave;': 'Ì',
+  '&Ograve;': 'Ò',
+  '&Ugrave;': 'Ù',
+  '&aacute;': 'á',
+  '&eacute;': 'é',
+  '&iacute;': 'í',
+  '&oacute;': 'ó',
+  '&uacute;': 'ú',
+  '&acirc;': 'â',
+  '&ecirc;': 'ê',
+  '&icirc;': 'î',
+  '&ocirc;': 'ô',
+  '&ucirc;': 'û',
+  '&laquo;': '«',
+  '&raquo;': '»',
+  '&ldquo;': '“',
+  '&rdquo;': '”',
+  '&lsquo;': "'",
+  '&rsquo;': '’',
+  '&hellip;': '…',
+  '&sect;': '§',
+  '&deg;': '°',
+  '&euro;': '€',
+  '&copy;': '©',
+  '&reg;': '®',
+  '&middot;': '·',
+  '&mdash;': '-',
+  '&ndash;': '-',
+};
+
+/** Decodifica estesa per i testi ufficiali (base + nominate latin-1). */
+function decodificaTestoUfficiale(testo: string): string {
+  if (!testo || !testo.includes('&')) return testo;
+  const base = decodificaEntita(testo);
+  if (!base.includes('&')) return base;
+  return base.replace(/&[a-zA-Z]+;/g, (e) => ENTITA_NOMINATE[e] ?? e);
 }
 
 function pulisciHtml(testo: string): string {
-  return decodificaEntita(testo.replace(/<[^>]*>/g, " ")).replace(/\s+/g, " ").trim();
+  return decodificaEntita(testo.replace(/<[^>]*>/g, ' '))
+    .replace(/\s+/g, ' ')
+    .trim();
 }
 
 function estraiTag(item: string, nome: string): string {
-  const re = new RegExp(`<${nome}(?:\\s[^>]*)?>([\\s\\S]*?)</${nome}>`, "i");
+  const re = new RegExp(`<${nome}(?:\\s[^>]*)?>([\\s\\S]*?)</${nome}>`, 'i');
   const match = re.exec(item);
-  return match?.[1] ? pulisciHtml(match[1]) : "";
+  return match?.[1] ? pulisciHtml(match[1]) : '';
 }
 
 function dataIso(grezza: string): string {
-  if (!grezza) return "";
+  if (!grezza) return '';
   const parsed = new Date(grezza);
-  return Number.isNaN(parsed.getTime()) ? "" : parsed.toISOString().slice(0, 10);
+  return Number.isNaN(parsed.getTime()) ? '' : parsed.toISOString().slice(0, 10);
 }
 
 function estraiNumero(titolo: string): string {
   const match = /\bn\.?\s*(\d+)/i.exec(titolo);
-  return match?.[1] ?? "";
+  return match?.[1] ?? '';
 }
 
 /** Converte gli item di un feed RSS in CdmItem. */
@@ -105,14 +162,14 @@ function parseRss(xml: string, limit: number): CdmItem[] {
   const items = xml.match(/<item(?:\s[^>]*)?>[\s\S]*?<\/item>/gi) ?? [];
   const risultati: CdmItem[] = [];
   for (const item of items.slice(0, limit)) {
-    const titolo = estraiTag(item, "title");
+    const titolo = estraiTag(item, 'title');
     if (!titolo) continue;
-    const link = estraiTag(item, "link");
-    const guid = estraiTag(item, "guid");
-    const descrizione = estraiTag(item, "description");
+    const link = estraiTag(item, 'link');
+    const guid = estraiTag(item, 'guid');
+    const descrizione = estraiTag(item, 'description');
     risultati.push({
       id: guid || link || `governo-${risultati.length + 1}`,
-      data: dataIso(estraiTag(item, "pubDate")),
+      data: dataIso(estraiTag(item, 'pubDate')),
       numero: estraiNumero(titolo),
       titolo,
       sintesi: descrizione.slice(0, 400),
@@ -133,33 +190,40 @@ export async function fetchGovernoComunicati(
   const quanti = Number.isFinite(limit) && limit > 0 ? Math.floor(limit) : 10;
   try {
     const response = await fetchConTimeout(SOURCE_URLS.governoFeed, options, {
-      headers: { accept: "application/rss+xml, application/xml, text/xml" },
+      headers: { accept: 'application/rss+xml, application/xml, text/xml' },
     });
     if (!response.ok) throw new Error(`Feed governo: ${response.status}`);
     const xml = await response.text();
     const items = parseRss(xml, quanti);
-    if (items.length === 0) throw new Error("Feed governo vuoto");
+    if (items.length === 0) throw new Error('Feed governo vuoto');
     return items;
   } catch {
     return getSeedCdm().slice(0, quanti);
   }
 }
 
-async function eseguiSparql(endpoint: string, query: string, options: FetchOptions): Promise<SparqlResult> {
+async function eseguiSparql(
+  endpoint: string,
+  query: string,
+  options: FetchOptions,
+): Promise<SparqlResult> {
   if (!query || !query.trim()) {
-    return { ok: false, error: "Query SPARQL vuota" };
+    return { ok: false, error: 'Query SPARQL vuota' };
   }
   try {
     const url = `${endpoint}?query=${encodeURIComponent(query)}&format=application%2Fsparql-results%2Bjson`;
     const response = await fetchConTimeout(url, options, {
-      headers: { accept: "application/sparql-results+json, application/json" },
+      headers: { accept: 'application/sparql-results+json, application/json' },
     });
     if (!response.ok) {
       return { ok: false, error: `SPARQL ${endpoint} ha risposto ${response.status}` };
     }
     return { ok: true, data: (await response.json()) as unknown };
   } catch (error) {
-    return { ok: false, error: error instanceof Error ? error.message : "Errore SPARQL sconosciuto" };
+    return {
+      ok: false,
+      error: error instanceof Error ? error.message : 'Errore SPARQL sconosciuto',
+    };
   }
 }
 
@@ -188,7 +252,9 @@ function clonaLegge(law: LawRecord): LawRecord {
 
 /** Chiave di dedup per ELI (stessa regola di `normalizzaChiaveEli`: trim+lowercase). */
 function chiaveEli(eli: unknown): string {
-  return String(eli ?? "").trim().toLowerCase();
+  return String(eli ?? '')
+    .trim()
+    .toLowerCase();
 }
 
 // ---------------------------------------------------------------------------
@@ -201,58 +267,60 @@ function chiaveEli(eli: unknown): string {
  * (dedup per ELI nel chiamante). Mai primo-file-vince: ogni nuovo batch
  * storico deve entrare nel corpus. */
 const PERCORSI_ATTI_REALI = [
-  "data/reali/normattiva-recenti.json",
-  "data/reali/normattiva-storico-collezioni.json",
-  "data/reali/normattiva-storico-1960.json",
-  "data/reali/normattiva-storico-1970.json",
-  "data/reali/normattiva-storico-1980.json",
-  "data/reali/normattiva-storico-1990.json",
-  "data/reali/normattiva-storico-2000.json",
-  "data/reali/normattiva-storico-2010.json",
-  "data/reali/normattiva-storico-2020.json",
-  "data/reali/normattiva-bulk-a-attuazione-ue.json",
-  "data/reali/normattiva-bulk-b-finestra-2005.json",
-  "data/reali/normattiva-storico-1992-1993.json",
-  "data/reali/normattiva-storico-2005-2006.json",
-  "data/reali/normattiva-storico-1955.json",
-  "data/reali/normattiva-storico-2015.json",
-  "data/reali/normattiva-storico-1948.json",
-  "data/reali/normattiva-storico-1985.json",
-  "data/reali/normattiva-storico-1975.json",
-  "data/reali/normattiva-storico-1995.json",
-  "data/reali/normattiva-finestra-1975.json",
-  "data/reali/normattiva-finestra-1995.json",
-  "data/reali/normattiva-storico-2012.json",
-  "data/reali/normattiva-storico-2018.json",
-  "data/reali/normattiva-storico-1965.json",
-  "data/reali/normattiva-storico-2022.json",
+  'data/reali/normattiva-recenti.json',
+  'data/reali/normattiva-storico-collezioni.json',
+  'data/reali/normattiva-storico-1960.json',
+  'data/reali/normattiva-storico-1970.json',
+  'data/reali/normattiva-storico-1980.json',
+  'data/reali/normattiva-storico-1990.json',
+  'data/reali/normattiva-storico-2000.json',
+  'data/reali/normattiva-storico-2010.json',
+  'data/reali/normattiva-storico-2020.json',
+  'data/reali/normattiva-bulk-a-attuazione-ue.json',
+  'data/reali/normattiva-bulk-b-finestra-2005.json',
+  'data/reali/normattiva-storico-1992-1993.json',
+  'data/reali/normattiva-storico-2005-2006.json',
+  'data/reali/normattiva-storico-1955.json',
+  'data/reali/normattiva-storico-2015.json',
+  'data/reali/normattiva-storico-1948.json',
+  'data/reali/normattiva-storico-1985.json',
+  'data/reali/normattiva-storico-1975.json',
+  'data/reali/normattiva-storico-1995.json',
+  'data/reali/normattiva-storico-2012.json',
+  'data/reali/normattiva-storico-2018.json',
+  'data/reali/normattiva-storico-1965.json',
+  'data/reali/normattiva-storico-2022.json',
+  'data/reali/normattiva-storico-2021.json',
+  'data/reali/normattiva-storico-2023.json',
+  'data/reali/normattiva-storico-2024.json',
+  'data/reali/normattiva-storico-2025.json',
 ] as const;
 
 /** Percorsi candidati per i comunicati reali (primo esistente e valido vince). */
 const PERCORSI_CDM_REALI = [
-  "data/reali/governo-comunicati.json",
-  "data/reali/governo-cdm.json",
+  'data/reali/governo-comunicati.json',
+  'data/reali/governo-cdm.json',
 ] as const;
 
 function stringaPulita(valore: unknown): string {
-  return typeof valore === "string" ? valore.trim() : "";
+  return typeof valore === 'string' ? valore.trim() : '';
 }
 
 function dataIsoReale(grezza: unknown): string {
   try {
     const testo = stringaPulita(grezza);
-    if (!testo) return "";
+    if (!testo) return '';
     if (/^\d{4}-\d{2}-\d{2}$/.test(testo)) return testo;
     const parsed = new Date(testo);
-    return Number.isNaN(parsed.getTime()) ? "" : parsed.toISOString().slice(0, 10);
+    return Number.isNaN(parsed.getTime()) ? '' : parsed.toISOString().slice(0, 10);
   } catch {
-    return "";
+    return '';
   }
 }
 
 function gulpeaseReale(testo: string, sintesi: string): number | null {
   try {
-    const indice = calcGulpease(testo || sintesi || "norma").indice;
+    const indice = calcGulpease(testo || sintesi || 'norma').indice;
     return Number.isFinite(indice) ? indice : null;
   } catch {
     return null;
@@ -261,33 +329,33 @@ function gulpeaseReale(testo: string, sintesi: string): number | null {
 
 /** Domini ufficiali ammessi per gli URL provenienti dai file reali. */
 const DOMINI_FONTUANTE_AMMESSI = [
-  "normattiva.it",
-  "www.normattiva.it",
-  "dati.normattiva.it",
-  "gazzettaufficiale.it",
-  "www.gazzettaufficiale.it",
-  "governo.it",
-  "www.governo.it",
-  "camera.it",
-  "www.camera.it",
-  "dati.camera.it",
-  "senato.it",
-  "www.senato.it",
-  "dati.senato.it",
-  "parlamento.it",
-  "www.parlamento.it",
-  "quirinale.it",
-  "www.quirinale.it",
-  "eur-lex.europa.eu",
-  "cortecostituzionale.it",
-  "www.cortecostituzionale.it",
+  'normattiva.it',
+  'www.normattiva.it',
+  'dati.normattiva.it',
+  'gazzettaufficiale.it',
+  'www.gazzettaufficiale.it',
+  'governo.it',
+  'www.governo.it',
+  'camera.it',
+  'www.camera.it',
+  'dati.camera.it',
+  'senato.it',
+  'www.senato.it',
+  'dati.senato.it',
+  'parlamento.it',
+  'www.parlamento.it',
+  'quirinale.it',
+  'www.quirinale.it',
+  'eur-lex.europa.eu',
+  'cortecostituzionale.it',
+  'www.cortecostituzionale.it',
 ] as const;
 
 /** `true` solo per URL https verso domini ufficiali (anti-spoofing dei file). */
 function urlFonteAmmesso(url: string): boolean {
   try {
     const parsed = new URL(url);
-    if (parsed.protocol !== "https:") return false;
+    if (parsed.protocol !== 'https:') return false;
     const host = parsed.hostname.toLowerCase();
     return (DOMINI_FONTUANTE_AMMESSI as readonly string[]).includes(host);
   } catch {
@@ -295,25 +363,30 @@ function urlFonteAmmesso(url: string): boolean {
   }
 }
 
-function fontiReali(input: Record<string, unknown>, tipo: string, numero: string, dataEmanazione: string): LawRecord["fonti"] {
+function fontiReali(
+  input: Record<string, unknown>,
+  tipo: string,
+  numero: string,
+  dataEmanazione: string,
+): LawRecord['fonti'] {
   try {
     const costruite = buildFonti({
       tipo,
       numero,
       dataEmanazione,
-      codiceRedazionale: stringaPulita(input["codiceRedazionale"]) || undefined,
-      dataGU: stringaPulita(input["dataGU"]) || undefined,
-      numeroGU: stringaPulita(input["numeroGU"]) || undefined,
-      legislatura: stringaPulita(input["legislatura"]) || undefined,
-      cameraId: stringaPulita(input["cameraId"]) || undefined,
-      senatoDid: stringaPulita(input["senatoDid"]) || undefined,
+      codiceRedazionale: stringaPulita(input['codiceRedazionale']) || undefined,
+      dataGU: stringaPulita(input['dataGU']) || undefined,
+      numeroGU: stringaPulita(input['numeroGU']) || undefined,
+      legislatura: stringaPulita(input['legislatura']) || undefined,
+      cameraId: stringaPulita(input['cameraId']) || undefined,
+      senatoDid: stringaPulita(input['senatoDid']) || undefined,
     });
     // Conserva solo URL verificati verso domini ufficiali eventualmente
     // già presenti nel file (un file manomesso non può iniettare URL esterni).
-    const grezze = input["fonti"];
-    if (grezze && typeof grezze === "object" && !Array.isArray(grezze)) {
+    const grezze = input['fonti'];
+    if (grezze && typeof grezze === 'object' && !Array.isArray(grezze)) {
       const g = grezze as Record<string, unknown>;
-      for (const chiave of ["normattiva", "gazzetta", "camera", "senato", "governo"] as const) {
+      for (const chiave of ['normattiva', 'gazzetta', 'camera', 'senato', 'governo'] as const) {
         const url = stringaPulita(g[chiave]);
         if (urlFonteAmmesso(url) && !(costruite as Record<string, string | undefined>)[chiave]) {
           (costruite as Record<string, string>)[chiave] = url;
@@ -343,47 +416,44 @@ function fontiReali(input: Record<string, unknown>, tipo: string, numero: string
  */
 export function normalizzaAttoReale(input: unknown): LawRecord | null {
   try {
-    if (!input || typeof input !== "object" || Array.isArray(input)) return null;
+    if (!input || typeof input !== 'object' || Array.isArray(input)) return null;
     const o = input as Record<string, unknown>;
-    const titolo = stringaPulita(o["titolo"]);
-    const eli = stringaPulita(o["eli"]);
+    const titolo = decodificaTestoUfficiale(stringaPulita(o['titolo']));
+    const eli = stringaPulita(o['eli']);
     if (!titolo || !eli) return null;
-    const urnCandidata = stringaPulita(o["urn"]);
+    const urnCandidata = stringaPulita(o['urn']);
     const nirVerificata = parseNIR(urnCandidata);
-    const tipo =
-      stringaPulita(o["tipo"]) || (nirVerificata ? nirVerificata.tipo : "");
-    const numero =
-      stringaPulita(o["numero"]) || (nirVerificata ? nirVerificata.numero : "");
+    const tipo = stringaPulita(o['tipo']) || (nirVerificata ? nirVerificata.tipo : '');
+    const numero = stringaPulita(o['numero']) || (nirVerificata ? nirVerificata.numero : '');
     const dataEmanazione =
-      dataIsoReale(o["dataEmanazione"]) ||
-      (nirVerificata ? nirVerificata.data : "");
+      dataIsoReale(o['dataEmanazione']) || (nirVerificata ? nirVerificata.data : '');
     if (!tipo || !numero || !dataEmanazione) return null;
-    const nir = stringaPulita(o["nir"]) || (nirVerificata ? urnCandidata : "");
-    const sintesiGrezza = stringaPulita(o["sintesi"]);
+    const nir = stringaPulita(o['nir']) || (nirVerificata ? urnCandidata : '');
+    const sintesiGrezza = decodificaTestoUfficiale(stringaPulita(o['sintesi']));
     const sintesi = (sintesiGrezza || titolo).slice(0, 600);
-    const testoGrezzo = typeof o["testo"] === "string" && o["testo"].trim() ? o["testo"] : sintesi;
+    const testoGrezzoRaw =
+      typeof o['testo'] === 'string' && o['testo'].trim() ? o['testo'] : sintesi;
+    const testoGrezzo = decodificaTestoUfficiale(testoGrezzoRaw);
     // Stati onesti: abrogato/decaduto solo da segnali espliciti; gli atti
     // lista-only (dettaglio False, senza testo verificato) restano
     // "sconosciuto": la vigenza non e' verificabile, mai `in_vigore`.
-    const statoGrezzo = stringaPulita(o["stato"]).toLowerCase();
+    const statoGrezzo = stringaPulita(o['stato']).toLowerCase();
     const fineVigenza = stringaPulita(
-      o["articoloDataFineVigenza"] ?? o["fineVigenza"] ?? o["dataFineVigenza"],
+      o['articoloDataFineVigenza'] ?? o['fineVigenza'] ?? o['dataFineVigenza'],
     );
-    const fineValida = /^(\d{4})(\d{2})(\d{2})$/.exec(fineVigenza.replace(/-/g, ""));
-    const oggi = new Date().toISOString().slice(0, 10).replace(/-/g, "");
-    const finePassata =
-      !!fineValida && fineValida[0] !== "99999999" && fineValida[0] < oggi;
-    const dettaglioAssente = o["dettaglio"] === false;
-    const haTestoVerificato =
-      typeof o["testo"] === "string" && o["testo"].trim().length > 0;
+    const fineValida = /^(\d{4})(\d{2})(\d{2})$/.exec(fineVigenza.replace(/-/g, ''));
+    const oggi = new Date().toISOString().slice(0, 10).replace(/-/g, '');
+    const finePassata = !!fineValida && fineValida[0] !== '99999999' && fineValida[0] < oggi;
+    const dettaglioAssente = o['dettaglio'] === false;
+    const haTestoVerificato = typeof o['testo'] === 'string' && o['testo'].trim().length > 0;
     const stato =
       /abrog/.test(statoGrezzo) || finePassata
-        ? "abrogato"
+        ? 'abrogato'
         : /decad/.test(statoGrezzo)
-          ? "decaduto"
-          : statoGrezzo === "sconosciuto" || (dettaglioAssente && !haTestoVerificato)
-            ? "sconosciuto"
-            : "in_vigore";
+          ? 'decaduto'
+          : statoGrezzo === 'sconosciuto' || (dettaglioAssente && !haTestoVerificato)
+            ? 'sconosciuto'
+            : 'in_vigore';
     const record: LawRecord = {
       eli,
       nir,
@@ -397,9 +467,20 @@ export function normalizzaAttoReale(input: unknown): LawRecord | null {
       fonti: fontiReali(o, tipo, numero, dataEmanazione),
       dimostrativo: false,
     };
-    const testo = typeof o["testo"] === "string" && o["testo"].trim() ? o["testo"] : undefined;
+    const testo =
+      typeof o['testo'] === 'string' && o['testo'].trim()
+        ? decodificaTestoUfficiale(o['testo'])
+        : undefined;
     if (testo) record.testo = testo;
-    for (const chiave of ["codiceRedazionale", "dataGU", "numeroGU", "legislatura", "cameraId", "senatoDid", "articoloDataFineVigenza"] as const) {
+    for (const chiave of [
+      'codiceRedazionale',
+      'dataGU',
+      'numeroGU',
+      'legislatura',
+      'cameraId',
+      'senatoDid',
+      'articoloDataFineVigenza',
+    ] as const) {
       const v = stringaPulita(o[chiave]);
       if (v) (record as unknown as Record<string, unknown>)[chiave] = v;
     }
@@ -415,19 +496,19 @@ export function normalizzaAttoReale(input: unknown): LawRecord | null {
  */
 export function normalizzaComunicatoReale(input: unknown): CdmItem | null {
   try {
-    if (!input || typeof input !== "object" || Array.isArray(input)) return null;
+    if (!input || typeof input !== 'object' || Array.isArray(input)) return null;
     const o = input as Record<string, unknown>;
-    const id = stringaPulita(o["id"]);
-    const titolo = stringaPulita(o["titolo"]);
-    const url = stringaPulita(o["url"] ?? o["link"]);
+    const id = stringaPulita(o['id']);
+    const titolo = stringaPulita(o['titolo']);
+    const url = stringaPulita(o['url'] ?? o['link']);
     if (!id || !titolo || !url) return null;
     if (!/^https?:\/\//i.test(url)) return null;
     return {
       id,
-      data: dataIsoReale(o["data"]),
-      numero: stringaPulita(o["numero"]),
+      data: dataIsoReale(o['data']),
+      numero: stringaPulita(o['numero']),
       titolo,
-      sintesi: stringaPulita(o["sintesi"]).slice(0, 2000),
+      sintesi: stringaPulita(o['sintesi']).slice(0, 2000),
       url,
     };
   } catch {
@@ -442,11 +523,11 @@ export function normalizzaComunicatoReale(input: unknown): CdmItem | null {
 export function estraiListaAttiReali(grezzo: unknown): unknown[] {
   try {
     if (Array.isArray(grezzo)) return grezzo;
-    if (grezzo && typeof grezzo === "object") {
+    if (grezzo && typeof grezzo === 'object') {
       const o = grezzo as Record<string, unknown>;
-      if (Array.isArray(o["leggi"])) return o["leggi"] as unknown[];
-      if (Array.isArray(o["dati"])) return o["dati"] as unknown[];
-      if (Array.isArray(o["atti"])) return o["atti"] as unknown[];
+      if (Array.isArray(o['leggi'])) return o['leggi'] as unknown[];
+      if (Array.isArray(o['dati'])) return o['dati'] as unknown[];
+      if (Array.isArray(o['atti'])) return o['atti'] as unknown[];
     }
     return [];
   } catch {
@@ -461,11 +542,11 @@ export function estraiListaAttiReali(grezzo: unknown): unknown[] {
 export function estraiListaComunicatiReali(grezzo: unknown): unknown[] {
   try {
     if (Array.isArray(grezzo)) return grezzo;
-    if (grezzo && typeof grezzo === "object") {
+    if (grezzo && typeof grezzo === 'object') {
       const o = grezzo as Record<string, unknown>;
-      if (Array.isArray(o["comunicati"])) return o["comunicati"] as unknown[];
-      if (Array.isArray(o["dati"])) return o["dati"] as unknown[];
-      if (Array.isArray(o["items"])) return o["items"] as unknown[];
+      if (Array.isArray(o['comunicati'])) return o['comunicati'] as unknown[];
+      if (Array.isArray(o['dati'])) return o['dati'] as unknown[];
+      if (Array.isArray(o['items'])) return o['items'] as unknown[];
     }
     return [];
   } catch {
@@ -473,26 +554,38 @@ export function estraiListaComunicatiReali(grezzo: unknown): unknown[] {
   }
 }
 
-function moduliNode(): { fs: { existsSync(p: string): boolean; readFileSync(p: string, enc: string): string }; path: { join(...p: string[]): string } } | null {
+function moduliNode(): {
+  fs: { existsSync(p: string): boolean; readFileSync(p: string, enc: string): string };
+  path: { join(...p: string[]): string };
+} | null {
   try {
-    if (typeof process === "undefined") return null;
-    if (typeof window !== "undefined") return null;
-    const g = globalThis as unknown as { process?: { getBuiltinModule?: (m: string) => unknown }; require?: (m: string) => unknown };
+    if (typeof process === 'undefined') return null;
+    if (typeof window !== 'undefined') return null;
+    const g = globalThis as unknown as {
+      process?: { getBuiltinModule?: (m: string) => unknown };
+      require?: (m: string) => unknown;
+    };
     try {
       const proc = g.process;
-      if (proc && typeof proc.getBuiltinModule === "function") {
-        const fs = proc.getBuiltinModule("node:fs") as { existsSync(p: string): boolean; readFileSync(p: string, enc: string): string };
-        const path = proc.getBuiltinModule("node:path") as { join(...p: string[]): string };
-        if (fs && path && typeof fs.readFileSync === "function") return { fs, path };
+      if (proc && typeof proc.getBuiltinModule === 'function') {
+        const fs = proc.getBuiltinModule('node:fs') as {
+          existsSync(p: string): boolean;
+          readFileSync(p: string, enc: string): string;
+        };
+        const path = proc.getBuiltinModule('node:path') as { join(...p: string[]): string };
+        if (fs && path && typeof fs.readFileSync === 'function') return { fs, path };
       }
     } catch {
       // continua con require
     }
     try {
       const req = g.require;
-      if (typeof req === "function") {
-        const fs = req("node:fs") as { existsSync(p: string): boolean; readFileSync(p: string, enc: string): string };
-        const path = req("node:path") as { join(...p: string[]): string };
+      if (typeof req === 'function') {
+        const fs = req('node:fs') as {
+          existsSync(p: string): boolean;
+          readFileSync(p: string, enc: string): string;
+        };
+        const path = req('node:path') as { join(...p: string[]): string };
         if (fs && path) return { fs, path };
       }
     } catch {
@@ -510,9 +603,9 @@ function leggiTuttiJsonDaDisco(percorsiRelativi: readonly string[]): unknown[] {
   try {
     const mod = moduliNode();
     if (!mod) return risultati;
-    let base = "";
+    let base = '';
     try {
-      base = typeof process !== "undefined" && process.cwd ? process.cwd() : "";
+      base = typeof process !== 'undefined' && process.cwd ? process.cwd() : '';
     } catch {
       return risultati;
     }
@@ -521,7 +614,7 @@ function leggiTuttiJsonDaDisco(percorsiRelativi: readonly string[]): unknown[] {
       try {
         const ass = mod.path.join(base, rel);
         if (!mod.fs.existsSync(ass)) continue;
-        const raw = mod.fs.readFileSync(ass, "utf8");
+        const raw = mod.fs.readFileSync(ass, 'utf8');
         if (!raw || raw.length > 2_000_000) continue;
         risultati.push(JSON.parse(raw) as unknown);
       } catch {
@@ -617,27 +710,68 @@ function caricaComunicatiReali(): CdmItem[] {
 }
 
 /**
- * Copia difensiva del corpus unificato + atti reali: i 5 seed (SEED_LAWS)
- * restano sempre i primi record e vincono la dedup per ELI, seguono gli atti
- * reali (`dimostrativo=false` forzato, solo se con titolo+eli verificati) e
- * poi il resto sintetico come prima. Thin-wrapper sincrono: non lancia mai,
- * in caso di errore o corpus vuoto ricade sui soli seed. Se i file
- * `data/reali/` sono assenti o invalidi, il comportamento precedente resta
- * invariato.
+ * Seed reali curati: `SEED_LAWS` senza le 3 schede dimostrative inventate
+ * (L 124/2025, D.Lgs 36/2026, L 8/2026, `dimostrativo=true`). Restano DL
+ * 133/2026 e DL 139/2026 curati. `lib/seed-data.ts` resta intatto: il filtro
+ * vive qui. Never-throw.
+ */
+function seedRealiCurati(): LawRecord[] {
+  try {
+    const filtrati = SEED_LAWS.filter((law) => {
+      try {
+        return (law as LawRecord).dimostrativo !== true;
+      } catch {
+        return true;
+      }
+    });
+    return filtrati.length > 0 ? filtrati : SEED_LAWS;
+  } catch {
+    return SEED_LAWS;
+  }
+}
+
+/**
+ * Copia difensiva del corpus real-only + atti reali: di default SOLO testi
+ * reali (seed curati non-dimostrativi + `data/reali/` + 2 atti di riferimento
+ * non-dimostrativi di `seed-data-espansa`), MAI sintetico inventato. Il
+ * corpus sintetico (`getCorpusUnificato`: atti dimostrativi curati + varianti
+ * "Variante N") entra SOLO con opt-in `CORPUS_SINTETICO=1` (dev/test), con i
+ * 5 seed legacy primi come prima. I seed curati restano primi e vincono la
+ * dedup per ELI; seguono gli atti reali (`dimostrativo=false` forzato, solo
+ * se con titolo+eli verificati). Thin-wrapper sincrono: non lancia mai,
+ * in caso di errore o corpus vuoto ricade sui soli seed reali. Se i file
+ * `data/reali/` sono assenti o invalidi, si usano seed reali + riferimenti.
  */
 export function getSeedLaws(): LawRecord[] {
   try {
-    const unificato = getCorpusUnificato();
     const reali = caricaAttiReali();
-    if (!Array.isArray(unificato) || unificato.length === 0) {
-      if (reali.length === 0) {
-        return SEED_LAWS.map(clonaLegge);
-      }
-      return unisciCorpus(SEED_LAWS, reali, []);
+    let riferimenti: LawRecord[] = [];
+    try {
+      riferimenti = getCorpusRiferimenti();
+    } catch {
+      riferimenti = [];
     }
-    return unisciCorpus(SEED_LAWS, reali, unificato);
+    if (isCorpusSinteticoAbilitato()) {
+      const unificato = getCorpusUnificato();
+      if (!Array.isArray(unificato) || unificato.length === 0) {
+        if (reali.length === 0) {
+          return SEED_LAWS.map(clonaLegge);
+        }
+        return unisciCorpus(SEED_LAWS, reali, riferimenti);
+      }
+      return unisciCorpus(SEED_LAWS, reali, unificato);
+    }
+    const seeds = seedRealiCurati();
+    if (reali.length === 0 && riferimenti.length === 0) {
+      return seeds.map(clonaLegge);
+    }
+    return unisciCorpus(seeds, reali, riferimenti);
   } catch {
-    return SEED_LAWS.map(clonaLegge);
+    try {
+      return seedRealiCurati().map(clonaLegge);
+    } catch {
+      return SEED_LAWS.map(clonaLegge);
+    }
   }
 }
 
@@ -658,7 +792,7 @@ export function unisciCorpus(
   const perChiave = new Map<string, LawRecord>();
   const accoda = (legge: unknown, reale: boolean): void => {
     try {
-      if (!legge || typeof legge !== "object") return;
+      if (!legge || typeof legge !== 'object') return;
       const chiave = chiaveEli((legge as LawRecord).eli);
       if (!chiave) return;
       const esistente = perChiave.get(chiave);
@@ -666,7 +800,7 @@ export function unisciCorpus(
         // Stesso atto in seed e reali: testo ufficiale nel seed curato.
         if (reale && esistente.testo !== (legge as LawRecord).testo) {
           const testoUfficiale = (legge as LawRecord).testo;
-          if (typeof testoUfficiale === "string" && testoUfficiale.trim()) {
+          if (typeof testoUfficiale === 'string' && testoUfficiale.trim()) {
             esistente.testo = testoUfficiale;
             esistente.gulpease = null;
           }
@@ -699,13 +833,15 @@ export function unisciCorpus(
 /** Informazioni sintetiche sul corpus (base 5 seed + espansi). Non lancia mai.
  *
  * Formula REALI-10 (documentata, legacy invariato):
- * - `base` = SEED_LAWS.length (5 seed, sempre primi nel corpus);
- * - `totale` = getSeedLaws().length (seed + reali + sintetico, dedup ELI);
+ * - `base` = SEED_LAWS.length (5 seed legacy, valore storico invariato);
+ * - `totale` = getSeedLaws().length (real-only di default: seed curati +
+ *   reali + 2 riferimenti, dedup ELI; con opt-in `CORPUS_SINTETICO=1` anche
+ *   il sintetico legacy);
  * - `espansi` = totale - base (significato storico invariato: tutto cio'
- *   che sta oltre i seed, reali + sintetico);
+ *   che sta oltre i seed, reali + (solo con opt-in) sintetico);
  * - `reali` = record con `dimostrativo === false` in getSeedLaws()
  *   (atti ufficiali da `data/reali/` + 2 atti di riferimento non-dimostrativi
- *   del corpus sintetico; sottoinsieme del totale, mai rete, fallback 0).
+ *   del corpus espanso; sottoinsieme del totale, mai rete, fallback 0).
  * Invarianti: base + espansi == totale; 0 <= reali <= totale.
  */
 export interface InfoCorpus {
@@ -713,6 +849,8 @@ export interface InfoCorpus {
   espansi: number;
   reali: number;
   totale: number;
+  /** Record con `dimostrativo === true` (0 in real-only; >0 solo con opt-in). */
+  dimostrative: number;
 }
 
 export function getCorpusInfo(): InfoCorpus {
@@ -721,23 +859,30 @@ export function getCorpusInfo(): InfoCorpus {
     const leggi = getSeedLaws();
     const totale = leggi.length;
     let reali = 0;
+    let dimostrative = 0;
     try {
       for (const legge of leggi) {
         if ((legge as LawRecord).dimostrativo === false) reali += 1;
+        else if ((legge as LawRecord).dimostrativo === true) dimostrative += 1;
       }
     } catch {
       reali = 0;
+      dimostrative = 0;
     }
-    return { base, espansi: Math.max(0, totale - base), reali, totale };
+    return { base, espansi: Math.max(0, totale - base), reali, totale, dimostrative };
   } catch {
     const base = SEED_LAWS.length;
-    return { base, espansi: 0, reali: 0, totale: base };
+    return { base, espansi: 0, reali: 0, totale: base, dimostrative: 0 };
   }
 }
 
 /** Copia difensiva dei ministri seed. */
 export function getSeedMinisters(): MinisterRecord[] {
-  return SEED_MINISTERS.map((m) => ({ ...m, competenze: [...m.competenze], provvedimenti: [...m.provvedimenti] }));
+  return SEED_MINISTERS.map((m) => ({
+    ...m,
+    competenze: [...m.competenze],
+    provvedimenti: [...m.provvedimenti],
+  }));
 }
 
 /** Copia difensiva dei comunicati CdM: reali primi se presenti e validi, altrimenti seed. Non lancia mai. */
@@ -753,7 +898,7 @@ export function getSeedCdm(): CdmItem[] {
 
 /** Ricerca testuale (case-insensitive) nelle leggi seed. */
 export function searchSeedLaws(q: string): LawRecord[] {
-  const query = (q ?? "").trim().toLowerCase();
+  const query = (q ?? '').trim().toLowerCase();
   const leggi = getSeedLaws();
   if (!query) return leggi;
   return leggi.filter((law) =>

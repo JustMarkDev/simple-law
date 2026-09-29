@@ -21,7 +21,7 @@ import {
 } from '@/lib/oversight-dati'
 
 export const metadata: Metadata = {
-  title: 'Elenco controllo — Contratti e provvedimenti — Stato della Repubblica',
+  title: 'Elenco controllo - Contratti e provvedimenti - Stato della Repubblica',
   description:
     'Elenco ricercabile dei contratti pubblici ANAC 2025 e dei provvedimenti di giustizia amministrativa 2026: documenti di controllo, non sono leggi.',
 }
@@ -214,7 +214,7 @@ export default async function ListaControlloPage({
                 <li key={p.schedaUrl || `${p.giudice}-${p.numero ?? ''}-${p.anno ?? ''}`} className="border border-regola bg-carta p-5 dark:border-notte-deep dark:bg-notte-soft">
                   <div className="flex flex-wrap items-center gap-2">
                     <span className="inline-flex items-center border border-inchiostro px-2 py-1 text-[11px] font-bold uppercase tracking-wide text-inchiostro dark:border-nebbia dark:text-nebbia">
-                      {p.giudice === 'cds' ? 'CdS' : p.giudice === 'cga' ? 'CGA' : 'TAR'}{p.sezione ? ` · ${p.sezione}` : ''} — non è una legge
+                      {p.giudice === 'cds' ? 'CdS' : p.giudice === 'cga' ? 'CGA' : 'TAR'}{p.sezione ? ` · ${p.sezione}` : ''} - non è una legge
                     </span>
                     <span className="text-xs text-inchiostro-faint dark:text-nebbia-faint">
                       {p.data ? dataIT(p.data) : 'data non indicata'}
@@ -267,7 +267,7 @@ export default async function ListaControlloPage({
           <section aria-labelledby="fonti-ga" className="mt-10 border border-regola bg-carta-soft p-5 dark:border-notte-deep dark:bg-notte-soft">
             <h2 id="fonti-ga" className="font-serif text-lg font-bold text-inchiostro dark:text-nebbia">Fonte e licenza</h2>
             <p className="mt-2 text-sm leading-relaxed text-inchiostro-soft dark:text-nebbia-soft">
-              Fonte: {provenance.fonte ?? 'Giustizia Amministrativa'} — licenza {provenance.licenza ?? 'da confermare nel file'}
+              Fonte: {provenance.fonte ?? 'Giustizia Amministrativa'} - licenza {provenance.licenza ?? 'da confermare nel file'}
               {provenance.recuperatoIl ? ` · dati aggiornati al ${dataIT(provenance.recuperatoIl)}` : ''}. {DISCLAIMER_CONTROLLO}
             </p>
           </section>
@@ -372,7 +372,7 @@ export default async function ListaControlloPage({
                 <li key={d.id} className="border border-regola bg-carta p-5 dark:border-notte-deep dark:bg-notte-soft">
                   <div className="flex flex-wrap items-center gap-2">
                     <span className="inline-flex items-center border border-inchiostro px-2 py-1 text-[11px] font-bold uppercase tracking-wide text-inchiostro dark:border-nebbia dark:text-nebbia">
-                      CNEL{d.tipo ? ` · ${d.tipo}` : ''} — non è una legge
+                      CNEL{d.tipo ? ` · ${d.tipo}` : ''} - non è una legge
                     </span>
                     <span className="text-xs text-inchiostro-faint dark:text-nebbia-faint">
                       {d.data ? dataIT(d.data) : 'data non indicata'}
@@ -412,7 +412,7 @@ export default async function ListaControlloPage({
           <section aria-labelledby="fonti-cnel" className="mt-10 border border-regola bg-carta-soft p-5 dark:border-notte-deep dark:bg-notte-soft">
             <h2 id="fonti-cnel" className="font-serif text-lg font-bold text-inchiostro dark:text-nebbia">Fonte e licenza</h2>
             <p className="mt-2 text-sm leading-relaxed text-inchiostro-soft dark:text-nebbia-soft">
-              Fonte: {provenance.fonte ?? 'CNEL'} — licenza {provenance.licenza ?? 'da confermare nel file'}
+              Fonte: {provenance.fonte ?? 'CNEL'} - licenza {provenance.licenza ?? 'da confermare nel file'}
               {provenance.recuperatoIl ? ` · dati aggiornati al ${dataIT(provenance.recuperatoIl)}` : ''}. {DISCLAIMER_CONTROLLO}
             </p>
           </section>
@@ -527,7 +527,7 @@ export default async function ListaControlloPage({
                 <li key={c.ocid || c.cig || c.oggetto} className="border border-regola bg-carta p-5 dark:border-notte-deep dark:bg-notte-soft">
                   <div className="flex flex-wrap items-center gap-2">
                     <span className="inline-flex items-center border border-inchiostro px-2 py-1 text-[11px] font-bold uppercase tracking-wide text-inchiostro dark:border-nebbia dark:text-nebbia">
-                      Contratto pubblico — non è una legge
+                      Contratto pubblico - non è una legge
                     </span>
                     {c.cig && (
                       <span className="text-xs text-inchiostro-faint dark:text-nebbia-faint">CIG {c.cig}</span>
@@ -584,7 +584,7 @@ export default async function ListaControlloPage({
         <section aria-labelledby="fonti-contratti" className="mt-10 border border-regola bg-carta-soft p-5 dark:border-notte-deep dark:bg-notte-soft">
           <h2 id="fonti-contratti" className="font-serif text-lg font-bold text-inchiostro dark:text-nebbia">Fonte e licenza</h2>
           <p className="mt-2 text-sm leading-relaxed text-inchiostro-soft dark:text-nebbia-soft">
-            Fonte: {provenance.fonte ?? 'ANAC/BDNCP'} — licenza {provenance.licenza ?? 'da confermare nel file'}
+            Fonte: {provenance.fonte ?? 'ANAC/BDNCP'} - licenza {provenance.licenza ?? 'da confermare nel file'}
             {provenance.recuperatoIl ? ` · dati aggiornati al ${dataIT(provenance.recuperatoIl)}` : ''}. {DISCLAIMER_CONTROLLO}
           </p>
         </section>

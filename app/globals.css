@@ -26,7 +26,7 @@ html.dark {
 
 html {
   scroll-behavior: smooth;
-  background-color: #faf8f3;
+  background-color: #fdf9f1;
 }
 
 html.dark {
@@ -44,10 +44,12 @@ html.dark ::selection {
 }
 
 @layer base {
+  /* Focus caldo e visibile (AA): alone terracotta su contorno accento. */
   :focus-visible {
     outline: 3px solid var(--accento, #9c1f29);
     outline-offset: 2px;
-    border-radius: 2px;
+    border-radius: 6px;
+    box-shadow: 0 0 0 5px rgba(156, 31, 41, 0.16);
   }
 
   html.dark :focus-visible {
@@ -103,17 +105,23 @@ html.dark ::selection {
   }
 
   /* Stati di caricamento/disabilitazione annunciati ai lettori di schermo. */
-  [aria-busy="true"] {
+  [aria-busy='true'] {
     cursor: progress;
   }
 
-  [aria-disabled="true"],
+  [aria-disabled='true'],
   :disabled {
     cursor: not-allowed;
   }
 }
 
 @layer components {
+  /*
+   * Blocco angoli cozy: MAI rounded-full in UI (solo puntini di stato da 8px).
+   * Bottoni/input -> rounded-xl (1rem), card -> rounded-2xl (1.25rem),
+   * badge -> rounded-lg. Non usare pill/stadio per nessun contenitore.
+   */
+
   /* Collegamento "Vai al contenuto" visibile solo con tastiera. */
   .salta-contenuto {
     position: absolute;
@@ -121,13 +129,13 @@ html.dark ::selection {
     top: -4rem;
     z-index: 100;
     display: inline-flex;
-    min-height: 2.75rem;
+    min-height: 3rem;
     align-items: center;
     padding: 0.5rem 1rem;
     font-weight: 600;
     background: #1a1714;
     color: #faf8f3;
-    border-radius: 0.375rem;
+    border-radius: 0.625rem;
     transition: top 0.15s ease-out;
   }
 
@@ -142,10 +150,10 @@ html.dark ::selection {
     color: #121110;
   }
 
-  /* Bersaglio minimo di tocco 44px per WCAG 2.5.8. */
+  /* Bersaglio minimo di tocco 48px per mani stanche e schermi piccoli. */
   .obiettivo-tocco {
-    min-height: 2.75rem;
-    min-width: 2.75rem;
+    min-height: 3rem;
+    min-width: 3rem;
   }
 
   /* Troncatura su 2/3 righe con ripiego per browser senza line-clamp. */
@@ -179,7 +187,7 @@ html.dark ::selection {
 
     .tronca-2::after,
     .tronca-3::after {
-      content: "…";
+      content: '…';
       position: absolute;
       right: 0;
       bottom: 0;
@@ -210,7 +218,7 @@ html.dark ::selection {
     float: left;
     margin-right: 0.5rem;
     margin-top: 0.3rem;
-    font-family: Georgia, "Times New Roman", serif;
+    font-family: Georgia, 'Times New Roman', serif;
     font-size: 3.1rem;
     line-height: 0.8;
     font-weight: 700;
@@ -218,15 +226,64 @@ html.dark ::selection {
 
   /* Scheletro di caricamento per le 12 card della lista leggi. */
   .scheletro-card {
-    border-radius: 0.5rem;
-    background: linear-gradient(100deg, #eae2d2 40%, #f3eee3 50%, #eae2d2 60%);
+    border-radius: 1.25rem;
+    background: linear-gradient(100deg, #efe4d0 40%, #faf3e6 50%, #efe4d0 60%);
     background-size: 200% 100%;
-    animation: onda-scheletro 1.4s ease-in-out infinite;
+    animation: onda-scheletro 1.8s ease-in-out infinite;
   }
 
   html.dark .scheletro-card {
-    background: linear-gradient(100deg, #302b24 40%, #1b1916 50%, #302b24 60%);
+    background: linear-gradient(100deg, #2b2620 40%, #211d18 50%, #2b2620 60%);
     background-size: 200% 100%;
+  }
+
+  /*
+   * Vetro caldo approssimato (onesto: nessuna libreria ufficiale liquid-glass,
+   * solo backdrop-blur + tinta calda traslucida + bordo bianco/40 + ombra
+   * interna sottile). Per header sticky e card featured.
+   */
+  .vetro {
+    background-color: rgba(253, 249, 241, 0.72);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(14px) saturate(1.08);
+    -webkit-backdrop-filter: blur(14px) saturate(1.08);
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.4),
+      0 10px 28px -14px rgba(156, 31, 41, 0.18);
+  }
+
+  html.dark .vetro {
+    background-color: rgba(27, 25, 22, 0.66);
+    border-color: rgba(255, 255, 255, 0.14);
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.08),
+      0 10px 28px -14px rgba(0, 0, 0, 0.6);
+  }
+
+  /* Ripiego solido dove backdrop-filter manca: tinta piena calda. */
+  @supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+    .vetro {
+      background-color: #fdf9f1;
+      backdrop-filter: none;
+      -webkit-backdrop-filter: none;
+    }
+
+    html.dark .vetro {
+      background-color: #1b1916;
+    }
+  }
+}
+
+/* Tinta piena calda quando l'utente chiede meno trasparenza. */
+@media (prefers-reduced-transparency: reduce) {
+  .vetro {
+    background-color: #fdf9f1 !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+  }
+
+  html.dark .vetro {
+    background-color: #1b1916 !important;
   }
 }
 
@@ -309,8 +366,8 @@ html.dark ::selection {
     text-decoration: underline;
   }
 
-  a[href^="http"]::after {
-    content: " (" attr(href) ")";
+  a[href^='http']::after {
+    content: ' (' attr(href) ')';
     font-size: 0.85em;
     word-break: break-all;
   }

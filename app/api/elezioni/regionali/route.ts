@@ -1,5 +1,5 @@
 /**
- * GET /api/elezioni/regionali — catalogo delle regionali con aggregati reali.
+ * GET /api/elezioni/regionali - catalogo delle regionali con aggregati reali.
  * Query opzionale `?id=` (default: tutte; senza `id` elenca le regionali
  * disponibili). Id non valido -> 404. Mai 500: in caso di errore restituisce
  * l'elenco vuoto con licenza, disclaimer e provenance.

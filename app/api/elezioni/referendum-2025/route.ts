@@ -1,5 +1,5 @@
 /**
- * GET /api/elezioni/referendum-2025 — quesiti SI/NO del referendum 8-9 giugno
+ * GET /api/elezioni/referendum-2025 - quesiti SI/NO del referendum 8-9 giugno
  * 2025 (aggregati DAIT, mai nominativi). Query: `q` (cerca comune, max 100
  * ch, min 2), `regione` (match esatto, max 80 ch), `page` (1..10000),
  * `per` (1..100, default 20), `sort` (`a_asc`|`a_desc`). File assente ->

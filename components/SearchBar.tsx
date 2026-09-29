@@ -2,6 +2,8 @@
 
 import { useRouter } from 'next/navigation'
 import { useState, useTransition, type FormEvent } from 'react'
+import { motion, useReducedMotion } from 'motion/react'
+import { Search01Icon } from 'hugeicons-react'
 
 interface SearchBarProps {
   defaultValue?: string
@@ -14,19 +16,20 @@ interface SearchBarProps {
   query?: Record<string, string>
 }
 
-/** Barra di ricerca accessibile: invia la query alla pagina indicata. */
+/** Barra di ricerca accogliente: parole semplici, bersaglio ampio, icona Hugeicons. */
 export default function SearchBar({
   defaultValue = '',
   action = '/leggi',
-  placeholder = 'Cerca una legge, un tema o una parola',
+  placeholder = 'Scrivi una parola: lavoro, casa, scuola…',
   id = 'ricerca-legge',
-  label = 'Cerca una legge',
+  label = 'Cerca',
   className = '',
   query = {},
 }: SearchBarProps) {
   const router = useRouter()
   const [value, setValue] = useState(defaultValue)
   const [inAttesa, avviaTransizione] = useTransition()
+  const ridotto = useReducedMotion()
 
   function onSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault()
@@ -48,15 +51,13 @@ export default function SearchBar({
     <form role="search" onSubmit={onSubmit} className={className} aria-busy={inAttesa}>
       <label
         htmlFor={id}
-        className="mb-1 block text-xs font-semibold uppercase tracking-wide text-inchiostro-soft dark:text-nebbia-soft"
+        className="mb-2 block text-sm font-bold text-inchiostro dark:text-nebbia"
       >
         {label}
       </label>
-      <div className="flex items-center gap-2 border border-inchiostro bg-carta p-1.5 focus-within:ring-2 focus-within:ring-inchiostro/30 dark:border-nebbia/40 dark:bg-notte-soft dark:focus-within:ring-nebbia/25">
+      <div className="flex items-center gap-2 rounded-xl border border-regola bg-carta p-2 transition-colors focus-within:border-accento dark:border-notte-deep dark:bg-notte dark:focus-within:border-accento-chiara">
         <span aria-hidden="true" className="pl-2 text-inchiostro-faint dark:text-nebbia-faint">
-          <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth="2">
-            <path strokeLinecap="round" strokeLinejoin="round" d="m21 21-4.3-4.3M17 10a7 7 0 1 1-14 0 7 7 0 0 1 14 0Z" />
-          </svg>
+          <Search01Icon size={22} strokeWidth={2} />
         </span>
         <input
           id={id}
@@ -69,19 +70,21 @@ export default function SearchBar({
           maxLength={200}
           disabled={inAttesa}
           aria-busy={inAttesa}
-          className="min-h-[44px] min-w-0 flex-1 bg-transparent py-2 text-sm text-inchiostro placeholder:text-inchiostro-faint focus:outline-none disabled:opacity-60 dark:text-nebbia dark:placeholder:text-nebbia-faint"
+          className="min-h-[48px] min-w-0 flex-1 rounded-lg bg-transparent px-1 py-2 text-base text-inchiostro placeholder:text-inchiostro-faint focus:outline-none disabled:opacity-60 dark:text-nebbia dark:placeholder:text-nebbia-faint"
         />
-        <button
+        <motion.button
           type="submit"
           disabled={inAttesa}
           aria-disabled={inAttesa}
-          className="inline-flex min-h-[44px] shrink-0 items-center bg-inchiostro px-4 py-2 text-xs font-semibold uppercase tracking-wide text-carta transition-colors hover:bg-inchiostro-soft focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-inchiostro disabled:opacity-60 dark:bg-nebbia dark:text-notte dark:hover:bg-nebbia-soft dark:focus-visible:outline-nebbia"
+          whileTap={ridotto ? undefined : { scale: 0.97 }}
+          transition={{ duration: 0.15, ease: 'easeOut' }}
+          className="inline-flex min-h-[48px] shrink-0 items-center rounded-xl bg-accento px-5 py-3 text-sm font-bold text-white transition-colors hover:brightness-110 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accento disabled:opacity-60 motion-reduce:transition-none dark:bg-accento-chiara dark:text-notte dark:focus-visible:outline-accento-chiara"
         >
-          {inAttesa ? 'Ricerca…' : 'Cerca'}
-        </button>
+          {inAttesa ? 'Aspetta…' : 'Cerca'}
+        </motion.button>
       </div>
       <span aria-live="polite" className="sr-only">
-        {inAttesa ? 'Ricerca in corso, aggiornamento dei risultati.' : ''}
+        {inAttesa ? 'Ricerca in corso.' : ''}
       </span>
     </form>
   )

@@ -10,9 +10,9 @@ import {
 export const revalidate = 3600
 
 export const metadata: Metadata = {
-  title: 'Regionali Liguria 2024 e Calabria 2025 — Stato della Repubblica',
+  title: 'Regionali Liguria 2024 e Calabria 2025 - Stato della Repubblica',
   description:
-    'Elezioni regionali di Liguria (27 ottobre 2024) e Calabria (5 ottobre 2025) con dati ufficiali aggregati del Ministero dell’Interno (DAIT–Eligendo): affluenza e voti per lista, affluenza per comune, senza dati personali.',
+    'Elezioni regionali di Liguria (27 ottobre 2024) e Calabria (5 ottobre 2025) con dati ufficiali aggregati del Ministero dell’Interno (DAIT-Eligendo): affluenza e voti per lista, affluenza per comune, senza dati personali.',
 }
 
 /* Registro statico (solo id, mai numeri): i totali sono letti dai file. */
@@ -26,25 +26,25 @@ interface VoceRegistro {
 const REGISTRO: VoceRegistro[] = [
   {
     id: 'regionali-2024-liguria',
-    titolo: 'Elezioni regionali 2024 — Liguria',
+    titolo: 'Elezioni regionali 2024 - Liguria',
     descrizione:
       'Voto del 27 ottobre 2024 in Liguria (data dal nome dello ZIP DAIT): affluenza e voti per lista a livello regionale e affluenza per comune. Solo aggregati, nessun nominativo; i voti del presidente non sono pubblicati come aggregato nel tracciato.',
   },
   {
     id: 'regionali-2025-calabria',
-    titolo: 'Elezioni regionali 2025 — Calabria',
+    titolo: 'Elezioni regionali 2025 - Calabria',
     descrizione:
       'Voto del 5 ottobre 2025 in Calabria (data dal nome dello ZIP DAIT): affluenza e voti per lista a livello regionale e affluenza per comune. Solo aggregati, nessun nominativo; i voti del presidente non sono pubblicati come aggregato nel tracciato.',
   },
   {
     id: 'regionali-2025-calabria',
-    titolo: 'Elezioni regionali 2025 — Calabria',
+    titolo: 'Elezioni regionali 2025 - Calabria',
     descrizione:
       'Voto del 5 ottobre 2025 in Calabria (data dal nome dello ZIP DAIT): affluenza e voti per lista a livello regionale e affluenza per comune. Solo aggregati, nessun nominativo; i voti del presidente non sono pubblicati come aggregato nel tracciato.',
   },
   {
     id: 'regionali-2024-emilia-romagna',
-    titolo: 'Elezioni regionali 2024 — Emilia-Romagna',
+    titolo: 'Elezioni regionali 2024 - Emilia-Romagna',
     descrizione:
       'Voto del 17 novembre 2024 in Emilia-Romagna (data dal nome dello ZIP DAIT): affluenza e voti per lista a livello regionale e affluenza per comune. Solo aggregati, nessun nominativo.',
   },
@@ -105,7 +105,7 @@ export default async function RegionaliExtraPage() {
             Regionali: Liguria 2024, Emilia-Romagna 2024 e Calabria 2025
           </h1>
           <p className="mt-3 max-w-2xl text-sm leading-relaxed text-inchiostro-soft dark:text-nebbia-soft">
-            Risultati elettorali da open data del Ministero dell’Interno (DAIT–Eligendo).
+            Risultati elettorali da open data del Ministero dell’Interno (DAIT-Eligendo).
             Pubblichiamo <strong>solo aggregati</strong>: affluenza e voti per lista a livello
             regionale, affluenza per comune. Nessun nominativo, nessuna riga candidata.
           </p>
@@ -176,7 +176,7 @@ export default async function RegionaliExtraPage() {
           <ul className="mt-3 list-disc space-y-2 pl-5 text-sm leading-relaxed text-inchiostro-soft dark:text-nebbia-soft">
             <li>
               Fonte: Ministero dell’Interno, Dipartimento per gli Affari Interni e Territoriali
-              (DAIT) — Archivio Eligendo, open data a livello di sezione (Liguria) e comunale
+              (DAIT) - Archivio Eligendo, open data a livello di sezione (Liguria) e comunale
               (Calabria), aggregati a comune.
             </li>
             <li>
@@ -212,7 +212,7 @@ export default async function RegionaliExtraPage() {
                   )
                 </>
               ) : null}
-              {provenance.licenza ? ` — ${provenance.licenza}.` : '.'}
+              {provenance.licenza ? ` - ${provenance.licenza}.` : '.'}
             </p>
           ) : null}
         </section>

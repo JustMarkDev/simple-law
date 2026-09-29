@@ -4,7 +4,7 @@ import Footer from '@/components/Footer'
 import Comparsa from '@/components/Comparsa'
 
 export const metadata: Metadata = {
-  title: 'Fonti ufficiali — Stato della Repubblica',
+  title: 'Fonti ufficiali - Stato della Repubblica',
   description: 'Da dove prendiamo i testi delle norme: Normattiva, Gazzetta Ufficiale, Parlamento e Governo.',
 }
 
@@ -31,7 +31,7 @@ const FONTI: Fonte[] = [
       'Il quotidiano ufficiale su cui vengono pubblicate le leggi. Dalla pubblicazione decorrono gli effetti e i termini di attuazione.',
   },
   {
-    nome: 'Governo — Consiglio dei ministri',
+    nome: 'Governo - Consiglio dei ministri',
     url: 'https://www.governo.it/it/archivio-consiglio-dei-ministri',
     cosa: 'Comunicati e delibere',
     descrizione:

@@ -12,7 +12,7 @@ import {
 } from '@/lib/consulta'
 
 export const metadata: Metadata = {
-  title: 'Corte Costituzionale — Pronunce 2001 — Stato della Repubblica',
+  title: 'Corte Costituzionale - Pronunce 2001 - Stato della Repubblica',
   description:
     'Le prime 50 pronunce del 2001 della Corte Costituzionale dai dati aperti ufficiali (CC BY-SA 3.0): sentenze e ordinanze con ECLI e scheda ufficiale.',
 }
@@ -87,7 +87,7 @@ export default async function ConsultaPage({
             Giurisprudenza · Anno 2001
           </p>
           <h1 className="mt-2 font-serif text-3xl font-bold text-inchiostro dark:text-nebbia sm:text-4xl">
-            Corte Costituzionale — Pronunce 2001
+            Corte Costituzionale - Pronunce 2001
           </h1>
           <p className="mt-3 max-w-2xl text-sm leading-relaxed text-inchiostro-soft dark:text-nebbia-soft">
             Le prime 50 pronunce del 2001 dai dati aperti ufficiali della Corte. Sentenze e ordinanze:
@@ -168,7 +168,7 @@ export default async function ConsultaPage({
               >
                 <div className="flex flex-wrap items-center gap-2">
                   <span className="inline-flex items-center border border-inchiostro px-2 py-1 text-[11px] font-bold uppercase tracking-wide text-inchiostro dark:border-nebbia dark:text-nebbia">
-                    {p.tipologia === 'S' ? 'S · Sentenza' : p.tipologia === 'O' ? 'O · Ordinanza' : (p.tipologia ?? '—')}
+                    {p.tipologia === 'S' ? 'S · Sentenza' : p.tipologia === 'O' ? 'O · Ordinanza' : (p.tipologia ?? '-')}
                   </span>
                   <span className="text-xs text-inchiostro-faint dark:text-nebbia-faint">
                     Deposito: {dataIT(p.dataDeposito)}
@@ -229,8 +229,8 @@ export default async function ConsultaPage({
             Fonte e licenza
           </h2>
           <p className="mt-2 text-sm leading-relaxed text-inchiostro-soft dark:text-nebbia-soft">
-            Fonte: dati.cortecostituzionale.it (open data) — licenza {provenance.licenza ?? 'CC BY-SA 3.0'} ·
-            anno 2001 · {provenance.totaleAnno ?? '—'} atti nell&apos;anno, qui le prime {tutte.length}
+            Fonte: dati.cortecostituzionale.it (open data) - licenza {provenance.licenza ?? 'CC BY-SA 3.0'} ·
+            anno 2001 · {provenance.totaleAnno ?? '-'} atti nell&apos;anno, qui le prime {tutte.length}
             {provenance.recuperatoIl ? ` · dati aggiornati al ${dataIT(provenance.recuperatoIl.slice(0, 10))}` : ''}.
           </p>
           <p className="mt-2 text-xs leading-relaxed text-inchiostro-faint dark:text-nebbia-faint">

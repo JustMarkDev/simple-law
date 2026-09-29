@@ -6,13 +6,13 @@ import TrafficLight from '@/components/TrafficLight'
 import { STATO_META, type Stato } from '@/components/seed-fallback'
 
 export const metadata: Metadata = {
-  title: 'Metodologia — Stato della Repubblica',
+  title: 'Metodologia - Stato della Repubblica',
   description: 'Come costruiamo le schede: template a 5 riquadri, semaforo di attuazione, leggibilità e limiti.',
 }
 
 const RIQUADRI = [
   { titolo: '1. In 10 secondi', testo: 'La norma in una frase. Serve a capire subito se vale la pena leggere il resto.' },
-  { titolo: '2. Riguarda te?', testo: 'Quattro punti di vista — Guida, Lavoro, Impresa, Studio — per trovare la tua situazione.' },
+  { titolo: '2. Riguarda te?', testo: 'Quattro punti di vista - Guida, Lavoro, Impresa, Studio - per trovare la tua situazione.' },
   { titolo: '3. Cosa fare', testo: 'I passi concreti: cosa controllare, cosa preparare, entro quando.' },
   { titolo: '4. Funziona già?', testo: 'Il semaforo dice se la norma è attiva o se servono decreti attuativi.' },
   { titolo: '5. Bene o male?', testo: 'Punti a favore e critici, con indicatori di qualità e leggibilità. Fatti, non opinioni.' },
@@ -106,8 +106,8 @@ export default function MetodologiaPage() {
             </p>
             <ul className="space-y-1.5">
               <li>≥ 80: molto chiaro, adatto a tutti.</li>
-              <li>60–79: chiaro, livello B1–B2.</li>
-              <li>40–59: medio, richiede attenzione.</li>
+              <li>60-79: chiaro, livello B1-B2.</li>
+              <li>40-59: medio, richiede attenzione.</li>
               <li>&lt; 40: difficile, tipico dei testi tecnici.</li>
             </ul>
             <p>

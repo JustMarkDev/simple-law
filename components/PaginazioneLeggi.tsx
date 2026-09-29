@@ -1,3 +1,8 @@
+'use client'
+
+import { motion, useReducedMotion } from 'motion/react'
+import { ArrowLeft01Icon, ArrowRight01Icon } from 'hugeicons-react'
+
 interface PaginazioneLeggiProps {
   page: number
   per: number
@@ -35,8 +40,9 @@ function voci(page: number, pagine: number): Voce[] {
   return risultato
 }
 
-/** Paginazione server-side con link condivisibili (no JS). Ellissi + salto diretto alla pagina. */
+/** Paginazione con link condivisibili (no JS). Tasti grandi da 48px, frecce Hugeicons. */
 export default function PaginazioneLeggi({ page, per, total, query, basePath = '/leggi' }: PaginazioneLeggiProps) {
+  const fermo = useReducedMotion()
   const pagine = Math.max(1, Math.ceil(total / per))
   if (pagine <= 1) return null
   const corrente = Math.min(Math.max(1, page), pagine)
@@ -44,26 +50,41 @@ export default function PaginazioneLeggi({ page, per, total, query, basePath = '
   const next = corrente < pagine ? corrente + 1 : null
 
   const btn =
-    'inline-flex min-h-[44px] min-w-[44px] items-center justify-center border border-regola px-4 py-2 text-xs font-semibold uppercase tracking-wide text-inchiostro-soft transition-colors hover:border-accento hover:text-accento dark:border-notte-deep dark:text-nebbia-soft dark:hover:border-accento-chiara dark:hover:text-accento-chiara'
+    'inline-flex min-h-[48px] min-w-[48px] items-center justify-center gap-1.5 rounded-xl border border-regola px-4 py-2 text-xs font-semibold uppercase tracking-wide text-inchiostro-soft transition-colors hover:border-accento hover:text-accento dark:border-notte-deep dark:text-nebbia-soft dark:hover:border-accento-chiara dark:hover:text-accento-chiara'
   const disabile = 'pointer-events-none opacity-40'
   const attivo =
-    'inline-flex min-h-[44px] min-w-[44px] items-center justify-center border border-accento bg-accento px-3 py-2 text-xs font-bold tabular-nums text-carta dark:border-accento-chiara dark:bg-accento-chiara dark:text-notte'
+    'inline-flex min-h-[48px] min-w-[48px] items-center justify-center rounded-xl border border-accento bg-accento px-3 py-2 text-xs font-bold tabular-nums text-carta dark:border-accento-chiara dark:bg-accento-chiara dark:text-notte'
+  const tocco = fermo ? undefined : { scale: 0.97 }
 
   const filtroNascosti = Object.entries(query).filter(([k, v]) => k !== 'page' && v)
 
   return (
-    <nav aria-label="Paginazione" className="mt-8 flex flex-wrap items-center justify-between gap-3">
+    <motion.nav
+      aria-label="Paginazione"
+      className="mt-8 flex flex-wrap items-center justify-between gap-3"
+      initial={fermo ? false : { opacity: 0, y: 8 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.3, ease: 'easeOut' }}
+    >
       <p className="text-sm text-inchiostro-soft dark:text-nebbia-soft" role="status">
         Pagina {corrente} di {pagine} · {total} {total === 1 ? 'norma' : 'norme'}
       </p>
       <div className="flex flex-wrap items-center gap-2">
         {prev ? (
-          <a href={href(basePath, query, prev)} rel="prev" className={btn}>
-            ← Precedente
-          </a>
+          <motion.a
+            href={href(basePath, query, prev)}
+            rel="prev"
+            aria-label={`Torna alla pagina ${prev}`}
+            className={btn}
+            whileTap={tocco}
+          >
+            <ArrowLeft01Icon size={16} aria-hidden="true" />
+            Indietro
+          </motion.a>
         ) : (
           <span aria-hidden="true" className={`${btn} ${disabile}`}>
-            ← Precedente
+            <ArrowLeft01Icon size={16} aria-hidden="true" />
+            Indietro
           </span>
         )}
         <ol className="flex flex-wrap items-center gap-1" aria-label="Vai alla pagina">
@@ -80,20 +101,33 @@ export default function PaginazioneLeggi({ page, per, total, query, basePath = '
               </li>
             ) : (
               <li key={i === 0 ? `prima-${v}` : v}>
-                <a href={href(basePath, query, v)} aria-label={`Vai alla pagina ${v}`} className={`${btn} px-3`}>
+                <motion.a
+                  href={href(basePath, query, v)}
+                  aria-label={`Vai alla pagina ${v}`}
+                  className={`${btn} px-3`}
+                  whileTap={tocco}
+                >
                   {v}
-                </a>
+                </motion.a>
               </li>
             ),
           )}
         </ol>
         {next ? (
-          <a href={href(basePath, query, next)} rel="next" className={btn}>
-            Successiva →
-          </a>
+          <motion.a
+            href={href(basePath, query, next)}
+            rel="next"
+            aria-label={`Vai alla pagina ${next}`}
+            className={btn}
+            whileTap={tocco}
+          >
+            Avanti
+            <ArrowRight01Icon size={16} aria-hidden="true" />
+          </motion.a>
         ) : (
           <span aria-hidden="true" className={`${btn} ${disabile}`}>
-            Successiva →
+            Avanti
+            <ArrowRight01Icon size={16} aria-hidden="true" />
           </span>
         )}
       </div>
@@ -117,7 +151,7 @@ export default function PaginazioneLeggi({ page, per, total, query, basePath = '
               max={pagine}
               defaultValue={corrente}
               required
-              className="min-h-[44px] w-24 border border-regola bg-carta px-3 py-2 text-sm text-inchiostro focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-inchiostro dark:border-notte-deep dark:bg-notte-soft dark:text-nebbia dark:focus-visible:outline-nebbia"
+              className="min-h-[48px] w-24 rounded-xl border border-regola bg-carta px-3 py-2 text-sm text-inchiostro focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-inchiostro dark:border-notte-deep dark:bg-notte-soft dark:text-nebbia dark:focus-visible:outline-nebbia"
             />
             <button type="submit" className={btn}>
               Vai
@@ -125,6 +159,6 @@ export default function PaginazioneLeggi({ page, per, total, query, basePath = '
           </div>
         </div>
       </form>
-    </nav>
+    </motion.nav>
   )
 }

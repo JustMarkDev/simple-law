@@ -9,7 +9,7 @@ import {
 } from '@/lib/quirinale-dati'
 
 export const metadata: Metadata = {
-  title: 'Quirinale — Comunicati — Stato della Repubblica',
+  title: 'Quirinale - Comunicati - Stato della Repubblica',
   description:
     'I comunicati recenti della Presidenza della Repubblica da quirinale.it: messaggi e dichiarazioni del Presidente. Non sono leggi.',
 }
@@ -61,7 +61,7 @@ export default async function QuirinalePage({
             Presidenza della Repubblica
           </p>
           <h1 className="mt-2 font-serif text-3xl font-bold text-inchiostro dark:text-nebbia sm:text-4xl">
-            Quirinale — Comunicati recenti
+            Quirinale - Comunicati recenti
           </h1>
           <p className="mt-3 max-w-2xl text-sm leading-relaxed text-inchiostro-soft dark:text-nebbia-soft">
             Messaggi, dichiarazioni e udienze del Presidente della Repubblica pubblicati su
@@ -158,7 +158,7 @@ export default async function QuirinalePage({
             Fonte e licenza
           </h2>
           <p className="mt-2 text-sm leading-relaxed text-inchiostro-soft dark:text-nebbia-soft">
-            Fonte: {provenance.fonte ?? 'quirinale.it'} — {provenance.licenza ?? 'uso non commerciale con attribuzione, fa fede la Gazzetta Ufficiale'}
+            Fonte: {provenance.fonte ?? 'quirinale.it'} - {provenance.licenza ?? 'uso non commerciale con attribuzione, fa fede la Gazzetta Ufficiale'}
             {provenance.recuperatoIl ? ` · dati aggiornati al ${dataIT(provenance.recuperatoIl.slice(0, 10))}` : ''}.
             Pagina 1 dell&apos;archivio comunicati (i comunicati non sono leggi: per i testi normativi fa fede la Gazzetta Ufficiale).
           </p>

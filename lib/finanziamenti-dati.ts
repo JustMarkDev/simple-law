@@ -46,7 +46,7 @@ export const PERCORSO_FINANZIAMENTI = "data/reali/finanziamenti-erogazioni-2024-
 export const MAX_JSON_BYTES = 1048576;
 
 /** Licenza obbligatoria da direttiva REALI-14 (solo riuso non commerciale). */
-export const LICENZA_FINANZIAMENTI = "camera.it — solo riuso non commerciale con citazione fonte";
+export const LICENZA_FINANZIAMENTI = "camera.it - solo riuso non commerciale con citazione fonte";
 
 /** Disclaimer fisso: i finanziamenti non sono leggi ne' bilanci. */
 export const DISCLAIMER_FINANZIAMENTI =

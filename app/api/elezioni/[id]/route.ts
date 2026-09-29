@@ -1,5 +1,5 @@
 /**
- * GET /api/elezioni/[id] — dettaglio aggregato di una consultazione.
+ * GET /api/elezioni/[id] - dettaglio aggregato di una consultazione.
  * Consultazioni: `europee-2024`, `politiche-2022-camera`,
  * `politiche-2022-senato` (nazionale + regioni/circoscrizioni con
  * per-lista, mai righe candidato/nominativi). Query: `top` (1..15,

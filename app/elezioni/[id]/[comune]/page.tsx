@@ -13,12 +13,12 @@ export async function generateStaticParams(): Promise<Array<{ id: string; comune
 }
 
 const REGISTRO: Array<{ id: string; titoloBreve: string; titolo: string; file: string }> = [
-  { id: 'europee-2024', titoloBreve: 'Europee 2024', titolo: 'Elezioni europee — 9 giugno 2024', file: path.join('data', 'reali', 'elezioni-europee-2024.json') },
-  { id: 'politiche-2022-camera', titoloBreve: 'Politiche 2022 — Camera', titolo: 'Elezioni politiche 2022 — Camera dei deputati', file: path.join('data', 'reali', 'elezioni-politiche-2022-camera.json') },
-  { id: 'politiche-2022-senato', titoloBreve: 'Politiche 2022 — Senato', titolo: 'Elezioni politiche 2022 — Senato della Repubblica', file: path.join('data', 'reali', 'elezioni-politiche-2022-senato.json') },
-  { id: 'regionali-2025-toscana', titoloBreve: 'Regionali 2025 — Toscana', titolo: 'Elezioni regionali 2025 — Toscana', file: path.join('data', 'reali', 'elezioni-regionali-2025-toscana.json') },
-  { id: 'regionali-2024-umbria', titoloBreve: 'Regionali 2024 — Umbria', titolo: 'Elezioni regionali 2024 — Umbria', file: path.join('data', 'reali', 'elezioni-regionali-2024-umbria.json') },
-  { id: 'referendum-2025', titoloBreve: 'Referendum 2025', titolo: 'Referendum 8-9 giugno 2025 — 5 quesiti', file: path.join('data', 'reali', 'referendum-2025.json') },
+  { id: 'europee-2024', titoloBreve: 'Europee 2024', titolo: 'Elezioni europee - 9 giugno 2024', file: path.join('data', 'reali', 'elezioni-europee-2024.json') },
+  { id: 'politiche-2022-camera', titoloBreve: 'Politiche 2022 - Camera', titolo: 'Elezioni politiche 2022 - Camera dei deputati', file: path.join('data', 'reali', 'elezioni-politiche-2022-camera.json') },
+  { id: 'politiche-2022-senato', titoloBreve: 'Politiche 2022 - Senato', titolo: 'Elezioni politiche 2022 - Senato della Repubblica', file: path.join('data', 'reali', 'elezioni-politiche-2022-senato.json') },
+  { id: 'regionali-2025-toscana', titoloBreve: 'Regionali 2025 - Toscana', titolo: 'Elezioni regionali 2025 - Toscana', file: path.join('data', 'reali', 'elezioni-regionali-2025-toscana.json') },
+  { id: 'regionali-2024-umbria', titoloBreve: 'Regionali 2024 - Umbria', titolo: 'Elezioni regionali 2024 - Umbria', file: path.join('data', 'reali', 'elezioni-regionali-2024-umbria.json') },
+  { id: 'referendum-2025', titoloBreve: 'Referendum 2025', titolo: 'Referendum 8-9 giugno 2025 - 5 quesiti', file: path.join('data', 'reali', 'referendum-2025.json') },
 ]
 
 const MAX_BYTE_JSON = 1024 * 1024
@@ -111,14 +111,14 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   try {
     const { id, comune } = await params
     const voce = REGISTRO.find((v) => v.id === id)
-    if (!voce) return { title: 'Elezione non trovata — Stato della Repubblica' }
+    if (!voce) return { title: 'Elezione non trovata - Stato della Repubblica' }
     const slug = decodeURIComponent(comune ?? '').slice(0, 120)
     return {
-      title: `${slug} — ${voce.titoloBreve} — Stato della Repubblica`,
-      description: `Affluenza aggregata DAIT–Eligendo per il comune «${slug}» (${voce.titoloBreve}). Solo aggregati, nessun nominativo.`,
+      title: `${slug} - ${voce.titoloBreve} - Stato della Repubblica`,
+      description: `Affluenza aggregata DAIT-Eligendo per il comune «${slug}» (${voce.titoloBreve}). Solo aggregati, nessun nominativo.`,
     }
   } catch {
-    return { title: 'Comune — Elezioni — Stato della Repubblica' }
+    return { title: 'Comune - Elezioni - Stato della Repubblica' }
   }
 }
 
@@ -246,10 +246,10 @@ export default async function ComunePage({ params }: Props) {
             Dati ufficiali DAIT · {voce!.titoloBreve}
           </p>
           <h1 className="mt-3 font-serif text-3xl font-bold text-inchiostro dark:text-nebbia sm:text-4xl">
-            {comune.c} — {comune.p} ({comune.r})
+            {comune.c} - {comune.p} ({comune.r})
           </h1>
           <p className="mt-3 max-w-2xl text-sm text-inchiostro-soft dark:text-nebbia-soft">
-            Solo affluenza aggregata da open data DAIT–Eligendo. Nessun dettaglio per lista a livello comunale, nessun nominativo, nessun seggio.
+            Solo affluenza aggregata da open data DAIT-Eligendo. Nessun dettaglio per lista a livello comunale, nessun nominativo, nessun seggio.
           </p>
         </header>
         <section aria-labelledby="affluenza-comune" className="mt-8">

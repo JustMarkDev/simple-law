@@ -9,7 +9,7 @@ import {
 } from '@/lib/elezioni-dati'
 
 export const metadata: Metadata = {
-  title: 'Referendum 8-9 giugno 2025 — Stato della Repubblica',
+  title: 'Referendum 8-9 giugno 2025 - Stato della Repubblica',
   description:
     'I 5 quesiti referendari dell’8-9 giugno 2025: SI e NO a livello nazionale, regionale e comunale, dai dati ufficiali del Ministero dell’Interno (DAIT). Solo aggregati.',
 }
@@ -255,7 +255,7 @@ export default async function Referendum2025Page({ searchParams }: PaginaProps) 
                         {intero(regione.v)}
                       </td>
                       <td className="px-4 py-2 text-right tabular-nums text-inchiostro-soft dark:text-nebbia-soft">
-                        {totQ1 > 0 ? `${decimaleIT((q1!.si / totQ1) * 100)}%` : '—'}
+                        {totQ1 > 0 ? `${decimaleIT((q1!.si / totQ1) * 100)}%` : '-'}
                       </td>
                     </tr>
                   )

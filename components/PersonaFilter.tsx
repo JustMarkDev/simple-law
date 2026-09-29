@@ -3,6 +3,7 @@
 import { useId, useRef, useTransition } from 'react'
 import { useRouter } from 'next/navigation'
 import { motion, useReducedMotion } from 'motion/react'
+import { Car01Icon, GridIcon, Mortarboard01Icon, Store01Icon, WorkIcon } from 'hugeicons-react'
 import { PERSONAS } from './personas'
 
 interface PersonaFilterProps {
@@ -12,21 +13,33 @@ interface PersonaFilterProps {
   query?: Record<string, string>
   label?: string
   className?: string
-  /** Conteggi per pill, es. { tutti: 120, guida: 12 }. */
+  /** Conteggi per voce, es. { tutti: 120, guida: 12 }. */
   conteggi?: Partial<Record<string, number>>
 }
 
 /**
- * Filtro per persona (Tutti / Guida / Lavoro / Impresa / Studio) con
- * indicatore animato che scivola tra le opzioni. Aggiorna i parametri
- * dell'URL così il filtro resta condivisibile. Tastiera: frecce, Home, Fine.
+ * Icone Hugeicons per ogni voce (niente glifi disegnati a mano).
+ * `personas.ts` resta l'unica fonte per chiavi ed etichette.
+ */
+const ICONE: Record<string, typeof GridIcon> = {
+  tutti: GridIcon,
+  guida: Car01Icon,
+  lavoro: WorkIcon,
+  impresa: Store01Icon,
+  studio: Mortarboard01Icon,
+}
+
+/**
+ * Scegli chi sei (Tutti / Guida / Lavoro / Impresa / Studio): cambia la lista
+ * e aggiorna l'indirizzo così resta condivisibile. Tastiera: frecce, Home, Fine.
+ * Parole semplici, bersaglio 48px, angoli arrotondati cozy.
  */
 export default function PersonaFilter({
   active = 'tutti',
   basePath = '/',
   paramName = 'persona',
   query = {},
-  label = 'Filtra le leggi per persona',
+  label = 'Scegli chi sei',
   className = '',
   conteggi,
 }: PersonaFilterProps) {
@@ -68,8 +81,11 @@ export default function PersonaFilter({
 
   return (
     <div className={className}>
-      <p id={gruppoId} className="mb-2 text-sm font-semibold text-inchiostro dark:text-nebbia">
+      <p id={gruppoId} className="mb-1 text-sm font-semibold text-inchiostro dark:text-nebbia">
         {label}
+      </p>
+      <p className="mb-2 text-xs text-inchiostro-faint dark:text-nebbia-faint">
+        Tocca una voce: la lista mostra solo quelle leggi.
       </p>
       <div role="group" aria-labelledby={gruppoId} aria-busy={inAttesa}>
         <ul className="flex flex-wrap gap-2" onKeyDown={allaTastiera}>
@@ -77,10 +93,11 @@ export default function PersonaFilter({
             const attiva = active === persona.key
             const conteggio = conteggi?.[persona.key]
             const etichettaConteggio =
-              typeof conteggio === 'number' ? `, ${conteggio} norme` : ''
+              typeof conteggio === 'number' ? `, ${conteggio} leggi` : ''
+            const Icona = ICONE[persona.key] ?? GridIcon
             return (
               <li key={persona.key}>
-                <button
+                <motion.button
                   ref={(el) => {
                     riferimenti.current[indice] = el
                   }}
@@ -89,36 +106,37 @@ export default function PersonaFilter({
                   disabled={inAttesa}
                   title={`${persona.descrizione} Esempi: ${persona.esempi.join(', ')}.`}
                   onClick={() => select(persona.key)}
-                  className="relative isolate inline-flex min-h-[44px] min-w-[44px] items-center gap-1.5 border border-regola px-4 py-2.5 text-xs font-semibold uppercase tracking-wide transition-colors hover:border-inchiostro focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-inchiostro disabled:opacity-60 dark:border-notte-deep dark:hover:border-nebbia dark:focus-visible:outline-nebbia"
+                  whileTap={ridotto ? undefined : { scale: 0.97 }}
+                  className={
+                    attiva
+                      ? 'relative isolate inline-flex min-h-[48px] min-w-[48px] items-center gap-1.5 rounded-xl px-4 py-2.5 text-xs font-semibold uppercase tracking-wide text-white transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accento disabled:opacity-60 dark:text-notte dark:focus-visible:outline-accento-chiara'
+                      : 'relative isolate inline-flex min-h-[48px] min-w-[48px] items-center gap-1.5 rounded-xl border border-regola bg-carta px-4 py-2.5 text-xs font-semibold uppercase tracking-wide text-inchiostro-soft transition-colors hover:border-accento hover:text-accento focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accento disabled:opacity-60 dark:border-notte-deep dark:bg-notte dark:text-nebbia-soft dark:hover:border-accento-chiara dark:hover:text-accento-chiara dark:focus-visible:outline-accento-chiara'
+                  }
                 >
                   {attiva && (
                     <motion.span
                       aria-hidden="true"
                       layoutId={ridotto ? undefined : `persona-${id}`}
-                      className="absolute inset-0 -z-10 bg-inchiostro dark:bg-nebbia"
+                      className="absolute inset-0 -z-10 rounded-xl bg-accento dark:bg-accento-chiara"
                       transition={{ type: 'spring', stiffness: 380, damping: 34 }}
                     />
                   )}
-                  <span aria-hidden="true" className={attiva ? 'text-carta dark:text-notte' : 'text-inchiostro-faint dark:text-nebbia-faint'}>
-                    {persona.icona}
-                  </span>
-                  <span className={attiva ? 'text-carta dark:text-notte' : 'text-inchiostro-soft dark:text-nebbia-soft'}>
-                    {persona.label}
-                  </span>
+                  <Icona size={16} aria-hidden="true" className="shrink-0" />
+                  <span>{persona.label}</span>
                   {typeof conteggio === 'number' && (
                     <span
-                      aria-label={`${conteggio} norme per ${persona.label}${attiva ? ' (selezionato)' : ''}`}
+                      aria-label={`${conteggio} leggi per ${persona.label}${attiva ? ' (scelta)' : ''}`}
                       className={
                         attiva
-                          ? 'rounded-full bg-carta/20 px-2 py-0.5 text-[11px] font-bold tabular-nums text-carta dark:bg-notte/20 dark:text-notte'
-                          : 'rounded-full bg-inchiostro/5 px-2 py-0.5 text-[11px] font-bold tabular-nums text-inchiostro-soft dark:bg-notte-deep dark:text-nebbia-soft'
+                          ? 'rounded-lg bg-white/20 px-2 py-0.5 text-[11px] font-bold tabular-nums text-white dark:bg-notte/20 dark:text-notte'
+                          : 'rounded-lg bg-inchiostro/5 px-2 py-0.5 text-[11px] font-bold tabular-nums text-inchiostro-soft dark:bg-notte-deep dark:text-nebbia-soft'
                       }
                     >
                       {conteggio}
                       <span className="sr-only">{etichettaConteggio}</span>
                     </span>
                   )}
-                </button>
+                </motion.button>
               </li>
             )
           })}

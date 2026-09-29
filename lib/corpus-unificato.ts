@@ -1,12 +1,17 @@
 /**
- * Corpus unificato — client+server, mai `node:fs`, never-throw.
+ * Corpus unificato - client+server, mai `node:fs`, never-throw.
  *
  * Unico punto di verità per il corpus grande servito senza database:
  * mapping puro da `AttoEspanso` (lib/seed-data-espansa.ts) a `LawRecord`
  * (lib/seed-data.ts, la forma consumata da `normalizeLaw`, `mapLaw`,
  * `toPrismaData`) + generazione deterministica di varianti + cache singleton.
  *
- * Ordine di merge (in `getSeedLaws` di lib/sources.ts): i 5 seed di
+ * Real-only di default: il corpus sintetico (atti dimostrativi curati +
+ * varianti "Variante N") entra in `getSeedLaws` SOLO con opt-in esplicito
+ * `CORPUS_SINTETICO=1` (dev/test). Senza opt-in restano solo i 2 atti di
+ * riferimento non-dimostrativi (`getCorpusRiferimenti`) + seed curati + reali.
+ *
+ * Ordine di merge (in `getSeedLaws` di lib/sources.ts): i seed di
  * lib/seed-data.ts restano sempre i primi e vincono la dedup per ELI.
  *
  * SSR-safe: zero import da `node:`. Non importare mai `sources` da qui
@@ -157,6 +162,44 @@ function leggiSemeDaEnv(): string {
   }
 }
 
+/**
+ * Opt-in esplicito al corpus sintetico (atti dimostrativi curati + varianti
+ * "Variante N"). Real-only di default: attivo SOLO con `CORPUS_SINTETICO=1`
+ * (valori "1", "true", "yes", "on", case-insensitive, con trim). Qualsiasi
+ * altro valore, assente o illeggibile, significa sintetico disattivato.
+ * SSR-safe, never-throw.
+ */
+export function isCorpusSinteticoAbilitato(): boolean {
+  try {
+    let raw: unknown = undefined;
+    if (typeof process !== "undefined" && (process as { env?: Record<string, string | undefined> })?.env) {
+      raw = (process as { env: Record<string, string | undefined> }).env["CORPUS_SINTETICO"];
+    }
+    if (typeof raw !== "string") return false;
+    const pulito = raw.trim().toLowerCase();
+    return pulito === "1" || pulito === "true" || pulito === "yes" || pulito === "on";
+  } catch {
+    return false;
+  }
+}
+
+/**
+ * Atti di riferimento non-dimostrativi del corpus espanso
+ * (`dimostrativo === false`: Costituzione, Codice della strada). Sono atti
+ * reali di riferimento, quindi entrano nel corpus anche senza opt-in
+ * sintetico. Mapping puro, never-throw (-> []), copie difensive.
+ */
+export function getCorpusRiferimenti(): LawRecord[] {
+  try {
+    const riferimenti = ATTI_ESPANSI.filter(
+      (atto) => (atto as AttoEspanso).dimostrativo === false,
+    );
+    return riferimenti.map(attoEspansoToLawRecord).map(clonaRecord);
+  } catch {
+    return [];
+  }
+}
+
 function normalizzaTotale(totale: unknown): number {
   const n = typeof totale === "number" ? Math.floor(totale) : Number.parseInt(String(totale), 10);
   if (!Number.isFinite(n) || n < 0) return 0;
@@ -257,7 +300,7 @@ export function generaCorpusUnificato(totale: number, seme: string): LawRecord[]
       const slugNir = slugEli.replace(/-/g, ".");
       const nir = `urn:nir:stato:${slugNir}:${dataEmanazione};${numeroNum}`;
       const numero = String(numeroNum);
-      const titolo = `${modello.titolo} — Variante ${risultato.length + 1}`;
+      const titolo = `${modello.titolo} - Variante ${risultato.length + 1}`;
       const testo =
         `${modello.testo}\n\n[Variante dimostrativa ${risultato.length + 1} del corpus "${s}", derivata da ${modello.eli}.]`;
       const variante: LawRecord = {
@@ -285,7 +328,9 @@ export function generaCorpusUnificato(totale: number, seme: string): LawRecord[]
   }
 }
 
-/** Corpus da env `CORPUS_TOTALE`/`CORPUS_SEED`. Never-throw (-> []). */
+/** Corpus da env `CORPUS_TOTALE`/`CORPUS_SEED` (legacy sintetico, opt-in dev/test).
+ * Never-throw (-> []). Di default `getSeedLaws` non lo usa: serve opt-in
+ * `CORPUS_SINTETICO=1` (vedi `isCorpusSinteticoAbilitato`). */
 export function getCorpusUnificato(): LawRecord[] {
   try {
     return generaCorpusUnificato(leggiTotaleDaEnv(), leggiSemeDaEnv());

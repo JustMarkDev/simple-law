@@ -115,6 +115,19 @@ fine-vigenza + intestazione Art. 1, dedup contro tutti i file esistenti).
 npx tsx scripts/ingest-reale-normattiva-finestre.ts
 ```
 
+## Coda recente — `normattiva-storico-2021/2023/2024/2025.json` (268 atti veri)
+
+Chiude la coda 2020-2022-recenti: 2021 (71: 55 in vigore, 16 abrogati),
+2023 (59: 53 in vigore, 6 abrogati), 2024 (70: 65 in vigore, 5 abrogati),
+2025 (68: 66 in vigore, 2 abrogati). Stesse regole di onesta (fine-vigenza
+
+- intestazione Art. 1, dedup contro tutti i file esistenti, entita HTML
+  decodificate a load in `normalizzaAttoReale`).
+
+```bash
+npx tsx scripts/ingest-reale-finestra-2021-2025.ts --anni=2025,2024,2023,2021 --limite=80 --testo-max=2000
+```
+
 ## Bulk Normattiva — `normattiva-bulk-a-attuazione-ue.json` (39) + `normattiva-bulk-b-finestra-2005.json` (638)
 
 - Attuazione regolamenti UE da collezione bulk preconfezionata (metadati
@@ -122,7 +135,7 @@ npx tsx scripts/ingest-reale-normattiva-finestre.ts
   monouso, non stabile: fa fede l'API bff-opendata).
 - Finestra aggiornati 2005, atti **lista-only** (`dettaglio: false`, senza
   testo): tipo/data/nir derivati dall'URN verificato, `stato:
-  "sconosciuto"` (vigenza non verificabile, semaforo giallo in UI).
+"sconosciuto"` (vigenza non verificabile, semaforo giallo in UI).
   Mai `in_vigore` inventato.
 
 ```bash

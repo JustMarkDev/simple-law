@@ -9,9 +9,9 @@ import { caricaSondaggi, type SondaggioNazionale } from '@/lib/sondaggi'
 export const revalidate = 3600
 
 export const metadata: Metadata = {
-  title: 'Elezioni — Stato della Repubblica',
+  title: 'Elezioni - Stato della Repubblica',
   description:
-    'Consultazioni elettorali con dati ufficiali aggregati del Ministero dell’Interno (DAIT–Eligendo): affluenza e risultati per lista e territorio, senza dati personali. Più una rassegna di sondaggi nazionali sul voto di partito (fonte secondaria Wikipedia, CC BY-SA 4.0).',
+    'Consultazioni elettorali con dati ufficiali aggregati del Ministero dell’Interno (DAIT-Eligendo): affluenza e risultati per lista e territorio, senza dati personali. Più una rassegna di sondaggi nazionali sul voto di partito (fonte secondaria Wikipedia, CC BY-SA 4.0).',
 }
 
 /* Registro delle consultazioni (solo id statici, mai numeri inventati). */
@@ -27,7 +27,7 @@ interface VoceRegistro {
 const REGISTRO: VoceRegistro[] = [
   {
     id: 'europee-2024',
-    titolo: 'Elezioni europee — 9 giugno 2024',
+    titolo: 'Elezioni europee - 9 giugno 2024',
     descrizione:
       'Affluenza nazionale, voti e percentuali delle liste, dettaglio per regione e affluenza per comune. I seggi non sono disponibili nel file ministeriale.',
     file: path.join('data', 'reali', 'elezioni-europee-2024.json'),
@@ -35,7 +35,7 @@ const REGISTRO: VoceRegistro[] = [
   },
   {
     id: 'politiche-2022-camera',
-    titolo: 'Elezioni politiche 2022 — Camera dei deputati',
+    titolo: 'Elezioni politiche 2022 - Camera dei deputati',
     descrizione:
       'Voto del 25 settembre 2022 per la Camera: affluenza nazionale, liste, circoscrizioni, collegi uninominali e plurinominali, affluenza per comune.',
     file: path.join('data', 'reali', 'elezioni-politiche-2022-camera.json'),
@@ -43,7 +43,7 @@ const REGISTRO: VoceRegistro[] = [
   },
   {
     id: 'politiche-2022-senato',
-    titolo: 'Elezioni politiche 2022 — Senato della Repubblica',
+    titolo: 'Elezioni politiche 2022 - Senato della Repubblica',
     descrizione:
       'Voto del 25 settembre 2022 per il Senato: affluenza nazionale, liste, circoscrizioni, collegi uninominali e plurinominali, affluenza per comune.',
     file: path.join('data', 'reali', 'elezioni-politiche-2022-senato.json'),
@@ -51,7 +51,7 @@ const REGISTRO: VoceRegistro[] = [
   },
   {
     id: 'referendum-2025',
-    titolo: 'Referendum 8-9 giugno 2025 — 5 quesiti',
+    titolo: 'Referendum 8-9 giugno 2025 - 5 quesiti',
     descrizione:
       'I 5 quesiti referendari: SI e NO a livello nazionale e regionale, affluenza per comune. Solo aggregati.',
     file: path.join('data', 'reali', 'referendum-2025.json'),
@@ -59,7 +59,7 @@ const REGISTRO: VoceRegistro[] = [
   },
   {
     id: 'regionali-2025-toscana',
-    titolo: 'Elezioni regionali 2025 — Toscana',
+    titolo: 'Elezioni regionali 2025 - Toscana',
     descrizione:
       'Voto del 12 ottobre 2025 in Toscana: affluenza e voti per lista a livello regionale e affluenza per comune. Solo aggregati, nessun nominativo; i voti del presidente non sono pubblicati come aggregato nel tracciato.',
     file: path.join('data', 'reali', 'elezioni-regionali-2025-toscana.json'),
@@ -67,7 +67,7 @@ const REGISTRO: VoceRegistro[] = [
   },
   {
     id: 'regionali-2024-umbria',
-    titolo: 'Elezioni regionali 2024 — Umbria',
+    titolo: 'Elezioni regionali 2024 - Umbria',
     descrizione:
       'Voto del 17 novembre 2024 in Umbria (circoscrizione unica): affluenza e voti per lista a livello regionale e affluenza per comune. Solo aggregati, nessun nominativo; i voti del presidente non sono pubblicati come aggregato nel tracciato.',
     file: path.join('data', 'reali', 'elezioni-regionali-2024-umbria.json'),
@@ -75,7 +75,7 @@ const REGISTRO: VoceRegistro[] = [
   },
   {
     id: 'regionali-2024-emilia-romagna',
-    titolo: 'Elezioni regionali 2024 — Emilia-Romagna',
+    titolo: 'Elezioni regionali 2024 - Emilia-Romagna',
     descrizione:
       'Voto del 17 novembre 2024 in Emilia-Romagna: affluenza e voti per lista a livello regionale e affluenza per comune. Solo aggregati, nessun nominativo; i voti del presidente non sono pubblicati come aggregato nel tracciato.',
     file: path.join('data', 'reali', 'elezioni-regionali-2024-emilia-romagna.json'),
@@ -83,7 +83,7 @@ const REGISTRO: VoceRegistro[] = [
   },
   {
     id: 'regionali-2025-campania',
-    titolo: 'Elezioni regionali 2025 — Campania',
+    titolo: 'Elezioni regionali 2025 - Campania',
     descrizione:
       'Voto del 23 novembre 2025 in Campania: affluenza e voti per lista a livello regionale e affluenza per comune. Solo aggregati, nessun nominativo; i voti del presidente non sono pubblicati come aggregato nel tracciato.',
     file: path.join('data', 'reali', 'elezioni-regionali-2025-campania.json'),
@@ -91,7 +91,7 @@ const REGISTRO: VoceRegistro[] = [
   },
   {
     id: 'regionali-2025-puglia',
-    titolo: 'Elezioni regionali 2025 — Puglia',
+    titolo: 'Elezioni regionali 2025 - Puglia',
     descrizione:
       'Voto del 23 novembre 2025 in Puglia: affluenza e voti per lista a livello regionale e affluenza per comune. Solo aggregati, nessun nominativo; i voti del presidente non sono pubblicati come aggregato nel tracciato.',
     file: path.join('data', 'reali', 'elezioni-regionali-2025-puglia.json'),
@@ -99,7 +99,7 @@ const REGISTRO: VoceRegistro[] = [
   },
   {
     id: 'regionali-2025-veneto',
-    titolo: 'Elezioni regionali 2025 — Veneto',
+    titolo: 'Elezioni regionali 2025 - Veneto',
     descrizione:
       'Voto del 23 novembre 2025 in Veneto: affluenza e voti per lista a livello regionale e affluenza per comune. Solo aggregati, nessun nominativo; i voti del presidente non sono pubblicati come aggregato nel tracciato.',
     file: path.join('data', 'reali', 'elezioni-regionali-2025-veneto.json'),
@@ -164,13 +164,13 @@ function decimaleIT(value: number): string {
   }
 }
 
-/** Percentuale sondaggio (1 decimale + %) o «—» se assente. Mai numeri inventati. */
+/** Percentuale sondaggio (1 decimale + %) o «-» se assente. Mai numeri inventati. */
 function pctSondaggio(value: number | null): string {
   try {
-    if (typeof value !== 'number' || !Number.isFinite(value)) return '—'
+    if (typeof value !== 'number' || !Number.isFinite(value)) return '-'
     return `${new Intl.NumberFormat('it-IT', { minimumFractionDigits: 1, maximumFractionDigits: 1 }).format(value)}%`
   } catch {
-    return '—'
+    return '-'
   }
 }
 
@@ -188,27 +188,27 @@ function dataIT(iso: string): string {
   }
 }
 
-/** Intervallo fieldwork «23–28 set 2026» o giorno singolo. Mai lancia. */
+/** Intervallo fieldwork «23-28 set 2026» o giorno singolo. Mai lancia. */
 function intervalloFieldwork(s: SondaggioNazionale): string {
   try {
     if (s.fieldwork_da === s.fieldwork_a) return dataIT(s.fieldwork_a)
     const a = /^(\d{4})-(\d{2})-(\d{2})$/.exec(s.fieldwork_da)
     const b = /^(\d{4})-(\d{2})-(\d{2})$/.exec(s.fieldwork_a)
-    if (!a || !b) return `${s.fieldwork_da} – ${s.fieldwork_a}`
+    if (!a || !b) return `${s.fieldwork_da} - ${s.fieldwork_a}`
     if (a[1] === b[1] && a[2] === b[2]) {
       const mese = MESI_IT[Number(b[2]) - 1] ?? b[2]
-      return `${Number(a[3])}–${Number(b[3])} ${mese} ${b[1]}`
+      return `${Number(a[3])}-${Number(b[3])} ${mese} ${b[1]}`
     }
-    return `${dataIT(s.fieldwork_da)} – ${dataIT(s.fieldwork_a)}`
+    return `${dataIT(s.fieldwork_da)} - ${dataIT(s.fieldwork_a)}`
   } catch {
     return s.fieldwork_a
   }
 }
 
 const LINK_ESTERNI = [
-  { label: 'Eligendo — Ministero dell’Interno', url: 'https://elezionistorico.interno.gov.it/eligendo/opendata.php' },
-  { label: 'CISE — Centro Italiano Studi Elettorali', url: 'https://cise.luiss.it/' },
-  { label: 'YouTrend — analisi elettorali', url: 'https://www.youtrend.it/' },
+  { label: 'Eligendo - Ministero dell’Interno', url: 'https://elezionistorico.interno.gov.it/eligendo/opendata.php' },
+  { label: 'CISE - Centro Italiano Studi Elettorali', url: 'https://cise.luiss.it/' },
+  { label: 'YouTrend - analisi elettorali', url: 'https://www.youtrend.it/' },
 ]
 
 /**
@@ -252,7 +252,7 @@ export default async function ElezioniPage() {
             Elezioni
           </h1>
           <p className="mt-3 max-w-2xl text-sm leading-relaxed text-inchiostro-soft dark:text-nebbia-soft">
-            Risultati elettorali da open data del Ministero dell’Interno (DAIT–Eligendo).
+            Risultati elettorali da open data del Ministero dell’Interno (DAIT-Eligendo).
             Pubblichiamo <strong>solo aggregati</strong>: affluenza e voti per lista a livello
             nazionale, regionale e comunale. Nessun nominativo, nessuna riga candidata.
           </p>
@@ -318,13 +318,13 @@ export default async function ElezioniPage() {
 
         <section aria-labelledby="sondaggi" className="mt-10">
           <h2 id="sondaggi" className="font-serif text-xl font-bold text-inchiostro dark:text-nebbia">
-            Sondaggi nazionali — voto di partito
+            Sondaggi nazionali - voto di partito
           </h2>
           <p className="mt-2 inline-flex w-fit items-center border border-regola px-2 py-0.5 text-[11px] font-semibold uppercase tracking-[0.16em] text-inchiostro-soft dark:border-notte-deep dark:text-nebbia-soft">
-            Sondaggi — non sono voti reali, non sono leggi
+            Sondaggi - non sono voti reali, non sono leggi
           </p>
           <p className="mt-3 max-w-2xl text-sm leading-relaxed text-inchiostro-soft dark:text-nebbia-soft">
-            Ultimi {sondaggi.length > 0 ? intero(sondaggi.length) : '—'} sondaggi nazionali sul voto di partito:
+            Ultimi {sondaggi.length > 0 ? intero(sondaggi.length) : '-'} sondaggi nazionali sul voto di partito:
             stime degli istituti con margine di errore, mai risultati elettorali e mai seggi.
             Solo sezione «Party vote» nazionale; esclusi gradimenti, primarie, scenari ipotetici
             e aggregatori di secondo livello.
@@ -355,7 +355,7 @@ export default async function ElezioniPage() {
                       <td className="px-3 py-2 font-medium text-inchiostro dark:text-nebbia">{s.istituto}</td>
                       <td className="whitespace-nowrap px-3 py-2 text-inchiostro-soft dark:text-nebbia-soft">{intervalloFieldwork(s)}</td>
                       <td className="px-3 py-2 text-right text-inchiostro-soft dark:text-nebbia-soft">
-                        {typeof s.campione_n === 'number' ? intero(s.campione_n) : '—'}
+                        {typeof s.campione_n === 'number' ? intero(s.campione_n) : '-'}
                       </td>
                       <td className="px-3 py-2 text-right font-semibold text-inchiostro dark:text-nebbia">{pctSondaggio(s.fdi)}</td>
                       <td className="px-3 py-2 text-right text-inchiostro-soft dark:text-nebbia-soft">{pctSondaggio(s.pd)}</td>
@@ -394,10 +394,10 @@ export default async function ElezioniPage() {
                   rel="noopener noreferrer"
                   className="font-medium text-accento underline underline-offset-2 hover:text-inchiostro focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-inchiostro dark:text-accento-chiara dark:hover:text-nebbia dark:focus-visible:outline-nebbia"
                 >
-                  Wikipedia — «Opinion polling for the next Italian general election»
+                  Wikipedia - «Opinion polling for the next Italian general election»
                 </a>
               ) : (
-                'Wikipedia — «Opinion polling for the next Italian general election»'
+                'Wikipedia - «Opinion polling for the next Italian general election»'
               )}
               {typeof sondaggiProvenance.revid === 'number' ? ` (revid ${sondaggiProvenance.revid}` : ''}
               {sondaggiProvenance.estratto_il ? `, estratto il ${dataIT(sondaggiProvenance.estratto_il)}` : ''}
@@ -427,7 +427,7 @@ export default async function ElezioniPage() {
           <ul className="mt-3 list-disc space-y-2 pl-5 text-sm leading-relaxed text-inchiostro-soft dark:text-nebbia-soft">
             <li>
               Fonte: Ministero dell’Interno, Dipartimento per gli Affari Interni e Territoriali
-              (DAIT) — Archivio Eligendo, open data a livello comunale.
+              (DAIT) - Archivio Eligendo, open data a livello comunale.
             </li>
             <li>
               Solo aggregati: elettori, votanti, schede bianche una volta per
@@ -449,7 +449,7 @@ export default async function ElezioniPage() {
             Licenze e riuso
           </h2>
           <p className="mt-3 text-sm leading-relaxed text-inchiostro-soft dark:text-nebbia-soft">
-            Dati di fonte ministeriale (DAIT–Eligendo), riuso open-data da confermare sul
+            Dati di fonte ministeriale (DAIT-Eligendo), riuso open-data da confermare sul
             catalogo ufficiale: la pagina «info open data» non riporta una stringa di licenza
             machine-readable (es. CC-BY). Fanno fede i verbali dei seggi e le proclamazioni
             ufficiali. I testi di questo sito restano rilasciati con licenza{' '}

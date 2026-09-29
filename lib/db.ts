@@ -232,10 +232,12 @@ function mapMinister(row: PrismaMinister, provvedimenti: Map<string, string[]>):
 }
 
 /** Legge tutte le norme dal DB; se il DB manca o e' vuoto, usa il seed.
- * Con DB popolato il seed grande (5000 voci) non viene mai generato (lazy:
+ * Con DB popolato il corpus di fallback non viene mai generato (lazy:
  * `getSeedLaws()` e' chiamato solo nel ramo di fallback). Quando il DB e'
  * assente il fallback e' memoizzato 30s (`DB_SEED_CACHE_TTL_MS`) per evitare
- * di rigenerare 5000 voci a ogni request; usare `svuotaCacheDb()` nei test. */
+ * di rileggere il corpus a ogni request; usare `svuotaCacheDb()` nei test.
+ * Il fallback e' real-only di default (solo testi reali); il sintetico
+ * richiede opt-in `CORPUS_SINTETICO=1` (vedi `lib/sources.ts`). */
 export async function getLawsFromDBorSeed(): Promise<LawRecordExtra[]> {
   const prisma = getPrisma();
   if (prisma) {
@@ -581,8 +583,8 @@ export const STATS_CACHE_TTL_MS = 60_000;
 
 /**
  * TTL memo-cache per il fallback seed di `getLawsFromDBorSeed` (30s).
- * Evita di rigenerare il seed grande (5000 voci) a ogni request quando il DB
- * e' assente/vuoto. Con DB popolato il seed non viene mai generato (lazy).
+ * Evita di rileggere il corpus di fallback a ogni request quando il DB
+ * e' assente/vuoto. Con DB popolato il fallback non viene mai generato (lazy).
  */
 export const DB_SEED_CACHE_TTL_MS = 30_000;
 

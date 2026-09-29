@@ -1,6 +1,7 @@
-import { describe, expect, it } from "vitest";
+import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import { SEED_CDM, SEED_LAWS, SEED_MINISTERS } from "@/lib/seed-data";
-import { getSeedLaws } from "@/lib/sources";
+import { azzeraCacheReali, getSeedLaws } from "@/lib/sources";
+import { svuotaCacheCorpus } from "@/lib/corpus-unificato";
 import { isValidELI, parseNIR } from "@/lib/nir";
 import { calcGulpease } from "@/lib/readability";
 
@@ -76,6 +77,19 @@ describe("integrita' del seed", () => {
 });
 
 describe("corpus grande: i 5 seed come sottoinsieme", () => {
+  // Queste prove verificano il merge legacy (5 seed primi + sintetico):
+  // real-only di default, quindi opt-in CORPUS_SINTETICO=1.
+  beforeEach(() => {
+    vi.stubEnv("CORPUS_SINTETICO", "1");
+    azzeraCacheReali();
+    svuotaCacheCorpus();
+  });
+  afterEach(() => {
+    vi.unstubAllEnvs();
+    azzeraCacheReali();
+    svuotaCacheCorpus();
+  });
+
   it("il corpus contiene almeno i 5 seed puri", () => {
     const corpus = getSeedLaws();
     expect(corpus.length).toBeGreaterThanOrEqual(5);

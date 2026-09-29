@@ -25,9 +25,9 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }: MinistroProps): Promise<Metadata> {
   const { slug } = await params
   const minister = await loadMinisterBySlug(slug)
-  if (!minister) return { title: 'Ministro non trovato — Stato della Repubblica' }
+  if (!minister) return { title: 'Ministro non trovato - Stato della Repubblica' }
   return {
-    title: `${minister.nome} — Stato della Repubblica`,
+    title: `${minister.nome} - Stato della Repubblica`,
     description: `${minister.dicastero}: competenze e provvedimenti collegati.`,
   }
 }

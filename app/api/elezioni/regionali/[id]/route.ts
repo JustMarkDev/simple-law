@@ -1,5 +1,5 @@
 /**
- * GET /api/elezioni/regionali/[id] — dettaglio aggregato di una regionale.
+ * GET /api/elezioni/regionali/[id] - dettaglio aggregato di una regionale.
  * Consultazioni: `regionali-2025-toscana`, `regionali-2024-umbria`,
  * `regionali-2024-emilia-romagna`, `regionali-2025-campania`,
  * `regionali-2025-puglia`, `regionali-2025-veneto`
