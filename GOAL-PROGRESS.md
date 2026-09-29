@@ -401,3 +401,13 @@ Obiettivo precedente (completato): UI/UX, feature, corpus 5005 voci.
 - Verifiche mie: tsc OK, eslint OK, 861/861 test OK, build OK
   (874 pagine), smoke live su 4 route.
 - Next: foto reali, E2E a11y, freschezza 2026 continua.
+
+## Freschezza+gate (2026-09-29): refresh 2026 e slop-gate
+- Workflow: 1 chiamata `workflow` con 2 agenti (refresh + gate).
+- R1: GU/gov/recenti ri-ingeriti (32/10/46 invariati, solo freschezza);
+  MANIFEST ri-sincronizzato da me (R1 non poteva toccarlo per scope).
+- R2: `tests/slop-gate.test.ts` (7 test: dash, dot, pill, href orfani,
+  h1+title, alt) con whitelist motivate; 12 righe a 2 dot segnalate
+  come casi veri non bloccanti (eurlex/consulta/parlamento).
+- Verifiche mie: tsc OK, 868/868 test OK, build OK, smoke live.
+- Next: foto reali, E2E con server, densita anni magri residui.
