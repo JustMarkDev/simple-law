@@ -449,3 +449,8 @@ Obiettivo precedente (completato): UI/UX, feature, corpus 5005 voci.
 - Verifiche mie: residui header 0, tsc/eslint OK, 878/878 test OK,
   build OK, smoke PASS.
 - Next: E2E browser, foto con licenza.
+
+## E2E (2026-09-29): Playwright Chromium verde
+- Workflow: 1 agente E1 (install headless-shell, 3 spec, config, script).
+- Verifiche mie: `npx playwright test` 3/3 + vitest 878/878.
+- Next: foto con licenza, freschezza continua.
