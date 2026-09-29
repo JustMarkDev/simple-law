@@ -479,3 +479,34 @@ Obiettivo precedente (completato): UI/UX, feature, corpus 5005 voci.
 - Fix mio: nota MANIFEST 57->201 voci.
 - Verifiche mie: tsc OK, lint OK, 878/878 test OK, e2e 3/3 OK,
   build OK (874 pagine), smoke PASS.
+
+## UI-overhaul (2026-09-29, commit `60a6000`): singola nav, hero full-bleed, design system
+- Workflow: 1 chiamata `workflow` con 14 subagenti (3 proposte read-only
+  A/B/C + 1 giudice + 6 writer su file disgiunti + 2 revisori
+  avversariali). Il giudice ha fuso: header 1 riga, hero full-bleed,
+  token .vetro/.superficie/.btn-*/.campo/.badge/.card, LawCard senza
+  striscia, hover accento light+dark, layout standard pagine.
+- Implementato: header singola riga h-68px (brand Simple Law + Leggi,
+  Parlamento, Gazzetta, Diritto UE, Statistiche + Tutto con aria-label
+  "Indice completo del sito", DataOdierna spostata nel footer);
+  hero con Montecitorio full-bleed + overlay inchiostro/70 + search in
+  vetro + CTA nowrap + contatori chip + attribuzione; featured in vetro,
+  card in superficie con hover -2px + ombra cozy; "In 10 secondi" box
+  con border-l-4 eliminato ovunque (riga tipografica "In breve," con
+  dedup su sintesi); 25 eyebrow uppercase 0.28em ridotti a testo
+  semplice; font-serif residui in sans; input senatori/deputati/ddl e
+  CTA statistiche sui token; footer coordinato (blu notte documentato).
+- Fix P0 miei post-revisori (verificati): TrafficLight fuori token
+  (rounded-md, bg-white/black, slate/neutral freddi) in token caldi;
+  LawCard con doppio stato (housing semaforo + puntino) ridotto a
+  puntino + etichetta; SearchBar rounded-lg in rounded-xl; Conferma
+  svuota senza dark:hover; paginazione regionali senza dark:hover e
+  senza radius; brand header/footer unificato in Simple Law; scrim hero
+  60 in 70 per AA; chip "Norme qui" da link duplicato a stat display.
+- Non-bug chiarito: contatori hero diversi tra screenshot (5942 vs 6526)
+  sono fotogrammi del count-up di Contatore, API stabile a 8951 x3.
+- Verifiche mie: tsc OK, lint OK, 878/878 test OK (slop-gate 7/7),
+  build OK (874 pagine), smoke live (/ e /leggi 200), screenshot
+  Playwright desktop (hero, feed, archivio) + mobile 390px senza errori.
+- Next: e2e Playwright da rieseguire sul nuovo hero, freschezza 2026
+  continua, terzo passaggio anni magri.
