@@ -439,3 +439,13 @@ Obiettivo precedente (completato): UI/UX, feature, corpus 5005 voci.
 - Wiring mio: PERCORSI +87, MANIFEST 201 voci, gate 1861+.
 - Verifiche mie: tsc/eslint OK, 871/871 test OK, build OK, smoke PASS.
 - Next: E2E browser, foto con licenza, terzo passaggio magri.
+
+## Onesta-stati (2026-09-29): bug testata abrogati fixato su 84 atti
+- 4 revisori indipendenti avevano trovato: regex ingest cieca allo
+  spazio dopo `((` e a `Articolo unico.` (L.142/1990 in_vigore!).
+- Workflow fix x3: guard a load + riscrittura 84 JSON (37 file) +
+  script --check + 7 test; bound default/export a 10000; hero compatta,
+  label unica, avviso troncato, touch 48px secondarie.
+- Verifiche mie: residui header 0, tsc/eslint OK, 878/878 test OK,
+  build OK, smoke PASS.
+- Next: E2E browser, foto con licenza.
