@@ -31,7 +31,7 @@ export default function SalvatiPage() {
         </nav>
         <Comparsa>
           <header className="mt-4">
-            <p className="text-xs font-semibold uppercase tracking-[0.28em] text-accento dark:text-accento-chiara">
+            <p className="text-sm font-bold text-accento dark:text-accento-chiara">
               Solo per te
             </p>
             <h1 className="mt-2 flex items-center gap-3 text-3xl font-bold text-inchiostro dark:text-nebbia sm:text-4xl">
@@ -44,7 +44,7 @@ export default function SalvatiPage() {
             <p className="mt-4">
               <Link
                 href="/leggi"
-                className="inline-flex min-h-[48px] items-center gap-2 rounded-xl bg-accento px-6 font-semibold text-white hover:opacity-90 dark:bg-accento-chiara dark:text-notte"
+                className="inline-flex min-h-[48px] items-center gap-2 rounded-xl bg-accento px-6 font-semibold text-white hover:brightness-110 dark:bg-accento-chiara dark:text-notte"
               >
                 Cerca tra le leggi
                 <ArrowRight01Icon size={18} aria-hidden="true" />

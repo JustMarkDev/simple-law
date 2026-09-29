@@ -156,10 +156,10 @@ export default async function RegionaleExtraDettaglioPage(
           </Link>
         </nav>
         <header className="mt-3 border-b-2 border-inchiostro pb-5 dark:border-nebbia">
-          <p className="text-xs font-semibold uppercase tracking-[0.28em] text-accento dark:text-accento-chiara">
+          <p className="text-sm font-bold text-accento dark:text-accento-chiara">
             Dati ufficiali DAIT
           </p>
-          <h1 className="mt-2 font-serif text-3xl font-bold text-inchiostro dark:text-nebbia sm:text-4xl">
+          <h1 className="mt-2 text-3xl font-bold text-inchiostro dark:text-nebbia sm:text-4xl">
             {voce.titolo}
           </h1>
           <p className="mt-3 max-w-2xl text-sm leading-relaxed text-inchiostro-soft dark:text-nebbia-soft">
@@ -168,7 +168,7 @@ export default async function RegionaleExtraDettaglioPage(
         </header>
 
         <section aria-labelledby="sintesi" className="mt-8">
-          <h2 id="sintesi" className="font-serif text-xl font-bold text-inchiostro dark:text-nebbia">
+          <h2 id="sintesi" className="text-xl font-bold text-inchiostro dark:text-nebbia">
             Sintesi
           </h2>
           <dl className="mt-3 flex flex-wrap gap-x-8 gap-y-2 text-sm text-inchiostro-soft dark:text-nebbia-soft">
@@ -202,7 +202,7 @@ export default async function RegionaleExtraDettaglioPage(
         </section>
 
         <section aria-labelledby="liste" className="mt-10">
-          <h2 id="liste" className="font-serif text-xl font-bold text-inchiostro dark:text-nebbia">
+          <h2 id="liste" className="text-xl font-bold text-inchiostro dark:text-nebbia">
             Voti per lista (livello regionale)
           </h2>
           <div className="mt-4 overflow-x-auto border border-regola dark:border-notte-deep">
@@ -231,7 +231,7 @@ export default async function RegionaleExtraDettaglioPage(
         </section>
 
         <section aria-labelledby="comuni" className="mt-10">
-          <h2 id="comuni" className="font-serif text-xl font-bold text-inchiostro dark:text-nebbia">
+          <h2 id="comuni" className="text-xl font-bold text-inchiostro dark:text-nebbia">
             Affluenza per comune ({intero(totaleComuni)} comuni)
           </h2>
           <form method="get" role="search" aria-label="Cerca un comune" className="mt-4 flex max-w-md gap-2">
@@ -244,11 +244,11 @@ export default async function RegionaleExtraDettaglioPage(
               minLength={2}
               maxLength={100}
               placeholder="Cerca un comune…"
-              className="min-h-[44px] w-full border border-regola bg-carta px-3 py-2 text-sm text-inchiostro dark:border-notte-deep dark:bg-notte-soft dark:text-nebbia"
+              className="min-h-[48px] w-full border border-regola bg-carta px-3 py-2 text-sm text-inchiostro dark:border-notte-deep dark:bg-notte-soft dark:text-nebbia"
             />
             <button
               type="submit"
-              className="inline-flex min-h-[44px] shrink-0 items-center bg-accento px-6 font-semibold text-white hover:opacity-90 dark:bg-accento-chiara dark:text-notte"
+              className="inline-flex min-h-[48px] shrink-0 items-center bg-accento px-6 font-semibold text-white hover:brightness-110 dark:bg-accento-chiara dark:text-notte"
             >
               Cerca
             </button>
@@ -291,7 +291,7 @@ export default async function RegionaleExtraDettaglioPage(
               {paginaCorrente > 1 ? (
                 <Link
                   href={`?${new URLSearchParams({ ...(q ? { q } : {}), page: String(paginaCorrente - 1) }).toString()}`}
-                  className="inline-flex min-h-[44px] items-center border border-regola px-4 font-medium text-accento underline-offset-2 hover:text-inchiostro dark:border-notte-deep dark:text-accento-chiara"
+                  className="inline-flex min-h-[48px] items-center rounded-xl border border-regola px-4 font-medium text-accento underline-offset-2 transition-colors hover:border-accento hover:text-accento dark:border-notte-deep dark:text-accento-chiara dark:hover:border-accento-chiara dark:hover:text-nebbia"
                 >
                   Pagina precedente
                 </Link>
@@ -302,7 +302,7 @@ export default async function RegionaleExtraDettaglioPage(
               {paginaCorrente < pagineTotali ? (
                 <Link
                   href={`?${new URLSearchParams({ ...(q ? { q } : {}), page: String(paginaCorrente + 1) }).toString()}`}
-                  className="inline-flex min-h-[44px] items-center border border-regola px-4 font-medium text-accento underline-offset-2 hover:text-inchiostro dark:border-notte-deep dark:text-accento-chiara"
+                  className="inline-flex min-h-[48px] items-center rounded-xl border border-regola px-4 font-medium text-accento underline-offset-2 transition-colors hover:border-accento hover:text-accento dark:border-notte-deep dark:text-accento-chiara dark:hover:border-accento-chiara dark:hover:text-nebbia"
                 >
                   Pagina successiva
                 </Link>
@@ -312,7 +312,7 @@ export default async function RegionaleExtraDettaglioPage(
         </section>
 
         <section aria-labelledby="note" className="mt-10 border border-regola bg-carta p-5 dark:border-notte-deep dark:bg-notte-soft">
-          <h2 id="note" className="font-serif text-lg font-bold text-inchiostro dark:text-nebbia">
+          <h2 id="note" className="text-lg font-bold text-inchiostro dark:text-nebbia">
             Metodologia e licenze
           </h2>
           <p className="mt-3 text-sm leading-relaxed text-inchiostro-soft dark:text-nebbia-soft">

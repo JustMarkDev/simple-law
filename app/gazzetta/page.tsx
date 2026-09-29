@@ -42,10 +42,10 @@ export default async function GazzettaPage() {
         </nav>
 
         <header className="mt-4 border-b-2 border-inchiostro pb-5 dark:border-nebbia">
-          <p className="text-xs font-semibold uppercase tracking-[0.28em] text-accento dark:text-accento-chiara">
+          <p className="text-sm font-bold text-accento dark:text-accento-chiara">
             Gazzetta Ufficiale
           </p>
-          <h1 className="mt-2 font-serif text-3xl font-bold text-inchiostro dark:text-nebbia sm:text-4xl">
+          <h1 className="mt-2 text-3xl font-bold text-inchiostro dark:text-nebbia sm:text-4xl">
             {dati ? dati.testata || `Serie Generale n. ${dati.numero}` : 'Ultimo numero uscito'}
           </h1>
           <p className="mt-3 max-w-2xl text-sm leading-relaxed text-inchiostro-soft dark:text-nebbia-soft">
@@ -71,7 +71,7 @@ export default async function GazzettaPage() {
                 key={atto.url}
                 className="border border-regola bg-carta p-5 dark:border-notte-deep dark:bg-notte-soft"
               >
-                <h2 className="font-serif text-lg font-bold leading-snug text-inchiostro dark:text-nebbia">
+                <h2 className="text-lg font-bold leading-snug text-inchiostro dark:text-nebbia">
                   <a
                     href={atto.url}
                     target="_blank"
@@ -93,7 +93,7 @@ export default async function GazzettaPage() {
           aria-labelledby="fonti-gu"
           className="mt-10 border border-regola bg-carta-soft p-5 dark:border-notte-deep dark:bg-notte-soft"
         >
-          <h2 id="fonti-gu" className="font-serif text-lg font-bold text-inchiostro dark:text-nebbia">
+          <h2 id="fonti-gu" className="text-lg font-bold text-inchiostro dark:text-nebbia">
             Fonte
           </h2>
           <p className="mt-2 text-sm leading-relaxed text-inchiostro-soft dark:text-nebbia-soft">

@@ -155,12 +155,12 @@ export default async function ComunePage({ params }: Props) {
             <span aria-current="page">{slug}</span>
           </nav>
           <section aria-labelledby="dati-assenti" className="mt-8 border border-dashed border-regola bg-carta p-8 text-center dark:border-notte-deep dark:bg-notte-soft">
-            <h2 id="dati-assenti" className="font-serif text-lg font-bold text-inchiostro dark:text-nebbia">Dati in preparazione</h2>
+            <h2 id="dati-assenti" className="text-lg font-bold text-inchiostro dark:text-nebbia">Dati in preparazione</h2>
             <p className="mx-auto mt-2 max-w-xl text-sm text-inchiostro-soft dark:text-nebbia-soft">
               L’aggregato ufficiale non è ancora disponibile. Nessun valore è mostrato: non pubblichiamo stime.
             </p>
             <p className="mt-6">
-              <Link href={`/elezioni/${voce!.id}`} className="inline-flex min-h-[44px] items-center bg-accento px-6 font-semibold text-white hover:opacity-90 dark:bg-accento-chiara dark:text-notte">
+              <Link href={`/elezioni/${voce!.id}`} className="inline-flex min-h-[48px] items-center bg-accento px-6 font-semibold text-white hover:brightness-110 dark:bg-accento-chiara dark:text-notte">
                 Torna alla consultazione
               </Link>
             </p>
@@ -201,7 +201,7 @@ export default async function ComunePage({ params }: Props) {
             <span aria-current="page">{slug}</span>
           </nav>
           <header className="mt-3 border-b-2 border-inchiostro pb-5 dark:border-nebbia">
-            <h1 className="mt-2 font-serif text-3xl font-bold text-inchiostro dark:text-nebbia sm:text-4xl">
+            <h1 className="mt-2 text-3xl font-bold text-inchiostro dark:text-nebbia sm:text-4xl">
               Più comuni corrispondono a «{slug}»
             </h1>
             <p className="mt-3 max-w-2xl text-sm text-inchiostro-soft dark:text-nebbia-soft">
@@ -242,10 +242,10 @@ export default async function ComunePage({ params }: Props) {
           <span aria-current="page">{comune.c}</span>
         </nav>
         <header className="mt-3 border-b-2 border-inchiostro pb-5 dark:border-nebbia">
-          <p className="inline-flex items-center border border-regola px-2 py-0.5 text-[11px] font-semibold uppercase tracking-[0.16em] text-inchiostro-soft dark:border-notte-deep dark:text-nebbia-soft">
+          <p className="inline-flex items-center border border-regola px-2 py-0.5 text-[11px] font-semibold text-inchiostro-soft dark:border-notte-deep dark:text-nebbia-soft">
             Dati ufficiali DAIT · {voce!.titoloBreve}
           </p>
-          <h1 className="mt-3 font-serif text-3xl font-bold text-inchiostro dark:text-nebbia sm:text-4xl">
+          <h1 className="mt-3 text-3xl font-bold text-inchiostro dark:text-nebbia sm:text-4xl">
             {comune.c} - {comune.p} ({comune.r})
           </h1>
           <p className="mt-3 max-w-2xl text-sm text-inchiostro-soft dark:text-nebbia-soft">
@@ -253,25 +253,25 @@ export default async function ComunePage({ params }: Props) {
           </p>
         </header>
         <section aria-labelledby="affluenza-comune" className="mt-8">
-          <h2 id="affluenza-comune" className="font-serif text-xl font-bold text-inchiostro dark:text-nebbia">
+          <h2 id="affluenza-comune" className="text-xl font-bold text-inchiostro dark:text-nebbia">
             Affluenza nel comune
           </h2>
           <dl className="mt-4 grid grid-cols-2 gap-px border border-regola bg-regola dark:border-notte-deep dark:bg-notte-deep sm:grid-cols-3">
             <div className="bg-carta p-4 dark:bg-notte">
               <dt className="text-xs font-medium text-inchiostro-faint dark:text-nebbia-faint">Affluenza</dt>
-              <dd className="mt-1 font-serif text-3xl font-bold text-inchiostro dark:text-nebbia">{decimaleIT(comune.a)}%</dd>
+              <dd className="mt-1 text-3xl font-bold text-inchiostro dark:text-nebbia">{decimaleIT(comune.a)}%</dd>
             </div>
             <div className="bg-carta p-4 dark:bg-notte">
               <dt className="text-xs font-medium text-inchiostro-faint dark:text-nebbia-faint">Elettori</dt>
-              <dd className="mt-1 font-serif text-3xl font-bold text-inchiostro dark:text-nebbia">{intero(comune.e)}</dd>
+              <dd className="mt-1 text-3xl font-bold text-inchiostro dark:text-nebbia">{intero(comune.e)}</dd>
             </div>
             <div className="bg-carta p-4 dark:bg-notte">
               <dt className="text-xs font-medium text-inchiostro-faint dark:text-nebbia-faint">Votanti</dt>
-              <dd className="mt-1 font-serif text-3xl font-bold text-inchiostro dark:text-nebbia">{intero(comune.v)}</dd>
+              <dd className="mt-1 text-3xl font-bold text-inchiostro dark:text-nebbia">{intero(comune.v)}</dd>
             </div>
           </dl>
           <p className="mt-4">
-            <Link href={`/elezioni/${voce!.id}`} className="inline-flex min-h-[44px] items-center border border-regola px-6 font-semibold text-inchiostro hover:border-accento hover:text-accento dark:border-notte-deep dark:text-nebbia dark:hover:border-accento-chiara dark:hover:text-accento-chiara">
+            <Link href={`/elezioni/${voce!.id}`} className="inline-flex min-h-[48px] items-center border border-regola px-6 font-semibold text-inchiostro hover:border-accento hover:text-accento dark:border-notte-deep dark:text-nebbia dark:hover:border-accento-chiara dark:hover:text-accento-chiara">
               Torna a {voce!.titoloBreve}
             </Link>
           </p>

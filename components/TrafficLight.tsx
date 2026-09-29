@@ -12,7 +12,8 @@ const ORDER: Stato[] = ['rosso', 'giallo', 'verde']
 /**
  * Semaforo di attuazione. Non usa emoji: lo stato è reso con pallini colorati
  * e testo accessibile (role="img" + aria-label).
- * Contrasto: contenitore sempre bg-white/dark:bg-black con bordo visibile.
+ *   contenitore in tinta carta/notte con bordo visibile.
+  Pallini spenti in carta-deep/notte-deep (mai grigi freddi).
  */
 export default function TrafficLight({ stato, motivo, size = 'md', showLabel = true }: TrafficLightProps) {
   const meta = STATO_META[stato]
@@ -24,13 +25,13 @@ export default function TrafficLight({ stato, motivo, size = 'md', showLabel = t
       <span
         role="img"
         aria-label={`Stato della norma: ${meta.label}. ${meta.descrizione}`}
-        className={`inline-flex shrink-0 flex-col ${housing} rounded-md border border-regola bg-white dark:border-nebbia/40 dark:bg-black`}
+        className={`inline-flex shrink-0 flex-col ${housing} rounded-lg border border-regola bg-carta dark:border-notte-deep dark:bg-notte`}
       >
         {ORDER.map((lampStato) => (
           <span
             key={lampStato}
             aria-hidden="true"
-            className={`${lamp} rounded-full ring-1 ring-inset ring-black/10 dark:ring-white/20 ${lampStato === stato ? STATO_META[lampStato].dot : 'bg-slate-200 dark:bg-neutral-800'}`}
+            className={`${lamp} rounded-full ring-1 ring-inset ring-black/10 dark:ring-white/20 ${lampStato === stato ? STATO_META[lampStato].dot : 'bg-carta-deep dark:bg-notte-deep'}`}
           />
         ))}
       </span>

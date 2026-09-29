@@ -124,10 +124,10 @@ export default async function Referendum2025Page({ searchParams }: PaginaProps) 
         </nav>
 
         <header className="mt-3 border-b-2 border-inchiostro pb-5 dark:border-nebbia">
-          <p className="inline-flex items-center border border-regola px-2 py-0.5 text-[11px] font-semibold uppercase tracking-[0.16em] text-inchiostro-soft dark:border-notte-deep dark:text-nebbia-soft">
+          <p className="inline-flex items-center border border-regola px-2 py-0.5 text-[11px] font-semibold text-inchiostro-soft dark:border-notte-deep dark:text-nebbia-soft">
             Dati ufficiali DAIT
           </p>
-          <h1 className="mt-3 font-serif text-3xl font-bold text-inchiostro dark:text-nebbia sm:text-4xl">
+          <h1 className="mt-3 text-3xl font-bold text-inchiostro dark:text-nebbia sm:text-4xl">
             Referendum 8-9 giugno 2025
           </h1>
           <p className="mt-3 max-w-2xl text-sm leading-relaxed text-inchiostro-soft dark:text-nebbia-soft">
@@ -137,31 +137,31 @@ export default async function Referendum2025Page({ searchParams }: PaginaProps) 
         </header>
 
         <section aria-labelledby="affluenza" className="mt-8">
-          <h2 id="affluenza" className="font-serif text-xl font-bold text-inchiostro dark:text-nebbia">
+          <h2 id="affluenza" className="text-xl font-bold text-inchiostro dark:text-nebbia">
             Affluenza nazionale
           </h2>
           <dl className="mt-4 grid grid-cols-2 gap-px border border-regola bg-regola dark:border-notte-deep dark:bg-notte-deep sm:grid-cols-4">
             <div className="bg-carta p-4 dark:bg-notte">
               <dt className="text-xs font-medium text-inchiostro-faint dark:text-nebbia-faint">Affluenza</dt>
-              <dd className="mt-1 font-serif text-3xl font-bold text-inchiostro dark:text-nebbia">
+              <dd className="mt-1 text-3xl font-bold text-inchiostro dark:text-nebbia">
                 {decimaleIT(elezione.a)}%
               </dd>
             </div>
             <div className="bg-carta p-4 dark:bg-notte">
               <dt className="text-xs font-medium text-inchiostro-faint dark:text-nebbia-faint">Elettori</dt>
-              <dd className="mt-1 font-serif text-3xl font-bold text-inchiostro dark:text-nebbia">
+              <dd className="mt-1 text-3xl font-bold text-inchiostro dark:text-nebbia">
                 {intero(elezione.e)}
               </dd>
             </div>
             <div className="bg-carta p-4 dark:bg-notte">
               <dt className="text-xs font-medium text-inchiostro-faint dark:text-nebbia-faint">Votanti</dt>
-              <dd className="mt-1 font-serif text-3xl font-bold text-inchiostro dark:text-nebbia">
+              <dd className="mt-1 text-3xl font-bold text-inchiostro dark:text-nebbia">
                 {intero(elezione.v)}
               </dd>
             </div>
             <div className="bg-carta p-4 dark:bg-notte">
               <dt className="text-xs font-medium text-inchiostro-faint dark:text-nebbia-faint">Data</dt>
-              <dd className="mt-1 font-serif text-3xl font-bold text-inchiostro dark:text-nebbia">
+              <dd className="mt-1 text-3xl font-bold text-inchiostro dark:text-nebbia">
                 {dataIT(elezione.data)}
               </dd>
             </div>
@@ -169,7 +169,7 @@ export default async function Referendum2025Page({ searchParams }: PaginaProps) 
         </section>
 
         <section aria-labelledby="quesiti" className="mt-10">
-          <h2 id="quesiti" className="font-serif text-xl font-bold text-inchiostro dark:text-nebbia">
+          <h2 id="quesiti" className="text-xl font-bold text-inchiostro dark:text-nebbia">
             I 5 quesiti
           </h2>
           <ul className="mt-4 grid gap-4 lg:grid-cols-2">
@@ -179,7 +179,7 @@ export default async function Referendum2025Page({ searchParams }: PaginaProps) 
                   key={quesito.q}
                   className="border border-regola bg-carta p-5 dark:border-notte-deep dark:bg-notte-soft"
                 >
-                  <h3 className="font-serif text-base font-bold leading-snug text-inchiostro dark:text-nebbia">
+                  <h3 className="text-base font-bold leading-snug text-inchiostro dark:text-nebbia">
                     <span className="mr-2 inline-flex h-6 w-6 items-center justify-center bg-inchiostro text-xs text-carta dark:bg-nebbia dark:text-notte">
                       {quesito.q}
                     </span>
@@ -223,7 +223,7 @@ export default async function Referendum2025Page({ searchParams }: PaginaProps) 
         </section>
 
         <section aria-labelledby="regioni" className="mt-10">
-          <h2 id="regioni" className="font-serif text-xl font-bold text-inchiostro dark:text-nebbia">
+          <h2 id="regioni" className="text-xl font-bold text-inchiostro dark:text-nebbia">
             Regioni
           </h2>
           <div className="mt-4 overflow-x-auto border border-regola dark:border-notte-deep">
@@ -266,7 +266,7 @@ export default async function Referendum2025Page({ searchParams }: PaginaProps) 
         </section>
 
         <section aria-labelledby="comuni" className="mt-10">
-          <h2 id="comuni" className="font-serif text-xl font-bold text-inchiostro dark:text-nebbia">
+          <h2 id="comuni" className="text-xl font-bold text-inchiostro dark:text-nebbia">
             Comuni
           </h2>
           <form method="get" action="/elezioni/referendum-2025" className="mt-4 flex max-w-xl gap-2" role="search">
@@ -280,11 +280,11 @@ export default async function Referendum2025Page({ searchParams }: PaginaProps) 
               defaultValue={qGrezza}
               placeholder="Cerca un comune (min. 2 caratteri)"
               autoComplete="off"
-              className="min-h-[44px] w-full border border-regola bg-carta px-3 py-2 text-sm text-inchiostro placeholder:text-inchiostro-faint focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-inchiostro dark:border-notte-deep dark:bg-notte dark:text-nebbia dark:placeholder:text-nebbia-faint dark:focus-visible:outline-nebbia"
+              className="min-h-[48px] w-full border border-regola bg-carta px-3 py-2 text-sm text-inchiostro placeholder:text-inchiostro-faint focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-inchiostro dark:border-notte-deep dark:bg-notte dark:text-nebbia dark:placeholder:text-nebbia-faint dark:focus-visible:outline-nebbia"
             />
             <button
               type="submit"
-              className="min-h-[44px] shrink-0 bg-inchiostro px-5 text-sm font-semibold text-carta hover:bg-inchiostro-soft focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-inchiostro dark:bg-nebbia dark:text-notte dark:hover:bg-nebbia-soft dark:focus-visible:outline-nebbia"
+              className="min-h-[48px] shrink-0 bg-inchiostro px-5 text-sm font-semibold text-carta hover:bg-inchiostro-soft focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-inchiostro dark:bg-nebbia dark:text-notte dark:hover:bg-nebbia-soft dark:focus-visible:outline-nebbia"
             >
               Cerca
             </button>
@@ -301,7 +301,7 @@ export default async function Referendum2025Page({ searchParams }: PaginaProps) 
                   key={`${comune.r}/${comune.p}/${comune.c}`}
                   className="border border-regola bg-carta p-4 dark:border-notte-deep dark:bg-notte-soft"
                 >
-                  <p className="font-serif text-base font-bold text-inchiostro dark:text-nebbia">{comune.c}</p>
+                  <p className="text-base font-bold text-inchiostro dark:text-nebbia">{comune.c}</p>
                   <p className="mt-0.5 text-xs text-inchiostro-faint dark:text-nebbia-faint">
                     {comune.p} · {comune.r}
                   </p>
@@ -318,7 +318,7 @@ export default async function Referendum2025Page({ searchParams }: PaginaProps) 
         </section>
 
         <section aria-labelledby="metodologia" className="mt-10 border border-regola bg-carta-soft p-5 dark:border-notte-deep dark:bg-notte-soft">
-          <h2 id="metodologia" className="font-serif text-lg font-bold text-inchiostro dark:text-nebbia">
+          <h2 id="metodologia" className="text-lg font-bold text-inchiostro dark:text-nebbia">
             Metodologia e fonti
           </h2>
           <p className="mt-2 text-sm leading-relaxed text-inchiostro-soft dark:text-nebbia-soft">{metodologia}</p>

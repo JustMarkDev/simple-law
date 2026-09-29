@@ -16,7 +16,7 @@ function titoloBreve(titolo: string, max = 60): string {
   return pulito.length <= max ? pulito : `${pulito.slice(0, max - 1).trimEnd()}…`;
 }
 
-/** Stella preferito (localStorage). z-10 per restare sopra la card. Fuori da <Link>. */
+/** Segnalibro preferiti (localStorage). z-10 per restare sopra la card. Fuori da <Link>. */
 export default function PulsantePreferito({ eli, titolo }: PulsantePreferitoProps) {
   const { has, toggle } = usePreferiti();
   const [esterno, setEsterno] = useState<boolean | null>(null);
@@ -61,7 +61,7 @@ export default function PulsantePreferito({ eli, titolo }: PulsantePreferitoProp
       aria-pressed={attivo}
       aria-label={etichetta}
       title={suggerimento}
-      className="relative z-10 inline-flex min-h-[48px] min-w-[48px] items-center justify-center rounded-xl border border-regola px-3 py-2 text-sm font-semibold text-inchiostro-soft transition-all duration-150 hover:border-inchiostro active:scale-90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-inchiostro motion-reduce:transition-none motion-reduce:active:scale-100 dark:border-notte-deep dark:text-nebbia-soft dark:hover:border-nebbia dark:focus-visible:outline-nebbia"
+      className="relative z-10 inline-flex min-h-[48px] min-w-[48px] items-center justify-center rounded-xl border border-regola px-3 py-2 text-sm font-semibold text-inchiostro-soft transition-colors duration-150 hover:border-accento hover:text-accento active:scale-95 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accento motion-reduce:transition-none motion-reduce:active:scale-100 dark:border-notte-deep dark:text-nebbia-soft dark:hover:border-accento-chiara dark:hover:text-accento-chiara dark:focus-visible:outline-accento-chiara"
     >
       <span
         key={attivo ? 'on' : 'off'}

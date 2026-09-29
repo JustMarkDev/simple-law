@@ -24,12 +24,12 @@ export default function MetodologiaPage() {
   return (
     <>
       <Header />
-      <main id="contenuto" className="mx-auto w-full max-w-4xl px-4 py-10 sm:px-6 sm:py-12 lg:px-8">
+      <main id="contenuto" className="mx-auto w-full max-w-editoriale px-4 py-10 sm:px-6 sm:py-12 lg:px-8">
         <header className="border-b-2 border-inchiostro pb-5 dark:border-nebbia">
-          <p className="text-xs font-semibold uppercase tracking-[0.28em] text-accento dark:text-accento-chiara">
+          <p className="text-sm font-bold text-accento dark:text-accento-chiara">
             Come lavoriamo
           </p>
-          <h1 className="mt-2 font-serif text-3xl font-bold text-inchiostro dark:text-nebbia sm:text-4xl">
+          <h1 className="mt-2 text-3xl font-bold text-inchiostro dark:text-nebbia sm:text-4xl">
             Metodologia
           </h1>
           <p className="mt-3 text-sm leading-relaxed text-inchiostro-soft dark:text-nebbia-soft">
@@ -39,12 +39,12 @@ export default function MetodologiaPage() {
         </header>
 
         <section aria-labelledby="template" className="mt-10">
-          <h2 id="template" className="font-serif text-xl font-bold text-inchiostro dark:text-nebbia">
+          <h2 id="template" className="text-xl font-bold text-inchiostro dark:text-nebbia">
             Il template a 5 riquadri
           </h2>
           <ol className="mt-4 grid gap-3 sm:grid-cols-2">
             {RIQUADRI.map((riquadro) => (
-              <li key={riquadro.titolo} className="border-l-2 border-inchiostro bg-carta-soft p-4 dark:border-nebbia dark:bg-notte-soft">
+              <li key={riquadro.titolo} className="rounded-2xl border border-regola bg-carta p-4 dark:border-notte-deep dark:bg-notte-soft">
                 <h3 className="text-sm font-bold text-inchiostro dark:text-nebbia">{riquadro.titolo}</h3>
                 <p className="mt-1.5 text-sm leading-relaxed text-inchiostro-soft dark:text-nebbia-soft">
                   {riquadro.testo}
@@ -55,7 +55,7 @@ export default function MetodologiaPage() {
         </section>
 
         <section aria-labelledby="semplificazione" className="mt-10">
-          <h2 id="semplificazione" className="font-serif text-xl font-bold text-inchiostro dark:text-nebbia">
+          <h2 id="semplificazione" className="text-xl font-bold text-inchiostro dark:text-nebbia">
             Semplificazione automatica
           </h2>
           <div className="mt-3 space-y-3 text-sm leading-relaxed text-inchiostro-soft dark:text-nebbia-soft">
@@ -72,7 +72,7 @@ export default function MetodologiaPage() {
         </section>
 
         <section aria-labelledby="semaforo" className="mt-10">
-          <h2 id="semaforo" className="font-serif text-xl font-bold text-inchiostro dark:text-nebbia">
+          <h2 id="semaforo" className="text-xl font-bold text-inchiostro dark:text-nebbia">
             Il semaforo di attuazione
           </h2>
           <p className="mt-2 text-sm leading-relaxed text-inchiostro-soft dark:text-nebbia-soft">
@@ -93,7 +93,7 @@ export default function MetodologiaPage() {
         </section>
 
         <section aria-labelledby="leggibilita" className="mt-10">
-          <h2 id="leggibilita" className="font-serif text-xl font-bold text-inchiostro dark:text-nebbia">
+          <h2 id="leggibilita" className="text-xl font-bold text-inchiostro dark:text-nebbia">
             Leggibilità e livello B1
           </h2>
           <div className="mt-3 space-y-3 text-sm leading-relaxed text-inchiostro-soft dark:text-nebbia-soft">
@@ -122,27 +122,27 @@ export default function MetodologiaPage() {
         </section>
 
         <section aria-labelledby="qualita" className="mt-10">
-          <h2 id="qualita" className="font-serif text-xl font-bold text-inchiostro dark:text-nebbia">
+          <h2 id="qualita" className="text-xl font-bold text-inchiostro dark:text-nebbia">
             Qualità della regolazione
           </h2>
           <p className="mt-2 text-sm leading-relaxed text-inchiostro-soft dark:text-nebbia-soft">
             Il punteggio di qualità è un’euristica trasparente su tre assi. Non è una valutazione ufficiale e non
             giudica il merito politico della norma.
           </p>
-          <dl className="mt-4 grid gap-px border border-regola bg-regola dark:border-notte-deep dark:bg-notte-deep sm:grid-cols-3">
-            <div className="bg-carta p-4 dark:bg-notte">
+          <dl className="mt-4 grid gap-5 sm:grid-cols-3">
+            <div className="rounded-2xl border border-regola bg-carta p-5 dark:border-notte-deep dark:bg-notte-soft">
               <dt className="text-sm font-bold text-inchiostro dark:text-nebbia">Processo</dt>
               <dd className="mt-1 text-sm leading-relaxed text-inchiostro-soft dark:text-nebbia-soft">
                 Analisi di impatto (AIR), voto di fiducia e testi omnibus.
               </dd>
             </div>
-            <div className="bg-carta p-4 dark:bg-notte">
+            <div className="rounded-2xl border border-regola bg-carta p-5 dark:border-notte-deep dark:bg-notte-soft">
               <dt className="text-sm font-bold text-inchiostro dark:text-nebbia">Tecnica</dt>
               <dd className="mt-1 text-sm leading-relaxed text-inchiostro-soft dark:text-nebbia-soft">
                 Rinvii interni, articoli “bis/ter” e lunghezza del testo.
               </dd>
             </div>
-            <div className="bg-carta p-4 dark:bg-notte">
+            <div className="rounded-2xl border border-regola bg-carta p-5 dark:border-notte-deep dark:bg-notte-soft">
               <dt className="text-sm font-bold text-inchiostro dark:text-nebbia">Attuazione</dt>
               <dd className="mt-1 text-sm leading-relaxed text-inchiostro-soft dark:text-nebbia-soft">
                 Decreti attuativi adottati, da adottare o scaduti.
@@ -152,7 +152,7 @@ export default function MetodologiaPage() {
         </section>
 
         <section aria-labelledby="limiti" className="mt-10 border border-regola bg-carta p-5 dark:border-notte-deep dark:bg-notte-soft sm:p-6">
-          <h2 id="limiti" className="font-serif text-xl font-bold text-inchiostro dark:text-nebbia">
+          <h2 id="limiti" className="text-xl font-bold text-inchiostro dark:text-nebbia">
             Limiti e correzioni
           </h2>
           <ul className="mt-3 space-y-2 text-sm leading-relaxed text-inchiostro-soft dark:text-nebbia-soft">

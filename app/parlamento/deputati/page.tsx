@@ -82,16 +82,16 @@ export async function generateMetadata({ searchParams }: DeputatiProps): Promise
 
 function SchedaDeputato({ membro }: { membro: Membro }) {
   return (
-    <article className="group relative flex h-full flex-col gap-3 border border-regola bg-carta p-5 transition-colors hover:border-inchiostro focus-within:border-inchiostro dark:border-notte-deep dark:bg-notte-soft dark:hover:border-nebbia dark:focus-within:border-nebbia">
+    <article className="group relative flex h-full flex-col gap-3 border border-regola bg-carta p-5 transition-colors hover:border-accento focus-within:border-inchiostro dark:border-notte-deep dark:bg-notte-soft dark:hover:border-nebbia dark:focus-within:border-nebbia">
       <div className="flex items-center gap-3">
         <span
           aria-hidden="true"
-          className="flex h-12 w-12 shrink-0 items-center justify-center border border-inchiostro bg-inchiostro font-serif text-sm font-bold text-carta dark:border-nebbia dark:bg-nebbia dark:text-notte"
+          className="flex h-12 w-12 shrink-0 items-center justify-center border border-inchiostro bg-inchiostro text-sm font-bold text-carta dark:border-nebbia dark:bg-nebbia dark:text-notte"
         >
           {iniziali(membro.nome)}
         </span>
         <div className="min-w-0">
-          <h3 className="font-serif text-base font-bold text-inchiostro dark:text-nebbia">
+          <h3 className="text-base font-bold text-inchiostro dark:text-nebbia">
             <Link
               href={`/parlamento/deputati/${encodeURIComponent(membro.slug)}`}
               className="after:absolute after:inset-0 hover:text-accento focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-inchiostro dark:hover:text-accento-chiara dark:focus-visible:outline-nebbia"
@@ -204,10 +204,10 @@ export default async function DeputatiPage({ searchParams }: DeputatiProps) {
         </nav>
 
         <header className="mt-4 border-b-2 border-inchiostro pb-5 dark:border-nebbia">
-          <p className="text-xs font-semibold uppercase tracking-[0.28em] text-accento dark:text-accento-chiara">
+          <p className="text-sm font-bold text-accento dark:text-accento-chiara">
             Camera · Legislatura 19
           </p>
-          <h1 className="mt-2 font-serif text-3xl font-bold text-inchiostro dark:text-nebbia sm:text-4xl">
+          <h1 className="mt-2 text-3xl font-bold text-inchiostro dark:text-nebbia sm:text-4xl">
             Deputati
           </h1>
           <p className="mt-3 max-w-2xl text-sm leading-relaxed text-inchiostro-soft dark:text-nebbia-soft">
@@ -223,7 +223,7 @@ export default async function DeputatiPage({ searchParams }: DeputatiProps) {
           <div>
             <label
               htmlFor="q-deputati"
-              className="mb-1 block text-xs font-semibold uppercase tracking-wide text-inchiostro-soft dark:text-nebbia-soft"
+              className="mb-1 block text-xs font-semibold text-inchiostro-soft dark:text-nebbia-soft"
             >
               Cerca per nome
             </label>
@@ -235,13 +235,13 @@ export default async function DeputatiPage({ searchParams }: DeputatiProps) {
               maxLength={100}
               placeholder="Es. AIELLO"
               autoComplete="off"
-              className="min-h-[48px] w-full border border-inchiostro bg-carta px-3 py-2 text-sm text-inchiostro placeholder:text-inchiostro-faint focus:outline-none focus:ring-2 focus:ring-inchiostro/30 dark:border-nebbia/40 dark:bg-notte dark:text-nebbia dark:placeholder:text-nebbia-faint"
+              className="campo text-sm"
             />
           </div>
           <div>
             <label
               htmlFor="gruppo-deputati"
-              className="mb-1 block text-xs font-semibold uppercase tracking-wide text-inchiostro-soft dark:text-nebbia-soft"
+              className="mb-1 block text-xs font-semibold text-inchiostro-soft dark:text-nebbia-soft"
             >
               Gruppo
             </label>
@@ -249,7 +249,7 @@ export default async function DeputatiPage({ searchParams }: DeputatiProps) {
               id="gruppo-deputati"
               name="gruppo"
               defaultValue={gruppo}
-              className="min-h-[48px] w-full border border-inchiostro bg-carta px-3 py-2 text-sm text-inchiostro dark:border-nebbia/40 dark:bg-notte dark:text-nebbia"
+              className="campo text-sm"
             >
               <option value="">Tutti i gruppi</option>
               {gruppi.map((g) => (
@@ -262,7 +262,7 @@ export default async function DeputatiPage({ searchParams }: DeputatiProps) {
           <div>
             <label
               htmlFor="per-deputati"
-              className="mb-1 block text-xs font-semibold uppercase tracking-wide text-inchiostro-soft dark:text-nebbia-soft"
+              className="mb-1 block text-xs font-semibold text-inchiostro-soft dark:text-nebbia-soft"
             >
               Per pagina
             </label>
@@ -270,7 +270,7 @@ export default async function DeputatiPage({ searchParams }: DeputatiProps) {
               id="per-deputati"
               name="per"
               defaultValue={String(per)}
-              className="min-h-[48px] w-full border border-inchiostro bg-carta px-3 py-2 text-sm text-inchiostro dark:border-nebbia/40 dark:bg-notte dark:text-nebbia"
+              className="campo text-sm"
             >
               <option value="12">12</option>
               <option value="24">24</option>
@@ -279,7 +279,7 @@ export default async function DeputatiPage({ searchParams }: DeputatiProps) {
           <div className="sm:col-span-3">
             <button
               type="submit"
-              className="inline-flex min-h-[48px] items-center bg-inchiostro px-5 py-2 text-xs font-semibold uppercase tracking-wide text-carta transition-colors hover:bg-inchiostro-soft focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-inchiostro dark:bg-nebbia dark:text-notte dark:hover:bg-nebbia-soft dark:focus-visible:outline-nebbia"
+              className="btn-primario"
             >
               Filtra
             </button>
@@ -299,7 +299,7 @@ export default async function DeputatiPage({ searchParams }: DeputatiProps) {
                 <Link
                   href={hrefSenza(queryBase, f.chiave)}
                   aria-label={`Rimuovi il filtro ${f.etichetta}`}
-                  className="inline-flex min-h-[48px] items-center gap-1 border border-regola bg-carta-soft px-3 py-2 text-xs font-medium text-inchiostro-soft hover:border-inchiostro hover:text-inchiostro dark:border-notte-deep dark:bg-notte dark:text-nebbia-soft dark:hover:border-nebbia dark:hover:text-nebbia"
+                  className="inline-flex min-h-[48px] items-center gap-1 border border-regola bg-carta-soft px-3 py-2 text-xs font-medium text-inchiostro-soft hover:border-accento hover:text-accento dark:border-notte-deep dark:bg-notte dark:text-nebbia-soft dark:hover:border-accento-chiara dark:hover:text-accento-chiara"
                 >
                   {f.etichetta} <span aria-hidden="true">×</span>
                 </Link>
@@ -324,7 +324,7 @@ export default async function DeputatiPage({ searchParams }: DeputatiProps) {
             <p className="mt-6">
               <Link
                 href="/parlamento/deputati"
-                className="inline-flex min-h-[48px] items-center bg-inchiostro px-5 py-2 text-xs font-semibold uppercase tracking-wide text-carta hover:bg-inchiostro-soft focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-inchiostro dark:bg-nebbia dark:text-notte dark:hover:bg-nebbia-soft dark:focus-visible:outline-nebbia"
+                className="inline-flex min-h-[48px] items-center bg-inchiostro px-5 py-2 text-xs font-semibold text-carta hover:bg-inchiostro-soft focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-inchiostro dark:bg-nebbia dark:text-notte dark:hover:bg-nebbia-soft dark:focus-visible:outline-nebbia"
               >
                 Rimuovi filtri
               </Link>
@@ -337,14 +337,14 @@ export default async function DeputatiPage({ searchParams }: DeputatiProps) {
             {page > 1 ? (
               <Link
                 href={hrefPagina(page - 1)}
-                className="inline-flex min-h-[48px] items-center border border-inchiostro px-4 py-2 text-xs font-semibold uppercase tracking-wide text-inchiostro hover:bg-inchiostro hover:text-carta dark:border-nebbia dark:text-nebbia dark:hover:bg-nebbia dark:hover:text-notte"
+                className="inline-flex min-h-[48px] items-center border border-inchiostro px-4 py-2 text-xs font-semibold text-inchiostro hover:bg-inchiostro hover:text-carta dark:border-nebbia dark:text-nebbia dark:hover:bg-nebbia dark:hover:text-notte"
               >
                 ← Precedente
               </Link>
             ) : (
               <span
                 aria-disabled="true"
-                className="inline-flex min-h-[48px] cursor-not-allowed items-center border border-regola px-4 py-2 text-xs font-semibold uppercase tracking-wide text-inchiostro-faint dark:border-notte-deep dark:text-nebbia-faint"
+                className="inline-flex min-h-[48px] cursor-not-allowed items-center border border-regola px-4 py-2 text-xs font-semibold text-inchiostro-faint dark:border-notte-deep dark:text-nebbia-faint"
               >
                 ← Precedente
               </span>
@@ -355,14 +355,14 @@ export default async function DeputatiPage({ searchParams }: DeputatiProps) {
             {page < totPagine ? (
               <Link
                 href={hrefPagina(page + 1)}
-                className="inline-flex min-h-[48px] items-center border border-inchiostro px-4 py-2 text-xs font-semibold uppercase tracking-wide text-inchiostro hover:bg-inchiostro hover:text-carta dark:border-nebbia dark:text-nebbia dark:hover:bg-nebbia dark:hover:text-notte"
+                className="inline-flex min-h-[48px] items-center border border-inchiostro px-4 py-2 text-xs font-semibold text-inchiostro hover:bg-inchiostro hover:text-carta dark:border-nebbia dark:text-nebbia dark:hover:bg-nebbia dark:hover:text-notte"
               >
                 Successiva →
               </Link>
             ) : (
               <span
                 aria-disabled="true"
-                className="inline-flex min-h-[48px] cursor-not-allowed items-center border border-regola px-4 py-2 text-xs font-semibold uppercase tracking-wide text-inchiostro-faint dark:border-notte-deep dark:text-nebbia-faint"
+                className="inline-flex min-h-[48px] cursor-not-allowed items-center border border-regola px-4 py-2 text-xs font-semibold text-inchiostro-faint dark:border-notte-deep dark:text-nebbia-faint"
               >
                 Successiva →
               </span>

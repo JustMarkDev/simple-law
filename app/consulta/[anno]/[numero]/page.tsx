@@ -100,17 +100,17 @@ export default async function DettaglioPronuncia({ params }: DettaglioProps) {
         </nav>
 
         <header className="mt-4 border-b-2 border-inchiostro pb-6 dark:border-nebbia">
-          <p className="text-xs font-semibold uppercase tracking-[0.28em] text-accento dark:text-accento-chiara">
+          <p className="text-sm font-bold text-accento dark:text-accento-chiara">
             {tipo} · Corte Costituzionale · {p.anno}
           </p>
-          <h1 className="mt-1 font-serif text-3xl font-bold text-inchiostro dark:text-nebbia">
+          <h1 className="mt-1 text-3xl font-bold text-inchiostro dark:text-nebbia">
             {tipo} n. {p.numero} del {p.anno}
           </h1>
           <p className="mt-2 text-sm text-inchiostro-soft dark:text-nebbia-soft">
             Decisione: {dataIT(p.dataDecisione)} · Deposito: {dataIT(p.dataDeposito)}
             {p.ecli ? ` · ${p.ecli}` : ''}
           </p>
-          <p className="mt-2 inline-flex items-center border border-regola px-2 py-1 text-[11px] font-semibold uppercase tracking-wide text-inchiostro-soft dark:border-notte-deep dark:text-nebbia-soft">
+          <p className="mt-2 inline-flex items-center border border-regola px-2 py-1 text-[11px] font-semibold text-inchiostro-soft dark:border-notte-deep dark:text-nebbia-soft">
             Giurisprudenza - non è una legge in vigore
           </p>
         </header>
@@ -120,7 +120,7 @@ export default async function DettaglioPronuncia({ params }: DettaglioProps) {
             aria-labelledby="sintesi"
             className="border border-regola bg-carta p-5 dark:border-notte-deep dark:bg-notte-soft lg:col-span-2"
           >
-            <h2 id="sintesi" className="font-serif text-lg font-bold text-inchiostro dark:text-nebbia">
+            <h2 id="sintesi" className="text-lg font-bold text-inchiostro dark:text-nebbia">
               Scheda
             </h2>
             <dl className="mt-3 space-y-2 text-sm">
@@ -160,7 +160,7 @@ export default async function DettaglioPronuncia({ params }: DettaglioProps) {
                 href={p.scheda}
                 target="_blank"
                 rel="noopener"
-                className="inline-flex min-h-[44px] items-center border border-inchiostro px-4 py-2 text-xs font-semibold uppercase tracking-wide text-inchiostro transition-colors hover:bg-inchiostro hover:text-carta focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-inchiostro dark:border-nebbia dark:text-nebbia dark:hover:bg-nebbia dark:hover:text-notte dark:focus-visible:outline-nebbia"
+                className="inline-flex min-h-[48px] items-center border border-inchiostro px-4 py-2 text-xs font-semibold text-inchiostro transition-colors hover:bg-inchiostro hover:text-carta focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-inchiostro dark:border-nebbia dark:text-nebbia dark:hover:bg-nebbia dark:hover:text-notte dark:focus-visible:outline-nebbia"
               >
                 Scheda ufficiale ↗
               </a>
@@ -171,7 +171,7 @@ export default async function DettaglioPronuncia({ params }: DettaglioProps) {
             aria-labelledby="fonte-scheda"
             className="border border-regola bg-carta-soft p-5 dark:border-notte-deep dark:bg-notte-soft"
           >
-            <h2 id="fonte-scheda" className="font-serif text-lg font-bold text-inchiostro dark:text-nebbia">
+            <h2 id="fonte-scheda" className="text-lg font-bold text-inchiostro dark:text-nebbia">
               Fonte
             </h2>
             <p className="mt-3 text-sm leading-relaxed text-inchiostro-soft dark:text-nebbia-soft">
@@ -188,7 +188,7 @@ export default async function DettaglioPronuncia({ params }: DettaglioProps) {
 
         {p.epigrafe && (
           <section aria-labelledby="epigrafe" className="mt-4 border border-regola bg-carta p-5 dark:border-notte-deep dark:bg-notte-soft">
-            <h2 id="epigrafe" className="font-serif text-lg font-bold text-inchiostro dark:text-nebbia">
+            <h2 id="epigrafe" className="text-lg font-bold text-inchiostro dark:text-nebbia">
               Epigrafe
             </h2>
             <p className="mt-3 text-sm leading-relaxed text-inchiostro-soft dark:text-nebbia-soft">{p.epigrafe}</p>
@@ -197,7 +197,7 @@ export default async function DettaglioPronuncia({ params }: DettaglioProps) {
 
         {p.dispositivo && (
           <section aria-labelledby="dispositivo" className="mt-4 border border-regola bg-carta p-5 dark:border-notte-deep dark:bg-notte-soft">
-            <h2 id="dispositivo" className="font-serif text-lg font-bold text-inchiostro dark:text-nebbia">
+            <h2 id="dispositivo" className="text-lg font-bold text-inchiostro dark:text-nebbia">
               Dispositivo
             </h2>
             <p className="mt-3 text-sm leading-relaxed text-inchiostro-soft dark:text-nebbia-soft">{p.dispositivo}</p>
@@ -207,7 +207,7 @@ export default async function DettaglioPronuncia({ params }: DettaglioProps) {
         <p className="mt-10">
           <Link
             href="/consulta"
-            className="inline-flex min-h-[44px] items-center gap-2 text-sm font-semibold text-accento underline underline-offset-2 dark:text-accento-chiara"
+            className="inline-flex min-h-[48px] items-center gap-2 text-sm font-semibold text-accento underline underline-offset-2 dark:text-accento-chiara"
           >
             Torna alle pronunce
           </Link>

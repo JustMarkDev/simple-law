@@ -83,10 +83,10 @@ export default async function ConsultaPage({
         </nav>
 
         <header className="mt-4 border-b-2 border-inchiostro pb-5 dark:border-nebbia">
-          <p className="text-xs font-semibold uppercase tracking-[0.28em] text-accento dark:text-accento-chiara">
+          <p className="text-sm font-bold text-accento dark:text-accento-chiara">
             Giurisprudenza · Anno 2001
           </p>
-          <h1 className="mt-2 font-serif text-3xl font-bold text-inchiostro dark:text-nebbia sm:text-4xl">
+          <h1 className="mt-2 text-3xl font-bold text-inchiostro dark:text-nebbia sm:text-4xl">
             Corte Costituzionale - Pronunce 2001
           </h1>
           <p className="mt-3 max-w-2xl text-sm leading-relaxed text-inchiostro-soft dark:text-nebbia-soft">
@@ -114,7 +114,7 @@ export default async function ConsultaPage({
           {tipologia && <input type="hidden" name="tipologia" value={tipologia} />}
           <button
             type="submit"
-            className="inline-flex min-h-[48px] items-center justify-center border border-inchiostro px-5 py-2 text-xs font-semibold uppercase tracking-wide text-inchiostro transition-colors hover:bg-inchiostro hover:text-carta focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-inchiostro dark:border-nebbia dark:text-nebbia dark:hover:bg-nebbia dark:hover:text-notte dark:focus-visible:outline-nebbia"
+            className="inline-flex min-h-[48px] items-center justify-center border border-inchiostro px-5 py-2 text-xs font-semibold text-inchiostro transition-colors hover:bg-inchiostro hover:text-carta focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-inchiostro dark:border-nebbia dark:text-nebbia dark:hover:bg-nebbia dark:hover:text-notte dark:focus-visible:outline-nebbia"
           >
             Cerca
           </button>
@@ -124,10 +124,10 @@ export default async function ConsultaPage({
           <Link
             href={q ? `/consulta?q=${encodeURIComponent(q)}` : '/consulta'}
             aria-current={!tipologia ? 'page' : undefined}
-            className={`inline-flex min-h-[48px] items-center border px-4 py-2 text-xs font-semibold uppercase tracking-wide focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-inchiostro dark:focus-visible:outline-nebbia ${
+            className={`inline-flex min-h-[48px] items-center border px-4 py-2 text-xs font-semibold focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-inchiostro dark:focus-visible:outline-nebbia ${
               !tipologia
                 ? 'border-inchiostro bg-inchiostro text-carta dark:border-nebbia dark:bg-nebbia dark:text-notte'
-                : 'border-regola text-inchiostro hover:border-inchiostro dark:border-notte-deep dark:text-nebbia dark:hover:border-nebbia'
+                : 'border-regola text-inchiostro hover:border-accento dark:border-notte-deep dark:text-nebbia dark:hover:border-nebbia'
             }`}
           >
             Tutte ({tutte.length})
@@ -142,10 +142,10 @@ export default async function ConsultaPage({
                 key={c.nome}
                 href={`/consulta?${sp.toString()}`}
                 aria-current={attiva ? 'page' : undefined}
-                className={`inline-flex min-h-[48px] items-center border px-4 py-2 text-xs font-semibold uppercase tracking-wide focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-inchiostro dark:focus-visible:outline-nebbia ${
+                className={`inline-flex min-h-[48px] items-center border px-4 py-2 text-xs font-semibold focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-inchiostro dark:focus-visible:outline-nebbia ${
                   attiva
                     ? 'border-inchiostro bg-inchiostro text-carta dark:border-nebbia dark:bg-nebbia dark:text-notte'
-                    : 'border-regola text-inchiostro hover:border-inchiostro dark:border-notte-deep dark:text-nebbia dark:hover:border-nebbia'
+                    : 'border-regola text-inchiostro hover:border-accento dark:border-notte-deep dark:text-nebbia dark:hover:border-nebbia'
                 }`}
               >
                 {c.nome === 'S' ? 'Sentenze' : c.nome === 'O' ? 'Ordinanze' : c.nome} ({c.componenti})
@@ -167,14 +167,14 @@ export default async function ConsultaPage({
                 className="border border-regola bg-carta p-5 dark:border-notte-deep dark:bg-notte-soft"
               >
                 <div className="flex flex-wrap items-center gap-2">
-                  <span className="inline-flex items-center border border-inchiostro px-2 py-1 text-[11px] font-bold uppercase tracking-wide text-inchiostro dark:border-nebbia dark:text-nebbia">
+                  <span className="inline-flex items-center border border-inchiostro px-2 py-1 text-[11px] font-bold text-inchiostro dark:border-nebbia dark:text-nebbia">
                     {p.tipologia === 'S' ? 'S, Sentenza' : p.tipologia === 'O' ? 'O · Ordinanza' : (p.tipologia ?? '-')}
                   </span>
                   <span className="text-xs text-inchiostro-faint dark:text-nebbia-faint">
                     Deposito: {dataIT(p.dataDeposito)}
                   </span>
                 </div>
-                <h2 className="mt-3 font-serif text-xl font-bold text-inchiostro dark:text-nebbia">
+                <h2 className="mt-3 text-xl font-bold text-inchiostro dark:text-nebbia">
                   <Link
                     href={`/consulta/${p.anno}/${p.numero}`}
                     className="underline-offset-2 hover:text-accento hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-inchiostro dark:hover:text-accento-chiara dark:focus-visible:outline-nebbia"
@@ -202,7 +202,7 @@ export default async function ConsultaPage({
             {paginaCorrente > 1 && (
               <Link
                 href={linkPagina(paginaCorrente - 1)}
-                className="inline-flex min-h-[48px] items-center border border-regola px-4 py-2 text-xs font-semibold uppercase tracking-wide text-inchiostro hover:border-inchiostro dark:border-notte-deep dark:text-nebbia dark:hover:border-nebbia"
+                className="inline-flex min-h-[48px] items-center border border-regola px-4 py-2 text-xs font-semibold text-inchiostro hover:border-accento dark:border-notte-deep dark:text-nebbia dark:hover:border-nebbia"
               >
                 ← Precedente
               </Link>
@@ -213,7 +213,7 @@ export default async function ConsultaPage({
             {paginaCorrente < pagine && (
               <Link
                 href={linkPagina(paginaCorrente + 1)}
-                className="inline-flex min-h-[48px] items-center border border-regola px-4 py-2 text-xs font-semibold uppercase tracking-wide text-inchiostro hover:border-inchiostro dark:border-notte-deep dark:text-nebbia dark:hover:border-nebbia"
+                className="inline-flex min-h-[48px] items-center border border-regola px-4 py-2 text-xs font-semibold text-inchiostro hover:border-accento dark:border-notte-deep dark:text-nebbia dark:hover:border-nebbia"
               >
                 Successiva →
               </Link>
@@ -225,7 +225,7 @@ export default async function ConsultaPage({
           aria-labelledby="fonti-licenze"
           className="mt-10 border border-regola bg-carta-soft p-5 dark:border-notte-deep dark:bg-notte-soft"
         >
-          <h2 id="fonti-licenze" className="font-serif text-lg font-bold text-inchiostro dark:text-nebbia">
+          <h2 id="fonti-licenze" className="text-lg font-bold text-inchiostro dark:text-nebbia">
             Fonte e licenza
           </h2>
           <p className="mt-2 text-sm leading-relaxed text-inchiostro-soft dark:text-nebbia-soft">

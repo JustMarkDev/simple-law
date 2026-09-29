@@ -145,16 +145,16 @@ export default async function DettaglioParlamentare({ params }: DettaglioProps) 
           ) : (
             <span
               aria-hidden="true"
-              className="flex h-16 w-16 shrink-0 items-center justify-center border border-inchiostro bg-inchiostro font-serif text-lg font-bold text-carta dark:border-nebbia dark:bg-nebbia dark:text-notte"
+              className="flex h-16 w-16 shrink-0 items-center justify-center border border-inchiostro bg-inchiostro text-lg font-bold text-carta dark:border-nebbia dark:bg-nebbia dark:text-notte"
             >
               {iniziali(membro.nome)}
             </span>
           )}
           <div>
-            <p className="text-xs font-semibold uppercase tracking-[0.28em] text-accento dark:text-accento-chiara">
+            <p className="text-sm font-bold text-accento dark:text-accento-chiara">
               {etichettaSingolo} · Legislatura 19
             </p>
-            <h1 className="mt-1 font-serif text-3xl font-bold text-inchiostro dark:text-nebbia">
+            <h1 className="mt-1 text-3xl font-bold text-inchiostro dark:text-nebbia">
               {membro.nome}
             </h1>
             {membro.gruppo ? (
@@ -179,7 +179,7 @@ export default async function DettaglioParlamentare({ params }: DettaglioProps) 
             aria-labelledby="scheda"
             className="border border-regola bg-carta p-5 dark:border-notte-deep dark:bg-notte-soft lg:col-span-2"
           >
-            <h2 id="scheda" className="font-serif text-lg font-bold text-inchiostro dark:text-nebbia">
+            <h2 id="scheda" className="text-lg font-bold text-inchiostro dark:text-nebbia">
               Scheda
             </h2>
             <dl className="mt-3 space-y-2 text-sm">
@@ -213,7 +213,7 @@ export default async function DettaglioParlamentare({ params }: DettaglioProps) 
                   href={membro.urlScheda}
                   target="_blank"
                   rel="noopener"
-                  className="inline-flex min-h-[48px] items-center border border-inchiostro px-4 py-2 text-xs font-semibold uppercase tracking-wide text-inchiostro transition-colors hover:bg-inchiostro hover:text-carta focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-inchiostro dark:border-nebbia dark:text-nebbia dark:hover:bg-nebbia dark:hover:text-notte dark:focus-visible:outline-nebbia"
+                  className="inline-flex min-h-[48px] items-center border border-inchiostro px-4 py-2 text-xs font-semibold text-inchiostro transition-colors hover:bg-inchiostro hover:text-carta focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-inchiostro dark:border-nebbia dark:text-nebbia dark:hover:bg-nebbia dark:hover:text-notte dark:focus-visible:outline-nebbia"
                 >
                   Scheda ufficiale ↗
                 </a>
@@ -225,7 +225,7 @@ export default async function DettaglioParlamentare({ params }: DettaglioProps) 
             aria-labelledby="fonte-scheda"
             className="border border-regola bg-carta-soft p-5 dark:border-notte-deep dark:bg-notte-soft"
           >
-            <h2 id="fonte-scheda" className="font-serif text-lg font-bold text-inchiostro dark:text-nebbia">
+            <h2 id="fonte-scheda" className="text-lg font-bold text-inchiostro dark:text-nebbia">
               Fonte
             </h2>
             <p className="mt-3 text-sm leading-relaxed text-inchiostro-soft dark:text-nebbia-soft">

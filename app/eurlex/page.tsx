@@ -47,16 +47,16 @@ function vigenza(it: AttoUe): string {
 
 function SchedaAtto({ atto }: { atto: AttoUe }) {
   return (
-    <article className="group relative flex h-full flex-col gap-3 border border-regola bg-carta p-5 transition-colors hover:border-inchiostro focus-within:border-inchiostro dark:border-notte-deep dark:bg-notte-soft dark:hover:border-nebbia dark:focus-within:border-nebbia">
+    <article className="group relative flex h-full flex-col gap-3 border border-regola bg-carta p-5 transition-colors hover:border-accento focus-within:border-inchiostro dark:border-notte-deep dark:bg-notte-soft dark:hover:border-nebbia dark:focus-within:border-nebbia">
       <p className="flex flex-wrap gap-2">
-        <span className="inline-flex items-center border border-inchiostro px-2 py-1 text-[11px] font-bold uppercase tracking-wide text-inchiostro dark:border-nebbia dark:text-nebbia">
+        <span className="inline-flex items-center border border-inchiostro px-2 py-1 text-[11px] font-bold text-inchiostro dark:border-nebbia dark:text-nebbia">
           {etichettaTipo(atto.tipo)}
         </span>
-        <span className="inline-flex items-center border border-regola px-2 py-1 text-[11px] uppercase tracking-wide text-inchiostro-soft dark:border-notte-deep dark:text-nebbia-soft">
+        <span className="inline-flex items-center border border-regola px-2 py-1 text-[11px] text-inchiostro-soft dark:border-notte-deep dark:text-nebbia-soft">
           {notaApplicabilita(atto.tipo)}
         </span>
       </p>
-      <h3 className="font-serif text-base font-bold leading-snug text-inchiostro dark:text-nebbia">
+      <h3 className="text-base font-bold leading-snug text-inchiostro dark:text-nebbia">
         <Link
           href={`/eurlex/${atto.celex}`}
           className="underline-offset-2 hover:text-accento hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-inchiostro dark:hover:text-accento-chiara dark:focus-visible:outline-nebbia"
@@ -152,10 +152,10 @@ export default async function EuropaPage({
         </nav>
 
         <header className="mt-4 border-b-2 border-inchiostro pb-5 dark:border-nebbia">
-          <p className="text-xs font-semibold uppercase tracking-[0.28em] text-accento dark:text-accento-chiara">
+          <p className="text-sm font-bold text-accento dark:text-accento-chiara">
             Unione europea · Anno 2026
           </p>
-          <h1 className="mt-2 font-serif text-3xl font-bold text-inchiostro dark:text-nebbia sm:text-4xl">
+          <h1 className="mt-2 text-3xl font-bold text-inchiostro dark:text-nebbia sm:text-4xl">
             Diritto UE rilevante per l&apos;Italia - 2026
           </h1>
           <p className="mt-3 max-w-2xl text-sm leading-relaxed text-inchiostro-soft dark:text-nebbia-soft">
@@ -193,7 +193,7 @@ export default async function EuropaPage({
           {per !== 20 && <input type="hidden" name="per" value={String(per)} />}
           <button
             type="submit"
-            className="inline-flex min-h-[48px] items-center justify-center border border-inchiostro px-5 py-2 text-xs font-semibold uppercase tracking-wide text-inchiostro transition-colors hover:bg-inchiostro hover:text-carta focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-inchiostro dark:border-nebbia dark:text-nebbia dark:hover:bg-nebbia dark:hover:text-notte dark:focus-visible:outline-nebbia"
+            className="inline-flex min-h-[48px] items-center justify-center border border-inchiostro px-5 py-2 text-xs font-semibold text-inchiostro transition-colors hover:bg-inchiostro hover:text-carta focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-inchiostro dark:border-nebbia dark:text-nebbia dark:hover:bg-nebbia dark:hover:text-notte dark:focus-visible:outline-nebbia"
           >
             Cerca
           </button>
@@ -203,10 +203,10 @@ export default async function EuropaPage({
           <Link
             href={q ? `/eurlex?q=${encodeURIComponent(q)}` : '/eurlex'}
             aria-current={!tipo ? 'page' : undefined}
-            className={`inline-flex min-h-[48px] items-center border px-4 py-2 text-xs font-semibold uppercase tracking-wide focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-inchiostro dark:focus-visible:outline-nebbia ${
+            className={`inline-flex min-h-[48px] items-center border px-4 py-2 text-xs font-semibold focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-inchiostro dark:focus-visible:outline-nebbia ${
               !tipo
                 ? 'border-inchiostro bg-inchiostro text-carta dark:border-nebbia dark:bg-nebbia dark:text-notte'
-                : 'border-regola text-inchiostro hover:border-inchiostro dark:border-notte-deep dark:text-nebbia dark:hover:border-nebbia'
+                : 'border-regola text-inchiostro hover:border-accento dark:border-notte-deep dark:text-nebbia dark:hover:border-nebbia'
             }`}
           >
             Tutti ({tutte.length})
@@ -214,10 +214,10 @@ export default async function EuropaPage({
           <Link
             href={`/eurlex?${new URLSearchParams({ ...(q ? { q } : {}), tipo: 'REG' }).toString()}`}
             aria-current={tipo === 'REG' ? 'page' : undefined}
-            className={`inline-flex min-h-[48px] items-center border px-4 py-2 text-xs font-semibold uppercase tracking-wide focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-inchiostro dark:focus-visible:outline-nebbia ${
+            className={`inline-flex min-h-[48px] items-center border px-4 py-2 text-xs font-semibold focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-inchiostro dark:focus-visible:outline-nebbia ${
               tipo === 'REG'
                 ? 'border-inchiostro bg-inchiostro text-carta dark:border-nebbia dark:bg-nebbia dark:text-notte'
-                : 'border-regola text-inchiostro hover:border-inchiostro dark:border-notte-deep dark:text-nebbia dark:hover:border-nebbia'
+                : 'border-regola text-inchiostro hover:border-accento dark:border-notte-deep dark:text-nebbia dark:hover:border-nebbia'
             }`}
           >
             Regolamenti ({conteggi.find((c) => c.nome === 'REG')?.componenti ?? 0})
@@ -225,10 +225,10 @@ export default async function EuropaPage({
           <Link
             href={`/eurlex?${new URLSearchParams({ ...(q ? { q } : {}), tipo: 'DIR_TUTTE' }).toString()}`}
             aria-current={tipo === 'DIR_TUTTE' ? 'page' : undefined}
-            className={`inline-flex min-h-[48px] items-center border px-4 py-2 text-xs font-semibold uppercase tracking-wide focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-inchiostro dark:focus-visible:outline-nebbia ${
+            className={`inline-flex min-h-[48px] items-center border px-4 py-2 text-xs font-semibold focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-inchiostro dark:focus-visible:outline-nebbia ${
               tipo === 'DIR_TUTTE'
                 ? 'border-inchiostro bg-inchiostro text-carta dark:border-nebbia dark:bg-nebbia dark:text-notte'
-                : 'border-regola text-inchiostro hover:border-inchiostro dark:border-notte-deep dark:text-nebbia dark:hover:border-nebbia'
+                : 'border-regola text-inchiostro hover:border-accento dark:border-notte-deep dark:text-nebbia dark:hover:border-nebbia'
             }`}
           >
             Direttive ({conteggi.filter((c) => c.nome !== 'REG').reduce((s, c) => s + c.componenti, 0)})
@@ -255,7 +255,7 @@ export default async function EuropaPage({
             {page > 1 && (
               <Link
                 href={linkPagina(page - 1)}
-                className="inline-flex min-h-[48px] items-center border border-regola px-4 py-2 text-xs font-semibold uppercase tracking-wide text-inchiostro hover:border-inchiostro dark:border-notte-deep dark:text-nebbia dark:hover:border-nebbia"
+                className="inline-flex min-h-[48px] items-center border border-regola px-4 py-2 text-xs font-semibold text-inchiostro hover:border-accento dark:border-notte-deep dark:text-nebbia dark:hover:border-nebbia"
               >
                 ← Precedente
               </Link>
@@ -266,7 +266,7 @@ export default async function EuropaPage({
             {page < pagine && (
               <Link
                 href={linkPagina(page + 1)}
-                className="inline-flex min-h-[48px] items-center border border-regola px-4 py-2 text-xs font-semibold uppercase tracking-wide text-inchiostro hover:border-inchiostro dark:border-notte-deep dark:text-nebbia dark:hover:border-nebbia"
+                className="inline-flex min-h-[48px] items-center border border-regola px-4 py-2 text-xs font-semibold text-inchiostro hover:border-accento dark:border-notte-deep dark:text-nebbia dark:hover:border-nebbia"
               >
                 Successiva →
               </Link>
@@ -278,7 +278,7 @@ export default async function EuropaPage({
           aria-labelledby="fonti-licenze"
           className="mt-10 border border-regola bg-carta-soft p-5 dark:border-notte-deep dark:bg-notte-soft"
         >
-          <h2 id="fonti-licenze" className="font-serif text-lg font-bold text-inchiostro dark:text-nebbia">
+          <h2 id="fonti-licenze" className="text-lg font-bold text-inchiostro dark:text-nebbia">
             Fonte e licenza
           </h2>
           <p className="mt-2 text-sm leading-relaxed text-inchiostro-soft dark:text-nebbia-soft">

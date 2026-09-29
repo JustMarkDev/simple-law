@@ -99,7 +99,7 @@ export default async function StatistichePage() {
         <main id="contenuto" className="mx-auto w-full max-w-editoriale px-4 py-10 sm:px-6 sm:py-12 lg:px-8">
           <Comparsa>
             <header>
-              <p className="text-xs font-semibold uppercase tracking-[0.28em] text-accento dark:text-accento-chiara">
+              <p className="text-sm font-bold text-accento dark:text-accento-chiara">
                 Dati aperti
               </p>
               <h1 className="mt-2 flex items-center gap-3 text-3xl font-bold text-inchiostro dark:text-nebbia sm:text-4xl">
@@ -119,7 +119,7 @@ export default async function StatistichePage() {
             <p className="mt-6">
               <Link
                 href="/leggi"
-                className="inline-flex min-h-[48px] items-center gap-2 rounded-xl bg-accento px-6 font-semibold text-white hover:opacity-90 dark:bg-accento-chiara dark:text-notte"
+                className="btn-primario"
               >
                 Cerca tra le leggi
                 <ArrowRight01Icon size={18} aria-hidden="true" />
@@ -212,7 +212,7 @@ export default async function StatistichePage() {
       <main id="contenuto" className="mx-auto w-full max-w-editoriale px-4 py-10 sm:px-6 sm:py-12 lg:px-8">
         <Comparsa>
           <header>
-            <p className="text-xs font-semibold uppercase tracking-[0.28em] text-accento dark:text-accento-chiara">
+            <p className="text-sm font-bold text-accento dark:text-accento-chiara">
               Dati aperti
             </p>
             <h1 className="mt-2 flex items-center gap-3 text-3xl font-bold text-inchiostro dark:text-nebbia sm:text-4xl">
@@ -225,7 +225,7 @@ export default async function StatistichePage() {
             <p className="mt-4">
               <Link
                 href="/leggi"
-                className="inline-flex min-h-[48px] items-center gap-2 rounded-xl bg-accento px-6 font-semibold text-white hover:opacity-90 dark:bg-accento-chiara dark:text-notte"
+                className="btn-primario"
               >
                 Cerca tra le leggi
                 <ArrowRight01Icon size={18} aria-hidden="true" />
@@ -450,7 +450,7 @@ export default async function StatistichePage() {
             <p className="mt-4 flex flex-wrap gap-3">
               <a
                 href="/api/export?formato=csv"
-                className="inline-flex min-h-[48px] items-center gap-2 rounded-xl bg-accento px-6 font-semibold text-white hover:opacity-90 dark:bg-accento-chiara dark:text-notte"
+                className="btn-primario"
               >
                 <Download01Icon size={18} aria-hidden="true" />
                 Scarica CSV

@@ -75,10 +75,10 @@ export default async function FinanziamentiPage() {
         </nav>
 
         <header className="mt-4 border-b-2 border-inchiostro pb-5 dark:border-nebbia">
-          <p className="text-xs font-semibold uppercase tracking-[0.28em] text-accento dark:text-accento-chiara">
+          <p className="text-sm font-bold text-accento dark:text-accento-chiara">
             Trasparenza · Erogazioni art. 5 DL 149/2013
           </p>
-          <h1 className="mt-2 font-serif text-3xl font-bold text-inchiostro dark:text-nebbia sm:text-4xl">
+          <h1 className="mt-2 text-3xl font-bold text-inchiostro dark:text-nebbia sm:text-4xl">
             Finanziamenti ai partiti politici
           </h1>
           <p className="mt-3 max-w-2xl text-sm leading-relaxed text-inchiostro-soft dark:text-nebbia-soft">
@@ -95,7 +95,7 @@ export default async function FinanziamentiPage() {
         </header>
 
         <section aria-labelledby="titolo-tabella" className="mt-8">
-          <h2 id="titolo-tabella" className="font-serif text-xl font-bold text-inchiostro dark:text-nebbia">
+          <h2 id="titolo-tabella" className="text-xl font-bold text-inchiostro dark:text-nebbia">
             Maggiori beneficiari per totale comunicato
           </h2>
           {ordinate.length === 0 ? (
@@ -165,7 +165,7 @@ export default async function FinanziamentiPage() {
         </section>
 
         <section aria-labelledby="titolo-fonti" className="mt-8 border border-regola bg-carta p-5 dark:border-notte-deep dark:bg-notte-soft">
-          <h2 id="titolo-fonti" className="font-serif text-xl font-bold text-inchiostro dark:text-nebbia">
+          <h2 id="titolo-fonti" className="text-xl font-bold text-inchiostro dark:text-nebbia">
             Fonti e licenza
           </h2>
           <p className="mt-2 text-sm leading-relaxed text-inchiostro-soft dark:text-nebbia-soft">

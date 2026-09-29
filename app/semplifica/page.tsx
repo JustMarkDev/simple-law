@@ -160,7 +160,7 @@ export default async function SemplificaPage({ searchParams }: SemplificaProps) 
 
         <Comparsa>
           <header className="mt-4">
-            <p className="text-xs font-semibold uppercase tracking-[0.28em] text-accento dark:text-accento-chiara">
+            <p className="text-sm font-bold text-accento dark:text-accento-chiara">
               Strumento
             </p>
             <h1 className="mt-2 flex items-center gap-3 text-3xl font-bold text-inchiostro dark:text-nebbia sm:text-4xl">
@@ -173,7 +173,7 @@ export default async function SemplificaPage({ searchParams }: SemplificaProps) 
             <p className="mt-4">
               <Link
                 href={ESEMPIO_URL}
-                className="inline-flex min-h-[48px] items-center gap-2 rounded-xl bg-accento px-6 font-semibold text-white hover:opacity-90 dark:bg-accento-chiara dark:text-notte"
+                className="inline-flex min-h-[48px] items-center gap-2 rounded-xl bg-accento px-6 font-semibold text-white hover:brightness-110 dark:bg-accento-chiara dark:text-notte"
               >
                 Prova con un esempio
                 <ArrowRight01Icon size={18} aria-hidden="true" />
@@ -229,7 +229,7 @@ export default async function SemplificaPage({ searchParams }: SemplificaProps) 
             {lunghezzaTesto > 0 && lunghezzaTesto < 20 ? ` · ancora ${20 - lunghezzaTesto} caratteri` : ''}
           </p>
           {erroreTesto ? (
-            <div id="errore-testo" role="alert" className="flex items-start gap-2 rounded-xl border border-red-600/40 bg-red-50 px-3 py-2 text-sm text-red-800 dark:bg-red-950/40 dark:text-red-200">
+            <div id="errore-testo" role="alert" className="superficie flex items-start gap-2 px-3 py-2 text-sm text-red-800 dark:text-red-200">
               <AlertCircleIcon size={18} aria-hidden="true" className="mt-0.5 shrink-0" />
               <p>
                 {erroreTesto}{' '}
@@ -247,7 +247,7 @@ export default async function SemplificaPage({ searchParams }: SemplificaProps) 
           <div>
             <button
               type="submit"
-              className="inline-flex min-h-[48px] items-center rounded-xl bg-accento px-6 py-2 text-sm font-semibold text-white hover:opacity-90 dark:bg-accento-chiara dark:text-notte"
+              className="inline-flex min-h-[48px] items-center rounded-xl bg-accento px-6 py-2 text-sm font-semibold text-white hover:brightness-110 dark:bg-accento-chiara dark:text-notte"
             >
               Semplifica
             </button>
@@ -273,7 +273,7 @@ export default async function SemplificaPage({ searchParams }: SemplificaProps) 
                 autoComplete="off"
                 className="min-h-[48px] rounded-xl border border-regola bg-carta px-3 py-2 text-sm dark:border-notte-deep dark:bg-notte"
               />
-              <button type="submit" className="inline-flex min-h-[48px] items-center justify-center rounded-xl border border-regola px-4 py-2 text-xs font-semibold uppercase tracking-wide hover:border-accento hover:text-accento dark:border-notte-deep dark:hover:border-accento-chiara dark:hover:text-accento-chiara">
+              <button type="submit" className="inline-flex min-h-[48px] items-center justify-center rounded-xl border border-regola px-4 py-2 text-xs font-semibold hover:border-accento hover:text-accento dark:border-notte-deep dark:hover:border-accento-chiara dark:hover:text-accento-chiara">
                 Mostra scheda
               </button>
             </form>
@@ -289,7 +289,7 @@ export default async function SemplificaPage({ searchParams }: SemplificaProps) 
                 autoComplete="off"
                 className="min-h-[48px] rounded-xl border border-regola bg-carta px-3 py-2 text-sm dark:border-notte-deep dark:bg-notte"
               />
-              <button type="submit" className="inline-flex min-h-[48px] items-center justify-center rounded-xl border border-regola px-4 py-2 text-xs font-semibold uppercase tracking-wide hover:border-accento hover:text-accento dark:border-notte-deep dark:hover:border-accento-chiara dark:hover:text-accento-chiara">
+              <button type="submit" className="inline-flex min-h-[48px] items-center justify-center rounded-xl border border-regola px-4 py-2 text-xs font-semibold hover:border-accento hover:text-accento dark:border-notte-deep dark:hover:border-accento-chiara dark:hover:text-accento-chiara">
                 Confronta
               </button>
             </form>
@@ -309,7 +309,7 @@ export default async function SemplificaPage({ searchParams }: SemplificaProps) 
             <p className="mt-1 text-xs text-inchiostro-faint dark:text-nebbia-faint">Fatte qui sul momento, solo dal tuo testo.</p>
 
             <h3 className="mt-6 text-base font-bold text-inchiostro dark:text-nebbia">1. In poche parole</h3>
-            <p className="mt-2 rounded-xl border-l-4 border-accento bg-carta-soft px-4 py-3 text-sm font-medium dark:bg-notte">{anteprima.in10Secondi}</p>
+            <p className="mt-2 text-sm leading-relaxed text-inchiostro-soft dark:text-nebbia-soft"><span className="font-bold text-inchiostro dark:text-nebbia">In breve: </span>{anteprima.in10Secondi}</p>
 
             <h3 className="mt-6 text-base font-bold text-inchiostro dark:text-nebbia">2. Cosa cambia per te</h3>
             <div className="mt-2 grid gap-3 sm:grid-cols-2">
@@ -493,7 +493,7 @@ export default async function SemplificaPage({ searchParams }: SemplificaProps) 
               Niente da mostrare per ora: incolla un testo qui sopra per cominciare.
             </p>
             <p className="mt-3">
-              <Link href="/leggi" className="inline-flex min-h-[48px] items-center rounded-xl border border-regola px-4 py-2 text-xs font-semibold uppercase tracking-wide hover:border-accento hover:text-accento dark:border-notte-deep dark:hover:border-accento-chiara dark:hover:text-accento-chiara">
+              <Link href="/leggi" className="inline-flex min-h-[48px] items-center rounded-xl border border-regola px-4 py-2 text-xs font-semibold hover:border-accento hover:text-accento dark:border-notte-deep dark:hover:border-accento-chiara dark:hover:text-accento-chiara">
                 Cerca tra le leggi
               </Link>
             </p>

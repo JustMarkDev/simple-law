@@ -156,33 +156,33 @@ export default function ListaSalvati() {
 
   if (leggiOrdinate === null) {
     return (
-      <div className="mt-6" role="status" aria-busy="true" aria-label="Caricamento dei salvati">
+      <div className="mt-10" role="status" aria-busy="true" aria-label="Caricamento dei salvati">
         <ul className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3" aria-hidden="true">
           {Array.from({ length: 6 }).map((_, i) => (
-            <li key={i} className="animate-pulse border border-regola p-5 dark:border-notte-deep">
-              <div className="h-4 w-2/3 bg-inchiostro/10 dark:bg-nebbia/10" />
-              <div className="mt-3 h-5 w-full bg-inchiostro/10 dark:bg-nebbia/10" />
-              <div className="mt-2 h-4 w-5/6 bg-inchiostro/10 dark:bg-nebbia/10" />
+            <li key={i} className="animate-pulse rounded-2xl border border-regola p-5 dark:border-notte-deep sm:p-6">
+              <div className="h-4 w-2/3 rounded-lg bg-inchiostro/10 dark:bg-nebbia/10" />
+              <div className="mt-3 h-5 w-full rounded-lg bg-inchiostro/10 dark:bg-nebbia/10" />
+              <div className="mt-2 h-4 w-5/6 rounded-lg bg-inchiostro/10 dark:bg-nebbia/10" />
             </li>
           ))}
         </ul>
-        <p className="mt-4 text-sm">Caricamento…</p>
+        <p className="mt-4 text-sm text-inchiostro-soft dark:text-nebbia-soft">Caricamento in corso.</p>
       </div>
     );
   }
 
   if (leggiOrdinate.length === 0) {
     return (
-      <div className="mt-6 border border-dashed border-regola p-8 text-center dark:border-notte-deep">
-        <p className="text-base font-semibold">Nessuna norma salvata.</p>
-        <p className="mt-1 text-sm text-inchiostro-faint dark:text-nebbia-faint">
+      <div className="mt-10 rounded-2xl border border-dashed border-regola p-5 text-center dark:border-notte-deep sm:p-8">
+        <p className="text-base font-semibold text-inchiostro dark:text-nebbia">Nessuna norma salvata.</p>
+        <p className="mx-auto mt-2 max-w-xl text-sm leading-relaxed text-inchiostro-soft dark:text-nebbia-soft">
           Tocca Salva su una scheda per ritrovarla qui. I salvati restano solo su questo
           dispositivo.
         </p>
         <p className="mt-6">
           <Link
             href="/leggi"
-            className="inline-flex min-h-[48px] items-center bg-inchiostro px-5 py-3 text-sm font-semibold text-carta transition-colors hover:bg-inchiostro-soft focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-inchiostro dark:bg-nebbia dark:text-notte dark:hover:bg-nebbia-soft dark:focus-visible:outline-nebbia"
+            className="inline-flex min-h-[48px] items-center rounded-xl bg-accento px-5 py-3 text-sm font-semibold text-white transition-colors hover:brightness-110 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accento dark:bg-accento-chiara dark:text-notte dark:focus-visible:outline-accento-chiara"
           >
             Sfoglia l’archivio delle leggi
           </Link>
@@ -192,40 +192,45 @@ export default function ListaSalvati() {
   }
 
   return (
-    <div className="mt-6">
-      <div className="flex flex-wrap items-center gap-3 border border-regola bg-carta-soft p-4 dark:border-notte-deep dark:bg-notte-soft">
-        <p className="text-sm font-semibold" role="status">
+    <div className="mt-10">
+      <div className="flex flex-wrap items-center gap-4 rounded-2xl border border-regola bg-carta-soft p-5 dark:border-notte-deep dark:bg-notte-soft sm:p-6">
+        <p className="text-sm font-semibold text-inchiostro dark:text-nebbia" role="status">
           {leggiOrdinate.length} {leggiOrdinate.length === 1 ? 'norma salvata' : 'norme salvate'}
         </p>
         {pieno && (
-          <p className="w-full text-sm text-amber-800 dark:text-amber-300" role="note">
+          <p className="w-full rounded-xl border border-regola bg-carta p-3 text-sm leading-relaxed text-inchiostro-soft dark:border-notte-deep dark:bg-notte dark:text-nebbia-soft" role="note">
             Hai raggiunto il massimo di {FAVORITES_MAX} norme salvate. Rimuovine una per salvarne
             una nuova.
           </p>
         )}
-        <div className="flex flex-wrap items-center gap-3">
-          <label
-            htmlFor="ordina-salvati"
-            className="text-sm font-medium text-inchiostro-soft dark:text-nebbia-soft"
-          >
-            Ordina per
-          </label>
-          <select
-            id="ordina-salvati"
-            value={ordine}
-            onChange={(e) => setOrdine(e.target.value as Ordinamento)}
-            className="min-h-[48px] border border-regola bg-carta px-3 py-2 text-sm text-inchiostro focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-inchiostro dark:border-notte-deep dark:bg-notte dark:text-nebbia dark:focus-visible:outline-nebbia"
-          >
-            <option value="recenti">Data: più recenti</option>
-            <option value="vecchie">Data: meno recenti</option>
-            <option value="titolo">Titolo A-Z</option>
-          </select>
+        <div className="flex flex-wrap items-end gap-3">
+          <div className="flex flex-col gap-2">
+            <label
+              htmlFor="ordina-salvati"
+              className="text-sm font-semibold text-inchiostro dark:text-nebbia"
+            >
+              Ordina per
+            </label>
+            <select
+              id="ordina-salvati"
+              value={ordine}
+              onChange={(e) => setOrdine(e.target.value as Ordinamento)}
+              className="min-h-[48px] rounded-xl border border-regola bg-carta px-3 py-2 text-sm text-inchiostro transition-colors hover:border-accento focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accento dark:border-notte-deep dark:bg-notte dark:text-nebbia dark:hover:border-accento-chiara dark:focus-visible:outline-accento-chiara"
+            >
+              <option value="recenti">Data: più recenti</option>
+              <option value="vecchie">Data: meno recenti</option>
+              <option value="titolo">Titolo A-Z</option>
+            </select>
+            <p className="text-xs text-inchiostro-faint dark:text-nebbia-faint">
+              Cambia l’ordine senza perdere i salvati.
+            </p>
+          </div>
         </div>
         <div className="ml-auto flex flex-wrap items-center gap-2">
           <button
             type="button"
             onClick={esportaJson}
-            className="inline-flex min-h-[48px] items-center border border-regola px-4 py-2 text-xs font-semibold uppercase tracking-wide hover:border-inchiostro focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-inchiostro dark:border-notte-deep dark:hover:border-nebbia dark:focus-visible:outline-nebbia"
+            className="inline-flex min-h-[48px] items-center rounded-xl border border-regola px-4 py-2 text-sm font-semibold text-inchiostro-soft transition-colors hover:border-accento hover:text-accento focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accento dark:border-notte-deep dark:text-nebbia-soft dark:hover:border-accento-chiara dark:hover:text-accento-chiara dark:focus-visible:outline-accento-chiara"
           >
             Esporta JSON
           </button>
@@ -233,24 +238,24 @@ export default function ListaSalvati() {
             <button
               type="button"
               onClick={svuotaTutto}
-              className="inline-flex min-h-[48px] items-center border border-regola px-4 py-2 text-xs font-semibold uppercase tracking-wide text-red-700 hover:border-red-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-700 dark:border-notte-deep dark:text-red-300 dark:hover:border-red-300"
+              className="inline-flex min-h-[48px] items-center rounded-xl border border-regola px-4 py-2 text-sm font-semibold text-red-700 transition-colors hover:border-red-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-700 dark:border-notte-deep dark:text-red-300 dark:hover:border-red-300"
             >
               Svuota tutto
             </button>
           ) : (
             <span className="inline-flex flex-wrap items-center gap-2">
-              <span className="text-sm font-medium">Rimuovere tutte le norme?</span>
+              <span className="text-sm font-medium text-inchiostro dark:text-nebbia">Rimuovere tutte le norme?</span>
               <button
                 type="button"
                 onClick={svuotaTutto}
-                className="inline-flex min-h-[48px] items-center bg-red-700 px-4 py-2 text-xs font-semibold uppercase tracking-wide text-white hover:bg-red-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-700"
+                className="inline-flex min-h-[48px] items-center rounded-xl bg-red-700 px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-red-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-700 dark:hover:bg-red-600"
               >
                 Conferma
               </button>
               <button
                 type="button"
                 onClick={() => setConfermaSvuota(false)}
-                className="inline-flex min-h-[48px] items-center border border-regola px-4 py-2 text-xs font-semibold uppercase tracking-wide hover:border-inchiostro focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-inchiostro dark:border-notte-deep dark:hover:border-nebbia"
+                className="inline-flex min-h-[48px] items-center rounded-xl border border-regola px-4 py-2 text-sm font-semibold transition-colors hover:border-accento hover:text-accento focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accento dark:border-notte-deep dark:hover:border-accento-chiara dark:hover:text-accento-chiara"
               >
                 Annulla
               </button>
@@ -264,31 +269,31 @@ export default function ListaSalvati() {
         if (voci.length === 0) return null;
         const meta = STATO_META[gruppo.stato];
         return (
-          <section key={gruppo.stato} aria-labelledby={`salvati-${gruppo.stato}`} className="mt-8">
+          <section key={gruppo.stato} aria-labelledby={`salvati-${gruppo.stato}`} className="mt-10">
             <h2
               id={`salvati-${gruppo.stato}`}
-              className="flex flex-wrap items-center gap-2 font-serif text-xl font-bold text-inchiostro dark:text-nebbia"
+              className="flex flex-wrap items-baseline gap-2 font-sans text-xl font-bold text-inchiostro dark:text-nebbia"
             >
-              <span aria-hidden="true" className={`h-2.5 w-2.5 rounded-full ${meta.dot}`} />
+              <span aria-hidden="true" className={`h-2.5 w-2.5 shrink-0 translate-y-[-1px] rounded-full ${meta.dot}`} />
               {gruppo.titolo}
               <span className="rounded-lg bg-inchiostro/5 px-2.5 py-0.5 font-sans text-xs font-bold tabular-nums text-inchiostro-soft dark:bg-notte-deep dark:text-nebbia-soft">
                 {voci.length}
               </span>
             </h2>
-            <p className="mt-1 text-sm text-inchiostro-faint dark:text-nebbia-faint">
+            <p className="mt-2 max-w-2xl text-sm leading-relaxed text-inchiostro-soft dark:text-nebbia-soft">
               {meta.descrizione}
             </p>
             <ul className="mt-4 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
               {voci.map((law) => (
-                <li key={law.eli} className="flex flex-col gap-2">
+                <li key={law.eli} className="flex flex-col gap-3">
                   <span className="flex-1">
                     <LawCard law={law} headingLevel="h3" />
                   </span>
                   <button
                     type="button"
                     onClick={() => rimuovi(law.eli)}
-                    aria-label={`Rimuovi «${law.titolo}» dai salvati`}
-                    className="inline-flex min-h-[48px] items-center self-start border border-regola px-4 py-2 text-xs font-semibold uppercase tracking-wide hover:border-inchiostro focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-inchiostro dark:border-notte-deep dark:hover:border-nebbia dark:focus-visible:outline-nebbia"
+                    aria-label={`Rimuovi ${law.titolo} dai salvati`}
+                    className="inline-flex min-h-[48px] items-center self-start rounded-xl border border-regola px-4 py-2 text-sm font-semibold text-inchiostro-soft transition-colors hover:border-accento hover:text-accento focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accento dark:border-notte-deep dark:text-nebbia-soft dark:hover:border-accento-chiara dark:hover:text-accento-chiara dark:focus-visible:outline-accento-chiara"
                   >
                     Rimuovi
                   </button>

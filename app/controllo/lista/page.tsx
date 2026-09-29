@@ -75,7 +75,7 @@ const tabBase =
 const tabAttiva =
   'border-inchiostro bg-inchiostro text-carta dark:border-nebbia dark:bg-nebbia dark:text-notte'
 const tabNormale =
-  'border-regola bg-carta text-inchiostro hover:border-inchiostro dark:border-notte-deep dark:bg-notte-soft dark:text-nebbia dark:hover:border-nebbia'
+  'border-regola bg-carta text-inchiostro hover:border-accento dark:border-notte-deep dark:bg-notte-soft dark:text-nebbia dark:hover:border-nebbia'
 
 const bottoneCerca =
   'inline-flex min-h-[48px] items-center justify-center gap-2 rounded-xl bg-inchiostro px-6 py-3 text-sm font-bold text-carta transition-colors hover:bg-inchiostro-soft focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-inchiostro dark:bg-nebbia dark:text-notte dark:hover:bg-nebbia-soft dark:focus-visible:outline-nebbia'
@@ -218,8 +218,8 @@ export default async function ListaControlloPage({
           </nav>
 
           <Comparsa>
-            <header className="mt-4 rounded-2xl border border-regola bg-carta-soft p-6 dark:border-notte-deep dark:bg-notte-soft sm:p-8">
-              <p className="text-xs font-semibold uppercase tracking-[0.28em] text-accento dark:text-accento-chiara">
+            <header className="mt-4">
+              <p className="text-sm font-bold text-accento dark:text-accento-chiara">
                 Controllo pubblico
               </p>
               <h1 className="mt-2 flex items-center gap-3 text-3xl font-bold text-inchiostro dark:text-nebbia sm:text-4xl">
@@ -395,8 +395,8 @@ export default async function ListaControlloPage({
           </nav>
 
           <Comparsa>
-            <header className="mt-4 rounded-2xl border border-regola bg-carta-soft p-6 dark:border-notte-deep dark:bg-notte-soft sm:p-8">
-              <p className="text-xs font-semibold uppercase tracking-[0.28em] text-accento dark:text-accento-chiara">
+            <header className="mt-4">
+              <p className="text-sm font-bold text-accento dark:text-accento-chiara">
                 Controllo pubblico
               </p>
               <h1 className="mt-2 flex items-center gap-3 text-3xl font-bold text-inchiostro dark:text-nebbia sm:text-4xl">
@@ -530,8 +530,8 @@ export default async function ListaControlloPage({
         </nav>
 
         <Comparsa>
-          <header className="mt-4 rounded-2xl border border-regola bg-carta-soft p-6 dark:border-notte-deep dark:bg-notte-soft sm:p-8">
-            <p className="text-xs font-semibold uppercase tracking-[0.28em] text-accento dark:text-accento-chiara">
+          <header className="mt-4">
+            <p className="text-sm font-bold text-accento dark:text-accento-chiara">
               Controllo pubblico
             </p>
             <h1 className="mt-2 flex items-center gap-3 text-3xl font-bold text-inchiostro dark:text-nebbia sm:text-4xl">

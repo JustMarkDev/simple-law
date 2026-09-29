@@ -110,20 +110,22 @@ export default function FiltriLeggi({
   }
 
   const selectClass =
-    'min-h-[48px] w-full rounded-xl border border-regola bg-carta px-3 py-2 text-sm font-medium text-inchiostro-soft focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-inchiostro disabled:opacity-60 dark:border-notte-deep dark:bg-notte-soft dark:text-nebbia-soft dark:focus-visible:outline-nebbia'
+    'min-h-[48px] w-full rounded-xl border border-regola bg-carta px-3 py-2 text-sm font-medium text-inchiostro transition-colors hover:border-accento focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accento disabled:opacity-60 dark:border-notte-deep dark:bg-notte-soft dark:text-nebbia dark:hover:border-accento-chiara dark:focus-visible:outline-accento-chiara'
   const labelClass =
-    'text-xs font-semibold uppercase tracking-wide text-inchiostro-soft dark:text-nebbia-soft'
+    'text-sm font-semibold text-inchiostro dark:text-nebbia'
+  const helperClass =
+    'text-xs leading-relaxed text-inchiostro-faint dark:text-nebbia-faint'
   const vistaBtn = (attivo: boolean) =>
-    `inline-flex min-h-[48px] items-center rounded-xl border px-4 py-2 text-xs font-semibold uppercase tracking-wide transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-inchiostro dark:focus-visible:outline-nebbia ${
+    `inline-flex min-h-[48px] items-center rounded-xl border px-4 py-2 text-sm font-semibold transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accento dark:focus-visible:outline-accento-chiara ${
       attivo
-        ? 'border-inchiostro bg-inchiostro text-carta dark:border-nebbia dark:bg-nebbia dark:text-notte'
-        : 'border-regola text-inchiostro-soft hover:border-inchiostro hover:text-inchiostro dark:border-notte-deep dark:text-nebbia-soft dark:hover:border-nebbia dark:hover:text-nebbia'
+        ? 'border-accento bg-accento/10 text-accento dark:border-accento-chiara dark:bg-accento-chiara/10 dark:text-accento-chiara'
+        : 'border-regola text-inchiostro-soft hover:border-accento hover:text-accento dark:border-notte-deep dark:text-nebbia-soft dark:hover:border-accento-chiara dark:hover:text-accento-chiara'
     }`
 
   return (
     <div aria-busy={inAttesa}>
-      <div className="grid gap-3 sm:grid-cols-3" role="group" aria-label="Filtri semplici">
-        <div className="flex flex-col gap-1">
+      <div className="grid gap-4 sm:grid-cols-3" role="group" aria-label="Filtri semplici">
+        <div className="flex flex-col gap-2">
           <label htmlFor="filtro-tipo" className={labelClass}>
             Che tipo di testo
           </label>
@@ -140,9 +142,10 @@ export default function FiltriLeggi({
               </option>
             ))}
           </select>
+          <p className={helperClass}>Legge, decreto legge o decreto legislativo.</p>
         </div>
 
-        <div className="flex flex-col gap-1">
+        <div className="flex flex-col gap-2">
           <label htmlFor="filtro-anno" className={labelClass}>
             Di che anno
           </label>
@@ -159,9 +162,10 @@ export default function FiltriLeggi({
               </option>
             ))}
           </select>
+          <p className={helperClass}>Anno in cui la norma è stata emanata.</p>
         </div>
 
-        <div className="flex flex-col gap-1">
+        <div className="flex flex-col gap-2">
           <label htmlFor="filtro-sort" className={labelClass}>
             Come ordinarli
           </label>
@@ -178,18 +182,19 @@ export default function FiltriLeggi({
               </option>
             ))}
           </select>
+          <p className={helperClass}>Data, titolo o facilità di lettura.</p>
         </div>
       </div>
 
-      <details className="mt-3 rounded-2xl border border-regola bg-carta-soft dark:border-notte-deep dark:bg-notte">
-        <summary className="inline-flex min-h-[48px] w-full cursor-pointer list-none items-center justify-between gap-2 rounded-2xl px-4 py-2 text-sm font-semibold text-inchiostro focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-inchiostro dark:text-nebbia dark:focus-visible:outline-nebbia">
+      <details className="mt-4 rounded-2xl border border-regola bg-carta-soft p-1 dark:border-notte-deep dark:bg-notte">
+        <summary className="inline-flex min-h-[48px] w-full cursor-pointer list-none items-center justify-between gap-2 rounded-xl px-4 py-2 text-sm font-semibold text-inchiostro transition-colors hover:text-accento focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accento dark:text-nebbia dark:hover:text-accento-chiara dark:focus-visible:outline-accento-chiara">
           Altri filtri
           <span aria-hidden="true" className="text-xs font-normal text-inchiostro-soft dark:text-nebbia-soft">
             validità, schede, pagina
           </span>
         </summary>
-        <div className="grid gap-3 px-4 pb-4 pt-1 sm:grid-cols-2 lg:grid-cols-4">
-          <div className="flex flex-col gap-1">
+        <div className="grid gap-4 px-4 pb-5 pt-2 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="flex flex-col gap-2">
             <label htmlFor="filtro-vigenza" className={labelClass}>
               Vale ancora?
             </label>
@@ -206,9 +211,10 @@ export default function FiltriLeggi({
                 </option>
               ))}
             </select>
+            <p className={helperClass}>Solo norme ancora in vigore o tutte.</p>
           </div>
 
-          <div className="flex flex-col gap-1">
+          <div className="flex flex-col gap-2">
             <label htmlFor="filtro-origine" className={labelClass}>
               Che schede
             </label>
@@ -225,9 +231,10 @@ export default function FiltriLeggi({
                 </option>
               ))}
             </select>
+            <p className={helperClass}>Testi veri o schede di esempio.</p>
           </div>
 
-          <div className="flex flex-col gap-1">
+          <div className="flex flex-col gap-2">
             <label htmlFor="filtro-per" className={labelClass}>
               Quante per pagina
             </label>
@@ -244,13 +251,14 @@ export default function FiltriLeggi({
                 </option>
               ))}
             </select>
+            <p className={helperClass}>Quante schede vedi per volta.</p>
           </div>
 
-          <div className="flex flex-col gap-1">
+          <div className="flex flex-col gap-2">
             <span id="vista-risultati-label" className={labelClass}>
               Come vederle
             </span>
-            <div role="group" aria-labelledby="vista-risultati-label" className="flex gap-1">
+            <div role="group" aria-labelledby="vista-risultati-label" className="flex gap-2">
               <button
                 type="button"
                 aria-pressed={vista === 'griglia'}
@@ -270,6 +278,7 @@ export default function FiltriLeggi({
                 Lista
               </button>
             </div>
+            <p className={helperClass}>Griglia compatta o elenco lungo.</p>
           </div>
         </div>
       </details>

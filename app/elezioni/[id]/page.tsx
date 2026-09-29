@@ -454,15 +454,15 @@ export default async function ElezionePage({ params, searchParams }: Props) {
             <span aria-current="page">{voce!.titoloBreve}</span>
           </nav>
           <header className="mt-3 border-b-2 border-inchiostro pb-5 dark:border-nebbia">
-            <p className="text-xs font-semibold uppercase tracking-[0.28em] text-accento dark:text-accento-chiara">
+            <p className="text-sm font-bold text-accento dark:text-accento-chiara">
               Dati ufficiali
             </p>
-            <h1 className="mt-2 font-serif text-3xl font-bold text-inchiostro dark:text-nebbia sm:text-4xl">
+            <h1 className="mt-2 text-3xl font-bold text-inchiostro dark:text-nebbia sm:text-4xl">
               {voce!.titolo}
             </h1>
           </header>
           <section aria-labelledby="dati-assenti" className="mt-8 border border-dashed border-regola bg-carta p-8 text-center dark:border-notte-deep dark:bg-notte-soft">
-            <h2 id="dati-assenti" className="font-serif text-lg font-bold text-inchiostro dark:text-nebbia">
+            <h2 id="dati-assenti" className="text-lg font-bold text-inchiostro dark:text-nebbia">
               Dati in preparazione
             </h2>
             <p className="mx-auto mt-2 max-w-xl text-sm leading-relaxed text-inchiostro-soft dark:text-nebbia-soft">
@@ -472,7 +472,7 @@ export default async function ElezionePage({ params, searchParams }: Props) {
             <p className="mt-6 flex flex-wrap justify-center gap-3">
               <Link
                 href="/elezioni"
-                className="inline-flex min-h-[48px] items-center bg-accento px-6 font-semibold text-white hover:opacity-90 dark:bg-accento-chiara dark:text-notte"
+                className="inline-flex min-h-[48px] items-center bg-accento px-6 font-semibold text-white hover:brightness-110 dark:bg-accento-chiara dark:text-notte"
               >
                 Torna alle elezioni
               </Link>
@@ -519,10 +519,10 @@ export default async function ElezionePage({ params, searchParams }: Props) {
         </nav>
 
         <header className="mt-3 border-b-2 border-inchiostro pb-5 dark:border-nebbia">
-          <p className="inline-flex items-center border border-regola px-2 py-0.5 text-[11px] font-semibold uppercase tracking-[0.16em] text-inchiostro-soft dark:border-notte-deep dark:text-nebbia-soft">
+          <p className="inline-flex items-center border border-regola px-2 py-0.5 text-[11px] font-semibold text-inchiostro-soft dark:border-notte-deep dark:text-nebbia-soft">
             Dati ufficiali DAIT
           </p>
-          <h1 className="mt-3 font-serif text-3xl font-bold text-inchiostro dark:text-nebbia sm:text-4xl">
+          <h1 className="mt-3 text-3xl font-bold text-inchiostro dark:text-nebbia sm:text-4xl">
             {voce!.titolo}
           </h1>
           <p className="mt-3 max-w-2xl text-sm leading-relaxed text-inchiostro-soft dark:text-nebbia-soft">
@@ -531,31 +531,31 @@ export default async function ElezionePage({ params, searchParams }: Props) {
         </header>
 
         <section aria-labelledby="affluenza" className="mt-8">
-          <h2 id="affluenza" className="font-serif text-xl font-bold text-inchiostro dark:text-nebbia">
+          <h2 id="affluenza" className="text-xl font-bold text-inchiostro dark:text-nebbia">
             Affluenza nazionale
           </h2>
           <dl className="mt-4 grid grid-cols-2 gap-px border border-regola bg-regola dark:border-notte-deep dark:bg-notte-deep sm:grid-cols-4">
             <div className="bg-carta p-4 dark:bg-notte">
               <dt className="text-xs font-medium text-inchiostro-faint dark:text-nebbia-faint">Affluenza</dt>
-              <dd className="mt-1 font-serif text-3xl font-bold text-inchiostro dark:text-nebbia">
+              <dd className="mt-1 text-3xl font-bold text-inchiostro dark:text-nebbia">
                 {decimaleIT(elezione.a)}%
               </dd>
             </div>
             <div className="bg-carta p-4 dark:bg-notte">
               <dt className="text-xs font-medium text-inchiostro-faint dark:text-nebbia-faint">Elettori</dt>
-              <dd className="mt-1 font-serif text-3xl font-bold text-inchiostro dark:text-nebbia">
+              <dd className="mt-1 text-3xl font-bold text-inchiostro dark:text-nebbia">
                 {intero(elezione.e)}
               </dd>
             </div>
             <div className="bg-carta p-4 dark:bg-notte">
               <dt className="text-xs font-medium text-inchiostro-faint dark:text-nebbia-faint">Votanti</dt>
-              <dd className="mt-1 font-serif text-3xl font-bold text-inchiostro dark:text-nebbia">
+              <dd className="mt-1 text-3xl font-bold text-inchiostro dark:text-nebbia">
                 {intero(elezione.v)}
               </dd>
             </div>
             <div className="bg-carta p-4 dark:bg-notte">
               <dt className="text-xs font-medium text-inchiostro-faint dark:text-nebbia-faint">Bianche / contestate</dt>
-              <dd className="mt-1 font-serif text-3xl font-bold text-inchiostro dark:text-nebbia">
+              <dd className="mt-1 text-3xl font-bold text-inchiostro dark:text-nebbia">
                 {intero(elezione.b + elezione.k)}
               </dd>
               <dd className="mt-1 text-xs text-inchiostro-faint dark:text-nebbia-faint">
@@ -566,7 +566,7 @@ export default async function ElezionePage({ params, searchParams }: Props) {
         </section>
 
         <section aria-labelledby="liste" className="mt-10">
-          <h2 id="liste" className="font-serif text-xl font-bold text-inchiostro dark:text-nebbia">
+          <h2 id="liste" className="text-xl font-bold text-inchiostro dark:text-nebbia">
             Liste - voti e percentuali nazionali
           </h2>
           <p className="mt-1 text-xs text-inchiostro-faint dark:text-nebbia-faint">
@@ -582,13 +582,13 @@ export default async function ElezionePage({ params, searchParams }: Props) {
                 <caption className="sr-only">Voti e percentuali delle liste a livello nazionale</caption>
                 <thead>
                   <tr className="border-b border-regola text-left dark:border-notte-deep">
-                    <th scope="col" className="px-4 py-3 text-xs font-semibold uppercase tracking-[0.12em] text-inchiostro-faint dark:text-nebbia-faint">
+                    <th scope="col" className="px-4 py-3 text-xs font-semibold text-inchiostro-faint dark:text-nebbia-faint">
                       Lista
                     </th>
-                    <th scope="col" className="px-4 py-3 text-right text-xs font-semibold uppercase tracking-[0.12em] text-inchiostro-faint dark:text-nebbia-faint">
+                    <th scope="col" className="px-4 py-3 text-right text-xs font-semibold text-inchiostro-faint dark:text-nebbia-faint">
                       Voti
                     </th>
-                    <th scope="col" className="px-4 py-3 text-right text-xs font-semibold uppercase tracking-[0.12em] text-inchiostro-faint dark:text-nebbia-faint">
+                    <th scope="col" className="px-4 py-3 text-right text-xs font-semibold text-inchiostro-faint dark:text-nebbia-faint">
                       Percentuale
                     </th>
                   </tr>
@@ -614,7 +614,7 @@ export default async function ElezionePage({ params, searchParams }: Props) {
         </section>
 
         <section aria-labelledby="territori" className="mt-10">
-          <h2 id="territori" className="font-serif text-xl font-bold text-inchiostro dark:text-nebbia">
+          <h2 id="territori" className="text-xl font-bold text-inchiostro dark:text-nebbia">
             {etichettaTerritori} - affluenza e prima lista
           </h2>
           <p className="mt-1 text-xs text-inchiostro-faint dark:text-nebbia-faint">
@@ -631,19 +631,19 @@ export default async function ElezionePage({ params, searchParams }: Props) {
                 <caption className="sr-only">Affluenza per territorio con prima lista</caption>
                 <thead>
                   <tr className="border-b border-regola text-left dark:border-notte-deep">
-                    <th scope="col" className="px-4 py-3 text-xs font-semibold uppercase tracking-[0.12em] text-inchiostro-faint dark:text-nebbia-faint">
+                    <th scope="col" className="px-4 py-3 text-xs font-semibold text-inchiostro-faint dark:text-nebbia-faint">
                       {etichettaTerritori === 'Regioni' ? 'Regione' : 'Circoscrizione'}
                     </th>
-                    <th scope="col" className="px-4 py-3 text-right text-xs font-semibold uppercase tracking-[0.12em] text-inchiostro-faint dark:text-nebbia-faint">
+                    <th scope="col" className="px-4 py-3 text-right text-xs font-semibold text-inchiostro-faint dark:text-nebbia-faint">
                       Elettori
                     </th>
-                    <th scope="col" className="px-4 py-3 text-right text-xs font-semibold uppercase tracking-[0.12em] text-inchiostro-faint dark:text-nebbia-faint">
+                    <th scope="col" className="px-4 py-3 text-right text-xs font-semibold text-inchiostro-faint dark:text-nebbia-faint">
                       Votanti
                     </th>
-                    <th scope="col" className="px-4 py-3 text-right text-xs font-semibold uppercase tracking-[0.12em] text-inchiostro-faint dark:text-nebbia-faint">
+                    <th scope="col" className="px-4 py-3 text-right text-xs font-semibold text-inchiostro-faint dark:text-nebbia-faint">
                       Affluenza
                     </th>
-                    <th scope="col" className="px-4 py-3 text-left text-xs font-semibold uppercase tracking-[0.12em] text-inchiostro-faint dark:text-nebbia-faint">
+                    <th scope="col" className="px-4 py-3 text-left text-xs font-semibold text-inchiostro-faint dark:text-nebbia-faint">
                       Prima lista
                     </th>
                   </tr>
@@ -679,7 +679,7 @@ export default async function ElezionePage({ params, searchParams }: Props) {
 
         {(collegiU.length > 0 || collegiP.length > 0) && (
           <section aria-labelledby="collegi" className="mt-10">
-            <h2 id="collegi" className="font-serif text-xl font-bold text-inchiostro dark:text-nebbia">
+            <h2 id="collegi" className="text-xl font-bold text-inchiostro dark:text-nebbia">
               Collegi - affluenza
             </h2>
             <p className="mt-1 text-xs text-inchiostro-faint dark:text-nebbia-faint">
@@ -689,7 +689,7 @@ export default async function ElezionePage({ params, searchParams }: Props) {
             </p>
             {collegiU.length > 0 && (
               <>
-                <h3 className="mt-4 text-sm font-semibold uppercase tracking-[0.12em] text-inchiostro-soft dark:text-nebbia-soft">
+                <h3 className="mt-4 text-sm font-semibold text-inchiostro-soft dark:text-nebbia-soft">
                   Collegi uninominali
                 </h3>
                 <div className="mt-2 overflow-x-auto border border-regola dark:border-notte-deep">
@@ -697,9 +697,9 @@ export default async function ElezionePage({ params, searchParams }: Props) {
                     <caption className="sr-only">Affluenza per collegio uninominale</caption>
                     <thead>
                       <tr className="border-b border-regola text-left dark:border-notte-deep">
-                        <th scope="col" className="px-4 py-3 text-xs font-semibold uppercase tracking-[0.12em] text-inchiostro-faint dark:text-nebbia-faint">Collegio</th>
-                        <th scope="col" className="px-4 py-3 text-right text-xs font-semibold uppercase tracking-[0.12em] text-inchiostro-faint dark:text-nebbia-faint">Elettori</th>
-                        <th scope="col" className="px-4 py-3 text-right text-xs font-semibold uppercase tracking-[0.12em] text-inchiostro-faint dark:text-nebbia-faint">Votanti</th>
+                        <th scope="col" className="px-4 py-3 text-xs font-semibold text-inchiostro-faint dark:text-nebbia-faint">Collegio</th>
+                        <th scope="col" className="px-4 py-3 text-right text-xs font-semibold text-inchiostro-faint dark:text-nebbia-faint">Elettori</th>
+                        <th scope="col" className="px-4 py-3 text-right text-xs font-semibold text-inchiostro-faint dark:text-nebbia-faint">Votanti</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -722,7 +722,7 @@ export default async function ElezionePage({ params, searchParams }: Props) {
             )}
             {collegiP.length > 0 && (
               <>
-                <h3 className="mt-4 text-sm font-semibold uppercase tracking-[0.12em] text-inchiostro-soft dark:text-nebbia-soft">
+                <h3 className="mt-4 text-sm font-semibold text-inchiostro-soft dark:text-nebbia-soft">
                   Collegi plurinominali
                 </h3>
                 <div className="mt-2 overflow-x-auto border border-regola dark:border-notte-deep">
@@ -730,9 +730,9 @@ export default async function ElezionePage({ params, searchParams }: Props) {
                     <caption className="sr-only">Affluenza per collegio plurinominale</caption>
                     <thead>
                       <tr className="border-b border-regola text-left dark:border-notte-deep">
-                        <th scope="col" className="px-4 py-3 text-xs font-semibold uppercase tracking-[0.12em] text-inchiostro-faint dark:text-nebbia-faint">Collegio</th>
-                        <th scope="col" className="px-4 py-3 text-right text-xs font-semibold uppercase tracking-[0.12em] text-inchiostro-faint dark:text-nebbia-faint">Elettori</th>
-                        <th scope="col" className="px-4 py-3 text-right text-xs font-semibold uppercase tracking-[0.12em] text-inchiostro-faint dark:text-nebbia-faint">Votanti</th>
+                        <th scope="col" className="px-4 py-3 text-xs font-semibold text-inchiostro-faint dark:text-nebbia-faint">Collegio</th>
+                        <th scope="col" className="px-4 py-3 text-right text-xs font-semibold text-inchiostro-faint dark:text-nebbia-faint">Elettori</th>
+                        <th scope="col" className="px-4 py-3 text-right text-xs font-semibold text-inchiostro-faint dark:text-nebbia-faint">Votanti</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -757,7 +757,7 @@ export default async function ElezionePage({ params, searchParams }: Props) {
         )}
 
         <section aria-labelledby="comuni" className="mt-10">
-          <h2 id="comuni" className="font-serif text-xl font-bold text-inchiostro dark:text-nebbia">
+          <h2 id="comuni" className="text-xl font-bold text-inchiostro dark:text-nebbia">
             Comuni - affluenza
           </h2>
           <p className="mt-1 text-xs text-inchiostro-faint dark:text-nebbia-faint">
@@ -766,7 +766,7 @@ export default async function ElezionePage({ params, searchParams }: Props) {
           </p>
           <form action={azioneForm} method="get" role="search" aria-label="Cerca un comune" className="mt-4 flex flex-wrap items-end gap-3">
             <div className="min-w-52 flex-1">
-              <label htmlFor="q-comune" className="block text-xs font-semibold uppercase tracking-[0.16em] text-inchiostro-faint dark:text-nebbia-faint">
+              <label htmlFor="q-comune" className="block text-xs font-semibold text-inchiostro-faint dark:text-nebbia-faint">
                 Cerca comune, provincia o regione
               </label>
               <input
@@ -781,7 +781,7 @@ export default async function ElezionePage({ params, searchParams }: Props) {
               />
             </div>
             <div>
-              <label htmlFor="ord-comune" className="block text-xs font-semibold uppercase tracking-[0.16em] text-inchiostro-faint dark:text-nebbia-faint">
+              <label htmlFor="ord-comune" className="block text-xs font-semibold text-inchiostro-faint dark:text-nebbia-faint">
                 Ordina per affluenza
               </label>
               <select
@@ -796,7 +796,7 @@ export default async function ElezionePage({ params, searchParams }: Props) {
             </div>
             <button
               type="submit"
-              className="inline-flex min-h-[48px] items-center bg-accento px-6 font-semibold text-white hover:opacity-90 dark:bg-accento-chiara dark:text-notte"
+              className="inline-flex min-h-[48px] items-center bg-accento px-6 font-semibold text-white hover:brightness-110 dark:bg-accento-chiara dark:text-notte"
             >
               Cerca
             </button>
@@ -830,22 +830,22 @@ export default async function ElezionePage({ params, searchParams }: Props) {
                 <caption className="sr-only">Affluenza per comune, massimo cento righe</caption>
                 <thead>
                   <tr className="border-b border-regola text-left dark:border-notte-deep">
-                    <th scope="col" className="px-4 py-3 text-xs font-semibold uppercase tracking-[0.12em] text-inchiostro-faint dark:text-nebbia-faint">
+                    <th scope="col" className="px-4 py-3 text-xs font-semibold text-inchiostro-faint dark:text-nebbia-faint">
                       Comune
                     </th>
-                    <th scope="col" className="px-4 py-3 text-left text-xs font-semibold uppercase tracking-[0.12em] text-inchiostro-faint dark:text-nebbia-faint">
+                    <th scope="col" className="px-4 py-3 text-left text-xs font-semibold text-inchiostro-faint dark:text-nebbia-faint">
                       Provincia
                     </th>
-                    <th scope="col" className="px-4 py-3 text-left text-xs font-semibold uppercase tracking-[0.12em] text-inchiostro-faint dark:text-nebbia-faint">
+                    <th scope="col" className="px-4 py-3 text-left text-xs font-semibold text-inchiostro-faint dark:text-nebbia-faint">
                       Regione
                     </th>
-                    <th scope="col" className="px-4 py-3 text-right text-xs font-semibold uppercase tracking-[0.12em] text-inchiostro-faint dark:text-nebbia-faint">
+                    <th scope="col" className="px-4 py-3 text-right text-xs font-semibold text-inchiostro-faint dark:text-nebbia-faint">
                       Elettori
                     </th>
-                    <th scope="col" className="px-4 py-3 text-right text-xs font-semibold uppercase tracking-[0.12em] text-inchiostro-faint dark:text-nebbia-faint">
+                    <th scope="col" className="px-4 py-3 text-right text-xs font-semibold text-inchiostro-faint dark:text-nebbia-faint">
                       Votanti
                     </th>
-                    <th scope="col" aria-sort={ord === 'a_asc' ? 'ascending' : 'descending'} className="px-4 py-3 text-right text-xs font-semibold uppercase tracking-[0.12em] text-inchiostro-faint dark:text-nebbia-faint">
+                    <th scope="col" aria-sort={ord === 'a_asc' ? 'ascending' : 'descending'} className="px-4 py-3 text-right text-xs font-semibold text-inchiostro-faint dark:text-nebbia-faint">
                       <Link
                         href={`${azioneForm}?q=${encodeURIComponent(query)}&ord=${ord === 'a_asc' ? 'a_desc' : 'a_asc'}`}
                         className="underline underline-offset-2 hover:text-accento dark:hover:text-accento-chiara"
@@ -886,7 +886,7 @@ export default async function ElezionePage({ params, searchParams }: Props) {
         </section>
 
         <section aria-labelledby="fonte-metodo" className="mt-10 border border-regola bg-carta p-5 dark:border-notte-deep dark:bg-notte-soft">
-          <h2 id="fonte-metodo" className="font-serif text-lg font-bold text-inchiostro dark:text-nebbia">
+          <h2 id="fonte-metodo" className="text-lg font-bold text-inchiostro dark:text-nebbia">
             Fonte, metodologia e avvertenze
           </h2>
           <dl className="mt-3 space-y-2 text-sm leading-relaxed text-inchiostro-soft dark:text-nebbia-soft">

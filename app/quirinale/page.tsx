@@ -57,10 +57,10 @@ export default async function QuirinalePage({
         </nav>
 
         <header className="mt-4 border-b-2 border-inchiostro pb-5 dark:border-nebbia">
-          <p className="text-xs font-semibold uppercase tracking-[0.28em] text-accento dark:text-accento-chiara">
+          <p className="text-sm font-bold text-accento dark:text-accento-chiara">
             Presidenza della Repubblica
           </p>
-          <h1 className="mt-2 font-serif text-3xl font-bold text-inchiostro dark:text-nebbia sm:text-4xl">
+          <h1 className="mt-2 text-3xl font-bold text-inchiostro dark:text-nebbia sm:text-4xl">
             Quirinale - Comunicati recenti
           </h1>
           <p className="mt-3 max-w-2xl text-sm leading-relaxed text-inchiostro-soft dark:text-nebbia-soft">
@@ -69,19 +69,19 @@ export default async function QuirinalePage({
           </p>
           <p className="mt-2 flex flex-wrap items-center gap-2 text-sm font-semibold text-inchiostro dark:text-nebbia" role="status">
             <span>{filtrate.length} comunicati mostrati · {tutte.length} caricati dalla pagina 1</span>
-            <span className="inline-flex items-center border border-inchiostro px-2 py-1 text-[11px] font-bold uppercase tracking-wide text-inchiostro dark:border-nebbia dark:text-nebbia">
+            <span className="inline-flex items-center border border-inchiostro px-2 py-1 text-[11px] font-bold text-inchiostro dark:border-nebbia dark:text-nebbia">
               non-legge
             </span>
           </p>
         </header>
 
         <div className="mt-4 flex flex-wrap gap-2" role="group" aria-label="Sezioni del Quirinale">
-          <span aria-current="page" className="inline-flex min-h-[48px] items-center border border-inchiostro bg-inchiostro px-4 py-2 text-xs font-semibold uppercase tracking-wide text-carta dark:border-nebbia dark:bg-nebbia dark:text-notte">
+          <span aria-current="page" className="inline-flex min-h-[48px] items-center border border-inchiostro bg-inchiostro px-4 py-2 text-xs font-semibold text-carta dark:border-nebbia dark:bg-nebbia dark:text-notte">
             Comunicati ({tutte.length})
           </span>
           <Link
             href="/quirinale/atti"
-            className="inline-flex min-h-[48px] items-center border border-regola px-4 py-2 text-xs font-semibold uppercase tracking-wide text-inchiostro hover:border-inchiostro dark:border-notte-deep dark:text-nebbia dark:hover:border-nebbia"
+            className="inline-flex min-h-[48px] items-center border border-regola px-4 py-2 text-xs font-semibold text-inchiostro hover:border-accento dark:border-notte-deep dark:text-nebbia dark:hover:border-nebbia"
           >
             Atti firmati →
           </Link>
@@ -102,7 +102,7 @@ export default async function QuirinalePage({
           />
           <button
             type="submit"
-            className="inline-flex min-h-[48px] items-center justify-center border border-inchiostro px-5 py-2 text-xs font-semibold uppercase tracking-wide text-inchiostro transition-colors hover:bg-inchiostro hover:text-carta focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-inchiostro dark:border-nebbia dark:text-nebbia dark:hover:bg-nebbia dark:hover:text-notte dark:focus-visible:outline-nebbia"
+            className="inline-flex min-h-[48px] items-center justify-center border border-inchiostro px-5 py-2 text-xs font-semibold text-inchiostro transition-colors hover:bg-inchiostro hover:text-carta focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-inchiostro dark:border-nebbia dark:text-nebbia dark:hover:bg-nebbia dark:hover:text-notte dark:focus-visible:outline-nebbia"
           >
             Cerca
           </button>
@@ -120,14 +120,14 @@ export default async function QuirinalePage({
                 className="border border-regola bg-carta p-5 dark:border-notte-deep dark:bg-notte-soft"
               >
                 <div className="flex flex-wrap items-center gap-2">
-                  <span className="inline-flex items-center border border-inchiostro px-2 py-1 text-[11px] font-bold uppercase tracking-wide text-inchiostro dark:border-nebbia dark:text-nebbia">
+                  <span className="inline-flex items-center border border-inchiostro px-2 py-1 text-[11px] font-bold text-inchiostro dark:border-nebbia dark:text-nebbia">
                     non-legge · comunicato
                   </span>
                   <span className="text-xs text-inchiostro-faint dark:text-nebbia-faint">
                     {dataIT(c.data)}
                   </span>
                 </div>
-                <h2 className="mt-3 font-serif text-xl font-bold text-inchiostro dark:text-nebbia">
+                <h2 className="mt-3 text-xl font-bold text-inchiostro dark:text-nebbia">
                   {c.titolo}
                 </h2>
                 {c.sintesi && (
@@ -154,7 +154,7 @@ export default async function QuirinalePage({
           aria-labelledby="fonti-licenze"
           className="mt-10 border border-regola bg-carta-soft p-5 dark:border-notte-deep dark:bg-notte-soft"
         >
-          <h2 id="fonti-licenze" className="font-serif text-lg font-bold text-inchiostro dark:text-nebbia">
+          <h2 id="fonti-licenze" className="text-lg font-bold text-inchiostro dark:text-nebbia">
             Fonte e licenza
           </h2>
           <p className="mt-2 text-sm leading-relaxed text-inchiostro-soft dark:text-nebbia-soft">

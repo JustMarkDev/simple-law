@@ -96,26 +96,29 @@ export default function TimelineAttuativi({ dataEmanazione, dataGU, attuativi, s
   ]
 
   return (
-    <div className="border border-regola bg-carta p-4 dark:border-notte-deep dark:bg-notte">
-      <h3 className="text-sm font-semibold uppercase tracking-wide">Cronologia di attuazione</h3>
+    <div className="rounded-2xl border border-regola bg-carta-soft p-5 shadow-cozy dark:border-notte-deep dark:bg-notte-soft sm:p-6">
+      <h3 className="text-base font-bold text-inchiostro dark:text-nebbia">Cronologia di attuazione</h3>
+      <p className="mt-1 text-sm text-inchiostro-soft dark:text-nebbia-soft">
+        Le tappe della norma, in ordine di tempo.
+      </p>
       <ol className="mt-4 space-y-0 border-l-2 border-regola pl-0 dark:border-notte-deep" aria-label="Fasi di attuazione della norma">
         {fasi.map((fase) => {
           const stile = STILE_FASE[fase.stato]
           return (
-            <li key={fase.id} className="relative pb-5 pl-6 last:pb-0">
+            <li key={fase.id} className="relative flex flex-col gap-1 pb-5 pl-6 last:pb-0">
               <span aria-hidden="true" className={`absolute -left-[7px] top-1 h-3 w-3 rounded-full border border-white ${stile.punto} dark:border-black`} />
-              <p className="text-sm font-semibold text-inchiostro dark:text-nebbia">
-                {fase.titolo}{' '}
-                <span className="ml-1 align-middle text-xs font-normal text-inchiostro-faint dark:text-nebbia-faint">
-                  · {stile.etichetta}
+              <p className="flex flex-wrap items-baseline gap-x-2 text-sm font-semibold text-inchiostro dark:text-nebbia">
+                {fase.titolo}
+                <span className="text-xs font-normal text-inchiostro-faint dark:text-nebbia-faint">
+                  {stile.etichetta}
                 </span>
               </p>
               {fase.data ? (
-                <p className="mt-0.5 text-xs text-inchiostro-faint dark:text-nebbia-faint">
+                <p className="text-xs text-inchiostro-faint dark:text-nebbia-faint">
                   <time dateTime={fase.data}>{formatDate(fase.data)}</time>
                 </p>
               ) : null}
-              <p className="mt-1 text-sm leading-relaxed text-inchiostro-soft dark:text-nebbia-soft">{fase.descrizione}</p>
+              <p className="text-sm leading-relaxed text-inchiostro-soft dark:text-nebbia-soft">{fase.descrizione}</p>
             </li>
           )
         })}

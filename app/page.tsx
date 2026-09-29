@@ -41,7 +41,7 @@ const PASSI = [
   },
   {
     titolo: 'Solo ciò che ti serve',
-    testo: 'Scegli chi sei - Guida, Lavoro, Impresa o Studio - e leggi la tua parte.',
+    testo: 'Scegli chi sei, Guida, Lavoro, Impresa o Studio, e leggi la tua parte.',
   },
   {
     titolo: 'A che punto è',
@@ -179,143 +179,131 @@ export default async function HomePage({ searchParams }: HomeProps) {
     <>
       <Header />
       <main id="contenuto" className="scroll-mt-24">
-        {/*
-          Liquid-glass approssimato (onesto: nessuna libreria ufficiale).
-          La scheda in evidenza in LawCard usa backdrop-blur + tinta calda
-          traslucida + bordo bianco/40 + ombra interna; fallback tinta piena
-          quando backdrop-filter manca e con prefers-reduced-transparency.
-        */}
-        <section className="border-b border-regola bg-carta-soft dark:border-notte-deep dark:bg-notte-soft">
-          <div className="mx-auto w-full max-w-editoriale px-4 py-10 sm:px-6 sm:py-14 lg:px-8">
-            <div className="grid items-start gap-8 lg:grid-cols-[1.05fr_0.95fr] lg:gap-10">
-              <div className="space-y-7">
-            <Comparsa>
-              <div>
-                <p className="inline-flex items-center gap-2 rounded-lg bg-carta px-3 py-2 text-xs font-bold uppercase tracking-[0.18em] text-accento dark:bg-notte dark:text-accento-chiara">
-                  <BookOpen01Icon size={16} strokeWidth={2} aria-hidden="true" />
-                  Una guida semplice alle leggi
-                </p>
-                <h1 className="mt-4 max-w-2xl text-4xl font-extrabold leading-[1.08] text-inchiostro dark:text-nebbia sm:text-5xl">
-                  Le leggi italiane,
-                  <br />
-                  spiegate con calma.
-                </h1>
-                <p className="mt-4 max-w-xl text-lg leading-relaxed text-inchiostro-soft dark:text-nebbia-soft">
-                  Capisci cosa cambia, per chi vale e se funziona già. Tutto semplice.
-                </p>
-              </div>
-            </Comparsa>
+        <section className="relative overflow-hidden bg-notte">
+          <div aria-hidden="true" className="absolute inset-0">
+            <Image
+              src="https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3c/Palazzo_Montecitorio_2019_03.jpg/1920px-Palazzo_Montecitorio_2019_03.jpg"
+              alt="Palazzo Montecitorio a Roma, sede della Camera dei deputati"
+              fill
+              priority
+              sizes="100vw"
+              className="object-cover"
+            />
+          </div>
+          <div
+            aria-hidden="true"
+            className="absolute inset-0 bg-inchiostro/70 dark:bg-notte/75"
+          />
+          <div aria-hidden="true" className="absolute inset-0 bg-accento/10" />
+          <div className="relative mx-auto w-full max-w-editoriale px-4 py-12 sm:px-6 sm:py-14 lg:px-8 md:flex md:min-h-[480px] md:items-center">
+            <div className="w-full max-w-2xl space-y-6 py-4">
+              <Comparsa>
+                <div>
+                  <p className="inline-flex items-center gap-2 rounded-lg bg-white/15 px-3 py-2 text-xs font-bold text-white">
+                    <BookOpen01Icon size={16} strokeWidth={2} aria-hidden="true" />
+                    Una guida semplice alle leggi
+                  </p>
+                  <h1 className="mt-4 max-w-2xl text-4xl font-extrabold leading-[1.08] text-white sm:text-5xl">
+                    Le leggi italiane,
+                    <br />
+                    spiegate con calma.
+                  </h1>
+                  <p className="mt-4 max-w-xl text-lg leading-relaxed text-white/85">
+                    Capisci cosa cambia, per chi vale e se funziona già. Tutto semplice.
+                  </p>
+                </div>
+              </Comparsa>
 
-            <Comparsa delay={0.08}>
-              <div className="max-w-2xl">
-                <SearchBar
-                  id="ricerca-home"
-                  label="Cerca"
-                  defaultValue={q}
-                  action="/leggi"
-                  placeholder="Scrivi una parola: lavoro, casa, scuola…"
-                />
-                <p className="mt-2 text-sm text-inchiostro-soft dark:text-nebbia-soft">
-                  Scrivi almeno 2 lettere. Esempi: lavoro, casa, scuola.
-                </p>
-              </div>
-            </Comparsa>
+              <Comparsa delay={0.08}>
+                <div className="vetro max-w-2xl rounded-2xl p-4 sm:p-5">
+                  <SearchBar
+                    id="ricerca-home"
+                    label="Cerca"
+                    defaultValue={q}
+                    action="/leggi"
+                    placeholder="Scrivi una parola: lavoro, casa, scuola…"
+                  />
+                  <p className="mt-2 text-sm text-inchiostro-soft dark:text-nebbia-soft">
+                    Scrivi almeno 2 lettere. Esempi: lavoro, casa, scuola.
+                  </p>
+                </div>
+              </Comparsa>
 
-            {totaleReale <= 0 && (
-              <div
-                role="alert"
-                className="flex max-w-2xl flex-wrap items-center gap-3 rounded-2xl border border-regola bg-carta px-5 py-4 dark:border-notte-deep dark:bg-notte"
-              >
-                <AlertCircleIcon
-                  size={22}
-                  strokeWidth={2}
-                  aria-hidden="true"
-                  className="shrink-0 text-accento dark:text-accento-chiara"
-                />
-                <p className="text-sm leading-relaxed text-inchiostro dark:text-nebbia">
-                  Non riusciamo a mostrare le norme. Riprova tra poco.
-                </p>
-                <Link
-                  href="/"
-                  className="inline-flex min-h-[48px] items-center rounded-xl bg-inchiostro px-5 py-3 text-sm font-bold text-carta transition-colors hover:bg-inchiostro-soft focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-inchiostro dark:bg-nebbia dark:text-notte dark:hover:bg-nebbia-soft dark:focus-visible:outline-nebbia"
+              {totaleReale <= 0 && (
+                <div
+                  role="alert"
+                  className="superficie flex max-w-2xl flex-wrap items-center gap-3 px-5 py-4"
                 >
-                  Torna all’inizio
-                </Link>
-              </div>
-            )}
-
-            <div className="flex max-w-2xl flex-wrap items-center gap-x-5 gap-y-3">
-              <Link
-                href={archivioHref}
-                className="inline-flex min-h-[48px] items-center gap-2 rounded-xl bg-accento px-6 py-3 text-sm font-bold text-white transition-all hover:brightness-110 active:scale-[0.97] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accento motion-reduce:transition-none motion-reduce:active:scale-100 dark:bg-accento-chiara dark:text-notte dark:focus-visible:outline-accento-chiara"
-              >
-                Vedi tutte le norme
-                <ArrowRight01Icon size={18} strokeWidth={2} aria-hidden="true" />
-              </Link>
-              <Link
-                href="/metodologia"
-                className="inline-flex min-h-[48px] items-center text-sm font-bold text-inchiostro-soft underline underline-offset-4 transition-colors hover:text-accento dark:text-nebbia-soft dark:hover:text-accento-chiara"
-              >
-                Come sono fatte le schede
-              </Link>
-            </div>
-
-            <div className="max-w-2xl rounded-2xl border border-regola bg-carta px-3 py-2 dark:border-notte-deep dark:bg-notte">
-              <p className="text-sm font-bold text-inchiostro dark:text-nebbia">
-                A che punto è:
-              </p>
-              <dl className="mt-1.5 flex flex-wrap gap-1.5">
-                <div className="rounded-xl border border-regola bg-carta-soft dark:border-notte-deep dark:bg-notte-soft">
-                  <Link
-                    href="/leggi"
-                    aria-label={`Vedi tutte le norme: ${totaleReale}`}
-                    className="flex min-h-[48px] items-center gap-2 px-3 py-2 transition-colors hover:bg-carta-soft focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accento dark:hover:bg-notte-deep dark:focus-visible:outline-accento-chiara"
-                  >
-                    <dt className="text-xs font-bold text-inchiostro-soft dark:text-nebbia-soft">
-                      Norme qui
-                    </dt>
-                    <dd className="text-xl font-extrabold text-inchiostro dark:text-nebbia">
-                      <Contatore value={totaleReale} />
-                    </dd>
+                  <AlertCircleIcon
+                    size={22}
+                    strokeWidth={2}
+                    aria-hidden="true"
+                    className="shrink-0 text-accento dark:text-accento-chiara"
+                  />
+                  <p className="text-sm leading-relaxed text-inchiostro dark:text-nebbia">
+                    Non riusciamo a mostrare le norme. Riprova tra poco.
+                  </p>
+                  <Link href="/" className="btn-secondario">
+                    Torna all’inizio
                   </Link>
                 </div>
+              )}
+
+              <div className="flex flex-wrap items-center gap-x-5 gap-y-3">
+                <Link href={archivioHref} className="btn-primario whitespace-nowrap">
+                  Vedi tutte le norme
+                  <ArrowRight01Icon size={18} strokeWidth={2} aria-hidden="true" />
+                </Link>
+                <Link
+                  href="/metodologia"
+                  className="inline-flex min-h-[48px] items-center whitespace-nowrap text-sm font-bold text-white underline underline-offset-4 transition-colors hover:text-white/80 focus-visible:outline focus-visible:outline-[3px] focus-visible:outline-offset-2 focus-visible:outline-white"
+                >
+                  Come sono fatte le schede
+                </Link>
+              </div>
+
+              <div className="flex flex-wrap gap-2">
+                <div className="vetro inline-flex min-h-[48px] items-center gap-2 rounded-xl px-3 py-2">
+                  <span className="text-xs font-bold text-inchiostro dark:text-nebbia">
+                    Norme qui
+                  </span>
+                  <span className="text-xl font-extrabold text-inchiostro dark:text-nebbia">
+                    <Contatore value={totaleReale} />
+                  </span>
+                </div>
                 {(['verde', 'giallo', 'rosso'] as const).map((stato) => (
-                  <div
+                  <Link
                     key={stato}
-                    className="rounded-xl border border-regola bg-carta-soft dark:border-notte-deep dark:bg-notte-soft"
+                    href={`/leggi?stato=${stato}`}
+                    aria-label={
+                      stato === 'rosso'
+                        ? `Vedi le norme non più in vigore: ${conteggio[stato]}`
+                        : `Vedi le norme: ${STATO_META[stato].label}, ${conteggio[stato]}`
+                    }
+                    className="vetro inline-flex min-h-[48px] items-center gap-2 rounded-xl px-3 py-2 transition-colors hover:border-accento focus-visible:outline focus-visible:outline-[3px] focus-visible:outline-offset-2 focus-visible:outline-accento dark:hover:border-accento-chiara dark:focus-visible:outline-accento-chiara"
                   >
-                    <Link
-                      href={`/leggi?stato=${stato}`}
-                      aria-label={
-                        stato === 'rosso'
-                          ? `Vedi le norme non più in vigore: ${conteggio[stato]}`
-                          : `Vedi le norme: ${STATO_META[stato].label}, ${conteggio[stato]}`
-                      }
-                      className="flex min-h-[48px] items-center gap-2 px-3 py-2 transition-colors hover:bg-carta-soft focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accento dark:hover:bg-notte-deep dark:focus-visible:outline-accento-chiara"
+                    <span
+                      className={`flex items-center gap-1.5 text-xs font-bold ${STATO_META[stato].text}`}
                     >
-                      <dt
-                        className={`flex items-center gap-1.5 text-xs font-bold ${STATO_META[stato].text}`}
-                      >
-                        <span
-                          aria-hidden="true"
-                          className={`h-2 w-2 rounded-full ${STATO_META[stato].dot}`}
-                        />
-                        {stato === 'rosso' ? 'Non più in vigore' : STATO_META[stato].parole}
-                      </dt>
-                      <dd className="text-xl font-extrabold text-inchiostro dark:text-nebbia">
-                        <Contatore value={conteggio[stato]} />
-                      </dd>
-                    </Link>
-                  </div>
+                      <span
+                        aria-hidden="true"
+                        className={`h-2 w-2 rounded-full ${STATO_META[stato].dot}`}
+                      />
+                      {stato === 'rosso' ? 'Non più in vigore' : STATO_META[stato].parole}
+                    </span>
+                    <span className="text-xl font-extrabold text-inchiostro dark:text-nebbia">
+                      <Contatore value={conteggio[stato]} />
+                    </span>
+                  </Link>
                 ))}
-              </dl>
+              </div>
               {troncato && (
-                <p className="mt-1 text-xs text-inchiostro-soft dark:text-nebbia-soft">
+                <p className="text-xs text-white/80">
                   Guardiamo le {estratto.length} norme più recenti su {totaleReale} totali.
                 </p>
               )}
               {composizione && (
-                <div className="mt-1">
+                <div className="max-w-2xl">
                   <CorpusBadge
                     totale={composizione.totale}
                     dimostrative={composizione.dimostrative}
@@ -324,35 +312,18 @@ export default async function HomePage({ searchParams }: HomeProps) {
                 </div>
               )}
             </div>
-              </div>
-              <Comparsa delay={0.12} className="lg:sticky lg:top-24">
-                <figure>
-                  <div className="overflow-hidden rounded-2xl border border-regola bg-carta dark:border-notte-deep dark:bg-notte">
-                    <Image
-                      src="https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3c/Palazzo_Montecitorio_2019_03.jpg/1920px-Palazzo_Montecitorio_2019_03.jpg"
-                      alt="Palazzo Montecitorio a Roma, sede della Camera dei deputati"
-                      width={1280}
-                      height={853}
-                      priority
-                      sizes="(max-width: 1024px) 100vw, 45vw"
-                      className="h-auto w-full object-cover max-h-[240px] sm:max-h-[300px] lg:max-h-[440px]"
-                    />
-                  </div>
-                  <figcaption className="mt-2 text-xs leading-relaxed text-inchiostro-soft dark:text-nebbia-soft">
-                    Foto:{' '}
-                    <a
-                      href="https://commons.wikimedia.org/wiki/File:Palazzo_Montecitorio_2019_03.jpg"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="underline underline-offset-2 hover:text-accento dark:hover:text-accento-chiara"
-                    >
-                      Nicholas Gemini, CC BY-SA 4.0, via Wikimedia Commons
-                    </a>
-                  </figcaption>
-                </figure>
-              </Comparsa>
-            </div>
           </div>
+          <p className="absolute bottom-2 right-4 text-[11px] leading-relaxed text-white/70">
+            Foto:{' '}
+            <a
+              href="https://commons.wikimedia.org/wiki/File:Palazzo_Montecitorio_2019_03.jpg"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline underline-offset-2 hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+            >
+              Nicholas Gemini, CC BY-SA 4.0, via Wikimedia Commons
+            </a>
+          </p>
         </section>
 
         <div className="mx-auto w-full max-w-editoriale space-y-14 px-4 py-10 sm:px-6 sm:py-14 lg:px-8">
@@ -381,10 +352,10 @@ export default async function HomePage({ searchParams }: HomeProps) {
                 aria-live="polite"
               >
                 {persona === 'tutti'
-                  ? `${totaleReale} ${totaleReale === 1 ? 'norma da leggere' : 'norme da leggere'} · qui le ${mostrate} più recenti.`
-                  : `${totaleFiltrati} ${totaleFiltrati === 1 ? 'norma' : 'norme'} per ${persona} · mostrate ${mostrate}.`}
+                  ? `${totaleReale} ${totaleReale === 1 ? 'norma da leggere' : 'norme da leggere'} qui, le ${mostrate} più recenti.`
+                  : `${totaleFiltrati} ${totaleFiltrati === 1 ? 'norma' : 'norme'} per ${persona}, mostrate ${mostrate}.`}
               </p>
-              <details className="group max-w-2xl rounded-2xl border border-regola bg-carta px-5 py-4 dark:border-notte-deep dark:bg-notte-soft">
+              <details className="superficie group max-w-2xl px-5 py-4">
                 <summary className="inline-flex min-h-[48px] cursor-pointer items-center text-sm font-bold text-inchiostro dark:text-nebbia">
                   Filtra per chi sei
                 </summary>
@@ -405,7 +376,7 @@ export default async function HomePage({ searchParams }: HomeProps) {
             </div>
 
             {resto.length > 0 ? (
-              <ul className="mt-7 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+              <ul className="mt-7 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
                 {resto.map((law) => (
                   <li key={law.eli} className="flex">
                     <LawCard law={law} persona={persona} headingLevel="h3" />
@@ -415,7 +386,7 @@ export default async function HomePage({ searchParams }: HomeProps) {
             ) : totaleReale <= 0 ? (
               <div
                 role="alert"
-                className="mt-7 flex max-w-2xl flex-wrap items-center gap-3 rounded-2xl border border-regola bg-carta px-5 py-4 dark:border-notte-deep dark:bg-notte-soft"
+                className="superficie mt-7 flex max-w-2xl flex-wrap items-center gap-3 px-5 py-4"
               >
                 <AlertCircleIcon
                   size={22}
@@ -426,10 +397,7 @@ export default async function HomePage({ searchParams }: HomeProps) {
                 <p className="text-sm leading-relaxed text-inchiostro dark:text-nebbia">
                   Non riusciamo a mostrare le norme. Riprova tra poco.
                 </p>
-                <Link
-                  href="/"
-                  className="inline-flex min-h-[48px] items-center rounded-xl bg-inchiostro px-5 py-3 text-sm font-bold text-carta transition-colors hover:bg-inchiostro-soft focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-inchiostro dark:bg-nebbia dark:text-notte dark:hover:bg-nebbia-soft dark:focus-visible:outline-nebbia"
-                >
+                <Link href="/" className="btn-secondario">
                   Torna all’inizio
                 </Link>
               </div>
@@ -448,10 +416,7 @@ export default async function HomePage({ searchParams }: HomeProps) {
                   Non troviamo norme per questa scelta. Ricomincia per vedere tutto.
                 </p>
                 <p className="mt-5">
-                  <Link
-                    href="/"
-                    className="inline-flex min-h-[48px] items-center rounded-xl bg-inchiostro px-5 py-3 text-sm font-bold text-carta transition-colors hover:bg-inchiostro-soft focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-inchiostro dark:bg-nebbia dark:text-notte dark:hover:bg-nebbia-soft dark:focus-visible:outline-nebbia"
-                  >
+                  <Link href="/" className="btn-secondario">
                     Vedi tutte le norme
                   </Link>
                 </p>
@@ -459,10 +424,7 @@ export default async function HomePage({ searchParams }: HomeProps) {
             )}
             {totaleVista > 0 && resto.length > 0 && (
               <p className="mt-7">
-                <Link
-                  href={archivioHref}
-                  className="inline-flex min-h-[48px] items-center gap-2 rounded-xl border border-inchiostro/30 px-5 py-3 text-sm font-bold text-inchiostro transition-colors hover:bg-inchiostro hover:text-carta focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-inchiostro dark:border-nebbia/30 dark:text-nebbia dark:hover:bg-nebbia dark:hover:text-notte dark:focus-visible:outline-nebbia"
-                >
+                <Link href={archivioHref} className="btn-secondario">
                   Vedi tutte le norme
                   <ArrowRight01Icon size={18} strokeWidth={2} aria-hidden="true" />
                 </Link>
@@ -515,12 +477,12 @@ export default async function HomePage({ searchParams }: HomeProps) {
                 </h2>
                 <Link
                   href="/ministri"
-                  className="inline-flex min-h-[48px] items-center text-sm font-bold text-accento underline underline-offset-4 dark:text-accento-chiara"
+                  className="inline-flex min-h-[48px] items-center text-sm font-bold text-accento underline underline-offset-4 transition-colors hover:brightness-110 dark:text-accento-chiara"
                 >
                   Tutti i ministri
                 </Link>
               </div>
-              <ul className="mt-6 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+              <ul className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
                 {ministri.slice(0, 4).map((minister) => (
                   <li key={minister.slug} className="flex">
                     <MinisterCard minister={minister} />

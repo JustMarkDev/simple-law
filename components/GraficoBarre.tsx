@@ -77,12 +77,20 @@ export default function GraficoBarre({
   const ridotto = useReducedMotion()
 
   if (!Array.isArray(barre) || !Array.isArray(serie) || barre.length === 0 || serie.length === 0) {
-    return <p className="text-sm text-inchiostro-faint dark:text-nebbia-faint">Nessun dato disponibile.</p>
+    return (
+      <p role="status" className="rounded-2xl border border-regola bg-carta-soft p-5 text-sm leading-relaxed text-inchiostro-soft dark:border-notte-deep dark:bg-notte-soft dark:text-nebbia-soft sm:p-6">
+        Nessun dato disponibile per questo grafico.
+      </p>
+    )
   }
 
   const barreSicure = barre.filter((b) => b && typeof b.etichetta === 'string' && b.valori)
   if (barreSicure.length === 0) {
-    return <p className="text-sm text-inchiostro-faint dark:text-nebbia-faint">Nessun dato disponibile.</p>
+    return (
+      <p role="status" className="rounded-2xl border border-regola bg-carta-soft p-5 text-sm leading-relaxed text-inchiostro-soft dark:border-notte-deep dark:bg-notte-soft dark:text-nebbia-soft sm:p-6">
+        Nessun dato disponibile per questo grafico.
+      </p>
+    )
   }
 
   const righeTabella = barreSicure.slice(0, MAX_RIGHE_TABELLA)
@@ -115,10 +123,10 @@ export default function GraficoBarre({
 
   const legenda =
     serie.length > 1 ? (
-      <ul className="mt-3 flex flex-wrap gap-x-4 gap-y-1.5 text-xs text-inchiostro-soft dark:text-nebbia-soft">
+      <ul className="mt-4 flex flex-wrap gap-x-4 gap-y-2 text-sm text-inchiostro-soft dark:text-nebbia-soft">
         {serie.map((s) => (
-          <li key={s.chiave} className="flex items-center gap-1.5">
-            <span aria-hidden="true" className="h-2.5 w-2.5" style={{ backgroundColor: s.colore }} />
+          <li key={s.chiave} className="flex min-h-[24px] items-center gap-2">
+            <span aria-hidden="true" className="h-2.5 w-2.5 rounded-sm" style={{ backgroundColor: s.colore }} />
             {s.etichetta}
           </li>
         ))}
@@ -130,7 +138,7 @@ export default function GraficoBarre({
     const mostrate = righeTabella.length
     return (
       <figure className={className}>
-        <p className="border border-regola bg-carta-soft p-4 text-sm leading-relaxed text-inchiostro-soft dark:border-notte-deep dark:bg-notte-soft dark:text-nebbia-soft">
+        <p className="rounded-2xl border border-regola bg-carta-soft p-5 text-sm leading-relaxed text-inchiostro-soft dark:border-notte-deep dark:bg-notte-soft dark:text-nebbia-soft sm:p-6">
           Il grafico mostra le prime {formatta(MAX_BARRE_SVG)} voci su {formatta(barreSicure.length)}: usa i filtri
           dell’archivio per restringere l’insieme. La tabella accessibile riporta le prime {formatta(mostrate)} voci.
         </p>

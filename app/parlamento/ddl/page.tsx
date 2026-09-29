@@ -78,13 +78,13 @@ export async function generateMetadata({ searchParams }: DdlProps): Promise<Meta
 function SchedaDdl({ voce }: { voce: VoceDdl }) {
   const schedaUrl = voce.scheda || voce.uri
   return (
-    <article className="group relative flex h-full flex-col gap-3 border border-regola bg-carta p-5 transition-colors hover:border-inchiostro focus-within:border-inchiostro dark:border-notte-deep dark:bg-notte-soft dark:hover:border-nebbia dark:focus-within:border-nebbia">
+    <article className="group relative flex h-full flex-col gap-3 border border-regola bg-carta p-5 transition-colors hover:border-accento focus-within:border-inchiostro dark:border-notte-deep dark:bg-notte-soft dark:hover:border-nebbia dark:focus-within:border-nebbia">
       <p>
-        <span className="inline-flex items-center border border-accento px-2 py-1 text-[11px] font-bold uppercase tracking-wide text-accento dark:border-accento-chiara dark:text-accento-chiara">
+        <span className="inline-flex items-center border border-accento px-2 py-1 text-[11px] font-bold text-accento dark:border-accento-chiara dark:text-accento-chiara">
           {BADGE_DDL}
         </span>
       </p>
-      <h3 className="font-serif text-base font-bold leading-snug text-inchiostro dark:text-nebbia">
+      <h3 className="text-base font-bold leading-snug text-inchiostro dark:text-nebbia">
         {voce.titolo}
       </h3>
       <dl className="grid gap-1 text-xs text-inchiostro-soft dark:text-nebbia-soft">
@@ -206,10 +206,10 @@ export default async function DdlPage({ searchParams }: DdlProps) {
         </nav>
 
         <header className="mt-4 border-b-2 border-inchiostro pb-5 dark:border-nebbia">
-          <p className="inline-flex items-center border border-accento px-2 py-1 text-xs font-bold uppercase tracking-[0.2em] text-accento dark:border-accento-chiara dark:text-accento-chiara">
+          <p className="inline-flex items-center border border-accento px-2 py-1 text-xs font-bold text-accento dark:border-accento-chiara dark:text-accento-chiara">
             DDL - non in vigore / iter in corso
           </p>
-          <h1 className="mt-3 font-serif text-3xl font-bold text-inchiostro dark:text-nebbia sm:text-4xl">
+          <h1 className="mt-3 text-3xl font-bold text-inchiostro dark:text-nebbia sm:text-4xl">
             Disegni di legge - Legislatura 19
           </h1>
           <p className="mt-3 max-w-2xl text-sm leading-relaxed text-inchiostro-soft dark:text-nebbia-soft">
@@ -237,7 +237,7 @@ export default async function DdlPage({ searchParams }: DdlProps) {
           <div>
             <label
               htmlFor="q-ddl"
-              className="mb-1 block text-xs font-semibold uppercase tracking-wide text-inchiostro-soft dark:text-nebbia-soft"
+              className="mb-1 block text-xs font-semibold text-inchiostro-soft dark:text-nebbia-soft"
             >
               Cerca nel titolo
             </label>
@@ -249,13 +249,13 @@ export default async function DdlPage({ searchParams }: DdlProps) {
               maxLength={100}
               placeholder="Es. museo"
               autoComplete="off"
-              className="min-h-[48px] w-full border border-inchiostro bg-carta px-3 py-2 text-sm text-inchiostro placeholder:text-inchiostro-faint focus:outline-none focus:ring-2 focus:ring-inchiostro/30 dark:border-nebbia/40 dark:bg-notte dark:text-nebbia dark:placeholder:text-nebbia-faint"
+              className="campo text-sm"
             />
           </div>
           <div>
             <label
               htmlFor="fase-ddl"
-              className="mb-1 block text-xs font-semibold uppercase tracking-wide text-inchiostro-soft dark:text-nebbia-soft"
+              className="mb-1 block text-xs font-semibold text-inchiostro-soft dark:text-nebbia-soft"
             >
               Fase (Senato)
             </label>
@@ -263,7 +263,7 @@ export default async function DdlPage({ searchParams }: DdlProps) {
               id="fase-ddl"
               name="fase"
               defaultValue={fase}
-              className="min-h-[48px] w-full border border-inchiostro bg-carta px-3 py-2 text-sm text-inchiostro dark:border-nebbia/40 dark:bg-notte dark:text-nebbia"
+              className="campo text-sm"
             >
               <option value="">Tutte le fasi</option>
               {fasi.map((f) => (
@@ -276,7 +276,7 @@ export default async function DdlPage({ searchParams }: DdlProps) {
           <div>
             <label
               htmlFor="ramo-ddl"
-              className="mb-1 block text-xs font-semibold uppercase tracking-wide text-inchiostro-soft dark:text-nebbia-soft"
+              className="mb-1 block text-xs font-semibold text-inchiostro-soft dark:text-nebbia-soft"
             >
               Ramo
             </label>
@@ -284,7 +284,7 @@ export default async function DdlPage({ searchParams }: DdlProps) {
               id="ramo-ddl"
               name="ramo"
               defaultValue={ramo}
-              className="min-h-[48px] w-full border border-inchiostro bg-carta px-3 py-2 text-sm text-inchiostro dark:border-nebbia/40 dark:bg-notte dark:text-nebbia"
+              className="campo text-sm"
             >
               <option value="">Tutti</option>
               <option value="S">Senato (S)</option>
@@ -294,7 +294,7 @@ export default async function DdlPage({ searchParams }: DdlProps) {
           <div>
             <label
               htmlFor="per-ddl"
-              className="mb-1 block text-xs font-semibold uppercase tracking-wide text-inchiostro-soft dark:text-nebbia-soft"
+              className="mb-1 block text-xs font-semibold text-inchiostro-soft dark:text-nebbia-soft"
             >
               Per pagina
             </label>
@@ -302,7 +302,7 @@ export default async function DdlPage({ searchParams }: DdlProps) {
               id="per-ddl"
               name="per"
               defaultValue={String(per)}
-              className="min-h-[48px] w-full border border-inchiostro bg-carta px-3 py-2 text-sm text-inchiostro dark:border-nebbia/40 dark:bg-notte dark:text-nebbia"
+              className="campo text-sm"
             >
               <option value="10">10</option>
               <option value="20">20</option>
@@ -312,7 +312,7 @@ export default async function DdlPage({ searchParams }: DdlProps) {
           <div className="sm:col-span-4">
             <button
               type="submit"
-              className="inline-flex min-h-[48px] items-center bg-inchiostro px-5 py-2 text-xs font-semibold uppercase tracking-wide text-carta transition-colors hover:bg-inchiostro-soft focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-inchiostro dark:bg-nebbia dark:text-notte dark:hover:bg-nebbia-soft dark:focus-visible:outline-nebbia"
+              className="btn-primario"
             >
               Filtra
             </button>
@@ -333,7 +333,7 @@ export default async function DdlPage({ searchParams }: DdlProps) {
                 <Link
                   href={hrefSenza(queryBase, f.chiave)}
                   aria-label={`Rimuovi il filtro ${f.etichetta}`}
-                  className="inline-flex min-h-[48px] items-center gap-1 border border-regola bg-carta-soft px-3 py-2 text-xs font-medium text-inchiostro-soft hover:border-inchiostro hover:text-inchiostro dark:border-notte-deep dark:bg-notte dark:text-nebbia-soft dark:hover:border-nebbia dark:hover:text-nebbia"
+                  className="inline-flex min-h-[48px] items-center gap-1 border border-regola bg-carta-soft px-3 py-2 text-xs font-medium text-inchiostro-soft hover:border-accento hover:text-accento dark:border-notte-deep dark:bg-notte dark:text-nebbia-soft dark:hover:border-accento-chiara dark:hover:text-accento-chiara"
                 >
                   {f.etichetta} <span aria-hidden="true">×</span>
                 </Link>
@@ -362,7 +362,7 @@ export default async function DdlPage({ searchParams }: DdlProps) {
             <p className="mt-6">
               <Link
                 href="/parlamento/ddl"
-                className="inline-flex min-h-[48px] items-center bg-inchiostro px-5 py-2 text-xs font-semibold uppercase tracking-wide text-carta hover:bg-inchiostro-soft focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-inchiostro dark:bg-nebbia dark:text-notte dark:hover:bg-nebbia-soft dark:focus-visible:outline-nebbia"
+                className="inline-flex min-h-[48px] items-center bg-inchiostro px-5 py-2 text-xs font-semibold text-carta hover:bg-inchiostro-soft focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-inchiostro dark:bg-nebbia dark:text-notte dark:hover:bg-nebbia-soft dark:focus-visible:outline-nebbia"
               >
                 Rimuovi filtri
               </Link>
@@ -375,14 +375,14 @@ export default async function DdlPage({ searchParams }: DdlProps) {
             {page > 1 ? (
               <Link
                 href={hrefPagina(page - 1)}
-                className="inline-flex min-h-[48px] items-center border border-inchiostro px-4 py-2 text-xs font-semibold uppercase tracking-wide text-inchiostro hover:bg-inchiostro hover:text-carta dark:border-nebbia dark:text-nebbia dark:hover:bg-nebbia dark:hover:text-notte"
+                className="inline-flex min-h-[48px] items-center border border-inchiostro px-4 py-2 text-xs font-semibold text-inchiostro hover:bg-inchiostro hover:text-carta dark:border-nebbia dark:text-nebbia dark:hover:bg-nebbia dark:hover:text-notte"
               >
                 ← Precedente
               </Link>
             ) : (
               <span
                 aria-disabled="true"
-                className="inline-flex min-h-[48px] cursor-not-allowed items-center border border-regola px-4 py-2 text-xs font-semibold uppercase tracking-wide text-inchiostro-faint dark:border-notte-deep dark:text-nebbia-faint"
+                className="inline-flex min-h-[48px] cursor-not-allowed items-center border border-regola px-4 py-2 text-xs font-semibold text-inchiostro-faint dark:border-notte-deep dark:text-nebbia-faint"
               >
                 ← Precedente
               </span>
@@ -393,14 +393,14 @@ export default async function DdlPage({ searchParams }: DdlProps) {
             {page < totPagine ? (
               <Link
                 href={hrefPagina(page + 1)}
-                className="inline-flex min-h-[48px] items-center border border-inchiostro px-4 py-2 text-xs font-semibold uppercase tracking-wide text-inchiostro hover:bg-inchiostro hover:text-carta dark:border-nebbia dark:text-nebbia dark:hover:bg-nebbia dark:hover:text-notte"
+                className="inline-flex min-h-[48px] items-center border border-inchiostro px-4 py-2 text-xs font-semibold text-inchiostro hover:bg-inchiostro hover:text-carta dark:border-nebbia dark:text-nebbia dark:hover:bg-nebbia dark:hover:text-notte"
               >
                 Successiva →
               </Link>
             ) : (
               <span
                 aria-disabled="true"
-                className="inline-flex min-h-[48px] cursor-not-allowed items-center border border-regola px-4 py-2 text-xs font-semibold uppercase tracking-wide text-inchiostro-faint dark:border-notte-deep dark:text-nebbia-faint"
+                className="inline-flex min-h-[48px] cursor-not-allowed items-center border border-regola px-4 py-2 text-xs font-semibold text-inchiostro-faint dark:border-notte-deep dark:text-nebbia-faint"
               >
                 Successiva →
               </span>
@@ -412,7 +412,7 @@ export default async function DdlPage({ searchParams }: DdlProps) {
           aria-labelledby="fonti-licenze-ddl"
           className="mt-10 border border-regola bg-carta-soft p-5 dark:border-notte-deep dark:bg-notte-soft"
         >
-          <h2 id="fonti-licenze-ddl" className="font-serif text-lg font-bold text-inchiostro dark:text-nebbia">
+          <h2 id="fonti-licenze-ddl" className="text-lg font-bold text-inchiostro dark:text-nebbia">
             Fonti e licenze
           </h2>
           <p className="mt-2 text-sm leading-relaxed text-inchiostro-soft dark:text-nebbia-soft">

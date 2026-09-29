@@ -4,7 +4,6 @@ import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { useEffect, useRef, useState } from 'react'
 import { ArrowDown01Icon, Cancel01Icon, Menu01Icon, Search01Icon } from 'hugeicons-react'
-import DataOdierna from './DataOdierna'
 import ToggleTema from './ToggleTema'
 
 /** Navigazione primaria: 5 voci + indice completo. */
@@ -121,8 +120,9 @@ function IndiceCompletoDesktop({ pathname }: { pathname: string }) {
         type="button"
         aria-expanded={aperto}
         aria-controls={ID_INDICE_DESKTOP}
+        aria-label="Indice completo del sito"
         onClick={() => setAperto((v) => !v)}
-        className={`flex min-h-[48px] items-center gap-1.5 rounded-xl px-4 py-3 text-sm font-semibold transition-colors ${FUOCO_LINK} ${
+        className={`flex min-h-[48px] items-center gap-1.5 whitespace-nowrap rounded-xl px-2.5 py-3 text-sm font-semibold transition-colors lg:px-3 ${FUOCO_LINK} ${
           aperto || attivo
             ? 'bg-accento/10 text-accento dark:bg-notte-deep dark:text-accento-chiara'
             : 'text-inchiostro-soft hover:bg-carta-deep/70 hover:text-inchiostro dark:text-nebbia-soft dark:hover:bg-notte-deep/70 dark:hover:text-nebbia'
@@ -264,7 +264,7 @@ function MenuMobile({ pathname }: { pathname: string }) {
         aria-haspopup="dialog"
         aria-label={aperto ? 'Chiudi il menu' : 'Apri il menu'}
         onClick={() => setAperto((valore) => !valore)}
-        className={`flex min-h-[48px] cursor-pointer items-center gap-2 rounded-xl border border-regola bg-carta px-4 py-3 text-sm font-semibold text-inchiostro-soft transition-colors hover:border-inchiostro hover:text-inchiostro dark:border-notte-deep dark:bg-notte-soft dark:text-nebbia-soft dark:hover:border-nebbia dark:hover:text-nebbia ${FUOCO_LINK}`}
+        className={`flex min-h-[48px] cursor-pointer items-center gap-2 rounded-xl border border-regola bg-carta px-4 py-3 text-sm font-semibold text-inchiostro-soft transition-colors hover:border-accento hover:text-accento dark:border-notte-deep dark:bg-notte-soft dark:text-nebbia-soft dark:hover:border-accento-chiara dark:hover:text-accento-chiara ${FUOCO_LINK}`}
       >
         {aperto ? (
           <Cancel01Icon size={20} aria-hidden="true" className="h-5 w-5" />
@@ -335,11 +335,11 @@ function MenuMobile({ pathname }: { pathname: string }) {
 }
 
 /**
- * Testata accogliente: header fisso in vetro caldo (.vetro da C1 in
- * app/globals.css - onesto: nessuna libreria liquid-glass ufficiale, solo
- * backdrop-blur + tinta calda traslucida + bordo chiaro + ombra interna
- * sottile, con tinta piena sotto prefers-reduced-transparency e se
- * backdrop-filter manca). 5 voci + indice, tutto a 48px.
+ * Testata a riga singola: header fisso in vetro caldo (.vetro da
+ * app/globals.css, onesto: backdrop-blur piu tinta calda traslucida piu
+ * bordo chiaro piu ombra interna sottile, con tinta piena sotto
+ * prefers-reduced-transparency e se backdrop-filter manca).
+ * Brand piu nav a 6 voci piu azioni su 68px, tutto a 48px di tocco.
  */
 export default function Header() {
   const pathname = usePathname()
@@ -359,22 +359,47 @@ export default function Header() {
         <span className="bg-tricolore-rosso" />
       </div>
 
-      <div className="mx-auto flex w-full max-w-editoriale items-center gap-x-3 gap-y-2 px-4 py-2.5 sm:px-6 lg:px-8">
+      <div className="mx-auto flex h-[68px] w-full max-w-editoriale flex-nowrap items-center gap-2 px-4 sm:px-6 lg:px-8">
         <Link
           href="/"
           aria-current={pathname === '/' ? 'page' : undefined}
-          className={`group flex min-h-[48px] min-w-0 items-center gap-3 rounded-xl px-2 py-2 ${FUOCO_LINK}`}
+          className={`group flex min-h-[48px] min-w-0 shrink-0 items-center gap-3 whitespace-nowrap rounded-xl px-2 py-2 ${FUOCO_LINK}`}
         >
-          <span className="font-serif text-lg font-bold leading-none tracking-tight text-inchiostro dark:text-nebbia sm:text-xl">
-            Stato della Repubblica
+          <span className="text-lg font-bold leading-none tracking-tight text-inchiostro dark:text-nebbia sm:text-xl">
+            Simple Law
           </span>
-          <span className="hidden text-xs text-inchiostro-faint dark:text-nebbia-faint lg:inline">
+          <span className="hidden text-xs text-inchiostro-faint dark:text-nebbia-faint xl:inline">
             le leggi spiegate semplici
           </span>
         </Link>
 
-        <div className="ml-auto flex shrink-0 items-center gap-2">
-          <DataOdierna className="mr-1 hidden text-xs text-inchiostro-soft dark:text-nebbia-soft xl:block" />
+        <nav aria-label="Navigazione principale" className="hidden min-w-0 flex-1 md:block">
+          <ul className="flex flex-nowrap items-center gap-0.5 whitespace-nowrap lg:gap-1">
+            {NAV_PRINCIPALE.map((item) => {
+              const attiva = isAttiva(pathname, item.href)
+              return (
+                <li key={item.href} className="shrink-0">
+                  <Link
+                    href={item.href}
+                    aria-current={attiva ? 'page' : undefined}
+                    className={`flex min-h-[48px] items-center whitespace-nowrap rounded-xl px-2.5 py-3 text-sm font-semibold transition-colors lg:px-3 ${FUOCO_LINK} ${
+                      attiva
+                        ? 'bg-accento/10 text-accento dark:bg-notte-deep dark:text-accento-chiara'
+                        : 'text-inchiostro-soft hover:bg-carta-deep/70 hover:text-inchiostro dark:text-nebbia-soft dark:hover:bg-notte-deep/70 dark:hover:text-nebbia'
+                    }`}
+                  >
+                    {item.label}
+                  </Link>
+                </li>
+              )
+            })}
+            <li className="shrink-0">
+              <IndiceCompletoDesktop pathname={pathname} />
+            </li>
+          </ul>
+        </nav>
+
+        <div className="ml-auto flex shrink-0 items-center gap-1 sm:gap-2">
           <Link
             href="/leggi"
             aria-label="Cerca nelle leggi"
@@ -387,32 +412,6 @@ export default function Header() {
           <MenuMobile pathname={pathname} />
         </div>
       </div>
-
-      <nav aria-label="Navigazione principale" className="hidden border-t border-regola/70 dark:border-notte-deep/70 md:block">
-        <ul className="mx-auto flex w-full max-w-editoriale flex-wrap items-center gap-1 px-4 py-1 sm:px-6 lg:px-8">
-          {NAV_PRINCIPALE.map((item) => {
-            const attiva = isAttiva(pathname, item.href)
-            return (
-              <li key={item.href}>
-                <Link
-                  href={item.href}
-                  aria-current={attiva ? 'page' : undefined}
-                  className={`flex min-h-[48px] items-center rounded-xl px-4 py-3 text-sm font-semibold transition-colors ${FUOCO_LINK} ${
-                    attiva
-                      ? 'bg-accento/10 text-accento dark:bg-notte-deep dark:text-accento-chiara'
-                      : 'text-inchiostro-soft hover:bg-carta-deep/70 hover:text-inchiostro dark:text-nebbia-soft dark:hover:bg-notte-deep/70 dark:hover:text-nebbia'
-                  }`}
-                >
-                  {item.label}
-                </Link>
-              </li>
-            )
-          })}
-          <li className="ml-auto">
-            <IndiceCompletoDesktop pathname={pathname} />
-          </li>
-        </ul>
-      </nav>
     </header>
   )
 }

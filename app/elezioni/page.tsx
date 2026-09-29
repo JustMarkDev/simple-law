@@ -245,10 +245,10 @@ export default async function ElezioniPage() {
       <Header />
       <main id="contenuto" className="mx-auto w-full max-w-editoriale px-4 py-10 sm:px-6 sm:py-12 lg:px-8">
         <header className="border-b-2 border-inchiostro pb-5 dark:border-nebbia">
-          <p className="text-xs font-semibold uppercase tracking-[0.28em] text-accento dark:text-accento-chiara">
+          <p className="text-sm font-bold text-accento dark:text-accento-chiara">
             Dati ufficiali
           </p>
-          <h1 className="mt-2 font-serif text-3xl font-bold text-inchiostro dark:text-nebbia sm:text-4xl">
+          <h1 className="mt-2 text-3xl font-bold text-inchiostro dark:text-nebbia sm:text-4xl">
             Elezioni
           </h1>
           <p className="mt-3 max-w-2xl text-sm leading-relaxed text-inchiostro-soft dark:text-nebbia-soft">
@@ -259,7 +259,7 @@ export default async function ElezioniPage() {
         </header>
 
         <section aria-labelledby="consultazioni" className="mt-8">
-          <h2 id="consultazioni" className="font-serif text-xl font-bold text-inchiostro dark:text-nebbia">
+          <h2 id="consultazioni" className="text-xl font-bold text-inchiostro dark:text-nebbia">
             Consultazioni disponibili
           </h2>
           <ul className="mt-4 grid gap-4 sm:grid-cols-2">
@@ -268,10 +268,10 @@ export default async function ElezioniPage() {
               return (
                 <li key={voce.id} className="flex">
                   <article className="flex w-full flex-col border border-regola bg-carta p-5 dark:border-notte-deep dark:bg-notte-soft">
-                    <p className="inline-flex w-fit items-center border border-regola px-2 py-0.5 text-[11px] font-semibold uppercase tracking-[0.16em] text-inchiostro-soft dark:border-notte-deep dark:text-nebbia-soft">
+                    <p className="inline-flex w-fit items-center border border-regola px-2 py-0.5 text-[11px] font-semibold text-inchiostro-soft dark:border-notte-deep dark:text-nebbia-soft">
                       Dati ufficiali DAIT
                     </p>
-                    <h3 className="mt-3 font-serif text-lg font-bold text-inchiostro dark:text-nebbia">
+                    <h3 className="mt-3 text-lg font-bold text-inchiostro dark:text-nebbia">
                       {voce.titolo}
                     </h3>
                     <p className="mt-2 text-sm leading-relaxed text-inchiostro-soft dark:text-nebbia-soft">
@@ -304,7 +304,7 @@ export default async function ElezioniPage() {
                     <p className="mt-4">
                       <Link
                         href={`/elezioni/${voce.id}`}
-                        className="inline-flex min-h-[48px] items-center bg-accento px-6 font-semibold text-white hover:opacity-90 dark:bg-accento-chiara dark:text-notte"
+                        className="inline-flex min-h-[48px] items-center bg-accento px-6 font-semibold text-white hover:brightness-110 dark:bg-accento-chiara dark:text-notte"
                       >
                         Vedi i risultati
                       </Link>
@@ -317,10 +317,10 @@ export default async function ElezioniPage() {
         </section>
 
         <section aria-labelledby="sondaggi" className="mt-10">
-          <h2 id="sondaggi" className="font-serif text-xl font-bold text-inchiostro dark:text-nebbia">
+          <h2 id="sondaggi" className="text-xl font-bold text-inchiostro dark:text-nebbia">
             Sondaggi nazionali - voto di partito
           </h2>
-          <p className="mt-2 inline-flex w-fit items-center border border-regola px-2 py-0.5 text-[11px] font-semibold uppercase tracking-[0.16em] text-inchiostro-soft dark:border-notte-deep dark:text-nebbia-soft">
+          <p className="mt-2 inline-flex w-fit items-center border border-regola px-2 py-0.5 text-[11px] font-semibold text-inchiostro-soft dark:border-notte-deep dark:text-nebbia-soft">
             Sondaggi - non sono voti reali, non sono leggi
           </p>
           <p className="mt-3 max-w-2xl text-sm leading-relaxed text-inchiostro-soft dark:text-nebbia-soft">
@@ -421,7 +421,7 @@ export default async function ElezioniPage() {
         </section>
 
         <section aria-labelledby="metodologia" className="mt-10 border border-regola bg-carta p-5 dark:border-notte-deep dark:bg-notte-soft">
-          <h2 id="metodologia" className="font-serif text-lg font-bold text-inchiostro dark:text-nebbia">
+          <h2 id="metodologia" className="text-lg font-bold text-inchiostro dark:text-nebbia">
             Metodologia
           </h2>
           <ul className="mt-3 list-disc space-y-2 pl-5 text-sm leading-relaxed text-inchiostro-soft dark:text-nebbia-soft">
@@ -445,7 +445,7 @@ export default async function ElezioniPage() {
         </section>
 
         <section aria-labelledby="licenze" className="mt-6 border border-regola bg-carta p-5 dark:border-notte-deep dark:bg-notte-soft">
-          <h2 id="licenze" className="font-serif text-lg font-bold text-inchiostro dark:text-nebbia">
+          <h2 id="licenze" className="text-lg font-bold text-inchiostro dark:text-nebbia">
             Licenze e riuso
           </h2>
           <p className="mt-3 text-sm leading-relaxed text-inchiostro-soft dark:text-nebbia-soft">
@@ -464,7 +464,7 @@ export default async function ElezioniPage() {
             .
           </p>
           <nav aria-label="Collegamenti esterni elettorali" className="mt-4">
-            <p className="text-xs font-semibold uppercase tracking-[0.16em] text-inchiostro-faint dark:text-nebbia-faint">
+            <p className="text-xs font-semibold text-inchiostro-faint dark:text-nebbia-faint">
               Fonti e analisi esterne
             </p>
             <ul className="mt-2 flex flex-wrap gap-x-6 gap-y-2 text-sm">

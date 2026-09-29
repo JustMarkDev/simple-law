@@ -134,10 +134,10 @@ function Riquadro({
   return (
     <section aria-labelledby={anchor} className={`scroll-mt-24 rounded-2xl border p-5 sm:p-6 ${sfondo}`}>
       <h2 id={anchor} className="flex items-baseline gap-3">
-        <span aria-hidden="true" className="font-serif text-3xl font-bold leading-none text-accento dark:text-accento-chiara">
+        <span aria-hidden="true" className="text-3xl font-bold leading-none text-accento dark:text-accento-chiara">
           {String(numero).padStart(2, '0')}
         </span>
-        <span className="text-xs font-bold uppercase tracking-[0.2em] text-inchiostro-soft dark:text-nebbia-soft">
+        <span className="text-xs font-bold text-inchiostro-soft dark:text-nebbia-soft">
           {titolo}
         </span>
       </h2>
@@ -157,7 +157,7 @@ function TabsPersona({ perTe, persone }: { perTe: Record<string, string>; person
     <div>
       <ul className="space-y-3">
         {attive.map((persona) => (
-          <li key={persona} className="rounded-xl border-l-2 border-regola bg-carta-soft p-4 dark:border-notte-deep dark:bg-notte">
+          <li key={persona} className="rounded-2xl border border-regola bg-carta p-4 dark:border-notte-deep dark:bg-notte-soft">
             <h3 className="text-sm font-semibold text-inchiostro dark:text-nebbia">{PERSONA_LABEL[persona] ?? persona}</h3>
             <p className="mt-1 text-sm leading-relaxed text-inchiostro-soft dark:text-nebbia-soft">{perTe[persona]}</p>
           </li>
@@ -232,9 +232,9 @@ export default async function LeggePage({ params }: LeggeProps) {
           </ol>
         </nav>
 
-        <header className="mt-4 animate-comparsa-su rounded-2xl border border-regola bg-carta-soft p-6 dark:border-notte-deep dark:bg-notte-soft sm:p-8">
+        <header className="mt-4">
           <div className="flex flex-wrap items-center gap-2 text-xs">
-            <span className="rounded-lg bg-inchiostro px-3 py-1 font-semibold uppercase tracking-[0.14em] text-carta dark:bg-nebbia dark:text-notte">
+            <span className="rounded-lg bg-inchiostro px-3 py-1 font-semibold text-carta dark:bg-nebbia dark:text-notte">
               {formatTipo(law.tipo)} {law.numero}/{anno}
             </span>
             {law.dimostrativo ? (
@@ -291,7 +291,7 @@ export default async function LeggePage({ params }: LeggeProps) {
               ['pro-contro', 'Cosa va e cosa no'],
               ['fonti', 'Testi veri'],
             ].map(([id, label]) => (
-              <a key={id} href={`#${id}`} className="inline-flex min-h-[48px] min-w-[48px] items-center rounded-xl border border-regola px-3 py-2 hover:border-inchiostro focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-inchiostro dark:border-notte-deep dark:hover:border-nebbia dark:focus-visible:outline-nebbia">
+              <a key={id} href={`#${id}`} className="inline-flex min-h-[48px] min-w-[48px] items-center rounded-xl border border-regola px-3 py-2 hover:border-accento focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-inchiostro dark:border-notte-deep dark:hover:border-nebbia dark:focus-visible:outline-nebbia">
                 {label}
               </a>
             ))}
@@ -300,8 +300,8 @@ export default async function LeggePage({ params }: LeggeProps) {
             <CondividiStampa titolo={law.titolo} />
             <PulsantePreferito eli={law.eli} />
           </div>
-          <p className="mt-4 flex items-start gap-2 rounded-xl border-l-2 border-regola bg-carta py-2 pl-3 pr-3 text-xs leading-relaxed text-inchiostro-faint dark:border-notte-deep dark:bg-notte dark:text-nebbia-faint">
-            <span className="font-semibold uppercase tracking-wide text-inchiostro-soft dark:text-nebbia-soft">
+          <p className="mt-4 flex items-start gap-2 rounded-2xl border border-regola bg-carta px-4 py-3 text-xs leading-relaxed text-inchiostro-faint dark:border-notte-deep dark:bg-notte-soft dark:text-nebbia-faint">
+            <span className="font-semibold text-inchiostro-soft dark:text-nebbia-soft">
               Testo semplificato.
             </span>
             I riquadri sotto nascono dai dati della scheda. Nessun servizio esterno, nessuna chiave richiesta.
@@ -368,7 +368,7 @@ export default async function LeggePage({ params }: LeggeProps) {
                 <ul className="mt-2 space-y-2">
                   {semplificata.proContro.pro.map((voce) => (
                     <li key={voce} className="flex gap-2 text-sm leading-relaxed text-inchiostro-soft dark:text-nebbia-soft">
-                      <span aria-hidden="true" className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-[2px] bg-emerald-500" />
+                      <span aria-hidden="true" className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-sm bg-emerald-500" />
                       {voce}
                     </li>
                   ))}
@@ -379,7 +379,7 @@ export default async function LeggePage({ params }: LeggeProps) {
                 <ul className="mt-2 space-y-2">
                   {semplificata.proContro.contro.map((voce) => (
                     <li key={voce} className="flex gap-2 text-sm leading-relaxed text-inchiostro-soft dark:text-nebbia-soft">
-                      <span aria-hidden="true" className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-[2px] bg-red-500" />
+                      <span aria-hidden="true" className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-sm bg-red-500" />
                       {voce}
                     </li>
                   ))}
@@ -479,7 +479,7 @@ export default async function LeggePage({ params }: LeggeProps) {
                 <li key={minister.slug}>
                   <Link
                     href={ministerHref(minister)}
-                    className="inline-flex min-h-[48px] flex-col justify-center rounded-xl border border-regola bg-carta px-4 py-2 transition-colors hover:border-inchiostro focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-inchiostro dark:border-notte-deep dark:bg-notte-soft dark:hover:border-nebbia dark:focus-visible:outline-nebbia"
+                    className="inline-flex min-h-[48px] flex-col justify-center rounded-xl border border-regola bg-carta px-4 py-2 transition-colors hover:border-accento focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-inchiostro dark:border-notte-deep dark:bg-notte-soft dark:hover:border-nebbia dark:focus-visible:outline-nebbia"
                   >
                     <span className="text-sm font-semibold text-inchiostro dark:text-nebbia">{minister.nome}</span>
                     <span className="text-xs text-inchiostro-faint dark:text-nebbia-faint">{minister.dicastero}</span>
@@ -510,9 +510,9 @@ export default async function LeggePage({ params }: LeggeProps) {
             <Link
               href={`/leggi/${precedente.eli}`}
               rel="prev"
-              className="inline-flex min-h-[48px] flex-col justify-center rounded-xl border border-regola px-4 py-3 hover:border-inchiostro focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-inchiostro dark:border-notte-deep dark:hover:border-nebbia dark:focus-visible:outline-nebbia"
+              className="inline-flex min-h-[48px] flex-col justify-center rounded-xl border border-regola px-4 py-3 hover:border-accento focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-inchiostro dark:border-notte-deep dark:hover:border-nebbia dark:focus-visible:outline-nebbia"
             >
-              <span className="inline-flex items-center gap-1.5 text-xs uppercase tracking-wide text-inchiostro-faint dark:text-nebbia-faint">
+              <span className="inline-flex items-center gap-1.5 text-xs text-inchiostro-faint dark:text-nebbia-faint">
                 <ArrowLeft01Icon size={14} aria-hidden="true" />
                 Prima di questa
               </span>
@@ -529,9 +529,9 @@ export default async function LeggePage({ params }: LeggeProps) {
             <Link
               href={`/leggi/${successiva.eli}`}
               rel="next"
-              className="inline-flex min-h-[48px] flex-col justify-center rounded-xl border border-regola px-4 py-3 text-right hover:border-inchiostro focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-inchiostro dark:border-notte-deep dark:hover:border-nebbia dark:focus-visible:outline-nebbia"
+              className="inline-flex min-h-[48px] flex-col justify-center rounded-xl border border-regola px-4 py-3 text-right hover:border-accento focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-inchiostro dark:border-notte-deep dark:hover:border-nebbia dark:focus-visible:outline-nebbia"
             >
-              <span className="inline-flex items-center justify-end gap-1.5 text-xs uppercase tracking-wide text-inchiostro-faint dark:text-nebbia-faint">
+              <span className="inline-flex items-center justify-end gap-1.5 text-xs text-inchiostro-faint dark:text-nebbia-faint">
                 Dopo questa
                 <ArrowRight01Icon size={14} aria-hidden="true" />
               </span>

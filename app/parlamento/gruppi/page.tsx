@@ -64,10 +64,10 @@ export default async function GruppiPage() {
         </nav>
 
         <header className="mt-4 border-b-2 border-inchiostro pb-5 dark:border-nebbia">
-          <p className="text-xs font-semibold uppercase tracking-[0.28em] text-accento dark:text-accento-chiara">
+          <p className="text-sm font-bold text-accento dark:text-accento-chiara">
             Legislatura 19
           </p>
-          <h1 className="mt-2 font-serif text-3xl font-bold text-inchiostro dark:text-nebbia sm:text-4xl">
+          <h1 className="mt-2 text-3xl font-bold text-inchiostro dark:text-nebbia sm:text-4xl">
             Gruppi parlamentari
           </h1>
           <p className="mt-3 max-w-2xl text-sm leading-relaxed text-inchiostro-soft dark:text-nebbia-soft">
@@ -90,7 +90,7 @@ export default async function GruppiPage() {
         </header>
 
         <section aria-labelledby="titolo-camera" id="camera" className="mt-10 scroll-mt-24">
-          <h2 id="titolo-camera" className="scroll-mt-24 font-serif text-2xl font-bold text-inchiostro dark:text-nebbia">
+          <h2 id="titolo-camera" className="scroll-mt-24 text-2xl font-bold text-inchiostro dark:text-nebbia">
             Camera dei deputati
           </h2>
           <p className="mt-1 text-sm text-inchiostro-soft dark:text-nebbia-soft" role="status">
@@ -105,7 +105,7 @@ export default async function GruppiPage() {
                   className="flex items-center justify-between gap-3 border border-regola bg-carta p-4 dark:border-notte-deep dark:bg-notte-soft"
                 >
                   <div className="min-w-0">
-                    <p className="font-serif text-base font-bold text-inchiostro dark:text-nebbia">{g.nome}</p>
+                    <p className="text-base font-bold text-inchiostro dark:text-nebbia">{g.nome}</p>
                     <p className="mt-0.5 text-xs text-inchiostro-soft dark:text-nebbia-soft">
                       {g.componenti} {g.componenti === 1 ? 'componente' : 'componenti'}
                     </p>
@@ -113,7 +113,7 @@ export default async function GruppiPage() {
                   <Link
                     href={`/parlamento/deputati?gruppo=${encodeURIComponent(g.nome)}`}
                     aria-label={`Vedi i deputati del gruppo ${g.nome}`}
-                    className="inline-flex min-h-[48px] shrink-0 items-center border border-inchiostro px-3 py-2 text-xs font-semibold uppercase tracking-wide text-inchiostro transition-colors hover:bg-inchiostro hover:text-carta focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-inchiostro dark:border-nebbia dark:text-nebbia dark:hover:bg-nebbia dark:hover:text-notte dark:focus-visible:outline-nebbia"
+                    className="inline-flex min-h-[48px] shrink-0 items-center border border-inchiostro px-3 py-2 text-xs font-semibold text-inchiostro transition-colors hover:bg-inchiostro hover:text-carta focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-inchiostro dark:border-nebbia dark:text-nebbia dark:hover:bg-nebbia dark:hover:text-notte dark:focus-visible:outline-nebbia"
                   >
                     Vedi →
                   </Link>
@@ -128,7 +128,7 @@ export default async function GruppiPage() {
         </section>
 
         <section aria-labelledby="titolo-senato" id="senato" className="mt-12 scroll-mt-24">
-          <h2 id="titolo-senato" className="scroll-mt-24 font-serif text-2xl font-bold text-inchiostro dark:text-nebbia">
+          <h2 id="titolo-senato" className="scroll-mt-24 text-2xl font-bold text-inchiostro dark:text-nebbia">
             Senato della Repubblica
           </h2>
           <p className="mt-1 text-sm text-inchiostro-soft dark:text-nebbia-soft" role="status">
@@ -148,7 +148,7 @@ export default async function GruppiPage() {
                   className="flex items-center justify-between gap-3 border border-regola bg-carta p-4 dark:border-notte-deep dark:bg-notte-soft"
                 >
                   <div className="min-w-0">
-                    <p className="font-serif text-base font-bold text-inchiostro dark:text-nebbia">{g.nome}</p>
+                    <p className="text-base font-bold text-inchiostro dark:text-nebbia">{g.nome}</p>
                     <p className="mt-0.5 text-xs text-inchiostro-soft dark:text-nebbia-soft">
                       {g.componenti} {g.componenti === 1 ? 'componente' : 'componenti'}
                     </p>
@@ -156,7 +156,7 @@ export default async function GruppiPage() {
                   <Link
                     href={`/parlamento/senatori?gruppo=${encodeURIComponent(g.nome)}`}
                     aria-label={`Vedi i senatori del gruppo ${g.nome}`}
-                    className="inline-flex min-h-[48px] shrink-0 items-center border border-inchiostro px-3 py-2 text-xs font-semibold uppercase tracking-wide text-inchiostro transition-colors hover:bg-inchiostro hover:text-carta focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-inchiostro dark:border-nebbia dark:text-nebbia dark:hover:bg-nebbia dark:hover:text-notte dark:focus-visible:outline-nebbia"
+                    className="inline-flex min-h-[48px] shrink-0 items-center border border-inchiostro px-3 py-2 text-xs font-semibold text-inchiostro transition-colors hover:bg-inchiostro hover:text-carta focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-inchiostro dark:border-nebbia dark:text-nebbia dark:hover:bg-nebbia dark:hover:text-notte dark:focus-visible:outline-nebbia"
                   >
                     Vedi →
                   </Link>
@@ -174,7 +174,7 @@ export default async function GruppiPage() {
           aria-labelledby="fonti-gruppi"
           className="mt-10 border border-regola bg-carta-soft p-5 dark:border-notte-deep dark:bg-notte-soft"
         >
-          <h2 id="fonti-gruppi" className="font-serif text-lg font-bold text-inchiostro dark:text-nebbia">
+          <h2 id="fonti-gruppi" className="text-lg font-bold text-inchiostro dark:text-nebbia">
             Fonti e licenze
           </h2>
           <p className="mt-2 text-sm leading-relaxed text-inchiostro-soft dark:text-nebbia-soft">

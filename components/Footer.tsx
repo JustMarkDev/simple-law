@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
+import DataOdierna from './DataOdierna';
 import Disclaimer from './Disclaimer';
 
 const NORME = [
@@ -50,14 +51,15 @@ export default function Footer() {
           alt=""
           fill
           sizes="100vw"
+          loading="eager"
           className="object-cover"
         />
       </div>
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute inset-0 bg-[#121a44]/90"
+        className="pointer-events-none absolute inset-0 bg-[#121a44]/80"
       />
-      <div className="relative mx-auto w-full max-w-editoriale px-4 py-10 sm:px-6 lg:px-8">
+      <div className="relative mx-auto w-full max-w-editoriale px-4 py-12 sm:px-6 lg:px-8">
         <div className="border-b border-white/15 pb-8">
           <p className="font-sans text-3xl font-extrabold tracking-tight text-white sm:text-4xl">
             Simple Law
@@ -67,6 +69,9 @@ export default function Footer() {
             di mano.
           </p>
           <p className="mt-3 text-xs leading-relaxed text-white/85">
+            <DataOdierna className="text-white/85" />
+          </p>
+          <p className="mt-1 text-xs leading-relaxed text-white/85">
             © {anno} Simple Law. Progetto informativo indipendente.
           </p>
         </div>

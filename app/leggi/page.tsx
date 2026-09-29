@@ -339,8 +339,8 @@ export default async function LeggiPage({ searchParams }: LeggiProps) {
           </ol>
         </nav>
 
-        <header className="mt-4 animate-comparsa-su rounded-2xl border border-regola bg-carta-soft p-6 dark:border-notte-deep dark:bg-notte-soft sm:p-8">
-          <p className="text-xs font-semibold uppercase tracking-[0.28em] text-accento dark:text-accento-chiara">
+        <header className="mt-4">
+          <p className="text-sm font-bold text-accento dark:text-accento-chiara">
             Archivio
           </p>
           <h1 className="mt-2 text-3xl font-bold text-inchiostro dark:text-nebbia sm:text-4xl">
@@ -368,7 +368,7 @@ export default async function LeggiPage({ searchParams }: LeggiProps) {
           (tinta calda traslucida + blur + bordo chiaro). Se il blur manca o
           serve meno trasparenza, resta la tinta piena e resta leggibile.
         */}
-        <div className="sticky top-0 z-20 -mx-4 border-b border-white/40 bg-carta/85 px-4 py-3 shadow-[inset_0_1px_0_rgba(255,255,255,0.4)] backdrop-blur-md supports-[not_(backdrop-filter:blur(1px))]:bg-carta sm:-mx-6 sm:px-6 lg:-mx-8 lg:px-8 dark:border-white/10 dark:bg-notte/85 dark:supports-[not_(backdrop-filter:blur(1px))]:bg-notte">
+        <div className="sticky top-16 z-20 mt-6 rounded-2xl border border-regola bg-carta/95 px-4 py-3 shadow-cozy backdrop-blur-md dark:border-notte-deep dark:bg-notte/95">
           <div className="grid gap-2.5 lg:grid-cols-[minmax(0,1fr)_auto] lg:items-end">
             <SearchBar
               id="ricerca-legge-archivio"
@@ -409,7 +409,7 @@ export default async function LeggiPage({ searchParams }: LeggiProps) {
               <p className="mt-4">
                 <Link
                   href="/leggi"
-                  className="inline-flex min-h-[48px] items-center rounded-xl bg-inchiostro px-5 py-2 text-xs font-semibold uppercase tracking-wide text-carta hover:bg-inchiostro-soft focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-inchiostro dark:bg-nebbia dark:text-notte dark:hover:bg-nebbia-soft dark:focus-visible:outline-nebbia"
+                  className="inline-flex min-h-[48px] items-center rounded-xl bg-inchiostro px-5 py-2 text-xs font-semibold text-carta hover:bg-inchiostro-soft focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-inchiostro dark:bg-nebbia dark:text-notte dark:hover:bg-nebbia-soft dark:focus-visible:outline-nebbia"
                 >
                   Mostra tutte le leggi
                 </Link>
@@ -461,7 +461,7 @@ export default async function LeggiPage({ searchParams }: LeggiProps) {
                   <p className="mt-4">
                     <Link
                       href="/leggi"
-                      className="inline-flex min-h-[48px] items-center rounded-xl bg-inchiostro px-5 py-2 text-xs font-semibold uppercase tracking-wide text-carta hover:bg-inchiostro-soft focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-inchiostro dark:bg-nebbia dark:text-notte dark:hover:bg-nebbia-soft dark:focus-visible:outline-nebbia"
+                      className="inline-flex min-h-[48px] items-center rounded-xl bg-inchiostro px-5 py-2 text-xs font-semibold text-carta hover:bg-inchiostro-soft focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-inchiostro dark:bg-nebbia dark:text-notte dark:hover:bg-nebbia-soft dark:focus-visible:outline-nebbia"
                     >
                       Mostra tutte le leggi
                     </Link>

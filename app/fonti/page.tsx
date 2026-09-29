@@ -59,10 +59,10 @@ export default function FontiPage() {
       <Header />
       <main id="contenuto" className="mx-auto w-full max-w-editoriale px-4 py-10 sm:px-6 sm:py-12 lg:px-8">
         <header className="border-b-2 border-inchiostro pb-5 dark:border-nebbia">
-          <p className="text-xs font-semibold uppercase tracking-[0.28em] text-accento dark:text-accento-chiara">
+          <p className="text-sm font-bold text-accento dark:text-accento-chiara">
             Trasparenza
           </p>
-          <h1 className="mt-2 font-serif text-3xl font-bold text-inchiostro dark:text-nebbia sm:text-4xl">
+          <h1 className="mt-2 text-3xl font-bold text-inchiostro dark:text-nebbia sm:text-4xl">
             Fonti ufficiali
           </h1>
           <p className="mt-3 max-w-2xl text-sm leading-relaxed text-inchiostro-soft dark:text-nebbia-soft">
@@ -76,14 +76,14 @@ export default function FontiPage() {
               <Comparsa className="flex w-full" delay={Math.min(index * 0.05, 0.25)}>
                 <article className="flex w-full flex-col p-5">
                   <span className="flex items-baseline gap-3">
-                    <span aria-hidden="true" className="font-serif text-2xl font-bold text-accento dark:text-accento-chiara">
+                    <span aria-hidden="true" className="text-2xl font-bold text-accento dark:text-accento-chiara">
                       {String(index + 1).padStart(2, '0')}
                     </span>
-                    <span className="text-[11px] font-semibold uppercase tracking-[0.16em] text-inchiostro-faint dark:text-nebbia-faint">
+                    <span className="text-[11px] font-semibold text-inchiostro-faint dark:text-nebbia-faint">
                       {fonte.cosa}
                     </span>
                   </span>
-                  <h2 className="mt-3 font-serif text-lg font-bold text-inchiostro dark:text-nebbia">
+                  <h2 className="mt-3 text-lg font-bold text-inchiostro dark:text-nebbia">
                     <a
                       href={fonte.url}
                       target="_blank"
@@ -106,7 +106,7 @@ export default function FontiPage() {
           aria-labelledby="foto"
           className="mt-10 rounded-2xl border border-regola bg-carta p-5 dark:border-notte-deep dark:bg-notte-soft"
         >
-          <h2 id="foto" className="font-serif text-xl font-bold text-inchiostro dark:text-nebbia">
+          <h2 id="foto" className="text-xl font-bold text-inchiostro dark:text-nebbia">
             Foto
           </h2>
           <p className="mt-2 text-sm leading-relaxed text-inchiostro-soft dark:text-nebbia-soft">

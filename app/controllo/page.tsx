@@ -70,8 +70,8 @@ export default async function ControlloPage() {
         </nav>
 
         <Comparsa>
-          <header className="mt-4 rounded-2xl border border-regola bg-carta-soft p-6 dark:border-notte-deep dark:bg-notte-soft sm:p-8">
-            <p className="text-xs font-semibold uppercase tracking-[0.28em] text-accento dark:text-accento-chiara">
+          <header className="mt-4">
+            <p className="text-sm font-bold text-accento dark:text-accento-chiara">
               Controllo pubblico
             </p>
             <h1 className="mt-2 flex items-center gap-3 text-3xl font-bold text-inchiostro dark:text-nebbia sm:text-4xl">

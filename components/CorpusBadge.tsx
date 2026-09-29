@@ -42,7 +42,7 @@ export default function CorpusBadge({ totale, dimostrative, ufficiali, reali }: 
     const haDimostrative = dimostrativeSane > 0;
 
     return (
-      <div className="flex flex-wrap items-center gap-x-4 gap-y-3 rounded-lg border border-regola bg-carta px-4 py-3 dark:border-notte-deep dark:bg-notte-soft">
+      <div className="flex flex-wrap items-center gap-x-4 gap-y-3 rounded-2xl border border-regola bg-carta px-4 py-3 transition-colors dark:border-notte-deep dark:bg-notte-soft">
         <span
           aria-hidden="true"
           className="inline-flex min-h-[48px] min-w-[48px] items-center justify-center rounded-lg bg-carta-soft text-accento dark:bg-notte-deep dark:text-accento-chiara"
@@ -66,7 +66,7 @@ export default function CorpusBadge({ totale, dimostrative, ufficiali, reali }: 
         </p>
         <Link
           href="/leggi"
-          className="inline-flex min-h-[48px] items-center text-sm font-bold text-accento underline underline-offset-4 hover:brightness-110 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accento dark:text-accento-chiara dark:focus-visible:outline-accento-chiara"
+          className="inline-flex min-h-[48px] items-center text-sm font-bold text-accento underline underline-offset-4 transition-colors hover:brightness-110 focus-visible:outline focus-visible:outline-[3px] focus-visible:outline-offset-2 focus-visible:outline-accento dark:text-accento-chiara dark:focus-visible:outline-accento-chiara"
         >
           Vedi tutte le norme
         </Link>

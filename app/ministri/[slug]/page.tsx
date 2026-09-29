@@ -88,7 +88,7 @@ export default async function MinistroPage({ params }: MinistroProps) {
         <header className="mt-4 flex flex-col gap-5 border-b-2 border-inchiostro pb-6 dark:border-nebbia sm:flex-row sm:items-center">
           <span
             aria-hidden="true"
-            className="flex h-16 w-16 shrink-0 items-center justify-center border border-inchiostro bg-inchiostro font-serif text-lg font-bold text-carta dark:border-nebbia dark:bg-nebbia dark:text-notte"
+            className="flex h-16 w-16 shrink-0 items-center justify-center border border-inchiostro bg-inchiostro text-lg font-bold text-carta dark:border-nebbia dark:bg-nebbia dark:text-notte"
           >
             {minister.nome
               .split(/\s+/)
@@ -98,7 +98,7 @@ export default async function MinistroPage({ params }: MinistroProps) {
               .join('')}
           </span>
           <div>
-            <h1 className="font-serif text-3xl font-bold text-inchiostro dark:text-nebbia">{minister.nome}</h1>
+            <h1 className="text-3xl font-bold text-inchiostro dark:text-nebbia">{minister.nome}</h1>
             <p className="mt-1 text-sm font-medium text-inchiostro-soft dark:text-nebbia-soft">{minister.dicastero}</p>
             {minister.partito && (
               <p className="mt-1 text-xs text-inchiostro-faint dark:text-nebbia-faint">
@@ -109,7 +109,7 @@ export default async function MinistroPage({ params }: MinistroProps) {
               <p className="mt-3 flex flex-wrap items-center gap-x-3 gap-y-1 text-xs">
                 <Link
                   href={boxParlamentare.hrefInterno}
-                  className="inline-flex min-h-[44px] items-center font-semibold text-accento underline underline-offset-2 dark:text-accento-chiara"
+                  className="inline-flex min-h-[48px] items-center font-semibold text-accento underline underline-offset-2 dark:text-accento-chiara"
                 >
                   Scheda parlamentare
                   {boxParlamentare.gruppo ? ` (${boxParlamentare.gruppo})` : ''}
@@ -119,7 +119,7 @@ export default async function MinistroPage({ params }: MinistroProps) {
                     href={boxParlamentare.hrefEsterno}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex min-h-[44px] items-center text-inchiostro-soft underline underline-offset-2 hover:text-accento dark:text-nebbia-soft dark:hover:text-accento-chiara"
+                    className="inline-flex min-h-[48px] items-center text-inchiostro-soft underline underline-offset-2 hover:text-accento dark:text-nebbia-soft dark:hover:text-accento-chiara"
                   >
                     Scheda ufficiale su camera.it/senato.it
                   </a>
@@ -139,7 +139,7 @@ export default async function MinistroPage({ params }: MinistroProps) {
             aria-labelledby="competenze"
             className="border border-regola bg-carta p-5 dark:border-notte-deep dark:bg-notte-soft lg:col-span-2"
           >
-            <h2 id="competenze" className="font-serif text-lg font-bold text-inchiostro dark:text-nebbia">
+            <h2 id="competenze" className="text-lg font-bold text-inchiostro dark:text-nebbia">
               Competenze
             </h2>
             {minister.competenze.length > 0 ? (
@@ -159,7 +159,7 @@ export default async function MinistroPage({ params }: MinistroProps) {
           </section>
 
           <section aria-labelledby="sintesi" className="border border-regola bg-carta-soft p-5 dark:border-notte-deep dark:bg-notte-soft">
-            <h2 id="sintesi" className="font-serif text-lg font-bold text-inchiostro dark:text-nebbia">
+            <h2 id="sintesi" className="text-lg font-bold text-inchiostro dark:text-nebbia">
               In breve
             </h2>
             <dl className="mt-3 space-y-2 text-sm">
@@ -180,7 +180,7 @@ export default async function MinistroPage({ params }: MinistroProps) {
         <section aria-labelledby="provvedimenti" className="mt-10">
           <h2
             id="provvedimenti"
-            className="border-b border-regola pb-3 font-serif text-lg font-bold text-inchiostro dark:border-notte-deep dark:text-nebbia"
+            className="border-b border-regola pb-3 text-lg font-bold text-inchiostro dark:border-notte-deep dark:text-nebbia"
           >
             Provvedimenti collegati
           </h2>

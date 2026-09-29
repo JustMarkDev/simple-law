@@ -75,10 +75,10 @@ export default async function ParlamentoPage() {
         </nav>
 
         <header className="mt-4 border-b-2 border-inchiostro pb-5 dark:border-nebbia">
-          <p className="text-xs font-semibold uppercase tracking-[0.28em] text-accento dark:text-accento-chiara">
+          <p className="text-sm font-bold text-accento dark:text-accento-chiara">
             Legislatura 19
           </p>
-          <h1 className="mt-2 font-serif text-3xl font-bold text-inchiostro dark:text-nebbia sm:text-4xl">
+          <h1 className="mt-2 text-3xl font-bold text-inchiostro dark:text-nebbia sm:text-4xl">
             Parlamento - Legislatura 19
           </h1>
           <p className="mt-3 max-w-2xl text-sm leading-relaxed text-inchiostro-soft dark:text-nebbia-soft">
@@ -93,15 +93,15 @@ export default async function ParlamentoPage() {
           <li className="flex">
             <Link
               href="/parlamento/deputati"
-              className="flex min-h-[44px] w-full flex-col gap-2 border border-regola bg-carta p-5 transition-colors hover:border-inchiostro focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-inchiostro dark:border-notte-deep dark:bg-notte-soft dark:hover:border-nebbia dark:focus-visible:outline-nebbia"
+              className="flex min-h-[48px] w-full flex-col gap-2 border border-regola bg-carta p-5 transition-colors hover:border-accento focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-inchiostro dark:border-notte-deep dark:bg-notte-soft dark:hover:border-nebbia dark:focus-visible:outline-nebbia"
             >
-              <span className="font-serif text-xl font-bold text-inchiostro dark:text-nebbia">
+              <span className="text-xl font-bold text-inchiostro dark:text-nebbia">
                 Deputati
               </span>
               <span className="text-sm text-inchiostro-soft dark:text-nebbia-soft">
                 {nDep} schede della Camera · cerca per nome, filtra per gruppo.
               </span>
-              <span className="mt-1 text-xs font-semibold uppercase tracking-wide text-accento dark:text-accento-chiara">
+              <span className="mt-1 text-xs font-semibold text-accento dark:text-accento-chiara">
                 Sfoglia i deputati →
               </span>
             </Link>
@@ -109,15 +109,15 @@ export default async function ParlamentoPage() {
           <li className="flex">
             <Link
               href="/parlamento/senatori"
-              className="flex min-h-[44px] w-full flex-col gap-2 border border-regola bg-carta p-5 transition-colors hover:border-inchiostro focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-inchiostro dark:border-notte-deep dark:bg-notte-soft dark:hover:border-nebbia dark:focus-visible:outline-nebbia"
+              className="flex min-h-[48px] w-full flex-col gap-2 border border-regola bg-carta p-5 transition-colors hover:border-accento focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-inchiostro dark:border-notte-deep dark:bg-notte-soft dark:hover:border-nebbia dark:focus-visible:outline-nebbia"
             >
-              <span className="font-serif text-xl font-bold text-inchiostro dark:text-nebbia">
+              <span className="text-xl font-bold text-inchiostro dark:text-nebbia">
                 Senatori
               </span>
               <span className="text-sm text-inchiostro-soft dark:text-nebbia-soft">
                 {nSen} schede del Senato · con foto ufficiale quando disponibile.
               </span>
-              <span className="mt-1 text-xs font-semibold uppercase tracking-wide text-accento dark:text-accento-chiara">
+              <span className="mt-1 text-xs font-semibold text-accento dark:text-accento-chiara">
                 Sfoglia i senatori →
               </span>
             </Link>
@@ -125,15 +125,15 @@ export default async function ParlamentoPage() {
           <li className="flex">
             <Link
               href="/parlamento/gruppi"
-              className="flex min-h-[44px] w-full flex-col gap-2 border border-regola bg-carta p-5 transition-colors hover:border-inchiostro focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-inchiostro dark:border-notte-deep dark:bg-notte-soft dark:hover:border-nebbia dark:focus-visible:outline-nebbia"
+              className="flex min-h-[48px] w-full flex-col gap-2 border border-regola bg-carta p-5 transition-colors hover:border-accento focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-inchiostro dark:border-notte-deep dark:bg-notte-soft dark:hover:border-nebbia dark:focus-visible:outline-nebbia"
             >
-              <span className="font-serif text-xl font-bold text-inchiostro dark:text-nebbia">
+              <span className="text-xl font-bold text-inchiostro dark:text-nebbia">
                 Gruppi
               </span>
               <span className="text-sm text-inchiostro-soft dark:text-nebbia-soft">
                 {nGruppiCamera} gruppi della Camera · consistenza contata dai dati.
               </span>
-              <span className="mt-1 text-xs font-semibold uppercase tracking-wide text-accento dark:text-accento-chiara">
+              <span className="mt-1 text-xs font-semibold text-accento dark:text-accento-chiara">
                 Vedi i gruppi →
               </span>
             </Link>
@@ -141,15 +141,15 @@ export default async function ParlamentoPage() {
           <li className="flex">
             <Link
               href="/parlamento/ddl"
-              className="flex min-h-[44px] w-full flex-col gap-2 border border-regola bg-carta p-5 transition-colors hover:border-inchiostro focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-inchiostro dark:border-notte-deep dark:bg-notte-soft dark:hover:border-nebbia dark:focus-visible:outline-nebbia"
+              className="flex min-h-[48px] w-full flex-col gap-2 border border-regola bg-carta p-5 transition-colors hover:border-accento focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-inchiostro dark:border-notte-deep dark:bg-notte-soft dark:hover:border-nebbia dark:focus-visible:outline-nebbia"
             >
-              <span className="font-serif text-xl font-bold text-inchiostro dark:text-nebbia">
+              <span className="text-xl font-bold text-inchiostro dark:text-nebbia">
                 Disegni di legge
               </span>
               <span className="text-sm text-inchiostro-soft dark:text-nebbia-soft">
                 DDL e atti all&apos;esame delle Camere · non sono leggi in vigore.
               </span>
-              <span className="mt-1 text-xs font-semibold uppercase tracking-wide text-accento dark:text-accento-chiara">
+              <span className="mt-1 text-xs font-semibold text-accento dark:text-accento-chiara">
                 Vedi i disegni di legge →
               </span>
             </Link>
@@ -160,7 +160,7 @@ export default async function ParlamentoPage() {
           <section aria-labelledby="esempi-deputati" className="mt-10">
             <h2
               id="esempi-deputati"
-              className="border-b border-regola pb-3 font-serif text-lg font-bold text-inchiostro dark:border-notte-deep dark:text-nebbia"
+              className="border-b border-regola pb-3 text-lg font-bold text-inchiostro dark:border-notte-deep dark:text-nebbia"
             >
               In evidenza
             </h2>
@@ -172,12 +172,12 @@ export default async function ParlamentoPage() {
                 >
                   <span
                     aria-hidden="true"
-                    className="flex h-12 w-12 shrink-0 items-center justify-center border border-inchiostro bg-inchiostro font-serif text-sm font-bold text-carta dark:border-nebbia dark:bg-nebbia dark:text-notte"
+                    className="flex h-12 w-12 shrink-0 items-center justify-center border border-inchiostro bg-inchiostro text-sm font-bold text-carta dark:border-nebbia dark:bg-nebbia dark:text-notte"
                   >
                     {iniziali(d.nome)}
                   </span>
                   <div className="min-w-0">
-                    <p className="truncate font-serif text-base font-bold text-inchiostro dark:text-nebbia">
+                    <p className="truncate text-base font-bold text-inchiostro dark:text-nebbia">
                       <Link
                         href={`/parlamento/deputati/${encodeURIComponent(d.slug)}`}
                         className="hover:text-accento dark:hover:text-accento-chiara"
@@ -199,7 +199,7 @@ export default async function ParlamentoPage() {
           aria-labelledby="fonti-licenze"
           className="mt-10 border border-regola bg-carta-soft p-5 dark:border-notte-deep dark:bg-notte-soft"
         >
-          <h2 id="fonti-licenze" className="font-serif text-lg font-bold text-inchiostro dark:text-nebbia">
+          <h2 id="fonti-licenze" className="text-lg font-bold text-inchiostro dark:text-nebbia">
             Fonti e licenze
           </h2>
           <p className="mt-2 text-sm leading-relaxed text-inchiostro-soft dark:text-nebbia-soft">

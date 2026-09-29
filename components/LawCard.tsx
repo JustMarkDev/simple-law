@@ -3,7 +3,6 @@
 import Link from 'next/link'
 import { motion, useReducedMotion } from 'motion/react'
 import { ArrowRight01Icon } from 'hugeicons-react'
-import TrafficLight from './TrafficLight'
 import Evidenzia from './Evidenzia'
 import PulsantePreferito from './PulsantePreferito'
 import { formatDate, lawHref, STATO_META, tipoLabel, type Law } from './seed-fallback'
@@ -21,16 +20,59 @@ function passiMancanti(law: Law): number {
   return law.attuativi.daAdottare + law.attuativi.scaduti
 }
 
+function normalizzaTesto(s: string): string {
+  return s.trim().replace(/\s+/g, ' ').toLowerCase()
+}
+
+/** Distanza di modifica tra due testi, con tetto a 24 per il gate In breve. */
+function distanzaTesti(a: string, b: string, tetto = 24): number {
+  const x = normalizzaTesto(a)
+  const y = normalizzaTesto(b)
+  if (x === y) return 0
+  if (!x || !y) return tetto
+  if (Math.abs(x.length - y.length) >= tetto) return tetto
+  if (x.includes(y) || y.includes(x)) return Math.abs(x.length - y.length)
+  const n = Math.min(x.length, 200)
+  const m = Math.min(y.length, 200)
+  const prev = new Array<number>(m + 1)
+  const curr = new Array<number>(m + 1)
+  for (let j = 0; j <= m; j++) prev[j] = j
+  for (let i = 1; i <= n; i++) {
+    curr[0] = i
+    let rigaMin = curr[0]
+    for (let j = 1; j <= m; j++) {
+      const costo = x[i - 1] === y[j - 1] ? 0 : 1
+      curr[j] = Math.min(prev[j] + 1, curr[j - 1] + 1, prev[j - 1] + costo)
+      if (curr[j] < rigaMin) rigaMin = curr[j]
+    }
+    for (let j = 0; j <= m; j++) prev[j] = curr[j]
+    if (rigaMin >= tetto && i > tetto) return tetto
+  }
+  return prev[m] ?? tetto
+}
+
+/** Mostra In breve solo se diversa dalla sintesi per almeno 24 caratteri. */
+function mostraInBreve(inBreve: string, sintesi: string): boolean {
+  const a = (inBreve ?? '').trim()
+  if (a.length < 2) return false
+  const b = (sintesi ?? '').trim()
+  if (!b) return true
+  return distanzaTesti(a, b, 24) >= 24
+}
+
 /*
  * Liquid-glass approssimato (onesto: nessuna libreria ufficiale).
- * Solo backdrop-blur + tinta calda traslucida + bordo 1px bianco/40 +
+ * Solo backdrop-blur piu tinta calda traslucida piu bordo 1px bianco/40 piu
  * ombra interna sottile. Fallback tinta piena quando backdrop-filter
  * manca (supports-*) e con prefers-reduced-transparency.
  */
 const VETRO_CLASSE =
   'border-white/40 bg-carta-soft/80 supports-[backdrop-filter]:bg-carta-soft/70 supports-[backdrop-filter]:backdrop-blur-md shadow-[inset_0_1px_0_rgba(255,255,255,0.4),0_12px_32px_rgba(26,23,20,0.08)] [@media(prefers-reduced-transparency:reduce)]:bg-carta-soft [@media(prefers-reduced-transparency:reduce)]:backdrop-blur-0 [@media(prefers-reduced-transparency:reduce)]:shadow-none dark:border-white/10 dark:bg-notte-soft/85 dark:supports-[backdrop-filter]:bg-notte-soft/75 dark:supports-[backdrop-filter]:backdrop-blur-md dark:[@media(prefers-reduced-transparency:reduce)]:bg-notte-soft'
 
-/** Card di una legge. Solo il titolo è cliccabile più una CTA esplicita. */
+const FUOCO =
+  'focus-visible:outline focus-visible:outline-[3px] focus-visible:outline-offset-2 focus-visible:outline-accento dark:focus-visible:outline-accento-chiara'
+
+/** Card di una legge. Solo il titolo e cliccabile piu una CTA esplicita. */
 export default function LawCard({ law, featured = false, persona, headingLevel = 'h3', evidenzia = '' }: LawCardProps) {
   const Heading = headingLevel
   const href = lawHref(law)
@@ -45,16 +87,18 @@ export default function LawCard({ law, featured = false, persona, headingLevel =
   const titoloId = `titolo-${law.eli.replace(/[^a-zA-Z0-9]+/g, '-').replace(/^-+|-+$/g, '').slice(0, 80) || 'norma'}`
   const mancanti = passiMancanti(law)
   const troncato = law.testoTroncato === true
+  const inBreve = (law.semplificata.in10Secondi ?? '').trim()
+  const mostraBreve = mostraInBreve(inBreve, law.sintesi ?? '')
 
   if (featured) {
     const corpo = (
       <>
         <div className="flex flex-wrap items-center gap-2">
-          <span className="rounded-lg bg-white/60 px-3 py-1.5 text-xs font-bold text-inchiostro-soft dark:bg-black/30 dark:text-nebbia-soft">
+          <span className="badge bg-carta-soft/70 text-inchiostro-soft dark:bg-notte-deep/70 dark:text-nebbia-soft">
             {tipoLabel(law)}
           </span>
           {law.dimostrativo && (
-            <span className="rounded-lg border border-regola px-3 py-1.5 text-xs font-semibold text-inchiostro-soft dark:border-notte-deep dark:text-nebbia-soft">
+            <span className="badge border border-regola text-inchiostro-soft dark:border-notte-deep dark:text-nebbia-soft">
               Scheda di prova
             </span>
           )}
@@ -62,11 +106,11 @@ export default function LawCard({ law, featured = false, persona, headingLevel =
 
         <Heading
           id={titoloId}
-          className="mt-4 text-2xl font-extrabold leading-tight text-inchiostro dark:text-nebbia sm:text-3xl"
+          className="mt-4 max-w-3xl text-2xl font-extrabold leading-tight text-inchiostro dark:text-nebbia sm:text-3xl"
         >
           <Link
             href={href}
-            className="underline-offset-4 hover:text-accento hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accento dark:hover:text-accento-chiara dark:focus-visible:outline-accento-chiara"
+            className={`underline-offset-4 transition-colors hover:text-accento hover:underline dark:hover:text-accento-chiara ${FUOCO}`}
           >
             {law.titolo}
           </Link>
@@ -82,18 +126,17 @@ export default function LawCard({ law, featured = false, persona, headingLevel =
           </p>
         )}
 
-        <p className="mt-4 rounded-xl border-l-4 border-accento bg-carta px-4 py-3 text-sm font-medium leading-relaxed text-inchiostro dark:bg-notte dark:text-nebbia">
-          <span className="mr-1 font-bold">In 10 secondi:</span>
-          {law.semplificata.in10Secondi}
-        </p>
+        {mostraBreve && (
+          <p className="mt-4 max-w-3xl text-sm leading-relaxed text-inchiostro dark:text-nebbia">
+            <span className="font-bold">In breve, </span>
+            {inBreve}
+          </p>
+        )}
 
         <div className="mt-5 flex flex-wrap items-center gap-x-6 gap-y-3">
-          <span className="inline-flex items-center gap-2 rounded-xl bg-white p-2 ring-1 ring-regola dark:bg-black dark:ring-notte-deep">
-            <TrafficLight stato={law.stato} showLabel={false} />
-            <span className="inline-flex items-center gap-1.5 pr-1 text-sm font-bold text-inchiostro dark:text-nebbia">
-              <span aria-hidden="true" className={`h-2 w-2 rounded-full ${meta.dot}`} />
-              A che punto è: {etichettaStato}
-            </span>
+          <span className="inline-flex items-center gap-1.5 rounded-xl bg-carta-soft/70 px-3 py-2 text-sm font-bold text-inchiostro ring-1 ring-regola dark:bg-notte-deep/70 dark:text-nebbia dark:ring-notte-deep">
+            <span aria-hidden="true" className={`h-2 w-2 rounded-full ${meta.dot}`} />
+            A che punto è: {etichettaStato}
           </span>
           <span className="text-sm text-inchiostro-soft dark:text-nebbia-soft">
             <span className="sr-only">Data: </span>
@@ -105,21 +148,15 @@ export default function LawCard({ law, featured = false, persona, headingLevel =
           {law.semplificata.statoLavora.motivo}
         </p>
 
-        <div className="mt-6 flex flex-wrap items-center gap-4">
+        <div className="mt-6 flex flex-wrap items-center gap-x-5 gap-y-3">
           {ridotto ? (
-            <Link
-              href={href}
-              className="inline-flex min-h-[48px] items-center gap-2 rounded-xl bg-accento px-6 py-3 text-sm font-bold text-white transition-colors hover:brightness-110 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accento dark:bg-accento-chiara dark:text-notte dark:focus-visible:outline-accento-chiara"
-            >
+            <Link href={href} className="btn-primario">
               Leggi la scheda
               <ArrowRight01Icon size={18} strokeWidth={2} aria-hidden="true" />
             </Link>
           ) : (
             <motion.span whileTap={{ scale: 0.97 }} transition={{ duration: 0.15, ease: 'easeOut' }} className="inline-flex">
-              <Link
-                href={href}
-                className="inline-flex min-h-[48px] items-center gap-2 rounded-xl bg-accento px-6 py-3 text-sm font-bold text-white transition-colors hover:brightness-110 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accento dark:bg-accento-chiara dark:text-notte dark:focus-visible:outline-accento-chiara"
-              >
+              <Link href={href} className="btn-primario">
                 Leggi la scheda
                 <ArrowRight01Icon size={18} strokeWidth={2} aria-hidden="true" />
               </Link>
@@ -127,7 +164,7 @@ export default function LawCard({ law, featured = false, persona, headingLevel =
           )}
           <Link
             href="/leggi"
-            className="inline-flex min-h-[48px] items-center text-sm font-bold text-inchiostro-soft underline underline-offset-4 transition-colors hover:text-accento dark:text-nebbia-soft dark:hover:text-accento-chiara"
+            className={`inline-flex min-h-[48px] items-center text-sm font-bold text-inchiostro-soft underline underline-offset-4 transition-colors hover:text-accento dark:text-nebbia-soft dark:hover:text-accento-chiara ${FUOCO}`}
           >
             Vedi tutte le norme
           </Link>
@@ -164,11 +201,11 @@ export default function LawCard({ law, featured = false, persona, headingLevel =
     <>
       <div className="flex flex-wrap items-center justify-between gap-2">
         <span className="flex flex-wrap items-center gap-2">
-          <span className="rounded-lg bg-inchiostro/5 px-2.5 py-1.5 text-xs font-bold text-inchiostro-soft dark:bg-notte-deep dark:text-nebbia-soft">
+          <span className="badge bg-inchiostro/5 text-inchiostro-soft dark:bg-notte-deep dark:text-nebbia-soft">
             {tipoLabel(law)}
           </span>
           {law.dimostrativo && (
-            <span className="rounded-lg border border-regola px-2.5 py-1.5 text-xs font-semibold text-inchiostro-soft dark:border-notte-deep dark:text-nebbia-soft">
+            <span className="badge border border-regola text-inchiostro-soft dark:border-notte-deep dark:text-nebbia-soft">
               Di prova
             </span>
           )}
@@ -182,7 +219,7 @@ export default function LawCard({ law, featured = false, persona, headingLevel =
       <Heading className="line-clamp-3 text-base font-extrabold leading-snug text-inchiostro dark:text-nebbia sm:text-lg">
         <Link
           href={href}
-          className="underline-offset-4 hover:text-accento hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accento dark:hover:text-accento-chiara dark:focus-visible:outline-accento-chiara"
+          className={`underline-offset-4 transition-colors hover:text-accento hover:underline dark:hover:text-accento-chiara ${FUOCO}`}
         >
           <Evidenzia testo={law.titolo} q={evidenzia} />
         </Link>
@@ -198,19 +235,24 @@ export default function LawCard({ law, featured = false, persona, headingLevel =
         </p>
       )}
 
+      {mostraBreve && (
+        <p className="line-clamp-3 text-sm leading-relaxed text-inchiostro-soft dark:text-nebbia-soft">
+          <span className="font-bold text-inchiostro dark:text-nebbia">In breve, </span>
+          {inBreve}
+        </p>
+      )}
+
       {personaTesto && (
-        <p className="line-clamp-3 rounded-xl border-l-4 border-accento bg-carta-soft px-3 py-2 text-sm leading-relaxed text-inchiostro-soft dark:bg-notte dark:text-nebbia-soft">
-          <span className="font-bold">Per te:</span> {personaTesto}
+        <p className="line-clamp-3 text-sm leading-relaxed text-inchiostro-soft dark:text-nebbia-soft">
+          <span className="font-bold text-inchiostro dark:text-nebbia">Per te, </span>
+          {personaTesto}
         </p>
       )}
 
       <div className="mt-auto flex flex-wrap items-center gap-2 pt-2">
-        <span className="inline-flex items-center gap-2 rounded-xl bg-white px-2 py-1.5 ring-1 ring-regola dark:bg-black dark:ring-notte-deep">
-          <TrafficLight stato={law.stato} size="sm" showLabel={false} />
-          <span className="inline-flex items-center gap-1.5 text-xs font-bold text-inchiostro dark:text-nebbia">
-            <span aria-hidden="true" className={`h-2 w-2 rounded-full ${meta.dot}`} />
-            {etichettaStato}
-          </span>
+        <span className="inline-flex items-center gap-1.5 rounded-xl bg-carta-soft/70 px-2 py-1.5 text-xs font-bold text-inchiostro ring-1 ring-regola dark:bg-notte-deep/70 dark:text-nebbia dark:ring-notte-deep">
+          <span aria-hidden="true" className={`h-2 w-2 rounded-full ${meta.dot}`} />
+          {etichettaStato}
         </span>
         <span className="sr-only">
           {etichettaStato}: {descrizioneStato}
@@ -227,7 +269,7 @@ export default function LawCard({ law, featured = false, persona, headingLevel =
         <Link
           href={href}
           aria-label={`Leggi la scheda: ${law.titolo}`}
-          className="inline-flex min-h-[48px] items-center gap-1.5 rounded-xl px-3 py-2 text-sm font-bold text-accento transition-colors hover:bg-accento/10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accento dark:text-accento-chiara dark:hover:bg-accento-chiara/10 dark:focus-visible:outline-accento-chiara"
+          className={`inline-flex min-h-[48px] items-center gap-1.5 rounded-xl px-3 py-2 text-sm font-bold text-accento transition-colors hover:bg-accento/10 focus-visible:outline focus-visible:outline-[3px] focus-visible:outline-offset-2 focus-visible:outline-accento dark:text-accento-chiara dark:hover:bg-accento-chiara/10 dark:focus-visible:outline-accento-chiara`}
         >
           Leggi la scheda
           <ArrowRight01Icon size={18} strokeWidth={2} aria-hidden="true" />
@@ -243,7 +285,7 @@ export default function LawCard({ law, featured = false, persona, headingLevel =
     return (
       <article
         style={{ contentVisibility: 'auto', containIntrinsicSize: 'auto 320px' }}
-        className="relative flex h-full scroll-mt-24 flex-col gap-3 rounded-2xl border border-regola bg-carta p-5 transition-colors hover:border-inchiostro/40 focus-within:border-inchiostro/40 dark:border-notte-deep dark:bg-notte-soft dark:hover:border-nebbia/40 dark:focus-within:border-nebbia/40"
+        className="relative flex h-full scroll-mt-24 flex-col gap-4 rounded-2xl border border-regola bg-carta p-5 transition-all hover:-translate-y-0.5 hover:border-accento hover:shadow-cozy-lg focus-within:border-accento dark:border-notte-deep dark:bg-notte-soft dark:hover:border-accento-chiara dark:focus-within:border-accento-chiara motion-reduce:transition-colors motion-reduce:hover:translate-y-0 sm:p-6"
       >
         {corpo}
       </article>
@@ -257,7 +299,7 @@ export default function LawCard({ law, featured = false, persona, headingLevel =
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.15 }}
       transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
-      className="relative flex h-full scroll-mt-24 flex-col gap-3 rounded-2xl border border-regola bg-carta p-5 transition-colors hover:border-inchiostro/40 focus-within:border-inchiostro/40 dark:border-notte-deep dark:bg-notte-soft dark:hover:border-nebbia/40 dark:focus-within:border-nebbia/40"
+      className="relative flex h-full scroll-mt-24 flex-col gap-4 rounded-2xl border border-regola bg-carta p-5 transition-all hover:-translate-y-0.5 hover:border-accento hover:shadow-cozy-lg focus-within:border-accento dark:border-notte-deep dark:bg-notte-soft dark:hover:border-accento-chiara dark:focus-within:border-accento-chiara motion-reduce:transition-colors motion-reduce:hover:translate-y-0 sm:p-6"
     >
       {corpo}
     </motion.article>

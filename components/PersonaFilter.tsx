@@ -84,7 +84,7 @@ export default function PersonaFilter({
       <p id={gruppoId} className="mb-1 text-sm font-semibold text-inchiostro dark:text-nebbia">
         {label}
       </p>
-      <p className="mb-2 text-xs text-inchiostro-faint dark:text-nebbia-faint">
+      <p className="mb-3 text-sm text-inchiostro-soft dark:text-nebbia-soft">
         Tocca una voce: la lista mostra solo quelle leggi.
       </p>
       <div role="group" aria-labelledby={gruppoId} aria-busy={inAttesa}>
@@ -109,15 +109,15 @@ export default function PersonaFilter({
                   whileTap={ridotto ? undefined : { scale: 0.97 }}
                   className={
                     attiva
-                      ? 'relative isolate inline-flex min-h-[48px] min-w-[48px] items-center gap-1.5 rounded-xl px-4 py-2.5 text-xs font-semibold uppercase tracking-wide text-white transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accento disabled:opacity-60 dark:text-notte dark:focus-visible:outline-accento-chiara'
-                      : 'relative isolate inline-flex min-h-[48px] min-w-[48px] items-center gap-1.5 rounded-xl border border-regola bg-carta px-4 py-2.5 text-xs font-semibold uppercase tracking-wide text-inchiostro-soft transition-colors hover:border-accento hover:text-accento focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accento disabled:opacity-60 dark:border-notte-deep dark:bg-notte dark:text-nebbia-soft dark:hover:border-accento-chiara dark:hover:text-accento-chiara dark:focus-visible:outline-accento-chiara'
+                      ? 'relative isolate inline-flex min-h-[48px] min-w-[48px] items-center gap-1.5 rounded-xl border border-accento bg-accento/10 px-4 py-2.5 text-sm font-semibold text-accento transition-colors hover:border-accento hover:bg-accento/15 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accento disabled:opacity-60 dark:border-accento-chiara dark:bg-accento-chiara/10 dark:text-accento-chiara dark:hover:border-accento-chiara dark:hover:bg-accento-chiara/15 dark:focus-visible:outline-accento-chiara'
+                      : 'relative isolate inline-flex min-h-[48px] min-w-[48px] items-center gap-1.5 rounded-xl border border-regola bg-carta px-4 py-2.5 text-sm font-semibold text-inchiostro-soft transition-colors hover:border-accento hover:text-accento focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accento disabled:opacity-60 dark:border-notte-deep dark:bg-notte dark:text-nebbia-soft dark:hover:border-accento-chiara dark:hover:text-accento-chiara dark:focus-visible:outline-accento-chiara'
                   }
                 >
                   {attiva && (
                     <motion.span
                       aria-hidden="true"
                       layoutId={ridotto ? undefined : `persona-${id}`}
-                      className="absolute inset-0 -z-10 rounded-xl bg-accento dark:bg-accento-chiara"
+                      className="absolute inset-0 -z-10 rounded-xl bg-accento/10 dark:bg-accento-chiara/10"
                       transition={{ type: 'spring', stiffness: 380, damping: 34 }}
                     />
                   )}
@@ -128,7 +128,7 @@ export default function PersonaFilter({
                       aria-label={`${conteggio} leggi per ${persona.label}${attiva ? ' (scelta)' : ''}`}
                       className={
                         attiva
-                          ? 'rounded-lg bg-white/20 px-2 py-0.5 text-[11px] font-bold tabular-nums text-white dark:bg-notte/20 dark:text-notte'
+                          ? 'rounded-lg bg-accento/15 px-2 py-0.5 text-[11px] font-bold tabular-nums text-accento dark:bg-accento-chiara/15 dark:text-accento-chiara'
                           : 'rounded-lg bg-inchiostro/5 px-2 py-0.5 text-[11px] font-bold tabular-nums text-inchiostro-soft dark:bg-notte-deep dark:text-nebbia-soft'
                       }
                     >

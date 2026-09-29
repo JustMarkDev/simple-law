@@ -40,33 +40,33 @@ export default function FontiList({ fonti, modalita = 'inline', className = '' }
 
   if (disponibili.length === 0) {
     return (
-      <p role="status" className={`text-sm leading-relaxed text-inchiostro-soft dark:text-nebbia-soft ${className}`}>
+      <p role="status" className={`rounded-2xl border border-regola bg-carta-soft p-5 text-sm leading-relaxed text-inchiostro-soft dark:border-notte-deep dark:bg-notte-soft dark:text-nebbia-soft sm:p-6 ${className}`}>
         Per ora non ci sono link diretti. Cerca numero e anno della norma su Normattiva o in Gazzetta Ufficiale.
       </p>
     )
   }
 
   return (
-    <ul className={`space-y-1 ${className}`}>
+    <ul className={`flex flex-col gap-1 ${className}`}>
       {disponibili.map((source) => (
         <li key={source.key}>
           <a
             href={fonti[source.key] as string}
             target="_blank"
             rel="noopener noreferrer"
-            className="group -mx-2 inline-flex min-h-[48px] items-start gap-2 rounded-xl px-2 py-2 transition-colors hover:bg-carta-soft focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-inchiostro dark:hover:bg-notte dark:focus-visible:outline-nebbia"
+            className="group inline-flex min-h-[48px] items-start gap-3 rounded-xl px-3 py-2.5 transition-colors hover:bg-accento/10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accento dark:hover:bg-accento-chiara/10 dark:focus-visible:outline-accento-chiara"
           >
             <LinkSquare01Icon
               size={18}
               aria-hidden="true"
-              className="mt-0.5 h-[18px] w-[18px] shrink-0 text-inchiostro-faint group-hover:text-accento dark:text-nebbia-faint dark:group-hover:text-accento-chiara"
+              className="mt-0.5 h-[18px] w-[18px] shrink-0 text-inchiostro-faint transition-colors group-hover:text-accento dark:text-nebbia-faint dark:group-hover:text-accento-chiara"
             />
-            <span className="min-w-0">
-              <span className="text-sm font-semibold text-inchiostro underline decoration-regola underline-offset-2 group-hover:text-accento group-hover:decoration-accento dark:text-nebbia dark:decoration-notte-deep dark:group-hover:text-accento-chiara dark:group-hover:decoration-accento-chiara">
+            <span className="flex min-w-0 flex-col gap-1">
+              <span className="text-sm font-semibold text-inchiostro underline decoration-regola underline-offset-2 transition-colors group-hover:text-accento group-hover:decoration-accento dark:text-nebbia dark:decoration-notte-deep dark:group-hover:text-accento-chiara dark:group-hover:decoration-accento-chiara">
                 {FONTI_LABELS[source.key]}
               </span>
               {modalita === 'block' && (
-                <span className="mt-0.5 block text-xs text-inchiostro-soft dark:text-nebbia-soft">{source.descrizione}</span>
+                <span className="block text-xs leading-relaxed text-inchiostro-soft dark:text-nebbia-soft">{source.descrizione}</span>
               )}
               <span className="sr-only"> (si apre in una nuova scheda)</span>
             </span>

@@ -55,7 +55,7 @@ export default function SearchBar({
       >
         {label}
       </label>
-      <div className="flex items-center gap-2 rounded-xl border border-regola bg-carta p-2 transition-colors focus-within:border-accento dark:border-notte-deep dark:bg-notte dark:focus-within:border-accento-chiara">
+      <div className="flex items-center gap-2 rounded-xl border border-regola bg-carta p-2 transition-colors hover:border-accento focus-within:border-accento dark:border-notte-deep dark:bg-notte dark:hover:border-accento-chiara dark:focus-within:border-accento-chiara">
         <span aria-hidden="true" className="pl-2 text-inchiostro-faint dark:text-nebbia-faint">
           <Search01Icon size={22} strokeWidth={2} />
         </span>
@@ -70,7 +70,7 @@ export default function SearchBar({
           maxLength={200}
           disabled={inAttesa}
           aria-busy={inAttesa}
-          className="min-h-[48px] min-w-0 flex-1 rounded-lg bg-transparent px-1 py-2 text-base text-inchiostro placeholder:text-inchiostro-faint focus:outline-none disabled:opacity-60 dark:text-nebbia dark:placeholder:text-nebbia-faint"
+          className="min-h-[48px] min-w-0 flex-1 rounded-xl bg-transparent px-1 py-2 text-base text-inchiostro placeholder:text-inchiostro-faint focus:outline-none disabled:opacity-60 dark:text-nebbia dark:placeholder:text-nebbia-faint"
         />
         <motion.button
           type="submit"

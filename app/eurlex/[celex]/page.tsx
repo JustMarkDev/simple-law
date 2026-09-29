@@ -224,14 +224,14 @@ export default async function AttoUePage({ params }: DettaglioProps) {
 
         <header className="mt-4 border-b-2 border-inchiostro pb-5 dark:border-nebbia">
           <p className="flex flex-wrap gap-2">
-            <span className="inline-flex items-center border border-inchiostro px-2 py-1 text-[11px] font-bold uppercase tracking-wide text-inchiostro dark:border-nebbia dark:text-nebbia">
+            <span className="inline-flex items-center border border-inchiostro px-2 py-1 text-[11px] font-bold text-inchiostro dark:border-nebbia dark:text-nebbia">
               {etichettaTipo(atto.tipo)}
             </span>
-            <span className="inline-flex items-center border border-regola px-2 py-1 text-[11px] uppercase tracking-wide text-inchiostro-soft dark:border-notte-deep dark:text-nebbia-soft">
+            <span className="inline-flex items-center border border-regola px-2 py-1 text-[11px] text-inchiostro-soft dark:border-notte-deep dark:text-nebbia-soft">
               {notaApplicabilita(atto.tipo)}
             </span>
           </p>
-          <h1 className="mt-3 font-serif text-3xl font-bold text-inchiostro dark:text-nebbia sm:text-4xl">
+          <h1 className="mt-3 text-3xl font-bold text-inchiostro dark:text-nebbia sm:text-4xl">
             {atto.celex}
           </h1>
           <p className="mt-3 max-w-2xl text-sm leading-relaxed text-inchiostro-soft dark:text-nebbia-soft">
@@ -244,27 +244,27 @@ export default async function AttoUePage({ params }: DettaglioProps) {
 
         <dl className="mt-6 grid gap-3 border border-regola bg-carta p-5 text-sm dark:border-notte-deep dark:bg-notte-soft sm:grid-cols-2">
           <div>
-            <dt className="text-xs font-semibold uppercase tracking-wide text-inchiostro-faint dark:text-nebbia-faint">Numero CELEX</dt>
+            <dt className="text-xs font-semibold text-inchiostro-faint dark:text-nebbia-faint">Numero CELEX</dt>
             <dd className="mt-1 font-medium text-inchiostro dark:text-nebbia">{atto.celex}</dd>
           </div>
           <div>
-            <dt className="text-xs font-semibold uppercase tracking-wide text-inchiostro-faint dark:text-nebbia-faint">Tipo di atto</dt>
+            <dt className="text-xs font-semibold text-inchiostro-faint dark:text-nebbia-faint">Tipo di atto</dt>
             <dd className="mt-1 text-inchiostro dark:text-nebbia">{etichettaTipo(atto.tipo)} ({atto.tipo})</dd>
           </div>
           <div>
-            <dt className="text-xs font-semibold uppercase tracking-wide text-inchiostro-faint dark:text-nebbia-faint">Data del documento</dt>
+            <dt className="text-xs font-semibold text-inchiostro-faint dark:text-nebbia-faint">Data del documento</dt>
             <dd className="mt-1 text-inchiostro dark:text-nebbia">{dataIT(atto.data)}</dd>
           </div>
           <div>
-            <dt className="text-xs font-semibold uppercase tracking-wide text-inchiostro-faint dark:text-nebbia-faint">Vigenza</dt>
+            <dt className="text-xs font-semibold text-inchiostro-faint dark:text-nebbia-faint">Vigenza</dt>
             <dd className="mt-1 text-inchiostro dark:text-nebbia">{vigenza}</dd>
           </div>
           <div>
-            <dt className="text-xs font-semibold uppercase tracking-wide text-inchiostro-faint dark:text-nebbia-faint">Entrata in vigore</dt>
+            <dt className="text-xs font-semibold text-inchiostro-faint dark:text-nebbia-faint">Entrata in vigore</dt>
             <dd className="mt-1 text-inchiostro dark:text-nebbia">{dataIT(atto.entrataInVigore)}</dd>
           </div>
           <div>
-            <dt className="text-xs font-semibold uppercase tracking-wide text-inchiostro-faint dark:text-nebbia-faint">Fine di validità</dt>
+            <dt className="text-xs font-semibold text-inchiostro-faint dark:text-nebbia-faint">Fine di validità</dt>
             <dd className="mt-1 text-inchiostro dark:text-nebbia">{dataIT(atto.fineValidita)}</dd>
           </div>
         </dl>
@@ -274,7 +274,7 @@ export default async function AttoUePage({ params }: DettaglioProps) {
             href={atto.eurlexUrl}
             target="_blank"
             rel="noopener"
-            className="inline-flex min-h-[44px] items-center border border-inchiostro bg-inchiostro px-5 py-2 text-xs font-semibold uppercase tracking-wide text-carta hover:bg-inchiostro-soft focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-inchiostro dark:border-nebbia dark:bg-nebbia dark:text-notte dark:hover:bg-nebbia-soft dark:focus-visible:outline-nebbia"
+            className="inline-flex min-h-[48px] items-center border border-inchiostro bg-inchiostro px-5 py-2 text-xs font-semibold text-carta hover:bg-inchiostro-soft focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-inchiostro dark:border-nebbia dark:bg-nebbia dark:text-notte dark:hover:bg-nebbia-soft dark:focus-visible:outline-nebbia"
           >
             Testo su EUR-Lex ↗
           </a>
@@ -282,7 +282,7 @@ export default async function AttoUePage({ params }: DettaglioProps) {
             href={atto.eli}
             target="_blank"
             rel="noopener"
-            className="inline-flex min-h-[44px] items-center border border-regola px-5 py-2 text-xs font-semibold uppercase tracking-wide text-inchiostro hover:border-inchiostro dark:border-notte-deep dark:text-nebbia dark:hover:border-nebbia"
+            className="inline-flex min-h-[48px] items-center border border-regola px-5 py-2 text-xs font-semibold text-inchiostro hover:border-accento dark:border-notte-deep dark:text-nebbia dark:hover:border-nebbia"
           >
             Identificativo ELI ↗
           </a>
@@ -293,7 +293,7 @@ export default async function AttoUePage({ params }: DettaglioProps) {
           aria-labelledby="recepimento"
           className="mt-10 border border-regola bg-carta p-5 dark:border-notte-deep dark:bg-notte-soft"
         >
-          <h2 id="recepimento" className="font-serif text-lg font-bold text-inchiostro dark:text-nebbia">
+          <h2 id="recepimento" className="text-lg font-bold text-inchiostro dark:text-nebbia">
             Recepimento in Italia
           </h2>
           {recepimento ? (
@@ -349,7 +349,7 @@ export default async function AttoUePage({ params }: DettaglioProps) {
               )}
               {collegatiAtti.length > 0 && (
                 <>
-                  <h3 className="mt-5 text-sm font-bold uppercase tracking-wide text-inchiostro dark:text-nebbia">
+                  <h3 className="mt-5 text-sm font-bold text-inchiostro dark:text-nebbia">
                     Atti che citano esplicitamente la direttiva
                   </h3>
                   <ul className="mt-2 space-y-3">
@@ -424,7 +424,7 @@ export default async function AttoUePage({ params }: DettaglioProps) {
               )}
               {collegatiAtti.length > 0 && (
                 <>
-                  <h3 className="mt-5 text-sm font-bold uppercase tracking-wide text-inchiostro dark:text-nebbia">
+                  <h3 className="mt-5 text-sm font-bold text-inchiostro dark:text-nebbia">
                     Atti che citano esplicitamente la direttiva
                   </h3>
                   <ul className="mt-2 space-y-3">
@@ -465,7 +465,7 @@ export default async function AttoUePage({ params }: DettaglioProps) {
           aria-labelledby="fonti-licenze"
           className="mt-10 border border-regola bg-carta-soft p-5 dark:border-notte-deep dark:bg-notte-soft"
         >
-          <h2 id="fonti-licenze" className="font-serif text-lg font-bold text-inchiostro dark:text-nebbia">
+          <h2 id="fonti-licenze" className="text-lg font-bold text-inchiostro dark:text-nebbia">
             Fonte e licenza
           </h2>
           <p className="mt-2 text-sm leading-relaxed text-inchiostro-soft dark:text-nebbia-soft">
