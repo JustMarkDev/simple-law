@@ -387,3 +387,17 @@ Obiettivo precedente (completato): UI/UX, feature, corpus 5005 voci.
 - Verifiche mie: tsc OK, eslint OK, 861/861 test OK, build OK
   (874 pagine), smoke live (200 anche con filtro giallo).
 - Next: eyebrow multipli residui, foto reali, E2E a11y, freschezza 2026.
+
+## Slop-zero (2026-09-29): 3-card uguali ed eyebrow multipli rimossi
+- Workflow: 1 chiamata `workflow` con 3 writer (home steps, controllo,
+  statistiche+semplifica, file disgiunti).
+- U1: "Come funziona" da 3 card uguali (banned) a righe numerate
+  asimmetriche in un contenitore; h3 non piu uppercase.
+- U2: controllo 1 eyebrow per ramo, badge "non e legge" semplici, CTA
+  accento 48px, zero dot, empty dedicato con icona.
+- U3: titoli normali ovunque, step "1. ..." col punto, confronto a 4
+  righe dati, nota conteggi con virgola. Resta 1 hero-eyebrow per render
+  (branch vuoti/rami alternativi: mai 2 visibili insieme).
+- Verifiche mie: tsc OK, eslint OK, 861/861 test OK, build OK
+  (874 pagine), smoke live su 4 route.
+- Next: foto reali, E2E a11y, freschezza 2026 continua.
