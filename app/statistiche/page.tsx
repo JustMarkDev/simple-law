@@ -297,7 +297,7 @@ export default async function StatistichePage() {
             </Link>
             {' · '}
             {intero(totale)} {totale === 1 ? 'legge qui dentro' : 'leggi qui dentro'}
-            {senzaAnno > 0 && ` · ${intero(senzaAnno)} senza anno`}.
+            {senzaAnno > 0 && `, ${intero(senzaAnno)} senza anno`}.
           </p>
         </section>
 
@@ -483,8 +483,8 @@ export default async function StatistichePage() {
               <li key={indicatore.indicatore} className="flex">
                 <Comparsa delay={Math.min(i * 0.05, 0.15)} className="flex w-full">
                   <article className="flex w-full flex-col rounded-2xl border border-regola bg-carta p-5 dark:border-notte-deep dark:bg-notte-soft">
-                    <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-inchiostro-faint dark:text-nebbia-faint">
-                      {indicatore.periodo}
+                    <p className="text-xs font-medium text-inchiostro-faint dark:text-nebbia-faint">
+                      Periodo: {indicatore.periodo}
                     </p>
                     <h3 className="mt-2 text-sm font-semibold text-inchiostro dark:text-nebbia">
                       {indicatore.indicatore}
@@ -508,7 +508,7 @@ export default async function StatistichePage() {
           </ul>
 
           <div className="mt-6 rounded-2xl border border-regola bg-carta-soft p-5 dark:border-notte-deep dark:bg-notte-soft">
-            <h3 className="text-xs font-semibold uppercase tracking-[0.16em] text-inchiostro dark:text-nebbia">
+            <h3 className="text-sm font-semibold text-inchiostro dark:text-nebbia">
               Siti ufficiali
             </h3>
             <ul className="mt-3 flex flex-wrap gap-x-6 gap-y-2 text-sm">

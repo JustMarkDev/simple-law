@@ -187,7 +187,7 @@ export default async function SemplificaPage({ searchParams }: SemplificaProps) 
           <p id="aiuto-modulo" className="text-xs text-inchiostro-faint dark:text-nebbia-faint">
             Scrivi qui sotto e premi Semplifica. Niente viene salvato. I conteggi si aggiornano mentre scrivi.
           </p>
-          <label htmlFor="titolo" className="text-xs font-semibold uppercase tracking-wide text-inchiostro dark:text-nebbia">
+          <label htmlFor="titolo" className="text-sm font-semibold text-inchiostro dark:text-nebbia">
             Titolo (se vuoi, fino a 500 caratteri)
           </label>
           <input
@@ -207,7 +207,7 @@ export default async function SemplificaPage({ searchParams }: SemplificaProps) 
             {lunghezzaTitolo}/500 caratteri
           </p>
 
-          <label htmlFor="testo" className="mt-2 text-xs font-semibold uppercase tracking-wide text-inchiostro dark:text-nebbia">
+          <label htmlFor="testo" className="mt-2 text-sm font-semibold text-inchiostro dark:text-nebbia">
             Testo da leggere (da 20 a 20.000 caratteri)
           </label>
           <textarea
@@ -262,7 +262,7 @@ export default async function SemplificaPage({ searchParams }: SemplificaProps) 
           </summary>
           <div className="mt-4 grid gap-4 sm:grid-cols-2">
             <form method="get" action="/semplifica" className="grid content-start gap-2 rounded-xl border border-regola bg-carta-soft p-4 dark:border-notte-deep dark:bg-notte-soft">
-              <label htmlFor="eli" className="text-xs font-semibold uppercase tracking-wide text-inchiostro dark:text-nebbia">
+              <label htmlFor="eli" className="text-sm font-semibold text-inchiostro dark:text-nebbia">
                 Mostra una legge dell’archivio
               </label>
               <input
@@ -278,7 +278,7 @@ export default async function SemplificaPage({ searchParams }: SemplificaProps) 
               </button>
             </form>
             <form method="get" action="/semplifica" className="grid content-start gap-2 rounded-xl border border-regola bg-carta-soft p-4 dark:border-notte-deep dark:bg-notte-soft">
-              <label htmlFor="confronta" className="text-xs font-semibold uppercase tracking-wide text-inchiostro dark:text-nebbia">
+              <label htmlFor="confronta" className="text-sm font-semibold text-inchiostro dark:text-nebbia">
                 Confronta due leggi
               </label>
               <input
@@ -308,32 +308,32 @@ export default async function SemplificaPage({ searchParams }: SemplificaProps) 
             </h2>
             <p className="mt-1 text-xs text-inchiostro-faint dark:text-nebbia-faint">Fatte qui sul momento, solo dal tuo testo.</p>
 
-            <h3 className="mt-4 text-sm font-semibold uppercase tracking-wide text-inchiostro dark:text-nebbia">1 · In poche parole</h3>
+            <h3 className="mt-6 text-base font-bold text-inchiostro dark:text-nebbia">1. In poche parole</h3>
             <p className="mt-2 rounded-xl border-l-4 border-accento bg-carta-soft px-4 py-3 text-sm font-medium dark:bg-notte">{anteprima.in10Secondi}</p>
 
-            <h3 className="mt-5 text-sm font-semibold uppercase tracking-wide text-inchiostro dark:text-nebbia">2 · Cosa cambia per te</h3>
+            <h3 className="mt-6 text-base font-bold text-inchiostro dark:text-nebbia">2. Cosa cambia per te</h3>
             <div className="mt-2 grid gap-3 sm:grid-cols-2">
               {Object.entries(anteprima.perTe).map(([k, v]) => (
                 <div key={k} className="rounded-xl border border-regola p-3 text-sm dark:border-notte-deep">
-                  <p className="text-xs font-semibold uppercase tracking-wide text-inchiostro dark:text-nebbia">{parolaPersona(k)}</p>
+                  <p className="text-sm font-semibold text-inchiostro dark:text-nebbia">{parolaPersona(k)}</p>
                   <p className="mt-1 text-sm leading-relaxed">{v}</p>
                 </div>
               ))}
             </div>
 
-            <h3 className="mt-5 text-sm font-semibold uppercase tracking-wide text-inchiostro dark:text-nebbia">3 · Cosa puoi fare</h3>
+            <h3 className="mt-6 text-base font-bold text-inchiostro dark:text-nebbia">3. Cosa puoi fare</h3>
             <ul className="mt-2 list-disc pl-5 text-sm leading-relaxed">
               {anteprima.cosaFare.map((c) => (
                 <li key={c}>{c}</li>
               ))}
             </ul>
 
-            <h3 className="mt-5 text-sm font-semibold uppercase tracking-wide text-inchiostro dark:text-nebbia">4 · A che punto è</h3>
+            <h3 className="mt-6 text-base font-bold text-inchiostro dark:text-nebbia">4. A che punto è</h3>
             <p className="mt-2 text-sm">
               <strong>{STATO_PAROLE[anteprima.statoLavora.colore] ?? 'Da vedere'}</strong> - {anteprima.statoLavora.motivo} · Parole facili: {anteprima.gulpease} su 100
             </p>
 
-            <h3 className="mt-5 text-sm font-semibold uppercase tracking-wide text-inchiostro dark:text-nebbia">5 · Lati buoni e lati deboli</h3>
+            <h3 className="mt-6 text-base font-bold text-inchiostro dark:text-nebbia">5. Lati buoni e lati deboli</h3>
             <div className="mt-2 grid gap-3 sm:grid-cols-2">
               <div className="rounded-xl border border-regola p-3 dark:border-notte-deep">
                 <h4 className="text-sm font-semibold">Cosa va bene</h4>
@@ -362,23 +362,23 @@ export default async function SemplificaPage({ searchParams }: SemplificaProps) 
             </div>
             <dl className="mt-4 grid gap-2 rounded-2xl border border-regola bg-carta-soft p-4 text-sm sm:grid-cols-2 dark:border-notte-deep dark:bg-notte-soft">
               <div>
-                <dt className="text-xs font-semibold uppercase tracking-wide">Titolo</dt>
+                <dt className="text-sm font-semibold text-inchiostro dark:text-nebbia">Titolo</dt>
                 <dd className="mt-1">{leggeSingola.titolo}</dd>
               </div>
               <div>
-                <dt className="text-xs font-semibold uppercase tracking-wide">Che legge è</dt>
+                <dt className="text-sm font-semibold text-inchiostro dark:text-nebbia">Che legge è</dt>
                 <dd className="mt-1">{tipoLabel(leggeSingola)} · {formatDate(leggeSingola.dataEmanazione)}</dd>
               </div>
               <div>
-                <dt className="text-xs font-semibold uppercase tracking-wide">A che punto è</dt>
+                <dt className="text-sm font-semibold text-inchiostro dark:text-nebbia">A che punto è</dt>
                 <dd className="mt-1">{STATO_META[leggeSingola.stato].label} - {leggeSingola.semplificata.statoLavora.motivo}</dd>
               </div>
               <div>
-                <dt className="text-xs font-semibold uppercase tracking-wide">Parole e numeri</dt>
+                <dt className="text-sm font-semibold text-inchiostro dark:text-nebbia">Parole e numeri</dt>
                 <dd className="mt-1">Facile da leggere: {leggeSingola.gulpease} su 100 · Qualità {leggeSingola.qualita} su 100</dd>
               </div>
               <div className="sm:col-span-2">
-                <dt className="text-xs font-semibold uppercase tracking-wide">Cosa manca ancora</dt>
+                <dt className="text-sm font-semibold text-inchiostro dark:text-nebbia">Cosa manca ancora</dt>
                 <dd className="mt-1">{attuativiRiepilogo(leggeSingola.attuativi)}</dd>
               </div>
             </dl>
@@ -403,49 +403,46 @@ export default async function SemplificaPage({ searchParams }: SemplificaProps) 
                     </caption>
                     <thead>
                       <tr className="border-b border-regola dark:border-notte-deep">
-                        <th scope="col" className="px-4 py-3 text-xs font-semibold uppercase tracking-wide">Voce</th>
-                        <th scope="col" className="px-4 py-3 text-xs font-semibold uppercase tracking-wide">Legge A · {tipoLabel(confronto[0])}</th>
-                        <th scope="col" className="px-4 py-3 text-xs font-semibold uppercase tracking-wide">Legge B · {tipoLabel(confronto[1])}</th>
+                        <th scope="col" className="px-4 py-3 text-sm font-semibold">Voce</th>
+                        <th scope="col" className="px-4 py-3 text-sm font-semibold">Legge A: {tipoLabel(confronto[0])}</th>
+                        <th scope="col" className="px-4 py-3 text-sm font-semibold">Legge B: {tipoLabel(confronto[1])}</th>
                       </tr>
                     </thead>
                     <tbody>
                       <tr className="border-b border-regola dark:border-notte-deep">
-                        <th scope="row" className="px-4 py-3 align-top text-xs font-semibold uppercase tracking-wide">Titolo</th>
+                        <th scope="row" className="px-4 py-3 align-top text-sm font-semibold">Titolo</th>
                         <td className="px-4 py-3 align-top">{confronto[0].titolo}</td>
                         <td className="px-4 py-3 align-top">{confronto[1].titolo}</td>
                       </tr>
                       <tr className="border-b border-regola dark:border-notte-deep">
-                        <th scope="row" className="px-4 py-3 align-top text-xs font-semibold uppercase tracking-wide">A che punto è</th>
+                        <th scope="row" className="px-4 py-3 align-top text-sm font-semibold">A che punto è</th>
                         <td className="px-4 py-3 align-top">{STATO_META[confronto[0].stato].label} - {attuativiRiepilogo(confronto[0].attuativi)}</td>
                         <td className="px-4 py-3 align-top">{STATO_META[confronto[1].stato].label} - {attuativiRiepilogo(confronto[1].attuativi)}</td>
                       </tr>
                       <tr className="border-b border-regola dark:border-notte-deep">
-                        <th scope="row" className="px-4 py-3 align-top text-xs font-semibold uppercase tracking-wide">Parole e numeri</th>
+                        <th scope="row" className="px-4 py-3 align-top text-sm font-semibold">Parole e numeri</th>
                         <td className="px-4 py-3 align-top">Facile da leggere: {confronto[0].gulpease} su 100 · Qualità {confronto[0].qualita} su 100</td>
                         <td className="px-4 py-3 align-top">Facile da leggere: {confronto[1].gulpease} su 100 · Qualità {confronto[1].qualita} su 100</td>
                       </tr>
-                      <tr className="border-b border-regola dark:border-notte-deep">
-                        <th scope="row" className="px-4 py-3 align-top text-xs font-semibold uppercase tracking-wide">Cosa va bene</th>
+                      <tr>
+                        <th scope="row" className="px-4 py-3 align-top text-sm font-semibold">Lati buoni e deboli</th>
                         <td className="px-4 py-3 align-top">
-                          <ul className="list-disc pl-5">
+                          <p className="text-sm font-semibold">Cosa va bene</p>
+                          <ul className="mt-1 list-disc pl-5">
                             {confronto[0].semplificata.proContro.pro.map((p) => (<li key={p}>{p}</li>))}
                           </ul>
-                        </td>
-                        <td className="px-4 py-3 align-top">
-                          <ul className="list-disc pl-5">
-                            {confronto[1].semplificata.proContro.pro.map((p) => (<li key={p}>{p}</li>))}
-                          </ul>
-                        </td>
-                      </tr>
-                      <tr>
-                        <th scope="row" className="px-4 py-3 align-top text-xs font-semibold uppercase tracking-wide">Cosa non va</th>
-                        <td className="px-4 py-3 align-top">
-                          <ul className="list-disc pl-5">
+                          <p className="mt-3 text-sm font-semibold">Cosa non va</p>
+                          <ul className="mt-1 list-disc pl-5">
                             {confronto[0].semplificata.proContro.contro.map((c) => (<li key={c}>{c}</li>))}
                           </ul>
                         </td>
                         <td className="px-4 py-3 align-top">
-                          <ul className="list-disc pl-5">
+                          <p className="text-sm font-semibold">Cosa va bene</p>
+                          <ul className="mt-1 list-disc pl-5">
+                            {confronto[1].semplificata.proContro.pro.map((p) => (<li key={p}>{p}</li>))}
+                          </ul>
+                          <p className="mt-3 text-sm font-semibold">Cosa non va</p>
+                          <ul className="mt-1 list-disc pl-5">
                             {confronto[1].semplificata.proContro.contro.map((c) => (<li key={c}>{c}</li>))}
                           </ul>
                         </td>

@@ -443,24 +443,28 @@ export default async function HomePage({ searchParams }: HomeProps) {
             >
               Come funziona
             </h2>
-            <ol className="mt-6 grid gap-5 sm:grid-cols-3">
+            <ol className="mt-6 overflow-hidden rounded-2xl border border-regola bg-carta dark:border-notte-deep dark:bg-notte-soft">
               {PASSI.map((passo, index) => (
                 <li
                   key={passo.titolo}
-                  className="rounded-2xl border border-regola bg-carta p-6 dark:border-notte-deep dark:bg-notte-soft"
+                  className={`flex items-start gap-4 px-5 py-5 sm:gap-5 sm:px-6 ${
+                    index > 0 ? 'border-t border-regola dark:border-notte-deep' : ''
+                  }`}
                 >
                   <span
                     aria-hidden="true"
-                    className="text-3xl font-extrabold text-accento dark:text-accento-chiara"
+                    className="w-10 shrink-0 text-4xl font-extrabold leading-none text-accento dark:text-accento-chiara"
                   >
                     {index + 1}
                   </span>
-                  <h3 className="mt-2 text-sm font-extrabold uppercase tracking-wide text-inchiostro dark:text-nebbia">
-                    {passo.titolo}
-                  </h3>
-                  <p className="mt-2 text-sm leading-relaxed text-inchiostro-soft dark:text-nebbia-soft">
-                    {passo.testo}
-                  </p>
+                  <div className="min-w-0">
+                    <h3 className="text-lg font-extrabold text-inchiostro dark:text-nebbia">
+                      {passo.titolo}
+                    </h3>
+                    <p className="mt-1 text-sm leading-relaxed text-inchiostro-soft dark:text-nebbia-soft">
+                      {passo.testo}
+                    </p>
+                  </div>
                 </li>
               ))}
             </ol>
