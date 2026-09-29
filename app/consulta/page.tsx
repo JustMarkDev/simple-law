@@ -94,7 +94,7 @@ export default async function ConsultaPage({
             non sono leggi in vigore, ma decisioni su questioni di legittimità costituzionale.
           </p>
           <p className="mt-2 text-sm font-semibold text-inchiostro dark:text-nebbia" role="status">
-            {totale} pronunce mostrate · {tutte.length} caricate · anno intero: {provenance.totaleAnno ?? 'non indicato'} atti
+            {totale} pronunce mostrate, {tutte.length} caricate · anno intero: {provenance.totaleAnno ?? 'non indicato'} atti
           </p>
         </header>
 
@@ -168,7 +168,7 @@ export default async function ConsultaPage({
               >
                 <div className="flex flex-wrap items-center gap-2">
                   <span className="inline-flex items-center border border-inchiostro px-2 py-1 text-[11px] font-bold uppercase tracking-wide text-inchiostro dark:border-nebbia dark:text-nebbia">
-                    {p.tipologia === 'S' ? 'S · Sentenza' : p.tipologia === 'O' ? 'O · Ordinanza' : (p.tipologia ?? '-')}
+                    {p.tipologia === 'S' ? 'S, Sentenza' : p.tipologia === 'O' ? 'O · Ordinanza' : (p.tipologia ?? '-')}
                   </span>
                   <span className="text-xs text-inchiostro-faint dark:text-nebbia-faint">
                     Deposito: {dataIT(p.dataDeposito)}

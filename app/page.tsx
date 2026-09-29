@@ -50,8 +50,8 @@ const PASSI = [
 
 /** La home non renderizza mai più di 12 schede: 1 in evidenza + 11 recenti. */
 const MAX_CARD_HOME = 12;
-/** Estratto bounded per i conteggi home (stato + filtro persona): 5000 record max. */
-const ESTRATTO_HOME_MAX = 5000;
+/** Estratto bounded per i conteggi home (stato + filtro persona): 10000 record max. */
+const ESTRATTO_HOME_MAX = 10000;
 
 /** Mirror di `featured` in `normalizeLaw`: DL 133/2026 in evidenza. */
 function isFeaturedRecord(record: Pick<LawRecordExtra, 'numero' | 'tipo'>): boolean {

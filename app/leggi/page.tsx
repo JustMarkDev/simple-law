@@ -36,8 +36,8 @@ const SORTS_UI: readonly SortUI[] = [
 const PER_OPZIONI: readonly number[] = [12, 24, 48];
 const PER_DEFAULT = 12;
 
-/** Estratto bounded per i conteggi globali del filtro semaforo (max 5000). */
-const ESTRATTO_FILTRI_MAX = 5000;
+/** Estratto bounded per i conteggi globali del filtro semaforo (max 10000). */
+const ESTRATTO_FILTRI_MAX = 10000;
 
 const STATI_SEMAFORO: readonly ColoreSemaforo[] = ['verde', 'giallo', 'rosso'];
 
@@ -195,7 +195,7 @@ export default async function LeggiPage({ searchParams }: LeggiProps) {
   // Paginazione sempre server-side con filtro persona diretto in lib/db
   // (Caso C): la pagina è già corretta, nessun filtro solo-pagina. Il filtro
   // semaforo (derivato) e il filtro origine (dimostrativo) usano l'estratto
-  // bounded in-memory (max 5000); la vigenza reale passa come `stato` al DB
+  // bounded in-memory (max 10000); la vigenza reale passa come `stato` al DB
   // (filtro onesto, mai inventato). Mai 500: ogni accesso è never-throw.
   const serveEstratto = stato !== '' || origine !== '';
   let paginata = { items: [] as LawRecordExtra[], total: 0, page };

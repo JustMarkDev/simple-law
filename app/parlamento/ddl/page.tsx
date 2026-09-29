@@ -323,7 +323,7 @@ export default async function DdlPage({ searchParams }: DdlProps) {
           {totale} {totale === 1 ? 'disegno di legge trovato' : 'disegni di legge trovati'}
           {q ? ` per “${q}”` : ''}
           {fase ? ` · fase: ${fase}` : ''}
-          {ramo ? ` · ramo: ${ramo}` : ''} · pagina {page} di {totPagine}.
+          {ramo ? ` · ramo: ${ramo}` : ''}, pagina {page} di {totPagine}.
         </p>
 
         {filtriAttivi.length > 0 && (
@@ -416,7 +416,7 @@ export default async function DdlPage({ searchParams }: DdlProps) {
             Fonti e licenze
           </h2>
           <p className="mt-2 text-sm leading-relaxed text-inchiostro-soft dark:text-nebbia-soft">
-            Senato: dati.senato.it - CC BY 3.0 IT · Camera: dati.camera.it - CC BY-SA 4.0 · legislatura 19
+            Senato: dati.senato.it - CC BY 3.0 IT, Camera: dati.camera.it - CC BY-SA 4.0 · legislatura 19
             {prov.senato?.recuperatoIl ? ` · dati Senato aggiornati al ${dataIT(prov.senato.recuperatoIl)}` : ''}
             {prov.camera?.recuperatoIl ? ` · dati Camera aggiornati al ${dataIT(prov.camera.recuperatoIl)}` : ''}.
           </p>

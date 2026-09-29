@@ -178,7 +178,7 @@ export default async function GruppiPage() {
             Fonti e licenze
           </h2>
           <p className="mt-2 text-sm leading-relaxed text-inchiostro-soft dark:text-nebbia-soft">
-            Camera: dati.camera.it - CC BY-SA 4.0 · Senato: dati.senato.it - CC BY 3.0 IT · legislatura 19
+            Camera: dati.camera.it - CC BY-SA 4.0, Senato: dati.senato.it - CC BY 3.0 IT · legislatura 19
             {provCamera?.recuperatoIl ? ` · dati Camera aggiornati al ${dataIT(provCamera.recuperatoIl)}` : ''}
             {provSenato?.recuperatoIl ? ` · dati Senato aggiornati al ${dataIT(provSenato.recuperatoIl)}` : ''}.
           </p>

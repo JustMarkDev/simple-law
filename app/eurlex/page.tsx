@@ -172,7 +172,7 @@ export default async function EuropaPage({
             .
           </p>
           <p className="mt-2 text-sm font-semibold text-inchiostro dark:text-nebbia" role="status">
-            {totale} atti mostrati · {tutte.length} caricati · universo 2026: {provenance.universo2026 ?? 'non indicato'} atti
+            {totale} atti mostrati, {tutte.length} caricati · universo 2026: {provenance.universo2026 ?? 'non indicato'} atti
           </p>
         </header>
 

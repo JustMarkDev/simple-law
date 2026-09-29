@@ -602,11 +602,11 @@ export function svuotaCacheDb(): void {
 export const QUALITA_FALLBACK_SOGLIA = 1000;
 
 /**
- * Tetto bounded per l'estratto persona su DB (prime 5000 schede).
+ * Tetto bounded per l'estratto persona su DB (prime 10000 schede).
  * Con `persona` attiva il totale è calcolato su questo estratto e la nota
- * UI `(calcolato sulle prime 5000 schede)` va mostrata oltre soglia.
+ * UI `(calcolato sulle prime 10000 schede)` va mostrata oltre soglia.
  */
-export const PERSONA_ESTRATTO_MAX = 5000;
+export const PERSONA_ESTRATTO_MAX = 10000;
 
 interface FiltriNormalizzati {
   q: string;
@@ -967,7 +967,7 @@ async function caricaBase(): Promise<LawRecordExtra[]> {
  * `take<=PERSONA_ESTRATTO_MAX`), poi filtro in memoria con
  * `personaRilevanteRecord` (+ `matchesFilters` per `q`), ordinamento e
  * paginazione; `total` coerente con le filtrate. Limite documentato: il
- * totale è calcolato sulle prime 5000 schede.
+ * totale è calcolato sulle prime 10000 schede.
  */
 export async function listLaws(params: ListLawsParams = {}): Promise<ListLawsResult> {
   const page = Math.min(10000, Math.max(1, Math.floor(params.page ?? 1) || 1));
@@ -1140,7 +1140,7 @@ export async function listLaws(params: ListLawsParams = {}): Promise<ListLawsRes
  * REGOLA MAI-IGNORARE (Caso C): con `persona` impostata e DB popolato si usa
  * un estratto bounded (`where` senza persona, `orderBy:data_desc`,
  * `take<=PERSONA_ESTRATTO_MAX`), poi filtro in memoria e cursore sulla lista
- * filtrata. Limite documentato: prime 5000 schede.
+ * filtrata. Limite documentato: prime 10000 schede.
  */
 export async function listLawsCursor(params: CursorParams = {}): Promise<CursorResult> {
   const takeRichiesto = Math.floor(params.take ?? 50) || 50;
@@ -1419,7 +1419,7 @@ export async function* streamLaws(
  * Conta le norme che soddisfano i filtri. Non lancia.
  *
  * REGOLA MAI-IGNORARE (Caso C): con `persona` impostata e DB popolato conta
- * sulle filtrate dell'estratto bounded (prime 5000 schede, `take` sempre
+ * sulle filtrate dell'estratto bounded (prime 10000 schede, `take` sempre
  * presente), totale coerente con `listLaws`.
  */
 export async function countLaws(filters: LawFilters = {}): Promise<number> {
@@ -1476,7 +1476,7 @@ export async function countLaws(filters: LawFilters = {}): Promise<number> {
  * Copre il corpus massimo generabile (CORPUS_TOTALE_MAX 20000 + 5 seed) con
  * margine: totali e ranking esatti senza troncamenti silenziosi. Limite
  * anti-DoS documentato: l'export usa `listLaws` paginato, gli estratti UI
- * passano un `limit` esplicito minore (5000).
+ * passano un `limit` esplicito minore (10000).
  */
 export const QUERY_CAP_MASSIMO = 25000;
 
@@ -1489,7 +1489,7 @@ export const QUERY_CAP_MASSIMO = 25000;
  * REGOLA MAI-IGNORARE (Caso C): con `persona` impostata e DB popolato usa
  * l'estratto bounded (`where` senza persona, `take<=PERSONA_ESTRATTO_MAX`),
  * poi filtro in memoria e `slice(0,min(limit,QUERY_CAP_MASSIMO))`. Limite
- * documentato: prime 5000 schede su DB popolato, finestra intera su seed.
+ * documentato: prime 10000 schede su DB popolato, finestra intera su seed.
  */
 export async function queryLaws(
   filters: LawFilters = {},
