@@ -431,3 +431,11 @@ Obiettivo precedente (completato): UI/UX, feature, corpus 5005 voci.
   niente foto finte: slot aperti per scatti istituzionali con licenza.
 - Verifiche mie: tsc OK, 871/871 test OK, smoke PASS.
 - Next: E2E browser, anni magri terzo passaggio, foto con licenza.
+
+## Regno (2026-09-29): 1861-1947, 8951 atti veri
+- Workflow: 1 chiamata `workflow` con 4 ingestor (ere disgiunte).
+- 3010 atti veri pre-1948 (97% abrogati onesti da Art.1, il resto ancora
+  in vigore), 87 file, nessun anno vuoto 1861-2025, 0 dup globali.
+- Wiring mio: PERCORSI +87, MANIFEST 201 voci, gate 1861+.
+- Verifiche mie: tsc/eslint OK, 871/871 test OK, build OK, smoke PASS.
+- Next: E2E browser, foto con licenza, terzo passaggio magri.
