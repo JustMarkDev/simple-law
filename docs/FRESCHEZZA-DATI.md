@@ -70,6 +70,21 @@ record per un link morto transiente, solo fix permanenti verificati con
 
 Mai inventare numeri, URL o date (solo file e risposte viste); mai scrivere
 fuori dai file assegnati; rete rispettosa (HEAD no-follow prima del GET,
-batch ≤ 5, pausa 150-400 ms, timeout 8-15 s, retry solo 429/5xx); ingest
-bounded con exit 1 senza parziali; librerie never-throw; interfaccia in
-italiano.
+ batch ≤ 5, pausa 150-400 ms, timeout 8-15 s, retry solo 429/5xx); ingest
+ bounded con exit 1 senza parziali; librerie never-throw; interfaccia in
+ italiano.
+
+## Refresh R1 2026-09-29 (conteggi veri, da provenance dei file)
+
+- `gazzetta-ultime.json`: 32 -> 32 atti, `recuperatoIl` `2026-09-29T01:12:57.822Z`
+  (`npx tsx scripts/ingest-reale-gu-diretta.ts`, SG n.225 del 2026-09-28).
+- `governo-comunicati.json`: 10 -> 10 comunicati, `recuperatoIl`
+  `2026-09-29T01:13:00.139Z` (`npx tsx scripts/ingest-reale-governo.ts`).
+- `normattiva-recenti.json`: 46 -> 46 atti, `recuperatoIl`
+  `2026-09-29T01:13:16.675Z` (`npx tsx scripts/ingest-reale-normattiva.ts
+  --limite=50`; lista 330 URN, dettagli OK 46, 4 scarti senza titolo/chiave).
+- `npx tsx scripts/verifica-freschezza.ts`: exit 0, tutti i refreshabili OK.
+- Nota onesta: gli script non aggiornano `MANIFEST.json` (voci ancora al
+  2026-09-28, fuori scope R1: MANIFEST in carico a W2) → 2 test di coerenza
+  in `tests/refresh-reali.test.ts` falliscono finche' W2 non ri-sincronizza
+  il MANIFEST; `tsc --noEmit` pulito.
