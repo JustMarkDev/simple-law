@@ -1,0 +1,291 @@
+{
+  "provenance": {
+    "fonte": "normattiva",
+    "url": "https://api.normattiva.it/t/normattiva.api/bff-opendata/v1/api/v1/ricerca/aggiornati",
+    "recuperatoIl": "2026-09-29T00:21:09.918Z",
+    "licenza": "riproduzione consentita con menzione di fonte, carattere non autentico e gratuito (Note legali dati.normattiva.it; solo la Gazzetta Ufficiale a stampa e' autentica)"
+  },
+  "atti": [
+    {
+      "chiave": "/eli/id/2001/10/05/001G0425/sg",
+      "titolo": "LEGGE 5 ottobre 2001, n. 367",
+      "tipo": "legge",
+      "numero": "367",
+      "dataEmanazione": "2001-10-05",
+      "nir": "urn:nir:stato:legge:2001-10-05;367",
+      "eli": "/eli/id/2001/10/05/001G0425/sg",
+      "stato": "in_vigore",
+      "sintesi": "Ratifica ed esecuzione dell'Accordo tra Italia e Svizzera che completa la Convenzione europea di assistenza giudiziaria in materia penale del 20 aprile 1959 e ne agevola l'applicazione, fatto a Roma il 10 settembre 1998, nonche' conseguenti modifiche al codice penale ed al codice di procedura penale.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:2001-10-05;367",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/2001/10/08/001G0425/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "2001-10-08",
+      "numeroGU": "234",
+      "codiceRedazionale": "001G0425",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "La Camera dei deputati ed il Senato della Repubblica hanno approvato; IL PRESIDENTE DELLA REPUBBLICA promulga la seguente legge: Art. 1 1. Il Presidente della Repubblica &egrave; autorizzato a ratificare l'Accordo tra Italia e Svizzera che completa la Convenzione europea di assistenza giudiziaria in materia penale del 20 aprile 1959 e ne agevola l'applicazione, fatto a Roma il 10 settembre 1998, di seguito denominato \"Accordo\". 2. Piena ed intera esecuzione &egrave; data all'Accordo di cui al comma 1, dalla data di entrata in vigore della presente legge, in conformit&agrave; all'articolo XXXII dell'Accordo stesso. Avvertenza: Il testo delle note qui pubblicato &egrave; stato redatto dall'amministrazione competente per materia, ai sensi dell'articolo 10, commi 2 e 3, del testo unico delle disposizioni sulla promulgazione delle leggi, sull'emanazione dei decreti del Presidente della Repubblica e sulle pubblicazioni ufficiali della Repubblica italiana, approvato con D.P.R. 28 dicembre 1985, n. 1092 , al solo fine di facilitare la lettura delle disposizioni di legge modificate o alle quali &egrave; operato il rinvio. Restano invariati il valore e l'efficacia degli atti legislativi qui trascritti."
+    },
+    {
+      "chiave": "/eli/id/2001/09/28/001G0412/sg",
+      "titolo": "DECRETO-LEGGE 28 settembre 2001, n. 354",
+      "tipo": "decreto.legge",
+      "numero": "354",
+      "dataEmanazione": "2001-09-28",
+      "nir": "urn:nir:stato:decreto.legge:2001-09-28;354",
+      "eli": "/eli/id/2001/09/28/001G0412/sg",
+      "stato": "in_vigore",
+      "sintesi": "Disposizioni urgenti per il trasporto aereo.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legge:2001-09-28;354",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/2001/09/28/001G0412/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "2001-09-28",
+      "numeroGU": "226",
+      "codiceRedazionale": "001G0412",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "IL PRESIDENTE DELLA REPUBBLICA Visti gli articoli 77 e 87 della Costituzione ; Considerato lo stato di crisi del settore del trasporto aereo a seguito degli attentati terroristici dell'11 settembre 2001 compiuti negli Stati Uniti d'America; Visti gli atti di indirizzo formulati dall'Ecofin nella riunione del 22 settembre 2001 con particolare riguardo all'opportunit&agrave; di un sostegno da parte dei Governi degli Stati membri dell'Unione europea a favore delle imprese di trasporto aereo che sia limitato nel tempo e finalizzato a favorire un rapido riequilibrio economico del settore; Ritenuta la straordinaria necessit&agrave; ed urgenza di riconoscere una adeguata garanzia finanziaria a favore delle imprese di trasporto aereo nazionali, anche in considerazione della peculiare e contingente condizione del mercato in ordine ai costi di assicurazione dei rischi derivanti da atti di guerra o terroristici, necessaria a consentire il proseguimento delle attivit&agrave; dalle stesse svolte; Vista la deliberazione del Consiglio dei Ministri, adottata nella riunione del 27 settembre 2001; Sulla proposta del Presidente del Consiglio dei Ministri, del Ministro dell'economia e delle finanze, del Ministro delle infrastrutture e dei trasporti e del Ministro delle attivit&agrave; produttive; Emana il seguente decreto-legge: Art. 1 1. Lo Stato italiano presta garanzia, a titolo gratuito, per il risarcimento dei danni subiti da terzi in conseguenza di atti di guerra o di terrorismo nell'esercizio del servizio aereo, in favore delle imprese di trasporto aereo nazionali, munite di valida licenza di esercizio rilasciata ai sensi del regolamento (CEE) n. 2407/92 del Consiglio del 23 luglio 1992, e del regolamento ENAC del 14 febbraio 2000, per il trasporto aereo di passeggeri e merci a titolo oneroso, nonch&egrave; in favore delle imprese di gestione aeroportuale. 2. La garanzia di cui al comma 1 &egrave; prestata limitatamente agli importi per i quali le imprese di trasporto aereo e le [...]",
+      "testoTroncato": true
+    },
+    {
+      "chiave": "/eli/id/2001/07/19/001G0330/sg",
+      "titolo": "DECRETO-LEGGE 19 luglio 2001, n. 294",
+      "tipo": "decreto.legge",
+      "numero": "294",
+      "dataEmanazione": "2001-07-19",
+      "nir": "urn:nir:stato:decreto.legge:2001-07-19;294",
+      "eli": "/eli/id/2001/07/19/001G0330/sg",
+      "stato": "abrogato",
+      "sintesi": "Proroga della partecipazione militare italiana a missioni internazionali di pace, nonche' prosecuzione dei programmi delle Forze di polizia italiane in Albania.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legge:2001-07-19;294",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/2001/07/19/001G0330/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "2001-07-19",
+      "numeroGU": "166",
+      "codiceRedazionale": "001G0330",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.LGS. 15 MARZO 2010, N. 66 ))"
+    },
+    {
+      "chiave": "/eli/id/2000/12/21/001G0157/sg",
+      "titolo": "DECRETO 21 dicembre 2000, n. 452",
+      "tipo": "decreto",
+      "numero": "452",
+      "dataEmanazione": "2000-12-21",
+      "nir": "urn:nir:stato:decreto:2000-12-21;452",
+      "eli": "/eli/id/2000/12/21/001G0157/sg",
+      "stato": "in_vigore",
+      "sintesi": "Regolamento recante disposizioni in materia di assegni di maternita' e per il nucleo familiare, in attuazione dell'articolo 49 della legge 22 dicembre 1999, n. 488, e degli articoli 65 e 66 della legge 23 dicembre 1998, n. 448.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto:2000-12-21;452",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/2001/04/06/001G0157/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "2001-04-06",
+      "numeroGU": "81",
+      "codiceRedazionale": "001G0157",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "IL MINISTRO PER LA SOLIDARIET&Agrave; SOCIALE di concerto con IL MINISTRO DEL LAVORO E DELLA PREVIDENZA SOCIALE e con IL MINISTRO DEL TESORO, DEL BILANCIO E DELLA PROGRAMMAZIONE ECONOMICA Visto l' articolo 17, comma 3, della legge 23 agosto 1988, n. 400 ; Visto l' articolo 49 della legge 23 dicembre 1999, n. 488 , concernente disposizioni per la riduzione degli oneri sociali e per la tutela della maternit&agrave;; Visto, in particolare, il comma 14 del suddetto articolo 49, che stabilisce che, con uno o pi&ugrave; decreti del Ministro per la solidariet&agrave; sociale, di concerto con i Ministri del lavoro e della previdenza sociale e del tesoro, del bilancio e della programmazione economica, sono emanate le disposizioni regolamentari necessarie per l'attuazione del medesimo articolo 49; Visti gli articoli 65 e 66 della legge 23 dicembre 1998, n. 448 , concernenti assegni per il nucleo familiare e di maternit&agrave;; Visto il decreto del Ministro per la solidariet&agrave; sociale, di concerto con i Ministri del lavoro e della previdenza sociale e del tesoro, del bilancio e della programmazione economica, 15 luglio 1999, n. 306, come rettificato con avviso pubblicato nella Gazzetta Ufficiale della Repubblica - serie generale - n. 264 del 10 novembre 1999, che detta disposizioni regolamentari attuative dei citati articoli 65 e 66 della legge n. 448 del 1998 ; Considerato che, ai sensi del citato articolo 49, commi 12 , 13 e 14 della legge n. 488 del 1999 , si rende necessario apportare modificazioni alla disciplina prevista nel suddetto decreto del Ministro per la solidariet&agrave; sociale 15 luglio 1999, n. 306, e che &egrave; opportuno dettare altres&igrave; ulteriori disposizioni al fine di chiarire, precisare ed integrare alcuni aspetti della disciplina sugli assegni per il nucleo familiare e di maternit&agrave; ed assicurare l'uniformit&agrave; nei procedimenti di concessione dei benefici; Considerato, altres&igrave;, che, a norma dell' articolo 10 del decreto  [...]",
+      "testoTroncato": true
+    },
+    {
+      "chiave": "/eli/id/2001/03/29/001G0149/sg",
+      "titolo": "LEGGE 29 marzo 2001, n. 86",
+      "tipo": "legge",
+      "numero": "86",
+      "dataEmanazione": "2001-03-29",
+      "nir": "urn:nir:stato:legge:2001-03-29;86",
+      "eli": "/eli/id/2001/03/29/001G0149/sg",
+      "stato": "in_vigore",
+      "sintesi": "Disposizioni in materia di personale delle Forze armate e delle Forze di polizia.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:2001-03-29;86",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/2001/04/02/001G0149/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "2001-04-02",
+      "numeroGU": "77",
+      "codiceRedazionale": "001G0149",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "La Camera dei deputati ed il Senato della Repubblica hanno approvato; IL PRESIDENTE DELLA REPUBBLICA Promulga la seguente legge: Art. 1 (Indennit&agrave; di trasferimento) 1. Al personale volontario coniugato e al personale in servizio permanente delle Forze armate, delle Forze di polizia ad ordinamento militare e civile e del Corpo nazionale dei vigili del fuoco, agli ufficiali e sottufficiali piloti di complemento in ferma dodecennale di cui al Codice dell'ordinamento militare emanato con decreto legislativo 15 marzo 2010, n. 66 , e, fatto salvo quanto previsto dall' articolo 28, comma 1, del decreto legislativo 19 maggio 2000, n. 139 , al personale appartenente alla carriera prefettizia, trasferiti d'autorit&agrave; ad altra sede di servizio sita in un comune diverso da quello di provenienza, compete una indennit&agrave; mensile pari a trenta diarie di missione in misura intera per i primi dodici mesi di permanenza ed in misura ridotta del 30 per cento per i secondi dodici mesi. 1-bis. L'indennit&agrave; di cui al comma 1 nonch&egrave; ogni altra indennit&agrave; o rimborso previsti nei casi di trasferimento d'autorit&agrave; non competono al personale trasferito ad altra sede di servizio limitrofa, anche se distante oltre dieci chilometri, a seguito della soppressione o dislocazione dei reparti o relative articolazioni. 2. L'indennit&agrave; di cui al comma 1 &egrave; ridotta del 20 per cento per il personale che fruisce nella nuova sede di alloggio gratuito di servizio. 3. Il personale che non fruisce nella nuova sede di alloggio di servizio pu&ograve; optare, in luogo del trattamento di cui al comma 1, per il rimborso del 90 per cento del canone mensile corrisposto per l'alloggio privato fino ad un importo massimo di lire 1.000.000 mensili per un periodo non superiore a trentasei mesi. Al rimborso di cui al presente comma si applica l'articolo 48, comma 5, del testo unico delle imposte sui redditi, approvato con decreto del Presidente della Repubblica 22 dicem [...]",
+      "testoTroncato": true
+    },
+    {
+      "chiave": "/eli/id/2001/02/28/001G0106/sg",
+      "titolo": "DECRETO LEGISLATIVO 28 febbraio 2001, n. 53",
+      "tipo": "decreto.legislativo",
+      "numero": "53",
+      "dataEmanazione": "2001-02-28",
+      "nir": "urn:nir:stato:decreto.legislativo:2001-02-28;53",
+      "eli": "/eli/id/2001/02/28/001G0106/sg",
+      "stato": "in_vigore",
+      "sintesi": "Disposizioni integrative e correttive del decreto legislativo 12 maggio 1995, n. 197, in materia di riordino delle carriere del personale non direttivo della Poliza di Stato.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legislativo:2001-02-28;53",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/2001/03/16/001G0106/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "2001-03-16",
+      "numeroGU": "63",
+      "codiceRedazionale": "001G0106",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "IL PRESIDENTE DELLA REPUBBLICA Visti gli articoli 76 e 87 della Costituzione ; Vista la legge 6 marzo 1992, n. 216 , di conversione, con modificazioni, del decreto-legge 7 gennaio 1992, n. 5 , ed in particolare l'articolo 3; Visto il decreto legislativo 12 maggio 1995, n. 197 ; Visto l' articolo 9, comma 1, della legge 31 marzo 2000, n. 78 , recante delega al Governo per l'emanazione di disposizioni integrative e correttive del decreto legislativo 12 maggio 1995, n. 197 , in materia di riordino delle carriere del personale non direttivo della Polizia di Stato; Visto l' articolo 50 della legge 23 dicembre 2000, n. 388 , ed in particolare i commi 9 e 11; Vista la preliminare deliberazione del Consiglio dei Ministri, adottata nella riunione del 19 gennaio 2001; Acquisiti i pareri delle organizzazioni sindacali del personale della Polizia di Stato maggiormente rappresentative a livello nazionale; Acquisiti i pareri delle competenti Commissioni permanenti del Senato della Repubblica e della Camera dei Deputati; Ritenuto di non poter accogliere la condizione espressa al punto 1 del parere reso dalla competente Commissione della Camera dei Deputati, per esigenze di allineamento con la posizione del corrispondente personale delle altre Forze di polizia; Vista la deliberazione del Consiglio dei Ministri, adottata nella riunione del 27 febbraio 2001; Sulla proposta del Ministro dell'interno, di concerto con il Ministro per la funzione pubblica e con il Ministro del tesoro, del bilancio e della programmazione economica; EMANA il seguente decreto legislativo: Art. 1 1. All' articolo 1 del decreto legislativo 12 maggio 1995, n. 197 , sono appostate le seguenti modifiche: a) dopo il comma 4, &egrave; inserito il seguente: 4-bis. L' articolo 6 del decreto del Presidente Della Repubblica 24 aprile 1982, n. 335 , costituito dai seguenti: \"Art. 6 (Nomina ad agente) 1. L'assunzione degli agenti di polizia avviene mediante pubblico concorso, al quale possono partecipare i cittadini ita [...]",
+      "testoTroncato": true
+    },
+    {
+      "chiave": "/eli/id/2001/03/01/001G0094/sg",
+      "titolo": "LEGGE 1 marzo 2001, n. 39",
+      "tipo": "legge",
+      "numero": "39",
+      "dataEmanazione": "2001-03-01",
+      "nir": "urn:nir:stato:legge:2001-03-01;39",
+      "eli": "/eli/id/2001/03/01/001G0094/sg",
+      "stato": "in_vigore",
+      "sintesi": "Contributo straordinario per lo svolgimento dei XIX Giochi mondiali silenziosi.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:2001-03-01;39",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/2001/03/08/001G0094/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "2001-03-08",
+      "numeroGU": "56",
+      "codiceRedazionale": "001G0094",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "La Camera dei deputati ed il Senato della Repubblica hanno approvato; IL PRESIDENTE DELLA REPUBBLICA Promulga la seguente legge: Art. 1 1. &Egrave; attribuito al Comitato organizzatore locale dei Giochi mondiali silenziosi un contributo di lire 3 miliardi per ciascuno degli anni 2001 e 2002, per il finanziamento delle spese concernenti la preparazione dei XIX Giochi mondiali silenziosi, in programma a Roma dal 22 luglio al 1 agosto 2001. ((1)) ----------------- AGGIORNAMENTO (1) La L. 28 novembre 2001, n. 424 ha disposto (con l'art. 1, comma 1) che \"Per le finalit&agrave; di cui all' articolo 1, comma 1, della legge 1 marzo 2001, n. 39 , recante il contributo straordinario per lo svolgimento dei XIX Giochi mondiali silenziosi, &egrave; autorizzata l'ulteriore spesa di lire 5 miliardi per l'anno 2002.\""
+    },
+    {
+      "chiave": "/eli/id/2001/02/26/001G0081/sg",
+      "titolo": "LEGGE 26 febbraio 2001, n. 30",
+      "tipo": "legge",
+      "numero": "30",
+      "dataEmanazione": "2001-02-26",
+      "nir": "urn:nir:stato:legge:2001-02-26;30",
+      "eli": "/eli/id/2001/02/26/001G0081/sg",
+      "stato": "in_vigore",
+      "sintesi": "Ricostruzione della posizione assicurativa dei dipendenti pubblici licenziati per motivi politici, sindacali o religiosi e interpretazione autentica dell'articolo 7 della legge 10 ottobre 1974, n. 496, come integrato dall'articolo 3 della legge 12 aprile 1976, n. 205.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:2001-02-26;30",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/2001/03/02/001G0081/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "2001-03-02",
+      "numeroGU": "51",
+      "codiceRedazionale": "001G0081",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "La Camera dei deputati ed il Senato della Repubblica hanno approvato; IL PRESIDENTE DELLA REPUBBLICA Promulga la seguente legge: Art. 1 1. Le disposizioni contenute nella legge 15 febbraio 1974, n. 36 , e successive modificazioni, salvo per quanto disciplinato dalla presente legge, si applicano: a) agli impiegati ed operai, anche non di ruolo, dipendenti delle pubbliche amministrazioni di cui al decreto legislativo 3 febbraio 1993, n. 29 , e successive modificazioni, ivi compresi i militari che, nel periodo dal 1o gennaio 1946 al 31 dicembre 1959, sono cessati dal servizio per mancato rinnovo del contratto di lavoro o si sono avvalsi dell'esodo volontario di cui alla legge 27 febbraio 1955, n. 53 , e successive modificazioni, in previsione della non rinnovazione del contratto di lavoro o in conseguenza di un improvviso trasferimento dalle sedi abituali di lavoro a sedi di disagevole sistemazione, per motivi da ricondurre a ragioni di credo politico o fede religiosa, all'appartenenza ad un sindacato o alla partecipazione ad attivit&agrave; sindacali, ovvero a fatti compiuti o comportamenti tenuti in occasione di moti o manifestazioni originati da avvenimenti di rilievo politico; b) ai dipendenti delle pubbliche amministrazioni di cui al decreto legislativo 3 febbraio 1993, n. 29 , e successive modificazioni, il cui rapporto di lavoro &egrave; stato risolto, tra il 1o gennaio 1947 e il 7 agosto 1966, per motivi che, indipendentemente dalle forme e motivazioni addotte, sono da ricondurre a ragioni di credo politico o fede religiosa, all'appartenenza ad un sindacato o alla partecipazione ad attivit&agrave; sindacali, ovvero a fatti compiuti o comportamenti tenuti in occasione di moti o manifestazioni originati da avvenimenti di rilievo politico; c) ai militari che sono stati collocati a riposo d'autorit&agrave; ai sensi del regio decreto legislativo 14 maggio 1946, n. 384 , del decreto legislativo del Capo provvisorio dello Stato 13 maggio 1947, n. 500 , e del decreto l [...]",
+      "testoTroncato": true
+    },
+    {
+      "chiave": "/eli/id/2001/02/02/001G0077/sg",
+      "titolo": "DECRETO LEGISLATIVO 2 febbraio 2001, n. 28",
+      "tipo": "decreto.legislativo",
+      "numero": "28",
+      "dataEmanazione": "2001-02-02",
+      "nir": "urn:nir:stato:decreto.legislativo:2001-02-02;28",
+      "eli": "/eli/id/2001/02/02/001G0077/sg",
+      "stato": "abrogato",
+      "sintesi": "Attuazione della direttiva 1999/35/CE relativa a un sistema di visite obbligatorie per l'esercizio in condizioni di sicurezza di traghetti roll-on/roll-off e di unita' veloci da passeggeri adibiti a servizi di linea, nonche' disciplina delle procedure di indagine sui sinistri marittimi.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legislativo:2001-02-02;28",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/2001/03/01/001G0077/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "2001-03-01",
+      "numeroGU": "50",
+      "codiceRedazionale": "001G0077",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.LGS. 22 APRILE 2020, N. 37 ))"
+    },
+    {
+      "chiave": "/eli/id/2000/12/07/001G0027/sg",
+      "titolo": "DECRETO 7 dicembre 2000, n. 426",
+      "tipo": "decreto",
+      "numero": "426",
+      "dataEmanazione": "2000-12-07",
+      "nir": "urn:nir:stato:decreto:2000-12-07;426",
+      "eli": "/eli/id/2000/12/07/001G0027/sg",
+      "stato": "in_vigore",
+      "sintesi": "Regolamento recante norme sulle modalita' di integrazione e aggiornamento delle graduatorie permanenti previste dagli articoli 3, 4 e 6 della legge 3 maggio 1999, n. 124.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto:2000-12-07;426",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/2001/01/23/001G0027/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "2001-01-23",
+      "numeroGU": "18",
+      "codiceRedazionale": "001G0027",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "IL MINISTRO DELLA PUBBLICA ISTRUZIONE Vista la legge 3 maggio 1999, n. 124 , recante disposizioni urgenti in materia di personale scolastico e, in particolare, gli articoli 1, 3 e 6; Visto l' articolo 17, commi 3 e 4, della legge 23 agosto 1988, n. 400 ; Visto il testo unico delle leggi in materia di istruzione, approvato con decreto legislativo 16 aprile 1994, n. 297 ; Vista la legge 21 dicembre 1999, n. 508 , contenente \"Riforma delle accademie di belle arti, dell'Accademia nazionale di danza, dell'Accademia nazionale d'arte drammatica, degli istituti superiori per le industrie artistiche, dei conservatori di musica e degli istituti musicali pareggiati\" e, in particolare, l'articolo 2, comma 6; Udito il parere del Consiglio di Stato, espresso dalla sezione consultiva per gli atti normativi nell'adunanza del 28 agosto 2000; Vista la comunicazione al Presidente del Consiglio dei Ministri, a norma dell' articolo 17, comma 3, della legge 23 agosto 1988, n. 400 ; Visto il parere del Consiglio nazionale per l'alta formazione artistica e musicale reso nell'adunanza del 12 luglio 2000; Sentito il Ministero dell'universit&agrave; e della ricerca scientifica e tecnologica; Adotta il seguente regolamento: Art. 1 Trasformazione delle graduatorie nazionali dei concorsi per soli titoli in graduatorie nazionali ad esaurimento 1. Le graduatorie nazionali dei concorsi per soli titoli del personale docente, assistente, accompagnatore al pianoforte e pianista accompagnatore delle accademie di belle arti, delle accademie nazionali di danza e di arte drammatica e dei conservatori di musica, previste dall' articolo 270, comma 1, del decreto legislativo 16 aprile 1994, n. 297 , come modificato dall' articolo 3, comma 1, dalla legge 3 maggio 1999, n. 124 , di seguito denominata \"legge\", integrate in prima applicazione a norma del citato articolo 3, comma 2, sono trasformate in graduatorie ad esaurimento in conformit&agrave; a quanto disposto dall' articolo 2, comma 6, della legge 21 dice [...]",
+      "testoTroncato": true
+    },
+    {
+      "chiave": "/eli/id/2000/12/27/000G0439/sg",
+      "titolo": "DECRETO-LEGGE 27 dicembre 2000, n. 392",
+      "tipo": "decreto.legge",
+      "numero": "392",
+      "dataEmanazione": "2000-12-27",
+      "nir": "urn:nir:stato:decreto.legge:2000-12-27;392",
+      "eli": "/eli/id/2000/12/27/000G0439/sg",
+      "stato": "in_vigore",
+      "sintesi": "Disposizioni urgenti in materia di enti locali.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legge:2000-12-27;392",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/2000/12/30/000G0439/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "2000-12-30",
+      "numeroGU": "303",
+      "codiceRedazionale": "000G0439",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "IL PRESIDENTE DELLA REPUBBLICA Visti gli articoli 77 e 87 della Costituzione ; Ritenuta la straordinaria necessit&agrave; ed urgenza di emanare disposizioni in materia di enti locali, volte in particolare ad assicurare congrui finanziamenti per fronteggiare le esigenze funzionali verificatesi nel corrente anno e che necessariamente devono essere definiti entro il 31 dicembre 2000, al fine di evitare situazioni di dissesto con conseguenti maggiori oneri per l'erario; Vista la deliberazione del Consiglio dei Ministri, adottata nella riunione del 22 dicembre 2000; Sulla proposta del Presidente del Consiglio dei Ministri, del Ministro dell'interno e del Ministro del tesoro, del bilancio e della programmazione economica; Emana il seguente decreto-legge: Art. 1 Disposizioni in materia di finanza locale 1. Per garantire la funzionalit&agrave; degli enti locali interessati, il contributo di cui all'articolo 3, comma 9, secondo periodo, del decreto-legge 27 ottobre 1995, n. 444 , convertito, con modificazioni, dalla legge 20 dicembre 1995, n. 539 , &egrave; attribuito alle province ed ai comuni interessati nella misura di lire 55.831 milioni per l'anno 2000, lire 49.969 milioni per l'anno 2001 e lire 53.969 milioni a decorrere dall'anno 2002, da ripartire in proporzione ai contributi in precedenza attribuiti. 2. A favore dei comuni destinatari del finanziamento previsto dall' articolo 31, comma 3, della legge 23 dicembre 1998, n. 448 , &egrave; attribuito un contributo complessivo, da ripartire secondo i criteri previsti dalla predetta norma, pari a lire 12.000 milioni per l'anno 2000 e lire 13.000 milioni per l'anno 2001. 3. A decorrere dall'anno 2000 alle province del Verbano-Cusio-Ossola, di Vercelli, di Novara e di Biella &egrave; attribuito un contributo annuo complessivo di lire 4.000 milioni, da ripartire per il 60 per cento in relazione al territorio e per il 40 per cento in relazione alla popolazione. ((3)) 4. All'articolo 154 del testo unico delle leggi sull'ordina [...]",
+      "testoTroncato": true
+    },
+    {
+      "chiave": "/eli/id/2000/12/11/000G0428/sg",
+      "titolo": "DECRETO 11 dicembre 2000, n. 375",
+      "tipo": "decreto",
+      "numero": "375",
+      "dataEmanazione": "2000-12-11",
+      "nir": "urn:nir:stato:decreto:2000-12-11;375",
+      "eli": "/eli/id/2000/12/11/000G0428/sg",
+      "stato": "in_vigore",
+      "sintesi": "Regolamento recante norme relative alla riduzione del gasolio da utilizzare in agricoltura, da adottare ai sensi dell'art. 1, comma 4, del decreto-legge 15 febbraio 2000, n. 21, convertito, con modificazioni, dalla legge 14 aprile 2000, n. 92.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto:2000-12-11;375",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/2000/12/16/000G0428/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "2000-12-16",
+      "numeroGU": "293",
+      "codiceRedazionale": "000G0428",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "IL MINISTRO DELLE FINANZE di concerto con IL MINISTRO DELLE POLITICHE AGRICOLE E FORESTALI e IL MINISTRO DEL TESORO, DEL BILANCIO E DELLA PROGRAMMAZIONE ECONOMICA Visto l'articolo 24 del testo unico delle disposizioni legislative concernenti le imposte sulla produzione e sui consumi e relative sanzioni penali e amministrative, approvato con decreto legislativo 26 ottobre 1995, n. 504, che contiene disposizioni per la disciplina dell'impiego degli oli minerali in usi agevolati; Visto il punto 5 della tabella A, allegata al citato decreto legislativo n. 504 del 1995, che prevede l'applicazione di aliquote ridotte di accisa per alcuni oli minerali impiegati nei lavori agricoli, orticoli, in allevamento, nella silvicoltura e piscicoltura e nella florovivaistica e che stabilisce che con decreto del Ministro delle finanze, di concerto con il Ministro delle risorse agricole, vengono fissati i criteri per la concessione dell'agevolazione; Visti gli articoli 2, commi 126, 127, 177, e 3, comma 4, della legge 23 dicembre 1996, n. 662; Visto l'articolo 1 del decreto legislativo 30 aprile 1998, n. 173; Visto l'articolo 29 del testo unico delle imposte sui redditi, approvato con decreto del Presidente della Repubblica 22 dicembre 1986, n. 917, e successive modificazioni; Visto il decreto del Presidente del Consiglio dei Ministri 16 gennaio 1978, pubblicato nella Gazzetta Ufficiale n. 41 del 10 febbraio 1978; Visto l'articolo 8 della legge 29 dicembre 1993, n. 580, ed il relativo regolamento di attuazione approvato con decreto del Presidente della Repubblica 7 dicembre 1995, n. 581, come modificato con il decreto del Presidente della Repubblica 16 settembre 1996, n. 559; Visto il decreto del Presidente della Repubblica 1o dicembre 1999, n. 503, recante norme per l'istituzione della carta dell'agricoltore e del pescatore e dell'anagrafe delle aziende agricole, in attuazione dell'articolo 14, comma 3, del decreto legislativo 30 aprile 1998, n. 173; Visto il nuovo codice della strada [...]",
+      "testoTroncato": true
+    },
+    {
+      "chiave": "/eli/id/2000/10/23/000G0352/sg",
+      "titolo": "LEGGE 23 ottobre 2000, n. 317",
+      "tipo": "legge",
+      "numero": "317",
+      "dataEmanazione": "2000-10-23",
+      "nir": "urn:nir:stato:legge:2000-10-23;317",
+      "eli": "/eli/id/2000/10/23/000G0352/sg",
+      "stato": "in_vigore",
+      "sintesi": "Disposizioni per l'assestamento del bilancio dello Stato e dei bilanci delle Amministrazioni autonome per l'anno finanziario 2000.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:2000-10-23;317",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/2000/11/03/000G0352/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "2000-11-03",
+      "numeroGU": "257",
+      "codiceRedazionale": "000G0352",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "La Camera dei deputati ed il Senato della Repubblica hanno approvato; IL PRESIDENTE DELLA REPUBBLICA Promulga la seguente legge: Art. 1 Disposizioni generali 1. Nello stato di previsione dell'entrata, negli stati di previsione dei Ministeri e nei bilanci delle Amministrazioni autonome, approvati con legge 23 dicembre 1999, n. 489 , sono introdotte, per l'anno finanziario 2000, le variazioni di cui alle annesse tabelle. Avvertenza: Il testo delle note qui pubblicato &egrave; stato redatto dall'amministrazione competente per materia, ai sensi dell'art. 10, commi 2 e 3, del testo unico delle disposizioni sulla promulgazione delle leggi, sull'emanazione dei decreti del Presidente della Repubblica e sulle pubblicazioni ufficiali della Repubblica italiana, approvato con decreto del Presidente della Repubblica 28 dicembre 1985, n. 1092 , al solo fine di facilitare la lettura delle disposizioni di legge modificate a alle quali &egrave; operato il rinvio. Restano invariati il valore e l'efficacia degli atti legislativi qui trascritti. Nota all'art. 1: - Il titolo della legge 23 dicembre 1999, n. 489 &egrave; il seguente: \"Bilancio di previsione dello Stato per l'anno finanziario 2000 e bilancio pluriennale per il triennio 2000-2002\"."
+    }
+  ]
+}

@@ -1,0 +1,577 @@
+{
+  "provenance": {
+    "fonte": "normattiva",
+    "url": "https://api.normattiva.it/t/normattiva.api/bff-opendata/v1/api/v1/ricerca/aggiornati",
+    "recuperatoIl": "2026-09-29T00:19:06.001Z",
+    "licenza": "riproduzione consentita con menzione di fonte, carattere non autentico e gratuito (Note legali dati.normattiva.it; solo la Gazzetta Ufficiale a stampa e' autentica)"
+  },
+  "atti": [
+    {
+      "chiave": "/eli/id/1968/11/19/068U1149/sg",
+      "titolo": "DECRETO-LEGGE 19 novembre 1968, n. 1149",
+      "tipo": "decreto.legge",
+      "numero": "1149",
+      "dataEmanazione": "1968-11-19",
+      "nir": "urn:nir:stato:decreto.legge:1968-11-19;1149",
+      "eli": "/eli/id/1968/11/19/068U1149/sg",
+      "stato": "decaduto",
+      "sintesi": "Ulteriori provvedimenti in favore delle zone colpite dalla alluvione dell'autunno 1968.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legge:1968-11-19;1149",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1968/11/19/068U1149/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1968-11-19",
+      "numeroGU": "294",
+      "codiceRedazionale": "068U1149",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 DECRETO DECADUTO;I SUOI EFFETTI SONO STATI FATTI SALVI DAL D.L. 18 DICEMBRE 1968, N. 1233"
+    },
+    {
+      "chiave": "/eli/id/1968/08/30/068U0917/sg",
+      "titolo": "DECRETO-LEGGE 30 agosto 1968, n. 917",
+      "tipo": "decreto.legge",
+      "numero": "917",
+      "dataEmanazione": "1968-08-30",
+      "nir": "urn:nir:stato:decreto.legge:1968-08-30;917",
+      "eli": "/eli/id/1968/08/30/068U0917/sg",
+      "stato": "abrogato",
+      "sintesi": "Provvidenze a favore delle aziende agricole a coltura specializzata danneggiate da calamita' naturali o da eccezionali avversita' atmosferiche.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legge:1968-08-30;917",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1968/08/30/068U0917/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1968-08-30",
+      "numeroGU": "220",
+      "codiceRedazionale": "068U0917",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.L. 25 GIUGNO 2008, N. 112 , CONVERTITO, CON MODIFICAZIONI DALLA L. 6 AGOSTO 2008, N. 133 ))"
+    },
+    {
+      "chiave": "/eli/id/1968/03/01/068U0198/sg",
+      "titolo": "LEGGE 1 marzo 1968, n. 198",
+      "tipo": "legge",
+      "numero": "198",
+      "dataEmanazione": "1968-03-01",
+      "nir": "urn:nir:stato:legge:1968-03-01;198",
+      "eli": "/eli/id/1968/03/01/068U0198/sg",
+      "stato": "in_vigore",
+      "sintesi": "Istituzione di nuove sedi di tribunale civile e penale a Civitavecchia, Marsala e Prato.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1968-03-01;198",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1968/03/25/068U0198/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1968-03-25",
+      "numeroGU": "78",
+      "codiceRedazionale": "068U0198",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "La Camera dei deputati ed il Senato della Repubblica hanno approvato; IL PRESIDENTE DELLA REPUBBLICA PROMULGA la seguente legge: Art. 1 Sono istituite le sedi di tribunale civile e penale in Civitavecchia, in Marsala e in Prato. Il tribunale civile e penale di Civitavecchia ha giurisdizione sulla circoscrizione territoriale dell'attuale mandamento della pretura di Civitavecchia che comprende i comuni di Allumiere, Cerveteri, Civitavecchia, Montalto di Castro, Santa Marinella, Tarquinia e Tolfa. Il tribunale civile e penale di Marsala ha giurisdizione sulla circoscrizione territoriale degli attuali mandamenti delle preture di Marsala, Mazara del Vallo, Castelvetrano, Partanna, Salemi e Pantelleria che comprendono i comuni di Marsala; Mazara del Vallo, Campobello di Mazara, Castelvetrano, Partanna, Gibellina, Poggioreale, Salaparuta, Santa Ninfa, Salemi, Vita e Pantelleria. Il tribunale civile e penale di Prato ha giurisdizione sulla circoscrizione territoriale dell'attuale mandamento della pretura di Prato che comprende i comuni di Calenzano, Cantagallo, Carmignano, Montemurlo, Prato, Poggio a Caiano, Vaiano, Vernio."
+    },
+    {
+      "chiave": "/eli/id/1968/03/01/068U0173/sg",
+      "titolo": "LEGGE 1 marzo 1968, n. 173",
+      "tipo": "legge",
+      "numero": "173",
+      "dataEmanazione": "1968-03-01",
+      "nir": "urn:nir:stato:legge:1968-03-01;173",
+      "eli": "/eli/id/1968/03/01/068U0173/sg",
+      "stato": "abrogato",
+      "sintesi": "Istituzione dell'Ente autonomo del porto di Savona in sostituzione dell'Ente portuale Savona-Piemonte.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1968-03-01;173",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1968/03/22/068U0173/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1968-03-22",
+      "numeroGU": "76",
+      "codiceRedazionale": "068U0173",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.L. 25 GIUGNO 2008, N. 112 , CONVERTITO CON MODIFICAZIONI DALLA L. 6 AGOSTO 2008, N. 133 ))"
+    },
+    {
+      "chiave": "/eli/id/1968/02/05/068U0083/sg",
+      "titolo": "LEGGE 5 febbraio 1968, n. 83",
+      "tipo": "legge",
+      "numero": "83",
+      "dataEmanazione": "1968-02-05",
+      "nir": "urn:nir:stato:legge:1968-02-05;83",
+      "eli": "/eli/id/1968/02/05/068U0083/sg",
+      "stato": "in_vigore",
+      "sintesi": "Proroga per la durata di un triennio della legge 27 febbraio 1958, n. 130, sull'assunzione obbligatoria dei profughi.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1968-02-05;83",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1968/03/01/068U0083/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1968-03-01",
+      "numeroGU": "57",
+      "codiceRedazionale": "068U0083",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 Articolo unico. ((PROVVEDIMENTO ABROGATO DAL D.L. 25 GIUGNO 2008, N. 112 , CONVERTITO, CON MODIFICAZIONI DALLA L. 6 AGOSTO 2008, N. 133 ))"
+    },
+    {
+      "chiave": "/eli/id/1968/01/31/068U0018/sg",
+      "titolo": "DECRETO-LEGGE 31 gennaio 1968, n. 18",
+      "tipo": "decreto.legge",
+      "numero": "18",
+      "dataEmanazione": "1968-01-31",
+      "nir": "urn:nir:stato:decreto.legge:1968-01-31;18",
+      "eli": "/eli/id/1968/01/31/068U0018/sg",
+      "stato": "in_vigore",
+      "sintesi": "Ulteriori interventi a sostegno del prezzo del formaggio grana mediante acquisti di tale prodotto da parte dell'A.I.M.A.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legge:1968-01-31;18",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1968/01/31/068U0018/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1968-01-31",
+      "numeroGU": "27",
+      "codiceRedazionale": "068U0018",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "IL PRESIDENTE DELLA REPUBBLICA Visto l' art. 77, secondo comma, della Costituzione ; Vista la legge 13 maggio 1966, n. 303 , con la quale &egrave; stata istituita l'Azienda di Stato per gli interventi nel mercato agricolo (A.I.M.A.); Visto il decreto-legge 16 settembre 1967, n. 801 , convertito nella legge 10 novembre 1967, n. 1027 , concernente interventi a sostegno del prezzo del formaggio \"grana\" mediante acquisti di partite di tale prodotto da parte dell'Azienda di Stato per gli interventi nel mercato agricolo; Ritenuta la straordinaria necessit&agrave; e l'urgenza di emanare norme per autorizzare l'A.I.M.A. ad acquistare ulteriori partite di formaggio \"grana\" allo scopo di sostenere il prezzo del suindicato prodotto; Sentito il Consiglio dei Ministri; Sulla proposta del Ministro per l'agricoltura e le foreste, di concerto con i Ministri per il bilancio e la programmazione economica e per il tesoro; Decreta: Art. 1 Il quantitativo di formaggio grana (grana padano e parmigiano reggiano) di qualit&agrave; \"scelto, 0,1\" di produzione 1967 che l'Azienda di Stato per gli interventi nel mercato agricolo (A.I.M.A.) &egrave; stata autorizzata ad acquistare presso latterie e caseifici sociali ed altri organismi associati di produttori agricoli con il decreto-legge 16 settembre 1967, n. 801 , convertito con la legge 10 novembre 1967, n. 1027 , &egrave; elevato fino ad un massimo di quintali 200 mila. Per il prelevamento delle somme occorrenti per i maggiori acquisti di cui al precedente comma, fino alla concorrenza di altri 10.000 milioni di lire, si applicano le norme dell'art. 5 del citato decreto-legge 16 settembre 1967, n. 801 ."
+    },
+    {
+      "chiave": "/eli/id/1968/01/31/068U0017/sg",
+      "titolo": "DECRETO-LEGGE 31 gennaio 1968, n. 17",
+      "tipo": "decreto.legge",
+      "numero": "17",
+      "dataEmanazione": "1968-01-31",
+      "nir": "urn:nir:stato:decreto.legge:1968-01-31;17",
+      "eli": "/eli/id/1968/01/31/068U0017/sg",
+      "stato": "abrogato",
+      "sintesi": "Interpretazione autentica dell'art. 34 del decreto-legge 22 gennaio 1968, n. 12, concernente provvidenze a favore delle popolazioni dei comuni della Sicilia colpiti dai terremoti del gennaio 1968.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legge:1968-01-31;17",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1968/01/31/068U0017/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1968-01-31",
+      "numeroGU": "27",
+      "codiceRedazionale": "068U0017",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.L 25 GIUGNO 2008, N. 112 , CONVERTITO CON MODIFICAZIONI DALLA L. 6 AGOSTO 2008, N. 133 ))"
+    },
+    {
+      "chiave": "/eli/id/1967/12/21/067U1209/sg",
+      "titolo": "DECRETO-LEGGE 21 dicembre 1967, n. 1209",
+      "tipo": "decreto.legge",
+      "numero": "1209",
+      "dataEmanazione": "1967-12-21",
+      "nir": "urn:nir:stato:decreto.legge:1967-12-21;1209",
+      "eli": "/eli/id/1967/12/21/067U1209/sg",
+      "stato": "abrogato",
+      "sintesi": "Proroga della sospensione dei termini di scadenza de titoli di credito a favore delle persone colpite dal movimento franoso verificatosi in Agrigento il 19 luglio 1966.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legge:1967-12-21;1209",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1967/12/21/067U1209/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1967-12-21",
+      "numeroGU": "318",
+      "codiceRedazionale": "067U1209",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.L. 25 GIUGNO 2008, N. 112 , CONVERTITO, CON MODIFICAZIONI, DALLA L. 6 AGOSTO 2008, N. 133 ))"
+    },
+    {
+      "chiave": "/eli/id/1967/12/12/067U1157/sg",
+      "titolo": "DECRETO-LEGGE 12 dicembre 1967, n. 1157",
+      "tipo": "decreto.legge",
+      "numero": "1157",
+      "dataEmanazione": "1967-12-12",
+      "nir": "urn:nir:stato:decreto.legge:1967-12-12;1157",
+      "eli": "/eli/id/1967/12/12/067U1157/sg",
+      "stato": "abrogato",
+      "sintesi": "Modifiche al regime fiscale dei filati di talune fibre tessili.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legge:1967-12-12;1157",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1967/12/13/067U1157/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1967-12-13",
+      "numeroGU": "310",
+      "codiceRedazionale": "067U1157",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.L. 25 GIUGNO 2008, N. 112 , CONVERTITO CON MODIFICAZIONI DALLA L. 6 AGOSTO 2008, N. 133 ))"
+    },
+    {
+      "chiave": "/eli/id/1967/07/28/067U0669/sg",
+      "titolo": "LEGGE 28 luglio 1967, n. 669",
+      "tipo": "legge",
+      "numero": "669",
+      "dataEmanazione": "1967-07-28",
+      "nir": "urn:nir:stato:legge:1967-07-28;669",
+      "eli": "/eli/id/1967/07/28/067U0669/sg",
+      "stato": "in_vigore",
+      "sintesi": "Estensione dell'assicurazione contro le malattie in favore dei sacerdoti di culto cattolico e dei ministri delle altre confessioni religiose.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1967-07-28;669",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1967/08/11/067U0669/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1967-08-11",
+      "numeroGU": "201",
+      "codiceRedazionale": "067U0669",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "La Camera dei deputati ed il Senato della Repubblica hanno approvato; IL PRESIDENTE DELLA REPUBBLICA PROMULGA la seguente legge: Art. 1 L'assicurazione obbligatoria contro le malattie, prevista dalla legge 11 gennaio 1943, n. 138 , e successive modificazioni e integrazioni, &egrave; estesa, limitatamente alle prestazioni di carattere sanitario, ai sacerdoti di culto cattolico di cui all' articolo 4 della legge 5 luglio 1961, n. 579 , ai ministri di culto delle altre confessioni religiose di cui ai commi primo e secondo dell'articolo 4 della legge 5 luglio 1961, n. 580 , di qualsiasi et&agrave; e rispettivi familiari viventi a carico. La disposizione di cui al precedente comma non si applica, salvo quanto previsto al successivo articolo 3, ai sacerdoti e ministri che esplicano attivit&agrave; lavorativa per la quale &egrave; prevista l'iscrizione obbligatoria ad altra forma di assicurazione contro le malattie. L'assistenza di malattia, prevista dalla legge 4 agosto 1955, n. 692 , e successive modificazioni ed integrazioni, &egrave; estesa ai titolari di pensione corrisposta dai Fondi speciali istituiti con le leggi 5 luglio 1961, n. 579 e n. 580 , richiamate al primo comma e rispettivi familiari viventi a carico."
+    },
+    {
+      "chiave": "/eli/id/1967/07/27/067U0658/sg",
+      "titolo": "LEGGE 27 luglio 1967, n. 658",
+      "tipo": "legge",
+      "numero": "658",
+      "dataEmanazione": "1967-07-27",
+      "nir": "urn:nir:stato:legge:1967-07-27;658",
+      "eli": "/eli/id/1967/07/27/067U0658/sg",
+      "stato": "in_vigore",
+      "sintesi": "Riordinamento della previdenza marinara.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1967-07-27;658",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1967/08/09/067U0658/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1967-08-09",
+      "numeroGU": "199",
+      "codiceRedazionale": "067U0658",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "La Camera dei deputati ed il Senato della Repubblica hanno approvato; IL PRESIDENTE DELLA REPUBBLICA PROMULGA la seguente legge: Art. 1 Scopi della Cassa nazionale per la previdenza marinara La Cassa nazionale per la previdenza marinara costituisce una gestione autonoma dell'INPS ed ha lo scopo di integrare, secondo le norme contenute nella presente legge, in favore degli iscritti alle Gestioni di cui all'articolo 3 del testo unico delle leggi sulla previdenza marinara, approvato con decreto del Presidente della Repubblica 26 dicembre 1962, n. 2109 , il trattamento dell'assicurazione obbligatoria per la invalidit&agrave;, la vecchiaia ed i superstiti e di corrispondere, a proprio carico, pensioni o indennit&agrave; negli speciali casi previsti dalle disposizioni che seguono."
+    },
+    {
+      "chiave": "/eli/id/1967/07/13/067U0583/sg",
+      "titolo": "LEGGE 13 luglio 1967, n. 583",
+      "tipo": "legge",
+      "numero": "583",
+      "dataEmanazione": "1967-07-13",
+      "nir": "urn:nir:stato:legge:1967-07-13;583",
+      "eli": "/eli/id/1967/07/13/067U0583/sg",
+      "stato": "in_vigore",
+      "sintesi": "Miglioramenti del trattamento posto a carico del Fondo Speciale di previdenza per il personale addetto ai pubblici servizi di telefonia e modifiche alle leggi 4 dicembre 1956, n. 1450 e 11 dicembre 1962, n. 1790.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1967-07-13;583",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1967/07/29/067U0583/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1967-07-29",
+      "numeroGU": "189",
+      "codiceRedazionale": "067U0583",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "La Camera dei deputati ed il Senato della Repubblica hanno approvato; IL PRESIDENTE DELLA REPUBBLICA PROMULGA la seguente legge: Art. 1 (Maggiorazione delle pensioni dirette) Le pensioni dirette dovute dal Fondo speciale di previdenza per il personale addetto ai pubblici servizi di telefonia, in corso di godimento alla data del 1 gennaio 1965, sono maggiorate, a decorrere dalla stessa data, delle misure percentuali appresso indicate: 60 per cento, se la pensione &egrave; stata liquidata con decorrenza anteriore al 10 gennaio 1948; 55 per cento, se la pensione &egrave; stata liquidata con decorrenza compresa nel periodo tra il 1 gennaio 1948 ed il 31 dicembre 1949; 50 per cento, se la pensione &egrave; stata liquidata con decorrenza compresa nel periodo tra il 1 gennaio 1950 ed il 31 dicembre 1952; 40 per cento, se la pensione &egrave; stata liquidata con decorrenza compresa nel periodo tra il 10 gennaio 1953 ed il 31 dicembre 1954; 35 per cento, se la pensione &egrave; stata liquidata con decorrenza compresa nel periodo tra il 1 gennaio 1955 ed il 31 dicembre 1956; 30 per cento, se la pensione &egrave; stata liquidata con decorrenza compresa nell'anno 1957; 24 per cento, se la pensione &egrave; stata liquidata con decorrenza compresa nell'anno 1958; 18 per cento, se la pensione &egrave; stata liquidata con decorrenza compresa nell'anno 1959; 15 per cento, se la pensione &egrave; stata liquidata con decorrenza compresa nell'anno 1960; 10 per cento, se la pensione &egrave; stata liquidata con decorrenza compresa nell'anno 1961; 5 per cento, se la pensione &egrave; stata liquidata con decorrenza compresa nell'anno 1962; 2 per cento, se la pensione &egrave; stata liquidata con decorrenza compresa nell'anno 1963."
+    },
+    {
+      "chiave": "/eli/id/1967/05/18/067U0318/sg",
+      "titolo": "LEGGE 18 maggio 1967, n. 318",
+      "tipo": "legge",
+      "numero": "318",
+      "dataEmanazione": "1967-05-18",
+      "nir": "urn:nir:stato:legge:1967-05-18;318",
+      "eli": "/eli/id/1967/05/18/067U0318/sg",
+      "stato": "in_vigore",
+      "sintesi": "Modifiche alle norme sulle pensioni di guerra.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1967-05-18;318",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1967/05/29/067U0318/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1967-05-29",
+      "numeroGU": "133",
+      "codiceRedazionale": "067U0318",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "La Camera dei deputati ed il Senato della Repubblica hanno approvato; IL PRESIDENTE DELLA REPUBBLICA PROMULGA la seguente legge: Art. 1 Le pensioni, gli assegni rinnovabili e le indennit&agrave; per i mutilati ed invalidi di guerra, sia militari che civili, sono concessi e liquidati in base alla tabella C annessa alla presente legge. La tabella E annessa alla legge 10 agosto 1950, n. 648 , modificata dall' articolo 4 della legge 26 luglio 1957, n. 616 e le tabelle G, I, M, O annesse alla legge 25 gennaio 1962, n. 12 , sono sostituite dalle corrispondenti tabelle allegate alla presente legge."
+    },
+    {
+      "chiave": "/eli/id/1967/03/21/067U0160/sg",
+      "titolo": "LEGGE 21 marzo 1967, n. 160",
+      "tipo": "legge",
+      "numero": "160",
+      "dataEmanazione": "1967-03-21",
+      "nir": "urn:nir:stato:legge:1967-03-21;160",
+      "eli": "/eli/id/1967/03/21/067U0160/sg",
+      "stato": "in_vigore",
+      "sintesi": "Trasformazione in Universita' statale della libera Universita' di Lecce.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1967-03-21;160",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1967/04/10/067U0160/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1967-04-10",
+      "numeroGU": "90",
+      "codiceRedazionale": "067U0160",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "La Camera dei deputati ed il Senato della Repubblica hanno approvato; IL PRESIDENTE DELLA REPUBBLICA PROMULGA la seguente legge: Art. 1 A decorrere dall'anno accademico 1966-67 la libera Universit&agrave; degli studi di Lecce &egrave; compresa fra quelle previste dall'articolo 1, n. 1, del testo unico delle leggi sull'istruzione superiore, approvato con regio decreto 31 agosto 1933, n. 1592 , e successive modificazioni e integrazioni."
+    },
+    {
+      "chiave": "/eli/id/1967/03/09/067U0150/sg",
+      "titolo": "LEGGE 9 marzo 1967, n. 150",
+      "tipo": "legge",
+      "numero": "150",
+      "dataEmanazione": "1967-03-09",
+      "nir": "urn:nir:stato:legge:1967-03-09;150",
+      "eli": "/eli/id/1967/03/09/067U0150/sg",
+      "stato": "in_vigore",
+      "sintesi": "Ordinamento delle scuole interne dei Convitti nazionali.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1967-03-09;150",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1967/04/06/067U0150/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1967-04-06",
+      "numeroGU": "86",
+      "codiceRedazionale": "067U0150",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "La Camera dei deputati ed il Senato della Repubblica hanno approvato; IL PRESIDENTE DELLA REPUBBLICA PROMULGA la seguente legge: Art. 1 Agli alunni convittori e semi convittori dei Convitti nazionali l'istruzione obbligatoria &egrave; impartita all'interno dei singoli istituti. A tal fine, ferme restando le disposizioni concernenti le scuole elementari annesse ai Convitti nazionali, a ciascun Convitto &egrave; annessa la scuola media statale e possono altres&igrave; essere annesse scuole secondarie superiori statali di qualsiasi tipo."
+    },
+    {
+      "chiave": "/eli/id/1967/03/09/067U0120/sg",
+      "titolo": "LEGGE 9 marzo 1967, n. 120",
+      "tipo": "legge",
+      "numero": "120",
+      "dataEmanazione": "1967-03-09",
+      "nir": "urn:nir:stato:legge:1967-03-09;120",
+      "eli": "/eli/id/1967/03/09/067U0120/sg",
+      "stato": "abrogato",
+      "sintesi": "Proroga del termine previsto dalla legge 23 dicembre 1965, n. 1415, in materia di appalti e revisione dei prezzi di opere pubbliche.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1967-03-09;120",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1967/03/25/067U0120/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1967-03-25",
+      "numeroGU": "76",
+      "codiceRedazionale": "067U0120",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.L. 25 GIUGNO 2008, N. 112 , CONVERTITO, CON MODIFICAZIONI, DALLA L. 6 AGOSTO 2008, N. 133 ))"
+    },
+    {
+      "chiave": "/eli/id/1967/02/27/067U0048/sg",
+      "titolo": "LEGGE 27 febbraio 1967, n. 48",
+      "tipo": "legge",
+      "numero": "48",
+      "dataEmanazione": "1967-02-27",
+      "nir": "urn:nir:stato:legge:1967-02-27;48",
+      "eli": "/eli/id/1967/02/27/067U0048/sg",
+      "stato": "in_vigore",
+      "sintesi": "Attribuzioni e ordinamento del Ministero del bilancio e della programmazione economica e istituzione del Comitato dei Ministri per la programmazione economica.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1967-02-27;48",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1967/03/02/067U0048/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1967-03-02",
+      "numeroGU": "55",
+      "codiceRedazionale": "067U0048",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "La Camera dei deputati ed il Senato della Repubblica hanno approvato; IL PRESIDENTE DELLA REPUBBLICA PROMULGA la seguente legge: Art. 1 ((ARTICOLO ABROGATO DAL D.LGS. 5 DICEMBRE 1997, N. 430 ))"
+    },
+    {
+      "chiave": "/eli/id/1966/10/24/066U0932/sg",
+      "titolo": "LEGGE 24 ottobre 1966, n. 932",
+      "tipo": "legge",
+      "numero": "932",
+      "dataEmanazione": "1966-10-24",
+      "nir": "urn:nir:stato:legge:1966-10-24;932",
+      "eli": "/eli/id/1966/10/24/066U0932/sg",
+      "stato": "in_vigore",
+      "sintesi": "Modifiche alla legge 7 febbraio 1958, n. 88.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1966-10-24;932",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1966/11/14/066U0932/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1966-11-14",
+      "numeroGU": "285",
+      "codiceRedazionale": "066U0932",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "La Camera dei deputati ed il Senato della Repubblica hanno approvato; IL PRESIDENTE DELLA REPUBBLICA PROMULGA la seguente legge: Art. 1 In deroga agli articoli 23, primo e secondo comma e 24 della legge 7 febbraio 1958, n. 88 , gli Istituti superiori di educazione fisica statali o pareggiati istituiscono, previa autorizzazione del Ministero della pubblica istruzione, appositi corsi riservati agli iscritti negli elenchi speciali di cui all'articolo 31, quarto comma, della ordinanza ministeriale 30 marzo 1961, concernente il conferimento degli incarichi e delle supplenze per l'anno scolastico 1961-62, i quali alla data del 30 settembre 1966 abbiano prestato nelle scuole ed istituti di istruzione secondaria e artistica statali o pareggiati, almeno tre anni di servizio, anche non consecutivi, di insegnamento di educazione fisica con qualifica non inferiore a \"valente\"."
+    },
+    {
+      "chiave": "/eli/id/1966/10/14/066U0851/sg",
+      "titolo": "LEGGE 14 ottobre 1966, n. 851",
+      "tipo": "legge",
+      "numero": "851",
+      "dataEmanazione": "1966-10-14",
+      "nir": "urn:nir:stato:legge:1966-10-14;851",
+      "eli": "/eli/id/1966/10/14/066U0851/sg",
+      "stato": "in_vigore",
+      "sintesi": "Assunzione obbligatoria al lavoro dei mutilati e invalidi del lavoro, degli orfani e delle vedove dei caduti sul lavoro nelle Amministrazioni dello Stato, degli Enti locali e degli Enti pubblici.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1966-10-14;851",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1966/10/24/066U0851/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1966-10-24",
+      "numeroGU": "265",
+      "codiceRedazionale": "066U0851",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "La Camera dei deputati ed il Senato della Repubblica hanno approvato; IL PRESIDENTE DELLA REPUBBLICA PROMULGA la seguente legge: Art. 1 Agli effetti della presente legge sono considerati invalidi del lavoro coloro che, non avendo compiuto il 55° anno di et&agrave;, abbiano subito, a causa di infortunio sul lavoro o di malattia professionale, una riduzione permanente della capacit&agrave; lavorativa in misura non inferiore ad un terzo. La predetta misura di riduzione della capacit&agrave; lavorativa si applica anche, a modifica di quanto disposto dall' articolo 2 del decreto legislativo del Capo provvisorio dello Stato 3 ottobre 1947, n. 1222 , per le assunzioni obbligatorie degli invalidi del lavoro presso le imprese private. Sono considerati orfani, di caduti sul lavoro le persone il cui padre, o madre esercitante la patria potest&agrave; o i diritti derivanti dalla medesima, siano deceduti a causa di infortunio sul lavoro o di malattia professionale."
+    },
+    {
+      "chiave": "/eli/id/1965/12/30/065U1464/sg",
+      "titolo": "LEGGE 30 dicembre 1965, n. 1464",
+      "tipo": "legge",
+      "numero": "1464",
+      "dataEmanazione": "1965-12-30",
+      "nir": "urn:nir:stato:legge:1965-12-30;1464",
+      "eli": "/eli/id/1965/12/30/065U1464/sg",
+      "stato": "in_vigore",
+      "sintesi": "Modifiche all'articolo 15 della legge 24 luglio 1961, n. 729, sulle nuove costruzioni stradali ed autostradali.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1965-12-30;1464",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1966/01/11/065U1464/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1966-01-11",
+      "numeroGU": "7",
+      "codiceRedazionale": "065U1464",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "La Camera dei deputati ed il Senato della Repubblica hanno approvato; IL PRESIDENTE DELLA REPUBBLICA PROMULGA la seguente legge: Art. 1 L'importo massimo complessivo dei mutui che l'Azienda nazionale autonoma delle strade &egrave; autorizzata a contrarre ai sensi dell' articolo 15 della legge 24 luglio 1961, n. 729 , per la costruzione dell'autostrada Salerno-Reggio Calabria, &egrave; elevato da lire 180 miliardi a lire 260 miliardi. Il maggiore importo di lire 80 miliardi &egrave; ripartito negli anni 1966, 1967 e 1968 nella misura di lire 20 miliardi per il 1966 e di lire 30 miliardi per ciascuno degli anni 1967 e 1968, in aggiunta agli importi gi&agrave; previsti nel secondo comma del citato articolo 15 per gli esercizi 1965-66 e 1966-67. Ai mutui contratti in applicazione della presente legge si estendono le disposizioni contenute nell'ultimo comma dello stesso articolo 15 ((e della legge 31 dicembre 1962, n. 1845 , e successive modifiche)) ."
+    },
+    {
+      "chiave": "/eli/id/1965/07/13/065U0893/sg",
+      "titolo": "LEGGE 13 luglio 1965, n. 893",
+      "tipo": "legge",
+      "numero": "893",
+      "dataEmanazione": "1965-07-13",
+      "nir": "urn:nir:stato:legge:1965-07-13;893",
+      "eli": "/eli/id/1965/07/13/065U0893/sg",
+      "stato": "abrogato",
+      "sintesi": "Modificazioni ed integrazioni delle leggi 3 agosto 1949, n. 589 e 15 febbraio 1953, n. 184, per quanto riguarda la costruzione di acquedotti e le reti interne di distribuzione nei Comuni della Sicilia.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1965-07-13;893",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1965/07/30/065U0893/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1965-07-30",
+      "numeroGU": "189",
+      "codiceRedazionale": "065U0893",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.L. 25 GIUGNO 2008, N. 112 , CONVERTITO, CON MODIFICAZIONI, DALLA L. 6 AGOSTO 2008, N. 133 ))"
+    },
+    {
+      "chiave": "/eli/id/1965/05/07/065U0459/sg",
+      "titolo": "LEGGE 7 maggio 1965, n. 459",
+      "tipo": "legge",
+      "numero": "459",
+      "dataEmanazione": "1965-05-07",
+      "nir": "urn:nir:stato:legge:1965-05-07;459",
+      "eli": "/eli/id/1965/05/07/065U0459/sg",
+      "stato": "in_vigore",
+      "sintesi": "Disposizioni sul collocamento a riposo degli ufficiali sanitari, medici condotti e veterinari condotti.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1965-05-07;459",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1965/05/22/065U0459/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1965-05-22",
+      "numeroGU": "128",
+      "codiceRedazionale": "065U0459",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "La Camera dei deputati ed il Senato della Repubblica hanno approvato; IL PRESIDENTE DELLA REPUBBLICA PROMULGA la seguente legge: Art. 1 Articolo unico. Gli ufficiali sanitari ed i sanitari condotti, comunque in servizio all'entrata in vigore della presente legge, entrati in carriera fino al 31 dicembre 1952, qualora al compimento del 650 anno di et&agrave; non abbiano raggiunto i 40 anni di servizio utile agli effetti della pensione, sono trattenuti in servizio per il tempo necessario al raggiungimento dei 40 anni di servizio utile a pensione e comunque non oltre il 700 anno di et&agrave;. (1) ((2)) La presente legge, munita del sigillo dello Stato, sar&agrave; inserta nella Raccolta ufficiale delle leggi e dei decreti della Repubblica, italiana. &Egrave; fatto obbligo a chiunque spetti di osservarla e di farla osservare come legge dello Stato. Data a Roma, add&igrave; 7 maggio 1965 SARAGAT MORO - MARIOTTI - COLOMBO Visto, il Guardasigilli: REALE ----------------- AGGIORNAMENTO (1) La L. 2 aprile 1968, n. 517 , ha disposto (con l'articolo unico) che \" Il requisito dell'ingresso in carriera fino al 31 dicembre 1952, stabilito dalla legge 7 maggio 1965, n. 459 , quale condizione per il trattenimento in servizio, per il tempo necessario al raggiungimento dei 40 anni di servizio utile a pensione e comunque non oltre il 70° anno di et&agrave;, degli ufficiali sanitari e dei sanitari condotti comunque in servizio alla data di entrata in vigore della legge predetta, deve intendersi riferito all'ingresso in carriera, per pubblico concorso, nei ruoli del personale sanitario, sia dello Stato che degli enti locali.\" ------------------- AGGIORNAMENTO (2) La Corte Costituzionale 24 marzo-7 aprile 1988, n. 398 (in G.U. 1a s.s. 13/4/1988, n. 15) ha dichiarato l'illegittimit&agrave; costituzionale del presente articolo \" nella parte in cui non prevede anche i sanitari comunali elencati nell'articolo unico della legge 26 dicembre 1962 n. 1751 .\""
+    },
+    {
+      "chiave": "/eli/id/1965/04/06/065U0351/sg",
+      "titolo": "LEGGE 6 aprile 1965, n. 351",
+      "tipo": "legge",
+      "numero": "351",
+      "dataEmanazione": "1965-04-06",
+      "nir": "urn:nir:stato:legge:1965-04-06;351",
+      "eli": "/eli/id/1965/04/06/065U0351/sg",
+      "stato": "abrogato",
+      "sintesi": "Provvidenze per le zone danneggiate da calamita' naturali o eccezionali avversita' atmosferiche.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1965-04-06;351",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1965/04/28/065U0351/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1965-04-28",
+      "numeroGU": "106",
+      "codiceRedazionale": "065U0351",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.L. 25 GIUGNO 2008, N. 112 , CONVERTITO CON MODIFICAZIONI DALLA L. 6 AGOSTO 2008, N. 133 ))"
+    },
+    {
+      "chiave": "/eli/id/1964/12/18/064U1412/sg",
+      "titolo": "LEGGE 18 dicembre 1964, n. 1412",
+      "tipo": "legge",
+      "numero": "1412",
+      "dataEmanazione": "1964-12-18",
+      "nir": "urn:nir:stato:legge:1964-12-18;1412",
+      "eli": "/eli/id/1964/12/18/064U1412/sg",
+      "stato": "abrogato",
+      "sintesi": "Accertamento dei lavoratori agricoli aventi diritto alle prestazioni previdenziali e accertamento dei contributi unificati in agricoltura.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1964-12-18;1412",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1965/01/04/064U1412/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1965-01-04",
+      "numeroGU": "2",
+      "codiceRedazionale": "064U1412",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.L. 25 GIUGNO 2008, N. 112 , CONVERTITO, CON MODIFICAZIONI DALLA L. 6 AGOSTO 2008, N. 133 ))"
+    },
+    {
+      "chiave": "/eli/id/1964/11/03/064U1122/sg",
+      "titolo": "LEGGE 3 novembre 1964, n. 1122",
+      "tipo": "legge",
+      "numero": "1122",
+      "dataEmanazione": "1964-11-03",
+      "nir": "urn:nir:stato:legge:1964-11-03;1122",
+      "eli": "/eli/id/1964/11/03/064U1122/sg",
+      "stato": "abrogato",
+      "sintesi": "Norme sull'orario d'obbligo degli insegnanti tecnico-pratici e di arte applicata, con conseguente acquisizione di nuove cattedre, e provvedimenti in favore di alcune categorie di insegnanti non di ruolo delle soppresse scuole di avviamento professionale.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1964-11-03;1122",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1964/11/12/064U1122/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1964-11-12",
+      "numeroGU": "279",
+      "codiceRedazionale": "064U1122",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.LGS. 13 DICEMBRE 2010, N. 212 ))"
+    },
+    {
+      "chiave": "/eli/id/1964/06/21/064U0463/sg",
+      "titolo": "LEGGE 21 giugno 1964, n. 463",
+      "tipo": "legge",
+      "numero": "463",
+      "dataEmanazione": "1964-06-21",
+      "nir": "urn:nir:stato:legge:1964-06-21;463",
+      "eli": "/eli/id/1964/06/21/064U0463/sg",
+      "stato": "abrogato",
+      "sintesi": "Disposizioni in materia di appalti di opere pubbliche.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1964-06-21;463",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1964/07/04/064U0463/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1964-07-04",
+      "numeroGU": "162",
+      "codiceRedazionale": "064U0463",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.P.R. 21 DICEMBRE 1999, N.554 ))"
+    },
+    {
+      "chiave": "/eli/id/1964/05/12/064U0303/sg",
+      "titolo": "LEGGE 12 maggio 1964, n. 303",
+      "tipo": "legge",
+      "numero": "303",
+      "dataEmanazione": "1964-05-12",
+      "nir": "urn:nir:stato:legge:1964-05-12;303",
+      "eli": "/eli/id/1964/05/12/064U0303/sg",
+      "stato": "abrogato",
+      "sintesi": "Revisione delle norme sul personale esecutivo ed ausiliario della Presidenza del Consiglio dei Ministri.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1964-05-12;303",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1964/05/25/064U0303/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1964-05-25",
+      "numeroGU": "127",
+      "codiceRedazionale": "064U0303",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.LGS. 13 DICEMBRE 2010, N. 212 ))"
+    }
+  ]
+}

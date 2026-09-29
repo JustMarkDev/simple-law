@@ -1,0 +1,623 @@
+{
+  "provenance": {
+    "fonte": "normattiva",
+    "url": "https://api.normattiva.it/t/normattiva.api/bff-opendata/v1/api/v1/ricerca/aggiornati",
+    "recuperatoIl": "2026-09-29T00:21:09.918Z",
+    "licenza": "riproduzione consentita con menzione di fonte, carattere non autentico e gratuito (Note legali dati.normattiva.it; solo la Gazzetta Ufficiale a stampa e' autentica)"
+  },
+  "atti": [
+    {
+      "chiave": "/eli/id/1994/11/30/094G0710/sg",
+      "titolo": "DECRETO-LEGGE 30 novembre 1994, n. 660",
+      "tipo": "decreto.legge",
+      "numero": "660",
+      "dataEmanazione": "1994-11-30",
+      "nir": "urn:nir:stato:decreto.legge:1994-11-30;660",
+      "eli": "/eli/id/1994/11/30/094G0710/sg",
+      "stato": "decaduto",
+      "sintesi": "Interventi urgenti in materia di trasporti e di parcheggi.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legge:1994-11-30;660",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1994/12/01/094G0710/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1994-12-01",
+      "numeroGU": "281",
+      "codiceRedazionale": "094G0710",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 DECRETO DECADUTO; I SUOI EFFETTI SONO STATI FATTI SALVI DALLA L. 30 MAGGIO 1995, N. 204 ."
+    },
+    {
+      "chiave": "/eli/id/1994/11/24/094G0694/sg",
+      "titolo": "DECRETO-LEGGE 24 novembre 1994, n. 646",
+      "tipo": "decreto.legge",
+      "numero": "646",
+      "dataEmanazione": "1994-11-24",
+      "nir": "urn:nir:stato:decreto.legge:1994-11-24;646",
+      "eli": "/eli/id/1994/11/24/094G0694/sg",
+      "stato": "in_vigore",
+      "sintesi": "Interventi urgenti a favore delle zone colpite dalle eccezionali avversita' atmosferiche e dagli eventi alluvionali nella prima decade del mese di novembre 1994.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legge:1994-11-24;646",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1994/11/24/094G0694/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1994-11-24",
+      "numeroGU": "275",
+      "codiceRedazionale": "094G0694",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "IL PRESIDENTE DELLA REPUBBLICA Visti gli articoli 77 e 87 della Costituzione ; Visto il decreto-legge 9 novembre 1994, n. 624 ; Ritenuta la straordinaria necessit&agrave; ed urgenza di attivare gli interventi di prima necessit&agrave; e di immediato sostegno in favore delle zone colpite in misura eccezionale da avversit&agrave; atmosferiche e da eventi alluvionali nella prima decade del mese di novembre 1994; Viste le deliberazioni del Consiglio dei Ministri, adottate nelle riunioni del 16 novembre 1994 e del 21 novembre 1994; Sulla proposta del Presidente del Consiglio dei Ministri, di concerto con i Ministri dell'interno, di grazia e giustizia, delle finanze, dell'industria, del commercio e dell'artigianato, dei lavori pubblici, delle risorse agricole, alimentari e forestali, della sanit&agrave;, per i beni culturali e ambientali, dell'ambiente, per la funzione pubblica e gli affari regionali, del tesoro e del lavoro e della previdenza sociale; EMANA il seguente decreto-legge: Art. 1 1. Con decreti del Presidente del Consiglio dei Ministri, da emanarsi entro cinque giorni dalla data di entrata in vigore del presente decreto, su proposta del Ministro dell'interno, sentiti i presidenti delle giunte delle regioni interessate, sono individuati i comuni nel cui ambito territoriale sono ricomprese le zone colpite dalle eccezionali avversit&agrave; atmosferiche e dagli eventi alluvionali nella prima decade del mese di novembre 1994, anche eventualmente indicando le parti di territorio comunale effettivamente colpite. A tale fine i prefetti delle province interessate comunicano al Ministero dell'interno ogni elemento di valutazione in loro possesso. 2. I comuni, le comunit&agrave; montane, le province e le regioni rientranti nei territori delle regioni individuate dal decreto del Presidente del Consiglio dei Ministri 10 novembre 1994, pubblicato nella Gazzetta Ufficiale n. 264 dell'11 novembre 1994 sono autorizzati a contrarre mutui ventennali, entro il limite complessivo [...]",
+      "testoTroncato": true
+    },
+    {
+      "chiave": "/eli/id/1994/10/29/094G0649/sg",
+      "titolo": "DECRETO-LEGGE 29 ottobre 1994, n. 607",
+      "tipo": "decreto.legge",
+      "numero": "607",
+      "dataEmanazione": "1994-10-29",
+      "nir": "urn:nir:stato:decreto.legge:1994-10-29;607",
+      "eli": "/eli/id/1994/10/29/094G0649/sg",
+      "stato": "decaduto",
+      "sintesi": "Disposizioni urgenti concernenti abolizione degli esami di riparazione e di seconda sessione ed attivazione dei relativi interventi di sostegno e di recupero.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legge:1994-10-29;607",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1994/10/31/094G0649/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1994-10-31",
+      "numeroGU": "255",
+      "codiceRedazionale": "094G0649",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 DECRETO DECADUTO; I SUOI EFFETTI SONO STATI FATTI SALVI DALLA L. 8 AGOSTO 1995, N. 352"
+    },
+    {
+      "chiave": "/eli/id/1994/10/28/094G0646/sg",
+      "titolo": "DECRETO-LEGGE 28 ottobre 1994, n. 602",
+      "tipo": "decreto.legge",
+      "numero": "602",
+      "dataEmanazione": "1994-10-28",
+      "nir": "urn:nir:stato:decreto.legge:1994-10-28;602",
+      "eli": "/eli/id/1994/10/28/094G0646/sg",
+      "stato": "decaduto",
+      "sintesi": "Disposizioni urgenti per il risanamento ed il riordino della RAI - S.p.a.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legge:1994-10-28;602",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1994/10/29/094G0646/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1994-10-29",
+      "numeroGU": "254",
+      "codiceRedazionale": "094G0646",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 DECRETO DECADUTO"
+    },
+    {
+      "chiave": "/eli/id/1994/10/28/094G0645/sg",
+      "titolo": "DECRETO-LEGGE 28 ottobre 1994, n. 601",
+      "tipo": "decreto.legge",
+      "numero": "601",
+      "dataEmanazione": "1994-10-28",
+      "nir": "urn:nir:stato:decreto.legge:1994-10-28;601",
+      "eli": "/eli/id/1994/10/28/094G0645/sg",
+      "stato": "decaduto",
+      "sintesi": "Disposizioni urgenti in materia di differimento di termini previsti da disposizioni legislative.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legge:1994-10-28;601",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1994/10/29/094G0645/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1994-10-29",
+      "numeroGU": "254",
+      "codiceRedazionale": "094G0645",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 DECRETO DECADUTO; I SUOI EFFETTI SONO STATI FATTI SALVI DALLA L. 13 LUGLIO 1995, N. 295"
+    },
+    {
+      "chiave": "/eli/id/1994/10/21/094G0629/sg",
+      "titolo": "DECRETO-LEGGE 21 ottobre 1994, n. 586",
+      "tipo": "decreto.legge",
+      "numero": "586",
+      "dataEmanazione": "1994-10-21",
+      "nir": "urn:nir:stato:decreto.legge:1994-10-21;586",
+      "eli": "/eli/id/1994/10/21/094G0629/sg",
+      "stato": "decaduto",
+      "sintesi": "Interventi urgenti a favore del settore portuale e marittimo.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legge:1994-10-21;586",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1994/10/22/094G0629/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1994-10-22",
+      "numeroGU": "248",
+      "codiceRedazionale": "094G0629",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 DECRETO DECADUTO; I SUOI EFFETTI SONO STATI FATTI SALVI DALLA L. 21 OTTOBRE 1996, N. 535"
+    },
+    {
+      "chiave": "/eli/id/1994/08/22/094G0623/sg",
+      "titolo": "DECRETO 22 agosto 1994, n. 582",
+      "tipo": "decreto",
+      "numero": "582",
+      "dataEmanazione": "1994-08-22",
+      "nir": "urn:nir:stato:decreto:1994-08-22;582",
+      "eli": "/eli/id/1994/08/22/094G0623/sg",
+      "stato": "in_vigore",
+      "sintesi": "Regolamento recante le modalita' per l'accertamento e la certificazione di morte.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto:1994-08-22;582",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1994/10/19/094G0623/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1994-10-19",
+      "numeroGU": "245",
+      "codiceRedazionale": "094G0623",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "IL MINISTRO DELLA SANIT&Agrave; Vista la legge 29 dicembre 1993, n. 578 , contenente: \"Norme per l'accertamento e la certificazione di morte\"; Visto in particolare l'art. 2 della predetta legge che prevede che le modalit&agrave; per l'accertamento della morte e le condizioni la cui presenza simultanea determina il momento della morte sono definite con decreto del Ministro della sanit&agrave;, previo parere obbligatorio e vincolante del Consiglio superiore di sanit&agrave;, che si esprime dopo aver sentito le societ&agrave; medico-scientifiche competenti nella materia; Visto il parere che il Consiglio superiore di sanit&agrave; ha espresso sullo schema di decreto nella seduta del 13 aprile 1994, dopo aver sentito le societ&agrave; medico-scientifiche competenti nella materia; Udito il parere del Consiglio di Stato espresso nell'adunanza generale del 27 luglio 1994; Ritenuto di provvedere in conformit&agrave; ai predetti pareri; Visto l' art. 17, comma 3, della legge 23 agosto 1988, n. 400 ; Vista la comunicazione in data 22 agosto 1994 al Presidente del Consiglio dei Ministri a norma dell'art. 17, comma 3, della citata legge n. 400 del 1988 ; ADOTTA il seguente regolamento: Art. 1 Accertamento della morte per arresto cardiaco 1. In conformit&agrave; all' art. 2, comma 1, della legge 29 dicembre 1993, n. 578 , l'accertamento della morte per arresto cardiaco pu&ograve; essere effettuato da un medico con il rilievo grafico continuo dell'elettrocardiogramma protratto per non meno di 20 minuti primi. AVVERTENZA: Il testo delle note qui pubblicato &egrave; stato redatto ai sensi dell'art. 10, comma 3, del testo unico delle disposizioni sulla promulgazione delle leggi, sull'emanazione dei decreti del Presidente della Repubblica e sulle pubblicazioni ufficiali della Repubblica italiana, approvato con D.P.R. 28 dicembre 1985, n. 1092 , al solo fine di facilitare la lettura delle disposizioni di legge alle quali &egrave; operato il rinvio. Restano invariati il valore e l'effic [...]",
+      "testoTroncato": true
+    },
+    {
+      "chiave": "/eli/id/1994/09/30/094G0606/sg",
+      "titolo": "DECRETO-LEGGE 30 settembre 1994, n. 564",
+      "tipo": "decreto.legge",
+      "numero": "564",
+      "dataEmanazione": "1994-09-30",
+      "nir": "urn:nir:stato:decreto.legge:1994-09-30;564",
+      "eli": "/eli/id/1994/09/30/094G0606/sg",
+      "stato": "in_vigore",
+      "sintesi": "Disposizioni urgenti in materia fiscale.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legge:1994-09-30;564",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1994/10/01/094G0606/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1994-10-01",
+      "numeroGU": "230",
+      "codiceRedazionale": "094G0606",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "IL PRESIDENTE DELLA REPUBBLICA Visti gli articoli 77 e 87 della Costituzione ; Ritenuta la straordinaria necessit&agrave; ed urgenza di emanare disposizioni in materia fiscale; Vista la deliberazione del Consiglio dei Ministri, adottata nella riunione del 27 settembre 1994; Sulla proposta del Presidente del Consiglio dei Ministri e del Ministro delle finanze, di concerto con i Ministri del tesoro e del bilancio e della programmazione economica; EMANA il seguente decreto-legge: Art. 1 Proroga dell'imposta sul patrimonio netto delle imprese 1. L'imposta sul patrimonio netto delle imprese di cui al decreto-legge 30 settembre 1992, n. 394 , convertito, con modificazioni, dalla legge 26 novembre 1992, n. 461 , si applica fino alla riforma del sistema fiscale e, comunque, non oltre l'esercizio in corso alla data del 30 settembre 1995."
+    },
+    {
+      "chiave": "/eli/id/1994/09/30/094G0601/sg",
+      "titolo": "DECRETO-LEGGE 30 settembre 1994, n. 560",
+      "tipo": "decreto.legge",
+      "numero": "560",
+      "dataEmanazione": "1994-09-30",
+      "nir": "urn:nir:stato:decreto.legge:1994-09-30;560",
+      "eli": "/eli/id/1994/09/30/094G0601/sg",
+      "stato": "decaduto",
+      "sintesi": "Interventi urgenti per il risanamento e l'adeguamento dei sistemi di smaltimento delle acque usate e degli impianti igienico-sanitari dei centri storici e nelle isole dei comuni di Venezia e di Chioggia.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legge:1994-09-30;560",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1994/10/01/094G0601/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1994-10-01",
+      "numeroGU": "230",
+      "codiceRedazionale": "094G0601",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 DECRETO DECADUTO; I SUOI EFFETTI SONO STATI FATTI SALVI DALLA L. 31 MAGGIO 1995, N. 206"
+    },
+    {
+      "chiave": "/eli/id/1994/09/23/094G0591/sg",
+      "titolo": "DECRETO-LEGGE 23 settembre 1994, n. 548",
+      "tipo": "decreto.legge",
+      "numero": "548",
+      "dataEmanazione": "1994-09-23",
+      "nir": "urn:nir:stato:decreto.legge:1994-09-23;548",
+      "eli": "/eli/id/1994/09/23/094G0591/sg",
+      "stato": "decaduto",
+      "sintesi": "Istituzione dell'Ente per gli interventi nel mercato agricolo E.I.M.A.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legge:1994-09-23;548",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1994/09/24/094G0591/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1994-09-24",
+      "numeroGU": "224",
+      "codiceRedazionale": "094G0591",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 DECRETO DECADUTO"
+    },
+    {
+      "chiave": "/eli/id/1994/09/19/094G0584/sg",
+      "titolo": "DECRETO-LEGGE 19 settembre 1994, n. 544",
+      "tipo": "decreto.legge",
+      "numero": "544",
+      "dataEmanazione": "1994-09-19",
+      "nir": "urn:nir:stato:decreto.legge:1994-09-19;544",
+      "eli": "/eli/id/1994/09/19/094G0584/sg",
+      "stato": "decaduto",
+      "sintesi": "Provvedimenti urgenti in materia di prezzi di specialita' medicinali.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legge:1994-09-19;544",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1994/09/21/094G0584/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1994-09-21",
+      "numeroGU": "221",
+      "codiceRedazionale": "094G0584",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 DECRETO DECADUTO; I SUOI EFFETTI SONO STATI FATTI SALVI DALLA L. 20 NOVEMBRE 1995, N. 490"
+    },
+    {
+      "chiave": "/eli/id/1994/09/19/094G0583/sg",
+      "titolo": "DECRETO-LEGGE 19 settembre 1994, n. 541",
+      "tipo": "decreto.legge",
+      "numero": "541",
+      "dataEmanazione": "1994-09-19",
+      "nir": "urn:nir:stato:decreto.legge:1994-09-19;541",
+      "eli": "/eli/id/1994/09/19/094G0583/sg",
+      "stato": "decaduto",
+      "sintesi": "Disposizioni urgenti in materia di riorganizzazione degli organi collegiali del Ministero dell'ambiente.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legge:1994-09-19;541",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1994/09/19/094G0583/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1994-09-19",
+      "numeroGU": "219",
+      "codiceRedazionale": "094G0583",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 DECRETO DECADUTO"
+    },
+    {
+      "chiave": "/eli/id/1994/09/17/094G0579/sg",
+      "titolo": "DECRETO-LEGGE 17 settembre 1994, n. 537",
+      "tipo": "decreto.legge",
+      "numero": "537",
+      "dataEmanazione": "1994-09-17",
+      "nir": "urn:nir:stato:decreto.legge:1994-09-17;537",
+      "eli": "/eli/id/1994/09/17/094G0579/sg",
+      "stato": "decaduto",
+      "sintesi": "Modifiche alla disciplina degli scarichi delle pubbliche fognature e degli insediamenti civili che non recapitano in pubbliche fognature.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legge:1994-09-17;537",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1994/09/17/094G0579/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1994-09-17",
+      "numeroGU": "218",
+      "codiceRedazionale": "094G0579",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 DECRETO DECADUTO; I SUOI EFFETTI SONO STATI FATTI SALVI DALLA L. 17 MAGGIO 1995, N. 172"
+    },
+    {
+      "chiave": "/eli/id/1994/09/08/094G0575/sg",
+      "titolo": "DECRETO-LEGGE 8 settembre 1994, n. 535",
+      "tipo": "decreto.legge",
+      "numero": "535",
+      "dataEmanazione": "1994-09-08",
+      "nir": "urn:nir:stato:decreto.legge:1994-09-08;535",
+      "eli": "/eli/id/1994/09/08/094G0575/sg",
+      "stato": "decaduto",
+      "sintesi": "Disposizioni urgenti per l'attuazione dell'articolo 68 della Costituzione.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legge:1994-09-08;535",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1994/09/14/094G0575/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1994-09-14",
+      "numeroGU": "215",
+      "codiceRedazionale": "094G0575",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 DECRETO DECADUTO; I SUOI EFFETTI SONO STATI SALVI DALLA L. 20 GIUGNO 2003, N. 140"
+    },
+    {
+      "chiave": "/eli/id/1994/09/07/094G0572/sg",
+      "titolo": "DECRETO-LEGGE 7 settembre 1994, n. 530",
+      "tipo": "decreto.legge",
+      "numero": "530",
+      "dataEmanazione": "1994-09-07",
+      "nir": "urn:nir:stato:decreto.legge:1994-09-07;530",
+      "eli": "/eli/id/1994/09/07/094G0572/sg",
+      "stato": "decaduto",
+      "sintesi": "Disposizioni in materia di riutilizzo dei residui derivanti da cicli di produzione o di consumo in un processo produttivo o in un processo di combustione, nonche' in materia di smaltimento dei rifiuti.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legge:1994-09-07;530",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1994/09/08/094G0572/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1994-09-08",
+      "numeroGU": "210",
+      "codiceRedazionale": "094G0572",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 DECRETO DECADUTO; I SUOI EFFETTI SONO STATI FATTI SALVI DALLA L. 11 NOVEMBRE 1996, N. 575"
+    },
+    {
+      "chiave": "/eli/id/1994/09/07/094G0570/sg",
+      "titolo": "DECRETO-LEGGE 7 settembre 1994, n. 528",
+      "tipo": "decreto.legge",
+      "numero": "528",
+      "dataEmanazione": "1994-09-07",
+      "nir": "urn:nir:stato:decreto.legge:1994-09-07;528",
+      "eli": "/eli/id/1994/09/07/094G0570/sg",
+      "stato": "decaduto",
+      "sintesi": "Disciplina operativa concernente partecipazioni e proventi del Tesoro, nonche' norme sugli organismi e sulle procedure attinenti ai mercati, alla Tesoreria e all'EAGAT.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legge:1994-09-07;528",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1994/09/08/094G0570/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1994-09-08",
+      "numeroGU": "210",
+      "codiceRedazionale": "094G0570",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 DECRETO DECADUTO; I SUOI EFFETTI SONO STATI FATTI SALVI DALLA L. 6 MARZO 1996, N.110"
+    },
+    {
+      "chiave": "/eli/id/1994/06/16/094G0558/sg",
+      "titolo": "DECRETO 16 giugno 1994, n. 527",
+      "tipo": "decreto",
+      "numero": "527",
+      "dataEmanazione": "1994-06-16",
+      "nir": "urn:nir:stato:decreto:1994-06-16;527",
+      "eli": "/eli/id/1994/06/16/094G0558/sg",
+      "stato": "in_vigore",
+      "sintesi": "Regolamento concernente disposizioni di attuazione degli articoli 2 e 4 della legge 7 agosto 1990, n. 241, riguardanti i termini e i responsabili dei procedimenti.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto:1994-06-16;527",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1994/09/06/094G0558/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1994-09-06",
+      "numeroGU": "208",
+      "codiceRedazionale": "094G0558",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "IL MINISTRO DELL'AMBIENTE Vista la legge 8 luglio 1986, n. 349 ; Visti gli articoli 2 e 4 della legge 7 agosto 1990, n. 241 ; Visto l' art. 17, comma 3, della legge 23 agosto 1988, n. 400 ; Udito il parere del Consiglio di Stato, reso nell'adunanza generale del 27 gennaio 1994; Vista la nota con la quale ai sensi dell'art. 17, comma 3, della citata legge n. 400/1988 , lo schema di regolamento &egrave; stato comunicato al Presidente del Consiglio dei Ministri; ADOTTA il seguente regolamento: Art. 1 Ambito di applicazione 1. Il presente regolamento si applica ai procedimenti amministrativi di competenza di organi dell'amministrazione dell'ambiente, sia che conseguano obbligatoriamente a iniziativa di parte, sia che debbano essere promossi d'ufficio, ove gi&agrave; non disciplinati da puntuali disposizioni normative relativamente ai termini e alle modalit&agrave; di partecipazione al procedimento e di informazione. 2. I procedimenti di competenza dell'amministrazione dell'ambiente devono concludersi con un provvedimento espresso nel termine stabilito, per ciascun procedimento, nelle tabelle allegate, che costituiscono parte integrante del presente regolamento e che contengono, altres&igrave;, l'indicazione dell'organo o ufficio competente e della fonte normativa. In caso di mancata inclusione del procedimento nelle allegate tabelle, lo stesso si concluder&agrave; nel termine previsto da altra fonte legislativa o regolamentare o, in mancanza, nel termine di trenta giorni di cui all' art. 2 della legge 7 agosto 1990, n. 241 . AVVERTENZA: Il testo delle note qui pubblicato &egrave; stato redatto ai sensi dell'art. 10, comma 3, del testo unico delle disposizioni sulla promulgazione delle leggi, sull'emanazione dei decreti del Presidente della Repubblica e sulle pubblicazioni ufficiali della Repubblica italiana, approvato con D.P.R. 28 dicembre 1985, n. 1092 , al solo fine di facilitare la lettura delle disposizioni di legge alle quali &egrave; operato il rinvio. Restano in [...]",
+      "testoTroncato": true
+    },
+    {
+      "chiave": "/eli/id/1994/08/29/094G0564/sg",
+      "titolo": "DECRETO-LEGGE 29 agosto 1994, n. 522",
+      "tipo": "decreto.legge",
+      "numero": "522",
+      "dataEmanazione": "1994-08-29",
+      "nir": "urn:nir:stato:decreto.legge:1994-08-29;522",
+      "eli": "/eli/id/1994/08/29/094G0564/sg",
+      "stato": "in_vigore",
+      "sintesi": "Disposizioni urgenti per assicurare il funzionamento dell'Istituto nazionale per il commercio estero.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legge:1994-08-29;522",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1994/08/31/094G0564/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1994-08-31",
+      "numeroGU": "203",
+      "codiceRedazionale": "094G0564",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "IL PRESIDENTE DELLA REPUBBLICA Visti gli articoli 77 e 87 della Costituzione ; Visto il decreto legislativo 3 febbraio 1993, n. 29 , e successive modificazioni; Visto l' articolo 1, comma 1, lettera b), della legge 24 dicembre 1993, n. 537 ; Vista la legge 18 marzo 1989, n. 106 , recante riordinamento dell'Istituto nazionale per il commercio estero; Visto il decreto del Presidente della Repubblica 18 gennaio 1990, n. 49 , concernente lo statuto dell'Istituto nazionale per il commercio estero; Ravvisata la necessit&agrave; ed urgenza di assicurare la gestione, in Italia e all'estero, dell'Istituto nazionale per il commercio estero, in attesa di procedere al riordinamento dello stesso; Vista la deliberazione del Consiglio dei Ministri, adottata nella riunione del 26 agosto 1994; Sulla proposta del Presidente del Consiglio dei Ministri e del Ministro del commercio con l'estero, di concerto con il Ministro del tesoro; EMANA il seguente decreto-legge: Art. 1 1. Gli organi di amministrazione dell'Istituto nazionale per il commercio estero, di cui all' articolo 2, comma 2, della legge 18 marzo 1989, n. 106 , con esclusione del collegio dei revisori, cessano dalle loro funzioni alla data di entrata in vigore del presente decreto. Entro sei mesi dalla medesima data, il Ministro per il commercio con l'estero presenta al Parlamento una relazione con le proposte sulla riorganizzazione dell'Istituto, riferite anche al complesso delle altre istituzioni preposte all'internazionalizzazione dell'economia. 2. A decorrere dalla stessa data la gestione dell'Istituto &egrave; affidata ad un ufficio commissariale composto da un amministratore straordinario, che si avvale di due direttori esecutivi e di un comitato consultivo composto da undici membri, compreso il presidente."
+    },
+    {
+      "chiave": "/eli/id/1994/08/29/094G0562/sg",
+      "titolo": "DECRETO-LEGGE 29 agosto 1994, n. 520",
+      "tipo": "decreto.legge",
+      "numero": "520",
+      "dataEmanazione": "1994-08-29",
+      "nir": "urn:nir:stato:decreto.legge:1994-08-29;520",
+      "eli": "/eli/id/1994/08/29/094G0562/sg",
+      "stato": "decaduto",
+      "sintesi": "Disposizioni urgenti in materia di bilanci per le imprese operanti nel settore dell'editoria e della radiodiffusione, nonche' di prosecuzione dell'attivita' per le emittenti televisive e sonore autorizzate in ambito locale.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legge:1994-08-29;520",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1994/08/31/094G0562/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1994-08-31",
+      "numeroGU": "203",
+      "codiceRedazionale": "094G0562",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 DECRETO DECADUTO"
+    },
+    {
+      "chiave": "/eli/id/1994/08/29/094G0561/sg",
+      "titolo": "DECRETO-LEGGE 29 agosto 1994, n. 518",
+      "tipo": "decreto.legge",
+      "numero": "518",
+      "dataEmanazione": "1994-08-29",
+      "nir": "urn:nir:stato:decreto.legge:1994-08-29;518",
+      "eli": "/eli/id/1994/08/29/094G0561/sg",
+      "stato": "decaduto",
+      "sintesi": "Disposizioni urgenti in materia di assistenza farmaceutica e di sanita'.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legge:1994-08-29;518",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1994/08/30/094G0561/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1994-08-30",
+      "numeroGU": "202",
+      "codiceRedazionale": "094G0561",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 DECRETO DECADUTO; I SUOI EFFETTI SONO STATI FATTI SALVI DALLA L. 17 GENNAIO 1997, N. 4"
+    },
+    {
+      "chiave": "/eli/id/1994/08/29/094G0559/sg",
+      "titolo": "DECRETO-LEGGE 29 agosto 1994, n. 516",
+      "tipo": "decreto.legge",
+      "numero": "516",
+      "dataEmanazione": "1994-08-29",
+      "nir": "urn:nir:stato:decreto.legge:1994-08-29;516",
+      "eli": "/eli/id/1994/08/29/094G0559/sg",
+      "stato": "in_vigore",
+      "sintesi": "Provvedimenti finalizzati alla razionalizzazione dell'indebitamento delle societa' per azioni interamente possedute dallo Stato, nonche' ulteriori disposizioni concernenti l'EFIM ed altri organismi.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legge:1994-08-29;516",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1994/08/30/094G0559/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1994-08-30",
+      "numeroGU": "202",
+      "codiceRedazionale": "094G0559",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "IL PRESIDENTE DELLA REPUBBLICA Visti gli articoli 77 e 87 della Costituzione ; Ritenuta la straordinaria necessit&agrave; ed urgenza di adottare interventi finalizzati a razionalizzare l'indebitamento delle societ&agrave; per azioni interamente possedute dallo Stato, nel rispetto delle intese raggiunte con la Comunit&agrave; europea, nonch&egrave; di emanare disposizioni per completare la liquidazione dell'EFIM; Vista la deliberazione del Consiglio dei Ministri, adottata nella riunione del 26 agosto 1994; Sulla proposta del Presidente del Consiglio dei Ministri e del Ministro del tesoro, di concerto con i Ministri del bilancio e della programmazione economica e del lavoro e della previdenza sociale; EMANA il seguente decreto-legge: Art. 1 (( 1. Ai fini della razionalizzazione della struttura dell'indebitamento proprio dell'Istituto per la ricostruzione industriale (IRI) S.p.a. e delle societ&agrave; controllate interamente dallo stesso nonch&egrave; del raggiungimento dell'obiettivo di progressiva riduzione dei debiti di cui all'intesa tra il Governo italiano e la Commissione delle Comunit&agrave; europee del 29 luglio 1993, la Cassa depositi e prestiti &egrave; autorizzata a concedere alle stesse societ&agrave; mutui in obbligazioni emesse dalla predetta Cassa, con godimento 1 gennaio 1994, assistite dalla garanzia dello Stato per il rimborso del capitale e il pagamento degli interessi. )) 2. Le obbligazioni di cui al comma 1 sono utilizzate dalle societ&agrave; ivi contemplate, in sostituzione di debiti gi&agrave; esistenti, per le finalit&agrave; di cui allo stesso comma 1, secondo modalit&agrave; stabilite dal Ministro del tesoro. 3. Il Ministro del tesoro determina, nei limiti dell'importo di 10 mila miliardi e tenendo conto della onerosit&agrave; delle situazioni debitorie, l'importo delle emissioni di cui al comma 1, la tipologia degli strumenti finanziari da utilizzare e le loro caratteristiche, inclusa la scadenza."
+    },
+    {
+      "chiave": "/eli/id/1994/08/27/094G0556/sg",
+      "titolo": "DECRETO-LEGGE 27 agosto 1994, n. 514",
+      "tipo": "decreto.legge",
+      "numero": "514",
+      "dataEmanazione": "1994-08-27",
+      "nir": "urn:nir:stato:decreto.legge:1994-08-27;514",
+      "eli": "/eli/id/1994/08/27/094G0556/sg",
+      "stato": "decaduto",
+      "sintesi": "Disposizioni urgenti in materia di differimento di termini previsti da disposizioni legislative.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legge:1994-08-27;514",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1994/08/29/094G0556/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1994-08-29",
+      "numeroGU": "201",
+      "codiceRedazionale": "094G0556",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 DECRETO DECADUTO; I SUOI EFFETTI SONO STATI FATTI SALVI DALLA L. 13 LUGLIO 1995, N. 295"
+    },
+    {
+      "chiave": "/eli/id/1994/08/08/094G0545/sg",
+      "titolo": "DECRETO-LEGGE 8 agosto 1994, n. 494",
+      "tipo": "decreto.legge",
+      "numero": "494",
+      "dataEmanazione": "1994-08-08",
+      "nir": "urn:nir:stato:decreto.legge:1994-08-08;494",
+      "eli": "/eli/id/1994/08/08/094G0545/sg",
+      "stato": "decaduto",
+      "sintesi": "Norme in materia di collocamento, di patronati, di previdenza per gli spedizionieri doganali, nonche' a sostegno dell'occupazione.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legge:1994-08-08;494",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1994/08/11/094G0545/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1994-08-11",
+      "numeroGU": "187",
+      "codiceRedazionale": "094G0545",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 DECRETO DECADUTO; I SUOI EFFETTI SONO STATI FATTI SALVI DALLA L. 28 NOVEMBRE 1996, N. 608"
+    },
+    {
+      "chiave": "/eli/id/1994/08/08/094G0543/sg",
+      "titolo": "DECRETO-LEGGE 8 agosto 1994, n. 492",
+      "tipo": "decreto.legge",
+      "numero": "492",
+      "dataEmanazione": "1994-08-08",
+      "nir": "urn:nir:stato:decreto.legge:1994-08-08;492",
+      "eli": "/eli/id/1994/08/08/094G0543/sg",
+      "stato": "decaduto",
+      "sintesi": "Disposizioni urgenti in favore degli enti locali in materia di personale.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legge:1994-08-08;492",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1994/08/11/094G0543/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1994-08-11",
+      "numeroGU": "187",
+      "codiceRedazionale": "094G0543",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 DECRETO DECADUTO; I SUOI EFFETTI SONO STATI FATTI SALVI DALLA L. 23 DICEMBRE 1996, N. 662"
+    },
+    {
+      "chiave": "/eli/id/1994/06/13/094G0527/sg",
+      "titolo": "DECRETO MINISTERIALE 13 giugno 1994, n. 495",
+      "tipo": "decreto.ministeriale",
+      "numero": "495",
+      "dataEmanazione": "1994-06-13",
+      "nir": "urn:nir:stato:decreto.ministeriale:1994-06-13;495",
+      "eli": "/eli/id/1994/06/13/094G0527/sg",
+      "stato": "in_vigore",
+      "sintesi": "Regolamento concernente disposizioni di attuazione degli articoli 2 e 4 della legge 7 agosto 1990, n. 241, riguardanti i termini e i responsabili dei procedimenti.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.ministeriale:1994-06-13;495",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1994/08/11/094G0527/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1994-08-11",
+      "numeroGU": "187",
+      "codiceRedazionale": "094G0527",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "IL MINISTRO PER I BENI CULTURALI E AMBIENTALI Visti gli articoli 2, comma 2 , e 4, comma 1, della legge 7 agosto 1990, n. 241 , che demandano ad un apposito regolamento la determinazione da parte delle pubbliche amministrazioni del termine entro cui deve concludersi ciascun tipo di procedimento e del responsabile per ciascun tipo di procedimento; Visto l' art. 17, commi 3 e 4, della legge 23 agosto 1988, n. 400 ; Udito il parere del Consiglio di Stato, espresso nell'adunanza generale del 31 marzo 1994; Vista la comunicazione al Presidente del Consiglio dei Ministri, a norma dell'art. 17, comma 3, della citata legge n. 400 del 1988 , effettuata con nota n. 1107 del 10 maggio 1994; ADOTTA il seguente regolamento: Art. 1 Ambito di applicazione 1. Il presente regolamento si applica ai procedimenti amministrativi che si concludono con un provvedimento espresso di competenza del Ministro per i beni culturali e ambientali. Il regolamento si applica sia ai procedimenti che conseguano obbligatoriamente ad iniziativa di parte, sia ai procedimenti promossi d'ufficio, ai sensi dell' art. 2, comma 1, della legge 7 agosto 1990, n. 241 . 2. I procedimenti di competenza dell'amministrazione per i beni culturali e ambientali devono concludersi con un provvedimento espresso nel termine stabilito, per ciascun procedimento, nella tabella a) allegata, che costituisce parte integrante del presente regolamento e che contiene, altres&igrave;, l'indicazione dell'organo o ufficio competente e della fonte normativa. In caso di mancata inclusione del procedimento nelle allegate tabelle, lo stesso si concluder&agrave; nel termine previsto da altra fonte legislativa o regolamentare o, in mancanza, nel termine di trenta giorni di cui all' art. 2 della legge 7 agosto 1990, n. 241 . 3. Nella tabella b allegata al presente regolamento sono indicati i termini entro cui l'amministrazione per i beni culturali e ambientali espleta la prescritta attivit&agrave; endoprocedimentale e manifesta il proprio i [...]",
+      "testoTroncato": true
+    },
+    {
+      "chiave": "/eli/id/1994/07/30/094G0521/sg",
+      "titolo": "DECRETO-LEGGE 30 luglio 1994, n. 477",
+      "tipo": "decreto.legge",
+      "numero": "477",
+      "dataEmanazione": "1994-07-30",
+      "nir": "urn:nir:stato:decreto.legge:1994-07-30;477",
+      "eli": "/eli/id/1994/07/30/094G0521/sg",
+      "stato": "decaduto",
+      "sintesi": "Riordino delle funzioni in materia di turismo, spettacolo e sport.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legge:1994-07-30;477",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1994/08/01/094G0521/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1994-08-01",
+      "numeroGU": "178",
+      "codiceRedazionale": "094G0521",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 DECRETO DECADUTO; I SUOI EFFETTI SONO STATI FATTI SALVI DALLA L. 30 MAGGIO 1995, N. 203"
+    },
+    {
+      "chiave": "/eli/id/1994/07/26/094G0512/sg",
+      "titolo": "DECRETO-LEGGE 26 luglio 1994, n. 468",
+      "tipo": "decreto.legge",
+      "numero": "468",
+      "dataEmanazione": "1994-07-26",
+      "nir": "urn:nir:stato:decreto.legge:1994-07-26;468",
+      "eli": "/eli/id/1994/07/26/094G0512/sg",
+      "stato": "decaduto",
+      "sintesi": "Misure urgenti per il rilancio economico ed occupazionale dei lavori pubblici e dell'edilizia privata.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legge:1994-07-26;468",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1994/07/28/094G0512/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1994-07-28",
+      "numeroGU": "175",
+      "codiceRedazionale": "094G0512",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 DECRETO DECADUTO; I SUOI EFFETTI SONO STATI FATTI SALVI DALLA L. 23 DICEMBRE 1996, N. 662"
+    },
+    {
+      "chiave": "/eli/id/1994/07/25/094G0505/sg",
+      "titolo": "DECRETO-LEGGE 25 luglio 1994, n. 464",
+      "tipo": "decreto.legge",
+      "numero": "464",
+      "dataEmanazione": "1994-07-25",
+      "nir": "urn:nir:stato:decreto.legge:1994-07-25;464",
+      "eli": "/eli/id/1994/07/25/094G0505/sg",
+      "stato": "decaduto",
+      "sintesi": "Istituzione dell'Ente per gli interventi nel mercato agricolo E.I.M.A.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legge:1994-07-25;464",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1994/07/26/094G0505/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1994-07-26",
+      "numeroGU": "173",
+      "codiceRedazionale": "094G0505",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 DECRETO DECADUTO"
+    },
+    {
+      "chiave": "/eli/id/1994/07/25/094G0504/sg",
+      "titolo": "DECRETO-LEGGE 25 luglio 1994, n. 463",
+      "tipo": "decreto.legge",
+      "numero": "463",
+      "dataEmanazione": "1994-07-25",
+      "nir": "urn:nir:stato:decreto.legge:1994-07-25;463",
+      "eli": "/eli/id/1994/07/25/094G0504/sg",
+      "stato": "decaduto",
+      "sintesi": "Interventi urgenti a sostegno dell'economia.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legge:1994-07-25;463",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1994/07/25/094G0504/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1994-07-25",
+      "numeroGU": "172",
+      "codiceRedazionale": "094G0504",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 DECRETO DECADUTO; I SUOI EFFETTI SONO STATI FATTI SALVI DALLA L. 22 NOVEMBRE 1994, N. 644"
+    }
+  ]
+}

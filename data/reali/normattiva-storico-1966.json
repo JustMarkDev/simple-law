@@ -1,0 +1,452 @@
+{
+  "provenance": {
+    "fonte": "normattiva",
+    "url": "https://api.normattiva.it/t/normattiva.api/bff-opendata/v1/api/v1/ricerca/aggiornati",
+    "recuperatoIl": "2026-09-29T00:19:06.001Z",
+    "licenza": "riproduzione consentita con menzione di fonte, carattere non autentico e gratuito (Note legali dati.normattiva.it; solo la Gazzetta Ufficiale a stampa e' autentica)"
+  },
+  "atti": [
+    {
+      "chiave": "/eli/id/1966/11/18/066U0976/sg",
+      "titolo": "DECRETO-LEGGE 18 novembre 1966, n. 976",
+      "tipo": "decreto.legge",
+      "numero": "976",
+      "dataEmanazione": "1966-11-18",
+      "nir": "urn:nir:stato:decreto.legge:1966-11-18;976",
+      "eli": "/eli/id/1966/11/18/066U0976/sg",
+      "stato": "in_vigore",
+      "sintesi": "Ulteriori interventi e provvidenze per la ricostruzione e per la ripresa economica nei territori colpiti dalle alluvioni e mareggiate dell'autunno 1966.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legge:1966-11-18;976",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1966/11/19/066U0976/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1966-11-19",
+      "numeroGU": "292",
+      "codiceRedazionale": "066U0976",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "IL PRESIDENTE DELLA REPUBBLICA Visto l' art. 77 della Costituzione ; Ritenuta la necessit&agrave; e l'urgenza di disporre ulteriori interventi e provvidenze per la ricostruzione e per la ripresa economica nei territori colpiti dalle alluvioni o mareggiate dell'autunno 1966; Sentito il Consiglio dei Ministri; Sulla proposta del Presidente del Consiglio dei Ministri, di concerto con i Ministri per l'interno, per la grazia e giustizia per il bilancio, per le finanze, per il tesoro, per la difesa, per la pubblica istruzione, per i lavori pubblici, per l'agricoltura e le foreste, per i trasporti e l'aviazione civile, per le poste e le telecomunicazioni, per l'industria, il commercio e l'artigianato, per il lavoro e la previdenza sociale, per la marina mercantile, per la sanit&agrave; e per il turismo e lo spettacolo; Decreta: Art. 1 &Egrave; autorizzata la spesa di lire 148.000 milioni, da iscriversi nello stato di previsione del Ministero dei lavori pubblici, per provvedere, in conseguenza delle alluvioni, mareggiate e frane verificatesi nell'autunno 1966: a) alle esigenze indicate nell' articolo 1, lettere b) , d) , e) , f) , g) , h), della legge 9 aprile 1955, n. 279 ; b) alla riparazione e ricostruzione di ospedali clinicizzati, policlinici e cliniche universitarie, nonch&egrave; di scuole statali di ogni ordine e grado; c) al ripristino, a totale carico dello Stato, di ogni altra opera di interesse degli enti locali e delle istituzioni pubbliche di assistenza e beneficenza e loro consorzi; d) al ripristino delle opere di conto dello Stato e delle opere di interesse degli enti locali e delle istituzioni pubbliche di assistenza e beneficenza e loro consorzi, comunque finanziate, in corso di esecuzione al momento degli eventi calamitosi e limitatamente alla parte di lavori gi&agrave; eseguita; e) al ripristino, a totale carico dello Stato, delle opere idrauliche di seconda, terza, quarta e quinta categoria e delle naturali difese lungo i corsi d'acqua non classificati; [...]",
+      "testoTroncato": true
+    },
+    {
+      "chiave": "/eli/id/1966/10/31/066U0947/sg",
+      "titolo": "LEGGE 31 ottobre 1966, n. 947",
+      "tipo": "legge",
+      "numero": "947",
+      "dataEmanazione": "1966-10-31",
+      "nir": "urn:nir:stato:legge:1966-10-31;947",
+      "eli": "/eli/id/1966/10/31/066U0947/sg",
+      "stato": "abrogato",
+      "sintesi": "Aumento del fondo per il concorso statale nel pagamento degli interessi sulle operazioni di credito a favore delle imprese artigiane e modifiche al capo VI della legge 25 luglio 1952, n. 949.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1966-10-31;947",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1966/11/16/066U0947/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1966-11-16",
+      "numeroGU": "287",
+      "codiceRedazionale": "066U0947",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.L. 25 GIUGNO 2008, N. 112 , CONVERTITO, CON MODIFICAZIONI, DALLA L. 6 AGOSTO 2008, N. 133 ))"
+    },
+    {
+      "chiave": "/eli/id/1966/11/09/066U0914/sg",
+      "titolo": "DECRETO-LEGGE 9 novembre 1966, n. 914",
+      "tipo": "decreto.legge",
+      "numero": "914",
+      "dataEmanazione": "1966-11-09",
+      "nir": "urn:nir:stato:decreto.legge:1966-11-09;914",
+      "eli": "/eli/id/1966/11/09/066U0914/sg",
+      "stato": "abrogato",
+      "sintesi": "Provvidenze In favore delle popolazioni del Comuni colpiti dalle alluvioni o mareggiate dell'autunno 1966.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legge:1966-11-09;914",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1966/11/09/066U0914/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1966-11-09",
+      "numeroGU": "280",
+      "codiceRedazionale": "066U0914",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.L 25 GIUGNO 2008, N. 112 , CONVERTITO CON MODIFICAZIONI DALLA L. 6 AGOSTO 2008, N. 133 ))"
+    },
+    {
+      "chiave": "/eli/id/1966/11/09/066U0913/sg",
+      "titolo": "DECRETO-LEGGE 9 novembre 1966, n. 913",
+      "tipo": "decreto.legge",
+      "numero": "913",
+      "dataEmanazione": "1966-11-09",
+      "nir": "urn:nir:stato:decreto.legge:1966-11-09;913",
+      "eli": "/eli/id/1966/11/09/066U0913/sg",
+      "stato": "abrogato",
+      "sintesi": "Modificazioni al regime fiscale delle benzine speciali diverse dall'acqua ragia minerale, della benzina e del petrolio diverso da quello lampante nonche' dei gas di petrolio liquefatti per autotrazione.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legge:1966-11-09;913",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1966/11/09/066U0913/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1966-11-09",
+      "numeroGU": "279",
+      "codiceRedazionale": "066U0913",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.L. 25 GIUGNO 2008, N. 112 , CONVERTITO CON MODIFICAZIONI DALLA L. 6 AGOSTO 2008, N. 133 ))"
+    },
+    {
+      "chiave": "/eli/id/1966/11/09/066U0912/sg",
+      "titolo": "DECRETO-LEGGE 9 novembre 1966, n. 912",
+      "tipo": "decreto.legge",
+      "numero": "912",
+      "dataEmanazione": "1966-11-09",
+      "nir": "urn:nir:stato:decreto.legge:1966-11-09;912",
+      "eli": "/eli/id/1966/11/09/066U0912/sg",
+      "stato": "abrogato",
+      "sintesi": "Norme per l'erogazione della integrazione del prezzo ai produttori di olio di oliva nonche' modificazioni al regime fiscale degli oli.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legge:1966-11-09;912",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1966/11/09/066U0912/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1966-11-09",
+      "numeroGU": "279",
+      "codiceRedazionale": "066U0912",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.L. 25 GIUGNO 2008, N. 112 , CONVERTITO, CON MODIFICAZIONI, DALLA L. 6 AGOSTO 2008, N. 133 ))"
+    },
+    {
+      "chiave": "/eli/id/1966/11/09/066U0911/sg",
+      "titolo": "DECRETO-LEGGE 9 novembre 1966, n. 911",
+      "tipo": "decreto.legge",
+      "numero": "911",
+      "dataEmanazione": "1966-11-09",
+      "nir": "urn:nir:stato:decreto.legge:1966-11-09;911",
+      "eli": "/eli/id/1966/11/09/066U0911/sg",
+      "stato": "abrogato",
+      "sintesi": "Attuazione del regime del prelievi nel settore dei grassi.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legge:1966-11-09;911",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1966/11/09/066U0911/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1966-11-09",
+      "numeroGU": "279",
+      "codiceRedazionale": "066U0911",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.L. 25 GIUGNO 2008, N. 112 , CONVERTITO, CON MODIFICAZIONI, DALLA L. 6 AGOSTO 2008, N. 133 ))"
+    },
+    {
+      "chiave": "/eli/id/1966/10/27/066U0910/sg",
+      "titolo": "LEGGE 27 ottobre 1966, n. 910",
+      "tipo": "legge",
+      "numero": "910",
+      "dataEmanazione": "1966-10-27",
+      "nir": "urn:nir:stato:legge:1966-10-27;910",
+      "eli": "/eli/id/1966/10/27/066U0910/sg",
+      "stato": "in_vigore",
+      "sintesi": "Provvedimenti per lo sviluppo dell'agricoltura nel quinquennio 1966-1970.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1966-10-27;910",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1966/11/09/066U0910/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1966-11-09",
+      "numeroGU": "278",
+      "codiceRedazionale": "066U0910",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "La Camera dei deputati ed il Senato della Repubblica hanno approvato; IL PRESIDENTE DELLA REPUBBLICA PROMULGA la seguente legge: Art. 1 (Finalit&agrave;) Le disposizioni della presente legge sono dirette ad attuare, con interventi di carattere straordinario - nel quinquennio 1966-1970 - le Indicazioni del programma nazionale di sviluppo economico nel quadro dello Inserimento dell'agricoltura nazionale nel Mercato comune europeo, favorendo il consolidamento e l'adeguamento strutturale, funzionale ed economico delle Imprese, in specie di quelle familiari, per elevarne l'efficienza e la competitivit&agrave;. In particolare gli interventi saranno rivolti a promuovere: lo sviluppo di attivit&agrave; e servizi di carattere generale, la stabilizzazione dei prezzi e l'organizzazione dei mercati agricoli, l'acquisizione dei capitali di esercizio e di conduzione, lo sviluppo della cooperazione e delle altre forme di organizzazione dei produttori agricoli, lo sviluppo delle produzioni zootecniche ed il miglioramento, la difesa e la specializzazione delle colture arboree e delle coltivazioni ortofrutticole, l'adeguamento delle strutture aziendali ed interaziendali, la diffusione dell'irrigazione ed Il completamento e il ripristino di opere pubbliche di bonifica, lo sviluppo forestale, l'accesso al credito agrario."
+    },
+    {
+      "chiave": "/eli/id/1966/07/30/066U0590/sg",
+      "titolo": "DECRETO-LEGGE 30 luglio 1966, n. 590",
+      "tipo": "decreto.legge",
+      "numero": "590",
+      "dataEmanazione": "1966-07-30",
+      "nir": "urn:nir:stato:decreto.legge:1966-07-30;590",
+      "eli": "/eli/id/1966/07/30/066U0590/sg",
+      "stato": "in_vigore",
+      "sintesi": "Provvedimenti a favore della citta' di Agrigento, in conseguenza del movimento franoso verificatosi il 19 luglio 1966.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legge:1966-07-30;590",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1966/07/30/066U0590/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1966-07-30",
+      "numeroGU": "189",
+      "codiceRedazionale": "066U0590",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 PROVVEDIMENTO ABROGATO DAL D.L 25 GIUGNO 2008, N. 112 , CONVERTITO CON MODIFICAZIONI DALLA L. 6 AGOSTO 2008, N. 133 ((7)) ------------ AGGIORNAMENTO (7) Il D.Lgs. 13 dicembre 2010, n. 212 ha confermato (con l'art. 1, comma 1) l'abrogazione del presente articolo."
+    },
+    {
+      "chiave": "/eli/id/1966/07/25/066U0571/sg",
+      "titolo": "LEGGE 25 luglio 1966, n. 571",
+      "tipo": "legge",
+      "numero": "571",
+      "dataEmanazione": "1966-07-25",
+      "nir": "urn:nir:stato:legge:1966-07-25;571",
+      "eli": "/eli/id/1966/07/25/066U0571/sg",
+      "stato": "abrogato",
+      "sintesi": "Aumento dei limiti di valore della competenza dei pretori e dei conciliatori e del limite di inappellabilita' delle sentenze dei conciliatori.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1966-07-25;571",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1966/07/28/066U0571/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1966-07-28",
+      "numeroGU": "186",
+      "codiceRedazionale": "066U0571",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.L. 25 GIUGNO 2008, N. 112 , CONVERTITO, CON MODIFICAZIONI, DALLA LEGGE 6 AGOSTO 2008 N. 133))"
+    },
+    {
+      "chiave": "/eli/id/1966/06/27/066U0453/sg",
+      "titolo": "LEGGE 27 giugno 1966, n. 453",
+      "tipo": "legge",
+      "numero": "453",
+      "dataEmanazione": "1966-06-27",
+      "nir": "urn:nir:stato:legge:1966-06-27;453",
+      "eli": "/eli/id/1966/06/27/066U0453/sg",
+      "stato": "abrogato",
+      "sintesi": "Proroga di disposizioni in tema di locazioni urbane.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1966-06-27;453",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1966/06/30/066U0453/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1966-06-30",
+      "numeroGU": "159",
+      "codiceRedazionale": "066U0453",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.L. 25 GIUGNO 2008, N.112 , CONVERTITO, CON MODIFICAZIONI, DALLA L. 6 AGOSTO 2008, N. 133 ))"
+    },
+    {
+      "chiave": "/eli/id/1963/02/18/063U0301/sg",
+      "titolo": "LEGGE 18 febbraio 1963, n. 301",
+      "tipo": "legge",
+      "numero": "301",
+      "dataEmanazione": "1963-02-18",
+      "nir": "urn:nir:stato:legge:1963-02-18;301",
+      "eli": "/eli/id/1963/02/18/063U0301/sg",
+      "stato": "in_vigore",
+      "sintesi": "Norme per il riordinamento dei servizi e delle carriere del Corpo forestale dello Stato e dei ruoli organici delle carriere esecutive del Ministero dell'agricoltura e delle foreste.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1963-02-18;301",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1963/03/28/063U0301/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1963-03-28",
+      "numeroGU": "84",
+      "codiceRedazionale": "063U0301",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "La Camera dei deputati ed il Senato della Repubblica hanno approvato; IL PRESIDENTE DELLA REPUBBLICA PROMULGA la seguente legge: Art. 1 Ruoli organici del Corpo forestale dello Stato I ruoli organici del personale del Corpo forestale dello Stato sono stabiliti nelle tabelle I, II, III, IV, V e VI annesse alla presente legge."
+    },
+    {
+      "chiave": "/eli/id/1963/02/14/063U0163/sg",
+      "titolo": "LEGGE 14 febbraio 1963, n. 163",
+      "tipo": "legge",
+      "numero": "163",
+      "dataEmanazione": "1963-02-14",
+      "nir": "urn:nir:stato:legge:1963-02-14;163",
+      "eli": "/eli/id/1963/02/14/063U0163/sg",
+      "stato": "abrogato",
+      "sintesi": "Integrazione della legge 21 marzo 1958, n. 290, relativa all'incremento ed al potenziamento della pesca e della piscicoltura nelle acque interne.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1963-02-14;163",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1963/03/09/063U0163/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1963-03-09",
+      "numeroGU": "66",
+      "codiceRedazionale": "063U0163",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.L. 25 GIUGNO 2008, N. 112 , CONVERTITO, CON MODIFICAZIONI, DALLA L. 6 AGOSTO 2008, N. 133 ))"
+    },
+    {
+      "chiave": "/eli/id/1963/02/03/063U0056/sg",
+      "titolo": "LEGGE 3 febbraio 1963, n. 56",
+      "tipo": "legge",
+      "numero": "56",
+      "dataEmanazione": "1963-02-03",
+      "nir": "urn:nir:stato:legge:1963-02-03;56",
+      "eli": "/eli/id/1963/02/03/063U0056/sg",
+      "stato": "abrogato",
+      "sintesi": "Ripianamento dei bilanci comunali e provinciali deficitari per gli anni 1962, 1963, 1964 e 1965.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1963-02-03;56",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1963/02/16/063U0056/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1963-02-16",
+      "numeroGU": "44",
+      "codiceRedazionale": "063U0056",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.L. 25 GIUGNO 2008, N. 112 , CONVERTITO, CON MODIFICAZIONI, DALLA L. 6 AGOSTO 2008, N. 133 ))"
+    },
+    {
+      "chiave": "/eli/id/1962/04/18/062U0208/sg",
+      "titolo": "LEGGE 18 aprile 1962, n. 208",
+      "tipo": "legge",
+      "numero": "208",
+      "dataEmanazione": "1962-04-18",
+      "nir": "urn:nir:stato:legge:1962-04-18;208",
+      "eli": "/eli/id/1962/04/18/062U0208/sg",
+      "stato": "abrogato",
+      "sintesi": "Modifiche alla tassa per l'occupazione di spazi ed aree pubbliche.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1962-04-18;208",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1962/05/09/062U0208/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1962-05-09",
+      "numeroGU": "118",
+      "codiceRedazionale": "062U0208",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.L. 25 GIUGNO 2008, N. 112 ,CONVERTITO CON MODIFICAZIONI DALLA L. 6 AGOSTO 2008, N. 133 ))"
+    },
+    {
+      "chiave": "/eli/id/1962/04/12/062U0153/sg",
+      "titolo": "LEGGE 12 aprile 1962, n. 153",
+      "tipo": "legge",
+      "numero": "153",
+      "dataEmanazione": "1962-04-12",
+      "nir": "urn:nir:stato:legge:1962-04-12;153",
+      "eli": "/eli/id/1962/04/12/062U0153/sg",
+      "stato": "in_vigore",
+      "sintesi": "Modificazioni alla legge 6 marzo 1950, n. 181, relativamente alle esenzioni fiscali sui carburanti a favore delle scuole di pilotaggio aereo.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1962-04-12;153",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1962/04/27/062U0153/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1962-04-27",
+      "numeroGU": "108",
+      "codiceRedazionale": "062U0153",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 Articolo unico. ((PROVVEDIMENTO ABROGATO DAL D.L. 25 GIUGNO 2008 N. 112 , CONVERTITO CON MODIFICAZIONI DALLA L. 6 AGOSTO 2008 N. 133 ))"
+    },
+    {
+      "chiave": "/eli/id/1962/02/15/062U0068/sg",
+      "titolo": "LEGGE 15 febbraio 1962, n. 68",
+      "tipo": "legge",
+      "numero": "68",
+      "dataEmanazione": "1962-02-15",
+      "nir": "urn:nir:stato:legge:1962-02-15;68",
+      "eli": "/eli/id/1962/02/15/062U0068/sg",
+      "stato": "in_vigore",
+      "sintesi": "Norme modificative alla legge 4 agosto 1955, n. 691, riguardante provvidenze per l'attuazione di iniziative di interesse turistico ed alberghiero.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1962-02-15;68",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1962/03/07/062U0068/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1962-03-07",
+      "numeroGU": "61",
+      "codiceRedazionale": "062U0068",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "La Camera dei deputati ed il Senato della Repubblica hanno approvato; IL PRESIDENTE DELLA REPUBBLICA PROMULGA la seguente legge: Art. 1 ((A favore di tutti coloro che intendano costruire, ricostruire, ampliare od adattare immobili ad uso di alberghi o di pensioni o di locande, nonch&egrave; autostelli, ostelli per la giovent&ugrave;, case per ferie, rifugi alpini, campeggi, villaggi turistici a tipo alberghiero e stabilimenti idro-termali e balneari pu&ograve; essere concesso un contributo del 3 per cento annuo nel pagamento dell'importo dei mutui da contrarre con gli Istituti di credito all'uopo autorizzati fino alla met&agrave; della spesa riconosciuta per l'esecuzione delle opere murarie ed impianti fissi compreso l'acquisto del terreno o dell'immobile da adattare)) . ((1)) La spesa per l'acquisto del terreno o dell'immobile da adattare non pu&ograve; essere riconosciuta in misura superiore alla met&agrave; dell'effettivo costo della costruzione. A favore di coloro che intendano provvedere all'arredamento ed ammodernamento degli esercizi di cui al primo comma, pu&ograve; essere concesso un eguale contributo nel pagamento dell'importo dei mutui da contrarre lino al quarto della spesa riconosciuta, quando trattasi di arredamento, e fino alla met&agrave; della spesa medesima, quando trattasi di opere di ammodernamento. ((La durata dei contributi &egrave; stabilita in anni venticinque per le spese relative alla esecuzione delle opere murarie ed impianti fissi, all'acquisto del suolo e dell'immobile da adattare; ed in anni dieci per le spese riguardanti l'ammodernamento e l'acquisto dell'arredamento)) . ((1)) -------------- AGGIORNAMENTO (1) La L. 1 giugno 1966, n. 422 ha disposto (con l'art. 8) che le modifiche hanno effetto dalla data di entrata in vigore della legge 15 febbraio 1962, n. 68 ."
+    },
+    {
+      "chiave": "/eli/id/1961/08/03/061U0833/sg",
+      "titolo": "LEGGE 3 agosto 1961, n. 833",
+      "tipo": "legge",
+      "numero": "833",
+      "dataEmanazione": "1961-08-03",
+      "nir": "urn:nir:stato:legge:1961-08-03;833",
+      "eli": "/eli/id/1961/08/03/061U0833/sg",
+      "stato": "abrogato",
+      "sintesi": "Stato giuridico dei vicebrigadieri e del militari di truppa della Guardia di finanza.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1961-08-03;833",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1961/08/30/061U0833/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1961-08-30",
+      "numeroGU": "214",
+      "codiceRedazionale": "061U0833",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.LGS. 29 MAGGIO 2017, N. 95 ))"
+    },
+    {
+      "chiave": "/eli/id/1961/07/21/061U0685/sg",
+      "titolo": "LEGGE 21 luglio 1961, n. 685",
+      "tipo": "legge",
+      "numero": "685",
+      "dataEmanazione": "1961-07-21",
+      "nir": "urn:nir:stato:legge:1961-07-21;685",
+      "eli": "/eli/id/1961/07/21/061U0685/sg",
+      "stato": "abrogato",
+      "sintesi": "Ammissione dei diplomati degli Istituti tecnici alle Facolta' universitarie.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1961-07-21;685",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1961/08/03/061U0685/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1961-08-03",
+      "numeroGU": "191",
+      "codiceRedazionale": "061U0685",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.LGS. 13 DICEMBRE 2010, N. 212 ))"
+    },
+    {
+      "chiave": "/eli/id/1960/12/22/060U1600/sg",
+      "titolo": "LEGGE 22 dicembre 1960, n. 1600",
+      "tipo": "legge",
+      "numero": "1600",
+      "dataEmanazione": "1960-12-22",
+      "nir": "urn:nir:stato:legge:1960-12-22;1600",
+      "eli": "/eli/id/1960/12/22/060U1600/sg",
+      "stato": "in_vigore",
+      "sintesi": "Norme per la sistemazione del personale assunto dal Governo militare alleato nel Territorio di Trieste.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1960-12-22;1600",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1961/01/04/060U1600/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1961-01-04",
+      "numeroGU": "3",
+      "codiceRedazionale": "060U1600",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "La Camera dei deputati ed il Senato della Repubblica hanno approvato; IL PRESIDENTE DELLA REPUBBLICA IL PRESIDENTE DELLA REPUBBLICA la seguente legge: Art. 1 I benefici previsti dall' articolo 1 della legge 28 agosto 1954, n. 961 , sono estesi agli impiegati civili non di ruolo in possesso dei prescritti requisiti, che siano stati assunti dopo il 1 maggio 1948 ed anteriormente al 26 ottobre 1954 a seguito di provvedimento della Amministrazione militare anglo-americana negli uffici delle Amministrazioni statali esistenti nel Territorio di Trieste e che si trovino attualmente in servizio negli uffici stessi. Gli impiegati che, ai sensi del precedente comma, hanno titolo all'inquadramento nei ruoli aggiunti istituiti dall' articolo 71 del decreto del Presidente della Repubblica 11 gennaio 1956, n. 16 , debbono presentare, a pena, di decadenza, domanda documentata nel termine di sessanta giorni dal compimento dell'anzianit&agrave; di servizio stabilita dall' art. 1 del decreto legislativo 7 aprile 1948, n. 262 , o, qualora l'anzianit&agrave; stessa, sia gi&agrave; compiuta alla data di entrata in vigore della presente legge, non oltre sessanta giorni da tale data. La sistemazione contesa dai precedenti commi non pu&ograve; comunque avere decorrenza da data anteriore al 26 ottobre 1954, ed il periodo compreso tra la data di sistemazione ed il 1 luglio 1956 &egrave; considerato come anzianit&agrave; di ruolo speciale transitorio."
+    },
+    {
+      "chiave": "/eli/id/1960/06/16/060U0623/sg",
+      "titolo": "LEGGE 16 giugno 1960, n. 623",
+      "tipo": "legge",
+      "numero": "623",
+      "dataEmanazione": "1960-06-16",
+      "nir": "urn:nir:stato:legge:1960-06-16;623",
+      "eli": "/eli/id/1960/06/16/060U0623/sg",
+      "stato": "abrogato",
+      "sintesi": "Disciplina fiscale della produzione e del commercio della margarina destinata all'industria alimentare.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1960-06-16;623",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1960/07/07/060U0623/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1960-07-07",
+      "numeroGU": "165",
+      "codiceRedazionale": "060U0623",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.L. 25 GIUGNO 2008, N. 112 , CONVERTITO CON MODIFICAZIONI DALLA L. 6 AGOSTO 2008, N. 133 ))"
+    },
+    {
+      "chiave": "/eli/id/1959/06/11/059U0450/sg",
+      "titolo": "LEGGE 11 giugno 1959, n. 450",
+      "tipo": "legge",
+      "numero": "450",
+      "dataEmanazione": "1959-06-11",
+      "nir": "urn:nir:stato:legge:1959-06-11;450",
+      "eli": "/eli/id/1959/06/11/059U0450/sg",
+      "stato": "in_vigore",
+      "sintesi": "Istituzione della imposta di fabbricazione sulla margarina.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1959-06-11;450",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1959/07/07/059U0450/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1959-07-07",
+      "numeroGU": "159",
+      "codiceRedazionale": "059U0450",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "La Camera dei deputati ed il Senato della Repubblica hanno approvato; IL PRESIDENTE DELLA REPUBBLICA PROMULGA la seguente legge: Art. 1 &Egrave; istituita una imposta di fabbricazione nella misura di lire 12.000 per quintale sulla margarina. Nella stessa misura si applica la sovrimposta di confine sulla, margarina importata dall'estero. (1) ((2)) --------------- AGGIORNAMENTO (1) Il D.L. 9 novembre 1966, n.912 , convertito, con modificazioni, dalla L. 23 dicembre 1966, n. 1143 , ha disposto (con l'art. 44, comma 1) che \"L'Imposta di fabbricazione e la corrispondente sovrimposta di confine sulla margarina di cui all' art. 1 della legge 11 giugno 1959, n. 450 , sono ridotte a lire 3.000 per quintale, fermo restando quanto dispone l' articolo 1 della legge 16 giugno 1960, n. 623 \". --------------- AGGIORNAMENTO (2) La L. 4 agosto 1975, n. 417 ha disposto (con l'art. 4, comma 2) l'abrogazione del presente provvedimento a decorrere dalla data di entrata in vigore del decreto ministeriale di cui all'art. 4, comma 1 della medesima legge."
+    }
+  ]
+}

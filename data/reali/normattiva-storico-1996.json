@@ -1,0 +1,414 @@
+{
+  "provenance": {
+    "fonte": "normattiva",
+    "url": "https://api.normattiva.it/t/normattiva.api/bff-opendata/v1/api/v1/ricerca/aggiornati",
+    "recuperatoIl": "2026-09-29T00:21:09.918Z",
+    "licenza": "riproduzione consentita con menzione di fonte, carattere non autentico e gratuito (Note legali dati.normattiva.it; solo la Gazzetta Ufficiale a stampa e' autentica)"
+  },
+  "atti": [
+    {
+      "chiave": "/eli/id/1996/10/23/096G0607/sg",
+      "titolo": "DECRETO LEGISLATIVO 23 ottobre 1996, n. 581",
+      "tipo": "decreto.legislativo",
+      "numero": "581",
+      "dataEmanazione": "1996-10-23",
+      "nir": "urn:nir:stato:decreto.legislativo:1996-10-23;581",
+      "eli": "/eli/id/1996/10/23/096G0607/sg",
+      "stato": "in_vigore",
+      "sintesi": "Attuazione della direttiva 93/83/CEE per il coordinamento di alcune norme in materia di diritto d'autore e diritti connessi, applicabili alla radiodiffusione e alla ritrasmissione via cavo.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legislativo:1996-10-23;581",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1996/11/18/096G0607/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1996-11-18",
+      "numeroGU": "270",
+      "codiceRedazionale": "096G0607",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "IL PRESIDENTE DELLA REPUBBLICA Visti gli articoli 76 e 87 della Costituzione ; Vista la legge 6 febbraio 1996, n. 52 , e, in particolare, gli articoli 1, 3, 16, e l'allegato A; Vista la direttiva n. 93/83/CEE del Consiglio del 27 settembre 1993 , concernente il coordinamento di alcune norme in materia di diritto d'autore e diritti connessi applicabili alla radiodiffusione via satellite e alla ritrasmissione via cavo; Vista la legge 22 aprile 1941, n. 633 ; Vista la legge 6 agosto 1990, n. 223 ; Vista la legge 5 febbraio 1992, n. 93 ; Visto il decreto legislativo 16 novembre 1994, n. 685 ; Vista la deliberazione del Consiglio dei Ministri, adottata nella riunione dell'11 ottobre 1996; Sulla proposta del Presidente del Consiglio dei Ministri, di concerto con i Ministri degli affari esteri, delle poste e delle telecomunicazioni, di grazia e giustizia, del tesoro e per i beni culturali e ambientali e per lo spettacolo e lo sport; EMANA il seguente decreto legislativo: Art. 1 1. L' art. 16 della legge 22 aprile 1941, n. 633 , &egrave; sostituito dal seguente: \"Art. 16. - 1. Il diritto esclusivo di diffondere ha per oggetto l'impiego di uno dei mezzi di diffusione a distanza, quali il telegrafo, il telefono, la radio, la televisione ed altri mezzi analoghi e comprende la comunicazione al pubblico via satellite e la ritrasmissione via cavo.\". AVVERTENZA: Il testo delle note qui pubblicato &egrave; stato redatto ai sensi dell'art 10, commi 2 e 3, del testo unico delle disposizioni sulla promulgazione delle leggi, sull'emanazione dei decreti del Presidente della Repubblica e sulle pubblicazioni ufficiali della Repubblica italiana, approvato con D.P.R. 28 dicembre 1985, n. 1092 , al solo fine di facilitare la lettura delle disposizioni di legge modificate o alle quali &egrave; operato il rinvio. Restano invariati il valore e l'efficacia degli atti legislativi qui trascritti. Note alle premesse: - L' art. 76 della Costituzione regola la delega al Governo dell'esercizio della f [...]",
+      "testoTroncato": true
+    },
+    {
+      "chiave": "/eli/id/1996/10/23/096G0579/sg",
+      "titolo": "DECRETO-LEGGE 23 ottobre 1996, n. 551",
+      "tipo": "decreto.legge",
+      "numero": "551",
+      "dataEmanazione": "1996-10-23",
+      "nir": "urn:nir:stato:decreto.legge:1996-10-23;551",
+      "eli": "/eli/id/1996/10/23/096G0579/sg",
+      "stato": "in_vigore",
+      "sintesi": "Misure urgenti per il Grande Giubileo del 2000.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legge:1996-10-23;551",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1996/10/23/096G0579/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1996-10-23",
+      "numeroGU": "249",
+      "codiceRedazionale": "096G0579",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "IL PRESIDENTE DELLA REPUBBLICA Visti gli articoli 77 e 87 della Costituzione ; Ritenuta la straordinaria necessit&agrave; ed urgenza di emanare disposizioni legislative per definire e disciplinare gli interventi per il Grande Giubileo del 2000; Vista la deliberazione del Consiglio dei Ministri, adottata nella riunione del 22 ottobre 1996; Sulla proposta del Presidente del Consiglio dei Ministri, di concerto con i Ministri dei lavori pubblici, del tesoro e del bilancio e della programmazione economica e per la funzione pubblica e gli affari regionali; EMANA il seguente decreto-legge: Art. 1 Obiettivi e finalit&agrave; 1. Lo Stato assicura il concorso alla realizzazione delle iniziative connesse alla celebrazione del Giubileo dell'anno 2000 con particolare riferimento agli ambiti territoriali di cui al comma 2. 2. La commissione di cui all' articolo 2, comma 1, della legge 15 dicembre 1990, n. 396 , definisce, ((sulla base delle proposte pervenute da parte delle amministrazioni interessate,)) entro novanta giorni dalla data di entrata in vigore del presente decreto, il piano degli interventi concernenti la citt&agrave; di Roma e le altre localit&agrave; della provincia di Roma e della regione Lazio direttamente interessate al Giubileo. Il piano &egrave; adottato con decreto del Presidente del Consiglio dei Ministri. Il piano pu&ograve; essere modificato e integrato anche sulla base ((dei risultati del monitoraggio di cui ai commi 6-bis e 8)) . (( 2-bis. Per le questioni di specifico interesse delle rispettive province, i presidenti delle province di Frosinone, Latina, Rieti e Viterbo, sentiti i sindaci dei comuni interessati, integrano la commissione di cui all' articolo 2, comma 1, della legge 15 dicembre 1990, n. 396 , senza oneri a carico del bilancio dello Stato. )) 3. Il piano indica per ciascun intervento: a) le amministrazioni pubbliche, gli enti pubblici, gli enti di cui all' articolo 1 della legge 20 maggio 1985, n. 222 , e le societ&agrave; a intero o preval [...]",
+      "testoTroncato": true
+    },
+    {
+      "chiave": "/eli/id/1996/10/23/096G0575/sg",
+      "titolo": "DECRETO-LEGGE 23 ottobre 1996, n. 547",
+      "tipo": "decreto.legge",
+      "numero": "547",
+      "dataEmanazione": "1996-10-23",
+      "nir": "urn:nir:stato:decreto.legge:1996-10-23;547",
+      "eli": "/eli/id/1996/10/23/096G0575/sg",
+      "stato": "decaduto",
+      "sintesi": "Misure di completamento della manovra di finanza pubblica.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legge:1996-10-23;547",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1996/10/23/096G0575/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1996-10-23",
+      "numeroGU": "249",
+      "codiceRedazionale": "096G0575",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 DECRETO DECADUTO; I SUOI EFFETTI SONO STATI FATTI SALVI DALLA L. 23 DICEMBRE 1996, N. 662"
+    },
+    {
+      "chiave": "/eli/id/1996/10/23/096G0574/sg",
+      "titolo": "DECRETO-LEGGE 23 ottobre 1996, n. 546",
+      "tipo": "decreto.legge",
+      "numero": "546",
+      "dataEmanazione": "1996-10-23",
+      "nir": "urn:nir:stato:decreto.legge:1996-10-23;546",
+      "eli": "/eli/id/1996/10/23/096G0574/sg",
+      "stato": "in_vigore",
+      "sintesi": "Interventi urgenti di carattere previdenziale per il personale del Gruppo Alitalia.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legge:1996-10-23;546",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1996/10/23/096G0574/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1996-10-23",
+      "numeroGU": "249",
+      "codiceRedazionale": "096G0574",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "IL PRESIDENTE DELLA REPUBBLICA Visti gli articoli 77 e 87 della Costituzione ; Ritenuta la straordinaria necessit&agrave; ed urgenza di emanare disposizioni per attuare il programma di carattere previdenziale riguardante il personale del Gruppo Alitalia; Vista la deliberazione del Consiglio dei Ministri, adottata nella riunione del 22 ottobre 1996; Sulla proposta del Presidente del Consiglio dei Ministri e dei Ministri del lavoro e della previdenza sociale e dei trasporti e della navigazione, di concerto con il Ministro del tesoro e del bilancio e della programmazione economica; EMANA il seguente decreto-legge: Art. 1 Disposizioni per il Gruppo Alitalia 1. Al fine di garantire la prosecuzione del piano di riassetto organizzativo e produttivo, tenuto conto anche del processo di liberalizzazione nell'ambito del mercato interno comunitario, &egrave; autorizzato, ai sensi e per gli effetti dell'articolo 1, comma 2, secondo periodo, della legge 8 agosto 1995, n. 335 , in favore delle imprese del Gruppo Alitalia esercenti il trasporto aereo un piano di pensionamenti anticipati per il triennio 1995-1997, nel limite massimo di 700 unit&agrave;, sulla base dei seguenti criteri: a) possono essere ammessi al beneficio del pensionamento anticipato i lavoratori dipendenti da imprese del Gruppo in possesso di almeno 30 anni di anzianit&agrave; contributiva e assicurativa nell'assicurazione generale obbligatoria per l'invalidit&agrave;, la vecchiaia ed i superstiti. Agli stessi lavoratori il trattamento pensionistico viene erogato con una maggiorazione dell'anzianit&agrave; contributiva e assicurativa pari al periodo necessario per la maturazione del requisito dei 35 anni prescritto dalle disposizioni regolanti la suddetta assicurazione generale obbligatoria, e in ogni caso non superiore al periodo compreso tra la data di risoluzione del rapporto di lavoro e quella del compimento del sessantesimo anno di et&agrave;. Le domande di pensionamento anticipato sono irrevocabili e devono [...]",
+      "testoTroncato": true
+    },
+    {
+      "chiave": "/eli/id/1996/10/23/096G0572/sg",
+      "titolo": "DECRETO-LEGGE 23 ottobre 1996, n. 544",
+      "tipo": "decreto.legge",
+      "numero": "544",
+      "dataEmanazione": "1996-10-23",
+      "nir": "urn:nir:stato:decreto.legge:1996-10-23;544",
+      "eli": "/eli/id/1996/10/23/096G0572/sg",
+      "stato": "decaduto",
+      "sintesi": "Disposizioni urgenti per assicurare l'attivita' delle emittenti televisive e sonore, autorizzate in ambito locale, nonche' per disciplinare le trasmissioni televisive in forma codificata.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legge:1996-10-23;544",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1996/10/23/096G0572/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1996-10-23",
+      "numeroGU": "249",
+      "codiceRedazionale": "096G0572",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 DECRETO DECADUTO; I SUOI EFFETTI SONO STATI FATTI SALVI DALLA L. 23 DICEMBRE 1996, N. 650 ."
+    },
+    {
+      "chiave": "/eli/id/1996/10/23/096G0570/sg",
+      "titolo": "DECRETO-LEGGE 23 ottobre 1996, n. 542",
+      "tipo": "decreto.legge",
+      "numero": "542",
+      "dataEmanazione": "1996-10-23",
+      "nir": "urn:nir:stato:decreto.legge:1996-10-23;542",
+      "eli": "/eli/id/1996/10/23/096G0570/sg",
+      "stato": "in_vigore",
+      "sintesi": "Differimento di termini previsti da disposizioni legislative in materia di interventi in campo economico e sociale.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legge:1996-10-23;542",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1996/10/23/096G0570/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1996-10-23",
+      "numeroGU": "249",
+      "codiceRedazionale": "096G0570",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "IL PRESIDENTE DELLA REPUBBLICA Visti gli articoli 77 e 87 della Costituzione ; Ritenuta la straordinaria necessit&agrave; ed urgenza di emanare disposizioni concernenti il differimento di termini previsti da disposizioni legislative in materia di interventi in campo economico e sociale; Vista la deliberazione del Consiglio dei Ministri, adottata nella riunione del 22 ottobre 1996; Sulla proposta del Presidente del Consiglio dei Ministri, di concerto con i Ministri della pubblica istruzione e dell'universit&agrave; e della ricerca scientifica e tecnologica, delle risorse agricole, alimentari e forestali, dell'ambiente, dell'industria, del commercio e dell'artigianato, della sanit&agrave;, del tesoro e del bilancio e della programmazione economica, di grazia e giustizia, del lavoro e della previdenza sociale e per le pari opportunit&agrave;; EMANA il seguente decreto-legge: Art. 1 Interventi nel campo della ricerca 1. Il termine di cui all' articolo 3, comma 3, della legge 29 novembre 1990, n. 366 , &egrave; differito al 31 dicembre 1996. 2. Il termine previsto dall' articolo 4, comma secondo, della legge 3 aprile 1979, n. 122 , gi&agrave; differito al 18 aprile 1995 dall' articolo 9, comma 8, della legge 15 dicembre 1990, n. 396 , &egrave; ulteriormente differito al 31 dicembre 1997."
+    },
+    {
+      "chiave": "/eli/id/1996/10/23/096G0567/sg",
+      "titolo": "DECRETO-LEGGE 23 ottobre 1996, n. 539",
+      "tipo": "decreto.legge",
+      "numero": "539",
+      "dataEmanazione": "1996-10-23",
+      "nir": "urn:nir:stato:decreto.legge:1996-10-23;539",
+      "eli": "/eli/id/1996/10/23/096G0567/sg",
+      "stato": "decaduto",
+      "sintesi": "Disposizioni urgenti in materia di imposizione diretta ed indiretta, di funzionalita' dell'Amministrazione finanziaria, di gestioni fuori bilancio, di fondi previdenziali e di contenzioso tributario.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legge:1996-10-23;539",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1996/10/23/096G0567/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1996-10-23",
+      "numeroGU": "249",
+      "codiceRedazionale": "096G0567",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 DECRETO DECADUTO"
+    },
+    {
+      "chiave": "/eli/id/1996/10/23/096G0493/sg",
+      "titolo": "DECRETO-LEGGE 23 ottobre 1996, n. 555",
+      "tipo": "decreto.legge",
+      "numero": "555",
+      "dataEmanazione": "1996-10-23",
+      "nir": "urn:nir:stato:decreto.legge:1996-10-23;555",
+      "eli": "/eli/id/1996/10/23/096G0493/sg",
+      "stato": "decaduto",
+      "sintesi": "Disposizioni urgenti per l'attuazione dell'articolo 68 della Costituzione.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legge:1996-10-23;555",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1996/10/23/096G0493/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1996-10-23",
+      "numeroGU": "249",
+      "codiceRedazionale": "096G0493",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 DECRETO DECADUTO; I SUOI EFFETTI SONO STATI FATTI SALVI DALLA L. 20 GIUGNO 2003, N. 140"
+    },
+    {
+      "chiave": "/eli/id/1996/10/04/096G0547/sg",
+      "titolo": "DECRETO-LEGGE 4 ottobre 1996, n. 520",
+      "tipo": "decreto.legge",
+      "numero": "520",
+      "dataEmanazione": "1996-10-04",
+      "nir": "urn:nir:stato:decreto.legge:1996-10-04;520",
+      "eli": "/eli/id/1996/10/04/096G0547/sg",
+      "stato": "decaduto",
+      "sintesi": "Modifiche alla legge 28 dicembre 1993, n. 549, recante misure a tutela dell'ozono stratosferico.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legge:1996-10-04;520",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1996/10/07/096G0547/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1996-10-07",
+      "numeroGU": "235",
+      "codiceRedazionale": "096G0547",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 DECRETO DECADUTO; I SUOI EFFETTI SONO STATI FATTI SALVI DALLA L. 16 GIUGNO 1997, N. 179"
+    },
+    {
+      "chiave": "/eli/id/1996/10/01/096G0541/sg",
+      "titolo": "DECRETO-LEGGE 1 ottobre 1996, n. 513",
+      "tipo": "decreto.legge",
+      "numero": "513",
+      "dataEmanazione": "1996-10-01",
+      "nir": "urn:nir:stato:decreto.legge:1996-10-01;513",
+      "eli": "/eli/id/1996/10/01/096G0541/sg",
+      "stato": "decaduto",
+      "sintesi": "Definizione delle controversie relative alle opere realizzate per la ricostruzione posterremoto e proroga della gestione.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legge:1996-10-01;513",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1996/10/02/096G0541/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1996-10-02",
+      "numeroGU": "231",
+      "codiceRedazionale": "096G0541",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 DECRETO DECADUTO"
+    },
+    {
+      "chiave": "/eli/id/1996/09/20/096G0519/sg",
+      "titolo": "DECRETO-LEGGE 20 settembre 1996, n. 492",
+      "tipo": "decreto.legge",
+      "numero": "492",
+      "dataEmanazione": "1996-09-20",
+      "nir": "urn:nir:stato:decreto.legge:1996-09-20;492",
+      "eli": "/eli/id/1996/09/20/096G0519/sg",
+      "stato": "decaduto",
+      "sintesi": "Disposizioni urgenti in materia di finanza locale per l'anno 1996.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legge:1996-09-20;492",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1996/09/23/096G0519/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1996-09-23",
+      "numeroGU": "223",
+      "codiceRedazionale": "096G0519",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 DECRETO DECADUTO; I SUOI EFFETTI SONO STATI FATTI SALVI DALLA L. 23 DICEMBRE 1996, N. 662"
+    },
+    {
+      "chiave": "/eli/id/1996/09/06/096G0494/sg",
+      "titolo": "DECRETO-LEGGE 6 settembre 1996, n. 467",
+      "tipo": "decreto.legge",
+      "numero": "467",
+      "dataEmanazione": "1996-09-06",
+      "nir": "urn:nir:stato:decreto.legge:1996-09-06;467",
+      "eli": "/eli/id/1996/09/06/096G0494/sg",
+      "stato": "in_vigore",
+      "sintesi": "Proroga e sospensione di termini per i soggetti colpiti dagli eventi alluvionali verificatisi nelle province di Lucca, MassaCarrara, Udine e Pordenone nel mese di giugno 1996.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legge:1996-09-06;467",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1996/09/09/096G0494/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1996-09-09",
+      "numeroGU": "211",
+      "codiceRedazionale": "096G0494",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "IL PRESIDENTE DELLA REPUBBLICA Visti gli articoli 77 e 87 della Costituzione ; Visti gli eccezionali eventi alluvionali verificatisi nelle province di Lucca, Massa-Carrara, Udine e Pordenone nel mese di giugno 1996; Ritenuta la straordinaria necessit&agrave; ed urgenza di sospendere e prorogare per i soggetti colpiti dai predetti eventi alluvionali i termini legali, tributari, previdenziali e contributivi, nonch&egrave; di adottare provvedimenti a favore di lavoratori dipendenti da datori di lavoro privati danneggiati; Vista la deliberazione del Consiglio dei Ministri, adottata nella riunione del 6 settembre 1996; Sulla proposta del Presidente del Consiglio dei Ministri e del Ministro dell'interno e per il coordinamento della protezione civile, di concerto con i Ministri di grazia e giustizia, delle finanze, del lavoro e della previdenza sociale, del tesoro e del bilancio e della programmazione economica e della difesa; EMANA il seguente decreto-legge: Art. 1 Proroga termini tributari 1. Nei confronti delle persone fisiche domiciliate o residenti nei comuni delle province di Lucca e Massa Carrara, nonch&egrave; delle province di Udine e Pordenone interessati dagli eventi alluvionali del 19 e 22 giugno 1996, individuati rispettivamente dalle ordinanze del Ministro dell'interno con delega per la protezione civile n. 2449 del 25 giugno 1996 e n. 2451 del 27 giugno 1996, le quali abbiano subito, in conseguenza di detti eventi, rilevanti danni, sono sospesi ((fino al 30 giugno 1997)) , a decorrere dalla data in cui si &egrave; verificato l'evento, i termini relativi agli adempimenti ed ai versamenti tributari, nonch&egrave; ai connessi adempimenti civilistici e amministrativi, ivi compreso il versamento di entrate aventi natura patrimoniale ed assimilata dovute all'amministrazione finanziaria e ad enti pubblici anche locali, salvo quanto disposto dal comma 4. 2. Nei confronti dei soggetti, diversi dalle persone fisiche, aventi sede nei comuni individuati ai sensi del com [...]",
+      "testoTroncato": true
+    },
+    {
+      "chiave": "/eli/id/1996/09/06/096G0493/sg",
+      "titolo": "DECRETO-LEGGE 6 settembre 1996, n. 466",
+      "tipo": "decreto.legge",
+      "numero": "466",
+      "dataEmanazione": "1996-09-06",
+      "nir": "urn:nir:stato:decreto.legge:1996-09-06;466",
+      "eli": "/eli/id/1996/09/06/096G0493/sg",
+      "stato": "decaduto",
+      "sintesi": "Disposizioni urgenti per l'attuazione dell'articolo 68 della Costituzione.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legge:1996-09-06;466",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1996/09/09/096G0493/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1996-09-09",
+      "numeroGU": "211",
+      "codiceRedazionale": "096G0493",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 DECRETO DECADUTO; I SUOI EFFETTI SONO STATI FATTI SALVI DALLA L. 20 GIUGNO 2003, N. 140"
+    },
+    {
+      "chiave": "/eli/id/1996/09/06/096G0490/sg",
+      "titolo": "DECRETO-LEGGE 6 settembre 1996, n. 463",
+      "tipo": "decreto.legge",
+      "numero": "463",
+      "dataEmanazione": "1996-09-06",
+      "nir": "urn:nir:stato:decreto.legge:1996-09-06;463",
+      "eli": "/eli/id/1996/09/06/096G0490/sg",
+      "stato": "decaduto",
+      "sintesi": "Interventi urgenti nei settori agricoli e fermo biologico della pesca per il 1996.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legge:1996-09-06;463",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1996/09/07/096G0490/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1996-09-07",
+      "numeroGU": "210",
+      "codiceRedazionale": "096G0490",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 DECRETO DECADUTO; I SUOI EFFETTI SONO STATI FATTI SALVI DALLA L. 20 DICEMBRE 1996, N. 642"
+    },
+    {
+      "chiave": "/eli/id/1996/08/30/096G0479/sg",
+      "titolo": "DECRETO-LEGGE 30 agosto 1996, n. 452",
+      "tipo": "decreto.legge",
+      "numero": "452",
+      "dataEmanazione": "1996-08-30",
+      "nir": "urn:nir:stato:decreto.legge:1996-08-30;452",
+      "eli": "/eli/id/1996/08/30/096G0479/sg",
+      "stato": "decaduto",
+      "sintesi": "Modalita' di funzionamento dei consigli degli enti locali.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legge:1996-08-30;452",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1996/08/31/096G0479/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1996-08-31",
+      "numeroGU": "204",
+      "codiceRedazionale": "096G0479",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 DECRETO DECADUTO; I SUOI EFFETTI SONO STATI FATTI SALVI DALLA L. 23 DICEMBRE 1996, N. 662"
+    },
+    {
+      "chiave": "/eli/id/1996/08/30/096G0476/sg",
+      "titolo": "DECRETO-LEGGE 30 agosto 1996, n. 451",
+      "tipo": "decreto.legge",
+      "numero": "451",
+      "dataEmanazione": "1996-08-30",
+      "nir": "urn:nir:stato:decreto.legge:1996-08-30;451",
+      "eli": "/eli/id/1996/08/30/096G0476/sg",
+      "stato": "decaduto",
+      "sintesi": "Disposizioni urgenti per assicurare la funzionalita' delle segreterie comunali e provinciali.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legge:1996-08-30;451",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1996/08/31/096G0476/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1996-08-31",
+      "numeroGU": "204",
+      "codiceRedazionale": "096G0476",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 DECRETO DECADUTO"
+    },
+    {
+      "chiave": "/eli/id/1996/08/30/096G0474/sg",
+      "titolo": "DECRETO-LEGGE 30 agosto 1996, n. 449",
+      "tipo": "decreto.legge",
+      "numero": "449",
+      "dataEmanazione": "1996-08-30",
+      "nir": "urn:nir:stato:decreto.legge:1996-08-30;449",
+      "eli": "/eli/id/1996/08/30/096G0474/sg",
+      "stato": "decaduto",
+      "sintesi": "Misure di completamento della manovra di finanza pubblica.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legge:1996-08-30;449",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1996/08/31/096G0474/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1996-08-31",
+      "numeroGU": "204",
+      "codiceRedazionale": "096G0474",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 DECRETO DECADUTO; I SUOI EFFETTI SONO STATI FATTI SALVI DALLA L. 23 DICEMBRE 1996, N. 662"
+    },
+    {
+      "chiave": "/eli/id/1996/08/08/096G0465/sg",
+      "titolo": "DECRETO-LEGGE 8 agosto 1996, n. 442",
+      "tipo": "decreto.legge",
+      "numero": "442",
+      "dataEmanazione": "1996-08-08",
+      "nir": "urn:nir:stato:decreto.legge:1996-08-08;442",
+      "eli": "/eli/id/1996/08/08/096G0465/sg",
+      "stato": "decaduto",
+      "sintesi": "Disposizioni urgenti per assicurare l'attivita' delle emittenti televisive e sonore, autorizzate in ambito locale, nonche' per disciplinare le trasmissioni televisive in forma codificata.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legge:1996-08-08;442",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1996/08/26/096G0465/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1996-08-26",
+      "numeroGU": "199",
+      "codiceRedazionale": "096G0465",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 DECRETO DECADUTO"
+    },
+    {
+      "chiave": "/eli/id/1996/07/24/096G0452/sg",
+      "titolo": "DECRETO LEGISLATIVO 24 luglio 1996, n. 434",
+      "tipo": "decreto.legislativo",
+      "numero": "434",
+      "dataEmanazione": "1996-07-24",
+      "nir": "urn:nir:stato:decreto.legislativo:1996-07-24;434",
+      "eli": "/eli/id/1996/07/24/096G0452/sg",
+      "stato": "in_vigore",
+      "sintesi": "Norme di attuazione dello statuto speciale per la regione Trentino-Alto Adige recanti modifiche ed integrazioni al decreto del Presidente della Repubblica 10 febbraio 1983, n. 89, concernente l'ordinamento scolastico in provincia di Bolzano.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legislativo:1996-07-24;434",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1996/08/23/096G0452/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1996-08-23",
+      "numeroGU": "197",
+      "codiceRedazionale": "096G0452",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "IL PRESIDENTE DELLA REPUBBLICA Visto l' art. 87, comma quinto, della Costituzione ; Visto il testo unico delle leggi costituzionali concernente lo statuto speciale per il Trentino-Alto Adige, approvato con decreto del Presidente della Repubblica 31 agosto 1972, n. 670 ; Visto il decreto del Presidente della Repubblica 10 febbraio 1983, n. 89 , concernente norme di attuazione dello statuto speciale per la regione Trentino-Alto Adige in materia di ordinamento scolastico in provincia di Bolzano; Sentita la commissione paritetica per le norme di attuazione prevista dall'art. 107, comma secondo, del citato testo unico; Vista la deliberazione del Consiglio dei Ministri, adottata nella riunione del 19 luglio 1996; Sulla proposta del Presidente del Consiglio dei Ministri e del Ministro per la funzione pubblica e per gli affari regionali di concerto con i Ministri del tesoro, della pubblica istruzione e delle finanze; EMANA il seguente decreto legislativo: Art. 1 1. Il comma 2 dell'art. 1 del decreto del Presidente della Repubblica 10 febbraio 1983, n. 89 , &egrave; sostituito dai seguenti: \" 2. Ferma restando la dipendenza dallo Stato del personale insegnante - ispettivo, direttivo e docente - di ruolo e non di ruolo, le attribuzioni dell'amministrazione dello Stato in materia di stato giuridico ed economico del predetto personale, attualmente esercitate dai suoi organi centrali e periferici, sono delegate alla provincia di Bolzano nell'osservanza delle norme del presente decreto. La provincia esercita le funzioni predette a far data dal 1 gennaio 1996. 3. La provincia ha potest&agrave; di disciplinare con proprie leggi la materia di cui al comma precedente, per l'attuazione delle modifiche degli ordinamenti didattici introdotti ai sensi dell'art. 9 e per la miglior utilizzazione del personale stesso anche al fine di soddisfare le esigenze di continuit&agrave; didattica, nonch&egrave; per una pi&ugrave; efficace organizzazione della scuola.\". AVVERTENZA: Il testo delle note [...]",
+      "testoTroncato": true
+    }
+  ]
+}

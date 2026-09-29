@@ -1,0 +1,411 @@
+{
+  "provenance": {
+    "fonte": "normattiva",
+    "url": "https://api.normattiva.it/t/normattiva.api/bff-opendata/v1/api/v1/ricerca/aggiornati",
+    "recuperatoIl": "2026-09-29T00:19:06.001Z",
+    "licenza": "riproduzione consentita con menzione di fonte, carattere non autentico e gratuito (Note legali dati.normattiva.it; solo la Gazzetta Ufficiale a stampa e' autentica)"
+  },
+  "atti": [
+    {
+      "chiave": "/eli/id/1971/10/29/071U0889/sg",
+      "titolo": "LEGGE 29 ottobre 1971, n. 889",
+      "tipo": "legge",
+      "numero": "889",
+      "dataEmanazione": "1971-10-29",
+      "nir": "urn:nir:stato:legge:1971-10-29;889",
+      "eli": "/eli/id/1971/10/29/071U0889/sg",
+      "stato": "in_vigore",
+      "sintesi": "Norme in materia di previdenza per gli addetti ai pubblici servizi di trasporto.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1971-10-29;889",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1971/11/06/071U0889/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1971-11-06",
+      "numeroGU": "280",
+      "codiceRedazionale": "071U0889",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "La Camera dei deputati ed il Senato della Repubblica hanno approvato; IL PRESIDENTE DELLA REPUBBLICA PROMULGA la seguente legge: Art. 1 (Attribuzioni del comitato di vigilanza) Ferme restando le attribuzioni del consiglio di amministrazione e del comitato esecutivo dell'istituto nazionale della previdenza sociale, spetta al comitato di vigilanza: 1) decidere sui ricorsi riguardanti i contributi e le prestazioni, fermo restando il disposto di cui agli articoli 29 dell'allegato A al regio decreto 8 gennaio 1931, n. 148 , e 13 della legge 28 luglio 1961, n. 830 , nonch&egrave; sui ricorsi di cui all'articolo 16, terzo comma, della presente legge; 2) fare proposte sulle questioni generali relative alla determinazione dei contributi ed alla riscossione di essi; 3) esaminare i bilanci preventivi del Fondo per la previdenza degli addetti ai pubblici servizi di trasporto ed esprimere pareri sui rendiconti del Fondo stesso; 4) dare pareri sulle questioni che comunque possano sorgere nell'applicazione delle norme sulla previdenza speciale per gli addetti ai pubblici servizi di trasporto; 5) fare proposte sull'impiego delle somme eccedenti la normale liquidit&agrave; della gestione, nei limiti del piano degli impieghi deliberato dal consiglio di amministrazione a norma dell' articolo 65 della legge 30 aprile 1969, n. 153 ."
+    },
+    {
+      "chiave": "/eli/id/1971/07/06/071U0439/sg",
+      "titolo": "DECRETO-LEGGE 6 luglio 1971, n. 439",
+      "tipo": "decreto.legge",
+      "numero": "439",
+      "dataEmanazione": "1971-07-06",
+      "nir": "urn:nir:stato:decreto.legge:1971-07-06;439",
+      "eli": "/eli/id/1971/07/06/071U0439/sg",
+      "stato": "abrogato",
+      "sintesi": "Modifica della legge 3 luglio 1970, n. 500, concernente la proroga del termine previsto dall'art. 1 della legge 6 maggio 1940, n. 500, per la durata dell'Ente autonomo del porto di Napoli.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legge:1971-07-06;439",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1971/07/07/071U0439/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1971-07-07",
+      "numeroGU": "169",
+      "codiceRedazionale": "071U0439",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.L. 25 GIUGNO 2008, N. 112 ,CONVERTITO CON MODIFICAZIONI DALLA L. 6 AGOSTO 2008, N. 133 ))"
+    },
+    {
+      "chiave": "/eli/id/1971/07/05/071U0429/sg",
+      "titolo": "DECRETO-LEGGE 5 luglio 1971, n. 429",
+      "tipo": "decreto.legge",
+      "numero": "429",
+      "dataEmanazione": "1971-07-05",
+      "nir": "urn:nir:stato:decreto.legge:1971-07-05;429",
+      "eli": "/eli/id/1971/07/05/071U0429/sg",
+      "stato": "abrogato",
+      "sintesi": "Proroga ed aumento dello sgravio degli oneri sociali per le imprese industriali ed artigiane nel Mezzogiorno.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legge:1971-07-05;429",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1971/07/06/071U0429/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1971-07-06",
+      "numeroGU": "168",
+      "codiceRedazionale": "071U0429",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.L. 25 GIUGNO 2008, N. 112 , CONVERTITO, CON MODIFICAZIONI, DALLA L. 6 AGOSTO 2008, N. 133 ))"
+    },
+    {
+      "chiave": "/eli/id/1971/07/05/071U0428/sg",
+      "titolo": "DECRETO-LEGGE 5 luglio 1971, n. 428",
+      "tipo": "decreto.legge",
+      "numero": "428",
+      "dataEmanazione": "1971-07-05",
+      "nir": "urn:nir:stato:decreto.legge:1971-07-05;428",
+      "eli": "/eli/id/1971/07/05/071U0428/sg",
+      "stato": "in_vigore",
+      "sintesi": "Aumento del fondo di rotazione per la ricerca applicata presso l'Istituto mobiliare italiano.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legge:1971-07-05;428",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1971/07/06/071U0428/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1971-07-06",
+      "numeroGU": "168",
+      "codiceRedazionale": "071U0428",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "IL PRESIDENTE DELLA REPUBBLICA Visto l' art. 77 della Costituzione ; Ritenuta la necessit&agrave; e l'urgenza di aumentare il fondo di rotazione per la ricerca applicata presso l'Istituto mobiliare italiano; Sentito il Consiglio dei Ministri; Sulla proposta del Ministro per il tesoro, di concerto con il Ministro per il bilancio e la programmazione economica; Decreta: Art. 1 L'autorizzazione di spesa destinata alla ricerca applicata, di cui all' art. 4 della legge 25 ottobre 1968, n. 1089 , &egrave; elevata da 100 a 150 miliardi di lire. L'ulteriore somma di lire 50 miliardi sar&agrave; versata sul fondo speciale costituito presso l'Istituto mobiliare italiano ai sensi del citato articolo."
+    },
+    {
+      "chiave": "/eli/id/1971/06/01/071U0291/sg",
+      "titolo": "LEGGE 1 giugno 1971, n. 291",
+      "tipo": "legge",
+      "numero": "291",
+      "dataEmanazione": "1971-06-01",
+      "nir": "urn:nir:stato:legge:1971-06-01;291",
+      "eli": "/eli/id/1971/06/01/071U0291/sg",
+      "stato": "in_vigore",
+      "sintesi": "Provvedimenti per l'accelerazione di procedure in materia di opere pubbliche e in materia urbanistica e per la incentivazione dell'attivita' edilizia.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1971-06-01;291",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1971/06/03/071U0291/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1971-06-03",
+      "numeroGU": "139",
+      "codiceRedazionale": "071U0291",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "La Camera dei deputati ed il Senato della Repubblica hanno approvato; IL PRESIDENTE DELLA REPUBBLICA PROMULGA la seguente legge: Art. 1 L' articolo 10, primo comma, della legge 17 agosto 1942, n. 1150 , e successive modificazioni e integrazioni, &egrave; sostituito dal seguente: \"Il piano regolatore generale &egrave; approvato con decreto del Ministro per i lavori pubblici, sentito il parere del Consiglio superiore dei lavori pubblici\". Dopo il penultimo comma dell'articolo 10 della legge richiamata nel comma precedente &egrave; aggiunto il seguente comma: \"Non sono soggette alla preventiva autorizzazione le varianti, anche generali, intese ad adeguare il piano approvato ai limiti e rapporti fissati con i decreti previsti dall'ultimo comma dell'articolo 41-quinquies e dall'articolo 41-septies della presente legge nonch&egrave; le modifiche alle norme di attuazione e le varianti parziali che non incidano sui criteri informatori del piano stesso\"."
+    },
+    {
+      "chiave": "/eli/id/1971/06/01/071U0289/sg",
+      "titolo": "DECRETO-LEGGE 1 giugno 1971, n. 289",
+      "tipo": "decreto.legge",
+      "numero": "289",
+      "dataEmanazione": "1971-06-01",
+      "nir": "urn:nir:stato:decreto.legge:1971-06-01;289",
+      "eli": "/eli/id/1971/06/01/071U0289/sg",
+      "stato": "abrogato",
+      "sintesi": "Ulteriori provvedimenti in favore delle zone terremotate della Sicilia.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legge:1971-06-01;289",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1971/06/01/071U0289/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1971-06-01",
+      "numeroGU": "138",
+      "codiceRedazionale": "071U0289",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.L. 25 GIUGNO 2008, N. 112 , CONVERTITO, CON MODIFICAZIONI, DALLA L. 6 AGOSTO 2008, N. 133 ))"
+    },
+    {
+      "chiave": "/eli/id/1971/04/20/071U0162/sg",
+      "titolo": "DECRETO-LEGGE 20 aprile 1971, n. 162",
+      "tipo": "decreto.legge",
+      "numero": "162",
+      "dataEmanazione": "1971-04-20",
+      "nir": "urn:nir:stato:decreto.legge:1971-04-20;162",
+      "eli": "/eli/id/1971/04/20/071U0162/sg",
+      "stato": "abrogato",
+      "sintesi": "Provvedimenti intesi ad ovviare alle conseguenze della situazione di emergenza verificatasi nel comune di Reggio di Calabria.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legge:1971-04-20;162",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1971/04/21/071U0162/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1971-04-21",
+      "numeroGU": "98",
+      "codiceRedazionale": "071U0162",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.L. 25 GIUGNO 2008, N. 112 , CONVERTITO, CON MODIFICAZIONI, DALLA L. 6 AGOSTO 2008, N. 133 ))"
+    },
+    {
+      "chiave": "/eli/id/1971/04/20/071U0161/sg",
+      "titolo": "DECRETO-LEGGE 20 aprile 1971, n. 161",
+      "tipo": "decreto.legge",
+      "numero": "161",
+      "dataEmanazione": "1971-04-20",
+      "nir": "urn:nir:stato:decreto.legge:1971-04-20;161",
+      "eli": "/eli/id/1971/04/20/071U0161/sg",
+      "stato": "in_vigore",
+      "sintesi": "Modifiche alle norme transitorie del decreto del Presidente della Repubblica 30 aprile 1970, n. 639, relative ai ricorsi dei lavoratori in materia di prestazioni erogate dall'Istituto nazionale della previdenza sociale.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legge:1971-04-20;161",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1971/04/21/071U0161/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1971-04-21",
+      "numeroGU": "98",
+      "codiceRedazionale": "071U0161",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "IL PRESIDENTE DELLA REPUBBLICA Visto, l' art. 77, comma secondo, della Costituzione ; Ritenuta la straordinaria necessit&agrave; ed urgenza di prolungare, nella prima applicazione della nuova procedura del contenzioso amministrativo di cui al decreto del Presidente della Repubblica 30 aprile 1970, n. 639 , i termini entro cui i comitati provinciali ed i comitati regionali dell'Istituto nazionale della, previdenza sociale debbono decidere i ricorsi di competenza, a causa del loro rilevante numero iniziale; ritenuta altres&igrave; la straordinaria necessit&agrave; ed urgenza di meglio precisare la decorrenza dei, termini di cui all' art. 46, comma quinto, del decreto del Presidente della Repubblica 30 aprile 1970, n. 639 , al fine di superare le difficolt&agrave; di interpretazione verificatesi: Sentito il Consiglio dei Ministri; Sulla proposta del Ministro per il lavoro e la previdenza sociale; Decreta: Art. 1 La scadenza del termine per la decisione dei ricorsi da parte dei comitati provinciali dell'istituto nazionale della previdenza sociale, previsto dall'art. 59, comma settimo, in relazione all' art. 46, comma secondo, del decreto del Presidente della Repubblica 30 aprile 1970, n. 639 , &egrave; differita al novantesimo giorno successivo alla data dell'entrata in vigore del presente decreto; per effetto di tale differimento il comitato provinciale &egrave; rimesso in termini per la decisione dei ricorsi qualora alla predetta data il termine sia gi&agrave; scaduto. Resta ferma, per i ricorsi presentati anteriormente alla data medesima, la facolt&agrave; dei ricorrenti di adire l'autorit&agrave; giudiziaria decorso il termine di novanta giorni previsto dall' art. 1 della legge 5 febbraio 1957, n. 18 . Il termine di novanta giorni previsto dall' art. 46, comma quarto, del decreto del Presidente della Repubblica - 30 aprile 1970, n. 639, per la decisione dei ricorsi di seconda istanza da parte dei comitati regionali dell'Istituto nazionale della previdenza sociale, d [...]",
+      "testoTroncato": true
+    },
+    {
+      "chiave": "/eli/id/1971/04/01/071U0119/sg",
+      "titolo": "DECRETO-LEGGE 1 aprile 1971, n. 119",
+      "tipo": "decreto.legge",
+      "numero": "119",
+      "dataEmanazione": "1971-04-01",
+      "nir": "urn:nir:stato:decreto.legge:1971-04-01;119",
+      "eli": "/eli/id/1971/04/01/071U0119/sg",
+      "stato": "abrogato",
+      "sintesi": "Provvidenze in favore delle popolazioni dei comuni colpiti dal terremoto del febbraio 1971 in provincia di Viterbo.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legge:1971-04-01;119",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1971/04/02/071U0119/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1971-04-02",
+      "numeroGU": "82",
+      "codiceRedazionale": "071U0119",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.L. 25 GIUGNO 2008 N. 112 , CONVERTITO, CON MODIFICAZIONI DALLA L. 6 AGOSTO 2008 N. 133 )) ."
+    },
+    {
+      "chiave": "/eli/id/1971/01/22/071U0004/sg",
+      "titolo": "LEGGE 22 gennaio 1971, n. 4",
+      "tipo": "legge",
+      "numero": "4",
+      "dataEmanazione": "1971-01-22",
+      "nir": "urn:nir:stato:legge:1971-01-22;4",
+      "eli": "/eli/id/1971/01/22/071U0004/sg",
+      "stato": "abrogato",
+      "sintesi": "Proroga dei termini per le chiamate ed i trasferimenti a cattedre vacanti presso le facolta' universitarie.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1971-01-22;4",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1971/02/01/071U0004/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1971-02-01",
+      "numeroGU": "26",
+      "codiceRedazionale": "071U0004",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.L. 25 GIUGNO 2008, N. 112 , CONVERTITO, CON MODIFICAZIONI DALLA L. 6 AGOSTO 2008, N. 133 ))"
+    },
+    {
+      "chiave": "/eli/id/1970/10/28/070U0777/sg",
+      "titolo": "LEGGE 28 ottobre 1970, n. 777",
+      "tipo": "legge",
+      "numero": "777",
+      "dataEmanazione": "1970-10-28",
+      "nir": "urn:nir:stato:legge:1970-10-28;777",
+      "eli": "/eli/id/1970/10/28/070U0777/sg",
+      "stato": "abrogato",
+      "sintesi": "Autorizzazione a prestazioni di lavoro straordinario per alcuni servizi delle Amministrazioni finanziarie.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1970-10-28;777",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1970/11/10/070U0777/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1970-11-10",
+      "numeroGU": "284",
+      "codiceRedazionale": "070U0777",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.L. 25 GIUGNO 2008 N. 112 , CONVERTITO, CON MODIFICAZIONI DALLA L. 6 AGOSTO 2008 N. 133 ))."
+    },
+    {
+      "chiave": "/eli/id/1970/10/19/070U0744/sg",
+      "titolo": "LEGGE 19 ottobre 1970, n. 744",
+      "tipo": "legge",
+      "numero": "744",
+      "dataEmanazione": "1970-10-19",
+      "nir": "urn:nir:stato:legge:1970-10-19;744",
+      "eli": "/eli/id/1970/10/19/070U0744/sg",
+      "stato": "in_vigore",
+      "sintesi": "Conversione in legge, con modificazioni, del decreto-legge 28 agosto 1970, n. 622, concernente provvidenze a favore dei cittadini italiani rimpatriati dalla Libia, integrazioni delle disposizioni per l'assistenza ai profughi, nonche' disposizioni in materia previdenziale a favore dei cittadini italiani che hanno svolto attivita' lavorativa in Libia e dei loro familiari.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1970-10-19;744",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1970/10/26/070U0744/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1970-10-26",
+      "numeroGU": "272",
+      "codiceRedazionale": "070U0744",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "La Camera dei deputati ed il Senato della Repubblica hanno approvato; IL PRESIDENTE DELLA REPUBBLICA PROMULGA la seguente legge: Articolo unico Il decreto-legge 28 agosto 1970, n. 622 , concernente provvidenze a favore dei cittadini italiani rimpatriati dalla Libia, integrazioni delle disposizioni per l'assistenza ai profughi, nonch&egrave; disposizioni in materia previdenziale a favore dei cittadini italiani che hanno svolto attivit&agrave; lavorativa in Libia e dei loro familiari, &egrave; convertito in legge con le seguenti modificazioni: All'articolo 1, al terzo e al quarto comma, le parole: \"quindici giorni\" sono sostituite dalle altre: \"trenta giorni\"; tra il quarto e il quinto comma &egrave; inserito il seguente: \"Per coloro che, entro il predetto termine, non hanno potuto trovare sistemazione autonoma, &egrave; consentito in via eccezionale, un ulteriore periodo di ospitalit&agrave; gratuita di quindici giorni\". All'articolo 2, al primo comma, le parole: \"Entro tre mesi\" sono sostituite dalle altre: \"Entro nove mesi\". All'articolo 4, il sottotitolo: \"Proroga di altri benefici e assunzioni obbligatorie\" &egrave; sostituito dal seguente: \"Assunzioni obbligatorie ed altri benefici\"; al terzo comma &egrave; aggiunto il seguente periodo: \"La facolt&agrave; di assumere anche in soprannumero &egrave; attribuita esclusivamente alle Amministrazioni dello Stato\"; alla fine dell'articolo sono aggiunti i seguenti commi: \"Per un biennio dalla data di entrata in vigore della legge di conversione del presente decreto, l'aliquota stabilita dall' articolo 17 della legge 4 marzo 1952, n. 137 , &egrave; elevata al trenta per cento; almeno la met&agrave; di tale aliquota sar&agrave; assegnata con precedenza ai connazionali rimpatriati dalla Libia dal 1 settembre 1969. La disposizione del precedente comma si applica anche agli alloggi costruiti in attuazione della legge 9 agosto 1954, n. 640 , modificata con legge 29 settembre 1957, n. 966 , e con legge 20 marzo 1959, n. 144 . P [...]",
+      "testoTroncato": true
+    },
+    {
+      "chiave": "/eli/id/1970/02/11/070U0034/sg",
+      "titolo": "LEGGE 11 febbraio 1970, n. 34",
+      "tipo": "legge",
+      "numero": "34",
+      "dataEmanazione": "1970-02-11",
+      "nir": "urn:nir:stato:legge:1970-02-11;34",
+      "eli": "/eli/id/1970/02/11/070U0034/sg",
+      "stato": "abrogato",
+      "sintesi": "Revisione delle competenze accessorie del personale dell'Azienda autonoma delle ferrovie dello Stato.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1970-02-11;34",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1970/02/27/070U0034/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1970-02-27",
+      "numeroGU": "52",
+      "codiceRedazionale": "070U0034",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.L. 25 GIUGNO 2008, N. 112 , CONVERTITO, CON MODIFICAZIONI, DALLA L. 6 AGOSTO 2008, N. 133 ))"
+    },
+    {
+      "chiave": "/eli/id/1970/02/05/070U0021/sg",
+      "titolo": "LEGGE 5 febbraio 1970, n. 21",
+      "tipo": "legge",
+      "numero": "21",
+      "dataEmanazione": "1970-02-05",
+      "nir": "urn:nir:stato:legge:1970-02-05;21",
+      "eli": "/eli/id/1970/02/05/070U0021/sg",
+      "stato": "in_vigore",
+      "sintesi": "Modifiche ed integrazioni al decreto-legge 27 febbraio 1968, n. 79, convertito, con modificazioni, nella legge 18 marzo 1968, n. 241, ed alla legge 29 luglio 1968, n. 858, concernenti provvidenze in favore delle zone della Sicilia colpite dai terremoti del 1967 e del 1968.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1970-02-05;21",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1970/02/16/070U0021/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1970-02-16",
+      "numeroGU": "41",
+      "codiceRedazionale": "070U0021",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "La Camera dei deputati ed il Senato della Repubblica hanno approvato; IL PRESIDENTE DELLA REPUBBLICA PROMULGA la seguente legge: Art. 1 Le provvidenze previste dall' articolo 1, lettera b), del decreto-legge 27 febbraio 1968, n. 79 , convertito, con modificazioni, nella legge 18 marzo 1968, n. 241 , sono estese al ripristino degli edifici di centri sociali e di asili-nido, ((del Monastero dell'Angelo custode - ordine benedettino - di Alcamo e dei conventi delle Benedettine di Alcamo e di Tagliavia in provincia di Palermo)) , nonch&egrave; degli edifici di interesse storico, artistico e monumentale di propriet&agrave; di enti pubblici diversi da quelli gi&agrave; indicati dalla citata lettera b), purch&egrave; gli edifici medesimi risultino essere stati sottoposti a vincolo, ai sensi della legge 1 giugno 1939, n. 1089 , in data anteriore agli eventi sismici. Le provvidenze previste dal precedente comma sono estese ai comuni di cui all' articolo 36-bis del decreto-legge 27 febbraio 1968, n. 79 , convertito, con modificazioni, nella legge 18 marzo 1968, n. 241 ."
+    },
+    {
+      "chiave": "/eli/id/1969/12/22/069U0964/sg",
+      "titolo": "LEGGE 22 dicembre 1969, n. 964",
+      "tipo": "legge",
+      "numero": "964",
+      "dataEmanazione": "1969-12-22",
+      "nir": "urn:nir:stato:legge:1969-12-22;964",
+      "eli": "/eli/id/1969/12/22/069U0964/sg",
+      "stato": "abrogato",
+      "sintesi": "Disposizioni in materia di credito ai comuni ed alle province, nonche' provvidenze varie in materia di finanza locale.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1969-12-22;964",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1969/12/30/069U0964/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1969-12-30",
+      "numeroGU": "327",
+      "codiceRedazionale": "069U0964",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.L. 25 GIUGNO 2008, N. 112 , CONVERTITO, CON MODIFICAZIONI, DALLA L. 6 AGOSTO 2008, N. 133 ))"
+    },
+    {
+      "chiave": "/eli/id/1968/03/12/068U0410/sg",
+      "titolo": "LEGGE 12 marzo 1968, n. 410",
+      "tipo": "legge",
+      "numero": "410",
+      "dataEmanazione": "1968-03-12",
+      "nir": "urn:nir:stato:legge:1968-03-12;410",
+      "eli": "/eli/id/1968/03/12/068U0410/sg",
+      "stato": "in_vigore",
+      "sintesi": "Modifiche alle leggi sulla previdenza e assistenza degli avvocati e procuratori legali, dei dottori commercialisti e dei ragionieri e periti commerciali.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1968-03-12;410",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1968/04/18/068U0410/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1968-04-18",
+      "numeroGU": "99",
+      "codiceRedazionale": "068U0410",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "La Camera dei deputati ed il Senato della Repubblica hanno approvato; IL PRESIDENTE DELLA REPUBBLICA PROMULGA la seguente legge: Art. 1 Sono dovuti alla Cassa nazionale di previdenza e di assistenza a favore degli avvocati e procuratori, alla Cassa nazionale di previdenza e di assistenza a favore dei dottori commercialisti e alla Cassa nazionale di previdenza e di assistenza a favore dei ragionieri e periti commerciali i seguenti contributi: a) contributo di lire 3.200 sugli atti che vengono depositati presso le cancellerie commerciali dei tribunali e sui documenti rilasciati dalle stesse, nonch&egrave; sulle copie di tali atti e documenti, riguardanti le imprese commerciali indicate dall' articolo 2195 del codice civile , escluse in ogni caso dall'obbligo di tale contribuzione le societ&agrave; cooperative; ((detto contributo va applicato sia sul bilancio che si deposita, sia sul verbale dell'assemblea che lo accompagna)) ; b) contributo di lire 500 da corrispondersi da ogni procuratore o avvocato, da ogni dottore commercialista, ragioniere o perito commerciale su ogni delega di rappresentanza ((relativa a ciascuna imposta e per ciascun periodo di imposta)) avanti gli uffici fiscali sia della finanza erariale che locale, di lire 2.000 su ogni delega o mandato di rappresentanza ((relativi a ciascuna imposta e per ciascun periodo di imposta)) davanti alle commissioni tributarie di ogni ordine e grado, nonch&egrave; davanti alle giunte provinciali amministrative; c) contributo di lire 2.000 per la vidimazione iniziale e per quelle annuali su ciascuno dei libri la cui tenuta &egrave; considerata obbligatoria per legge e dei libri ausiliari prescritti per le imprese di cui all' articolo 2195 del codice civile , escluse in ogni caso dall'obbligo di tale contribuzione le societ&agrave; cooperative."
+    },
+    {
+      "chiave": "/eli/id/1968/03/12/068U0315/sg",
+      "titolo": "LEGGE 12 marzo 1968, n. 315",
+      "tipo": "legge",
+      "numero": "315",
+      "dataEmanazione": "1968-03-12",
+      "nir": "urn:nir:stato:legge:1968-03-12;315",
+      "eli": "/eli/id/1968/03/12/068U0315/sg",
+      "stato": "in_vigore",
+      "sintesi": "Proroga ed integrazione della legge 16 settembre 1960, n. 1016, sul finanziamento a medio termine al commercio.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1968-03-12;315",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1968/04/08/068U0315/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1968-04-08",
+      "numeroGU": "91",
+      "codiceRedazionale": "068U0315",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "La Camera dei deputati ed il Senato della Repubblica hanno approvato; IL PRESIDENTE DELLA REPUBBLICA PROMULGA la seguente legge: Art. 1 Il termine di cui al terzo comma dell'articolo 5 della legge 16 settembre 1960, n. 1016 , gi&agrave; prorogato con legge 25 gennaio 1962, n. 21, 28 luglio 1962, n. 1075, 21 febbraio 1963, n. 264, 23 marzo 1964, n. 153, e 6 maggio 1966, n. 308 , &egrave; ulteriormente prorogato al 31 dicembre 1968."
+    },
+    {
+      "chiave": "/eli/id/1968/01/04/068U0007/sg",
+      "titolo": "LEGGE 4 gennaio 1968, n. 7",
+      "tipo": "legge",
+      "numero": "7",
+      "dataEmanazione": "1968-01-04",
+      "nir": "urn:nir:stato:legge:1968-01-04;7",
+      "eli": "/eli/id/1968/01/04/068U0007/sg",
+      "stato": "abrogato",
+      "sintesi": "Proroga con modifiche, delle disposizioni sull'assistenza ai profughi ed ai connazionali rimpatriati assimilati ai profughi.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1968-01-04;7",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1968/01/19/068U0007/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1968-01-19",
+      "numeroGU": "15",
+      "codiceRedazionale": "068U0007",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.LGS. 13 DICEMBRE 2010, N. 212 ))"
+    },
+    {
+      "chiave": "/eli/id/1968/01/04/068U0005/sg",
+      "titolo": "LEGGE 4 gennaio 1968, n. 5",
+      "tipo": "legge",
+      "numero": "5",
+      "dataEmanazione": "1968-01-04",
+      "nir": "urn:nir:stato:legge:1968-01-04;5",
+      "eli": "/eli/id/1968/01/04/068U0005/sg",
+      "stato": "abrogato",
+      "sintesi": "Eliminazione delle baracche ed altri edifici malsani costruiti in Abruzzo in dipendenza del terremoto del 13 gennaio 1915.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1968-01-04;5",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1968/01/19/068U0005/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1968-01-19",
+      "numeroGU": "15",
+      "codiceRedazionale": "068U0005",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.L. 25 GIUGNO 2008, N. 112 , CONVERTITO, CON MODIFICAZIONI, DALLA L. 6 AGOSTO 2008, N. 133 ))"
+    }
+  ]
+}

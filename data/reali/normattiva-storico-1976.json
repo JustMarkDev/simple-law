@@ -1,0 +1,497 @@
+{
+  "provenance": {
+    "fonte": "normattiva",
+    "url": "https://api.normattiva.it/t/normattiva.api/bff-opendata/v1/api/v1/ricerca/aggiornati",
+    "recuperatoIl": "2026-09-29T00:31:30.823Z",
+    "licenza": "riproduzione consentita con menzione di fonte, carattere non autentico e gratuito (Note legali dati.normattiva.it; solo la Gazzetta Ufficiale a stampa e' autentica)"
+  },
+  "atti": [
+    {
+      "chiave": "/eli/id/1976/11/19/076U0759/sg",
+      "titolo": "DECRETO-LEGGE 19 novembre 1976, n. 759",
+      "tipo": "decreto.legge",
+      "numero": "759",
+      "dataEmanazione": "1976-11-19",
+      "nir": "urn:nir:stato:decreto.legge:1976-11-19;759",
+      "eli": "/eli/id/1976/11/19/076U0759/sg",
+      "stato": "in_vigore",
+      "sintesi": "Modificazione all'art. 2 della legge 30 aprile 1976, n. 159, sostituito dall'art. 3 della legge 8 ottobre 1976, n. 689, contenente disposizioni penali in materia di infrazioni valutarie.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legge:1976-11-19;759",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1976/11/20/076U0759/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1976-11-20",
+      "numeroGU": "310",
+      "codiceRedazionale": "076U0759",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "IL PRESIDENTE DELLA REPUBBLICA Visto l' art. 77, secondo comma, della Costituzione ; Visto il decreto-legge 4 marzo 1976, n. 31 , convertito, con modificazioni, nella legge 30 aprile 1976, n. 159 , contenente disposizioni penali in materia di infrazioni valutarie; Visto il decreto-legge 10 agosto 1976, n. 543 , convertito, con modificazioni, nella legge 8 ottobre 1976, n. 689 , contenente anch'essa disposizioni penali in materia di infrazioni valutarie; Ritenuta la necessit&agrave; e l'urgenza di provvedere ad una congrua proroga del termine per la presentazione all'Ufficio italiano dei cambi della dichiarazione prevista dall' art. 2 della legge 30 aprile 1976, n. 159 , sostituito dall' art. 3 della legge 8 ottobre 1976, n. 689 ; Sentito il Consiglio dei Ministri; Sulla proposta del Ministro per la grazia e giustizia, di concerto con i Ministri per le finanze, per il tesoro e per il commercio con l'estero; Decreta: Art. 1 La data del 19 novembre 1976 di cui all'art. 2, sub art. 3, della legge 8 ottobre 1976, n. 689 , &egrave; sostituita con quella del 3 dicembre 1976."
+    },
+    {
+      "chiave": "/eli/id/1976/10/23/076U0711/sg",
+      "titolo": "DECRETO-LEGGE 23 ottobre 1976, n. 711",
+      "tipo": "decreto.legge",
+      "numero": "711",
+      "dataEmanazione": "1976-10-23",
+      "nir": "urn:nir:stato:decreto.legge:1976-10-23;711",
+      "eli": "/eli/id/1976/10/23/076U0711/sg",
+      "stato": "in_vigore",
+      "sintesi": "Norme per l'istituzione di un diritto speciale sulle cessioni di valuta e sui pagamenti verso l'estero.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legge:1976-10-23;711",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1976/10/23/076U0711/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1976-10-23",
+      "numeroGU": "284",
+      "codiceRedazionale": "076U0711",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "IL PRESIDENTE DELLA REPUBBLICA Visto l' art. 77, secondo comma, della Costituzione ; Ritenuta la necessit&agrave; e l'urgenza di istituire un diritto speciale sulle cessioni di valuta e sui pagamenti verso l'estero; Sentito il Consiglio dei Ministri; Sulla proposta del Ministro per il tesoro, di concerto con i Ministri per le finanze e per il commercio con l'estero; Decreta: Art. 1 Fino alla data che verr&agrave; stabilita con decreto del Ministro per il tesoro, di concerto con i Ministri per le finanze e per il commercio con l'estero e, comunque, non oltre il 18 febbraio 1977, sulle cessioni di valuta estera contro lire, a pronti o a termine, effettuate in favore dei residenti per il regolamento di operazioni autorizzate in via generale o particolare, &egrave; dovuto un diritto speciale nella misura del 7 per cento della moneta nazionale corrisposta come controvalore della valuta estera ceduta. ((2)) Il diritto speciale &egrave; dovuto anche sui pagamenti all'estero effettuati dalle banche agenti per conto di residenti mediante addebitamenti di conti valutari, nonch&egrave; sui pagamenti eseguiti mediante accreditamento di lire in conti di pertinenza estera. --------------- AGGIORNAMENTO (2) Il D.M. 23 dicembre 1976 (in G.U. 24/12/1976, n. 342) ha disposto (con l'art. 1, comma 1) che \"Il diritto speciale previsto dal decreto-legge 23 ottobre 1976, n. 711 , convertito, con modificazioni, nella legge 14 dicembre 1976, n. 845 , &egrave; progressivamente ridotto, con decorrenza dalle date sottoindicate, alle seguenti misure: 3&frac12;% dal 27 dicembre 1976; 3% dal 3 gennaio 1977; 2&frac12;% dal 10 gennaio 1977; 2 % dal 17 gennaio 1977; 1&frac12;% dal 24 gennaio 1977; 1% dal 31 gennaio 1977; &frac12;% dal 7 febbraio 1977\"."
+    },
+    {
+      "chiave": "/eli/id/1976/10/11/076U0699/sg",
+      "titolo": "DECRETO-LEGGE 11 ottobre 1976, n. 699",
+      "tipo": "decreto.legge",
+      "numero": "699",
+      "dataEmanazione": "1976-10-11",
+      "nir": "urn:nir:stato:decreto.legge:1976-10-11;699",
+      "eli": "/eli/id/1976/10/11/076U0699/sg",
+      "stato": "abrogato",
+      "sintesi": "Disposizioni sulla corresponsione degli aumenti retributivi dipendenti da variazioni del costo della vita.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legge:1976-10-11;699",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1976/10/12/076U0699/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1976-10-12",
+      "numeroGU": "272",
+      "codiceRedazionale": "076U0699",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.L. 25 GIUGNO 2008, N. 112 , CONVERTITO, CON MODIFICAZIONI, DALLA L. 6 AGOSTO 2008, N. 133 ))"
+    },
+    {
+      "chiave": "/eli/id/1976/08/10/076U0544/sg",
+      "titolo": "DECRETO-LEGGE 10 agosto 1976, n. 544",
+      "tipo": "decreto.legge",
+      "numero": "544",
+      "dataEmanazione": "1976-08-10",
+      "nir": "urn:nir:stato:decreto.legge:1976-08-10;544",
+      "eli": "/eli/id/1976/08/10/076U0544/sg",
+      "stato": "in_vigore",
+      "sintesi": "Proroga dei termini di cui agli articoli 15, 17 e 18 della legge 10 maggio 1976, n. 319, recante norme per la tutela delle acque dall'inquinamento.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legge:1976-08-10;544",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1976/08/11/076U0544/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1976-08-11",
+      "numeroGU": "211",
+      "codiceRedazionale": "076U0544",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((Il D.LGS. 3 APRILE 2006, N. 152 HA CONFERMATO L'ABROGAZIONE DEL PRESENTE PROVVEDIMENTO)) ."
+    },
+    {
+      "chiave": "/eli/id/1976/08/10/076U0543/sg",
+      "titolo": "DECRETO-LEGGE 10 agosto 1976, n. 543",
+      "tipo": "decreto.legge",
+      "numero": "543",
+      "dataEmanazione": "1976-08-10",
+      "nir": "urn:nir:stato:decreto.legge:1976-08-10;543",
+      "eli": "/eli/id/1976/08/10/076U0543/sg",
+      "stato": "in_vigore",
+      "sintesi": "Modifica dell'art. 2 della legge 30 aprile 1976, n. 159, contenente disposizioni penali in materia di infrazioni valutarie.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legge:1976-08-10;543",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1976/08/11/076U0543/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1976-08-11",
+      "numeroGU": "211",
+      "codiceRedazionale": "076U0543",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "IL PRESIDENTE DELLA REPUBBLICA Visto l' art. 77, secondo comma, della Costituzione ; Visto il decreto-legge 4 marzo 1976, n. 31 , convertito, con modificazioni, nella legge 30 aprile 1976, n. 159 , contenente \"Disposizioni penali in materia di infrazioni valutarie\"; Ritenuta la necessit&agrave; e l'urgenza di provvedere ad una congrua proroga del termine di tre mesi, stabilito dall'art. 2 della predetta legge per la presentazione all'Ufficio italiano dei cambi della dichiarazione delle disponibilit&agrave; e attivit&agrave; di cui al secondo comma dell'art. 1 del decreto-legge 4 marzo 1976, n. 31 ; Sentito il Consiglio dei Ministri; Sulla proposta del Ministro per la grazia e giustizia, di concerto con il Ministro per il tesoro, con il Ministro per le finanze e con il Ministro per il commercio con l'estero; Decreta: Art. 1 Il termine di tre mesi, stabilito per la dichiarazione di cui all' art. 2, primo comma, della legge 30 aprile 1976, n. 159 , &egrave; prorogato al 19 novembre 1976."
+    },
+    {
+      "chiave": "/eli/id/1976/08/10/076U0542/sg",
+      "titolo": "DECRETO-LEGGE 10 agosto 1976, n. 542",
+      "tipo": "decreto.legge",
+      "numero": "542",
+      "dataEmanazione": "1976-08-10",
+      "nir": "urn:nir:stato:decreto.legge:1976-08-10;542",
+      "eli": "/eli/id/1976/08/10/076U0542/sg",
+      "stato": "in_vigore",
+      "sintesi": "Interventi urgenti per le popolazioni della zona colpita dall'inquinamento da sostanze tossiche verificatosi in provincia di Milano il 10 luglio 1976.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legge:1976-08-10;542",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1976/08/11/076U0542/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1976-08-11",
+      "numeroGU": "211",
+      "codiceRedazionale": "076U0542",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "IL PRESIDENTE DELLA REPUBBLICA Visto l' art. 77 della Costituzione ; Ritenuta la necessit&agrave; e l'urgenza di disporre interventi urgenti per le popolazioni della zona colpita dall'inquinamento da sostanze tossiche verificatosi in provincia di Milano il 10 luglio 1976; Sentito il Consiglio dei Ministri; Sulla proposta del Presidente del Consiglio dei Ministri, di concerto con i Ministri per il tesoro e per il bilancio e la programmazione economica; Decreta: Contributo speciale alla regione Lombardia Art. 1 Al fine di fronteggiare le prime necessit&agrave; d'intervento nella zona colpita dall'inquinamento di sostanze tossiche verificatosi il 10 luglio 1976 lo Stato assegna alla regione Lombardia un contributo speciale di lire 40 miliardi. Con la somma anzidetta la regione provveder&agrave; nell'ambito dei comuni indicati con decreto del Presidente del Consiglio dei Ministri ai sensi del decreto-legge 3 agosto 1976, n. 537 , anche a mezzo di delega o di contributo agli enti locali, agli interventi urgenti rientranti nelle materie di propria competenza o ad essa delegate dallo Stato anche a norma del presente decreto, ovvero in quelle materie di competenza degli enti locali nelle quali &egrave; indispensabile un'azione coordinata, a favore della popolazione e del territorio colpiti, e in particolare: a) agli accertamenti ed ai controlli sull'inquinamento del terreno, delle acque e della vegetazione; b) agli interventi di decontaminazione e di bonifica del terreno, degli stabili e ad ogni altro intervento di ripristino e di protezione dell'ambiente anche in relazione alle direttive che potranno essere impartite dal Ministero della sanit&agrave;; c) agli accertamenti e controlli sanitari e all'assistenza sanitaria e in genere necessarie a tutela della salute pubblica nella zona colpita; d) all'assistenza, anche scolastica; e) agli accertamenti e controlli ed agli interventi nel campo della profilassi medico-veterinaria e della assistenza zooiatrica; f) all'esecuzione  [...]",
+      "testoTroncato": true
+    },
+    {
+      "chiave": "/eli/id/1976/07/09/076U0470/sg",
+      "titolo": "DECRETO-LEGGE 9 luglio 1976, n. 470",
+      "tipo": "decreto.legge",
+      "numero": "470",
+      "dataEmanazione": "1976-07-09",
+      "nir": "urn:nir:stato:decreto.legge:1976-07-09;470",
+      "eli": "/eli/id/1976/07/09/076U0470/sg",
+      "stato": "abrogato",
+      "sintesi": "Disposizioni sulla riscossione della imposta sul reddito delle persone fisiche per la rata di luglio 1976.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legge:1976-07-09;470",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1976/07/10/076U0470/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1976-07-10",
+      "numeroGU": "180",
+      "codiceRedazionale": "076U0470",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL 25 GIUGNO 2008, N. 112, CONVERTITO, CON MODIFICAZIONI, DALLA L. 6 AGOSTO 2008, N. 133 ))."
+    },
+    {
+      "chiave": "/eli/id/1976/07/03/076U0454/sg",
+      "titolo": "DECRETO-LEGGE 3 luglio 1976, n. 454",
+      "tipo": "decreto.legge",
+      "numero": "454",
+      "dataEmanazione": "1976-07-03",
+      "nir": "urn:nir:stato:decreto.legge:1976-07-03;454",
+      "eli": "/eli/id/1976/07/03/076U0454/sg",
+      "stato": "in_vigore",
+      "sintesi": "Modificazioni alla legge 16 luglio 1974, n. 329, sulla disciplina igienica della produzione e del commercio della birra in Italia.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legge:1976-07-03;454",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1976/07/06/076U0454/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1976-07-06",
+      "numeroGU": "175",
+      "codiceRedazionale": "076U0454",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "IL PRESIDENTE DELLA REPUBBLICA Visto l' art. 77, comma secondo, della Costituzione ; Vista la legge 16 luglio 1974, n. 329 ; Vista la legge 16 agosto 1962, n. 1354 ; Ritenuta la necessit&agrave; e l'urgenza di apportare modifiche alla disciplina della produzione e del commercio della birra al fine di adeguarsi al disposto degli articoli da 30 a 36 del trattato istitutivo della Comunit&agrave; economica europea ratificato con legge 14 ottobre 1957, n. 1203 ; Sentito il Consiglio dei Ministri; Sulla proposta del Ministro per la sanit&agrave;, di concerto con i Ministri per l'industria, il commercio e l'artigianato, per le finanze e per il commercio con l'estero; Decreta: Art. 1 Il penultimo comma dell' art. 7 della legge 16 luglio 1974, n. 329 , &egrave; cos&igrave; modificato: \"Inoltre anche i relativi recipienti e bottiglie debbono corrispondere alle caratteristiche e requisiti stabiliti dalla presente legge e debbono recare in lingua italiana le indicazioni prescritte dagli articoli 2 e 12 della stessa legge\"."
+    },
+    {
+      "chiave": "/eli/id/1976/05/10/076U0262/sg",
+      "titolo": "LEGGE 10 maggio 1976, n. 262",
+      "tipo": "legge",
+      "numero": "262",
+      "dataEmanazione": "1976-05-10",
+      "nir": "urn:nir:stato:legge:1976-05-10;262",
+      "eli": "/eli/id/1976/05/10/076U0262/sg",
+      "stato": "in_vigore",
+      "sintesi": "Proroga al 31 dicembre 1976 della riduzione al 6 per cento dell'aliquota IVA sui prodotti petroliferi agevolati per uso agricolo.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1976-05-10;262",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1976/05/18/076U0262/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1976-05-18",
+      "numeroGU": "130",
+      "codiceRedazionale": "076U0262",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "La Camera dei deputati ed il Senato della Repubblica hanno approvato; IL PRESIDENTE DELLA REPUBBLICA PROMULGA la seguente legge: Art. 1 Articolo unico L'aliquota dell'imposta sul valore aggiunto per i prodotti petroliferi per uso agricolo e per la pesca in acque interne &egrave; ridotta al 6 per cento fino al 31 dicembre 1976. (1) (2) ((3)) La presente legge, munita del sigillo dello Stato, sar&agrave; inserta nella Raccolta ufficiale delle leggi e dei decreti della Repubblica italiana. &Egrave; fatto obbligo a chiunque spetti di osservarla e di farla osservare come legge dello Stato. Data a Roma, add&igrave; 10 maggio 1976 LEONE MORO - STAMMATI - MARCORA Visto, il Guardasigilli: BONIFACIO --------------- AGGIORNAMENTO (1) Il D.L. 23 dicembre 1976, n. 852 , convertito con modificazioni dalla L. 21 febbraio 1977, n. 31 , ha disposto (con l'art. 3, comma 1) che \"La riduzione al 6 per cento dell'aliquota della imposta sul valore aggiunto prevista dalla legge 10 maggio 1976, n. 262 , per le cessioni e le importazioni di prodotti petroliferi per uso agricolo e per la pesca in acque interne &egrave; prorogata al 31 dicembre 1977\". --------------- AGGIORNAMENTO (2) Il D.L. 23 dicembre 1978, n. 816 , convertito con modificazioni dalla L. 19 febbraio 1979, n. 53 , ha disposto (con l'art. 3, comma 1) che \"La riduzione al 6 per cento dell'aliquota dell'imposta sul valore aggiunto prevista dalla legge 10 maggio 1976, n. 262 , per le cessioni e le importazioni di prodotti petroliferi per uso agricolo e per la pesca in acque interne si applica fino al 31 dicembre 1979\". --------------- AGGIORNAMENTO (3) Il D.L. 30 dicembre 1979, n. 660 , convertito con modificazioni dalla L. 29 febbraio 1980, n. 31 , ha disposto (con l'art. 7, comma 1) che \"La riduzione al 6 per cento dell'aliquota dell'imposta sul valore aggiunto prevista dalla legge 10 maggio 1976, n. 262 , per le cessioni e le importazioni di prodotti petroliferi per uso agricolo e per la pesca in acque interne, si applica fin [...]",
+      "testoTroncato": true
+    },
+    {
+      "chiave": "/eli/id/1976/05/13/076U0228/sg",
+      "titolo": "DECRETO-LEGGE 13 maggio 1976, n. 228",
+      "tipo": "decreto.legge",
+      "numero": "228",
+      "dataEmanazione": "1976-05-13",
+      "nir": "urn:nir:stato:decreto.legge:1976-05-13;228",
+      "eli": "/eli/id/1976/05/13/076U0228/sg",
+      "stato": "in_vigore",
+      "sintesi": "Provvedimenti urgenti sulla proroga dei contratti di locazione e di sublocazione degli immobili urbani.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legge:1976-05-13;228",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1976/05/14/076U0228/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1976-05-14",
+      "numeroGU": "127",
+      "codiceRedazionale": "076U0228",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "IL PRESIDENTE DELLA REPUBBLICA Visto l' art. 77 della Costituzione ; Ritenuta la straordinaria necessit&agrave; e l'urgenza di prorogare i contratti di locazione e di sublocazione degli immobili urbani; Sentito il Consiglio dei Ministri; Sulla proposta del Ministro per la grazia e giustizia, di concerto con il Ministro per l'industria, il commercio e l'artigianato; Decreta: Art. 1 ((I contratti di locazione e di sublocazione di immobili urbani, in corso alla data di entrata in vigore del presente decreto-legge sono prorogati fino alla data del 31 dicembre 1976 ovvero, qualora si tratti di immobile adibito ad uso di albergo, pensione e locanda, fino al 30 giugno 1977. Sino alla predetta data continuano ad applicarsi le disposizioni del decreto-legge 25 giugno 1975, n. 255 , convertito nella legge 31 luglio 1975, n. 363 , nonch&egrave; le altre disposizioni speciali vigenti in materia di locazione e sublocazione di immobili urbani)) ."
+    },
+    {
+      "chiave": "/eli/id/1976/04/30/076U0198/sg",
+      "titolo": "LEGGE 30 aprile 1976, n. 198",
+      "tipo": "legge",
+      "numero": "198",
+      "dataEmanazione": "1976-04-30",
+      "nir": "urn:nir:stato:legge:1976-04-30;198",
+      "eli": "/eli/id/1976/04/30/076U0198/sg",
+      "stato": "in_vigore",
+      "sintesi": "Aumento del fondo di rotazione per iniziative economiche a Trieste e Gorizia di cui alla legge 18 dicembre 1955, n. 908.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1976-04-30;198",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1976/05/12/076U0198/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1976-05-12",
+      "numeroGU": "124",
+      "codiceRedazionale": "076U0198",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "La Camera dei deputati ed il Senato della Repubblica hanno approvato; IL PRESIDENTE DELLA REPUBBLICA PROMULGA la seguente legge: Art. 1 &Egrave; autorizzato l'ulteriore conferimento della somma di 100 miliardi di lire a favore del fondo di rotazione per iniziative economiche a Trieste e nella provincia di Gorizia, di cui all' articolo 1 della legge 18 ottobre 1955, n. 908 , e successive modificazioni ed integrazioni, ripartita in quattro annualit&agrave; di lire 25 miliardi a decorrere dall'esercizio 1976.(1) ((2)) ----------- AGGIORNAMENTO (1) Il D.L. 13 maggio 1976, n.227 , convertito con modificazioni dalla L. 29 maggio 1976, n.336 ha disposto (con l'art.2 comma 1) che \"L'apporto di cui all' articolo 1 della legge 30 aprile 1976, n. 198 , in favore del fondo di rotazione per iniziative economiche nel territorio di Trieste e nella provincia di Gorizia, &egrave; elevato da lire 100 miliardi a lire 150 miliardi e viene conferito in ragione di lire 48 miliardi in ciascuno degli anni 1976 e 1977, di lire 36 miliardi nel 1978 e 18 miliardi nell'anno 1979.\" ----------- AGGIORNAMENTO (2) Il D.L. 18 settembre 1976, n.648 , convertito con modificazioni dalla L. 30 ottobre 1976, n.730 ha disposto (con l'art.9 comma 1) che \"L'apporto di cui all' art. 1 della legge 30 aprile 1976, n. 198 , in favore del fondo di rotazione per iniziative economiche nel territorio di Trieste e nella provincia di Gorizia - gi&agrave; elevato a lire 150.000 milioni con legge 29 maggio 1976, n. 336 - &egrave; ulteriormente elevato a lire 192.000 milioni e viene conferito in ragione di lire 69.000 milioni in ciascuno degli anni 1976 e 1977 e di lire 54.000 milioni nel 1978.\""
+    },
+    {
+      "chiave": "/eli/id/1976/04/29/076U0178/sg",
+      "titolo": "LEGGE 29 aprile 1976, n. 178",
+      "tipo": "legge",
+      "numero": "178",
+      "dataEmanazione": "1976-04-29",
+      "nir": "urn:nir:stato:legge:1976-04-29;178",
+      "eli": "/eli/id/1976/04/29/076U0178/sg",
+      "stato": "in_vigore",
+      "sintesi": "Ulteriori norme per la ricostruzione delle zone del Belice distrutte dal terremoto del gennaio 1968.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1976-04-29;178",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1976/05/07/076U0178/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1976-05-07",
+      "numeroGU": "120",
+      "codiceRedazionale": "076U0178",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "La Camera dei deputati ed il Senato della Repubblica hanno approvato; IL PRESIDENTE DELLA REPUBBLICA PROMULGA la seguente legge: Art. 1 Per la concessione dei contributi previsti dagli articoli 3 e 10 della presente legge, nonch&egrave; per la realizzazione delle opere di cui al successivo articolo 2, &egrave; autorizzata, in aggiunta agli stanziamenti di cui alla legge 6 giugno 1975, n. 206 , la spesa di lire 250.000 milioni da iscrivere nello stato di previsione del Ministero dei lavori pubblici in ragione di lire 20.000 milioni nell'anno finanziario 1977, di lire 70.000 milioni nell'anno finanziario 1978 e di lire 80.000 milioni per ciascuno degli anni finanziari 1979 e 1980."
+    },
+    {
+      "chiave": "/eli/id/1976/05/03/076U0161/sg",
+      "titolo": "DECRETO-LEGGE 3 maggio 1976, n. 161",
+      "tipo": "decreto.legge",
+      "numero": "161",
+      "dataEmanazione": "1976-05-03",
+      "nir": "urn:nir:stato:decreto.legge:1976-05-03;161",
+      "eli": "/eli/id/1976/05/03/076U0161/sg",
+      "stato": "in_vigore",
+      "sintesi": "Modificazioni ed integrazioni alle disposizioni di legge relative al procedimento elettorale per le elezioni politiche, regionali, provinciali e comunali nonche' norme per il rinvio delle elezioni per la rinnovazione dei consigli comunali nei comuni nei quali si vota col sistema maggioritario il cui quinquennio di carica scade il 12 giugno 1976.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legge:1976-05-03;161",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1976/05/04/076U0161/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1976-05-04",
+      "numeroGU": "116",
+      "codiceRedazionale": "076U0161",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "IL PRESIDENTE DELLA REPUBBLICA Visto l' art. 77, comma secondo, della Costituzione ; Visto il decreto del Presidente della Repubblica 3 maggio 1976, n. 164 , con il quale si &egrave; provveduto alla convocazione dei comizi elettorali per la elezione della Camera dei deputati e del Senato della Repubblica per il giorno di domenica 20 giugno 1976; Ritenuta la necessit&agrave; e l'urgenza di dettare norme che consentano il contemporaneo svolgimento delle operazioni relative alle suindicate elezioni politiche con quelle relative alle elezioni dei consigli delle regioni a statuto ordinario, delle assemblee e dei consigli delle regioni a statuto speciale, dei consigli provinciali e dei consigli comunali; Sentito il Consiglio dei Ministri; Sulla proposta del Ministro per l'interno, di concerto con i Ministri per la grazia e giustizia e per il tesoro; Decreta: Art. 1 Alle disposizioni di legge per l'elezione dei consigli regionali delle regioni a statuto normale, dei consigli provinciali e dei consigli comunali sono apportate le seguenti modifiche ed integrazioni: a) la presentazione delle candidature per l'elezione dei consigli regionali, dei consigli provinciali e dei consigli comunali deve essere effettuata dal trentesimo al venticinquesimo giorno antecedente la data della votazione; b) in occasione di elezioni regionali, provinciali e comunali, nessuna sottoscrizione &egrave; richiesta per la presentazione di liste o di candidature con contrassegni tradizionalmente usati da partiti o gruppi politici che abbiano avuto eletto un proprio rappresentante ((anche in una sola delle due Camere o nel Parlamento europeo)) o siano costituiti in gruppo parlamentare ((anche in una sola delle due Camere)) nella legislatura in corso alla data di indizione dei relativi comizi; ovvero, in caso di contemporaneo svolgimento delle elezioni politiche con quelle regionali, provinciali e comunali, nella legislatura precedente a quella per la quale vengono svolte le consultazioni politiche. (( [...]",
+      "testoTroncato": true
+    },
+    {
+      "chiave": "/eli/id/1976/04/30/076U0159/sg",
+      "titolo": "LEGGE 30 aprile 1976, n. 159",
+      "tipo": "legge",
+      "numero": "159",
+      "dataEmanazione": "1976-04-30",
+      "nir": "urn:nir:stato:legge:1976-04-30;159",
+      "eli": "/eli/id/1976/04/30/076U0159/sg",
+      "stato": "in_vigore",
+      "sintesi": "Conversione in legge, con modificazioni, del decreto-legge 4 marzo 1976, n. 31, contenente disposizioni penali in materia di infrazioni valutarie.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1976-04-30;159",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1976/05/04/076U0159/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1976-05-04",
+      "numeroGU": "116",
+      "codiceRedazionale": "076U0159",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "La Camera dei deputati ed il Senato della Repubblica hanno approvato; IL PRESIDENTE DELLA REPUBBLICA PROMULGA la seguente legge: Art. 1 Il decreto-legge 4 marzo 1976, n. 31 , contenente disposizioni penali in materia di infrazioni valutarie, &egrave; convertito in legge con le seguenti modificazioni: nell'articolo 1, al primo e secondo comma, dopo le parole: \"senza l'autorizzazione prevista dalle norme in materia valutaria\" sono aggiunte le altre: \"ovvero con autorizzazione indebitamente ottenuta\"; dopo il secondo comma &egrave; inserito il seguente: \"Chiunque, in violazione delle norme valutarie, omette di cedere entro trenta giorni all'Ufficio italiano dei cambi valuta estera comunque acquisita o detenuta nel territorio nazionale, &egrave; punito con la sanzione prevista dal comma precedente\"; al terzo comma, &egrave; soppressa la parola: \"esportati\"; al quarto comma, le parole: \"sono concorse nel reato\" sono sostituite dalle altre: \"hanno concorso nel reato\" e le parole: \"se nel reato sono concorsi\" sono sostituite con le altre: \"se nel reato hanno concorso\"; &egrave; aggiunto, in fine, il seguente comma: \"Se il valore dei beni ovvero delle disponibilit&agrave; o attivit&agrave; costituite all'estero ovvero della valuta estera non ceduta all'Ufficio italiano dei cambi non supera lire 500 mila, non si applicano le disposizioni dei commi precedenti ed il fatto &egrave; punito con le sanzioni amministrative previste dalle disposizioni vigenti\"; nell'articolo 3, alla fine del primo comma, sono aggiunte le parole: \"purch&egrave; l'azione o l'omissione abbia favorito il compimento di uno dei reati previsti dall'articolo 1\"; sono aggiunti, in fine, i seguenti commi: \"Nel caso di violazioni dell'articolo 1 o del presente articolo, il rapporto deve essere inviato anche alla Banca d'Italia e al Ministero del tesoro. La Banca d'Italia pu&ograve; sospendere o revocare la concessione di esercitare le sue funzioni alla banca agente o ad una o pi&ugrave; delle sue agenzie. Il M [...]",
+      "testoTroncato": true
+    },
+    {
+      "chiave": "/eli/id/1976/04/22/076U0128/sg",
+      "titolo": "DECRETO-LEGGE 22 aprile 1976, n. 128",
+      "tipo": "decreto.legge",
+      "numero": "128",
+      "dataEmanazione": "1976-04-22",
+      "nir": "urn:nir:stato:decreto.legge:1976-04-22;128",
+      "eli": "/eli/id/1976/04/22/076U0128/sg",
+      "stato": "decaduto",
+      "sintesi": "Norme per consentire l'aumento del capitale della GEPI.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legge:1976-04-22;128",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1976/04/23/076U0128/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1976-04-23",
+      "numeroGU": "107",
+      "codiceRedazionale": "076U0128",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 DECRETO DECADUTO; I SUOI EFFETTI SONO STATI FATTI SALVI DAL D.L. 30 APRILE 1976, N. 156 , CONVERTITO, CON MODIFICAZIONI, DALLA L. 24 MAGGIO 1976, N. 350"
+    },
+    {
+      "chiave": "/eli/id/1976/04/22/076U0127/sg",
+      "titolo": "DECRETO-LEGGE 22 aprile 1976, n. 127",
+      "tipo": "decreto.legge",
+      "numero": "127",
+      "dataEmanazione": "1976-04-22",
+      "nir": "urn:nir:stato:decreto.legge:1976-04-22;127",
+      "eli": "/eli/id/1976/04/22/076U0127/sg",
+      "stato": "abrogato",
+      "sintesi": "Riattivazione del bacino carbonifero del Sulcis.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legge:1976-04-22;127",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1976/04/23/076U0127/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1976-04-23",
+      "numeroGU": "107",
+      "codiceRedazionale": "076U0127",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.L. 10 DICEMBRE 1976, N.832 , CONEVRTITO CON MODIFICAZIONI DALLA L. 8 FEBBRAIO 1977, N.18 (IN G.U.10/2/1977, N.38))"
+    },
+    {
+      "chiave": "/eli/id/1976/04/16/076U0106/sg",
+      "titolo": "DECRETO-LEGGE 16 aprile 1976, n. 106",
+      "tipo": "decreto.legge",
+      "numero": "106",
+      "dataEmanazione": "1976-04-16",
+      "nir": "urn:nir:stato:decreto.legge:1976-04-16;106",
+      "eli": "/eli/id/1976/04/16/076U0106/sg",
+      "stato": "in_vigore",
+      "sintesi": "Proroga del termine per la presentazione della dichiarazione dei redditi delle persone fisiche.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legge:1976-04-16;106",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1976/04/16/076U0106/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1976-04-16",
+      "numeroGU": "101",
+      "codiceRedazionale": "076U0106",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "IL PRESIDENTE DELLA REPUBBLICA Visto l' art. 77, secondo comma, della Costituzione ; Visto l' art. 27, nono comma, della legge 2 dicembre 1975, n. 576 ; Ritenuta la straordinaria necessit&agrave; ed urgenza di prorogare il termine per la presentazione della dichiarazione dei redditi delle persone fisiche; Sentito il Consiglio dei Ministri; Sulla proposta del Ministro per le finanze, di concerto con i Ministri per il tesoro e per il bilancio e la programmazione economica; Decreta: Art. 1 Il termine del 30 aprile 1976 stabilito dal nono comma dell'art. 27 della legge 2 dicembre 1975, n. 576 , per la presentazione della dichiarazione dei redditi posseduti nell'anno 1975 da parte delle persone fisiche &egrave; prorogato al 15 maggio 1976."
+    },
+    {
+      "chiave": "/eli/id/1976/03/04/076U0030/sg",
+      "titolo": "DECRETO-LEGGE 4 marzo 1976, n. 30",
+      "tipo": "decreto.legge",
+      "numero": "30",
+      "dataEmanazione": "1976-03-04",
+      "nir": "urn:nir:stato:decreto.legge:1976-03-04;30",
+      "eli": "/eli/id/1976/03/04/076U0030/sg",
+      "stato": "in_vigore",
+      "sintesi": "Norme in materia di riscossione delle imposte sul reddito.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legge:1976-03-04;30",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1976/03/05/076U0030/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1976-03-05",
+      "numeroGU": "60",
+      "codiceRedazionale": "076U0030",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "IL PRESIDENTE DELLA REPUBBLICA Visto l' art. 77, secondo comma, della Costituzione ; Ritenuta la straordinaria necessit&agrave; ed urgenza di emanare norme in materia di riscossione delle imposte sul reddito; Sentito il Consiglio dei Ministri; Sulla proposta del Ministro per le finanze, di concerto con i Ministri per il bilancio e la programmazione economica e per il tesoro; Decreta: Art. 1 La sopratassa stabilita dall' art. 92 del decreto del Presidente della Repubblica 29 settembre 1973, n. 602 , richiamato dall' art. 17 della legge 2 dicembre 1975, n. 576 , per l'omesso o ritardato versamento dell'imposta sul reddito delle persone giuridiche e dell'imposta sul reddito delle persone fisiche, &egrave; elevata dal dieci al quindici per cento. La disposizione del comma precedente si applica anche per l'omesso o ritardato versamento dell'imposta locale sui redditi dovuta in base alla dichiarazione dai soggetti all'imposta sul reddito delle persone giuridiche che si avvalgono della facolt&agrave; di approvare il bilancio, a norma di leggi speciali, oltre sei mesi dalla data di chiusura dell'esercizio. La sopratassa stabilita nella misura minima del due per cento dal secondo comma dell'art. 92 del decreto indicato nel primo comma &egrave; elevata al tre per cento. In deroga alle disposizioni del primo e terzo comma dell'art. 98 del decreto indicato nel primo comma, le sopratasse di cui ai commi precedenti sono iscritte a ruolo in base alla dichiarazione alla quale si riferisce l'omesso o ritardato versamento."
+    },
+    {
+      "chiave": "/eli/id/1976/01/30/076U0013/sg",
+      "titolo": "DECRETO-LEGGE 30 gennaio 1976, n. 13",
+      "tipo": "decreto.legge",
+      "numero": "13",
+      "dataEmanazione": "1976-01-30",
+      "nir": "urn:nir:stato:decreto.legge:1976-01-30;13",
+      "eli": "/eli/id/1976/01/30/076U0013/sg",
+      "stato": "in_vigore",
+      "sintesi": "Riordinamento dei ruoli del personale docente, direttivo ed ispettivo della scuola materna, elementare, secondaria ed artistica dello Stato.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legge:1976-01-30;13",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1976/02/16/076U0013/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1976-02-16",
+      "numeroGU": "42",
+      "codiceRedazionale": "076U0013",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "IL PRESIDENTE DELLA REPUBBLICA Visto l' art. 77 della Costituzione ; Ritenuta la necessit&agrave; ed urgenza di emanare norme sul riordinamento dei ruoli del personale docente, direttivo ed ispettivo della scuola materna, elementare, secondaria ed artistica dello Stato; Sulla proposta del Ministro per la pubblica istruzione di concerto con il Ministro per il tesoro e con il Ministro per il bilancio e la programmazione economica; Decreta: Art. 1 Riordinamento dei ruoli del personale ispettivo tecnico periferico, direttivo e docente della scuola materna, elementare, secondaria, dei licei artistici e degli istituti d'arte dello Stato. I ruoli del personale ispettivo tecnico periferico, direttivo e docente della scuola materna, elementare, secondaria, dei licei artistici e degli istituti d'arte dello Stato sono riordinati secondo le annesse tabelle A, B, C, D."
+    },
+    {
+      "chiave": "/eli/id/1975/12/27/075U0687/sg",
+      "titolo": "DECRETO-LEGGE 27 dicembre 1975, n. 687",
+      "tipo": "decreto.legge",
+      "numero": "687",
+      "dataEmanazione": "1975-12-27",
+      "nir": "urn:nir:stato:decreto.legge:1975-12-27;687",
+      "eli": "/eli/id/1975/12/27/075U0687/sg",
+      "stato": "in_vigore",
+      "sintesi": "Riapertura, in favore degli appartenenti alle forze dello ordine, dei termini per la revoca delle domande di collocamento a riposo agevolato ai sensi dell'art. 3 della legge 24 maggio 1970, n. 336, e successive modificazioni.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legge:1975-12-27;687",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1975/12/30/075U0687/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1975-12-30",
+      "numeroGU": "342",
+      "codiceRedazionale": "075U0687",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "IL PRESIDENTE DELLA REPUBBLICA Visto l' art. 77 della Costituzione ; Ritenuta la necessit&agrave; e l'urgenza, in relazione alle particolari esigenze di servizio delle forze di polizia, di disporre la riapertura dei termini per la revoca delle domande di collocamento a riposo agevolato, di cui all' art. 3 della legge 24 maggio 1970, n. 336 , e successive modificazioni; Sentito il Consiglio dei Ministri; Sulla proposta del Ministro per l'interno, di concerto con i Ministri per la grazia e giustizia, per le finanze, per il tesoro, per la difesa e per l'agricoltura e le foreste; Decreta: Art. 1 In deroga al disposto del primo comma dell'art. 1 del decreto-legge 8 luglio 1974, n. 261 , convertito, con modificazioni, nella legge 14 agosto 1974, n. 355 , gli appartenenti al personale civile e militare della pubblica sicurezza, gli appartenenti all'Arma dei carabinieri, al Corpo della guardia di finanza, al Corpo degli agenti di custodia ed al Corpo forestale dello Stato possono, entro il termine perentorio di sessanta giorni dalla data di pubblicazione del presente decreto, revocare le domande di collocamento a riposo presentate ai sensi della legge 24 maggio 1970, n. 336 , e successive modificazioni. Salvi gli effetti di cui al precedente comma, rimangono immutati i contingenti dei collocamenti a riposo gi&agrave; stabiliti ai sensi dell' art. 1 del decreto-legge 8 luglio 1974, n. 261 , convertito, con modificazioni, nella legge 14 agosto 1974, n. 355 ."
+    },
+    {
+      "chiave": "/eli/id/1975/12/09/075U0604/sg",
+      "titolo": "DECRETO-LEGGE 9 dicembre 1975, n. 604",
+      "tipo": "decreto.legge",
+      "numero": "604",
+      "dataEmanazione": "1975-12-09",
+      "nir": "urn:nir:stato:decreto.legge:1975-12-09;604",
+      "eli": "/eli/id/1975/12/09/075U0604/sg",
+      "stato": "abrogato",
+      "sintesi": "Ulteriori interventi straordinari a favore delle popolazioni della citta' di Napoli e provincia interessate alla crisi economica conseguente all'infezione colerica dell'agosto e settembre 1973.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legge:1975-12-09;604",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1975/12/10/075U0604/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1975-12-10",
+      "numeroGU": "325",
+      "codiceRedazionale": "075U0604",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.L. 25 GIUGNO 2008, N. 112 , CONVERTITO, CON MODIFICAZIONI, DALLA L. 6 AGOSTO 2008, N. 133 ))"
+    },
+    {
+      "chiave": "/eli/id/1975/10/10/075U0517/sg",
+      "titolo": "LEGGE 10 ottobre 1975, n. 517",
+      "tipo": "legge",
+      "numero": "517",
+      "dataEmanazione": "1975-10-10",
+      "nir": "urn:nir:stato:legge:1975-10-10;517",
+      "eli": "/eli/id/1975/10/10/075U0517/sg",
+      "stato": "abrogato",
+      "sintesi": "Credito agevolato al commercio.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1975-10-10;517",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1975/11/05/075U0517/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1975-11-05",
+      "numeroGU": "292",
+      "codiceRedazionale": "075U0517",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.P.R. 15 DICEMBRE 2000, N. 438 ))"
+    },
+    {
+      "chiave": "/eli/id/1975/07/08/075U0306/sg",
+      "titolo": "LEGGE 8 luglio 1975, n. 306",
+      "tipo": "legge",
+      "numero": "306",
+      "dataEmanazione": "1975-07-08",
+      "nir": "urn:nir:stato:legge:1975-07-08;306",
+      "eli": "/eli/id/1975/07/08/075U0306/sg",
+      "stato": "abrogato",
+      "sintesi": "Incentivazione dell'associazionismo dei produttori agricoli nel settore zootecnico e norme per la determinazione del prezzo di vendita del latte alla produzione.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1975-07-08;306",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1975/07/23/075U0306/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1975-07-23",
+      "numeroGU": "194",
+      "codiceRedazionale": "075U0306",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.L. 25 GIUGNO 2008, N. 112 , CONVERTITO CON MODIFICAZIONI DALLA LEGGE 6 AGOSTO 2008, N. 133))"
+    }
+  ]
+}

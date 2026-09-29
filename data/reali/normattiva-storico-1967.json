@@ -1,0 +1,514 @@
+{
+  "provenance": {
+    "fonte": "normattiva",
+    "url": "https://api.normattiva.it/t/normattiva.api/bff-opendata/v1/api/v1/ricerca/aggiornati",
+    "recuperatoIl": "2026-09-29T00:19:06.001Z",
+    "licenza": "riproduzione consentita con menzione di fonte, carattere non autentico e gratuito (Note legali dati.normattiva.it; solo la Gazzetta Ufficiale a stampa e' autentica)"
+  },
+  "atti": [
+    {
+      "chiave": "/eli/id/1967/10/30/067U0967/sg",
+      "titolo": "DECRETO-LEGGE 30 ottobre 1967, n. 967",
+      "tipo": "decreto.legge",
+      "numero": "967",
+      "dataEmanazione": "1967-10-30",
+      "nir": "urn:nir:stato:decreto.legge:1967-10-30;967",
+      "eli": "/eli/id/1967/10/30/067U0967/sg",
+      "stato": "abrogato",
+      "sintesi": "Incremento del Fondo di cui all'art. 7 del decreto-legge 23 gennaio 1958, n. 8, convertito nella legge 23 febbraio 1958, n. 84 e utilizzazione delle disponibilita' del Fondo medesimo.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legge:1967-10-30;967",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1967/10/31/067U0967/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1967-10-31",
+      "numeroGU": "273",
+      "codiceRedazionale": "067U0967",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.LGS. 13 DICEMBRE 2010, N. 212 ))"
+    },
+    {
+      "chiave": "/eli/id/1967/10/11/067U0901/sg",
+      "titolo": "DECRETO-LEGGE 11 ottobre 1967, n. 901",
+      "tipo": "decreto.legge",
+      "numero": "901",
+      "dataEmanazione": "1967-10-11",
+      "nir": "urn:nir:stato:decreto.legge:1967-10-11;901",
+      "eli": "/eli/id/1967/10/11/067U0901/sg",
+      "stato": "abrogato",
+      "sintesi": "Disciplina relativa ad alcuni prodotti oggetto della politica agricola della Comunita' Economica Europea.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legge:1967-10-11;901",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1967/10/14/067U0901/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1967-10-14",
+      "numeroGU": "257",
+      "codiceRedazionale": "067U0901",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.L. 25 GIUGNO 2008, N. 112 , CONVERTITO, CON MODIFICAZIONI, DALLA L. 6 AGOSTO 2008, N. 133 ))"
+    },
+    {
+      "chiave": "/eli/id/1967/09/16/067U0801/sg",
+      "titolo": "DECRETO-LEGGE 16 settembre 1967, n. 801",
+      "tipo": "decreto.legge",
+      "numero": "801",
+      "dataEmanazione": "1967-09-16",
+      "nir": "urn:nir:stato:decreto.legge:1967-09-16;801",
+      "eli": "/eli/id/1967/09/16/067U0801/sg",
+      "stato": "abrogato",
+      "sintesi": "Interventi a sostegno del prezzo del formaggio \"grana\" mediante acquisti di partite di tale prodotto da parte dell'Azienda di Stato per gli interventi nel mercato agricolo.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legge:1967-09-16;801",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1967/09/18/067U0801/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1967-09-18",
+      "numeroGU": "234",
+      "codiceRedazionale": "067U0801",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.L. 25 GIUGNO 2008 N. 112 , CONVERTITO, CON MODIFICAZIONI, DALLA L. 6 AGOSTO N. 133))"
+    },
+    {
+      "chiave": "/eli/id/1967/09/11/067U0797/sg",
+      "titolo": "DECRETO-LEGGE 11 settembre 1967, n. 797",
+      "tipo": "decreto.legge",
+      "numero": "797",
+      "dataEmanazione": "1967-09-11",
+      "nir": "urn:nir:stato:decreto.legge:1967-09-11;797",
+      "eli": "/eli/id/1967/09/11/067U0797/sg",
+      "stato": "abrogato",
+      "sintesi": "Modifiche al decreto del Presidente della Repubblica 30 novembre 1965, n. 1701, relativo alle norme sanitarie sugli scambi di animali e di carni tra l'Italia e gli altri Stati membri della C.E.E.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legge:1967-09-11;797",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1967/09/14/067U0797/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1967-09-14",
+      "numeroGU": "231",
+      "codiceRedazionale": "067U0797",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.L. 25 GIUGNO 2008, N. 112 , CONVERTITO, CON MODIFICAZIONI, DALLA L. 6 AGOSTO 2008, N. 133 ))"
+    },
+    {
+      "chiave": "/eli/id/1967/06/27/067U0460/sg",
+      "titolo": "DECRETO-LEGGE 27 giugno 1967, n. 460",
+      "tipo": "decreto.legge",
+      "numero": "460",
+      "dataEmanazione": "1967-06-27",
+      "nir": "urn:nir:stato:decreto.legge:1967-06-27;460",
+      "eli": "/eli/id/1967/06/27/067U0460/sg",
+      "stato": "abrogato",
+      "sintesi": "Disciplina transitoria delle locazioni di immobili urbani.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legge:1967-06-27;460",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1967/06/28/067U0460/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1967-06-28",
+      "numeroGU": "161",
+      "codiceRedazionale": "067U0460",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.L. 25 GIUGNO 2008, N. 112 , CONVERTITO, CON MODIFICAZIONI, DALLA L. 6 AGOSTO 2008, N. 133 ))"
+    },
+    {
+      "chiave": "/eli/id/1967/05/15/067U0430/sg",
+      "titolo": "LEGGE 15 maggio 1967, n. 430",
+      "tipo": "legge",
+      "numero": "430",
+      "dataEmanazione": "1967-05-15",
+      "nir": "urn:nir:stato:legge:1967-05-15;430",
+      "eli": "/eli/id/1967/05/15/067U0430/sg",
+      "stato": "in_vigore",
+      "sintesi": "Istituzione di una nuova sezione in funzione di Corte di assise di appello presso la Corte di appello di Catanzaro.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1967-05-15;430",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1967/06/22/067U0430/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1967-06-22",
+      "numeroGU": "154",
+      "codiceRedazionale": "067U0430",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "La Camera dei deputati ed il Senato della Repubblica hanno approvato; IL PRESIDENTE DELLA REPUBBLICA PROMULGA la seguente legge: Art. 1 Articolo unico. Presso la Corte di appello di Catanzaro &egrave; istituita una nuova sezione in funzione di Corte di assise di appello con sede di normale convocazione in Catanzaro. La circoscrizione territoriale ed il numero dei giudici popolari relativi a detta sede sono determinati dalla tabella annessa alla presente legge, vistata dal Ministro per la grazia e giustizia e da quello per il tesoro. In conseguenza, la tabella N annessa al decreto del Presidente della Repubblica 30 agosto 1951, n. 757 , con le varianti successive, &egrave; modificata - per la parte relativa al distretto di Catanzaro - come dalla tabella annessa alla presente legge. La presente legge, munita del sigillo dello Stato, sar&agrave; inserta nella Raccolta ufficiale delle leggi e dei decreti della Repubblica italiana. &Egrave; fatto obbligo a chiunque spetti di osservarla e di farla osservare come legge dello Stato. Data a Roma, add&igrave; 15 maggio 1967 SARAGAT MORO - REALE - COLOMBO Visto, il Guardasigilli: REALE"
+    },
+    {
+      "chiave": "/eli/id/1967/05/08/067U0247/sg",
+      "titolo": "DECRETO-LEGGE 8 maggio 1967, n. 247",
+      "tipo": "decreto.legge",
+      "numero": "247",
+      "dataEmanazione": "1967-05-08",
+      "nir": "urn:nir:stato:decreto.legge:1967-05-08;247",
+      "eli": "/eli/id/1967/05/08/067U0247/sg",
+      "stato": "abrogato",
+      "sintesi": "Provvedimenti straordinari per la profilassi della peste suina classica e della peste suina africana.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legge:1967-05-08;247",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1967/05/09/067U0247/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1967-05-09",
+      "numeroGU": "115",
+      "codiceRedazionale": "067U0247",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.L. 25 GIUGNO 2008, N. 112 , CONVERTITO, CON MODIFICAZIONI, DALLA L. 6 AGOSTO 2008, N. 133 ))"
+    },
+    {
+      "chiave": "/eli/id/1967/03/17/067U0080/sg",
+      "titolo": "DECRETO-LEGGE 17 marzo 1967, n. 80",
+      "tipo": "decreto.legge",
+      "numero": "80",
+      "dataEmanazione": "1967-03-17",
+      "nir": "urn:nir:stato:decreto.legge:1967-03-17;80",
+      "eli": "/eli/id/1967/03/17/067U0080/sg",
+      "stato": "abrogato",
+      "sintesi": "Attuazione di interventi nel settore dei prodotti ortofrutticoli.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legge:1967-03-17;80",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1967/03/17/067U0080/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1967-03-17",
+      "numeroGU": "69",
+      "codiceRedazionale": "067U0080",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.L 25 GIUGNO 2008, N. 112 , CONVERTITO CON MODIFICAZIONI DALLA L. 6 AGOSTO 2008, N. 133 ))"
+    },
+    {
+      "chiave": "/eli/id/1967/02/24/067U0062/sg",
+      "titolo": "LEGGE 24 febbraio 1967, n. 62",
+      "tipo": "legge",
+      "numero": "62",
+      "dataEmanazione": "1967-02-24",
+      "nir": "urn:nir:stato:legge:1967-02-24;62",
+      "eli": "/eli/id/1967/02/24/067U0062/sg",
+      "stato": "abrogato",
+      "sintesi": "Istituzione di nuove cattedre universitarie, di nuovi posti di assistente universitario, e nuova disciplina degli incarichi di insegnamento universitario e degli assistenti volontari.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1967-02-24;62",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1967/03/13/067U0062/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1967-03-13",
+      "numeroGU": "65",
+      "codiceRedazionale": "067U0062",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D. L. 25 GIUGNO 2008, N. 112 , CONVERTITO, CON MODIFICAZIONI DALLA L. 6 AGOSTO 2008, N. 133 ))"
+    },
+    {
+      "chiave": "/eli/id/1967/02/23/067U0031/sg",
+      "titolo": "DECRETO-LEGGE 23 febbraio 1967, n. 31",
+      "tipo": "decreto.legge",
+      "numero": "31",
+      "dataEmanazione": "1967-02-23",
+      "nir": "urn:nir:stato:decreto.legge:1967-02-23;31",
+      "eli": "/eli/id/1967/02/23/067U0031/sg",
+      "stato": "abrogato",
+      "sintesi": "Modificazioni alla legge 23 dicembre 1966, n. 1142, che ha convertito in legge, con modificazioni, il decreto-legge 18 novembre 1966, n. 976, concernente ulteriori interventi e provvidenze per la ricostruzione e per la ripresa economica nei territori colpiti dalle alluvioni e mareggiate dell'autunno 1966.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legge:1967-02-23;31",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1967/02/24/067U0031/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1967-02-24",
+      "numeroGU": "49",
+      "codiceRedazionale": "067U0031",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.L. 25 GIUGNO 2008, N. 112 , CONVERTITO CON MODIFICAZIONI DALLA L. 6 AGOSTO 2008, N. 133 ))"
+    },
+    {
+      "chiave": "/eli/id/1967/02/21/067U0022/sg",
+      "titolo": "DECRETO-LEGGE 21 febbraio 1967, n. 22",
+      "tipo": "decreto.legge",
+      "numero": "22",
+      "dataEmanazione": "1967-02-21",
+      "nir": "urn:nir:stato:decreto.legge:1967-02-21;22",
+      "eli": "/eli/id/1967/02/21/067U0022/sg",
+      "stato": "abrogato",
+      "sintesi": "Nuove disposizioni in materia di ritenuta d'acconto o di imposta sugli utili distribuiti dalle societa'.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legge:1967-02-21;22",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1967/02/22/067U0022/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1967-02-22",
+      "numeroGU": "47",
+      "codiceRedazionale": "067U0022",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.LGS. 13 DICEMBRE 2010, N. 212 ))"
+    },
+    {
+      "chiave": "/eli/id/1966/12/29/066U1195/sg",
+      "titolo": "LEGGE 29 dicembre 1966, n. 1195",
+      "tipo": "legge",
+      "numero": "1195",
+      "dataEmanazione": "1966-12-29",
+      "nir": "urn:nir:stato:legge:1966-12-29;1195",
+      "eli": "/eli/id/1966/12/29/066U1195/sg",
+      "stato": "abrogato",
+      "sintesi": "Ulteriore proroga dei termini della legge 21 ottobre 1950, n. 943, e dell'articolo 37 della legge 9 febbraio 1963, n. 82, recanti provvedimenti a favore dell'Ente portuale Savona-Piemonte.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1966-12-29;1195",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1967/01/14/066U1195/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1967-01-14",
+      "numeroGU": "11",
+      "codiceRedazionale": "066U1195",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.L. 25 GIUGNO 2008, N. 112 , CONVERTITO, CON MODIFICAZIONI, DALLA L. 6 AGOSTO 2008, N. 133 ))"
+    },
+    {
+      "chiave": "/eli/id/1966/12/21/066U1089/sg",
+      "titolo": "DECRETO-LEGGE 21 dicembre 1966, n. 1089",
+      "tipo": "decreto.legge",
+      "numero": "1089",
+      "dataEmanazione": "1966-12-21",
+      "nir": "urn:nir:stato:decreto.legge:1966-12-21;1089",
+      "eli": "/eli/id/1966/12/21/066U1089/sg",
+      "stato": "abrogato",
+      "sintesi": "Corresponsione ai lavoratori in Cassa integrazione guadagni degli assegni familiari e proroga della corresponsione degli assegni familiari ai disoccupati in luogo delle maggiorazioni per carichi di famiglia.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legge:1966-12-21;1089",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1966/12/22/066U1089/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1966-12-22",
+      "numeroGU": "321",
+      "codiceRedazionale": "066U1089",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.LGS. 13 DICEMBRE 2010, N. 212 ))"
+    },
+    {
+      "chiave": "/eli/id/1966/12/19/066U1075/sg",
+      "titolo": "DECRETO-LEGGE 19 dicembre 1966, n. 1075",
+      "tipo": "decreto.legge",
+      "numero": "1075",
+      "dataEmanazione": "1966-12-19",
+      "nir": "urn:nir:stato:decreto.legge:1966-12-19;1075",
+      "eli": "/eli/id/1966/12/19/066U1075/sg",
+      "stato": "abrogato",
+      "sintesi": "Sospensione dei procedimenti di esecuzione forzata nei confronti di debitori residenti o domiciliati nei comuni di Longarone, Castellavazzo, Erto e Casso.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legge:1966-12-19;1075",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1966/12/19/066U1075/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1966-12-19",
+      "numeroGU": "318",
+      "codiceRedazionale": "066U1075",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.L. 25 GIUGNO 2008 N. 112 , CONVERTITO CON MODIFICAZIONI, DALLA L. 6 AGOSTO 2008 N. 133 ))"
+    },
+    {
+      "chiave": "/eli/id/1966/10/31/066U0942/sg",
+      "titolo": "LEGGE 31 ottobre 1966, n. 942",
+      "tipo": "legge",
+      "numero": "942",
+      "dataEmanazione": "1966-10-31",
+      "nir": "urn:nir:stato:legge:1966-10-31;942",
+      "eli": "/eli/id/1966/10/31/066U0942/sg",
+      "stato": "abrogato",
+      "sintesi": "Finanziamento del piano di sviluppo della scuola nel quinquennio dal 1966 al 1970.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1966-10-31;942",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1966/11/15/066U0942/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1966-11-15",
+      "numeroGU": "286",
+      "codiceRedazionale": "066U0942",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.LGS. 13 DICEMBRE 2010, N. 212 ))"
+    },
+    {
+      "chiave": "/eli/id/1966/08/06/066U0625/sg",
+      "titolo": "LEGGE 6 agosto 1966, n. 625",
+      "tipo": "legge",
+      "numero": "625",
+      "dataEmanazione": "1966-08-06",
+      "nir": "urn:nir:stato:legge:1966-08-06;625",
+      "eli": "/eli/id/1966/08/06/066U0625/sg",
+      "stato": "in_vigore",
+      "sintesi": "Provvidenze a favore dei mutilati ed invalidi civili.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1966-08-06;625",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1966/08/19/066U0625/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1966-08-19",
+      "numeroGU": "205",
+      "codiceRedazionale": "066U0625",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "La Camera dei deputati ed il Senato della Repubblica hanno approvato; IL PRESIDENTE DELLA REPUBBLICA PROMULGA la seguente legge: Art. 1 Il Ministero della sanit&agrave; provvede all'assistenza sanitaria specifica diretta al recupero funzionale dei mutilati ed invalidi civili appartenenti alle categorie dei motulesi e dei neurolesi che versino in istato di bisogno e la cui invalidit&agrave; possa essere ridotta mediante idoneo trattamento di riabilitazione. Le disposizioni della legge 10 giugno 1940, n. 932 , sono estese a favore dei motulesi e dei neurolesi fino alla et&agrave; di 15 anni. Ai fini dell'assistenza contemplata nei commi precedenti e dalle leggi 10 giugno 1940, n. 932, e 10 aprile 1954, n. 218 , il Ministero della sanit&agrave; ha facolt&agrave; di stipulare convenzioni con cliniche universitarie, con ospedali, con l'Associazione nazionale mutilati e invalidi civili e con enti ed istituzioni pubblici o privati che gestiscano appositi centri di recupero."
+    },
+    {
+      "chiave": "/eli/id/1965/10/31/065U1261/sg",
+      "titolo": "LEGGE 31 ottobre 1965, n. 1261",
+      "tipo": "legge",
+      "numero": "1261",
+      "dataEmanazione": "1965-10-31",
+      "nir": "urn:nir:stato:legge:1965-10-31;1261",
+      "eli": "/eli/id/1965/10/31/065U1261/sg",
+      "stato": "in_vigore",
+      "sintesi": "Determinazione della indennita' spettante ai membri del Parlamento.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1965-10-31;1261",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1965/11/20/065U1261/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1965-11-20",
+      "numeroGU": "290",
+      "codiceRedazionale": "065U1261",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "La Camera dei deputati ed il Senato della Repubblica hanno approvato IL PRESIDENTE DELLA REPUBBLICA PROMULGA la seguente legge: Art. 1 L'indennit&agrave; spettante ai membri del Parlamento a norma dell' articolo 69 della Costituzione per garantire il libero svolgimento del mandato &egrave; regolata dalla presente legge ed &egrave; costituita da quote mensili comprensive anche del rimborso di spese di segreteria e di rappresentanza. Gli Uffici di Presidenza delle due Camere determinano l'ammontare di dette quote in misura tale che non superino il dodicesimo del trattamento complessivo massimo annuo lordo dei magistrati con funzioni di presidente di Sezione della Corte di cassazione ed equiparate."
+    },
+    {
+      "chiave": "/eli/id/1965/07/13/065U0882/sg",
+      "titolo": "LEGGE 13 luglio 1965, n. 882",
+      "tipo": "legge",
+      "numero": "882",
+      "dataEmanazione": "1965-07-13",
+      "nir": "urn:nir:stato:legge:1965-07-13;882",
+      "eli": "/eli/id/1965/07/13/065U0882/sg",
+      "stato": "in_vigore",
+      "sintesi": "Ordinamento della banda della Guardia di finanza.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1965-07-13;882",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1965/07/29/065U0882/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1965-07-29",
+      "numeroGU": "188",
+      "codiceRedazionale": "065U0882",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "La Camera dei deputati ed il Senato della Repubblica hanno approvato; IL PRESIDENTE DELLA REPUBBLICA PROMULGA la seguente legge: Art. 1 L'organico della banda della Guardia di finanza &egrave; compreso nell'organico generale del Corpo ed &egrave; cosa stabilito: 1 ufficiale, maestro direttore, 1 maresciallo maggiore, carica speciale, vice direttore, 102 sottufficiali, appuntati e finanzieri, musicanti. Non possono essere assegnati alla banda sottufficiali, appuntati e finanzieri in eccedenza all'organico previsto dal precedente comma, anche se in qualit&agrave; di musicanti aggregati o di allievi musicanti. ((5)) --------------- AGGIORNAMENTO (5) Il D.L. 21 settembre 1987, n. 387 , convertito con modificazioni dalla L. 20 novembre 1987, n. 472 , ha disposto (con l'art. 11-ter) che il Governo &egrave; delegato ad emanare, entro sei mesi dall'entrata in vigore della legge di conversione del presente decreto, appositi decreti per il riordinamento della banda dell'Arma dei carabinieri e della Guardia di finanza al fine di adeguare la posizione dei componenti delle citate bande a quella degli appartenenti alla Polizia di Stato, fissata con il decreto del Presidente della Repubblica 30 aprile 1987, n. 240 . All'entrata in vigore dei decreti del Presidente della Repubblica di cui al comma 1, la legge 13 luglio 1965, n. 882 , e successive modificazioni, si intender&agrave; abrogata."
+    },
+    {
+      "chiave": "/eli/id/1965/06/05/065U0718/sg",
+      "titolo": "LEGGE 5 giugno 1965, n. 718",
+      "tipo": "legge",
+      "numero": "718",
+      "dataEmanazione": "1965-06-05",
+      "nir": "urn:nir:stato:legge:1965-06-05;718",
+      "eli": "/eli/id/1965/06/05/065U0718/sg",
+      "stato": "in_vigore",
+      "sintesi": "Concessione di anticipazioni in favore dei cittadini italiani rimpatriati, titolari di proprieta' agricole in Tunisia di recente espropriate.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1965-06-05;718",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1965/07/01/065U0718/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1965-07-01",
+      "numeroGU": "160",
+      "codiceRedazionale": "065U0718",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "La Camera dei deputati ed il Senato della Repubblica hanno approvato; IL PRESIDENTE DELLA REPUBBLICA PROMULGA la seguente legge: Art. 1 In favore dei cittadini italiani rimpatriati, titolari di propriet&agrave; agricole o titolari di scorte vive, morte e frutti pendenti in Tunisia, oggetto dei provvedimenti di espropriazione adottati, il 12 maggio 1964, dal Governo tunisino, e che abbiano tempestivamente avanzato domanda di indennizzo alle competenti autorit&agrave; tunisine, &egrave; autorizzata la corresponsione di un'anticipazione. L'anticipazione sar&agrave; corrisposta nella misura massima del 50 per cento del valore in comune commercio dei beni sul mercato di Tunisia in epoca immediatamente precedente i suddetti provvedimenti di espropriazione o, in mancanza, del valore risultante dalla capitalizzazione del reddito netto medio ed ordinario dei beni stessi afferenti al capitale fondiario ed alle scorte, secondo i criteri di stima e di valutazione che saranno stabiliti dalla Commissione di cui all'articolo 2. L'importo dell'anticipazione, nei limiti stabiliti dal Ministro per il tesoro, sentita la Commissione di cui all'articolo 2, sar&agrave; recuperato sul risarcimento definito in sede internazionale e dovr&agrave; essere restituito dall'interessato ad avvenuta riscossione dell'indennizzo direttamente conseguito dal Governo tunisino, fino alla concorrenza, del relativo ammontare. Per la corresponsione delle suddette anticipazioni &egrave; autorizzata la spesa di lire 3 miliardi, da iscriversi nello stato di previsione della spesa del Ministero del tesoro per il periodo 1 luglio-31 dicembre 1964. Per gli esercizi successivi potranno essere stabiliti con appositi provvedimenti legislativi e iscritti nel bilancio dello Stato gli stanziamenti necessari."
+    },
+    {
+      "chiave": "/eli/id/1965/03/29/065U0218/sg",
+      "titolo": "LEGGE 29 marzo 1965, n. 218",
+      "tipo": "legge",
+      "numero": "218",
+      "dataEmanazione": "1965-03-29",
+      "nir": "urn:nir:stato:legge:1965-03-29;218",
+      "eli": "/eli/id/1965/03/29/065U0218/sg",
+      "stato": "abrogato",
+      "sintesi": "Provvedimenti per l'edilizia popolare.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1965-03-29;218",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1965/04/06/065U0218/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1965-04-06",
+      "numeroGU": "87",
+      "codiceRedazionale": "065U0218",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D. L. 25 GIUGNO 2008, N. 112 , CONVERTITO, CON MODIFICAZIONI DALLA L. 6 AGOSTO 2008, N. 133 ))"
+    },
+    {
+      "chiave": "/eli/id/1965/03/29/065U0203/sg",
+      "titolo": "LEGGE 29 marzo 1965, n. 203",
+      "tipo": "legge",
+      "numero": "203",
+      "dataEmanazione": "1965-03-29",
+      "nir": "urn:nir:stato:legge:1965-03-29;203",
+      "eli": "/eli/id/1965/03/29/065U0203/sg",
+      "stato": "in_vigore",
+      "sintesi": "Modifiche alla legge 10 febbraio 1962, n. 57, riguardante l'istituzione dell'Albo nazionale dei costruttori.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1965-03-29;203",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1965/04/03/065U0203/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1965-04-03",
+      "numeroGU": "84",
+      "codiceRedazionale": "065U0203",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "La Camera dei deputati ed il Senato della Repubblica hanno approvato; IL PRESIDENTE DELLA REPUBBLICA PROMULGA la seguente legge: Art. 1 Il primo comma dell'articolo 2 della legge 10 febbraio 1962, n. 57 , &egrave; sostituito dal seguente: \"L'iscrizione nell'Albo &egrave; obbligatoria per chiunque esegua lavori di importo superiore a lire 15 milioni, di competenza dello Stato, degli enti pubblici e di chi fruisca, per i lavori stessi, di un concorso, contributo o sussidio dello Stato. &Egrave; facoltativa per lavori il cui importo non superi detto limite\"."
+    },
+    {
+      "chiave": "/eli/id/1965/02/01/065U0013/sg",
+      "titolo": "LEGGE 1 febbraio 1965, n. 13",
+      "tipo": "legge",
+      "numero": "13",
+      "dataEmanazione": "1965-02-01",
+      "nir": "urn:nir:stato:legge:1965-02-01;13",
+      "eli": "/eli/id/1965/02/01/065U0013/sg",
+      "stato": "abrogato",
+      "sintesi": "Delega al Governo ad emanare una nuova tariffa dei dazi doganali.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1965-02-01;13",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1965/02/15/065U0013/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1965-02-15",
+      "numeroGU": "40",
+      "codiceRedazionale": "065U0013",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.L. 25 GIUGNO 2008, N. 112 , CONVERTITO CON MODIFICAZIONI DALLA L. 6 AGOSTO 2008, N. 133 ))"
+    },
+    {
+      "chiave": "/eli/id/1964/06/21/064U0467/sg",
+      "titolo": "LEGGE 21 giugno 1964, n. 467",
+      "tipo": "legge",
+      "numero": "467",
+      "dataEmanazione": "1964-06-21",
+      "nir": "urn:nir:stato:legge:1964-06-21;467",
+      "eli": "/eli/id/1964/06/21/064U0467/sg",
+      "stato": "in_vigore",
+      "sintesi": "Modifiche alla legge 24 luglio 1959, n. 622, recante interventi a favore dell'economia nazionale, per la parte riguardante l'ammodernamento del naviglio mercantile.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1964-06-21;467",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1964/07/06/064U0467/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1964-07-06",
+      "numeroGU": "163",
+      "codiceRedazionale": "064U0467",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "La Camera dei deputati ed il Senato della Repubblica hanno approvato; IL PRESIDENTE DELLA REPUBBLICA IL PRESIDENTE DELLA REPUBBLICA la seguente legge: Art. 1 La validit&agrave; delle disposizioni del Capo X della legge 24 luglio 1959, n. 622 , modificata dalla legge 9 gennaio 1962, n. 2 , ed integrata dalla legge 28 ottobre 1962, n. 1604 , &egrave; estesa al periodo dal 1 luglio 1963 al 30 giugno 1966. Dalla data di entrata in vigore della presente legge, gli articoli 2 , 3 , 6 e 10 della legge 9 gennaio 1962, n. 2 , sono sostituiti rispettivamente dagli articoli 2, 3, 4 e 6 della presente legge, l' articolo 4 della legge 9 gennaio 1962, n. 2 , e l'articolo unico della legge 28 ottobre 1962, n. 1604 , sono abrogati. L' articolo 49 della legge 24 luglio 1959, n. 622 , &egrave; sostituito dall'articolo 5 della presente legge."
+    },
+    {
+      "chiave": "/eli/id/1964/04/26/064U0308/sg",
+      "titolo": "LEGGE 26 aprile 1964, n. 308",
+      "tipo": "legge",
+      "numero": "308",
+      "dataEmanazione": "1964-04-26",
+      "nir": "urn:nir:stato:legge:1964-04-26;308",
+      "eli": "/eli/id/1964/04/26/064U0308/sg",
+      "stato": "abrogato",
+      "sintesi": "Modifica dell'articolo 2 della legge 6 luglio 1962, n. 921 recante norme sui sussidi a favore dei lebbrosi e dei loro familiari a carico.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1964-04-26;308",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1964/05/26/064U0308/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1964-05-26",
+      "numeroGU": "128",
+      "codiceRedazionale": "064U0308",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.LGS. 13 DICEMBRE 2010, N. 212 ))"
+    }
+  ]
+}

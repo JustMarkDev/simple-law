@@ -1,0 +1,600 @@
+{
+  "provenance": {
+    "fonte": "normattiva",
+    "url": "https://api.normattiva.it/t/normattiva.api/bff-opendata/v1/api/v1/ricerca/aggiornati",
+    "recuperatoIl": "2026-09-29T00:32:15.359Z",
+    "licenza": "riproduzione consentita con menzione di fonte, carattere non autentico e gratuito (Note legali dati.normattiva.it; solo la Gazzetta Ufficiale a stampa e' autentica)"
+  },
+  "atti": [
+    {
+      "chiave": "/eli/id/1957/10/17/057U1007/sg",
+      "titolo": "LEGGE 17 ottobre 1957, n. 1007",
+      "tipo": "legge",
+      "numero": "1007",
+      "dataEmanazione": "1957-10-17",
+      "nir": "urn:nir:stato:legge:1957-10-17;1007",
+      "eli": "/eli/id/1957/10/17/057U1007/sg",
+      "stato": "in_vigore",
+      "sintesi": "Stato di previsione della spesa del Ministero della difesa per l'esercizio finanziario dal 1 luglio 1957 al 30 giugno 1958.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1957-10-17;1007",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1957/10/31/057U1007/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1957-10-31",
+      "numeroGU": "270",
+      "codiceRedazionale": "057U1007",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "La Camera dei deputati ed il Senato della Repubblica hanno approvato; IL PRESIDENTE DELLA REPUBBLICA PROMULGA la seguente legge: Art. 1 &Egrave; autorizzato il pagamento delle spese ordinarie e straordinarie del Ministero della difesa per l'esercizio finanziario dal 1 luglio 1957 al 30 giugno 1958, in conformit&agrave; dello stato di previsione annesso alla presente legge."
+    },
+    {
+      "chiave": "/eli/id/1957/09/14/057U0812/sg",
+      "titolo": "DECRETO-LEGGE 14 settembre 1957, n. 812",
+      "tipo": "decreto.legge",
+      "numero": "812",
+      "dataEmanazione": "1957-09-14",
+      "nir": "urn:nir:stato:decreto.legge:1957-09-14;812",
+      "eli": "/eli/id/1957/09/14/057U0812/sg",
+      "stato": "abrogato",
+      "sintesi": "Agevolazioni temporanee eccezionali per lo spirito e la acquavite di vino; esenzione dall'imposta generale sulla entrata per le vendite di vino al pubblico da parte dei produttori e nuova disciplina della esenzione dalla imposta comunale di consumo a favore dei produttori di vino; concessione di un contributo negli interessi sui mutui contratti dagli Enti gestori degli ammassi volontari di uva attuati per la campagna vinicola 1957.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legge:1957-09-14;812",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1957/09/14/057U0812/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1957-09-14",
+      "numeroGU": "229",
+      "codiceRedazionale": "057U0812",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.L. 25 GIUGNO 2008, N. 112 , CONVERTITO CON MODIFICAZIONI DALLA L. 6 AGOSTO 2008, N. 133 ))"
+    },
+    {
+      "chiave": "/eli/id/1957/08/12/057U0752/sg",
+      "titolo": "LEGGE 12 agosto 1957, n. 752",
+      "tipo": "legge",
+      "numero": "752",
+      "dataEmanazione": "1957-08-12",
+      "nir": "urn:nir:stato:legge:1957-08-12;752",
+      "eli": "/eli/id/1957/08/12/057U0752/sg",
+      "stato": "in_vigore",
+      "sintesi": "Modificazioni al testo unico 17 luglio 1910, n. 536, e unificazione delle norme concernenti i buoni del Tesoro poliennali con quelle degli altri debiti dello Stato.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1957-08-12;752",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1957/08/30/057U0752/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1957-08-30",
+      "numeroGU": "215",
+      "codiceRedazionale": "057U0752",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "La Camera dei deputati ed il Senato della Repubblica hanno approvato; IL PRESIDENTE DELLA REPUBBLICA PROMULGA la seguente legge: Art. 1 Abolizione delle matrici I titoli al portatore e misti dei prestiti da iscrivere nel Gran Libro del debito pubblico sono emessi senza matrici."
+    },
+    {
+      "chiave": "/eli/id/1957/07/30/057U0652/sg",
+      "titolo": "LEGGE 30 luglio 1957, n. 652",
+      "tipo": "legge",
+      "numero": "652",
+      "dataEmanazione": "1957-07-30",
+      "nir": "urn:nir:stato:legge:1957-07-30;652",
+      "eli": "/eli/id/1957/07/30/057U0652/sg",
+      "stato": "in_vigore",
+      "sintesi": "Modifiche all'art. 9 del decreto del Presidente della Repubblica 30 maggio 1955, n. 797.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1957-07-30;652",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1957/08/07/057U0652/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1957-08-07",
+      "numeroGU": "196",
+      "codiceRedazionale": "057U0652",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "La Camera dei deputati ed il Senato della Repubblica hanno approvato; IL PRESIDENTE DELLA REPUBBLICA PROMULGA la seguente legge: Art. 1 L' art. 9 del decreto del Presidente della Repubblica 30 maggio 1955, n. 797 , &egrave; sostituito dal seguente: \"I limiti di reddito previsti dagli articoli 6 e 7 ai fini della corresponsione degli assegni familiari, rispettivamente per il coniuge e per i genitori a carico, sono elevati a lire 10.000 mensili per il coniuge o per un solo genitore e a lire 15.000 mensili per i due genitori\"."
+    },
+    {
+      "chiave": "/eli/id/1957/07/11/057U0518/sg",
+      "titolo": "DECRETO-LEGGE 11 luglio 1957, n. 518",
+      "tipo": "decreto.legge",
+      "numero": "518",
+      "dataEmanazione": "1957-07-11",
+      "nir": "urn:nir:stato:decreto.legge:1957-07-11;518",
+      "eli": "/eli/id/1957/07/11/057U0518/sg",
+      "stato": "in_vigore",
+      "sintesi": "Proroga della esenzione dal diritto erariale sul saccarosio contenuto nei melassi.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legge:1957-07-11;518",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1957/07/12/057U0518/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1957-07-12",
+      "numeroGU": "172",
+      "codiceRedazionale": "057U0518",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "IL PRESIDENTE DELLA REPUBBLICA Visto l' art. 77, comma secondo, della Costituzione ; Visto il decreto Ministeriale 8 luglio 1924, che approva il testo unico delle leggi per l'imposta di fabbricazione sullo zucchero, sul glucosio, sul maltosio e sulle analoghe materie zuccherine, pubblicato nella Gazzetta Ufficiale 20 agosto 1924, n. 193, e successive modificazioni; Visto il decreto-legge 28 settembre 1956, n. 1109 , convertito con modificazioni, nella legge 29 novembre 1956, n. 1329 ; Ritenuta la straordinaria necessit&agrave; e l'urgenza di prorogare la esenzione dal diritto erariale sui melassi sottoposti a dezuccherazione con qualsiasi procedimento, istituito con l' art. 5 del decreto-legge 28 settembre 1956, n. 1109 , convertito con modificazioni, nella legge 29 novembre 1956, n. 1329 ; Sentito il Consiglio dei Ministri; Sulla proposta del Ministro per le finanze, di concerto con i Ministri per il bilancio, per il tesoro, per l'industria ed il commercio e per l'agricoltura e foreste; Decreta: Art. 1 Il comma aggiunto all' art. 5 del decreto-legge 28 settembre 1956, n. 1109 , con la legge di conversione 29 novembre 1956, n. 1329, &egrave; sostituito dal seguente: \"Fino al 30 giugno 1959, il diritto erariale di cui al precedente comma, non verr&agrave; applicato su un contingente annuo di saccarosio di produzione nazionale contenuto nei melassi che verr&agrave; fissato, con proprio decreto, dal Ministro per le finanze di concerto con i Ministri per l'industria e commercio e per l'agricoltura e foreste. I contingenti esentati dal pagamento del diritto erariale verranno assegnati a favore dei singoli produttori in relazione alla potenzialit&agrave; produttiva di ciascun stabilimento ed alle rispettive esigenze lavorative\"."
+    },
+    {
+      "chiave": "/eli/id/1957/06/25/057U0444/sg",
+      "titolo": "DECRETO-LEGGE 25 giugno 1957, n. 444",
+      "tipo": "decreto.legge",
+      "numero": "444",
+      "dataEmanazione": "1957-06-25",
+      "nir": "urn:nir:stato:decreto.legge:1957-06-25;444",
+      "eli": "/eli/id/1957/06/25/057U0444/sg",
+      "stato": "in_vigore",
+      "sintesi": "Ulteriore proroga dei termini previsti dal secondo comma dell'art. 3 del regio decreto-legge 7 dicembre 1936 n. 2081, relativo al nuovo assetto delle linee di navigazione di preminente interesse nazionale.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legge:1957-06-25;444",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1957/06/26/057U0444/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1957-06-26",
+      "numeroGU": "158",
+      "codiceRedazionale": "057U0444",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "IL PRESIDENTE DELLA REPUBBLICA Visto l' art. 77, comma secondo, della Costituzione ; Visto il regio decreto-legge 7 dicembre 1936, n. 2081 , convertito nella legge 10 giugno 1937, n. 1002 , concernente il nuovo assetto delle linee di navigazione di preminente interesse nazionale; Visto il decreto-legge 20 dicembre 1956, n. 1379 , convertito nella legge 17 febbraio 1957, n. 22 , concernente la proroga dei termini previsti dal secondo comma dell'art. 3 del citato regio decreto-legge 7 dicembre 1936, n. 2081 ; Ritenuta la straordinaria necessit&agrave; ed urgenza di prorogare ulteriormente i termini predetti in attesa dell'approvazione del disegno di legge concernente il riassetto dei servizi marittimi di preminente interesse nazionale attualmente all'esame del Parlamento, allo scopo di assicurare la continuit&agrave; dei servizi marittimi; Sentito il Consiglio dei Ministri; Sulla proposta del Ministro per la marina mercantile, di concerto con i Ministri per il bilancio, per le finanze e per il tesoro; Decreta: Art. 1 Il termine di anni venti, previsto dal secondo comma dell'art. 3 del regio decreto-legge 7 dicembre 1936, n. 2081 , convertito nella legge 10 giugno 1937, n. 1002 , gi&agrave; prorogato di sei mesi con il decreto-legge 20 dicembre 1956, n. 1379 , convertito in legge 17 febbraio 1957, n. 22 , &egrave; prorogato al 30 giugno 1958. I Ministri per la marina mercantile e per il tesoro sono autorizzati a stipulare, con le Societ&agrave; esercenti le linee di navigazione di preminente interesse nazionale, appositi atti di proroga delle concessioni, alle stesse condizioni contenute nelle convenzioni in vigore. La revisione prevista dall' art. 7 del regio decreto-legge 7 dicembre 1936, n. 2081 , modificato dall' art 1 del decreto-legge 20 dicembre 1956, n. 1379 , sar&agrave; effettuata anzich&egrave; per il periodo 1 gennaio 1953-30 giugno 1957, per il periodo 1° gennaio 1953-30 giugno 1958, in rapporto al risultato netto conseguito nel periodo stesso."
+    },
+    {
+      "chiave": "/eli/id/1957/05/28/057U0360/sg",
+      "titolo": "DECRETO-LEGGE 28 maggio 1957, n. 360",
+      "tipo": "decreto.legge",
+      "numero": "360",
+      "dataEmanazione": "1957-05-28",
+      "nir": "urn:nir:stato:decreto.legge:1957-05-28;360",
+      "eli": "/eli/id/1957/05/28/057U0360/sg",
+      "stato": "in_vigore",
+      "sintesi": "Norme sugli scrutini e gli esami nelle scuole secondarie e artistiche per l'anno scolastico 1956-57.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legge:1957-05-28;360",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1957/06/03/057U0360/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1957-06-03",
+      "numeroGU": "139",
+      "codiceRedazionale": "057U0360",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "IL PRESIDENTE DELLA REPUBBLICA Visto l' art. 77, comma secondo, della Costituzione ; Ritenuta la straordinaria necessit&agrave; ed urgenza di emanare norme con forza di legge per disciplinare gli esami delle sessioni del corrente anno nelle scuole secondarie e artistiche di ogni ordine e grado; Sentito il Consiglio dei Ministri; Sulla proposta del Ministro per la pubblica istruzione, di concerto con il Ministro per il tesoro; Decreta: Art. 1 Articolo unico. Le norme sugli scrutini e gli esami nelle scuole secondarie e artistiche contenute nel decreto-legge 24 giugno 1952, n. 649 , convertito in legge con legge 25 luglio 1952, n. 1059 , e le modificazioni ad esse apportate dal decreto-legge 21 giugno 1953, n. 451 , convertito in legge con legge 21 agosto 1953, n. 588 , sono richiamate in vigore per le sessioni dell'anno scolastico 1956-57. Il presente decreto entrer&agrave; in vigore il giorno della sua pubblicazione nella Gazzetta Ufficiale della Repubblica italiana e nello stesso giorno sar&agrave; presentato alle Camere per la conversione in legge. Il presente decreto, munito del sigillo dello Stato, sar&agrave; inserto nella Raccolta ufficiale delle leggi e dei decreti della Repubblica italiana. &Egrave; fatto obbligo a chiunque spetti di osservarlo e di farlo osservare. Dato a Roma, add&igrave; 28 maggio 1957 GRONCHI ZOLI - MORO - MEDICI Visto, il Guardasigilli: GONELLA Registrato alla Corte dei conti, add&igrave; 1° giugno 1957 Atti del Governo, registro n. 106, foglio n. 19. - CARLOMAGNO"
+    },
+    {
+      "chiave": "/eli/id/1957/05/05/057U0271/sg",
+      "titolo": "DECRETO-LEGGE 5 maggio 1957, n. 271",
+      "tipo": "decreto.legge",
+      "numero": "271",
+      "dataEmanazione": "1957-05-05",
+      "nir": "urn:nir:stato:decreto.legge:1957-05-05;271",
+      "eli": "/eli/id/1957/05/05/057U0271/sg",
+      "stato": "in_vigore",
+      "sintesi": "Disposizioni per la prevenzione e la repressione delle frodi nel settore degli oli minerali.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legge:1957-05-05;271",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1957/05/06/057U0271/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1957-05-06",
+      "numeroGU": "115",
+      "codiceRedazionale": "057U0271",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((IL D.L. 25 GIUGNO 2008 N. 112 , CONVERTITO CON MODIFICAZIONI, DALLA L. 6 AGOSTO 2008 N. 133 HA CONFERMATO L'ABROGAZIONE DEL PRESENTE PROVVEDIMENTO))"
+    },
+    {
+      "chiave": "/eli/id/1956/12/08/056U1429/sg",
+      "titolo": "LEGGE 8 dicembre 1956, n. 1429",
+      "tipo": "legge",
+      "numero": "1429",
+      "dataEmanazione": "1956-12-08",
+      "nir": "urn:nir:stato:legge:1956-12-08;1429",
+      "eli": "/eli/id/1956/12/08/056U1429/sg",
+      "stato": "abrogato",
+      "sintesi": "Sistemazione della carriera dei docenti della scuola elementare, secondaria e di istruzione artistica, in possesso dei requisiti di perseguitati politici o razziali, vincitori dei concorsi speciali.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1956-12-08;1429",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1957/01/02/056U1429/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1957-01-02",
+      "numeroGU": "1",
+      "codiceRedazionale": "056U1429",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.LGS. 13 DICEMBRE 2010, N. 212 ))"
+    },
+    {
+      "chiave": "/eli/id/1956/12/20/056U1422/sg",
+      "titolo": "LEGGE 20 dicembre 1956, n. 1422",
+      "tipo": "legge",
+      "numero": "1422",
+      "dataEmanazione": "1956-12-20",
+      "nir": "urn:nir:stato:legge:1956-12-20;1422",
+      "eli": "/eli/id/1956/12/20/056U1422/sg",
+      "stato": "in_vigore",
+      "sintesi": "Riduzione dei canoni di affitto di fondi rustici composti in canapa nelle province della Campania.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1956-12-20;1422",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1956/12/31/056U1422/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1956-12-31",
+      "numeroGU": "327",
+      "codiceRedazionale": "056U1422",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "La Camera dei deputati ed il Senato della Repubblica hanno approvato; IL PRESIDENTE DELLA REPUBBLICA IL PRESIDENTE DELLA REPUBBLICA la seguente legge: Art. 1 A decorrere dall'annata agraria 1955-56 e sino al termine dell'annata agraria in corso al momento della entrata in vigore di una nuova legge contenente norme di riforma dei contratti agrari, i canoni di affitto dei fondi rustici in canapa o in denaro con riferimento al prezzo della canapa, comunque determinati, nelle province della Campania, sono ridotti del trenta per cento (30 per cento). Qualora il canone sia composto anche di altri prodotti, la riduzione prevista al comma precedente, salve le disposizioni di legge vigenti per i canoni costituiti in cereali, si applica limitatamente alla parte composta in canapa o con riferimento al prezzo della stessa. L'affittuario potr&agrave; ripetere la differenza tra l'ammontare eventualmente corrisposto a titolo di canone al locatore e quello minore dovuto ai sensi dei commi precedenti, non oltre un anno dalla cessazione del rapporto di affitto. ((1)) ---------------- AGGIORNAMENTO (1) La Corte Costituzionale con sentenza 9-14 luglio 1958, n. 53 (in G.U. 1a s.s. 19/7/1958, n. 174) ha dichiarato \" l'illegittimit&agrave; costituzionale della legge 20 dicembre 1956, n. 1422 , intitolata \"Riduzione dei canoni di affitto dei fondi rustici composti in canapa nelle provincie della Campania\", in riferimento all' art. 3 della Costituzione ; e, conseguentemente, della legge 9 luglio 1957, n. 601 .\""
+    },
+    {
+      "chiave": "/eli/id/1956/12/20/056U1379/sg",
+      "titolo": "DECRETO-LEGGE 20 dicembre 1956, n. 1379",
+      "tipo": "decreto.legge",
+      "numero": "1379",
+      "dataEmanazione": "1956-12-20",
+      "nir": "urn:nir:stato:decreto.legge:1956-12-20;1379",
+      "eli": "/eli/id/1956/12/20/056U1379/sg",
+      "stato": "in_vigore",
+      "sintesi": "Proroga dei termini previsti dal secondo comma dell'art. 3 del regio decreto-legge 7 dicembre 1936, n. 2081, relativo al nuovo assetto delle linee di navigazione di preminente interesse nazionale.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legge:1956-12-20;1379",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1956/12/21/056U1379/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1956-12-21",
+      "numeroGU": "321",
+      "codiceRedazionale": "056U1379",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "IL PRESIDENTE DELLA REPUBBLICA Visto l' art. 77, secondo comma, della Costituzione ; Visto il regio decreto-legge 7 dicembre 1936, n. 2081 , convertito nella legge 10 giugno 1937, n. 1002 , concernente il nuovo assetto delle linee di navigazione di preminente interesse nazionale; Ritenuta la straordinaria necessit&agrave; ed urgenza di prorogare il termine di venti anni previsto dall'art. 3 del citato regio decreto-legge 7 dicembre 1936, n. 2081 , che viene a scadere il 31 dicembre 1956, in attesa dell'approvazione del disegno di legge concernente il riassetto dei servizi marittimi di preminente interesse nazionale attualmente all'esame del Parlamento, allo scopo di assicurare la continuit&agrave; dei servizi marittimi; Sentito il Consiglio dei Ministri; Sulla proposta del Ministro per la marina mercantile di concerto con quelli per il bilancio, per le finanze e per il tesoro; Decreta: Art. 1 Il termine di anni venti, previsto dal secondo comma dell'art. 3 del regio decreto-legge 7 dicembre 1936, numero 2081 , convertito nella legge 10 giugno 1937, n. 1002 , &egrave; prorogato di sei mesi. I Ministri per la marina mercantile e per il tesoro sono autorizzati a stipulare, con le Societ&agrave; esercenti le linee di navigazione di preminente interesse nazionale, apposito atto di proroga delle concessioni, alle stesse condizioni contenute nelle convenzioni in vigore. La revisione prevista dall' art. 7 del decreto-legge 7 dicembre 1936, n. 2081 , sar&agrave; effettuata anzich&egrave; per il quadriennio 1 gennaio 1953-31 dicembre 1956, per il periodo 1 gennaio 1953-30 giugno 1957, in rapporto al risultato netto conseguito nel periodo stesso."
+    },
+    {
+      "chiave": "/eli/id/1956/12/14/056U1362/sg",
+      "titolo": "DECRETO-LEGGE 14 dicembre 1956, n. 1362",
+      "tipo": "decreto.legge",
+      "numero": "1362",
+      "dataEmanazione": "1956-12-14",
+      "nir": "urn:nir:stato:decreto.legge:1956-12-14;1362",
+      "eli": "/eli/id/1956/12/14/056U1362/sg",
+      "stato": "in_vigore",
+      "sintesi": "Proroga dal 1 dicembre 1956 al 30 novembre 1957 della sospensione del dazio doganale sugli oli di semi destinati all'industria del pesce conservato.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legge:1956-12-14;1362",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1956/12/17/056U1362/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1956-12-17",
+      "numeroGU": "317",
+      "codiceRedazionale": "056U1362",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "IL PRESIDENTE DELLA REPUBBLICA Visto l' art. 77, secondo comma, della Costituzione ; Visto l' art. 5, lettera a), del decreto Presidenziale 8 maggio 1956, n. 482 , con cui venne sospesa, fino a non oltre il 30 novembre 1956, l'applicazione del dazio doganale sugli oli di semi destinati all'industria del pesce conservato; Ritenuta la straordinaria necessit&agrave; ed urgenza di prorogare per un anno la suindicata agevolazione, perdurando le ragioni che consigliarono a suo tempo di favorire l'impiego dell'olio di semi nell'industria del pesce conservato, in sostituzione dell'olio di oliva, gi&agrave; Sentito il Consiglio dei Ministri; Sulla proposta del Ministro per le finanze, di concerto con i Ministri per il bilancio per il tesoro, per l'agricoltura e le foreste, per l'industria ed il commercio e per il commercio con l'estero; Decreta: Art. 1 La sospensione del dazio doganale sugli oli di semi (voce della tariffa doganale ex 139) destinati all'industria del pesce conservato, stabilita dall' art. 5, lettera a), del decreto Presidenziale 8 maggio 1956, n. 482 , &egrave; prorogata dal 1 dicembre 1956 al 30 novembre 1957."
+    },
+    {
+      "chiave": "/eli/id/1956/05/16/056U0562/sg",
+      "titolo": "LEGGE 16 maggio 1956, n. 562",
+      "tipo": "legge",
+      "numero": "562",
+      "dataEmanazione": "1956-05-16",
+      "nir": "urn:nir:stato:legge:1956-05-16;562",
+      "eli": "/eli/id/1956/05/16/056U0562/sg",
+      "stato": "in_vigore",
+      "sintesi": "Sistemazione giuridica ed economica dei collocatori comunali.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1956-05-16;562",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1956/06/25/056U0562/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1956-06-25",
+      "numeroGU": "156",
+      "codiceRedazionale": "056U0562",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "La Camera dei deputati ed il Senato della Repubblica hanno approvato; IL PRESIDENTE DELLA REPUBBLICA PROMULGA la seguente legge: Art. 1 All'espletamento dei compiti relativi al collocamento della mano d'opera nel territorio della Repubblica si provvede, sia con il personale degli Uffici del lavoro e della massima occupazione di cui alla tabella C del decreto del Presidente della Repubblica 19 marzo 1955, n. 520 , sia con i \"Collocatori\" di cui al successivo art. 3 e con i \"Corrispondenti\" previsti al successivo art. 12. Oltre alle funzioni indicate nell'art. 23 del citato decreto Presidenziale, il personale, i \"Collocatori\" ed i \"Corrispondenti\" di cui al precedente comma svolgono i compiti che nel settore della previdenza e della assistenza sociale sono ad essi affidati da Istituti ed Enti previdenziali entro i limiti e con le modalit&agrave; stabilite dal Ministro per il lavoro e la previdenza sociale."
+    },
+    {
+      "chiave": "/eli/id/1955/12/05/055U1288/sg",
+      "titolo": "LEGGE 5 dicembre 1955, n. 1288",
+      "tipo": "legge",
+      "numero": "1288",
+      "dataEmanazione": "1955-12-05",
+      "nir": "urn:nir:stato:legge:1955-12-05;1288",
+      "eli": "/eli/id/1955/12/05/055U1288/sg",
+      "stato": "abrogato",
+      "sintesi": "Istituzione dei vaglia postali a taglio fisso.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1955-12-05;1288",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1955/12/24/055U1288/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1955-12-24",
+      "numeroGU": "297",
+      "codiceRedazionale": "055U1288",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.L. 25 GIUGNO 2008, N. 112 , CONVERTITO CON MODIFICAZIONI DALLA L. 6 AGOSTO 2008, N. 133 ))"
+    },
+    {
+      "chiave": "/eli/id/1955/11/26/055U1177/sg",
+      "titolo": "LEGGE 26 novembre 1955, n. 1177",
+      "tipo": "legge",
+      "numero": "1177",
+      "dataEmanazione": "1955-11-26",
+      "nir": "urn:nir:stato:legge:1955-11-26;1177",
+      "eli": "/eli/id/1955/11/26/055U1177/sg",
+      "stato": "abrogato",
+      "sintesi": "Provvedimenti straordinari per la Calabria.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1955-11-26;1177",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1955/12/13/055U1177/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1955-12-13",
+      "numeroGU": "286",
+      "codiceRedazionale": "055U1177",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.LGS. 13 DICEMBRE 2010, N. 212 ))"
+    },
+    {
+      "chiave": "/eli/id/1955/10/31/055U1064/sg",
+      "titolo": "LEGGE 31 ottobre 1955, n. 1064",
+      "tipo": "legge",
+      "numero": "1064",
+      "dataEmanazione": "1955-10-31",
+      "nir": "urn:nir:stato:legge:1955-10-31;1064",
+      "eli": "/eli/id/1955/10/31/055U1064/sg",
+      "stato": "in_vigore",
+      "sintesi": "Disposizioni relative alle generalita' in estratti, atti e documenti, e modificazioni all'ordinamento dello stato civile.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1955-10-31;1064",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1955/11/19/055U1064/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1955-11-19",
+      "numeroGU": "267",
+      "codiceRedazionale": "055U1064",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "La Camera dei deputati ed il Senato della Repubblica hanno approvato; IL PRESIDENTE DELLA REPUBBLICA PROMULGA la seguente legge: Art. 1 L'indicazione della paternit&agrave; e della maternit&agrave; sar&agrave; omessa: 1) negli estratti per riassunto e nei certificati relativi agli atti di nascita, di matrimonio, di cittadinanza, negli atti attestanti lo stato di famiglia e nelle pubblicazioni di matrimonio esposte al pubblico; 2) in tutti i documenti di riconoscimento."
+    },
+    {
+      "chiave": "/eli/id/1955/10/18/055U0908/sg",
+      "titolo": "LEGGE 18 ottobre 1955, n. 908",
+      "tipo": "legge",
+      "numero": "908",
+      "dataEmanazione": "1955-10-18",
+      "nir": "urn:nir:stato:legge:1955-10-18;908",
+      "eli": "/eli/id/1955/10/18/055U0908/sg",
+      "stato": "in_vigore",
+      "sintesi": "Costituzione del Fondo di rotazione per iniziative economiche nel territorio di Trieste e nella provincia di Gorizia.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1955-10-18;908",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1955/10/22/055U0908/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1955-10-22",
+      "numeroGU": "245",
+      "codiceRedazionale": "055U0908",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "La Camera dei deputati ed il Senato della Repubblica hanno approvato; IL PRESIDENTE DELLA REPUBBLICA PROMULGA la seguente legge: Art. 1 (Costituzione del Fondo di rotazione per iniziative economiche nel territorio di Trieste e nella provincia di Gorizia). &Egrave; costituito un Fondo di rotazione destinato a promuovere iniziative economiche nel territorio di Trieste e nella provincia di Gorizia. Affluiscono al Fondo: a) le somme disponibili sul Fondo E.R.P. triestino e le quote d'ammortamento per capitale ed interessi relative ai mutui accordati sul Fondo stesso; b) le somme disponibili presso la Sezione prestiti del Governo militare alleato e le quote d'ammortamento per capitale ed interessi sui mutui accordati dal Governo anzidetto e non convertiti in contributi a fondo perduto; c) le quote d'ammortamento per capitale ed interessi sui mutui accordati sul Fondo incremento edilizio, istituito con Ordine del Governo militare alleato n. 26 del 7 febbraio 1951; d) le quote d'ammortamento per capitale ed interessi sui mutui da concedersi ai sensi della presente legge; e) le somme derivanti da recuperi od estinzioni anticipate dei mutui; f) l'importo di cinque miliardi di lire che il Ministero del tesoro concede al Fondo in dotazione. (3) ((6)) --------------- AGGIORNAMENTO (3) La L. 2 marzo 1963, n. 362 ha disposto (con l'art. 1, commi 1 e 2) che \"&Egrave; autorizzato l'ulteriore conferimento della somma di 5 miliardi di lire, a favore del Fondo di rotazione per iniziative economiche nel territorio di Trieste e nella provincia di Gorizia, di cui all' articolo 1 della legge 18 ottobre 1955, n. 908 \". --------------- AGGIORNAMENTO (6) La L. 30 aprile 1976, n. 198 ha disposto (con l'art. 1) che \"&Egrave; autorizzato l'ulteriore conferimento della somma di 100 miliardi di lire a favore del fondo di rotazione per iniziative economiche a Trieste e nella provincia di Gorizia, di cui all' articolo 1 della legge 18 ottobre 1955, n. 908 , e successive modificazioni ed integrazion [...]",
+      "testoTroncato": true
+    },
+    {
+      "chiave": "/eli/id/1955/02/12/055U0077/sg",
+      "titolo": "LEGGE 12 febbraio 1955, n. 77",
+      "tipo": "legge",
+      "numero": "77",
+      "dataEmanazione": "1955-02-12",
+      "nir": "urn:nir:stato:legge:1955-02-12;77",
+      "eli": "/eli/id/1955/02/12/055U0077/sg",
+      "stato": "in_vigore",
+      "sintesi": "Pubblicazione degli elenchi dei protesti cambiari.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1955-02-12;77",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1955/03/22/055U0077/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1955-03-22",
+      "numeroGU": "66",
+      "codiceRedazionale": "055U0077",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "La Camera dei deputati ed il Senato della Repubblica hanno approvato; IL PRESIDENTE DELLA REPUBBLICA PROMULGA la seguente, legge: Art. 1 Alla pubblicazione ufficiale dell'elenco dei protesti cambiari per mancato pagamento di cambiali accettate, di vaglia cambiari e di assegni bancari, nonch&egrave; delle dichiarazioni di rifiuto di pagamento fatte in conformit&agrave; della legge cambiaria, provvedono soltanto le Camere di commercio, industria e agricoltura. ((COMMA ABROGATO DAL D.L. 18 SETTEMBRE 1995, N. 381 , CONVERTITO, CON MODIFICAZIONI, DALLA L. 15 NOVEMBRE 1995, N. 480 , COME MODIFICATO DALLA L. 18 AGOSTO 2000, N. 235 )) . Chiunque intende pubblicare notizia dei protesti cambiari deve fare riferimento alla pubblicazione ufficiale di cui al primo comma, indicando gli estremi di tale pubblicazione. Chiunque contravviene alla disposizione di cui al precedente comma &egrave; punito con l'ammenda da lire ventimila a lire centomila."
+    },
+    {
+      "chiave": "/eli/id/1954/08/09/054U0640/sg",
+      "titolo": "LEGGE 9 agosto 1954, n. 640",
+      "tipo": "legge",
+      "numero": "640",
+      "dataEmanazione": "1954-08-09",
+      "nir": "urn:nir:stato:legge:1954-08-09;640",
+      "eli": "/eli/id/1954/08/09/054U0640/sg",
+      "stato": "abrogato",
+      "sintesi": "Provvedimenti per l'eliminazione delle abitazioni malsane.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1954-08-09;640",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1954/08/16/054U0640/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1954-08-16",
+      "numeroGU": "186",
+      "codiceRedazionale": "054U0640",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.LGS. 13 DICEMBRE 2010, N. 212 ))"
+    },
+    {
+      "chiave": "/eli/id/1953/12/27/053U0968/sg",
+      "titolo": "LEGGE 27 dicembre 1953, n. 968",
+      "tipo": "legge",
+      "numero": "968",
+      "dataEmanazione": "1953-12-27",
+      "nir": "urn:nir:stato:legge:1953-12-27;968",
+      "eli": "/eli/id/1953/12/27/053U0968/sg",
+      "stato": "in_vigore",
+      "sintesi": "Concessione di indennizzi e contributi per danni di guerra.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1953-12-27;968",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1953/12/31/053U0968/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1953-12-31",
+      "numeroGU": "299",
+      "codiceRedazionale": "053U0968",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "La Camera dei deputati ed il Senato della Repubblica hanno approvato: IL PRESIDENTE DELLA REPUBBLICA PROMULGA la seguente legge: Art. 1 Indennizzi e contributi per danni di guerra Limiti territoriali della legge ai cittadini italiani ed agli enti e societ&agrave; di nazionalit&agrave; italiana sono concessi, con le modalit&agrave; e nei limiti previsti dalla presente legge, indennizzi o contributi per la perdita, la distruzione o il danneggiamento di cose mobili o immobili in dipendenza di un fatto di guerra. L'indennizzo o il contributo vengono concessi per i danni verificatisi nel territorio dello Stato e nel Territorio Libero di Trieste, nelle zone di confine non pi&ugrave; facenti parte del territorio dello Stato, nei territori dell'Africa gi&agrave; sottoposti alla sovranit&agrave; italiana, nel Dodecanneso e nell'Albania. Per i danni verificatisi in territorio estero, l'indennizzo o il contributo sono concessi limitatamente ai casi e alle condizioni previsti dall'art. 52. Per i danni ai cavi sottomarini di telecomunicazioni, alle navi, ai galleggianti ed ai relativi carichi ammessi ai benefici della presente legge, questi sono concessi qualunque sia la localit&agrave; in cui i danni si sono verificati."
+    },
+    {
+      "chiave": "/eli/id/1953/04/11/053U0263/sg",
+      "titolo": "LEGGE 11 aprile 1953, n. 263",
+      "tipo": "legge",
+      "numero": "263",
+      "dataEmanazione": "1953-04-11",
+      "nir": "urn:nir:stato:legge:1953-04-11;263",
+      "eli": "/eli/id/1953/04/11/053U0263/sg",
+      "stato": "in_vigore",
+      "sintesi": "Concessione di miglioramenti alle pensioni delle vedove, degli orfani, genitori, collaterali ed assimilati, dei caduti in guerra ed alle pensioni degli invalidi di guerra.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1953-04-11;263",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1953/04/27/053U0263/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1953-04-27",
+      "numeroGU": "96",
+      "codiceRedazionale": "053U0263",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "La Camera dei deputati ed il Senato della Repubblica hanno approvato; IL PRESIDENTE DELLA REPUBBLICA PROMULGA la seguente legge: Art. 1 Alla vedova del militare, morto per causa di servizio di guerra o attinente alla guerra, o del civile morto per fatti di guerra di cui all' art. 10 della legge del 10 agosto 1950, n. 648 , &egrave; concesso, in aggiunta alla pensione di guerra, un assegno supplementare: di annue lire 24.000 per l'esercizio finanziario 1953-54; di annue lire 63.000 per l'esercizio 1954-55 e di annue lire 102.000 per l'esercizio 1955-56 e per gli esercizi successivi. Detto assegno spetta pure, in eguale misura, agli orfani di guerra, di cui agli articoli 62 , 63 e 64 della legge 10 agosto 1950, n. 648 , i quali conseguano, o abbiano conseguito, la pensione di guerra per diritto proprio. Uguale diritto compete pure alla vedova e agli orfani che conseguano, od abbiano conseguito, il trattamento di riversibilit&agrave; di cui all' art. 69 della legge 10 agosto 1950, n. 648 ."
+    },
+    {
+      "chiave": "/eli/id/1953/03/21/053U0224/sg",
+      "titolo": "LEGGE 21 marzo 1953, n. 224",
+      "tipo": "legge",
+      "numero": "224",
+      "dataEmanazione": "1953-03-21",
+      "nir": "urn:nir:stato:legge:1953-03-21;224",
+      "eli": "/eli/id/1953/03/21/053U0224/sg",
+      "stato": "abrogato",
+      "sintesi": "Pagamenti dell'indennita' per i terreni espropriati e altre disposizioni finanziarie per l'applicazione delle leggi 12 maggio 1950, n. 230, e 21 ottobre 1950, n. 841.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1953-03-21;224",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1953/04/16/053U0224/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1953-04-16",
+      "numeroGU": "88",
+      "codiceRedazionale": "053U0224",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.L. 25 GIUGNO 2008, N. 112 , CONVERTITO, CON MODIFICAZIONI, DALLA L. 6 AGOSTO 2008, N. 133 ))"
+    },
+    {
+      "chiave": "/eli/id/1953/03/21/053U0161/sg",
+      "titolo": "LEGGE 21 marzo 1953, n. 161",
+      "tipo": "legge",
+      "numero": "161",
+      "dataEmanazione": "1953-03-21",
+      "nir": "urn:nir:stato:legge:1953-03-21;161",
+      "eli": "/eli/id/1953/03/21/053U0161/sg",
+      "stato": "in_vigore",
+      "sintesi": "Modificazioni al testo unico delle leggi sulla Corte dei conti.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1953-03-21;161",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1953/04/01/053U0161/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1953-04-01",
+      "numeroGU": "76",
+      "codiceRedazionale": "053U0161",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "La Camera dei deputati ed il Senato della Repubblica hanno approvato; IL PRESIDENTE DELLA REPUBBLICA PROMULGA la seguente legge: Art. 1 L'art. 24 del testo unico delle leggi sulla Corte dei conti approvato con regio decreto 12 luglio 1934, n. 1214 , &egrave; sostituito dal seguente: \"Qualora il consigliere delegato al controllo, dopo che sia stata sentita l'Amministrazione interessata, ritenga che un atto o decreto non debba essere ammesso al visto o alla registrazione, lo trasmette al Presidente della Corte, informandone nel tempo stesso il competente presidente di Sezione addetto al coordinamento. Il Presidente della Corte, udito il consigliere, promuove, nel pi&ugrave; breve termine, una pronunzia motivata della Sezione di controllo costituita dal Presidente della Corte, che la presiede, dai presidenti di Sezione addetti al coordinamento del controllo e dai consiglieri di cui al primo comma dell'art. 22. \"Al di fuori dell'ipotesi prevista dal comma precedente, il Presidente della Corte pu&ograve;, su segnalazione del consigliere delegato al controllo o del presidente di Sezione addetto al coordinamento o dell'Amministrazione interessata o di ufficio, deferire alla Sezione come sopra costituita la pronunzia sul visto e la registrazione degli atti o decreti ove si renda necessaria la risoluzione di questioni di massima di particolare importanza. \"Nei casi di cui ai precedenti comma, del deferimento alla Sezione di controllo &egrave; data comunicazione scritta alla Amministrazione interessata e a quella del Tesoro per quanto la riguardi. Queste possono presentare deduzioni e farsi rappresentare avanti la Sezione stessa da funzionari di grado non inferiore a quello di direttore capo divisione o equiparato. \"Le stesse norme si applicano per gli atti o decreti di competenza delle Delegazioni della Corte dei conti per la Regione sarda e per la Regione Trentino-Alto Adige e degli uffici distaccati della Corte stessa presso il Magistrato delle acque in Venezia e i Provved [...]",
+      "testoTroncato": true
+    },
+    {
+      "chiave": "/eli/id/1952/12/18/052U2386/sg",
+      "titolo": "LEGGE 18 dicembre 1952, n. 2386",
+      "tipo": "legge",
+      "numero": "2386",
+      "dataEmanazione": "1952-12-18",
+      "nir": "urn:nir:stato:legge:1952-12-18;2386",
+      "eli": "/eli/id/1952/12/18/052U2386/sg",
+      "stato": "abrogato",
+      "sintesi": "Riordinamento dei ruoli, quadri organici e nuovi limiti di eta' per la cessazione dal servizio permanente degli ufficiali della Marina.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1952-12-18;2386",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1952/12/30/052U2386/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1952-12-30",
+      "numeroGU": "301",
+      "codiceRedazionale": "052U2386",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.LGS. 15 MARZO 2010, N. 66 ))"
+    },
+    {
+      "chiave": "/eli/id/1952/06/20/052U0762/sg",
+      "titolo": "LEGGE 20 giugno 1952, n. 762",
+      "tipo": "legge",
+      "numero": "762",
+      "dataEmanazione": "1952-06-20",
+      "nir": "urn:nir:stato:legge:1952-06-20;762",
+      "eli": "/eli/id/1952/06/20/052U0762/sg",
+      "stato": "abrogato",
+      "sintesi": "Acquisto della \"Villa Karam\" ad Alessandria d'Egitto ed ampliamento ed ammodernamento dell'Ospedale italiano del Cairo.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1952-06-20;762",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1952/07/12/052U0762/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1952-07-12",
+      "numeroGU": "160",
+      "codiceRedazionale": "052U0762",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DALLA L. 6 FEBBRAIO 1957, N. 42 ))"
+    },
+    {
+      "chiave": "/eli/id/1952/05/17/052U0629/sg",
+      "titolo": "LEGGE 17 maggio 1952, n. 629",
+      "tipo": "legge",
+      "numero": "629",
+      "dataEmanazione": "1952-05-17",
+      "nir": "urn:nir:stato:legge:1952-05-17;629",
+      "eli": "/eli/id/1952/05/17/052U0629/sg",
+      "stato": "in_vigore",
+      "sintesi": "Riordinamento degli Archivi notarili.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1952-05-17;629",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1952/06/19/052U0629/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1952-06-19",
+      "numeroGU": "140",
+      "codiceRedazionale": "052U0629",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "La Camera dei deputati ed il Senato della Repubblica hanno approvato; IL PRESIDENTE DELLA REPUBBLICA PROMULGA la seguente legge: Art. 1 L'Amministrazione degli archivi notarili dipende gerarchicamente ed amministrativamente dal Ministero di grazia e giustizia, ma ha ordinamento e gestione finanziaria separati. ((Il bilancio di previsione ed il conto consuntivo degli Archivi notarili, sono redatti secondo i principi contenuti nella legge 31 dicembre 2009, n. 196 , ed approvati dal Ministro della giustizia di concerto con il Ministro dell'economia e delle finanze. Gli stessi sono trasmessi dal Ministro della giustizia alle Commissioni parlamentari competenti per materia, rispettivamente entro il termine di presentazione del disegno di legge di bilancio e del disegno di legge del rendiconto. Il conto consuntivo &egrave; trasmesso anche alla Corte dei conti.)) Il Ministero di grazia e giustizia esercita la vigilanza sugli Archivi notarili, anche a mezzo dei procuratori generali presso le Corti d'appello e dei procuratori della Repubblica presso i Tribunali e pu&ograve; ordinare le ispezioni che ritiene opportune."
+    },
+    {
+      "chiave": "/eli/id/1951/12/22/051U1575/sg",
+      "titolo": "LEGGE 22 dicembre 1951, n. 1575",
+      "tipo": "legge",
+      "numero": "1575",
+      "dataEmanazione": "1951-12-22",
+      "nir": "urn:nir:stato:legge:1951-12-22;1575",
+      "eli": "/eli/id/1951/12/22/051U1575/sg",
+      "stato": "abrogato",
+      "sintesi": "Agevolazioni fiscali per opere concesse dalla Cassa per il Mezzogiorno.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1951-12-22;1575",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1952/01/19/051U1575/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1952-01-19",
+      "numeroGU": "16",
+      "codiceRedazionale": "051U1575",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.LGS. 13 DICEMBRE 2010, N. 212 ))"
+    },
+    {
+      "chiave": "/eli/id/1951/11/04/051U1316/sg",
+      "titolo": "LEGGE 4 novembre 1951, n. 1316",
+      "tipo": "legge",
+      "numero": "1316",
+      "dataEmanazione": "1951-11-04",
+      "nir": "urn:nir:stato:legge:1951-11-04;1316",
+      "eli": "/eli/id/1951/11/04/051U1316/sg",
+      "stato": "abrogato",
+      "sintesi": "Disciplina della produzione e del commercio della margarina e dei grassi idrogenati alimentari.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1951-11-04;1316",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1951/12/12/051U1316/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1951-12-12",
+      "numeroGU": "285",
+      "codiceRedazionale": "051U1316",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.LGS. 26 MARZO 2010, n. 59 , COME MODIFICATO DAL D.LGS. 6 AGOSTO 2012, n. 147 ))"
+    }
+  ]
+}

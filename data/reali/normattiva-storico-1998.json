@@ -1,0 +1,482 @@
+{
+  "provenance": {
+    "fonte": "normattiva",
+    "url": "https://api.normattiva.it/t/normattiva.api/bff-opendata/v1/api/v1/ricerca/aggiornati",
+    "recuperatoIl": "2026-09-29T00:21:09.918Z",
+    "licenza": "riproduzione consentita con menzione di fonte, carattere non autentico e gratuito (Note legali dati.normattiva.it; solo la Gazzetta Ufficiale a stampa e' autentica)"
+  },
+  "atti": [
+    {
+      "chiave": "/eli/id/1998/06/12/098G0402/sg",
+      "titolo": "DECRETO 12 giugno 1998, n. 349",
+      "tipo": "decreto",
+      "numero": "349",
+      "dataEmanazione": "1998-06-12",
+      "nir": "urn:nir:stato:decreto:1998-06-12;349",
+      "eli": "/eli/id/1998/06/12/098G0402/sg",
+      "stato": "in_vigore",
+      "sintesi": "Regolamento recante norme concernenti le regole tecniche per l'omologazione degli apparati monocanali per il servizio fisso e mobile terrestre ad uso privato.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto:1998-06-12;349",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1998/10/12/098G0402/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1998-10-12",
+      "numeroGU": "238",
+      "codiceRedazionale": "098G0402",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "IL MINISTRO DELLE COMUNICAZIONI Visto il testo unico delle disposizioni legislative in materia postale, di bancoposta e di telecomunicazioni, approvato con decreto del Presidente della Repubblica 29 marzo 1973, n. 156 ; Visto il decreto ministeriale 17 novembre 1981, con il quale sono state approvate le norme tecniche riguardanti gli apparati monocanali radiotelefonici per i servizi fisso e mobile terrestre, pubblicato nella Gazzetta Ufficiale n. 339 del 10 dicembre 1981 ; Visto il decreto ministeriale 31 gennaio 1983, con il quale &egrave; stato approvato il piano nazionale di ripartizione delle radiofrequenze, pubblicato nel supplemento ordinario alla Gazzetta Ufficiale n. 47 del 17 febbraio 1983 e successive modificazioni; Vista la direttiva 83/189/CEE attuata con legge 21 giugno 1986, n. 317 - notifica 98/0064/I; Visto il decreto ministeriale 21 febbraio 1986, modificato con decreto ministeriale 17 aprile 1997, n. 162 , con il quale &egrave; stata approvata la normativa tecnica relativa ai collegamenti radiomobili privati, pubblicato nel supplemento ordinario alla Gazzetta Ufficiale n. 173 del 28 luglio 1986 ; Visto il decreto ministeriale 4 ottobre 1994, n. 625 , con il quale &egrave; stato adottato il regolamento recante norme concernenti le regole tecniche per l'omologazione degli apparati monocanali per i servizi fisso e mobile terrestre, modificato dal decreto ministeriale 5 giugno 1997, n. 188 ; Visto il regolamento delle radiocomunicazioni, annesso alla convenzione internazionale delle telecomunicazioni adottata a Ginevra il 22 dicembre 1992 e ratificata con legge 31 gennaio 1996, n. 61 ; Visto il decreto legislativo 12 novembre 1996, n. 615 , di attuazione della direttiva 89/336/CEE in materia di ravvicinamento delle legislazioni degli Stati membri relativa alla compatibilit&agrave; elettromagnetica, modificata ed integrata dalla direttiva 92/31/CEE del Consiglio del 28 aprile 1992 , dalla direttiva 93/68/CEE del Consiglio del 22 luglio 1993 e dalla dire [...]",
+      "testoTroncato": true
+    },
+    {
+      "chiave": "/eli/id/1998/07/03/098G0270/sg",
+      "titolo": "DECRETO-LEGGE 3 luglio 1998, n. 211",
+      "tipo": "decreto.legge",
+      "numero": "211",
+      "dataEmanazione": "1998-07-03",
+      "nir": "urn:nir:stato:decreto.legge:1998-07-03;211",
+      "eli": "/eli/id/1998/07/03/098G0270/sg",
+      "stato": "decaduto",
+      "sintesi": "Disposizioni urgenti per la validita' dell'anno scolastico e per gli esami nella scuola italiana di Asmara.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legge:1998-07-03;211",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1998/07/06/098G0270/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1998-07-06",
+      "numeroGU": "155",
+      "codiceRedazionale": "098G0270",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 DECRETO DECADUTO; I SUOI EFFETTI SONO STATI FATTI SALVI DALLA L. 3 AGOSTO 1998, N. 287"
+    },
+    {
+      "chiave": "/eli/id/1998/06/16/098G0247/sg",
+      "titolo": "LEGGE 16 giugno 1998, n. 197",
+      "tipo": "legge",
+      "numero": "197",
+      "dataEmanazione": "1998-06-16",
+      "nir": "urn:nir:stato:legge:1998-06-16;197",
+      "eli": "/eli/id/1998/06/16/098G0247/sg",
+      "stato": "in_vigore",
+      "sintesi": "Ratifica ed esecuzione dell'accordo quadro di cooperazione economica, industriale ed allo sviluppo tra il Governo della Repubblica italiana e il Governo della Repubblica federativa del Brasile, fatto a Roma il 12 febbraio 1997.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1998-06-16;197",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1998/06/30/098G0247/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1998-06-30",
+      "numeroGU": "150",
+      "codiceRedazionale": "098G0247",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "La Camera dei deputati ed il Senato della Repubblica hanno approvato; IL PRESIDENTE DELLA REPUBBLICA Promulga la seguente legge: Art. 1 1. Il Presidente della Repubblica &egrave; autorizzato a ratificare l'accordo quadro di cooperazione economica, industriale ed allo sviluppo tra la Repubblica italiana e la Repubblica federativa del Brasile, fatto a Roma il 12 febbraio 1997."
+    },
+    {
+      "chiave": "/eli/id/1998/06/11/098G0230/sg",
+      "titolo": "DECRETO-LEGGE 11 giugno 1998, n. 180",
+      "tipo": "decreto.legge",
+      "numero": "180",
+      "dataEmanazione": "1998-06-11",
+      "nir": "urn:nir:stato:decreto.legge:1998-06-11;180",
+      "eli": "/eli/id/1998/06/11/098G0230/sg",
+      "stato": "in_vigore",
+      "sintesi": "Misure urgenti per la prevenzione del rischio idrogeologico ed a favore delle zone colpite da disastri franosi nella regione Campania.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legge:1998-06-11;180",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1998/06/11/098G0230/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1998-06-11",
+      "numeroGU": "134",
+      "codiceRedazionale": "098G0230",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((ARTICOLO ABROGATO DAL D.LGS. 3 APRILE 2006, N. 152 ))"
+    },
+    {
+      "chiave": "/eli/id/1998/04/06/098G0222/sg",
+      "titolo": "DECRETO 6 aprile 1998, n. 172",
+      "tipo": "decreto",
+      "numero": "172",
+      "dataEmanazione": "1998-04-06",
+      "nir": "urn:nir:stato:decreto:1998-04-06;172",
+      "eli": "/eli/id/1998/04/06/098G0222/sg",
+      "stato": "in_vigore",
+      "sintesi": "Regolamento recante norme per l'aggiunta di farine di cereali maltati, di estratti di malto e degli enzimi amilolitici alfaamilasi e betaamilasi alle farine di grano tenero.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto:1998-04-06;172",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1998/06/03/098G0222/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1998-06-03",
+      "numeroGU": "127",
+      "codiceRedazionale": "098G0222",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "IL MINISTRO DELLA SANIT&Agrave; Vista la legge 4 luglio 1967, n. 580 , che disciplina la lavorazione ed il commercio dei cereali, degli sfarinati, del pane e delle paste alimentari; Visto, in particolare, l'articolo 10 della citata legge n. 580 del 1967 che vieta l'aggiunta di sostanze organiche ed inorganiche di qualsiasi natura, nonch&egrave; qualsiasi trattamento degli sfarinati con agenti fisici o chimici, salvi i competenti provvedimenti del Ministero della sanit&agrave; emanati a norma della legge 30 aprile 1962, n. 283 ; Visto l'articolo 7 della predetta legge n. 283 del 1962 , con il quale &egrave; conferita al Ministro della sanit&agrave; la facolt&agrave; di consentire, con proprio decreto, sentito il Consiglio superiore di sanit&agrave;, la produzione ed il commercio di sostanze alimentari e bevande che abbiano subito aggiunte e sottrazioni, prescrivendo, del pari, anche le indicazioni che debbono essere riportate sul prodotto finito; Visto il decreto legislativo 27 gennaio 1992, n. 109 , e successive modificazioni ed integrazioni, relativo a attuazione delle direttive 89/395/CEE e 89/396/CEE concernenti l'etichettatura, la presentazione e la pubblicit&agrave; dei prodotti alimentari; Considerato che l'aggiunta di farine di cereali maltati, di estratti di malto e di enzimi amilolitici alfa e beta amilasi &egrave; attualmente consentita nella produzione del pane ai sensi dell'articolo 19 della citata legge n. 580 del 1967 ; Considerato che l'impiego di tali ingredienti non &egrave; disciplinato da alcuna disposizione nella fabbricazione di prodotti dolciari da forno e di altri prodotti della panetteria in genere; Considerato che l'impiego di tali ingredienti nelle farine di grano tenero &egrave; di uso comune nei Paesi dell'Unione europea; Considerato che l'aggiunta alle farine di grano tenero di farine di cereali maltati, di estratti di malto e di enzimi amilolitici alfa e beta amilasi &egrave; giustificata sul piano tecnologico dalla necessit&agrave; di  [...]",
+      "testoTroncato": true
+    },
+    {
+      "chiave": "/eli/id/1998/03/14/098G0132/sg",
+      "titolo": "DECRETO LEGISLATIVO 14 marzo 1998, n. 84",
+      "tipo": "decreto.legislativo",
+      "numero": "84",
+      "dataEmanazione": "1998-03-14",
+      "nir": "urn:nir:stato:decreto.legislativo:1998-03-14;84",
+      "eli": "/eli/id/1998/03/14/098G0132/sg",
+      "stato": "in_vigore",
+      "sintesi": "Riordino della disciplina per l'accesso alla professione di autotrasportatore di cose per conto di terzi, a norma dell'articolo 7, comma 1, della legge 23 dicembre 1997, n. 454.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legislativo:1998-03-14;84",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1998/04/09/098G0132/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1998-04-09",
+      "numeroGU": "83",
+      "codiceRedazionale": "098G0132",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 Oggetto e definizioni 1. Con il presente decreto si provvede al riordino della disciplina per l'accesso alla professione di trasportatore su strada di cose per conto di terzi da parte delle imprese di cui all' articolo 1, comma 2, lettere c) ed e), della legge 23 dicembre 1997, n. 454 , ovvero da parte delle aziende speciali o consorzi di cui alla legge 8 giugno 1990, n. 142 . 2. Ai sensi del presente decreto si intende per: a) \"professione di autotrasportatore di cose per conto di terzi\", l'attivit&agrave; di un soggetto che esegue, mediante autoveicoli, il trasporto di merci per conto di terzi; b) \"albo\", l'albo delle persone fisiche e giuridiche che esercitano autotrasporto di cose per conto di terzi istituito con legge 6 giugno 1974, n 298 ; c) \"comitato centrale\", \"comitato regionale\" e \"comitato provinciale\" gli organismi di cui agli articoli 3, 4 e 5 della citata legge n. 298 del 1974 . (2) ((3)) --------------- AGGIORNAMENTO (2) Il D.Lgs. 22 dicembre 2000, n. 395 ha disposto (con l'art. 20, comma 1, lettera b)) che il presente provvedimento &egrave; abrogato a decorrere dalla data di entrata in vigore del regolamento di cui all'articolo 21 del medesimo D.Lgs. e comunque a decorrere dal 1° luglio 2001. --------------- AGGIORNAMENTO (3) - Il D.Lgs. 22 dicembre 2000, n. 395 , come modificato dal D.Lgs. 28 dicembre 2001, n. 478 , ha disposto (con l'art. 20, comma 1, lettera b)) l'abrogazione del presente provvedimento a decorrere dalla data di entrata in vigore del regolamento di cui all'articolo 21 del medesimo D.Lgs. 22 dicembre 2000, n. 395 . - Il D.Lgs. 28 dicembre 2001, n. 478 , nel modificare l' art. 20, comma 1 del D.Lgs. 22 dicembre 2000, n. 395 , ha conseguentemente disposto (con l'art. 22, comma 1) che \"Le disposizioni del presente decreto hanno efficacia dal giorno della pubblicazione\". - Il regolamento di cui all'art. 20, comma 1, alinea del D.Lgs. 22 dicembre 2000, n. 395 &egrave; stato emanato con Decreto 28 aprile 2005, n. 161, pubblicato i [...]",
+      "testoTroncato": true
+    },
+    {
+      "chiave": "/eli/id/1998/04/08/098G0139/sg",
+      "titolo": "DECRETO-LEGGE 8 aprile 1998, n. 78",
+      "tipo": "decreto.legge",
+      "numero": "78",
+      "dataEmanazione": "1998-04-08",
+      "nir": "urn:nir:stato:decreto.legge:1998-04-08;78",
+      "eli": "/eli/id/1998/04/08/098G0139/sg",
+      "stato": "in_vigore",
+      "sintesi": "Interventi urgenti in materia occupazionale.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legge:1998-04-08;78",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1998/04/08/098G0139/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1998-04-08",
+      "numeroGU": "82",
+      "codiceRedazionale": "098G0139",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "IL PRESIDENTE DELLA REPUBBLICA Visti gli articoli 77 e 87 della Costituzione ; Ritenuta la straordinaria necessit&agrave; ed urgenza di adottare misure a sostegno del reddito intese a fronteggiare, nell'immediato, emergenze occupazionali in vista di una piena operativit&agrave; delle iniziative volte al reimpiego dei soggetti interessati e ci&ograve; con particolare riferimento ai programmi di reindustrializzazione; Ritenuta la straordinaria necessit&agrave; ed urgenza di apportare modifiche alla disciplina in materia di lavori socialmente utili, al fine di assicurare interventi pi&ugrave; funzionali alla collocazione dei lavori utilizzati nei predetti lavori; Considerata, altres&igrave;, la straordinaria necessit&agrave; ed urgenza di assicurare ulteriori stanziamenti, al fine di consentire la prosecuzione di lavori socialmente utili presso il Ministero per i beni culturali e ambientali; Vista la deliberazione del Consiglio dei Ministri, adottata nella riunione del 3 aprile 1998; Sulla proposta del Presidente del Consiglio dei Ministri e del Ministro del lavoro e della previdenza sociale, di concerto con i Ministri del tesoro, del bilancio e della programmazione economica e per i beni culturali e ambientali; EMANA il seguente decreto legislativo: Art. 1 Interventi urgenti in materia occupazionale 1. Sono prorogati: a) di ulteriori dodici mesi e nei confronti di un numero di soggetti fino ad un massimo di 3.500 unit&agrave; i trattamenti di integrazione salariale straordinaria e di mobilit&agrave; di cui all'articolo 4, comma 21, terzo e quinto periodo, del decreto-legge 1 ottobre 1996, n. 510 , convertito, con modificazioni, dalla legge 28 novembre 1996, n. 608 , in corso alla data del 31 marzo 1998 per effetto di disposizioni vigenti alla data del 31 dicembre 1997, nella misura vigente alla predetta data del 31 marzo 1998; la proroga dei trattamenti di integrazione straordinaria salariale comporta una pari riduzione del periodo di trattamento di mobilit&agrave;, o [...]",
+      "testoTroncato": true
+    },
+    {
+      "chiave": "/eli/id/1998/01/02/098G0063/sg",
+      "titolo": "DECRETO 2 gennaio 1998, n. 28",
+      "tipo": "decreto",
+      "numero": "28",
+      "dataEmanazione": "1998-01-02",
+      "nir": "urn:nir:stato:decreto:1998-01-02;28",
+      "eli": "/eli/id/1998/01/02/098G0063/sg",
+      "stato": "in_vigore",
+      "sintesi": "Regolamento recante norme in tema di costituzione del catasto dei fabbricati e modalita' di produzione ed adeguamento della nuova cartografia catastale.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto:1998-01-02;28",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1998/02/24/098G0063/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1998-02-24",
+      "numeroGU": "45",
+      "codiceRedazionale": "098G0063",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "IL MINISTRO DELLE FINANZE Visto l' articolo 9, commi 1 e 2, del decreto-legge 30 dicembre 1993, n. 557 , convertito, con modificazioni, dalla legge 26 febbraio 1994, n. 133 , che disciplinano, rispettivamente, la costituzione del catasto dei fabbricati e le modalit&agrave; di produzione ed adeguamento della nuova cartografia a grande scala; Visto il regio decreto-legge 13 aprile 1939, n. 652 , convertito, con modificazioni, dalla legge 11 agosto 1939, n. 1249 , che disciplina l'accertamento generale dei fabbricati urbani, rivalutazione del relativo reddito e formazione del nuovo catasto edilizio urbano; Visto il regolamento per la formazione del nuovo catasto edilizio urbano, approvato con decreto del Presidente della Repubblica 1 dicembre 1949, n. 1142 ; Visto l' articolo 3, comma 154, della legge 23 dicembre 1996, n. 662 , con il quale &egrave; stata disposta la revisione generale delle zone censuarie, delle tariffe d'estimo, della qualificazione, classificazione e classamento delle unit&agrave; immobiliari e dei relativi criteri, nonch&egrave; delle commissioni censuarie; Visto l' articolo 3, comma 156, della legge 23 dicembre 1996, n. 662 , con il quale &egrave; stata disposta la revisione dei criteri di accatastamento dei fabbricati rurali; Visto l' articolo 2, comma 1-sexies, del decreto-legge 23 gennaio 1993, n. 16 , convertito, con modificazioni, dalla legge 24 marzo 1993, n. 75 , che prevede nuovi criteri di classificazione e di determinazione delle rendite del catasto dei terreni che tengano conto della potenzialit&agrave; produttiva dei suoli; Visto l' articolo 1 del decreto del Presidente della Repubblica 26 ottobre 1972, n. 650 , che reca norme per il perfezionamento e revisione del sistema catastale; Vista la legge 2 febbraio 1960, n. 68 , che reca norme sulla cartografia ufficiale dello Stato e sulla disciplina delle produzioni e dei rilevamenti terrestri e idrografici; Visto il decreto del Ministro delle finanze 19 aprile 1994, n. 701 , che disciplin [...]",
+      "testoTroncato": true
+    },
+    {
+      "chiave": "/eli/id/1997/12/16/098G0016/sg",
+      "titolo": "DECRETO 16 dicembre 1997, n. 486",
+      "tipo": "decreto",
+      "numero": "486",
+      "dataEmanazione": "1997-12-16",
+      "nir": "urn:nir:stato:decreto:1997-12-16;486",
+      "eli": "/eli/id/1997/12/16/098G0016/sg",
+      "stato": "abrogato",
+      "sintesi": "Regolamento recante norme per lo snellimento delle procedure in materia di comunicazioni antimafia.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto:1997-12-16;486",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1998/01/19/098G0016/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1998-01-19",
+      "numeroGU": "14",
+      "codiceRedazionale": "098G0016",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.P.R. 3 GIUGNO 1998, N. 252 ))"
+    },
+    {
+      "chiave": "/eli/id/1998/01/08/098G0006/sg",
+      "titolo": "DECRETO LEGISLATIVO 8 gennaio 1998, n. 3",
+      "tipo": "decreto.legislativo",
+      "numero": "3",
+      "dataEmanazione": "1998-01-08",
+      "nir": "urn:nir:stato:decreto.legislativo:1998-01-08;3",
+      "eli": "/eli/id/1998/01/08/098G0006/sg",
+      "stato": "in_vigore",
+      "sintesi": "Riordino degli organi collegiali operanti presso la Presidenza del Consiglio dei Ministri - Dipartimento dello spettacolo, a norma dell'articolo 11, comma 1, lettera a) , della legge 15 marzo 1997, n. 59.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legislativo:1998-01-08;3",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1998/01/14/098G0006/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1998-01-14",
+      "numeroGU": "10",
+      "codiceRedazionale": "098G0006",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "IL PRESIDENTE DELLA REPUBBLICA Visti gli articoli 76 e 87 della Costituzione ; Vista la legge 23 agosto 1988, n. 400 ; Vista la legge 15 marzo 1997, n. 59 , ed in particolare gli articoli 11, comma 1, lettera a), e 12, comma 1, lettere g) e p); Ravvisata l'esigenza di razionalizzare l'attuale assetto organizzativo delle varie commissioni e comitati, istituiti per legge, operanti nel settore dello spettacolo, con conseguente semplificazione e riattribuzione delle funzioni agli stessi affidate; Vista la preliminare deliberazione del Consiglio dei Ministri, adottata nella riunione del 29 agosto 1997; Acquisito il prescritto parere della commissione parlamentare bicamerale istituita ai sensi dell' articolo 5 della legge 15 marzo 1997, n. 59 ; Vista la deliberazione del Consiglio dei Ministri, adottata nella riunione del 14 novembre 1997; Sulla proposta del Presidente del Consiglio dei Ministri e del Ministro per i beni culturali e ambientali e per lo spettacolo e lo sport, di concerto con i Ministri dell'interno e per la funzione pubblica e gli affari regionali; Emana il seguente decreto legislativo: Art. 1 Comitato per i problemi dello spettacolo 1. L' articolo 3 della legge 30 aprile 1985, n. 163 , &egrave; abrogato. 2. Tutte le funzioni gi&agrave; attribuite al Consiglio nazionale dello spettacolo sono affidate al Comitato per i problemi dello spettacolo, di cui all' articolo 1, comma 67, del decreto-legge 23 ottobre 1996, n. 545 , convertito, con modificazioni, dalla legge 23 dicembre 1996, n. 650 , le cui sezioni hanno un numero di componenti non inferiore a cinque e non superiore ad undici. L'Autorit&agrave; di Governo competente in materia di spettacolo pu&ograve; delegare la presidenza di singole sedute del Comitato. 3. All' articolo 1, comma 70, del decreto-legge 23 ottobre 1996, n. 545 , convertito, con modificazioni, dalla legge 23 dicembre 1996, n. 650 , sono aggiunte, in fine, le seguenti parole: \"e del soppresso Consiglio nazionale dello spettacolo\". Avver [...]",
+      "testoTroncato": true
+    },
+    {
+      "chiave": "/eli/id/1997/12/23/097G0508/sg",
+      "titolo": "DECRETO LEGISLATIVO 23 dicembre 1997, n. 469",
+      "tipo": "decreto.legislativo",
+      "numero": "469",
+      "dataEmanazione": "1997-12-23",
+      "nir": "urn:nir:stato:decreto.legislativo:1997-12-23;469",
+      "eli": "/eli/id/1997/12/23/097G0508/sg",
+      "stato": "abrogato",
+      "sintesi": "Conferimento alle regioni e agli enti locali di funzioni e compiti in materia di mercato del lavoro, a norma dell'articolo 1 della legge 15 marzo 1997, n. 59.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legislativo:1997-12-23;469",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1998/01/08/097G0508/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1998-01-08",
+      "numeroGU": "5",
+      "codiceRedazionale": "097G0508",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.LGS. 14 SETTEMBRE 2015, N. 150 ))"
+    },
+    {
+      "chiave": "/eli/id/1997/12/18/097G0500/sg",
+      "titolo": "DECRETO LEGISLATIVO 18 dicembre 1997, n. 473",
+      "tipo": "decreto.legislativo",
+      "numero": "473",
+      "dataEmanazione": "1997-12-18",
+      "nir": "urn:nir:stato:decreto.legislativo:1997-12-18;473",
+      "eli": "/eli/id/1997/12/18/097G0500/sg",
+      "stato": "abrogato",
+      "sintesi": "Revisione delle sanzioni amministrative in materia di tributi sugli affari, sulla produzione e sui consumi, nonche' di altri tributi indiretti, a norma dell'articolo 3, comma 133, lettera q) , della legge 23 dicembre 1996, n. 662.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legislativo:1997-12-18;473",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1998/01/08/097G0500/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1998-01-08",
+      "numeroGU": "5",
+      "codiceRedazionale": "097G0500",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.LGS. 5 NOVEMBRE 2024, N. 173 , COME MODIFICATO DAL D.L. 31 DICEMBRE 2025, N. 200 ))"
+    },
+    {
+      "chiave": "/eli/id/1997/12/18/097G0499/sg",
+      "titolo": "DECRETO LEGISLATIVO 18 dicembre 1997, n. 472",
+      "tipo": "decreto.legislativo",
+      "numero": "472",
+      "dataEmanazione": "1997-12-18",
+      "nir": "urn:nir:stato:decreto.legislativo:1997-12-18;472",
+      "eli": "/eli/id/1997/12/18/097G0499/sg",
+      "stato": "in_vigore",
+      "sintesi": "Disposizioni generali in materia di sanzioni amministrative per le violazioni di norme tributarie, a norma dell'articolo 3, comma 133, della legge 23 dicembre 1996, n. 662.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legislativo:1997-12-18;472",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1998/01/08/097G0499/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1998-01-08",
+      "numeroGU": "5",
+      "codiceRedazionale": "097G0499",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "IL PRESIDENTE DELLA REPUBBLICA Visti gli articoli 76 e 87 della Costituzione ; Visto l' articolo 3, comma 133, della legge 23 dicembre 1996, n. 662 , recante delega al Governo per l'emanazione di uno o pi&ugrave; decreti legislativi per la revisione organica ed il completamento della disciplina delle sanzioni tributarie non penali; Vista la preliminare deliberazione del Consiglio dei Ministri, adottata nella riunione del 10 aprile 1997; Acquisito il parere della commissione parlamentare istituita a norma dell'articolo 3, comma 13, della citata legge n. 662 del 1996 ; Vista la deliberazione del Consiglio dei Ministri, adottata nella riunione del 5 dicembre 1997; Sulla proposta del Ministro delle finanze, di concerto con i Ministri di grazia e giustizia e del tesoro e del bilancio e della programmazione economica; Emana il seguente decreto legislativo: Art. 1 ((ARTICOLO ABROGATO DAL D.LGS. 5 NOVEMBRE 2024, N. 173 , COME MODIFICATO DAL D.L. 31 DICEMBRE 2025, N. 200 ))"
+    },
+    {
+      "chiave": "/eli/id/1997/12/18/097G0504/sg",
+      "titolo": "DECRETO LEGISLATIVO 18 dicembre 1997, n. 467",
+      "tipo": "decreto.legislativo",
+      "numero": "467",
+      "dataEmanazione": "1997-12-18",
+      "nir": "urn:nir:stato:decreto.legislativo:1997-12-18;467",
+      "eli": "/eli/id/1997/12/18/097G0504/sg",
+      "stato": "in_vigore",
+      "sintesi": "Disposizioni in materia di imposta sostitutiva della maggiorazione di conguaglio e di credito di imposta sugli utili societari, a norma dell'articolo 3, comma 162, lettere e) ed i), della legge 23 dicembre 1996, n. 662.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legislativo:1997-12-18;467",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1998/01/05/097G0504/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1998-01-05",
+      "numeroGU": "3",
+      "codiceRedazionale": "097G0504",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "IL PRESIDENTE DELLA REPUBBLICA Visti gli articoli 76 e 87, quinto comma, della Costituzione ; Visto l' articolo 3, comma 162, lettere e) ed i), della legge 23 dicembre 1996, n. 662 , recante delega al Governo per l'emanazione di uno o pi&ugrave; decreti legislativi concernenti l'abrogazione della maggiorazione di conguaglio e il coordinamento della disciplina del credito di imposta sugli utili societari; Vista la preliminare deliberazione del Consiglio dei Ministri, adottata nella riunione del 12 settembre 1997; Visto l' articolo 3, comma 1, della legge 31 luglio 1997, n. 259 , che ha fissato alla data del 30 novembre 1997 il termine per l'esercizio delle deleghe legislative recate dal citato articolo 3 della legge n. 662 del 1996 ; Vista la deliberazione del Presidente del Senato della Repubblica, d'intesa con il Presidente della Camera dei deputati, adottata ai sensi dell'articolo 3, comma 15, della citata legge n. 662 del 1996 , con la quale &egrave; stata concessa la proroga di venti giorni del termine per l'adozione del parere da parte della commissione parlamentare istituita a norma dello stesso articolo 3, comma 13, della legge n. 662 del 1996 ; Considerato che in applicazione del citato articolo 3, comma 16, della legge n. 662 del 1996 , &egrave; conseguentemente prorogato di venti giorni il termine per l'esercizio della delega; Acquisito il parere della citata commissione parlamentare; Acquisito il parere della Conferenza unificata istituita ai sensi del decreto legislativo 28 agosto 1997, n. 281 ; Vista la deliberazione del Consiglio dei Ministri, adottata nella riunione del 10 dicembre 1997; Sulla proposta del Ministro delle finanze, di concerto con i Ministri del tesoro e del bilancio e della programmazione economica e per la funzione pubblica e gli affari regionali; Emana il seguente decreto legislativo: Art. 1 Imposta sostitutiva della maggiorazione di conguaglio 1. Le riserve e gli altri fondi di cui ai commi 2 e 4 dell'articolo 105 del testo unico de [...]",
+      "testoTroncato": true
+    },
+    {
+      "chiave": "/eli/id/1997/12/18/097G0503/sg",
+      "titolo": "DECRETO LEGISLATIVO 18 dicembre 1997, n. 466",
+      "tipo": "decreto.legislativo",
+      "numero": "466",
+      "dataEmanazione": "1997-12-18",
+      "nir": "urn:nir:stato:decreto.legislativo:1997-12-18;466",
+      "eli": "/eli/id/1997/12/18/097G0503/sg",
+      "stato": "in_vigore",
+      "sintesi": "Riordino delle imposte personali sul reddito al fine di favorire la capitalizzazione delle imprese, a norma dell'articolo 3, comma 162, lettere a), b), c), d) ed f) , della legge 23 dicembre 1996, n. 662.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legislativo:1997-12-18;466",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1998/01/05/097G0503/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1998-01-05",
+      "numeroGU": "3",
+      "codiceRedazionale": "097G0503",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 (( PROVVEDIMENTO ABROGATO DAL D.LGS. 12 DICEMBRE 2003, N. 344 ))"
+    },
+    {
+      "chiave": "/eli/id/1997/12/04/097G0489/sg",
+      "titolo": "DECRETO LEGISLATIVO 4 dicembre 1997, n. 460",
+      "tipo": "decreto.legislativo",
+      "numero": "460",
+      "dataEmanazione": "1997-12-04",
+      "nir": "urn:nir:stato:decreto.legislativo:1997-12-04;460",
+      "eli": "/eli/id/1997/12/04/097G0489/sg",
+      "stato": "in_vigore",
+      "sintesi": "Riordino della disciplina tributaria degli enti non commerciali e delle organizzazioni non lucrative di utilita' sociale.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legislativo:1997-12-04;460",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1998/01/02/097G0489/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1998-01-02",
+      "numeroGU": "1",
+      "codiceRedazionale": "097G0489",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "IL PRESIDENTE DELLA REPUBBLICA Visti gli articoli 76 e 87, quinto comma, della Costituzione ; Visto l' articolo 3, commi 186 , 187 , 188 , 189 della legge 23 dicembre 1996, n. 662 , recante delega al Governo per la disciplina tributaria degli enti non commerciali e delle organizzazioni non lucrative di utilit&agrave; sociale; Vista la preliminare deliberazione del Consiglio dei Ministri, adottata nella riunione del 4 luglio 1997; Visto l' articolo 3, comma 1, della legge 31 luglio 1997, n. 259 , che ha fissato alla data del 30 novembre 1997 il termine per l'esercizio delle deleghe legislative recate dal citato articolo della legge n. 662 del 1996 ; Vista la deliberazione del Presidente del Senato della Repubblica, d'intesa col Presidente della Camera dei deputati, adottata ai sensi dell'articolo 3, comma 15, della citata legge n. 662 del 1996 , recante proroga di venti giorni del termine per l'espressione del parere da parte della Commissione parlamentare istituita a norma dell'articolo 3, comma 13, della medesima legge n. 662 del 1996 ; Acquisito il parere della summenzionata Commissione parlamentare; Vista la deliberazione del Consiglio dei Ministri, adottata nella riunione del 14 novembre 1997; Sulla proposta del Ministro delle finanze, di concerto con il Ministro del tesoro e del bilancio e della programmazione economica; Emana il seguente decreto legislativo: Art. 1 Qualificazione degli enti e determinazione dei criteri per individuarne l'oggetto esclusivo o principale di attivit&agrave;. 1. Nel testo unico delle imposte sui redditi, approvato con decreto del Presidente della Repubblica 22 dicembre 1986, n. 917, all'articolo 87, il comma 4 &egrave; sostituito dai seguenti: \"4. L'oggetto esclusivo o principale dell'ente residente &egrave; determinato in base alla legge, all'atto costitutivo o allo statuto, se esistenti in forma di atto pubblico o di scrittura privata autenticata o registrata. Per oggetto principale si intende l'attivit&agrave; essenziale per rea [...]",
+      "testoTroncato": true
+    },
+    {
+      "chiave": "/eli/id/1997/12/30/097G0493/sg",
+      "titolo": "DECRETO-LEGGE 30 dicembre 1997, n. 457",
+      "tipo": "decreto.legge",
+      "numero": "457",
+      "dataEmanazione": "1997-12-30",
+      "nir": "urn:nir:stato:decreto.legge:1997-12-30;457",
+      "eli": "/eli/id/1997/12/30/097G0493/sg",
+      "stato": "in_vigore",
+      "sintesi": "Disposizioni urgenti per lo sviluppo del settore dei trasporti e l'incremento dell'occupazione.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legge:1997-12-30;457",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1997/12/31/097G0493/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1997-12-31",
+      "numeroGU": "303",
+      "codiceRedazionale": "097G0493",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "IL PRESIDENTE DELLA REPUBBLICA Visti gli articoli 77 e 87 della Costituzione ; Ritenuta la straordinaria necessit&agrave; ed urgenza di pervenire all'istituzione del registro internazionale di immatricolazione delle navi, al fine di fornire agli operatori nazionali parit&agrave; di condi zioni sui mercati internazionali, nonch&egrave; di emanare disposizioni finalizzate alla ri strutturazione delle autorit&agrave; portuali, allo sviluppo dei trasporti ed all'incremento dell'occupazione; Vista la deliberazione del Consiglio dei Ministri, adottata nella riunione del 23 dicembre 1997; Sulla proposta del Presidente del Consiglio dei Ministri e del Ministro dei trasporti e della navigazione, di concerto con i Ministri di grazia e giustizia, del lavoro e della previdenza sociale, delle finanze, dell'interno, del tesoro, del bilancio e della programmazione economica e per la funzione pubblica e gli affari regionali; Emana il seguente decretolegge: Art. 1 Istituzione del Registro internazionale 1. &Egrave; istituito il registro delle navi adibite alla navigazione internazionale, di seguito denominato \"Registro internazionale\", nel quale sono iscritte, a seguito di autorizzazione del Ministero delle infrastrutture e della mobilit&agrave; sostenibili, le navi che effettuano attivit&agrave; di trasporto marittimo, inteso come trasporto via mare di passeggeri o merci tra porti, tra un porto e un impianto o una struttura in mare aperto, nonch&egrave; quelle che svolgono attivit&agrave; assimilate al trasporto marittimo, secondo quanto previsto dal presente comma, quali: a) navi che forniscono assistenza alle piattaforme offshore, quali le unit&agrave; che prestano servizi antincendio, di trasporto di materiali e personale tecnico; b) navi d'appoggio quali le navi che prestano servizi di rimorchio d'alto mare, servizio antincendio e servizio antinquinamento; c) navi posacavi che effettuano l'installazione e l'attivit&agrave; di manutenzione degli strati di cavi e di tubi; d) navi [...]",
+      "testoTroncato": true
+    },
+    {
+      "chiave": "/eli/id/1997/12/23/097G0486/sg",
+      "titolo": "DECRETO-LEGGE 23 dicembre 1997, n. 456",
+      "tipo": "decreto.legge",
+      "numero": "456",
+      "dataEmanazione": "1997-12-23",
+      "nir": "urn:nir:stato:decreto.legge:1997-12-23;456",
+      "eli": "/eli/id/1997/12/23/097G0486/sg",
+      "stato": "decaduto",
+      "sintesi": "Proroga di termini relativi al settore universitario ed alla ricerca scientifica.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legge:1997-12-23;456",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1997/12/31/097G0486/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1997-12-31",
+      "numeroGU": "303",
+      "codiceRedazionale": "097G0486",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 DECRETO DECADUTO"
+    },
+    {
+      "chiave": "/eli/id/1997/12/18/097G0481/sg",
+      "titolo": "LEGGE 18 dicembre 1997, n. 439",
+      "tipo": "legge",
+      "numero": "439",
+      "dataEmanazione": "1997-12-18",
+      "nir": "urn:nir:stato:legge:1997-12-18;439",
+      "eli": "/eli/id/1997/12/18/097G0481/sg",
+      "stato": "abrogato",
+      "sintesi": "Proroga di termini relativi ad impegni internazionali del Ministero degli affari esteri e norme in materia di personale militare impegnato in missioni all'estero.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1997-12-18;439",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1997/12/23/097G0481/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1997-12-23",
+      "numeroGU": "298",
+      "codiceRedazionale": "097G0481",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.LGS. 15 MARZO 2010, N. 66 ))"
+    },
+    {
+      "chiave": "/eli/id/1997/12/01/097G0456/sg",
+      "titolo": "LEGGE 1 dicembre 1997, n. 420",
+      "tipo": "legge",
+      "numero": "420",
+      "dataEmanazione": "1997-12-01",
+      "nir": "urn:nir:stato:legge:1997-12-01;420",
+      "eli": "/eli/id/1997/12/01/097G0456/sg",
+      "stato": "in_vigore",
+      "sintesi": "Istituzione della Consulta dei comitati nazionali e delle edizioni nazionali.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1997-12-01;420",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1997/12/05/097G0456/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1997-12-05",
+      "numeroGU": "284",
+      "codiceRedazionale": "097G0456",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "La Camera dei deputati ed il Senato della Repubblica hanno approvato; IL PRESIDENTE DELLA REPUBBLICA Promulga la seguente legge: Art. 1 Istituzione e composizione della Consulta 1. &Egrave; istituita presso il Ministero per i beni culturali e ambientali la Consulta dei comitati nazionali e delle edizioni nazionali, di seguito denominata \"Consulta\", avente la finalit&agrave; di individuare le celebrazioni o le manifestazioni culturali di particolare rilevanza nonch&egrave; le edizioni nazionali da realizzare. 2. La Consulta &egrave; composta da: a) tre esponenti di chiara fama del mondo della cultura, dei quali uno con funzioni di presidente; b) il direttore generale dell'Ufficio centrale per i beni librari, le istituzioni culturali e l'editoria, con funzioni di vice presidente; c) un rappresentante della Presidenza del Consiglio dei Ministri e di ciascuno dei Ministeri della pubblica istruzione, del tesoro, dell'universit&agrave; e della ricerca scientifica e tecnologica; d) il presidente del coordinamento degli assessori regionali alla cultura. 3. Il presidente della Consulta, in relazione ai singoli argomenti da trattare, chiama a partecipare ai lavori qualificati esponenti del mondo della cultura, i responsabili dei comitati di settore del Consiglio nazionale per i beni culturali e ambientali, nonch&egrave; rappresentanti del Ministero degli affari esteri, del Ministero delle poste e delle telecomunicazioni e delle amministrazioni interessate. I componenti della Consulta sono nominati con decreto del Ministro per i beni culturali e ambientali e durano in carica tre anni. Ai componenti della Consulta esterni alla pubblica amministrazione compete il trattamento economico di missione in base alla normativa generale vigente per i dirigenti generali di livello C dello Stato."
+    },
+    {
+      "chiave": "/eli/id/1997/10/08/097G0387/sg",
+      "titolo": "LEGGE 8 ottobre 1997, n. 352",
+      "tipo": "legge",
+      "numero": "352",
+      "dataEmanazione": "1997-10-08",
+      "nir": "urn:nir:stato:legge:1997-10-08;352",
+      "eli": "/eli/id/1997/10/08/097G0387/sg",
+      "stato": "in_vigore",
+      "sintesi": "Disposizioni sui beni culturali.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1997-10-08;352",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1997/10/17/097G0387/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1997-10-17",
+      "numeroGU": "243",
+      "codiceRedazionale": "097G0387",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "La Camera dei deputati ed il Senato della Repubblica hanno approvato; IL PRESIDENTE DELLA REPUBBLICA PROMULGA la seguente legge: Art. 1 (Testo unico delle norme in materia di beni culturali) 1. Il Governo della Repubblica &egrave; delegato ad emanare, entro un anno dalla data di entrata in vigore della presente legge, un decreto legislativo recante un testo unico nel quale siano riunite e coordi- nate tutte le disposizioni legislative vigenti in materia di beni culturali e ambientali. Con l'entrata in vigore del testo unico sono abrogate tutte le previgenti disposizioni in materia che il Governo indica in allegato al medesimo testo unico. (2) (3) 2. Nella predisposizione del testo unico di cui al comma 1, il Governo si attiene ai seguenti principi e criteri direttivi: a) possono essere inserite nel testo unico le disposizioni legis- lative vigenti alla data di entrata in vigore della presente legge, nonch&egrave; quelle che entreranno in vigore nei sei mesi successivi; (2) b) alle disposizioni devono essere apportate esclusivamente le modificazioni necessarie per il loro coordinamento formale e sostanziale, nonch&egrave; per assicurare il riordino e la semplificazione dei procedimenti. 3. Lo schema di testo unico &egrave; trasmesso, entro sette mesi dalla data di entrata in vigore della presente legge, alla Camera dei deputati e al Senato della Repubblica affinch&egrave; le competenti Commissioni parlamentari esprimano il loro parere. Si applica la procedura di cui all' articolo 14, comma 4, della legge 23 agosto 1988, n. 400 . (2) (3) ((4. Il testo unico pu&ograve; essere aggiornato, secondo i principi ed i criteri direttivi di cui al comma 2, lettera b), entro tre anni dalla data della sua entrata in vigore, con uno o pi&ugrave; decreti legislativi il cui schema &egrave; deliberato dal Consiglio dei ministri, valutato il parere che il Consiglio di Stato esprime entro quarantacinque giorni dalla richiesta. Lo schema &egrave; trasmesso, sentita la Conferenza permane [...]",
+      "testoTroncato": true
+    },
+    {
+      "chiave": "/eli/id/1997/09/15/097G0374/sg",
+      "titolo": "DECRETO LEGISLATIVO 15 settembre 1997, n. 342",
+      "tipo": "decreto.legislativo",
+      "numero": "342",
+      "dataEmanazione": "1997-09-15",
+      "nir": "urn:nir:stato:decreto.legislativo:1997-09-15;342",
+      "eli": "/eli/id/1997/09/15/097G0374/sg",
+      "stato": "in_vigore",
+      "sintesi": "Disposizioni in materia di contabilita', di equilibrio e di dissesto finanziario degli enti locali.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legislativo:1997-09-15;342",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1997/10/10/097G0374/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1997-10-10",
+      "numeroGU": "237",
+      "codiceRedazionale": "097G0374",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "IL PRESIDENTE DELLA REPUBBLICA Visti gli articoli 76 e 87 della Costituzione ; Visto l' articolo 9, comma 1, della legge 15 maggio 1997, n. 127 , che ha delegato il Governo ad emanare norme legislative, in materia di equilibrio finanziario e contabilit&agrave; degli enti locali; Visto il decreto legislativo 25 febbraio 1995, n. 77 , recante ordinamento finanziario e contabile degli enti locali; Visto il decreto legislativo 11 giugno 1996, n. 336 , che ha apportato disposizioni correttive al decreto legislativo 25 febbraio 1995, n. 77 ; Vista la preliminare deliberazione del Consiglio dei Ministri, adottata nella riunione del 18 giugno 1997; Acquisiti i pareri delle competenti commissioni del Senato della Repubblica e della Camera dei deputati; Acquisiti i pareri della Conferenza permanente per i rapporti tra lo Stato, le regioni e le province autonome di Trento e di Bolzano e della Conferenza Statocitt&agrave; e autonomie locali; ((Acquisito il parere della sezione enti locali della Corte dei conti;)) Vista la deliberazione del Consiglio dei Ministri, adottata nella riunione del 12 settembre 1997; Sulla proposta del Ministro dell'interno, di concerto con i Ministri del tesoro, delle finanze e per la funzione pubblica e gli affari regionali; Emana il seguente decreto legislativo: Art. 1 1. Al comma 6 dell'articolo 3 del decreto legislativo 25 febbraio 1995, n. 77 , sono apportate le seguenti modifiche: a) dopo le parole: \"legale rappresentante dell'ente,\" sono inserite le seguenti: \"al consiglio dell'ente nella persona del suo presidente\"; b) dopo l'ultimo periodo sono inseriti i seguenti: \"In ogni caso la segnalazione &egrave; effettuata entro sette giorni dalla conoscenza dei fatti. Il consiglio provvede al riequilibrio a norma dell'articolo 36, entro trenta giorni dal ricevimento della segnalazione, anche su proposta della giunta comunale.\"."
+    }
+  ]
+}

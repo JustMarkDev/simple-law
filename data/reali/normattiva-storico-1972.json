@@ -1,0 +1,430 @@
+{
+  "provenance": {
+    "fonte": "normattiva",
+    "url": "https://api.normattiva.it/t/normattiva.api/bff-opendata/v1/api/v1/ricerca/aggiornati",
+    "recuperatoIl": "2026-09-29T00:19:06.001Z",
+    "licenza": "riproduzione consentita con menzione di fonte, carattere non autentico e gratuito (Note legali dati.normattiva.it; solo la Gazzetta Ufficiale a stampa e' autentica)"
+  },
+  "atti": [
+    {
+      "chiave": "/eli/id/1972/10/17/072U0603/sg",
+      "titolo": "DECRETO-LEGGE 17 ottobre 1972, n. 603",
+      "tipo": "decreto.legge",
+      "numero": "603",
+      "dataEmanazione": "1972-10-17",
+      "nir": "urn:nir:stato:decreto.legge:1972-10-17;603",
+      "eli": "/eli/id/1972/10/17/072U0603/sg",
+      "stato": "abrogato",
+      "sintesi": "Concessione di un contributo straordinario all'Istituto scientifico sperimentale per i tabacchi per l'anno finanziario 1972.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legge:1972-10-17;603",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1972/10/19/072U0603/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1972-10-19",
+      "numeroGU": "273",
+      "codiceRedazionale": "072U0603",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.L. 25 GIUGNO 2008, N.112 , CONVERTITO, CON MODIFICAZIONI, DALLA LEGGE 6 AGOSTO 2008 N.133))"
+    },
+    {
+      "chiave": "/eli/id/1972/09/06/072U0504/sg",
+      "titolo": "DECRETO-LEGGE 6 settembre 1972, n. 504",
+      "tipo": "decreto.legge",
+      "numero": "504",
+      "dataEmanazione": "1972-09-06",
+      "nir": "urn:nir:stato:decreto.legge:1972-09-06;504",
+      "eli": "/eli/id/1972/09/06/072U0504/sg",
+      "stato": "abrogato",
+      "sintesi": "Nuove norme per l'apertura dell'anno scolastico 1972-1973 e per altre necessita' straordinarie ed urgenti.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legge:1972-09-06;504",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1972/09/07/072U0504/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1972-09-07",
+      "numeroGU": "234",
+      "codiceRedazionale": "072U0504",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.L. 9 FEBBRAIO 2012, N. 5 , CONVERTITO CON MODIFICAZIONI DALLA L. 4 APRILE 2012, N. 35 ))"
+    },
+    {
+      "chiave": "/eli/id/1972/07/05/072U0288/sg",
+      "titolo": "DECRETO-LEGGE 5 luglio 1972, n. 288",
+      "tipo": "decreto.legge",
+      "numero": "288",
+      "dataEmanazione": "1972-07-05",
+      "nir": "urn:nir:stato:decreto.legge:1972-07-05;288",
+      "eli": "/eli/id/1972/07/05/072U0288/sg",
+      "stato": "abrogato",
+      "sintesi": "Nuove norme sulla esportazione delle cose di interesse artistico ed archivistico di cui alla legge 1 giugno 1939, n. 1089, ed al decreto del Presidente della Repubblica 30 settembre 1963, n. 1409.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legge:1972-07-05;288",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1972/07/06/072U0288/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1972-07-06",
+      "numeroGU": "174",
+      "codiceRedazionale": "072U0288",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.LGS. 29 OTTOBRE 1999, N.490 ))"
+    },
+    {
+      "chiave": "/eli/id/1972/07/01/072U0287/sg",
+      "titolo": "DECRETO-LEGGE 1 luglio 1972, n. 287",
+      "tipo": "decreto.legge",
+      "numero": "287",
+      "dataEmanazione": "1972-07-01",
+      "nir": "urn:nir:stato:decreto.legge:1972-07-01;287",
+      "eli": "/eli/id/1972/07/01/072U0287/sg",
+      "stato": "abrogato",
+      "sintesi": "Proroga delle norme transitorie per la compilazione degli elenchi nominativi per i lavoratori agricoli, di cui all'art. 18 del decreto-legge 3 febbraio 1970, n. 7, convertito, con modifiche, nella legge 11 marzo 1970, n. 83, e la vigilanza nel settore agricolo.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legge:1972-07-01;287",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1972/07/04/072U0287/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1972-07-04",
+      "numeroGU": "172",
+      "codiceRedazionale": "072U0287",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.L. 25 GIUGNO 2008, N. 112 , CONVERTITO, CON MODIFICAZIONI DALLA L. 6 AGOSTO 2008, N. 133 ))"
+    },
+    {
+      "chiave": "/eli/id/1972/05/25/072U0202/sg",
+      "titolo": "DECRETO-LEGGE 25 maggio 1972, n. 202",
+      "tipo": "decreto.legge",
+      "numero": "202",
+      "dataEmanazione": "1972-05-25",
+      "nir": "urn:nir:stato:decreto.legge:1972-05-25;202",
+      "eli": "/eli/id/1972/05/25/072U0202/sg",
+      "stato": "in_vigore",
+      "sintesi": "Modifiche ed integrazioni alla legge 6 dicembre 1971, n. 1036, in materia di riforma tributaria.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legge:1972-05-25;202",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1972/05/25/072U0202/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1972-05-25",
+      "numeroGU": "135",
+      "codiceRedazionale": "072U0202",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "IL PRESIDENTE DELLA REPUBBLICA Visto l' art. 77, comma secondo, della Costituzione ; Ritenuta la straordinaria necessit&agrave; ed urgenza di prorogare ulteriormente i termini dell'entrata in vigore delle norme per l'applicazione dei nuovi tributi previsti dalla legge 9 ottobre 1971, n. 825 , concernente delega legislativa al Governo per la riforma tributaria, gi&agrave; prorogati con la legge 6 dicembre 1971, n. 1036 ; Sentito il Consiglio dei Ministri; Sulla proposta del Ministro per le finanze di concerto col Ministro per il tesoro; Decreta: Art. 1 ((L' articolo 1 della legge 6 dicembre 1971, n. 1036 , &egrave; sostituito dal seguente: \"Le disposizioni per l'attuazione della riforma tributaria, prevista dalla legge 9 ottobre 1971, n. 825 , relative ai punti II, III, IV e V dell'articolo 1 di tale legge, nonch&egrave; quelle di cui ai numeri 14 e 15 dell'articolo 10, ai numeri 2, 3, 4, 5 e 14 dell'articolo 11, al numero 1 del secondo comma dell'articolo 12 ed all'ottavo comma dell'articolo 15 della stessa legge, entreranno in vigore il 1 gennaio 1973. Le disposizioni previste dalla legge 9 ottobre 1971, n. 825 , relative al punto I, dell'articolo 1 di tale legge, nonch&egrave; quelle previste dai numeri 3 e 4 dell'articolo 9 della stessa legge, entreranno in vigore il 1 gennaio 1974. Resta fermo, agli effetti della fissazione dei redditi relativi al periodo d'imposta 1973, l'obbligo della presentazione della dichiarazione dei redditi stessi da effettuarsi nei termini e con le modalit&agrave; previsti nel testo unico delle leggi sulle imposte dirette, approvato con decreto del Presidente della Repubblica 29 gennaio 1958, n. 645 . Le altre disposizioni previste dalla legge 9 ottobre 1971, n. 825 , entreranno in vigore alla data che sar&agrave; stabilita nei relativi decreti ed in ogni caso entro il 1 gennaio 1974\")) ."
+    },
+    {
+      "chiave": "/eli/id/1971/12/15/071U1222/sg",
+      "titolo": "LEGGE 15 dicembre 1971, n. 1222",
+      "tipo": "legge",
+      "numero": "1222",
+      "dataEmanazione": "1971-12-15",
+      "nir": "urn:nir:stato:legge:1971-12-15;1222",
+      "eli": "/eli/id/1971/12/15/071U1222/sg",
+      "stato": "abrogato",
+      "sintesi": "Cooperazione tecnica con i Paesi in via di sviluppo.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1971-12-15;1222",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1972/01/21/071U1222/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1972-01-21",
+      "numeroGU": "18",
+      "codiceRedazionale": "071U1222",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DALLA L. 9 FEBBRAIO 1979, N. 38 ))"
+    },
+    {
+      "chiave": "/eli/id/1971/12/30/071U1204/sg",
+      "titolo": "LEGGE 30 dicembre 1971, n. 1204",
+      "tipo": "legge",
+      "numero": "1204",
+      "dataEmanazione": "1971-12-30",
+      "nir": "urn:nir:stato:legge:1971-12-30;1204",
+      "eli": "/eli/id/1971/12/30/071U1204/sg",
+      "stato": "abrogato",
+      "sintesi": "Tutela delle lavoratrici madri.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1971-12-30;1204",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1972/01/18/071U1204/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1972-01-18",
+      "numeroGU": "14",
+      "codiceRedazionale": "071U1204",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.LGS. 26 MARZO 2001, N. 151 ))"
+    },
+    {
+      "chiave": "/eli/id/1971/12/28/071U1121/sg",
+      "titolo": "DECRETO-LEGGE 28 dicembre 1971, n. 1121",
+      "tipo": "decreto.legge",
+      "numero": "1121",
+      "dataEmanazione": "1971-12-28",
+      "nir": "urn:nir:stato:decreto.legge:1971-12-28;1121",
+      "eli": "/eli/id/1971/12/28/071U1121/sg",
+      "stato": "in_vigore",
+      "sintesi": "Determinazione della data di inizio dell'esercizio delle funzioni da parte delle Regioni a statuto ordinario.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legge:1971-12-28;1121",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1971/12/29/071U1121/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1971-12-29",
+      "numeroGU": "329",
+      "codiceRedazionale": "071U1121",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "IL PRESIDENTE DELLA REPUBBLICA Visto l' art. 77, comma secondo, della Costituzione ; Ritenuta la necessit&agrave; e l'urgenza di fissare al 1 aprile 1972 la data di inizio dell'esercizio delle funzioni da parte delle Regioni a statuto ordinario; Sentito il Consiglio dei Ministri; Sulla proposta del Presidente del Consiglio dei Ministri, di concerto con i Ministri per l'interno, per il tesoro, per le finanze e per il bilancio e la programmazione economica; Decreta: Art. 1 I decreti legislativi, emanati in forza della delega di cui all' art. 17 della legge 16 maggio 1970, n. 281 , per regolare il passaggio alle regioni, ai sensi della disposizione VIII transitoria della Costituzione, delle funzioni ad esse attribuite dall' art. 117 della Costituzione , hanno effetto, per quanto riguarda il trasferimento delle funzioni amministrative; dal 1 aprile 1972. Dalla stessa data avr&agrave; inizio l'esercizio da parte delle regioni delle funzioni trasferite e sar&agrave; provveduto alla iscrizione nel bilancio dello Stato del fondo comune indicato nell' art. 8 della legge 16 maggio 1970, n. 281 , che per l'anno 1972 viene ragguagliato ai nove dodicesimi dell'importo risultante dall'applicazione delle norme contenute nello stesso articolo."
+    },
+    {
+      "chiave": "/eli/id/1971/12/28/071U1120/sg",
+      "titolo": "DECRETO-LEGGE 28 dicembre 1971, n. 1120",
+      "tipo": "decreto.legge",
+      "numero": "1120",
+      "dataEmanazione": "1971-12-28",
+      "nir": "urn:nir:stato:decreto.legge:1971-12-28;1120",
+      "eli": "/eli/id/1971/12/28/071U1120/sg",
+      "stato": "abrogato",
+      "sintesi": "Ulteriore proroga del termine previsto dalla legge 6 maggio 1940, n. 500, per la durata dell'Ente autonomo del porto di Napoli.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legge:1971-12-28;1120",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1971/12/29/071U1120/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1971-12-29",
+      "numeroGU": "329",
+      "codiceRedazionale": "071U1120",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.L. 25 GIUGNO 2008, N. 112 , CONVERTITO, CON MODIFICAZIONI DALLA L. 6 AGOSTO 2008, N. 133 ))"
+    },
+    {
+      "chiave": "/eli/id/1971/12/06/071U1036/sg",
+      "titolo": "LEGGE 6 dicembre 1971, n. 1036",
+      "tipo": "legge",
+      "numero": "1036",
+      "dataEmanazione": "1971-12-06",
+      "nir": "urn:nir:stato:legge:1971-12-06;1036",
+      "eli": "/eli/id/1971/12/06/071U1036/sg",
+      "stato": "in_vigore",
+      "sintesi": "Proroga dell'entrata in vigore delle norme per l'applicazione dei nuovi tributi previsti dalla legge 9 ottobre 1971, n. 825, concernente delega legislativa al Governo della Repubblica per la riforma tributaria.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1971-12-06;1036",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1971/12/14/071U1036/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1971-12-14",
+      "numeroGU": "315",
+      "codiceRedazionale": "071U1036",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "La Camera dei deputati ed il Senato della Repubblica hanno approvato; IL PRESIDENTE DELLA REPUBBLICA PROMULGA la seguente legge: Art. 1 ((Le disposizioni per l'attuazione della riforma tributaria, prevista dalla legge 9 ottobre 1971, n. 825 , relative ai punti II, III, IV e V dell'articolo 1 di tale legge, nonch&egrave; quelle di cui ai numeri 14 e 15 dell'articolo 10, ai numeri 2, 3, 4, 5 e 14 dell'articolo 11, al numero 1 del secondo comma dell'articolo 12 ed all'ottavo comma dell'articolo 15 della stessa legge, entreranno in vigore il 1 gennaio 1973. Le disposizioni previste dalla legge 9 ottobre 1971, n. 825 , relative al punto I, dell'articolo 1 di tale legge, nonch&egrave; quelle previste dai numeri 3 e 4 dell'articolo 9 della stessa legge, entreranno in vigore il 1 gennaio 1974. Resta fermo, agli effetti della fissazione dei redditi relativi al periodo d'imposta 1973, l'obbligo della presentazione della dichiarazione dei redditi stessi da effettuarsi nei termini e con le modalit&agrave; previsti nel testo unico delle leggi sulle imposte dirette, approvato con decreto del Presidente della Repubblica 29 gennaio 1958, n. 645 . Le altre disposizioni previste dalla legge 9 ottobre 1971, n. 825 , entreranno in vigore alla data che sar&agrave; stabilita nei relativi decreti ed in ogni caso entro il 1 gennaio 1974)) ."
+    },
+    {
+      "chiave": "/eli/id/1971/05/14/071U0271/sg",
+      "titolo": "LEGGE 14 maggio 1971, n. 271",
+      "tipo": "legge",
+      "numero": "271",
+      "dataEmanazione": "1971-05-14",
+      "nir": "urn:nir:stato:legge:1971-05-14;271",
+      "eli": "/eli/id/1971/05/14/071U0271/sg",
+      "stato": "in_vigore",
+      "sintesi": "Proroga a favore dell'UNIRE dell'abbuono sui diritti erariali accertati sulle scommesse che hanno luogo nelle corse dei cavalli e riduzione dell'aliquota di tributo sulle scommesse accettate in occasione delle corse dei cani.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1971-05-14;271",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1971/05/22/071U0271/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1971-05-22",
+      "numeroGU": "129",
+      "codiceRedazionale": "071U0271",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "La Camera dei deputati ed il Senato della Repubblica hanno approvato; IL PRESIDENTE DELLA REPUBBLICA PROMULGA la seguente legge: Art. 1 L'abbuono sui diritti erariali a favore dell'UNIRE per il triennio 1971-1973 viene concesso secondo le percentuali che seguono in rapporto al gettito annuo dei diritti erariali dovuti ai sensi del punto 8 della tabella A annessa alla legge 26 novembre 1955, n. 1109 , sulle scommesse sulle corse dei cavalli sia negli ippodromi che fuori di essi: Percen- Gettito annuo diritti erariali al netto dell'aggio tuale dovuto all'Ente accertatore abbuono per gettito da lire 1 fino a 7 miliardi e mezzo 50 per gettito da lire 1 fino a 8 miliardi e mezzo 45 per gettito da lire 1 fino a 9 miliardi e mezzo 40 per gettito da lire 1 fino a 10 miliardi e mezzo 35 per gettito da lire 1 fino a 11 miliardi e mezzo 30 per gettito da lire 1 fino a oltre 11 miliardi e mezzo....................................... 20 &Egrave; abrogato l' articolo 18 del decreto-legge 26 ottobre 1970, n. 745 , convertito, con modificazioni, nella legge 18 dicembre 1970, n. 1034 ."
+    },
+    {
+      "chiave": "/eli/id/1970/05/25/070U0364/sg",
+      "titolo": "LEGGE 25 maggio 1970, n. 364",
+      "tipo": "legge",
+      "numero": "364",
+      "dataEmanazione": "1970-05-25",
+      "nir": "urn:nir:stato:legge:1970-05-25;364",
+      "eli": "/eli/id/1970/05/25/070U0364/sg",
+      "stato": "in_vigore",
+      "sintesi": "Istituzione del Fondo di solidarieta' nazionale.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1970-05-25;364",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1970/06/19/070U0364/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1970-06-19",
+      "numeroGU": "152",
+      "codiceRedazionale": "070U0364",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((ARTICOLO ABROGATO DAL D.LGS. 29 MARZO 2004, N.102 ))"
+    },
+    {
+      "chiave": "/eli/id/1969/04/21/069U0168/sg",
+      "titolo": "LEGGE 21 aprile 1969, n. 168",
+      "tipo": "legge",
+      "numero": "168",
+      "dataEmanazione": "1969-04-21",
+      "nir": "urn:nir:stato:legge:1969-04-21;168",
+      "eli": "/eli/id/1969/04/21/069U0168/sg",
+      "stato": "abrogato",
+      "sintesi": "Collaborazione di enti ospedalieri con i Paesi in via di sviluppo.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1969-04-21;168",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1969/05/06/069U0168/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1969-05-06",
+      "numeroGU": "115",
+      "codiceRedazionale": "069U0168",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DALLA L. 15 DICEMBRE 1971, N. 1222 ))"
+    },
+    {
+      "chiave": "/eli/id/1968/02/17/068U0108/sg",
+      "titolo": "LEGGE 17 febbraio 1968, n. 108",
+      "tipo": "legge",
+      "numero": "108",
+      "dataEmanazione": "1968-02-17",
+      "nir": "urn:nir:stato:legge:1968-02-17;108",
+      "eli": "/eli/id/1968/02/17/068U0108/sg",
+      "stato": "in_vigore",
+      "sintesi": "Norme per la elezione dei Consigli regionali delle Regioni a statuto normale.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1968-02-17;108",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1968/03/06/068U0108/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1968-03-06",
+      "numeroGU": "61",
+      "codiceRedazionale": "068U0108",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "La Camera dei deputati ed il Senato della Repubblica hanno approvato; IL PRESIDENTE DELLA REPUBBLICA PROMULGA la seguente legge: Art. 1 Norme generali I consigli regionali delle regioni a statuto normale sono eletti a suffragio universale con voto diretto, libero e segreto, attribuito a liste di candidati concorrenti. L'assegnazione dei seggi alle liste concorrenti &egrave; effettuata in ragione proporzionale, mediante riparto nelle singole circoscrizioni e recupero dei voti residui nel collegio unico regionale. Ogni elettore dispone di un voto di lista ed ha facolt&agrave; di attribuire preferenze nei limiti e con le modalit&agrave; stabiliti dalla presente legge. Il territorio di ciascuna regione &egrave; ripartito in circoscrizioni elettorali corrispondenti alle rispettive province. I consiglieri regionali rappresentano l'intera regione senza vincolo di mandato. Salvo quanto disposto dalla presente legge, per la elezione dei consigli regionali si osservano, in quanto applicabili, le disposizioni del testo unico delle leggi per la composizione e la elezione degli organi delle amministrazioni comunali, approvato con decreto del Presidente della Repubblica 16 maggio 1960, n. 570 , e successive modificazioni, nelle parti riguardanti i consigli dei comuni con oltre 5.000 abitanti."
+    },
+    {
+      "chiave": "/eli/id/1968/02/05/068U0085/sg",
+      "titolo": "LEGGE 5 febbraio 1968, n. 85",
+      "tipo": "legge",
+      "numero": "85",
+      "dataEmanazione": "1968-02-05",
+      "nir": "urn:nir:stato:legge:1968-02-05;85",
+      "eli": "/eli/id/1968/02/05/068U0085/sg",
+      "stato": "in_vigore",
+      "sintesi": "Miglioramenti ai trattamenti di quiescenza delle casse pensioni facenti parte degli istituti di previdenza con speciale riguardo alle pensioni a carico della Cassa per le pensioni ai dipendenti degli enti locali e della Cassa per le pensioni agli insegnanti di asilo e di scuole elementari parificate e modifiche ai rispettivi ordinamenti.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1968-02-05;85",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1968/03/02/068U0085/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1968-03-02",
+      "numeroGU": "58",
+      "codiceRedazionale": "068U0085",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "La Camera dei deputati ed il Senato della Repubblica hanno approvato; IL PRESIDENTE DELLA REPUBBLICA PROMULGA la seguente legge: Art. 1 Con effetto dal 1 gennaio 1967, ai titolari di pensione a carico delle casse pensioni facenti parte degli istituti di previdenza presso il Ministero del tesoro sono concesse le quote di aggiunta di famiglia per il coniuge, per i figli e per i genitori a carico, nella misura e con le norme di cui all' articolo 5 della legge 27 maggio 1959, n. 324 e successive modificazioni."
+    },
+    {
+      "chiave": "/eli/id/1967/12/23/067U1376/sg",
+      "titolo": "LEGGE 23 dicembre 1967, n. 1376",
+      "tipo": "legge",
+      "numero": "1376",
+      "dataEmanazione": "1967-12-23",
+      "nir": "urn:nir:stato:legge:1967-12-23;1376",
+      "eli": "/eli/id/1967/12/23/067U1376/sg",
+      "stato": "abrogato",
+      "sintesi": "Assistenza tecnica, culturale, economica e finanziaria alla Somalia.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1967-12-23;1376",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1968/02/02/067U1376/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1968-02-02",
+      "numeroGU": "29",
+      "codiceRedazionale": "067U1376",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DALLA L. 15 DICEMBRE 1971, N. 1222 ))"
+    },
+    {
+      "chiave": "/eli/id/1963/02/26/063U0329/sg",
+      "titolo": "LEGGE 26 febbraio 1963, n. 329",
+      "tipo": "legge",
+      "numero": "329",
+      "dataEmanazione": "1963-02-26",
+      "nir": "urn:nir:stato:legge:1963-02-26;329",
+      "eli": "/eli/id/1963/02/26/063U0329/sg",
+      "stato": "in_vigore",
+      "sintesi": "Miglioramenti nelle prestazioni dell'assicurazione contro le malattie per i lavoratori agricoli.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1963-02-26;329",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1963/04/01/063U0329/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1963-04-01",
+      "numeroGU": "88",
+      "codiceRedazionale": "063U0329",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "La Camera dei deputati ed il Senato della Repubblica hanno approvato; IL PRESIDENTE DELLA REPUBBLICA PROMULGA la seguente legge: Art. 1 A far tempo dal 1 luglio 1963, le prestazioni previste dall'articolo 6, primo comma, punti 1), 2), 4), 5), 6) e 7) della legge 11 gennaio 1943, n. 138 , sono estese a tutti i lavoratori agricoli indicati nell' articolo 3 del decreto legislativo luogotenenziale 9 aprile 1946, n. 212 , nonch&egrave; ai loro familiari a carico. ((COMMA ABROGATO DALLA L. 8 AGOSTO 1972, N. 457 COMMA ABROGATO DALLA L. 8 AGOSTO 1972, N. 457 ))"
+    },
+    {
+      "chiave": "/eli/id/1962/08/05/062U1209/sg",
+      "titolo": "LEGGE 5 agosto 1962, n. 1209",
+      "tipo": "legge",
+      "numero": "1209",
+      "dataEmanazione": "1962-08-05",
+      "nir": "urn:nir:stato:legge:1962-08-05;1209",
+      "eli": "/eli/id/1962/08/05/062U1209/sg",
+      "stato": "in_vigore",
+      "sintesi": "Istituzione di un ruolo speciale transitorio degli ufficiali in servizio permanente effettivo della Guardia di finanza.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1962-08-05;1209",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1962/08/21/062U1209/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1962-08-21",
+      "numeroGU": "210",
+      "codiceRedazionale": "062U1209",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 La Camera dei deputati ed il Senato della Repubblica hanno approvato; IL PRESIDENTE DELLA REPUBBLICA PROMULGA la seguente legge: &Egrave; istituito un ruolo speciale transitorio degli ufficiali in servizio permanente effettivo della Guardia di finanza. Nel predetto ruolo sono trasferiti, formando altrettante vacanze nel ruolo di provenienza, con l'anzianit&agrave; acquisita, i capitani in servizio permanente effettivo della Guardia di finanza tratti mediante reclutamento straordinario dagli ufficiali di complemento del Corpo per effetto della legge 21 dicembre 1948, n. 1579 ."
+    },
+    {
+      "chiave": "/eli/id/1962/07/16/062U0922/sg",
+      "titolo": "LEGGE 16 luglio 1962, n. 922",
+      "tipo": "legge",
+      "numero": "922",
+      "dataEmanazione": "1962-07-16",
+      "nir": "urn:nir:stato:legge:1962-07-16;922",
+      "eli": "/eli/id/1962/07/16/062U0922/sg",
+      "stato": "in_vigore",
+      "sintesi": "Revisione degli organici delle cancellerie e segreterie giudiziarie e norme sulla ripartizione dei proventi di cancelleria.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1962-07-16;922",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1962/07/27/062U0922/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1962-07-27",
+      "numeroGU": "188",
+      "codiceRedazionale": "062U0922",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "La Camera dei deputati ed il Senato della Repubblica hanno approvato: IL PRESIDENTE DELLA REPUBBLICA PROMULGA la seguente legge: Art. 1 L' articolo 2 della legge 23 ottobre 1960, n. 1196 , &egrave; sostituito dal seguente: \"La carriera direttiva comprende le seguenti qualifiche: cancelliere capo della Corte suprema di cassazione, segretario capo della Procura generale presso la Corte suprema di cassazione, cancelliere capo di Corte di appello e segretario capo di Procura generale presso la Corte di appello; cancelliere capo di Tribunale e segretario capo di Procura della Repubblica di prima classe; cancelliere capo di Tribunale e segretario capo di Procura della Repubblica di seconda classe; cancelliere capo di Pretura. La carriera di concetto comprende le seguenti qualifiche: cancelliere e segretario di prima classe; cancelliere e segretario di seconda classe; vice cancelliere e vice segretario\"."
+    },
+    {
+      "chiave": "/eli/id/1960/08/11/060U0933/sg",
+      "titolo": "LEGGE 11 agosto 1960, n. 933",
+      "tipo": "legge",
+      "numero": "933",
+      "dataEmanazione": "1960-08-11",
+      "nir": "urn:nir:stato:legge:1960-08-11;933",
+      "eli": "/eli/id/1960/08/11/060U0933/sg",
+      "stato": "in_vigore",
+      "sintesi": "Istituzione del Comitato nazionale per l'energia nucleare.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1960-08-11;933",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1960/09/06/060U0933/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1960-09-06",
+      "numeroGU": "218",
+      "codiceRedazionale": "060U0933",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "La Camera dei deputati ed il Senato della Repubblica hanno approvato; IL PRESIDENTE DELLA REPUBBLICA PROMULGA la seguente legge: Art. 1 ((ARTICOLO ABROGATO DALLA L. 15 DICEMBRE 1971, N. 1240 ))"
+    }
+  ]
+}

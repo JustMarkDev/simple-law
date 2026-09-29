@@ -1,0 +1,559 @@
+{
+  "provenance": {
+    "fonte": "normattiva",
+    "url": "https://api.normattiva.it/t/normattiva.api/bff-opendata/v1/api/v1/ricerca/aggiornati",
+    "recuperatoIl": "2026-09-29T00:32:15.359Z",
+    "licenza": "riproduzione consentita con menzione di fonte, carattere non autentico e gratuito (Note legali dati.normattiva.it; solo la Gazzetta Ufficiale a stampa e' autentica)"
+  },
+  "atti": [
+    {
+      "chiave": "/eli/id/1951/09/20/051U0942/sg",
+      "titolo": "DECRETO-LEGGE 20 settembre 1951, n. 942",
+      "tipo": "decreto.legge",
+      "numero": "942",
+      "dataEmanazione": "1951-09-20",
+      "nir": "urn:nir:stato:decreto.legge:1951-09-20;942",
+      "eli": "/eli/id/1951/09/20/051U0942/sg",
+      "stato": "in_vigore",
+      "sintesi": "Limitazioni all'impiego del nickel, del rame, dello zinco e delle rispettive leghe.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legge:1951-09-20;942",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1951/09/20/051U0942/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1951-09-20",
+      "numeroGU": "216",
+      "codiceRedazionale": "051U0942",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "IL PRESIDENTE DELLA REPUBBLICA Visto l' art. 77, secondo comma, della Costituzione ; Ritenuta la necessit&agrave; e l'urgenza di stabilire limitazioni all'impiego del nickel, del rame, dello stagno e delle rispettive leghe; Sentito il Consiglio dei Ministri; Sulla proposta del Ministro per l'industria e commercio, di concerto col Ministro per la grazia e giustizia; Decreta: Art. 1 Sono vietati, salvo quanto disposto negli articoli 3 e 4: 1) l'impiego totale o parziale del nickel, del rame, dello zinco, e delle leghe relative, per la fabbricazione dei prodotti indicati rispettivamente nelle tabelle A, C, D, allegate al presente decreto e vistate dal Ministro per l'industria e il commercio; 2) la nichelatura dei prodotti indicati nella tabella B allegata al presente decreto e vistata dal Ministro per l'industria e il commercio; 3) l'uso dei prodotti indicati nelle tabelle A, C, D, per destinazioni diverse da quelle in esse previste."
+    },
+    {
+      "chiave": "/eli/id/1951/09/08/051U0750/sg",
+      "titolo": "DECRETO-LEGGE 8 settembre 1951, n. 750",
+      "tipo": "decreto.legge",
+      "numero": "750",
+      "dataEmanazione": "1951-09-08",
+      "nir": "urn:nir:stato:decreto.legge:1951-09-08;750",
+      "eli": "/eli/id/1951/09/08/051U0750/sg",
+      "stato": "abrogato",
+      "sintesi": "Modificazioni al regime fiscale degli spiriti e della birra e precisazione del trattamento fiscale del melasso.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legge:1951-09-08;750",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1951/09/08/051U0750/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1951-09-08",
+      "numeroGU": "206",
+      "codiceRedazionale": "051U0750",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.LGS. 13 DICEMBRE 2010, N. 212 ))"
+    },
+    {
+      "chiave": "/eli/id/1951/07/07/051U0490/sg",
+      "titolo": "DECRETO-LEGGE 7 luglio 1951, n. 490",
+      "tipo": "decreto.legge",
+      "numero": "490",
+      "dataEmanazione": "1951-07-07",
+      "nir": "urn:nir:stato:decreto.legge:1951-07-07;490",
+      "eli": "/eli/id/1951/07/07/051U0490/sg",
+      "stato": "abrogato",
+      "sintesi": "Finanziamento per costituire riserve di prodotti alimentari e di materie prime di proprieta' dello Stato.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legge:1951-07-07;490",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1951/07/07/051U0490/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1951-07-07",
+      "numeroGU": "153",
+      "codiceRedazionale": "051U0490",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.LGS. 13 DICEMBRE 2010, N. 212 ))"
+    },
+    {
+      "chiave": "/eli/id/1951/05/29/051U0358/sg",
+      "titolo": "LEGGE 29 maggio 1951, n. 358",
+      "tipo": "legge",
+      "numero": "358",
+      "dataEmanazione": "1951-05-29",
+      "nir": "urn:nir:stato:legge:1951-05-29;358",
+      "eli": "/eli/id/1951/05/29/051U0358/sg",
+      "stato": "abrogato",
+      "sintesi": "Disciplina delle locazioni di immobili adibiti ad uso di albergo, pensione o locanda.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1951-05-29;358",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1951/06/01/051U0358/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1951-06-01",
+      "numeroGU": "123",
+      "codiceRedazionale": "051U0358",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.L. 25 GIUGNO 2008, N. 112 , CONVERTITO, CON MODIFICAZIONI, DALLA L. 6 AGOSTO 2008, N. 133 ))"
+    },
+    {
+      "chiave": "/eli/id/1951/05/23/051U0357/sg",
+      "titolo": "LEGGE 23 maggio 1951, n. 357",
+      "tipo": "legge",
+      "numero": "357",
+      "dataEmanazione": "1951-05-23",
+      "nir": "urn:nir:stato:legge:1951-05-23;357",
+      "eli": "/eli/id/1951/05/23/051U0357/sg",
+      "stato": "abrogato",
+      "sintesi": "Proroga degli sfratti nei Comuni che presentano eccezionale penuria di abitazioni.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1951-05-23;357",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1951/06/01/051U0357/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1951-06-01",
+      "numeroGU": "123",
+      "codiceRedazionale": "051U0357",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.L. 25 GIUGNO 2008, N. 112 , CONVERTITO, CON MODIFICAZIONI DALLA L. 6 AGOSTO 2008, N. 133 ))"
+    },
+    {
+      "chiave": "/eli/id/1951/04/10/051U0287/sg",
+      "titolo": "LEGGE 10 aprile 1951, n. 287",
+      "tipo": "legge",
+      "numero": "287",
+      "dataEmanazione": "1951-04-10",
+      "nir": "urn:nir:stato:legge:1951-04-10;287",
+      "eli": "/eli/id/1951/04/10/051U0287/sg",
+      "stato": "in_vigore",
+      "sintesi": "Riordinamento dei giudizi di Assise.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1951-04-10;287",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1951/05/07/051U0287/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1951-05-07",
+      "numeroGU": "102",
+      "codiceRedazionale": "051U0287",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "La Camera dei deputati ed il Senato della Repubblica hanno approvato; IL PRESIDENTE DELLA REPUBBLICA PROMULGA la seguente legge: Art. 1 (Istituzione delle Corti di assise). In ogni distretto di Corte di appello sono istituite una o pi&ugrave; Corti di assise che, nella circoscrizione del circolo loro assegnato, giudicano dei reati attribuiti alla loro competenza."
+    },
+    {
+      "chiave": "/eli/id/1951/03/15/051U0227/sg",
+      "titolo": "LEGGE 15 marzo 1951, n. 227",
+      "tipo": "legge",
+      "numero": "227",
+      "dataEmanazione": "1951-03-15",
+      "nir": "urn:nir:stato:legge:1951-03-15;227",
+      "eli": "/eli/id/1951/03/15/051U0227/sg",
+      "stato": "in_vigore",
+      "sintesi": "Modificazioni ai ruoli organici del personale di gruppo C e subalterno dell'Amministrazione della pubblica sicurezza.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1951-03-15;227",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1951/04/17/051U0227/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1951-04-17",
+      "numeroGU": "88",
+      "codiceRedazionale": "051U0227",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "La Camera dei deputati ed il Senato della Repubblica hanno approvato; IL PRESIDENTE DELLA REPUBBLICA PROMULGA la seguente legge: Art. 1 I ruoli organici del personale di gruppo C dell'Amministrazione della pubblica sicurezza, approvati con regio decreto 24 ottobre 1931, n. 1234 , sono sostituiti dai seguenti: Impiegati di polizia Gruppo C Numero Grado Denominazione dei posti 9° - Impiegati di polizia di 1&ordf; classe................ (a) 95 10° - Impiegati di polizia di 2&ordf; classe................ 290 11° - Impiegati di polizia di 3&ordf; classe................ 175 --- 560 --- (a) Oltre dodici posti in soprannumero da riassorbire con un terzo delle vacanze che, nel grado, si verificheranno a partire dal 1 gennaio 1952. Impiegati d'ordine di pubblica sicurezza Gruppo C Numero Grado Denominazione dei posti 9° - Archivisti capi di pubblica sicurezza............ (a) 90 10° - Primi Archivisti di pubblica sicurezza........... 230 11° - Archivisti di pubblica sicurezza................. 350 12° - Applicati di pubblica sicurezza.................. 610 13° - Alunni d'ordine di pubblica sicurezza............ 130 ---- 1410 ---- (a) Oltre dieci posti di soprannumero da riassorbire con un terzo delle vacanze, che, nel grado, si verificheranno a partire dal 1 gennaio 1952."
+    },
+    {
+      "chiave": "/eli/id/1951/02/22/051U0215/sg",
+      "titolo": "LEGGE 22 febbraio 1951, n. 215",
+      "tipo": "legge",
+      "numero": "215",
+      "dataEmanazione": "1951-02-22",
+      "nir": "urn:nir:stato:legge:1951-02-22;215",
+      "eli": "/eli/id/1951/02/22/051U0215/sg",
+      "stato": "in_vigore",
+      "sintesi": "Interpretazione dell'art. 2, lett. f) e dell'art. 27, lett. a) della legge 18 ottobre 1942, n. 1407, concernente la costituzione dell'Istituto cauzioni e quiescenza per i ricevitori postali e telegrafici.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1951-02-22;215",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1951/04/12/051U0215/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1951-04-12",
+      "numeroGU": "84",
+      "codiceRedazionale": "051U0215",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "La Camera dei deputati ed il Senato della Repubblica hanno approvato; IL PRESIDENTE DELLA REPUBBLICA PROMULGA la seguente legge: Art. 1 Articolo unico. Tra i valori coperti da assicurazione contro i danni dell'incendio, del furto e della rapina, di cui alla lettera f) dell'art. 2 , ed alla lettera a) dell'art. 27, della legge 18 ottobre 1942, n. 1407 , sono compresi anche i pacchi con valore dichiarato e le corrispondenze assicurate. L'assicurazione stessa copre anche gli indennizzi corrisposti dall'Amministrazione postale telegrafica per perdite di pacchi ordinari e di corrispondenze raccomandate verificatesi nelle ricevitorie a causa di incendio, furto e rapina. La presente legge, munita del sigillo dello Stato, sar&agrave; inserta nella Raccolta ufficiale delle leggi e dei decreti della Repubblica italiana. &Egrave; fatto obbligo a chiunque spetti di osservarla e di farla osservare come legge dello Stato. Data a Roma, add&igrave; 22 febbraio 1951 EINAUDI DE GASPERI - SPATARO - PELLA Visto, il Guardasigilli: PICCIONI"
+    },
+    {
+      "chiave": "/eli/id/1951/03/03/051U0193/sg",
+      "titolo": "LEGGE 3 marzo 1951, n. 193",
+      "tipo": "legge",
+      "numero": "193",
+      "dataEmanazione": "1951-03-03",
+      "nir": "urn:nir:stato:legge:1951-03-03;193",
+      "eli": "/eli/id/1951/03/03/051U0193/sg",
+      "stato": "in_vigore",
+      "sintesi": "Norme relative al servizio del Portafoglio dello Stato.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1951-03-03;193",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1951/04/04/051U0193/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1951-04-04",
+      "numeroGU": "77",
+      "codiceRedazionale": "051U0193",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "La Camera dei deputati ed il Senato della Repubblica hanno approvato; IL PRESIDENTE DELLA REPUBBLICA PROMULGA la seguente legge: Art. 1 ((ARTICOLO ABROGATO DAL D.P.R. 15 DICEMBRE 2001, N. 482 ))"
+    },
+    {
+      "chiave": "/eli/id/1951/01/09/051U0167/sg",
+      "titolo": "LEGGE 9 gennaio 1951, n. 167",
+      "tipo": "legge",
+      "numero": "167",
+      "dataEmanazione": "1951-01-09",
+      "nir": "urn:nir:stato:legge:1951-01-09;167",
+      "eli": "/eli/id/1951/01/09/051U0167/sg",
+      "stato": "abrogato",
+      "sintesi": "Istituzione del Consiglio superiore delle Forze armate.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1951-01-09;167",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1951/03/24/051U0167/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1951-03-24",
+      "numeroGU": "69",
+      "codiceRedazionale": "051U0167",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.LGS. 15 MARZO 2010, N. 66 ))"
+    },
+    {
+      "chiave": "/eli/id/1951/02/27/051U0065/sg",
+      "titolo": "DECRETO-LEGGE 27 febbraio 1951, n. 65",
+      "tipo": "decreto.legge",
+      "numero": "65",
+      "dataEmanazione": "1951-02-27",
+      "nir": "urn:nir:stato:decreto.legge:1951-02-27;65",
+      "eli": "/eli/id/1951/02/27/051U0065/sg",
+      "stato": "in_vigore",
+      "sintesi": "Modificazioni al regime fiscale degli oli minerali e abolizione dell'imposta di fabbricazione sul benzolo.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legge:1951-02-27;65",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1951/02/27/051U0065/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1951-02-27",
+      "numeroGU": "48",
+      "codiceRedazionale": "051U0065",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "IL PRESIDENTE DELLA REPUBBLICA Visto l'art. 77, comma, secondo, della Costituzione; Vista la tariffa per l'applicazione dei dazi doganali, approvata con il decreto del Presidente della Repubblica 7 luglio 1950, n. 442 ; Visto il decreto-legge 28 febbraio 1939, n. 334 , convertito nella legge 2 giugno 1939, n. 739 , riguardante il regime fiscale dei prodotti petroliferi e le successive modificazioni; Visto il decreto legislativo 7 maggio 1948, n. 464 , che ha ripristinato l'imposta di fabbricazione sul benzolo e le successive modificazioni; Visto il decreto Ministeriale 22 marzo 1946, che stabilisce temporanee tolleranze circa le caratteristiche degli oli da gas da usare come combustibili, pubblicato nella Gazzetta Ufficiale del 4 aprile 1946, n. 79; Ritenuta la necessit&agrave; e l'urgenza di modificare il regime fiscale dei prodotti petroliferi e di abolire l'imposta di fabbricazione sul benzolo; Sentito il Consiglio dei Ministri; Sulla proposta del Ministro per le finanze; Decreta: Art. 1 Le aliquote della imposta di fabbricazione e della corrispondente sovrimposta di confine, per i seguenti prodotti petroliferi, sono stabilite come appresso: Oli di petrolio, oli provenienti dalla lavorazione del catrami paraffinici di lignite, di torba, di schisti e simili (voce della tariffa doganale 271): Oli greggi di petrolio, naturali: 1) da usare direttamente come combu- stibili (voce della tariffa 271-a)-1): Per quintale alfa) nelle caldaie e nei forni.. L. 110 beta) nei motori................. \" 3.000 2) per altri usi (voce 271-a)-3).... \" 5.000 Benzina (voce 271 -b-1)............... \" 10.500 Acqua ragia minerale (voce 271-b)-2).. \" 8.400 Petrolio (voce 271-b)-3).............. \" 8.000 Oli da gas: 1) da usare direttamente come combu- stibili (voce 271-b)-4-alfa): I) con densita da 0,850 a 0,890 alla temperatura di 15° C............... \" 4.800 II) con densita superiore a 0,890 alla temperatura di 15° C............... \" 3.000 2) per altri usi (voce 271-b)-4-be- ta).......... [...]",
+      "testoTroncato": true
+    },
+    {
+      "chiave": "/eli/id/1950/10/21/050U0991/sg",
+      "titolo": "LEGGE 21 ottobre 1950, n. 991",
+      "tipo": "legge",
+      "numero": "991",
+      "dataEmanazione": "1950-10-21",
+      "nir": "urn:nir:stato:legge:1950-10-21;991",
+      "eli": "/eli/id/1950/10/21/050U0991/sg",
+      "stato": "in_vigore",
+      "sintesi": "Ricostituzione dell'Ente autonomo del Parco nazionale d'Abruzzo.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1950-10-21;991",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1950/12/21/050U0991/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1950-12-21",
+      "numeroGU": "292",
+      "codiceRedazionale": "050U0991",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "La Camera dei deputati ed il Senato della Repubblica hanno approvato; IL PRESIDENTE DELLA REPUBBLICA PROMULGA la seguente legge: Art. 1 Il regio decreto-legge 11 dicembre 1933, n. 1718 , convertito nella legge 25 gennaio 1934, n. 233 , &egrave; abrogato. Il Parco d'Abruzzo &egrave; ricostituito in ente autonomo nella sua attuale consistenza."
+    },
+    {
+      "chiave": "/eli/id/1950/10/27/050U0910/sg",
+      "titolo": "LEGGE 27 ottobre 1950, n. 910",
+      "tipo": "legge",
+      "numero": "910",
+      "dataEmanazione": "1950-10-27",
+      "nir": "urn:nir:stato:legge:1950-10-27;910",
+      "eli": "/eli/id/1950/10/27/050U0910/sg",
+      "stato": "abrogato",
+      "sintesi": "Concessione di finanziamenti per favorire l'industrializzazione della provincia di Trento ed il reimpianto e la riattivazione delle aziende industriali gia' operanti nella Venezia Giulia e in Dalmazia.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1950-10-27;910",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1950/11/28/050U0910/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1950-11-28",
+      "numeroGU": "273",
+      "codiceRedazionale": "050U0910",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.L. 25 GIUGNO 2008, N.112 , CONVERTITO, CON MODIFICAZIONI, DALLA L. 6 AGOSTO 2008, N. 133 ))"
+    },
+    {
+      "chiave": "/eli/id/1950/10/31/050U0850/sg",
+      "titolo": "LEGGE 31 ottobre 1950, n. 850",
+      "tipo": "legge",
+      "numero": "850",
+      "dataEmanazione": "1950-10-31",
+      "nir": "urn:nir:stato:legge:1950-10-31;850",
+      "eli": "/eli/id/1950/10/31/050U0850/sg",
+      "stato": "in_vigore",
+      "sintesi": "Stato di previsione della spesa del Ministero della pubblica istruzione per l'esercizio finanziario dal 1 luglio 1950 al 30 giugno 1951.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1950-10-31;850",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1950/10/31/050U0850/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1950-10-31",
+      "numeroGU": "251",
+      "codiceRedazionale": "050U0850",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "La Camera dei deputati e il Senato della Repubblica hanno approvato; IL PRESIDENTE DELLA REPUBBLICA PROMULGA la seguente legge: Art. 1 &Egrave; autorizzato il pagamento delle spese ordinarie e straordinarie del Ministero della pubblica istruzione per l'esercizio finanziario dal 1 luglio 1950 al 30 giugno 1951, in conformit&agrave; dello stato di previsione annesso alla presente legge."
+    },
+    {
+      "chiave": "/eli/id/1950/10/21/050U0841/sg",
+      "titolo": "LEGGE 21 ottobre 1950, n. 841",
+      "tipo": "legge",
+      "numero": "841",
+      "dataEmanazione": "1950-10-21",
+      "nir": "urn:nir:stato:legge:1950-10-21;841",
+      "eli": "/eli/id/1950/10/21/050U0841/sg",
+      "stato": "abrogato",
+      "sintesi": "Norme per la espropriazione, bonifica, trasformazione ed assegnazione dei terreni ai contadini.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1950-10-21;841",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1950/10/28/050U0841/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1950-10-28",
+      "numeroGU": "249",
+      "codiceRedazionale": "050U0841",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.P.R. 8 GIUGNO 2001, N. 327 )) ((9)) ---------------- AGGIORNAMENTO (9) Il D. Lgs. 8 giugno 2001, n. 327 , come modificato dal D.L. 23 novembre 2001, n. 411 , convertito con modificazioni dalla L. 31 dicembre 2001, n. 463 , ha disposto (con l'art. 59, comma 1) la proroga dell'entrata in vigore dell'abrogazione del presente provvedimento dal 1 gennaio 2002 al 30 giugno 2002. Il D.Lgs. 8 giugno 2001, n. 327 , come modificato dalla L. 1 agosto 2002, n. 166 ha disposto (con l'art. 59, comma 1) la proroga dell'entrata in vigore dell'abrogazione del presente provvedimento dal 30 giugno 2002 al 31 dicembre 2002. Il D.Lgs. 8 giugno 2001, n. 327 , come modificato dal D.L. 20 giugno 2002, n. 122 , convertito con modificazioni dalla L. 1 agosto 2002, n. 185 ha disposto (con l'art. 59, comma 1) la proroga dell'entrata in vigore dell'abrogazione del presente provvedimento dal 31 dicembre 2002 al 30 giugno 2003. Il D. Lgs. 8 giugno 2001, n. 327 , come modificato dal D. Lgs. 27 dicembre 2002, n. 302 ha disposto (con l'art. 59, comma 1) la proroga dell'entrata in vigore dell'abrogazione del presente provvedimento dal 1 gennaio 2002 al 30 giugno 2003."
+    },
+    {
+      "chiave": "/eli/id/1950/07/28/050U0626/sg",
+      "titolo": "LEGGE 28 luglio 1950, n. 626",
+      "tipo": "legge",
+      "numero": "626",
+      "dataEmanazione": "1950-07-28",
+      "nir": "urn:nir:stato:legge:1950-07-28;626",
+      "eli": "/eli/id/1950/07/28/050U0626/sg",
+      "stato": "abrogato",
+      "sintesi": "Assegnazione, a decorrere dall'esercizio finanziario 1950 - 1951, di un contributo ordinario di lire 480 milioni annui, a favore dell'Unione italiana ciechi, da destinarsi all'assistenza continuativa dei ciechi in condizione di maggior bisogno e per l'aumento del contributo ordinario di funzionamento da lire 15 milioni a lire 20 milioni annui, a decorrere dallo stesso esercizio.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1950-07-28;626",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1950/08/28/050U0626/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1950-08-28",
+      "numeroGU": "196",
+      "codiceRedazionale": "050U0626",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.LGS. 13 DICEMBRE 2010, N. 212 ))"
+    },
+    {
+      "chiave": "/eli/id/1950/07/30/050U0575/sg",
+      "titolo": "LEGGE 30 luglio 1950, n. 575",
+      "tipo": "legge",
+      "numero": "575",
+      "dataEmanazione": "1950-07-30",
+      "nir": "urn:nir:stato:legge:1950-07-30;575",
+      "eli": "/eli/id/1950/07/30/050U0575/sg",
+      "stato": "abrogato",
+      "sintesi": "Provvidenze a favore delle finanze dei Comuni e delle Province.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1950-07-30;575",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1950/08/14/050U0575/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1950-08-14",
+      "numeroGU": "185",
+      "codiceRedazionale": "050U0575",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.L . 25 GIUGNO 2008, N. 112, CONVERTITO CON MODIFICAZIONI DALLA L. 6 AGOSTO 2008, N. 133 ))"
+    },
+    {
+      "chiave": "/eli/id/1950/05/23/050U0253/sg",
+      "titolo": "LEGGE 23 maggio 1950, n. 253",
+      "tipo": "legge",
+      "numero": "253",
+      "dataEmanazione": "1950-05-23",
+      "nir": "urn:nir:stato:legge:1950-05-23;253",
+      "eli": "/eli/id/1950/05/23/050U0253/sg",
+      "stato": "in_vigore",
+      "sintesi": "Disposizioni per le locazioni e sublocazioni di immobili urbani.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1950-05-23;253",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1950/05/26/050U0253/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1950-05-26",
+      "numeroGU": "120",
+      "codiceRedazionale": "050U0253",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "La Camera dei deputati ed il Senato della Repubblica hanno approvato; IL PRESIDENTE DELLA REPUBBLICA PROMULGA la seguente legge: Art. 1 I contratti di locazione e di sublocazione prorogati ai sensi dell' art. 1 della legge 30 dicembre 1948, n. 1471 , sono ulteriormente prorogati anche nei confronti degli aventi causa del locatore fino al 31 dicembre 1951. Nei casi in cui i contratti di locazione hanno scadenza consuetudinaria, la data indicata nel comma precedente &egrave; sostituita da quella della scadenza consuetudinaria successiva. La proroga ha luogo di diritto, nonostante qualunque patto in contrario e anche quando sia stata pattuita la risoluzione del contratto per il caso di vendita. In caso di morte del conduttore, se trattasi di immobile adibito ad uso di abitazione, la proroga opera soltanto a favore del coniuge, degli eredi, dei parenti e degli affini del defunto con lui abitualmente conviventi. Se trattasi di immobile adibito ad uso diverso da quello di abitazione, la proroga opera a favore di coloro che, per successione o per precedente rapporto, risultante da atto di data certa anteriore all'apertura della successione, continuino l'attivit&agrave; del defunto.(3) ((4)) --------------- AGGIORNAMENTO (3) Il D.L. 21 dicembre 1951, n. 1356 , convertito con modificazioni dalla L. 16 febbraio 1952, n. 58 ha disposto (con l'art. 1, comma 1) che \"La proroga dei contratti di locazione e di sublocazione disposta nell' art. 1 della legge 23 maggio 1950, n. 253 , &egrave; protratta sino alla data di entrata in vigore della nuova legge contenente norme in materia di locazione e sublocazione di immobili urbani.\" --------------- AGGIORNAMENTO (4) La L. 1 maggio 1955, n. 368 ha disposto (con l'art. 1, comma 1) che \" La proroga dei contratti di locazione e di sublocazione disposta nell' art. 1 della legge 23 maggio 1950, numero 253 , &egrave; protratta fino al 31 dicembre 1960. Nei casi in cui i contratti di locazione hanno scadenza consuetudinaria, la data indicata n [...]",
+      "testoTroncato": true
+    },
+    {
+      "chiave": "/eli/id/1949/12/24/049U0940/sg",
+      "titolo": "LEGGE 24 dicembre 1949, n. 940",
+      "tipo": "legge",
+      "numero": "940",
+      "dataEmanazione": "1949-12-24",
+      "nir": "urn:nir:stato:legge:1949-12-24;940",
+      "eli": "/eli/id/1949/12/24/049U0940/sg",
+      "stato": "abrogato",
+      "sintesi": "Regime fiscale dei filati delle varie fibre naturali ed artificiali.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1949-12-24;940",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1949/12/29/049U0940/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1949-12-29",
+      "numeroGU": "299",
+      "codiceRedazionale": "049U0940",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.L. 25 GIUGNO 2008, N. 112 , CONVERTITO, CON MODIFICAZIONI DALLA L. 6 AGOSTO 2008, N. 133 ))"
+    },
+    {
+      "chiave": "/eli/id/1949/08/21/049U0639/sg",
+      "titolo": "LEGGE 21 agosto 1949, n. 639",
+      "tipo": "legge",
+      "numero": "639",
+      "dataEmanazione": "1949-08-21",
+      "nir": "urn:nir:stato:legge:1949-08-21;639",
+      "eli": "/eli/id/1949/08/21/049U0639/sg",
+      "stato": "in_vigore",
+      "sintesi": "Relazione annua al Parlamento sulla situazione economica del Paese.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1949-08-21;639",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1949/09/20/049U0639/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1949-09-20",
+      "numeroGU": "216",
+      "codiceRedazionale": "049U0639",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 Articolo unico. ((PROVVEDIMENTO ABROGATO DALLA L. 31 DICEMBRE 2009, N. 196 ))"
+    },
+    {
+      "chiave": "/eli/id/1949/08/21/049U0638/sg",
+      "titolo": "LEGGE 21 agosto 1949, n. 638",
+      "tipo": "legge",
+      "numero": "638",
+      "dataEmanazione": "1949-08-21",
+      "nir": "urn:nir:stato:legge:1949-08-21;638",
+      "eli": "/eli/id/1949/08/21/049U0638/sg",
+      "stato": "in_vigore",
+      "sintesi": "Concessione di anticipazioni a favore di imprese industriali danneggiate o distrutte in seguito a pubbliche calamita'.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1949-08-21;638",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1949/09/20/049U0638/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1949-09-20",
+      "numeroGU": "216",
+      "codiceRedazionale": "049U0638",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "La Camera dei deputati ed il Senato della Repubblica hanno approvato; IL PRESIDENTE DELLA REPUBBLICA PROMULGA la seguente legge: Art. 1 Il Ministro per il tesoro, di concerto col Ministro per l'industria e commercio, &egrave; autorizzato a concedere ad Istituti di credito di diritto pubblico e ad Enti esercenti il credito mobiliare, la garanzia, sussidiaria dello Stato, entro i limiti del 70 per cento delle perdite accertate, fino ad un ammontare complessivo di lire un miliardo, per anticipazioni da concedersi ad imprese industriali che intendono riattivare o ricostruire i loro impianti, danneggiati o distrutti da pubbliche calamit&agrave;, con destinazione da fissarsi con i decreti di concessione della garanzia di cui sopra, nonch&egrave; a concorrere negli interessi di cui all'art. 2. ((1)) --------------- AGGIORNAMENTO (1) Il D.L. 15 dicembre 1951, n. 1334 , convertito con modificazioni dalla L. 13 febbraio 1952, n. 50 , ha disposto (con l'art. 2) che \"Il limite della garanzia complessiva dello Stato, di cui all' art. 1 della legge 21 agosto 1949, n. 638 , per ciascuna operazione di finanziamento, &egrave; elevato all'80 per cento delle perdite accertate sull'operazione stessa, e quello della garanzia sussidiaria complessiva, limitatamente ai finanziamento delle imprese (individuali o sociali) industriali, commerciali ed artigiane colpite dalle alluvioni posteriori alla entrata in vigore della legge predetta, &egrave; elevato, per un primo fondo di garanzia, a a miliardi."
+    },
+    {
+      "chiave": "/eli/id/1949/08/21/049U0610/sg",
+      "titolo": "LEGGE 21 agosto 1949, n. 610",
+      "tipo": "legge",
+      "numero": "610",
+      "dataEmanazione": "1949-08-21",
+      "nir": "urn:nir:stato:legge:1949-08-21;610",
+      "eli": "/eli/id/1949/08/21/049U0610/sg",
+      "stato": "in_vigore",
+      "sintesi": "Norme di attuazione dell'Accordo italo-egiziano 10 settembre 1946, approvato con legge 16 maggio 1947, n. 512.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1949-08-21;610",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1949/09/12/049U0610/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1949-09-12",
+      "numeroGU": "209",
+      "codiceRedazionale": "049U0610",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "La Camera dei deputati ed il Senato della Repubblica, hanno approvato; IL PRESIDENTE DELLA REPUBBLICA PROMULGA la seguente legge: Art. 1 Le somme liquide, prelevate dal Governo egiziano sui beni dei cittadini italiani residenti in Egitto durante la gestione di sequestro dei beni stessi, sono a carico del Governo italiano il quale provveder&agrave; al pagamento agli aventi diritto in applicazione dell'art. 2 dell'Accordo italo-egiziano del 10 settembre 1946, approvato e reso esecutivo con legge 16 maggio 1947, n. 512 , e dagli scambi di note effettuati al Cairo fra l'Italia e l'Egitto il 25 settembre 1947 e il 10 marzo 1948, resi esecutivi col decreto legislativo 1 aprile 1948 n. 227 ."
+    },
+    {
+      "chiave": "/eli/id/1949/07/02/049U0408/sg",
+      "titolo": "LEGGE 2 luglio 1949, n. 408",
+      "tipo": "legge",
+      "numero": "408",
+      "dataEmanazione": "1949-07-02",
+      "nir": "urn:nir:stato:legge:1949-07-02;408",
+      "eli": "/eli/id/1949/07/02/049U0408/sg",
+      "stato": "in_vigore",
+      "sintesi": "Disposizioni per l'incremento delle costruzioni edilizie.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1949-07-02;408",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1949/07/18/049U0408/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1949-07-18",
+      "numeroGU": "162",
+      "codiceRedazionale": "049U0408",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "La Camera dei deputati ed il Senato della Repubblica hanno approvato; IL PRESIDENTE DELLA REPUBBLICA PROMULGA la seguente legge: Art. 1 Per la concessione dei contributi in annualit&agrave; da parte dello Stato agli enti e societ&agrave; che ai sensi del testo unico 28 aprile 1938, n. 1165 , sull'edilizia popolare ed economica, costruiscono case popolari, il Ministero dei lavori pubblici &egrave; autorizzato ad assumere i seguenti impegni: lire due miliardi nell'esercizio 1949-50; lire tre miliardi nell'esercizio 1950-51. Tali contributi saranno corrisposti in misura costante per trentacinque anni e saranno commisurati ad una percentuale della spesa riconosciuta ammissibile. I contributi stessi saranno corrisposti anche se gli enti e le societ&agrave; di cui all'art. 71 del detto testo unico non contraggano mutuo e sono cedibili. I termini di costruzione indicati nel citato art. 71 sono protratti al 31 dicembre 1955. La somma complessiva di lire centosettantacinque miliardi occorrenti per il pagamento dei contributi previsti nel primo comma del presente articolo sar&agrave; stanziata in bilancio per lire due miliardi nell'esercizio 1949-50, per lire cinque miliardi annui negli esercizi dal 1950-51 fino al 1983-84 e per lire tre miliardi nell'esercizio 1984-85. Le somme occorrenti per il pagamento delle annualit&agrave; di cui al presente articolo saranno inscritte in apposito capitolo dello stato di previsione della spesa del Ministero dei lavori pubblici per l'esercizio 1949-50 e corrispondenti degli esercizi successivi fino al 1984-85 compreso. ((3)) --------------- AGGIORNAMENTO (3) La L. 19 ottobre 1951, n. 1186 ha disposto (con l'art. 1) che \"In aggiunta al limite d'impegni, previsto dall' art. 1 della legge 2 luglio 1949, n. 408 , modificato dall' art. 1 della legge 22 giugno 1950, n. 471 , &egrave; fissato un ulteriore limite di lire 1.500.000.000, entro il quale il Ministero dei lavori pubblici &egrave; autorizzato a concedere, nell'esercizio finanziario 195 [...]",
+      "testoTroncato": true
+    },
+    {
+      "chiave": "/eli/id/1949/04/29/049U0221/sg",
+      "titolo": "LEGGE 29 aprile 1949, n. 221",
+      "tipo": "legge",
+      "numero": "221",
+      "dataEmanazione": "1949-04-29",
+      "nir": "urn:nir:stato:legge:1949-04-29;221",
+      "eli": "/eli/id/1949/04/29/049U0221/sg",
+      "stato": "in_vigore",
+      "sintesi": "Adeguamento di pensioni ordinarie al personale civile e militare dello Stato.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1949-04-29;221",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1949/05/20/049U0221/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1949-05-20",
+      "numeroGU": "116",
+      "codiceRedazionale": "049U0221",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "La Camera dei deputati ed il Senato della Repubblica hanno approvato; IL PRESIDENTE DELLA REPUBBLICA PROMULGA la seguente legge: Art. 1 Per le cessazioni dal servizio aventi decorrenza dal 1 novembre 1948 in poi, alle norme che regolano il trattamento ordinario di quiescenza a carico dello Stato, del Fondo pensioni delle Ferrovie dello Stato o dell'Amministrazione ferroviaria, del Fondo per il culto, del Fondo di beneficenza e di religione della citt&agrave; di Roma, dell'Azienda dei patrimoni riuniti ex economali e degli Archivi notarili, a favore degli impiegati civili, dei militari, dei salariati e delle loro famiglie, sono apportate le modificazioni di cui al presente capo."
+    },
+    {
+      "chiave": "/eli/id/1948/04/21/048U1372/sg",
+      "titolo": "DECRETO LEGISLATIVO 21 aprile 1948, n. 1372",
+      "tipo": "decreto.legislativo",
+      "numero": "1372",
+      "dataEmanazione": "1948-04-21",
+      "nir": "urn:nir:stato:decreto.legislativo:1948-04-21;1372",
+      "eli": "/eli/id/1948/04/21/048U1372/sg",
+      "stato": "abrogato",
+      "sintesi": "Provvedimenti in materia di conti consuntivi delle Amministrazioni provinciali, comunali e delle Istituzioni pubbliche di assistenza e beneficenza e disposizioni per il pagamento di titoli di spesa emessi dalle Amministrazioni provinciali, comunali e consorziali.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legislativo:1948-04-21;1372",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1948/12/01/048U1372/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1948-12-01",
+      "numeroGU": "280",
+      "codiceRedazionale": "048U1372",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.L. 25 GIUGNO 2008, N. 112 , CONVERTITO, CON MODIFICAZIONI, DALLA L. 6 AGOSTO 2008, N. 133 ))"
+    },
+    {
+      "chiave": "/eli/id/1948/05/07/048U1236/sg",
+      "titolo": "DECRETO LEGISLATIVO 7 maggio 1948, n. 1236",
+      "tipo": "decreto.legislativo",
+      "numero": "1236",
+      "dataEmanazione": "1948-05-07",
+      "nir": "urn:nir:stato:decreto.legislativo:1948-05-07;1236",
+      "eli": "/eli/id/1948/05/07/048U1236/sg",
+      "stato": "in_vigore",
+      "sintesi": "Riordinamento della Scuola nazionale di danza in Roma.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legislativo:1948-05-07;1236",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1948/10/18/048U1236/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1948-10-18",
+      "numeroGU": "243",
+      "codiceRedazionale": "048U1236",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "IL PRESIDENTE DELLA REPUBBLICA Visto l' art. 4 del decreto-legge luogotenenziale 25 giugno 1944, n. 151 , con le modificazioni ad esso apportate dall' art. 3, comma primo, del decreto legislativo luogotenenziale 16 marzo 1946, n. 98 ; Viste le disposizioni transitorie I e XV della Costituzione; Visto l' art. 87, comma quinto, della Costituzione ; Sulla proposta del Ministro per la pubblica istruzione, di concerto con il Presidente del Consiglio dei Ministri ed il Ministro per il tesoro; PROMULGA il seguente decreto legislativo, approvato dal Consiglio dei Ministri con deliberazione dell'8 aprile 1948: Art. 1 La Scuola di danza in Roma assume la denominazione di \"Accademia nazionale di danza\" ed ha autonomia didattica ed amministrativa. Essa comprende un corso normale di otto anni per alunne, con il fine di formare danzatrici, ed un corso di perfezionamento della durata di tre anni per alunni di ambo i sessi, per la formazione di solisti, insegnanti, coreografi e compositori di danza."
+    }
+  ]
+}

@@ -1,0 +1,520 @@
+{
+  "provenance": {
+    "fonte": "normattiva",
+    "url": "https://api.normattiva.it/t/normattiva.api/bff-opendata/v1/api/v1/ricerca/aggiornati",
+    "recuperatoIl": "2026-09-29T00:19:06.001Z",
+    "licenza": "riproduzione consentita con menzione di fonte, carattere non autentico e gratuito (Note legali dati.normattiva.it; solo la Gazzetta Ufficiale a stampa e' autentica)"
+  },
+  "atti": [
+    {
+      "chiave": "/eli/id/1973/08/11/073U0533/sg",
+      "titolo": "LEGGE 11 agosto 1973, n. 533",
+      "tipo": "legge",
+      "numero": "533",
+      "dataEmanazione": "1973-08-11",
+      "nir": "urn:nir:stato:legge:1973-08-11;533",
+      "eli": "/eli/id/1973/08/11/073U0533/sg",
+      "stato": "in_vigore",
+      "sintesi": "Disciplina delle controversie individuali di lavoro e delle controversie in materia di previdenza e di assistenza obbligatorie.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1973-08-11;533",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1973/09/13/073U0533/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1973-09-13",
+      "numeroGU": "237",
+      "codiceRedazionale": "073U0533",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "La Camera dei deputati ed il Senato della Repubblica hanno approvato; IL PRESIDENTE DELLA REPUBBLICA PROMULGA la seguente legge: Art. 1 Il titolo IV del libro secondo del codice di procedura civile approvato con regio decreto 28 ottobre 1940, n. 1443 , &egrave; sostituito dal seguente: TITOLO IV Norme per le controversie in materia di lavoro CAPO I DELLE CONTROVERSIE INDIVIDUALI DI LAVORO SEZIONE I DISPOSIZIONI GENERALI Art. 409. - (Controversie individuali di lavoro). - Si osservano le disposizioni del presente capo nelle controversie relative a: 1) rapporti di lavoro subordinato privato, anche se non inerenti all'esercizio di una impresa; 2) rapporti di mezzadria, di colonia parziaria, di compartecipazione agraria, di affitto a coltivatore diretto, nonch&egrave; rapporti derivanti da altri contratti agrari, salva la competenza delle sezioni specializzate agrarie; 3) rapporti di agenzia, di rappresentanza commerciale ed altri rapporti di collaborazione che si concretino in una prestazione di opera continuativa e coordinata, prevalentemente personale, anche se non a carattere subordinato; 4) rapporti di lavoro dei dipendenti di enti pubblici che svolgono esclusivamente o prevalentemente attivit&agrave; economica; 5) rapporti di lavoro dei dipendenti di enti pubblici ed altri rapporti di lavoro pubblico, semprech&egrave; non siano devoluti dalla legge ad altro giudice. Art. 410. - (Tentativo facoltativo di conciliazione). - Chi intende proporre in giudizio una domanda relativa ai rapporti previsti dall'articolo precedente, e non ritiene di avvalersi delle procedure di conciliazione previste dai contratti e accordi collettivi, pu&ograve; promuovere anche tramite una associazione sindacale il tentativo di conciliazione presso la commissione di conciliazione, nella cui circoscrizione si trova l'azienda e una qualsiasi dipendenza di questa, alla quale &egrave; addetto il lavoratore, o presso la quale egli prestava la sua opera al momento della fine del rapporto. La commi [...]",
+      "testoTroncato": true
+    },
+    {
+      "chiave": "/eli/id/1973/07/24/073U0428/sg",
+      "titolo": "DECRETO-LEGGE 24 luglio 1973, n. 428",
+      "tipo": "decreto.legge",
+      "numero": "428",
+      "dataEmanazione": "1973-07-24",
+      "nir": "urn:nir:stato:decreto.legge:1973-07-24;428",
+      "eli": "/eli/id/1973/07/24/073U0428/sg",
+      "stato": "abrogato",
+      "sintesi": "Norme per l'adeguamento dei servizi del Ministero del bilancio e della programmazione economica, del Comitato interministeriale dei prezzi e dei comitati provinciali dei prezzi.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legge:1973-07-24;428",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1973/07/24/073U0428/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1973-07-24",
+      "numeroGU": "189",
+      "codiceRedazionale": "073U0428",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.L. 25 GIUGNO 2008 N. 112 , CONVERTITO CON MODIFICAZIONI DALLA L. 6 AGOSTO 2008 N. 133 ))"
+    },
+    {
+      "chiave": "/eli/id/1973/07/24/073U0426/sg",
+      "titolo": "DECRETO-LEGGE 24 luglio 1973, n. 426",
+      "tipo": "decreto.legge",
+      "numero": "426",
+      "dataEmanazione": "1973-07-24",
+      "nir": "urn:nir:stato:decreto.legge:1973-07-24;426",
+      "eli": "/eli/id/1973/07/24/073U0426/sg",
+      "stato": "in_vigore",
+      "sintesi": "Provvedimenti urgenti sulla proroga dei contratti di locazione e di sublocazione degli immobili urbani.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legge:1973-07-24;426",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1973/07/24/073U0426/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1973-07-24",
+      "numeroGU": "189",
+      "codiceRedazionale": "073U0426",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "IL PRESIDENTE DELLA REPUBBLICA Visto l' art. 77 della Costituzione ; Ritenuta la straordinaria necessit&agrave; e l'urgenza di prorogare i contratti di locazione e di sublocazione degli immobili urbani; Sentito il Consiglio dei Ministri; Sulla proposta del Ministro per la grazia e giustizia, di concerto col Ministro per l'industria, il commercio e l'artigianato; Decreta: Art. 1 I contratti di locazione e di sublocazione di immobili urbani, in corso alla data di entrata in vigore del presente decreto, sono prorogati fino al 31 gennaio 1974, salvo quelli ad uso di abitazione stipulati con conduttori o subconduttori che siano iscritti a ruolo ai fini dell'imposta complementare per l'anno 1973 per un reddito complessivo netto superiore a 4.000.000 di lire o che comunque abbiano percepito nel 1972 un reddito di pari misura determinabile ai sensi degli articoli 133 , 135 , 136 , 138 del testo unico 29 gennaio 1958, n. 645 . Ai fini di cui sopra i redditi derivanti da lavoro dipendente e le pensioni sono provati esclusivamente sulla base di attestazioni del datore di lavoro o dell'ente erogatore della pensione. L'attestazione del datore di lavoro deve contenere l'indicazione della retribuzione a carattere fisso e continuativo al netto dei contributi previdenziali obbligatori e facoltativi. I patti e le clausole contrattuali stipulati successivamente all'entrata in vigore del presente decreto che a qualsiasi titolo prevedano aumenti di canoni di locazione di immobili urbani sono nulli. Dalla stessa data sono inefficaci le clausole di adeguamento dei canoni di locazione diretti a compensare eventuali effetti di svalutazione monetaria. Fino al 31 gennaio 1974 &egrave; sospesa l'esecuzione di provvedimenti di rilascio degli immobili locati, ad eccezione di quelli fondati sulla morosit&agrave; del conduttore o subconduttore, ovvero sulla urgente e improrogabile necessit&agrave; del locatore, verificatasi successivamente alla costituzione del rapporto locatizio, di destinare l'i [...]",
+      "testoTroncato": true
+    },
+    {
+      "chiave": "/eli/id/1973/04/15/073U0170/sg",
+      "titolo": "LEGGE 15 aprile 1973, n. 170",
+      "tipo": "legge",
+      "numero": "170",
+      "dataEmanazione": "1973-04-15",
+      "nir": "urn:nir:stato:legge:1973-04-15;170",
+      "eli": "/eli/id/1973/04/15/073U0170/sg",
+      "stato": "in_vigore",
+      "sintesi": "Variazioni al bilancio dello Stato ed a quelli di Amministrazioni autonome per l'anno finanziario 1972.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1973-04-15;170",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1973/05/07/073U0170/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1973-05-07",
+      "numeroGU": "116",
+      "codiceRedazionale": "073U0170",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "La Camera dei deputati ed il Senato della Repubblica hanno approvato: IL PRESIDENTE DELLA REPUBBLICA PROMULGA la seguente legge: STATO DI PREVISIONE DEL MINISTERO DEL TESORO Art. 1 Ai sensi dell' articolo 3, lettera a), della legge 19 luglio 1971, n. 565 , il contributo dello Stato a favore dell'Opera nazionale di assistenza all'infanzia delle Regioni di confine (ONAIRC) &egrave; stabilito, per l'anno finanziario 1972, in lire 2.400.000.000."
+    },
+    {
+      "chiave": "/eli/id/1973/03/23/073U0036/sg",
+      "titolo": "LEGGE 23 marzo 1973, n. 36",
+      "tipo": "legge",
+      "numero": "36",
+      "dataEmanazione": "1973-03-23",
+      "nir": "urn:nir:stato:legge:1973-03-23;36",
+      "eli": "/eli/id/1973/03/23/073U0036/sg",
+      "stato": "abrogato",
+      "sintesi": "Conversione in legge, con modificazioni ed integrazioni, del decreto-legge 22 gennaio 1973, n. 2, recante provvidenze a favore delle popolazioni dei comuni della Sicilia e della Calabria colpiti dalle alluvioni del dicembre 1972 e del gennaio 1973.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1973-03-23;36",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1973/03/24/073U0036/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1973-03-24",
+      "numeroGU": "77",
+      "codiceRedazionale": "073U0036",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.L. 25 GIUGNO 2008, N. 112 , CONVERTITO, CON MODIFICAZIONI DALLA L. 6 AGOSTO 2008, N. 133 ))"
+    },
+    {
+      "chiave": "/eli/id/1972/12/18/072U0788/sg",
+      "titolo": "DECRETO-LEGGE 18 dicembre 1972, n. 788",
+      "tipo": "decreto.legge",
+      "numero": "788",
+      "dataEmanazione": "1972-12-18",
+      "nir": "urn:nir:stato:decreto.legge:1972-12-18;788",
+      "eli": "/eli/id/1972/12/18/072U0788/sg",
+      "stato": "in_vigore",
+      "sintesi": "Proroga dei termini di decadenza e di prescrizione in materia di tasse ed imposte indirette sugli affari.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legge:1972-12-18;788",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1972/12/20/072U0788/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1972-12-20",
+      "numeroGU": "328",
+      "codiceRedazionale": "072U0788",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "IL PRESIDENTE DELLA REPUBBLICA Visto l' art. 77, comma secondo, della Costituzione ; Ritenuta la straordinaria necessit&agrave; ed urgenza di prorogare fino al 31 dicembre 1973 la scadenza dei termini di prescrizione e di decadenza in materia di tasse ed imposte indirette sugli affari; Sentito il Consiglio dei Ministri; Sulla proposta del Ministro per le finanze; Decreta: Art. 1 I termini di prescrizione e di decadenza in materia di tasse e di imposte indirette sugli affari, che scadono nel periodo di tempo intercorrente tra la data di entrata in vigore del presente decreto e il 30 giugno 1974 sono prorogati fino a tale data tanto per l'Amministrazione finanziaria che per i contribuenti. Sono altres&igrave; prorogati, per i tributi di cui al comma precedente e per il periodo e fino alla data ivi indicati, i termini relativi ai ricorsi ed ai procedimenti dinanzi alle commissioni tributarie, alla impugnazione delle decisioni di dette commissioni ed alla proposizione delle azioni dinanzi ai giudici ordinari a seguito delle decisioni stesse. ((2)) --------------- AGGIORNAMENTO (2) Il D.L. 19 giugno 1974, n. 237 , convertito con modificazioni dalla L. 2 agosto 1974, n. 350 , ha disposto (con l'art. 1, comma 1) che \"Le disposizioni contenute nel decreto-legge 18 dicembre 1972, n. 788 , convertito, con modificazioni, nella legge 15 febbraio 1973, n. 9 , sono prorogate al 31 dicembre 1975. La proroga si intende riferita ai termini aventi scadenza dal 21 dicembre 1972 al 31 dicembre 1975\"."
+    },
+    {
+      "chiave": "/eli/id/1972/12/18/072U0787/sg",
+      "titolo": "DECRETO-LEGGE 18 dicembre 1972, n. 787",
+      "tipo": "decreto.legge",
+      "numero": "787",
+      "dataEmanazione": "1972-12-18",
+      "nir": "urn:nir:stato:decreto.legge:1972-12-18;787",
+      "eli": "/eli/id/1972/12/18/072U0787/sg",
+      "stato": "in_vigore",
+      "sintesi": "Variazioni delle tabelle dei prezzi dei generi di monopolio annesse alla legge 13 luglio 1965, n. 825, e successive modificazioni, in relazione all'introduzione dell'imposta sul valore aggiunto ed alla soppressione sia dell'imposta sul consumo del sale che del monopolio delle cartine e tubetti per sigarette e delle pietrine focaie.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legge:1972-12-18;787",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1972/12/20/072U0787/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1972-12-20",
+      "numeroGU": "328",
+      "codiceRedazionale": "072U0787",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "IL PRESIDENTE DELLA REPUBBLICA Visto l' art. 77, comma secondo, della Costituzione ; Vista la legge 17 luglio 1942, n. 907 , sul monopolio dei sali e dei tabacchi, e successive modificazioni; Visto il regio decreto-legge 13 gennaio 1936, n. 70 , convertito, con modificazioni, nella legge 4 giugno 1936, n. 1342 , sul monopolio di vendita delle cartine e tubetti per sigarette; Vista la legge 13 luglio 1965, n. 825 , e successive modificazioni, concernente il regime d'imposizione fiscale dei prodotti oggetto di monopolio di Stato; Visto il decreto del Presidente della Repubblica 26 ottobre 1972, n. 633 , concernente l'istituzione e la disciplina dell'imposta sul valore aggiunto; Ritenuta la straordinaria necessit&agrave; e l'urgenza di modificare l'imposta di consumo sui tabacchi lavorati in dipendenza dell'introduzione dell'imposta sul valore aggiunto al fine di mantenere invariati i relativi prezzi di tariffa, nonch&egrave; di procedere alla formazione di una nuova tabella dei prezzi di vendita dei sali, conseguente all'abolizione della relativa imposta di consumo; Ritenuta altres&igrave; la straordinaria necessit&agrave; e l'urgenza di provvedere alla soppressione del monopolio di vendita delle cartine e tubetti per sigarette; Sentito il Consiglio dei Ministri; Sulla proposta del Ministro per le finanze; Decreta: Art. 1 Le tabelle \"A, B, C, D, E, F\" annesse alla legge 13 luglio 1965, n. 825 , e successive modificazioni, sono sostituite da quelle annesse al presente decreto. Le tabelle \"G\" ed \"H\" sono soppresse. Il Ministro per le finanze provveder&agrave; con proprio decreto a stabilire i nuovi prezzi di vendita al pubblico di quei prodotti che, in applicazione delle tabelle di cui al primo comma, subiscono variazioni."
+    },
+    {
+      "chiave": "/eli/id/1972/12/02/072U0728/sg",
+      "titolo": "DECRETO-LEGGE 2 dicembre 1972, n. 728",
+      "tipo": "decreto.legge",
+      "numero": "728",
+      "dataEmanazione": "1972-12-02",
+      "nir": "urn:nir:stato:decreto.legge:1972-12-02;728",
+      "eli": "/eli/id/1972/12/02/072U0728/sg",
+      "stato": "decaduto",
+      "sintesi": "Ulteriore applicazione delle riduzioni d'imposta di fabbricazione stabilite con il decreto-legge 12 maggio 1971, n. 249, convertito nella legge 4 luglio 1971, n. 427, per alcuni prodotti petroliferi.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legge:1972-12-02;728",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1972/12/04/072U0728/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1972-12-04",
+      "numeroGU": "314",
+      "codiceRedazionale": "072U0728",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 DECRETO DECADUTO"
+    },
+    {
+      "chiave": "/eli/id/1972/11/15/072U0661/sg",
+      "titolo": "DECRETO-LEGGE 15 novembre 1972, n. 661",
+      "tipo": "decreto.legge",
+      "numero": "661",
+      "dataEmanazione": "1972-11-15",
+      "nir": "urn:nir:stato:decreto.legge:1972-11-15;661",
+      "eli": "/eli/id/1972/11/15/072U0661/sg",
+      "stato": "in_vigore",
+      "sintesi": "Organizzazione comune dei mercati nei settori del tabacco greggio, vitivinicolo, dei prodotti della pesca e delle sementi; misure di politica congiunturale da adottare nel settore agricolo in seguito all'ampliamento temporaneo dei margini di fluttuazione delle monete di alcuni Stati membri. Integrazione del decreto-legge 23 ottobre 1964, n. 989, convertito, con modificazioni, nella legge 28 dicembre 1964, n. 1350.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legge:1972-11-15;661",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1972/11/17/072U0661/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1972-11-17",
+      "numeroGU": "298",
+      "codiceRedazionale": "072U0661",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "IL PRESIDENTE DELLA REPUBBLICA Visto l' art. 77, comma secondo, della Costituzione ; Visto il trattato istitutivo della Comunit&agrave; economica europea, ratificato con legge 14 ottobre 1957, n. 1203 ; Visto il regolamento C.E.E. n. 727/70, adottato il 21 aprile 1970 dal Consiglio delle Comunit&agrave; europee, e le relative norme di applicazione, concernente l'attuazione di un'organizzazione comune dei mercati nel settore del tabacco greggio; Visto il regolamento C.E.E. n. 816/70, adottato il 28 aprile 1970 dal Consiglio delle Comunit&agrave; europee, e le relative norme di applicazione, concernente disposizioni complementari in materia di organizzazione comune del mercato vitivinicolo; Visto il regolamento C.E.E. n. 2142/70, adottato il 20 ottobre 1970 dal Consiglio delle Comunit&agrave; europee, e le relative norme di applicazione, concernente l'organizzazione comune dei mercati nel settore dei prodotti della pesca; Visto il regolamento C.E.E. n. 2358/71, adottato il 26 ottobre 1971, dal Consiglio delle Comunit&agrave; europee, relativo alla organizzazione comune dei mercati nel settore delle sementi; Visto il regolamento C.E.E. n. 974/71, adottato il 12 maggio 1971 dal Consiglio delle Comunit&agrave; europee, relativo a talune misure di politica congiunturale da adottare nel settore agricolo in seguito all'ampliamento temporaneo dei margini di fluttuazione delle monete di alcuni Stati membri, e le relative norme di applicazione; Visti gli articoli 21, 44, 33, 17 e 8 contenuti rispettivamente nei regolamenti comunitari n. 727/70 , numero 816/70 , n. 2142/70 , n. 2358/71 e n. 974/71 , relativi all'entrata in vigore ed alla diretta applicazione dei regolamenti stessi, in ciascuno degli Stati membri; Visto il decreto-legge 23 ottobre 1964, n. 989 , convertito, con modificazioni, nella legge 18 dicembre 1964, n. 1350 , recante modificazioni alla disciplina fiscale dei prodotti petroliferi; Ritenuta la straordinaria necessit&agrave; ed urgenza di emanare norme per l' [...]",
+      "testoTroncato": true
+    },
+    {
+      "chiave": "/eli/id/1971/12/30/071U1228/sg",
+      "titolo": "LEGGE 30 dicembre 1971, n. 1228",
+      "tipo": "legge",
+      "numero": "1228",
+      "dataEmanazione": "1971-12-30",
+      "nir": "urn:nir:stato:legge:1971-12-30;1228",
+      "eli": "/eli/id/1971/12/30/071U1228/sg",
+      "stato": "in_vigore",
+      "sintesi": "Rivalutazione delle indennita' di servizio forestale spettanti al personale del ruolo tecnico superiore forestale (ufficiali) del Corpo forestale dello Stato e loro estensione ai tecnici di concetto dello stesso Corpo.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1971-12-30;1228",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1972/01/22/071U1228/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1972-01-22",
+      "numeroGU": "19",
+      "codiceRedazionale": "071U1228",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((IL D.L. 25 GIUGNO 2008, N. 112 , CONVERTITO, CON MODIFICAZIONI DALLA L. 6 AGOSTO 2008, N. 133 , HA CONFERMATO L'ABROGAZIONE DEL PRESENTE PROVVEDIMENTO))"
+    },
+    {
+      "chiave": "/eli/id/1971/11/25/071U1042/sg",
+      "titolo": "LEGGE 25 novembre 1971, n. 1042",
+      "tipo": "legge",
+      "numero": "1042",
+      "dataEmanazione": "1971-11-25",
+      "nir": "urn:nir:stato:legge:1971-11-25;1042",
+      "eli": "/eli/id/1971/11/25/071U1042/sg",
+      "stato": "abrogato",
+      "sintesi": "Provvedimenti per il personale non insegnante delle universita' e degli istituti di istruzione universitaria.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1971-11-25;1042",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1971/12/15/071U1042/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1971-12-15",
+      "numeroGU": "316",
+      "codiceRedazionale": "071U1042",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.L. 25 GIUGNO 2008, N. 122 , CONVERTITO CON MODIFICAZIONI DALLA L.6 AGOSTO 2008, N. 133 ))"
+    },
+    {
+      "chiave": "/eli/id/1971/10/30/071U0909/sg",
+      "titolo": "LEGGE 30 ottobre 1971, n. 909",
+      "tipo": "legge",
+      "numero": "909",
+      "dataEmanazione": "1971-10-30",
+      "nir": "urn:nir:stato:legge:1971-10-30;909",
+      "eli": "/eli/id/1971/10/30/071U0909/sg",
+      "stato": "in_vigore",
+      "sintesi": "Compensi al personale del Ministero del lavoro e della previdenza sociale per l'attivita' svolta a favore degli istituti ed enti previdenziali e assistenziali.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1971-10-30;909",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1971/11/15/071U0909/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1971-11-15",
+      "numeroGU": "287",
+      "codiceRedazionale": "071U0909",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((IL D.L 25 GIUGNO 2008, N. 112 , CONVERTITO, CON MODIFICAZIONI DALLA L. 6 AGOSTO 2008, N. 133 HA CONFERMATO L'ABROGAZIONE DELL'INTERO PROVVEDIMENTO))"
+    },
+    {
+      "chiave": "/eli/id/1971/07/24/071U0556/sg",
+      "titolo": "LEGGE 24 luglio 1971, n. 556",
+      "tipo": "legge",
+      "numero": "556",
+      "dataEmanazione": "1971-07-24",
+      "nir": "urn:nir:stato:legge:1971-07-24;556",
+      "eli": "/eli/id/1971/07/24/071U0556/sg",
+      "stato": "in_vigore",
+      "sintesi": "Norme integrative della legge 7 febbraio 1951, n. 72, concernente rivalutazione dei fondi amministrati dalle camere di commercio, industria, artigianato e agricoltura per il trattamento di quiescenza del personale.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1971-07-24;556",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1971/08/09/071U0556/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1971-08-09",
+      "numeroGU": "200",
+      "codiceRedazionale": "071U0556",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "La Camera dei deputati ed il Senato della Repubblica hanno approvato; IL PRESIDENTE DELLA REPUBBLICA PROMULGA la seguente legge: Art. 1 I dipendenti delle camere di commercio, industria, artigianato ed agricoltura, collocati a riposo con liquidazione una tantum a norma della legge 7 febbraio 1951, n. 72 , prima del 16 marzo 1970, entro un anno dall'entrata in vigore della presente legge possono presentare domanda alla camera di commercio, industria, artigianato ed agricoltura che ha provveduto alla liquidazione predetta per ottenere la concessione di un assegno pensionistico vitalizio, nella misura indicata nell'articolo 2. Nel caso di decesso del dipendente la domanda di cui al precedente comma pu&ograve; essere presentata dagli aventi diritto secondo le norme vigenti di riversibilit&agrave; per le pensioni degli impiegati civili dello Stato. ((1)) --------------- AGGIORNAMENTO (1) La L. 6 giugno 1973, n. 314 ha disposto (con l'art. 1)che \"Ai sensi ed agli effetti della legge 24 luglio 1971, n. 556 , si considera dipendente della Camera di commercio, industria, artigianato ed agricoltura il personale dei ruoli delle suddette Camere, trasferito, a norma di legge, nei ruoli statali degli uffici provinciali dell'economia e collocato a riposo con liquidazione una tantum prima del 16 marzo 1970\"."
+    },
+    {
+      "chiave": "/eli/id/1970/12/18/070U1138/sg",
+      "titolo": "LEGGE 18 dicembre 1970, n. 1138",
+      "tipo": "legge",
+      "numero": "1138",
+      "dataEmanazione": "1970-12-18",
+      "nir": "urn:nir:stato:legge:1970-12-18;1138",
+      "eli": "/eli/id/1970/12/18/070U1138/sg",
+      "stato": "in_vigore",
+      "sintesi": "Nuove norme in materia di enfiteusi.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1970-12-18;1138",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1971/01/15/070U1138/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1971-01-15",
+      "numeroGU": "11",
+      "codiceRedazionale": "070U1138",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "La Camera dei deputati ed il Senato della Repubblica hanno approvato; IL PRESIDENTE DELLA REPUBBLICA PROMULGA la seguente legge: Art. 1 Le norme contenute nell' articolo 1 della legge 22 luglio 1966, n. 607 , si applicano alle enfiteusi rustiche costituite anteriormente al 28 ottobre 1941."
+    },
+    {
+      "chiave": "/eli/id/1970/12/23/070U1054/sg",
+      "titolo": "LEGGE 23 dicembre 1970, n. 1054",
+      "tipo": "legge",
+      "numero": "1054",
+      "dataEmanazione": "1970-12-23",
+      "nir": "urn:nir:stato:legge:1970-12-23;1054",
+      "eli": "/eli/id/1970/12/23/070U1054/sg",
+      "stato": "in_vigore",
+      "sintesi": "Norme per il riordinamento della indennita' mensile per servizi di istituto dovuta alle forze di polizia ed al personale civile dell'amministrazione penitenziaria.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1970-12-23;1054",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1970/12/30/070U1054/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1970-12-30",
+      "numeroGU": "328",
+      "codiceRedazionale": "070U1054",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "La Camera dei deputati ed il Senato della Repubblica hanno approvato; IL PRESIDENTE DELLA REPUBBLICA PROMULGA la seguente legge: Art. 1 Agli appartenenti all'Arma dei carabinieri, ai Corpi della guardia di finanza, delle guardie di pubblica sicurezza e degli agenti di custodia, che si trovino in analoghe condizioni di impiego, spettano in ogni tempo le stesse competenze accessorie specificamente connesse all'espletamento dei servizi di istituto; con riferimento agli ufficiali del Corpo delle guardie di pubblica sicurezza e con esclusione in ogni caso dell'indennit&agrave; di servizio speciale e della indennit&agrave; speciale di pubblica sicurezza la disposizione predetta si applica ai funzionari di pubblica sicurezza. L'indennit&agrave; mensile per servizio di istituto, risultante dall' articolo 2 della legge 22 dicembre 1969, n. 967 , &egrave; determinata nelle misure fissate nelle annesse tabelle 1 e 2, ferma restando la quota pensionabile di lire quindicimila. Con effetto dal 1 luglio 1970 l'indennit&agrave; suddetta esclude l'attribuzione di quella di impiego operativo di cui alla legge 6 marzo 1958, n. 192 , e successive modificazioni. Con effetto dalla stessa data del 1 luglio 1970, l'indennit&agrave; di cui al secondo comma non &egrave; cumulabile, salva l'opzione per il trattamento pi&ugrave; favorevole, con quelle di aeronavigazione e di volo, con l'assegno personale di cui all' articolo 4 del decreto-legge 31 luglio 1954, n. 533 , e successive modificazioni, con il premio speciale di cui all' articolo 10 della legge 22 luglio 1961, n. 628 , e successive modificazioni, con l'assegno mensile di cui alla legge 7 novembre 1961, n. 1162 , e successive modificazioni, con l'indennit&agrave; di cui alla legge 6 dicembre 1965, n. 1441 , e con il premio industriale di cui alla legge 11 febbraio 1970, n. 29 ; al personale gi&agrave; in godimento dei trattamenti predetti &egrave; corrisposta l'eventuale differenza tra la misura dell'aumento dell'indennit&agrave; di c [...]",
+      "testoTroncato": true
+    },
+    {
+      "chiave": "/eli/id/1970/07/03/070U0483/sg",
+      "titolo": "LEGGE 3 luglio 1970, n. 483",
+      "tipo": "legge",
+      "numero": "483",
+      "dataEmanazione": "1970-07-03",
+      "nir": "urn:nir:stato:legge:1970-07-03;483",
+      "eli": "/eli/id/1970/07/03/070U0483/sg",
+      "stato": "abrogato",
+      "sintesi": "Erogazione del premio per l'incremento del rendimento industriale al personale dell'Amministrazione autonoma dei monopoli di Stato.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1970-07-03;483",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1970/07/15/070U0483/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1970-07-15",
+      "numeroGU": "176",
+      "codiceRedazionale": "070U0483",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.L. 25 GIUGNO 2008, N. 112 , CONVERTITO, CON MODIFICAZIONI, DALLA L. 6 AGOSTO 2008, N. 133 ))"
+    },
+    {
+      "chiave": "/eli/id/1970/05/25/070U0371/sg",
+      "titolo": "LEGGE 25 maggio 1970, n. 371",
+      "tipo": "legge",
+      "numero": "371",
+      "dataEmanazione": "1970-05-25",
+      "nir": "urn:nir:stato:legge:1970-05-25;371",
+      "eli": "/eli/id/1970/05/25/070U0371/sg",
+      "stato": "in_vigore",
+      "sintesi": "Destinazione dei beni gia' in dotazione della Corona e soppressione degli uffici che li amministrano.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1970-05-25;371",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1970/06/20/070U0371/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1970-06-20",
+      "numeroGU": "154",
+      "codiceRedazionale": "070U0371",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "La Camera dei deputati ed il Senato della Repubblica hanno approvato; IL PRESIDENTE DELLA REPUBBLICA PROMULGA la seguente legge: Art. 1 I beni immobili gi&agrave; in dotazione della Corona, elencati nella tabella A annessa alla presente legge, sono assegnati in uso gratuito, per fini istituzionali, agli organi ed enti in essa indicati. La consegna degli immobili viene effettuata con la compilazione dei testimoniali di stato da redigersi con l'intervento delle amministrazioni interessate. Tali beni sono amministrati dagli organi ed enti usuari ai sensi della legge e del regolamento sull'amministrazione del patrimonio e sulla contabilit&agrave; generale dello Stato e delle altre disposizioni vigenti in materia."
+    },
+    {
+      "chiave": "/eli/id/1970/05/27/070U0365/sg",
+      "titolo": "LEGGE 27 maggio 1970, n. 365",
+      "tipo": "legge",
+      "numero": "365",
+      "dataEmanazione": "1970-05-27",
+      "nir": "urn:nir:stato:legge:1970-05-27;365",
+      "eli": "/eli/id/1970/05/27/070U0365/sg",
+      "stato": "in_vigore",
+      "sintesi": "Riordinamento delle indennita' di aeronavigazione, di pilotaggio e di volo, degli assegni di imbarco e dell'indennita' di impiego operativo.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1970-05-27;365",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1970/06/19/070U0365/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1970-06-19",
+      "numeroGU": "152",
+      "codiceRedazionale": "070U0365",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "La Camera dei deputati ed il Senato della Repubblica hanno approvato; IL PRESIDENTE DELLA REPUBBLICA PROMULGA la seguente legge: Art. 1 Le indennit&agrave; mensili di aeronavigazione e di pilotaggio spettanti, ai sensi degli articoli 1 e 2 delle norme approvate con decreto-legge 20 luglio 1934, n. 1302 , convertito nella legge 4 aprile 1935, n. 808 , quali risultano sostituiti dagli articoli 1 e 2 della legge 17 dicembre 1953, n. 953 , agli ufficiali e sottufficiali dei ruoli naviganti dell'aeronautica militare, assumono la denominazione unica di indennit&agrave; di aeronavigazione. Detta indennit&agrave; &egrave; stabilita, in relazione al tipo di aeromobile sul quale il personale svolge normalmente l'attivit&agrave; di volo, nelle misure indicate nell'annessa Tabella I. Agli ufficiali e sottufficiali dei ruoli naviganti della Aeronautica militare in servizio come piloti di linea presso i gruppi di volo e le squadriglie mantenute in stato costante di pronto intervento, che siano in possesso di specifica qualifica per l'impiego dei velivoli a pieno carico operativo e in qualsiasi condizione meteorologica, spetta, in aggiunta all'indennit&agrave; mensile di cui al comma precedente, un'indennit&agrave; supplementare mensile di lire 25.000 dal 1 luglio 1970 e di lire 50.000 dal 1 gennaio 1971. Agli ufficiali e ai sottufficiali assegnati a reparti sperimentali di volo e che vi svolgono con carattere di continuit&agrave; effettive mansioni di pilota collaudatore sperimentatore spetta, in aggiunta all'indennit&agrave; mensile di cui al primo comma, una indennit&agrave; mensile supplementare di lire 45.000 dal 1 luglio 1970 e di lire 90.000 dal 1 gennaio 1971, non cumulabile con l'indennit&agrave; supplementare di cui al comma precedente e con i compensi di cui ai successivi articoli 4 e 6. Sono soppresse le indennit&agrave; mensili supplementari di aeronavigazione e di pilotaggio previste dagli articoli 1 e 2 delle norme approvate con decreto-legge 20 luglio 1934, n. 1302 [...]",
+      "testoTroncato": true
+    },
+    {
+      "chiave": "/eli/id/1970/02/19/070U0076/sg",
+      "titolo": "LEGGE 19 febbraio 1970, n. 76",
+      "tipo": "legge",
+      "numero": "76",
+      "dataEmanazione": "1970-02-19",
+      "nir": "urn:nir:stato:legge:1970-02-19;76",
+      "eli": "/eli/id/1970/02/19/070U0076/sg",
+      "stato": "abrogato",
+      "sintesi": "Norme per la revisione dei prezzi degli appalti di opere pubbliche.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1970-02-19;76",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1970/03/16/070U0076/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1970-03-16",
+      "numeroGU": "68",
+      "codiceRedazionale": "070U0076",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.L. 25 GIUGNO 2008, N. 112 , CONVERTITO, CON MODIFICAZIONI DALLA L. 6 AGOSTO 2008, N. 133 ))"
+    },
+    {
+      "chiave": "/eli/id/1969/12/24/069U1034/sg",
+      "titolo": "LEGGE 24 dicembre 1969, n. 1034",
+      "tipo": "legge",
+      "numero": "1034",
+      "dataEmanazione": "1969-12-24",
+      "nir": "urn:nir:stato:legge:1969-12-24;1034",
+      "eli": "/eli/id/1969/12/24/069U1034/sg",
+      "stato": "abrogato",
+      "sintesi": "Rettifica della misura dell'indennita' di servizio penitenziario spettante agli applicati, coniugati, e qualifiche corrispondenti dell'amministrazione degli istituti di prevenzione e di pena.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1969-12-24;1034",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1970/01/12/069U1034/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1970-01-12",
+      "numeroGU": "9",
+      "codiceRedazionale": "069U1034",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DALLA L. 15 NOVEMBRE 1973, N. 734 ))"
+    },
+    {
+      "chiave": "/eli/id/1969/12/24/069U0991/sg",
+      "titolo": "LEGGE 24 dicembre 1969, n. 991",
+      "tipo": "legge",
+      "numero": "991",
+      "dataEmanazione": "1969-12-24",
+      "nir": "urn:nir:stato:legge:1969-12-24;991",
+      "eli": "/eli/id/1969/12/24/069U0991/sg",
+      "stato": "in_vigore",
+      "sintesi": "Adeguamento delle pensioni degli avvocati e dei procuratori.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1969-12-24;991",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1970/01/03/069U0991/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1970-01-03",
+      "numeroGU": "2",
+      "codiceRedazionale": "069U0991",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "La Camera dei deputati ed il Senato della Repubblica hanno approvato; IL PRESIDENTE DELLA REPUBBLICA PROMULGA la seguente legge: Art. 1 ((ARTICOLO ABROGATO DALLA L. 22 LUGLIO 1975, N. 319 ))"
+    },
+    {
+      "chiave": "/eli/id/1969/12/22/069U0965/sg",
+      "titolo": "LEGGE 22 dicembre 1969, n. 965",
+      "tipo": "legge",
+      "numero": "965",
+      "dataEmanazione": "1969-12-22",
+      "nir": "urn:nir:stato:legge:1969-12-22;965",
+      "eli": "/eli/id/1969/12/22/069U0965/sg",
+      "stato": "abrogato",
+      "sintesi": "Norme sull'indennita' di alloggio dovuta al personale delle forze di polizia.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1969-12-22;965",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1969/12/30/069U0965/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1969-12-30",
+      "numeroGU": "327",
+      "codiceRedazionale": "069U0965",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.LGS. 13 DICEMBRE 2010, N. 212 ))"
+    },
+    {
+      "chiave": "/eli/id/1968/03/28/068U0393/sg",
+      "titolo": "LEGGE 28 marzo 1968, n. 393",
+      "tipo": "legge",
+      "numero": "393",
+      "dataEmanazione": "1968-03-28",
+      "nir": "urn:nir:stato:legge:1968-03-28;393",
+      "eli": "/eli/id/1968/03/28/068U0393/sg",
+      "stato": "abrogato",
+      "sintesi": "Pagamento differito dell'imposta di fabbricazione e dell'I.G.E. sui prodotti petroliferi.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1968-03-28;393",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1968/04/16/068U0393/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1968-04-16",
+      "numeroGU": "97",
+      "codiceRedazionale": "068U0393",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.L. 30 AGOSTO 1993, N. 331 , CONVERTITO, CON MODIFICAZIONI, DALLA L. 29 OTTOBRE 1993, N. 427 ))"
+    },
+    {
+      "chiave": "/eli/id/1968/03/08/068U0221/sg",
+      "titolo": "LEGGE 8 marzo 1968, n. 221",
+      "tipo": "legge",
+      "numero": "221",
+      "dataEmanazione": "1968-03-08",
+      "nir": "urn:nir:stato:legge:1968-03-08;221",
+      "eli": "/eli/id/1968/03/08/068U0221/sg",
+      "stato": "in_vigore",
+      "sintesi": "Provvidenze a favore dei farmacisti rurali.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1968-03-08;221",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1968/03/27/068U0221/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1968-03-27",
+      "numeroGU": "80",
+      "codiceRedazionale": "068U0221",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "La Camera dei deputati ed il Senato della Repubblica hanno approvato; IL PRESIDENTE DELLA REPUBBLICA PROMULGA la seguente legge: Art. 1 Le farmacie sono classificate in due categorie: a) farmacie urbane, situate in comuni o centri abitati con popolazione superiore a 5.000 abitanti; b) farmacie rurali ubicate in comuni, frazioni o centri abitati con popolazione non superiore a 5.000 abitanti. Non sono classificate farmacie rurali quelle che si trovano nei quartieri periferici delle citt&agrave;, congiunti a queste senza discontinuit&agrave; di abitati. ((Nei comuni, frazioni o centri abitati di cui alla lettera b) del primo comma, ove non sia aperta la farmacia privata o pubblica prevista dalla pianta organica, le regioni e le province autonome di Trento e di Bolzano istituiscono dispensari farmaceutici. La gestione dei dispensari, disciplinata mediante provvedimento delle regioni e delle province autonome di Trento e di Bolzano, &egrave; affidata alla responsabilit&agrave; del titolare di una farmacia privata o pubblica della zona con preferenza per il titolare della farmacia pi&ugrave; vicina. Nel caso di rinunzia il dispensario &egrave; gestito dal comune. I dispensari farmaceutici sono dotati di medicinali di uso comune e di pronto soccorso, gi&agrave; confezionati. Nelle stazioni di soggiorno, di cura e di turismo, nonch&egrave; nelle altre localit&agrave; climatiche, balneari o termali o comunque di interesse turistico, di cui all' articolo 1 del regio decreto-legge 24 novembre 1938, n. 1926 , convertito dalla legge 2 giugno 1939, n. 739 , con popolazione non superiore a 12.500 abitanti, le regioni e le province autonome di Trento e di Bolzano possono autorizzare, in aggiunta alle farmacie esistenti ai sensi dell' articolo 1 della legge 2 aprile 1968, n. 475 , e successive modificazioni, l'apertura stagionale di dispensari farmaceutici, tenuto conto della media giornaliera delle presenze annuali rilevate dalle aziende di promozione turistica di cui all' articol [...]",
+      "testoTroncato": true
+    }
+  ]
+}

@@ -128,6 +128,14 @@ Chiude la coda 2020-2022-recenti: 2021 (71: 55 in vigore, 16 abrogati),
 npx tsx scripts/ingest-reale-finestra-2021-2025.ts --anni=2025,2024,2023,2021 --limite=80 --testo-max=2000
 ```
 
+## Copertura totale 1948-2025 — ogni anno ha la sua finestra (1703 atti, batch 2026-09-29)
+
+Backfill completo via `scripts/ingest-reale-finestra-anni-{A,B,C,D,E}.ts`
+(stesso pattern onesto): 1949-1959 + 1961 (379), 1962-1974 (357),
+1976-1989 (421), 1991-2004 (248), 2007-2019 (298). Il 2026 corrente resta
+coperto da `normattiva-recenti.json` + GU del giorno. Gate:
+`tests/reali-16-copertura.test.ts` (ogni anno cablato, ELI unici).
+
 ## Bulk Normattiva — `normattiva-bulk-a-attuazione-ue.json` (39) + `normattiva-bulk-b-finestra-2005.json` (638)
 
 - Attuazione regolamenti UE da collezione bulk preconfezionata (metadati

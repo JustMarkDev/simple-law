@@ -1,0 +1,516 @@
+{
+  "provenance": {
+    "fonte": "normattiva",
+    "url": "https://api.normattiva.it/t/normattiva.api/bff-opendata/v1/api/v1/ricerca/aggiornati",
+    "recuperatoIl": "2026-09-29T00:19:06.001Z",
+    "licenza": "riproduzione consentita con menzione di fonte, carattere non autentico e gratuito (Note legali dati.normattiva.it; solo la Gazzetta Ufficiale a stampa e' autentica)"
+  },
+  "atti": [
+    {
+      "chiave": "/eli/id/1969/10/24/069U0701/sg",
+      "titolo": "DECRETO-LEGGE 24 ottobre 1969, n. 701",
+      "tipo": "decreto.legge",
+      "numero": "701",
+      "dataEmanazione": "1969-10-24",
+      "nir": "urn:nir:stato:decreto.legge:1969-10-24;701",
+      "eli": "/eli/id/1969/10/24/069U0701/sg",
+      "stato": "in_vigore",
+      "sintesi": "Norme integrative e modificative della legge 28 luglio 1967, n. 641, sull'edilizia scolastica e universitaria.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legge:1969-10-24;701",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1969/10/28/069U0701/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1969-10-28",
+      "numeroGU": "274",
+      "codiceRedazionale": "069U0701",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "IL PRESIDENTE DELLA REPUBBLICA Visto l' articolo 77 della Costituzione ; Ritenuta la necessit&agrave; e l'urgenza di emanare norme integrative e modificative della legge 28 luglio 1967, n. 641 , sull'edilizia scolastica e universitaria; Sentito il Consiglio dei Ministri; Sulla proposta del Ministro per la pubblica istruzione, di concerto con il Ministro per il bilancio e la programmazione economica, il Ministro per il tesoro e il Ministro per i lavori pubblici; Decreta: Art. 1 (((Delega per la progettazione ed esecuzione delle opere di edilizia scolastica ed acquisto delle aree occorrenti)) ((Il primo , secondo e terzo comma dell'articolo 16 della legge 28 luglio 1967, n. 641 , sono sostituiti dai seguenti: \"Gli enti obbligati di cui al primo comma dell'articolo 9 possono avvalersi della delega da parte dello Stato per l'esecuzione delle opere di cui al presente titolo. Ai fini della progettazione e della costruzione la domanda redatta dal comune e dagli altri enti obbligati ai sensi del primo comma dell'articolo 9 equivale a richiesta di delega. La delega &egrave; concessa all'atto dell'approvazione del piano esecutivo annuale. Qualora gli enti obbligati dichiarino, nella domanda presentata ai sensi dell'articolo 9 della presente legge, di non volersi avvalere della delega o rinuncino alla delega loro accordata od incorrano nella decadenza prevista dalle norme concernenti i termini per la progettazione e per l'appalto concorso, il provveditore regionale alle opere pubbliche competente per territorio, sentito il comitato di cui all'articolo 25 della presente legge, pu&ograve; delegare l'istituto per lo sviluppo dell'edilizia sociale od altri enti pubblici, a carattere nazionale, specializzati nell'edilizia scolastica, ovvero pu&ograve; disporre l'esecuzione diretta dell'opera\". Fermo restando il diritto previsto dal secondo comma dell'articolo 13 della legge 28 luglio 1967, n. 641 , nella delega accordata ai sensi dei precedenti capoversi &egrave; compresa anche l'a [...]",
+      "testoTroncato": true
+    },
+    {
+      "chiave": "/eli/id/1969/09/30/069U0645/sg",
+      "titolo": "DECRETO-LEGGE 30 settembre 1969, n. 645",
+      "tipo": "decreto.legge",
+      "numero": "645",
+      "dataEmanazione": "1969-09-30",
+      "nir": "urn:nir:stato:decreto.legge:1969-09-30;645",
+      "eli": "/eli/id/1969/09/30/069U0645/sg",
+      "stato": "abrogato",
+      "sintesi": "Norme relative all'integrazione di prezzo per il grano duro e all'attuazione di regolamenti comunitari concernenti il settore agricolo.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legge:1969-09-30;645",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1969/10/01/069U0645/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1969-10-01",
+      "numeroGU": "249",
+      "codiceRedazionale": "069U0645",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.L. 25 GIUGNO 2008, N. 112 , CONVERTITO, CON MODIFICAZIONI, DALLA L. 6 AGOSTO 2008, N. 133 ))"
+    },
+    {
+      "chiave": "/eli/id/1969/07/02/069U0320/sg",
+      "titolo": "DECRETO-LEGGE 2 luglio 1969, n. 320",
+      "tipo": "decreto.legge",
+      "numero": "320",
+      "dataEmanazione": "1969-07-02",
+      "nir": "urn:nir:stato:decreto.legge:1969-07-02;320",
+      "eli": "/eli/id/1969/07/02/069U0320/sg",
+      "stato": "in_vigore",
+      "sintesi": "Variazione della tabella allegato \"E\" annessa alla legge 13 luglio 1965, n. 825, modificata con la legge 6 agosto 1967, n. 697.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legge:1969-07-02;320",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1969/07/03/069U0320/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1969-07-03",
+      "numeroGU": "166",
+      "codiceRedazionale": "069U0320",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "IL PRESIDENTE DELLA REPUBBLICA Visto l' art. 77 comma secondo della Costituzione ; Vista la legge 13 luglio 1965, n. 825 , concernente il regime di imposizione fiscale dei prodotti oggetto di monopolio di Stato; Vista la legge 6 agosto 1967, n. 697 , recante modifiche alla suddetta legge; Ritenuta la necessit&agrave; e l'urgenza di variare l'imposta di consumo su alcuni generi di monopolio nonch&egrave; le corrispondenti quote spettanti a titolo di omaggio ai rivenditori; Sentito il Consiglio dei Ministri; Sulla proposta del Ministro per le finanze; Decreta: Art. 1 Articolo unico. La tabella allegato \"E\" annessa alla legge 13 luglio 1965, n. 825 , modificata con la legge 6 agosto 1967, numero 697 , &egrave; sostituita dalla tabella annessa al presente decreto. Il Ministro per le finanze provveder&agrave; con proprio decreto a stabilire i nuovi prezzi di vendita al pubblico di quelle marche di prodotti che, in applicazione della tabella \"E\" di cui al precedente comma, subiscono variazioni. Il presente decreto entra in vigore il giorno stesso della sua pubblicazione nella Gazzetta Ufficiale della Repubblica italiana e sar&agrave; presentato alle Camere per la conversione in legge. Il presente decreto, munito del sigillo dello Stato, sar&agrave; inserto nella Raccolta ufficiale delle leggi e dei decreti della Repubblica italiana. &Egrave; fatto obbligo a chiunque spetti di osservarlo e di farlo osservare. Dato a Roma, add&igrave; 2 luglio 1969 SARAGAT RUMOR - REALE Visto, il Guardasigilli: GAVA Registrato alla Corte dei conti, add&igrave; 2 luglio 1969 Atti del Governo, registro n. 227, foglio n. 107. - GRECO"
+    },
+    {
+      "chiave": "/eli/id/1968/11/05/068U1115/sg",
+      "titolo": "LEGGE 5 novembre 1968, n. 1115",
+      "tipo": "legge",
+      "numero": "1115",
+      "dataEmanazione": "1968-11-05",
+      "nir": "urn:nir:stato:legge:1968-11-05;1115",
+      "eli": "/eli/id/1968/11/05/068U1115/sg",
+      "stato": "in_vigore",
+      "sintesi": "Estensione, in favore dei lavoratori, degli interventi della Cassa integrazione guadagni, della gestione dell'assicurazione contro la disoccupazione e della Cassa assegni familiari e provvidenze in favore dei lavoratori anziani licenziati.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1968-11-05;1115",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1968/11/05/068U1115/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1968-11-05",
+      "numeroGU": "282",
+      "codiceRedazionale": "068U1115",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "La Camera dei deputati ed il Senato della Repubblica hanno approvato; IL PRESIDENTE DELLA REPUBBLICA PROMULGA la seguente legge: Art. 1 Presso il Comitato dei Ministri per la programmazione economica si dar&agrave; luogo ad esami periodici annuali, o a richiesta delle organizzazioni sindacali de lavoratori o degli imprenditori, dell'andamento dell'occupazione con riferimento sia a situazioni congiunturali che al progresso tecnico ed alle conseguenti ristrutturazioni delle attivit&agrave; produttive. Per l'esame della situazione, sia nella fase degli accertamenti preventivi che in quella dei provvedimenti amministrativi, da adottare in relazione agli obiettivi del programma quinquennale per lo sviluppo economico del Paese, saranno consultate le predette organizzazioni sindacali."
+    },
+    {
+      "chiave": "/eli/id/1968/03/28/068U0420/sg",
+      "titolo": "LEGGE 28 marzo 1968, n. 420",
+      "tipo": "legge",
+      "numero": "420",
+      "dataEmanazione": "1968-03-28",
+      "nir": "urn:nir:stato:legge:1968-03-28;420",
+      "eli": "/eli/id/1968/03/28/068U0420/sg",
+      "stato": "abrogato",
+      "sintesi": "Integrazione dei bilanci comunali e provinciali deficitari per il biennio 1969-70.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1968-03-28;420",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1968/04/19/068U0420/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1968-04-19",
+      "numeroGU": "100",
+      "codiceRedazionale": "068U0420",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.L. 25 GIUGNO 2008, N. 112 , CONVERTITO, CON MODIFICAZIONI, DALLA LEGGE 6 AGOSTO 2008 N. 133))"
+    },
+    {
+      "chiave": "/eli/id/1968/03/18/068U0238/sg",
+      "titolo": "LEGGE 18 marzo 1968, n. 238",
+      "tipo": "legge",
+      "numero": "238",
+      "dataEmanazione": "1968-03-18",
+      "nir": "urn:nir:stato:legge:1968-03-18;238",
+      "eli": "/eli/id/1968/03/18/068U0238/sg",
+      "stato": "in_vigore",
+      "sintesi": "Nuovi termini per l'emanazione dei provvedimenti di cui all'art. 39 della legge 21 luglio 1965, n. 903, e norme integrative della medesima.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1968-03-18;238",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1968/03/28/068U0238/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1968-03-28",
+      "numeroGU": "81",
+      "codiceRedazionale": "068U0238",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "La Camera dei deputati ed il Senato della Repubblica hanno approvato; IL PRESIDENTE DELLA REPUBBLICA PROMULGA la seguente legge: Art. 1 ((ARTICOLO ABROGATO DALLA L. 30 APRILE 1969, N. 153 ))"
+    },
+    {
+      "chiave": "/eli/id/1968/03/12/068U0233/sg",
+      "titolo": "LEGGE 12 marzo 1968, n. 233",
+      "tipo": "legge",
+      "numero": "233",
+      "dataEmanazione": "1968-03-12",
+      "nir": "urn:nir:stato:legge:1968-03-12;233",
+      "eli": "/eli/id/1968/03/12/068U0233/sg",
+      "stato": "in_vigore",
+      "sintesi": "Norme temporanee per l'assistenza sanitaria ai familiari residenti in Italia degli emigrati italiani in Svizzera e ai lavoratori frontalieri.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1968-03-12;233",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1968/03/28/068U0233/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1968-03-28",
+      "numeroGU": "81",
+      "codiceRedazionale": "068U0233",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "La Camera dei deputati ed il Senato della Repubblica hanno approvato; IL PRESIDENTE DELLA REPUBBLICA PROMULGA la seguente legge: Art. 1 In attesa che l'assistenza di malattia ai familiari residenti in Italia dei lavoratori italiani occupati in Svizzera sia definita mediante apposito accordo tra il Governo italiano ed il Governo svizzero, l'Istituto nazionale per l'assicurazione contro le malattie e le casse mutue provinciali di malattia di Trento e Bolzano provvedono, per l'anno 1968, con separata gestione, all'assistenza di malattia nei confronti dei familiari residenti in Italia dei lavoratori occupati in Svizzera, nonch&egrave; dei lavoratori frontalieri ivi occupati e dei loro familiari residenti in Italia, ai quali non spetti l'assistenza stessa per altro titolo, in virt&ugrave; di assicurazione obbligatoria propria o di altri membri della famiglia."
+    },
+    {
+      "chiave": "/eli/id/1968/03/08/068U0199/sg",
+      "titolo": "LEGGE 8 marzo 1968, n. 199",
+      "tipo": "legge",
+      "numero": "199",
+      "dataEmanazione": "1968-03-08",
+      "nir": "urn:nir:stato:legge:1968-03-08;199",
+      "eli": "/eli/id/1968/03/08/068U0199/sg",
+      "stato": "in_vigore",
+      "sintesi": "Trasformazione in Istituto universitario di magistero statale dell'attuale Istituto universitario pareggiato di magistero \"G. Cuomo\" di Salerno.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1968-03-08;199",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1968/03/25/068U0199/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1968-03-25",
+      "numeroGU": "78",
+      "codiceRedazionale": "068U0199",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "La Camera dei deputati ed il Senato della Repubblica hanno approvato; IL PRESIDENTE DELLA REPUBBLICA PROMULGA la seguente legge: Art. 1 A decorrere dall'anno accademico 1967-1968 l'Istituto universitario pareggiato di magistero \"G. Cuomo\" di Salerno, riconosciuto con decreto del Presidente della Repubblica 9 ottobre 1951, n. 1300 , &egrave; compreso fra quelli previsti dall'articolo 1, n. 1, del testo unico delle leggi sull'istruzione superiore, approvato con regio decreto 31 agosto 1933, n. 1592 , e successive modificazioni e integrazioni. L'istituto di cui al precedente comma assume la denominazione di Istituto universitario di magistero statale di Salerno. Il direttore, che &egrave; preside della facolt&agrave; ed &egrave; presidente del consiglio di amministrazione, &egrave; eletto dal consiglio di facolt&agrave; tra i professori di ruolo dell'istituto ed &egrave; nominato con decreto del Ministro per la pubblica istruzione."
+    },
+    {
+      "chiave": "/eli/id/1968/03/08/068U0152/sg",
+      "titolo": "LEGGE 8 marzo 1968, n. 152",
+      "tipo": "legge",
+      "numero": "152",
+      "dataEmanazione": "1968-03-08",
+      "nir": "urn:nir:stato:legge:1968-03-08;152",
+      "eli": "/eli/id/1968/03/08/068U0152/sg",
+      "stato": "in_vigore",
+      "sintesi": "Nuove norme in materia previdenziale per il personale degli Enti locali.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1968-03-08;152",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1968/03/18/068U0152/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1968-03-18",
+      "numeroGU": "73",
+      "codiceRedazionale": "068U0152",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "La Camera dei deputati ed il Senato della Repubblica hanno approvato; IL PRESIDENTE DELLA REPUBBLICA PROMULGA la seguente legge: Art. 1 (Iscrizione personale non di ruolo) A decorrere dalla data di entrata in vigore della presente legge, l'iscrizione obbligatoria all'INADEL ai fini del trattamento di previdenza, &egrave; estesa al personale non di ruolo impiegato, sanitario e salariato degli enti tenuti ad iscrivere i propri dipendenti di ruolo all'Istituto medesimo a norma delle disposizioni vigenti, purch&egrave; il personale predetto abbia almeno un anno di servizio continuativo e sia adibito a servizi di carattere permanente che comportino l'obbligo di iscrizione ai fini del trattamento di quiescenza erogato dagli istituti di previdenza amministrati dal Ministero del tesoro."
+    },
+    {
+      "chiave": "/eli/id/1967/12/02/067U1215/sg",
+      "titolo": "LEGGE 2 dicembre 1967, n. 1215",
+      "tipo": "legge",
+      "numero": "1215",
+      "dataEmanazione": "1967-12-02",
+      "nir": "urn:nir:stato:legge:1967-12-02;1215",
+      "eli": "/eli/id/1967/12/02/067U1215/sg",
+      "stato": "abrogato",
+      "sintesi": "Norme integrative del testo unico 5 febbraio 1928, n. 577, concernenti il personale insegnante nelle scuole reggimentali.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1967-12-02;1215",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1967/12/23/067U1215/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1967-12-23",
+      "numeroGU": "320",
+      "codiceRedazionale": "067U1215",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.LGS. 13 DICEMBRE 2010, N. 212 ))"
+    },
+    {
+      "chiave": "/eli/id/1967/05/29/067U0370/sg",
+      "titolo": "LEGGE 29 maggio 1967, n. 370",
+      "tipo": "legge",
+      "numero": "370",
+      "dataEmanazione": "1967-05-29",
+      "nir": "urn:nir:stato:legge:1967-05-29;370",
+      "eli": "/eli/id/1967/05/29/067U0370/sg",
+      "stato": "in_vigore",
+      "sintesi": "Modifiche al decreto-legge 7 ottobre 1965, n. 1118, concernente sospensione dell'imposta di fabbricazione sui filati di lana ed istituzione di un'addizionale speciale all'imposta generale sull'entrata per le materie prime tessili di lana, convertito, con modificazioni, nella legge 4 dicembre 1965, n. 1309.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1967-05-29;370",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1967/06/13/067U0370/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1967-06-13",
+      "numeroGU": "146",
+      "codiceRedazionale": "067U0370",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "La Camera dei deputati ed il Senato della Repubblica hanno approvato; IL PRESIDENTE DELLA REPUBBLICA PROMULGA la seguente legge: Art. 1 Articolo unico. Il primo comma dell'articolo 3 del decreto-legge 7 ottobre 1965, n. 1118 , convertito, con modificazioni, nella legge 4 dicembre 1965, n. 1309 , &egrave; sostituito dal seguente: \"Nel periodo di sospensione dell'imposta di fabbricazione e della corrispondente sovrimposta di confine per i filati di lana di cui al precedente articolo 1, per gli atti economici relativi al commercio delle seguenti materie prime tessili contemplate dalla tabella allegato A alla legge 12 agosto 1957, n. 757 , modificata dalla legge 21 marzo 1958, n. 267 , in aggiunta all'aliquota della imposta generale sull'entrata, dovuta una volta tanto, a norma dell'articolo 2 della citata legge 12 agosto 1957, n. 757 , e successive modificazioni ed all'addizionale di cui alla legge 15 novembre 1964, n. 1162 , si applica sulla entrata imponibile l'addizionale speciale nelle misure sotto indicate: 645 lane in massa . . . . . . . . . . . . . . . . . . . . . . . 4% ex 646 peli fini non nominati n&egrave; compresi altrove, in massa, esclusi quelli di coniglio, di lepre, di castoro e di nutria. . . . 4% 647 peli grossolani di animali della specie bovina ed equina (eccettuati i crini) e di capra comune e simili, e loro cascami, puri o misti . . . . . . . . . . . . . . . . . . . 4% 648 cascami di lana e di peli fini, puri o misti. . . . . . . . 4% 649 sfilacciati di lana o di peli fini, puri o misti. . . . . . 4% 650 lane e peli, cardati o pettinati. . . . . . . . . . . . . . 4% 757 stracci (avanzi, ritagli e cimose di tessuti o di feltro, anche nuovi, oggetti cuciti, usati, inservibili all'uso loro proprio, vecchie reti, cordami fuori uso e simili) non utilizzabili che per la sfilacciatura, per la fabbricazione della pasta per carta, per pulitura di macchine od altri simili usi . . . . . . . . . . . . . . . . . . . . . . . . 4%\" L' articolo 4 del decreto-legg [...]",
+      "testoTroncato": true
+    },
+    {
+      "chiave": "/eli/id/1967/01/11/067U0001/sg",
+      "titolo": "LEGGE 11 gennaio 1967, n. 1",
+      "tipo": "legge",
+      "numero": "1",
+      "dataEmanazione": "1967-01-11",
+      "nir": "urn:nir:stato:legge:1967-01-11;1",
+      "eli": "/eli/id/1967/01/11/067U0001/sg",
+      "stato": "abrogato",
+      "sintesi": "Miglioramento delle prestazioni in favore dei tubercolotici assistiti dai Consorzi provinciali antitubercolari.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1967-01-11;1",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1967/01/23/067U0001/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1967-01-23",
+      "numeroGU": "19",
+      "codiceRedazionale": "067U0001",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.L. 25 GIUGNO 2008, N. 112 , CONVERTITO, CON MODIFICAZIONI, DALLA L. 6 AGOSTO 2008, N. 133 ))"
+    },
+    {
+      "chiave": "/eli/id/1966/07/22/066U0613/sg",
+      "titolo": "LEGGE 22 luglio 1966, n. 613",
+      "tipo": "legge",
+      "numero": "613",
+      "dataEmanazione": "1966-07-22",
+      "nir": "urn:nir:stato:legge:1966-07-22;613",
+      "eli": "/eli/id/1966/07/22/066U0613/sg",
+      "stato": "in_vigore",
+      "sintesi": "Estensione dell'assicurazione obbligatoria per l'invalidita', la vecchiaia ed i superstiti agli esercenti attivita' commerciali ed ai loro familiari coadiutori e coordinamento degli ordinamenti pensionistici per i lavoratori autonomi.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1966-07-22;613",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1966/08/12/066U0613/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1966-08-12",
+      "numeroGU": "200",
+      "codiceRedazionale": "066U0613",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "La Camera dei deputati ed il Senato della Repubblica hanno approvato; IL PRESIDENTE DELLA REPUBBLICA PROMULGA la seguente legge: Art. 1 L'assicurazione obbligatoria per l'invalidit&agrave;, la vecchiaia ed i superstiti &egrave; estesa agli esercenti piccole imprese commerciali iscritti negli elenchi degli aventi diritto all'assicurazione obbligatoria contro le malattie istituita con legge 27 novembre 1960, n. 1397 , agli ausiliari del commercio ed agli altri lavoratori autonomi iscritti nei predetti elenchi, nonch&egrave; ai loro familiari coadiutori, indicati nell'articolo seguente. L'obbligo di iscrizione all'assicurazione sussiste anche se gli interessati abbiano esercitato il diritto di opzione previsto dall' articolo 8 del decreto del Presidente della Repubblica 28 febbraio 1961, n. 184 . Per quanto non diversamente disposto dagli articoli seguenti, l'assicurazione di cui alla presente legge &egrave; regolata dalle norme del regio decreto-legge 4 ottobre 1935, n. 1827 , e successive modificazioni ed integrazioni."
+    },
+    {
+      "chiave": "/eli/id/1966/07/25/066U0570/sg",
+      "titolo": "LEGGE 25 luglio 1966, n. 570",
+      "tipo": "legge",
+      "numero": "570",
+      "dataEmanazione": "1966-07-25",
+      "nir": "urn:nir:stato:legge:1966-07-25;570",
+      "eli": "/eli/id/1966/07/25/066U0570/sg",
+      "stato": "abrogato",
+      "sintesi": "Disposizioni sulla nomina a magistrato di Corte di appello.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1966-07-25;570",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1966/07/28/066U0570/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1966-07-28",
+      "numeroGU": "186",
+      "codiceRedazionale": "066U0570",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D. LGS. 5 APRILE 2006, N. 160 ))"
+    },
+    {
+      "chiave": "/eli/id/1965/07/14/065U0963/sg",
+      "titolo": "LEGGE 14 luglio 1965, n. 963",
+      "tipo": "legge",
+      "numero": "963",
+      "dataEmanazione": "1965-07-14",
+      "nir": "urn:nir:stato:legge:1965-07-14;963",
+      "eli": "/eli/id/1965/07/14/065U0963/sg",
+      "stato": "abrogato",
+      "sintesi": "Disciplina della pesca marittima.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1965-07-14;963",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1965/08/14/065U0963/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1965-08-14",
+      "numeroGU": "203",
+      "codiceRedazionale": "065U0963",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.LGS. 9 GENNAIO 2012, N. 4 ))"
+    },
+    {
+      "chiave": "/eli/id/1963/02/14/063U0080/sg",
+      "titolo": "LEGGE 14 febbraio 1963, n. 80",
+      "tipo": "legge",
+      "numero": "80",
+      "dataEmanazione": "1963-02-14",
+      "nir": "urn:nir:stato:legge:1963-02-14;80",
+      "eli": "/eli/id/1963/02/14/063U0080/sg",
+      "stato": "abrogato",
+      "sintesi": "Istituzione dell'assegno di studio universitario.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1963-02-14;80",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1963/02/22/063U0080/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1963-02-22",
+      "numeroGU": "51",
+      "codiceRedazionale": "063U0080",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DALLA L. 2 DICEMBRE 1991, N. 390 ))"
+    },
+    {
+      "chiave": "/eli/id/1962/12/29/062U1744/sg",
+      "titolo": "LEGGE 29 dicembre 1962, n. 1744",
+      "tipo": "legge",
+      "numero": "1744",
+      "dataEmanazione": "1962-12-29",
+      "nir": "urn:nir:stato:legge:1962-12-29;1744",
+      "eli": "/eli/id/1962/12/29/062U1744/sg",
+      "stato": "in_vigore",
+      "sintesi": "Nuove disposizioni per l'applicazione delle leggi di registro, dell'imposta generale sull'entrata e del bollo ai contratti di locazione dei beni immobili urbani.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1962-12-29;1744",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1963/01/07/062U1744/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1963-01-07",
+      "numeroGU": "5",
+      "codiceRedazionale": "062U1744",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((IL D.L. 25 GIUGNO 2008 N. 112 , CONVERTITO, CON MODIFICAZIONI, DALLA L. 6 AGOSTO 2008 N. 133 HA CONFERMATO L'ABROGAZIONE DEL PRESENTE PROVVEDIMENTO))"
+    },
+    {
+      "chiave": "/eli/id/1962/11/07/062U1613/sg",
+      "titolo": "LEGGE 7 novembre 1962, n. 1613",
+      "tipo": "legge",
+      "numero": "1613",
+      "dataEmanazione": "1962-11-07",
+      "nir": "urn:nir:stato:legge:1962-11-07;1613",
+      "eli": "/eli/id/1962/11/07/062U1613/sg",
+      "stato": "abrogato",
+      "sintesi": "Adeguamento del diritto di scritturato di cui alla tabella allegata al decreto-legge 31 luglio 1954, n. 534, convertito, con modificazioni, nella legge 26 settembre 1954, n. 870.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1962-11-07;1613",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1962/11/30/062U1613/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1962-11-30",
+      "numeroGU": "305",
+      "codiceRedazionale": "062U1613",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DALLA L. 23 OTTOBRE 1969, N. 789 ))"
+    },
+    {
+      "chiave": "/eli/id/1962/04/27/062U0211/sg",
+      "titolo": "LEGGE 27 aprile 1962, n. 211",
+      "tipo": "legge",
+      "numero": "211",
+      "dataEmanazione": "1962-04-27",
+      "nir": "urn:nir:stato:legge:1962-04-27;211",
+      "eli": "/eli/id/1962/04/27/062U0211/sg",
+      "stato": "abrogato",
+      "sintesi": "Rinnovamento, riclassamento, ammodernamento e potenziamento delle ferrovie dello Stato.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1962-04-27;211",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1962/05/09/062U0211/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1962-05-09",
+      "numeroGU": "118",
+      "codiceRedazionale": "062U0211",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.L. 25 GIUGNO 2008, N. 112 , CONVERTITO, CON MODIFICAZIONI, DALLA L. 6 AGOSTO 2008, N. 133 ))"
+    },
+    {
+      "chiave": "/eli/id/1962/02/01/062U0035/sg",
+      "titolo": "LEGGE 1 febbraio 1962, n. 35",
+      "tipo": "legge",
+      "numero": "35",
+      "dataEmanazione": "1962-02-01",
+      "nir": "urn:nir:stato:legge:1962-02-01;35",
+      "eli": "/eli/id/1962/02/01/062U0035/sg",
+      "stato": "in_vigore",
+      "sintesi": "Riconoscimento a favore dei lavoratori della Venezia Giulia e Tridentina dell'opera prestata prima dell'entrata in vigore del regio decreto-legge 29 novembre 1925, n. 2146, ai fini dell'assicurazione obbligatoria invalidita', vecchiaia e superstiti e dei fondi speciali sostitutivi.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1962-02-01;35",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1962/02/19/062U0035/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1962-02-19",
+      "numeroGU": "45",
+      "codiceRedazionale": "062U0035",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "La Camera dei deputati ed il Senato della Repubblica hanno approvato; IL PRESIDENTE DELLA REPUBBLICA PROMULGA la seguente legge: Art. 1 A coloro che, pur avendo prestato opera retribuita alle dipendenze di datori di lavoro delle province della Venezia Giulia e Tridentina gi&agrave; facenti parte dell'ex impero austro-ungarico, furono esclusi dall'assicurazione obbligatoria invalidit&agrave; e vecchiaia dal 1 luglio 1920 fino alla data di entrata in vigore del regio decreto-legge 29 novembre 1925, n. 2146 , che estese detta assicurazione alle Province in questione, &egrave; data facolt&agrave; di provvedere al versamento dei contributi assicurativi per i periodi di esclusione. Il versamento dei contributi pu&ograve; essere effettuato per i periodi di comprovata prestazione d'opera soggetta all'obbligo assicurativo ai sensi del decreto legislativo luogotenenziale 21 aprile 1919, n. 603 , e successive modificazioni, mediante il pagamento della somma complessiva di lire quarantacinque per ogni settimana di lavoro compresa nei periodi suindicati. Ai fini della liquidazione delle prestazioni assicurative verr&agrave; considerato, per ogni settimana di lavoro coperta dal versamento di cui al precedente comma, il contributo settimanale previsto dalle disposizioni legislative all'epoca vigenti nella misura di lire tre, rivalutato ai sensi dell' articolo 4 lettera a) del regio decreto-legge 18 marzo 1943, n. 126 ."
+    },
+    {
+      "chiave": "/eli/id/1961/12/04/061U1256/sg",
+      "titolo": "LEGGE 4 dicembre 1961, n. 1256",
+      "tipo": "legge",
+      "numero": "1256",
+      "dataEmanazione": "1961-12-04",
+      "nir": "urn:nir:stato:legge:1961-12-04;1256",
+      "eli": "/eli/id/1961/12/04/061U1256/sg",
+      "stato": "abrogato",
+      "sintesi": "Determinazione delle piante organiche del personale delle ferrovie dello Stato ed attinenti modifiche allo stato giuridico.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1961-12-04;1256",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1961/12/11/061U1256/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1961-12-11",
+      "numeroGU": "306",
+      "codiceRedazionale": "061U1256",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.L. 25 GIUGNO 2008, N.112 , CONVERTITO, CON MODIFICAZIONI, DALLA L. 6 AGOSTO 2008 N.133 ))"
+    },
+    {
+      "chiave": "/eli/id/1961/03/05/061U0212/sg",
+      "titolo": "LEGGE 5 marzo 1961, n. 212",
+      "tipo": "legge",
+      "numero": "212",
+      "dataEmanazione": "1961-03-05",
+      "nir": "urn:nir:stato:legge:1961-03-05;212",
+      "eli": "/eli/id/1961/03/05/061U0212/sg",
+      "stato": "abrogato",
+      "sintesi": "Modifiche alla legge 27 marzo 1953, n. 259, concernente l'aumento dei soprassoldi di medaglie al valor militare e degli assegni ai decorati dell'Ordine Militare d'Italia ed estensione del soprassoldo ai decorati della Croce di guerra al valor militare.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1961-03-05;212",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1961/04/12/061U0212/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1961-04-12",
+      "numeroGU": "91",
+      "codiceRedazionale": "061U0212",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.LGS 15 MARZO 2010, N. 66 ))"
+    },
+    {
+      "chiave": "/eli/id/1960/02/23/060U0131/sg",
+      "titolo": "LEGGE 23 febbraio 1960, n. 131",
+      "tipo": "legge",
+      "numero": "131",
+      "dataEmanazione": "1960-02-23",
+      "nir": "urn:nir:stato:legge:1960-02-23;131",
+      "eli": "/eli/id/1960/02/23/060U0131/sg",
+      "stato": "abrogato",
+      "sintesi": "Applicazione della imposta fabbricati sulla base delle rendite del nuovo catasto edilizio urbano.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1960-02-23;131",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1960/03/12/060U0131/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1960-03-12",
+      "numeroGU": "62",
+      "codiceRedazionale": "060U0131",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.LGS. 13 DICEMBRE 2010, N. 212 ))"
+    },
+    {
+      "chiave": "/eli/id/1958/04/03/058U0460/sg",
+      "titolo": "LEGGE 3 aprile 1958, n. 460",
+      "tipo": "legge",
+      "numero": "460",
+      "dataEmanazione": "1958-04-03",
+      "nir": "urn:nir:stato:legge:1958-04-03;460",
+      "eli": "/eli/id/1958/04/03/058U0460/sg",
+      "stato": "in_vigore",
+      "sintesi": "Stato giuridico ed avanzamento dei sottufficiali del Corpo delle guardie di pubblica sicurezza.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1958-04-03;460",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1958/05/08/058U0460/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1958-05-08",
+      "numeroGU": "111",
+      "codiceRedazionale": "058U0460",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "La Camera dei deputati ed il Senato della Repubblica hanno approvato; IL PRESIDENTE DELLA REPUBBLICA PROMULGA la seguente legge: Art. 1 Lo stato di sottufficiale &egrave; costituito dal complesso dei doveri e dei diritti inerenti al grado. Lo stato di sottufficiale sorge col legittimo conferimento del grado e cessa con la perdita del grado."
+    }
+  ]
+}

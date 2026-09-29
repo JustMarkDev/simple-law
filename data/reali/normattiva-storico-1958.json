@@ -1,0 +1,601 @@
+{
+  "provenance": {
+    "fonte": "normattiva",
+    "url": "https://api.normattiva.it/t/normattiva.api/bff-opendata/v1/api/v1/ricerca/aggiornati",
+    "recuperatoIl": "2026-09-29T00:32:15.359Z",
+    "licenza": "riproduzione consentita con menzione di fonte, carattere non autentico e gratuito (Note legali dati.normattiva.it; solo la Gazzetta Ufficiale a stampa e' autentica)"
+  },
+  "atti": [
+    {
+      "chiave": "/eli/id/1958/10/17/058U0938/sg",
+      "titolo": "DECRETO-LEGGE 17 ottobre 1958, n. 938",
+      "tipo": "decreto.legge",
+      "numero": "938",
+      "dataEmanazione": "1958-10-17",
+      "nir": "urn:nir:stato:decreto.legge:1958-10-17;938",
+      "eli": "/eli/id/1958/10/17/058U0938/sg",
+      "stato": "in_vigore",
+      "sintesi": "Mantenimento in vigore nella misura del 50% della sovrimposta addizionale sulla benzina, di cui al primo e secondo comma dell'art. 4 del decreto-legge 22 novembre 1956, n. 1267, convertito, con modificazioni, nella legge 27 dicembre 1956, n. 1415.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legge:1958-10-17;938",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1958/10/18/058U0938/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1958-10-18",
+      "numeroGU": "252",
+      "codiceRedazionale": "058U0938",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "IL PRESIDENTE DELLA REPUBBLICA Visto l' art. 77, secondo comma, della Costituzione ; Vista la tariffa per l'applicazione dei dazi doganali, approvata con il decreto del Presidente della Repubblica 7 luglio 1950, n. 442 ; Visto il regio decreto-legge 28 febbraio 1939, n. 334 , convertito nella legge 2 giugno 1939, n. 739 , riguardante il regime fiscale dei prodotti petroliferi e le successive modificazioni; Visto il decreto-legge 22 novembre 1956, n. 1267 , convertito, con modificazioni, nella legge 27 dicembre 1956, n. 1415 ; Visto il decreto-legge 3 luglio 1957, n. 475 , convertito, con modificazioni, nella legge 12 agosto 1957, n. 754 ; Ritenuta la straordinaria necessit&agrave; e l'urgenza di mantenere in vigore nella misura del cinquanta per cento la sovrimposta addizionale sulla benzina istituita con il primo e secondo comma dell'art. 4 del decreto-legge 22 novembre 1956, n. 1267 , convertito, con modificazioni, nella legge 27 dicembre 1956, n. 1415 , anche dopo la copertura dell'onere derivante dall'applicazione delle misure adottate per assicurare l'approvvigionamento di prodotti petroliferi; Sentito il Consiglio dei Ministri; Sulla proposta del Ministro per le finanze, di concerto con i Ministri per l'industria ed il commercio, per i lavori pubblici, per il bilancio, per il tesoro, per la grazia e giustizia e per il commercio con l'estero; Decreta: Art. 1 A decorrere dal 10 novembre 1958 la sovrimposta addizionale sulla benzina, di cui al primo e secondo comma dell'art. 4 del decreto-legge 22 novembre 1956, n. 1267 , convertito, con modificazioni, nella legge 27 dicembre 1956, n. 1415 , &egrave; mantenuta in vigore nella misura del cinquanta per cento. ((La sovrimposta addizionale, nella misura cos&igrave; ridotta, sar&agrave; abolita a partire dalle ore ventiquattro del 31 dicembre 1958)) ."
+    },
+    {
+      "chiave": "/eli/id/1958/09/24/058U0918/sg",
+      "titolo": "DECRETO-LEGGE 24 settembre 1958, n. 918",
+      "tipo": "decreto.legge",
+      "numero": "918",
+      "dataEmanazione": "1958-09-24",
+      "nir": "urn:nir:stato:decreto.legge:1958-09-24;918",
+      "eli": "/eli/id/1958/09/24/058U0918/sg",
+      "stato": "abrogato",
+      "sintesi": "Proroga delle disposizioni dell'art. 3 del decreto-legge 6 ottobre 1948, n. 1199, relativo alle riduzioni della imposta erariale sui consumi di energia elettrica effettuati nell'Italia meridionale ed insulare.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legge:1958-09-24;918",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1958/09/26/058U0918/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1958-09-26",
+      "numeroGU": "233",
+      "codiceRedazionale": "058U0918",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.L. 25 GIUGNO 2008, N. 112 , CONVERTITO, CON MODIFICAZIONI, DALLA L. 6 AGOSTO 2008, N. 133 ))"
+    },
+    {
+      "chiave": "/eli/id/1958/07/23/058U0721/sg",
+      "titolo": "DECRETO-LEGGE 23 luglio 1958, n. 721",
+      "tipo": "decreto.legge",
+      "numero": "721",
+      "dataEmanazione": "1958-07-23",
+      "nir": "urn:nir:stato:decreto.legge:1958-07-23;721",
+      "eli": "/eli/id/1958/07/23/058U0721/sg",
+      "stato": "in_vigore",
+      "sintesi": "Estrazione anticipata dello spirito da vino accantonato ai sensi dei decreti-legge 16 marzo 1957, n. 69 e 14 settembre 1957, n. 812, rispettivamente convertiti in legge, con modificazioni, nelle leggi 12 maggio 1957, n. 307 e 27 ottobre 1957, n. 1031.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legge:1958-07-23;721",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1958/07/25/058U0721/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1958-07-25",
+      "numeroGU": "179",
+      "codiceRedazionale": "058U0721",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "IL PRESIDENTE DELLA REPUBBLICA Visto l' art. 77, comma secondo, della Costituzione ; Visto il testo unico di legge per l'imposta di fabbricazione sugli spiriti, approvato con decreto Ministeriale 8 luglio 1924, e le successive modificazioni; Visto il decreto-legge 18 aprile 1950, n. 142 , concernente modificazioni al regime fiscale degli spiriti per agevolare la distillazione del vino ed alle disposizioni relative alla minuta vendita degli estratti ed essenze per la preparazione dei liquori, convertito in legge con la legge 16 giugno 1950, n. 331 ; Visto il decreto-legge 18 marzo 1952, n. 118 , concernente il ripristino delle agevolazioni fiscali temporanee e straordinarie per la distillazione del vino, convertito in legge con la legge 15 maggio 1952, n. 457 ; Visto il decreto-legge 3 dicembre 1953, n. 879 , concernente modificazioni alla imposta di fabbricazione ed ai diritti erariali sugli alcoli convertito, con modificazioni, nella legge 31 gennaio 1954, n. 3 ; Visto il decreto-legge 16 settembre 1955, n. 836 , concernente proroga e modifica del regime fiscale sugli alcoli, convertito, con modificazioni, nella legge 15 novembre 1955, n. 1037 ; Visto il decreto-legge 16 marzo 1957, n. 69 , concernente il ripristino delle agevolazioni temporanee straordinarie per lo spirito e le acqueviti di vino accordate con il decreto-legge 18 aprile 1950, n. 142 , e con il decreto-legge 18 marzo 1952, n. 118 , convertito, con modificazioni, nella legge 12 maggio 1957, n. 307 ; Visto il decreto-legge 14 settembre 1957, n. 812 , concernente, fra l'altro, agevolazioni temporanee eccezionali per lo spirito e l'acquavite di vino, convertito, con modificazioni, nella legge 27 ottobre 1957, n. 1031 ; Ritenuta la straordinaria necessit&agrave; e l'urgenza di sopperire alla minore produzione di spirito di seconda categoria verificatasi nel decorso esercizio finanziario; Sentito il Consiglio dei Ministri; Sulla proposta dei Ministri per le finanze, per il bilancio, per il tesoro e per l' [...]",
+      "testoTroncato": true
+    },
+    {
+      "chiave": "/eli/id/1958/06/11/058U0573/sg",
+      "titolo": "DECRETO-LEGGE 11 giugno 1958, n. 573",
+      "tipo": "decreto.legge",
+      "numero": "573",
+      "dataEmanazione": "1958-06-11",
+      "nir": "urn:nir:stato:decreto.legge:1958-06-11;573",
+      "eli": "/eli/id/1958/06/11/058U0573/sg",
+      "stato": "in_vigore",
+      "sintesi": "Proroga del termine stabilito dall'art. 23 della legge 31 luglio 1956, n. 897, contenente disposizioni sulla cinematografia e successive modificazioni.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legge:1958-06-11;573",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1958/06/13/058U0573/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1958-06-13",
+      "numeroGU": "140",
+      "codiceRedazionale": "058U0573",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "IL PRESIDENTE DELLA REPUBBLICA Visto l' art. 77, secondo comma, della Costituzione ; Vista la legge 31 luglio 1956, n. 897 , contenente modificazioni ed aggiunte alle disposizioni sulla cinematografia; Ritenuta la straordinaria necessit&agrave; e l'urgenza di prorogare oltre il 30 giugno 1958 l'efficacia delle vigenti disposizioni relative al nulla osta per la proiezione in pubblico e per l'esportazione dei film, fino alla emanazione di nuove norme per la disciplina della materia; Sentito il Consiglio dei Ministri; Sulla proposta del Presidente del Consiglio dei Ministri, di concerto con i Ministri per l'interno e per la grazia e giustizia; Decreta: Art. 1 Le vigenti disposizioni concernenti il nulla osta per la proiezione in pubblico e per l'esportazione dei film, scadenti il 30 giugno 1958, continuano ad applicarsi fino all'emanazione di nuove norme sulla revisione dei film e, in ogni caso, non oltre il 31 dicembre 1958."
+    },
+    {
+      "chiave": "/eli/id/1958/02/07/058U0088/sg",
+      "titolo": "LEGGE 7 febbraio 1958, n. 88",
+      "tipo": "legge",
+      "numero": "88",
+      "dataEmanazione": "1958-02-07",
+      "nir": "urn:nir:stato:legge:1958-02-07;88",
+      "eli": "/eli/id/1958/02/07/058U0088/sg",
+      "stato": "in_vigore",
+      "sintesi": "Provvedimenti per l'educazione fisica.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1958-02-07;88",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1958/03/06/058U0088/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1958-03-06",
+      "numeroGU": "57",
+      "codiceRedazionale": "058U0088",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "La Camera dei deputati ed il Senato della Repubblica hanno approvato; IL PRESIDENTE DELLA REPUBBLICA PROMULGA: la seguente legge: Art. 1 (Organizzazione dell'insegnamento) L'insegnamento dell'educazione fisica &egrave; obbligatorio in tutte le scuole ed istituti di istruzione secondaria ed artistica ed &egrave; impartito distintamente per gli alunni e le alunne."
+    },
+    {
+      "chiave": "/eli/id/1958/02/04/058U0023/sg",
+      "titolo": "LEGGE 4 febbraio 1958, n. 23",
+      "tipo": "legge",
+      "numero": "23",
+      "dataEmanazione": "1958-02-04",
+      "nir": "urn:nir:stato:legge:1958-02-04;23",
+      "eli": "/eli/id/1958/02/04/058U0023/sg",
+      "stato": "in_vigore",
+      "sintesi": "Norme per il conglobamento e perequazioni salariali in favore dei portieri ed altri lavoratori addetti alla pulizia e custodia di stabili urbani.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1958-02-04;23",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1958/02/15/058U0023/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1958-02-15",
+      "numeroGU": "40",
+      "codiceRedazionale": "058U0023",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "La Camera dei deputati ed il Senato della Repubblica hanno approvato; IL PRESIDENTE DELLA REPUBBLICA PROMULGA la seguente legge: Art. 1 I minimi di salario previsti in ciascuna provincia in base, ai vigenti contratti integrativi provinciali del contratto nazionale di lavoro del 30 aprile 1938 ed aggiornati ai sensi del decreto-legge 15 aprile 1948, n. 628 , e della legge 31 marzo 1954, n. 109 , spettanti ai portieri che prestino la loro opera di vigilanza e custodia ed ai lavoratori addetti alla pulizia con rapporto continuativo negli immobili urbani adibiti ad uso di abitazione ed altri usi compresi quelli di cooperative a contributo statale e di Istituti autonomi di case popolari; l'indennit&agrave; di contingenza di cui all' art. 1 del decreto-legge 22 aprile 1947, n. 28 , aumentata ai sensi dell' art. 2 della legge 20 novembre 1951, n. 1323 , e dell' art. 2 della legge 31 marzo 1954, n. 109 ; l'indennit&agrave; di caro vita di cui al decreto-legge luogotenenziale 2 novembre 1944, n. 303 ; l'indennit&agrave; di caro pane di cui al decreto-legge 7 luglio 1948, n. 1093 ; sono conglobati a tutti i fini contrattuali e di legge in una unica voce retributiva, uguale per uomo e donna, a partire dal 1 gennaio 1957. ((4)) --------------- AGGIORNAMENTO (4) La Corte Costituzionale con sentenza 12-18 novembre 1970, n. 161 (in G.U. 1a s.s. 25/11/1970, n.299) ha dichiarato \"l'illegittimit&agrave; costituzionale dell'articolo unico, tabella A, del D.L.C.P.S. 22 aprile 1947, n. 285, nonch&egrave; dell'art. 1 del decreto legislativo 14 dicembre 1947, n. 1460, degli artt. 1 e 2 della legge di ratifica 20 novembre 1951, n. 1323, dell' art. 2 della legge 31 marzo 1954, n. 109 , e dell' art. 1 della legge 4 febbraio 1958, n. 23 , nelle parti in cui rispettivamente stabiliscono, aumentano e conglobano nella retribuzione l'indennit&agrave; di contingenza, dovuta ai portieri, in misura ridotta in relazione al reddito imponibile dello stabile inferiore al minimo stabilito per legge.\""
+    },
+    {
+      "chiave": "/eli/id/1958/01/23/058U0008/sg",
+      "titolo": "DECRETO-LEGGE 23 gennaio 1958, n. 8",
+      "tipo": "decreto.legge",
+      "numero": "8",
+      "dataEmanazione": "1958-01-23",
+      "nir": "urn:nir:stato:decreto.legge:1958-01-23;8",
+      "eli": "/eli/id/1958/01/23/058U0008/sg",
+      "stato": "abrogato",
+      "sintesi": "Facolta' di rinnovo dei buoni del Tesoro novennali 5% con scadenza 1° aprile 1959 e costituzione di un Fondo destinato al graduale acquisto sul mercato di buoni del Tesoro novennali.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legge:1958-01-23;8",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1958/01/29/058U0008/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1958-01-29",
+      "numeroGU": "24",
+      "codiceRedazionale": "058U0008",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.LGS. 13 DICEMBRE 2010, N. 212 ))"
+    },
+    {
+      "chiave": "/eli/id/1957/12/20/057U1193/sg",
+      "titolo": "DECRETO-LEGGE 20 dicembre 1957, n. 1193",
+      "tipo": "decreto.legge",
+      "numero": "1193",
+      "dataEmanazione": "1957-12-20",
+      "nir": "urn:nir:stato:decreto.legge:1957-12-20;1193",
+      "eli": "/eli/id/1957/12/20/057U1193/sg",
+      "stato": "in_vigore",
+      "sintesi": "Proroga del termine stabilito dall'art. 23 della legge 31 luglio 1956, n. 897, contenente modificazioni ed aggiunte alle disposizioni sulla cinematografia.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legge:1957-12-20;1193",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1957/12/20/057U1193/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1957-12-20",
+      "numeroGU": "315",
+      "codiceRedazionale": "057U1193",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "IL PRESIDENTE DELLA REPUBBLICA Visto l'art. 77, comma, secondo, della Costituzione; Vista la legge 31 luglio 1956, n. 897 , contenente modificazioni ed aggiunte alle disposizioni sulla cinematografia; Ritenuta la straordinaria necessit&agrave; e l'urgenza di prorogare oltre il 31 dicembre 1957 l'efficacia delle vigenti disposizioni relative al nulla osta per la proiezione in pubblico e per l'esportazione dei film, fino all'emanazione di nuove norme, per la disciplina della materia; Sentito il Consiglio dei Ministri; Sulla proposta del Presidente del Consiglio dei Ministri, di concerto con i Ministri dell'interno e per la grazia e giustizia; Decreta: Art. 1 L' art. 23 della legge 31 luglio 1956, n. 897 , &egrave; sostituito dal seguente. \"Le vigenti disposizioni concernenti il nulla osta per la proiezione in pubblico e per l'esportazione dei film restano in vigore fino all'emanazione di nuove norme sulla revisione dei film e, in ogni caso, ((non oltre il 30 giugno 1958)) \"."
+    },
+    {
+      "chiave": "/eli/id/1957/08/12/057U0757/sg",
+      "titolo": "LEGGE 12 agosto 1957, n. 757",
+      "tipo": "legge",
+      "numero": "757",
+      "dataEmanazione": "1957-08-12",
+      "nir": "urn:nir:stato:legge:1957-08-12;757",
+      "eli": "/eli/id/1957/08/12/057U0757/sg",
+      "stato": "abrogato",
+      "sintesi": "Imposta generale sull'entrata \"una tantum\" sui prodotti tessili.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1957-08-12;757",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1957/08/31/057U0757/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1957-08-31",
+      "numeroGU": "216",
+      "codiceRedazionale": "057U0757",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.L. 25 GIUGNO 2008, N. 112 , CONVERTITO, CON MODIFICAZIONI, DALLA L. 6 AGOSTO 2008, N. 133 ))"
+    },
+    {
+      "chiave": "/eli/id/1957/08/08/057U0751/sg",
+      "titolo": "LEGGE 8 agosto 1957, n. 751",
+      "tipo": "legge",
+      "numero": "751",
+      "dataEmanazione": "1957-08-08",
+      "nir": "urn:nir:stato:legge:1957-08-08;751",
+      "eli": "/eli/id/1957/08/08/057U0751/sg",
+      "stato": "abrogato",
+      "sintesi": "Regolazione degli aumenti biennali degli stipendi, delle paghe e delle retribuzioni nella prima applicazione del decreto del Presidente della Repubblica 11 gennaio 1956, n. 19.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1957-08-08;751",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1957/08/30/057U0751/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1957-08-30",
+      "numeroGU": "215",
+      "codiceRedazionale": "057U0751",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.LGS. 13 DICEMBRE 2010, N. 212 ))"
+    },
+    {
+      "chiave": "/eli/id/1957/08/01/057U0743/sg",
+      "titolo": "LEGGE 1 agosto 1957, n. 743",
+      "tipo": "legge",
+      "numero": "743",
+      "dataEmanazione": "1957-08-01",
+      "nir": "urn:nir:stato:legge:1957-08-01;743",
+      "eli": "/eli/id/1957/08/01/057U0743/sg",
+      "stato": "abrogato",
+      "sintesi": "Autorizzazione di spesa per il riassetto, la sistemazione, il completamento e l'ampliamento di cliniche universitarie ed ospedali clinicizzati.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1957-08-01;743",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1957/08/29/057U0743/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1957-08-29",
+      "numeroGU": "214",
+      "codiceRedazionale": "057U0743",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.L. 25 GIUGNO 2008, N. 112 , CONVERTITO CON MODIFICAZIONI DALLA L. 6 AGOSTO 2008, N. 133 ))"
+    },
+    {
+      "chiave": "/eli/id/1957/01/11/057U0006/sg",
+      "titolo": "LEGGE 11 gennaio 1957, n. 6",
+      "tipo": "legge",
+      "numero": "6",
+      "dataEmanazione": "1957-01-11",
+      "nir": "urn:nir:stato:legge:1957-01-11;6",
+      "eli": "/eli/id/1957/01/11/057U0006/sg",
+      "stato": "in_vigore",
+      "sintesi": "Ricerca e coltivazione degli idrocarburi liquidi e gassosi.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1957-01-11;6",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1957/01/29/057U0006/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1957-01-29",
+      "numeroGU": "25",
+      "codiceRedazionale": "057U0006",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "La Camera dei deputati ed il Senato della Repubblica hanno approvato; IL PRESIDENTE DELLA REPUBBLICA PROMULGA la seguente legge: Art. 1 La ricerca e la coltivazione di idrocarburi nelle zone diverse da quelle delimitate nella tabella A, allegata alla legge 10 febbraio 1953, n. 136 , sono soggette alle disposizioni della presente legge ed a quelle con essa non contrastanti, contenute nelle leggi e nei regolamenti minerari attualmente in vigore. ((Sono sottratte alle disposizioni della presente legge e regolate esclusivamente dal regio decreto-legge 29 luglio 1927, n. 1443 , le attivit&agrave; di ricerca e coltivazione di idrocarburi ubicate nei territori delle province di Ferrara e Rovigo, limitatamente agli strati del quaternario situati a profondit&agrave; non superiore a 1200 metri, nonch&egrave; quelle previste dall' art. 28 della legge 10 febbraio 1953, n. 136 )) ."
+    },
+    {
+      "chiave": "/eli/id/1956/03/29/056U0288/sg",
+      "titolo": "LEGGE 29 marzo 1956, n. 288",
+      "tipo": "legge",
+      "numero": "288",
+      "dataEmanazione": "1956-03-29",
+      "nir": "urn:nir:stato:legge:1956-03-29;288",
+      "eli": "/eli/id/1956/03/29/056U0288/sg",
+      "stato": "in_vigore",
+      "sintesi": "Norme sullo stato giuridico e sull'avanzamento degli ufficiali del Corpo delle guardie di pubblica sicurezza.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1956-03-29;288",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1956/04/26/056U0288/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1956-04-26",
+      "numeroGU": "101",
+      "codiceRedazionale": "056U0288",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "La Camera dei deputati ed il Senato della Repubblica hanno approvato; IL PRESIDENTE DELLA REPUBBLICA PROMULGA la seguente legge: Art. 1 ((Gli ufficiali dei Corpo della guardie di pubblica sicurezza provvedono all'inquadramento, all'addestramento militare e alla disciplina del personale del Corpo stesso, nonch&egrave; alla gestione a amministrativa dei reparti: concorrono altres&igrave; all'istruzione professionale del Corpo)) ."
+    },
+    {
+      "chiave": "/eli/id/1956/02/04/056U0033/sg",
+      "titolo": "LEGGE 4 febbraio 1956, n. 33",
+      "tipo": "legge",
+      "numero": "33",
+      "dataEmanazione": "1956-02-04",
+      "nir": "urn:nir:stato:legge:1956-02-04;33",
+      "eli": "/eli/id/1956/02/04/056U0033/sg",
+      "stato": "abrogato",
+      "sintesi": "Modifica alle norme sull'imposta generale sull'entrata per il commercio del bestiame bovino, ovino, suino ed equino.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1956-02-04;33",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1956/02/14/056U0033/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1956-02-14",
+      "numeroGU": "37",
+      "codiceRedazionale": "056U0033",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.L. 25 GIUGNO 2008 N. 112 , CONVERTITO, CON MODIFICAZIONI, DALLA L. 6 AGSOTO 2008 N. 133))"
+    },
+    {
+      "chiave": "/eli/id/1955/11/26/055U1148/sg",
+      "titolo": "LEGGE 26 novembre 1955, n. 1148",
+      "tipo": "legge",
+      "numero": "1148",
+      "dataEmanazione": "1955-11-26",
+      "nir": "urn:nir:stato:legge:1955-11-26;1148",
+      "eli": "/eli/id/1955/11/26/055U1148/sg",
+      "stato": "abrogato",
+      "sintesi": "Proroga e ampliamento dei provvedimenti per incrementare l'occupazione operaia agevolando la costruzione di case per i lavoratori.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1955-11-26;1148",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1955/12/10/055U1148/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1955-12-10",
+      "numeroGU": "284",
+      "codiceRedazionale": "055U1148",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.L. 25 GIUGNO 2008 N. 112 , CONVERTITO, CON MODIFICAZIONI, DALLA L. 6 AGOSTO 2008 N. 133 ))"
+    },
+    {
+      "chiave": "/eli/id/1955/03/10/055U0103/sg",
+      "titolo": "LEGGE 10 marzo 1955, n. 103",
+      "tipo": "legge",
+      "numero": "103",
+      "dataEmanazione": "1955-03-10",
+      "nir": "urn:nir:stato:legge:1955-03-10;103",
+      "eli": "/eli/id/1955/03/10/055U0103/sg",
+      "stato": "abrogato",
+      "sintesi": "Restituzione del dazio e degli altri diritti doganali relativi ai materiali siderurgici impiegati nella fabbricazione dei prodotti dell'industria meccanica esportati.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1955-03-10;103",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1955/03/29/055U0103/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1955-03-29",
+      "numeroGU": "72",
+      "codiceRedazionale": "055U0103",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.LGS. 13 DICEMBRE 2010, N. 212 ))"
+    },
+    {
+      "chiave": "/eli/id/1954/08/09/054U0645/sg",
+      "titolo": "LEGGE 9 agosto 1954, n. 645",
+      "tipo": "legge",
+      "numero": "645",
+      "dataEmanazione": "1954-08-09",
+      "nir": "urn:nir:stato:legge:1954-08-09;645",
+      "eli": "/eli/id/1954/08/09/054U0645/sg",
+      "stato": "in_vigore",
+      "sintesi": "Provvidenze straordinarie a favore dell'edilizia scolastica nonche' nuova misura delle tasse per gli istituti di istruzione media, classica, scientifica, magistrale e tecnica e disposizioni sugli esoneri dal pagamento delle tasse stesse e Istituzione di borse di studio.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1954-08-09;645",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1954/08/17/054U0645/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1954-08-17",
+      "numeroGU": "187",
+      "codiceRedazionale": "054U0645",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "La Camera dei deputati ed il Senato della Repubblica hanno approvato; IL PRESIDENTE DELLA REPUBBLICA PROMULGA la seguente legge: Art. 1 (Misura dei contributi - Enti ammessi al godimento). Sono autorizzati il limite d'impegno di lire 1500 milioni per l'esercizio 1954-55, comprensivi degli 800 milioni autorizzati con l'art. 6, lettera d) della legge che approva lo stato di previsione della spesa del Ministero dei lavori pubblici per l'esercizio medesimo, e il limite d'impegno annuo di lire 1.500.000.000 per ciascuno degli esercizi dal 1955-50 al 1963-64 per la corresponsione, da parte del Ministero dei lavori pubblici agli Enti obbligati, di contributi trentacinquennali nelle seguenti misure sulla spesa riconosciuta ammissibile per la costruzione, il completamento, l'ampliamento, il riattamento e l'arredamento principale di edifici scolastici: a) del sei per cento per le scuole materne e dell'obbligo (elementare e dell'avviamento) nel Mezzogiorno e nelle Isole; b) del sei per cento per le scuole materne e dell'obbligo (elementare e dell'avviamento) nei Comuni, frazioni di Comuni e sedi scolastiche situati in territori diversi da quelli di cui alla precedente lettera a), quando il Ministro per i lavori pubblici, di concerto con il Ministro per l'interno e con quello per il tesoro, abbia riconosciuto che la loro condizione possa considerarsi similare a quella del Mezzogiorno e delle Isole; c) del cinque per cento per le scuole materne e dell'obbligo (elementare e dell'avviamento) nel restante territorio della Repubblica; d) del quattro per cento per le altre scuole. I benefici, previsti nel precedente comma, possono essere concessi anche ai Comuni che, pur non essendovi obbligati, intendono costruire edifici ad uso di scuole legalmente riconosciute, quando nei Comuni stessi non esista scuola del medesimo ordine e tipo. I Comuni di cui alle lettere a) e b) sono autorizzati a contrarre mutui per fruire dei benefici della presente legge anche in deroga al disposto dell' a [...]",
+      "testoTroncato": true
+    },
+    {
+      "chiave": "/eli/id/1953/03/11/053U0087/sg",
+      "titolo": "LEGGE 11 marzo 1953, n. 87",
+      "tipo": "legge",
+      "numero": "87",
+      "dataEmanazione": "1953-03-11",
+      "nir": "urn:nir:stato:legge:1953-03-11;87",
+      "eli": "/eli/id/1953/03/11/053U0087/sg",
+      "stato": "in_vigore",
+      "sintesi": "Norme sulla costituzione e sul funzionamento della Corte costituzionale.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1953-03-11;87",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1953/03/14/053U0087/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1953-03-14",
+      "numeroGU": "62",
+      "codiceRedazionale": "053U0087",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "La Camera dei deputati ed il Senato della Repubblica hanno approvato; IL PRESIDENTE DELLA REPUBBLICA PROMULGA la seguente legge: Art. 1 La Corte costituzionale &egrave; composta di quindici giudici nominati, in ordine successivo, cinque dalle supreme magistrature ordinaria e amministrative, cinque dal Parlamento in seduta comune, cinque dal Presidente della Repubblica."
+    },
+    {
+      "chiave": "/eli/id/1952/07/05/052U0989/sg",
+      "titolo": "LEGGE 5 luglio 1952, n. 989",
+      "tipo": "legge",
+      "numero": "989",
+      "dataEmanazione": "1952-07-05",
+      "nir": "urn:nir:stato:legge:1952-07-05;989",
+      "eli": "/eli/id/1952/07/05/052U0989/sg",
+      "stato": "abrogato",
+      "sintesi": "Riordinamento di ruoli, quadri organici e nuovi limiti di eta' per la cessazione dal servizio permanente degli ufficiali dell'aeronautica.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1952-07-05;989",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1952/07/31/052U0989/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1952-07-31",
+      "numeroGU": "176",
+      "codiceRedazionale": "052U0989",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.LGS. 15 MARZO 2010, N. 66 ))"
+    },
+    {
+      "chiave": "/eli/id/1952/05/17/052U0619/sg",
+      "titolo": "LEGGE 17 maggio 1952, n. 619",
+      "tipo": "legge",
+      "numero": "619",
+      "dataEmanazione": "1952-05-17",
+      "nir": "urn:nir:stato:legge:1952-05-17;619",
+      "eli": "/eli/id/1952/05/17/052U0619/sg",
+      "stato": "abrogato",
+      "sintesi": "Risanamento dei rioni dei \"Sassi\" nell'abitato del comune di Matera.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1952-05-17;619",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1952/06/18/052U0619/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1952-06-18",
+      "numeroGU": "139",
+      "codiceRedazionale": "052U0619",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.L. 25 GIUGNO 2008, N. 112 , CONVERTITO, CON MODIFICAZIONI, DALLA L. 6 AGOSTO 2008, N. 133 ))"
+    },
+    {
+      "chiave": "/eli/id/1952/03/22/052U0203/sg",
+      "titolo": "LEGGE 22 marzo 1952, n. 203",
+      "tipo": "legge",
+      "numero": "203",
+      "dataEmanazione": "1952-03-22",
+      "nir": "urn:nir:stato:legge:1952-03-22;203",
+      "eli": "/eli/id/1952/03/22/052U0203/sg",
+      "stato": "abrogato",
+      "sintesi": "Riconoscimento del servizio prestato nella scuola elementare ai fini della carriera nelle scuole medie.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1952-03-22;203",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1952/04/11/052U0203/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1952-04-11",
+      "numeroGU": "87",
+      "codiceRedazionale": "052U0203",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.LGS. 13 DICEMBRE 2010, N. 212 ))"
+    },
+    {
+      "chiave": "/eli/id/1951/11/04/051U1219/sg",
+      "titolo": "LEGGE 4 novembre 1951, n. 1219",
+      "tipo": "legge",
+      "numero": "1219",
+      "dataEmanazione": "1951-11-04",
+      "nir": "urn:nir:stato:legge:1951-11-04;1219",
+      "eli": "/eli/id/1951/11/04/051U1219/sg",
+      "stato": "in_vigore",
+      "sintesi": "Determinazione del reddito imponibile dei fabbricati, riduzione delle aliquote d'imposta e relative sovrimposte e soppressione del contributo erariale di guerra.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1951-11-04;1219",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1951/11/29/051U1219/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1951-11-29",
+      "numeroGU": "275",
+      "codiceRedazionale": "051U1219",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "La Camera dei deputati ed il Senato della Repubblica hanno approvato; IL PRESIDENTE DELLA REPUBBLICA PROMULGA la seguente legge: Art. 1 Fino a quando non sia entrato in vigore il nuovo catasto edilizio urbano, di cui al regio decreto-legge 13 aprile 1939, n. 652 , e successive modificazioni, il reddito imponibile dei fabbricati &egrave; determinato secondo le seguenti disposizioni: a) per i fabbricati costruiti dopo la data di entrata in vigore del decreto legislativo luogotenenziale 24 aprile 1946, n. 350 , si detrae dal reddito lordo una quota pari ad un quarto del reddito stesso. La medesima norma vale anche per i fabbricati distrutti o danneggiati per pi&ugrave; della met&agrave; in seguito ad eventi bellici e ricostruiti, dopo la data suindicata, a cura diretta del proprietario; b) per i fabbricati costruiti ed utilizzati secondo la loro destinazione prima della data indicata nella precedente lettera a), si detrae dal reddito lordo, ridotto di un quarto, una somma pari a quattro volte e mezzo il reddito imponibile accertato, per l'anno 1938, ai fini delle imposte dirette. Ove si tratti di fabbricati costruiti dopo il 31 dicembre 1938, il reddito imponibile relativo all'anno 1938 &egrave; valutato comparativamente alla pigione dei fabbricati gi&agrave; esistenti nell'anno suddetto, posti in analoghe condizioni, nello stesso Comune. Per la citt&agrave; di Venezia - centro ed isole della Giudecca, di Murano e Burano - oltre alla detrazione normale di un quarto del reddito lordo, &egrave; ammessa una ulteriore detrazione pari ad un settimo del reddito stesso.(1) ((2)) --------------- AGGIORNAMENTO (1) Il D.P.R. 29 gennaio 1958, n. 645 ha disposto (con l'art. 288 comma 1 lettera c)) che &egrave; abrogato l'art. 1 ad eccezione della lettera b) del primo comma della L. 4 novembre 1951, n. 1219 , ed inoltre ha disposto che tale abrogazione decorre dal 1 gennaio 1960. --------------- AGGIORNAMENTO (2) Il D.lgs. 13 dicembre 2010, n. 212 ha disposto (con l'art. 1, comma 1 [...]",
+      "testoTroncato": true
+    },
+    {
+      "chiave": "/eli/id/1951/03/29/051U0210/sg",
+      "titolo": "LEGGE 29 marzo 1951, n. 210",
+      "tipo": "legge",
+      "numero": "210",
+      "dataEmanazione": "1951-03-29",
+      "nir": "urn:nir:stato:legge:1951-03-29;210",
+      "eli": "/eli/id/1951/03/29/051U0210/sg",
+      "stato": "abrogato",
+      "sintesi": "Collocamento a riposo per limiti di eta' dei sottufficiali e militari di truppa dell'Arma dei carabinieri.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1951-03-29;210",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1951/04/10/051U0210/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1951-04-10",
+      "numeroGU": "82",
+      "codiceRedazionale": "051U0210",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.L. 25 GIUGNO 2008, N. 112 , CONVERTITO, CON MODIFICAZIONI, DALLA L. 6 AGOSTO 2008 N. 133 ))"
+    },
+    {
+      "chiave": "/eli/id/1950/04/18/050U0245/sg",
+      "titolo": "LEGGE 18 aprile 1950, n. 245",
+      "tipo": "legge",
+      "numero": "245",
+      "dataEmanazione": "1950-04-18",
+      "nir": "urn:nir:stato:legge:1950-04-18;245",
+      "eli": "/eli/id/1950/04/18/050U0245/sg",
+      "stato": "abrogato",
+      "sintesi": "Autorizzazione all'Amministrazione autonoma dei monopoli di Stato a contrarre mutui e ad utilizzare l'avanzo di gestione per provvedere a spese straordinarie per la ricostruzione.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1950-04-18;245",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1950/05/24/050U0245/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1950-05-24",
+      "numeroGU": "118",
+      "codiceRedazionale": "050U0245",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.LGS. 13 DICEMBRE 2010, N. 212 ))"
+    },
+    {
+      "chiave": "/eli/id/1950/02/20/050U0064/sg",
+      "titolo": "LEGGE 20 febbraio 1950, n. 64",
+      "tipo": "legge",
+      "numero": "64",
+      "dataEmanazione": "1950-02-20",
+      "nir": "urn:nir:stato:legge:1950-02-20;64",
+      "eli": "/eli/id/1950/02/20/050U0064/sg",
+      "stato": "abrogato",
+      "sintesi": "Modificazioni all'assicurazione obbligatoria contro gli infortuni sul lavoro in agricoltura.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1950-02-20;64",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1950/03/16/050U0064/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1950-03-16",
+      "numeroGU": "63",
+      "codiceRedazionale": "050U0064",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.LGS. 13 DICEMBRE 2010, N. 212 ))"
+    },
+    {
+      "chiave": "/eli/id/1948/04/09/048U0486/sg",
+      "titolo": "DECRETO LEGISLATIVO 9 aprile 1948, n. 486",
+      "tipo": "decreto.legislativo",
+      "numero": "486",
+      "dataEmanazione": "1948-04-09",
+      "nir": "urn:nir:stato:decreto.legislativo:1948-04-09;486",
+      "eli": "/eli/id/1948/04/09/048U0486/sg",
+      "stato": "abrogato",
+      "sintesi": "Aumento del diritti spettanti alle cancellerie e alle segreterie giudiziarie.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legislativo:1948-04-09;486",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1948/05/21/048U0486/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1948-05-21",
+      "numeroGU": "117",
+      "codiceRedazionale": "048U0486",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.L. 25 GIUGNO 2008, N. 112 , CONVERTITO, CON MODIFICAZIONI, DALLA L. 6 AGOSTO 2008, N. 133 ))"
+    },
+    {
+      "chiave": "/eli/id/1948/02/06/048U0029/sg",
+      "titolo": "LEGGE 6 febbraio 1948, n. 29",
+      "tipo": "legge",
+      "numero": "29",
+      "dataEmanazione": "1948-02-06",
+      "nir": "urn:nir:stato:legge:1948-02-06;29",
+      "eli": "/eli/id/1948/02/06/048U0029/sg",
+      "stato": "in_vigore",
+      "sintesi": "Norme per la elezione del Senato della Repubblica.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1948-02-06;29",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1948/02/07/048U0029/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1948-02-07",
+      "numeroGU": "31",
+      "codiceRedazionale": "048U0029",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "IL PRESIDENTE DELLA REPUBBLICA IL PRESIDENTE DELLA REPUBBLICA Promulga la seguente legge approvata dall'Assemblea Costituente: Art. 1 (( 1. Il Senato della Repubblica &egrave; eletto su base regionale. I seggi sono ripartiti tra le regioni a norma dell' articolo 57 della Costituzione , con decreto del Presidente della Repubblica, previa deliberazione del Consiglio dei ministri. 2. Il territorio di ciascuna regione, con eccezione del Molise e della Valle d'Aosta, &egrave; ripartito in collegi uninominali, pari ai tre quarti dei seggi assegnati alla regione, con arrotondamento per difetto. Per l'assegnazione degli ulteriori seggi spettanti, ciascuna regione &egrave; costituita in unica circoscrizione elettorale. 3. La regione Valle d'Aosta &egrave; costituita in unico collegio uninominale. Il territorio della regione Molise &egrave; ripartito in due collegi uninominali. 4. I collegi uninominali della regione Trentino-Alto Adige sono definiti dalla legge 30 dicembre 1991, n.422 ))"
+    },
+    {
+      "chiave": "/eli/id/1947/01/27/047U0073/sg",
+      "titolo": "DECRETO DEL CAPO PROVVISORIO DELLO STATO 27 gennaio 1947, n. 73",
+      "tipo": "decreto.del.capo.provvisorio.dello.stato",
+      "numero": "73",
+      "dataEmanazione": "1947-01-27",
+      "nir": "urn:nir:stato:decreto.del.capo.provvisorio.dello.stato:1947-01-27;73",
+      "eli": "/eli/id/1947/01/27/047U0073/sg",
+      "stato": "abrogato",
+      "sintesi": "Ordinamento del Consiglio superiore delle miniere.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.del.capo.provvisorio.dello.stato:1947-01-27;73",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1947/03/13/047U0073/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1947-03-13",
+      "numeroGU": "60",
+      "codiceRedazionale": "047U0073",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.L. 22 DICEMBRE 2008, N. 200 , CONVERTITO, CON MODIFICAZIONI, DALLA L. 18 FEBBRAIO 2009, N. 9 ))"
+    }
+  ]
+}

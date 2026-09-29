@@ -1,0 +1,372 @@
+{
+  "provenance": {
+    "fonte": "normattiva",
+    "url": "https://api.normattiva.it/t/normattiva.api/bff-opendata/v1/api/v1/ricerca/aggiornati",
+    "recuperatoIl": "2026-09-29T00:19:06.001Z",
+    "licenza": "riproduzione consentita con menzione di fonte, carattere non autentico e gratuito (Note legali dati.normattiva.it; solo la Gazzetta Ufficiale a stampa e' autentica)"
+  },
+  "atti": [
+    {
+      "chiave": "/eli/id/1974/11/30/074U0603/sg",
+      "titolo": "DECRETO-LEGGE 30 novembre 1974, n. 603",
+      "tipo": "decreto.legge",
+      "numero": "603",
+      "dataEmanazione": "1974-11-30",
+      "nir": "urn:nir:stato:decreto.legge:1974-11-30;603",
+      "eli": "/eli/id/1974/11/30/074U0603/sg",
+      "stato": "decaduto",
+      "sintesi": "Nuove norme in materia di diffusione radiofonica e televisiva.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legge:1974-11-30;603",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1974/12/01/074U0603/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1974-12-01",
+      "numeroGU": "313",
+      "codiceRedazionale": "074U0603",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 DECRETO DECADUTO"
+    },
+    {
+      "chiave": "/eli/id/1974/09/30/074U0460/sg",
+      "titolo": "DECRETO-LEGGE 30 settembre 1974, n. 460",
+      "tipo": "decreto.legge",
+      "numero": "460",
+      "dataEmanazione": "1974-09-30",
+      "nir": "urn:nir:stato:decreto.legge:1974-09-30;460",
+      "eli": "/eli/id/1974/09/30/074U0460/sg",
+      "stato": "in_vigore",
+      "sintesi": "Modifica dell'art. 173 del testo unico delle disposizioni legislative in materia postale, di bancoposta e di telecomunicazioni, approvato con decreto del Presidente della Repubblica 29 marzo 1973, n. 156.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legge:1974-09-30;460",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1974/09/30/074U0460/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1974-09-30",
+      "numeroGU": "254",
+      "codiceRedazionale": "074U0460",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "IL PRESIDENTE DELLA REPUBBLICA Visto l' art. 77, secondo comma, della Costituzione ; Rilevata la necessit&agrave; e l'urgenza di modificare le disposizioni contenute nel codice postale e delle telecomunicazioni in materia di variazioni del saggio di interesse dei buoni postali fruttiferi; Sentito il Consiglio dei Ministri; Sulla proposta del Ministro per le poste e le telecomunicazioni, di concerto con il Ministro per il tesoro; Decreta: Art. 1 L'art. 173 del testo unico delle disposizioni legislative in materia postale, di bancoposta e di telecomunicazioni, approvato con decreto del Presidente della Repubblica 29 marzo 1973, n. 156 , &egrave; sostituito dal seguente: \"Le variazioni del saggio d'interesse dei buoni postali fruttiferi sono disposte con decreto del Ministro per il tesoro, di concerto con il Ministro per le poste e le telecomunicazioni, da pubblicarsi nella Gazzetta Ufficiale; esse hanno effetto per i buoni di nuova serie, emessi dalla data di entrata in vigore del decreto stesso, e possono essere estese ad una o pi&ugrave; delle precedenti serie. Ai soli fini del calcolo degli interessi, i buoni delle precedenti serie, alle quali sia stata estesa la variazione del saggio, si considerano come rimborsati e convertiti in titoli della nuova serie e il relativo computo degli interessi &egrave; effettuato sul montante maturato, in base alle norme di cui al primo comma del precedente art. 172, alla data di entrata in vigore del decreto previsto dal presente articolo. Per i buoni che siano stati emessi da meno di un anno, il nuovo saggio decorre dalla data di compimento dell'anno ed il calcolo degli interessi &egrave; eseguito sul montante maturato alla scadenza di questo periodo. Gli interessi vengono corrisposti sulla base della tabella riportata a tergo dei buoni; tale tabella, per i titoli i cui tassi siano stati modificati dopo la loro emissione, &egrave; integrata con quella che &egrave; a disposizione dei titolari dei buoni stessi presso gli uffici pos [...]",
+      "testoTroncato": true
+    },
+    {
+      "chiave": "/eli/id/1974/08/17/074U0386/sg",
+      "titolo": "LEGGE 17 agosto 1974, n. 386",
+      "tipo": "legge",
+      "numero": "386",
+      "dataEmanazione": "1974-08-17",
+      "nir": "urn:nir:stato:legge:1974-08-17;386",
+      "eli": "/eli/id/1974/08/17/074U0386/sg",
+      "stato": "in_vigore",
+      "sintesi": "Conversione in legge, con modificazioni, del decreto-legge 8 luglio 1974, n. 264, recante norme per l'estinzione dei debiti degli enti mutualistici nei confronti degli enti ospedalieri, il finanziamento della spesa ospedaliera e l'avvio della riforma sanitaria.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1974-08-17;386",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1974/08/29/074U0386/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1974-08-29",
+      "numeroGU": "225",
+      "codiceRedazionale": "074U0386",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "La Camera dei deputati ed il Senato della Repubblica hanno approvato; IL PRESIDENTE DELLA REPUBBLICA PROMULGA la seguente legge: Articolo unico &Egrave; convertito in legge il decreto-legge 8 luglio 1974, n. 264 , recante norme per la estinzione dei debiti degli enti mutualistici nei confronti degli enti ospedalieri, il finanziamento della spesa ospedaliera e l'avvio della riforma sanitaria, con le seguenti modificazioni: All'articolo 1, alla fine del primo comma sono aggiunte le parole: \"e, nell'ambito delle residue disponibilit&agrave;, dei comuni -; dopo il terzo comma sono aggiunti i seguenti: \"Nella liquidazione dei crediti vantati dagli enti ospedalieri per rette di degenza si terr&agrave; conto degli oneri finanziari che potranno eventualmente ricadere sugli enti medesimi ove la realizzazione dei crediti abbia luogo successivamente al 31 marzo 1975. Gli amministratori ed i tesorieri degli enti ospedalieri sono responsabili della destinazione degli importi assegnati a tacitazione dei crediti vantati nei confronti degli enti mutualistici per l'estinzione dei debiti verso istituti bancari e verso fornitori di materiali connessi con l'esercizio dell'attivit&agrave; ospedaliera. I collegi sindacali vigileranno per la puntuale osservanza degli adempimenti di cui ai commi precedenti\". All'articolo 2, nel primo comma, la parola: emerge\", &egrave; sostituita dalla parola: \"risulta\"; la parola: \"32\", &egrave; sostituita dalla parola: \"16\", e le parole: \"comitati regionali\", sono sostituite con le parole: \"competenti organi\"; nel secondo comma, le parole: \"da istituti e cliniche universitarie, da istituti pubblici di ricovero e cura a carattere scientifico, da istituti ed enti di cui al penultimo comma dell' articolo 1 della legge 12 febbraio 1968, n. 132 , da case di cura private\", sono sostituite dalle parole: \"e dagli altri istituti ed enti pubblici e privati di ricovero e cura e dalle case di cura private\"; dopo il terzo comma sono aggiunti i seguenti: \"Le somme des [...]",
+      "testoTroncato": true
+    },
+    {
+      "chiave": "/eli/id/1974/06/24/074U0268/sg",
+      "titolo": "LEGGE 24 giugno 1974, n. 268",
+      "tipo": "legge",
+      "numero": "268",
+      "dataEmanazione": "1974-06-24",
+      "nir": "urn:nir:stato:legge:1974-06-24;268",
+      "eli": "/eli/id/1974/06/24/074U0268/sg",
+      "stato": "abrogato",
+      "sintesi": "Rifinanziamento, integrazione e modifica della legge 11 giugno 1962, n. 588 (piano straordinario per la rinascita economica e sociale della Sardegna) e riforma dell'assetto agropastorale in Sardegna.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1974-06-24;268",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1974/07/15/074U0268/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1974-07-15",
+      "numeroGU": "184",
+      "codiceRedazionale": "074U0268",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.L. 25 GIUGNO 2008, N. 112 , CONVERTITO CON MODIFICAZIONI DALLA L. 6 AGOSTO 2008, N. 133 ))"
+    },
+    {
+      "chiave": "/eli/id/1974/07/08/074U0255/sg",
+      "titolo": "DECRETO-LEGGE 8 luglio 1974, n. 255",
+      "tipo": "decreto.legge",
+      "numero": "255",
+      "dataEmanazione": "1974-07-08",
+      "nir": "urn:nir:stato:decreto.legge:1974-07-08;255",
+      "eli": "/eli/id/1974/07/08/074U0255/sg",
+      "stato": "in_vigore",
+      "sintesi": "Applicazione dei regolamenti comunitari n. 83/74 e numero 1495/74 concernenti zuccheri destinati all'alimentazione umana.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legge:1974-07-08;255",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1974/07/08/074U0255/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1974-07-08",
+      "numeroGU": "177",
+      "codiceRedazionale": "074U0255",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "IL PRESIDENTE DELLA REPUBBLICA Visto l' art. 77 della Costituzione ; Ritenuta la straordinaria necessit&agrave; e l'urgenza di dettare norme per l'applicazione dei regolamenti comunitari n. 834/74 e n. 1495/74 concernenti zuccheri destinati all'alimentazione umana; Sentito il Consiglio dei Ministri; Sulla proposta del Ministro per l'industria, il commercio e l'artigianato, di concerto con il Ministro per l'agricoltura e le foreste; Decreta: Art. 1 Tutti coloro che, alle ore zero del 1° luglio 1974, detenevano, a qualsiasi titolo, zucchero bianco, zucchero greggio e sciroppi di zucchero o fossero destinatari dei prodotti stessi in corso di trasporto per quantit&agrave; superiori a 500 kg. debbono versare gli importi riferiti a 100 kg. netti di cui all'allegata tabella. ((La quantit&agrave; di zucchero, soggetta al contributo di cui al comma precedente, &egrave; determinata con esclusione delle scorte di esercizio. Si considera scorta di esercizio il quantitativo di zucchero detenuto dalle aziende utilizzatrici in misura pari ai quattro cinquantaduesimi del consumo di zucchero nel periodo 1 luglio 1974-30 giugno 1975. Le aziende a carattere stagionale hanno facolt&agrave; di assumere come scorta di esercizio un quantitativo di zucchero pari al consumo del mese di luglio 1974, nel limite in cui non superi il 50 per cento del consumo complessivo del periodo 1 luglio 1974-30 giugno 1975)) ."
+    },
+    {
+      "chiave": "/eli/id/1974/07/06/074U0251/sg",
+      "titolo": "DECRETO-LEGGE 6 luglio 1974, n. 251",
+      "tipo": "decreto.legge",
+      "numero": "251",
+      "dataEmanazione": "1974-07-06",
+      "nir": "urn:nir:stato:decreto.legge:1974-07-06;251",
+      "eli": "/eli/id/1974/07/06/074U0251/sg",
+      "stato": "in_vigore",
+      "sintesi": "Modificazioni al regime fiscale di alcuni prodotti petroliferi e imposizione di un prelievo tributario \"una tantum\" sui veicoli a motore, autoscafi ed aeromobili.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legge:1974-07-06;251",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1974/07/06/074U0251/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1974-07-06",
+      "numeroGU": "176",
+      "codiceRedazionale": "074U0251",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "IL PRESIDENTE DELLA REPUBBLICA Visto l' art. 77, comma secondo, della Costituzione ; Vista la tariffa per l'applicazione dei dazi doganali, approvata con il decreto del Presidente della Repubblica 26 giugno 1965, n. 723 , e successive aggiunte e modificazioni; Visto il decreto-legge 28 febbraio 1939, n. 334 , convertito nella legge 2 giugno 1939, n. 739 , istitutivo di una imposta di fabbricazione sugli oli minerali e sui prodotti della loro lavorazione, e successive modificazioni; Visto il decreto-legge 23 ottobre 1964, n. 989 , convertito, con modificazioni, nella legge 18 dicembre 1964, n. 1350 , concernente modificazioni alla disciplina fiscale dei prodotti petroliferi; Vista la legge 19 marzo 1973, n. 32 , concernente modificazioni al regime fiscale di alcuni prodotti petroliferi e del gas metano; Visto il decreto-legge 29 settembre 1973, n. 578 , convertito, con modificazioni, nella legge 15 novembre 1973, n. 733 , concernente modificazioni al regime fiscale di alcuni prodotti petroliferi; Visto il decreto-legge 19 giugno 1974, n. 229 , concernente modificazioni al regime fiscale di alcuni prodotti petroliferi; Ritenuta la straordinaria necessit&agrave; ed urgenza di modificare il regime fiscale di alcuni prodotti petroliferi e di imporre un prelievo tributario \"una tantum\" sui veicoli a motore, autoscafi ed aeromobili; Sentito il Consiglio dei Ministri; Sulla proposta del Ministro per le finanze, di concerto con i Ministri per il bilancio e la programmazione economica, per il tesoro, per la difesa, per l'industria, il commercio e l'artigianato, per il commercio con l'estero e per il turismo e lo spettacolo; Decreta: Art. 1 L'imposta di fabbricazione e la corrispondente sovrimposta di confine sulle benzine speciali diverse dall'acqua ragia minerale, sulla benzina e sul petrolio diverso da quello lampante sono aumentate da L. 18.225 a L. 23.070 per quintale. &Egrave; ripristinata l'agevolazione prevista dalla lettera B), punto 1), della tabella B allegata alla  [...]",
+      "testoTroncato": true
+    },
+    {
+      "chiave": "/eli/id/1974/06/19/074U0229/sg",
+      "titolo": "DECRETO-LEGGE 19 giugno 1974, n. 229",
+      "tipo": "decreto.legge",
+      "numero": "229",
+      "dataEmanazione": "1974-06-19",
+      "nir": "urn:nir:stato:decreto.legge:1974-06-19;229",
+      "eli": "/eli/id/1974/06/19/074U0229/sg",
+      "stato": "decaduto",
+      "sintesi": "Modificazioni al regime fiscale di alcuni prodotti petroliferi.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legge:1974-06-19;229",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1974/06/19/074U0229/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1974-06-19",
+      "numeroGU": "160",
+      "codiceRedazionale": "074U0229",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 DECRETO DECADUTO; I SUOI EFFETTI SONO STATI FATTI SALVI DALLA L. 14 AGOSTO 1974, N. 347"
+    },
+    {
+      "chiave": "/eli/id/1974/04/20/074U0103/sg",
+      "titolo": "DECRETO-LEGGE 20 aprile 1974, n. 103",
+      "tipo": "decreto.legge",
+      "numero": "103",
+      "dataEmanazione": "1974-04-20",
+      "nir": "urn:nir:stato:decreto.legge:1974-04-20;103",
+      "eli": "/eli/id/1974/04/20/074U0103/sg",
+      "stato": "decaduto",
+      "sintesi": "Modificazioni al regime fiscale di alcuni prodotti petroliferi.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legge:1974-04-20;103",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1974/04/20/074U0103/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1974-04-20",
+      "numeroGU": "103",
+      "codiceRedazionale": "074U0103",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 DECRETO DECADUTO; I SUOI EFFETTI SONO STATI FATTI SALVI DALLA L. 14 AGOSTO 1974, N. 347"
+    },
+    {
+      "chiave": "/eli/id/1974/02/28/074U0047/sg",
+      "titolo": "DECRETO-LEGGE 28 febbraio 1974, n. 47",
+      "tipo": "decreto.legge",
+      "numero": "47",
+      "dataEmanazione": "1974-02-28",
+      "nir": "urn:nir:stato:decreto.legge:1974-02-28;47",
+      "eli": "/eli/id/1974/02/28/074U0047/sg",
+      "stato": "in_vigore",
+      "sintesi": "Istituzione di una tassa di sbarco e imbarco sulle merci trasportate per via aerea e per via marittima.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legge:1974-02-28;47",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1974/03/13/074U0047/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1974-03-13",
+      "numeroGU": "68",
+      "codiceRedazionale": "074U0047",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "IL PRESIDENTE DELLA REPUBBLICA Visto l' art. 77 della Costituzione ; Vista la legge 9 gennaio 1956, n. 24 , concernente i diritti per l'uso degli aerodromi aperti al traffico aereo civile; Vista la legge 9 febbraio 1963, n. 82 , concernente la revisione delle tasse e dei diritti marittimi; Visto il trattato che istituisce la Comunit&agrave; economica europea ratificato con legge 14 ottobre 1957, n. 1203 ; Tenuto conto della abrogazione intervenuta nell'ambito comunitario di norme relative alle tasse ed ai diritti di sbarco e imbarco delle merci trasportate per via aerea e per via marittima; Ritenuta la straordinaria necessit&agrave; e urgenza di adottare un diverso sistema di tassazione su dette merci compatibile anche con la disciplina comunitaria; Sentito il Consiglio dei Ministri; Sulla proposta dei Ministri per i trasporti e l'aviazione civile e per la marina mercantile, di concerto con i Ministri per il tesoro, per le finanze e per il bilancio e la programmazione economica; Decreta: Art. 1 In tutti gli aerodromi sui quali comunque si svolga attivit&agrave; aerea commerciale &egrave; dovuta una tassa erariale sulle merci sbarcate e imbarcate dagli aeromobili in misura non superiore a lire cento per ogni chilogrammo di peso lordo. La tassa non &egrave; dovuta in caso di trasbordo. La frazione di chilogrammo superiore a 500 grammi &egrave; considerata come chilogrammo intero In ogni caso la tassa non dovr&agrave; essere inferiore a lire 100. La tassa &egrave; dovuta dal vettore, che pu&ograve; rivalersene sullo speditore o sul destinatario, ed &egrave; accertata, liquidata e riscossa dalla direzione dell'aeroporto che, ove ne ravvisi la opportunit&agrave;, pu&ograve; all'uopo delegare il competente ufficio doganale. (3) (4) ((6)) La misura della tassa di cui al primo comma del presente articolo &egrave; determinata e variata per ciascun aerodromo con decreto del Presidente della Repubblica, su proposta del Ministro per i trasporti e l'aviazione civile, di concerto [...]",
+      "testoTroncato": true
+    },
+    {
+      "chiave": "/eli/id/1974/02/23/074U0024/sg",
+      "titolo": "LEGGE 23 febbraio 1974, n. 24",
+      "tipo": "legge",
+      "numero": "24",
+      "dataEmanazione": "1974-02-23",
+      "nir": "urn:nir:stato:legge:1974-02-23;24",
+      "eli": "/eli/id/1974/02/23/074U0024/sg",
+      "stato": "in_vigore",
+      "sintesi": "Bilancio di previsione dello Stato per l'anno finanziario 1974.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1974-02-23;24",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1974/02/28/074U0024/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1974-02-28",
+      "numeroGU": "56",
+      "codiceRedazionale": "074U0024",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "La Camera dei deputati ed il Senato della Repubblica hanno approvato; IL PRESIDENTE DELLA REPUBBLICA PROMULGA la seguente legge: Art. 1 &Egrave; autorizzato l'accertamento e la riscossione, secondo le leggi in vigore, delle imposte e delle tasse di ogni specie e il versamento nelle casse dello Stato delle somme e dei proventi dovuti per l'anno finanziario 1974, giusta l'annesso stato di previsione per l'entrata (Tabella n. 1). &Egrave; altres&igrave; autorizzata l'emanazione dei provvedimenti necessari per rendere esecutivi i ruoli delle imposte dirette pertinenti il medesimo anno."
+    },
+    {
+      "chiave": "/eli/id/1973/12/27/073U0846/sg",
+      "titolo": "LEGGE 27 dicembre 1973, n. 846",
+      "tipo": "legge",
+      "numero": "846",
+      "dataEmanazione": "1973-12-27",
+      "nir": "urn:nir:stato:legge:1973-12-27;846",
+      "eli": "/eli/id/1973/12/27/073U0846/sg",
+      "stato": "in_vigore",
+      "sintesi": "Proroga del regime agevolativo previsto per la zona di Gorizia.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1973-12-27;846",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1973/12/31/073U0846/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1973-12-31",
+      "numeroGU": "334",
+      "codiceRedazionale": "073U0846",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "La Camera dei deputati ed il Senato della Repubblica hanno approvato; IL PRESIDENTE DELLA REPUBBLICA PROMULGA la seguente legge: Art. 1 Il termine del 31 dicembre 1973, previsto dall'articolo 1 del decreto-legge dicembre 1966, n. 1036, modificato dalla legge di conversione 2 febbraio 1967, n. 7, &egrave; prorogato al 31 dicembre 1974. ((1)) Fino alla scadenza del termine di cui al comma precedente restano in vigore, in quanto applicabili, le disposizioni di cui agli articoli 1, secondo comma, 2, 3 e 4 del decreto-legge suddetto. L'esenzione prevista per i contingenti di merci indicate nelle tabelle A e B allegate al medesimo decreto-legge &egrave; applicabile relativamente ai diritti di confine di cui all' articolo 34 del decreto del Presidente della Repubblica 23 gennaio 1973, n. 43 , ed alle imposte di fabbricazione ed erariali di consumo. --------------- AGGIORNAMENTO (1) La L. 21 dicembre 1974, n. 693 ha disposto (con l'articolo unico) che \"Il termine del 31 dicembre 1974, previsto dall' articolo 1, primo comma, della legge 27 dicembre 1973, numero 846 , &egrave; prorogato dal 1 gennaio 1975 al 31 dicembre 1975.\""
+    },
+    {
+      "chiave": "/eli/id/1973/12/20/073U0796/sg",
+      "titolo": "DECRETO-LEGGE 20 dicembre 1973, n. 796",
+      "tipo": "decreto.legge",
+      "numero": "796",
+      "dataEmanazione": "1973-12-20",
+      "nir": "urn:nir:stato:decreto.legge:1973-12-20;796",
+      "eli": "/eli/id/1973/12/20/073U0796/sg",
+      "stato": "abrogato",
+      "sintesi": "Gestione dei servizi di radiodiffusione circolare, di televisione circolare, di telediffusione su filo e di radiofotografia circolare per il periodo 1 gennaio - 30 aprile 1974.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legge:1973-12-20;796",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1973/12/20/073U0796/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1973-12-20",
+      "numeroGU": "327",
+      "codiceRedazionale": "073U0796",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.L. 25 GIUGNO 2008, N.112 , CONVERTITO, CON MODIFICAZIONI, DALLA L. 6 AGOSTO 2008, N. 133 ))"
+    },
+    {
+      "chiave": "/eli/id/1973/07/30/073U0484/sg",
+      "titolo": "LEGGE 30 luglio 1973, n. 484",
+      "tipo": "legge",
+      "numero": "484",
+      "dataEmanazione": "1973-07-30",
+      "nir": "urn:nir:stato:legge:1973-07-30;484",
+      "eli": "/eli/id/1973/07/30/073U0484/sg",
+      "stato": "in_vigore",
+      "sintesi": "Norme modificative ed integrative della legge 13 luglio 1965, n. 859, sulla previdenza del personale di volo dipendente da aziende di navigazione aerea.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1973-07-30;484",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1973/08/18/073U0484/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1973-08-18",
+      "numeroGU": "213",
+      "codiceRedazionale": "073U0484",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "La Camera dei deputati ed il Senato della Repubblica hanno approvato; IL PRESIDENTE DELLA REPUBBLICA PROMULGA la seguente legge: Art. 1 (Modifiche agli articoli 12, 13, 14, 22, 25, 29 e 30 della legge 13 luglio 1965, n. 859 ). Il secondo comma dell'articolo 12, la lettera c) dell'articolo 13, il primo ed ultimo comma dell'articolo 14, l'articolo 22, il primo e il secondo comma dell'articolo 25, il primo e il secondo comma dell'articolo 29 , il primo comma dell'articolo 30 della legge 13 luglio 1965, n. 859 , sono sostituiti dai seguenti: Articolo 12, secondo comma: \"La gestione del Fondo &egrave; tecnicamente organizzata in modo da garantire la copertura dei valori capitali delle pensioni in godimento\". Articolo 13, lettera c): \"Indennit&agrave; accessorie e speciali nonch&egrave; qualsiasi altro emolumento assoggettabile a contributo ai sensi delle vigenti norme sull'assicurazione obbligatoria per l'invalidit&agrave;, la vecchiaia ed i superstiti ad eccezione dell'indennit&agrave; sostitutiva del periodo di preavviso e dell'indennit&agrave; per ferie non godute\". Articolo 14, primo comma: \"A decorrere dalla data di entrata in vigore della presente legge, il contributo dovuto al Fondo di previdenza del personale di volo &egrave; stabilito nel 15 per cento degli elementi retributivi di cui al precedente articolo 13, validi ai fini della pensione, ed &egrave; ripartito per i 2/3 a carico dell'azienda e, per 1/3, a carico del personale. Ove intervengano variazioni in tale aliquota contributiva, oltre l'aliquota prevista dall'assicurazione generale obbligatoria, la quota eccedente quest'ultima sar&agrave; ripartita in ragione di 3/5 a carico dell'azienda e di 2/5 a carico del personale\". Articolo 14, ultimo comma: \"L'obbligo del versamento del contributo sussiste anche se il dipendente abbia superato il 50° anno di et&agrave;\". Articolo 22: \"Hanno diritto a pensione di anzianit&agrave; gli iscritti, quando, avendo cessato il servizio per dimissioni o licenziamento: 1) p [...]",
+      "testoTroncato": true
+    },
+    {
+      "chiave": "/eli/id/1971/12/06/071U1065/sg",
+      "titolo": "LEGGE 6 dicembre 1971, n. 1065",
+      "tipo": "legge",
+      "numero": "1065",
+      "dataEmanazione": "1971-12-06",
+      "nir": "urn:nir:stato:legge:1971-12-06;1065",
+      "eli": "/eli/id/1971/12/06/071U1065/sg",
+      "stato": "abrogato",
+      "sintesi": "Revisione dell'ordinamento finanziario della Regione Valle d'Aosta.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1971-12-06;1065",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1971/12/17/071U1065/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1971-12-17",
+      "numeroGU": "318",
+      "codiceRedazionale": "071U1065",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DALLA L. 26 NOVEMBRE 1981, N.690 ))"
+    },
+    {
+      "chiave": "/eli/id/1970/05/30/070U0379/sg",
+      "titolo": "LEGGE 30 maggio 1970, n. 379",
+      "tipo": "legge",
+      "numero": "379",
+      "dataEmanazione": "1970-05-30",
+      "nir": "urn:nir:stato:legge:1970-05-30;379",
+      "eli": "/eli/id/1970/05/30/070U0379/sg",
+      "stato": "in_vigore",
+      "sintesi": "Integrazioni e modifiche della legge 9 gennaio 1962, n. 1, e successive modificazioni, per l'esercizio del credito navale.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1970-05-30;379",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1970/06/22/070U0379/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1970-06-22",
+      "numeroGU": "155",
+      "codiceRedazionale": "070U0379",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "La Camera dei deputati ed il Senato della Repubblica hanno approvato; IL PRESIDENTE DELLA REPUBBLICA PROMULGA la seguente legge: Art. 1 In aggiunta ai limiti di impegno previsti dal primo comma dell'articolo 8 della legge 9 gennaio 1962, n. 1 , aumentati dalla legge 21 giugno 1964, n. 461 , e dalla legge 24 maggio 1967, n. 451 , sono autorizzati limiti di impegno annuali di lire 1.200 milioni per l'anno finanziario 1970, di lire 1.100 milioni per l'anno finanziario 1971, di lire 1.000 milioni per ciascuno degli anni finanziari 1972 e 1973 e di lire 400 milioni per l'anno finanziario 1974."
+    },
+    {
+      "chiave": "/eli/id/1967/12/23/067U1342/sg",
+      "titolo": "LEGGE 23 dicembre 1967, n. 1342",
+      "tipo": "legge",
+      "numero": "1342",
+      "dataEmanazione": "1967-12-23",
+      "nir": "urn:nir:stato:legge:1967-12-23;1342",
+      "eli": "/eli/id/1967/12/23/067U1342/sg",
+      "stato": "abrogato",
+      "sintesi": "Nuove norme sulla promozione dei direttori didattici a ispettori scolastici. Incremento del ruolo organico degli ispettori scolastici.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1967-12-23;1342",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1968/01/23/067U1342/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1968-01-23",
+      "numeroGU": "19",
+      "codiceRedazionale": "067U1342",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.L. 25 GIUGNO 2008, N. 112 , CONVERTITO, CON MODIFICAZIONI, DALLA L. 6 AGOSTO 2008 N. 133 ))"
+    },
+    {
+      "chiave": "/eli/id/1967/10/17/067U0976/sg",
+      "titolo": "LEGGE 17 ottobre 1967, n. 976",
+      "tipo": "legge",
+      "numero": "976",
+      "dataEmanazione": "1967-10-17",
+      "nir": "urn:nir:stato:legge:1967-10-17;976",
+      "eli": "/eli/id/1967/10/17/067U0976/sg",
+      "stato": "abrogato",
+      "sintesi": "Aumento del contributo statale all'Ente nazionale per l'artigianato e le piccole industrie (E.N.A.P.I.) ed alla Mostra mercato dell'artigianato in Firenze.",
+      "fonti": {
+        "normattiva": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1967-10-17;976",
+        "gazzetta": "https://www.gazzettaufficiale.it/eli/id/1967/11/06/067U0976/sg",
+        "governo": "https://www.governo.it/it/archivio-consiglio-dei-ministri"
+      },
+      "dataGU": "1967-11-06",
+      "numeroGU": "276",
+      "codiceRedazionale": "067U0976",
+      "articoloDataFineVigenza": "99999999",
+      "testo": "Art. 1 ((PROVVEDIMENTO ABROGATO DAL D.L. 25 GIUGNO 2008, N. 112 , CONVERTITO CON MODIFICAZIONI DALLA L. 6 AGOSTO 2008, N. 133 ))"
+    }
+  ]
+}
