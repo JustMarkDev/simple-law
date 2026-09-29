@@ -420,3 +420,14 @@ Obiettivo precedente (completato): UI/UX, feature, corpus 5005 voci.
 - Verifiche mie: tsc OK, eslint OK, 868/868 test OK, build OK,
   smoke live (home 5941 visibile, API 200).
 - Next: foto reali, E2E con server, anni magri terzo passaggio.
+
+## Verifica-dura (2026-09-29): smoke live + sitemap 100%
+- Workflow: 1 chiamata `workflow` con 2 agenti (smoke + sitemap).
+- `npm run smoke` (nuovo): boot produzione + asserzioni real-only live.
+- Sitemap: cap 5000 hardcoded troncava 941 atti; ora limite da corpus
+  a build time: 5969/5969 URL (100%).
+- Foto: 4 seed picsum ispezionati da me (dusk/deserto, bambu, strada,
+  cascata) e scartati (soggetti casuali, uno pure landmark errato);
+  niente foto finte: slot aperti per scatti istituzionali con licenza.
+- Verifiche mie: tsc OK, 871/871 test OK, smoke PASS.
+- Next: E2E browser, anni magri terzo passaggio, foto con licenza.
