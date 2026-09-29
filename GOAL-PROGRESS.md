@@ -373,3 +373,17 @@ Obiettivo precedente (completato): UI/UX, feature, corpus 5005 voci.
 - Next: finestre dense per gli anni magri (<30 atti: 1966-74, 1996-2001),
   eyebrow multipli residui (controllo/statistiche/semplifica), foto reali,
   E2E a11y, freschezza 2026 continua.
+
+## Dense (2026-09-29): secondo passaggio, 5941 atti veri
+- Workflow: 1 chiamata `workflow` con 4 densificatori paralleli (anni
+  disgiunti, append con dedup, bound +120/file e 950KB).
+- Resa: +1904 lordi (+328/+637/+507/+432), netti +1922 con storicototale
+  (4019 -> 5941; 5939 reali, 0 dimostrativi). Anni magri risolti
+  (1974: 17->135, 1988: 34->154, 1991: 26->123, 2011: 27->121).
+- Race parallela: i team si sono pestati i piedi (stessi atti aggiornati
+  trasversali); audit globale mio: 2 ELI duplicati residui, risolti
+  tenendo la finestra piu vicina all'emanazione; ora 0 duplicati su
+  tutto data/reali. MANIFEST 114 voci con 32 conteggi aggiornati veri.
+- Verifiche mie: tsc OK, eslint OK, 861/861 test OK, build OK
+  (874 pagine), smoke live (200 anche con filtro giallo).
+- Next: eyebrow multipli residui, foto reali, E2E a11y, freschezza 2026.
