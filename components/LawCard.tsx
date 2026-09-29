@@ -7,6 +7,7 @@ import TrafficLight from './TrafficLight'
 import Evidenzia from './Evidenzia'
 import PulsantePreferito from './PulsantePreferito'
 import { formatDate, lawHref, STATO_META, tipoLabel, type Law } from './seed-fallback'
+import { paroleVigenza } from '@/lib/filtri-leggi'
 
 interface LawCardProps {
   law: Law & { testoTroncato?: boolean }
@@ -34,6 +35,11 @@ export default function LawCard({ law, featured = false, persona, headingLevel =
   const Heading = headingLevel
   const href = lawHref(law)
   const meta = STATO_META[law.stato]
+  const motivoVigenza = law.semplificata.statoLavora.motivo
+  const vigenza = paroleVigenza(motivoVigenza)
+  const leggeNonVigore = vigenza.parole === 'Non più in vigore'
+  const etichettaStato = leggeNonVigore ? vigenza.label : meta.label
+  const descrizioneStato = leggeNonVigore ? vigenza.descrizione : meta.descrizione
   const ridotto = useReducedMotion()
   const personaTesto = persona && persona !== 'tutti' ? law.semplificata.perTe[persona] : undefined
   const titoloId = `titolo-${law.eli.replace(/[^a-zA-Z0-9]+/g, '-').replace(/^-+|-+$/g, '').slice(0, 80) || 'norma'}`
@@ -86,7 +92,7 @@ export default function LawCard({ law, featured = false, persona, headingLevel =
             <TrafficLight stato={law.stato} showLabel={false} />
             <span className="inline-flex items-center gap-1.5 pr-1 text-sm font-bold text-inchiostro dark:text-nebbia">
               <span aria-hidden="true" className={`h-2 w-2 rounded-full ${meta.dot}`} />
-              A che punto è: {meta.label}
+              A che punto è: {etichettaStato}
             </span>
           </span>
           <span className="text-sm text-inchiostro-soft dark:text-nebbia-soft">
@@ -203,11 +209,11 @@ export default function LawCard({ law, featured = false, persona, headingLevel =
           <TrafficLight stato={law.stato} size="sm" showLabel={false} />
           <span className="inline-flex items-center gap-1.5 text-xs font-bold text-inchiostro dark:text-nebbia">
             <span aria-hidden="true" className={`h-2 w-2 rounded-full ${meta.dot}`} />
-            {meta.label}
+            {etichettaStato}
           </span>
         </span>
         <span className="sr-only">
-          {meta.label}: {meta.descrizione}
+          {etichettaStato}: {descrizioneStato}
         </span>
       </div>
 

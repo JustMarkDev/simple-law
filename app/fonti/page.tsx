@@ -101,6 +101,53 @@ export default function FontiPage() {
             </li>
           ))}
         </ol>
+
+        <section
+          aria-labelledby="foto"
+          className="mt-10 rounded-2xl border border-regola bg-carta p-5 dark:border-notte-deep dark:bg-notte-soft"
+        >
+          <h2 id="foto" className="font-serif text-xl font-bold text-inchiostro dark:text-nebbia">
+            Foto
+          </h2>
+          <p className="mt-2 text-sm leading-relaxed text-inchiostro-soft dark:text-nebbia-soft">
+            Foto istituzionali con licenza libera. Restano dei loro autori.
+          </p>
+          <ul className="mt-4 space-y-3 text-sm leading-relaxed text-inchiostro-soft dark:text-nebbia-soft">
+            <li>
+              Palazzo Montecitorio in home:{' '}
+              <a
+                href="https://commons.wikimedia.org/wiki/File:Palazzo_Montecitorio_2019_03.jpg"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="underline underline-offset-2 hover:text-accento focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-inchiostro dark:hover:text-accento-chiara dark:focus-visible:outline-nebbia"
+              >
+                Nicholas Gemini, CC BY-SA 4.0, via Wikimedia Commons
+              </a>
+            </li>
+            <li>
+              Palazzo Madama nel footer:{' '}
+              <a
+                href="https://commons.wikimedia.org/wiki/File:Palazzo_Madama_(Roma).jpg"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="underline underline-offset-2 hover:text-accento focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-inchiostro dark:hover:text-accento-chiara dark:focus-visible:outline-nebbia"
+              >
+                Merulana, CC BY-SA 4.0, via Wikimedia Commons
+              </a>
+            </li>
+          </ul>
+          <p className="mt-4 text-sm leading-relaxed text-inchiostro-soft dark:text-nebbia-soft">
+            Licenza foto:{' '}
+            <a
+              href="https://creativecommons.org/licenses/by-sa/4.0/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline underline-offset-2 hover:text-accento focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-inchiostro dark:hover:text-accento-chiara dark:focus-visible:outline-nebbia"
+            >
+              CC BY-SA 4.0
+            </a>
+          </p>
+        </section>
       </main>
       <Footer />
     </>

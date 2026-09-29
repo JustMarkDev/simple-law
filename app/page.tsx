@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Image from 'next/image';
 import Link from 'next/link';
 import { redirect } from 'next/navigation';
 import { AlertCircleIcon, ArrowRight01Icon, BookOpen01Icon } from 'hugeicons-react';
@@ -185,7 +186,9 @@ export default async function HomePage({ searchParams }: HomeProps) {
           quando backdrop-filter manca e con prefers-reduced-transparency.
         */}
         <section className="border-b border-regola bg-carta-soft dark:border-notte-deep dark:bg-notte-soft">
-          <div className="mx-auto w-full max-w-editoriale space-y-7 px-4 py-10 sm:px-6 sm:py-14 lg:px-8">
+          <div className="mx-auto w-full max-w-editoriale px-4 py-10 sm:px-6 sm:py-14 lg:px-8">
+            <div className="grid items-start gap-8 lg:grid-cols-[1.05fr_0.95fr] lg:gap-10">
+              <div className="space-y-7">
             <Comparsa>
               <div>
                 <p className="inline-flex items-center gap-2 rounded-lg bg-carta px-3 py-2 text-xs font-bold uppercase tracking-[0.18em] text-accento dark:bg-notte dark:text-accento-chiara">
@@ -241,11 +244,27 @@ export default async function HomePage({ searchParams }: HomeProps) {
               </div>
             )}
 
-            <div className="max-w-2xl rounded-2xl border border-regola bg-carta px-4 py-3 dark:border-notte-deep dark:bg-notte">
+            <div className="flex max-w-2xl flex-wrap items-center gap-x-5 gap-y-3">
+              <Link
+                href={archivioHref}
+                className="inline-flex min-h-[48px] items-center gap-2 rounded-xl bg-accento px-6 py-3 text-sm font-bold text-white transition-all hover:brightness-110 active:scale-[0.97] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accento motion-reduce:transition-none motion-reduce:active:scale-100 dark:bg-accento-chiara dark:text-notte dark:focus-visible:outline-accento-chiara"
+              >
+                Vedi tutte le norme
+                <ArrowRight01Icon size={18} strokeWidth={2} aria-hidden="true" />
+              </Link>
+              <Link
+                href="/metodologia"
+                className="inline-flex min-h-[48px] items-center text-sm font-bold text-inchiostro-soft underline underline-offset-4 transition-colors hover:text-accento dark:text-nebbia-soft dark:hover:text-accento-chiara"
+              >
+                Come sono fatte le schede
+              </Link>
+            </div>
+
+            <div className="max-w-2xl rounded-2xl border border-regola bg-carta px-3 py-2 dark:border-notte-deep dark:bg-notte">
               <p className="text-sm font-bold text-inchiostro dark:text-nebbia">
                 A che punto è:
               </p>
-              <dl className="mt-2 flex flex-wrap gap-2">
+              <dl className="mt-1.5 flex flex-wrap gap-1.5">
                 <div className="rounded-xl border border-regola bg-carta-soft dark:border-notte-deep dark:bg-notte-soft">
                   <Link
                     href="/leggi"
@@ -267,7 +286,11 @@ export default async function HomePage({ searchParams }: HomeProps) {
                   >
                     <Link
                       href={`/leggi?stato=${stato}`}
-                      aria-label={`Vedi le norme: ${STATO_META[stato].label}, ${conteggio[stato]}`}
+                      aria-label={
+                        stato === 'rosso'
+                          ? `Vedi le norme non più in vigore: ${conteggio[stato]}`
+                          : `Vedi le norme: ${STATO_META[stato].label}, ${conteggio[stato]}`
+                      }
                       className="flex min-h-[48px] items-center gap-2 px-3 py-2 transition-colors hover:bg-carta-soft focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accento dark:hover:bg-notte-deep dark:focus-visible:outline-accento-chiara"
                     >
                       <dt
@@ -277,7 +300,7 @@ export default async function HomePage({ searchParams }: HomeProps) {
                           aria-hidden="true"
                           className={`h-2 w-2 rounded-full ${STATO_META[stato].dot}`}
                         />
-                        {STATO_META[stato].parole}
+                        {stato === 'rosso' ? 'Non più in vigore' : STATO_META[stato].parole}
                       </dt>
                       <dd className="text-xl font-extrabold text-inchiostro dark:text-nebbia">
                         <Contatore value={conteggio[stato]} />
@@ -287,12 +310,12 @@ export default async function HomePage({ searchParams }: HomeProps) {
                 ))}
               </dl>
               {troncato && (
-                <p className="mt-2 text-xs text-inchiostro-soft dark:text-nebbia-soft">
+                <p className="mt-1 text-xs text-inchiostro-soft dark:text-nebbia-soft">
                   Guardiamo le {estratto.length} norme più recenti su {totaleReale} totali.
                 </p>
               )}
               {composizione && (
-                <div className="mt-2">
+                <div className="mt-1">
                   <CorpusBadge
                     totale={composizione.totale}
                     dimostrative={composizione.dimostrative}
@@ -301,21 +324,33 @@ export default async function HomePage({ searchParams }: HomeProps) {
                 </div>
               )}
             </div>
-
-            <div className="flex max-w-2xl flex-wrap items-center gap-x-5 gap-y-3">
-              <Link
-                href={archivioHref}
-                className="inline-flex min-h-[48px] items-center gap-2 rounded-xl bg-accento px-6 py-3 text-sm font-bold text-white transition-all hover:brightness-110 active:scale-[0.97] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accento motion-reduce:transition-none motion-reduce:active:scale-100 dark:bg-accento-chiara dark:text-notte dark:focus-visible:outline-accento-chiara"
-              >
-                Vedi tutte le norme
-                <ArrowRight01Icon size={18} strokeWidth={2} aria-hidden="true" />
-              </Link>
-              <Link
-                href="/metodologia"
-                className="inline-flex min-h-[48px] items-center text-sm font-bold text-inchiostro-soft underline underline-offset-4 transition-colors hover:text-accento dark:text-nebbia-soft dark:hover:text-accento-chiara"
-              >
-                Come sono fatte le schede
-              </Link>
+              </div>
+              <Comparsa delay={0.12} className="lg:sticky lg:top-24">
+                <figure>
+                  <div className="overflow-hidden rounded-2xl border border-regola bg-carta dark:border-notte-deep dark:bg-notte">
+                    <Image
+                      src="https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3c/Palazzo_Montecitorio_2019_03.jpg/1920px-Palazzo_Montecitorio_2019_03.jpg"
+                      alt="Palazzo Montecitorio a Roma, sede della Camera dei deputati"
+                      width={1280}
+                      height={853}
+                      priority
+                      sizes="(max-width: 1024px) 100vw, 45vw"
+                      className="h-auto w-full object-cover max-h-[240px] sm:max-h-[300px] lg:max-h-[440px]"
+                    />
+                  </div>
+                  <figcaption className="mt-2 text-xs leading-relaxed text-inchiostro-soft dark:text-nebbia-soft">
+                    Foto:{' '}
+                    <a
+                      href="https://commons.wikimedia.org/wiki/File:Palazzo_Montecitorio_2019_03.jpg"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="underline underline-offset-2 hover:text-accento dark:hover:text-accento-chiara"
+                    >
+                      Nicholas Gemini, CC BY-SA 4.0, via Wikimedia Commons
+                    </a>
+                  </figcaption>
+                </figure>
+              </Comparsa>
             </div>
           </div>
         </section>

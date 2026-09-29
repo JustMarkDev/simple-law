@@ -25,6 +25,7 @@ import {
   ministerHref,
   STATO_META,
 } from '@/components/seed-fallback'
+import { paroleVigenza } from '@/lib/filtri-leggi'
 
 interface LeggeProps {
   params: Promise<{ eli: string[] }>
@@ -176,6 +177,10 @@ export default async function LeggePage({ params }: LeggeProps) {
   const [tutte, ministri] = await Promise.all([loadLaws(), loadMinisters()])
   const semplificata = law.semplificata
   const meta = STATO_META[law.stato]
+  const motivoVigenza = semplificata.statoLavora.motivo
+  const vigenza = paroleVigenza(motivoVigenza)
+  const leggeNonVigore = vigenza.parole === 'Non più in vigore'
+  const etichettaStato = leggeNonVigore ? vigenza.label : meta.label
   const anno = law.dataEmanazione.slice(0, 4)
   const attuativiMancanti = law.attuativi.daAdottare + law.attuativi.scaduti
   const ministriCollegati = ministri.filter((minister) => leggiDelMinistro(minister, [law]).length > 0)
@@ -196,7 +201,7 @@ export default async function LeggePage({ params }: LeggeProps) {
     name: law.titolo,
     legislationIdentifier: law.nir || law.eli,
     datePublished: law.dataEmanazione,
-    inForceStatus: meta.label,
+    inForceStatus: etichettaStato,
     abstract: law.sintesi,
     legislationType: formatTipo(law.tipo),
     sameAs: stessiAmmessi(law.fonti as unknown as Record<string, unknown>),
@@ -243,7 +248,7 @@ export default async function LeggePage({ params }: LeggeProps) {
             )}
             <span className={`inline-flex items-center gap-1.5 rounded-lg px-3 py-1 font-semibold ring-1 ${meta.bg} ${meta.text} ${meta.ring}`}>
               <span aria-hidden="true" className={`h-2 w-2 rounded-full ${meta.dot}`} />
-              {meta.label}
+              {etichettaStato}
             </span>
           </div>
           <h1 id="titolo-scheda" tabIndex={-1} className="mt-5 max-w-4xl text-2xl font-bold leading-tight text-inchiostro outline-none focus-visible:outline focus-visible:outline-2 focus-visible:outline-inchiostro dark:text-nebbia dark:focus-visible:outline-nebbia sm:text-3xl lg:text-4xl">
@@ -258,7 +263,7 @@ export default async function LeggePage({ params }: LeggeProps) {
             </div>
             <div className="flex gap-1.5">
               <dt className="font-semibold">A che punto è:</dt>
-              <dd>{meta.label}</dd>
+              <dd>{etichettaStato}</dd>
             </div>
             <div className="flex gap-1.5">
               <dt className="font-semibold">Lettura:</dt>
@@ -427,7 +432,7 @@ export default async function LeggePage({ params }: LeggeProps) {
               </div>
             </dl>
             <p className="mt-3 text-xs leading-relaxed text-inchiostro-soft dark:text-nebbia-soft">
-              {meta.label}: {semplificata.statoLavora.motivo}
+              {etichettaStato}: {semplificata.statoLavora.motivo}
             </p>
           </section>
 

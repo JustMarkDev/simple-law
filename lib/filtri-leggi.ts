@@ -111,6 +111,56 @@ export function personeDelRecord(r: {
 }
 
 /**
+ * Parole oneste per la vigenza. Never-throw.
+ * Se `stato` matcha non-vigore (`RE_NON_VIGORE`: abrogata, decaduta,
+ * sospesa o non vigente) restituisce parole oneste per atti abrogati.
+ * Altrimenti restituisce parole, label e descrizione del meta semaforo
+ * corrispondente (verde, giallo o rosso).
+ */
+export function paroleVigenza(stato: unknown): {
+  parole: string;
+  label: string;
+  descrizione: string;
+} {
+  try {
+    const testo = typeof stato === 'string' ? stato : String(stato ?? '');
+    if (testo && RE_NON_VIGORE.test(testo)) {
+      return {
+        parole: 'Non più in vigore',
+        label: 'Non più in vigore',
+        descrizione: 'Abrogata o decaduta: non si applica più.',
+      };
+    }
+    const chiave = testo.trim().toLowerCase();
+    if (chiave === 'giallo' || chiave === 'sconosciuto') {
+      return {
+        parole: 'In attesa',
+        label: 'Funziona in parte',
+        descrizione: 'Alcune parti aspettano decreti attuativi.',
+      };
+    }
+    if (chiave === 'rosso') {
+      return {
+        parole: 'Bloccata',
+        label: 'Non ancora attiva',
+        descrizione: 'Serve un passaggio attuativo per applicarla.',
+      };
+    }
+    return {
+      parole: 'Attiva',
+      label: 'Funziona già',
+      descrizione: 'La norma è in vigore e applicabile.',
+    };
+  } catch {
+    return {
+      parole: 'Attiva',
+      label: 'Funziona già',
+      descrizione: 'La norma è in vigore e applicabile.',
+    };
+  }
+}
+
+/**
  * Verifica se un record è rilevante per una persona. Never-throw.
  * Persona vuota o `tutti` → `true`; altrimenti appartenza a `personeDelRecord`.
  */
