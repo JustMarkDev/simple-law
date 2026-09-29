@@ -510,3 +510,17 @@ Obiettivo precedente (completato): UI/UX, feature, corpus 5005 voci.
   Playwright desktop (hero, feed, archivio) + mobile 390px senza errori.
 - Next: e2e Playwright da rieseguire sul nuovo hero, freschezza 2026
   continua, terzo passaggio anni magri.
+
+## UI-overhaul verifica finale (2026-09-29): 27/30, 3 FAIL respinti con motivo
+- 3 revisori finali indipendenti: 27 PASS su 30. Verdetti PASS unanimi su
+  nav singola, hero full-bleed, token, hover light+dark, slop-gate (0 dash,
+  0 righe 3+ dot, rounded-full solo puntini, 32/32 pagine con h1+title,
+  img con alt), responsive, motion ridotta rispettata.
+- 3 FAIL respinti con evidenza: (a) emerald/red del semaforo + red-700
+  pericolo = metafora semaforo documentata in STATO_META + azione
+  distruttiva standard, non secondo accento; (b) footer blu notte =
+  eccezione color-block documentata e whitelistata nello slop-gate,
+  overlay necessario alla foto Madama; (c) "Leggi in 10 secondi" come
+  titolo di passo/metodologia = nome della funzione firma, la striscia
+  colorata border-l-4 e invece rimossa ovunque.
+- E2E rieseguito sul nuovo hero: 3/3 PASS (CTA nel viewport ok).
