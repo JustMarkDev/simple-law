@@ -454,3 +454,12 @@ Obiettivo precedente (completato): UI/UX, feature, corpus 5005 voci.
 - Workflow: 1 agente E1 (install headless-shell, 3 spec, config, script).
 - Verifiche mie: `npx playwright test` 3/3 + vitest 878/878.
 - Next: foto con licenza, freschezza continua.
+
+## Vigenza-foto (2026-09-29): repealed mai Bloccata + foto vere
+- 4 revisori indipendenti avevano trovato il falso "Bloccata" su 4954
+  abrogati + CTA fuori viewport con la foto.
+- Workflow x2: helper paroleVigenza (LawCard/dettaglio), hero riordinata
+  (e2e verde), foto Commons verificate a vista e integrate con
+  attribuzioni (Montecitorio hero, Madama footer, pagina /fonti).
+- Verifiche mie: tsc/eslint OK, 878/878 + e2e 3/3 OK, build OK, smoke.
+- Next: freschezza continua, terzo passaggio magri.
