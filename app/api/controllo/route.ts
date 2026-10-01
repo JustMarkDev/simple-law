@@ -29,12 +29,7 @@ export const runtime = "nodejs";
 const PER_AMMESSI = [10, 20, 50] as const;
 const TIPI_AMMESSI = ["contratti", "ga", "cnel"] as const;
 
-function intero(
-  value: string | null,
-  fallback: number,
-  min: number,
-  max: number,
-): number {
+function intero(value: string | null, fallback: number, min: number, max: number): number {
   const parsed = Number.parseInt(value ?? "", 10);
   if (!Number.isFinite(parsed)) return fallback;
   return Math.min(max, Math.max(min, Math.floor(parsed)));
@@ -57,19 +52,14 @@ export async function GET(request: Request) {
         disclaimer: DISCLAIMER_CONTROLLO,
       });
     }
-    const tipoGrezzo = (params.get("tipo") ?? "contratti")
-      .trim()
-      .toLowerCase()
-      .slice(0, 20);
+    const tipoGrezzo = (params.get("tipo") ?? "contratti").trim().toLowerCase().slice(0, 20);
     const tipo = (TIPI_AMMESSI as readonly string[]).includes(tipoGrezzo)
       ? tipoGrezzo
       : "contratti";
     const q = (params.get("q") ?? "").slice(0, 100);
     const page = intero(params.get("page"), 1, 1, 1000);
     const perGrezzo = intero(params.get("per"), 20, 1, 50);
-    const per = (PER_AMMESSI as readonly number[]).includes(perGrezzo)
-      ? perGrezzo
-      : 20;
+    const per = (PER_AMMESSI as readonly number[]).includes(perGrezzo) ? perGrezzo : 20;
 
     if (tipo === "cnel") {
       let base = await tuttiDocumentiCnel();

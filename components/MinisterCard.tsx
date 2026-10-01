@@ -1,8 +1,8 @@
-import Link from 'next/link'
-import { ministerHref, type Minister } from './seed-fallback'
+import Link from "next/link";
+import { ministerHref, type Minister } from "./seed-fallback";
 
 interface MinisterCardProps {
-  minister: Minister
+  minister: Minister;
 }
 
 function initials(nome: string): string {
@@ -10,8 +10,8 @@ function initials(nome: string): string {
     .split(/\s+/)
     .filter(Boolean)
     .slice(0, 2)
-    .map((part) => part[0]?.toUpperCase() ?? '')
-    .join('')
+    .map((part) => part[0]?.toUpperCase() ?? "")
+    .join("");
 }
 
 /** Card di un ministro, con iniziali, dicastero e competenze. */
@@ -34,13 +34,17 @@ export default function MinisterCard({ minister }: MinisterCardProps) {
               {minister.nome}
             </Link>
           </h2>
-          <p className="mt-1 text-sm leading-snug text-inchiostro-soft dark:text-nebbia-soft">{minister.dicastero}</p>
+          <p className="mt-1 text-sm leading-snug text-inchiostro-soft dark:text-nebbia-soft">
+            {minister.dicastero}
+          </p>
         </div>
       </div>
 
       {minister.partito && (
         <p className="text-sm text-inchiostro-faint dark:text-nebbia-faint">
-          <span className="font-semibold text-inchiostro-soft dark:text-nebbia-soft">Gruppo politico:</span>{' '}
+          <span className="font-semibold text-inchiostro-soft dark:text-nebbia-soft">
+            Gruppo politico:
+          </span>{" "}
           {minister.partito}
         </p>
       )}
@@ -58,5 +62,5 @@ export default function MinisterCard({ minister }: MinisterCardProps) {
         </ul>
       )}
     </article>
-  )
+  );
 }

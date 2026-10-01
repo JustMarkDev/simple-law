@@ -1,7 +1,7 @@
-import type { Metadata } from 'next'
-import Link from 'next/link'
-import Header from '@/components/Header'
-import Footer from '@/components/Footer'
+import type { Metadata } from "next";
+import Link from "next/link";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 import {
   tuttiSenatori,
   contaPerGruppo,
@@ -10,27 +10,27 @@ import {
   pagina,
   leggiProvenance,
   type Membro,
-} from '@/lib/parlamento-dati'
+} from "@/lib/parlamento-dati";
 
 interface SenatoriProps {
-  searchParams: Promise<Record<string, string | string[] | undefined>>
+  searchParams: Promise<Record<string, string | string[] | undefined>>;
 }
 
-const PER_OPZIONI = [12, 24] as const
-const PER_DEFAULT = 24
+const PER_OPZIONI = [12, 24] as const;
+const PER_DEFAULT = 24;
 
 function str(sp: Record<string, string | string[] | undefined>, nome: string): string {
-  const v = sp[nome]
-  return typeof v === 'string' ? v : ''
+  const v = sp[nome];
+  return typeof v === "string" ? v : "";
 }
 
 function dataIT(iso: string): string {
   try {
-    const d = new Date(iso)
-    if (Number.isNaN(d.getTime())) return iso.slice(0, 10)
-    return d.toLocaleDateString('it-IT', { day: 'numeric', month: 'long', year: 'numeric' })
+    const d = new Date(iso);
+    if (Number.isNaN(d.getTime())) return iso.slice(0, 10);
+    return d.toLocaleDateString("it-IT", { day: "numeric", month: "long", year: "numeric" });
   } catch {
-    return iso.slice(0, 10)
+    return iso.slice(0, 10);
   }
 }
 
@@ -39,44 +39,45 @@ function iniziali(nome: string): string {
     .split(/\s+/)
     .filter(Boolean)
     .slice(0, 2)
-    .map((p) => p[0]?.toUpperCase() ?? '')
-    .join('')
+    .map((p) => p[0]?.toUpperCase() ?? "")
+    .join("");
 }
 
 function hrefSenza(query: Record<string, string>, chiave: string): string {
-  const params = new URLSearchParams(query)
-  params.delete(chiave)
-  params.delete('page')
-  const qs = params.toString()
-  return qs ? `/parlamento/senatori?${qs}` : '/parlamento/senatori'
+  const params = new URLSearchParams(query);
+  params.delete(chiave);
+  params.delete("page");
+  const qs = params.toString();
+  return qs ? `/parlamento/senatori?${qs}` : "/parlamento/senatori";
 }
 
 export async function generateMetadata({ searchParams }: SenatoriProps): Promise<Metadata> {
   const base: Metadata = {
-    title: 'Senatori - Legislatura 19 - Stato della Repubblica',
-    description: 'I 212 senatori della Repubblica, legislatura 19: cerca per nome o filtra per gruppo.',
-  }
+    title: "Senatori - Legislatura 19 - Stato della Repubblica",
+    description:
+      "I 212 senatori della Repubblica, legislatura 19: cerca per nome o filtra per gruppo.",
+  };
   try {
-    const sp = await searchParams
-    const q = str(sp, 'q').slice(0, 100)
-    const gruppo = str(sp, 'gruppo').slice(0, 160)
-    const base2 = await tuttiSenatori()
-    let filtrati = base2
-    const nomiGruppi = new Set((await contaPerGruppo(base2)).map((g) => g.nome))
-    const gruppoValido = gruppo && nomiGruppi.has(gruppo) ? gruppo : ''
-    if (gruppoValido) filtrati = await filtraPerGruppo(filtrati, gruppoValido)
-    const qValida = q.trim().length >= 2 ? q.trim() : ''
-    if (qValida) filtrati = await cercaMembri(filtrati, qValida)
-    const pezzi: string[] = []
-    if (qValida) pezzi.push(`“${qValida}”`)
-    if (gruppoValido) pezzi.push(gruppoValido)
-    const dettaglio = pezzi.length > 0 ? ` - ${pezzi.join(' · ')}` : ''
+    const sp = await searchParams;
+    const q = str(sp, "q").slice(0, 100);
+    const gruppo = str(sp, "gruppo").slice(0, 160);
+    const base2 = await tuttiSenatori();
+    let filtrati = base2;
+    const nomiGruppi = new Set((await contaPerGruppo(base2)).map((g) => g.nome));
+    const gruppoValido = gruppo && nomiGruppi.has(gruppo) ? gruppo : "";
+    if (gruppoValido) filtrati = await filtraPerGruppo(filtrati, gruppoValido);
+    const qValida = q.trim().length >= 2 ? q.trim() : "";
+    if (qValida) filtrati = await cercaMembri(filtrati, qValida);
+    const pezzi: string[] = [];
+    if (qValida) pezzi.push(`“${qValida}”`);
+    if (gruppoValido) pezzi.push(gruppoValido);
+    const dettaglio = pezzi.length > 0 ? ` - ${pezzi.join(" · ")}` : "";
     return {
       title: `Senatori (${filtrati.length})${dettaglio} - Stato della Repubblica`,
       description: `Archivio di ${filtrati.length} senatori della legislatura 19${dettaglio}.`,
-    }
+    };
   } catch {
-    return base
+    return base;
   }
 }
 
@@ -141,60 +142,65 @@ function SchedaSenatore({ membro }: { membro: Membro }) {
         </p>
       )}
     </article>
-  )
+  );
 }
 
 export default async function SenatoriPage({ searchParams }: SenatoriProps) {
-  const sp = await searchParams
-  const qGrezza = str(sp, 'q').slice(0, 100)
-  const q = qGrezza.trim().length >= 2 ? qGrezza.trim() : ''
-  const gruppoParam = str(sp, 'gruppo').slice(0, 160)
-  const perRaw = Math.floor(Number(str(sp, 'per'))) || PER_DEFAULT
-  const per = (PER_OPZIONI as readonly number[]).includes(perRaw) ? (perRaw as 12 | 24) : PER_DEFAULT
-  const pageRichiesta = Math.max(1, Math.floor(Number(str(sp, 'page'))) || 1)
+  const sp = await searchParams;
+  const qGrezza = str(sp, "q").slice(0, 100);
+  const q = qGrezza.trim().length >= 2 ? qGrezza.trim() : "";
+  const gruppoParam = str(sp, "gruppo").slice(0, 160);
+  const perRaw = Math.floor(Number(str(sp, "per"))) || PER_DEFAULT;
+  const per = (PER_OPZIONI as readonly number[]).includes(perRaw)
+    ? (perRaw as 12 | 24)
+    : PER_DEFAULT;
+  const pageRichiesta = Math.max(1, Math.floor(Number(str(sp, "page"))) || 1);
 
-  const tutti = await tuttiSenatori()
-  const gruppi = await contaPerGruppo(tutti)
-  const nomiGruppi = new Set(gruppi.map((g) => g.nome))
-  const gruppo = gruppoParam && nomiGruppi.has(gruppoParam) ? gruppoParam : ''
+  const tutti = await tuttiSenatori();
+  const gruppi = await contaPerGruppo(tutti);
+  const nomiGruppi = new Set(gruppi.map((g) => g.nome));
+  const gruppo = gruppoParam && nomiGruppi.has(gruppoParam) ? gruppoParam : "";
 
-  let filtrati: Membro[] = tutti
-  if (gruppo) filtrati = await filtraPerGruppo(filtrati, gruppo)
-  if (q) filtrati = await cercaMembri(filtrati, q)
+  let filtrati: Membro[] = tutti;
+  if (gruppo) filtrati = await filtraPerGruppo(filtrati, gruppo);
+  if (q) filtrati = await cercaMembri(filtrati, q);
 
-  const totale = filtrati.length
-  const totPagine = Math.max(1, Math.ceil(totale / per))
-  const page = Math.min(pageRichiesta, totPagine)
-  const risultati = await pagina(filtrati, page, per)
+  const totale = filtrati.length;
+  const totPagine = Math.max(1, Math.ceil(totale / per));
+  const page = Math.min(pageRichiesta, totPagine);
+  const risultati = await pagina(filtrati, page, per);
 
-  let provSenato: { recuperatoIl?: string } | null = null
+  let provSenato: { recuperatoIl?: string } | null = null;
   try {
-    provSenato = (await leggiProvenance()).senato ?? null
+    provSenato = (await leggiProvenance()).senato ?? null;
   } catch {
-    provSenato = null
+    provSenato = null;
   }
 
-  const queryBase: Record<string, string> = {}
-  if (qGrezza.trim()) queryBase.q = qGrezza.trim().slice(0, 100)
-  if (gruppo) queryBase.gruppo = gruppo
-  if (per !== PER_DEFAULT) queryBase.per = String(per)
+  const queryBase: Record<string, string> = {};
+  if (qGrezza.trim()) queryBase.q = qGrezza.trim().slice(0, 100);
+  if (gruppo) queryBase.gruppo = gruppo;
+  if (per !== PER_DEFAULT) queryBase.per = String(per);
 
-  const filtriAttivi: { chiave: string; etichetta: string }[] = []
-  if (q) filtriAttivi.push({ chiave: 'q', etichetta: `Ricerca: ${q}` })
-  if (gruppo) filtriAttivi.push({ chiave: 'gruppo', etichetta: `Gruppo: ${gruppo}` })
-  if (per !== PER_DEFAULT) filtriAttivi.push({ chiave: 'per', etichetta: `Per pagina: ${per}` })
+  const filtriAttivi: { chiave: string; etichetta: string }[] = [];
+  if (q) filtriAttivi.push({ chiave: "q", etichetta: `Ricerca: ${q}` });
+  if (gruppo) filtriAttivi.push({ chiave: "gruppo", etichetta: `Gruppo: ${gruppo}` });
+  if (per !== PER_DEFAULT) filtriAttivi.push({ chiave: "per", etichetta: `Per pagina: ${per}` });
 
   function hrefPagina(p: number): string {
-    const params = new URLSearchParams(queryBase)
-    if (p > 1) params.set('page', String(p))
-    const qs = params.toString()
-    return qs ? `/parlamento/senatori?${qs}` : '/parlamento/senatori'
+    const params = new URLSearchParams(queryBase);
+    if (p > 1) params.set("page", String(p));
+    const qs = params.toString();
+    return qs ? `/parlamento/senatori?${qs}` : "/parlamento/senatori";
   }
 
   return (
     <>
       <Header />
-      <main id="contenuto" className="mx-auto w-full max-w-editoriale px-4 py-10 sm:px-6 sm:py-12 lg:px-8">
+      <main
+        id="contenuto"
+        className="mx-auto w-full max-w-editoriale px-4 py-10 sm:px-6 sm:py-12 lg:px-8"
+      >
         <nav aria-label="Percorso" className="text-sm text-inchiostro-soft dark:text-nebbia-soft">
           <ol className="flex flex-wrap items-center gap-2">
             <li>
@@ -204,7 +210,10 @@ export default async function SenatoriPage({ searchParams }: SenatoriProps) {
             </li>
             <li aria-hidden="true">/</li>
             <li>
-              <Link href="/parlamento" className="hover:text-accento dark:hover:text-accento-chiara">
+              <Link
+                href="/parlamento"
+                className="hover:text-accento dark:hover:text-accento-chiara"
+              >
                 Parlamento
               </Link>
             </li>
@@ -289,19 +298,20 @@ export default async function SenatoriPage({ searchParams }: SenatoriProps) {
             </select>
           </div>
           <div className="sm:col-span-3">
-            <button
-              type="submit"
-              className="btn-primario"
-            >
+            <button type="submit" className="btn-primario">
               Filtra
             </button>
           </div>
         </form>
 
-        <p className="mt-6 text-sm text-inchiostro-soft dark:text-nebbia-soft" role="status" aria-live="polite">
-          {totale} {totale === 1 ? 'senatore trovato' : 'senatori trovati'}
-          {q ? ` per “${q}”` : ''}
-          {gruppo ? ` · gruppo: ${gruppo}` : ''} · pagina {page} di {totPagine}.
+        <p
+          className="mt-6 text-sm text-inchiostro-soft dark:text-nebbia-soft"
+          role="status"
+          aria-live="polite"
+        >
+          {totale} {totale === 1 ? "senatore trovato" : "senatori trovati"}
+          {q ? ` per “${q}”` : ""}
+          {gruppo ? ` · gruppo: ${gruppo}` : ""} · pagina {page} di {totPagine}.
         </p>
 
         {filtriAttivi.length > 0 && (
@@ -384,10 +394,10 @@ export default async function SenatoriPage({ searchParams }: SenatoriProps) {
 
         <p className="mt-10 border-t border-regola pt-4 text-xs leading-relaxed text-inchiostro-soft dark:border-notte-deep dark:text-nebbia-soft">
           Senato: dati.senato.it - CC BY 3.0 IT · legislatura 19
-          {provSenato?.recuperatoIl ? ` · aggiornati al ${dataIT(provSenato.recuperatoIl)}` : ''}.
+          {provSenato?.recuperatoIl ? ` · aggiornati al ${dataIT(provSenato.recuperatoIl)}` : ""}.
         </p>
       </main>
       <Footer />
     </>
-  )
+  );
 }

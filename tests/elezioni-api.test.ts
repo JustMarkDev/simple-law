@@ -16,7 +16,7 @@
 
 import { existsSync, readFileSync, statSync } from "node:fs";
 import { resolve } from "node:path";
-import { beforeEach, describe, expect, it, vi } from "vitest";
+import { beforeEach, describe, expect, it, vi } from "vite-plus/test";
 
 let chiamateFetch = 0;
 beforeEach(() => {
@@ -61,7 +61,15 @@ interface ComuneAgg {
 
 interface Europee2024 {
   readonly provenance: { fonte: string; url: string; recuperatoIl: string; licenza: string };
-  readonly elezione: { tipo: string; data: string; e: number; v: number; b: number; k: number; a: number };
+  readonly elezione: {
+    tipo: string;
+    data: string;
+    e: number;
+    v: number;
+    b: number;
+    k: number;
+    a: number;
+  };
   readonly liste: readonly ListaAgg[];
   readonly regioni: readonly RegioneAgg[];
   readonly comuni: readonly ComuneAgg[];
@@ -288,12 +296,7 @@ describe("elezioni api — conformita' lib reale (tollerante se assente, mai-500
 });
 
 describe("elezioni api — integrazione disco tollerante (solo se W1 ha scritto il JSON)", () => {
-  const PERCORSO = resolve(
-    process.cwd(),
-    "data",
-    "reali",
-    "elezioni-europee-2024.json",
-  );
+  const PERCORSO = resolve(process.cwd(), "data", "reali", "elezioni-europee-2024.json");
 
   it("se il file esiste: ≤950KB, envelope valido, solo aggregati", async () => {
     if (!existsSync(PERCORSO)) {
@@ -323,9 +326,7 @@ describe("elezioni api — integrazione disco tollerante (solo se W1 ha scritto 
       mod = null;
     }
     if (mod && typeof mod["caricaEuropee2024"] === "function") {
-      await expect(
-        (mod["caricaEuropee2024"] as () => unknown)(),
-      ).resolves.not.toThrow();
+      await expect((mod["caricaEuropee2024"] as () => unknown)()).resolves.not.toThrow();
     }
   });
 });
@@ -348,9 +349,7 @@ describe("elezioni api — registry multi-consultazione (MAI rete, mai throw)", 
     }>;
     expect(Array.isArray(registry)).toBe(true);
     const ids = registry.map((v) => v.id).sort();
-    expect(ids).toEqual(
-      ["europee-2024", "politiche-2022-camera", "politiche-2022-senato"].sort(),
-    );
+    expect(ids).toEqual(["europee-2024", "politiche-2022-camera", "politiche-2022-senato"].sort());
     for (const v of registry) {
       expect(typeof v.file).toBe("string");
       expect(v.file.startsWith("data/reali/elezioni-")).toBe(true);
@@ -400,16 +399,11 @@ describe("elezioni api — registry multi-consultazione (MAI rete, mai throw)", 
     }
     // Nessuna voce con id fuori registry.
     for (const id of ids) {
-      expect([
-        "europee-2024",
-        "politiche-2022-camera",
-        "politiche-2022-senato",
-      ]).toContain(id);
+      expect(["europee-2024", "politiche-2022-camera", "politiche-2022-senato"]).toContain(id);
     }
     // File assente -> consultazione assente (mai throw): coerenza con disco.
-    const attesi = ["data/reali/elezioni-politiche-2022-camera.json"].map(
-      (f) =>
-        existsSync(resolve(process.cwd(), f)) ? "politiche-2022-camera" : null,
+    const attesi = ["data/reali/elezioni-politiche-2022-camera.json"].map((f) =>
+      existsSync(resolve(process.cwd(), f)) ? "politiche-2022-camera" : null,
     );
     for (const id of attesi) {
       if (id === null) expect(ids).not.toContain("politiche-2022-camera");
@@ -421,9 +415,7 @@ describe("elezioni api — registry multi-consultazione (MAI rete, mai throw)", 
 describe("elezioni api — 404 id ignoto e coerenza per-id (mai 500)", () => {
   it("caricaElezione/caricaElezioneResult: id ignoto -> null/{ok:false}, mai throw", async () => {
     const mod = (await import("@/lib/elezioni-dati")) as Record<string, unknown>;
-    const carica = mod["caricaElezione"] as (
-      id: unknown,
-    ) => Promise<unknown>;
+    const carica = mod["caricaElezione"] as (id: unknown) => Promise<unknown>;
     const caricaResult = mod["caricaElezioneResult"] as (
       id: unknown,
     ) => Promise<{ ok: boolean; errore?: string }>;
@@ -439,9 +431,7 @@ describe("elezioni api — 404 id ignoto e coerenza per-id (mai 500)", () => {
 
   it("coerenza per-id: europee-2024 coincide con caricaEuropee2024; politiche assenti -> null", async () => {
     const mod = (await import("@/lib/elezioni-dati")) as Record<string, unknown>;
-    const carica = mod["caricaElezione"] as (
-      id: unknown,
-    ) => Promise<Europee2024 | null>;
+    const carica = mod["caricaElezione"] as (id: unknown) => Promise<Europee2024 | null>;
     const legacy = mod["caricaEuropee2024"] as () => Promise<Europee2024 | null>;
     const perId = await carica("europee-2024");
     const daLegacy = await legacy();
@@ -453,14 +443,8 @@ describe("elezioni api — 404 id ignoto e coerenza per-id (mai 500)", () => {
       expect(perId?.elezione.v).toBe(daLegacy.elezione.v);
       expect(perId?.liste.length).toBe(daLegacy.liste.length);
       // Helper esistenti riusabili per-id senza cambiare firma.
-      const cerca = mod["cercaComune"] as (
-        comuni: readonly ComuneAgg[],
-        q: unknown,
-      ) => ComuneAgg[];
-      const top = mod["topListe"] as (
-        liste: readonly ListaAgg[],
-        n: unknown,
-      ) => ListaAgg[];
+      const cerca = mod["cercaComune"] as (comuni: readonly ComuneAgg[], q: unknown) => ComuneAgg[];
+      const top = mod["topListe"] as (liste: readonly ListaAgg[], n: unknown) => ListaAgg[];
       const pagina = mod["pagina"] as (
         el: readonly unknown[],
         p: unknown,

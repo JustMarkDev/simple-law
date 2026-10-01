@@ -7,7 +7,7 @@
  * iniettato che fallisce.
  */
 
-import { describe, expect, it } from "vitest";
+import { describe, expect, it } from "vite-plus/test";
 import {
   adesioniDaRighe,
   caricaDeputati,
@@ -118,9 +118,7 @@ describe("nomeIntero", () => {
 
 describe("pulisciEtichettaGruppo", () => {
   it("toglie il suffisso con le date dalle etichette reali", () => {
-    expect(pulisciEtichettaGruppo("MOVIMENTO 5 STELLE (18.10.2022)")).toBe(
-      "MOVIMENTO 5 STELLE",
-    );
+    expect(pulisciEtichettaGruppo("MOVIMENTO 5 STELLE (18.10.2022)")).toBe("MOVIMENTO 5 STELLE");
     expect(pulisciEtichettaGruppo("MISTO (18.10.2022-27.10.2022)")).toBe("MISTO");
     expect(pulisciEtichettaGruppo("NOI MODERATI (27.10.2022)")).toBe("NOI MODERATI");
   });
@@ -164,9 +162,7 @@ describe("deputatiDaRigheLista", () => {
 
 describe("gruppoCorrentePerDeputato", () => {
   it("sceglie l'adesione piu' recente in caso di cambio di gruppo", () => {
-    const gruppi = gruppoCorrentePerDeputato(
-      adesioniDaRighe(righeDaSparql(ADESIONI_REALI)),
-    );
+    const gruppi = gruppoCorrentePerDeputato(adesioniDaRighe(righeDaSparql(ADESIONI_REALI)));
     expect(gruppi.get("d307394_19")).toBe("MOVIMENTO 5 STELLE");
     expect(gruppi.get("d300369_19")).toBe("NOI MODERATI");
   });
@@ -444,9 +440,7 @@ function simulaApiParlamento(
     const gruppiWhitelist = new Set(filtrati.map((m) => m.gruppo).filter(Boolean));
     const gruppo = params.gruppo ?? "";
     if (gruppo) {
-      filtrati = gruppiWhitelist.has(gruppo)
-        ? filtrati.filter((m) => m.gruppo === gruppo)
-        : [];
+      filtrati = gruppiWhitelist.has(gruppo) ? filtrati.filter((m) => m.gruppo === gruppo) : [];
     }
     const q = (params.q ?? "").slice(0, 100);
     if (normalizzaRif(q).length >= 2) {
@@ -511,9 +505,7 @@ describe("hub parlamento: helper puri con fixture inline", () => {
     const conteggi = contaPerGruppoRif(MEMBRI_FIXTURE);
     const fdi = conteggi.find((c) => c.nome === "FRATELLI D'ITALIA");
     expect(fdi?.componenti).toBe(2);
-    const senzaGruppo = contaPerGruppoRif([
-      { camera: "camera", slug: "x", nome: "SENZA GRUPPO" },
-    ]);
+    const senzaGruppo = contaPerGruppoRif([{ camera: "camera", slug: "x", nome: "SENZA GRUPPO" }]);
     expect(senzaGruppo).toEqual([]);
   });
 
@@ -600,12 +592,12 @@ describe("hub parlamento: matchMinistro (trovaParlamentare)", () => {
 
   it("case-insensitive + diacritics ok", () => {
     expect(trovaParlamentareRif("davide aiello", MEMBRI_FIXTURE)?.slug).toBe("d307394_19");
-    expect(
-      trovaParlamentareRif("Maria Elisabetta Alberti Casellati", MEMBRI_FIXTURE)?.slug,
-    ).toBe("32");
-    expect(
-      trovaParlamentareRif("maria elisabetta alberti casellati", MEMBRI_FIXTURE)?.slug,
-    ).toBe("32");
+    expect(trovaParlamentareRif("Maria Elisabetta Alberti Casellati", MEMBRI_FIXTURE)?.slug).toBe(
+      "32",
+    );
+    expect(trovaParlamentareRif("maria elisabetta alberti casellati", MEMBRI_FIXTURE)?.slug).toBe(
+      "32",
+    );
   });
 
   it("parziale NON matcha", () => {
@@ -771,4 +763,3 @@ describe("hub parlamento: integrazione disco (solo se data/reali presente)", () 
     expect(senato.senatori.filter((s) => !s.foto)).toHaveLength(0);
   });
 });
-

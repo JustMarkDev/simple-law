@@ -8,7 +8,8 @@ export const runtime = "nodejs";
 export async function GET(request: Request) {
   const { searchParams } = new URL(request.url);
   const limiteGrezzo = Number.parseInt(searchParams.get("limit") ?? "", 10);
-  const limite = Number.isFinite(limiteGrezzo) && limiteGrezzo > 0 ? Math.min(limiteGrezzo, 50) : 10;
+  const limite =
+    Number.isFinite(limiteGrezzo) && limiteGrezzo > 0 ? Math.min(limiteGrezzo, 50) : 10;
 
   try {
     const items = await fetchGovernoComunicati(limite);

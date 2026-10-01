@@ -1,4 +1,4 @@
-import { describe, expect, it, vi } from "vitest";
+import { describe, expect, it, vi } from "vite-plus/test";
 import { Effect, Exit } from "effect";
 import {
   buildNirUrn,
@@ -152,7 +152,13 @@ describe("parser puri", () => {
   });
 
   it("buildNirUrn ed eliFromUrn", () => {
-    const urn = buildNirUrn({ tipo: "decreto.legge", anno: 2026, mese: 7, giorno: 27, numero: 133 });
+    const urn = buildNirUrn({
+      tipo: "decreto.legge",
+      anno: 2026,
+      mese: 7,
+      giorno: 27,
+      numero: 133,
+    });
     expect(urn).toBe("urn:nir:stato:decreto.legge:2026-07-27;133");
     expect(eliFromUrn(urn, "26G00155")).toBe("/eli/id/2026/07/27/26G00155/sg");
     expect(eliFromUrn("non-urn", "26G00155")).toBe("");
@@ -166,9 +172,7 @@ describe("parser puri", () => {
   });
 
   it("stripHtml decodifica le entita' numeriche", () => {
-    expect(stripHtml("l&#39;articolo &#x27;x&#x27; e &#34;y&#34;")).toBe(
-      "l'articolo 'x' e \"y\"",
-    );
+    expect(stripHtml("l&#39;articolo &#x27;x&#x27; e &#34;y&#34;")).toBe("l'articolo 'x' e \"y\"");
   });
 });
 
@@ -250,10 +254,7 @@ describe("wrapper Effect", () => {
 
     const effetto = downloadCollection({ nome: "Collezione A" });
     const archivio = await Effect.runPromise(
-      Effect.provide(
-        effetto,
-        (await import("@/lib/normattiva")).normattivaLayer({ fetchImpl }),
-      ),
+      Effect.provide(effetto, (await import("@/lib/normattiva")).normattivaLayer({ fetchImpl })),
     );
     expect(archivio.entries).toHaveLength(1);
     expect(archivio.entries[0].name).toBe("documento.json");

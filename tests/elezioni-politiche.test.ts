@@ -14,7 +14,7 @@
  *   passa con nota (prodotto da un altro passo, MAI generato qui).
  */
 
-import { beforeEach, describe, expect, it, vi } from "vitest";
+import { beforeEach, describe, expect, it, vi } from "vite-plus/test";
 import { existsSync, readFileSync, statSync } from "node:fs";
 import { join } from "node:path";
 import {
@@ -240,8 +240,18 @@ describe("politiche 2022 — tracciato merge 12 colonne (candidati)", () => {
 // ---------------------------------------------------------------------------
 
 describe("politiche 2022 — integrazione disco (tollerante se assente)", () => {
-  const PERCORSO_CAMERA = join(process.cwd(), "data", "reali", "elezioni-politiche-2022-camera.json");
-  const PERCORSO_SENATO = join(process.cwd(), "data", "reali", "elezioni-politiche-2022-senato.json");
+  const PERCORSO_CAMERA = join(
+    process.cwd(),
+    "data",
+    "reali",
+    "elezioni-politiche-2022-camera.json",
+  );
+  const PERCORSO_SENATO = join(
+    process.cwd(),
+    "data",
+    "reali",
+    "elezioni-politiche-2022-senato.json",
+  );
 
   it("envelope reali validi oppure nota di assenza (mai fallire per file mancanti)", () => {
     expect(chiamateFetch).toBe(0);
@@ -262,7 +272,16 @@ describe("politiche 2022 — integrazione disco (tollerante se assente)", () => 
       [dC, "camera"],
       [dS, "senato"],
     ] as const) {
-      for (const k of ["provenance", "metodologia", "avvertenze", "elezione", "liste", "circoscrizioni", "collegiU", "comuni"]) {
+      for (const k of [
+        "provenance",
+        "metodologia",
+        "avvertenze",
+        "elezione",
+        "liste",
+        "circoscrizioni",
+        "collegiU",
+        "comuni",
+      ]) {
         expect(d, `${ramo}: chiave ${k}`).toHaveProperty(k);
       }
     }
@@ -280,7 +299,10 @@ describe("politiche 2022 — integrazione disco (tollerante se assente)", () => 
     expect(elS["b"]).toBe(498898);
 
     // Coerenza interna: a = v/e a 1 decimale; somma p liste ≈ 100.
-    const check = (el: Record<string, unknown>, liste: { n: string; v: number; p: number }[]): void => {
+    const check = (
+      el: Record<string, unknown>,
+      liste: { n: string; v: number; p: number }[],
+    ): void => {
       const e = el["e"] as number;
       const v = el["v"] as number;
       expect(el["a"]).toBe(Math.round((v / e) * 100 * 10) / 10);
@@ -307,6 +329,7 @@ describe("politiche 2022 — integrazione disco (tollerante se assente)", () => 
     expect((dS["collegiU"] as unknown[]).length).toBe(67);
     const vdaC = circC.find((c) => c["r"] === "VALLE D'AOSTA");
     expect(vdaC?.["e"]).toBeNull();
+    // oxlint-disable-next-line no-unsafe-optional-chaining -- value is checked just above
     expect((vdaC?.["liste"] as unknown[]).length).toBe(7);
 
     // Comuni {c,p,r,e,v,a} per scheda: camera senza i 74 solo-VdA,

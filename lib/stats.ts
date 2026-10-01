@@ -86,11 +86,7 @@ function media(valori: readonly number[]): number | null {
 
 /** Media dell'indice Gulpease; `null` se nessun valore disponibile. */
 export function gulpeaseMedio(laws: readonly StatLaw[]): number | null {
-  return media(
-    laws
-      .map((law) => law.gulpease)
-      .filter((v): v is number => typeof v === "number"),
-  );
+  return media(laws.map((law) => law.gulpease).filter((v): v is number => typeof v === "number"));
 }
 
 /** Somma dei decreti attuativi su tutto il corpus. */
@@ -149,11 +145,7 @@ export function qualitaDi(law: StatLaw): number | null {
 
 /** Media del punteggio di qualita'; `null` se non calcolabile. */
 export function qualitaMedia(laws: readonly StatLaw[]): number | null {
-  return media(
-    laws
-      .map((law) => qualitaDi(law))
-      .filter((v): v is number => typeof v === "number"),
-  );
+  return media(laws.map((law) => qualitaDi(law)).filter((v): v is number => typeof v === "number"));
 }
 
 /** Aggregato completo del corpus. */

@@ -38,7 +38,7 @@
  * ufficiale), altrimenti in_vigore. Mai inferito dal corpo del testo.
  *
  * Uso:
- *   npx tsx scripts/ingest-reale-normattiva-finestre.ts [--limite=80]
+ *   bunx tsx scripts/ingest-reale-normattiva-finestre.ts [--limite=80]
  *     [--testo-max=2000] [--anni=1990,2000] [--out-1990=...] [--out-2000=...]
  *     [--out-2010=...] [--out-1970=...] [--out-2020=...] [--out-1960=...]
  *     [--out-1992-1993=...] [--out-2005-2006=...]
@@ -238,7 +238,9 @@ function isoDaParti(anno: unknown, mese: unknown, giorno: unknown): string {
 
 /** Chiave di dedup ELI: trim + lowercase (stessa regola del resto dell'app). */
 export function chiaveEliFinestra(eli: unknown): string {
-  return String(eli ?? "").trim().toLowerCase();
+  return String(eli ?? "")
+    .trim()
+    .toLowerCase();
 }
 
 function pausa(ms: number): Promise<void> {
@@ -279,9 +281,7 @@ export function statoDaFineVigenzaFinestre(
  * e' lo status ufficiale dell'atto, non una citazione nel corpo. Pura.
  * Restituisce null se nessuna intestazione formale presente.
  */
-export function statoDaIntestazioneArt1Finestre(
-  testo: string,
-): "decaduto" | "abrogato" | null {
+export function statoDaIntestazioneArt1Finestre(testo: string): "decaduto" | "abrogato" | null {
   try {
     const righe = String(testo ?? "").split(/\r?\n/);
     for (const riga of righe.slice(0, 8)) {
@@ -374,7 +374,8 @@ export function dettaglioToRecordFinestra(
     (parseNIR(voce.urn)?.data ?? "");
   if (!dataEmanazione) return null;
 
-  const codice = dto?.codiceRedazionale || stringaFinestra(interno["codiceRedazionale"]) || voce.codice;
+  const codice =
+    dto?.codiceRedazionale || stringaFinestra(interno["codiceRedazionale"]) || voce.codice;
 
   const html = dto?.articoloHtml || stringaFinestra(interno["articoloHtml"]);
   const testoIntegrale = dto?.testo || stripHtml(html);
@@ -428,9 +429,10 @@ export function dettaglioToRecordFinestra(
     numeroGU: numeroGU || undefined,
   });
 
-  const sintesi = normalizzaFinestra(
-    law.sintesi || sottoTitolo || testoIntegrale || titolo,
-  ).slice(0, 600);
+  const sintesi = normalizzaFinestra(law.sintesi || sottoTitolo || testoIntegrale || titolo).slice(
+    0,
+    600,
+  );
   if (!sintesi) return null;
 
   const testoPieno = (law.testo ?? "").trim();
@@ -467,7 +469,7 @@ function aiuto(): string {
     "Ingest finestre storiche Normattiva (dati ufficiali, mai dimostrativi).",
     "",
     "Uso:",
-    "  npx tsx scripts/ingest-reale-normattiva-finestre.ts [opzioni]",
+    "  bunx tsx scripts/ingest-reale-normattiva-finestre.ts [opzioni]",
     "",
     "Opzioni:",
     "  --anni=A,B            finestre da ingerire (default 1990,2000; ammessi 1990,2000,2010,1970,2020,1960,1992-1993,2005-2006,1955,2015,1948,1985,1975,1995,2012,2018,1965,2022)",
@@ -489,8 +491,8 @@ function aiuto(): string {
     "  --out-1995=PATH       file JSON finestra 1995 (default data/reali/normattiva-storico-1995.json)",
     "  --out-2012=PATH       file JSON finestra 2012 (default data/reali/normattiva-storico-2012.json)",
     "  --out-2018=PATH       file JSON finestra 2018 (default data/reali/normattiva-storico-2018.json)",
-  "  --out-1965=PATH       file JSON finestra 1965 (default data/reali/normattiva-storico-1965.json)",
-  "  --out-2022=PATH       file JSON finestra 2022 (default data/reali/normattiva-storico-2022.json)",
+    "  --out-1965=PATH       file JSON finestra 1965 (default data/reali/normattiva-storico-1965.json)",
+    "  --out-2022=PATH       file JSON finestra 2022 (default data/reali/normattiva-storico-2022.json)",
     "  --api-base=URL        override base API Normattiva",
     "  --help                mostra questo aiuto",
   ].join("\n");
@@ -556,11 +558,16 @@ export function vociDaAggiornatiFinestra(raw: unknown): VoceFinestra[] {
 
 /** Errore "troppi atti" del server (limite 7000): va raffinata la ricerca. */
 export function isErroreLimiteAttiFinestra(cause: unknown): boolean {
-  return /superiore al limite|superiore a 12 mesi|periodo di esportazione|7000|1501|raffinare la ricerca/i.test(messaggioDi(cause));
+  return /superiore al limite|superiore a 12 mesi|periodo di esportazione|7000|1501|raffinare la ricerca/i.test(
+    messaggioDi(cause),
+  );
 }
 
 /** Dimezza un intervallo ISO [inizio..fine] in due sotto-intervalli per giorni. */
-export function dividiIntervalloFinestra(inizio: string, fine: string): Array<[string, string]> | null {
+export function dividiIntervalloFinestra(
+  inizio: string,
+  fine: string,
+): Array<[string, string]> | null {
   if (!isIsoDateFinestra(inizio) || !isIsoDateFinestra(fine) || inizio >= fine) return null;
   const t0 = Date.parse(`${inizio}T00:00:00Z`);
   const t1 = Date.parse(`${fine}T00:00:00Z`);
@@ -569,7 +576,10 @@ export function dividiIntervalloFinestra(inizio: string, fine: string): Array<[s
   const mid = new Date(t0 + Math.floor(giorni / 2) * 86400000).toISOString().slice(0, 10);
   const dopoMid = new Date(Date.parse(`${mid}T00:00:00Z`) + 86400000).toISOString().slice(0, 10);
   if (!(inizio <= mid && dopoMid <= fine && mid < dopoMid)) return null;
-  return [[inizio, mid], [dopoMid, fine]];
+  return [
+    [inizio, mid],
+    [dopoMid, fine],
+  ];
 }
 
 /** Finestra aggiornati: POST /api/v1/ricerca/aggiornati su [inizio..fine]. */
@@ -678,7 +688,9 @@ async function main(): Promise<void> {
     .split(",")
     .map((a) => a.trim())
     .filter((a) => a in FINESTRE_DISPONIBILI) as NomeFinestra[];
-  const anni: NomeFinestra[] = [...new Set(anniGrezzi.length > 0 ? anniGrezzi : ["1990", "2000"] as NomeFinestra[])];
+  const anni: NomeFinestra[] = [
+    ...new Set(anniGrezzi.length > 0 ? anniGrezzi : (["1990", "2000"] as NomeFinestra[])),
+  ];
   const outPerAnno = new Map<NomeFinestra, string>();
   for (const anno of anni) {
     outPerAnno.set(anno, argomento(`out-${anno}`) ?? OUT_DEFAULT_FINESTRA[anno]);
@@ -723,7 +735,11 @@ async function main(): Promise<void> {
   for (const finestra of finestre) {
     const nome = finestra.nome as NomeFinestra;
     try {
-      const { voci, url } = await listaFinestraConSplit(overridesPost, finestra.inizio, finestra.fine);
+      const { voci, url } = await listaFinestraConSplit(
+        overridesPost,
+        finestra.inizio,
+        finestra.fine,
+      );
       urlPerAnno.set(nome, url);
       console.log(`Finestra ${nome}: ${voci.length} voci reali.`);
       const filtrate = escludiConosciute(voci).filter((voce) => {
@@ -732,7 +748,9 @@ async function main(): Promise<void> {
         if (eliCandidatiFinestra(voce).some((c) => eliViste.has(c))) return false;
         return true;
       });
-      console.log(`Finestra ${nome}: ${voci.length} voci, ${voci.length - filtrate.length} duplicate escluse.`);
+      console.log(
+        `Finestra ${nome}: ${voci.length} voci, ${voci.length - filtrate.length} duplicate escluse.`,
+      );
       const selezionate = filtrate.slice(0, limite);
       vociPerAnno.set(nome, selezionate);
       for (const voce of selezionate) {
@@ -758,7 +776,9 @@ async function main(): Promise<void> {
     process.exitCode = 1;
     return;
   }
-  console.log(`Recupero dettagli per ${daDettagliare.length} atti (batch da ${DETTAGLI_PER_BATCH}).`);
+  console.log(
+    `Recupero dettagli per ${daDettagliare.length} atti (batch da ${DETTAGLI_PER_BATCH}).`,
+  );
 
   const attiPerAnno = new Map<NomeFinestra, LawRecord[]>();
   for (const finestra of finestre) attiPerAnno.set(finestra.nome as NomeFinestra, []);
@@ -809,9 +829,13 @@ async function main(): Promise<void> {
     `Dettagli OK: ${finestre.map((f) => `finestra${f.nome}=${attiPerAnno.get(f.nome as NomeFinestra)?.length ?? 0}`).join(" ")}; scarti/errori: ${errori.length}.`,
   );
   // Niente parziali: OGNI finestra selezionata deve aver prodotto atti reali.
-  const vuote = finestre.filter((f) => (attiPerAnno.get(f.nome as NomeFinestra)?.length ?? 0) === 0);
+  const vuote = finestre.filter(
+    (f) => (attiPerAnno.get(f.nome as NomeFinestra)?.length ?? 0) === 0,
+  );
   if (vuote.length > 0) {
-    console.error(`Finestre senza atti reali (${vuote.map((f) => f.nome).join(",")}): nessun file scritto.`);
+    console.error(
+      `Finestre senza atti reali (${vuote.map((f) => f.nome).join(",")}): nessun file scritto.`,
+    );
     for (const e of errori.slice(0, 10)) console.error(`  - ${e}`);
     process.exitCode = 1;
     return;
@@ -853,11 +877,13 @@ async function main(): Promise<void> {
     await writeFile(dest, jsonPerAnno.get(nome) ?? "", "utf8");
   }
   console.log(
-    finestre.map((f) => {
-      const nome = f.nome as NomeFinestra;
-      const kb = Buffer.byteLength(jsonPerAnno.get(nome) ?? "", "utf8") / DIM_KB;
-      return `Scritti ${(attiPerAnno.get(nome) ?? []).length} atti ${nome} in ${path.resolve(outPerAnno.get(nome) ?? "")} (${kb.toFixed(1)} KB).`;
-    }).join(" "),
+    finestre
+      .map((f) => {
+        const nome = f.nome as NomeFinestra;
+        const kb = Buffer.byteLength(jsonPerAnno.get(nome) ?? "", "utf8") / DIM_KB;
+        return `Scritti ${(attiPerAnno.get(nome) ?? []).length} atti ${nome} in ${path.resolve(outPerAnno.get(nome) ?? "")} (${kb.toFixed(1)} KB).`;
+      })
+      .join(" "),
   );
   if (errori.length > 0) {
     console.log(`Note (${errori.length}):`);

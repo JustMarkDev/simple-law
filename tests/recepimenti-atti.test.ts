@@ -1,4 +1,4 @@
-import { describe, expect, it } from "vitest";
+import { describe, expect, it } from "vite-plus/test";
 import {
   attiCollegatiPerDirettiva,
   azzeraCacheAttiCollegati,
@@ -38,12 +38,8 @@ describe("recepimenti-atti: matcher esplicito anno+numero (fixture, zero rete)",
   it("negativi: anno o numero da soli non bastano, mai fuzzy", () => {
     expect(testoCitaDirettiva("direttiva del 2019 senza numero", "2019", "944")).toBe(false);
     expect(testoCitaDirettiva("direttiva n. 944 senza anno", "2019", "944")).toBe(false);
-    expect(
-      testoCitaDirettiva("direttiva (UE) 2019/94 sul mercato", "2019", "944"),
-    ).toBe(false);
-    expect(
-      testoCitaDirettiva("direttiva (UE) 2019/945 sul mercato", "2019", "944"),
-    ).toBe(false);
+    expect(testoCitaDirettiva("direttiva (UE) 2019/94 sul mercato", "2019", "944")).toBe(false);
+    expect(testoCitaDirettiva("direttiva (UE) 2019/945 sul mercato", "2019", "944")).toBe(false);
     expect(testoCitaDirettiva(null, "2019", "944")).toBe(false);
     expect(testoCitaDirettiva("direttiva (UE) 2019/944", "non-anno", "944")).toBe(false);
   });
@@ -52,21 +48,15 @@ describe("recepimenti-atti: matcher esplicito anno+numero (fixture, zero rete)",
     expect(
       testoCitaDirettiva("Visto il regolamento (UE) 2014/65 del Parlamento", "2014", "65"),
     ).toBe(false);
-    expect(
-      testoCitaDirettiva("DECRETO LEGISLATIVO 3 luglio 2026, n. 136", "2026", "136"),
-    ).toBe(false);
+    expect(testoCitaDirettiva("DECRETO LEGISLATIVO 3 luglio 2026, n. 136", "2026", "136")).toBe(
+      false,
+    );
     expect(testoCitaDirettiva("articolo 944/2019 del testo unico", "2019", "944")).toBe(false);
-    expect(
-      testoCitaDirettiva("a.s. 2024/2025 e organico scolastico", "2024", "2025"),
-    ).toBe(false);
+    expect(testoCitaDirettiva("a.s. 2024/2025 e organico scolastico", "2024", "2025")).toBe(false);
     // Parola direttiva troppo lontana (>60ch prima del riferimento): no match.
-    expect(
-      testoCitaDirettiva(
-        `direttiva europea ${"x".repeat(80)} 2019/944`,
-        "2019",
-        "944",
-      ),
-    ).toBe(false);
+    expect(testoCitaDirettiva(`direttiva europea ${"x".repeat(80)} 2019/944`, "2019", "944")).toBe(
+      false,
+    );
     expect(() => testoCitaDirettiva(undefined, undefined, undefined)).not.toThrow();
   });
 
@@ -82,8 +72,7 @@ describe("recepimenti-atti: matcher esplicito anno+numero (fixture, zero rete)",
 describe("recepimenti-atti: loader mappa (file reale, zero rete, never-throw)", () => {
   it("carica la mappa o { ok:false } senza lanciare; solo voci con atti osservati", async () => {
     azzeraCacheAttiCollegati();
-    const esito: Awaited<ReturnType<typeof tuttiAttiCollegati>> =
-      await tuttiAttiCollegati();
+    const esito: Awaited<ReturnType<typeof tuttiAttiCollegati>> = await tuttiAttiCollegati();
     expect(() => esito).not.toThrow();
     expect(esito).not.toBeNull();
     if (esito && esito.ok) {

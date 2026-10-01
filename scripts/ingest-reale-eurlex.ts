@@ -59,7 +59,7 @@ const QUERY_MAIN = `${PREFISSI} SELECT ?celex (SAMPLE(?e0) AS ?eli) (SAMPLE(?t0)
 
 const CELEX_GENUINO_RE = /^3\d{4}[RL]\d{1,4}$/;
 const CELEX_PARTI_RE = /^3(\d{4})([RL])(\d{1,4})$/;
-const ELI_OSSERVATO_RE = /^http:\/\/data\.europa\.eu\/eli\/[a-z_]+\/\d{4}\/[^\/\s]+\/oj$/i;
+const ELI_OSSERVATO_RE = /^http:\/\/data\.europa\.eu\/eli\/[a-z_]+\/\d{4}\/[^/\s]+\/oj$/i;
 const ISO_DATA_RE = /^\d{4}-\d{2}-\d{2}$/;
 
 interface Binding {
@@ -100,24 +100,27 @@ function dormi(ms: number): Promise<void> {
 
 /** Decodifica entità HTML/numeriche nei titoli CELLAR (`&#11;`, `&amp;`…). */
 function decodificaEntita(testo: string): string {
-  return testo
-    .replace(/&#(\d+);/g, (_m, codice: string) => {
-      const n = Number(codice);
-      return Number.isFinite(n) && n > 0 ? String.fromCodePoint(n) : " ";
-    })
-    .replace(/&#x([0-9a-f]+);/gi, (_m, codice: string) => {
-      const n = parseInt(codice, 16);
-      return Number.isFinite(n) && n > 0 ? String.fromCodePoint(n) : " ";
-    })
-    .replace(/&nbsp;/g, " ")
-    .replace(/&quot;/g, '"')
-    .replace(/&apos;/g, "'")
-    .replace(/&lt;/g, "<")
-    .replace(/&gt;/g, ">")
-    .replace(/&amp;/g, "&")
-    .replace(/[\u0000-\u0008\u000B\u000C\u000E-\u001F]/g, " ")
-    .replace(/\s+/g, " ")
-    .trim();
+  return (
+    testo
+      .replace(/&#(\d+);/g, (_m, codice: string) => {
+        const n = Number(codice);
+        return Number.isFinite(n) && n > 0 ? String.fromCodePoint(n) : " ";
+      })
+      .replace(/&#x([0-9a-f]+);/gi, (_m, codice: string) => {
+        const n = parseInt(codice, 16);
+        return Number.isFinite(n) && n > 0 ? String.fromCodePoint(n) : " ";
+      })
+      .replace(/&nbsp;/g, " ")
+      .replace(/&quot;/g, '"')
+      .replace(/&apos;/g, "'")
+      .replace(/&lt;/g, "<")
+      .replace(/&gt;/g, ">")
+      .replace(/&amp;/g, "&")
+      // oxlint-disable-next-line no-control-regex -- strips control characters on purpose
+      .replace(/[\u0000-\u0008\u000B\u000C\u000E-\u001F]/g, " ")
+      .replace(/\s+/g, " ")
+      .trim()
+  );
 }
 
 function dataIso(valore: string): string {
@@ -259,7 +262,8 @@ async function main(): Promise<void> {
       reg2025_2026,
       dir2024_2026,
       universo2026: 120,
-      criterio: "REG genuini + DIR/DIR_IMPL/DIR_DEL del 2026, escluse rettifiche R(, top per data documento DESC e CELEX ASC",
+      criterio:
+        "REG genuini + DIR/DIR_IMPL/DIR_DEL del 2026, escluse rettifiche R(, top per data documento DESC e CELEX ASC",
     },
     atti,
   };

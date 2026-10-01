@@ -2,10 +2,7 @@ import { NextResponse } from "next/server";
 import { QUERY_CAP_MASSIMO, listLaws, queryLaws, sortLaws } from "@/lib/db";
 import type { LawRecordExtra, LawSort } from "@/lib/db";
 import { rankAndFilter } from "@/lib/search-rank";
-import {
-  coloreSemaforoRecord,
-  personaRilevanteRecord,
-} from "@/lib/filtri-leggi";
+import { coloreSemaforoRecord, personaRilevanteRecord } from "@/lib/filtri-leggi";
 
 export const dynamic = "force-dynamic";
 export const runtime = "nodejs";
@@ -146,8 +143,7 @@ export async function GET(request: Request) {
     const rilevanzaRichiesta = chiedeRilevanza(sortParam);
     const sortEsplicito = (sortParam ?? "").trim() !== "";
     // Default: con `q` (>=2 char) ordina per rilevanza, altrimenti per data.
-    const usaRilevanza =
-      q.trim().length >= 2 && (rilevanzaRichiesta || !sortEsplicito);
+    const usaRilevanza = q.trim().length >= 2 && (rilevanzaRichiesta || !sortEsplicito);
 
     if (usaRilevanza || haNuoviFiltri) {
       // Finestra di ricerca/ranking esatta fino a QUERY_CAP_MASSIMO (copre

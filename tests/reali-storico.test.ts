@@ -6,7 +6,7 @@
  * `scripts/ingest-reale-normattiva-storico.ts`.
  */
 import { deflateRawSync } from "node:zlib";
-import { describe, expect, it } from "vitest";
+import { describe, expect, it } from "vite-plus/test";
 import {
   caricaChiaviRecenti,
   chiaveEliStorico,
@@ -82,7 +82,9 @@ const DETTAGLIO_1980 = {
 };
 
 /** Costruisce uno ZIP minimo in memoria (stored + deflate) senza dipendenze. */
-function zipMinimo(entries: Array<{ nome: string; contenuto: string; deflate: boolean }>): Uint8Array {
+function zipMinimo(
+  entries: Array<{ nome: string; contenuto: string; deflate: boolean }>,
+): Uint8Array {
   const parti: Buffer[] = [];
   const centrale: Buffer[] = [];
   let offset = 0;
@@ -189,8 +191,12 @@ describe("ingest storico Normattiva (fixture inline, zero rete)", () => {
     expect(record?.dataGU).toBe("1980-12-06");
     expect(record?.numeroGU).toBe("335");
     expect(record?.codiceRedazionale).toBe("080U0799");
-    expect(record?.fonti.normattiva).toContain("https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legge:1980-12-05;799");
-    expect(record?.fonti.gazzetta).toBe("https://www.gazzettaufficiale.it/eli/id/1980/12/06/080U0799/sg");
+    expect(record?.fonti.normattiva).toContain(
+      "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legge:1980-12-05;799",
+    );
+    expect(record?.fonti.gazzetta).toBe(
+      "https://www.gazzettaufficiale.it/eli/id/1980/12/06/080U0799/sg",
+    );
     expect("dimostrativo" in (record as unknown as Record<string, unknown>)).toBe(false);
   });
 

@@ -180,7 +180,9 @@ export function pagina<T>(elementi: readonly T[], page: unknown, per: unknown): 
 }
 
 /** Conteggi per tipologia raw, ordinati per componenti desc e nome asc. */
-export function contaPerTipologia(pronunce: readonly Pronuncia[]): { nome: string; componenti: number }[] {
+export function contaPerTipologia(
+  pronunce: readonly Pronuncia[],
+): { nome: string; componenti: number }[] {
   try {
     if (!Array.isArray(pronunce)) return [];
     const conteggi = new Map<string, number>();
@@ -286,7 +288,8 @@ function provenanceDi(grezzo: unknown): ProvenienzaConsulta | null {
     const anno = stringaPulita(o["anno"]);
     if (anno) out.anno = anno;
     const tot = o["totaleAnno"];
-    if (typeof tot === "number" && Number.isFinite(tot) && tot > 0) out.totaleAnno = Math.floor(tot);
+    if (typeof tot === "number" && Number.isFinite(tot) && tot > 0)
+      out.totaleAnno = Math.floor(tot);
     return out;
   } catch {
     return null;

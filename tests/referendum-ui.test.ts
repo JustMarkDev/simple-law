@@ -4,7 +4,7 @@
  * numeri-stringa DAIT, mai-500 dell'API, coerenza SI/NO.
  */
 
-import { describe, expect, it } from "vitest";
+import { describe, expect, it } from "vite-plus/test";
 import { existsSync } from "node:fs";
 import { join } from "node:path";
 import {
@@ -98,7 +98,9 @@ describe("referendum 2025 — API mai-500", () => {
   });
 
   it("q sotto 2 caratteri non filtra (mai 500)", async () => {
-    const res = await referendumGET(new Request("http://localhost/api/elezioni/referendum-2025?q=x"));
+    const res = await referendumGET(
+      new Request("http://localhost/api/elezioni/referendum-2025?q=x"),
+    );
     expect([200, 404].includes(res.status)).toBe(true);
   });
 });

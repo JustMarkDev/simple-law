@@ -23,7 +23,7 @@
  * altro di reale: zero aggiunte oneste, MAI riempire con inventati.
  *
  * Uso:
- *   npx tsx scripts/dense-B2.ts [--anni=1971,1972] [--per-anno=120]
+ *   bunx tsx scripts/dense-B2.ts [--anni=1971,1972] [--per-anno=120]
  *     [--testo-max=2000] [--api-base=...] [--help]
  */
 
@@ -164,7 +164,9 @@ function isoDaParti(anno: unknown, mese: unknown, giorno: unknown): string {
 }
 
 export function chiaveEliDenseB2(eli: unknown): string {
-  return String(eli ?? "").trim().toLowerCase();
+  return String(eli ?? "")
+    .trim()
+    .toLowerCase();
 }
 
 function pausa(ms: number): Promise<void> {
@@ -222,7 +224,11 @@ export function urnDaVoceDenseB2(voce: unknown): string {
   const numero = stringaDenseB2(
     voce["numeroProvvedimento"] ?? voce["numero"] ?? voce["numeroAttoAlfanumerico"],
   );
-  const iso = isoDaParti(voce["annoProvvedimento"], voce["meseProvvedimento"], voce["giornoProvvedimento"]);
+  const iso = isoDaParti(
+    voce["annoProvvedimento"],
+    voce["meseProvvedimento"],
+    voce["giornoProvvedimento"],
+  );
   if (!tipo || !numero || !iso) return "";
   const urn = formatNIR({ tipo, data: iso, numero });
   return parseNIR(urn) ? urn : "";
@@ -271,17 +277,21 @@ export function dettaglioToRecordDenseB2(
 
   const dataEmanazione =
     dto?.dataEmanazione ||
-    isoDaParti(interno["annoProvvedimento"], interno["meseProvvedimento"], interno["giornoProvvedimento"]) ||
+    isoDaParti(
+      interno["annoProvvedimento"],
+      interno["meseProvvedimento"],
+      interno["giornoProvvedimento"],
+    ) ||
     normalizzaData(interno["dataEmanazione"]) ||
     (parseNIR(voce.urn)?.data ?? "");
   if (!dataEmanazione) return null;
 
-  const codice = dto?.codiceRedazionale || stringaDenseB2(interno["codiceRedazionale"]) || voce.codice;
+  const codice =
+    dto?.codiceRedazionale || stringaDenseB2(interno["codiceRedazionale"]) || voce.codice;
 
   const html = dto?.articoloHtml || stringaDenseB2(interno["articoloHtml"]);
   const testoIntegrale = dto?.testo || stripHtml(html);
-  const sottoTitolo =
-    dto?.sottoTitolo || normalizzaDenseB2(stringaDenseB2(interno["sottoTitolo"]));
+  const sottoTitolo = dto?.sottoTitolo || normalizzaDenseB2(stringaDenseB2(interno["sottoTitolo"]));
   const fineVigenzaGrezza = stringaDenseB2(interno["articoloDataFineVigenza"]);
   const daData = statoDaFineVigenzaDenseB2(fineVigenzaGrezza, oggiCompact());
   const daIntestazione = statoDaIntestazioneArt1DenseB2(testoIntegrale);
@@ -364,7 +374,7 @@ function aiuto(): string {
     "Densificazione TAG-B2 anni 1971,1972,1973,1974,1976,1982,1983,1988 (APPEND, dati ufficiali, mai dimostrativi).",
     "",
     "Uso:",
-    "  npx tsx scripts/dense-B2.ts [opzioni]",
+    "  bunx tsx scripts/dense-B2.ts [opzioni]",
     "",
     "Opzioni:",
     "  --anni=A,B            anni da densificare (default tutti gli 8)",
@@ -434,7 +444,10 @@ export function isErroreLimiteAttiDenseB2(cause: unknown): boolean {
   );
 }
 
-export function dividiIntervalloDenseB2(inizio: string, fine: string): Array<[string, string]> | null {
+export function dividiIntervalloDenseB2(
+  inizio: string,
+  fine: string,
+): Array<[string, string]> | null {
   if (!isIsoDateDenseB2(inizio) || !isIsoDateDenseB2(fine) || inizio >= fine) return null;
   const t0 = Date.parse(`${inizio}T00:00:00Z`);
   const t1 = Date.parse(`${fine}T00:00:00Z`);
@@ -554,7 +567,9 @@ export async function percorsiDedupDenseB2(): Promise<string[]> {
   }
 }
 
-export async function caricaChiaviEsistentiDenseB2(percorsi: readonly string[]): Promise<Set<string>> {
+export async function caricaChiaviEsistentiDenseB2(
+  percorsi: readonly string[],
+): Promise<Set<string>> {
   const chiavi = new Set<string>();
   for (const percorso of percorsi) {
     try {
@@ -590,7 +605,9 @@ export function eliCandidatiDenseB2(voce: VoceDenseB2): string[] {
   return [...candidati];
 }
 
-async function leggiAttiEsistenti(percorso: string): Promise<{ atti: LawRecord[]; provenance: Provenance | null }> {
+async function leggiAttiEsistenti(
+  percorso: string,
+): Promise<{ atti: LawRecord[]; provenance: Provenance | null }> {
   try {
     const raw = await readFile(path.resolve(percorso), "utf8");
     const parsed = JSON.parse(raw) as unknown;
@@ -598,11 +615,17 @@ async function leggiAttiEsistenti(percorso: string): Promise<{ atti: LawRecord[]
     const lista = arrayDa(parsed["atti"] ?? [], []);
     const atti: LawRecord[] = [];
     for (const item of Array.isArray(lista) ? lista : []) {
-      if (isRecord(item) && typeof item["chiave"] === "string" && typeof item["titolo"] === "string") {
+      if (
+        isRecord(item) &&
+        typeof item["chiave"] === "string" &&
+        typeof item["titolo"] === "string"
+      ) {
         atti.push(item as unknown as LawRecord);
       }
     }
-    const prov = isRecord(parsed["provenance"]) ? (parsed["provenance"] as unknown as Provenance) : null;
+    const prov = isRecord(parsed["provenance"])
+      ? (parsed["provenance"] as unknown as Provenance)
+      : null;
     return { atti, provenance: prov };
   } catch {
     return { atti: [], provenance: null };
@@ -683,7 +706,11 @@ async function main(): Promise<void> {
     while (nuovi.length < perAnno && indice < candidate.length && !interrotto) {
       const blocco = candidate.slice(indice, indice + 60);
       indice += blocco.length;
-      for (let i = 0; i < blocco.length && nuovi.length < perAnno && !interrotto; i += DETTAGLI_PER_BATCH) {
+      for (
+        let i = 0;
+        i < blocco.length && nuovi.length < perAnno && !interrotto;
+        i += DETTAGLI_PER_BATCH
+      ) {
         const batch = blocco.slice(i, i + DETTAGLI_PER_BATCH);
         for (const voce of batch) {
           if (nuovi.length >= perAnno) break;
@@ -723,7 +750,9 @@ async function main(): Promise<void> {
           await pausa(PAUSA_BATCH_MS);
         }
       }
-      console.log(`Anno ${anno}: raccolti ${nuovi.length}/${perAnno} (scansionate ${Math.min(indice, candidate.length)}/${candidate.length} candidate).`);
+      console.log(
+        `Anno ${anno}: raccolti ${nuovi.length}/${perAnno} (scansionate ${Math.min(indice, candidate.length)}/${candidate.length} candidate).`,
+      );
       if (!interrotto) await pausa(PAUSA_BATCH_MS);
     }
 
@@ -751,11 +780,19 @@ async function main(): Promise<void> {
       aggiunti += 1;
     }
     const envelope: Envelope = {
-      provenance: { fonte: "normattiva", url: urlLista, recuperatoIl: new Date().toISOString(), licenza: LICENZA },
+      provenance: {
+        fonte: "normattiva",
+        url: urlLista,
+        recuperatoIl: new Date().toISOString(),
+        licenza: LICENZA,
+      },
       atti: merge,
     };
     let json = JSON.stringify(envelope, null, 2);
-    while (Buffer.byteLength(json, "utf8") / DIM_KB > LIMITE_FILE_KB && envelope.atti.length > esistenti.length) {
+    while (
+      Buffer.byteLength(json, "utf8") / DIM_KB > LIMITE_FILE_KB &&
+      envelope.atti.length > esistenti.length
+    ) {
       envelope.atti.pop();
       aggiunti -= 1;
       json = JSON.stringify(envelope, null, 2);
@@ -768,7 +805,9 @@ async function main(): Promise<void> {
     }
     await mkdir(path.dirname(dest), { recursive: true });
     await writeFile(dest, json, "utf8");
-    console.log(`Anno ${anno}: +${aggiunti} atti (tot ${envelope.atti.length}, ${kbFinale.toFixed(1)} KB). Scarti: ${errori.length}.`);
+    console.log(
+      `Anno ${anno}: +${aggiunti} atti (tot ${envelope.atti.length}, ${kbFinale.toFixed(1)} KB). Scarti: ${errori.length}.`,
+    );
     riepilogo.push({ anno, prima, dopo: envelope.atti.length, nuovi: aggiunti });
   }
 

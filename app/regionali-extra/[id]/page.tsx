@@ -1,8 +1,8 @@
-import type { Metadata } from 'next'
-import Link from 'next/link'
-import { notFound } from 'next/navigation'
-import Header from '@/components/Header'
-import Footer from '@/components/Footer'
+import type { Metadata } from "next";
+import Link from "next/link";
+import { notFound } from "next/navigation";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 import {
   caricaRegionaleExtra,
   cercaComuneExtra,
@@ -10,143 +10,162 @@ import {
   normalizzaIdRegionaleExtra,
   paginaExtra,
   type DatiRegionaleExtra,
-} from '@/lib/regionali-extra-dati'
+} from "@/lib/regionali-extra-dati";
 
-export const revalidate = 3600
+export const revalidate = 3600;
 
 export function generateStaticParams(): Array<{ id: string }> {
-  return [{ id: 'regionali-2024-liguria' }, { id: 'regionali-2025-calabria' }, { id: 'regionali-2024-emilia-romagna' }]
+  return [
+    { id: "regionali-2024-liguria" },
+    { id: "regionali-2025-calabria" },
+    { id: "regionali-2024-emilia-romagna" },
+  ];
 }
 
 const TITOLI: Record<string, { titolo: string; descrizione: string }> = {
-  'regionali-2024-emilia-romagna': {
-    titolo: 'Elezioni regionali 2024 - Emilia-Romagna (17 novembre 2024)',
+  "regionali-2024-emilia-romagna": {
+    titolo: "Elezioni regionali 2024 - Emilia-Romagna (17 novembre 2024)",
     descrizione:
-      'Solo aggregati DAIT-Eligendo per l’Emilia-Romagna: affluenza e voti per lista a livello regionale, affluenza per comune. Nessun nominativo, nessuna riga candidata.',
+      "Solo aggregati DAIT-Eligendo per l’Emilia-Romagna: affluenza e voti per lista a livello regionale, affluenza per comune. Nessun nominativo, nessuna riga candidata.",
   },
-  'regionali-2024-liguria': {
-    titolo: 'Elezioni regionali 2024 - Liguria (27 ottobre 2024)',
+  "regionali-2024-liguria": {
+    titolo: "Elezioni regionali 2024 - Liguria (27 ottobre 2024)",
     descrizione:
-      'Solo aggregati DAIT-Eligendo per la Liguria: affluenza e voti per lista a livello regionale, affluenza per comune. Nessun nominativo, nessuna riga candidata; i voti del presidente non sono pubblicati come aggregato nel tracciato.',
+      "Solo aggregati DAIT-Eligendo per la Liguria: affluenza e voti per lista a livello regionale, affluenza per comune. Nessun nominativo, nessuna riga candidata; i voti del presidente non sono pubblicati come aggregato nel tracciato.",
   },
-  'regionali-2025-calabria': {
-    titolo: 'Elezioni regionali 2025 - Calabria (5 ottobre 2025)',
+  "regionali-2025-calabria": {
+    titolo: "Elezioni regionali 2025 - Calabria (5 ottobre 2025)",
     descrizione:
-      'Solo aggregati DAIT-Eligendo per la Calabria: affluenza e voti per lista a livello regionale, affluenza per comune. Nessun nominativo, nessuna riga candidata; i voti del presidente non sono pubblicati come aggregato nel tracciato.',
+      "Solo aggregati DAIT-Eligendo per la Calabria: affluenza e voti per lista a livello regionale, affluenza per comune. Nessun nominativo, nessuna riga candidata; i voti del presidente non sono pubblicati come aggregato nel tracciato.",
   },
-}
+};
 
-export async function generateMetadata(
-  { params }: { params: Promise<{ id: string }> },
-): Promise<Metadata> {
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ id: string }>;
+}): Promise<Metadata> {
   try {
-    const { id } = await params
-    const voce = TITOLI[id] ?? null
-    if (!voce) return { title: 'Consultazione non trovata - Stato della Repubblica' }
+    const { id } = await params;
+    const voce = TITOLI[id] ?? null;
+    if (!voce) return { title: "Consultazione non trovata - Stato della Repubblica" };
     return {
       title: `${voce.titolo} - Stato della Repubblica`,
       description: voce.descrizione,
-    }
+    };
   } catch {
-    return { title: 'Regionali extra - Stato della Repubblica' }
+    return { title: "Regionali extra - Stato della Repubblica" };
   }
 }
 
 function intero(value: number): string {
   try {
-    return new Intl.NumberFormat('it-IT', { maximumFractionDigits: 0 }).format(
+    return new Intl.NumberFormat("it-IT", { maximumFractionDigits: 0 }).format(
       Number.isFinite(value) ? value : 0,
-    )
+    );
   } catch {
-    return '0'
+    return "0";
   }
 }
 
 function decimaleIT(value: number): string {
   try {
-    return new Intl.NumberFormat('it-IT', { minimumFractionDigits: 1, maximumFractionDigits: 1 }).format(
-      Number.isFinite(value) ? value : 0,
-    )
+    return new Intl.NumberFormat("it-IT", {
+      minimumFractionDigits: 1,
+      maximumFractionDigits: 1,
+    }).format(Number.isFinite(value) ? value : 0);
   } catch {
-    return '0,0'
+    return "0,0";
   }
 }
 
-function interoQuery(value: string | string[] | undefined, fallback: number, min: number, max: number): number {
+function interoQuery(
+  value: string | string[] | undefined,
+  fallback: number,
+  min: number,
+  max: number,
+): number {
   try {
-    const raw = Array.isArray(value) ? value[0] : value
-    const parsed = Number.parseInt(raw ?? '', 10)
-    if (!Number.isFinite(parsed)) return fallback
-    return Math.min(max, Math.max(min, Math.floor(parsed)))
+    const raw = Array.isArray(value) ? value[0] : value;
+    const parsed = Number.parseInt(raw ?? "", 10);
+    if (!Number.isFinite(parsed)) return fallback;
+    return Math.min(max, Math.max(min, Math.floor(parsed)));
   } catch {
-    return fallback
+    return fallback;
   }
 }
 
 function stringaQuery(value: string | string[] | undefined, max: number): string {
   try {
-    const raw = Array.isArray(value) ? value[0] : value
-    if (typeof raw !== 'string') return ''
-    return raw.slice(0, max)
+    const raw = Array.isArray(value) ? value[0] : value;
+    if (typeof raw !== "string") return "";
+    return raw.slice(0, max);
   } catch {
-    return ''
+    return "";
   }
 }
 
-const PER_PAGINA = 20
+const PER_PAGINA = 20;
 
 /**
  * Dettaglio di una regionale-extra: sintesi, per-lista regionale e
  * affluenza comunale con ricerca. Solo aggregati dai file committati,
  * mai numeri inventati. File assente o id ignoto -> notFound().
  */
-export default async function RegionaleExtraDettaglioPage(
-  { params, searchParams }: { params: Promise<{ id: string }>; searchParams: Promise<Record<string, string | string[] | undefined>> },
-) {
-  let id = ''
+export default async function RegionaleExtraDettaglioPage({
+  params,
+  searchParams,
+}: {
+  params: Promise<{ id: string }>;
+  searchParams: Promise<Record<string, string | string[] | undefined>>;
+}) {
+  let id = "";
   try {
-    id = (await params).id
+    id = (await params).id;
   } catch {
-    notFound()
+    notFound();
   }
-  const chiave = normalizzaIdRegionaleExtra(id)
-  const voce = chiave ? TITOLI[chiave] : null
-  if (!chiave || !voce) notFound()
+  const chiave = normalizzaIdRegionaleExtra(id);
+  const voce = chiave ? TITOLI[chiave] : null;
+  if (!chiave || !voce) notFound();
 
-  let query: Record<string, string | string[] | undefined> = {}
+  let query: Record<string, string | string[] | undefined> = {};
   try {
-    query = await searchParams
+    query = await searchParams;
   } catch {
-    query = {}
+    query = {};
   }
-  const q = stringaQuery(query['q'], 100)
-  const pagina = interoQuery(query['page'], 1, 1, 10000)
+  const q = stringaQuery(query["q"], 100);
+  const pagina = interoQuery(query["page"], 1, 1, 10000);
 
-  let dati: DatiRegionaleExtra | null = null
+  let dati: DatiRegionaleExtra | null = null;
   try {
-    dati = await caricaRegionaleExtra(chiave)
+    dati = await caricaRegionaleExtra(chiave);
   } catch {
-    dati = null
+    dati = null;
   }
-  if (!dati) notFound()
+  if (!dati) notFound();
 
-  const liste = [...dati.liste].sort((a, b) => b.v - a.v).slice(0, 15)
-  let comuniBase = dati.comuni
+  const liste = [...dati.liste].sort((a, b) => b.v - a.v).slice(0, 15);
+  let comuniBase = dati.comuni;
   try {
-    comuniBase = normalizzaExtra(q).length >= 2 ? cercaComuneExtra(dati.comuni, q) : dati.comuni
+    comuniBase = normalizzaExtra(q).length >= 2 ? cercaComuneExtra(dati.comuni, q) : dati.comuni;
   } catch {
-    comuniBase = dati.comuni
+    comuniBase = dati.comuni;
   }
-  const totaleComuni = comuniBase.length
-  const pagineTotali = Math.max(1, Math.ceil(totaleComuni / PER_PAGINA))
-  const paginaCorrente = Math.min(pagina, pagineTotali)
-  const comuni = paginaExtra(comuniBase, paginaCorrente, PER_PAGINA)
-  const regione = dati.regioni[0] ?? null
+  const totaleComuni = comuniBase.length;
+  const pagineTotali = Math.max(1, Math.ceil(totaleComuni / PER_PAGINA));
+  const paginaCorrente = Math.min(pagina, pagineTotali);
+  const comuni = paginaExtra(comuniBase, paginaCorrente, PER_PAGINA);
+  const regione = dati.regioni[0] ?? null;
 
   return (
     <>
       <Header />
-      <main id="contenuto" className="mx-auto w-full max-w-editoriale px-4 py-10 sm:px-6 sm:py-12 lg:px-8">
+      <main
+        id="contenuto"
+        className="mx-auto w-full max-w-editoriale px-4 py-10 sm:px-6 sm:py-12 lg:px-8"
+      >
         <nav aria-label="Percorso" className="text-sm">
           <Link
             href="/regionali-extra"
@@ -189,14 +208,16 @@ export default async function RegionaleExtraDettaglioPage(
               <dd>{intero(dati.elezione.b)}</dd>
             </div>
             <div className="flex gap-2">
-              <dt className="font-semibold text-inchiostro dark:text-nebbia">Nulle + contestate:</dt>
+              <dt className="font-semibold text-inchiostro dark:text-nebbia">
+                Nulle + contestate:
+              </dt>
               <dd>{intero(dati.elezione.k)}</dd>
             </div>
           </dl>
           {regione ? (
             <p className="mt-2 text-sm text-inchiostro-soft dark:text-nebbia-soft">
-              Regione {regione.r}: {intero(regione.v)} votanti su {intero(regione.e)} elettori
-              ({decimaleIT(regione.a)}%).
+              Regione {regione.r}: {intero(regione.v)} votanti su {intero(regione.e)} elettori (
+              {decimaleIT(regione.a)}%).
             </p>
           ) : null}
         </section>
@@ -212,17 +233,41 @@ export default async function RegionaleExtraDettaglioPage(
               </caption>
               <thead>
                 <tr className="border-b border-regola text-left dark:border-notte-deep">
-                  <th scope="col" className="px-3 py-2 font-semibold text-inchiostro dark:text-nebbia">Lista</th>
-                  <th scope="col" className="px-3 py-2 text-right font-semibold text-inchiostro dark:text-nebbia">Voti</th>
-                  <th scope="col" className="px-3 py-2 text-right font-semibold text-inchiostro dark:text-nebbia">%</th>
+                  <th
+                    scope="col"
+                    className="px-3 py-2 font-semibold text-inchiostro dark:text-nebbia"
+                  >
+                    Lista
+                  </th>
+                  <th
+                    scope="col"
+                    className="px-3 py-2 text-right font-semibold text-inchiostro dark:text-nebbia"
+                  >
+                    Voti
+                  </th>
+                  <th
+                    scope="col"
+                    className="px-3 py-2 text-right font-semibold text-inchiostro dark:text-nebbia"
+                  >
+                    %
+                  </th>
                 </tr>
               </thead>
               <tbody>
                 {liste.map((l) => (
-                  <tr key={l.n} className="border-b border-regola last:border-0 dark:border-notte-deep">
-                    <td className="px-3 py-2 font-medium text-inchiostro dark:text-nebbia">{l.n}</td>
-                    <td className="px-3 py-2 text-right text-inchiostro-soft dark:text-nebbia-soft">{intero(l.v)}</td>
-                    <td className="px-3 py-2 text-right text-inchiostro-soft dark:text-nebbia-soft">{decimaleIT(l.p)}%</td>
+                  <tr
+                    key={l.n}
+                    className="border-b border-regola last:border-0 dark:border-notte-deep"
+                  >
+                    <td className="px-3 py-2 font-medium text-inchiostro dark:text-nebbia">
+                      {l.n}
+                    </td>
+                    <td className="px-3 py-2 text-right text-inchiostro-soft dark:text-nebbia-soft">
+                      {intero(l.v)}
+                    </td>
+                    <td className="px-3 py-2 text-right text-inchiostro-soft dark:text-nebbia-soft">
+                      {decimaleIT(l.p)}%
+                    </td>
                   </tr>
                 ))}
               </tbody>
@@ -234,8 +279,15 @@ export default async function RegionaleExtraDettaglioPage(
           <h2 id="comuni" className="text-xl font-bold text-inchiostro dark:text-nebbia">
             Affluenza per comune ({intero(totaleComuni)} comuni)
           </h2>
-          <form method="get" role="search" aria-label="Cerca un comune" className="mt-4 flex max-w-md gap-2">
-            <label htmlFor="q-comune" className="sr-only">Cerca un comune (minimo 2 caratteri)</label>
+          <form
+            method="get"
+            role="search"
+            aria-label="Cerca un comune"
+            className="mt-4 flex max-w-md gap-2"
+          >
+            <label htmlFor="q-comune" className="sr-only">
+              Cerca un comune (minimo 2 caratteri)
+            </label>
             <input
               id="q-comune"
               name="q"
@@ -244,7 +296,7 @@ export default async function RegionaleExtraDettaglioPage(
               minLength={2}
               maxLength={100}
               placeholder="Cerca un comune…"
-              className="min-h-[48px] w-full border border-regola bg-carta px-3 py-2 text-sm text-inchiostro dark:border-notte-deep dark:bg-notte-soft dark:text-nebbia"
+              className="min-h-[48px] w-full border border-regola placeholder:text-gray-400 bg-carta px-3 py-2 text-sm text-inchiostro dark:border-notte-deep dark:bg-notte-soft dark:text-nebbia"
             />
             <button
               type="submit"
@@ -265,21 +317,59 @@ export default async function RegionaleExtraDettaglioPage(
                 </caption>
                 <thead>
                   <tr className="border-b border-regola text-left dark:border-notte-deep">
-                    <th scope="col" className="px-3 py-2 font-semibold text-inchiostro dark:text-nebbia">Comune</th>
-                    <th scope="col" className="px-3 py-2 font-semibold text-inchiostro dark:text-nebbia">Circoscrizione</th>
-                    <th scope="col" className="px-3 py-2 text-right font-semibold text-inchiostro dark:text-nebbia">Elettori</th>
-                    <th scope="col" className="px-3 py-2 text-right font-semibold text-inchiostro dark:text-nebbia">Votanti</th>
-                    <th scope="col" className="px-3 py-2 text-right font-semibold text-inchiostro dark:text-nebbia">Affluenza</th>
+                    <th
+                      scope="col"
+                      className="px-3 py-2 font-semibold text-inchiostro dark:text-nebbia"
+                    >
+                      Comune
+                    </th>
+                    <th
+                      scope="col"
+                      className="px-3 py-2 font-semibold text-inchiostro dark:text-nebbia"
+                    >
+                      Circoscrizione
+                    </th>
+                    <th
+                      scope="col"
+                      className="px-3 py-2 text-right font-semibold text-inchiostro dark:text-nebbia"
+                    >
+                      Elettori
+                    </th>
+                    <th
+                      scope="col"
+                      className="px-3 py-2 text-right font-semibold text-inchiostro dark:text-nebbia"
+                    >
+                      Votanti
+                    </th>
+                    <th
+                      scope="col"
+                      className="px-3 py-2 text-right font-semibold text-inchiostro dark:text-nebbia"
+                    >
+                      Affluenza
+                    </th>
                   </tr>
                 </thead>
                 <tbody>
                   {comuni.map((c) => (
-                    <tr key={`${c.r}-${c.p}-${c.c}`} className="border-b border-regola last:border-0 dark:border-notte-deep">
-                      <td className="px-3 py-2 font-medium text-inchiostro dark:text-nebbia">{c.c}</td>
-                      <td className="px-3 py-2 text-inchiostro-soft dark:text-nebbia-soft">{c.p}</td>
-                      <td className="px-3 py-2 text-right text-inchiostro-soft dark:text-nebbia-soft">{intero(c.e)}</td>
-                      <td className="px-3 py-2 text-right text-inchiostro-soft dark:text-nebbia-soft">{intero(c.v)}</td>
-                      <td className="px-3 py-2 text-right text-inchiostro-soft dark:text-nebbia-soft">{decimaleIT(c.a)}%</td>
+                    <tr
+                      key={`${c.r}-${c.p}-${c.c}`}
+                      className="border-b border-regola last:border-0 dark:border-notte-deep"
+                    >
+                      <td className="px-3 py-2 font-medium text-inchiostro dark:text-nebbia">
+                        {c.c}
+                      </td>
+                      <td className="px-3 py-2 text-inchiostro-soft dark:text-nebbia-soft">
+                        {c.p}
+                      </td>
+                      <td className="px-3 py-2 text-right text-inchiostro-soft dark:text-nebbia-soft">
+                        {intero(c.e)}
+                      </td>
+                      <td className="px-3 py-2 text-right text-inchiostro-soft dark:text-nebbia-soft">
+                        {intero(c.v)}
+                      </td>
+                      <td className="px-3 py-2 text-right text-inchiostro-soft dark:text-nebbia-soft">
+                        {decimaleIT(c.a)}%
+                      </td>
                     </tr>
                   ))}
                 </tbody>
@@ -287,7 +377,10 @@ export default async function RegionaleExtraDettaglioPage(
             </div>
           )}
           {pagineTotali > 1 ? (
-            <nav aria-label="Pagine dei comuni" className="mt-4 flex flex-wrap items-center gap-3 text-sm">
+            <nav
+              aria-label="Pagine dei comuni"
+              className="mt-4 flex flex-wrap items-center gap-3 text-sm"
+            >
               {paginaCorrente > 1 ? (
                 <Link
                   href={`?${new URLSearchParams({ ...(q ? { q } : {}), page: String(paginaCorrente - 1) }).toString()}`}
@@ -311,7 +404,10 @@ export default async function RegionaleExtraDettaglioPage(
           ) : null}
         </section>
 
-        <section aria-labelledby="note" className="mt-10 border border-regola bg-carta p-5 dark:border-notte-deep dark:bg-notte-soft">
+        <section
+          aria-labelledby="note"
+          className="mt-10 border border-regola bg-carta p-5 dark:border-notte-deep dark:bg-notte-soft"
+        >
           <h2 id="note" className="text-lg font-bold text-inchiostro dark:text-nebbia">
             Metodologia e licenze
           </h2>
@@ -322,10 +418,11 @@ export default async function RegionaleExtraDettaglioPage(
             {dati.avvertenze}
           </p>
           <p className="mt-2 text-sm leading-relaxed text-inchiostro-soft dark:text-nebbia-soft">
-            Fonte: {dati.provenance.fonte ?? 'Ministero dell’Interno DAIT'}
+            Fonte: {dati.provenance.fonte ?? "Ministero dell’Interno DAIT"}
             {dati.provenance.url ? (
               <>
-                {' '}(
+                {" "}
+                (
                 <a
                   href={dati.provenance.url}
                   target="_blank"
@@ -337,11 +434,11 @@ export default async function RegionaleExtraDettaglioPage(
                 )
               </>
             ) : null}
-            {dati.provenance.licenza ? ` - ${dati.provenance.licenza}.` : '.'}
+            {dati.provenance.licenza ? ` - ${dati.provenance.licenza}.` : "."}
           </p>
         </section>
       </main>
       <Footer />
     </>
-  )
+  );
 }

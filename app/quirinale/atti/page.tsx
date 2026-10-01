@@ -1,47 +1,43 @@
-import type { Metadata } from 'next'
-import Link from 'next/link'
-import Header from '@/components/Header'
-import Footer from '@/components/Footer'
-import {
-  cercaQuirinale,
-  leggiProvenanceQuirinale,
-  tuttiAttiQuirinale,
-} from '@/lib/quirinale-dati'
+import type { Metadata } from "next";
+import Link from "next/link";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
+import { cercaQuirinale, leggiProvenanceQuirinale, tuttiAttiQuirinale } from "@/lib/quirinale-dati";
 
 export const metadata: Metadata = {
-  title: 'Quirinale - Atti firmati - Stato della Repubblica',
+  title: "Quirinale - Atti firmati - Stato della Repubblica",
   description:
-    'Gli atti recenti firmati dal Presidente della Repubblica da quirinale.it: decreti, disegni di legge autorizzati, nomine. Schede sintetiche, non testi di legge.',
-}
+    "Gli atti recenti firmati dal Presidente della Repubblica da quirinale.it: decreti, disegni di legge autorizzati, nomine. Schede sintetiche, non testi di legge.",
+};
 
 function dataIT(iso?: string): string {
   try {
-    if (!iso) return 'data non indicata'
-    const d = new Date(`${iso}T00:00:00Z`)
-    if (Number.isNaN(d.getTime())) return iso.slice(0, 10)
-    return d.toLocaleDateString('it-IT', { day: 'numeric', month: 'long', year: 'numeric' })
+    if (!iso) return "data non indicata";
+    const d = new Date(`${iso}T00:00:00Z`);
+    if (Number.isNaN(d.getTime())) return iso.slice(0, 10);
+    return d.toLocaleDateString("it-IT", { day: "numeric", month: "long", year: "numeric" });
   } catch {
-    return (iso ?? '').slice(0, 10)
+    return (iso ?? "").slice(0, 10);
   }
 }
 
 export default async function QuirinaleAttiPage({
   searchParams,
 }: {
-  searchParams: Promise<{ q?: string }>
+  searchParams: Promise<{ q?: string }>;
 }) {
-  const params = await searchParams
-  const q = (params.q ?? '').slice(0, 100)
-  const [tutte, provenance] = await Promise.all([
-    tuttiAttiQuirinale(),
-    leggiProvenanceQuirinale(),
-  ])
-  const filtrati = cercaQuirinale(tutte, q)
+  const params = await searchParams;
+  const q = (params.q ?? "").slice(0, 100);
+  const [tutte, provenance] = await Promise.all([tuttiAttiQuirinale(), leggiProvenanceQuirinale()]);
+  const filtrati = cercaQuirinale(tutte, q);
 
   return (
     <>
       <Header />
-      <main id="contenuto" className="mx-auto w-full max-w-editoriale px-4 py-10 sm:px-6 sm:py-12 lg:px-8">
+      <main
+        id="contenuto"
+        className="mx-auto w-full max-w-editoriale px-4 py-10 sm:px-6 sm:py-12 lg:px-8"
+      >
         <nav aria-label="Percorso" className="text-sm text-inchiostro-soft dark:text-nebbia-soft">
           <ol className="flex items-center gap-2">
             <li>
@@ -74,9 +70,14 @@ export default async function QuirinaleAttiPage({
             legge, nomine) come elencati su quirinale.it. Sono schede sintetiche di una riga -
             spesso «in attesa di pubblicazione» - non testi normativi completi.
           </p>
-          <p className="mt-2 flex flex-wrap items-center gap-2 text-sm font-semibold text-inchiostro dark:text-nebbia" role="status">
-            <span>{filtrati.length} atti mostrati · {tutte.length} caricati dalla pagina 1</span>
-            <span className="inline-flex items-center border border-inchiostro px-2 py-1 text-[11px] font-bold text-inchiostro dark:border-nebbia dark:text-nebbia">
+          <p
+            className="mt-2 flex flex-wrap items-center gap-2 text-sm font-semibold text-inchiostro dark:text-nebbia"
+            role="status"
+          >
+            <span>
+              {filtrati.length} atti mostrati · {tutte.length} caricati dalla pagina 1
+            </span>
+            <span className="inline-flex items-center border border-inchiostro px-2 py-1 text-[11px] leading-5 font-bold text-inchiostro dark:border-nebbia dark:text-nebbia">
               non-legge
             </span>
           </p>
@@ -89,12 +90,20 @@ export default async function QuirinaleAttiPage({
           >
             ← Comunicati
           </Link>
-          <span aria-current="page" className="inline-flex min-h-[48px] items-center border border-inchiostro bg-inchiostro px-4 py-2 text-xs font-semibold text-carta dark:border-nebbia dark:bg-nebbia dark:text-notte">
+          <span
+            aria-current="page"
+            className="inline-flex min-h-[48px] items-center border border-inchiostro bg-inchiostro px-4 py-2 text-xs font-semibold text-carta dark:border-nebbia dark:bg-nebbia dark:text-notte"
+          >
             Atti ({tutte.length})
           </span>
         </div>
 
-        <form method="get" action="/quirinale/atti" className="mt-6 flex flex-col gap-3 sm:flex-row" role="search">
+        <form
+          method="get"
+          action="/quirinale/atti"
+          className="mt-6 flex flex-col gap-3 sm:flex-row"
+          role="search"
+        >
           <label htmlFor="cerca-atti" className="sr-only">
             Cerca negli atti
           </label>
@@ -116,7 +125,10 @@ export default async function QuirinaleAttiPage({
         </form>
 
         {filtrati.length === 0 ? (
-          <p className="mt-8 border border-regola bg-carta-soft p-5 text-sm text-inchiostro-soft dark:border-notte-deep dark:bg-notte-soft dark:text-nebbia-soft" role="status">
+          <p
+            className="mt-8 border border-regola bg-carta-soft p-5 text-sm text-inchiostro-soft dark:border-notte-deep dark:bg-notte-soft dark:text-nebbia-soft"
+            role="status"
+          >
             Nessun atto trovato con questi criteri. Prova a cercare un altro argomento.
           </p>
         ) : (
@@ -170,9 +182,14 @@ export default async function QuirinaleAttiPage({
             Fonte e licenza
           </h2>
           <p className="mt-2 text-sm leading-relaxed text-inchiostro-soft dark:text-nebbia-soft">
-            Fonte: {provenance.fonte ?? 'quirinale.it'} - {provenance.licenza ?? 'uso non commerciale con attribuzione, fa fede la Gazzetta Ufficiale'}
-            {provenance.recuperatoIl ? ` · dati aggiornati al ${dataIT(provenance.recuperatoIl.slice(0, 10))}` : ''}.
-            Pagina 1 dell&apos;archivio atti (schede di una riga, senza numero né stato: per i testi autentici fa fede la Gazzetta Ufficiale).
+            Fonte: {provenance.fonte ?? "quirinale.it"} -{" "}
+            {provenance.licenza ??
+              "uso non commerciale con attribuzione, fa fede la Gazzetta Ufficiale"}
+            {provenance.recuperatoIl
+              ? ` · dati aggiornati al ${dataIT(provenance.recuperatoIl.slice(0, 10))}`
+              : ""}
+            . Pagina 1 dell&apos;archivio atti (schede di una riga, senza numero né stato: per i
+            testi autentici fa fede la Gazzetta Ufficiale).
           </p>
           <p className="mt-3">
             <a
@@ -188,5 +205,5 @@ export default async function QuirinaleAttiPage({
       </main>
       <Footer />
     </>
-  )
+  );
 }

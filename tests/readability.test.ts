@@ -1,4 +1,4 @@
-import { describe, expect, it } from "vitest";
+import { describe, expect, it } from "vite-plus/test";
 import {
   calcFleschVacca,
   calcGulpease,
@@ -65,7 +65,8 @@ describe("calcFleschVacca", () => {
 
 describe("rinvii e bis/ter", () => {
   it("conta i rinvii", () => {
-    const testo = "Ai sensi dell'articolo 5 e della legge n. 3 del 2020, si applica il decreto legislativo n. 36.";
+    const testo =
+      "Ai sensi dell'articolo 5 e della legge n. 3 del 2020, si applica il decreto legislativo n. 36.";
     expect(contaRinvii(testo)).toBeGreaterThanOrEqual(3);
   });
 

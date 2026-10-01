@@ -42,8 +42,7 @@ export const XLSX_LOCALE = "/tmp/elezioni/OPENDATA_LivComune.xlsx";
 export const XLSX_LOCALE_ALT = "/tmp/elezioni/ref-tmp/OPENDATA_LivComune.xlsx";
 export const ZIP_LOCALE = "/tmp/elezioni/referendum-20250608.zip";
 export const FONTE = "Ministero Interno DAIT — Eligendo Open Data";
-export const LICENZA =
-  "open-data ministeriale da confermare, info_opendata senza stringa CC-BY";
+export const LICENZA = "open-data ministeriale da confermare, info_opendata senza stringa CC-BY";
 export const METODOLOGIA =
   "streaming XLSX (sharedStrings + sheet1.xml via unzip -p), filtro DATAELEZIONE=45816 (=2025-06-08), " +
   "no=validi-si, p_si 1 decimale; e 1x/comune, v=max votanti tra i 5 quesiti per comune, a 1 decimale";
@@ -145,8 +144,7 @@ export interface RigaReferendum {
 
 export function isHeaderReferendum(campi: readonly string[]): boolean {
   return (
-    campi.length === HEADER_ATTESO.length &&
-    HEADER_ATTESO.every((atteso, i) => campi[i] === atteso)
+    campi.length === HEADER_ATTESO.length && HEADER_ATTESO.every((atteso, i) => campi[i] === atteso)
   );
 }
 
@@ -162,8 +160,21 @@ export function parseRigaReferendum(
   if (campi.length !== HEADER_ATTESO.length) {
     throw new Error(`riga ${numeroRiga}: ${campi.length} colonne invece di 13`);
   }
-  const [dataRaw, numRaw, titoloRaw, elettoriRaw, , votantiRaw, , biancheRaw, validiRaw, siRaw, regioneRaw, provinciaRaw, comuneRaw] =
-    campi as unknown as string[];
+  const [
+    dataRaw,
+    numRaw,
+    titoloRaw,
+    elettoriRaw,
+    ,
+    votantiRaw,
+    ,
+    biancheRaw,
+    validiRaw,
+    siRaw,
+    regioneRaw,
+    provinciaRaw,
+    comuneRaw,
+  ] = campi as unknown as string[];
   if (!isDataTarget(dataRaw ?? "")) return null;
   const quesito = normalizzaQuesito(numRaw ?? "", titoloRaw ?? "");
   const elettori = interoNonNegativo(elettoriRaw ?? "");
@@ -231,7 +242,19 @@ export function caricaSharedStrings(xlsx: string): string[] {
 }
 
 const LETTERA_COLONNA: Record<string, number> = {
-  A: 0, B: 1, C: 2, D: 3, E: 4, F: 5, G: 6, H: 7, I: 8, J: 9, K: 10, L: 11, M: 12,
+  A: 0,
+  B: 1,
+  C: 2,
+  D: 3,
+  E: 4,
+  F: 5,
+  G: 6,
+  H: 7,
+  I: 8,
+  J: 9,
+  K: 10,
+  L: 11,
+  M: 12,
 };
 
 /** Risolve le celle di un XML `<row>` in 13 stringhe (sparse -> ""). */
@@ -247,9 +270,8 @@ export function celleRiga(rowXml: string, condivise: readonly string[]): string[
     if (idx === undefined) continue;
     if (attr.includes('t="s"')) {
       const si = Number(valore);
-      celle[idx] = Number.isSafeInteger(si) && si >= 0 && si < condivise.length
-        ? (condivise[si] ?? "")
-        : "";
+      celle[idx] =
+        Number.isSafeInteger(si) && si >= 0 && si < condivise.length ? (condivise[si] ?? "") : "";
     } else {
       celle[idx] = decodificaEntitaXml(valore.trim());
     }
@@ -307,7 +329,14 @@ function applicaRiga(esito: EsitoParse, riga: RigaReferendum): void {
   const chiave = `${riga.regione}||${riga.provincia}||${riga.comune}`;
   let com = esito.comuni.get(chiave);
   if (!com) {
-    com = { c: riga.comune, p: riga.provincia, r: riga.regione, e: riga.elettori, vMax: riga.votanti, bAlMax: riga.bianche };
+    com = {
+      c: riga.comune,
+      p: riga.provincia,
+      r: riga.regione,
+      e: riga.elettori,
+      vMax: riga.votanti,
+      bAlMax: riga.bianche,
+    };
     esito.comuni.set(chiave, com);
     esito.elettoriUnici += riga.elettori;
   } else if (riga.votanti > com.vMax) {
@@ -386,7 +415,8 @@ export async function parseXlsx(
     figlio.stdout.on("error", (e: unknown) => rigetta(e));
     figlio.on("error", (e: unknown) => rigetta(e));
     figlio.on("close", (codice: number | null) => {
-      if (codice !== 0 && codice !== null) rigetta(new Error(`unzip -p uscito con codice ${codice}`));
+      if (codice !== 0 && codice !== null)
+        rigetta(new Error(`unzip -p uscito con codice ${codice}`));
       else risolvi();
     });
   });
@@ -499,7 +529,11 @@ async function scaricaZip(destinazione: string): Promise<string> {
       },
     });
     try {
-      await pipeline(Readable.fromWeb(risposta.body as never), guardiano, createWriteStream(destinazione));
+      await pipeline(
+        Readable.fromWeb(risposta.body as never),
+        guardiano,
+        createWriteStream(destinazione),
+      );
     } catch (errore) {
       try {
         await unlink(destinazione);
@@ -532,8 +566,12 @@ function estraiXlsx(zip: string, destinazione: string): void {
   if (!existsSync(destinazione)) throw new Error("XLSX estratto non trovato");
 }
 
-async function risolviXlsx(xlsxOverride: string | null, scaricati: string[]): Promise<{ xlsx: string; urlProvenance: string }> {
-  if (xlsxOverride && existsSync(xlsxOverride)) return { xlsx: xlsxOverride, urlProvenance: URL_ZIP_FINALE };
+async function risolviXlsx(
+  xlsxOverride: string | null,
+  scaricati: string[],
+): Promise<{ xlsx: string; urlProvenance: string }> {
+  if (xlsxOverride && existsSync(xlsxOverride))
+    return { xlsx: xlsxOverride, urlProvenance: URL_ZIP_FINALE };
   if (existsSync(XLSX_LOCALE)) return { xlsx: XLSX_LOCALE, urlProvenance: URL_ZIP_FINALE };
   if (existsSync(XLSX_LOCALE_ALT)) return { xlsx: XLSX_LOCALE_ALT, urlProvenance: URL_ZIP_FINALE };
   if (existsSync(ZIP_LOCALE)) {
@@ -633,7 +671,12 @@ async function main(): Promise<void> {
   const vTot = [...esito.comuni.values()].reduce((s, c) => s + c.vMax, 0);
   const bTot = [...esito.comuni.values()].reduce((s, c) => s + c.bAlMax, 0);
   const comuni = [...esito.comuni.values()]
-    .sort((a, b) => a.r.localeCompare(b.r, "it") || a.p.localeCompare(b.p, "it") || a.c.localeCompare(b.c, "it"))
+    .sort(
+      (a, b) =>
+        a.r.localeCompare(b.r, "it") ||
+        a.p.localeCompare(b.p, "it") ||
+        a.c.localeCompare(b.c, "it"),
+    )
     .map((c) => ({ c: c.c, p: c.p, r: c.r, e: c.e, v: c.vMax, a: affluenza(c.vMax, c.e) }));
   const envelope = {
     provenance: { fonte: FONTE, url: urlProvenance, recuperatoIl, licenza: LICENZA },

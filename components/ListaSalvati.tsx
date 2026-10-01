@@ -1,27 +1,26 @@
-'use client';
+"use client";
 
-import Link from 'next/link';
-import { useEffect, useMemo, useState } from 'react';
-import { usePreferiti } from '@/hooks/usePreferiti';
-import { FAVORITES_KEY, FAVORITES_MAX, parsePreferiti } from '@/lib/validation';
-import type { Law } from '@/components/seed-fallback';
-import { STATO_META } from '@/components/seed-fallback';
-import LawCard from './LawCard';
+import Link from "next/link";
+import { useEffect, useMemo, useState } from "react";
+import { usePreferiti } from "@/hooks/usePreferiti";
+import { FAVORITES_KEY, FAVORITES_MAX, parsePreferiti } from "@/lib/validation";
+import type { Law } from "@/components/seed-fallback";
+import LawCard from "./LawCard";
 
-type Ordinamento = 'recenti' | 'vecchie' | 'titolo';
+type Ordinamento = "recenti" | "vecchie" | "titolo";
 
-const GRUPPI: Array<{ stato: Law['stato']; titolo: string }> = [
-  { stato: 'verde', titolo: 'Funzionano già' },
-  { stato: 'giallo', titolo: 'Funzionano in parte' },
-  { stato: 'rosso', titolo: 'Non ancora attive' },
+const GRUPPI: Array<{ stato: Law["stato"]; titolo: string }> = [
+  { stato: "verde", titolo: "In vigore" },
+  { stato: "giallo", titolo: "In vigore, con passaggi mancanti" },
+  { stato: "rosso", titolo: "Non più in vigore o bloccate" },
 ];
 
 function eliPath(eli: string): string | null {
   const voci = parsePreferiti([eli]);
   if (voci.length === 0) return null;
-  const path = voci[0].replace(/^\/+/, '').split('/').filter(Boolean);
+  const path = voci[0].replace(/^\/+/, "").split("/").filter(Boolean);
   if (path.length === 0 || path.length > 10) return null;
-  return path.map((s) => encodeURIComponent(s)).join('/');
+  return path.map((s) => encodeURIComponent(s)).join("/");
 }
 
 async function caricaUno(eli: string, segnale: AbortSignal): Promise<Law | null> {
@@ -49,9 +48,9 @@ function leggiDaStorage(): string[] {
 
 function ordinaLeggi(leggi: Law[], ordine: Ordinamento): Law[] {
   const copia = [...leggi];
-  if (ordine === 'titolo') {
-    copia.sort((a, b) => a.titolo.localeCompare(b.titolo, 'it'));
-  } else if (ordine === 'vecchie') {
+  if (ordine === "titolo") {
+    copia.sort((a, b) => a.titolo.localeCompare(b.titolo, "it"));
+  } else if (ordine === "vecchie") {
     copia.sort((a, b) => a.dataEmanazione.localeCompare(b.dataEmanazione));
   } else {
     copia.sort((a, b) => b.dataEmanazione.localeCompare(a.dataEmanazione));
@@ -64,7 +63,7 @@ export default function ListaSalvati() {
   const { ids, toggle } = usePreferiti();
   const [leggi, setLeggi] = useState<Law[] | null>(null);
   const [sincronizzati, setSincronizzati] = useState<string[] | null>(null);
-  const [ordine, setOrdine] = useState<Ordinamento>('recenti');
+  const [ordine, setOrdine] = useState<Ordinamento>("recenti");
   const [confermaSvuota, setConfermaSvuota] = useState(false);
 
   // Sync cross-tab: un'altra scheda modifica localStorage -> ricarica.
@@ -74,8 +73,8 @@ export default function ListaSalvati() {
         setSincronizzati(leggiDaStorage());
       }
     }
-    window.addEventListener('storage', suStorage);
-    return () => window.removeEventListener('storage', suStorage);
+    window.addEventListener("storage", suStorage);
+    return () => window.removeEventListener("storage", suStorage);
   }, []);
 
   const idsEffettivi = useMemo(
@@ -111,7 +110,7 @@ export default function ListaSalvati() {
       controller.abort();
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [idsEffettivi.join('|')]);
+  }, [idsEffettivi.join("|")]);
 
   const leggiOrdinate = useMemo(() => (leggi ? ordinaLeggi(leggi, ordine) : null), [leggi, ordine]);
 
@@ -143,11 +142,11 @@ export default function ListaSalvati() {
         stato: law.stato,
       })),
     };
-    const blob = new Blob([JSON.stringify(corpo, null, 2)], { type: 'application/json' });
+    const blob = new Blob([JSON.stringify(corpo, null, 2)], { type: "application/json" });
     const url = URL.createObjectURL(blob);
-    const a = document.createElement('a');
+    const a = document.createElement("a");
     a.href = url;
-    a.download = 'salvati-simple-law.json';
+    a.download = "salvati-simple-law.json";
     document.body.appendChild(a);
     a.click();
     a.remove();
@@ -159,14 +158,19 @@ export default function ListaSalvati() {
       <div className="mt-10" role="status" aria-busy="true" aria-label="Caricamento dei salvati">
         <ul className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3" aria-hidden="true">
           {Array.from({ length: 6 }).map((_, i) => (
-            <li key={i} className="animate-pulse rounded-2xl border border-regola p-5 dark:border-notte-deep sm:p-6">
+            <li
+              key={i}
+              className="animate-pulse rounded-2xl border border-regola p-5 dark:border-notte-deep sm:p-6"
+            >
               <div className="h-4 w-2/3 rounded-lg bg-inchiostro/10 dark:bg-nebbia/10" />
               <div className="mt-3 h-5 w-full rounded-lg bg-inchiostro/10 dark:bg-nebbia/10" />
               <div className="mt-2 h-4 w-5/6 rounded-lg bg-inchiostro/10 dark:bg-nebbia/10" />
             </li>
           ))}
         </ul>
-        <p className="mt-4 text-sm text-inchiostro-soft dark:text-nebbia-soft">Caricamento in corso.</p>
+        <p className="mt-4 text-sm text-inchiostro-soft dark:text-nebbia-soft">
+          Caricamento in corso.
+        </p>
       </div>
     );
   }
@@ -174,7 +178,9 @@ export default function ListaSalvati() {
   if (leggiOrdinate.length === 0) {
     return (
       <div className="mt-10 rounded-2xl border border-dashed border-regola p-5 text-center dark:border-notte-deep sm:p-8">
-        <p className="text-base font-semibold text-inchiostro dark:text-nebbia">Nessuna norma salvata.</p>
+        <p className="text-base font-semibold text-inchiostro dark:text-nebbia">
+          Nessuna norma salvata.
+        </p>
         <p className="mx-auto mt-2 max-w-xl text-sm leading-relaxed text-inchiostro-soft dark:text-nebbia-soft">
           Tocca Salva su una scheda per ritrovarla qui. I salvati restano solo su questo
           dispositivo.
@@ -195,10 +201,13 @@ export default function ListaSalvati() {
     <div className="mt-10">
       <div className="flex flex-wrap items-center gap-4 rounded-2xl border border-regola bg-carta-soft p-5 dark:border-notte-deep dark:bg-notte-soft sm:p-6">
         <p className="text-sm font-semibold text-inchiostro dark:text-nebbia" role="status">
-          {leggiOrdinate.length} {leggiOrdinate.length === 1 ? 'norma salvata' : 'norme salvate'}
+          {leggiOrdinate.length} {leggiOrdinate.length === 1 ? "norma salvata" : "norme salvate"}
         </p>
         {pieno && (
-          <p className="w-full rounded-xl border border-regola bg-carta p-3 text-sm leading-relaxed text-inchiostro-soft dark:border-notte-deep dark:bg-notte dark:text-nebbia-soft" role="note">
+          <p
+            className="w-full rounded-xl border border-regola bg-carta p-3 text-sm leading-relaxed text-inchiostro-soft dark:border-notte-deep dark:bg-notte dark:text-nebbia-soft"
+            role="note"
+          >
             Hai raggiunto il massimo di {FAVORITES_MAX} norme salvate. Rimuovine una per salvarne
             una nuova.
           </p>
@@ -244,7 +253,9 @@ export default function ListaSalvati() {
             </button>
           ) : (
             <span className="inline-flex flex-wrap items-center gap-2">
-              <span className="text-sm font-medium text-inchiostro dark:text-nebbia">Rimuovere tutte le norme?</span>
+              <span className="text-sm font-medium text-inchiostro dark:text-nebbia">
+                Rimuovere tutte le norme?
+              </span>
               <button
                 type="button"
                 onClick={svuotaTutto}
@@ -267,22 +278,17 @@ export default function ListaSalvati() {
       {GRUPPI.map((gruppo) => {
         const voci = leggiOrdinate.filter((law) => law.stato === gruppo.stato);
         if (voci.length === 0) return null;
-        const meta = STATO_META[gruppo.stato];
         return (
           <section key={gruppo.stato} aria-labelledby={`salvati-${gruppo.stato}`} className="mt-10">
             <h2
               id={`salvati-${gruppo.stato}`}
               className="flex flex-wrap items-baseline gap-2 font-sans text-xl font-bold text-inchiostro dark:text-nebbia"
             >
-              <span aria-hidden="true" className={`h-2.5 w-2.5 shrink-0 translate-y-[-1px] rounded-full ${meta.dot}`} />
               {gruppo.titolo}
               <span className="rounded-lg bg-inchiostro/5 px-2.5 py-0.5 font-sans text-xs font-bold tabular-nums text-inchiostro-soft dark:bg-notte-deep dark:text-nebbia-soft">
                 {voci.length}
               </span>
             </h2>
-            <p className="mt-2 max-w-2xl text-sm leading-relaxed text-inchiostro-soft dark:text-nebbia-soft">
-              {meta.descrizione}
-            </p>
             <ul className="mt-4 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
               {voci.map((law) => (
                 <li key={law.eli} className="flex flex-col gap-3">

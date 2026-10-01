@@ -5,6 +5,7 @@ Repubblica italiana (leggi, parlamento, governo, tutto cio' che e' open source).
 Obiettivo precedente (completato): UI/UX, feature, corpus 5005 voci.
 
 ## Reali-1 (2026-09-28, commit `5e0bb16`): primo batch ufficiale live
+
 - Workflow: 1 chiamata `workflow` con 11 subagenti (3 verdetti read-only su
   endpoint + 1 giudice + 5 scrittori su file disgiunti + 2 revisori
   avversariali). I verdetti riusavano sonde /tmp precedenti: Normattiva
@@ -40,9 +41,10 @@ Obiettivo precedente (completato): UI/UX, feature, corpus 5005 voci.
   Elezioni/Eligendo, sostituzione progressiva del sintetico.
 
 ## Reali-2 (2026-09-28, commit `432114f`): Parlamento in UI, 626 schede reali
+
 - Workflow: 1 chiamata `workflow` con 10 subagenti (3 proposte IA concorrenti
-  + 1 giudice + 4 scrittori disgiunti + 2 revisori). Il giudice ha scelto IA A
-  (hub /parlamento + liste + dettaglio /parlamento/[camera]/[slug]).
+  - 1 giudice + 4 scrittori disgiunti + 2 revisori). Il giudice ha scelto IA A
+    (hub /parlamento + liste + dettaglio /parlamento/[camera]/[slug]).
 - Implementato: `lib/parlamento-dati.ts` (server-only, cache, never-throw),
   5 pagine `app/parlamento/*` (hub leg19 con conteggi 414/212/13, liste 24/pag
   con q/gruppo/page, dettaglio con JSON-LD Person, licenze CC visibili),
@@ -63,6 +65,7 @@ Obiettivo precedente (completato): UI/UX, feature, corpus 5005 voci.
   batch storico Normattiva per anno, sostituzione progressiva del sintetico.
 
 ## Reali-3 (2026-09-28, commit `8aefb32`): storico, DDL/atti, Consulta
+
 - Workflow: 1 chiamata `workflow` con 10 subagenti (4 sonde + 1 giudice + 3
   scrittori verticali + 2 revisori). Sonde: storico via aggiornati annuali +
   collezioni bulk; DDL Senato + 6288 atti Camera via SPARQL; Consulta/Quirinale;
@@ -85,6 +88,7 @@ Obiettivo precedente (completato): UI/UX, feature, corpus 5005 voci.
   del sintetico.
 
 ## Reali-4 (2026-09-28, commit `5853988`): EUR-Lex, Quirinale, storico 1990/2000
+
 - Workflow: 1 chiamata `workflow` con 10 subagenti (3 sonde + 1 giudice + 4
   scrittori + 2 revisori). Sonde: CELLAR SPARQL OK, Quirinale HTML stabile,
   finestre 1990/2000 percorribili, elezioni solo recon (doc verificato).
@@ -104,6 +108,7 @@ Obiettivo precedente (completato): UI/UX, feature, corpus 5005 voci.
   sostituzione progressiva del sintetico.
 
 ## Reali-7 (2026-09-28, commit `c77fcec`): referendum + storico 1970/2010 + BUR
+
 - Workflow: 1 chiamata `workflow` con 11 subagenti (3 sonde + 1 giudice + 5
   scrittori + 2 revisori). Sonde: referendum DAIT (XLSX!), ISTAT fragile,
   BUR senza fonte unica (confermato con tabella per regione).
@@ -120,6 +125,7 @@ Obiettivo precedente (completato): UI/UX, feature, corpus 5005 voci.
   sostituzione del sintetico, Corte dei Conti/ANAC se programmabili.
 
 ## Reali-5 (2026-09-28, commit `64e6ea5`): elezioni europee 2024 in UI
+
 - Workflow: 1 chiamata `workflow` con 10 subagenti (3 proposte + 1 giudice +
   4 scrittori + 2 revisori). Giudice: ibrida (nazionale+regioni con liste,
   comuni solo affluenza; niente per-lista comunale, niente seggi).
@@ -129,8 +135,8 @@ Obiettivo precedente (completato): UI/UX, feature, corpus 5005 voci.
 - UI/API: `/elezioni` + `/elezioni/europee-2024` (+ ricerca comune) con
   licenza+disclaimer aggregati, nav, mai-500. Zero nominativi ovunque.
 - Fix miei: test conformita lib (forma Result vs dati), normalizza fragile
-  + q senza cap in pagina [id], tmp CSV mai rimosso + cap download solo a
-  fine scaricamento (ora in streaming con cleanup).
+  - q senza cap in pagina [id], tmp CSV mai rimosso + cap download solo a
+    fine scaricamento (ora in streaming con cleanup).
 - Verifiche mie: `npm test` 446/446 OK, `typecheck`/`lint` OK, `build` OK
   (857 pagine), smoke live (hub/dettaglio/API 200, Roma trovata, totale
   5359 esatto).
@@ -139,6 +145,7 @@ Obiettivo precedente (completato): UI/UX, feature, corpus 5005 voci.
   finestre, sostituzione del sintetico (ancora ~5000 su 5491+).
 
 ## Reali-6 (2026-09-28, commit `eba9df2`): politiche 2022 + recepimenti UE
+
 - Workflow: 1 chiamata `workflow` con 10 subagenti (3 sonde + 1 giudice + 4
   scrittori + 2 revisori). Sonde: DAIT politiche live, CELLAR transposition
   vs match testuale (scelto match esplicito anno+numero entro 60ch).
@@ -158,6 +165,7 @@ Obiettivo precedente (completato): UI/UX, feature, corpus 5005 voci.
   sostituzione del sintetico.
 
 ## Reali-8 (2026-09-28, commit `c7f433f`): oversight ANAC + giustizia amm.va
+
 - Workflow: 1 chiamata `workflow` con 10 subagenti (3 sonde + 1 giudice + 4
   scrittori + 2 revisori). Sonde: ANAC/BDNCP via OCP (VIA LIBERA), CdS/TAR
   via Focus giurisprudenza (VIA LIBERA), Corte dei Conti e Italgiure
@@ -176,6 +184,7 @@ Obiettivo precedente (completato): UI/UX, feature, corpus 5005 voci.
   (ora ~5000/6296).
 
 ## Reali-9 (2026-09-28, commit `fd13037`): scala reale, 6296 voci live
+
 - Workflow: 1 chiamata `workflow` con 10 subagenti (2 sonde + 1 giudice + 5
   scrittori + 2 revisori). Sonde: bulk con/senza titolo, atti Camera 3144
   DISTINCT (6288 righe doppie).
@@ -194,6 +203,7 @@ Obiettivo precedente (completato): UI/UX, feature, corpus 5005 voci.
   del sintetico (ora ~5000/6422, 22% reale mostrato in UI).
 
 ## Reali-10 (2026-09-28, commit `9a7e00e`): composizione, finestre, sondaggi
+
 - Workflow: 1 chiamata `workflow` con 10 subagenti (2 sonde + 1 giudice + 4
   scrittori + 2 revisori). Sonde: vigilanza residua + sondaggi Wikipedia
   (CC BY-SA, MediaWiki API stabile).
@@ -210,6 +220,7 @@ Obiettivo precedente (completato): UI/UX, feature, corpus 5005 voci.
   Corte dei Conti se si apre, riduzione del sintetico.
 
 ## Reali-11 (2026-09-28, commit `78e7ac6`): finestre 1955/2015, atti collegati
+
 - Workflow: 1 chiamata `workflow` con 10 subagenti (3 proposte + 1 giudice +
   4 scrittori + 2 revisori). Decisione documentata: default sintetico
   INVARIATO (il ranking BM25 surfacia gia i reali; tagliare sarebbe
@@ -226,6 +237,7 @@ Obiettivo precedente (completato): UI/UX, feature, corpus 5005 voci.
   via crescita reale (mai tagli cosmetici).
 
 ## Reali-12 (2026-09-28, commit `4158767`): regionali, finestre 1948/1985, CNEL
+
 - Workflow: 1 chiamata `workflow` con 10 subagenti (3 sonde + 1 giudice + 4
   scrittori + 2 revisori). Sonde: regionali DAIT, finanziamenti/CNEL/CSM,
   finestre dense.
@@ -243,6 +255,7 @@ Obiettivo precedente (completato): UI/UX, feature, corpus 5005 voci.
   1995, GU diretta), Corte dei Conti se si apre, riduzione del sintetico.
 
 ## Reali-13 (2026-09-28, commit `c073b8b`): regionali, finestre, GU diretta
+
 - Workflow: 1 chiamata `workflow` con 11 subagenti (4 sonde + 1 giudice + 4
   scrittori + 2 revisori). Sonde: regionali DAIT, finanziamenti/CSM,
   GU RSS, finestre dense.
@@ -258,6 +271,7 @@ Obiettivo precedente (completato): UI/UX, feature, corpus 5005 voci.
   riduzione del sintetico via crescita reale.
 
 ## Reali-14 (2026-09-29, commit `b260bce`): Emilia-R., Sud, finestre, finanze
+
 - Workflow: 1 chiamata `workflow` con 11 subagenti (4 sonde + 1 giudice + 4
   scrittori + 2 revisori). Sonde: finanziamenti/CSM/regioni/finestre.
 - Ingerito: regionali Emilia-Romagna 2024 (330 comuni, 11 liste),
@@ -273,6 +287,7 @@ Obiettivo precedente (completato): UI/UX, feature, corpus 5005 voci.
   Conti/CSM se si aprono, riduzione del sintetico via crescita reale.
 
 ## Reali-15 (2026-09-28, commit `dbb9296`): freschezza, finestre 1965/2022
+
 - Workflow: 1 chiamata `workflow` con 10 subagenti (3 audit + 1 giudice + 4
   scrittori + 2 revisori). Audit: link-rot, coerenza MANIFEST/disco/UI,
   freschezza e performance.
@@ -287,6 +302,7 @@ Obiettivo precedente (completato): UI/UX, feature, corpus 5005 voci.
   reale continua.
 
 ## Stato iniziale (2026-09-28, iterazione 0)
+
 - Repo: `/Users/mark/Projects/simple-law`, branch `master` (appena `git init`, baseline committata `5391a84`).
 - Stack: Next.js 15 App Router, TS strict, Tailwind, Prisma+Postgres con fallback seed, Vitest, Vercel Cron.
 - Verifiche baseline: `npm test` 202/202 OK, `typecheck` OK, `build` OK.
@@ -295,6 +311,7 @@ Obiettivo precedente (completato): UI/UX, feature, corpus 5005 voci.
 - Limiti noti: nessun full-text ranking, filtro persona solo client su estratto 2000, corpus dimostrativo, nessun supporto reale per 100 GB (solo piano in README).
 
 ## Iterazione 1 (2026-09-28, commit `cde8b63`)
+
 - Workflow: 1 chiamata `workflow` con 24 subagenti (9 proposte + 1 giudice + 12 implementatori + 3 revisori avversariali).
 - Proposte: corpus A (JSONL gzip + streaming + Postgres, vince) vs B (Parquet/SQLite/S3/Bloom, scartata: incompatibile Vercel, doppia logica) vs C (tassonomia realistica, integrata in A come generatore). UX: vince ibrido (quick-win + redesign editoriale sobrio). Feature top-8: ranking rilevanza, cursor pagination, export streaming, feed ETag, dashboard stats, timeline attuativi, confronto diff, ChecklistFare client.
 - Implementato (file disgiunti, nessun conflitto):
@@ -309,6 +326,7 @@ Obiettivo precedente (completato): UI/UX, feature, corpus 5005 voci.
 - Next: collegare `seed-espansa`/corpus alla UI (oggi UI legge ancora 5 seed: `getSeedLaws` non include espansa/corpus), ingest reale Normattiva chunked con resume, FTS Postgres tsvector, export da cursore senza materializzare 5000, rate-limit IP reale + LRU, menu mobile dialog con focus-trap, test E2E a11y/perf con 5k atti.
 
 ## Iterazione 2 (2026-09-28, commit `65f5b51`)
+
 - Workflow: 1 chiamata `workflow` con 16 subagenti (4 proposte + 1 giudice + 8 implementatori su file disgiunti + 3 revisori avversariali).
 - Verdetto giudice: ibrido — mapping puro in `lib/corpus-unificato.ts`, `getSeedLaws` thin-wrapper con dedup (5 seed primi), default 5000 clamp 77..20000 via `CORPUS_TOTALE`/`CORPUS_SEED`, UI con slice/vetrina ed estratti bounded 5000, test migrati da `===5` a relativi.
 - Implementato: `lib/corpus-unificato.ts` (NUOVO: 72 curati + varianti deterministiche fino al totale env, cache singleton, never-throw), `lib/sources.ts` (wiring + `getCorpusInfo`), `app/page.tsx` + `app/leggi/page.tsx` (slice home 12, estratti 5000), API/stats (X-Total-Count, cap), `components/CorpusBadge.tsx` (NUOVO), `lib/db.ts` (memo seed), `tests/corpus-unificato.test.ts` (NUOVO).
@@ -321,6 +339,7 @@ Obiettivo precedente (completato): UI/UX, feature, corpus 5005 voci.
 - Next: unificare i 4 mirror `coloreSemaforo`/`personaRilevante` (home, archivio, API) in un'unica funzione esportata da `seed-fallback`; filtro persona server-side in `lib/db` (oggi filtra solo la pagina corrente); export streaming a pagine da 500 senza materializzare 5000; `generateStaticParams` oltre i 100; sitemap.xml; menu mobile con focus-trap; test perf con 20k atti.
 
 ## Cozy-1 (2026-09-29, commit real-only+cozy): solo leggi vere, footer dusk, cozy ovunque
+
 - Direzione utente (override skill): minimale, accogliente, font cozy
   (Nunito), angoli arrotondati mai pill, liquid-glass approssimato onesto,
   motion.dev, Hugeicons gratis, base Next.js fullstack + toolchain
@@ -359,6 +378,7 @@ Obiettivo precedente (completato): UI/UX, feature, corpus 5005 voci.
 - Next: finestre storiche mancanti, audit foto/eyebrow residui, E2E a11y.
 
 ## Storico-totale (2026-09-29): copertura 1948-2025 completa, 4019 atti veri
+
 - Workflow: 1 chiamata `workflow` con 5 ingestor paralleli (A-E, anni
   disgiunti, niente tocchi a lib/MANIFEST/test). Rete OK per tutti.
 - Ingerito: 53 nuovi file annuali, 1703 atti veri (379+357+421+248+298),
@@ -375,6 +395,7 @@ Obiettivo precedente (completato): UI/UX, feature, corpus 5005 voci.
   E2E a11y, freschezza 2026 continua.
 
 ## Dense (2026-09-29): secondo passaggio, 5941 atti veri
+
 - Workflow: 1 chiamata `workflow` con 4 densificatori paralleli (anni
   disgiunti, append con dedup, bound +120/file e 950KB).
 - Resa: +1904 lordi (+328/+637/+507/+432), netti +1922 con storicototale
@@ -389,6 +410,7 @@ Obiettivo precedente (completato): UI/UX, feature, corpus 5005 voci.
 - Next: eyebrow multipli residui, foto reali, E2E a11y, freschezza 2026.
 
 ## Slop-zero (2026-09-29): 3-card uguali ed eyebrow multipli rimossi
+
 - Workflow: 1 chiamata `workflow` con 3 writer (home steps, controllo,
   statistiche+semplifica, file disgiunti).
 - U1: "Come funziona" da 3 card uguali (banned) a righe numerate
@@ -403,6 +425,7 @@ Obiettivo precedente (completato): UI/UX, feature, corpus 5005 voci.
 - Next: foto reali, E2E a11y, freschezza 2026 continua.
 
 ## Freschezza+gate (2026-09-29): refresh 2026 e slop-gate
+
 - Workflow: 1 chiamata `workflow` con 2 agenti (refresh + gate).
 - R1: GU/gov/recenti ri-ingeriti (32/10/46 invariati, solo freschezza);
   MANIFEST ri-sincronizzato da me (R1 non poteva toccarlo per scope).
@@ -413,6 +436,7 @@ Obiettivo precedente (completato): UI/UX, feature, corpus 5005 voci.
 - Next: foto reali, E2E con server, densita anni magri residui.
 
 ## Conta-esatti (2026-09-29): bound 10000, semaforo su 5941 reali
+
 - Workflow: 1 chiamata `workflow` con 2 agenti (bounds + dotline).
 - B1: bound 5000->10000 (misurato 157ms, heap invariato); conteggi
   esatti 3289/676/1976; nota troncamento condizionale.
@@ -422,6 +446,7 @@ Obiettivo precedente (completato): UI/UX, feature, corpus 5005 voci.
 - Next: foto reali, E2E con server, anni magri terzo passaggio.
 
 ## Verifica-dura (2026-09-29): smoke live + sitemap 100%
+
 - Workflow: 1 chiamata `workflow` con 2 agenti (smoke + sitemap).
 - `npm run smoke` (nuovo): boot produzione + asserzioni real-only live.
 - Sitemap: cap 5000 hardcoded troncava 941 atti; ora limite da corpus
@@ -433,6 +458,7 @@ Obiettivo precedente (completato): UI/UX, feature, corpus 5005 voci.
 - Next: E2E browser, anni magri terzo passaggio, foto con licenza.
 
 ## Regno (2026-09-29): 1861-1947, 8951 atti veri
+
 - Workflow: 1 chiamata `workflow` con 4 ingestor (ere disgiunte).
 - 3010 atti veri pre-1948 (97% abrogati onesti da Art.1, il resto ancora
   in vigore), 87 file, nessun anno vuoto 1861-2025, 0 dup globali.
@@ -441,6 +467,7 @@ Obiettivo precedente (completato): UI/UX, feature, corpus 5005 voci.
 - Next: E2E browser, foto con licenza, terzo passaggio magri.
 
 ## Onesta-stati (2026-09-29): bug testata abrogati fixato su 84 atti
+
 - 4 revisori indipendenti avevano trovato: regex ingest cieca allo
   spazio dopo `((` e a `Articolo unico.` (L.142/1990 in_vigore!).
 - Workflow fix x3: guard a load + riscrittura 84 JSON (37 file) +
@@ -451,11 +478,13 @@ Obiettivo precedente (completato): UI/UX, feature, corpus 5005 voci.
 - Next: E2E browser, foto con licenza.
 
 ## E2E (2026-09-29): Playwright Chromium verde
+
 - Workflow: 1 agente E1 (install headless-shell, 3 spec, config, script).
 - Verifiche mie: `npx playwright test` 3/3 + vitest 878/878.
 - Next: foto con licenza, freschezza continua.
 
 ## Vigenza-foto (2026-09-29): repealed mai Bloccata + foto vere
+
 - 4 revisori indipendenti avevano trovato il falso "Bloccata" su 4954
   abrogati + CTA fuori viewport con la foto.
 - Workflow x2: helper paroleVigenza (LawCard/dettaglio), hero riordinata
@@ -465,12 +494,14 @@ Obiettivo precedente (completato): UI/UX, feature, corpus 5005 voci.
 - Next: freschezza continua, terzo passaggio magri.
 
 ## Confine-1861 (2026-09-29): prima del 1861 non c'e dato
+
 - Workflow: 1 sonda (1848-1860 via aggiornati, controllo positivo 1861).
 - Esito: 13/13 liste vuote; confine documentato in README; zero file.
 - Copertura finale: ogni anno 1861-2025 + 2026 via recenti+GU.
 - Verifiche: gate 10/10.
 
 ## Finale (2026-09-29): goal verificato completo
+
 - 3 revisori finali indipendenti: dati COMPLETO (8951 reali, 0
   dimostrativi, 0 dup, stati onesti, 1861-2026), UX COMPLETO
   (pre-flight: dash, eyebrow, card, hero, CTA, accento, shape,
@@ -481,6 +512,7 @@ Obiettivo precedente (completato): UI/UX, feature, corpus 5005 voci.
   build OK (874 pagine), smoke PASS.
 
 ## UI-overhaul (2026-09-29, commit `60a6000`): singola nav, hero full-bleed, design system
+
 - Workflow: 1 chiamata `workflow` con 14 subagenti (3 proposte read-only
   A/B/C + 1 giudice + 6 writer su file disgiunti + 2 revisori
   avversariali). Il giudice ha fuso: header 1 riga, hero full-bleed,
@@ -512,6 +544,7 @@ Obiettivo precedente (completato): UI/UX, feature, corpus 5005 voci.
   continua, terzo passaggio anni magri.
 
 ## UI-overhaul verifica finale (2026-09-29): 27/30, 3 FAIL respinti con motivo
+
 - 3 revisori finali indipendenti: 27 PASS su 30. Verdetti PASS unanimi su
   nav singola, hero full-bleed, token, hover light+dark, slop-gate (0 dash,
   0 righe 3+ dot, rounded-full solo puntini, 32/32 pagine con h1+title,

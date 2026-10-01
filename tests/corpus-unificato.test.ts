@@ -1,4 +1,4 @@
-import { beforeEach, describe, expect, it, vi } from "vitest";
+import { beforeEach, describe, expect, it, vi } from "vite-plus/test";
 import { SEED_LAWS } from "@/lib/seed-data";
 import { azzeraCacheReali, getSeedLaws } from "@/lib/sources";
 import { countLaws, getStats, listLaws, resetPrisma } from "@/lib/db";
@@ -95,9 +95,7 @@ describe("corpus unificato: forma e sottoinsieme seed", () => {
       for (const law of varianti) {
         const n = Number(law.numero);
         if (Number.isFinite(n)) {
-          expect(NUMERI_RISERVATI, `numero riservato ${law.numero} in varianti`).not.toContain(
-            n,
-          );
+          expect(NUMERI_RISERVATI, `numero riservato ${law.numero} in varianti`).not.toContain(n);
         }
       }
     } finally {

@@ -14,7 +14,7 @@
  *  - euristiche ammorbidite dove il pattern editoriale legittimo
  *    colliderebbe con la regola stretta (vedi note CHECK 2 / CHECK 3 / CHECK 6).
  */
-import { describe, expect, it } from "vitest";
+import { describe, expect, it } from "vite-plus/test";
 import fs from "node:fs";
 import path from "node:path";
 
@@ -62,26 +62,7 @@ function read(p: string): string {
 // ---------------------------------------------------------------------------
 
 /** CHECK 3: `rounded-full` deliberati che non rispettano il pattern h/w statico. */
-const ROUNDED_FULL_ALLOWLIST: { file: string; match: string; motivo: string }[] = [
-  {
-    file: "components/TrafficLight.tsx",
-    match: "${lamp} rounded-full",
-    motivo:
-      "Semaforo di stato: le lampadine sono dimensionate via variabile `lamp` (h-2.5/h-3.5/h-4 deliberati per size sm/md/lg), quindi la riga con rounded-full non contiene h-* in forma statica. Puntino di stato intenzionale, non pill decorativa.",
-  },
-  {
-    file: "components/TimelineAttuativi.tsx",
-    match: "h-3 w-3 rounded-full",
-    motivo:
-      "Punto della timeline (h-3 w-3): diametro maggiore dei puntini h-2 per restare leggibile sulla linea verticale assoluta -left-[7px]. Puntino di stato intenzionale.",
-  },
-  {
-    file: "components/Footer.tsx",
-    match: "footer color-block",
-    motivo:
-      'Eccezione "color-block" documentata nel Footer: unico blocco colore della pagina (blu notte dusk #1a2456, gradiente CSS onesto). Non usa rounded-full, ma si registra qui come eccezione visiva deliberata perche il gate non deve mai segnalare il footer.',
-  },
-];
+const ROUNDED_FULL_ALLOWLIST: { file: string; match: string; motivo: string }[] = [];
 
 /** CHECK 4: prefissi href interni che non corrispondono a una page (route API, ancore). */
 const HREF_PREFIX_ALLOWLIST: { prefix: string; motivo: string }[] = [
@@ -197,7 +178,8 @@ describe("slop-gate (3): rounded-full solo puntini di stato", () => {
         if (!raw.includes("rounded-full")) return;
         if (isStatusDot(raw)) return;
         const allowed = ROUNDED_FULL_ALLOWLIST.some(
-          (w) => r.endsWith(w.file.replace(/^components\//, "components/")) && raw.includes(w.match),
+          (w) =>
+            r.endsWith(w.file.replace(/^components\//, "components/")) && raw.includes(w.match),
         );
         // Il footer color-block non contiene rounded-full: la sua entry e solo documentativa.
         const isFooterDoc = r === "components/Footer.tsx";
@@ -211,13 +193,8 @@ describe("slop-gate (3): rounded-full solo puntini di stato", () => {
     ).toEqual([]);
   });
 
-  it("whitelist rounded-full documentata con motivo", () => {
-    for (const w of ROUNDED_FULL_ALLOWLIST) {
-      expect(w.motivo.trim().length, `motivo mancante per ${w.file}`).toBeGreaterThan(20);
-    }
-    const files = ROUNDED_FULL_ALLOWLIST.map((w) => w.file);
-    expect(files).toContain("components/TrafficLight.tsx");
-    expect(files).toContain("components/Footer.tsx");
+  it("whitelist rounded-full vuota: niente semaforo, niente eccezioni", () => {
+    expect(ROUNDED_FULL_ALLOWLIST).toEqual([]);
   });
 });
 
@@ -253,8 +230,7 @@ function buildRoutePatterns(): { route: string; re: RegExp }[] {
 /** Estrae href statici (doppi/singoli apici, anche in oggetti `{ href: '...' }`). Salta i dinamici. */
 function extractStaticHrefs(text: string): string[] {
   const out: string[] = [];
-  const re =
-    /(?:href\s*=\s*(?:"([^"]+)"|'([^']+)')|href\s*:\s*(?:"([^"]+)"|'([^']+)'))/g;
+  const re = /(?:href\s*=\s*(?:"([^"]+)"|'([^']+)')|href\s*:\s*(?:"([^"]+)"|'([^']+)'))/g;
   let m: RegExpExecArray | null;
   while ((m = re.exec(text)) !== null) {
     const v = m[1] ?? m[2] ?? m[3] ?? m[4];
@@ -301,7 +277,9 @@ describe("slop-gate (5): pagine con <h1> e title", () => {
       if (!/title\s*:/.test(t)) missingTitle.push(rel(f));
     }
     expect(missingH1, `pagine senza <h1>:\n${missingH1.join("\n")}`).toEqual([]);
-    expect(missingTitle, `pagine senza title nei metadata:\n${missingTitle.join("\n")}`).toEqual([]);
+    expect(missingTitle, `pagine senza title nei metadata:\n${missingTitle.join("\n")}`).toEqual(
+      [],
+    );
   });
 });
 

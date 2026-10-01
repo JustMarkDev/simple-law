@@ -8,7 +8,7 @@
  * inline (comuni fittizi, MAI nominativi reali).
  */
 
-import { beforeEach, describe, expect, it, vi } from "vitest";
+import { beforeEach, describe, expect, it, vi } from "vite-plus/test";
 import { existsSync, readFileSync, statSync } from "node:fs";
 import { resolve } from "node:path";
 
@@ -72,26 +72,19 @@ describe("referendum — header e filtro data (fixture inline)", () => {
   });
 
   it("filtro DATAELEZIONE=45816: accetta target, scarta altri valori", async () => {
-    const mod = (await import(
-      "@/scripts/ingest-reale-referendum"
-    )) as Record<string, unknown>;
+    const mod = (await import("@/scripts/ingest-reale-referendum")) as Record<string, unknown>;
     const isDataTarget = mod["isDataTarget"] as (s: string) => boolean;
     expect(isDataTarget("45816")).toBe(true);
     expect(isDataTarget("45815")).toBe(false);
     expect(isDataTarget("DATAELEZIONE")).toBe(false);
-    const parse = mod["parseRigaReferendum"] as (
-      celle: string[],
-      n: number,
-    ) => unknown;
+    const parse = mod["parseRigaReferendum"] as (celle: string[], n: number) => unknown;
     expect(parse(rigaCelle(), 2)).toMatchObject({ q: 1, si: 300, no: 80 });
     expect(parse(rigaCelle({ DATAELEZIONE: "45000" }), 2)).toBeNull();
     expect(chiamateFetch).toBe(0);
   });
 
   it("header diverso (12 o 14 colonne, ordine errato) -> isHeader false", async () => {
-    const mod = (await import(
-      "@/scripts/ingest-reale-referendum"
-    )) as Record<string, unknown>;
+    const mod = (await import("@/scripts/ingest-reale-referendum")) as Record<string, unknown>;
     const isHeader = mod["isHeaderReferendum"] as (c: string[]) => boolean;
     expect(isHeader([...HEADER_ATTESO])).toBe(true);
     expect(isHeader([...HEADER_ATTESO].slice(0, 12))).toBe(false);
@@ -106,34 +99,25 @@ describe("referendum — header e filtro data (fixture inline)", () => {
 
 describe("referendum — quote SI/NO e affluenza (fixture inline)", () => {
   it("quota SI: no=validi-si, p_si a 1 decimale, si>validi -> null", async () => {
-    const mod = (await import(
-      "@/scripts/ingest-reale-referendum"
-    )) as Record<string, unknown>;
+    const mod = (await import("@/scripts/ingest-reale-referendum")) as Record<string, unknown>;
     const quotaSi = mod["quotaSi"] as (
       si: string,
       validi: string,
     ) => { si: number; no: number; validi: number; p_si: number } | null;
     expect(quotaSi("300", "380")).toMatchObject({ si: 300, no: 80 });
-    expect(quotaSi("300", "380")?.p_si).toBe(
-      Math.round((300 / 380) * 100 * 10) / 10,
-    );
+    expect(quotaSi("300", "380")?.p_si).toBe(Math.round((300 / 380) * 100 * 10) / 10);
     expect(quotaSi("0", "0")).toMatchObject({ no: 0, p_si: 0 });
     expect(quotaSi("381", "380")).toBeNull();
     expect(quotaSi("-1", "380")).toBeNull();
   });
 
   it("parse riga: quesito normalizzato {id,titolo}, mai nominativi", async () => {
-    const mod = (await import(
-      "@/scripts/ingest-reale-referendum"
-    )) as Record<string, unknown>;
+    const mod = (await import("@/scripts/ingest-reale-referendum")) as Record<string, unknown>;
     const parse = mod["parseRigaReferendum"] as (
       celle: string[],
       n: number,
     ) => Record<string, unknown>;
-    const r = parse(
-      rigaCelle({ NUMQUESITO: "2", QUESITOREFERENDUM: TITOLO_Q2 }),
-      3,
-    );
+    const r = parse(rigaCelle({ NUMQUESITO: "2", QUESITOREFERENDUM: TITOLO_Q2 }), 3);
     expect(r).toMatchObject({ q: 2, titolo: TITOLO_Q2, si: 300, no: 80 });
     const serializzato = JSON.stringify(r);
     for (const campo of ["COGNOME", "NOME", "PREFERENZE", "DATANASCITA"]) {
@@ -144,9 +128,7 @@ describe("referendum — quote SI/NO e affluenza (fixture inline)", () => {
   });
 
   it("affluenza v/e a 1 decimale, e<=0 -> 0", async () => {
-    const mod = (await import(
-      "@/scripts/ingest-reale-referendum"
-    )) as Record<string, unknown>;
+    const mod = (await import("@/scripts/ingest-reale-referendum")) as Record<string, unknown>;
     const affluenza = mod["affluenza"] as (v: number, e: number) => number;
     expect(affluenza(400, 1000)).toBe(40);
     expect(affluenza(1, 3)).toBe(33.3);
@@ -163,10 +145,7 @@ describe("referendum — integrazione disco tollerante (MAI fallire se assente)"
     }
     const byte = statSync(percorso).size;
     expect(byte).toBeLessThanOrEqual(950 * 1024);
-    const grezzo = JSON.parse(readFileSync(percorso, "utf8")) as Record<
-      string,
-      unknown
-    >;
+    const grezzo = JSON.parse(readFileSync(percorso, "utf8")) as Record<string, unknown>;
     const elezione = grezzo["elezione"] as Record<string, unknown>;
     expect(elezione["tipo"]).toBe("referendum");
     expect(elezione["data"]).toBe("2025-06-08");

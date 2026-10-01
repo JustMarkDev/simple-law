@@ -8,7 +8,10 @@ export default function Loading() {
       <p role="status" className="sr-only">
         Sto caricando le norme, un attimo.
       </p>
-      <div aria-hidden="true" className="rounded-2xl border border-regola bg-carta-soft p-6 dark:border-notte-deep dark:bg-notte-soft sm:p-8">
+      <div
+        aria-hidden="true"
+        className="rounded-2xl border border-regola bg-carta-soft p-6 dark:border-notte-deep dark:bg-notte-soft sm:p-8"
+      >
         <div className="scheletro-card h-5 w-36 rounded-xl" />
         <div className="scheletro-card mt-4 h-9 w-2/3 rounded-xl" />
         <div className="scheletro-card mt-3 h-4 w-1/2 rounded-xl" />
@@ -29,5 +32,5 @@ export default function Loading() {
         ))}
       </ul>
     </main>
-  )
+  );
 }

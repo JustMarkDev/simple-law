@@ -35,14 +35,53 @@ function mulberry32(seed: number) {
 
 const TIPI = ["decreto.legge", "legge", "decreto.legislativo"] as const;
 const TEMI = [
-  { slug: "energia", titolo: "efficienza energetica e riconversione industriale", sintesi: "Incentivi per la riconversione degli impianti e programmi straordinari per i siti produttivi strategici." },
-  { slug: "fisco", titolo: "semplificazione fiscale e concordato preventivo", sintesi: "Riduzione degli adempimenti, rateazioni e concordato preventivo per partite IVA e PMI." },
-  { slug: "lavoro", titolo: "contratti a termine e sicurezza sul lavoro", sintesi: "Nuove causali per i contratti a termine, incentivi alle assunzioni stabili e stretta sui subappalti irregolari." },
-  { slug: "digitale", titolo: "PA digitale e interoperabilità dei dati", sintesi: "Anagrafe unica, domicilio digitale e stop alle richieste di dati già in possesso della PA." },
-  { slug: "concorrenza", titolo: "concorrenza nei servizi locali e appalti", sintesi: "Gare trasparenti per i servizi locali, qualificazione delle stazioni appaltanti e tempi certi di pagamento." },
-  { slug: "sicurezza", titolo: "sicurezza urbana e protezione civile", sintesi: "Potenziamento dei presidi urbani, fondo per le emergenze e procedure rapide per la ricostruzione." },
-  { slug: "istruzione", titolo: "docenti e continuità didattica", sintesi: "Stabilizzazione dei precari storici, organico potenziato e fondi per laboratori e mense." },
-  { slug: "salute", titolo: "liste d'attesa e assistenza territoriale", sintesi: "Tetti ai tempi d'attesa, case di comunità e assunzione di personale sanitario." },
+  {
+    slug: "energia",
+    titolo: "efficienza energetica e riconversione industriale",
+    sintesi:
+      "Incentivi per la riconversione degli impianti e programmi straordinari per i siti produttivi strategici.",
+  },
+  {
+    slug: "fisco",
+    titolo: "semplificazione fiscale e concordato preventivo",
+    sintesi:
+      "Riduzione degli adempimenti, rateazioni e concordato preventivo per partite IVA e PMI.",
+  },
+  {
+    slug: "lavoro",
+    titolo: "contratti a termine e sicurezza sul lavoro",
+    sintesi:
+      "Nuove causali per i contratti a termine, incentivi alle assunzioni stabili e stretta sui subappalti irregolari.",
+  },
+  {
+    slug: "digitale",
+    titolo: "PA digitale e interoperabilità dei dati",
+    sintesi:
+      "Anagrafe unica, domicilio digitale e stop alle richieste di dati già in possesso della PA.",
+  },
+  {
+    slug: "concorrenza",
+    titolo: "concorrenza nei servizi locali e appalti",
+    sintesi:
+      "Gare trasparenti per i servizi locali, qualificazione delle stazioni appaltanti e tempi certi di pagamento.",
+  },
+  {
+    slug: "sicurezza",
+    titolo: "sicurezza urbana e protezione civile",
+    sintesi:
+      "Potenziamento dei presidi urbani, fondo per le emergenze e procedure rapide per la ricostruzione.",
+  },
+  {
+    slug: "istruzione",
+    titolo: "docenti e continuità didattica",
+    sintesi:
+      "Stabilizzazione dei precari storici, organico potenziato e fondi per laboratori e mense.",
+  },
+  {
+    slug: "salute",
+    titolo: "liste d'attesa e assistenza territoriale",
+    sintesi: "Tetti ai tempi d'attesa, case di comunità e assunzione di personale sanitario.",
+  },
 ] as const;
 
 const AIR = ["presente", "esente", "semplificata", "assente"] as const;
@@ -71,7 +110,12 @@ function genera(totale: number): LawRecord[] {
     const eli = `/eli/id/${anno}/${pad2(mese)}/${pad2(giorno)}/${codice}/sg`;
     if (usati.has(eli)) continue;
     usati.add(eli);
-    const nirTipo = tipo === "legge" ? "legge" : tipo === "decreto.legge" ? "decreto.legge" : "decreto.legislativo";
+    const nirTipo =
+      tipo === "legge"
+        ? "legge"
+        : tipo === "decreto.legge"
+          ? "decreto.legge"
+          : "decreto.legislativo";
     const titolo = `Disposizioni in materia di ${tema.titolo} (${numero}/${anno})`;
     const sintesi = `${tema.sintesi} Atto dimostrativo generato offline per test di scala (${tema.slug}).`;
     leggi.push({
@@ -84,7 +128,13 @@ function genera(totale: number): LawRecord[] {
       sintesi,
       stato: "in_vigore",
       gulpease: null,
-      fonti: buildFonti({ tipo, numero, dataEmanazione: data, codiceRedazionale: codice, dataGU: data }),
+      fonti: buildFonti({
+        tipo,
+        numero,
+        dataEmanazione: data,
+        codiceRedazionale: codice,
+        dataGU: data,
+      }),
       codiceRedazionale: codice,
       dataGU: data,
       air: AIR[Math.floor(rand() * AIR.length)],
@@ -105,7 +155,9 @@ function genera(totale: number): LawRecord[] {
 async function main(): Promise<void> {
   const args = process.argv.slice(2);
   const totaleArg = args.find((a) => a.startsWith("--totale="));
-  const totale = totaleArg ? Math.min(5000, Math.max(1, Number(totaleArg.split("=")[1]) || TOTALE_DEFAULT)) : TOTALE_DEFAULT;
+  const totale = totaleArg
+    ? Math.min(5000, Math.max(1, Number(totaleArg.split("=")[1]) || TOTALE_DEFAULT))
+    : TOTALE_DEFAULT;
   const apply = args.includes("--apply");
   const leggi = genera(totale);
   await mkdir("data", { recursive: true });

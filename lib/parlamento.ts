@@ -22,8 +22,7 @@ export const CAMERA_SPARQL_ENDPOINT = "https://dati.camera.it/sparql";
 export const CAMERA_FONTE = "dati.camera.it";
 export const CAMERA_LICENZA = "CC BY-SA 4.0";
 export const CAMERA_LEGISLATURA = "19";
-export const CAMERA_LEGISLATURA_URI =
-  "http://dati.camera.it/ocd/legislatura.rdf/repubblica_19";
+export const CAMERA_LEGISLATURA_URI = "http://dati.camera.it/ocd/legislatura.rdf/repubblica_19";
 export const CAMERA_DEPUTATO_TIPO = "http://dati.camera.it/ocd/deputato";
 
 const PRED_RIF_LEG = "http://dati.camera.it/ocd/rif_leg";
@@ -125,10 +124,7 @@ export function nomeIntero(nome: string, cognome: string): string {
  * nome del gruppo; le parentesi interne (es. `NOI MODERATI (...)`) restano.
  */
 export function pulisciEtichettaGruppo(etichetta: string): string {
-  const pulita = testo(etichetta).replace(
-    /\s*\([^()]*\d{2}\.\d{2}\.\d{4}[^()]*\)?\s*$/,
-    "",
-  );
+  const pulita = testo(etichetta).replace(/\s*\([^()]*\d{2}\.\d{2}\.\d{4}[^()]*\)?\s*$/, "");
   return pulita.replace(/\s+/g, " ").trim();
 }
 
@@ -156,9 +152,7 @@ export function deputatiDaRigheLista(righe: readonly Record<string, unknown>[]):
     if (!slug || !nome || visti.has(slug)) continue;
     visti.add(slug);
     const scheda = testo(valoreBinding(riga, "scheda"));
-    risultato.push(
-      scheda ? { slug, nome, urlScheda: scheda } : { slug, nome },
-    );
+    risultato.push(scheda ? { slug, nome, urlScheda: scheda } : { slug, nome });
   }
   return risultato;
 }
@@ -184,9 +178,7 @@ export function adesioniDaRighe(righe: readonly Record<string, unknown>[]): Ades
  * `inizio` maggiore (formato `YYYYMMDD`, confrontabile come stringa); le
  * etichette vengono pulite dalle date. Restituisce `slug -> gruppo`.
  */
-export function gruppoCorrentePerDeputato(
-  adesioni: readonly Adesione[],
-): Map<string, string> {
+export function gruppoCorrentePerDeputato(adesioni: readonly Adesione[]): Map<string, string> {
   const migliori = new Map<string, Adesione>();
   for (const adesione of adesioni) {
     const slug = slugDaUriDeputato(adesione.uriDeputato);
@@ -274,7 +266,10 @@ function voceRdfJson(voce: unknown): VoceRdfJson | null {
  * Considera solo il soggetto del deputato; la scheda solo da
  * `dcterms:isReferencedBy`.
  */
-export function dettaglioDaRdfJson(uri: string, documento: unknown): {
+export function dettaglioDaRdfJson(
+  uri: string,
+  documento: unknown,
+): {
   nome: string;
   urlScheda: string;
 } {
@@ -415,8 +410,7 @@ export async function sparqlCamera(
 ): Promise<Esito<unknown>> {
   if (!query.trim()) return { ok: false, errore: "Query SPARQL vuota" };
   const fetchImpl =
-    opzioni.fetchImpl ??
-    ((globalThis.fetch as unknown as FetchLike | undefined) as FetchLike);
+    opzioni.fetchImpl ?? (globalThis.fetch as unknown as FetchLike | undefined as FetchLike);
   if (!fetchImpl) return { ok: false, errore: "fetch non disponibile" };
   const timeoutMs = opzioni.timeoutMs ?? TIMEOUT_MS_DEFAULT;
   const url =
@@ -459,13 +453,13 @@ export async function mappaABatch<T, R>(
         Promise.resolve()
           .then(() => fn(elemento, indice))
           .then(
-          (valore) => {
-            valori[indice] = valore;
-          },
-          (cause) => {
-            errori.push({ indice, errore: erroreDa(cause) });
-          },
-        ),
+            (valore) => {
+              valori[indice] = valore;
+            },
+            (cause) => {
+              errori.push({ indice, errore: erroreDa(cause) });
+            },
+          ),
       );
     }
     await Promise.all(promesse);
@@ -477,9 +471,7 @@ export async function mappaABatch<T, R>(
  * Carica i deputati reali: 1 lista + 1 query adesioni, poi unione.
  * Non lancia mai; in caso di rete fallita restituisce `ok:false`.
  */
-export async function caricaDeputati(
-  opzioni: OpzioniFetch = {},
-): Promise<Esito<Deputato[]>> {
+export async function caricaDeputati(opzioni: OpzioniFetch = {}): Promise<Esito<Deputato[]>> {
   const lista = await sparqlCamera(queryListaDeputati(), opzioni);
   if (!lista.ok) return lista;
   const adesioni = await sparqlCamera(queryAdesioni(), opzioni);
@@ -488,9 +480,7 @@ export async function caricaDeputati(
   if (deputati.length === 0) {
     return { ok: false, errore: "Lista deputati vuota" };
   }
-  const gruppi = gruppoCorrentePerDeputato(
-    adesioniDaRighe(righeDaSparql(adesioni.valore)),
-  );
+  const gruppi = gruppoCorrentePerDeputato(adesioniDaRighe(righeDaSparql(adesioni.valore)));
   return { ok: true, valore: unisciDeputati(deputati, gruppi) };
 }
 

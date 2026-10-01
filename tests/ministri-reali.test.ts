@@ -8,7 +8,7 @@
  * - mai inventare dati: 0 o ≥2 match → nessun link; 1 solo → box link.
  */
 
-import { describe, expect, it } from "vitest";
+import { describe, expect, it } from "vite-plus/test";
 import { SEED_MINISTERS } from "@/lib/seed-data";
 
 interface MembroMinistri {

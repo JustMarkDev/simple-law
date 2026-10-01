@@ -6,31 +6,40 @@
 export const GLOSSARIO: Record<string, string> = {
   DDL: "Disegno di legge: proposta di legge presentata al Parlamento, che deve essere approvata da Camera e Senato.",
   DL: "Decreto-legge: provvedimento urgente del Governo che entra subito in vigore e deve essere convertito in legge entro 60 giorni.",
-  "D.LGS": "Decreto legislativo: atto del Governo emanato su delega del Parlamento per attuare o riordinare la materia.",
-  "D.P.R": "Decreto del Presidente della Repubblica: atto formale del Presidente della Repubblica su proposta del Governo.",
-  "D.P.C.M": "Decreto del Presidente del Consiglio dei ministri: atto regolamentare adottato dal Presidente del Consiglio.",
+  "D.LGS":
+    "Decreto legislativo: atto del Governo emanato su delega del Parlamento per attuare o riordinare la materia.",
+  "D.P.R":
+    "Decreto del Presidente della Repubblica: atto formale del Presidente della Repubblica su proposta del Governo.",
+  "D.P.C.M":
+    "Decreto del Presidente del Consiglio dei ministri: atto regolamentare adottato dal Presidente del Consiglio.",
   DPCM: "Decreto del Presidente del Consiglio dei ministri: atto regolamentare adottato dal Presidente del Consiglio.",
   DPR: "Decreto del Presidente della Repubblica: atto formale firmato dal Capo dello Stato su proposta del Governo.",
   AIR: "Analisi di impatto della regolamentazione: documento che valuta costi, benefici ed effetti di una proposta normativa.",
   VIR: "Verifica di impatto della regolamentazione: controllo successivo sugli effetti prodotti da una norma gia' in vigore.",
-  NUVIR: "Nucleo per la verifica e l'impatto della regolamentazione: struttura del Governo che svolge le verifiche sull'impatto delle norme.",
+  NUVIR:
+    "Nucleo per la verifica e l'impatto della regolamentazione: struttura del Governo che svolge le verifiche sull'impatto delle norme.",
   GU: "Gazzetta Ufficiale: fonte ufficiale di pubblicazione delle leggi e degli atti normativi italiani.",
   CdM: "Consiglio dei ministri: organo collegiale del Governo presieduto dal Presidente del Consiglio.",
   ELI: "European Legislation Identifier: sistema di identificazione univoca (URI) di leggi e atti normativi.",
   NIR: "Numero Identificativo della Regolamentazione: codice URN stabile che identifica una norma italiana.",
   URN: "Uniform Resource Name: identificatore persistente di una risorsa, usato dal sistema NIR.",
-  SPARQL: "Linguaggio di interrogazione dei dati aperti RDF, usato per consultare banche dati pubbliche come quelle parlamentari.",
+  SPARQL:
+    "Linguaggio di interrogazione dei dati aperti RDF, usato per consultare banche dati pubbliche come quelle parlamentari.",
   DAGL: "Dipartimento per gli affari giuridici e legislativi: struttura di Palazzo Chigi che coordina l'attivita' normativa del Governo.",
   MEF: "Ministero dell'Economia e delle Finanze: dicastero competente su bilancio, fisco e finanza pubblica.",
-  ISTAT: "Istituto nazionale di statistica: ente pubblico che produce le statistiche ufficiali del Paese.",
+  ISTAT:
+    "Istituto nazionale di statistica: ente pubblico che produce le statistiche ufficiali del Paese.",
   SENATO: "Senato della Repubblica: una delle due camere del Parlamento italiano.",
   CAMERA: "Camera dei deputati: una delle due camere del Parlamento italiano.",
   CUP: "Comitato interministeriale per la programmazione economica e lo sviluppo sostenibile: comitato che approva investimenti pubblici strategici.",
-  CONSOB: "Commissione nazionale per le societa' e la borsa: autorita' di vigilanza sui mercati finanziari.",
+  CONSOB:
+    "Commissione nazionale per le societa' e la borsa: autorita' di vigilanza sui mercati finanziari.",
   AGCOM: "Autorita' per le garanzie nelle comunicazioni: regola telecomunicazioni, media e posta.",
-  ARERA: "Autorita' di regolazione per energia, reti e ambiente: vigila su energia, gas, acqua e rifiuti.",
+  ARERA:
+    "Autorita' di regolazione per energia, reti e ambiente: vigila su energia, gas, acqua e rifiuti.",
   PNRR: "Piano Nazionale di Ripresa e Resilienza: programma di investimenti finanziati dall'Unione europea.",
-  SOGLIA: "Soglia di rilevanza: valore oltre il quale scatta un obbligo o un controllo previsto dalla norma.",
+  SOGLIA:
+    "Soglia di rilevanza: valore oltre il quale scatta un obbligo o un controllo previsto dalla norma.",
   OMISSIS: "Parti di un documento non pubblicate per tutela della riservatezza o della sicurezza.",
 };
 

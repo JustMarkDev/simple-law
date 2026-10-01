@@ -1,15 +1,15 @@
-'use client'
+"use client";
 
-import type { ReactNode } from 'react'
-import { motion, useReducedMotion } from 'motion/react'
+import type { ReactNode } from "react";
+import { motion, useReducedMotion } from "motion/react";
 
-const EASE: [number, number, number, number] = [0.22, 1, 0.36, 1]
+const EASE: [number, number, number, number] = [0.22, 1, 0.36, 1];
 
 interface ComparsaProps {
-  children: ReactNode
-  className?: string
+  children: ReactNode;
+  className?: string;
   /** Ritardo in secondi, utile per le comparse a cascata. */
-  delay?: number
+  delay?: number;
 }
 
 /**
@@ -17,11 +17,11 @@ interface ComparsaProps {
  * con movimento ridotto il contenuto è reso subito senza animazione.
  */
 export default function Comparsa({ children, className, delay = 0 }: ComparsaProps) {
-  const ridotto = useReducedMotion()
+  const ridotto = useReducedMotion();
 
   // Movimento ridotto: nessun effetto, contenuto reso subito e accessibile.
   if (ridotto) {
-    return <div className={className}>{children}</div>
+    return <div className={className}>{children}</div>;
   }
 
   return (
@@ -34,5 +34,5 @@ export default function Comparsa({ children, className, delay = 0 }: ComparsaPro
     >
       {children}
     </motion.div>
-  )
+  );
 }

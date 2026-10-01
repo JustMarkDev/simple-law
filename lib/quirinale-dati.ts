@@ -141,10 +141,9 @@ export function aAttoQuirinale(voce: unknown): AttoQuirinale | null {
  * normalizzazione). Sotto i 2 caratteri restituisce copia invariata.
  * Non lancia mai.
  */
-export function cercaQuirinale<T extends { titolo: string; sintesi?: string; descrizione?: string; sottotipo?: string }>(
-  voci: readonly T[],
-  q: unknown,
-): T[] {
+export function cercaQuirinale<
+  T extends { titolo: string; sintesi?: string; descrizione?: string; sottotipo?: string },
+>(voci: readonly T[], q: unknown): T[] {
   try {
     if (!Array.isArray(voci)) return [];
     const grezza = typeof q === "string" ? q.slice(0, 100) : "";
@@ -275,7 +274,9 @@ export async function tuttiComunicatiQuirinale(): Promise<ComunicatoQuirinale[]>
     if (!cache.comunicati) {
       const grezzo = leggiJson(PERCORSO_COMUNICATI);
       const lista =
-        grezzo && typeof grezzo === "object" && !Array.isArray(grezzo) &&
+        grezzo &&
+        typeof grezzo === "object" &&
+        !Array.isArray(grezzo) &&
         Array.isArray((grezzo as Record<string, unknown>)["comunicati"])
           ? ((grezzo as Record<string, unknown>)["comunicati"] as unknown[])
           : [];
@@ -303,7 +304,9 @@ export async function tuttiAttiQuirinale(): Promise<AttoQuirinale[]> {
     if (!cache.atti) {
       const grezzo = leggiJson(PERCORSO_ATTI);
       const lista =
-        grezzo && typeof grezzo === "object" && !Array.isArray(grezzo) &&
+        grezzo &&
+        typeof grezzo === "object" &&
+        !Array.isArray(grezzo) &&
         Array.isArray((grezzo as Record<string, unknown>)["atti"])
           ? ((grezzo as Record<string, unknown>)["atti"] as unknown[])
           : [];

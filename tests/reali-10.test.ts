@@ -19,7 +19,7 @@
 
 import { readFile, readdir, stat } from "node:fs/promises";
 import path from "node:path";
-import { describe, expect, it } from "vitest";
+import { describe, expect, it } from "vite-plus/test";
 import {
   estraiListaAttiReali,
   getCorpusInfo,
@@ -137,15 +137,7 @@ function isRecuperatoIl(v: unknown): boolean {
   return anno >= 2025 && anno <= oggi + 1;
 }
 
-const SEGNALI_INVENTATI = [
-  "example.com",
-  "malevolo",
-  "lorem",
-  "todo",
-  "xxx",
-  "inventato",
-  "fake",
-];
+const SEGNALI_INVENTATI = ["example.com", "malevolo", "lorem", "todo", "xxx", "inventato", "fake"];
 function haSegnaleInventato(v: unknown): boolean {
   if (typeof v !== "string") return false;
   const s = v.toLowerCase();
@@ -153,8 +145,7 @@ function haSegnaleInventato(v: unknown): boolean {
 }
 
 function provenanceDi(parsed: unknown): Record<string, unknown> | null {
-  if (!parsed || typeof parsed !== "object" || Array.isArray(parsed))
-    return null;
+  if (!parsed || typeof parsed !== "object" || Array.isArray(parsed)) return null;
   const p = (parsed as { provenance?: unknown }).provenance;
   if (!p || typeof p !== "object" || Array.isArray(p)) return null;
   return p as Record<string, unknown>;
@@ -177,9 +168,7 @@ function estraiArrayDati(parsed: unknown, chiavi: string[]): unknown[] | null {
   return null;
 }
 
-async function leggiJson(
-  percorso: string,
-): Promise<{ parsed: unknown; byte: number } | null> {
+async function leggiJson(percorso: string): Promise<{ parsed: unknown; byte: number } | null> {
   try {
     const raw = await readFile(percorso, "utf8");
     const byte = Buffer.byteLength(raw, "utf8");
@@ -194,7 +183,9 @@ function notaSkip(msg: string): void {
 }
 
 function chiaveBassa(v: unknown): string {
-  return String(v ?? "").trim().toLowerCase();
+  return String(v ?? "")
+    .trim()
+    .toLowerCase();
 }
 
 // ---------------------------------------------------------------------------
@@ -280,8 +271,7 @@ function spotCheckCommissione(voce: unknown): string | null {
   const titolo = r["titolo"] ?? r["oggetto"];
   if (!isStringaNonVuota(titolo)) return "manca titolo/oggetto";
   if (haSegnaleInventato(titolo)) return "titolo con segnale inventato";
-  const chiave =
-    r["eli"] ?? r["codiceRedazionale"] ?? r["id"] ?? r["url"] ?? r["urn"];
+  const chiave = r["eli"] ?? r["codiceRedazionale"] ?? r["id"] ?? r["url"] ?? r["urn"];
   if (!isStringaNonVuota(String(chiave ?? ""))) {
     return "manca eli/codiceRedazionale/id/url";
   }
@@ -311,12 +301,17 @@ describe("reali-10: envelope finestre Normattiva 1992-1993/2005-2006 (skip se as
       expect(prov, `${atteso.nome}: senza provenance`).not.toBeNull();
       expect(isStringaNonVuota(prov?.["fonte"]), `${atteso.nome}: fonte assente`).toBe(true);
       expect(isHttpsUrl(prov?.["url"]), `${atteso.nome}: url non https`).toBe(true);
-      expect(isRecuperatoIl(prov?.["recuperatoIl"] ?? prov?.["estratto_il"]), `${atteso.nome}: recuperatoIl/estratto_il non reale`).toBe(true);
+      expect(
+        isRecuperatoIl(prov?.["recuperatoIl"] ?? prov?.["estratto_il"]),
+        `${atteso.nome}: recuperatoIl/estratto_il non reale`,
+      ).toBe(true);
       expect(isStringaNonVuota(prov?.["licenza"]), `${atteso.nome}: licenza assente`).toBe(true);
       const lista = estraiArrayDati(letto.parsed, atteso.chiavi);
       expect(lista, `${atteso.nome}: nessun array dati`).not.toBeNull();
       expect(lista?.length ?? 0, `${atteso.nome}: conteggio zero`).toBeGreaterThan(0);
-      expect(lista?.length ?? 0, `${atteso.nome}: oltre cap ${atteso.max}`).toBeLessThanOrEqual(atteso.max);
+      expect(lista?.length ?? 0, `${atteso.nome}: oltre cap ${atteso.max}`).toBeLessThanOrEqual(
+        atteso.max,
+      );
     });
 
     it(`${atteso.nome}: zero inventati (spot-check + normalizzazione)`, async () => {
@@ -336,15 +331,18 @@ describe("reali-10: envelope finestre Normattiva 1992-1993/2005-2006 (skip se as
       let validi = 0;
       for (const voce of campione) {
         const errore = spotCheckAttoFinestra(voce);
-        expect(errore, `${atteso.nome}: record non valido (${errore}): ${JSON.stringify(voce).slice(0, 200)}`).toBeNull();
+        expect(
+          errore,
+          `${atteso.nome}: record non valido (${errore}): ${JSON.stringify(voce).slice(0, 200)}`,
+        ).toBeNull();
         validi += 1;
       }
       expect(validi).toBeGreaterThan(0);
       // Almeno un record del campione deve normalizzare in LawRecord reale.
-      const normalizzati = campione
-        .map((v) => normalizzaAttoReale(v))
-        .filter((r) => r !== null);
-      expect(normalizzati.length, `${atteso.nome}: nessun record normalizzabile`).toBeGreaterThan(0);
+      const normalizzati = campione.map((v) => normalizzaAttoReale(v)).filter((r) => r !== null);
+      expect(normalizzati.length, `${atteso.nome}: nessun record normalizzabile`).toBeGreaterThan(
+        0,
+      );
       for (const r of normalizzati) {
         expect(r?.dimostrativo).toBe(false);
       }
@@ -377,14 +375,21 @@ describe("reali-10: envelope sondaggi/CNEL/commissione (skip se assenti)", () =>
       expect(isStringaNonVuota(prov?.["licenza"]), `${atteso.nome}: licenza assente`).toBe(true);
       // Sondaggi: licenza CC BY-SA 4.0 prescritta dal giudice.
       if (atteso.nome === "sondaggi-nazionali.json") {
-        expect(String(prov?.["licenza"] ?? ""), "sondaggi: licenza non CC BY-SA 4.0").toContain("CC BY-SA 4.0");
+        expect(String(prov?.["licenza"] ?? ""), "sondaggi: licenza non CC BY-SA 4.0").toContain(
+          "CC BY-SA 4.0",
+        );
         const revid = prov?.["revid"] ?? prov?.["revid_wiki"];
-        expect(isStringaNonVuota(String(revid ?? prov?.["url"] ?? "")), "sondaggi: manca revid/url di attribuzione").toBe(true);
+        expect(
+          isStringaNonVuota(String(revid ?? prov?.["url"] ?? "")),
+          "sondaggi: manca revid/url di attribuzione",
+        ).toBe(true);
       }
       const lista = estraiArrayDati(letto.parsed, atteso.chiavi);
       expect(lista, `${atteso.nome}: nessun array dati`).not.toBeNull();
       expect(lista?.length ?? 0, `${atteso.nome}: conteggio zero`).toBeGreaterThan(0);
-      expect(lista?.length ?? 0, `${atteso.nome}: oltre cap ${atteso.max}`).toBeLessThanOrEqual(atteso.max);
+      expect(lista?.length ?? 0, `${atteso.nome}: oltre cap ${atteso.max}`).toBeLessThanOrEqual(
+        atteso.max,
+      );
     });
 
     it(`${atteso.nome}: zero inventati (spot-check tipologia)`, async () => {
@@ -405,7 +410,10 @@ describe("reali-10: envelope sondaggi/CNEL/commissione (skip se assenti)", () =>
       let validi = 0;
       for (const voce of campione) {
         const errore = check(voce);
-        expect(errore, `${atteso.nome}: record non valido (${errore}): ${JSON.stringify(voce).slice(0, 200)}`).toBeNull();
+        expect(
+          errore,
+          `${atteso.nome}: record non valido (${errore}): ${JSON.stringify(voce).slice(0, 200)}`,
+        ).toBeNull();
         validi += 1;
       }
       expect(validi).toBeGreaterThan(0);
@@ -447,9 +455,15 @@ describe("reali-10: wiring percorsi + dedup finestre", () => {
     // I file non-atti hanno forma diversa da LawRecord: se un giorno entrano
     // nel loader atti, estraiListaAttiReali li ignorerebbe comunque; qui si
     // documenta che NON devono stare nei percorsi atti.
-    for (const nome of ["sondaggi-nazionali.json", "cnel-pareri.json", "commissione-partiti-gu.json"]) {
+    for (const nome of [
+      "sondaggi-nazionali.json",
+      "cnel-pareri.json",
+      "commissione-partiti-gu.json",
+    ]) {
       if (testo.includes(nome)) {
-        console.info(`[reali-10] NOTA — ${nome} citato in sources.ts (verificare sia solo commento/docs, non loader atti)`);
+        console.info(
+          `[reali-10] NOTA — ${nome} citato in sources.ts (verificare sia solo commento/docs, non loader atti)`,
+        );
       }
     }
     expect(true).toBe(true);
@@ -492,7 +506,9 @@ describe("reali-10: wiring percorsi + dedup finestre", () => {
       expect(true).toBe(true);
       return;
     }
-    console.info(`[reali-10] dedup su ${fileVerificati} file, ${attiTotali} atti, ${visti.size} chiavi uniche`);
+    console.info(
+      `[reali-10] dedup su ${fileVerificati} file, ${attiTotali} atti, ${visti.size} chiavi uniche`,
+    );
     expect(duplicati, `ELI duplicati:\n${duplicati.slice(0, 10).join("\n")}`).toEqual([]);
   });
 });
@@ -554,7 +570,9 @@ describe("reali-10: MANIFEST coerente (tollerante)", () => {
     const json = entries.filter((e) => e.endsWith(".json") && e !== "MANIFEST.json");
     const nuoviNonElencati = json.filter((e) => nuoviNomi.has(e) && !elencati.has(e));
     if (nuoviNonElencati.length > 0) {
-      console.info(`[reali-10] NOTA — nuovi file non ancora in MANIFEST (lag scrittori): ${nuoviNonElencati.join(", ")}`);
+      console.info(
+        `[reali-10] NOTA — nuovi file non ancora in MANIFEST (lag scrittori): ${nuoviNonElencati.join(", ")}`,
+      );
     }
     expect(true).toBe(true);
   });
@@ -600,7 +618,9 @@ describe("reali-10: getCorpusInfo coerente + never-throw (mai rete)", () => {
     expect(leggi.length).toBeGreaterThan(0);
     for (const l of leggi.slice(0, 50)) {
       const r = l as Record<string, unknown>;
-      expect(haSegnaleInventato(r["titolo"]), "titolo con segnale inventato nel corpus").toBe(false);
+      expect(haSegnaleInventato(r["titolo"]), "titolo con segnale inventato nel corpus").toBe(
+        false,
+      );
     }
   });
 

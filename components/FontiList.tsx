@@ -1,49 +1,60 @@
-import { LinkSquare01Icon } from 'hugeicons-react'
-import type { Fonti } from './seed-fallback'
-import { FONTI_LABELS } from '@/lib/fonti'
+import { LinkSquare01Icon } from "hugeicons-react";
+import type { Fonti } from "./seed-fallback";
+import { FONTI_LABELS } from "@/lib/fonti";
 
 interface FontiListProps {
-  fonti: Fonti
-  modalita?: 'inline' | 'block'
-  className?: string
+  fonti: Fonti;
+  modalita?: "inline" | "block";
+  className?: string;
 }
 
 const SOURCES: { key: keyof Fonti; descrizione: string }[] = [
-  { key: 'normattiva', descrizione: 'Il testo della norma, aggiornato' },
-  { key: 'gazzetta', descrizione: 'La prima pubblicazione ufficiale' },
-  { key: 'governo', descrizione: 'Le notizie dal Governo' },
-  { key: 'camera', descrizione: 'I lavori alla Camera' },
-  { key: 'senato', descrizione: 'I lavori al Senato' },
-]
+  { key: "normattiva", descrizione: "Il testo della norma, aggiornato" },
+  { key: "gazzetta", descrizione: "La prima pubblicazione ufficiale" },
+  { key: "governo", descrizione: "Le notizie dal Governo" },
+  { key: "camera", descrizione: "I lavori alla Camera" },
+  { key: "senato", descrizione: "I lavori al Senato" },
+];
 
-const DOMINI_CONSENTITI = ['normattiva.it', 'gazzettaufficiale.it', 'governo.it', 'camera.it', 'senato.it']
+const DOMINI_CONSENTITI = [
+  "normattiva.it",
+  "gazzettaufficiale.it",
+  "governo.it",
+  "camera.it",
+  "senato.it",
+];
 
 /** Accetta solo https verso domini ufficiali; blocca javascript:, data: e altri schemi. */
 function fonteSicura(url: unknown): boolean {
-  if (typeof url !== 'string' || url.length === 0 || url.length > 2000) return false
-  const testo = url.trim().toLowerCase()
-  if (testo.startsWith('javascript:') || testo.startsWith('data:') || testo.startsWith('vbscript:')) return false
+  if (typeof url !== "string" || url.length === 0 || url.length > 2000) return false;
+  const testo = url.trim().toLowerCase();
+  if (testo.startsWith("javascript:") || testo.startsWith("data:") || testo.startsWith("vbscript:"))
+    return false;
   try {
-    const parsed = new URL(url)
-    if (parsed.protocol !== 'https:') return false
+    const parsed = new URL(url);
+    if (parsed.protocol !== "https:") return false;
     return DOMINI_CONSENTITI.some(
       (dominio) => parsed.hostname === dominio || parsed.hostname.endsWith(`.${dominio}`),
-    )
+    );
   } catch {
-    return false
+    return false;
   }
 }
 
 /** Elenco dei testi veri di una norma, con icona di link esterno. */
-export default function FontiList({ fonti, modalita = 'inline', className = '' }: FontiListProps) {
-  const disponibili = SOURCES.filter((source) => fonteSicura(fonti[source.key]))
+export default function FontiList({ fonti, modalita = "inline", className = "" }: FontiListProps) {
+  const disponibili = SOURCES.filter((source) => fonteSicura(fonti[source.key]));
 
   if (disponibili.length === 0) {
     return (
-      <p role="status" className={`rounded-2xl border border-regola bg-carta-soft p-5 text-sm leading-relaxed text-inchiostro-soft dark:border-notte-deep dark:bg-notte-soft dark:text-nebbia-soft sm:p-6 ${className}`}>
-        Per ora non ci sono link diretti. Cerca numero e anno della norma su Normattiva o in Gazzetta Ufficiale.
+      <p
+        role="status"
+        className={`rounded-2xl border border-regola bg-carta-soft p-5 text-sm leading-relaxed text-inchiostro-soft dark:border-notte-deep dark:bg-notte-soft dark:text-nebbia-soft sm:p-6 ${className}`}
+      >
+        Per ora non ci sono link diretti. Cerca numero e anno della norma su Normattiva o in
+        Gazzetta Ufficiale.
       </p>
-    )
+    );
   }
 
   return (
@@ -65,8 +76,10 @@ export default function FontiList({ fonti, modalita = 'inline', className = '' }
               <span className="text-sm font-semibold text-inchiostro underline decoration-regola underline-offset-2 transition-colors group-hover:text-accento group-hover:decoration-accento dark:text-nebbia dark:decoration-notte-deep dark:group-hover:text-accento-chiara dark:group-hover:decoration-accento-chiara">
                 {FONTI_LABELS[source.key]}
               </span>
-              {modalita === 'block' && (
-                <span className="block text-xs leading-relaxed text-inchiostro-soft dark:text-nebbia-soft">{source.descrizione}</span>
+              {modalita === "block" && (
+                <span className="block text-xs leading-relaxed text-inchiostro-soft dark:text-nebbia-soft">
+                  {source.descrizione}
+                </span>
               )}
               <span className="sr-only"> (si apre in una nuova scheda)</span>
             </span>
@@ -74,5 +87,5 @@ export default function FontiList({ fonti, modalita = 'inline', className = '' }
         </li>
       ))}
     </ul>
-  )
+  );
 }

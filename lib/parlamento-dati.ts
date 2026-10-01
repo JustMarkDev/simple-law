@@ -72,10 +72,7 @@ function urlHttp(value: unknown): string {
  * Match ministro -> parlamentare: esatto sul normalizzato, uno solo -> link,
  * zero o >=2 (doppia camera/omonimi) -> null. Mai lancia.
  */
-export function trovaParlamentare(
-  nomeMinistro: unknown,
-  membri: readonly Membro[],
-): Membro | null {
+export function trovaParlamentare(nomeMinistro: unknown, membri: readonly Membro[]): Membro | null {
   try {
     if (typeof nomeMinistro !== "string") return null;
     if (!Array.isArray(membri)) return null;

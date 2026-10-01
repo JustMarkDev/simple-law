@@ -31,7 +31,7 @@
 
 import { readdir, readFile, stat } from "node:fs/promises";
 import path from "node:path";
-import { describe, expect, it } from "vitest";
+import { describe, expect, it } from "vite-plus/test";
 import {
   estraiListaAttiReali,
   getCorpusInfo,
@@ -134,15 +134,7 @@ function isRecuperatoIl(v: unknown): boolean {
   return anno >= 2025 && anno <= oggi + 1;
 }
 
-const SEGNALI_INVENTATI = [
-  "example.com",
-  "malevolo",
-  "lorem",
-  "todo",
-  "xxx",
-  "inventato",
-  "fake",
-];
+const SEGNALI_INVENTATI = ["example.com", "malevolo", "lorem", "todo", "xxx", "inventato", "fake"];
 function haSegnaleInventato(v: unknown): boolean {
   if (typeof v !== "string") return false;
   const s = v.toLowerCase();
@@ -150,8 +142,7 @@ function haSegnaleInventato(v: unknown): boolean {
 }
 
 function provenanceDi(parsed: unknown): Record<string, unknown> | null {
-  if (!parsed || typeof parsed !== "object" || Array.isArray(parsed))
-    return null;
+  if (!parsed || typeof parsed !== "object" || Array.isArray(parsed)) return null;
   const p = (parsed as { provenance?: unknown }).provenance;
   if (!p || typeof p !== "object" || Array.isArray(p)) return null;
   return p as Record<string, unknown>;
@@ -174,9 +165,7 @@ function estraiArrayDati(parsed: unknown, chiavi: string[]): unknown[] | null {
   return null;
 }
 
-async function leggiJson(
-  percorso: string,
-): Promise<{ parsed: unknown; byte: number } | null> {
+async function leggiJson(percorso: string): Promise<{ parsed: unknown; byte: number } | null> {
   try {
     const raw = await readFile(percorso, "utf8");
     const byte = Buffer.byteLength(raw, "utf8");
@@ -191,7 +180,9 @@ function notaSkip(msg: string): void {
 }
 
 function chiaveBassa(v: unknown): string {
-  return String(v ?? "").trim().toLowerCase();
+  return String(v ?? "")
+    .trim()
+    .toLowerCase();
 }
 
 // ---------------------------------------------------------------------------
@@ -285,10 +276,10 @@ describe("reali-12: envelope finestre Normattiva 1948/1985 (skip se assenti)", (
         validi += 1;
       }
       expect(validi).toBeGreaterThan(0);
-      const normalizzati = campione
-        .map((v) => normalizzaAttoReale(v))
-        .filter((r) => r !== null);
-      expect(normalizzati.length, `${atteso.nome}: nessun record normalizzabile`).toBeGreaterThan(0);
+      const normalizzati = campione.map((v) => normalizzaAttoReale(v)).filter((r) => r !== null);
+      expect(normalizzati.length, `${atteso.nome}: nessun record normalizzabile`).toBeGreaterThan(
+        0,
+      );
       for (const r of normalizzati) {
         expect(r?.dimostrativo).toBe(false);
       }
@@ -477,7 +468,9 @@ describe("reali-12: getCorpusInfo coerente + corpus in crescita (mai rete)", () 
     expect(leggi.length).toBeGreaterThan(0);
     for (const l of leggi.slice(0, 50)) {
       const r = l as Record<string, unknown>;
-      expect(haSegnaleInventato(r["titolo"]), "titolo con segnale inventato nel corpus").toBe(false);
+      expect(haSegnaleInventato(r["titolo"]), "titolo con segnale inventato nel corpus").toBe(
+        false,
+      );
     }
   });
 

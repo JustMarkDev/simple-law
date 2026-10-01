@@ -110,11 +110,7 @@ export interface RecenteSyncOptions {
   readonly persist?: boolean;
 }
 
-const DEFAULT_DENOMINAZIONI: readonly string[] = [
-  "DECRETO-LEGGE",
-  "LEGGE",
-  "DECRETO LEGISLATIVO",
-];
+const DEFAULT_DENOMINAZIONI: readonly string[] = ["DECRETO-LEGGE", "LEGGE", "DECRETO LEGISLATIVO"];
 
 const DEFAULT_ZIP_DIR = "data/bulk";
 
@@ -152,8 +148,7 @@ export function enrichLaw(
   source = "normattiva",
   syncedAt = new Date().toISOString(),
 ): LawRecordExtra {
-  const testo =
-    (law.testo ?? "").trim() || [law.titolo, law.sintesi].filter(Boolean).join(". ");
+  const testo = (law.testo ?? "").trim() || [law.titolo, law.sintesi].filter(Boolean).join(". ");
   const attuativi = law.attuativi ?? { daAdottare: 0, adottati: 0, scaduti: 0 };
 
   const base = simplifyLaw({
@@ -212,9 +207,7 @@ export function attoToLawRecord(atto: AttoDto): LawRecordExtra | null {
     sintesi,
     stato: atto.stato || "in_vigore",
     gulpease: null,
-    fonti: eli.startsWith("/eli/")
-      ? { normattiva: `https://www.normattiva.it${eli}` }
-      : null,
+    fonti: eli.startsWith("/eli/") ? { normattiva: `https://www.normattiva.it${eli}` } : null,
     testo: atto.testo || undefined,
     urn: atto.urn || undefined,
     codiceRedazionale: atto.codiceRedazionale || undefined,
@@ -245,7 +238,10 @@ function messaggioDi(cause: unknown): string {
 }
 
 function nomeFileSicuro(nome: string): string {
-  const pulito = nome.replace(/[^a-zA-Z0-9._-]+/g, "_").replace(/^[._-]+/, "").slice(0, 100);
+  const pulito = nome
+    .replace(/[^a-zA-Z0-9._-]+/g, "_")
+    .replace(/^[._-]+/, "")
+    .slice(0, 100);
   return pulito || `collection-${Date.now()}`;
 }
 
@@ -352,7 +348,7 @@ export const storicoEffect = (
     // 1) Inventario delle collezioni predefinite.
     emit({ phase: "collections", message: "Lettura delle collezioni predefinite" });
     const collections = yield* getCollections().pipe(
-      Effect.catchAll((errore) => {
+      Effect.catch((errore) => {
         acc.errors.push(`collections: ${errore.message}`);
         return Effect.succeed<CollectionItem[]>([]);
       }),
@@ -377,7 +373,7 @@ export const storicoEffect = (
         formato: "JSON",
         formatoRichiesta: "V",
       }).pipe(
-        Effect.catchAll((errore) => {
+        Effect.catch((errore) => {
           acc.errors.push(`download ${nome}: ${errore.message}`);
           return Effect.succeed(null);
         }),
@@ -409,9 +405,7 @@ export const storicoEffect = (
     // 3) Denominate da cercare.
     let denominazioni: string[] = options.denominazioni ? [...options.denominazioni] : [];
     if (denominazioni.length === 0) {
-      const tipologiche = yield* denominazioniAtto().pipe(
-        Effect.catchAll(() => Effect.succeed([])),
-      );
+      const tipologiche = yield* denominazioniAtto().pipe(Effect.catch(() => Effect.succeed([])));
       denominazioni = tipologiche.map((voce) => voce.value).filter(Boolean);
       if (denominazioni.length === 0) denominazioni = [...DEFAULT_DENOMINAZIONI];
     }
@@ -445,7 +439,7 @@ export const storicoEffect = (
               total: page.total ?? undefined,
             }),
         }).pipe(
-          Effect.catchAll((errore) => {
+          Effect.catch((errore) => {
             acc.errors.push(`ricerca ${denominazione}: ${errore.message}`);
             return Effect.succeed<WalkRicercaResult>({ items: [], pages: 0, total: null });
           }),
@@ -513,7 +507,7 @@ export const recenteEffect = (
       dataInizioAggiornamento: dal,
       dataFineAggiornamento: al,
     }).pipe(
-      Effect.catchAll((errore) => {
+      Effect.catch((errore) => {
         acc.errors.push(`aggiornati: ${errore.message}`);
         return Effect.succeed([]);
       }),
@@ -528,7 +522,7 @@ export const recenteEffect = (
         continue;
       }
       const atto = yield* dettaglioAtto(urn).pipe(
-        Effect.catchAll((errore) => {
+        Effect.catch((errore) => {
           acc.errors.push(`dettaglio ${urn}: ${errore.message}`);
           return Effect.succeed<AttoDto | null>(null);
         }),

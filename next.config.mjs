@@ -2,12 +2,8 @@
 const nextConfig = {
   reactStrictMode: true,
   poweredByHeader: false,
-  eslint: {
-    // Lint viene eseguito in CI/script dedicati; non bloccare la build di produzione.
-    ignoreDuringBuilds: true,
-  },
-  // Prisma non deve essere bundlato lato server: usa i moduli nativi di Node.
-  serverExternalPackages: ["@prisma/client", "prisma"],
+  // Il driver `pg` (usato dall'adapter Prisma) non va bundlato lato server.
+  serverExternalPackages: ["pg"],
   images: {
     remotePatterns: [
       {

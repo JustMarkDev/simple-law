@@ -9,8 +9,8 @@
  *   Committabili solo: codice + 72 curati + `data/corpus/manifest.json` <100KB + README.
  *
  * Uso:
- *   npx tsx scripts/generate-corpus-massivo.ts --totale 5000 --kb-medio 4 --seed simple-law-v1 --output data/corpus/incoming/shard-demo.jsonl.gz
- *   npx tsx scripts/generate-corpus-massivo.ts --totale 500 --output /tmp/shard-demo.jsonl.gz
+ *   bunx tsx scripts/generate-corpus-massivo.ts --totale 5000 --kb-medio 4 --seed simple-law-v1 --output data/corpus/incoming/shard-demo.jsonl.gz
+ *   bunx tsx scripts/generate-corpus-massivo.ts --totale 500 --output /tmp/shard-demo.jsonl.gz
  *
  * - Mai Parquet/SQLite/S3/Bloom: solo JSONL (anche gzip) con Node integrato.
  * - Deterministico: mulberry32 + FNV-1a, seme `simple-law-corpus-v1:<tema>:<tipo>:<anno>:<indice>`.
@@ -67,11 +67,15 @@ function leggiOpzioni(argv: string[]): Opzioni {
       if (Number.isFinite(v) && v >= KB_MEDIO_MINIMO && v <= KB_MEDIO_MASSIMO) opzioni.kbMedio = v;
       i++;
     } else if (arg === "--seed" && argv[i + 1]) {
-      const s = String(argv[i + 1]).trim().slice(0, 80);
+      const s = String(argv[i + 1])
+        .trim()
+        .slice(0, 80);
       if (s.length > 0) opzioni.seed = s;
       i++;
     } else if (arg === "--output" && argv[i + 1]) {
-      const s = String(argv[i + 1]).trim().slice(0, 300);
+      const s = String(argv[i + 1])
+        .trim()
+        .slice(0, 300);
       if (s.length > 0) opzioni.output = s;
       i++;
     }
@@ -112,7 +116,9 @@ function adattaDimensioneTesto(testoBase: string, kbMedio: number, rnd: () => nu
 }
 
 export function generaVariante(base: AttoEspanso, indice: number, seedRadice: string): AttoEspanso {
-  const seme = fnv1a(`simple-law-corpus-v1:${base.tema}:${base.tipo}:${base.anno}:${seedRadice}:${indice}`);
+  const seme = fnv1a(
+    `simple-law-corpus-v1:${base.tema}:${base.tipo}:${base.anno}:${seedRadice}:${indice}`,
+  );
   const rnd = mulberry32(seme);
   const numero = numeroSicuro(base.numero, indice);
   const slug = base.eli.split("/")[2] ?? "legge";
@@ -136,7 +142,9 @@ export function generaVariante(base: AttoEspanso, indice: number, seedRadice: st
 }
 
 function scegliFrase(rnd: () => number): string {
-  return FRASI_RIEMPITIVE[Math.floor(rnd() * FRASI_RIEMPITIVE.length) % FRASI_RIEMPITIVE.length] as string;
+  return FRASI_RIEMPITIVE[
+    Math.floor(rnd() * FRASI_RIEMPITIVE.length) % FRASI_RIEMPITIVE.length
+  ] as string;
 }
 
 /**
@@ -161,7 +169,8 @@ export function generaCorpus(totale: number, seed: string, kbMedio: number): Att
     }
     if (!visti.has(candidato.eli)) {
       const rnd = mulberry32(fnv1a(`${seed}:${candidato.eli}`));
-      const testoAdattato = ciclo === 0 ? candidato.testo : adattaDimensioneTesto(candidato.testo, kbMedio, rnd);
+      const testoAdattato =
+        ciclo === 0 ? candidato.testo : adattaDimensioneTesto(candidato.testo, kbMedio, rnd);
       visti.add(candidato.eli);
       risultato.push({ ...candidato, testo: testoAdattato });
     }
@@ -169,7 +178,9 @@ export function generaCorpus(totale: number, seed: string, kbMedio: number): Att
     if (indice > totale * 10 + 5000) break;
   }
   if (risultato.length < totale) {
-    console.warn(`generate-corpus-massivo: richiesti ${totale}, generati ${risultato.length} (spazio ELI esaurito)`);
+    console.warn(
+      `generate-corpus-massivo: richiesti ${totale}, generati ${risultato.length} (spazio ELI esaurito)`,
+    );
   }
   return risultato.slice(0, totale);
 }

@@ -1,4 +1,4 @@
-import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
+import { afterEach, beforeEach, describe, expect, it, vi } from "vite-plus/test";
 import { SEED_CDM, SEED_LAWS, SEED_MINISTERS } from "@/lib/seed-data";
 import { azzeraCacheReali, getSeedLaws } from "@/lib/sources";
 import { svuotaCacheCorpus } from "@/lib/corpus-unificato";
@@ -120,9 +120,7 @@ describe("corpus grande: i 5 seed come sottoinsieme", () => {
 
   it("il DL 139/2026 e la legge 124/2025 restano presenti", () => {
     const corpus = getSeedLaws();
-    expect(
-      corpus.some((l) => l.numero === "139" && l.tipo === "decreto.legge"),
-    ).toBe(true);
+    expect(corpus.some((l) => l.numero === "139" && l.tipo === "decreto.legge")).toBe(true);
     const l124 = corpus.find((l) => l.numero === "124" && l.tipo === "legge");
     expect(l124).toBeDefined();
     expect(l124?.titolo.toLowerCase()).toContain("concorrenza");

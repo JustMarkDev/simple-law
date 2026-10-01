@@ -82,11 +82,7 @@ function cifreSenzaZeri(v: string): string {
  * Falsi amici rifiutati: `legge 136/2026`, `regolamento (UE) 2024/1789`,
  * numeri parziali, anno o numero da soli. Mai throw.
  */
-export function testoCitaDirettiva(
-  testo: unknown,
-  anno: unknown,
-  numero: unknown,
-): boolean {
+export function testoCitaDirettiva(testo: unknown, anno: unknown, numero: unknown): boolean {
   try {
     if (typeof testo !== "string" || !testo) return false;
     const a = typeof anno === "string" ? anno.trim() : "";
@@ -97,8 +93,7 @@ export function testoCitaDirettiva(
     const t = testo.toLowerCase();
     if (!t.includes("direttiva") && !t.includes("direttive")) return false;
     // Riferimenti AAAA/NNNN e NNNN/AAAA con slash, bordi non-cifra, zeri ammessi.
-    const rif =
-      /(\d{4})\s*\/\s*(0*\d{1,4})|(0*\d{1,4})\s*\/\s*(\d{4})/g;
+    const rif = /(\d{4})\s*\/\s*(0*\d{1,4})|(0*\d{1,4})\s*\/\s*(\d{4})/g;
     let m: RegExpExecArray | null;
     while ((m = rif.exec(t)) !== null) {
       let annoTrovato = "";
@@ -214,10 +209,7 @@ function dormi(ms: number): Promise<void> {
   return new Promise((r) => setTimeout(r, ms));
 }
 
-async function fetchConTimeout(
-  url: string,
-  accept: string,
-): Promise<string | null> {
+async function fetchConTimeout(url: string, accept: string): Promise<string | null> {
   const controller = new AbortController();
   const timer = setTimeout(() => controller.abort(), TIMEOUT_MS);
   try {
@@ -236,9 +228,7 @@ async function fetchConTimeout(
 }
 
 /** NIM-ITA osservati per direttiva (titoli/ruoli reali, mai inventati). */
-async function cercaNimIta(
-  celex: string,
-): Promise<{ titolo: string; celexNim: string }[]> {
+async function cercaNimIta(celex: string): Promise<{ titolo: string; celexNim: string }[]> {
   try {
     const q =
       `PREFIX cdm:<http://publications.europa.eu/ontology/cdm#> ` +
@@ -249,10 +239,7 @@ async function cercaNimIta(
       `OPTIONAL { ?nim cdm:work_title ?titolo } ` +
       `OPTIONAL { ?nim cdm:resource_legal_id_celex ?celexNim } } LIMIT 20`;
     const url = `${CELLAR_SPARQL}?query=${encodeURIComponent(q)}&format=application%2Fsparql-results%2Bjson`;
-    const txt = await fetchConTimeout(
-      url,
-      "application/sparql-results+json, application/json",
-    );
+    const txt = await fetchConTimeout(url, "application/sparql-results+json, application/json");
     if (!txt) return [];
     const corpo = JSON.parse(txt) as {
       results?: { bindings?: Record<string, { value?: string }>[] };
@@ -427,9 +414,10 @@ async function main(): Promise<void> {
   // Scrittura unica alla fine: mai parziali.
   mkdirSync(DIR_REALI, { recursive: true });
   writeFileSync(FILE_OUT, json, "utf8");
-  const conAtti = voci.filter((v) =>
-    Array.isArray((v as { atti?: unknown[] }).atti) &&
-    ((v as { atti?: unknown[] }).atti ?? []).length > 0
+  const conAtti = voci.filter(
+    (v) =>
+      Array.isArray((v as { atti?: unknown[] }).atti) &&
+      ((v as { atti?: unknown[] }).atti ?? []).length > 0,
   ).length;
   console.log(
     `Recepimenti: ${voci.length} direttive, ${conAtti} con >=1 atto. File scritto: data/reali/eurlex-recepimenti.json.`,

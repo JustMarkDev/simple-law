@@ -1,13 +1,8 @@
-import { beforeEach, describe, expect, it, vi } from "vitest";
+import { beforeEach, describe, expect, it, vi } from "vite-plus/test";
 import { Effect, Layer } from "effect";
 import { resetPrisma } from "@/lib/db";
 import type { LawRecordExtra } from "@/lib/db";
-import {
-  Normattiva,
-  NormattivaError,
-  type AttoDto,
-  type NormattivaShape,
-} from "@/lib/normattiva";
+import { Normattiva, NormattivaError, type AttoDto, type NormattivaShape } from "@/lib/normattiva";
 import { attoToLawRecord, enrichLaw, recenteEffect, storicoEffect } from "@/lib/sync";
 import { anniDaSelezionare } from "@/lib/sync";
 
@@ -49,7 +44,12 @@ function servizioFinto(config: FintoConfig = {}): {
       if (path.includes("ricerca/avanzata")) {
         if (config.fallisciAvanzata) {
           return Effect.fail(
-            new NormattivaError({ message: "avanzata ko", url: path, status: 500, retryable: false }),
+            new NormattivaError({
+              message: "avanzata ko",
+              url: path,
+              status: 500,
+              retryable: false,
+            }),
           );
         }
         const pagina =
@@ -65,12 +65,22 @@ function servizioFinto(config: FintoConfig = {}): {
         return Effect.succeed(config.dettaglio ?? null);
       }
       return Effect.fail(
-        new NormattivaError({ message: `rotta non gestita: ${path}`, url: path, status: 404, retryable: false }),
+        new NormattivaError({
+          message: `rotta non gestita: ${path}`,
+          url: path,
+          status: 404,
+          retryable: false,
+        }),
       );
     },
     download: () =>
       Effect.fail(
-        new NormattivaError({ message: "download non usato", url: "", status: null, retryable: false }),
+        new NormattivaError({
+          message: "download non usato",
+          url: "",
+          status: null,
+          retryable: false,
+        }),
       ),
   };
 
@@ -80,7 +90,8 @@ function servizioFinto(config: FintoConfig = {}): {
 const ATTO_A = {
   titolo: "Disposizioni urgenti in materia di energia",
   sottoTitolo: "Misure per la riconversione industriale",
-  testo: "Il Governo adotta misure per la riconversione degli impianti. Le amministrazioni provvedono.",
+  testo:
+    "Il Governo adotta misure per la riconversione degli impianti. Le amministrazioni provvedono.",
   denominazioneAtto: "DECRETO-LEGGE",
   numero: "133",
   dataEmanazione: "2026-07-27",
@@ -174,10 +185,7 @@ describe("storicoEffect", () => {
       avanzata: () => ({ atti: [ATTO_A, ATTO_B], total: 2 }),
     });
     const report = await Effect.runPromise(
-      Effect.provide(
-        storicoEffect({ denominazioni: ["DECRETO-LEGGE"], persist: false }),
-        layer,
-      ),
+      Effect.provide(storicoEffect({ denominazioni: ["DECRETO-LEGGE"], persist: false }), layer),
     );
     expect(report.ok).toBe(true);
     expect(report.fetched).toBe(2);
@@ -240,10 +248,7 @@ describe("recenteEffect", () => {
       dettaglio: ATTO_A,
     });
     const report = await Effect.runPromise(
-      Effect.provide(
-        recenteEffect({ dal: "2026-07-01", al: "2026-07-31", persist: false }),
-        layer,
-      ),
+      Effect.provide(recenteEffect({ dal: "2026-07-01", al: "2026-07-31", persist: false }), layer),
     );
     expect(report.ok).toBe(true);
     expect(report.fetched).toBe(1);
@@ -259,7 +264,10 @@ describe("recenteEffect", () => {
     const { layer, chiamate } = servizioFinto({ aggiornati: { hits: [] } });
     await Effect.runPromise(Effect.provide(recenteEffect({ persist: false }), layer));
     const ricerca = chiamate.find((c) => c.path.includes("ricerca/aggiornati"));
-    const body = ricerca?.body as { dataInizioAggiornamento: string; dataFineAggiornamento: string };
+    const body = ricerca?.body as {
+      dataInizioAggiornamento: string;
+      dataFineAggiornamento: string;
+    };
     expect(body.dataInizioAggiornamento).toMatch(/^\d{4}-\d{2}-\d{2}$/);
     expect(body.dataFineAggiornamento).toMatch(/^\d{4}-\d{2}-\d{2}$/);
   });
@@ -271,10 +279,7 @@ describe("recenteEffect", () => {
       },
     });
     const report = await Effect.runPromise(
-      Effect.provide(
-        recenteEffect({ dal: "2026-01-01", al: "2026-01-31", persist: false }),
-        layer,
-      ),
+      Effect.provide(recenteEffect({ dal: "2026-01-01", al: "2026-01-31", persist: false }), layer),
     );
     expect(report.ok).toBe(true);
     expect(report.errors).toEqual([]);

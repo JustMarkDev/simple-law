@@ -1,4 +1,4 @@
-import { describe, expect, it } from "vitest";
+import { describe, expect, it } from "vite-plus/test";
 import { buildFonti, FONTI_LABELS, GOVERNO_ARCHIVIO_URL } from "@/lib/fonti";
 import { SEED_LAWS } from "@/lib/seed-data";
 

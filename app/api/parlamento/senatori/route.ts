@@ -4,12 +4,7 @@
  */
 
 import { NextResponse } from "next/server";
-import {
-  cercaMembri,
-  filtraPerGruppo,
-  pagina,
-  tuttiSenatori,
-} from "@/lib/parlamento-dati";
+import { cercaMembri, filtraPerGruppo, pagina, tuttiSenatori } from "@/lib/parlamento-dati";
 
 export const dynamic = "force-dynamic";
 export const runtime = "nodejs";

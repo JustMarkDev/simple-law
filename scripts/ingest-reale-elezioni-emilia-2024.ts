@@ -49,12 +49,26 @@ const TIMEOUT_MS = 120_000;
 const PAUSA_RETE_MS = 2000;
 
 const HEADER = [
-  "REGIONE", "CIRCOSCRIZIONE", "COMUNE", "SEZIONE",
-  "ELETTORI_UOMINI", "ELETTORI_DONNE", "ELETTORI_TOTALI",
-  "VOTANTI_UOMINI", "VOTANTI_DONNE", "VOTANTI_TOTALI",
-  "SCHEDE_NULLE", "SCHEDE_BIANCHE", "SCHEDE_CONTESTATE",
-  "NUM_CANDIDATO", "COGNOME_CANDIDATO", "NOME_CANDIDATO", "VOTI_CANDIDATO",
-  "NUM_LISTA", "LISTA", "VOTI_LISTA",
+  "REGIONE",
+  "CIRCOSCRIZIONE",
+  "COMUNE",
+  "SEZIONE",
+  "ELETTORI_UOMINI",
+  "ELETTORI_DONNE",
+  "ELETTORI_TOTALI",
+  "VOTANTI_UOMINI",
+  "VOTANTI_DONNE",
+  "VOTANTI_TOTALI",
+  "SCHEDE_NULLE",
+  "SCHEDE_BIANCHE",
+  "SCHEDE_CONTESTATE",
+  "NUM_CANDIDATO",
+  "COGNOME_CANDIDATO",
+  "NOME_CANDIDATO",
+  "VOTI_CANDIDATO",
+  "NUM_LISTA",
+  "LISTA",
+  "VOTI_LISTA",
 ] as const;
 
 /* ------------------------------------------------------------------ */
@@ -147,8 +161,12 @@ export function parseRiga(campi: readonly string[], numeroRiga: number): RigaEmi
   const lista = normalizzaLista(campi[18] ?? "");
   const votiLista = interoNonNegativo(campi[19] ?? "");
   if (
-    elettoriTot === null || votantiTot === null || nulle === null ||
-    bianche === null || contestate === null || votiLista === null
+    elettoriTot === null ||
+    votantiTot === null ||
+    nulle === null ||
+    bianche === null ||
+    contestate === null ||
+    votiLista === null
   ) {
     throw new Error(`riga ${numeroRiga}: numerico non valido`);
   }
@@ -160,15 +178,29 @@ export function parseRiga(campi: readonly string[], numeroRiga: number): RigaEmi
       throw new Error(`riga ${numeroRiga}: lista vuota con voti non nulli`);
     }
     return {
-      circoscrizione, comune, sezione,
-      elettori: elettoriTot, votanti: votantiTot,
-      bianche, nulle, contestate, lista: "", votiLista: 0,
+      circoscrizione,
+      comune,
+      sezione,
+      elettori: elettoriTot,
+      votanti: votantiTot,
+      bianche,
+      nulle,
+      contestate,
+      lista: "",
+      votiLista: 0,
     };
   }
   return {
-    circoscrizione, comune, sezione,
-    elettori: elettoriTot, votanti: votantiTot,
-    bianche, nulle, contestate, lista, votiLista,
+    circoscrizione,
+    comune,
+    sezione,
+    elettori: elettoriTot,
+    votanti: votantiTot,
+    bianche,
+    nulle,
+    contestate,
+    lista,
+    votiLista,
   };
 }
 
@@ -219,10 +251,7 @@ async function scaricaZip(destinazione: string): Promise<void> {
     const { createWriteStream } = await import("node:fs");
     const { pipeline } = await import("node:stream/promises");
     const { Readable } = await import("node:stream");
-    await pipeline(
-      Readable.fromWeb(risposta.body as never),
-      createWriteStream(destinazione),
-    );
+    await pipeline(Readable.fromWeb(risposta.body as never), createWriteStream(destinazione));
     const { stat, unlink } = await import("node:fs/promises");
     const info = await stat(destinazione);
     if (info.size > MAX_BYTE_DOWNLOAD_ZIP) {
@@ -270,7 +299,9 @@ async function main(): Promise<void> {
     } else if (existsSync(ZIP_LOCALE)) {
       const { tmpdir } = await import("node:os");
       const dest = join(tmpdir(), `emilia-2024-scrutini-${Date.now()}.csv`);
-      const figlio = spawnSync("unzip", ["-p", ZIP_LOCALE, VOCE_ZIP], { maxBuffer: 128 * 1024 * 1024 });
+      const figlio = spawnSync("unzip", ["-p", ZIP_LOCALE, VOCE_ZIP], {
+        maxBuffer: 128 * 1024 * 1024,
+      });
       if (figlio.status !== 0) throw new Error("estrazione voce ZIP fallita");
       writeFileSync(dest, figlio.stdout);
       scaricati.push(dest);
@@ -289,9 +320,16 @@ async function main(): Promise<void> {
     }
 
     const stato: StatoEmilia = {
-      e: 0, v: 0, b: 0, k: 0, votiListe: 0,
-      liste: new Map(), comuni: new Map(), sezioniViste: new Set(),
-      righeLette: 0, righeAggregate: 0,
+      e: 0,
+      v: 0,
+      b: 0,
+      k: 0,
+      votiListe: 0,
+      liste: new Map(),
+      comuni: new Map(),
+      sezioniViste: new Set(),
+      righeLette: 0,
+      righeAggregate: 0,
     };
     const flusso = createReadStream(csvPercorso, { encoding: "latin1" });
     const righe = createInterface({ input: flusso, crlfDelay: Infinity });
@@ -365,12 +403,21 @@ async function main(): Promise<void> {
 
     const liste = [...stato.liste.entries()]
       .sort((a, b) => b[1] - a[1])
-      .map(([n, v]) => ({ n, v, p: stato.votiListe > 0 ? unaDecimale((v / stato.votiListe) * 100) : 0 }));
+      .map(([n, v]) => ({
+        n,
+        v,
+        p: stato.votiListe > 0 ? unaDecimale((v / stato.votiListe) * 100) : 0,
+      }));
     const comuni = [...stato.comuni.values()]
       .sort((a, b) => a.c.localeCompare(b.c, "it"))
       .map((c) => ({ ...c, a: affluenza(c.v, c.e) }));
     const envelope = {
-      provenance: { fonte: FONTE, url: urlProvenance, recuperatoIl: new Date().toISOString().slice(0, 10), licenza: LICENZA },
+      provenance: {
+        fonte: FONTE,
+        url: urlProvenance,
+        recuperatoIl: new Date().toISOString().slice(0, 10),
+        licenza: LICENZA,
+      },
       elezione: {
         tipo: TIPO,
         data: DATA_ISO,
@@ -381,15 +428,17 @@ async function main(): Promise<void> {
         a: affluenza(stato.v, stato.e),
       },
       liste,
-      regioni: [{
-        r: REGIONE_NOME,
-        e: stato.e,
-        v: stato.v,
-        b: stato.b,
-        k: stato.k,
-        a: affluenza(stato.v, stato.e),
-        liste,
-      }],
+      regioni: [
+        {
+          r: REGIONE_NOME,
+          e: stato.e,
+          v: stato.v,
+          b: stato.b,
+          k: stato.k,
+          a: affluenza(stato.v, stato.e),
+          liste,
+        },
+      ],
       comuni,
       metodologia: METODOLOGIA,
       avvertenze: AVVERTENZE,
@@ -402,7 +451,9 @@ async function main(): Promise<void> {
     }
     mkdirSync(DIR_REALI, { recursive: true });
     writeFileSync(FILE_OUT, json, "utf8");
-    console.log(`[ingest-emilia-2024] scritto data/reali/elezioni-regionali-2024-emilia-romagna.json (${byte} byte).`);
+    console.log(
+      `[ingest-emilia-2024] scritto data/reali/elezioni-regionali-2024-emilia-romagna.json (${byte} byte).`,
+    );
   } finally {
     for (const tmp of scaricati) {
       try {

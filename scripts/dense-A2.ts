@@ -39,7 +39,7 @@
  * testo prima della scrittura.
  *
  * Uso:
- *   npx tsx scripts/dense-A2.ts [--anni=1951,1952,1957,1958,1966,1967,1968,1969]
+ *   bunx tsx scripts/dense-A2.ts [--anni=1951,1952,1957,1958,1966,1967,1968,1969]
  *     [--max-nuovi=120] [--testo-max=2000] [--probe] [--api-base=...] [--help]
  *
  * Bound: max +120 atti per file, file finale SEMPRE <= 950 KB (se l'unione
@@ -196,7 +196,9 @@ function isoDaParti(anno: unknown, mese: unknown, giorno: unknown): string {
 
 /** Chiave di dedup ELI: trim + lowercase (stessa regola del resto dell'app). */
 export function chiaveEliDenseA2(eli: unknown): string {
-  return String(eli ?? "").trim().toLowerCase();
+  return String(eli ?? "")
+    .trim()
+    .toLowerCase();
 }
 
 function pausa(ms: number): Promise<void> {
@@ -265,7 +267,11 @@ export function urnDaVoceDenseA2(voce: unknown): string {
   const numero = stringaDenseA2(
     voce["numeroProvvedimento"] ?? voce["numero"] ?? voce["numeroAttoAlfanumerico"],
   );
-  const iso = isoDaParti(voce["annoProvvedimento"], voce["meseProvvedimento"], voce["giornoProvvedimento"]);
+  const iso = isoDaParti(
+    voce["annoProvvedimento"],
+    voce["meseProvvedimento"],
+    voce["giornoProvvedimento"],
+  );
   if (!tipo || !numero || !iso) return "";
   const urn = formatNIR({ tipo, data: iso, numero });
   return parseNIR(urn) ? urn : "";
@@ -319,17 +325,21 @@ export function dettaglioToRecordDenseA2(
 
   const dataEmanazione =
     dto?.dataEmanazione ||
-    isoDaParti(interno["annoProvvedimento"], interno["meseProvvedimento"], interno["giornoProvvedimento"]) ||
+    isoDaParti(
+      interno["annoProvvedimento"],
+      interno["meseProvvedimento"],
+      interno["giornoProvvedimento"],
+    ) ||
     normalizzaData(interno["dataEmanazione"]) ||
     (parseNIR(voce.urn)?.data ?? "");
   if (!dataEmanazione) return null;
 
-  const codice = dto?.codiceRedazionale || stringaDenseA2(interno["codiceRedazionale"]) || voce.codice;
+  const codice =
+    dto?.codiceRedazionale || stringaDenseA2(interno["codiceRedazionale"]) || voce.codice;
 
   const html = dto?.articoloHtml || stringaDenseA2(interno["articoloHtml"]);
   const testoIntegrale = dto?.testo || stripHtml(html);
-  const sottoTitolo =
-    dto?.sottoTitolo || normalizzaDenseA2(stringaDenseA2(interno["sottoTitolo"]));
+  const sottoTitolo = dto?.sottoTitolo || normalizzaDenseA2(stringaDenseA2(interno["sottoTitolo"]));
   // Vigenza onesta, in ordine di affidabilita':
   // 1) data di fine vigenza esplicita del dettaglio (passata = abrogato);
   // 2) intestazione formale Art. 1 di Normattiva (DECRETO DECADUTO /
@@ -417,7 +427,7 @@ function aiuto(): string {
     "Densificazione TAG-A2 Normattiva 1951/1952/1957/1958/1966/1967/1968/1969 (dati ufficiali, mai dimostrativi).",
     "",
     "Uso:",
-    "  npx tsx scripts/dense-A2.ts [opzioni]",
+    "  bunx tsx scripts/dense-A2.ts [opzioni]",
     "",
     "Opzioni:",
     "  --anni=A,B            anni da densificare (default 1951,1952,1957,1958,1966,1967,1968,1969)",
@@ -495,7 +505,10 @@ export function isErroreLimiteAttiDenseA2(cause: unknown): boolean {
 }
 
 /** Dimezza un intervallo ISO [inizio..fine] in due sotto-intervalli per giorni. */
-export function dividiIntervalloDenseA2(inizio: string, fine: string): Array<[string, string]> | null {
+export function dividiIntervalloDenseA2(
+  inizio: string,
+  fine: string,
+): Array<[string, string]> | null {
   if (!isIsoDateDenseA2(inizio) || !isIsoDateDenseA2(fine) || inizio >= fine) return null;
   const t0 = Date.parse(`${inizio}T00:00:00Z`);
   const t1 = Date.parse(`${fine}T00:00:00Z`);
@@ -630,7 +643,9 @@ async function leggiFileEsistente(percorso: string): Promise<Envelope | null> {
     if (!isRecord(parsed)) return null;
     const lista = arrayDa(parsed["atti"] ?? [], []);
     const atti = (Array.isArray(lista) ? lista : []).filter((a): a is LawRecord => isRecord(a));
-    const prov = isRecord(parsed["provenance"]) ? (parsed["provenance"] as Record<string, unknown>) : {};
+    const prov = isRecord(parsed["provenance"])
+      ? (parsed["provenance"] as Record<string, unknown>)
+      : {};
     return {
       provenance: {
         fonte: typeof prov["fonte"] === "string" ? prov["fonte"] : "normattiva",
@@ -675,19 +690,22 @@ async function main(): Promise<void> {
     ...(apiBase ? { baseUrl: apiBase } : {}),
   };
 
-  console.log(
-    `Densificazione TAG-A2 (split mensili): ${anni.join(", ")} (max +${maxNuovi}/file).`,
-  );
+  console.log(`Densificazione TAG-A2 (split mensili): ${anni.join(", ")} (max +${maxNuovi}/file).`);
 
   const conosciuti = await caricaChiaviEsistentiDenseA2();
-  console.log(`Dedup globale: ${conosciuti.size} chiavi ELI/nir gia' presenti in data/reali/*.json.`);
+  console.log(
+    `Dedup globale: ${conosciuti.size} chiavi ELI/nir gia' presenti in data/reali/*.json.`,
+  );
 
   // Esistenti per l'append (prima).
   const esistenti = new Map<NomeAnnoDenseA2, Envelope>();
   for (const anno of anni) {
     const env = await leggiFileEsistente(outDefaultDenseA2(anno));
     if (env) esistenti.set(anno, env);
-    else console.log(`Anno ${anno}: file esistente illeggibile o assente, verra' creato solo con atti nuovi.`);
+    else
+      console.log(
+        `Anno ${anno}: file esistente illeggibile o assente, verra' creato solo con atti nuovi.`,
+      );
   }
 
   // Liste mensili per anno (secondo passaggio piu' a fondo).
@@ -738,7 +756,9 @@ async function main(): Promise<void> {
   if (probe) {
     console.log("Probe: nessuna scrittura. Riepilogo candidati nuovi per anno:");
     for (const anno of anni) {
-      console.log(`  - ${anno}: ${vociPerAnno.get(anno)?.length ?? 0} candidati (su ${urnVisteAnno.get(anno) ?? 0} voci).`);
+      console.log(
+        `  - ${anno}: ${vociPerAnno.get(anno)?.length ?? 0} candidati (su ${urnVisteAnno.get(anno) ?? 0} voci).`,
+      );
     }
     return;
   }
@@ -748,14 +768,18 @@ async function main(): Promise<void> {
     for (const voce of vociPerAnno.get(anno) ?? []) daDettagliare.push({ voce, gruppo: anno });
   }
   if (daDettagliare.length === 0) {
-    console.log("Nessuna voce nuova da dettagliare: tutti i file restano invariati (zero aggiunte oneste).");
+    console.log(
+      "Nessuna voce nuova da dettagliare: tutti i file restano invariati (zero aggiunte oneste).",
+    );
     for (const anno of anni) {
       const prima = esistenti.get(anno)?.atti.length ?? 0;
       console.log(`  - ${anno}: ${prima} -> ${prima} (+0, API esaurita o tutto duplicato).`);
     }
     return;
   }
-  console.log(`Recupero dettagli per ${daDettagliare.length} atti (batch da ${DETTAGLI_PER_BATCH}).`);
+  console.log(
+    `Recupero dettagli per ${daDettagliare.length} atti (batch da ${DETTAGLI_PER_BATCH}).`,
+  );
 
   const nuoviPerAnno = new Map<NomeAnnoDenseA2, LawRecord[]>();
   for (const anno of anni) nuoviPerAnno.set(anno, []);
@@ -846,7 +870,9 @@ async function main(): Promise<void> {
       tenuti = tenuti.slice(0, -1);
     }
     if (tenuti.length === 0) {
-      console.log(`Anno ${anno}: ${prima} -> ${prima} (+0, bound 950KB: nessuna aggiunta rientra).`);
+      console.log(
+        `Anno ${anno}: ${prima} -> ${prima} (+0, bound 950KB: nessuna aggiunta rientra).`,
+      );
       continue;
     }
     const dest = path.resolve(outDefaultDenseA2(anno));

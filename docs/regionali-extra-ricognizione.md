@@ -48,8 +48,8 @@
 ## File e rotte (scrittore W1, REALI-13)
 
 - `scripts/ingest-reale-regionali-extra.ts` + `data/reali/elezioni-regionali-2024-liguria.json`
-  + `data/reali/elezioni-regionali-2025-calabria.json` + `lib/regionali-extra-dati.ts`
-  + `app/api/regionali-extra/route.ts` + `app/api/regionali-extra/[id]/route.ts`
-  + `app/regionali-extra/page.tsx` + `app/regionali-extra/[id]/page.tsx`
-  + `tests/regionali-extra.test.ts`.
+  - `data/reali/elezioni-regionali-2025-calabria.json` + `lib/regionali-extra-dati.ts`
+  - `app/api/regionali-extra/route.ts` + `app/api/regionali-extra/[id]/route.ts`
+  - `app/regionali-extra/page.tsx` + `app/regionali-extra/[id]/page.tsx`
+  - `tests/regionali-extra.test.ts`.
 - Nessun altro file esistente toccato, salvo voce `Header.tsx` e voci `sitemap.ts`.

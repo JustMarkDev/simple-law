@@ -1,35 +1,35 @@
-'use client'
+"use client";
 
-import { motion, useReducedMotion } from 'motion/react'
+import { motion, useReducedMotion } from "motion/react";
 
 export interface SerieGrafico {
-  chiave: string
-  etichetta: string
-  colore: string
+  chiave: string;
+  etichetta: string;
+  colore: string;
 }
 
 export interface BarraGrafico {
-  etichetta: string
-  nota?: string
-  valori: Record<string, number>
+  etichetta: string;
+  nota?: string;
+  valori: Record<string, number>;
   /** Colore alternativo per la singola barra (grafici a serie unica). */
-  colore?: string
+  colore?: string;
 }
 
 interface Riferimento {
-  valore: number
-  etichetta: string
+  valore: number;
+  etichetta: string;
 }
 
 interface GraficoBarreProps {
-  barre: BarraGrafico[]
-  serie: SerieGrafico[]
-  ariaLabel: string
-  unita?: string
-  orientamento?: 'verticale' | 'orizzontale'
-  altezza?: number
-  riferimento?: Riferimento
-  className?: string
+  barre: BarraGrafico[];
+  serie: SerieGrafico[];
+  ariaLabel: string;
+  unita?: string;
+  orientamento?: "verticale" | "orizzontale";
+  altezza?: number;
+  riferimento?: Riferimento;
+  className?: string;
 }
 
 /**
@@ -37,24 +37,24 @@ interface GraficoBarreProps {
  * tabella accessibile con una nota. Evita di generare decine di migliaia
  * di nodi DOM quando il corpus cresce (100GB).
  */
-const MAX_BARRE_SVG = 120
+const MAX_BARRE_SVG = 120;
 /** Righe massime della tabella per tecnologie assistive. */
-const MAX_RIGHE_TABELLA = 500
+const MAX_RIGHE_TABELLA = 500;
 
 function tronca(testo: string, max = 10): string {
-  return testo.length <= max ? testo : `${testo.slice(0, max - 1)}…`
+  return testo.length <= max ? testo : `${testo.slice(0, max - 1)}…`;
 }
 
 function formatta(value: number): string {
-  const sicuro = Number.isFinite(value) ? value : 0
-  return new Intl.NumberFormat('it-IT', { maximumFractionDigits: 1 }).format(sicuro)
+  const sicuro = Number.isFinite(value) ? value : 0;
+  return new Intl.NumberFormat("it-IT", { maximumFractionDigits: 1 }).format(sicuro);
 }
 
 function somma(barra: BarraGrafico, serie: SerieGrafico[]): number {
   return serie.reduce((acc, s) => {
-    const v = barra.valori[s.chiave]
-    return acc + (typeof v === 'number' && Number.isFinite(v) ? v : 0)
-  }, 0)
+    const v = barra.valori[s.chiave];
+    return acc + (typeof v === "number" && Number.isFinite(v) ? v : 0);
+  }, 0);
 }
 
 /**
@@ -68,32 +68,38 @@ export default function GraficoBarre({
   barre,
   serie,
   ariaLabel,
-  unita = '',
-  orientamento = 'verticale',
+  unita = "",
+  orientamento = "verticale",
   altezza = 200,
   riferimento,
-  className = '',
+  className = "",
 }: GraficoBarreProps) {
-  const ridotto = useReducedMotion()
+  const ridotto = useReducedMotion();
 
   if (!Array.isArray(barre) || !Array.isArray(serie) || barre.length === 0 || serie.length === 0) {
     return (
-      <p role="status" className="rounded-2xl border border-regola bg-carta-soft p-5 text-sm leading-relaxed text-inchiostro-soft dark:border-notte-deep dark:bg-notte-soft dark:text-nebbia-soft sm:p-6">
+      <p
+        role="status"
+        className="rounded-2xl border border-regola bg-carta-soft p-5 text-sm leading-relaxed text-inchiostro-soft dark:border-notte-deep dark:bg-notte-soft dark:text-nebbia-soft sm:p-6"
+      >
         Nessun dato disponibile per questo grafico.
       </p>
-    )
+    );
   }
 
-  const barreSicure = barre.filter((b) => b && typeof b.etichetta === 'string' && b.valori)
+  const barreSicure = barre.filter((b) => b && typeof b.etichetta === "string" && b.valori);
   if (barreSicure.length === 0) {
     return (
-      <p role="status" className="rounded-2xl border border-regola bg-carta-soft p-5 text-sm leading-relaxed text-inchiostro-soft dark:border-notte-deep dark:bg-notte-soft dark:text-nebbia-soft sm:p-6">
+      <p
+        role="status"
+        className="rounded-2xl border border-regola bg-carta-soft p-5 text-sm leading-relaxed text-inchiostro-soft dark:border-notte-deep dark:bg-notte-soft dark:text-nebbia-soft sm:p-6"
+      >
         Nessun dato disponibile per questo grafico.
       </p>
-    )
+    );
   }
 
-  const righeTabella = barreSicure.slice(0, MAX_RIGHE_TABELLA)
+  const righeTabella = barreSicure.slice(0, MAX_RIGHE_TABELLA);
   const tabellaAccessibile = (
     <table className="sr-only">
       <caption>{ariaLabel}</caption>
@@ -103,7 +109,7 @@ export default function GraficoBarre({
           {serie.map((s) => (
             <th key={s.chiave} scope="col">
               {s.etichetta}
-              {unita ? ` (${unita})` : ''}
+              {unita ? ` (${unita})` : ""}
             </th>
           ))}
         </tr>
@@ -119,49 +125,54 @@ export default function GraficoBarre({
         ))}
       </tbody>
     </table>
-  )
+  );
 
   const legenda =
     serie.length > 1 ? (
       <ul className="mt-4 flex flex-wrap gap-x-4 gap-y-2 text-sm text-inchiostro-soft dark:text-nebbia-soft">
         {serie.map((s) => (
           <li key={s.chiave} className="flex min-h-[24px] items-center gap-2">
-            <span aria-hidden="true" className="h-2.5 w-2.5 rounded-sm" style={{ backgroundColor: s.colore }} />
+            <span
+              aria-hidden="true"
+              className="h-2.5 w-2.5 rounded-sm"
+              style={{ backgroundColor: s.colore }}
+            />
             {s.etichetta}
           </li>
         ))}
       </ul>
-    ) : null
+    ) : null;
 
   // Tutela 100GB: mai migliaia di rettangoli SVG, solo tabella + nota.
   if (barreSicure.length > MAX_BARRE_SVG) {
-    const mostrate = righeTabella.length
+    const mostrate = righeTabella.length;
     return (
       <figure className={className}>
         <p className="rounded-2xl border border-regola bg-carta-soft p-5 text-sm leading-relaxed text-inchiostro-soft dark:border-notte-deep dark:bg-notte-soft dark:text-nebbia-soft sm:p-6">
-          Il grafico mostra le prime {formatta(MAX_BARRE_SVG)} voci su {formatta(barreSicure.length)}: usa i filtri
-          dell’archivio per restringere l’insieme. La tabella accessibile riporta le prime {formatta(mostrate)} voci.
+          Il grafico mostra le prime {formatta(MAX_BARRE_SVG)} voci su{" "}
+          {formatta(barreSicure.length)}: usa i filtri dell’archivio per restringere l’insieme. La
+          tabella accessibile riporta le prime {formatta(mostrate)} voci.
         </p>
         {legenda}
         {tabellaAccessibile}
       </figure>
-    )
+    );
   }
 
-  const max = Math.max(1, ...barreSicure.map((b) => somma(b, serie)))
+  const max = Math.max(1, ...barreSicure.map((b) => somma(b, serie)));
 
-  if (orientamento === 'orizzontale') {
-    const larghezza = 720
-    const padL = 148
-    const padR = 56
-    const rigaH = 34
-    const plotW = larghezza - padL - padR
-    const altezzaTot = barreSicure.length * rigaH + 12
-    const conScorrimento = barreSicure.length > 16
+  if (orientamento === "orizzontale") {
+    const larghezza = 720;
+    const padL = 148;
+    const padR = 56;
+    const rigaH = 34;
+    const plotW = larghezza - padL - padR;
+    const altezzaTot = barreSicure.length * rigaH + 12;
+    const conScorrimento = barreSicure.length > 16;
 
     return (
       <figure className={className}>
-        <div className={conScorrimento ? 'max-h-[560px] overflow-y-auto' : undefined}>
+        <div className={conScorrimento ? "max-h-[560px] overflow-y-auto" : undefined}>
           <svg
             viewBox={`0 0 ${larghezza} ${altezzaTot}`}
             className="h-auto w-full text-inchiostro dark:text-nebbia"
@@ -169,19 +180,19 @@ export default function GraficoBarre({
             aria-label={ariaLabel}
           >
             {barreSicure.map((barra, i) => {
-              const y = i * rigaH + 6
-              const h = rigaH - 16
-              const totale = somma(barra, serie)
-              let cursore = 0
+              const y = i * rigaH + 6;
+              const h = rigaH - 16;
+              const totale = somma(barra, serie);
+              let cursore = 0;
               const segmenti = serie.map((s) => {
-                const grezzo = barra.valori[s.chiave] ?? 0
-                const valore = typeof grezzo === 'number' && Number.isFinite(grezzo) ? grezzo : 0
-                const w = (valore / max) * plotW
-                const x = padL + cursore
-                cursore += w
-                return { s, valore, w, x }
-              })
-              const colore = barra.colore ?? serie[0]?.colore
+                const grezzo = barra.valori[s.chiave] ?? 0;
+                const valore = typeof grezzo === "number" && Number.isFinite(grezzo) ? grezzo : 0;
+                const w = (valore / max) * plotW;
+                const x = padL + cursore;
+                cursore += w;
+                return { s, valore, w, x };
+              });
+              const colore = barra.colore ?? serie[0]?.colore;
               return (
                 <g key={`${i}-${barra.etichetta}`}>
                   <rect
@@ -201,11 +212,15 @@ export default function GraficoBarre({
                         width={seg.w}
                         height={h}
                         fill={serie.length === 1 ? colore : seg.s.colore}
-                        style={{ transformBox: 'fill-box', transformOrigin: 'left' }}
+                        style={{ transformBox: "fill-box", transformOrigin: "left" }}
                         initial={ridotto ? { scaleX: 1 } : { scaleX: 0 }}
                         whileInView={{ scaleX: 1 }}
                         viewport={{ once: true, amount: 0.3 }}
-                        transition={{ duration: 0.6, delay: i * 0.06 + idx * 0.04, ease: 'easeOut' }}
+                        transition={{
+                          duration: 0.6,
+                          delay: i * 0.06 + idx * 0.04,
+                          ease: "easeOut",
+                        }}
                       />
                     ) : null,
                   )}
@@ -229,27 +244,27 @@ export default function GraficoBarre({
                     {unita}
                   </text>
                 </g>
-              )
+              );
             })}
           </svg>
         </div>
         {legenda}
         {tabellaAccessibile}
       </figure>
-    )
+    );
   }
 
   // Verticale (con eventuale sovrapposizione a pila).
-  const passo = 64
-  const padL = 44
-  const padR = 18
-  const padT = 18
-  const padB = 46
-  const larghezza = Math.max(320, barreSicure.length * passo + padL + padR)
-  const plotH = altezza - padT - padB
-  const barW = Math.min(40, passo * 0.56)
-  const yFor = (v: number) => padT + plotH - (Math.min(v, max) / max) * plotH
-  const ticks = [0, 0.25, 0.5, 0.75, 1]
+  const passo = 64;
+  const padL = 44;
+  const padR = 18;
+  const padT = 18;
+  const padB = 46;
+  const larghezza = Math.max(320, barreSicure.length * passo + padL + padR);
+  const plotH = altezza - padT - padB;
+  const barW = Math.min(40, passo * 0.56);
+  const yFor = (v: number) => padT + plotH - (Math.min(v, max) / max) * plotH;
+  const ticks = [0, 0.25, 0.5, 0.75, 1];
 
   return (
     <figure className={className}>
@@ -261,16 +276,30 @@ export default function GraficoBarre({
           aria-label={ariaLabel}
         >
           {ticks.map((f) => {
-            const valore = max * f
-            const y = yFor(valore)
+            const valore = max * f;
+            const y = yFor(valore);
             return (
               <g key={f}>
-                <line x1={padL} y1={y} x2={larghezza - padR} y2={y} stroke="var(--chart-grid)" strokeWidth={1} />
-                <text x={padL - 8} y={y + 4} textAnchor="end" fontSize={10} fill="currentColor" opacity={0.6}>
+                <line
+                  x1={padL}
+                  y1={y}
+                  x2={larghezza - padR}
+                  y2={y}
+                  stroke="var(--chart-grid)"
+                  strokeWidth={1}
+                />
+                <text
+                  x={padL - 8}
+                  y={y + 4}
+                  textAnchor="end"
+                  fontSize={10}
+                  fill="currentColor"
+                  opacity={0.6}
+                >
                   {formatta(valore)}
                 </text>
               </g>
-            )
+            );
           })}
 
           {riferimento && (
@@ -297,19 +326,19 @@ export default function GraficoBarre({
           )}
 
           {barreSicure.map((barra, i) => {
-            const centro = padL + i * passo + passo / 2
-            const x = centro - barW / 2
-            let cursore = padT + plotH
-            const totale = somma(barra, serie)
-            const colore = barra.colore ?? serie[0]?.colore
+            const centro = padL + i * passo + passo / 2;
+            const x = centro - barW / 2;
+            let cursore = padT + plotH;
+            const totale = somma(barra, serie);
+            const colore = barra.colore ?? serie[0]?.colore;
             return (
               <g key={`${i}-${barra.etichetta}`}>
                 {serie.map((s, idx) => {
-                  const grezzo = barra.valori[s.chiave] ?? 0
-                  const valore = typeof grezzo === 'number' && Number.isFinite(grezzo) ? grezzo : 0
-                  const h = (valore / max) * plotH
-                  const y = cursore - h
-                  cursore -= h
+                  const grezzo = barra.valori[s.chiave] ?? 0;
+                  const valore = typeof grezzo === "number" && Number.isFinite(grezzo) ? grezzo : 0;
+                  const h = (valore / max) * plotH;
+                  const y = cursore - h;
+                  cursore -= h;
                   return visibile(h) ? (
                     <motion.rect
                       key={s.chiave}
@@ -318,39 +347,60 @@ export default function GraficoBarre({
                       width={barW}
                       height={h}
                       fill={serie.length === 1 ? colore : s.colore}
-                      style={{ transformBox: 'fill-box', transformOrigin: 'bottom' }}
+                      style={{ transformBox: "fill-box", transformOrigin: "bottom" }}
                       initial={ridotto ? { scaleY: 1 } : { scaleY: 0 }}
                       whileInView={{ scaleY: 1 }}
                       viewport={{ once: true, amount: 0.2 }}
-                      transition={{ duration: 0.6, delay: i * 0.06 + idx * 0.04, ease: 'easeOut' }}
+                      transition={{ duration: 0.6, delay: i * 0.06 + idx * 0.04, ease: "easeOut" }}
                     />
-                  ) : null
+                  ) : null;
                 })}
                 {totale > 0 && (
-                  <text x={centro} y={yFor(totale) - 6} textAnchor="middle" fontSize={11} fill="currentColor" opacity={0.85}>
+                  <text
+                    x={centro}
+                    y={yFor(totale) - 6}
+                    textAnchor="middle"
+                    fontSize={11}
+                    fill="currentColor"
+                    opacity={0.85}
+                  >
                     {formatta(totale)}
                     {unita}
                   </text>
                 )}
-                <text x={centro} y={altezza - padB + 18} textAnchor="middle" fontSize={11} fill="currentColor" opacity={0.8}>
+                <text
+                  x={centro}
+                  y={altezza - padB + 18}
+                  textAnchor="middle"
+                  fontSize={11}
+                  fill="currentColor"
+                  opacity={0.8}
+                >
                   {tronca(barra.etichetta, 9)}
                 </text>
                 {barra.nota && (
-                  <text x={centro} y={altezza - padB + 32} textAnchor="middle" fontSize={9} fill="currentColor" opacity={0.5}>
+                  <text
+                    x={centro}
+                    y={altezza - padB + 32}
+                    textAnchor="middle"
+                    fontSize={9}
+                    fill="currentColor"
+                    opacity={0.5}
+                  >
                     {tronca(barra.nota, 12)}
                   </text>
                 )}
               </g>
-            )
+            );
           })}
         </svg>
       </div>
       {legenda}
       {tabellaAccessibile}
     </figure>
-  )
+  );
 }
 
 function visibile(altezzaSegmento: number): boolean {
-  return altezzaSegmento > 0.5
+  return altezzaSegmento > 0.5;
 }

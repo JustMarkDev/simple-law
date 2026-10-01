@@ -11,7 +11,7 @@
  * - rete vietata (fetch stubbato a lanciare).
  */
 
-import { beforeEach, describe, expect, it, vi } from "vitest";
+import { beforeEach, describe, expect, it, vi } from "vite-plus/test";
 import {
   aContratto,
   aDocumentoCnel,
@@ -84,9 +84,11 @@ const RADICE = typeof process !== "undefined" ? process.cwd() : ".";
 const FILE_ANAC = `${RADICE}/data/reali/anac-contratti-2025.json`;
 const FILE_GA = `${RADICE}/data/reali/ga-provvedimenti-2026.json`;
 
-async function leggiEnvelope(
-  percorso: string,
-): Promise<{ provenance: Record<string, unknown>; byte: number; raw: Record<string, unknown> } | null> {
+async function leggiEnvelope(percorso: string): Promise<{
+  provenance: Record<string, unknown>;
+  byte: number;
+  raw: Record<string, unknown>;
+} | null> {
   try {
     const fs = await import("node:fs");
     if (!fs.existsSync(percorso)) return null;
@@ -94,7 +96,10 @@ async function leggiEnvelope(
     const parsed = JSON.parse(raw) as Record<string, unknown>;
     if (!parsed || typeof parsed !== "object" || Array.isArray(parsed)) return null;
     return {
-      provenance: ((parsed as { provenance?: unknown }).provenance ?? {}) as Record<string, unknown>,
+      provenance: ((parsed as { provenance?: unknown }).provenance ?? {}) as Record<
+        string,
+        unknown
+      >,
       byte: Buffer.byteLength(raw, "utf8"),
       raw: parsed,
     };
@@ -174,7 +179,9 @@ describe("oversight: normalizzazione fixture (zero rete, zero disco)", () => {
     expect(normalizzaGiudiceGA("Consiglio di Stato, Sez. V")).toBe("cds");
     expect(normalizzaGiudiceGA("TAR")).toBe("tar");
     expect(normalizzaGiudiceGA("T.a.r. per la Lombardia, Brescia, sezione I")).toBe("tar");
-    expect(normalizzaGiudiceGA("Consiglio di giustizia amministrativa per la Regione Siciliana")).toBe("cga");
+    expect(
+      normalizzaGiudiceGA("Consiglio di giustizia amministrativa per la Regione Siciliana"),
+    ).toBe("cga");
     expect(normalizzaGiudiceGA("cga")).toBe("cga");
     expect(normalizzaGiudiceGA("cassazione")).toBe("");
     expect(normalizzaGiudiceGA(null)).toBe("");
@@ -243,7 +250,8 @@ describe("oversight: normalizzazione fixture (zero rete, zero disco)", () => {
   });
 
   it("never-throw su input malformati", () => {
-    expect(() => aContratto({})).not.toThrow();    expect(() => aProvvedimentoGA({})).not.toThrow();
+    expect(() => aContratto({})).not.toThrow();
+    expect(() => aProvvedimentoGA({})).not.toThrow();
     expect(() => cercaContratti(null as never, "x")).not.toThrow();
     expect(() => filtraPerEnte(null as never, "x")).not.toThrow();
     expect(() => cercaProvvedimenti(null as never, "x")).not.toThrow();
@@ -285,7 +293,9 @@ describe("oversight: normalizzazione fixture (zero rete, zero disco)", () => {
 describe("oversight: API /api/controllo mai-500 e bounded", () => {
   it("tipo=contratti risponde 200 con bound q/per e disclaimer", async () => {
     const res = await controlloGET(
-      new Request("http://localhost/api/controllo?tipo=contratti&q=" + "a".repeat(500) + "&per=999&page=-3"),
+      new Request(
+        "http://localhost/api/controllo?tipo=contratti&q=" + "a".repeat(500) + "&per=999&page=-3",
+      ),
     );
     expect(res.status).toBe(200);
     const data = (await res.json()) as {
@@ -325,9 +335,7 @@ describe("oversight: API /api/controllo mai-500 e bounded", () => {
   });
 
   it("tipo ignoto ricade su contratti senza 500", async () => {
-    const res = await controlloGET(
-      new Request("http://localhost/api/controllo?tipo=leggi"),
-    );
+    const res = await controlloGET(new Request("http://localhost/api/controllo?tipo=leggi"));
     expect(res.status).toBe(200);
     const data = (await res.json()) as { tipo: string; items: unknown[] };
     expect(data.tipo).toBe("contratti");
@@ -434,7 +442,9 @@ describe("oversight: documenti CNEL (metadati + link, mai testo)", () => {
     expect(ok?.url.startsWith("https://")).toBe(true);
     expect(ok && "testo" in ok).toBe(false);
     expect(aDocumentoCnel({ titolo: "x", url: "https://www.cnel.it/y" })).toBeNull();
-    expect(aDocumentoCnel({ id: "x", titolo: "yyyyy", url: "http://inscure.example/y" })).toBeNull();
+    expect(
+      aDocumentoCnel({ id: "x", titolo: "yyyyy", url: "http://inscure.example/y" }),
+    ).toBeNull();
     expect(aDocumentoCnel(null)).toBeNull();
   });
 
@@ -452,9 +462,7 @@ describe("oversight: documenti CNEL (metadati + link, mai testo)", () => {
   it("cercaDocumentiCnel bound e min-2 (mai throw)", async () => {
     const docs = await tuttiDocumentiCnel();
     expect(cercaDocumentiCnel(docs, "lavoro").length).toBeLessThanOrEqual(docs.length);
-    expect(cercaDocumentiCnel(docs, "x")).toEqual(
-      docs.length > 0 ? expect.any(Array) : [],
-    );
+    expect(cercaDocumentiCnel(docs, "x")).toEqual(docs.length > 0 ? expect.any(Array) : []);
     expect(() => cercaDocumentiCnel(null as never, null)).not.toThrow();
   });
 });

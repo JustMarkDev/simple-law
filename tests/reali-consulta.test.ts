@@ -8,7 +8,7 @@
  * - mai inventare dati: campi assenti -> omessi, mai ricostruiti.
  */
 
-import { describe, expect, it } from "vitest";
+import { describe, expect, it } from "vite-plus/test";
 import {
   aPronuncia,
   cercaPronunce,
@@ -66,7 +66,10 @@ async function leggiReali(): Promise<{
     const pronunce = (parsed as { pronunce?: unknown }).pronunce;
     if (!Array.isArray(pronunce)) return null;
     return {
-      provenance: ((parsed as { provenance?: unknown }).provenance ?? {}) as Record<string, unknown>,
+      provenance: ((parsed as { provenance?: unknown }).provenance ?? {}) as Record<
+        string,
+        unknown
+      >,
       anno: (parsed as { anno?: unknown }).anno,
       totaleAnno: (parsed as { totaleAnno?: unknown }).totaleAnno,
       pronunce,

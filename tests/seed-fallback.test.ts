@@ -1,13 +1,12 @@
-import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
+import { afterEach, beforeEach, describe, expect, it, vi } from "vite-plus/test";
 import {
   attuativiRiepilogo,
   findLawByEli,
   formatDate,
   formatTipo,
-  loadLawByEli,
-  loadLaws,
   normalizeLaw,
 } from "@/components/seed-fallback";
+import { loadLawByEli, loadLaws } from "@/lib/load-laws";
 import { SEED_LAWS } from "@/lib/seed-data";
 import type { LawRecord } from "@/lib/seed-data";
 import { azzeraCacheReali } from "@/lib/sources";
@@ -83,9 +82,7 @@ describe("seed-fallback (cio' che vede la UI)", () => {
   });
 
   it("attuativiRiepilogo descrive i decreti mancanti", () => {
-    expect(attuativiRiepilogo({ daAdottare: 2, adottati: 0, scaduti: 0 })).toMatch(
-      /2 da adottare/,
-    );
+    expect(attuativiRiepilogo({ daAdottare: 2, adottati: 0, scaduti: 0 })).toMatch(/2 da adottare/);
   });
 
   it("formatTipo produce etichette leggibili", () => {

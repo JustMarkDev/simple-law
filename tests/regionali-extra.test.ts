@@ -15,7 +15,7 @@
  *   (comuni/liste fittizi, MAI nominativi reali).
  */
 
-import { beforeEach, describe, expect, it, vi } from "vitest";
+import { beforeEach, describe, expect, it, vi } from "vite-plus/test";
 import { existsSync, readFileSync, statSync } from "node:fs";
 import { resolve } from "node:path";
 import type {
@@ -40,15 +40,14 @@ beforeEach(() => {
 });
 
 async function modScript(): Promise<Record<string, unknown>> {
-  return (await import(
-    "@/scripts/ingest-reale-regionali-extra"
-  )) as unknown as Record<string, unknown>;
+  return (await import("@/scripts/ingest-reale-regionali-extra")) as unknown as Record<
+    string,
+    unknown
+  >;
 }
 
 async function modLib(): Promise<Record<string, unknown>> {
-  return (await import(
-    "@/lib/regionali-extra-dati"
-  )) as unknown as Record<string, unknown>;
+  return (await import("@/lib/regionali-extra-dati")) as unknown as Record<string, unknown>;
 }
 
 // ---------------------------------------------------------------------------
@@ -275,7 +274,13 @@ describe("regionali-extra ingest — aggregazione e envelope (fixture inline)", 
     const righe = [
       rigaCalabria({ LISTA: "LISTA ESEMPIO UNO", VOTI_LISTA: "100" }),
       rigaCalabria({ LISTA: "LISTA ESEMPIO DUE", VOTI_LISTA: "200" }),
-      rigaCalabria({ COMUNE: "COMUNE DELTA", ELETTORI: "500", VOTANTI: "300", LISTA: "LISTA ESEMPIO UNO", VOTI_LISTA: "50" }),
+      rigaCalabria({
+        COMUNE: "COMUNE DELTA",
+        ELETTORI: "500",
+        VOTANTI: "300",
+        LISTA: "LISTA ESEMPIO UNO",
+        VOTI_LISTA: "50",
+      }),
     ];
     let n = 2;
     for (const celle of righe) {
@@ -303,7 +308,14 @@ describe("regionali-extra ingest — aggregazione e envelope (fixture inline)", 
     const righe = [
       rigaLiguria({ SEZIONE: "1", LISTA: "LISTA ESEMPIO DUE", VOTI_LISTA: "40" }),
       rigaLiguria({ SEZIONE: "1", LISTA: "LISTA ESEMPIO TRE", VOTI_LISTA: "10" }),
-      rigaLiguria({ SEZIONE: "2", ELETTORI_TOTALI: "100", VOTANTI_TOTALI: "50", LISTA: "", NUM_LISTA: "", VOTI_LISTA: "0" }),
+      rigaLiguria({
+        SEZIONE: "2",
+        ELETTORI_TOTALI: "100",
+        VOTANTI_TOTALI: "50",
+        LISTA: "",
+        NUM_LISTA: "",
+        VOTI_LISTA: "0",
+      }),
     ];
     let num = 2;
     for (const celle of righe) {
@@ -317,7 +329,10 @@ describe("regionali-extra ingest — aggregazione e envelope (fixture inline)", 
     expect(stato.righeSoloPresidente).toBe(1);
     expect(stato.liste.has("")).toBe(false);
     expect(stato.comuni.size).toBe(1);
-    expect(stato.comuni.get("LIGURIA||PROVINCIA ESEMPIO||COMUNE ALFA")).toMatchObject({ e: 320, v: 180 });
+    expect(stato.comuni.get("LIGURIA||PROVINCIA ESEMPIO||COMUNE ALFA")).toMatchObject({
+      e: 320,
+      v: 180,
+    });
     expect(stato.liste.get("LISTA ESEMPIO DUE")).toBe(40);
     expect(chiamateFetch).toBe(0);
   });
@@ -354,7 +369,14 @@ describe("regionali-extra ingest — aggregazione e envelope (fixture inline)", 
       dataIso: "2025-10-05",
       formato: "calabria",
     } as unknown as SorgenteRegionale;
-    const env = costruisci(stato, src, "metodologia-test", "avvertenze-test", "https://example.invalid/zip", "2026-01-01");
+    const env = costruisci(
+      stato,
+      src,
+      "metodologia-test",
+      "avvertenze-test",
+      "https://example.invalid/zip",
+      "2026-01-01",
+    );
     expect(Object.keys(env).sort()).toEqual(
       ["avvertenze", "comuni", "elezione", "liste", "metodologia", "provenance", "regioni"].sort(),
     );
@@ -419,10 +441,13 @@ describe("regionali-extra lib — loader never-throw (MAI rete)", () => {
     expect((cerca(comuni, "alf") as unknown[]).length).toBe(1);
     expect((cerca(comuni, "x") as unknown[]).length).toBe(0);
     expect((cerca(comuni, null) as unknown[]).length).toBe(0);
-    const liste = [{ n: "A", v: 10, p: 10 }, { n: "B", v: 30, p: 30 }];
+    const liste = [
+      { n: "A", v: 10, p: 10 },
+      { n: "B", v: 30, p: 30 },
+    ];
     expect((top(liste, 1) as { n: string }[])[0]?.["n"]).toBe("B");
-    expect((pagina([1, 2, 3], 2, 2) as unknown[])).toEqual([3]);
-    expect((pagina(null, null, null) as unknown[])).toEqual([]);
+    expect(pagina([1, 2, 3], 2, 2) as unknown[]).toEqual([3]);
+    expect(pagina(null, null, null) as unknown[]).toEqual([]);
     expect(chiamateFetch).toBe(0);
   });
 
@@ -438,7 +463,10 @@ describe("regionali-extra lib — loader never-throw (MAI rete)", () => {
 describe("regionali-extra — integrazione tollerante sui JSON reali (MAI rete)", () => {
   const FILE_LIGURIA = resolve(process.cwd(), "data/reali/elezioni-regionali-2024-liguria.json");
   const FILE_CALABRIA = resolve(process.cwd(), "data/reali/elezioni-regionali-2025-calabria.json");
-  const FILE_EMILIA = resolve(process.cwd(), "data/reali/elezioni-regionali-2024-emilia-romagna.json");
+  const FILE_EMILIA = resolve(
+    process.cwd(),
+    "data/reali/elezioni-regionali-2024-emilia-romagna.json",
+  );
   const CAP = 950 * 1024;
   const VIETATE = ["COGNOME", "NOME", "PREFERENZE", "VOTI_CANDIDATO", "NUM_CANDIDATO", "NUM_LISTA"];
 
@@ -459,7 +487,15 @@ describe("regionali-extra — integrazione tollerante sui JSON reali (MAI rete)"
     const liste = env["liste"] as { n: string; v: number; p: number }[];
     expect(liste.length).toBeGreaterThan(0);
     expect(liste.length).toBeLessThanOrEqual(64);
-    const regioni = env["regioni"] as { r: string; e: number; v: number; b: number; k: number; a: number; liste: unknown[] }[];
+    const regioni = env["regioni"] as {
+      r: string;
+      e: number;
+      v: number;
+      b: number;
+      k: number;
+      a: number;
+      liste: unknown[];
+    }[];
     expect(regioni.length).toBeGreaterThanOrEqual(1);
     expect(regioni.length).toBeLessThanOrEqual(10);
     expect(regioni[0]?.["r"]).toBe(regioneAttesa);

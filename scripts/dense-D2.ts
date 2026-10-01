@@ -17,7 +17,7 @@
  * (API esaurita o solo duplicati): file invariato, zero aggiunte oneste.
  *
  * Uso:
- *   npx tsx scripts/dense-D2.ts [--anni=2007,2008] [--max-nuovi=120] [--testo-max=2000]
+ *   bunx tsx scripts/dense-D2.ts [--anni=2007,2008] [--max-nuovi=120] [--testo-max=2000]
  */
 
 import { mkdir, readFile, readdir, writeFile } from "node:fs/promises";
@@ -132,7 +132,9 @@ function isoDaParti(anno: unknown, mese: unknown, giorno: unknown): string {
 }
 
 export function chiaveEliD2(eli: unknown): string {
-  return String(eli ?? "").trim().toLowerCase();
+  return String(eli ?? "")
+    .trim()
+    .toLowerCase();
 }
 
 function pausa(ms: number): Promise<void> {
@@ -184,7 +186,11 @@ export function urnDaVoceD2(voce: unknown): string {
   const numero = stringa(
     voce["numeroProvvedimento"] ?? voce["numero"] ?? voce["numeroAttoAlfanumerico"],
   );
-  const iso = isoDaParti(voce["annoProvvedimento"], voce["meseProvvedimento"], voce["giornoProvvedimento"]);
+  const iso = isoDaParti(
+    voce["annoProvvedimento"],
+    voce["meseProvvedimento"],
+    voce["giornoProvvedimento"],
+  );
   if (!tipo || !numero || !iso) return "";
   const urn = formatNIR({ tipo, data: iso, numero });
   return parseNIR(urn) ? urn : "";
@@ -225,14 +231,16 @@ export function dettaglioToRecordD2(
     "atto";
 
   const numero =
-    dto?.numero ||
-    stringa(interno["numeroProvvedimento"]) ||
-    (parseNIR(voce.urn)?.numero ?? "");
+    dto?.numero || stringa(interno["numeroProvvedimento"]) || (parseNIR(voce.urn)?.numero ?? "");
   if (!numero) return null;
 
   const dataEmanazione =
     dto?.dataEmanazione ||
-    isoDaParti(interno["annoProvvedimento"], interno["meseProvvedimento"], interno["giornoProvvedimento"]) ||
+    isoDaParti(
+      interno["annoProvvedimento"],
+      interno["meseProvvedimento"],
+      interno["giornoProvvedimento"],
+    ) ||
     normalizzaData(interno["dataEmanazione"]) ||
     (parseNIR(voce.urn)?.data ?? "");
   if (!dataEmanazione) return null;
@@ -273,7 +281,8 @@ export function dettaglioToRecordD2(
   const dataGU =
     isoDaParti(interno["annoGU"], interno["meseGU"], interno["giornoGU"]) ||
     (isIsoDate(voce.dataGU) ? voce.dataGU : "");
-  const numeroGU = stringa(interno["numeroGU"]) || (/^\d+$/.test(voce.numeroGU) ? voce.numeroGU : "");
+  const numeroGU =
+    stringa(interno["numeroGU"]) || (/^\d+$/.test(voce.numeroGU) ? voce.numeroGU : "");
 
   const fonti = buildFonti({
     tipo,
@@ -394,7 +403,9 @@ async function listaMese(
       const t0 = Date.parse(`${ini}T00:00:00Z`);
       const t1 = Date.parse(`${fin}T00:00:00Z`);
       const mid = new Date(t0 + Math.floor((t1 - t0) / 2)).toISOString().slice(0, 10);
-      const dopoMid = new Date(Date.parse(`${mid}T00:00:00Z`) + 86400000).toISOString().slice(0, 10);
+      const dopoMid = new Date(Date.parse(`${mid}T00:00:00Z`) + 86400000)
+        .toISOString()
+        .slice(0, 10);
       if (isIsoDate(mid) && isIsoDate(dopoMid) && ini <= mid && dopoMid <= fin) {
         console.log(`Split mese ${ini}..${fin} (oltre limite 7000 atti).`);
         const a = await listaMese(overrides, ini, mid);
@@ -467,7 +478,13 @@ async function main(): Promise<void> {
   const globali = await caricaChiaviGlobali();
   console.log(`Dedup globale: ${globali.size} chiavi ELI/nir da tutti i normattiva-*.json.`);
 
-  const riepilogo: Array<{ anno: string; prima: number; dopo: number; nuovi: number; nota: string }> = [];
+  const riepilogo: Array<{
+    anno: string;
+    prima: number;
+    dopo: number;
+    nuovi: number;
+    nota: string;
+  }> = [];
   let stopDefinitivo = false;
 
   for (const anno of anni) {
@@ -495,12 +512,17 @@ async function main(): Promise<void> {
         try {
           const { voci, limite } = await listaMese(overrides, ini, fin);
           perMese.push(voci);
-          if (limite) console.log(`Anno ${anno} mese ${ini}..${fin}: oltre limite anche dopo split, mese parziale onesto.`);
+          if (limite)
+            console.log(
+              `Anno ${anno} mese ${ini}..${fin}: oltre limite anche dopo split, mese parziale onesto.`,
+            );
         } catch (cause) {
           console.log(`Anno ${anno} mese ${ini}..${fin} fallito (${messaggioDi(cause)}).`);
           perMese.push([]);
           if (erroreDefinitivo(cause)) {
-            console.log("Errore definitivo (403/409): stop liste, dettaglio solo candidati raccolti.");
+            console.log(
+              "Errore definitivo (403/409): stop liste, dettaglio solo candidati raccolti.",
+            );
             stopDefinitivo = true;
             while (perMese.length < 12) perMese.push([]);
             break;
@@ -513,7 +535,9 @@ async function main(): Promise<void> {
       continue;
     }
     const totVoci = perMese.reduce((s, m) => s + m.length, 0);
-    console.log(`Anno ${anno}: ${totVoci} voci mensili totali (${perMese.map((m) => m.length).join("/")}).`);
+    console.log(
+      `Anno ${anno}: ${totVoci} voci mensili totali (${perMese.map((m) => m.length).join("/")}).`,
+    );
 
     // Round-robin tra mesi per candidati oltre i primi 80 annuali.
     const candidati: VoceDensa[] = [];
@@ -545,18 +569,28 @@ async function main(): Promise<void> {
     const visti = new Set<string>();
     const errori: string[] = [];
     let interrotto = false;
-    for (let i = 0; i < daProvare.length && nuovi.length < maxNuovi && !interrotto; i += DETTAGLI_PER_BATCH) {
+    for (
+      let i = 0;
+      i < daProvare.length && nuovi.length < maxNuovi && !interrotto;
+      i += DETTAGLI_PER_BATCH
+    ) {
       const batch = daProvare.slice(i, i + DETTAGLI_PER_BATCH);
       for (const voce of batch) {
         if (nuovi.length >= maxNuovi) break;
         try {
-          const raw = await postJson(overrides, "/api/v1/atto/dettaglio-atto-urn", { urn: voce.urn });
+          const raw = await postJson(overrides, "/api/v1/atto/dettaglio-atto-urn", {
+            urn: voce.urn,
+          });
           const record = dettaglioToRecordD2(voce, raw, testoMax);
           if (!record) {
             errori.push(`dettaglio senza titolo/chiave: ${voce.urn}`);
             continue;
           }
-          const impronte = [chiaveEliD2(record.chiave), chiaveEliD2(record.eli), chiaveEliD2(record.nir)].filter(Boolean);
+          const impronte = [
+            chiaveEliD2(record.chiave),
+            chiaveEliD2(record.eli),
+            chiaveEliD2(record.nir),
+          ].filter(Boolean);
           if (impronte.some((im) => visti.has(im) || globali.has(im))) {
             errori.push(`duplicato escluso: ${voce.urn}`);
             continue;
@@ -580,7 +614,9 @@ async function main(): Promise<void> {
         await pausa(PAUSA_BATCH_MS);
       }
     }
-    console.log(`Anno ${anno}: ${nuovi.length} nuovi record reali; scarti/errori ${errori.length}.`);
+    console.log(
+      `Anno ${anno}: ${nuovi.length} nuovi record reali; scarti/errori ${errori.length}.`,
+    );
 
     if (nuovi.length === 0) {
       riepilogo.push({ anno, prima, dopo: prima, nuovi: 0, nota: "API esaurita/solo duplicati" });
@@ -592,7 +628,9 @@ async function main(): Promise<void> {
     const finale: LawRecord[] = [];
     const visteFinale = new Set<string>();
     for (const r of uniti) {
-      const impronte = [chiaveEliD2(r.chiave), chiaveEliD2(r.eli), chiaveEliD2(r.nir)].filter(Boolean);
+      const impronte = [chiaveEliD2(r.chiave), chiaveEliD2(r.eli), chiaveEliD2(r.nir)].filter(
+        Boolean,
+      );
       if (impronte.some((im) => visteFinale.has(im))) continue;
       for (const im of impronte) visteFinale.add(im);
       finale.push(r);
@@ -614,7 +652,9 @@ async function main(): Promise<void> {
       const dedup: LawRecord[] = [];
       const viste = new Set<string>();
       for (const r of ridotti) {
-        const impronte = [chiaveEliD2(r.chiave), chiaveEliD2(r.eli), chiaveEliD2(r.nir)].filter(Boolean);
+        const impronte = [chiaveEliD2(r.chiave), chiaveEliD2(r.eli), chiaveEliD2(r.nir)].filter(
+          Boolean,
+        );
         if (impronte.some((im) => viste.has(im))) continue;
         for (const im of impronte) viste.add(im);
         dedup.push(r);
@@ -630,7 +670,9 @@ async function main(): Promise<void> {
     }
     await mkdir(path.dirname(dest), { recursive: true });
     await writeFile(dest, json, "utf8");
-    console.log(`Anno ${anno}: ${prima} -> ${envelope.atti.length} (+${envelope.atti.length - prima}) ${kb.toFixed(1)} KB.`);
+    console.log(
+      `Anno ${anno}: ${prima} -> ${envelope.atti.length} (+${envelope.atti.length - prima}) ${kb.toFixed(1)} KB.`,
+    );
     riepilogo.push({
       anno,
       prima,
@@ -641,7 +683,8 @@ async function main(): Promise<void> {
   }
 
   console.log("RIEPILOGO D2 (anno: prima->dopo):");
-  for (const r of riepilogo) console.log(`  ${r.anno}: ${r.prima}->${r.dopo} (+${r.nuovi}) [${r.nota}]`);
+  for (const r of riepilogo)
+    console.log(`  ${r.anno}: ${r.prima}->${r.dopo} (+${r.nuovi}) [${r.nota}]`);
 }
 
 const eseguitoComeScript =

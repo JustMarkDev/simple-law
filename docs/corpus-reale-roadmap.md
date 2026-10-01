@@ -4,14 +4,14 @@ Numeri verificati via script il 2026-09-28 (mai stimati a mano).
 
 ## OGGI: reale vs sintetico
 
-| Corpus | Record | Nota |
-|---|---|---|
-| Atti/documenti reali | 1018 | 616 Normattiva + 52 UE + 202 parlamento + 24 Quirinale + 50 Consulta + 74 oversight |
-| Anagrafiche/comunicati reali | 663 | 414 deputati + 212 senatori + 27 gruppi + 10 governo |
-| Aggregati elettorali | 78 | liste/quesiti, non atti |
-| **Totale reale** | **1759** | `data/reali/*.json` |
-| Sintetico default | 5000 | `CORPUS_TOTALE_DEFAULT` (`lib/corpus-unificato.ts:27`) |
-| Rapporto reale/sintetico | ~35% | 1759 / 5000 |
+| Corpus                       | Record   | Nota                                                                                |
+| ---------------------------- | -------- | ----------------------------------------------------------------------------------- |
+| Atti/documenti reali         | 1018     | 616 Normattiva + 52 UE + 202 parlamento + 24 Quirinale + 50 Consulta + 74 oversight |
+| Anagrafiche/comunicati reali | 663      | 414 deputati + 212 senatori + 27 gruppi + 10 governo                                |
+| Aggregati elettorali         | 78       | liste/quesiti, non atti                                                             |
+| **Totale reale**             | **1759** | `data/reali/*.json`                                                                 |
+| Sintetico default            | 5000     | `CORPUS_TOTALE_DEFAULT` (`lib/corpus-unificato.ts:27`)                              |
+| Rapporto reale/sintetico     | ~35%     | 1759 / 5000                                                                         |
 
 Dopo REALI-9 (attesi, non finali): +~1450 lista-only +257 TU +3144 Camera
 = ~6600 reali → rapporto ribaltato (~132% del default sintetico).

@@ -1,4 +1,4 @@
-import { beforeEach, describe, expect, it, vi } from "vitest";
+import { beforeEach, describe, expect, it, vi } from "vite-plus/test";
 import { resetPrisma } from "@/lib/db";
 import { GET as healthGET } from "@/app/api/health/route";
 import { GET as leggiGET } from "@/app/api/leggi/route";
@@ -55,9 +55,7 @@ describe("GET /api/leggi", () => {
       const cerca = (await (
         await leggiGET(new Request("http://localhost/api/leggi?q=energia&per=50"))
       ).json()) as { items: { eli?: string }[] };
-      expect(cerca.items.some((i) => i.eli === "/eli/id/2026/07/27/26G00155/sg")).toBe(
-        true,
-      );
+      expect(cerca.items.some((i) => i.eli === "/eli/id/2026/07/27/26G00155/sg")).toBe(true);
     } else {
       expect(ha133Pagina).toBe(true);
     }
@@ -100,7 +98,9 @@ describe("GET /api/leggi", () => {
       await leggiGET(new Request("http://localhost/api/leggi?stato=in_vigore&per=1"))
     ).json()) as { total: number };
     expect(esatto.total).toBeGreaterThanOrEqual(1);
-    const base = (await (await leggiGET(new Request("http://localhost/api/leggi?per=1"))).json()) as {
+    const base = (await (
+      await leggiGET(new Request("http://localhost/api/leggi?per=1"))
+    ).json()) as {
       total: number;
     };
     const perColore: Record<string, number> = {};
@@ -128,9 +128,7 @@ describe("GET /api/leggi", () => {
   });
 
   it("ordina per titolo", async () => {
-    const res = await leggiGET(
-      new Request("http://localhost/api/leggi?sort=titolo_asc&per=100"),
-    );
+    const res = await leggiGET(new Request("http://localhost/api/leggi?sort=titolo_asc&per=100"));
     const data = (await res.json()) as { items: { titolo: string }[] };
     const titoli = data.items.map((item) => item.titolo);
     const ordinati = [...titoli].sort((a, b) => a.localeCompare(b, "it"));

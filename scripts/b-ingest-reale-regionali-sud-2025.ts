@@ -189,7 +189,14 @@ export function parseRiga(campi: readonly string[], numeroRiga: number): RigaReg
   const contestate = interoNonNegativo(campi[7] ?? "");
   const lista = normalizzaLista(campi[14] ?? "");
   const votiLista = interoNonNegativo(campi[15] ?? "");
-  if (elettori === null || votanti === null || bianche === null || nulle === null || contestate === null || votiLista === null) {
+  if (
+    elettori === null ||
+    votanti === null ||
+    bianche === null ||
+    nulle === null ||
+    contestate === null ||
+    votiLista === null
+  ) {
     throw new Error(`riga ${numeroRiga}: numerico non valido`);
   }
   if (!circoscrizione || !comune) {
@@ -199,9 +206,31 @@ export function parseRiga(campi: readonly string[], numeroRiga: number): RigaReg
     if (votiLista !== 0) {
       throw new Error(`riga ${numeroRiga}: lista vuota con voti non nulli`);
     }
-    return { regione, circoscrizione, comune, elettori, votanti, bianche, nulle, contestate, lista: "", votiLista: 0 };
+    return {
+      regione,
+      circoscrizione,
+      comune,
+      elettori,
+      votanti,
+      bianche,
+      nulle,
+      contestate,
+      lista: "",
+      votiLista: 0,
+    };
   }
-  return { regione, circoscrizione, comune, elettori, votanti, bianche, nulle, contestate, lista, votiLista };
+  return {
+    regione,
+    circoscrizione,
+    comune,
+    elettori,
+    votanti,
+    bianche,
+    nulle,
+    contestate,
+    lista,
+    votiLista,
+  };
 }
 
 /* ------------------------------------------------------------------ */
@@ -478,19 +507,28 @@ export function costruisciEnvelope(
   }
   const liste: ListaOut[] = [...stato.liste.entries()]
     .sort((a, b) => b[1] - a[1])
-    .map(([n, v]) => ({ n, v, p: stato.votiListe > 0 ? unaDecimale((v / stato.votiListe) * 100) : 0 }));
-  const regioni = [{
-    r: regione,
-    e: stato.e,
-    v: stato.v,
-    b: stato.b,
-    k: stato.k,
-    a: affluenza(stato.v, stato.e),
-    liste,
-  }];
+    .map(([n, v]) => ({
+      n,
+      v,
+      p: stato.votiListe > 0 ? unaDecimale((v / stato.votiListe) * 100) : 0,
+    }));
+  const regioni = [
+    {
+      r: regione,
+      e: stato.e,
+      v: stato.v,
+      b: stato.b,
+      k: stato.k,
+      a: affluenza(stato.v, stato.e),
+      liste,
+    },
+  ];
   const comuni = [...stato.comuni.values()]
-    .sort((a, b) =>
-      a.r.localeCompare(b.r, "it") || a.p.localeCompare(b.p, "it") || a.c.localeCompare(b.c, "it"),
+    .sort(
+      (a, b) =>
+        a.r.localeCompare(b.r, "it") ||
+        a.p.localeCompare(b.p, "it") ||
+        a.c.localeCompare(b.c, "it"),
     )
     .map((c) => ({ c: c.c, p: c.p, r: c.r, e: c.e, v: c.v, a: affluenza(c.v, c.e) }));
   return {
@@ -587,16 +625,29 @@ async function main(): Promise<void> {
   const serializza = (envelope: unknown, etichetta: string): string => {
     const json = `${JSON.stringify(envelope)}\n`;
     const byte = Buffer.byteLength(json, "utf8");
-    console.log(`[b-ingest-regionali-sud] output ${etichetta}: ${byte} byte (cap ${MAX_BYTE_OUT}).`);
+    console.log(
+      `[b-ingest-regionali-sud] output ${etichetta}: ${byte} byte (cap ${MAX_BYTE_OUT}).`,
+    );
     if (byte > MAX_BYTE_OUT) {
-      throw new Error(`output ${etichetta} ${byte} byte oltre il cap di ${MAX_BYTE_OUT}: nessun file scritto`);
+      throw new Error(
+        `output ${etichetta} ${byte} byte oltre il cap di ${MAX_BYTE_OUT}: nessun file scritto`,
+      );
     }
     return json;
   };
   const jsons: Record<RegioneAttesa, string> = {
-    CAMPANIA: serializza(costruisciEnvelope(stati.CAMPANIA, "CAMPANIA", urlProvenance, recuperatoIl), "campania-2025"),
-    PUGLIA: serializza(costruisciEnvelope(stati.PUGLIA, "PUGLIA", urlProvenance, recuperatoIl), "puglia-2025"),
-    VENETO: serializza(costruisciEnvelope(stati.VENETO, "VENETO", urlProvenance, recuperatoIl), "veneto-2025"),
+    CAMPANIA: serializza(
+      costruisciEnvelope(stati.CAMPANIA, "CAMPANIA", urlProvenance, recuperatoIl),
+      "campania-2025",
+    ),
+    PUGLIA: serializza(
+      costruisciEnvelope(stati.PUGLIA, "PUGLIA", urlProvenance, recuperatoIl),
+      "puglia-2025",
+    ),
+    VENETO: serializza(
+      costruisciEnvelope(stati.VENETO, "VENETO", urlProvenance, recuperatoIl),
+      "veneto-2025",
+    ),
   };
   mkdirSync(DIR_REALI, { recursive: true });
   const scritti: string[] = [];

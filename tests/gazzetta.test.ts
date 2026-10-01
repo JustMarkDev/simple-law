@@ -3,14 +3,10 @@
  * Integrazione disco tollerante: se il file manca, i test passano con nota.
  */
 
-import { describe, expect, it } from "vitest";
+import { describe, expect, it } from "vite-plus/test";
 import { existsSync, statSync } from "node:fs";
 import { join } from "node:path";
-import {
-  azzeraCacheGazzetta,
-  caricaGazzettaUltima,
-  PERCORSO_GAZZETTA,
-} from "@/lib/gazzetta-dati";
+import { azzeraCacheGazzetta, caricaGazzettaUltima, PERCORSO_GAZZETTA } from "@/lib/gazzetta-dati";
 import { GET as gazzettaGET } from "@/app/api/gazzetta/route";
 
 const PERCORSO = join(process.cwd(), PERCORSO_GAZZETTA);

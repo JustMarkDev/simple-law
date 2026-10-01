@@ -3,12 +3,12 @@
 // L'app funziona anche SENZA database: in quel caso usa il fallback su dati seed.
 
 generator client {
-  provider = "prisma-client-js"
+  provider = "prisma-client"
+  output   = "../lib/generated/prisma"
 }
 
 datasource db {
   provider = "postgresql"
-  url      = env("DATABASE_URL")
 }
 
 /// Atto normativo italiano (legge, decreto-legge, decreto legislativo, ...).

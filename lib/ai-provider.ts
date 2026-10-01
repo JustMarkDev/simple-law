@@ -1,137 +1,253 @@
 /**
- * Provider LLM opzionale (API compatibile OpenAI).
+ * AI via opencode (https://opencode.ai), con il modello della sottoscrizione
+ * opencode-go. Supporta entrambe le API del server opencode:
+ *  - v2: output strutturato con JSON Schema (`format: json_schema`);
+ *  - v1: risposta testuale da cui si estrae il JSON.
+ * Con `SL_OPENCODE_API=auto` (default) prova v2 e ricade su v1. Se il modello
+ * non regge l'output strutturato, la v2 ripiega sul testo.
  *
- * Se `LLM_API_KEY` (o un `apiKey` esplicito) non e' presente, si usa sempre
- * l'euristica offline `simplifyLaw`. In nessun caso la funzione lancia errori:
- * in caso di problemi di rete o risposte non valide si ricade sull'euristica.
+ * Senza `SL_OPENCODE_URL` avvia da solo un `opencode serve` locale (serve il
+ * comando `opencode` nel PATH, gia' autenticato). Non lancia mai: in caso di
+ * problemi restituisce `null` e chi chiama usa l'euristica offline.
  */
 
-import { buildLLMPrompt, simplifyLaw } from "./simplify";
-import type { SimplifiedLaw, SimplifyInput, StatoLavoroColore } from "./simplify";
+import { mkdirSync } from "node:fs";
+import { tmpdir } from "node:os";
+import path from "node:path";
+import { createOpencodeClient as clientV1 } from "@opencode-ai/sdk";
+import { createOpencodeClient as clientV2, createOpencodeServer } from "@opencode-ai/sdk/v2";
+
+export type OpencodeApi = "v1" | "v2" | "auto";
 
 export interface ProviderOptions {
-  provider?: string;
-  apiKey?: string;
-  baseUrl?: string;
+  /** Server opencode gia' avviato (es. `http://127.0.0.1:4096`). */
+  url?: string;
+  /** Formato `provider/modello`. */
   model?: string;
+  api?: OpencodeApi;
   timeoutMs?: number;
+  /** `true` spegne l'AI (test, ambienti senza opencode). */
+  disattivata?: boolean;
   /** Iniettabile nei test per evitare chiamate reali. */
   fetchImpl?: typeof fetch;
 }
 
-export interface SimplifyProviderResult {
-  usatoLLM: boolean;
-  risultato: SimplifiedLaw;
+export interface OpencodeConfig {
+  url: string | null;
+  providerID: string;
+  modelID: string;
+  api: OpencodeApi;
+  timeoutMs: number;
+  attiva: boolean;
 }
 
-export interface LLMConfig {
-  apiKey: string;
-  baseUrl: string;
-  model: string;
-}
+const MODELLO_DEFAULT = "opencode-go/muse-spark-1.3-contributor";
+const TIMEOUT_DEFAULT = 120_000;
+const AGENTE = "simple-law";
 
-const DEFAULT_BASE_URL = "https://api.openai.com/v1";
-const DEFAULT_MODEL = "gpt-4o-mini";
-const DEFAULT_TIMEOUT_MS = 20000;
-const COLORI: readonly StatoLavoroColore[] = ["verde", "giallo", "rosso"];
+/** Modelli che hanno gia' rifiutato l'output strutturato in questo processo. */
+const senzaStrutturato = new Set<string>();
 
-/** Legge la configurazione LLM dall'ambiente, con default sensati. */
-export function getLLMConfig(options: ProviderOptions = {}): LLMConfig {
-  const apiKey = (options.apiKey ?? process.env.LLM_API_KEY ?? "").trim();
-  const baseUrl = (options.baseUrl ?? process.env.LLM_BASE_URL ?? DEFAULT_BASE_URL).trim();
-  const model = (options.model ?? process.env.LLM_MODEL ?? DEFAULT_MODEL).trim();
+/** Nessuno strumento: il modello deve solo leggere e rispondere. */
+const NIENTE_STRUMENTI: Record<string, boolean> = {
+  "*": false,
+  bash: false,
+  edit: false,
+  write: false,
+  read: false,
+  glob: false,
+  grep: false,
+  list: false,
+  patch: false,
+  task: false,
+  todowrite: false,
+  todoread: false,
+  webfetch: false,
+  websearch: false,
+};
+
+export function getOpencodeConfig(options: ProviderOptions = {}): OpencodeConfig {
+  const env = process.env;
+  const [providerID, ...resto] = (options.model ?? env.SL_OPENCODE_MODEL ?? MODELLO_DEFAULT)
+    .trim()
+    .split("/");
+  const apiGrezza = (options.api ?? env.SL_OPENCODE_API ?? "auto").trim().toLowerCase();
+  const api: OpencodeApi = apiGrezza === "v1" || apiGrezza === "v2" ? apiGrezza : "auto";
+  const timeout = Number(env.SL_OPENCODE_TIMEOUT_MS);
+  const spenta =
+    options.disattivata ??
+    ["off", "0", "false"].includes((env.SL_OPENCODE ?? "").trim().toLowerCase());
   return {
-    apiKey,
-    baseUrl: baseUrl || DEFAULT_BASE_URL,
-    model: model || DEFAULT_MODEL,
+    url: (options.url ?? env.SL_OPENCODE_URL ?? "").trim() || null,
+    providerID: providerID || "opencode-go",
+    modelID: resto.join("/") || "muse-spark-1.3-contributor",
+    api,
+    timeoutMs:
+      options.timeoutMs ?? (Number.isFinite(timeout) && timeout > 0 ? timeout : TIMEOUT_DEFAULT),
+    attiva: !spenta,
   };
+}
+
+/** `true` se l'AI e' configurata (non garantisce che opencode risponda). */
+export function aiAttiva(): boolean {
+  return getOpencodeConfig().attiva;
+}
+
+/* ---------------------------------------------------------------------------
+ * Server locale: uno solo per processo (anche con l'HMR di `next dev`).
+ * ------------------------------------------------------------------------- */
+
+interface StatoServer {
+  url?: Promise<string>;
+  fallitoAlle?: number;
+}
+
+const globale = globalThis as typeof globalThis & { __slOpencode?: StatoServer };
+const stato: StatoServer = (globale.__slOpencode ??= {});
+
+/** Cartella vuota: opencode non legge il repo ne' i suoi AGENTS.md. */
+function cartellaIsolata(): string {
+  const dir = path.join(tmpdir(), "simple-law-opencode");
+  mkdirSync(dir, { recursive: true });
+  return dir;
+}
+
+function serverLocale(): Promise<string> {
+  // Dopo un avvio fallito aspetta un minuto prima di riprovare.
+  if (stato.fallitoAlle && Date.now() - stato.fallitoAlle < 60_000) {
+    return Promise.reject(new Error("opencode non disponibile"));
+  }
+  stato.url ??= createOpencodeServer({
+    port: 0,
+    timeout: 30_000,
+    config: {
+      permission: "deny",
+      tools: NIENTE_STRUMENTI,
+      agent: {
+        [AGENTE]: {
+          mode: "primary",
+          description: "Analisi di leggi italiane, solo testo, nessuno strumento.",
+          prompt: "Rispondi solo con quello che ti viene chiesto, senza usare strumenti.",
+          tools: NIENTE_STRUMENTI,
+          permission: "deny",
+        },
+      },
+    },
+  }).then(
+    (server) => {
+      process.once("exit", () => server.close());
+      return server.url;
+    },
+    (errore: unknown) => {
+      stato.url = undefined;
+      stato.fallitoAlle = Date.now();
+      throw errore;
+    },
+  );
+  return stato.url;
+}
+
+/* ---------------------------------------------------------------------------
+ * Chiamate v1 / v2.
+ * ------------------------------------------------------------------------- */
+
+interface Richiesta {
+  baseUrl: string;
+  config: OpencodeConfig;
+  system: string;
+  user: string;
+  schema?: Record<string, unknown>;
+  /** Solo sul server avviato da noi esiste l'agente dedicato. */
+  agente?: string;
+  fetchImpl?: typeof fetch;
+}
+
+interface RispostaPrompt {
+  info?: { error?: unknown; structured?: unknown };
+  parts?: { type?: string; text?: string }[];
+}
+
+function testoDelleParti(parti: RispostaPrompt["parts"]): string {
+  return (parti ?? [])
+    .filter((p) => p.type === "text" && typeof p.text === "string")
+    .map((p) => p.text)
+    .join("\n");
+}
+
+function leggiRisposta(data: RispostaPrompt | undefined, strutturata: boolean): unknown {
+  if (!data || data.info?.error) return null;
+  if (strutturata && data.info?.structured !== undefined) return data.info.structured;
+  return parseJson(testoDelleParti(data.parts));
+}
+
+async function viaV2(r: Richiesta): Promise<unknown> {
+  const directory = cartellaIsolata();
+  const client = clientV2({ baseUrl: r.baseUrl, directory, fetch: r.fetchImpl });
+  const segnale = AbortSignal.timeout(r.config.timeoutMs);
+  const sessione = await client.session.create(
+    {
+      title: "simple-law",
+      permission: [{ permission: "*", pattern: "*", action: "deny" }],
+    },
+    { throwOnError: true, signal: segnale },
+  );
+  try {
+    const risposta = await client.session.prompt(
+      {
+        sessionID: sessione.data.id,
+        model: { providerID: r.config.providerID, modelID: r.config.modelID },
+        agent: r.agente,
+        system: r.system,
+        tools: NIENTE_STRUMENTI,
+        format: r.schema ? { type: "json_schema", schema: r.schema, retryCount: 1 } : undefined,
+        parts: [{ type: "text", text: r.user }],
+      },
+      { throwOnError: true, signal: segnale },
+    );
+    return leggiRisposta(risposta.data as RispostaPrompt, Boolean(r.schema));
+  } finally {
+    void client.session.delete({ sessionID: sessione.data.id }).catch(() => undefined);
+  }
+}
+
+async function viaV1(r: Richiesta): Promise<unknown> {
+  const directory = cartellaIsolata();
+  const client = clientV1({ baseUrl: r.baseUrl, directory, fetch: r.fetchImpl });
+  const segnale = AbortSignal.timeout(r.config.timeoutMs);
+  const sessione = await client.session.create({
+    body: { title: "simple-law" },
+    throwOnError: true,
+    signal: segnale,
+  });
+  try {
+    const risposta = await client.session.prompt({
+      path: { id: sessione.data.id },
+      body: {
+        model: { providerID: r.config.providerID, modelID: r.config.modelID },
+        agent: r.agente,
+        system: r.system,
+        tools: NIENTE_STRUMENTI,
+        parts: [{ type: "text", text: r.user }],
+      },
+      throwOnError: true,
+      signal: segnale,
+    });
+    return leggiRisposta(risposta.data as RispostaPrompt, false);
+  } finally {
+    void client.session.delete({ path: { id: sessione.data.id } }).catch(() => undefined);
+  }
 }
 
 function isRecord(value: unknown): value is Record<string, unknown> {
   return typeof value === "object" && value !== null && !Array.isArray(value);
 }
 
-function stringhe(value: unknown): string[] | null {
-  if (!Array.isArray(value)) return null;
-  const filtrato = value.filter((v): v is string => typeof v === "string" && v.trim().length > 0);
-  return filtrato.length > 0 ? filtrato : null;
-}
-
-function stringheRecord(value: unknown): Record<string, string> | null {
-  if (!isRecord(value)) return null;
-  const out: Record<string, string> = {};
-  for (const [k, v] of Object.entries(value)) {
-    if (typeof v === "string" && v.trim().length > 0) out[k] = v;
-  }
-  return Object.keys(out).length > 0 ? out : null;
-}
-
-/** Unisce la risposta LLM (parziale) con il risultato euristico, garantendo lo schema. */
-function fondiConEuristica(raw: unknown, base: SimplifiedLaw): SimplifiedLaw {
-  if (!isRecord(raw)) return base;
-  const risultato: SimplifiedLaw = { ...base };
-
-  if (typeof raw.in10Secondi === "string" && raw.in10Secondi.trim()) {
-    risultato.in10Secondi = raw.in10Secondi.trim();
-  }
-  const perTe = stringheRecord(raw.perTe);
-  if (perTe) {
-    // Un solo schema perTe: si accettano solo le chiavi persona della UI.
-    const filtrato: Record<string, string> = {};
-    for (const chiave of Object.keys(base.perTe)) {
-      if (perTe[chiave]) filtrato[chiave] = perTe[chiave];
-    }
-    risultato.perTe = { ...base.perTe, ...filtrato };
-  }
-
-  const cosaFare = stringhe(raw.cosaFare);
-  if (cosaFare) risultato.cosaFare = cosaFare;
-
-  if (isRecord(raw.statoLavora)) {
-    const colore = raw.statoLavora.colore;
-    const motivo = raw.statoLavora.motivo;
-    if (typeof colore === "string" && COLORI.includes(colore as StatoLavoroColore)) {
-      risultato.statoLavora = {
-        colore: colore as StatoLavoroColore,
-        motivo: typeof motivo === "string" && motivo.trim() ? motivo.trim() : base.statoLavora.motivo,
-      };
-    }
-  }
-
-  if (isRecord(raw.proContro)) {
-    const pro = stringhe(raw.proContro.pro);
-    const contro = stringhe(raw.proContro.contro);
-    risultato.proContro = {
-      pro: pro ?? base.proContro.pro,
-      contro: contro ?? base.proContro.contro,
-    };
-  }
-
-  if (typeof raw.gulpease === "number" && Number.isFinite(raw.gulpease)) {
-    risultato.gulpease = Math.round(Math.min(100, Math.max(0, raw.gulpease)));
-  }
-
-  return risultato;
-}
-
-interface ChatCompletionChoice {
-  message?: { content?: unknown };
-}
-
-function estraiContenuto(payload: unknown): string | null {
-  if (!isRecord(payload)) return null;
-  const choices = payload.choices;
-  if (!Array.isArray(choices) || choices.length === 0) return null;
-  const primo = choices[0] as ChatCompletionChoice | undefined;
-  const contenuto = primo?.message?.content;
-  return typeof contenuto === "string" ? contenuto : null;
-}
-
 function parseJson(content: string): unknown {
+  const pulito = content.replace(/^```(?:json)?\s*|\s*```$/g, "").trim();
   try {
-    return JSON.parse(content) as unknown;
+    return JSON.parse(pulito) as unknown;
   } catch {
-    const match = /\{[\s\S]*\}/.exec(content);
+    const match = /\{[\s\S]*\}/.exec(pulito);
     if (!match) return null;
     try {
       return JSON.parse(match[0]) as unknown;
@@ -141,86 +257,56 @@ function parseJson(content: string): unknown {
   }
 }
 
-async function chiamaProvider(
-  config: LLMConfig,
-  input: SimplifyInput,
-  options: ProviderOptions,
-  conFormatoJson: boolean,
-): Promise<unknown> {
-  const fetchImpl = options.fetchImpl ?? fetch;
-  const timeoutMs = options.timeoutMs ?? DEFAULT_TIMEOUT_MS;
-  const controller = new AbortController();
-  const timer = setTimeout(() => controller.abort(), timeoutMs);
-
-  try {
-    const body: Record<string, unknown> = {
-      model: config.model,
-      temperature: 0.2,
-      messages: [
-        {
-          role: "system",
-          content:
-            "Spieghi le leggi italiane a chi non e' un giurista. Rispondi solo con JSON valido, in italiano.",
-        },
-        { role: "user", content: buildLLMPrompt(input.testo) },
-      ],
-    };
-    if (conFormatoJson) body.response_format = { type: "json_object" };
-
-    const response = await fetchImpl(`${config.baseUrl.replace(/\/+$/, "")}/chat/completions`, {
-      method: "POST",
-      headers: {
-        "content-type": "application/json",
-        authorization: `Bearer ${config.apiKey}`,
-      },
-      body: JSON.stringify(body),
-      signal: controller.signal,
-    });
-
-    if (!response.ok) {
-      throw new Error(`Provider LLM ha risposto ${response.status}`);
-    }
-    return (await response.json()) as unknown;
-  } finally {
-    clearTimeout(timer);
-  }
-}
-
 /**
- * Semplifica una norma usando il provider LLM se configurato, altrimenti
- * l'euristica offline. Non lancia mai eccezioni.
+ * Chiede a opencode una risposta JSON. `schema` (JSON Schema) attiva l'output
+ * strutturato sulla v2; sulla v1 il JSON si estrae dal testo. Restituisce
+ * l'oggetto letto, oppure `null` se l'AI e' spenta o qualcosa va storto.
  */
-export async function simplifyWithProvider(
-  input: SimplifyInput,
-  options: ProviderOptions = {},
-): Promise<SimplifyProviderResult> {
-  const base = simplifyLaw(input);
-  const config = getLLMConfig(options);
+export async function chiediJSON(
+  system: string,
+  user: string,
+  options: ProviderOptions & { schema?: Record<string, unknown> } = {},
+): Promise<Record<string, unknown> | null> {
+  const config = getOpencodeConfig(options);
+  if (!config.attiva) return null;
 
-  if (!config.apiKey) {
-    return { usatoLLM: false, risultato: base };
-  }
-
+  let baseUrl: string;
   try {
-    // Budget totale condiviso tra i due tentativi (non oltre il timeout base).
-    const budget = Math.max(1000, Math.floor((options.timeoutMs ?? DEFAULT_TIMEOUT_MS) / 2));
-    const tentativi: ProviderOptions = { ...options, timeoutMs: budget };
-    let payload: unknown;
-    try {
-      payload = await chiamaProvider(config, input, tentativi, true);
-    } catch {
-      // Alcuni provider non supportano response_format: un solo retry senza.
-      payload = await chiamaProvider(config, input, tentativi, false);
-    }
-
-    const contenuto = estraiContenuto(payload);
-    if (!contenuto) return { usatoLLM: false, risultato: base };
-
-    const parsed = parseJson(contenuto);
-    if (parsed === null) return { usatoLLM: false, risultato: base };
-
-    return { usatoLLM: true, risultato: fondiConEuristica(parsed, base) };
+    baseUrl = config.url ?? (await serverLocale());
   } catch {
-    return { usatoLLM: false, risultato: base };
+    return null;
   }
+
+  const richiesta: Richiesta = {
+    baseUrl,
+    config,
+    system,
+    user,
+    schema: options.schema,
+    agente: config.url ? undefined : AGENTE,
+    fetchImpl: options.fetchImpl,
+  };
+  // Alcuni modelli (es. muse-spark) accettano solo `tool_choice: "auto"` e
+  // rifiutano l'output strutturato della v2: si ripiega su v2 testuale e ci si
+  // ricorda del modello per non sprecare la chiamata le volte successive.
+  const modello = `${config.providerID}/${config.modelID}`;
+  const strutturato = Boolean(richiesta.schema) && !senzaStrutturato.has(modello);
+  const tentativi: { api: "v1" | "v2"; schema: boolean }[] = [];
+  if (config.api !== "v1") {
+    if (strutturato) tentativi.push({ api: "v2", schema: true });
+    tentativi.push({ api: "v2", schema: false });
+  }
+  if (config.api !== "v2") tentativi.push({ api: "v1", schema: false });
+
+  for (const { api, schema } of tentativi) {
+    try {
+      const r = { ...richiesta, schema: schema ? richiesta.schema : undefined };
+      const risultato = api === "v2" ? await viaV2(r) : await viaV1(r);
+      if (isRecord(risultato)) return risultato;
+    } catch {
+      // prova il tentativo successivo
+    }
+    if (schema) senzaStrutturato.add(modello);
+  }
+  return null;
 }

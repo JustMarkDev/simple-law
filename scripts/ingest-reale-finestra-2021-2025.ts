@@ -31,7 +31,7 @@
  * testo prima della scrittura.
  *
  * Uso:
- *   npx tsx scripts/ingest-reale-finestra-2021-2025.ts [--anni=2025,2024,2023,2021]
+ *   bunx tsx scripts/ingest-reale-finestra-2021-2025.ts [--anni=2025,2024,2023,2021]
  *     [--limite=80] [--testo-max=2000] [--api-base=...] [--help]
  *
  * Esce con codice 1 (SENZA scrivere file parziali) se una delle finestre
@@ -200,7 +200,9 @@ function isoDaParti(anno: unknown, mese: unknown, giorno: unknown): string {
 
 /** Chiave di dedup ELI: trim + lowercase (stessa regola del resto dell'app). */
 export function chiaveEliFinestra2125(eli: unknown): string {
-  return String(eli ?? "").trim().toLowerCase();
+  return String(eli ?? "")
+    .trim()
+    .toLowerCase();
 }
 
 function pausa(ms: number): Promise<void> {
@@ -269,7 +271,11 @@ export function urnDaVoceFinestra2125(voce: unknown): string {
   const numero = stringaFinestra2125(
     voce["numeroProvvedimento"] ?? voce["numero"] ?? voce["numeroAttoAlfanumerico"],
   );
-  const iso = isoDaParti(voce["annoProvvedimento"], voce["meseProvvedimento"], voce["giornoProvvedimento"]);
+  const iso = isoDaParti(
+    voce["annoProvvedimento"],
+    voce["meseProvvedimento"],
+    voce["giornoProvvedimento"],
+  );
   if (!tipo || !numero || !iso) return "";
   const urn = formatNIR({ tipo, data: iso, numero });
   return parseNIR(urn) ? urn : "";
@@ -323,12 +329,17 @@ export function dettaglioToRecordFinestra2125(
 
   const dataEmanazione =
     dto?.dataEmanazione ||
-    isoDaParti(interno["annoProvvedimento"], interno["meseProvvedimento"], interno["giornoProvvedimento"]) ||
+    isoDaParti(
+      interno["annoProvvedimento"],
+      interno["meseProvvedimento"],
+      interno["giornoProvvedimento"],
+    ) ||
     normalizzaData(interno["dataEmanazione"]) ||
     (parseNIR(voce.urn)?.data ?? "");
   if (!dataEmanazione) return null;
 
-  const codice = dto?.codiceRedazionale || stringaFinestra2125(interno["codiceRedazionale"]) || voce.codice;
+  const codice =
+    dto?.codiceRedazionale || stringaFinestra2125(interno["codiceRedazionale"]) || voce.codice;
 
   const html = dto?.articoloHtml || stringaFinestra2125(interno["articoloHtml"]);
   const testoIntegrale = dto?.testo || stripHtml(html);
@@ -421,7 +432,7 @@ function aiuto(): string {
     "Ingest finestre recenti Normattiva 2025/2024/2023/2021 (dati ufficiali, mai dimostrativi).",
     "",
     "Uso:",
-    "  npx tsx scripts/ingest-reale-finestra-2021-2025.ts [opzioni]",
+    "  bunx tsx scripts/ingest-reale-finestra-2021-2025.ts [opzioni]",
     "",
     "Opzioni:",
     "  --anni=A,B            finestre da ingerire (default 2025,2024,2023,2021; ammessi 2025,2024,2023,2021)",
@@ -692,7 +703,11 @@ async function main(): Promise<void> {
   for (const finestra of finestre) {
     const nome = finestra.nome as NomeFinestra2125;
     try {
-      const { voci, url } = await listaFinestraConSplit(overridesPost, finestra.inizio, finestra.fine);
+      const { voci, url } = await listaFinestraConSplit(
+        overridesPost,
+        finestra.inizio,
+        finestra.fine,
+      );
       urlPerAnno.set(nome, url);
       console.log(`Finestra ${nome}: ${voci.length} voci reali.`);
       const filtrate = escludiConosciute(voci).filter((voce) => {
@@ -701,7 +716,9 @@ async function main(): Promise<void> {
         if (eliCandidati2125(voce).some((c) => eliViste.has(c))) return false;
         return true;
       });
-      console.log(`Finestra ${nome}: ${voci.length} voci, ${voci.length - filtrate.length} duplicate escluse.`);
+      console.log(
+        `Finestra ${nome}: ${voci.length} voci, ${voci.length - filtrate.length} duplicate escluse.`,
+      );
       const selezionate = filtrate.slice(0, limite);
       vociPerAnno.set(nome, selezionate);
       for (const voce of selezionate) {
@@ -727,7 +744,9 @@ async function main(): Promise<void> {
     process.exitCode = 1;
     return;
   }
-  console.log(`Recupero dettagli per ${daDettagliare.length} atti (batch da ${DETTAGLI_PER_BATCH}).`);
+  console.log(
+    `Recupero dettagli per ${daDettagliare.length} atti (batch da ${DETTAGLI_PER_BATCH}).`,
+  );
 
   const attiPerAnno = new Map<NomeFinestra2125, LawRecord[]>();
   for (const finestra of finestre) attiPerAnno.set(finestra.nome as NomeFinestra2125, []);
@@ -778,9 +797,13 @@ async function main(): Promise<void> {
     `Dettagli OK: ${finestre.map((f) => `finestra${f.nome}=${attiPerAnno.get(f.nome as NomeFinestra2125)?.length ?? 0}`).join(" ")}; scarti/errori: ${errori.length}.`,
   );
   // Niente parziali: OGNI finestra selezionata deve aver prodotto atti reali.
-  const vuote = finestre.filter((f) => (attiPerAnno.get(f.nome as NomeFinestra2125)?.length ?? 0) === 0);
+  const vuote = finestre.filter(
+    (f) => (attiPerAnno.get(f.nome as NomeFinestra2125)?.length ?? 0) === 0,
+  );
   if (vuote.length > 0) {
-    console.error(`Finestre senza atti reali (${vuote.map((f) => f.nome).join(",")}): nessun file scritto.`);
+    console.error(
+      `Finestre senza atti reali (${vuote.map((f) => f.nome).join(",")}): nessun file scritto.`,
+    );
     for (const e of errori.slice(0, 10)) console.error(`  - ${e}`);
     process.exitCode = 1;
     return;

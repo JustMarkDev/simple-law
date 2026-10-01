@@ -39,10 +39,30 @@ const TIMEOUT_MS = 30000;
 const AGGREGATORI_ESCLUSI = ["politpro", "bidimedia", "cassandra", "youtrend", "europe elects"];
 
 const MESI = {
-  january: 1, february: 2, march: 3, april: 4, may: 5, june: 6,
-  july: 7, august: 8, september: 9, october: 10, november: 11, december: 12,
-  jan: 1, feb: 2, mar: 3, apr: 4, jun: 6, jul: 7, aug: 8,
-  sep: 9, sept: 9, oct: 10, nov: 11, dec: 12,
+  january: 1,
+  february: 2,
+  march: 3,
+  april: 4,
+  may: 5,
+  june: 6,
+  july: 7,
+  august: 8,
+  september: 9,
+  october: 10,
+  november: 11,
+  december: 12,
+  jan: 1,
+  feb: 2,
+  mar: 3,
+  apr: 4,
+  jun: 6,
+  jul: 7,
+  aug: 8,
+  sep: 9,
+  sept: 9,
+  oct: 10,
+  nov: 11,
+  dec: 12,
 };
 
 /* ------------------------------------------------------------------ */
@@ -52,7 +72,9 @@ const MESI = {
 /** Mese inglese (nome intero o abbreviazione) -> 1..12, altrimenti null. */
 export function meseANumero(raw) {
   try {
-    const t = String(raw ?? "").trim().toLowerCase();
+    const t = String(raw ?? "")
+      .trim()
+      .toLowerCase();
     if (!t) return null;
     if (Object.prototype.hasOwnProperty.call(MESI, t)) return MESI[t];
     const tre = t.slice(0, 3);
@@ -194,9 +216,21 @@ export function parseRigaBlocco(blocco, revid, estrattoIl) {
     if (isAggregatore(link.istituto)) return null;
     const campione = parseCampione(celle[3]);
     const idx = {
-      fdi: 4, pd: 5, m5s: 6, lega: 7, fi: 8, azione: 9, iv: 10,
-      avs: 11, piu_europa: 12, nm: 13, fn: 16, altri: 17,
-      lead: 18, csx: 19, cdx: 20,
+      fdi: 4,
+      pd: 5,
+      m5s: 6,
+      lega: 7,
+      fi: 8,
+      azione: 9,
+      iv: 10,
+      avs: 11,
+      piu_europa: 12,
+      nm: 13,
+      fn: 16,
+      altri: 17,
+      lead: 18,
+      csx: 19,
+      cdx: 20,
     };
     const val = (i) => (i < celle.length ? estraiPercentuale(celle[i]) : null);
     const fdi = val(idx.fdi);
@@ -428,7 +462,12 @@ async function main() {
       ultimi_n: sondaggi.length,
       limite_richiesto: opzioni.limite,
       max_snapshot: MAX_RECORD,
-      esclusi: ["approval", "primarie", "ipotetici", "aggregatori secondo livello (PolitPro, BiDiMedia, Cassandra, Youtrend, Europe Elects)"],
+      esclusi: [
+        "approval",
+        "primarie",
+        "ipotetici",
+        "aggregatori secondo livello (PolitPro, BiDiMedia, Cassandra, Youtrend, Europe Elects)",
+      ],
     },
     sondaggi,
     metodologia:

@@ -8,11 +8,10 @@ Stack: **Next.js 15 (App Router)**, **TypeScript strict**, **Tailwind CSS**, **P
 ## Avvio rapido
 
 ```bash
-npm install
-npm run dev        # http://localhost:3000
-npm test           # test unitari e smoke test delle API
-npm run typecheck  # tsconfig strict, nessun errore
-npm run lint       # ESLint, zero warning
+bun install
+bun run dev        # http://localhost:3000
+bun run test           # test unitari e smoke test delle API
+bun run check      # formato, lint e tipi (Vite+), zero errori
 ```
 
 Il database **non e' obbligatorio**: senza `DATABASE_URL` l'app usa i dati inclusi nel bundle
@@ -22,13 +21,14 @@ Il database **non e' obbligatorio**: senza `DATABASE_URL` l'app usa i dati inclu
 
 Copia `.env.example` in `.env.local`. Tutte le variabili sono opzionali in sviluppo.
 
-| Variabile              | Descrizione                                                        |
-| ---------------------- | ------------------------------------------------------------------ |
-| `DATABASE_URL`         | Postgres (Neon / Vercel Postgres). Assente -> fallback seed.       |
-| `LLM_API_KEY`          | Chiave di un provider compatibile OpenAI. Assente -> euristica.    |
-| `LLM_BASE_URL`         | Base URL del provider (default `https://api.openai.com/v1`).       |
-| `LLM_MODEL`            | Modello usato (default `gpt-4o-mini`).                             |
-| `NEXT_PUBLIC_SITE_URL` | Base per link assoluti e feed RSS.                                 |
+| Variabile              | Descrizione                                                                                                       |
+| ---------------------- | ----------------------------------------------------------------------------------------------------------------- |
+| `DATABASE_URL`         | Postgres (Neon / Vercel Postgres). Assente -> fallback seed.                                                      |
+| `SL_OPENCODE_URL`      | Server opencode gia' avviato. Assente -> l'app avvia `opencode serve` da sola.                                    |
+| `SL_OPENCODE_MODEL`    | Modello `provider/id` (default `opencode-go/muse-spark-1.3-contributor`).                                         |
+| `SL_OPENCODE_API`      | `auto` (default, v2 poi v1), `v2` o `v1`.                                                                         |
+| `SL_OPENCODE`          | `off` spegne l'AI: solo analisi offline.                                                                          |
+| `NEXT_PUBLIC_SITE_URL` | Base per link assoluti e feed RSS.                                                                                |
 | `CRON_SECRET`          | Se impostato richiede `Bearer` su cron/sync. Se assente: aperto in dev/test, `401` in `production` (fail-closed). |
 
 Nessun segreto va committato: `.env*` e' in `.gitignore`.
@@ -45,11 +45,11 @@ Nessun segreto va committato: `.env*` e' in `.gitignore`.
 Bootstrap schema e dati:
 
 ```bash
-npm run prisma:generate   # genera il client (eseguito anche in postinstall)
-npm run prisma:push       # crea le tabelle (richiede DATABASE_URL)
-npm run db:seed           # carica leggi e ministri
-npm run db:seed:espanso            # genera data/seed-espanso.json (default 240 atti offline, dimostrativo:true; usa --totale=1500 per test di scala)
-npm run db:seed:espanso -- --apply # + upsert in DB (richiede DATABASE_URL)
+bun run prisma:generate   # genera il client (eseguito anche in postinstall)
+bun run prisma:push       # crea le tabelle (richiede DATABASE_URL)
+bun run db:seed           # carica leggi e ministri
+bun run db:seed:espanso            # genera data/seed-espanso.json (default 240 atti offline, dimostrativo:true; usa --totale=1500 per test di scala)
+bun run db:seed:espanso -- --apply # + upsert in DB (richiede DATABASE_URL)
 ```
 
 Piano 100 GB: il corpus reale arriva via `sync:storico` a chunk (`limit`/`pageSize`/`maxPages`),
@@ -63,27 +63,27 @@ Modelli Prisma: `Law` (chiave `eli`), `Minister` (chiave `slug`), `IngestRun`.
 
 Tutte le route rispondono JSON e non restituiscono 500 se il DB manca.
 
-| Metodo | Route                        | Descrizione                                             |
-| ------ | ---------------------------- | ------------------------------------------------------- |
-| GET    | `/api/health`                | `{ok, db, time}`                                        |
+| Metodo | Route                                        | Descrizione                                                                                                                                                                                                                                                |
+| ------ | -------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| GET    | `/api/health`                                | `{ok, db, time}`                                                                                                                                                                                                                                           |
 | GET    | `/api/leggi?q=&tipo=&anno=&sort=&page=&per=` | elenco norme: `q` max 200, `tipo` max 80, `anno` YYYY 1800-2100 (altrimenti ignorato), `sort` data_desc\|data_asc\|titolo_asc\|gulpease_desc\|qualita_desc, `page` 1..10000, `per` alias `limit` 1..200. Risponde `{items,total,page,per}` + `count=total` |
-| GET    | `/api/leggi/[...eli]`        | dettaglio `{law,ui,simplified,quality,fonti,memorizzata}` (`ui` = forma UI con semaforo/riquadri; `?eli=` max 500; 404 se ignota) |
-| GET    | `/api/ministri`              | elenco ministri                                         |
-| GET    | `/api/ministri/[slug]`       | dettaglio ministro                                      |
-| GET    | `/api/cdm`                   | comunicati del Governo (live con fallback seed)         |
-| GET    | `/api/export`                | export del corpus: `?formato=csv\|json&q=&tipo=&anno=` (max 5000 righe; CSV 12 colonne con BOM, anti-injection `'=+-@\|%;"` dopo spazi/controlli inclusi BOM/unicode/bidi, `attachment` + `no-store`; 400 se formato non valido) |
-| GET    | `/api/statistiche`           | aggregati del corpus + snapshot economico               |
-| GET    | `/api/feed`                  | feed RSS delle ultime norme                             |
-| GET    | `/api/cron/ingest`           | ingest da Vercel Cron (sempre 200)                      |
-| GET    | `/api/sync/storico`          | bulk storico Normattiva (`limit`, `maxPages` <= 10, `denominazioni`, `collezioni`) |
-| GET    | `/api/sync/recente`          | atti aggiornati (`dal`, `al`, `limit`)                  |
-| GET    | `/api/parlamento...`         | deputati, senatori, gruppi, DDL leg19 (`q`, `gruppo`, `page`, `per`<=100; mai 500) |
-| GET    | `/api/elezioni...`           | consultazioni, dettaglio, comuni (`q`, `page`, `per`<=100; mai 500) |
-| GET    | `/api/eurlex...`             | atti UE CELLAR con recepimenti (`q`, `tipo`, `page`, `per`; mai 500) |
-| GET    | `/api/quirinale`             | atti e comunicati del Quirinale (mai 500)               |
-| GET    | `/api/consulta...`           | pronunce Corte Costituzionale (mai 500)                 |
-| GET    | `/api/controllo...`          | contratti ANAC, provvedimenti GA, documenti CNEL (`tipo`, `q`; mai 500) |
-| GET    | `/api/gazzetta`              | ultima GU: solo metadati + link ufficiali (mai 500)     |
+| GET    | `/api/leggi/[...eli]`                        | dettaglio `{law,ui,simplified,quality,fonti,memorizzata}` (`ui` = forma UI con semaforo/riquadri; `?eli=` max 500; 404 se ignota)                                                                                                                          |
+| GET    | `/api/ministri`                              | elenco ministri                                                                                                                                                                                                                                            |
+| GET    | `/api/ministri/[slug]`                       | dettaglio ministro                                                                                                                                                                                                                                         |
+| GET    | `/api/cdm`                                   | comunicati del Governo (live con fallback seed)                                                                                                                                                                                                            |
+| GET    | `/api/export`                                | export del corpus: `?formato=csv\|json&q=&tipo=&anno=` (max 5000 righe; CSV 12 colonne con BOM, anti-injection `'=+-@\|%;"` dopo spazi/controlli inclusi BOM/unicode/bidi, `attachment` + `no-store`; 400 se formato non valido)                           |
+| GET    | `/api/statistiche`                           | aggregati del corpus + snapshot economico                                                                                                                                                                                                                  |
+| GET    | `/api/feed`                                  | feed RSS delle ultime norme                                                                                                                                                                                                                                |
+| GET    | `/api/cron/ingest`                           | ingest da Vercel Cron (sempre 200)                                                                                                                                                                                                                         |
+| GET    | `/api/sync/storico`                          | bulk storico Normattiva (`limit`, `maxPages` <= 10, `denominazioni`, `collezioni`)                                                                                                                                                                         |
+| GET    | `/api/sync/recente`                          | atti aggiornati (`dal`, `al`, `limit`)                                                                                                                                                                                                                     |
+| GET    | `/api/parlamento...`                         | deputati, senatori, gruppi, DDL leg19 (`q`, `gruppo`, `page`, `per`<=100; mai 500)                                                                                                                                                                         |
+| GET    | `/api/elezioni...`                           | consultazioni, dettaglio, comuni (`q`, `page`, `per`<=100; mai 500)                                                                                                                                                                                        |
+| GET    | `/api/eurlex...`                             | atti UE CELLAR con recepimenti (`q`, `tipo`, `page`, `per`; mai 500)                                                                                                                                                                                       |
+| GET    | `/api/quirinale`                             | atti e comunicati del Quirinale (mai 500)                                                                                                                                                                                                                  |
+| GET    | `/api/consulta...`                           | pronunce Corte Costituzionale (mai 500)                                                                                                                                                                                                                    |
+| GET    | `/api/controllo...`                          | contratti ANAC, provvedimenti GA, documenti CNEL (`tipo`, `q`; mai 500)                                                                                                                                                                                    |
+| GET    | `/api/gazzetta`                              | ultima GU: solo metadati + link ufficiali (mai 500)                                                                                                                                                                                                        |
 
 Le route `/api/sync/storico` e `/api/sync/recente`, come `/api/cron/ingest`, richiedono
 `Authorization: Bearer <CRON_SECRET>` **se** `CRON_SECRET` e' impostato; senza la
@@ -102,13 +102,19 @@ curl "http://localhost:3000/api/export?formato=csv&anno=2026"
 curl "http://localhost:3000/api/statistiche"
 ```
 
-## Semplificazione (offline + LLM opzionale)
+## Analisi AI (opencode)
 
-- `lib/simplify.ts` - euristica offline deterministica: 5 caselle (`in10Secondi`, `perTe`,
-  `cosaFare`, `statoLavora`, `proContro`) + indice Gulpease.
-- `lib/ai-provider.ts` - `simplifyWithProvider()` usa un provider compatibile OpenAI se
-  `LLM_API_KEY` e' presente; in ogni altro caso ricade sull'euristica. **Non lancia mai** e
-  ritenta senza `response_format` se il provider non lo supporta.
+Ogni scheda risponde a quattro domande: in poche parole, spiegata semplice, chi riguarda e
+le cifre, e se e' una buona legge nel merito (voto 1-10), separata da come e' scritta.
+
+- `lib/analisi.ts` - prompt, JSON Schema, validazione e ripiego offline onesto (niente voto
+  inventato, solo cifre davvero presenti nel testo).
+- `lib/ai-provider.ts` - client `@opencode-ai/sdk` per **v2** (output strutturato con JSON
+  Schema) e **v1** (JSON estratto dal testo). Se il modello rifiuta l'output strutturato
+  (muse-spark accetta solo `tool_choice: "auto"`) la v2 ripiega sul testo. Sessioni in una
+  cartella temporanea vuota, tutti gli strumenti e i permessi negati. **Non lancia mai.**
+- Requisito: `opencode` nel PATH e autenticato (`opencode providers login`) con la
+  sottoscrizione opencode-go. Le risposte per legge restano in cache 30 giorni.
 
 ## Metriche
 
@@ -130,7 +136,7 @@ curl "http://localhost:3000/api/statistiche"
 
 ## Test
 
-`npm test` esegue i test Vitest su metriche, identificatori, glossario, semplificatore, provider
+`bun run test` esegue i test Vitest su metriche, identificatori, glossario, semplificatore, provider
 AI, sorgenti (con fetch simulato), layer DB (senza database reale) e smoke test di tutte le route.
 
 ## Limiti noti (v1)
@@ -150,14 +156,14 @@ I file in `data/reali/` sostituiscono progressivamente il corpus dimostrativo co
 ufficiali verificati. Ogni file ha envelope `provenance` (fonte, url, recuperatoIl ISO-8601,
 licenza): senza `provenance` completa il file resta dimostrativo.
 
-| fonte | endpoint | file | licenza | rigenerazione |
-| ----- | -------- | ---- | ------- | ------------- |
-| normattiva.it | `POST /api/v1/ricerca/listaAtti` + `POST /api/v1/atto/dettaglio-atto-urn` (fallback `GET /collections/collection-predefinite`) | `data/reali/normattiva-leggi.json` | attribuzione + link Normattiva/GU per atto (no mirror bulk) | `scripts/ingest-reale-*.ts` |
-| dati.camera.it | `GET https://dati.camera.it/sparql` | `data/reali/camera-deputati.json` | CC BY-SA 4.0 | `scripts/ingest-reale-*.ts` |
-| dati.senato.it (senatori) | `GET https://dati.senato.it/sparql` | `data/reali/senato-senatori.json` | CC BY 3.0 IT | `scripts/ingest-reale-*.ts` |
-| dati.senato.it (DDL) | `GET https://dati.senato.it/sparql` | `data/reali/senato-ddl.json` | CC BY 3.0 IT | `scripts/ingest-reale-*.ts` |
-| governo.it/it/feed/rss | `GET https://www.governo.it/it/feed/rss` | `data/reali/governo-cdm.json` | riuso titolo/link/descrizione | `scripts/ingest-reale-*.ts` |
-| dati.camera.it + dati.senato.it (gruppi) | `GET https://dati.camera.it/sparql`, `GET https://dati.senato.it/sparql` | `data/reali/gruppi-parlamentari.json` | CC BY-SA 4.0, CC BY 3.0 IT | `scripts/ingest-reale-*.ts` |
+| fonte                                    | endpoint                                                                                                                       | file                                  | licenza                                                     | rigenerazione               |
+| ---------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------- | ----------------------------------------------------------- | --------------------------- |
+| normattiva.it                            | `POST /api/v1/ricerca/listaAtti` + `POST /api/v1/atto/dettaglio-atto-urn` (fallback `GET /collections/collection-predefinite`) | `data/reali/normattiva-leggi.json`    | attribuzione + link Normattiva/GU per atto (no mirror bulk) | `scripts/ingest-reale-*.ts` |
+| dati.camera.it                           | `GET https://dati.camera.it/sparql`                                                                                            | `data/reali/camera-deputati.json`     | CC BY-SA 4.0                                                | `scripts/ingest-reale-*.ts` |
+| dati.senato.it (senatori)                | `GET https://dati.senato.it/sparql`                                                                                            | `data/reali/senato-senatori.json`     | CC BY 3.0 IT                                                | `scripts/ingest-reale-*.ts` |
+| dati.senato.it (DDL)                     | `GET https://dati.senato.it/sparql`                                                                                            | `data/reali/senato-ddl.json`          | CC BY 3.0 IT                                                | `scripts/ingest-reale-*.ts` |
+| governo.it/it/feed/rss                   | `GET https://www.governo.it/it/feed/rss`                                                                                       | `data/reali/governo-cdm.json`         | riuso titolo/link/descrizione                               | `scripts/ingest-reale-*.ts` |
+| dati.camera.it + dati.senato.it (gruppi) | `GET https://dati.camera.it/sparql`, `GET https://dati.senato.it/sparql`                                                       | `data/reali/gruppi-parlamentari.json` | CC BY-SA 4.0, CC BY 3.0 IT                                  | `scripts/ingest-reale-*.ts` |
 
 Stato e manifest: `data/reali/MANIFEST.json` riporta per ogni file conteggio e `recuperatoIl`
 (`null` = in attesa del primo ingest, nessun numero inventato). I file oltre 1 MB non si

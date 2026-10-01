@@ -141,9 +141,7 @@ function righeDaJson(json: unknown): SparqlRiga[] {
   if (typeof results !== "object" || results === null) return [];
   const bindings = (results as { bindings?: unknown }).bindings;
   if (!Array.isArray(bindings)) return [];
-  return bindings.filter(
-    (riga): riga is SparqlRiga => typeof riga === "object" && riga !== null,
-  );
+  return bindings.filter((riga): riga is SparqlRiga => typeof riga === "object" && riga !== null);
 }
 
 async function sparqlSelect(query: string): Promise<SparqlRiga[]> {

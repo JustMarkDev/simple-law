@@ -1,32 +1,40 @@
-import type { Metadata } from 'next'
-import Link from 'next/link'
-import Header from '@/components/Header'
-import Footer from '@/components/Footer'
-import { caricaGazzettaUltima } from '@/lib/gazzetta-dati'
+import type { Metadata } from "next";
+import Link from "next/link";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
+import { caricaGazzettaUltima } from "@/lib/gazzetta-dati";
 
 export const metadata: Metadata = {
-  title: 'Ultima Gazzetta Ufficiale - Stato della Repubblica',
+  title: "Ultima Gazzetta Ufficiale - Stato della Repubblica",
   description:
-    'L’ultimo numero uscito della Gazzetta Ufficiale: atti pubblicati con link ai testi ufficiali. Fa fede la Gazzetta a stampa.',
-}
+    "L’ultimo numero uscito della Gazzetta Ufficiale: atti pubblicati con link ai testi ufficiali. Fa fede la Gazzetta a stampa.",
+};
 
 function dataIT(iso: string): string {
   try {
-    const d = new Date(`${iso.slice(0, 10)}T00:00:00Z`)
-    if (Number.isNaN(d.getTime())) return iso.slice(0, 10)
-    return d.toLocaleDateString('it-IT', { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' })
+    const d = new Date(`${iso.slice(0, 10)}T00:00:00Z`);
+    if (Number.isNaN(d.getTime())) return iso.slice(0, 10);
+    return d.toLocaleDateString("it-IT", {
+      day: "numeric",
+      month: "long",
+      year: "numeric",
+      timeZone: "UTC",
+    });
   } catch {
-    return iso.slice(0, 10)
+    return iso.slice(0, 10);
   }
 }
 
 export default async function GazzettaPage() {
-  const dati = await caricaGazzettaUltima()
+  const dati = await caricaGazzettaUltima();
 
   return (
     <>
       <Header />
-      <main id="contenuto" className="mx-auto w-full max-w-editoriale px-4 py-10 sm:px-6 sm:py-12 lg:px-8">
+      <main
+        id="contenuto"
+        className="mx-auto w-full max-w-editoriale px-4 py-10 sm:px-6 sm:py-12 lg:px-8"
+      >
         <nav aria-label="Percorso" className="text-xs text-inchiostro-soft dark:text-nebbia-soft">
           <ol className="flex flex-wrap items-center gap-2">
             <li>
@@ -46,22 +54,28 @@ export default async function GazzettaPage() {
             Gazzetta Ufficiale
           </p>
           <h1 className="mt-2 text-3xl font-bold text-inchiostro dark:text-nebbia sm:text-4xl">
-            {dati ? dati.testata || `Serie Generale n. ${dati.numero}` : 'Ultimo numero uscito'}
+            {dati ? dati.testata || `Serie Generale n. ${dati.numero}` : "Ultimo numero uscito"}
           </h1>
           <p className="mt-3 max-w-2xl text-sm leading-relaxed text-inchiostro-soft dark:text-nebbia-soft">
             Gli atti appena pubblicati, con link ai testi ufficiali. Solo metadati: fa fede la
             Gazzetta Ufficiale a stampa.
           </p>
           {dati && (
-            <p className="mt-2 text-sm font-semibold text-inchiostro dark:text-nebbia" role="status">
-              {dati.atti.length} {dati.atti.length === 1 ? 'atto pubblicato' : 'atti pubblicati'}
-              {dati.data ? ` il ${dataIT(dati.data)}` : ''}
+            <p
+              className="mt-2 text-sm font-semibold text-inchiostro dark:text-nebbia"
+              role="status"
+            >
+              {dati.atti.length} {dati.atti.length === 1 ? "atto pubblicato" : "atti pubblicati"}
+              {dati.data ? ` il ${dataIT(dati.data)}` : ""}
             </p>
           )}
         </header>
 
         {!dati || dati.atti.length === 0 ? (
-          <p className="mt-8 border border-dashed border-regola bg-carta p-6 text-sm text-inchiostro-soft dark:border-notte-deep dark:bg-notte-soft dark:text-nebbia-soft" role="status">
+          <p
+            className="mt-8 border border-dashed border-regola bg-carta p-6 text-sm text-inchiostro-soft dark:border-notte-deep dark:bg-notte-soft dark:text-nebbia-soft"
+            role="status"
+          >
             Dati in preparazione: l’ultimo numero indicizzato non è ancora disponibile.
           </p>
         ) : (
@@ -97,13 +111,13 @@ export default async function GazzettaPage() {
             Fonte
           </h2>
           <p className="mt-2 text-sm leading-relaxed text-inchiostro-soft dark:text-nebbia-soft">
-            Fonte: {dati?.provenance.fonte ?? 'gazzettaufficiale.it (RSS Serie Generale)'} -{' '}
-            {dati?.provenance.licenza ?? 'solo metadati + link ufficiali, nessun mirror'}.
-            Fa fede esclusivamente la Gazzetta Ufficiale a stampa.
+            Fonte: {dati?.provenance.fonte ?? "gazzettaufficiale.it (RSS Serie Generale)"} -{" "}
+            {dati?.provenance.licenza ?? "solo metadati + link ufficiali, nessun mirror"}. Fa fede
+            esclusivamente la Gazzetta Ufficiale a stampa.
           </p>
         </section>
       </main>
       <Footer />
     </>
-  )
+  );
 }

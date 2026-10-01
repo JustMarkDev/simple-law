@@ -12,10 +12,7 @@
  */
 
 import { Effect } from "effect";
-import {
-  normattivaLayer,
-  type NormattivaConfig,
-} from "../lib/normattiva";
+import { normattivaLayer, type NormattivaConfig } from "../lib/normattiva";
 import { storicoEffect } from "../lib/sync";
 import type { StoricoSyncOptions, SyncProgress } from "../lib/sync";
 

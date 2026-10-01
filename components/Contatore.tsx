@@ -1,22 +1,22 @@
-'use client'
+"use client";
 
-import { useEffect, useRef, useState } from 'react'
-import { animate, useInView, useReducedMotion } from 'motion/react'
+import { useEffect, useRef, useState } from "react";
+import { animate, useInView, useReducedMotion } from "motion/react";
 
 interface ContatoreProps {
-  value: number
-  decimals?: number
-  prefix?: string
-  suffix?: string
-  durata?: number
-  className?: string
+  value: number;
+  decimals?: number;
+  prefix?: string;
+  suffix?: string;
+  durata?: number;
+  className?: string;
 }
 
 function formatta(value: number, decimals: number): string {
-  return new Intl.NumberFormat('it-IT', {
+  return new Intl.NumberFormat("it-IT", {
     minimumFractionDigits: decimals,
     maximumFractionDigits: decimals,
-  }).format(value)
+  }).format(value);
 }
 
 /**
@@ -27,33 +27,33 @@ function formatta(value: number, decimals: number): string {
 export default function Contatore({
   value,
   decimals = 0,
-  prefix = '',
-  suffix = '',
+  prefix = "",
+  suffix = "",
   durata = 1.1,
-  className = '',
+  className = "",
 }: ContatoreProps) {
-  const ref = useRef<HTMLSpanElement>(null)
-  const inVista = useInView(ref, { once: true, amount: 0.4 })
-  const ridotto = useReducedMotion()
-  const [mostrato, setMostrato] = useState(() => (ridotto ? value : 0))
+  const ref = useRef<HTMLSpanElement>(null);
+  const inVista = useInView(ref, { once: true, amount: 0.4 });
+  const ridotto = useReducedMotion();
+  const [mostrato, setMostrato] = useState(() => (ridotto ? value : 0));
 
-  const valoreFinale = Number.isFinite(value) ? value : 0
-  const cifre = Number.isInteger(decimals) ? Math.min(Math.max(decimals, 0), 5) : 0
-  const durataAnimazione = Number.isFinite(durata) ? Math.min(Math.max(durata, 0), 5) : 1.1
+  const valoreFinale = Number.isFinite(value) ? value : 0;
+  const cifre = Number.isInteger(decimals) ? Math.min(Math.max(decimals, 0), 5) : 0;
+  const durataAnimazione = Number.isFinite(durata) ? Math.min(Math.max(durata, 0), 5) : 1.1;
 
   useEffect(() => {
-    if (!inVista) return
+    if (!inVista) return;
     if (ridotto || durataAnimazione === 0) {
-      setMostrato(valoreFinale)
-      return
+      setMostrato(valoreFinale);
+      return;
     }
     const controlli = animate(0, valoreFinale, {
       duration: durataAnimazione,
-      ease: 'easeOut',
+      ease: "easeOut",
       onUpdate: (v) => setMostrato(v),
-    })
-    return () => controlli.stop()
-  }, [inVista, valoreFinale, ridotto, durataAnimazione])
+    });
+    return () => controlli.stop();
+  }, [inVista, valoreFinale, ridotto, durataAnimazione]);
 
   return (
     <span ref={ref} className={`font-mono tabular-nums ${className}`}>
@@ -68,5 +68,5 @@ export default function Contatore({
         {suffix}
       </span>
     </span>
-  )
+  );
 }

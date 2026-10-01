@@ -4,7 +4,7 @@
  * Mai inventare dati: campi assenti o malformati -> voce scartata (null).
  */
 
-import { describe, expect, it } from "vitest";
+import { describe, expect, it } from "vite-plus/test";
 import {
   gaDataIso,
   normalizzaGaVoce,
@@ -122,12 +122,8 @@ describe("oversight: mapping OCDS/ANAC (zero rete, zero disco)", () => {
     expect(normalizzaOcdsVoce(null, RISORSA_ANAC)).toBeNull();
     expect(normalizzaOcdsVoce("stringa", RISORSA_ANAC)).toBeNull();
     expect(normalizzaOcdsVoce([], RISORSA_ANAC)).toBeNull();
-    expect(
-      normalizzaOcdsVoce({ ...OCDS_VALIDA, tender: { id: "1" } }, RISORSA_ANAC),
-    ).toBeNull();
-    expect(
-      normalizzaOcdsVoce({ ...OCDS_VALIDA, buyer: { id: "x" } }, RISORSA_ANAC),
-    ).toBeNull();
+    expect(normalizzaOcdsVoce({ ...OCDS_VALIDA, tender: { id: "1" } }, RISORSA_ANAC)).toBeNull();
+    expect(normalizzaOcdsVoce({ ...OCDS_VALIDA, buyer: { id: "x" } }, RISORSA_ANAC)).toBeNull();
     expect(
       normalizzaOcdsVoce({ ...OCDS_VALIDA, awards: [], tender: { id: "1" } }, RISORSA_ANAC),
     ).toBeNull();
@@ -147,7 +143,9 @@ describe("oversight: mapping OCDS/ANAC (zero rete, zero disco)", () => {
 
   it("never-throw su input malformati", () => {
     expect(() => normalizzaOcdsVoce({}, RISORSA_ANAC)).not.toThrow();
-    expect(() => normalizzaOcdsVoce({ ocid: 1, buyer: [], tender: [] }, RISORSA_ANAC)).not.toThrow();
+    expect(() =>
+      normalizzaOcdsVoce({ ocid: 1, buyer: [], tender: [] }, RISORSA_ANAC),
+    ).not.toThrow();
     expect(() => ocdsDataIso({} as Record<string, unknown>)).not.toThrow();
     expect(normalizzaOcdsVoce({}, RISORSA_ANAC)).toBeNull();
   });
@@ -179,9 +177,7 @@ describe("oversight: mapping GA Focus (zero rete, zero disco)", () => {
     expect(normalizzaGaVoce(null)).toBeNull();
     expect(normalizzaGaVoce("")).toBeNull();
     expect(normalizzaGaVoce("<article></article>")).toBeNull();
-    expect(
-      normalizzaGaVoce(ARTICOLO_FOCUS.replace("28 agosto 2026", "28 agosto 2024")),
-    ).toBeNull();
+    expect(normalizzaGaVoce(ARTICOLO_FOCUS.replace("28 agosto 2026", "28 agosto 2024"))).toBeNull();
     expect(
       normalizzaGaVoce(
         ARTICOLO_FOCUS.replace(

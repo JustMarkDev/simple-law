@@ -43,7 +43,12 @@ export async function GET(request: Request) {
     });
   } catch (error) {
     const dettaglio = error instanceof Error ? error.message : "Errore sconosciuto";
-    await recordIngestRun({ source: "governo+seed", status: "error", detail: dettaglio, startedAt });
+    await recordIngestRun({
+      source: "governo+seed",
+      status: "error",
+      detail: dettaglio,
+      startedAt,
+    });
     return NextResponse.json({ ok: false, error: dettaglio, db: Boolean(getPrisma()) });
   }
 }

@@ -2,8 +2,8 @@
  * smoke-live.mjs — live smoke test per SimpleLaw Italia.
  *
  * Uso:
- *   1. npm run build      (OBBLIGATORIO prima: `next start` serve la build di produzione)
- *   2. npm run smoke      (= `node scripts/smoke-live.mjs`)
+ *   1. bun run build      (OBBLIGATORIO prima: `next start` serve la build di produzione)
+ *   2. bun run smoke      (= `node scripts/smoke-live.mjs`)
  *
  * Cosa fa:
  *   - avvia `next start -p 3199` come processo figlio,
@@ -31,17 +31,14 @@ const POLL_MS = 500;
 
 function get(path) {
   return new Promise((resolve, reject) => {
-    const req = http.get(
-      { host: HOST, port: PORT, path, timeout: 10000 },
-      (res) => {
-        const chunks = [];
-        res.on("data", (c) => chunks.push(c));
-        res.on("end", () => {
-          const body = Buffer.concat(chunks).toString("utf8");
-          resolve({ status: res.statusCode ?? 0, headers: res.headers, body });
-        });
-      },
-    );
+    const req = http.get({ host: HOST, port: PORT, path, timeout: 10000 }, (res) => {
+      const chunks = [];
+      res.on("data", (c) => chunks.push(c));
+      res.on("end", () => {
+        const body = Buffer.concat(chunks).toString("utf8");
+        resolve({ status: res.statusCode ?? 0, headers: res.headers, body });
+      });
+    });
     req.on("timeout", () => req.destroy(new Error(`timeout GET ${path}`)));
     req.on("error", reject);
   });
@@ -132,7 +129,9 @@ async function main() {
           ? json.count
           : NaN;
     if (!Number.isFinite(totale) || totale <= 0) {
-      fail(`conteggio totale non valido (header=${api.headers["x-total-count"]} json.total=${json?.total})`);
+      fail(
+        `conteggio totale non valido (header=${api.headers["x-total-count"]} json.total=${json?.total})`,
+      );
     }
     ok(`/api/leggi totale reale = ${totale}`);
     if (!Array.isArray(json?.items) || json.items.length === 0) {
@@ -142,7 +141,8 @@ async function main() {
     if (typeof titolo0 !== "string" || titolo0.trim() === "") {
       fail("GET /api/leggi?per=2 -> items[0].titolo mancante o vuoto");
     }
-    if (titolo0.includes("Variante")) fail(`items[0].titolo contiene "Variante": ${titolo0.slice(0, 120)}`);
+    if (titolo0.includes("Variante"))
+      fail(`items[0].titolo contiene "Variante": ${titolo0.slice(0, 120)}`);
     ok(`items[0].titolo reale = ${titolo0.slice(0, 80)}`);
 
     // --- (1) GET / ---
@@ -152,7 +152,9 @@ async function main() {
     const varianti = conteggioVarianti(totale);
     const contieneTotale = varianti.some((v) => home.body.includes(v));
     if (!contieneTotale) {
-      fail(`GET / -> HTML non contiene il conteggio totale ${totale} (provato: ${varianti.join(", ")})`);
+      fail(
+        `GET / -> HTML non contiene il conteggio totale ${totale} (provato: ${varianti.join(", ")})`,
+      );
     }
     ok(`GET / 200, contiene totale ${totale}, senza "Variante "`);
 

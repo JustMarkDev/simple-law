@@ -1,8 +1,8 @@
-import { splitEvidenzia } from '@/lib/validation'
+import { splitEvidenzia } from "@/lib/validation";
 
 /** Evidenzia i termini di `q` in `testo` con <mark>. Sicuro: mai dangerouslySetInnerHTML. */
 export default function Evidenzia({ testo, q }: { testo: string; q: string }) {
-  const parti = splitEvidenzia(testo, q)
+  const parti = splitEvidenzia(testo, q);
   return (
     <>
       {parti.map((parte, i) =>
@@ -15,5 +15,5 @@ export default function Evidenzia({ testo, q }: { testo: string; q: string }) {
         ),
       )}
     </>
-  )
+  );
 }

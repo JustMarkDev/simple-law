@@ -1,40 +1,58 @@
-import type { Metadata } from 'next'
-import Link from 'next/link'
-import Header from '@/components/Header'
-import Footer from '@/components/Footer'
-import TrafficLight from '@/components/TrafficLight'
-import { STATO_META, type Stato } from '@/components/seed-fallback'
+import type { Metadata } from "next";
+import Link from "next/link";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
+import { STATO_META, type Stato } from "@/components/seed-fallback";
 
 export const metadata: Metadata = {
-  title: 'Metodologia - Stato della Repubblica',
-  description: 'Come costruiamo le schede: template a 5 riquadri, semaforo di attuazione, leggibilità e limiti.',
-}
+  title: "Metodologia - Stato della Repubblica",
+  description:
+    "Come costruiamo le schede: template a 5 riquadri, semaforo di attuazione, leggibilità e limiti.",
+};
 
 const RIQUADRI = [
-  { titolo: '1. In 10 secondi', testo: 'La norma in una frase. Serve a capire subito se vale la pena leggere il resto.' },
-  { titolo: '2. Riguarda te?', testo: 'Quattro punti di vista - Guida, Lavoro, Impresa, Studio - per trovare la tua situazione.' },
-  { titolo: '3. Cosa fare', testo: 'I passi concreti: cosa controllare, cosa preparare, entro quando.' },
-  { titolo: '4. Funziona già?', testo: 'Il semaforo dice se la norma è attiva o se servono decreti attuativi.' },
-  { titolo: '5. Bene o male?', testo: 'Punti a favore e critici, con indicatori di qualità e leggibilità. Fatti, non opinioni.' },
-]
+  {
+    titolo: "1. In 10 secondi",
+    testo: "La norma in una frase. Serve a capire subito se vale la pena leggere il resto.",
+  },
+  {
+    titolo: "2. Riguarda te?",
+    testo:
+      "Quattro punti di vista - Guida, Lavoro, Impresa, Studio - per trovare la tua situazione.",
+  },
+  {
+    titolo: "3. Cosa fare",
+    testo: "I passi concreti: cosa controllare, cosa preparare, entro quando.",
+  },
+  {
+    titolo: "4. Funziona già?",
+    testo: "Il semaforo dice se la norma è attiva o se servono decreti attuativi.",
+  },
+  {
+    titolo: "5. Bene o male?",
+    testo:
+      "Punti a favore e critici, con indicatori di qualità e leggibilità. Fatti, non opinioni.",
+  },
+];
 
-const STATI: Stato[] = ['verde', 'giallo', 'rosso']
+const STATI: Stato[] = ["verde", "giallo", "rosso"];
 
 export default function MetodologiaPage() {
   return (
     <>
       <Header />
-      <main id="contenuto" className="mx-auto w-full max-w-editoriale px-4 py-10 sm:px-6 sm:py-12 lg:px-8">
+      <main
+        id="contenuto"
+        className="mx-auto w-full max-w-editoriale px-4 py-10 sm:px-6 sm:py-12 lg:px-8"
+      >
         <header className="border-b-2 border-inchiostro pb-5 dark:border-nebbia">
-          <p className="text-sm font-bold text-accento dark:text-accento-chiara">
-            Come lavoriamo
-          </p>
+          <p className="text-sm font-bold text-accento dark:text-accento-chiara">Come lavoriamo</p>
           <h1 className="mt-2 text-3xl font-bold text-inchiostro dark:text-nebbia sm:text-4xl">
             Metodologia
           </h1>
           <p className="mt-3 text-sm leading-relaxed text-inchiostro-soft dark:text-nebbia-soft">
-            Regole semplici e dichiarate: poche frasi, fonti verificabili e nessuna valutazione presentata come
-            ufficiale. Qui spieghiamo come nasce ogni scheda.
+            Regole semplici e dichiarate: poche frasi, fonti verificabili e nessuna valutazione
+            presentata come ufficiale. Qui spieghiamo come nasce ogni scheda.
           </p>
         </header>
 
@@ -44,8 +62,13 @@ export default function MetodologiaPage() {
           </h2>
           <ol className="mt-4 grid gap-3 sm:grid-cols-2">
             {RIQUADRI.map((riquadro) => (
-              <li key={riquadro.titolo} className="rounded-2xl border border-regola bg-carta p-4 dark:border-notte-deep dark:bg-notte-soft">
-                <h3 className="text-sm font-bold text-inchiostro dark:text-nebbia">{riquadro.titolo}</h3>
+              <li
+                key={riquadro.titolo}
+                className="rounded-2xl border border-regola bg-carta p-4 dark:border-notte-deep dark:bg-notte-soft"
+              >
+                <h3 className="text-sm font-bold text-inchiostro dark:text-nebbia">
+                  {riquadro.titolo}
+                </h3>
                 <p className="mt-1.5 text-sm leading-relaxed text-inchiostro-soft dark:text-nebbia-soft">
                   {riquadro.testo}
                 </p>
@@ -60,13 +83,15 @@ export default function MetodologiaPage() {
           </h2>
           <div className="mt-3 space-y-3 text-sm leading-relaxed text-inchiostro-soft dark:text-nebbia-soft">
             <p>
-              Ogni scheda viene semplificata automaticamente a partire dai dati della norma: sintesi, testo disponibile,
-              stato dei decreti attuativi e indicatori di qualità. Non serve incollare testi né configurare chiavi API.
+              Ogni scheda viene semplificata automaticamente a partire dai dati della norma:
+              sintesi, testo disponibile, stato dei decreti attuativi e indicatori di qualità. Non
+              serve incollare testi né configurare chiavi API.
             </p>
             <p>
-              Quando il corpus conserva una versione redazionale della semplificazione, la scheda la preferisce; altrimenti
-              la deriva sul momento con le stesse regole. In entrambi i casi il risultato è una bozza divulgativa: fa
-              sempre fede il testo pubblicato in Gazzetta Ufficiale.
+              Quando il corpus conserva una versione redazionale della semplificazione, la scheda la
+              preferisce; altrimenti la deriva sul momento con le stesse regole. In entrambi i casi
+              il risultato è una bozza divulgativa: fa sempre fede il testo pubblicato in Gazzetta
+              Ufficiale.
             </p>
           </div>
         </section>
@@ -76,14 +101,18 @@ export default function MetodologiaPage() {
             Il semaforo di attuazione
           </h2>
           <p className="mt-2 text-sm leading-relaxed text-inchiostro-soft dark:text-nebbia-soft">
-            Una legge può essere approvata ma non ancora applicabile. Il semaforo riassume lo stato partendo dai decreti
-            attuativi previsti.
+            Una legge può essere approvata ma non ancora applicabile. Il semaforo riassume lo stato
+            partendo dai decreti attuativi previsti.
           </p>
           <ul className="mt-4 space-y-3">
             {STATI.map((stato) => (
-              <li key={stato} className={`border p-4 ${STATO_META[stato].bg} ${STATO_META[stato].ring}`}>
-                <TrafficLight stato={stato} showLabel={false} />
-                <p className={`mt-2 text-sm font-bold ${STATO_META[stato].text}`}>{STATO_META[stato].label}</p>
+              <li
+                key={stato}
+                className={`border border-gray-200 p-4 ${STATO_META[stato].bg} ${STATO_META[stato].ring}`}
+              >
+                <p className={`mt-2 text-sm font-bold ${STATO_META[stato].text}`}>
+                  {STATO_META[stato].label}
+                </p>
                 <p className="mt-1 text-sm leading-relaxed text-inchiostro-soft dark:text-nebbia-soft">
                   {STATO_META[stato].descrizione}
                 </p>
@@ -98,8 +127,8 @@ export default function MetodologiaPage() {
           </h2>
           <div className="mt-3 space-y-3 text-sm leading-relaxed text-inchiostro-soft dark:text-nebbia-soft">
             <p>
-              Usiamo l’indice Gulpease, pensato per l’italiano. Il punteggio va da 0 a 100: più è alto, più il testo è
-              facile. La formula combina numero di frasi, lettere e parole:
+              Usiamo l’indice Gulpease, pensato per l’italiano. Il punteggio va da 0 a 100: più è
+              alto, più il testo è facile. La formula combina numero di frasi, lettere e parole:
             </p>
             <p className="border border-regola bg-carta-soft p-3 font-mono text-xs text-inchiostro dark:border-notte-deep dark:bg-notte-soft dark:text-nebbia">
               89 + (300 × frasi − 10 × lettere) ÷ parole
@@ -111,9 +140,13 @@ export default function MetodologiaPage() {
               <li>&lt; 40: difficile, tipico dei testi tecnici.</li>
             </ul>
             <p>
-              Nelle schede puntiamo al livello B1: frasi brevi (di norma massimo 15 parole) e lessico comune. È lo stesso
-              registro che applichiamo alla semplificazione automatica, visibile in ogni{' '}
-              <Link href="/leggi" className="font-semibold text-accento underline underline-offset-2 dark:text-accento-chiara">
+              Nelle schede puntiamo al livello B1: frasi brevi (di norma massimo 15 parole) e
+              lessico comune. È lo stesso registro che applichiamo alla semplificazione automatica,
+              visibile in ogni{" "}
+              <Link
+                href="/leggi"
+                className="font-semibold text-accento underline underline-offset-2 dark:text-accento-chiara"
+              >
                 scheda di legge
               </Link>
               .
@@ -126,8 +159,8 @@ export default function MetodologiaPage() {
             Qualità della regolazione
           </h2>
           <p className="mt-2 text-sm leading-relaxed text-inchiostro-soft dark:text-nebbia-soft">
-            Il punteggio di qualità è un’euristica trasparente su tre assi. Non è una valutazione ufficiale e non
-            giudica il merito politico della norma.
+            Il punteggio di qualità è un’euristica trasparente su tre assi. Non è una valutazione
+            ufficiale e non giudica il merito politico della norma.
           </p>
           <dl className="mt-4 grid gap-5 sm:grid-cols-3">
             <div className="rounded-2xl border border-regola bg-carta p-5 dark:border-notte-deep dark:bg-notte-soft">
@@ -151,22 +184,35 @@ export default function MetodologiaPage() {
           </dl>
         </section>
 
-        <section aria-labelledby="limiti" className="mt-10 border border-regola bg-carta p-5 dark:border-notte-deep dark:bg-notte-soft sm:p-6">
+        <section
+          aria-labelledby="limiti"
+          className="mt-10 border border-regola bg-carta p-5 dark:border-notte-deep dark:bg-notte-soft sm:p-6"
+        >
           <h2 id="limiti" className="text-xl font-bold text-inchiostro dark:text-nebbia">
             Limiti e correzioni
           </h2>
           <ul className="mt-3 space-y-2 text-sm leading-relaxed text-inchiostro-soft dark:text-nebbia-soft">
             <li className="flex gap-2">
-              <span aria-hidden="true" className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accento dark:bg-accento-chiara" />
-              Le schede sono rielaborazioni divulgative: fa sempre fede il testo pubblicato in Gazzetta Ufficiale.
+              <span
+                aria-hidden="true"
+                className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accento dark:bg-accento-chiara"
+              />
+              Le schede sono rielaborazioni divulgative: fa sempre fede il testo pubblicato in
+              Gazzetta Ufficiale.
             </li>
             <li className="flex gap-2">
-              <span aria-hidden="true" className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accento dark:bg-accento-chiara" />
+              <span
+                aria-hidden="true"
+                className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accento dark:bg-accento-chiara"
+              />
               Indicatori e punteggi sono euristiche dichiarate, aggiornabili quando emergono errori.
             </li>
             <li className="flex gap-2">
-              <span aria-hidden="true" className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accento dark:bg-accento-chiara" />
-              I contenuti sono rilasciati con licenza{' '}
+              <span
+                aria-hidden="true"
+                className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accento dark:bg-accento-chiara"
+              />
+              I contenuti sono rilasciati con licenza{" "}
               <a
                 href="https://creativecommons.org/licenses/by/4.0/deed.it"
                 target="_blank"
@@ -182,5 +228,5 @@ export default function MetodologiaPage() {
       </main>
       <Footer />
     </>
-  )
+  );
 }

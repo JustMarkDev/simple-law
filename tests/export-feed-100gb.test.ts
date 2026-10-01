@@ -1,4 +1,4 @@
-import { beforeEach, describe, expect, it, vi } from "vitest";
+import { beforeEach, describe, expect, it, vi } from "vite-plus/test";
 import type { LawRecordExtra } from "@/lib/db";
 
 vi.mock("@/lib/db", () => ({
@@ -9,7 +9,12 @@ vi.mock("@/lib/db", () => ({
 }));
 
 import { countLaws, getLawsFromDBorSeed, listLaws, queryLaws } from "@/lib/db";
-import { EXPORT_BATCH, EXPORT_CAP, GET as exportGET, azzeraLimiteExport } from "@/app/api/export/route";
+import {
+  EXPORT_BATCH,
+  EXPORT_CAP,
+  GET as exportGET,
+  azzeraLimiteExport,
+} from "@/app/api/export/route";
 import { FEED_MAX, GET as feedGET } from "@/app/api/feed/route";
 
 function riga(indice: number, titolo?: string): LawRecordExtra {
@@ -113,7 +118,10 @@ describe("export: filtri e limiti", () => {
     expect(bytes[1]).toBe(0xbb);
     expect(bytes[2]).toBe(0xbf);
     const testo = await res.text();
-    const righe = testo.replace(/^\uFEFF/, "").split("\r\n").filter((l) => l.length > 0);
+    const righe = testo
+      .replace(/^\uFEFF/, "")
+      .split("\r\n")
+      .filter((l) => l.length > 0);
     expect(righe[0]).toBe(
       "eli,nir,tipo,numero,dataEmanazione,titolo,stato,gulpease,qualita,codiceRedazionale,dataGU,numeroGU",
     );
@@ -187,7 +195,7 @@ describe("export: anti-injection CSV", () => {
       "|pipe",
       "%percento",
       "\tTabulazione",
-      "\"virgolette\"",
+      '"virgolette"',
       "  =spazi prima",
       " =nbsp prima",
       "‪=bidi ltr",
@@ -213,7 +221,10 @@ describe("export: anti-injection CSV", () => {
     expect(csv).not.toContain("\n'Titolo normale");
     // La riga con virgola resta quotata dopo la protezione.
     expect(csv).toContain(`"'=1,2 con virgola"`);
-    const righe = csv.replace(/^\uFEFF/, "").split("\r\n").slice(1);
+    const righe = csv
+      .replace(/^\uFEFF/, "")
+      .split("\r\n")
+      .slice(1);
     expect(righe.filter((l) => l.length > 0).length).toBe(pericolosi.length);
   });
 });

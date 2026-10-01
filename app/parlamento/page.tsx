@@ -1,27 +1,27 @@
-import type { Metadata } from 'next'
-import Link from 'next/link'
-import Header from '@/components/Header'
-import Footer from '@/components/Footer'
+import type { Metadata } from "next";
+import Link from "next/link";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 import {
   tuttiDeputati,
   tuttiSenatori,
   contaPerGruppo,
   leggiProvenance,
-} from '@/lib/parlamento-dati'
+} from "@/lib/parlamento-dati";
 
 export const metadata: Metadata = {
-  title: 'Parlamento - Legislatura 19 - Stato della Repubblica',
+  title: "Parlamento - Legislatura 19 - Stato della Repubblica",
   description:
-    'Camera e Senato della legislatura 19: 414 deputati, 212 senatori e i gruppi parlamentari, dai dati reali di Camera e Senato.',
-}
+    "Camera e Senato della legislatura 19: 414 deputati, 212 senatori e i gruppi parlamentari, dai dati reali di Camera e Senato.",
+};
 
 function dataIT(iso: string): string {
   try {
-    const d = new Date(iso)
-    if (Number.isNaN(d.getTime())) return iso.slice(0, 10)
-    return d.toLocaleDateString('it-IT', { day: 'numeric', month: 'long', year: 'numeric' })
+    const d = new Date(iso);
+    if (Number.isNaN(d.getTime())) return iso.slice(0, 10);
+    return d.toLocaleDateString("it-IT", { day: "numeric", month: "long", year: "numeric" });
   } catch {
-    return iso.slice(0, 10)
+    return iso.slice(0, 10);
   }
 }
 
@@ -30,36 +30,39 @@ function iniziali(nome: string): string {
     .split(/\s+/)
     .filter(Boolean)
     .slice(0, 2)
-    .map((p) => p[0]?.toUpperCase() ?? '')
-    .join('')
+    .map((p) => p[0]?.toUpperCase() ?? "")
+    .join("");
 }
 
 export default async function ParlamentoPage() {
-  const [deputati, senatori] = await Promise.all([tuttiDeputati(), tuttiSenatori()])
-  const nDep = deputati.length
-  const nSen = senatori.length
-  let nGruppiCamera = 0
+  const [deputati, senatori] = await Promise.all([tuttiDeputati(), tuttiSenatori()]);
+  const nDep = deputati.length;
+  const nSen = senatori.length;
+  let nGruppiCamera = 0;
   try {
-    nGruppiCamera = (await contaPerGruppo(deputati)).length
+    nGruppiCamera = (await contaPerGruppo(deputati)).length;
   } catch {
-    nGruppiCamera = 0
+    nGruppiCamera = 0;
   }
 
-  let provCamera: { recuperatoIl?: string } | null = null
-  let provSenato: { recuperatoIl?: string } | null = null
+  let provCamera: { recuperatoIl?: string } | null = null;
+  let provSenato: { recuperatoIl?: string } | null = null;
   try {
-    const prov = await leggiProvenance()
-    provCamera = prov.camera ?? null
-    provSenato = prov.senato ?? null
+    const prov = await leggiProvenance();
+    provCamera = prov.camera ?? null;
+    provSenato = prov.senato ?? null;
   } catch {
-    provCamera = null
-    provSenato = null
+    provCamera = null;
+    provSenato = null;
   }
 
   return (
     <>
       <Header />
-      <main id="contenuto" className="mx-auto w-full max-w-editoriale px-4 py-10 sm:px-6 sm:py-12 lg:px-8">
+      <main
+        id="contenuto"
+        className="mx-auto w-full max-w-editoriale px-4 py-10 sm:px-6 sm:py-12 lg:px-8"
+      >
         <nav aria-label="Percorso" className="text-sm text-inchiostro-soft dark:text-nebbia-soft">
           <ol className="flex items-center gap-2">
             <li>
@@ -75,9 +78,7 @@ export default async function ParlamentoPage() {
         </nav>
 
         <header className="mt-4 border-b-2 border-inchiostro pb-5 dark:border-nebbia">
-          <p className="text-sm font-bold text-accento dark:text-accento-chiara">
-            Legislatura 19
-          </p>
+          <p className="text-sm font-bold text-accento dark:text-accento-chiara">Legislatura 19</p>
           <h1 className="mt-2 text-3xl font-bold text-inchiostro dark:text-nebbia sm:text-4xl">
             Parlamento - Legislatura 19
           </h1>
@@ -95,9 +96,7 @@ export default async function ParlamentoPage() {
               href="/parlamento/deputati"
               className="flex min-h-[48px] w-full flex-col gap-2 border border-regola bg-carta p-5 transition-colors hover:border-accento focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-inchiostro dark:border-notte-deep dark:bg-notte-soft dark:hover:border-nebbia dark:focus-visible:outline-nebbia"
             >
-              <span className="text-xl font-bold text-inchiostro dark:text-nebbia">
-                Deputati
-              </span>
+              <span className="text-xl font-bold text-inchiostro dark:text-nebbia">Deputati</span>
               <span className="text-sm text-inchiostro-soft dark:text-nebbia-soft">
                 {nDep} schede della Camera · cerca per nome, filtra per gruppo.
               </span>
@@ -111,9 +110,7 @@ export default async function ParlamentoPage() {
               href="/parlamento/senatori"
               className="flex min-h-[48px] w-full flex-col gap-2 border border-regola bg-carta p-5 transition-colors hover:border-accento focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-inchiostro dark:border-notte-deep dark:bg-notte-soft dark:hover:border-nebbia dark:focus-visible:outline-nebbia"
             >
-              <span className="text-xl font-bold text-inchiostro dark:text-nebbia">
-                Senatori
-              </span>
+              <span className="text-xl font-bold text-inchiostro dark:text-nebbia">Senatori</span>
               <span className="text-sm text-inchiostro-soft dark:text-nebbia-soft">
                 {nSen} schede del Senato · con foto ufficiale quando disponibile.
               </span>
@@ -127,9 +124,7 @@ export default async function ParlamentoPage() {
               href="/parlamento/gruppi"
               className="flex min-h-[48px] w-full flex-col gap-2 border border-regola bg-carta p-5 transition-colors hover:border-accento focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-inchiostro dark:border-notte-deep dark:bg-notte-soft dark:hover:border-nebbia dark:focus-visible:outline-nebbia"
             >
-              <span className="text-xl font-bold text-inchiostro dark:text-nebbia">
-                Gruppi
-              </span>
+              <span className="text-xl font-bold text-inchiostro dark:text-nebbia">Gruppi</span>
               <span className="text-sm text-inchiostro-soft dark:text-nebbia-soft">
                 {nGruppiCamera} gruppi della Camera · consistenza contata dai dati.
               </span>
@@ -186,7 +181,9 @@ export default async function ParlamentoPage() {
                       </Link>
                     </p>
                     {d.gruppo && (
-                      <p className="truncate text-xs text-inchiostro-soft dark:text-nebbia-soft">{d.gruppo}</p>
+                      <p className="truncate text-xs text-inchiostro-soft dark:text-nebbia-soft">
+                        {d.gruppo}
+                      </p>
                     )}
                   </div>
                 </li>
@@ -203,17 +200,23 @@ export default async function ParlamentoPage() {
             Fonti e licenze
           </h2>
           <p className="mt-2 text-sm leading-relaxed text-inchiostro-soft dark:text-nebbia-soft">
-            Camera: dati.camera.it - CC BY-SA 4.0, Senato: dati.senato.it - CC BY 3.0 IT · legislatura 19
-            {provCamera?.recuperatoIl ? ` · dati Camera aggiornati al ${dataIT(provCamera.recuperatoIl)}` : ''}
-            {provSenato?.recuperatoIl ? ` · dati Senato aggiornati al ${dataIT(provSenato.recuperatoIl)}` : ''}.
+            Camera: dati.camera.it - CC BY-SA 4.0, Senato: dati.senato.it - CC BY 3.0 IT ·
+            legislatura 19
+            {provCamera?.recuperatoIl
+              ? ` · dati Camera aggiornati al ${dataIT(provCamera.recuperatoIl)}`
+              : ""}
+            {provSenato?.recuperatoIl
+              ? ` · dati Senato aggiornati al ${dataIT(provSenato.recuperatoIl)}`
+              : ""}
+            .
           </p>
           <p className="mt-2 text-xs leading-relaxed text-inchiostro-faint dark:text-nebbia-faint">
-            Gruppi e foto mostrati solo quando presenti nei dati reali. Nessun collegio disponibile nei dati della
-            Camera: la voce è omessa, mai riempita.
+            Gruppi e foto mostrati solo quando presenti nei dati reali. Nessun collegio disponibile
+            nei dati della Camera: la voce è omessa, mai riempita.
           </p>
         </section>
       </main>
       <Footer />
     </>
-  )
+  );
 }

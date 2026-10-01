@@ -119,3 +119,11 @@ export function livelloSemplice(gulpease: number): LivelloLettura {
   if (gulpease >= 60) return "medio";
   return "difficile";
 }
+
+/** Etichetta in parole per l'indice Gulpease (scala per titolo di studio). */
+export function paroleLeggibilita(gulpease: number): string {
+  if (gulpease >= 80) return "Facile per quasi tutti";
+  if (gulpease >= 60) return "Facile con la licenza media";
+  if (gulpease >= 40) return "Serve almeno il diploma";
+  return "Difficile anche con il diploma";
+}

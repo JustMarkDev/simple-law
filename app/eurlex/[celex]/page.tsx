@@ -1,10 +1,10 @@
-import type { Metadata } from 'next'
-import Link from 'next/link'
-import { notFound } from 'next/navigation'
-import { promises as fs } from 'node:fs'
-import path from 'node:path'
-import Header from '@/components/Header'
-import Footer from '@/components/Footer'
+import type { Metadata } from "next";
+import Link from "next/link";
+import { notFound } from "next/navigation";
+import { promises as fs } from "node:fs";
+import path from "node:path";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 import {
   attiCollegatiPerDirettiva,
   attiPerDirettiva,
@@ -15,20 +15,20 @@ import {
   tuttiAttiUe,
   type AttoCollegato,
   type AttoRecepimento,
-} from '@/lib/eurlex-dati'
+} from "@/lib/eurlex-dati";
 
 interface DettaglioProps {
-  params: Promise<{ celex: string }>
+  params: Promise<{ celex: string }>;
 }
 
 function dataIT(iso?: string): string {
   try {
-    if (!iso) return 'non indicata'
-    const d = new Date(`${iso}T00:00:00Z`)
-    if (Number.isNaN(d.getTime())) return iso.slice(0, 10)
-    return d.toLocaleDateString('it-IT', { day: 'numeric', month: 'long', year: 'numeric' })
+    if (!iso) return "non indicata";
+    const d = new Date(`${iso}T00:00:00Z`);
+    if (Number.isNaN(d.getTime())) return iso.slice(0, 10);
+    return d.toLocaleDateString("it-IT", { day: "numeric", month: "long", year: "numeric" });
   } catch {
-    return (iso ?? '').slice(0, 10)
+    return (iso ?? "").slice(0, 10);
   }
 }
 
@@ -38,94 +38,100 @@ function dataIT(iso?: string): string {
  * ------------------------------------------------------------------------- */
 
 interface AttoIT {
-  titoloNim: string
-  tipoNim: string
-  ojData: string
-  chiaveNormattiva?: string
-  eliNormattiva?: string
+  titoloNim: string;
+  tipoNim: string;
+  ojData: string;
+  chiaveNormattiva?: string;
+  eliNormattiva?: string;
 }
 
 interface RigaRecepimento {
-  celexDirettiva: string
-  termineUE?: string
-  haNimITA: 'sì' | 'no'
-  numNimTot: number
-  attiIT: AttoIT[]
-  nota: string
+  celexDirettiva: string;
+  termineUE?: string;
+  haNimITA: "sì" | "no";
+  numNimTot: number;
+  attiIT: AttoIT[];
+  nota: string;
 }
 
-const PERCORSO_RECEPIMENTI = path.join(process.cwd(), 'data', 'reali', 'eurlex-recepimenti.json')
+const PERCORSO_RECEPIMENTI = path.join(process.cwd(), "data", "reali", "eurlex-recepimenti.json");
 
 function stringaBreve(value: unknown, max: number): string {
   try {
-    return typeof value === 'string' ? value.trim().slice(0, max) : ''
+    return typeof value === "string" ? value.trim().slice(0, max) : "";
   } catch {
-    return ''
+    return "";
   }
 }
 
 async function leggiRecepimento(celex: string): Promise<RigaRecepimento | null> {
   try {
-    const chiave = (celex ?? '').trim().toUpperCase()
-    if (!/^3\d{4}L\d{1,4}$/.test(chiave)) return null
-    const stat = await fs.stat(PERCORSO_RECEPIMENTI)
-    if (!stat.isFile() || stat.size > 50 * 1024) return null
-    const raw = await fs.readFile(PERCORSO_RECEPIMENTI, 'utf8')
-    const parsed: unknown = JSON.parse(raw)
-    const o0 = (typeof parsed === 'object' && parsed !== null ? parsed : {}) as Record<string, unknown>
+    const chiave = (celex ?? "").trim().toUpperCase();
+    if (!/^3\d{4}L\d{1,4}$/.test(chiave)) return null;
+    const stat = await fs.stat(PERCORSO_RECEPIMENTI);
+    if (!stat.isFile() || stat.size > 50 * 1024) return null;
+    const raw = await fs.readFile(PERCORSO_RECEPIMENTI, "utf8");
+    const parsed: unknown = JSON.parse(raw);
+    const o0 = (typeof parsed === "object" && parsed !== null ? parsed : {}) as Record<
+      string,
+      unknown
+    >;
     const righe: unknown[] = Array.isArray(parsed)
       ? parsed
-      : Array.isArray(o0['righe'])
-        ? (o0['righe'] as unknown[])
-        : Array.isArray(o0['direttive'])
-          ? (o0['direttive'] as unknown[])
-          : []
+      : Array.isArray(o0["righe"])
+        ? (o0["righe"] as unknown[])
+        : Array.isArray(o0["direttive"])
+          ? (o0["direttive"] as unknown[])
+          : [];
     for (const voce of righe) {
       try {
-        if (typeof voce !== 'object' || voce === null) continue
-        const o = voce as Record<string, unknown>
-        const celexRiga = stringaBreve(o['celexDirettiva'], 16).toUpperCase()
-        if (celexRiga !== chiave) continue
-        const haNim = stringaBreve(o['haNimITA'], 4).toLowerCase()
-        const numRaw = o['numNimTot']
-        const attiRaw = Array.isArray(o['attiIT'])
-          ? (o['attiIT'] as unknown[])
-          : Array.isArray(o['atti'])
-            ? (o['atti'] as unknown[])
-            : []
-        const attiIT: AttoIT[] = []
+        if (typeof voce !== "object" || voce === null) continue;
+        const o = voce as Record<string, unknown>;
+        const celexRiga = stringaBreve(o["celexDirettiva"], 16).toUpperCase();
+        if (celexRiga !== chiave) continue;
+        const haNim = stringaBreve(o["haNimITA"], 4).toLowerCase();
+        const numRaw = o["numNimTot"];
+        const attiRaw = Array.isArray(o["attiIT"])
+          ? (o["attiIT"] as unknown[])
+          : Array.isArray(o["atti"])
+            ? (o["atti"] as unknown[])
+            : [];
+        const attiIT: AttoIT[] = [];
         for (const a of attiRaw.slice(0, 50)) {
           try {
-            if (typeof a !== 'object' || a === null) continue
-            const ao = a as Record<string, unknown>
-            const titoloNim = stringaBreve(ao['titoloNim'], 500)
-            if (!titoloNim) continue
+            if (typeof a !== "object" || a === null) continue;
+            const ao = a as Record<string, unknown>;
+            const titoloNim = stringaBreve(ao["titoloNim"], 500);
+            if (!titoloNim) continue;
             attiIT.push({
               titoloNim,
-              tipoNim: stringaBreve(ao['tipoNim'], 80),
-              ojData: stringaBreve(ao['ojData'], 16),
-              chiaveNormattiva: stringaBreve(ao['chiaveNormattiva'], 200) || undefined,
-              eliNormattiva: stringaBreve(ao['eliNormattiva'], 200) || undefined,
-            })
+              tipoNim: stringaBreve(ao["tipoNim"], 80),
+              ojData: stringaBreve(ao["ojData"], 16),
+              chiaveNormattiva: stringaBreve(ao["chiaveNormattiva"], 200) || undefined,
+              eliNormattiva: stringaBreve(ao["eliNormattiva"], 200) || undefined,
+            });
           } catch {
-            continue
+            continue;
           }
         }
         return {
           celexDirettiva: chiave,
-          termineUE: stringaBreve(o['termineUE'], 16) || undefined,
-          haNimITA: haNim === 'sì' || haNim === 'si' ? 'sì' : 'no',
-          numNimTot: typeof numRaw === 'number' && Number.isFinite(numRaw) && numRaw >= 0 ? Math.floor(numRaw) : attiIT.length,
+          termineUE: stringaBreve(o["termineUE"], 16) || undefined,
+          haNimITA: haNim === "sì" || haNim === "si" ? "sì" : "no",
+          numNimTot:
+            typeof numRaw === "number" && Number.isFinite(numRaw) && numRaw >= 0
+              ? Math.floor(numRaw)
+              : attiIT.length,
           attiIT,
-          nota: stringaBreve(o['nota'], 300),
-        }
+          nota: stringaBreve(o["nota"], 300),
+        };
       } catch {
-        continue
+        continue;
       }
     }
-    return null
+    return null;
   } catch {
-    return null
+    return null;
   }
 }
 
@@ -133,75 +139,80 @@ async function leggiRecepimento(celex: string): Promise<RigaRecepimento | null> 
 function hrefLegge(atto: AttoIT): string | null {
   try {
     for (const campo of [atto.eliNormattiva, atto.chiaveNormattiva]) {
-      const percorso = (campo ?? '').replace(/^\/+/, '').trim()
-      if (percorso && !/\s/.test(percorso) && !/^[a-z]+:/i.test(percorso)) return `/leggi/${percorso}`
+      const percorso = (campo ?? "").replace(/^\/+/, "").trim();
+      if (percorso && !/\s/.test(percorso) && !/^[a-z]+:/i.test(percorso))
+        return `/leggi/${percorso}`;
     }
-    return null
+    return null;
   } catch {
-    return null
+    return null;
   }
 }
 
 export async function generateStaticParams(): Promise<{ celex: string }[]> {
   try {
-    const atti = await tuttiAttiUe()
-    return atti.map((a) => ({ celex: a.celex }))
+    const atti = await tuttiAttiUe();
+    return atti.map((a) => ({ celex: a.celex }));
   } catch {
-    return []
+    return [];
   }
 }
 
 export async function generateMetadata({ params }: DettaglioProps): Promise<Metadata> {
   const base: Metadata = {
-    title: 'Atto UE - Stato della Repubblica',
-    description: 'Scheda di un atto UE 2026 dai dati ufficiali EUR-Lex CELLAR, con link al testo ufficiale.',
-  }
+    title: "Atto UE - Stato della Repubblica",
+    description:
+      "Scheda di un atto UE 2026 dai dati ufficiali EUR-Lex CELLAR, con link al testo ufficiale.",
+  };
   try {
-    const { celex } = await params
-    const atto = await trovaAttoUe(celex)
-    if (!atto) return base
+    const { celex } = await params;
+    const atto = await trovaAttoUe(celex);
+    if (!atto) return base;
     return {
       title: `${atto.celex} - ${etichettaTipo(atto.tipo)} - Stato della Repubblica`,
       description: `Scheda ${atto.celex} (${etichettaTipo(atto.tipo)}, ${dataIT(atto.data)}): metadati ufficiali CELLAR e link al testo su EUR-Lex.`,
-    }
+    };
   } catch {
-    return base
+    return base;
   }
 }
 
 export default async function AttoUePage({ params }: DettaglioProps) {
-  const { celex } = await params
-  const [atto, provenance] = await Promise.all([trovaAttoUe(celex), leggiProvenanceEurlex()])
-  if (!atto) notFound()
+  const { celex } = await params;
+  const [atto, provenance] = await Promise.all([trovaAttoUe(celex), leggiProvenanceEurlex()]);
+  if (!atto) notFound();
 
-  const eDirettiva = atto.tipo === 'DIR' || atto.tipo === 'DIR_IMPL' || atto.tipo === 'DIR_DEL'
-  const recepimento = eDirettiva ? await leggiRecepimento(atto.celex) : null
-  let collegati: AttoRecepimento[] = []
+  const eDirettiva = atto.tipo === "DIR" || atto.tipo === "DIR_IMPL" || atto.tipo === "DIR_DEL";
+  const recepimento = eDirettiva ? await leggiRecepimento(atto.celex) : null;
+  let collegati: AttoRecepimento[] = [];
   try {
-    collegati = eDirettiva ? await attiPerDirettiva(atto.celex) : []
+    collegati = eDirettiva ? await attiPerDirettiva(atto.celex) : [];
   } catch {
-    collegati = []
+    collegati = [];
   }
   // Atti Camera/Normattiva che citano esplicitamente la direttiva
   // (seconda mappa, indipendente dalle notifiche NTM).
-  let collegatiAtti: AttoCollegato[] = []
+  let collegatiAtti: AttoCollegato[] = [];
   try {
-    collegatiAtti = eDirettiva ? await attiCollegatiPerDirettiva(atto.celex) : []
+    collegatiAtti = eDirettiva ? await attiCollegatiPerDirettiva(atto.celex) : [];
   } catch {
-    collegatiAtti = []
+    collegatiAtti = [];
   }
 
   const vigenza =
     atto.inVigore === true
-      ? 'In vigore secondo CELLAR'
+      ? "In vigore secondo CELLAR"
       : atto.inVigore === false
-        ? 'Non in vigore secondo CELLAR'
-        : 'Vigenza non indicata da CELLAR'
+        ? "Non in vigore secondo CELLAR"
+        : "Vigenza non indicata da CELLAR";
 
   return (
     <>
       <Header />
-      <main id="contenuto" className="mx-auto w-full max-w-editoriale px-4 py-10 sm:px-6 sm:py-12 lg:px-8">
+      <main
+        id="contenuto"
+        className="mx-auto w-full max-w-editoriale px-4 py-10 sm:px-6 sm:py-12 lg:px-8"
+      >
         <nav aria-label="Percorso" className="text-sm text-inchiostro-soft dark:text-nebbia-soft">
           <ol className="flex flex-wrap items-center gap-2">
             <li>
@@ -244,27 +255,43 @@ export default async function AttoUePage({ params }: DettaglioProps) {
 
         <dl className="mt-6 grid gap-3 border border-regola bg-carta p-5 text-sm dark:border-notte-deep dark:bg-notte-soft sm:grid-cols-2">
           <div>
-            <dt className="text-xs font-semibold text-inchiostro-faint dark:text-nebbia-faint">Numero CELEX</dt>
+            <dt className="text-xs font-semibold text-inchiostro-faint dark:text-nebbia-faint">
+              Numero CELEX
+            </dt>
             <dd className="mt-1 font-medium text-inchiostro dark:text-nebbia">{atto.celex}</dd>
           </div>
           <div>
-            <dt className="text-xs font-semibold text-inchiostro-faint dark:text-nebbia-faint">Tipo di atto</dt>
-            <dd className="mt-1 text-inchiostro dark:text-nebbia">{etichettaTipo(atto.tipo)} ({atto.tipo})</dd>
+            <dt className="text-xs font-semibold text-inchiostro-faint dark:text-nebbia-faint">
+              Tipo di atto
+            </dt>
+            <dd className="mt-1 text-inchiostro dark:text-nebbia">
+              {etichettaTipo(atto.tipo)} ({atto.tipo})
+            </dd>
           </div>
           <div>
-            <dt className="text-xs font-semibold text-inchiostro-faint dark:text-nebbia-faint">Data del documento</dt>
+            <dt className="text-xs font-semibold text-inchiostro-faint dark:text-nebbia-faint">
+              Data del documento
+            </dt>
             <dd className="mt-1 text-inchiostro dark:text-nebbia">{dataIT(atto.data)}</dd>
           </div>
           <div>
-            <dt className="text-xs font-semibold text-inchiostro-faint dark:text-nebbia-faint">Vigenza</dt>
+            <dt className="text-xs font-semibold text-inchiostro-faint dark:text-nebbia-faint">
+              Vigenza
+            </dt>
             <dd className="mt-1 text-inchiostro dark:text-nebbia">{vigenza}</dd>
           </div>
           <div>
-            <dt className="text-xs font-semibold text-inchiostro-faint dark:text-nebbia-faint">Entrata in vigore</dt>
-            <dd className="mt-1 text-inchiostro dark:text-nebbia">{dataIT(atto.entrataInVigore)}</dd>
+            <dt className="text-xs font-semibold text-inchiostro-faint dark:text-nebbia-faint">
+              Entrata in vigore
+            </dt>
+            <dd className="mt-1 text-inchiostro dark:text-nebbia">
+              {dataIT(atto.entrataInVigore)}
+            </dd>
           </div>
           <div>
-            <dt className="text-xs font-semibold text-inchiostro-faint dark:text-nebbia-faint">Fine di validità</dt>
+            <dt className="text-xs font-semibold text-inchiostro-faint dark:text-nebbia-faint">
+              Fine di validità
+            </dt>
             <dd className="mt-1 text-inchiostro dark:text-nebbia">{dataIT(atto.fineValidita)}</dd>
           </div>
         </dl>
@@ -289,176 +316,216 @@ export default async function AttoUePage({ params }: DettaglioProps) {
         </div>
 
         {eDirettiva && (
-        <section
-          aria-labelledby="recepimento"
-          className="mt-10 border border-regola bg-carta p-5 dark:border-notte-deep dark:bg-notte-soft"
-        >
-          <h2 id="recepimento" className="text-lg font-bold text-inchiostro dark:text-nebbia">
-            Recepimento in Italia
-          </h2>
-          {recepimento ? (
-            <>
-              <dl className="mt-3 space-y-2 text-sm leading-relaxed text-inchiostro-soft dark:text-nebbia-soft">
-                <div className="flex flex-wrap gap-x-2">
-                  <dt className="font-semibold text-inchiostro dark:text-nebbia">Termine UE di recepimento:</dt>
-                  <dd>{recepimento.termineUE ? dataIT(recepimento.termineUE) : 'non rilevato'}</dd>
-                </div>
-                <div className="flex flex-wrap gap-x-2">
-                  <dt className="font-semibold text-inchiostro dark:text-nebbia">Nel corpus italiano:</dt>
-                  <dd>
-                    {recepimento.attiIT.length > 0
-                      ? `trovati ${recepimento.attiIT.length} ${recepimento.attiIT.length === 1 ? 'atto' : 'atti'}`
-                      : `nessun atto trovato${recepimento.termineUE ? ` (termine: ${dataIT(recepimento.termineUE)})` : ''}`}
-                  </dd>
-                </div>
-                <div className="flex flex-wrap gap-x-2">
-                  <dt className="font-semibold text-inchiostro dark:text-nebbia">Notifiche NTM UE:</dt>
-                  <dd>
-                    {recepimento.numNimTot} (notifiche degli Stati membri, non leggi italiane
-                    {recepimento.haNimITA === 'sì' ? '; Italia presente' : '; nessuna notifica italiana'})
-                  </dd>
-                </div>
-              </dl>
-              {recepimento.attiIT.length > 0 ? (
-                <ul className="mt-4 space-y-3">
-                  {recepimento.attiIT.map((a, i) => {
-                    const href = hrefLegge(a)
-                    return (
-                      <li key={`${a.titoloNim}-${i}`} className="border-t border-regola pt-3 text-sm dark:border-notte-deep">
-                        {href ? (
-                          <Link href={href} className="font-semibold text-accento underline underline-offset-2 dark:text-accento-chiara">
-                            {a.titoloNim}
-                          </Link>
-                        ) : (
-                          <span className="font-semibold text-inchiostro dark:text-nebbia">{a.titoloNim}</span>
-                        )}
-                        <span className="mt-1 block text-xs text-inchiostro-soft dark:text-nebbia-soft">
-                          {[a.tipoNim, a.ojData ? `GU ${a.ojData}` : ''].filter(Boolean).join(' · ') || 'estremi non rilevati'}
-                        </span>
-                      </li>
-                    )
-                  })}
-                </ul>
-              ) : collegatiAtti.length === 0 ? (
-                <p className="mt-3 text-sm leading-relaxed text-inchiostro-soft dark:text-nebbia-soft">
-                  Nessun recepimento rilevato nei dati: nel corpus italiano non risulta alcun atto collegato a questa direttiva.
-                </p>
-              ) : null}
-              {recepimento.nota && (
-                <p className="mt-3 text-xs text-inchiostro-faint dark:text-nebbia-faint">{recepimento.nota}</p>
-              )}
-              {collegatiAtti.length > 0 && (
-                <>
-                  <h3 className="mt-5 text-sm font-bold text-inchiostro dark:text-nebbia">
-                    Atti che citano esplicitamente la direttiva
-                  </h3>
-                  <ul className="mt-2 space-y-3">
-                    {collegatiAtti.map((a, i) => (
-                      <li key={`${a.titolo}-${i}`} className="border-t border-regola pt-3 text-sm dark:border-notte-deep">
-                        {a.uri ? (
-                          <a
-                            href={a.uri}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="font-semibold text-accento underline underline-offset-2 dark:text-accento-chiara"
-                          >
-                            {a.titolo}
-                          </a>
-                        ) : (
-                          <span className="font-semibold text-inchiostro dark:text-nebbia">{a.titolo}</span>
-                        )}
-                        <span className="mt-1 block text-xs text-inchiostro-soft dark:text-nebbia-soft">
-                          {a.fonte === 'camera' ? 'Atto Camera' : 'Atto Normattiva'}
-                          {a.nota ? ` · ${a.nota}` : ''}
-                        </span>
-                      </li>
-                    ))}
-                  </ul>
-                </>
-              )}
-            </>
-          ) : (
-            <>
-              {collegati.length > 0 && (
-                <ul className="mt-4 space-y-3">
-                  {collegati.map((a, i) => {
-                    const titolo = a.titoloNim || a.titolo
-                    const href =
-                      a.urlGU && /^https?:\/\//i.test(a.urlGU)
-                        ? a.urlGU
-                        : a.eliNormattiva
-                          ? `/leggi/${a.eliNormattiva.replace(/^\/+/, '')}`
-                          : null
-                    return (
-                      <li key={`${a.titolo}-${i}`} className="border-t border-regola pt-3 text-sm dark:border-notte-deep">
-                        {href ? (
-                          a.urlGU ? (
-                            <a
-                              href={href}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              className="font-semibold text-accento underline underline-offset-2 dark:text-accento-chiara"
-                            >
-                              {titolo}
-                            </a>
-                          ) : (
+          <section
+            aria-labelledby="recepimento"
+            className="mt-10 border border-regola bg-carta p-5 dark:border-notte-deep dark:bg-notte-soft"
+          >
+            <h2 id="recepimento" className="text-lg font-bold text-inchiostro dark:text-nebbia">
+              Recepimento in Italia
+            </h2>
+            {recepimento ? (
+              <>
+                <dl className="mt-3 space-y-2 text-sm leading-relaxed text-inchiostro-soft dark:text-nebbia-soft">
+                  <div className="flex flex-wrap gap-x-2">
+                    <dt className="font-semibold text-inchiostro dark:text-nebbia">
+                      Termine UE di recepimento:
+                    </dt>
+                    <dd>
+                      {recepimento.termineUE ? dataIT(recepimento.termineUE) : "non rilevato"}
+                    </dd>
+                  </div>
+                  <div className="flex flex-wrap gap-x-2">
+                    <dt className="font-semibold text-inchiostro dark:text-nebbia">
+                      Nel corpus italiano:
+                    </dt>
+                    <dd>
+                      {recepimento.attiIT.length > 0
+                        ? `trovati ${recepimento.attiIT.length} ${recepimento.attiIT.length === 1 ? "atto" : "atti"}`
+                        : `nessun atto trovato${recepimento.termineUE ? ` (termine: ${dataIT(recepimento.termineUE)})` : ""}`}
+                    </dd>
+                  </div>
+                  <div className="flex flex-wrap gap-x-2">
+                    <dt className="font-semibold text-inchiostro dark:text-nebbia">
+                      Notifiche NTM UE:
+                    </dt>
+                    <dd>
+                      {recepimento.numNimTot} (notifiche degli Stati membri, non leggi italiane
+                      {recepimento.haNimITA === "sì"
+                        ? "; Italia presente"
+                        : "; nessuna notifica italiana"}
+                      )
+                    </dd>
+                  </div>
+                </dl>
+                {recepimento.attiIT.length > 0 ? (
+                  <ul className="mt-4 space-y-3">
+                    {recepimento.attiIT.map((a, i) => {
+                      const href = hrefLegge(a);
+                      return (
+                        <li
+                          key={`${a.titoloNim}-${i}`}
+                          className="border-t border-regola pt-3 text-sm dark:border-notte-deep"
+                        >
+                          {href ? (
                             <Link
                               href={href}
                               className="font-semibold text-accento underline underline-offset-2 dark:text-accento-chiara"
                             >
-                              {titolo}
+                              {a.titoloNim}
                             </Link>
-                          )
-                        ) : (
-                          <span className="font-semibold text-inchiostro dark:text-nebbia">{titolo}</span>
-                        )}
-                        <span className="mt-1 block text-xs text-inchiostro-soft dark:text-nebbia-soft">
-                          {a.fonte === 'cellar' ? 'Atto UE (CELLAR)' : 'Atto Normattiva'}
-                          {a.tipoNim ? ` · ${a.tipoNim}` : ''}
-                          {a.nota ? ` · ${a.nota}` : ''}
-                        </span>
-                      </li>
-                    )
-                  })}
-                </ul>
-              )}
-              {collegatiAtti.length > 0 && (
-                <>
-                  <h3 className="mt-5 text-sm font-bold text-inchiostro dark:text-nebbia">
-                    Atti che citano esplicitamente la direttiva
-                  </h3>
-                  <ul className="mt-2 space-y-3">
-                    {collegatiAtti.map((a, i) => (
-                      <li key={`${a.titolo}-${i}`} className="border-t border-regola pt-3 text-sm dark:border-notte-deep">
-                        {a.uri ? (
-                          <a
-                            href={a.uri}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="font-semibold text-accento underline underline-offset-2 dark:text-accento-chiara"
-                          >
-                            {a.titolo}
-                          </a>
-                        ) : (
-                          <span className="font-semibold text-inchiostro dark:text-nebbia">{a.titolo}</span>
-                        )}
-                        <span className="mt-1 block text-xs text-inchiostro-soft dark:text-nebbia-soft">
-                          {a.fonte === 'camera' ? 'Atto Camera' : 'Atto Normattiva'}
-                          {a.nota ? ` · ${a.nota}` : ''}
-                        </span>
-                      </li>
-                    ))}
+                          ) : (
+                            <span className="font-semibold text-inchiostro dark:text-nebbia">
+                              {a.titoloNim}
+                            </span>
+                          )}
+                          <span className="mt-1 block text-xs text-inchiostro-soft dark:text-nebbia-soft">
+                            {[a.tipoNim, a.ojData ? `GU ${a.ojData}` : ""]
+                              .filter(Boolean)
+                              .join(" · ") || "estremi non rilevati"}
+                          </span>
+                        </li>
+                      );
+                    })}
                   </ul>
-                </>
-              )}
-              {collegati.length === 0 && collegatiAtti.length === 0 && (
-                <p className="mt-2 text-sm leading-relaxed text-inchiostro-soft dark:text-nebbia-soft">
-                  Nessun recepimento rilevato nei dati: nel corpus italiano non risulta alcun atto collegato a questa direttiva.
-                </p>
-              )}
-            </>
-          )}
-        </section>
+                ) : collegatiAtti.length === 0 ? (
+                  <p className="mt-3 text-sm leading-relaxed text-inchiostro-soft dark:text-nebbia-soft">
+                    Nessun recepimento rilevato nei dati: nel corpus italiano non risulta alcun atto
+                    collegato a questa direttiva.
+                  </p>
+                ) : null}
+                {recepimento.nota && (
+                  <p className="mt-3 text-xs text-inchiostro-faint dark:text-nebbia-faint">
+                    {recepimento.nota}
+                  </p>
+                )}
+                {collegatiAtti.length > 0 && (
+                  <>
+                    <h3 className="mt-5 text-sm font-bold text-inchiostro dark:text-nebbia">
+                      Atti che citano esplicitamente la direttiva
+                    </h3>
+                    <ul className="mt-2 space-y-3">
+                      {collegatiAtti.map((a, i) => (
+                        <li
+                          key={`${a.titolo}-${i}`}
+                          className="border-t border-regola pt-3 text-sm dark:border-notte-deep"
+                        >
+                          {a.uri ? (
+                            <a
+                              href={a.uri}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="font-semibold text-accento underline underline-offset-2 dark:text-accento-chiara"
+                            >
+                              {a.titolo}
+                            </a>
+                          ) : (
+                            <span className="font-semibold text-inchiostro dark:text-nebbia">
+                              {a.titolo}
+                            </span>
+                          )}
+                          <span className="mt-1 block text-xs text-inchiostro-soft dark:text-nebbia-soft">
+                            {a.fonte === "camera" ? "Atto Camera" : "Atto Normattiva"}
+                            {a.nota ? ` · ${a.nota}` : ""}
+                          </span>
+                        </li>
+                      ))}
+                    </ul>
+                  </>
+                )}
+              </>
+            ) : (
+              <>
+                {collegati.length > 0 && (
+                  <ul className="mt-4 space-y-3">
+                    {collegati.map((a, i) => {
+                      const titolo = a.titoloNim || a.titolo;
+                      const href =
+                        a.urlGU && /^https?:\/\//i.test(a.urlGU)
+                          ? a.urlGU
+                          : a.eliNormattiva
+                            ? `/leggi/${a.eliNormattiva.replace(/^\/+/, "")}`
+                            : null;
+                      return (
+                        <li
+                          key={`${a.titolo}-${i}`}
+                          className="border-t border-regola pt-3 text-sm dark:border-notte-deep"
+                        >
+                          {href ? (
+                            a.urlGU ? (
+                              <a
+                                href={href}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="font-semibold text-accento underline underline-offset-2 dark:text-accento-chiara"
+                              >
+                                {titolo}
+                              </a>
+                            ) : (
+                              <Link
+                                href={href}
+                                className="font-semibold text-accento underline underline-offset-2 dark:text-accento-chiara"
+                              >
+                                {titolo}
+                              </Link>
+                            )
+                          ) : (
+                            <span className="font-semibold text-inchiostro dark:text-nebbia">
+                              {titolo}
+                            </span>
+                          )}
+                          <span className="mt-1 block text-xs text-inchiostro-soft dark:text-nebbia-soft">
+                            {a.fonte === "cellar" ? "Atto UE (CELLAR)" : "Atto Normattiva"}
+                            {a.tipoNim ? ` · ${a.tipoNim}` : ""}
+                            {a.nota ? ` · ${a.nota}` : ""}
+                          </span>
+                        </li>
+                      );
+                    })}
+                  </ul>
+                )}
+                {collegatiAtti.length > 0 && (
+                  <>
+                    <h3 className="mt-5 text-sm font-bold text-inchiostro dark:text-nebbia">
+                      Atti che citano esplicitamente la direttiva
+                    </h3>
+                    <ul className="mt-2 space-y-3">
+                      {collegatiAtti.map((a, i) => (
+                        <li
+                          key={`${a.titolo}-${i}`}
+                          className="border-t border-regola pt-3 text-sm dark:border-notte-deep"
+                        >
+                          {a.uri ? (
+                            <a
+                              href={a.uri}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="font-semibold text-accento underline underline-offset-2 dark:text-accento-chiara"
+                            >
+                              {a.titolo}
+                            </a>
+                          ) : (
+                            <span className="font-semibold text-inchiostro dark:text-nebbia">
+                              {a.titolo}
+                            </span>
+                          )}
+                          <span className="mt-1 block text-xs text-inchiostro-soft dark:text-nebbia-soft">
+                            {a.fonte === "camera" ? "Atto Camera" : "Atto Normattiva"}
+                            {a.nota ? ` · ${a.nota}` : ""}
+                          </span>
+                        </li>
+                      ))}
+                    </ul>
+                  </>
+                )}
+                {collegati.length === 0 && collegatiAtti.length === 0 && (
+                  <p className="mt-2 text-sm leading-relaxed text-inchiostro-soft dark:text-nebbia-soft">
+                    Nessun recepimento rilevato nei dati: nel corpus italiano non risulta alcun atto
+                    collegato a questa direttiva.
+                  </p>
+                )}
+              </>
+            )}
+          </section>
         )}
 
         <section
@@ -469,14 +536,16 @@ export default async function AttoUePage({ params }: DettaglioProps) {
             Fonte e licenza
           </h2>
           <p className="mt-2 text-sm leading-relaxed text-inchiostro-soft dark:text-nebbia-soft">
-            Fonte: {provenance.fonte ?? 'EUR-Lex CELLAR SPARQL'} - licenza{' '}
-            {provenance.licenza ?? 'riuso con attribuzione Dec.2011/833/UE'}
-            {provenance.recuperatoIl ? ` · dati aggiornati al ${dataIT(provenance.recuperatoIl.slice(0, 10))}` : ''}.
-            Fa fede il testo ufficiale su EUR-Lex.
+            Fonte: {provenance.fonte ?? "EUR-Lex CELLAR SPARQL"} - licenza{" "}
+            {provenance.licenza ?? "riuso con attribuzione Dec.2011/833/UE"}
+            {provenance.recuperatoIl
+              ? ` · dati aggiornati al ${dataIT(provenance.recuperatoIl.slice(0, 10))}`
+              : ""}
+            . Fa fede il testo ufficiale su EUR-Lex.
           </p>
         </section>
       </main>
       <Footer />
     </>
-  )
+  );
 }

@@ -1,14 +1,11 @@
-import { describe, expect, it } from "vitest";
+import { describe, expect, it } from "vite-plus/test";
 import {
   attiPerDirettiva,
   azzeraCacheRecepimenti,
   leggiProvenanceRecepimenti,
   tuttiRecepimenti,
 } from "@/lib/eurlex-dati";
-import {
-  estraiAnnoNumeroDaCelex,
-  testoCitaDirettiva,
-} from "@/scripts/ingest-reale-recepimenti";
+import { estraiAnnoNumeroDaCelex, testoCitaDirettiva } from "@/scripts/ingest-reale-recepimenti";
 
 describe("recepimenti: matcher esplicito anno+numero (fixture, zero rete)", () => {
   it("positivi: forme AAAA/NNNN e NNNN/AAAA con parola direttiva", () => {
@@ -20,31 +17,23 @@ describe("recepimenti: matcher esplicito anno+numero (fixture, zero rete)", () =
       ),
     ).toBe(true);
     expect(
-      testoCitaDirettiva(
-        "Attuazione della direttiva 2023/2226/UE del Consiglio",
-        "2023",
-        "2226",
-      ),
+      testoCitaDirettiva("Attuazione della direttiva 2023/2226/UE del Consiglio", "2023", "2226"),
     ).toBe(true);
-    expect(
-      testoCitaDirettiva("Vista la direttiva n. 50/2016 di recepimento", "2016", "50"),
-    ).toBe(true);
-    expect(
-      testoCitaDirettiva("direttiva (CE) 2009/73/CE che abroga", "2009", "73"),
-    ).toBe(true);
+    expect(testoCitaDirettiva("Vista la direttiva n. 50/2016 di recepimento", "2016", "50")).toBe(
+      true,
+    );
+    expect(testoCitaDirettiva("direttiva (CE) 2009/73/CE che abroga", "2009", "73")).toBe(true);
   });
 
   it("negativi: anno o numero da soli non bastano, mai fuzzy", () => {
     expect(testoCitaDirettiva("direttiva del 2024 senza numero", "2024", "1788")).toBe(false);
     expect(testoCitaDirettiva("direttiva n. 1788 senza anno", "2024", "1788")).toBe(false);
     // Numero parziale (178 vs 1788): mai fuzzy.
-    expect(
-      testoCitaDirettiva("direttiva (UE) 2024/178 del Parlamento", "2024", "1788"),
-    ).toBe(false);
+    expect(testoCitaDirettiva("direttiva (UE) 2024/178 del Parlamento", "2024", "1788")).toBe(
+      false,
+    );
     // Anno diverso: nessun match.
-    expect(
-      testoCitaDirettiva("direttiva (UE) 2024/1789 sui mercati", "2024", "1788"),
-    ).toBe(false);
+    expect(testoCitaDirettiva("direttiva (UE) 2024/1789 sui mercati", "2024", "1788")).toBe(false);
     expect(testoCitaDirettiva(null, "2024", "1788")).toBe(false);
     expect(testoCitaDirettiva("direttiva (UE) 2024/1788", "non-anno", "1788")).toBe(false);
   });
@@ -75,8 +64,7 @@ describe("recepimenti: matcher esplicito anno+numero (fixture, zero rete)", () =
 describe("recepimenti: loader mappa (file reale, zero rete, never-throw)", () => {
   it("carica la mappa ibrida A+B o { ok:false } senza lanciare", async () => {
     azzeraCacheRecepimenti();
-    const esito: Awaited<ReturnType<typeof tuttiRecepimenti>> =
-      await tuttiRecepimenti();
+    const esito: Awaited<ReturnType<typeof tuttiRecepimenti>> = await tuttiRecepimenti();
     expect(() => esito).not.toThrow();
     expect(esito).not.toBeNull();
     if (esito && esito.ok) {

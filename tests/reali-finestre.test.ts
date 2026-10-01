@@ -8,7 +8,7 @@
  */
 import { readFile } from "node:fs/promises";
 import path from "node:path";
-import { describe, expect, it } from "vitest";
+import { describe, expect, it } from "vite-plus/test";
 import {
   caricaChiaviEsistenti,
   chiaveEliFinestra,
@@ -114,9 +114,7 @@ describe("ingest finestre Normattiva 1990/2000 (fixture inline, zero rete)", () 
     expect(urnDaVoceFinestra(VOCE_AGGIORNATI_1990)).toBe(
       "urn:nir:stato:decreto.legge:1990-01-27;55",
     );
-    expect(urnDaVoceFinestra(VOCE_AGGIORNATI_2000)).toBe(
-      "urn:nir:stato:legge:2000-06-09;112",
-    );
+    expect(urnDaVoceFinestra(VOCE_AGGIORNATI_2000)).toBe("urn:nir:stato:legge:2000-06-09;112");
   });
 
   it("urnDaVoceFinestra restituisce '' se i campi non bastano (mai inventare)", () => {
@@ -150,9 +148,9 @@ describe("ingest finestre Normattiva 1990/2000 (fixture inline, zero rete)", () 
 
   it("statoDaIntestazioneArt1Finestre: solo intestazione formale Art. 1", () => {
     expect(statoDaIntestazioneArt1Finestre("ART. 1 DECRETO DECADUTO - testo")).toBe("decaduto");
-    expect(
-      statoDaIntestazioneArt1Finestre("Art. 1 ((PROVVEDIMENTO ABROGATO - testo"),
-    ).toBe("abrogato");
+    expect(statoDaIntestazioneArt1Finestre("Art. 1 ((PROVVEDIMENTO ABROGATO - testo")).toBe(
+      "abrogato",
+    );
     expect(statoDaIntestazioneArt1Finestre("Testo che cita un'abrogazione nel corpo")).toBeNull();
     expect(statoDaIntestazioneArt1Finestre("")).toBeNull();
   });
@@ -166,7 +164,10 @@ describe("ingest finestre Normattiva 1990/2000 (fixture inline, zero rete)", () 
   it("eliCandidatiFinestra elenca ELI reale + derivato da URN/codice", () => {
     const candidati = eliCandidatiFinestra(VOCE_1990);
     expect(candidati).toContain("/eli/id/1990/01/27/090g0075/sg");
-    const conReale: VoceFinestra = { ...VOCE_1990, eliReale: "/eli/id/1990/03/10/090G0075/ORIGINAL" };
+    const conReale: VoceFinestra = {
+      ...VOCE_1990,
+      eliReale: "/eli/id/1990/03/10/090G0075/ORIGINAL",
+    };
     expect(eliCandidatiFinestra(conReale)).toContain("/eli/id/1990/03/10/090g0075/original");
   });
 
@@ -343,12 +344,8 @@ const VOCE_AGGIORNATI_1970 = {
 
 describe("ingest finestre Normattiva 2010/1970 (fixture inline, zero rete)", () => {
   it("urnDaVoceFinestra costruisce URN reali 2010 e 1970", () => {
-    expect(urnDaVoceFinestra(VOCE_AGGIORNATI_2010)).toBe(
-      "urn:nir:stato:legge:2010-06-25;96",
-    );
-    expect(urnDaVoceFinestra(VOCE_AGGIORNATI_1970)).toBe(
-      "urn:nir:stato:legge:1970-05-16;281",
-    );
+    expect(urnDaVoceFinestra(VOCE_AGGIORNATI_2010)).toBe("urn:nir:stato:legge:2010-06-25;96");
+    expect(urnDaVoceFinestra(VOCE_AGGIORNATI_1970)).toBe("urn:nir:stato:legge:1970-05-16;281");
   });
 
   it("vociDaAggiornatiFinestra: dedup URN tra 2010/1970", () => {
@@ -407,7 +404,11 @@ describe("ingest finestre Normattiva 2010/1970 (fixture inline, zero rete)", () 
     expect(prima[1] < seconda[0]).toBe(true);
     expect(dividiIntervalloFinestra("2010-01-01", "2010-01-01")).toBeNull();
     expect(dividiIntervalloFinestra("non-data", "2010-12-31")).toBeNull();
-    expect(isErroreLimiteAttiFinestra(new Error("Numero di atti superiore al limite consentito di 7000, raffinare la ricerca"))).toBe(true);
+    expect(
+      isErroreLimiteAttiFinestra(
+        new Error("Numero di atti superiore al limite consentito di 7000, raffinare la ricerca"),
+      ),
+    ).toBe(true);
     expect(isErroreLimiteAttiFinestra(new Error("altro errore"))).toBe(false);
   });
 
@@ -534,9 +535,7 @@ describe("ingest finestre Normattiva 2020/1960 (fixture inline, zero rete)", () 
     expect(urnDaVoceFinestra(VOCE_AGGIORNATI_2020)).toBe(
       "urn:nir:stato:decreto.legge:2020-03-17;27",
     );
-    expect(urnDaVoceFinestra(VOCE_AGGIORNATI_1960)).toBe(
-      "urn:nir:stato:legge:1960-10-21;1084",
-    );
+    expect(urnDaVoceFinestra(VOCE_AGGIORNATI_1960)).toBe("urn:nir:stato:legge:1960-10-21;1084");
   });
 
   it("vociDaAggiornatiFinestra: dedup URN tra 2020/1960", () => {
@@ -766,12 +765,8 @@ const VOCE_AGGIORNATI_2005 = {
 
 describe("ingest finestre Normattiva 1992-1993/2005-2006 (fixture inline, zero rete)", () => {
   it("urnDaVoceFinestra costruisce URN reali 1992 e 2005", () => {
-    expect(urnDaVoceFinestra(VOCE_AGGIORNATI_1992)).toBe(
-      "urn:nir:stato:legge:1992-12-19;488",
-    );
-    expect(urnDaVoceFinestra(VOCE_AGGIORNATI_2005)).toBe(
-      "urn:nir:stato:legge:2005-12-23;266",
-    );
+    expect(urnDaVoceFinestra(VOCE_AGGIORNATI_1992)).toBe("urn:nir:stato:legge:1992-12-19;488");
+    expect(urnDaVoceFinestra(VOCE_AGGIORNATI_2005)).toBe("urn:nir:stato:legge:2005-12-23;266");
   });
 
   it("vociDaAggiornatiFinestra: dedup URN tra 1992-1993 e 2005-2006", () => {
@@ -854,10 +849,14 @@ describe("ingest finestre Normattiva 1992-1993/2005-2006 (fixture inline, zero r
 
   it("split onesto: errore 1501/12-mesi fa splittare come il limite 7000", () => {
     expect(
-      isErroreLimiteAttiFinestra(new Error("periodo di esportazione superiore a 12 mesi (code 1501)")),
+      isErroreLimiteAttiFinestra(
+        new Error("periodo di esportazione superiore a 12 mesi (code 1501)"),
+      ),
     ).toBe(true);
     expect(
-      isErroreLimiteAttiFinestra(new Error("Numero di atti superiore al limite consentito di 7000, raffinare la ricerca")),
+      isErroreLimiteAttiFinestra(
+        new Error("Numero di atti superiore al limite consentito di 7000, raffinare la ricerca"),
+      ),
     ).toBe(true);
     expect(isErroreLimiteAttiFinestra(new Error("altro errore"))).toBe(false);
     const parti = dividiIntervalloFinestra("1992-01-01", "1993-12-31");
@@ -1434,12 +1433,8 @@ const VOCE_AGGIORNATI_2018 = {
 
 describe("ingest finestre Normattiva 2012/2018 (fixture inline, zero rete)", () => {
   it("urnDaVoceFinestra costruisce URN reali 2012 e 2018", () => {
-    expect(urnDaVoceFinestra(VOCE_AGGIORNATI_2012)).toBe(
-      "urn:nir:stato:legge:2012-12-24;234",
-    );
-    expect(urnDaVoceFinestra(VOCE_AGGIORNATI_2018)).toBe(
-      "urn:nir:stato:legge:2018-12-30;145",
-    );
+    expect(urnDaVoceFinestra(VOCE_AGGIORNATI_2012)).toBe("urn:nir:stato:legge:2012-12-24;234");
+    expect(urnDaVoceFinestra(VOCE_AGGIORNATI_2018)).toBe("urn:nir:stato:legge:2018-12-30;145");
   });
 
   it("vociDaAggiornatiFinestra: dedup URN tra 2012/2018", () => {
@@ -1660,12 +1655,8 @@ const VOCE_AGGIORNATI_2022 = {
 
 describe("ingest finestre Normattiva 1965/2022 (fixture inline, zero rete)", () => {
   it("urnDaVoceFinestra costruisce URN reali 1965 e 2022", () => {
-    expect(urnDaVoceFinestra(VOCE_AGGIORNATI_1965)).toBe(
-      "urn:nir:stato:legge:1965-05-26;350",
-    );
-    expect(urnDaVoceFinestra(VOCE_AGGIORNATI_2022)).toBe(
-      "urn:nir:stato:legge:2022-12-29;197",
-    );
+    expect(urnDaVoceFinestra(VOCE_AGGIORNATI_1965)).toBe("urn:nir:stato:legge:1965-05-26;350");
+    expect(urnDaVoceFinestra(VOCE_AGGIORNATI_2022)).toBe("urn:nir:stato:legge:2022-12-29;197");
   });
 
   it("vociDaAggiornatiFinestra: dedup URN tra 1965/2022", () => {

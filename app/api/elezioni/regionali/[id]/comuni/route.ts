@@ -34,10 +34,7 @@ function intero(value: string | null, fallback: number, min: number, max: number
   return Math.min(max, Math.max(min, Math.floor(parsed)));
 }
 
-function ordina(
-  comuni: ComuneRisultato[],
-  sort: string,
-): ComuneRisultato[] {
+function ordina(comuni: ComuneRisultato[], sort: string): ComuneRisultato[] {
   try {
     if (sort === "a_asc")
       return [...comuni].sort((a, b) => a.a - b.a || a.c.localeCompare(b.c, "it"));
@@ -102,12 +99,8 @@ export async function GET(request: Request, context: RouteContext) {
 
     let filtrati: ComuneRisultato[];
     try {
-      filtrati =
-        normalizza(q).length >= 2
-          ? cercaComune(base, q)
-          : base.map((c) => ({ ...c }));
-      if (regione.length >= 2)
-        filtrati = filtrati.filter((c) => normalizza(c?.r) === regione);
+      filtrati = normalizza(q).length >= 2 ? cercaComune(base, q) : base.map((c) => ({ ...c }));
+      if (regione.length >= 2) filtrati = filtrati.filter((c) => normalizza(c?.r) === regione);
       filtrati = ordina(filtrati, sort);
     } catch {
       filtrati = [];

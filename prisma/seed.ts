@@ -4,7 +4,8 @@
  * Se DATABASE_URL manca, esce senza errore: l'app usera' il seed in-memory.
  */
 
-import { PrismaClient } from "@prisma/client";
+import { PrismaPg } from "@prisma/adapter-pg";
+import { PrismaClient } from "../lib/generated/prisma/client";
 import { SEED_LAWS, SEED_MINISTERS } from "../lib/seed-data";
 import { toPrismaData } from "../lib/db";
 
@@ -14,7 +15,9 @@ async function main(): Promise<void> {
     return;
   }
 
-  const prisma = new PrismaClient();
+  const prisma = new PrismaClient({
+    adapter: new PrismaPg({ connectionString: process.env.DATABASE_URL }),
+  });
   try {
     for (const law of SEED_LAWS) {
       const data = toPrismaData(law);

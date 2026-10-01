@@ -16,7 +16,7 @@
 
 import { readdir, readFile, stat } from "node:fs/promises";
 import path from "node:path";
-import { describe, expect, it } from "vitest";
+import { describe, expect, it } from "vite-plus/test";
 
 const RADICE = process.cwd();
 const DIR_REALI = path.resolve(RADICE, "data/reali");
@@ -137,9 +137,7 @@ function estraiArray(parsed: unknown, chiavi: string[]): unknown[] | null {
   return null;
 }
 
-async function leggiJson(
-  percorso: string,
-): Promise<{ parsed: unknown; byte: number } | null> {
+async function leggiJson(percorso: string): Promise<{ parsed: unknown; byte: number } | null> {
   try {
     const raw = await readFile(percorso, "utf8");
     const byte = Buffer.byteLength(raw, "utf8");
@@ -279,18 +277,25 @@ describe("reali-8: envelope file attesi (disco read-only, skip se assenti)", () 
         `${nome}: file oltre 1MB (rigenerare via script, non committare)`,
       ).toBeLessThanOrEqual(MAX_BYTE);
       const prov = provenanceDi(letto.parsed);
-      expect(prov, `${nome}: envelope senza provenance{fonte,url,recuperatoIl,licenza}`).not.toBeNull();
+      expect(
+        prov,
+        `${nome}: envelope senza provenance{fonte,url,recuperatoIl,licenza}`,
+      ).not.toBeNull();
       expect(isStringaNonVuota(prov?.["fonte"]), `${nome}: provenance.fonte assente`).toBe(true);
       expect(isHttpsUrl(prov?.["url"]), `${nome}: provenance.url non https`).toBe(true);
       expect(
         isRecuperatoIl(prov?.["recuperatoIl"]),
         `${nome}: provenance.recuperatoIl non ISO reale`,
       ).toBe(true);
-      expect(isStringaNonVuota(prov?.["licenza"]), `${nome}: provenance.licenza assente`).toBe(true);
+      expect(isStringaNonVuota(prov?.["licenza"]), `${nome}: provenance.licenza assente`).toBe(
+        true,
+      );
       const lista = estraiArray(letto.parsed, atteso.chiavi);
       expect(lista, `${nome}: nessun array dati non vuoto`).not.toBeNull();
       expect(lista?.length ?? 0, `${nome}: conteggio zero`).toBeGreaterThan(0);
-      expect(lista?.length ?? 0, `${nome}: oltre il cap ${atteso.max}`).toBeLessThanOrEqual(atteso.max);
+      expect(lista?.length ?? 0, `${nome}: oltre il cap ${atteso.max}`).toBeLessThanOrEqual(
+        atteso.max,
+      );
     });
 
     it(`${nome}: zero campi inventati (spot-check titolo+url/data)`, async () => {
@@ -312,7 +317,10 @@ describe("reali-8: envelope file attesi (disco read-only, skip se assenti)", () 
       let validi = 0;
       for (const voce of campione) {
         const errore = check(voce);
-        expect(errore, `${nome}: record non valido (${errore}): ${JSON.stringify(voce).slice(0, 200)}`).toBeNull();
+        expect(
+          errore,
+          `${nome}: record non valido (${errore}): ${JSON.stringify(voce).slice(0, 200)}`,
+        ).toBeNull();
         validi += 1;
       }
       expect(validi).toBeGreaterThan(0);

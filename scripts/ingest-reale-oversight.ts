@@ -26,7 +26,7 @@
  * parziali: i file si scrivono solo dopo che tutte le fonti richieste hanno
  * prodotto payload validi).
  *
- * Uso: npx tsx scripts/ingest-reale-oversight.ts [--solo=anac|ga] [--max=60]
+ * Uso: bunx tsx scripts/ingest-reale-oversight.ts [--solo=anac|ga] [--max=60]
  */
 
 import { mkdirSync, writeFileSync } from "node:fs";
@@ -247,7 +247,9 @@ async function righeCompleteDaGzip(grezzo: Buffer, maxRighe: number): Promise<st
   return complete;
 }
 
-async function ingerisciAnac(max: number): Promise<{ voci: VoceOversight[]; recuperatoIl: string }> {
+async function ingerisciAnac(
+  max: number,
+): Promise<{ voci: VoceOversight[]; recuperatoIl: string }> {
   const recuperatoIl = new Date().toISOString();
   const { corpo } = await scarica(ANAC_DOWNLOAD_URL, {
     accept: "application/gzip, application/octet-stream",
@@ -377,7 +379,8 @@ function gaProvvedimento(articolo: string): { testo: string; href: string } | nu
     if (!hm) continue;
     const href = decodificaEntita(hm[1]).trim();
     if (!/^https?:\/\//i.test(href)) continue;
-    if (!/visualizza|\/documents\/|\.pdf|portali\.giustizia-amministrativa\.it/i.test(href)) continue;
+    if (!/visualizza|\/documents\/|\.pdf|portali\.giustizia-amministrativa\.it/i.test(href))
+      continue;
     const testo = toTesto(a.replace(/^<a\s[^>]*>/i, "").replace(/<\/a>\s*$/i, "")).slice(0, 280);
     if (!testo) continue;
     return { testo, href };
@@ -458,7 +461,8 @@ async function ingerisciGa(max: number): Promise<{ voci: VoceOversight[]; recupe
     }
     if (voci.length >= Math.min(max, GA_MAX_VOCI)) break;
   }
-  if (voci.length === 0) throw new Error("GA: nessun Focus 2026 utilizzabile nelle pagine di ricerca");
+  if (voci.length === 0)
+    throw new Error("GA: nessun Focus 2026 utilizzabile nelle pagine di ricerca");
   return { voci, recuperatoIl };
 }
 
@@ -477,7 +481,8 @@ function envelope(
     null,
     2,
   )}\n`;
-  if (Buffer.byteLength(json, "utf8") > MAX_BYTE) throw new Error(`envelope oltre ${MAX_BYTE} byte`);
+  if (Buffer.byteLength(json, "utf8") > MAX_BYTE)
+    throw new Error(`envelope oltre ${MAX_BYTE} byte`);
   return json;
 }
 
@@ -485,7 +490,7 @@ async function main(): Promise<void> {
   const { aiuto, solo, max } = argomenti();
   if (aiuto) {
     console.log(
-      "Uso: npx tsx scripts/ingest-reale-oversight.ts [--solo=anac|ga] [--max=60]\n" +
+      "Uso: bunx tsx scripts/ingest-reale-oversight.ts [--solo=anac|ga] [--max=60]\n" +
         "Ingerisce ANAC/OCP 2025 (Range slice) e GA Focus 2026 (2 GET, pausa >=3s).\n" +
         "Scrive data/reali/oversight-anac-2025.json e data/reali/oversight-ga-2026.json\n" +
         "(solo i file richiesti da --solo). Fallimento -> exit 1 senza file parziali.",
@@ -499,7 +504,14 @@ async function main(): Promise<void> {
     const { voci, recuperatoIl } = await ingerisciAnac(Math.min(max, 100));
     payloads.push({
       file: FILE_ANAC,
-      json: envelope(ANAC_FONTE, ANAC_DOWNLOAD_URL, recuperatoIl, ANAC_LICENZA, ANAC_PAGINA_DATI, voci),
+      json: envelope(
+        ANAC_FONTE,
+        ANAC_DOWNLOAD_URL,
+        recuperatoIl,
+        ANAC_LICENZA,
+        ANAC_PAGINA_DATI,
+        voci,
+      ),
       etichetta: `ANAC/OCP 2025: ${voci.length} voci`,
     });
   }

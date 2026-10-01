@@ -39,7 +39,7 @@
  * Licenza envelope: `camera.it — solo riuso non commerciale con citazione
  * fonte` (obbligatoria da direttiva REALI-14).
  *
- * Uso: npx tsx scripts/ingest-reale-finanziamenti.ts [--max=50] [--help]
+ * Uso: bunx tsx scripts/ingest-reale-finanziamenti.ts [--max=50] [--help]
  */
 
 import { mkdirSync, writeFileSync } from "node:fs";
@@ -131,8 +131,7 @@ export async function scaricaFinanziamenti(
 export function estraiHrefPdfFinanziamenti(html: string, base: string): string[] {
   const hrefs: string[] = [];
   const visti = new Set<string>();
-  const re =
-    /<a\b[^>]*href="([^"]+)"[^>]*>([\s\S]{0,200}?)<\/a\s*>/gi;
+  const re = /<a\b[^>]*href="([^"]+)"[^>]*>([\s\S]{0,200}?)<\/a\s*>/gi;
   let m: RegExpExecArray | null;
   for (;;) {
     m = re.exec(html);
@@ -176,11 +175,33 @@ export function selezionaPdfPerPeriodo(hrefs: string[]): Map<string, string> {
 
 /** Tabella Windows-1252 per i byte 0x80-0x9F (il resto e' Latin-1 1:1). */
 const CP1252_ALTI: Record<number, string> = {
-  0x80: "€", 0x82: "‚", 0x83: "ƒ", 0x84: "„", 0x85: "…", 0x86: "†",
-  0x87: "‡", 0x88: "ˆ", 0x89: "‰", 0x8a: "Š", 0x8b: "‹", 0x8c: "Œ",
-  0x8e: "Ž", 0x91: "‘", 0x92: "’", 0x93: "“", 0x94: "”", 0x95: "•",
-  0x96: "–", 0x97: "—", 0x98: "˜", 0x99: "™", 0x9a: "š", 0x9b: "›",
-  0x9c: "œ", 0x9e: "ž", 0x9f: "Ÿ",
+  0x80: "€",
+  0x82: "‚",
+  0x83: "ƒ",
+  0x84: "„",
+  0x85: "…",
+  0x86: "†",
+  0x87: "‡",
+  0x88: "ˆ",
+  0x89: "‰",
+  0x8a: "Š",
+  0x8b: "‹",
+  0x8c: "Œ",
+  0x8e: "Ž",
+  0x91: "‘",
+  0x92: "’",
+  0x93: "“",
+  0x94: "”",
+  0x95: "•",
+  0x96: "–",
+  0x97: "—",
+  0x98: "˜",
+  0x99: "™",
+  0x9a: "š",
+  0x9b: "›",
+  0x9c: "œ",
+  0x9e: "ž",
+  0x9f: "Ÿ",
 };
 
 /** Decodifica byte PDF (WinAnsi/Windows-1252) in stringa. Mai throw. */
@@ -199,7 +220,14 @@ export function decodificaCp1252(byte: Uint8Array | Buffer | number[]): string {
 }
 
 const ESCAPE_SEMPLICI: Record<string, number> = {
-  n: 0x0a, r: 0x0d, t: 0x09, b: 0x08, f: 0x0c, "(": 0x28, ")": 0x29, "\\": 0x5c,
+  n: 0x0a,
+  r: 0x0d,
+  t: 0x09,
+  b: 0x08,
+  f: 0x0c,
+  "(": 0x28,
+  ")": 0x29,
+  "\\": 0x5c,
 };
 
 /**
@@ -247,9 +275,8 @@ interface CellaPdf {
   readonly testo: string;
 }
 
-const RE_TM =
-  /(-?[\d.]+)\s+(-?[\d.]+)\s+(-?[\d.]+)\s+(-?[\d.]+)\s+(-?[\d.]+)\s+(-?[\d.]+)\s+Tm/g;
-const RE_TJ = /\((?:[^()\\]|\\.)*\)Tj|\[(?:[^\[\]])*\]TJ|<[0-9A-Fa-f]+>Tj/g;
+const RE_TM = /(-?[\d.]+)\s+(-?[\d.]+)\s+(-?[\d.]+)\s+(-?[\d.]+)\s+(-?[\d.]+)\s+(-?[\d.]+)\s+Tm/g;
+const RE_TJ = /\((?:[^()\\]|\\.)*\)Tj|\[(?:[^[\]])*\]TJ|<[0-9A-Fa-f]+>Tj/g;
 const RE_PARTI_TJ = /\((?:[^()\\]|\\.)*\)/g;
 
 function arrotonda1(v: number): number {
@@ -325,7 +352,9 @@ export function celleDaContentStream(inflato: string): CellaPdf[] {
 }
 
 /** Righe di una pagina: celle raggruppate per y desc, ordinate per x. */
-export function righeDaCelle(celle: readonly CellaPdf[]): Array<{ y: number; x: number[]; testi: string[]; riga: string }> {
+export function righeDaCelle(
+  celle: readonly CellaPdf[],
+): Array<{ y: number; x: number[]; testi: string[]; riga: string }> {
   try {
     const perY = new Map<number, CellaPdf[]>();
     for (const c of celle) {
@@ -459,14 +488,20 @@ export const ANNO_MAX_FINANZIAMENTI = 2026;
 
 export interface AggregatiFile {
   /** chiave `${beneficiario}|||${anno}` -> [n, centesimi] */
-  readonly coppie: Map<string, { beneficiario: string; anno: number; n: number; centesimi: number }>;
+  readonly coppie: Map<
+    string,
+    { beneficiario: string; anno: number; n: number; centesimi: number }
+  >;
   readonly righe: number;
   readonly scartateFuoriAnno: number;
 }
 
 /** Aggrega un PDF (buffer) in coppie (beneficiario, anno 2024-2026). Mai throw. */
 export function aggregaPdfFinanziamenti(pdf: Buffer): AggregatiFile {
-  const coppie = new Map<string, { beneficiario: string; anno: number; n: number; centesimi: number }>();
+  const coppie = new Map<
+    string,
+    { beneficiario: string; anno: number; n: number; centesimi: number }
+  >();
   let righe = 0;
   let scartateFuoriAnno = 0;
   try {
@@ -631,7 +666,7 @@ async function main(): Promise<void> {
   const { aiuto, max } = argomenti();
   if (aiuto) {
     console.log(
-      "Uso: npx tsx scripts/ingest-reale-finanziamenti.ts [--max=50]\n" +
+      "Uso: bunx tsx scripts/ingest-reale-finanziamenti.ts [--max=50]\n" +
         "Ingerisce le erogazioni ai partiti 2024-2026 da parlamento18.camera.it/199\n" +
         "(1 GET indice + 3 GET PDF transienti, solo aggregati beneficiario×anno,\n" +
         "zero nominativi eroganti, top-50 per totale). Fallimento -> exit 1\n" +
@@ -675,22 +710,21 @@ async function main(): Promise<void> {
     fonte_pdf: scaricati[v.indiceFile].url,
     lastModified: scaricati[v.indiceFile].lastModified,
   }));
-  const json =
-    `${JSON.stringify(
-      {
-        provenance: {
-          fonte: FONTE,
-          url: INDICE_URL,
-          recuperatoIl,
-          licenza: LICENZA,
-          hub: HUB_URL,
-          relazioni: RELAZIONI_URL,
-        },
-        erogazioni,
+  const json = `${JSON.stringify(
+    {
+      provenance: {
+        fonte: FONTE,
+        url: INDICE_URL,
+        recuperatoIl,
+        licenza: LICENZA,
+        hub: HUB_URL,
+        relazioni: RELAZIONI_URL,
       },
-      null,
-      2,
-    )}\n`;
+      erogazioni,
+    },
+    null,
+    2,
+  )}\n`;
   if (Buffer.byteLength(json, "utf8") > MAX_JSON_BYTE) {
     throw new Error("envelope oltre 1MB");
   }

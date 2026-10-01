@@ -6,8 +6,9 @@
  * anche in anteprima Vercel senza database collegato.
  */
 
-import { Prisma, PrismaClient } from "@prisma/client";
-import type { Law as PrismaLaw, Minister as PrismaMinister } from "@prisma/client";
+import { PrismaPg } from "@prisma/adapter-pg";
+import { Prisma, PrismaClient } from "./generated/prisma/client";
+import type { Law as PrismaLaw, Minister as PrismaMinister } from "./generated/prisma/client";
 import { normalizeEli, parseNIR } from "./nir";
 import { parseAnno, parseQualita, parseQuery, parseTipo } from "./validation";
 import { getSeedLaws, getSeedMinisters } from "./sources";
@@ -68,7 +69,9 @@ export function getPrisma(): PrismaClient | null {
   }
 
   try {
-    prismaGlobal.__simpleLawPrisma = new PrismaClient();
+    prismaGlobal.__simpleLawPrisma = new PrismaClient({
+      adapter: new PrismaPg({ connectionString: url }),
+    });
   } catch {
     prismaGlobal.__simpleLawPrisma = null;
   }
@@ -120,18 +123,10 @@ export function parseSemplificata(value: unknown): SimplifiedLaw | undefined {
   if (typeof value.in10Secondi !== "string") return undefined;
   if (!recordDiStringhe(value.perTe)) return undefined;
   if (!stringhe(value.cosaFare)) return undefined;
-  if (
-    !isRecord(stato) ||
-    !coloreStato(stato.colore) ||
-    typeof stato.motivo !== "string"
-  ) {
+  if (!isRecord(stato) || !coloreStato(stato.colore) || typeof stato.motivo !== "string") {
     return undefined;
   }
-  if (
-    !isRecord(proContro) ||
-    !stringhe(proContro.pro) ||
-    !stringhe(proContro.contro)
-  ) {
+  if (!isRecord(proContro) || !stringhe(proContro.pro) || !stringhe(proContro.contro)) {
     return undefined;
   }
   if (typeof value.gulpease !== "number" || !Number.isFinite(value.gulpease)) {
@@ -415,9 +410,7 @@ export function toPrismaData(law: LawRecordExtra) {
     testoHash: scala.testoHash ?? null,
     lunghezzaTesto: scala.lunghezzaTesto ?? null,
     extra:
-      Object.keys(extra).length > 0
-        ? (extra as unknown as Prisma.InputJsonValue)
-        : Prisma.JsonNull,
+      Object.keys(extra).length > 0 ? (extra as unknown as Prisma.InputJsonValue) : Prisma.JsonNull,
   };
 }
 
@@ -733,10 +726,7 @@ export function punteggioRilevanza(law: LawRecordExtra, q: string): number {
 }
 
 /** Ordina per rilevanza BM25-lite (a parita': data desc, poi ELI). Pura. */
-export function ordinaPerRilevanza(
-  items: LawRecordExtra[],
-  q: string,
-): LawRecordExtra[] {
+export function ordinaPerRilevanza(items: LawRecordExtra[], q: string): LawRecordExtra[] {
   const righe = items
     .map((law) => ({ law, punti: punteggioRilevanza(law, q) }))
     .filter((r) => r.punti > 0);
@@ -792,9 +782,7 @@ export function sortLaws(
       copia.sort((a, b) => a.titolo.localeCompare(b.titolo, "it") || a.eli.localeCompare(b.eli));
       break;
     case "gulpease_desc":
-      copia.sort(
-        (a, b) => (b.gulpease ?? -1) - (a.gulpease ?? -1) || a.eli.localeCompare(b.eli),
-      );
+      copia.sort((a, b) => (b.gulpease ?? -1) - (a.gulpease ?? -1) || a.eli.localeCompare(b.eli));
       break;
     case "qualita_desc":
       copia.sort((a, b) => (b.qualita ?? -1) - (a.qualita ?? -1) || a.eli.localeCompare(b.eli));
@@ -900,8 +888,12 @@ export function sha256Hex(testo: string): string | null {
     };
     const a = cyrb(testo, 0x1234).toString(16).padStart(14, "0");
     const b = cyrb(testo, 0xabcd).toString(16).padStart(14, "0");
-    const c = cyrb(`${testo.length}:${testo.slice(0, 512)}`, 0x55aa).toString(16).padStart(14, "0");
-    const d = cyrb(`${testo.slice(-512)}:${testo.length}`, 0x77ee).toString(16).padStart(14, "0");
+    const c = cyrb(`${testo.length}:${testo.slice(0, 512)}`, 0x55aa)
+      .toString(16)
+      .padStart(14, "0");
+    const d = cyrb(`${testo.slice(-512)}:${testo.length}`, 0x77ee)
+      .toString(16)
+      .padStart(14, "0");
     return `${a}${b}${c}${d}`.slice(0, 64).padEnd(64, "0");
   } catch {
     return null;
@@ -990,9 +982,7 @@ export async function listLaws(params: ListLawsParams = {}): Promise<ListLawsRes
             orderBy: [{ dataEmanazione: "desc" }, { eli: "asc" }],
             take: PERSONA_ESTRATTO_MAX,
           });
-          const filtrateBase = estratto
-            .map(mapLaw)
-            .filter((law) => matchesFilters(law, params));
+          const filtrateBase = estratto.map(mapLaw).filter((law) => matchesFilters(law, params));
           let ordinate: LawRecordExtra[];
           if (sort === "rilevanza") {
             if (qNorm.length >= 2) {
@@ -1068,10 +1058,7 @@ export async function listLaws(params: ListLawsParams = {}): Promise<ListLawsRes
               skip: 0,
               take: finestra,
             });
-            const ordinati = ordinaPerRilevanza(
-              candidati.map(mapLaw),
-              qNorm.toLowerCase(),
-            );
+            const ordinati = ordinaPerRilevanza(candidati.map(mapLaw), qNorm.toLowerCase());
             const total = await prisma.law.count({ where });
             const inizio = (page - 1) * per;
             return { items: ordinati.slice(inizio, inizio + per), total, page, per };
@@ -1161,18 +1148,15 @@ export async function listLawsCursor(params: CursorParams = {}): Promise<CursorR
             orderBy: [{ dataEmanazione: "desc" }, { eli: "asc" }],
             take: PERSONA_ESTRATTO_MAX,
           });
-          const filtrateBase = estratto
-            .map(mapLaw)
-            .filter((law) => matchesFilters(law, params));
+          const filtrateBase = estratto.map(mapLaw).filter((law) => matchesFilters(law, params));
           let ordinate: LawRecordExtra[];
           if (sort === "rilevanza") {
-            const qNorm = parseQuery(params.q ?? "").slice(0, 200).toLowerCase();
+            const qNorm = parseQuery(params.q ?? "")
+              .slice(0, 200)
+              .toLowerCase();
             if (qNorm.length >= 2) {
               const ranked = ordinaPerRilevanza(filtrateBase, qNorm);
-              ordinate =
-                ranked.length > 0
-                  ? ranked
-                  : sortLaws(filtrateBase, "data_desc", qNorm);
+              ordinate = ranked.length > 0 ? ranked : sortLaws(filtrateBase, "data_desc", qNorm);
             } else {
               ordinate = sortLaws(filtrateBase, "data_desc", qNorm);
             }
@@ -1180,7 +1164,9 @@ export async function listLawsCursor(params: CursorParams = {}): Promise<CursorR
             ordinate = sortLaws(
               filtrateBase,
               sort,
-              parseQuery(params.q ?? "").slice(0, 200).toLowerCase(),
+              parseQuery(params.q ?? "")
+                .slice(0, 200)
+                .toLowerCase(),
             );
           }
           let inizio = 0;
@@ -1205,15 +1191,15 @@ export async function listLawsCursor(params: CursorParams = {}): Promise<CursorR
     }
     try {
       const laws = await caricaBase().catch(() => getSeedLaws());
-      const qNormPersona = parseQuery(params.q ?? "").slice(0, 200).toLowerCase();
+      const qNormPersona = parseQuery(params.q ?? "")
+        .slice(0, 200)
+        .toLowerCase();
       const ordinatePersona =
         sort === "rilevanza"
           ? (() => {
               const candidati = laws.filter((law) => matchesFilters(law, params));
               const ranked =
-                qNormPersona.length >= 2
-                  ? ordinaPerRilevanza(candidati, qNormPersona)
-                  : [];
+                qNormPersona.length >= 2 ? ordinaPerRilevanza(candidati, qNormPersona) : [];
               return ranked.length > 0 ? ranked : sortLaws(candidati, "data_desc");
             })()
           : sortLaws(
@@ -1227,15 +1213,11 @@ export async function listLawsCursor(params: CursorParams = {}): Promise<CursorR
       }
       const paginaPersona = ordinatePersona.slice(inizioPersona, inizioPersona + take);
       const ultimaPersona = paginaPersona[paginaPersona.length - 1];
-      const haAltrePersona =
-        inizioPersona + take < ordinatePersona.length && ultimaPersona;
+      const haAltrePersona = inizioPersona + take < ordinatePersona.length && ultimaPersona;
       return {
         items: paginaPersona,
         nextCursor: haAltrePersona
-          ? encodeCursor(
-              ultimaPersona.dataEmanazione.slice(0, 10),
-              ultimaPersona.eli,
-            )
+          ? encodeCursor(ultimaPersona.dataEmanazione.slice(0, 10), ultimaPersona.eli)
           : null,
         take,
       };
@@ -1262,16 +1244,12 @@ export async function listLawsCursor(params: CursorParams = {}): Promise<CursorR
                   {
                     OR: [
                       {
-                        dataEmanazione: discendente
-                          ? { lt: dataCursore }
-                          : { gt: dataCursore },
+                        dataEmanazione: discendente ? { lt: dataCursore } : { gt: dataCursore },
                       },
                       {
                         AND: [
                           { dataEmanazione: { equals: dataCursore } },
-                          discendente
-                            ? { eli: { gt: cursore.eli } }
-                            : { eli: { lt: cursore.eli } },
+                          discendente ? { eli: { gt: cursore.eli } } : { eli: { lt: cursore.eli } },
                         ],
                       },
                     ],
@@ -1292,10 +1270,7 @@ export async function listLawsCursor(params: CursorParams = {}): Promise<CursorR
             items,
             nextCursor:
               hasNext && ultima
-                ? encodeCursor(
-                    ultima.dataEmanazione.toISOString().slice(0, 10),
-                    ultima.eli,
-                  )
+                ? encodeCursor(ultima.dataEmanazione.toISOString().slice(0, 10), ultima.eli)
                 : null,
             take,
           };
@@ -1325,7 +1300,9 @@ export async function listLawsCursor(params: CursorParams = {}): Promise<CursorR
         });
         let items = rows.slice(0, take).map(mapLaw);
         if (sort === "rilevanza") {
-          const qNorm = parseQuery(params.q ?? "").slice(0, 200).toLowerCase();
+          const qNorm = parseQuery(params.q ?? "")
+            .slice(0, 200)
+            .toLowerCase();
           if (qNorm.length >= 2) {
             const ordinati = ordinaPerRilevanza(items, qNorm);
             if (ordinati.length > 0) items = ordinati;
@@ -1336,10 +1313,7 @@ export async function listLawsCursor(params: CursorParams = {}): Promise<CursorR
           items,
           nextCursor:
             rows.length > take && ultima
-              ? encodeCursor(
-                  ultima.dataEmanazione.toISOString().slice(0, 10),
-                  ultima.eli,
-                )
+              ? encodeCursor(ultima.dataEmanazione.toISOString().slice(0, 10), ultima.eli)
               : null,
           take,
         };
@@ -1353,7 +1327,9 @@ export async function listLawsCursor(params: CursorParams = {}): Promise<CursorR
   const ordinate =
     sort === "rilevanza"
       ? (() => {
-          const qNorm = parseQuery(params.q ?? "").slice(0, 200).toLowerCase();
+          const qNorm = parseQuery(params.q ?? "")
+            .slice(0, 200)
+            .toLowerCase();
           const candidati = laws.filter((law) => matchesFilters(law, params));
           const ranked = qNorm.length >= 2 ? ordinaPerRilevanza(candidati, qNorm) : [];
           return ranked.length > 0 ? ranked : sortLaws(candidati, "data_desc");
@@ -1436,8 +1412,7 @@ export async function countLaws(filters: LawFilters = {}): Promise<number> {
             orderBy: [{ dataEmanazione: "desc" }, { eli: "asc" }],
             take: PERSONA_ESTRATTO_MAX,
           });
-          return estratto.map(mapLaw).filter((law) => matchesFilters(law, filters))
-            .length;
+          return estratto.map(mapLaw).filter((law) => matchesFilters(law, filters)).length;
         }
       }
     } catch {

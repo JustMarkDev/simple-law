@@ -14,7 +14,7 @@
  * di un altro scrittore ancora assente.
  */
 
-import { beforeEach, describe, expect, it, vi } from "vitest";
+import { beforeEach, describe, expect, it, vi } from "vite-plus/test";
 
 // ---------------------------------------------------------------------------
 // Guardia anti-rete: se il parser provasse fetch, fallisce subito il test.
@@ -368,9 +368,10 @@ describe("elezioni ingest — conformita' script W1 (tollerante se assente)", ()
   it("se lo script espone parseRigaElezioni/normalizza, rispettano il contratto sulle fixture", async () => {
     let mod: Record<string, unknown>;
     try {
-      mod = (await import(
-        "@/scripts/ingest-reale-elezioni-europee-2024"
-      )) as Record<string, unknown>;
+      mod = (await import("@/scripts/ingest-reale-elezioni-europee-2024")) as Record<
+        string,
+        unknown
+      >;
     } catch {
       // W1 non ancora presente: replica gia' verificata sopra, passa con nota.
       expect(true).toBe(true);

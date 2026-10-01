@@ -14,7 +14,7 @@
 
 import { readdirSync, readFileSync } from "node:fs";
 import path from "node:path";
-import { describe, expect, it } from "vitest";
+import { describe, expect, it } from "vite-plus/test";
 
 const RADICE = process.cwd();
 const DIR_REALI = path.join(RADICE, "data", "reali");
@@ -117,7 +117,11 @@ describe("reali-15: MANIFEST esiste con voci uniche e generatoIl onesto", () => 
     } | null;
     expect(parsed).not.toBeNull();
     const voci = parsed?.fonti ?? [];
-    const max = voci.map((v) => String(v.recuperatoIl)).sort().at(-1) ?? "";
+    const max =
+      voci
+        .map((v) => String(v.recuperatoIl))
+        .sort()
+        .at(-1) ?? "";
     expect(parsed?.generatoIl).toBe(max);
   });
 });
@@ -178,8 +182,7 @@ describe("reali-15: envelope provenance + link https (zero rete)", () => {
       // vuoto con fonte ai corpora locali `data/reali/...` — mai inventare
       // un URL di fonte per un file calcolato.
       const fonte = typeof prov?.["fonte"] === "string" ? prov?.["fonte"] : "";
-      const urlVuotaOnesta =
-        (prov?.["url"] ?? "") === "" && fonte.includes("data/reali/");
+      const urlVuotaOnesta = (prov?.["url"] ?? "") === "" && fonte.includes("data/reali/");
       expect(urlVuotaOnesta || eHttps(prov?.["url"])).toBe(true);
       // Eccezione documentata: sondaggi-nazionali.json usa `estratto_il`
       // + revisione pinnata (pageid/revid/revisione_timestamp) invece di

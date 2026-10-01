@@ -9,20 +9,16 @@
  *   numero/stato deriva dagli atti.
  */
 
-import { describe, expect, it } from "vitest";
-import {
-  aAttoQuirinale,
-  aComunicato,
-  cercaQuirinale,
-  normalizza,
-} from "@/lib/quirinale-dati";
+import { describe, expect, it } from "vite-plus/test";
+import { aAttoQuirinale, aComunicato, cercaQuirinale, normalizza } from "@/lib/quirinale-dati";
 
 const COMUNICATO_FIXTURE = {
   id: "https://www.quirinale.it/it/comunicato/dichiarazione-presidente-mattarella-occasione-capodanno-ebraico-6",
   tipo: "comunicato-quirinale",
   titolo: "Dichiarazione del Presidente Mattarella in occasione del Capodanno ebraico",
   data: "2026-09-12",
-  sintesi: "Il Presidente della Repubblica, Sergio Mattarella, in occasione del Capodanno ebraico...",
+  sintesi:
+    "Il Presidente della Repubblica, Sergio Mattarella, in occasione del Capodanno ebraico...",
   url: "https://www.quirinale.it/it/comunicato/dichiarazione-presidente-mattarella-occasione-capodanno-ebraico-6",
 };
 
@@ -40,7 +36,10 @@ const RADICE = typeof process !== "undefined" ? process.cwd() : ".";
 const FILE_COM = `${RADICE}/data/reali/quirinale-comunicati.json`;
 const FILE_ATTI = `${RADICE}/data/reali/quirinale-atti.json`;
 
-async function leggiReali(percorso: string, chiave: string): Promise<{
+async function leggiReali(
+  percorso: string,
+  chiave: string,
+): Promise<{
   provenance: Record<string, unknown>;
   voci: unknown[];
   byte: number;
@@ -54,7 +53,10 @@ async function leggiReali(percorso: string, chiave: string): Promise<{
     const voci = (parsed as Record<string, unknown>)[chiave];
     if (!Array.isArray(voci)) return null;
     return {
-      provenance: ((parsed as { provenance?: unknown }).provenance ?? {}) as Record<string, unknown>,
+      provenance: ((parsed as { provenance?: unknown }).provenance ?? {}) as Record<
+        string,
+        unknown
+      >,
       voci,
       byte: Buffer.byteLength(raw, "utf8"),
     };
@@ -156,8 +158,20 @@ describe("quirinale: integrazione disco tollerante (solo se i file esistono)", (
       expect((a?.titolo ?? "").length).toBeGreaterThanOrEqual(10);
       expect(/^\d{4}-\d{2}-\d{2}$/.test(a?.data ?? "")).toBe(true);
       expect(a?.url.startsWith("https://www.quirinale.it/elementi/")).toBe(true);
-      expect(voce && typeof voce === "object" ? ("numero" in (voce as object) ? (voce as Record<string, unknown>)["numero"] : undefined) : undefined).toBeUndefined();
-      expect(voce && typeof voce === "object" ? ("stato" in (voce as object) ? (voce as Record<string, unknown>)["stato"] : undefined) : undefined).toBeUndefined();
+      expect(
+        voce && typeof voce === "object"
+          ? "numero" in (voce as object)
+            ? (voce as Record<string, unknown>)["numero"]
+            : undefined
+          : undefined,
+      ).toBeUndefined();
+      expect(
+        voce && typeof voce === "object"
+          ? "stato" in (voce as object)
+            ? (voce as Record<string, unknown>)["stato"]
+            : undefined
+          : undefined,
+      ).toBeUndefined();
       expect(visti.has(a?.url ?? "")).toBe(false);
       visti.add(a?.url ?? "");
     }

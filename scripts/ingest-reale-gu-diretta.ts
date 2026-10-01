@@ -25,7 +25,7 @@
  * `{provenance{fonte,url,recuperatoIl,licenza},serie,numero,data,atti[]}`.
  *
  * Uso:
- *   npx tsx scripts/ingest-reale-gu-diretta.ts [--help]
+ *   bunx tsx scripts/ingest-reale-gu-diretta.ts [--help]
  */
 
 import { mkdirSync, writeFileSync } from "node:fs";
@@ -34,8 +34,7 @@ import { fileURLToPath } from "node:url";
 
 const RSS_SG = "https://www.gazzettaufficiale.it/rss/SG";
 const FONTE = "gazzettaufficiale.it RSS Serie Generale";
-const LICENZA =
-  "solo metadati + link ufficiali, nessun mirror (fa fede la GU a stampa)";
+const LICENZA = "solo metadati + link ufficiali, nessun mirror (fa fede la GU a stampa)";
 const TIMEOUT_MS = 15000;
 const TENTATIVI = 2;
 const PAUSA_RETE_MS = 2000;
@@ -235,7 +234,7 @@ async function main(): Promise<void> {
         "Ingest reale Gazzetta Ufficiale diretta — Ultime (RSS Serie Generale).",
         "",
         "Uso:",
-        "  npx tsx scripts/ingest-reale-gu-diretta.ts",
+        "  bunx tsx scripts/ingest-reale-gu-diretta.ts",
         "",
         `Sorgente: ${RSS_SG} (ultimo numero SG, max ${MAX_ITEM} item).`,
         "Output: data/reali/gazzetta-ultime.json (<= 1MB).",
@@ -260,13 +259,17 @@ async function main(): Promise<void> {
   };
   const json = `${JSON.stringify(envelope, null, 2)}\n`;
   const byte = Buffer.byteLength(json, "utf8");
-  console.log(`[ingest-gu] SG n.${numero || "?"} del ${data || "?"}: ${atti.length} atti (${byte} byte, cap ${MAX_BYTE_OUT}).`);
+  console.log(
+    `[ingest-gu] SG n.${numero || "?"} del ${data || "?"}: ${atti.length} atti (${byte} byte, cap ${MAX_BYTE_OUT}).`,
+  );
   if (byte > MAX_BYTE_OUT) {
     throw new Error(`gazzetta-ultime.json ${byte} byte oltre 1MB: nessun file scritto`);
   }
   mkdirSync(DIR_REALI, { recursive: true });
   writeFileSync(FILE_OUT, json, "utf8");
-  console.log(`Gazzetta Ufficiale SG: ${atti.length} atti. File scritto: data/reali/gazzetta-ultime.json.`);
+  console.log(
+    `Gazzetta Ufficiale SG: ${atti.length} atti. File scritto: data/reali/gazzetta-ultime.json.`,
+  );
 }
 
 const eseguitoDiretto =

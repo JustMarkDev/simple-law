@@ -33,7 +33,7 @@
  * testo prima della scrittura.
  *
  * Uso:
- *   npx tsx scripts/ingest-reale-pre-P4.ts [--anni=1935,1936,1937,1938,1939,1940,1941,1942,1943,1944,1945,1946,1947]
+ *   bunx tsx scripts/ingest-reale-pre-P4.ts [--anni=1935,1936,1937,1938,1939,1940,1941,1942,1943,1944,1945,1946,1947]
  *     [--limite=80] [--testo-max=2000] [--api-base=...] [--help]
  *
  * Anni a zero: NESSUN file per l'anno vuoto (lista onesta in console). Esce
@@ -132,7 +132,21 @@ const FINESTRA_1946 = { nome: "1946", inizio: "1946-01-01", fine: "1946-12-31" }
 const FINESTRA_1947 = { nome: "1947", inizio: "1947-01-01", fine: "1947-12-31" } as const;
 
 /** Ordine di default: backfill pre-1948 Regno d'Italia (1935 prima, 1947 ultima). */
-const ORDINE_DEFAULT = ["1935", "1936", "1937", "1938", "1939", "1940", "1941", "1942", "1943", "1944", "1945", "1946", "1947"] as const;
+const ORDINE_DEFAULT = [
+  "1935",
+  "1936",
+  "1937",
+  "1938",
+  "1939",
+  "1940",
+  "1941",
+  "1942",
+  "1943",
+  "1944",
+  "1945",
+  "1946",
+  "1947",
+] as const;
 
 /** Finestre selezionabili via --anni (stesso bounded: max 80 atti). */
 const FINESTRE_DISPONIBILI = {
@@ -231,7 +245,9 @@ function isoDaParti(anno: unknown, mese: unknown, giorno: unknown): string {
 
 /** Chiave di dedup ELI: trim + lowercase (stessa regola del resto dell'app). */
 export function chiaveEliFinestraPreP4(eli: unknown): string {
-  return String(eli ?? "").trim().toLowerCase();
+  return String(eli ?? "")
+    .trim()
+    .toLowerCase();
 }
 
 function pausa(ms: number): Promise<void> {
@@ -300,7 +316,11 @@ export function urnDaVoceFinestraPreP4(voce: unknown): string {
   const numero = stringaFinestraPreP4(
     voce["numeroProvvedimento"] ?? voce["numero"] ?? voce["numeroAttoAlfanumerico"],
   );
-  const iso = isoDaParti(voce["annoProvvedimento"], voce["meseProvvedimento"], voce["giornoProvvedimento"]);
+  const iso = isoDaParti(
+    voce["annoProvvedimento"],
+    voce["meseProvvedimento"],
+    voce["giornoProvvedimento"],
+  );
   if (!tipo || !numero || !iso) return "";
   const urn = formatNIR({ tipo, data: iso, numero });
   return parseNIR(urn) ? urn : "";
@@ -354,12 +374,17 @@ export function dettaglioToRecordFinestraPreP4(
 
   const dataEmanazione =
     dto?.dataEmanazione ||
-    isoDaParti(interno["annoProvvedimento"], interno["meseProvvedimento"], interno["giornoProvvedimento"]) ||
+    isoDaParti(
+      interno["annoProvvedimento"],
+      interno["meseProvvedimento"],
+      interno["giornoProvvedimento"],
+    ) ||
     normalizzaData(interno["dataEmanazione"]) ||
     (parseNIR(voce.urn)?.data ?? "");
   if (!dataEmanazione) return null;
 
-  const codice = dto?.codiceRedazionale || stringaFinestraPreP4(interno["codiceRedazionale"]) || voce.codice;
+  const codice =
+    dto?.codiceRedazionale || stringaFinestraPreP4(interno["codiceRedazionale"]) || voce.codice;
 
   const html = dto?.articoloHtml || stringaFinestraPreP4(interno["articoloHtml"]);
   const testoIntegrale = dto?.testo || stripHtml(html);
@@ -452,7 +477,7 @@ function aiuto(): string {
     "Ingest finestre pre-P4 (1935-1947 Regno d'Italia) Normattiva 1935/1936/1937/1938/1939/1940/1941/1942/1943/1944/1945/1946/1947 (dati ufficiali, mai dimostrativi).",
     "",
     "Uso:",
-    "  npx tsx scripts/ingest-reale-pre-P4.ts [opzioni]",
+    "  bunx tsx scripts/ingest-reale-pre-P4.ts [opzioni]",
     "",
     "Opzioni:",
     "  --anni=A,B            finestre da ingerire (default 1935,1936,1937,1938,1939,1940,1941,1942,1943,1944,1945,1946,1947; ammessi 1935,1936,1937,1938,1939,1940,1941,1942,1943,1944,1945,1946,1947)",
@@ -542,8 +567,12 @@ export function isErroreLimiteAttiPreP4(cause: unknown): boolean {
 }
 
 /** Dimezza un intervallo ISO [inizio..fine] in due sotto-intervalli per giorni. */
-export function dividiIntervalloPreP4(inizio: string, fine: string): Array<[string, string]> | null {
-  if (!isIsoDateFinestraPreP4(inizio) || !isIsoDateFinestraPreP4(fine) || inizio >= fine) return null;
+export function dividiIntervalloPreP4(
+  inizio: string,
+  fine: string,
+): Array<[string, string]> | null {
+  if (!isIsoDateFinestraPreP4(inizio) || !isIsoDateFinestraPreP4(fine) || inizio >= fine)
+    return null;
   const t0 = Date.parse(`${inizio}T00:00:00Z`);
   const t1 = Date.parse(`${fine}T00:00:00Z`);
   const giorni = Math.round((t1 - t0) / 86400000);
@@ -630,7 +659,9 @@ export async function percorsiDedupPreP4(escludi: readonly string[]): Promise<st
  * Carica gli ELI/nir/chiave gia' presenti nei file esistenti (lower+trim).
  * Non lancia mai: se un file manca o e' invalido viene saltato.
  */
-export async function caricaChiaviEsistentiPreP4(percorsi: readonly string[]): Promise<Set<string>> {
+export async function caricaChiaviEsistentiPreP4(
+  percorsi: readonly string[],
+): Promise<Set<string>> {
   const chiavi = new Set<string>();
   for (const percorso of percorsi) {
     try {
@@ -732,7 +763,11 @@ async function main(): Promise<void> {
   for (const finestra of finestre) {
     const nome = finestra.nome as NomeFinestraPreP4;
     try {
-      const { voci, url } = await listaFinestraConSplit(overridesPost, finestra.inizio, finestra.fine);
+      const { voci, url } = await listaFinestraConSplit(
+        overridesPost,
+        finestra.inizio,
+        finestra.fine,
+      );
       urlPerAnno.set(nome, url);
       console.log(`Finestra ${nome}: ${voci.length} voci reali.`);
       const filtrate = escludiConosciute(voci).filter((voce) => {
@@ -741,7 +776,9 @@ async function main(): Promise<void> {
         if (eliCandidatiPreP4(voce).some((c) => eliViste.has(c))) return false;
         return true;
       });
-      console.log(`Finestra ${nome}: ${voci.length} voci, ${voci.length - filtrate.length} duplicate escluse.`);
+      console.log(
+        `Finestra ${nome}: ${voci.length} voci, ${voci.length - filtrate.length} duplicate escluse.`,
+      );
       const selezionate = filtrate.slice(0, limite);
       vociPerAnno.set(nome, selezionate);
       for (const voce of selezionate) {
@@ -767,7 +804,9 @@ async function main(): Promise<void> {
     process.exitCode = 1;
     return;
   }
-  console.log(`Recupero dettagli per ${daDettagliare.length} atti (batch da ${DETTAGLI_PER_BATCH}).`);
+  console.log(
+    `Recupero dettagli per ${daDettagliare.length} atti (batch da ${DETTAGLI_PER_BATCH}).`,
+  );
 
   const attiPerAnno = new Map<NomeFinestraPreP4, LawRecord[]>();
   for (const finestra of finestre) attiPerAnno.set(finestra.nome as NomeFinestraPreP4, []);
@@ -820,13 +859,19 @@ async function main(): Promise<void> {
   // Pre-1948: atti 1800/primi-900 spesso senza dettaglio servito, scarti onesti
   // attesi. Anni a zero => NESSUN file per quell'anno (lista onesta). Esce 1
   // SENZA scrivere alcun file solo se TUTTE le finestre sono vuote.
-  const vuote = finestre.filter((f) => (attiPerAnno.get(f.nome as NomeFinestraPreP4)?.length ?? 0) === 0);
-  const piene = finestre.filter((f) => (attiPerAnno.get(f.nome as NomeFinestraPreP4)?.length ?? 0) > 0);
+  const vuote = finestre.filter(
+    (f) => (attiPerAnno.get(f.nome as NomeFinestraPreP4)?.length ?? 0) === 0,
+  );
+  const piene = finestre.filter(
+    (f) => (attiPerAnno.get(f.nome as NomeFinestraPreP4)?.length ?? 0) > 0,
+  );
   if (vuote.length > 0) {
     console.log(`Anni vuoti onesti (nessun file): ${vuote.map((f) => f.nome).join(",")}.`);
   }
   if (piene.length === 0) {
-    console.error(`Tutte le finestre senza atti reali (${vuote.map((f) => f.nome).join(",")}): nessun file scritto.`);
+    console.error(
+      `Tutte le finestre senza atti reali (${vuote.map((f) => f.nome).join(",")}): nessun file scritto.`,
+    );
     for (const e of errori.slice(0, 10)) console.error(`  - ${e}`);
     process.exitCode = 1;
     return;

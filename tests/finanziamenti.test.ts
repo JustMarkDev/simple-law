@@ -16,7 +16,7 @@
 import { readFile, stat } from "node:fs/promises";
 import path from "node:path";
 import { deflateSync } from "node:zlib";
-import { beforeEach, describe, expect, it, vi } from "vitest";
+import { beforeEach, describe, expect, it, vi } from "vite-plus/test";
 import { GET as finanziamentiGET } from "@/app/api/finanziamenti/route";
 import {
   aErogazione,
@@ -66,7 +66,14 @@ const VOCE_VALIDA = {
   lastModified: "Thu, 11 Jun 2026 15:39:23 GMT",
 };
 
-const CHIAVI_VOCE = ["anno", "beneficiario", "fonte_pdf", "lastModified", "n_erogazioni", "totale_euro"].sort();
+const CHIAVI_VOCE = [
+  "anno",
+  "beneficiario",
+  "fonte_pdf",
+  "lastModified",
+  "n_erogazioni",
+  "totale_euro",
+].sort();
 
 // ---------------------------------------------------------------------------
 // Script: decodifica low-level (offline, fixture inline)
@@ -95,9 +102,9 @@ describe("finanziamenti ingest: decodifica PDF low-level", () => {
       n: 1,
       centesimi: 10000,
     });
-    expect(
-      parseRigaErogazione("17/12/2024 2024 07/03/2025 FAGGI SIMONE 1 € -59,40 no", 7),
-    ).toEqual({ anno: 2024, n: 1, centesimi: -5940 });
+    expect(parseRigaErogazione("17/12/2024 2024 07/03/2025 FAGGI SIMONE 1 € -59,40 no", 7)).toEqual(
+      { anno: 2024, n: 1, centesimi: -5940 },
+    );
     expect(
       parseRigaErogazione(
         "08/04/2025 2025 30/05/2025 VIZIANO DAVIDE 1 € 300,00 no Erogazione integrata con comunicazione",
@@ -140,7 +147,8 @@ describe("finanziamenti ingest: indice e selezione PDF", () => {
     <a href="/application/xmanager/projects/parlamento18/attachments/file_parlamento/uploads/000/000/007/ART_5_2025_agg._11062026.pdf">Erogazioni 2025</a>
     <a href="/application/xmanager/projects/parlamento18/attachments/file_parlamento/uploads/000/000/008/ART_5_2026_v._65.pdf">Erogazioni 2026</a>
     <a href="https://example.com/esterno.pdf">Esterno (scartato)</a>
-  `.replaceAll("ART_5_2024", "ART_5_DL_149_2013_L_3_2019_dal_01012024_al_31122024")
+  `
+    .replaceAll("ART_5_2024", "ART_5_DL_149_2013_L_3_2019_dal_01012024_al_31122024")
     .replaceAll("ART_5_2025", "ART_5_DL_149_2013_L_3_2019_dal_01012025_al_31122025")
     .replaceAll("ART_5_2026", "ART_5_DL_149_2013_L_3_2019_dal_01012026");
 
@@ -178,7 +186,8 @@ const THEAD_SINTETICA: Array<[number, number, string]> = [
 ];
 
 function pdfSintetico(celle: Array<[number, number, string]>): Buffer {
-  const escape = (t: string) => t.replace(/\\/g, "\\\\").replace(/\(/g, "\\(").replace(/\)/g, "\\)");
+  const escape = (t: string) =>
+    t.replace(/\\/g, "\\\\").replace(/\(/g, "\\(").replace(/\)/g, "\\)");
   let ops = "";
   for (const [x, y, t] of celle) {
     ops += `BT\n1 0 0 1 ${x} ${y} Tm\n/F1 8 Tf\n(${escape(t)})Tj\nET\n`;
@@ -300,7 +309,8 @@ describe("finanziamenti ingest: merge e top deterministico", () => {
       string,
       { beneficiario: string; anno: number; n: number; centesimi: number }
     >();
-    for (const [b, a, n, c] of coppie) mappa.set(`${b}|||${a}`, { beneficiario: b, anno: a, n, centesimi: c });
+    for (const [b, a, n, c] of coppie)
+      mappa.set(`${b}|||${a}`, { beneficiario: b, anno: a, n, centesimi: c });
     return { coppie: mappa, righe: 1, scartateFuoriAnno: 0 };
   }
 
@@ -313,12 +323,24 @@ describe("finanziamenti ingest: merge e top deterministico", () => {
       50,
     );
     expect(voci).toHaveLength(1);
-    expect(voci[0]).toMatchObject({ beneficiario: "PARTITO ESEMPIO", anno: 2025, n: 13, centesimi: 150000, indiceFile: 0 });
+    expect(voci[0]).toMatchObject({
+      beneficiario: "PARTITO ESEMPIO",
+      anno: 2025,
+      n: 13,
+      centesimi: 150000,
+      indiceFile: 0,
+    });
   });
 
   it("top per totale desc con cap e spareggio deterministico", () => {
     const voci = unisciEOrdinaFinanziamenti(
-      [fileDi([["B ALTO", 2024, 1, 99900], ["A BASSO", 2024, 1, 100], ["C MEDIO", 2025, 1, 50000]])],
+      [
+        fileDi([
+          ["B ALTO", 2024, 1, 99900],
+          ["A BASSO", 2024, 1, 100],
+          ["C MEDIO", 2025, 1, 50000],
+        ]),
+      ],
       2,
     );
     expect(voci.map((v) => v.beneficiario)).toEqual(["B ALTO", "C MEDIO"]);
@@ -335,7 +357,9 @@ describe("finanziamenti lib: normalizzazione e helper", () => {
     expect(aErogazione({ ...VOCE_VALIDA, anno: 1999 })).toBeNull();
     expect(aErogazione({ ...VOCE_VALIDA, n_erogazioni: 0 })).toBeNull();
     expect(aErogazione({ ...VOCE_VALIDA, totale_euro: Number.NaN })).toBeNull();
-    expect(aErogazione({ ...VOCE_VALIDA, fonte_pdf: "http://parlamento18.camera.it/x.pdf" })).toBeNull();
+    expect(
+      aErogazione({ ...VOCE_VALIDA, fonte_pdf: "http://parlamento18.camera.it/x.pdf" }),
+    ).toBeNull();
     expect(aErogazione({ ...VOCE_VALIDA, beneficiario: "X" })).toBeNull();
     expect(aErogazione({ ...VOCE_VALIDA, lastModified: "" })).toBeNull();
     expect(aErogazione(null)).toBeNull();
@@ -352,7 +376,9 @@ describe("finanziamenti lib: normalizzazione e helper", () => {
     expect(cercaErogazioni(voci, "x")).toHaveLength(3);
     expect(filtraPerAnno(voci, 2025)).toHaveLength(2);
     expect(filtraPerAnno(voci, "nope")).toHaveLength(3);
-    expect(ordinaErogazioni(voci, "totale_desc").map((v) => v.totale_euro)).toEqual([300, 200, 100]);
+    expect(ordinaErogazioni(voci, "totale_desc").map((v) => v.totale_euro)).toEqual([
+      300, 200, 100,
+    ]);
     expect(ordinaErogazioni(voci, "nome_asc")[0].beneficiario).toBe("FORZA ITALIA");
     const dodici: ErogazionePartito[] = Array.from({ length: 12 }, (_, i) => ({
       ...VOCE_VALIDA,
@@ -384,7 +410,9 @@ describe("finanziamenti API: mai-500", () => {
 
   it("GET con parametri assurdi non lancia e pagina entro i bound", async () => {
     const res = await finanziamentiGET(
-      new Request("https://simple-law.it/api/finanziamenti?q=%20%20&anno=abcd&ord=zzz&page=-5&per=9999"),
+      new Request(
+        "https://simple-law.it/api/finanziamenti?q=%20%20&anno=abcd&ord=zzz&page=-5&per=9999",
+      ),
     );
     expect(res.status).toBe(200);
     const json = (await res.json()) as { page: number; per: number; items: unknown[] };

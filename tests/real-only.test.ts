@@ -1,11 +1,6 @@
-import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
+import { afterEach, beforeEach, describe, expect, it, vi } from "vite-plus/test";
 import { SEED_LAWS } from "@/lib/seed-data";
-import {
-  azzeraCacheReali,
-  getCorpusInfo,
-  getSeedLaws,
-  unisciCorpus,
-} from "@/lib/sources";
+import { azzeraCacheReali, getCorpusInfo, getSeedLaws, unisciCorpus } from "@/lib/sources";
 import { svuotaCacheCorpus } from "@/lib/corpus-unificato";
 
 /**
@@ -15,12 +10,8 @@ import { svuotaCacheCorpus } from "@/lib/corpus-unificato";
  * escluso. Con opt-in il legacy e' ripristinato.
  */
 
-const ELI_DIMOSTRATIVI = SEED_LAWS.filter((l) => l.dimostrativo === true).map(
-  (l) => l.eli,
-);
-const ELI_CURATI = SEED_LAWS.filter((l) => l.dimostrativo !== true).map(
-  (l) => l.eli,
-);
+const ELI_DIMOSTRATIVI = SEED_LAWS.filter((l) => l.dimostrativo === true).map((l) => l.eli);
+const ELI_CURATI = SEED_LAWS.filter((l) => l.dimostrativo !== true).map((l) => l.eli);
 
 const STATI_ONESTI = ["in_vigore", "abrogato", "decaduto", "sconosciuto"];
 const DOMINI_BASE_AMMESSI = [
@@ -64,9 +55,7 @@ describe("real-only: default senza sintetico", () => {
     const leggi = getSeedLaws();
     expect(leggi.length).toBeGreaterThan(0);
     for (const law of leggi) {
-      expect(law.titolo.includes("Variante "), `titolo sintetico: ${law.eli}`).toBe(
-        false,
-      );
+      expect(law.titolo.includes("Variante "), `titolo sintetico: ${law.eli}`).toBe(false);
     }
   });
 
@@ -102,9 +91,7 @@ describe("real-only: default senza sintetico", () => {
   it("stati onesti in tutto il default (mai 500, mai inventati)", () => {
     senzaSintetico();
     for (const law of getSeedLaws()) {
-      expect(STATI_ONESTI, `stato non onesto ${law.eli}: ${law.stato}`).toContain(
-        law.stato,
-      );
+      expect(STATI_ONESTI, `stato non onesto ${law.eli}: ${law.stato}`).toContain(law.stato);
     }
   });
 

@@ -10,7 +10,7 @@
  * - mai inventare dati: campi assenti -> null, mai ricostruiti.
  */
 
-import { beforeEach, describe, expect, it, vi } from "vitest";
+import { beforeEach, describe, expect, it, vi } from "vite-plus/test";
 import {
   aSondaggio,
   cercaPerIstituto,
@@ -106,7 +106,7 @@ const CELLE_FIXTURE = [
   "8.0",
   " {{Hidden|4.3|dettaglio}}",
   'style="background:#FFD0D7;"|6.8',
-  'style="background:#FFD0D7;"|\'\'\'45.1\'\'\'',
+  "style=\"background:#FFD0D7;\"|'''45.1'''",
   "40.4",
 ];
 
@@ -129,7 +129,10 @@ async function leggiReale(): Promise<{
     const sondaggi = (parsed as Record<string, unknown>)["sondaggi"];
     if (!Array.isArray(sondaggi)) return null;
     return {
-      provenance: ((parsed as { provenance?: unknown }).provenance ?? {}) as Record<string, unknown>,
+      provenance: ((parsed as { provenance?: unknown }).provenance ?? {}) as Record<
+        string,
+        unknown
+      >,
       sondaggi,
       byte: Buffer.byteLength(raw, "utf8"),
     };
@@ -190,9 +193,10 @@ describe("sondaggi: validazione fixture (zero rete, zero disco)", () => {
   });
 
   it("mediaPartito su sigla nota, clamp 1..60, null su sigla ignota", () => {
-    const elenco = [aSondaggio(RECORD_FIXTURE), aSondaggio({ ...RECORD_FIXTURE, fdi: 25.4 })].filter(
-      (v): v is NonNullable<typeof v> => v !== null,
-    );
+    const elenco = [
+      aSondaggio(RECORD_FIXTURE),
+      aSondaggio({ ...RECORD_FIXTURE, fdi: 25.4 }),
+    ].filter((v): v is NonNullable<typeof v> => v !== null);
     expect(mediaPartito(elenco, "fdi", 2)).toBe(26.4);
     expect(mediaPartito(elenco, "dx", 2)).toBeNull();
     expect(mediaPartito([], "fdi", 5)).toBeNull();
@@ -253,7 +257,7 @@ describe("sondaggi: conformita' script fetch-sondaggi-wiki.mjs (tollerante se as
     const estrai = mod["estraiPercentuale"];
     if (typeof estrai === "function") {
       const fn = estrai as (s: string) => number | null;
-      expect(fn('style="background:#FFD0D7;"|\'\'\'45.1\'\'\'')).toBe(45.1);
+      expect(fn("style=\"background:#FFD0D7;\"|'''45.1'''")).toBe(45.1);
       expect(fn(" {{Hidden|4.3|dettaglio}}")).toBe(4.3);
       expect(fn("")).toBeNull();
     }
@@ -290,7 +294,9 @@ describe("sondaggi: conformita' script fetch-sondaggi-wiki.mjs (tollerante se as
         cdx: 40.4,
       });
       // riga-nota con colspan -> null
-      expect(fn("|{{Opdrts|27|28|September|2026}}\n| colspan=\"19\" | nota", 1, "2026-09-28")).toBeNull();
+      expect(
+        fn('|{{Opdrts|27|28|September|2026}}\n| colspan="19" | nota', 1, "2026-09-28"),
+      ).toBeNull();
     }
     expect(chiamateFetch).toBe(0);
     expect(true).toBe(true);

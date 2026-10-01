@@ -159,8 +159,7 @@ export function aSondaggio(voce: unknown): SondaggioNazionale | null {
     const m5s = percentuale(o["m5s"]);
     const url = stringa(o["url_fonte"], 500);
     const revidRaw = o["revid_wiki"];
-    const revid =
-      typeof revidRaw === "number" && Number.isSafeInteger(revidRaw) ? revidRaw : NaN;
+    const revid = typeof revidRaw === "number" && Number.isSafeInteger(revidRaw) ? revidRaw : NaN;
     const estratto = dataIso(o["estratto_il"]);
     if (!istituto || istituto.length < 2) return null;
     if (!da || !a) return null;
@@ -170,9 +169,7 @@ export function aSondaggio(voce: unknown): SondaggioNazionale | null {
     if (!estratto) return null;
     const campioneRaw = o["campione_n"];
     const campione =
-      campioneRaw === null || campioneRaw === undefined
-        ? null
-        : interoONullo(campioneRaw);
+      campioneRaw === null || campioneRaw === undefined ? null : interoONullo(campioneRaw);
     if (campioneRaw !== null && campioneRaw !== undefined && campione === null) {
       // campione presente ma invalido -> invalida il record (mai stimare)
       if (typeof campioneRaw === "number") return null;
@@ -279,8 +276,17 @@ export function mediaPartito(
     if (!Array.isArray(sondaggi)) return null;
     const chiave = stringa(sigla, 16).toLowerCase();
     const ammesse = [
-      "fdi", "pd", "m5s", "lega", "fi", "azione",
-      "iv", "avs", "piu_europa", "nm", "fn",
+      "fdi",
+      "pd",
+      "m5s",
+      "lega",
+      "fi",
+      "azione",
+      "iv",
+      "avs",
+      "piu_europa",
+      "nm",
+      "fn",
     ];
     if (!ammesse.includes(chiave)) return null;
     let limite = 10;
@@ -364,7 +370,7 @@ function moduliNode(): ModuliNode | null {
 
 let cache: EnvelopeSondaggi | null | undefined;
 
- /** Azzera la cache in modulo (utile nei test). Non lancia mai. */
+/** Azzera la cache in modulo (utile nei test). Non lancia mai. */
 export function azzeraCache(): void {
   try {
     cache = undefined;

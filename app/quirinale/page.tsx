@@ -1,47 +1,50 @@
-import type { Metadata } from 'next'
-import Link from 'next/link'
-import Header from '@/components/Header'
-import Footer from '@/components/Footer'
+import type { Metadata } from "next";
+import Link from "next/link";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 import {
   cercaQuirinale,
   leggiProvenanceQuirinale,
   tuttiComunicatiQuirinale,
-} from '@/lib/quirinale-dati'
+} from "@/lib/quirinale-dati";
 
 export const metadata: Metadata = {
-  title: 'Quirinale - Comunicati - Stato della Repubblica',
+  title: "Quirinale - Comunicati - Stato della Repubblica",
   description:
-    'I comunicati recenti della Presidenza della Repubblica da quirinale.it: messaggi e dichiarazioni del Presidente. Non sono leggi.',
-}
+    "I comunicati recenti della Presidenza della Repubblica da quirinale.it: messaggi e dichiarazioni del Presidente. Non sono leggi.",
+};
 
 function dataIT(iso?: string): string {
   try {
-    if (!iso) return 'data non indicata'
-    const d = new Date(`${iso}T00:00:00Z`)
-    if (Number.isNaN(d.getTime())) return iso.slice(0, 10)
-    return d.toLocaleDateString('it-IT', { day: 'numeric', month: 'long', year: 'numeric' })
+    if (!iso) return "data non indicata";
+    const d = new Date(`${iso}T00:00:00Z`);
+    if (Number.isNaN(d.getTime())) return iso.slice(0, 10);
+    return d.toLocaleDateString("it-IT", { day: "numeric", month: "long", year: "numeric" });
   } catch {
-    return (iso ?? '').slice(0, 10)
+    return (iso ?? "").slice(0, 10);
   }
 }
 
 export default async function QuirinalePage({
   searchParams,
 }: {
-  searchParams: Promise<{ q?: string }>
+  searchParams: Promise<{ q?: string }>;
 }) {
-  const params = await searchParams
-  const q = (params.q ?? '').slice(0, 100)
+  const params = await searchParams;
+  const q = (params.q ?? "").slice(0, 100);
   const [tutte, provenance] = await Promise.all([
     tuttiComunicatiQuirinale(),
     leggiProvenanceQuirinale(),
-  ])
-  const filtrate = cercaQuirinale(tutte, q)
+  ]);
+  const filtrate = cercaQuirinale(tutte, q);
 
   return (
     <>
       <Header />
-      <main id="contenuto" className="mx-auto w-full max-w-editoriale px-4 py-10 sm:px-6 sm:py-12 lg:px-8">
+      <main
+        id="contenuto"
+        className="mx-auto w-full max-w-editoriale px-4 py-10 sm:px-6 sm:py-12 lg:px-8"
+      >
         <nav aria-label="Percorso" className="text-sm text-inchiostro-soft dark:text-nebbia-soft">
           <ol className="flex items-center gap-2">
             <li>
@@ -65,18 +68,27 @@ export default async function QuirinalePage({
           </h1>
           <p className="mt-3 max-w-2xl text-sm leading-relaxed text-inchiostro-soft dark:text-nebbia-soft">
             Messaggi, dichiarazioni e udienze del Presidente della Repubblica pubblicati su
-            quirinale.it. Sono comunicati istituzionali: non sono leggi e non hanno valore normativo.
+            quirinale.it. Sono comunicati istituzionali: non sono leggi e non hanno valore
+            normativo.
           </p>
-          <p className="mt-2 flex flex-wrap items-center gap-2 text-sm font-semibold text-inchiostro dark:text-nebbia" role="status">
-            <span>{filtrate.length} comunicati mostrati · {tutte.length} caricati dalla pagina 1</span>
-            <span className="inline-flex items-center border border-inchiostro px-2 py-1 text-[11px] font-bold text-inchiostro dark:border-nebbia dark:text-nebbia">
+          <p
+            className="mt-2 flex flex-wrap items-center gap-2 text-sm font-semibold text-inchiostro dark:text-nebbia"
+            role="status"
+          >
+            <span>
+              {filtrate.length} comunicati mostrati · {tutte.length} caricati dalla pagina 1
+            </span>
+            <span className="inline-flex items-center border border-inchiostro px-2 py-1 text-[11px] leading-5 font-bold text-inchiostro dark:border-nebbia dark:text-nebbia">
               non-legge
             </span>
           </p>
         </header>
 
         <div className="mt-4 flex flex-wrap gap-2" role="group" aria-label="Sezioni del Quirinale">
-          <span aria-current="page" className="inline-flex min-h-[48px] items-center border border-inchiostro bg-inchiostro px-4 py-2 text-xs font-semibold text-carta dark:border-nebbia dark:bg-nebbia dark:text-notte">
+          <span
+            aria-current="page"
+            className="inline-flex min-h-[48px] items-center border border-inchiostro bg-inchiostro px-4 py-2 text-xs font-semibold text-carta dark:border-nebbia dark:bg-nebbia dark:text-notte"
+          >
             Comunicati ({tutte.length})
           </span>
           <Link
@@ -87,7 +99,12 @@ export default async function QuirinalePage({
           </Link>
         </div>
 
-        <form method="get" action="/quirinale" className="mt-6 flex flex-col gap-3 sm:flex-row" role="search">
+        <form
+          method="get"
+          action="/quirinale"
+          className="mt-6 flex flex-col gap-3 sm:flex-row"
+          role="search"
+        >
           <label htmlFor="cerca-quirinale" className="sr-only">
             Cerca nei comunicati
           </label>
@@ -109,7 +126,10 @@ export default async function QuirinalePage({
         </form>
 
         {filtrate.length === 0 ? (
-          <p className="mt-8 border border-regola bg-carta-soft p-5 text-sm text-inchiostro-soft dark:border-notte-deep dark:bg-notte-soft dark:text-nebbia-soft" role="status">
+          <p
+            className="mt-8 border border-regola bg-carta-soft p-5 text-sm text-inchiostro-soft dark:border-notte-deep dark:bg-notte-soft dark:text-nebbia-soft"
+            role="status"
+          >
             Nessun comunicato trovato con questi criteri. Prova a cercare un altro argomento.
           </p>
         ) : (
@@ -158,9 +178,14 @@ export default async function QuirinalePage({
             Fonte e licenza
           </h2>
           <p className="mt-2 text-sm leading-relaxed text-inchiostro-soft dark:text-nebbia-soft">
-            Fonte: {provenance.fonte ?? 'quirinale.it'} - {provenance.licenza ?? 'uso non commerciale con attribuzione, fa fede la Gazzetta Ufficiale'}
-            {provenance.recuperatoIl ? ` · dati aggiornati al ${dataIT(provenance.recuperatoIl.slice(0, 10))}` : ''}.
-            Pagina 1 dell&apos;archivio comunicati (i comunicati non sono leggi: per i testi normativi fa fede la Gazzetta Ufficiale).
+            Fonte: {provenance.fonte ?? "quirinale.it"} -{" "}
+            {provenance.licenza ??
+              "uso non commerciale con attribuzione, fa fede la Gazzetta Ufficiale"}
+            {provenance.recuperatoIl
+              ? ` · dati aggiornati al ${dataIT(provenance.recuperatoIl.slice(0, 10))}`
+              : ""}
+            . Pagina 1 dell&apos;archivio comunicati (i comunicati non sono leggi: per i testi
+            normativi fa fede la Gazzetta Ufficiale).
           </p>
           <p className="mt-3">
             <a
@@ -176,5 +201,5 @@ export default async function QuirinalePage({
       </main>
       <Footer />
     </>
-  )
+  );
 }

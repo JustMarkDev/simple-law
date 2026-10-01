@@ -11,7 +11,7 @@
  * - un file refreshabile e' piu' vecchio della sua soglia.
  *
  * Uso:
- *   npx tsx scripts/verifica-freschezza.ts [--campagna] [--json] [--ora=ISO] [--help]
+ *   bunx tsx scripts/verifica-freschezza.ts [--campagna] [--json] [--ora=ISO] [--help]
  *
  * Opzioni:
  *   --campagna  usa la soglia settimanale per i sondaggi (campagna
@@ -43,21 +43,21 @@ export const FILE_REFRESHABILI: readonly VoceRefreshabile[] = [
   {
     file: "gazzetta-ultime.json",
     cadenza: "quotidiana feriale",
-    comando: "npx tsx scripts/ingest-reale-gu-diretta.ts",
+    comando: "bunx tsx scripts/ingest-reale-gu-diretta.ts",
     costo: "1 GET RSS Serie Generale (32 item osservati, timeout 15 s, max 84 item)",
     sogliaGiorni: 4,
   },
   {
     file: "governo-comunicati.json",
     cadenza: "giornaliera (RSS volatile)",
-    comando: "npx tsx scripts/ingest-reale-governo.ts",
+    comando: "bunx tsx scripts/ingest-reale-governo.ts",
     costo: "1 GET feed RSS governo.it (max 30 item, timeout 12 s)",
     sogliaGiorni: 3,
   },
   {
     file: "normattiva-recenti.json",
     cadenza: "settimanale (finestra mobile)",
-    comando: "npx tsx scripts/ingest-reale-normattiva.ts --limite=50",
+    comando: "bunx tsx scripts/ingest-reale-normattiva.ts --limite=50",
     costo: "1 POST lista + ~46 dettagli a batch di 5 con pausa 400 ms, timeout 15 s (~1-3 min)",
     sogliaGiorni: 9,
   },
@@ -71,42 +71,42 @@ export const FILE_REFRESHABILI: readonly VoceRefreshabile[] = [
   {
     file: "camera-deputati.json",
     cadenza: "mensile",
-    comando: "npx tsx scripts/ingest-reale-camera.ts",
+    comando: "bunx tsx scripts/ingest-reale-camera.ts",
     costo: "SPARQL dati.camera.it (lista + DESCRIBE per scheda)",
     sogliaGiorni: 35,
   },
   {
     file: "camera-gruppi.json",
     cadenza: "mensile (derivato dai deputati, senza nuove interrogazioni)",
-    comando: "npx tsx scripts/ingest-reale-camera.ts",
+    comando: "bunx tsx scripts/ingest-reale-camera.ts",
     costo: "derivato localmente da camera-deputati.json",
     sogliaGiorni: 35,
   },
   {
     file: "camera-atti.json",
     cadenza: "mensile (campione leg. 19)",
-    comando: "npx tsx scripts/ingest-reale-camera.ts",
+    comando: "bunx tsx scripts/ingest-reale-camera.ts",
     costo: "SPARQL dati.camera.it (atti leg. 19, campione)",
     sogliaGiorni: 35,
   },
   {
     file: "senato-senatori.json",
     cadenza: "mensile",
-    comando: "npx tsx scripts/ingest-reale-senato.ts",
+    comando: "bunx tsx scripts/ingest-reale-senato.ts",
     costo: "SPARQL dati.senato.it (lista + dettagli gruppo/foto)",
     sogliaGiorni: 35,
   },
   {
     file: "senato-gruppi.json",
     cadenza: "mensile (denominazioni storiche leg. 19)",
-    comando: "npx tsx scripts/ingest-reale-senato.ts",
+    comando: "bunx tsx scripts/ingest-reale-senato.ts",
     costo: "derivato dalla lista senatori (stessa interrogazione)",
     sogliaGiorni: 35,
   },
   {
     file: "parlamento-ddl.json",
     cadenza: "mensile (campione leg. 19)",
-    comando: "npx tsx scripts/ingest-reale-ddl.ts",
+    comando: "bunx tsx scripts/ingest-reale-ddl.ts",
     costo: "SPARQL dati.senato.it (DDL leg. 19, campione)",
     sogliaGiorni: 35,
   },
@@ -116,8 +116,17 @@ export const FILE_REFRESHABILI: readonly VoceRefreshabile[] = [
 export const SOGLIA_SONDAGGI_CAMPAGNA_GIORNI = 9;
 
 export type EsitoVoce =
-  | { readonly stato: "ok"; readonly file: string; readonly etaGiorni: number; readonly sogliaGiorni: number }
-  | { readonly stato: "scaduto" | "mancante" | "data-non-valida"; readonly file: string; readonly dettaglio: string };
+  | {
+      readonly stato: "ok";
+      readonly file: string;
+      readonly etaGiorni: number;
+      readonly sogliaGiorni: number;
+    }
+  | {
+      readonly stato: "scaduto" | "mancante" | "data-non-valida";
+      readonly file: string;
+      readonly dettaglio: string;
+    };
 
 export interface EsitoVerifica {
   readonly ok: boolean;
@@ -189,7 +198,13 @@ export function verificaFreschezza(
       return {
         ok: false,
         riferimentoIso,
-        voci: [{ stato: "data-non-valida", file: "MANIFEST.json", dettaglio: "testo non interpretabile (fonti assente)" }],
+        voci: [
+          {
+            stato: "data-non-valida",
+            file: "MANIFEST.json",
+            dettaglio: "testo non interpretabile (fonti assente)",
+          },
+        ],
       };
     }
     const perFile = new Map<string, VoceManifest>();
@@ -208,7 +223,11 @@ export function verificaFreschezza(
       const voce = perFile.get(atteso.file);
       if (!voce) {
         ok = false;
-        esiti.push({ stato: "mancante", file: atteso.file, dettaglio: "voce assente in MANIFEST.json" });
+        esiti.push({
+          stato: "mancante",
+          file: atteso.file,
+          dettaglio: "voce assente in MANIFEST.json",
+        });
         continue;
       }
       const istante = interpretaData(voce.recuperatoIl);
@@ -238,7 +257,13 @@ export function verificaFreschezza(
     return {
       ok: false,
       riferimentoIso,
-      voci: [{ stato: "data-non-valida", file: "MANIFEST.json", dettaglio: "errore interno di verifica" }],
+      voci: [
+        {
+          stato: "data-non-valida",
+          file: "MANIFEST.json",
+          dettaglio: "errore interno di verifica",
+        },
+      ],
     };
   }
 }
@@ -257,14 +282,16 @@ function stampaTabella(esito: EsitoVerifica): void {
   if (esito.ok) {
     console.log("Tutti i file refreshabili sono entro la cadenza.");
   } else {
-    console.error("Uno o piu' file refreshabili sono oltre la cadenza: rieseguire gli ingest del giudice.");
+    console.error(
+      "Uno o piu' file refreshabili sono oltre la cadenza: rieseguire gli ingest del giudice.",
+    );
   }
 }
 
 function mostraAiuto(): void {
   console.log(
     [
-      "Uso: npx tsx scripts/verifica-freschezza.ts [--campagna] [--json] [--ora=ISO] [--help]",
+      "Uso: bunx tsx scripts/verifica-freschezza.ts [--campagna] [--json] [--ora=ISO] [--help]",
       "",
       "Verifica read-only (mai rete): confronta recuperatoIl del MANIFEST con le cadenze.",
       "Exit 0 entro soglia, 1 oltre soglia o in caso di MANIFEST illeggibile.",

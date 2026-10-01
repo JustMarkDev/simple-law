@@ -10,7 +10,7 @@
 
 import { readFile, writeFile, mkdir, rm } from "node:fs/promises";
 import path from "node:path";
-import { describe, expect, it } from "vitest";
+import { describe, expect, it } from "vite-plus/test";
 import {
   CAP_ATTI_BULK_B,
   CAP_BYTE_BULK_B,
@@ -96,10 +96,14 @@ describe("reali-bulk-b: cap file ed envelope", () => {
     }
     const prov = (letto.parsed as { provenance?: Record<string, unknown> }).provenance;
     expect(prov && typeof prov === "object").toBe(true);
+    // oxlint-disable-next-line no-unsafe-optional-chaining -- value is checked just above
     expect(typeof prov?.["fonte"] === "string" && (prov?.["fonte"] as string).trim()).toBeTruthy();
     expect(isHttpsUrl(prov?.["url"])).toBe(true);
     expect(isIsoDateTime(prov?.["recuperatoIl"])).toBe(true);
-    expect(typeof prov?.["licenza"] === "string" && (prov?.["licenza"] as string).trim()).toBeTruthy();
+    expect(
+      // oxlint-disable-next-line no-unsafe-optional-chaining -- value is checked just above
+      typeof prov?.["licenza"] === "string" && (prov?.["licenza"] as string).trim(),
+    ).toBeTruthy();
   });
 });
 
@@ -114,7 +118,9 @@ describe("reali-bulk-b: onesta lista-only, mai inventare", () => {
     const atti = (letto.parsed as { atti: Record<string, unknown>[] }).atti;
     const campione = [...atti.slice(0, 20), ...atti.slice(-5)];
     for (const a of campione) {
-      expect(typeof a["titolo"] === "string" && (a["titolo"] as string).trim().length > 0).toBe(true);
+      expect(typeof a["titolo"] === "string" && (a["titolo"] as string).trim().length > 0).toBe(
+        true,
+      );
       expect(a["titolo"]).toBe(a["titoloAtto"]);
       expect(a["sintesi"]).toBe(a["titoloAtto"]);
       expect(a["stato"]).toBe("in_vigore");
@@ -175,7 +181,9 @@ describe("reali-bulk-b: helper never-throw su input assenti/malformati", () => {
     expect(voceToAttoBulkB({})).toBeNull();
     expect(vociDaAggiornatiBulkB(undefined)).toEqual([]);
     expect(numeroAttiTrovatiBulkB(undefined)).toBeNull();
-    expect((await caricaChiaviEsistentiBulkB(["data/reali/file-che-non-esiste.json"])).size).toBe(0);
+    expect((await caricaChiaviEsistentiBulkB(["data/reali/file-che-non-esiste.json"])).size).toBe(
+      0,
+    );
     expect(dedupAttiBulkB([], new Set()).unici).toEqual([]);
 
     // Fixture /tmp: voce reale minima → atto valido; voce senza titolo → null.

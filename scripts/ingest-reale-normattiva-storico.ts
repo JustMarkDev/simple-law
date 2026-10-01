@@ -30,7 +30,7 @@
  * ufficiale), altrimenti in_vigore. Mai inferito dal corpo del testo.
  *
  * Uso:
- *   npx tsx scripts/ingest-reale-normattiva-storico.ts [--limite-1980=80]
+ *   bunx tsx scripts/ingest-reale-normattiva-storico.ts [--limite-1980=80]
  *     [--testo-max=2000] [--out-collezioni=...] [--out-1980=...]
  *     [--api-base=...] [--help]
  *
@@ -119,7 +119,11 @@ const MAX_ATTI_FINESTRA = 80;
 const MAX_VOCI_ZIP_PER_COLLEZIONE = 60;
 const MAX_BYTES_SINGOLO_JSON_ZIP = 64 * 1024 * 1024;
 
-const COLLEZIONI: readonly string[] = ["Codici", "Leggi costituzionali", "Leggi di delegazione europea"];
+const COLLEZIONI: readonly string[] = [
+  "Codici",
+  "Leggi costituzionali",
+  "Leggi di delegazione europea",
+];
 
 const PERCORSO_RECENTI = path.join("data", "reali", "normattiva-recenti.json");
 
@@ -163,7 +167,9 @@ function isoDaParti(anno: unknown, mese: unknown, giorno: unknown): string {
 
 /** Chiave di dedup ELI: trim + lowercase (stessa regola del resto dell'app). */
 export function chiaveEliStorico(eli: unknown): string {
-  return String(eli ?? "").trim().toLowerCase();
+  return String(eli ?? "")
+    .trim()
+    .toLowerCase();
 }
 
 function pausa(ms: number): Promise<void> {
@@ -189,7 +195,10 @@ function messaggioDi(cause: unknown): string {
  * Stato onesto da `articoloDataFineVigenza` esplicita (formato `YYYYMMDD`):
  * `99999999` = ancora in vigore, data passata = abrogato. Pura, per i test.
  */
-export function statoDaFineVigenza(fineVigenza: string, oggiYYYYMMDD: string): "in_vigore" | "abrogato" {
+export function statoDaFineVigenza(
+  fineVigenza: string,
+  oggiYYYYMMDD: string,
+): "in_vigore" | "abrogato" {
   const valida = /^(\d{4})(\d{2})(\d{2})$/.exec((fineVigenza ?? "").trim());
   if (valida && valida[0] !== "99999999" && valida[0] < oggiYYYYMMDD) return "abrogato";
   return "in_vigore";
@@ -221,12 +230,18 @@ export function statoDaIntestazioneArt1(testo: string): "decaduto" | "abrogato" 
  */
 export function urnDaVoceLista(voce: unknown): string {
   if (!isRecord(voce)) return "";
-  const denominazione = stringaStorico(voce["denominazioneAtto"] ?? voce["tipoProvvedimentoDescrizione"]);
+  const denominazione = stringaStorico(
+    voce["denominazioneAtto"] ?? voce["tipoProvvedimentoDescrizione"],
+  );
   const tipo = tipoFromDenominazione(denominazione);
   const numero = stringaStorico(
     voce["numeroProvvedimento"] ?? voce["numero"] ?? voce["numeroAttoAlfanumerico"],
   );
-  const iso = isoDaParti(voce["annoProvvedimento"], voce["meseProvvedimento"], voce["giornoProvvedimento"]);
+  const iso = isoDaParti(
+    voce["annoProvvedimento"],
+    voce["meseProvvedimento"],
+    voce["giornoProvvedimento"],
+  );
   if (!tipo || !numero || !iso) return "";
   const urn = formatNIR({ tipo, data: iso, numero });
   return parseNIR(urn) ? urn : "";
@@ -240,7 +255,9 @@ export function urnDaVoceLista(voce: unknown): string {
  */
 export function voceCollezioneDaMetadati(voce: unknown): VoceLista | null {
   if (!isRecord(voce)) return null;
-  const metadati = isRecord(voce["metadati"]) ? (voce["metadati"] as Record<string, unknown>) : voce;
+  const metadati = isRecord(voce["metadati"])
+    ? (voce["metadati"] as Record<string, unknown>)
+    : voce;
   const urn = stringaStorico(metadati["urn"]);
   if (!parseNIR(urn)) return null;
   const codice = stringaStorico(metadati["redazione"] ?? metadati["codiceRedazionale"]);
@@ -290,7 +307,8 @@ export function dettaglioToRecordStorico(
   const tipo =
     dto?.tipo ||
     tipoFromDenominazione(
-      stringaStorico(interno["tipoProvvedimentoDescrizione"]) || stringaStorico(interno["denominazioneAtto"]),
+      stringaStorico(interno["tipoProvvedimentoDescrizione"]) ||
+        stringaStorico(interno["denominazioneAtto"]),
     ) ||
     "atto";
 
@@ -302,12 +320,17 @@ export function dettaglioToRecordStorico(
 
   const dataEmanazione =
     dto?.dataEmanazione ||
-    isoDaParti(interno["annoProvvedimento"], interno["meseProvvedimento"], interno["giornoProvvedimento"]) ||
+    isoDaParti(
+      interno["annoProvvedimento"],
+      interno["meseProvvedimento"],
+      interno["giornoProvvedimento"],
+    ) ||
     normalizzaData(interno["dataEmanazione"]) ||
     (parseNIR(voce.urn)?.data ?? "");
   if (!dataEmanazione) return null;
 
-  const codice = dto?.codiceRedazionale || stringaStorico(interno["codiceRedazionale"]) || voce.codice;
+  const codice =
+    dto?.codiceRedazionale || stringaStorico(interno["codiceRedazionale"]) || voce.codice;
 
   const html = dto?.articoloHtml || stringaStorico(interno["articoloHtml"]);
   const testoIntegrale = dto?.testo || stripHtml(html);
@@ -347,7 +370,8 @@ export function dettaglioToRecordStorico(
   const dataGU =
     isoDaParti(interno["annoGU"], interno["meseGU"], interno["giornoGU"]) ||
     (isIsoDateStorico(voce.dataGU) ? voce.dataGU : "");
-  const numeroGU = stringaStorico(interno["numeroGU"]) || (/^\d+$/.test(voce.numeroGU) ? voce.numeroGU : "");
+  const numeroGU =
+    stringaStorico(interno["numeroGU"]) || (/^\d+$/.test(voce.numeroGU) ? voce.numeroGU : "");
 
   const fonti = buildFonti({
     tipo,
@@ -358,7 +382,10 @@ export function dettaglioToRecordStorico(
     numeroGU: numeroGU || undefined,
   });
 
-  const sintesi = normalizzaStorico(law.sintesi || sottoTitolo || testoIntegrale || titolo).slice(0, 600);
+  const sintesi = normalizzaStorico(law.sintesi || sottoTitolo || testoIntegrale || titolo).slice(
+    0,
+    600,
+  );
   if (!sintesi) return null;
 
   const testoPieno = (law.testo ?? "").trim();
@@ -395,7 +422,7 @@ function aiuto(): string {
     "Ingest storico Normattiva (dati ufficiali, mai dimostrativi).",
     "",
     "Uso:",
-    "  npx tsx scripts/ingest-reale-normattiva-storico.ts [opzioni]",
+    "  bunx tsx scripts/ingest-reale-normattiva-storico.ts [opzioni]",
     "",
     "Opzioni:",
     "  --limite-1980=N         atti della finestra 1980 (default 80, MAI oltre 80)",
@@ -491,7 +518,8 @@ export function vociDaZipCollezione(bytes: Uint8Array, maxVoci: number): VoceLis
     const cdOffset = view.getUint32(eocd + 16, true);
     if (totali === 0xffff || cdOffset === 0xffffffff) return [];
     let offset = cdOffset;
-    const nomi: Array<{ nome: string; metodo: number; dimCompatta: number; headerLocale: number }> = [];
+    const nomi: Array<{ nome: string; metodo: number; dimCompatta: number; headerLocale: number }> =
+      [];
     for (let i = 0; i < totali && offset + 46 <= bytes.length; i += 1) {
       if (view.getUint32(offset, true) !== 0x02014b50) break;
       const metodo = view.getUint16(offset + 10, true);
@@ -501,7 +529,8 @@ export function vociDaZipCollezione(bytes: Uint8Array, maxVoci: number): VoceLis
       const extraLen = view.getUint16(offset + 30, true);
       const commentoLen = view.getUint16(offset + 32, true);
       const headerLocale = view.getUint32(offset + 42, true);
-      if (dimCompatta === 0xffffffff || dimEstesa === 0xffffffff || headerLocale === 0xffffffff) break;
+      if (dimCompatta === 0xffffffff || dimEstesa === 0xffffffff || headerLocale === 0xffffffff)
+        break;
       const nome = Buffer.from(bytes.subarray(offset + 46, offset + 46 + nomeLen)).toString("utf8");
       nomi.push({ nome, metodo, dimCompatta, headerLocale });
       offset += 46 + nomeLen + extraLen + commentoLen;
@@ -626,7 +655,8 @@ async function main(): Promise<void> {
   const testoMax = intero("testo-max", 2000, 1000, 61440);
   const outCollezioni =
     argomento("out-collezioni") ?? path.join("data", "reali", "normattiva-storico-collezioni.json");
-  const out1980 = argomento("out-1980") ?? path.join("data", "reali", "normattiva-storico-1980.json");
+  const out1980 =
+    argomento("out-1980") ?? path.join("data", "reali", "normattiva-storico-1980.json");
   const apiBase = argomento("api-base");
 
   const overridesPost: Partial<NormattivaConfig> = {
@@ -640,7 +670,9 @@ async function main(): Promise<void> {
     ...(apiBase ? { baseUrl: apiBase } : {}),
   };
 
-  console.log(`Ingest storico Normattiva: collezioni [${COLLEZIONI.join(", ")}] + finestra 1980-01-01..1980-12-31.`);
+  console.log(
+    `Ingest storico Normattiva: collezioni [${COLLEZIONI.join(", ")}] + finestra 1980-01-01..1980-12-31.`,
+  );
 
   const conosciuti = await caricaChiaviRecenti(PERCORSO_RECENTI);
   console.log(`Dedup: ${conosciuti.size} chiavi ELI/nir gia' in normattiva-recenti.json.`);
@@ -662,7 +694,11 @@ async function main(): Promise<void> {
     const urls: string[] = [];
     for (const nome of COLLEZIONI) {
       try {
-        const { voci, url } = await listaCollezione(overridesDownload, nome, MAX_VOCI_ZIP_PER_COLLEZIONE);
+        const { voci, url } = await listaCollezione(
+          overridesDownload,
+          nome,
+          MAX_VOCI_ZIP_PER_COLLEZIONE,
+        );
         console.log(`Collezione ${nome}: ${voci.length} voci reali.`);
         if (url) urls.push(url);
         raccolte.push(...voci);
@@ -678,7 +714,9 @@ async function main(): Promise<void> {
       urls[0] ??
       `${defaultNormattivaConfig(overridesDownload).baseUrl}/api/v1/collections/download/collection-preconfezionata`;
     const filtrate = escludiConosciute(raccolte);
-    console.log(`Collezioni: ${raccolte.length} voci, ${raccolte.length - filtrate.length} duplicate escluse.`);
+    console.log(
+      `Collezioni: ${raccolte.length} voci, ${raccolte.length - filtrate.length} duplicate escluse.`,
+    );
     vociCollezioni = filtrate.slice(0, MAX_ATTI_COLLEZIONI);
   } catch (cause) {
     console.log(`Fase collezioni fallita (${messaggioDi(cause)}).`);
@@ -692,7 +730,9 @@ async function main(): Promise<void> {
     url1980 = url;
     console.log(`Finestra 1980: ${voci.length} voci reali.`);
     const filtrate = escludiConosciute(voci);
-    console.log(`Finestra 1980: ${voci.length} voci, ${voci.length - filtrate.length} duplicate escluse.`);
+    console.log(
+      `Finestra 1980: ${voci.length} voci, ${voci.length - filtrate.length} duplicate escluse.`,
+    );
     voci1980 = filtrate.slice(0, limite1980);
   } catch (cause) {
     console.log(`Finestra 1980 fallita (${messaggioDi(cause)}).`);
@@ -710,7 +750,9 @@ async function main(): Promise<void> {
     process.exitCode = 1;
     return;
   }
-  console.log(`Recupero dettagli per ${daDettagliare.length} atti (batch da ${DETTAGLI_PER_BATCH}).`);
+  console.log(
+    `Recupero dettagli per ${daDettagliare.length} atti (batch da ${DETTAGLI_PER_BATCH}).`,
+  );
 
   const attiCollezioni: LawRecord[] = [];
   const atti1980: LawRecord[] = [];

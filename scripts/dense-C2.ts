@@ -18,7 +18,7 @@
  * aggiunte oneste, mai riempire con inventati.
  *
  * Uso:
- *   npx tsx scripts/dense-C2.ts [--anni=1991,1994,1996,1997,1998,2001,2002,2003]
+ *   bunx tsx scripts/dense-C2.ts [--anni=1991,1994,1996,1997,1998,2001,2002,2003]
  *     [--max-nuovi=120] [--testo-max=2000] [--api-base=...] [--help]
  */
 
@@ -162,7 +162,9 @@ function isoDaParti(anno: unknown, mese: unknown, giorno: unknown): string {
 }
 
 export function chiaveEliDenseC2(eli: unknown): string {
-  return String(eli ?? "").trim().toLowerCase();
+  return String(eli ?? "")
+    .trim()
+    .toLowerCase();
 }
 
 function pausa(ms: number): Promise<void> {
@@ -216,7 +218,11 @@ export function urnDaVoceDenseC2(voce: unknown): string {
   const numero = stringaDenseC2(
     voce["numeroProvvedimento"] ?? voce["numero"] ?? voce["numeroAttoAlfanumerico"],
   );
-  const iso = isoDaParti(voce["annoProvvedimento"], voce["meseProvvedimento"], voce["giornoProvvedimento"]);
+  const iso = isoDaParti(
+    voce["annoProvvedimento"],
+    voce["meseProvvedimento"],
+    voce["giornoProvvedimento"],
+  );
   if (!tipo || !numero || !iso) return "";
   const urn = formatNIR({ tipo, data: iso, numero });
   return parseNIR(urn) ? urn : "";
@@ -265,17 +271,21 @@ export function dettaglioToRecordDenseC2(
 
   const dataEmanazione =
     dto?.dataEmanazione ||
-    isoDaParti(interno["annoProvvedimento"], interno["meseProvvedimento"], interno["giornoProvvedimento"]) ||
+    isoDaParti(
+      interno["annoProvvedimento"],
+      interno["meseProvvedimento"],
+      interno["giornoProvvedimento"],
+    ) ||
     normalizzaData(interno["dataEmanazione"]) ||
     (parseNIR(voce.urn)?.data ?? "");
   if (!dataEmanazione) return null;
 
-  const codice = dto?.codiceRedazionale || stringaDenseC2(interno["codiceRedazionale"]) || voce.codice;
+  const codice =
+    dto?.codiceRedazionale || stringaDenseC2(interno["codiceRedazionale"]) || voce.codice;
 
   const html = dto?.articoloHtml || stringaDenseC2(interno["articoloHtml"]);
   const testoIntegrale = dto?.testo || stripHtml(html);
-  const sottoTitolo =
-    dto?.sottoTitolo || normalizzaDenseC2(stringaDenseC2(interno["sottoTitolo"]));
+  const sottoTitolo = dto?.sottoTitolo || normalizzaDenseC2(stringaDenseC2(interno["sottoTitolo"]));
   const fineVigenzaGrezza = stringaDenseC2(interno["articoloDataFineVigenza"]);
   const daData = statoDaFineVigenzaC2(fineVigenzaGrezza, oggiCompact());
   const daIntestazione = statoDaIntestazioneArt1C2(testoIntegrale);
@@ -358,7 +368,7 @@ function aiuto(): string {
     "Densificazione TAG C2: secondo passaggio mensile profondo + APPEND (dati ufficiali, mai dimostrativi).",
     "",
     "Uso:",
-    "  npx tsx scripts/dense-C2.ts [opzioni]",
+    "  bunx tsx scripts/dense-C2.ts [opzioni]",
     "",
     "Opzioni:",
     "  --anni=A,B            anni da densificare (default 1991,1994,1996,1997,1998,2001,2002,2003)",
@@ -558,13 +568,16 @@ async function leggiEnvelope(percorso: string): Promise<Envelope | null> {
     return {
       provenance: {
         fonte: "normattiva",
-        url: typeof parsed["provenance"] === "object" && parsed["provenance"] !== null
-          ? String((parsed["provenance"] as Record<string, unknown>)["url"] ?? "")
-          : "",
+        url:
+          typeof parsed["provenance"] === "object" && parsed["provenance"] !== null
+            ? String((parsed["provenance"] as Record<string, unknown>)["url"] ?? "")
+            : "",
         recuperatoIl: new Date().toISOString(),
         licenza: LICENZA,
       },
-      atti: (Array.isArray(atti) ? atti : []).filter((a): a is LawRecord => isRecord(a)) as LawRecord[],
+      atti: (Array.isArray(atti) ? atti : []).filter((a): a is LawRecord =>
+        isRecord(a),
+      ) as LawRecord[],
     };
   } catch {
     return null;
@@ -585,9 +598,9 @@ async function main(): Promise<void> {
     .split(",")
     .map((a) => a.trim())
     .filter((a) => (ANNI_C2 as readonly string[]).includes(a));
-  const anni: NomeC2[] = (
-    anniGrezzi.length > 0 ? anniGrezzi : [...ANNI_C2]
-  ).filter((a, i, arr) => arr.indexOf(a) === i) as NomeC2[];
+  const anni: NomeC2[] = (anniGrezzi.length > 0 ? anniGrezzi : [...ANNI_C2]).filter(
+    (a, i, arr) => arr.indexOf(a) === i,
+  ) as NomeC2[];
   const apiBase = argomento("api-base");
 
   const overridesPost: Partial<NormattivaConfig> = {
@@ -733,7 +746,9 @@ async function main(): Promise<void> {
       continue;
     }
     await writeFile(path.resolve(dest), json, "utf8");
-    console.log(`Anno ${anno}: ${prima} -> ${envelope.atti.length} (+${aggiunti.length}), ${kbFinale.toFixed(1)} KB.`);
+    console.log(
+      `Anno ${anno}: ${prima} -> ${envelope.atti.length} (+${aggiunti.length}), ${kbFinale.toFixed(1)} KB.`,
+    );
     riepilogo.push({ anno, prima, dopo: envelope.atti.length, nuovi: aggiunti.length });
   }
 

@@ -1,4 +1,4 @@
-import { describe, expect, it } from "vitest";
+import { describe, expect, it } from "vite-plus/test";
 import { SEED_LAWS } from "@/lib/seed-data";
 import {
   estraiListaAttiReali,
@@ -57,7 +57,9 @@ describe("wiring reali -> app (fixture inline, zero rete, zero disco)", () => {
   it("non lancia mai su input malformati", () => {
     expect(() => normalizzaAttoReale({})).not.toThrow();
     expect(() => normalizzaAttoReale({ titolo: 123, eli: null })).not.toThrow();
-    expect(() => normalizzaAttoReale({ titolo: "x", eli: "y", dataEmanazione: "non-una-data" })).not.toThrow();
+    expect(() =>
+      normalizzaAttoReale({ titolo: "x", eli: "y", dataEmanazione: "non-una-data" }),
+    ).not.toThrow();
   });
 
   it("estrae atti sia da envelope sia da array diretto", () => {

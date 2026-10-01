@@ -160,8 +160,7 @@ export function aAttoUe(voce: unknown): AttoUe | null {
       data,
       tipo,
       eurlexUrl,
-      inVigore:
-        o["inVigore"] === true ? true : o["inVigore"] === false ? false : null,
+      inVigore: o["inVigore"] === true ? true : o["inVigore"] === false ? false : null,
     };
     const entrata = isoValida(o["entrataInVigore"]);
     if (entrata) atto.entrataInVigore = entrata;
@@ -185,10 +184,7 @@ export function cercaAttiUe(atti: readonly AttoUe[], q: unknown): AttoUe[] {
     if (n.length < 2) return [...atti];
     return atti.filter((a) => {
       try {
-        return (
-          normalizzaEurlex(a?.titolo).includes(n) ||
-          normalizzaEurlex(a?.celex).includes(n)
-        );
+        return normalizzaEurlex(a?.titolo).includes(n) || normalizzaEurlex(a?.celex).includes(n);
       } catch {
         return false;
       }
@@ -238,9 +234,7 @@ export function paginaUe<T>(elementi: readonly T[], page: unknown, per: unknown)
 }
 
 /** Conteggi per tipo, ordinati per componenti desc e nome asc. */
-export function contaPerTipoUe(
-  atti: readonly AttoUe[],
-): { nome: string; componenti: number }[] {
+export function contaPerTipoUe(atti: readonly AttoUe[]): { nome: string; componenti: number }[] {
   try {
     if (!Array.isArray(atti)) return [];
     const conteggi = new Map<string, number>();
@@ -757,11 +751,7 @@ function aAttoCollegato(voce: unknown): AttoCollegato | null {
     const titolo = stringaPulita(o["titolo"]);
     if (titolo.length < 10) return null;
     const fonte =
-      o["fonte"] === "camera"
-        ? "camera"
-        : o["fonte"] === "normattiva"
-          ? "normattiva"
-          : null;
+      o["fonte"] === "camera" ? "camera" : o["fonte"] === "normattiva" ? "normattiva" : null;
     if (!fonte) return null;
     const atto: AttoCollegato = { titolo: titolo.slice(0, 500), fonte };
     const uri = uriAttoAmmesso(o["uri"]);
@@ -834,9 +824,7 @@ function caricaAttiCollegati(): EsitoMappaAttiCollegati {
         }
       }
     }
-    const lista = Array.isArray(parsed["direttive"])
-      ? (parsed["direttive"] as unknown[])
-      : null;
+    const lista = Array.isArray(parsed["direttive"]) ? (parsed["direttive"] as unknown[]) : null;
     if (!lista) return { ok: false, voci: [], provenance: prov };
     const voci: VoceAttiCollegati[] = [];
     const visti = new Set<string>();
@@ -882,9 +870,7 @@ export async function tuttiAttiCollegati(): Promise<EsitoMappaAttiCollegati> {
  * mai throw). File assente, CELEX malformato o direttiva senza match ->
  * `[]` (onesto).
  */
-export async function attiCollegatiPerDirettiva(
-  celex: unknown,
-): Promise<AttoCollegato[]> {
+export async function attiCollegatiPerDirettiva(celex: unknown): Promise<AttoCollegato[]> {
   try {
     const c = typeof celex === "string" ? celex.trim().toUpperCase() : "";
     if (!/^3\d{4}L\d{1,4}$/.test(c)) return [];

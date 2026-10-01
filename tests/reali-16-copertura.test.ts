@@ -4,12 +4,12 @@
  * (singolo o range 1992-1993/2005-2006) cablato nel loader, con atti
  * veri e ELI unici. Mai inventare anni: il test fallisce se manca copertura.
  */
-import { describe, expect, it } from 'vitest';
-import { readdirSync, readFileSync } from 'node:fs';
-import { join } from 'node:path';
-import { getCorpusInfo, getSeedLaws } from '@/lib/sources';
+import { describe, expect, it } from "vitest";
+import { readdirSync, readFileSync } from "node:fs";
+import { join } from "node:path";
+import { getCorpusInfo, getSeedLaws } from "@/lib/sources";
 
-const DIR_REALI = join(process.cwd(), 'data', 'reali');
+const DIR_REALI = join(process.cwd(), "data", "reali");
 
 function anniCoperti(nome: string): number[] {
   const m = /^normattiva-storico-(\d{4})(?:-(\d{4}))?\.json$/.exec(nome);
@@ -21,9 +21,9 @@ function anniCoperti(nome: string): number[] {
   return out;
 }
 
-describe('reali-16: copertura storica completa 1861-2026', () => {
-  it('ogni anno 1861-2025 ha una finestra storica dedicata (2026 via recenti+GU)', () => {
-    const files = readdirSync(DIR_REALI).filter((f) => f.startsWith('normattiva-storico-'));
+describe("reali-16: copertura storica completa 1861-2026", () => {
+  it("ogni anno 1861-2025 ha una finestra storica dedicata (2026 via recenti+GU)", () => {
+    const files = readdirSync(DIR_REALI).filter((f) => f.startsWith("normattiva-storico-"));
     const coperti = new Set<number>();
     for (const f of files) for (const y of anniCoperti(f)) coperti.add(y);
     const mancanti: number[] = [];
@@ -33,33 +33,33 @@ describe('reali-16: copertura storica completa 1861-2026', () => {
     // non come annata storica chiusa.
     expect(coperti.has(2026)).toBe(false);
     const recenti = JSON.parse(
-      readFileSync(join(DIR_REALI, 'normattiva-recenti.json'), 'utf8'),
+      readFileSync(join(DIR_REALI, "normattiva-recenti.json"), "utf8"),
     ) as { atti?: unknown[] };
     expect(Array.isArray(recenti.atti) && recenti.atti.length).toBeGreaterThan(0);
   });
 
-  it('corpus live interamente reale e sopra soglia', () => {
+  it("corpus live interamente reale e sopra soglia", () => {
     const info = getCorpusInfo();
     expect(info.dimostrative).toBe(0);
     expect(info.reali).toBeGreaterThanOrEqual(4000);
     expect(info.totale).toBe(info.base + info.espansi);
     const leggi = getSeedLaws();
-    expect(leggi.some((l) => (l.titolo ?? '').includes('Variante '))).toBe(false);
+    expect(leggi.some((l) => (l.titolo ?? "").includes("Variante "))).toBe(false);
   });
 
-  it('ogni finestra storica ha atti con ELI unici globali', () => {
-    const files = readdirSync(DIR_REALI).filter((f) => f.startsWith('normattiva-storico-'));
+  it("ogni finestra storica ha atti con ELI unici globali", () => {
+    const files = readdirSync(DIR_REALI).filter((f) => f.startsWith("normattiva-storico-"));
     expect(files.length).toBeGreaterThanOrEqual(70);
     const visti = new Set<string>();
     let totale = 0;
     for (const f of files) {
-      const d = JSON.parse(readFileSync(join(DIR_REALI, f), 'utf8')) as {
+      const d = JSON.parse(readFileSync(join(DIR_REALI, f), "utf8")) as {
         atti?: Array<{ eli?: string; titolo?: string }>;
       };
       const atti = Array.isArray(d.atti) ? d.atti : [];
       expect(atti.length).toBeGreaterThan(0);
       for (const a of atti) {
-        const e = String(a.eli ?? '')
+        const e = String(a.eli ?? "")
           .trim()
           .toLowerCase();
         expect(e.length).toBeGreaterThan(0);

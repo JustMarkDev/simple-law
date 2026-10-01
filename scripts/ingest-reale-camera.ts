@@ -1,7 +1,7 @@
 /**
  * Ingest reale dei deputati della Camera (leg. 19) da `dati.camera.it`.
  *
- * Uso: `npx tsx scripts/ingest-reale-camera.ts`
+ * Uso: `bunx tsx scripts/ingest-reale-camera.ts`
  *
  * Esegue 1 lista + 1 query adesioni sull'endpoint SPARQL del verdetto e
  * scrive `data/reali/camera-deputati.json` con envelope (provenance completa
@@ -25,9 +25,7 @@ import {
   type Deputato,
 } from "../lib/parlamento";
 
-const DESTINAZIONE = fileURLToPath(
-  new URL("../data/reali/camera-deputati.json", import.meta.url),
-);
+const DESTINAZIONE = fileURLToPath(new URL("../data/reali/camera-deputati.json", import.meta.url));
 const MASSIMO_BYTE = 1024 * 1024;
 
 function esci(messaggio: string): never {
@@ -49,9 +47,7 @@ async function main(): Promise<void> {
 
   const base = deputatiDaRigheLista(righeDaSparql(lista.valore));
   if (base.length === 0) esci("lista deputati vuota, nessun file scritto");
-  const gruppi = gruppoCorrentePerDeputato(
-    adesioniDaRighe(righeDaSparql(adesioni.valore)),
-  );
+  const gruppi = gruppoCorrentePerDeputato(adesioniDaRighe(righeDaSparql(adesioni.valore)));
 
   const deputati: Deputato[] = base.map((dep) => {
     const gruppo = gruppi.get(dep.slug);

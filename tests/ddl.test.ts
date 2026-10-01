@@ -14,7 +14,7 @@
  * pagine. Questo e' verificato sotto via lettura tollerante del disco.
  */
 
-import { describe, expect, it } from "vitest";
+import { describe, expect, it } from "vite-plus/test";
 import {
   azzeraCacheDdl,
   cercaDdl,
@@ -176,12 +176,10 @@ describe("voceDaDdlSenato", () => {
     const riga = {
       uri: "http://dati.senato.it/ddl/60180",
       titolo: DETTAGLIO_SENATO_REALE["http://dati.senato.it/osr/titolo"],
-      numeroFaseCompatto:
-        DETTAGLIO_SENATO_REALE["http://dati.senato.it/osr/numeroFaseCompatto"],
+      numeroFaseCompatto: DETTAGLIO_SENATO_REALE["http://dati.senato.it/osr/numeroFaseCompatto"],
       ramo: DETTAGLIO_SENATO_REALE["http://dati.senato.it/osr/ramo"],
       statoDdl_raw: DETTAGLIO_SENATO_REALE["http://dati.senato.it/osr/statoDdl"],
-      dataPresentazione:
-        DETTAGLIO_SENATO_REALE["http://dati.senato.it/osr/dataPresentazione"],
+      dataPresentazione: DETTAGLIO_SENATO_REALE["http://dati.senato.it/osr/dataPresentazione"],
       idDdl: DETTAGLIO_SENATO_REALE["http://dati.senato.it/osr/idDdl"],
       fase: DETTAGLIO_SENATO_REALE["http://dati.senato.it/osr/fase"],
       legislatura: 19,
@@ -291,7 +289,12 @@ describe("GET /api/parlamento/ddl", () => {
     ]) {
       const res = await GET(new Request(`http://localhost/api/parlamento/ddl?${qs}`));
       expect(res.status).toBe(200);
-      const data = (await res.json()) as { items: unknown[]; total: number; page: number; per: number };
+      const data = (await res.json()) as {
+        items: unknown[];
+        total: number;
+        page: number;
+        per: number;
+      };
       expect(Array.isArray(data.items)).toBe(true);
       expect(data.total).toBeGreaterThanOrEqual(0);
       expect(data.page).toBeGreaterThanOrEqual(1);

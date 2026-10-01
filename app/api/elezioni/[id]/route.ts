@@ -33,15 +33,10 @@ function intero(value: string | null, fallback: number, min: number, max: number
   return Math.min(max, Math.max(min, Math.floor(parsed)));
 }
 
-function filtraListe(
-  liste: readonly ListaRisultato[],
-  filtro: string,
-): ListaRisultato[] {
+function filtraListe(liste: readonly ListaRisultato[], filtro: string): ListaRisultato[] {
   try {
     if (!filtro) return liste.map((l) => ({ ...l }));
-    return liste
-      .filter((l) => normalizza(l?.n).includes(filtro))
-      .map((l) => ({ ...l }));
+    return liste.filter((l) => normalizza(l?.n).includes(filtro)).map((l) => ({ ...l }));
   } catch {
     return [];
   }
@@ -83,9 +78,7 @@ export async function GET(request: Request, context: RouteContext) {
       return errore404("Dati non disponibili per questa consultazione");
     }
     const top = intero(searchParams.get("top"), 15, 1, 15);
-    const filtroLista = normalizza(
-      (searchParams.get("lista") ?? "").slice(0, 80),
-    );
+    const filtroLista = normalizza((searchParams.get("lista") ?? "").slice(0, 80));
     // topListe accetta max 10: per top>10 si ordina e si tronca qui.
     const ordinate = topListe(dati.liste, 10);
     const resto =
@@ -95,14 +88,8 @@ export async function GET(request: Request, context: RouteContext) {
             .sort((a, b) => b.v - a.v)
             .slice(10, top)
         : [];
-    const nazionali = filtraListe([...ordinate, ...resto], filtroLista).slice(
-      0,
-      top,
-    );
-    const nomi =
-      filtroLista.length >= 2
-        ? new Set(nazionali.map((l) => normalizza(l.n)))
-        : null;
+    const nazionali = filtraListe([...ordinate, ...resto], filtroLista).slice(0, top);
+    const nomi = filtroLista.length >= 2 ? new Set(nazionali.map((l) => normalizza(l.n))) : null;
     const regioni = dati.regioni.map((r) => ({
       r: r.r,
       e: r.e,
@@ -111,9 +98,7 @@ export async function GET(request: Request, context: RouteContext) {
       k: r.k,
       a: r.a,
       liste: nomi
-        ? r.liste
-            .filter((l) => nomi.has(normalizza(l.n)))
-            .map((l) => ({ ...l }))
+        ? r.liste.filter((l) => nomi.has(normalizza(l.n))).map((l) => ({ ...l }))
         : r.liste.map((l) => ({ ...l })),
     }));
     const corpo: Record<string, unknown> = {
@@ -130,9 +115,7 @@ export async function GET(request: Request, context: RouteContext) {
         e: c.e,
         v: c.v,
         liste: nomi
-          ? c.liste
-              .filter((l) => nomi.has(normalizza(l.n)))
-              .map((l) => ({ ...l }))
+          ? c.liste.filter((l) => nomi.has(normalizza(l.n))).map((l) => ({ ...l }))
           : c.liste.map((l) => ({ ...l })),
       }));
     }

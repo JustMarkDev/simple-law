@@ -93,7 +93,9 @@ export function attoEspansoToLawRecord(atto: AttoEspanso): LawRecord {
     const tipo = TIPO_ESPANSO_A_LAW[(atto as AttoEspanso).tipo] ?? "legge";
     const numero = String((atto as AttoEspanso).numero ?? "0");
     const dataEmanazione =
-      typeof (atto as AttoEspanso).dataEmanazione === "string" ? (atto as AttoEspanso).dataEmanazione : "";
+      typeof (atto as AttoEspanso).dataEmanazione === "string"
+        ? (atto as AttoEspanso).dataEmanazione
+        : "";
     const titolo = typeof atto.titolo === "string" ? atto.titolo : "";
     const sintesi = typeof atto.sintesi === "string" ? atto.sintesi : "";
     const testo = typeof atto.testo === "string" && atto.testo ? atto.testo : sintesi;
@@ -134,7 +136,10 @@ export function attoEspansoToLawRecord(atto: AttoEspanso): LawRecord {
 function leggiTotaleDaEnv(): number {
   try {
     let raw: unknown = undefined;
-    if (typeof process !== "undefined" && (process as { env?: Record<string, string | undefined> })?.env) {
+    if (
+      typeof process !== "undefined" &&
+      (process as { env?: Record<string, string | undefined> })?.env
+    ) {
       raw = (process as { env: Record<string, string | undefined> }).env["CORPUS_TOTALE"];
     }
     if (raw === undefined || raw === null || raw === "") return CORPUS_TOTALE_DEFAULT;
@@ -151,7 +156,10 @@ function leggiTotaleDaEnv(): number {
 function leggiSemeDaEnv(): string {
   try {
     let raw: unknown = undefined;
-    if (typeof process !== "undefined" && (process as { env?: Record<string, string | undefined> })?.env) {
+    if (
+      typeof process !== "undefined" &&
+      (process as { env?: Record<string, string | undefined> })?.env
+    ) {
       raw = (process as { env: Record<string, string | undefined> }).env["CORPUS_SEED"];
     }
     if (typeof raw !== "string") return CORPUS_SEED_DEFAULT;
@@ -172,7 +180,10 @@ function leggiSemeDaEnv(): string {
 export function isCorpusSinteticoAbilitato(): boolean {
   try {
     let raw: unknown = undefined;
-    if (typeof process !== "undefined" && (process as { env?: Record<string, string | undefined> })?.env) {
+    if (
+      typeof process !== "undefined" &&
+      (process as { env?: Record<string, string | undefined> })?.env
+    ) {
       raw = (process as { env: Record<string, string | undefined> }).env["CORPUS_SINTETICO"];
     }
     if (typeof raw !== "string") return false;
@@ -191,9 +202,7 @@ export function isCorpusSinteticoAbilitato(): boolean {
  */
 export function getCorpusRiferimenti(): LawRecord[] {
   try {
-    const riferimenti = ATTI_ESPANSI.filter(
-      (atto) => (atto as AttoEspanso).dimostrativo === false,
-    );
+    const riferimenti = ATTI_ESPANSI.filter((atto) => (atto as AttoEspanso).dimostrativo === false);
     return riferimenti.map(attoEspansoToLawRecord).map(clonaRecord);
   } catch {
     return [];
@@ -218,7 +227,8 @@ type CacheGlobale = { __simpleLawCorpusUnificato?: Map<string, LawRecord[]> };
 function ottieniCache(): Map<string, LawRecord[]> {
   try {
     const g = globalThis as unknown as CacheGlobale;
-    if (!g.__simpleLawCorpusUnificato) g.__simpleLawCorpusUnificato = new Map<string, LawRecord[]>();
+    if (!g.__simpleLawCorpusUnificato)
+      g.__simpleLawCorpusUnificato = new Map<string, LawRecord[]>();
     return g.__simpleLawCorpusUnificato;
   } catch {
     return new Map<string, LawRecord[]>();
@@ -301,8 +311,7 @@ export function generaCorpusUnificato(totale: number, seme: string): LawRecord[]
       const nir = `urn:nir:stato:${slugNir}:${dataEmanazione};${numeroNum}`;
       const numero = String(numeroNum);
       const titolo = `${modello.titolo} - Variante ${risultato.length + 1}`;
-      const testo =
-        `${modello.testo}\n\n[Variante dimostrativa ${risultato.length + 1} del corpus "${s}", derivata da ${modello.eli}.]`;
+      const testo = `${modello.testo}\n\n[Variante dimostrativa ${risultato.length + 1} del corpus "${s}", derivata da ${modello.eli}.]`;
       const variante: LawRecord = {
         ...clonaRecord(modelloRecord),
         eli,

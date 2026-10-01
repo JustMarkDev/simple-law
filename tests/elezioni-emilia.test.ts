@@ -8,7 +8,7 @@
  * voti per lista sommati.
  */
 
-import { describe, expect, it } from "vitest";
+import { describe, expect, it } from "vite-plus/test";
 import {
   affluenza,
   interoNonNegativo,
@@ -20,12 +20,26 @@ import {
 } from "@/scripts/ingest-reale-elezioni-emilia-2024";
 
 const HEADER_REALE = [
-  "REGIONE", "CIRCOSCRIZIONE", "COMUNE", "SEZIONE",
-  "ELETTORI_UOMINI", "ELETTORI_DONNE", "ELETTORI_TOTALI",
-  "VOTANTI_UOMINI", "VOTANTI_DONNE", "VOTANTI_TOTALI",
-  "SCHEDE_NULLE", "SCHEDE_BIANCHE", "SCHEDE_CONTESTATE",
-  "NUM_CANDIDATO", "COGNOME_CANDIDATO", "NOME_CANDIDATO", "VOTI_CANDIDATO",
-  "NUM_LISTA", "LISTA", "VOTI_LISTA",
+  "REGIONE",
+  "CIRCOSCRIZIONE",
+  "COMUNE",
+  "SEZIONE",
+  "ELETTORI_UOMINI",
+  "ELETTORI_DONNE",
+  "ELETTORI_TOTALI",
+  "VOTANTI_UOMINI",
+  "VOTANTI_DONNE",
+  "VOTANTI_TOTALI",
+  "SCHEDE_NULLE",
+  "SCHEDE_BIANCHE",
+  "SCHEDE_CONTESTATE",
+  "NUM_CANDIDATO",
+  "COGNOME_CANDIDATO",
+  "NOME_CANDIDATO",
+  "VOTI_CANDIDATO",
+  "NUM_LISTA",
+  "LISTA",
+  "VOTI_LISTA",
 ];
 
 function riga(campi: string[]): string[] {
@@ -46,10 +60,26 @@ describe("emilia 2024 — parser puro (zero rete, zero disco)", () => {
 
   it("parseRiga legge solo whitelist e ignora i candidati", () => {
     const campi = [
-      "EMILIA-ROMAGNA", "BOLOGNA", "ALTO RENO TERME", "1",
-      "477", "497", "974", "148", "147", "295", "4", "2", "0",
-      "2", "UGOLINI", "ELENA", "143", "6",
-      "FRATELLI D'ITALIA - GIORGIA MELONI", "90",
+      "EMILIA-ROMAGNA",
+      "BOLOGNA",
+      "ALTO RENO TERME",
+      "1",
+      "477",
+      "497",
+      "974",
+      "148",
+      "147",
+      "295",
+      "4",
+      "2",
+      "0",
+      "2",
+      "UGOLINI",
+      "ELENA",
+      "143",
+      "6",
+      "FRATELLI D'ITALIA - GIORGIA MELONI",
+      "90",
     ];
     const r = parseRiga(riga(campi), 2);
     expect(r).not.toBeNull();
@@ -62,9 +92,26 @@ describe("emilia 2024 — parser puro (zero rete, zero disco)", () => {
 
   it("parseRiga scarta regioni diverse e righe malformate", () => {
     const altra = [
-      "LOMBARDIA", "MILANO", "MILANO", "1",
-      "1", "1", "2", "1", "1", "2", "0", "0", "0",
-      "1", "ROSSI", "MARIO", "1", "1", "LISTA X", "1",
+      "LOMBARDIA",
+      "MILANO",
+      "MILANO",
+      "1",
+      "1",
+      "1",
+      "2",
+      "1",
+      "1",
+      "2",
+      "0",
+      "0",
+      "0",
+      "1",
+      "ROSSI",
+      "MARIO",
+      "1",
+      "1",
+      "LISTA X",
+      "1",
     ];
     expect(parseRiga(riga(altra), 2)).toBeNull();
     const corta = ["EMILIA-ROMAGNA", "BOLOGNA"];
@@ -73,10 +120,26 @@ describe("emilia 2024 — parser puro (zero rete, zero disco)", () => {
 
   it("parseRiga rifiuta lista vuota con voti e accetta lista vuota a zero", () => {
     const base = [
-      "EMILIA-ROMAGNA", "BOLOGNA", "VERGATO", "2",
-      "100", "100", "200", "50", "50", "100", "1", "2", "0",
-      "", "", "", "",
-      "", "", "0",
+      "EMILIA-ROMAGNA",
+      "BOLOGNA",
+      "VERGATO",
+      "2",
+      "100",
+      "100",
+      "200",
+      "50",
+      "50",
+      "100",
+      "1",
+      "2",
+      "0",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "0",
     ];
     const r = parseRiga(riga(base), 2);
     expect(r?.lista).toBe("");
@@ -101,7 +164,12 @@ describe("emilia 2024 — integrazione disco (tollerante se assente)", () => {
   it("envelope reale valido oppure nota di assenza", async () => {
     const { existsSync, readFileSync, statSync } = await import("node:fs");
     const { join } = await import("node:path");
-    const percorso = join(process.cwd(), "data", "reali", "elezioni-regionali-2024-emilia-romagna.json");
+    const percorso = join(
+      process.cwd(),
+      "data",
+      "reali",
+      "elezioni-regionali-2024-emilia-romagna.json",
+    );
     if (!existsSync(percorso)) {
       expect(true).toBe(true);
       return;

@@ -18,8 +18,7 @@
 import { Context, Data, Duration, Effect, Layer, Schedule } from "effect";
 import { formatNIR, normalizeEli, parseNIR } from "./nir";
 
-export const DEFAULT_API_BASE =
-  "https://api.normattiva.it/t/normattiva.api/bff-opendata/v1";
+export const DEFAULT_API_BASE = "https://api.normattiva.it/t/normattiva.api/bff-opendata/v1";
 
 export const NORMATTIVA_REFERER = "https://www.normattiva.it/";
 
@@ -28,15 +27,7 @@ const USER_AGENT =
   "(KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36 SimpleLaw/1.0";
 
 /** Formati di esportazione accettati da `collection-preconfezionata`. */
-export type FormatoExport =
-  | "AKN"
-  | "XML"
-  | "JSON"
-  | "PDF"
-  | "EPUB"
-  | "RTF"
-  | "URI"
-  | "HTML";
+export type FormatoExport = "AKN" | "XML" | "JSON" | "PDF" | "EPUB" | "RTF" | "URI" | "HTML";
 
 /** Vigenza richiesta: O = originario, M = in vigore, V = vigente (vigore). */
 export type FormatoRichiesta = "O" | "M" | "V";
@@ -55,8 +46,7 @@ export function defaultNormattivaConfig(
   overrides: Partial<NormattivaConfig> = {},
 ): NormattivaConfig {
   const daAmbiente = (process.env.NORMATTIVA_API_BASE ?? "").trim();
-  const fetchImpl =
-    (globalThis.fetch as typeof fetch | undefined) ?? (fetch as typeof fetch);
+  const fetchImpl = (globalThis.fetch as typeof fetch | undefined) ?? (fetch as typeof fetch);
   return {
     baseUrl: daAmbiente || DEFAULT_API_BASE,
     fetchImpl,
@@ -210,9 +200,9 @@ export function tipoFromDenominazione(denominazione: string): string {
     "DECRETO MINISTERIALE": "decreto.ministeriale",
     "DECRETO LEGISLATIVO LUOGOTENENZIALE": "decreto.legislativo.luogotenenziale",
     REGOLAMENTO: "regolamento",
-    "TRATTATO": "trattato",
-    "CODICE": "codice",
-    "COSTITUZIONE": "costituzione",
+    TRATTATO: "trattato",
+    CODICE: "codice",
+    COSTITUZIONE: "costituzione",
   };
   if (mappa[chiave]) return mappa[chiave];
   return chiave.toLowerCase().replace(/\s+/g, ".");
@@ -339,12 +329,7 @@ export function parseAttoDto(raw: unknown): AttoDto | null {
   const eli = stringaDa(interno, ["eli"]);
   if (!titolo && !articoloHtml && !urn && !eli) return null;
 
-  const tipoGrezzo = stringaDa(interno, [
-    "denominazioneAtto",
-    "tipoAtto",
-    "tipo",
-    "specieAtto",
-  ]);
+  const tipoGrezzo = stringaDa(interno, ["denominazioneAtto", "tipoAtto", "tipo", "specieAtto"]);
   const dataGrezza = valoreDa(interno, [
     "dataEmanazione",
     "dtEmanazione",
@@ -359,8 +344,7 @@ export function parseAttoDto(raw: unknown): AttoDto | null {
     sottoTitolo: stringaDa(interno, ["sottoTitolo", "sottotitolo", "sommario"]),
     articoloHtml,
     testo: stripHtml(
-      articoloHtml ||
-        stringaDa(interno, ["testo", "testoIntegrale", "contenuto", "abstract"]),
+      articoloHtml || stringaDa(interno, ["testo", "testoIntegrale", "contenuto", "abstract"]),
     ),
     tipo: tipoFromDenominazione(tipoGrezzo),
     numero: stringaDa(interno, ["numero", "numeroAtto", "numeroProvvedimento"]),
@@ -379,11 +363,7 @@ export interface RicercaAvanzataPage {
 }
 
 /** Analizza una pagina di `POST /ricerca/avanzata`. */
-export function parseRicercaAvanzata(
-  raw: unknown,
-  page = 1,
-  pageSize = 50,
-): RicercaAvanzataPage {
+export function parseRicercaAvanzata(raw: unknown, page = 1, pageSize = 50): RicercaAvanzataPage {
   const involucro = unwrapData(raw);
   const lista = arrayDa(involucro, ["atti", "risultati", "hits"]);
   const items = lista
@@ -394,9 +374,7 @@ export function parseRicercaAvanzata(
     ? numeroDa(involucro, ["total", "totale", "numTotale", "totalElements", "count"])
     : null;
   const hasNext =
-    total !== null
-      ? page * pageSize < total
-      : items.length > 0 && items.length >= pageSize;
+    total !== null ? page * pageSize < total : items.length > 0 && items.length >= pageSize;
 
   return { items, page, total, hasNext };
 }
@@ -576,7 +554,7 @@ export interface NormattivaShape {
   readonly download: (path: string) => Effect.Effect<DownloadResult, NormattivaError>;
 }
 
-export class Normattiva extends Context.Tag("Normattiva")<Normattiva, NormattivaShape>() {}
+export class Normattiva extends Context.Service<Normattiva, NormattivaShape>()("Normattiva") {}
 
 function urlCompleto(config: NormattivaConfig, path: string): string {
   if (/^https?:\/\//i.test(path)) return path;
@@ -608,15 +586,17 @@ function eseguiConRetry<A>(
   url: string,
 ): Effect.Effect<A, NormattivaError> {
   return effect.pipe(
-    Effect.timeoutFail({
+    Effect.timeoutOrElse({
       duration: Duration.millis(config.timeoutMs),
-      onTimeout: () =>
-        new NormattivaError({
-          message: `Timeout dopo ${config.timeoutMs}ms`,
-          url,
-          status: null,
-          retryable: true,
-        }),
+      orElse: () =>
+        Effect.fail(
+          new NormattivaError({
+            message: `Timeout dopo ${config.timeoutMs}ms`,
+            url,
+            status: null,
+            retryable: true,
+          }),
+        ),
     }),
     Effect.retry({
       schedule: Schedule.exponential(Duration.millis(200)),
@@ -695,10 +675,7 @@ function makeService(config: NormattivaConfig): NormattivaShape {
         .fetchImpl(url, { method: "GET", headers, signal, redirect: "follow" })
         .then(async (response) => {
           // Controllo preventivo: non bufferizzare archivi oltre il limite.
-          const contentLength = Number.parseInt(
-            response.headers.get("content-length") ?? "",
-            10,
-          );
+          const contentLength = Number.parseInt(response.headers.get("content-length") ?? "", 10);
           if (Number.isFinite(contentLength) && contentLength > MAX_DOWNLOAD_BYTES) {
             throw new NormattivaError({
               message: `Risposta troppo grande: ${contentLength} byte (max 250 MB)`,
@@ -709,10 +686,7 @@ function makeService(config: NormattivaConfig): NormattivaShape {
           }
           const bytes = new Uint8Array(await response.arrayBuffer());
           if (!response.ok) {
-            throw new RispostaHttpError(
-              response.status,
-              messaggioDiErrore(decodificaCorpo(bytes)),
-            );
+            throw new RispostaHttpError(response.status, messaggioDiErrore(decodificaCorpo(bytes)));
           }
           if (!looksLikeZip(bytes)) {
             const messaggio = messaggioDiErrore(decodificaCorpo(bytes));
@@ -823,7 +797,8 @@ function corpoRicercaAvanzata(
       ? [...input.denominazioneAtto]
       : input.denominazioneAtto;
   }
-  if (input.numeroProvvedimento !== undefined) corpo.numeroProvvedimento = input.numeroProvvedimento;
+  if (input.numeroProvvedimento !== undefined)
+    corpo.numeroProvvedimento = input.numeroProvvedimento;
   if (input.annoProvvedimento !== undefined) corpo.annoProvvedimento = input.annoProvvedimento;
   if (input.mese !== undefined) corpo.mese = input.mese;
   if (input.giorno !== undefined) corpo.giorno = input.giorno;

@@ -1,5 +1,5 @@
-import { describe, expect, it } from "vitest";
-import { buildLLMPrompt, simplifyLaw } from "@/lib/simplify";
+import { describe, expect, it } from "vite-plus/test";
+import { simplifyLaw } from "@/lib/simplify";
 
 const INPUT = {
   titolo: "Disposizioni urgenti in materia di carburanti",
@@ -42,33 +42,9 @@ describe("simplifyLaw", () => {
 
   it("usa un solo schema perTe con le chiavi persona della UI", () => {
     const risultato = simplifyLaw({ titolo: "Norma di prova", testo: "Testo della norma." });
-    expect(Object.keys(risultato.perTe).sort()).toEqual([
-      "guida",
-      "impresa",
-      "lavoro",
-      "studio",
-    ]);
+    expect(Object.keys(risultato.perTe).sort()).toEqual(["guida", "impresa", "lavoro", "studio"]);
     for (const chiave of Object.keys(risultato.perTe)) {
       expect(risultato.perTe[chiave]).toBeTruthy();
     }
-  });
-});
-
-describe("buildLLMPrompt", () => {
-  it("chiede JSON e include il testo", () => {
-    const prompt = buildLLMPrompt("Testo della norma.");
-    expect(prompt).toContain("JSON");
-    expect(prompt).toContain("Testo della norma.");
-    expect(prompt).toContain("in10Secondi");
-  });
-
-  it("chiede lo schema perTe della UI", () => {
-    const prompt = buildLLMPrompt("Testo della norma.");
-    expect(prompt).toContain('"perTe"');
-    expect(prompt).toContain('"guida"');
-    expect(prompt).toContain('"lavoro"');
-    expect(prompt).toContain('"impresa"');
-    expect(prompt).toContain('"studio"');
-    expect(prompt).not.toContain("cittadini");
   });
 });

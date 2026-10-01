@@ -91,22 +91,22 @@ Esempio di `manifest.json`:
 
 ```bash
 # Generatore runtime (default 5000, cap 20000, output in incoming/ mai committato)
-npx tsx scripts/generate-corpus-massivo.ts --totale 5000 --kb-medio 4 --seed simple-law-v1 --output data/corpus/incoming/shard-demo.jsonl.gz
+bunx tsx scripts/generate-corpus-massivo.ts --totale 5000 --kb-medio 4 --seed simple-law-v1 --output data/corpus/incoming/shard-demo.jsonl.gz
 
 # Prova locale piccola
-npx tsx scripts/generate-corpus-massivo.ts --totale 500 --output /tmp/shard-demo.jsonl.gz
+bunx tsx scripts/generate-corpus-massivo.ts --totale 500 --output /tmp/shard-demo.jsonl.gz
 
 # Shard grandi in streaming (oltre i 20000, fino a 200k/100GB): sempre in incoming/ o /tmp/
-npx tsx scripts/corpus-100gb.ts generate --totale=5000 --seed=simple-law-corpus-v1 --dir=data/corpus/incoming
+bunx tsx scripts/corpus-100gb.ts generate --totale=5000 --seed=simple-law-corpus-v1 --dir=data/corpus/incoming
 
 # Verifica ELI/NIR unici, date, testi, checksum (esce con codice 1 se fallisce)
-npx tsx scripts/corpus-100gb.ts verify --dir=data/corpus/incoming
+bunx tsx scripts/corpus-100gb.ts verify --dir=data/corpus/incoming
 
 # Verifica rapida su corpus enormi (prime 1000 righe per shard)
-npx tsx scripts/corpus-100gb.ts verify --dir=data/corpus/incoming --max-righe=1000
+bunx tsx scripts/corpus-100gb.ts verify --dir=data/corpus/incoming --max-righe=1000
 
 # Statistiche da manifest + campione streaming (sicuro su 100GB)
-npx tsx scripts/corpus-100gb.ts stats --dir=data/corpus/incoming
+bunx tsx scripts/corpus-100gb.ts stats --dir=data/corpus/incoming
 
 # Test
 npx vitest run tests/corpus-100gb.test.ts

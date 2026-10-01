@@ -65,9 +65,7 @@ export async function GET(request: Request) {
     let provenance: unknown = {};
     try {
       const prima = voci[0];
-      provenance = prima
-        ? await leggiProvenanceRegionale(prima.id)
-        : {};
+      provenance = prima ? await leggiProvenanceRegionale(prima.id) : {};
     } catch {
       provenance = {};
     }

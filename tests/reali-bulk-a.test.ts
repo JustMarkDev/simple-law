@@ -10,7 +10,7 @@
 import { mkdtemp, readFile, readdir, rm, writeFile } from "node:fs/promises";
 import { tmpdir } from "node:os";
 import path from "node:path";
-import { describe, expect, it } from "vitest";
+import { describe, expect, it } from "vite-plus/test";
 import { Effect } from "effect";
 import { NormattivaError } from "../lib/normattiva";
 import {
@@ -194,10 +194,13 @@ describe("ingest bulk-A Normattiva (fixture inline, zero rete)", () => {
     const dir = await mkdtemp(path.join(tmpdir(), "bulka-"));
     try {
       const fixture = {
-        provenance: { fonte: "normattiva", url: "https://example.test", recuperatoIl: "2026-01-01", licenza: "x" },
-        atti: [
-          { titolo: "T", eli: " /ELI/ID/1988/SG ", nir: "urn:nir:stato:legge:1988-01-01;1" },
-        ],
+        provenance: {
+          fonte: "normattiva",
+          url: "https://example.test",
+          recuperatoIl: "2026-01-01",
+          licenza: "x",
+        },
+        atti: [{ titolo: "T", eli: " /ELI/ID/1988/SG ", nir: "urn:nir:stato:legge:1988-01-01;1" }],
       };
       const p = path.join(dir, "f.json");
       await writeFile(p, JSON.stringify(fixture), "utf8");

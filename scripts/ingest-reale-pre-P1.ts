@@ -34,7 +34,7 @@
  * per quell'anno (consegna lista anni vuoti onesta in output).
  *
  * Uso:
- *   npx tsx scripts/ingest-reale-pre-P1.ts [--anni=1861,1862,...] [--limite=80]
+ *   bunx tsx scripts/ingest-reale-pre-P1.ts [--anni=1861,1862,...] [--limite=80]
  *     [--testo-max=2000] [--api-base=...] [--help]
  *
  * Esce con codice 1 (SENZA scrivere file parziali) se zero atti reali totali
@@ -118,10 +118,45 @@ const MAX_ATTI_FINESTRA = 80;
 
 /** Anni TAG=P1: 1861..1899 (Regno d'Italia). */
 const ANNI_PRE_P1 = [
-  "1861", "1862", "1863", "1864", "1865", "1866", "1867", "1868", "1869", "1870",
-  "1871", "1872", "1873", "1874", "1875", "1876", "1877", "1878", "1879", "1880",
-  "1881", "1882", "1883", "1884", "1885", "1886", "1887", "1888", "1889", "1890",
-  "1891", "1892", "1893", "1894", "1895", "1896", "1897", "1898", "1899",
+  "1861",
+  "1862",
+  "1863",
+  "1864",
+  "1865",
+  "1866",
+  "1867",
+  "1868",
+  "1869",
+  "1870",
+  "1871",
+  "1872",
+  "1873",
+  "1874",
+  "1875",
+  "1876",
+  "1877",
+  "1878",
+  "1879",
+  "1880",
+  "1881",
+  "1882",
+  "1883",
+  "1884",
+  "1885",
+  "1886",
+  "1887",
+  "1888",
+  "1889",
+  "1890",
+  "1891",
+  "1892",
+  "1893",
+  "1894",
+  "1895",
+  "1896",
+  "1897",
+  "1898",
+  "1899",
 ] as const;
 
 type NomeFinestraPreP1 = (typeof ANNI_PRE_P1)[number];
@@ -134,10 +169,7 @@ interface FinestraPreP1 {
 
 /** Finestre selezionabili via --anni (stesso bounded: max 80 atti). */
 const FINESTRE_DISPONIBILI: Record<NomeFinestraPreP1, FinestraPreP1> = Object.fromEntries(
-  ANNI_PRE_P1.map((anno) => [
-    anno,
-    { nome: anno, inizio: `${anno}-01-01`, fine: `${anno}-12-31` },
-  ]),
+  ANNI_PRE_P1.map((anno) => [anno, { nome: anno, inizio: `${anno}-01-01`, fine: `${anno}-12-31` }]),
 ) as Record<NomeFinestraPreP1, FinestraPreP1>;
 
 /** Ordine di default: 1861 prima, 1899 ultima. */
@@ -209,7 +241,9 @@ function isoDaParti(anno: unknown, mese: unknown, giorno: unknown): string {
 
 /** Chiave di dedup ELI: trim + lowercase (stessa regola del resto dell'app). */
 export function chiaveEliPreP1(eli: unknown): string {
-  return String(eli ?? "").trim().toLowerCase();
+  return String(eli ?? "")
+    .trim()
+    .toLowerCase();
 }
 
 function pausa(ms: number): Promise<void> {
@@ -278,7 +312,11 @@ export function urnDaVocePreP1(voce: unknown): string {
   const numero = stringaPreP1(
     voce["numeroProvvedimento"] ?? voce["numero"] ?? voce["numeroAttoAlfanumerico"],
   );
-  const iso = isoDaParti(voce["annoProvvedimento"], voce["meseProvvedimento"], voce["giornoProvvedimento"]);
+  const iso = isoDaParti(
+    voce["annoProvvedimento"],
+    voce["meseProvvedimento"],
+    voce["giornoProvvedimento"],
+  );
   if (!tipo || !numero || !iso) return "";
   const urn = formatNIR({ tipo, data: iso, numero });
   return parseNIR(urn) ? urn : "";
@@ -332,17 +370,21 @@ export function dettaglioToRecordPreP1(
 
   const dataEmanazione =
     dto?.dataEmanazione ||
-    isoDaParti(interno["annoProvvedimento"], interno["meseProvvedimento"], interno["giornoProvvedimento"]) ||
+    isoDaParti(
+      interno["annoProvvedimento"],
+      interno["meseProvvedimento"],
+      interno["giornoProvvedimento"],
+    ) ||
     normalizzaData(interno["dataEmanazione"]) ||
     (parseNIR(voce.urn)?.data ?? "");
   if (!dataEmanazione) return null;
 
-  const codice = dto?.codiceRedazionale || stringaPreP1(interno["codiceRedazionale"]) || voce.codice;
+  const codice =
+    dto?.codiceRedazionale || stringaPreP1(interno["codiceRedazionale"]) || voce.codice;
 
   const html = dto?.articoloHtml || stringaPreP1(interno["articoloHtml"]);
   const testoIntegrale = dto?.testo || stripHtml(html);
-  const sottoTitolo =
-    dto?.sottoTitolo || normalizzaPreP1(stringaPreP1(interno["sottoTitolo"]));
+  const sottoTitolo = dto?.sottoTitolo || normalizzaPreP1(stringaPreP1(interno["sottoTitolo"]));
   // Vigenza onesta, in ordine di affidabilita':
   // 1) data di fine vigenza esplicita del dettaglio (passata = abrogato);
   // 2) intestazione formale Art. 1 di Normattiva (DECRETO DECADUTO /
@@ -430,7 +472,7 @@ function aiuto(): string {
     "Ingest backfill pre-1948 TAG=P1 (1861-1899, Regno d'Italia) Normattiva (dati ufficiali, mai dimostrativi).",
     "",
     "Uso:",
-    "  npx tsx scripts/ingest-reale-pre-P1.ts [opzioni]",
+    "  bunx tsx scripts/ingest-reale-pre-P1.ts [opzioni]",
     "",
     "Opzioni:",
     "  --anni=A,B            finestre da ingerire (default 1861..1899; ammessi 1861..1899)",
@@ -514,7 +556,10 @@ export function isErroreLimiteAttiPreP1(cause: unknown): boolean {
 }
 
 /** Dimezza un intervallo ISO [inizio..fine] in due sotto-intervalli per giorni. */
-export function dividiIntervalloPreP1(inizio: string, fine: string): Array<[string, string]> | null {
+export function dividiIntervalloPreP1(
+  inizio: string,
+  fine: string,
+): Array<[string, string]> | null {
   if (!isIsoDatePreP1(inizio) || !isIsoDatePreP1(fine) || inizio >= fine) return null;
   const t0 = Date.parse(`${inizio}T00:00:00Z`);
   const t1 = Date.parse(`${fine}T00:00:00Z`);
@@ -602,7 +647,9 @@ export async function percorsiDedupPreP1(escludi: readonly string[]): Promise<st
  * Carica gli ELI/nir/chiave gia' presenti nei file esistenti (lower+trim).
  * Non lancia mai: se un file manca o e' invalido viene saltato.
  */
-export async function caricaChiaviEsistentiPreP1(percorsi: readonly string[]): Promise<Set<string>> {
+export async function caricaChiaviEsistentiPreP1(
+  percorsi: readonly string[],
+): Promise<Set<string>> {
   const chiavi = new Set<string>();
   for (const percorso of percorsi) {
     try {
@@ -687,8 +734,7 @@ async function main(): Promise<void> {
 
   const escludiConosciute = (voci: VoceFinestraPreP1[]): VoceFinestraPreP1[] =>
     voci.filter((voce) => {
-      if (chiaveEliPreP1(voce.urn) && conosciuti.has(chiaveEliPreP1(voce.urn)))
-        return false;
+      if (chiaveEliPreP1(voce.urn) && conosciuti.has(chiaveEliPreP1(voce.urn))) return false;
       for (const candidato of eliCandidatiPreP1(voce)) {
         if (conosciuti.has(candidato)) return false;
       }
@@ -703,7 +749,11 @@ async function main(): Promise<void> {
   for (const finestra of finestre) {
     const nome = finestra.nome;
     try {
-      const { voci, url } = await listaFinestraConSplit(overridesPost, finestra.inizio, finestra.fine);
+      const { voci, url } = await listaFinestraConSplit(
+        overridesPost,
+        finestra.inizio,
+        finestra.fine,
+      );
       urlPerAnno.set(nome, url);
       console.log(`Finestra ${nome}: ${voci.length} voci reali.`);
       const filtrate = escludiConosciute(voci).filter((voce) => {
@@ -712,7 +762,9 @@ async function main(): Promise<void> {
         if (eliCandidatiPreP1(voce).some((c) => eliViste.has(c))) return false;
         return true;
       });
-      console.log(`Finestra ${nome}: ${voci.length} voci, ${voci.length - filtrate.length} duplicate escluse.`);
+      console.log(
+        `Finestra ${nome}: ${voci.length} voci, ${voci.length - filtrate.length} duplicate escluse.`,
+      );
       const selezionate = filtrate.slice(0, limite);
       vociPerAnno.set(nome, selezionate);
       for (const voce of selezionate) {
@@ -738,7 +790,9 @@ async function main(): Promise<void> {
     process.exitCode = 1;
     return;
   }
-  console.log(`Recupero dettagli per ${daDettagliare.length} atti (batch da ${DETTAGLI_PER_BATCH}).`);
+  console.log(
+    `Recupero dettagli per ${daDettagliare.length} atti (batch da ${DETTAGLI_PER_BATCH}).`,
+  );
 
   const attiPerAnno = new Map<NomeFinestraPreP1, LawRecord[]>();
   for (const finestra of finestre) attiPerAnno.set(finestra.nome, []);

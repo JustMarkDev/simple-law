@@ -15,7 +15,7 @@
  * (gestiti da lib/normattiva.ts); stop su 403/409/ERR_409.
  *
  * Uso:
- *   npx tsx scripts/ingest-reale-normattiva.ts [--limite=50] [--dal=2026-07-01]
+ *   bunx tsx scripts/ingest-reale-normattiva.ts [--limite=50] [--dal=2026-07-01]
  *     [--al=2026-09-28] [--testo-max=8000] [--dimensione-pagina=20]
  *     [--out=data/reali/normattiva-recenti.json] [--api-base=...] [--help]
  *
@@ -92,11 +92,7 @@ const LICENZA =
   "riproduzione consentita con menzione di fonte, carattere non autentico e gratuito " +
   "(Note legali dati.normattiva.it; solo la Gazzetta Ufficiale a stampa e' autentica)";
 
-const DENOMINAZIONI_FALLBACK: readonly string[] = [
-  "DECRETO-LEGGE",
-  "LEGGE",
-  "DECRETO LEGISLATIVO",
-];
+const DENOMINAZIONI_FALLBACK: readonly string[] = ["DECRETO-LEGGE", "LEGGE", "DECRETO LEGISLATIVO"];
 
 /* ------------------------------------------------------- utility interne */
 
@@ -158,7 +154,11 @@ function urnDaVoceLista(voce: unknown): string {
   const numero = stringa(
     voce["numeroProvvedimento"] ?? voce["numero"] ?? voce["numeroAttoAlfanumerico"],
   );
-  const iso = isoDaParti(voce["annoProvvedimento"], voce["meseProvvedimento"], voce["giornoProvvedimento"]);
+  const iso = isoDaParti(
+    voce["annoProvvedimento"],
+    voce["meseProvvedimento"],
+    voce["giornoProvvedimento"],
+  );
   if (!tipo || !numero || !iso) return "";
   const urn = formatNIR({ tipo, data: iso, numero });
   return parseNIR(urn) ? urn : "";
@@ -205,14 +205,16 @@ function dettaglioToRecord(
     "atto";
 
   const numero =
-    dto?.numero ||
-    stringa(interno["numeroProvvedimento"]) ||
-    (parseNIR(urn)?.numero ?? "");
+    dto?.numero || stringa(interno["numeroProvvedimento"]) || (parseNIR(urn)?.numero ?? "");
   if (!numero) return null;
 
   const dataEmanazione =
     dto?.dataEmanazione ||
-    isoDaParti(interno["annoProvvedimento"], interno["meseProvvedimento"], interno["giornoProvvedimento"]) ||
+    isoDaParti(
+      interno["annoProvvedimento"],
+      interno["meseProvvedimento"],
+      interno["giornoProvvedimento"],
+    ) ||
     normalizzaData(interno["dataEmanazione"]) ||
     (parseNIR(urn)?.data ?? "");
   if (!dataEmanazione) return null;
@@ -277,7 +279,8 @@ function dettaglioToRecord(
   const dataGU =
     isoDaParti(interno["annoGU"], interno["meseGU"], interno["giornoGU"]) ||
     (isIsoDate(dataGULista) ? dataGULista : "");
-  const numeroGU = stringa(interno["numeroGU"]) || (/^\d+$/.test(numeroGULista) ? numeroGULista : "");
+  const numeroGU =
+    stringa(interno["numeroGU"]) || (/^\d+$/.test(numeroGULista) ? numeroGULista : "");
 
   const fonti = buildFonti({
     tipo,
@@ -325,7 +328,7 @@ function aiuto(): string {
     "Ingest reale Normattiva (dati ufficiali, mai dimostrativi).",
     "",
     "Uso:",
-    "  npx tsx scripts/ingest-reale-normattiva.ts [opzioni]",
+    "  bunx tsx scripts/ingest-reale-normattiva.ts [opzioni]",
     "",
     "Opzioni:",
     "  --limite=N            atti da salvare (default 50, MAI oltre 200)",
@@ -441,15 +444,16 @@ async function listaAvanzata(
       overrides,
     );
     for (const atto of walk.items) {
-      const urn = atto.urn && parseNIR(atto.urn)
-        ? atto.urn
-        : (() => {
-          const tipo = atto.tipo || tipoFromDenominazione(denominazione);
-          const iso = isIsoDate(atto.dataEmanazione) ? atto.dataEmanazione : "";
-          if (!tipo || !iso || !atto.numero) return "";
-          const candidato = formatNIR({ tipo, data: iso, numero: atto.numero });
-          return parseNIR(candidato) ? candidato : "";
-        })();
+      const urn =
+        atto.urn && parseNIR(atto.urn)
+          ? atto.urn
+          : (() => {
+              const tipo = atto.tipo || tipoFromDenominazione(denominazione);
+              const iso = isIsoDate(atto.dataEmanazione) ? atto.dataEmanazione : "";
+              if (!tipo || !iso || !atto.numero) return "";
+              const candidato = formatNIR({ tipo, data: iso, numero: atto.numero });
+              return parseNIR(candidato) ? candidato : "";
+            })();
       if (!urn || visti.has(urn)) continue;
       visti.add(urn);
       risultato.push({ urn, codice: atto.codiceRedazionale, dataGU: "", numeroGU: "" });
@@ -493,9 +497,21 @@ async function main(): Promise<void> {
   let voci: VoceLista[] = [];
   let endpointUsato = "";
   const tentativi: Array<{ nome: string; path: string; fn: () => Promise<VoceLista[]> }> = [
-    { nome: "listaAtti", path: "/api/v1/ricerca/listaAtti", fn: () => listaAtti(overrides, dimensionePagina) },
-    { nome: "aggiornati", path: "/api/v1/ricerca/aggiornati", fn: () => listaAggiornati(overrides, dal, al) },
-    { nome: "avanzata", path: "/api/v1/ricerca/avanzata", fn: () => listaAvanzata(overrides, dimensionePagina) },
+    {
+      nome: "listaAtti",
+      path: "/api/v1/ricerca/listaAtti",
+      fn: () => listaAtti(overrides, dimensionePagina),
+    },
+    {
+      nome: "aggiornati",
+      path: "/api/v1/ricerca/aggiornati",
+      fn: () => listaAggiornati(overrides, dal, al),
+    },
+    {
+      nome: "avanzata",
+      path: "/api/v1/ricerca/avanzata",
+      fn: () => listaAvanzata(overrides, dimensionePagina),
+    },
   ];
 
   for (const tentativo of tentativi) {
@@ -509,7 +525,9 @@ async function main(): Promise<void> {
       }
       console.log(`Endpoint ${tentativo.nome}: nessun atto, provo il successivo.`);
     } catch (cause) {
-      console.log(`Endpoint ${tentativo.nome} fallito (${messaggioDi(cause)}), provo il successivo.`);
+      console.log(
+        `Endpoint ${tentativo.nome} fallito (${messaggioDi(cause)}), provo il successivo.`,
+      );
       if (erroreDefinitivo(cause)) {
         console.log("Errore definitivo (403/409/ERR_409): interrompo gli altri tentativi POST.");
         break;
@@ -524,7 +542,9 @@ async function main(): Promise<void> {
   }
 
   const daDettagliare = voci.slice(0, limite);
-  console.log(`Recupero dettagli per ${daDettagliare.length} atti (batch da ${DETTAGLI_PER_BATCH}).`);
+  console.log(
+    `Recupero dettagli per ${daDettagliare.length} atti (batch da ${DETTAGLI_PER_BATCH}).`,
+  );
 
   const atti: LawRecord[] = [];
   const visti = new Set<string>();
@@ -599,7 +619,9 @@ async function main(): Promise<void> {
   const destinazione = path.resolve(out);
   await mkdir(path.dirname(destinazione), { recursive: true });
   await writeFile(destinazione, json, "utf8");
-  console.log(`Scritti ${atti.length} atti reali in ${destinazione} (${(Buffer.byteLength(json, "utf8") / 1024).toFixed(1)} KB).`);
+  console.log(
+    `Scritti ${atti.length} atti reali in ${destinazione} (${(Buffer.byteLength(json, "utf8") / 1024).toFixed(1)} KB).`,
+  );
   if (errori.length > 0) {
     console.log(`Note (${errori.length}):`);
     for (const e of errori.slice(0, 10)) console.log(`  - ${e}`);

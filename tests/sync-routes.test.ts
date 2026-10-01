@@ -1,4 +1,4 @@
-import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
+import { afterEach, beforeEach, describe, expect, it, vi } from "vite-plus/test";
 import type { SyncReport } from "@/lib/sync";
 
 vi.mock("@/lib/sync", () => ({
@@ -121,7 +121,9 @@ describe("parametri dello storico", () => {
 
   it("non accetta zipDir: nessun input influenza il percorso di scrittura", async () => {
     await storicoGET(
-      new Request("http://localhost/api/sync/storico?zipDir=/tmp/attacco&collezioni=Collezione%20A"),
+      new Request(
+        "http://localhost/api/sync/storico?zipDir=/tmp/attacco&collezioni=Collezione%20A",
+      ),
     );
     const opzioni = opzioniStorico();
     expect(Object.prototype.hasOwnProperty.call(opzioni, "zipDir")).toBe(false);

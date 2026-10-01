@@ -1,31 +1,33 @@
-import type { Metadata } from 'next'
-import Header from '@/components/Header'
-import Footer from '@/components/Footer'
-import MinisterCard from '@/components/MinisterCard'
-import Comparsa from '@/components/Comparsa'
-import { loadMinisters } from '@/components/seed-fallback'
+import type { Metadata } from "next";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
+import MinisterCard from "@/components/MinisterCard";
+import Comparsa from "@/components/Comparsa";
+import { loadMinisters } from "@/components/seed-fallback";
 
 export const metadata: Metadata = {
-  title: 'Ministri - Stato della Repubblica',
-  description: 'Chi guida i dicasteri, di quali materie si occupa e quali provvedimenti segue.',
-}
+  title: "Ministri - Stato della Repubblica",
+  description: "Chi guida i dicasteri, di quali materie si occupa e quali provvedimenti segue.",
+};
 
 export default async function MinistriPage() {
-  const ministri = await loadMinisters()
+  const ministri = await loadMinisters();
 
   return (
     <>
       <Header />
-      <main id="contenuto" className="mx-auto w-full max-w-editoriale px-4 py-10 sm:px-6 sm:py-12 lg:px-8">
+      <main
+        id="contenuto"
+        className="mx-auto w-full max-w-editoriale px-4 py-10 sm:px-6 sm:py-12 lg:px-8"
+      >
         <header className="border-b-2 border-inchiostro pb-5 dark:border-nebbia">
-          <p className="text-sm font-bold text-accento dark:text-accento-chiara">
-            Governo
-          </p>
+          <p className="text-sm font-bold text-accento dark:text-accento-chiara">Governo</p>
           <h1 className="mt-2 text-3xl font-bold text-inchiostro dark:text-nebbia sm:text-4xl">
             Ministri e dicasteri
           </h1>
           <p className="mt-3 max-w-2xl text-sm leading-relaxed text-inchiostro-soft dark:text-nebbia-soft">
-            Una scheda per ogni ministro: il dicastero, le competenze principali e i provvedimenti collegati nel feed.
+            Una scheda per ogni ministro: il dicastero, le competenze principali e i provvedimenti
+            collegati nel feed.
           </p>
         </header>
 
@@ -47,5 +49,5 @@ export default async function MinistriPage() {
       </main>
       <Footer />
     </>
-  )
+  );
 }

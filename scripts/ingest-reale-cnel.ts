@@ -21,7 +21,7 @@
  * (`archiviocontratti.cnel.it`), non bounded via HTML/API semplice:
  * nessuna scheda bulk importata (solo metadati documenti sopra).
  *
- * Uso: npx tsx scripts/ingest-reale-cnel.ts [--max=50] [--solo=osservazioni|rapporti|pareri-ue]
+ * Uso: bunx tsx scripts/ingest-reale-cnel.ts [--max=50] [--solo=osservazioni|rapporti|pareri-ue]
  */
 
 import { mkdirSync, writeFileSync } from "node:fs";
@@ -255,7 +255,8 @@ async function ingerisciCategoria(
     visti.add(voce.id);
     voci.push(voce);
   }
-  if (voci.length === 0) throw new Error(`CNEL ${categoria.chiave}: nessuna voce valida nella risposta`);
+  if (voci.length === 0)
+    throw new Error(`CNEL ${categoria.chiave}: nessuna voce valida nella risposta`);
   return voci;
 }
 
@@ -291,7 +292,7 @@ async function main(): Promise<void> {
   const { aiuto, solo, max } = argomenti();
   if (aiuto) {
     console.log(
-      "Uso: npx tsx scripts/ingest-reale-cnel.ts [--max=50] [--solo=osservazioni|rapporti|pareri-ue]\n" +
+      "Uso: bunx tsx scripts/ingest-reale-cnel.ts [--max=50] [--solo=osservazioni|rapporti|pareri-ue]\n" +
         "Ingerisce CNEL (osservazioni + rapporti + pareri UE) via 3 POST API, solo metadati.\n" +
         "Scrive data/reali/oversight-cnel-2026.json (<=50 voci, <=950KB). Fallimento -> exit 1 senza file parziali.",
     );
@@ -313,26 +314,27 @@ async function main(): Promise<void> {
     visti.add(v.id);
     return true;
   });
-  dedup.sort((a, b) => (a.data < b.data ? 1 : a.data > b.data ? -1 : a.titolo.localeCompare(b.titolo, "it")));
+  dedup.sort((a, b) =>
+    a.data < b.data ? 1 : a.data > b.data ? -1 : a.titolo.localeCompare(b.titolo, "it"),
+  );
   const documenti = dedup.slice(0, max);
   if (documenti.length === 0) throw new Error("CNEL: nessun documento valido");
   const recuperatoIl = new Date().toISOString();
-  const json =
-    `${JSON.stringify(
-      {
-        provenance: {
-          fonte: CNEL_FONTE,
-          url: CNEL_INDICE_DOCUMENTI,
-          recuperatoIl,
-          licenza: CNEL_LICENZA,
-        },
-        documenti,
-        metodologia: CNEL_METODOLOGIA,
-        avvertenze: CNEL_AVVERTENZE,
+  const json = `${JSON.stringify(
+    {
+      provenance: {
+        fonte: CNEL_FONTE,
+        url: CNEL_INDICE_DOCUMENTI,
+        recuperatoIl,
+        licenza: CNEL_LICENZA,
       },
-      null,
-      2,
-    )}\n`;
+      documenti,
+      metodologia: CNEL_METODOLOGIA,
+      avvertenze: CNEL_AVVERTENZE,
+    },
+    null,
+    2,
+  )}\n`;
   if (Buffer.byteLength(json, "utf8") > MAX_BYTE_OUT) {
     throw new Error(`envelope oltre ${MAX_BYTE_OUT} byte`);
   }

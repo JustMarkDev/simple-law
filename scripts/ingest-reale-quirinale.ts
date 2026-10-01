@@ -24,7 +24,7 @@
  *   solo insieme a fine ingest riuscito).
  *
  * Uso:
- *   npx tsx scripts/ingest-reale-quirinale.ts [--help]
+ *   bunx tsx scripts/ingest-reale-quirinale.ts [--help]
  *
  * Nota operativa: quirinale.it applica un check anti-bot per IP. Da reti
  * bloccate la pagina risponde «Pagina di errore / check di verifica»: lo
@@ -174,8 +174,12 @@ function estraiCard(html: string, accettaHref: (href: string) => boolean): Card[
     if (!accettaHref(href)) continue;
     const inner = m[2] ?? "";
     const titolo = toTesto(/<div class="titolo">([\s\S]*?)<\/div>/i.exec(inner)?.[1] ?? "");
-    const tipoRicerca = toTesto(/<span class="tipoRicerca">([\s\S]*?)<\/span>/i.exec(inner)?.[1] ?? "");
-    const descrizione = toTesto(/<span class="descrizione">([\s\S]*?)<\/span>/i.exec(inner)?.[1] ?? "");
+    const tipoRicerca = toTesto(
+      /<span class="tipoRicerca">([\s\S]*?)<\/span>/i.exec(inner)?.[1] ?? "",
+    );
+    const descrizione = toTesto(
+      /<span class="descrizione">([\s\S]*?)<\/span>/i.exec(inner)?.[1] ?? "",
+    );
     cards.push({ href, titolo, tipoRicerca, descrizione });
   }
   return cards;
@@ -238,7 +242,7 @@ async function main(): Promise<void> {
         "Ingest reale Quirinale (solo GET pagina 1, mai POST).",
         "",
         "Uso:",
-        "  npx tsx scripts/ingest-reale-quirinale.ts",
+        "  bunx tsx scripts/ingest-reale-quirinale.ts",
         "",
         "Scrive (solo insieme, mai parziali):",
         `  data/reali/quirinale-comunicati.json (max ${MAX_VOCI})`,
@@ -265,8 +269,10 @@ async function main(): Promise<void> {
   };
   const jsonCom = `${JSON.stringify(envCom, null, 2)}\n`;
   const jsonAtti = `${JSON.stringify(envAtti, null, 2)}\n`;
-  if (Buffer.byteLength(jsonCom, "utf8") > MAX_BYTE) throw new Error("quirinale-comunicati.json oltre 1MB");
-  if (Buffer.byteLength(jsonAtti, "utf8") > MAX_BYTE) throw new Error("quirinale-atti.json oltre 1MB");
+  if (Buffer.byteLength(jsonCom, "utf8") > MAX_BYTE)
+    throw new Error("quirinale-comunicati.json oltre 1MB");
+  if (Buffer.byteLength(jsonAtti, "utf8") > MAX_BYTE)
+    throw new Error("quirinale-atti.json oltre 1MB");
 
   // Solo dopo entrambi i successi: mai file parziali.
   mkdirSync(DIR_REALI, { recursive: true });

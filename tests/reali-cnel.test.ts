@@ -5,7 +5,7 @@
  * scartata (null).
  */
 
-import { describe, expect, it } from "vitest";
+import { describe, expect, it } from "vite-plus/test";
 import {
   CNEL_MAX_DOC,
   estraiVociGrezze,
@@ -58,7 +58,10 @@ async function leggiEnvelope(file: string): Promise<{
     const documenti = (parsed as { documenti?: unknown }).documenti;
     if (!Array.isArray(documenti)) return null;
     return {
-      provenance: ((parsed as { provenance?: unknown }).provenance ?? {}) as Record<string, unknown>,
+      provenance: ((parsed as { provenance?: unknown }).provenance ?? {}) as Record<
+        string,
+        unknown
+      >,
       documenti,
       metodologia: (parsed as { metodologia?: unknown }).metodologia,
       avvertenze: (parsed as { avvertenze?: unknown }).avvertenze,
@@ -133,16 +136,22 @@ describe("cnel: normalizzaVoceCnel (zero rete, zero disco)", () => {
     expect(normalizzaVoceCnel([], "osservazione")).toBeNull();
     expect(normalizzaVoceCnel({}, "osservazione")).toBeNull();
     expect(normalizzaVoceCnel({ ...OSS_VALIDO, title: "  " }, "osservazione")).toBeNull();
-    expect(normalizzaVoceCnel({ ...OSS_VALIDO, publicationDate: "luglio 2026" }, "osservazione")).toBeNull();
+    expect(
+      normalizzaVoceCnel({ ...OSS_VALIDO, publicationDate: "luglio 2026" }, "osservazione"),
+    ).toBeNull();
     expect(normalizzaVoceCnel({ ...OSS_VALIDO, url: "" }, "osservazione")).toBeNull();
-    expect(normalizzaVoceCnel({ ...OSS_VALIDO, url: "https://esterno.it/x" }, "osservazione")).toBeNull();
+    expect(
+      normalizzaVoceCnel({ ...OSS_VALIDO, url: "https://esterno.it/x" }, "osservazione"),
+    ).toBeNull();
     // URL /media/docs (allegato PDF) non e' una scheda: scartato, mai promosso a voce
     expect(normalizzaVoceCnel(PARERE_PDF_SOLO, "parere-ue")).toBeNull();
     expect(normalizzaVoceCnel(OSS_VALIDO, "decreto" as never)).toBeNull();
   });
 
   it("never-throw su input malformati", () => {
-    expect(() => normalizzaVoceCnel({ title: 1, url: [], publicationDate: {} }, "rapporto")).not.toThrow();
+    expect(() =>
+      normalizzaVoceCnel({ title: 1, url: [], publicationDate: {} }, "rapporto"),
+    ).not.toThrow();
     expect(normalizzaVoceCnel({ title: 1, url: [], publicationDate: {} }, "rapporto")).toBeNull();
   });
 });
@@ -199,7 +208,7 @@ describe("cnel: integrazione disco tollerante (solo se il file esiste)", () => {
       expect(visti.has(o["id"] as string)).toBe(false);
       visti.add(o["id"] as string);
       expect(o["id"]).toBe(o["url"]);
-      expect((o["url"] as string)).not.toContain("/media/docs/");
+      expect(o["url"] as string).not.toContain("/media/docs/");
       expect(Object.keys(o).sort()).toEqual(["abstract", "data", "id", "tipo", "titolo", "url"]);
     }
   });

@@ -151,14 +151,12 @@ export function normalizzaGiudiceGA(value: unknown): GiudiceGA | "" {
       s = value;
     } else if (value && typeof value === "object" && !Array.isArray(value)) {
       const o = value as Record<string, unknown>;
-      const candidato =
-        o["tipo"] ?? o["codice"] ?? o["nome"] ?? o["giudice"] ?? "";
+      const candidato = o["tipo"] ?? o["codice"] ?? o["nome"] ?? o["giudice"] ?? "";
       s = typeof candidato === "string" ? candidato : "";
     }
     // Via i punti: "T.a.r. per ..." -> "tar per ..." (match stabile).
     const n = normalizzaOversight(s).replace(/\./g, "");
-    if (n.includes("consiglio di stato") || n === "cds" || n.startsWith("cds"))
-      return "cds";
+    if (n.includes("consiglio di stato") || n === "cds" || n.startsWith("cds")) return "cds";
     // Consiglio di giustizia amministrativa per la Regione Siciliana:
     // giudice d'appello siciliano, distinto da CdS e TAR.
     if (n.includes("consiglio di giustizia amministrativa")) return "cga";
@@ -227,27 +225,18 @@ function aContrattoRicco(voce: unknown): ContrattoPubblico | null {
     const contratto: ContrattoPubblico = {
       ocid,
       cig,
-      stazioneAppaltante: cf
-        ? { denominazione, cf }
-        : { denominazione },
+      stazioneAppaltante: cf ? { denominazione, cf } : { denominazione },
       oggetto: oggettoRaw.slice(0, 2000),
     };
-    const importo =
-      importoValido(o["importo"]) ?? importoValido(o["valore"]);
+    const importo = importoValido(o["importo"]) ?? importoValido(o["valore"]);
     if (importo !== null) contratto.importo = importo;
     const valuta = stringaPulita(o["valuta"]).toUpperCase();
     if (/^[A-Z]{3}$/.test(valuta)) contratto.valuta = valuta;
-    const dataAward = isoValida(
-      o["dataAward"] ?? o["data"] ?? o["awardDate"],
-    );
+    const dataAward = isoValida(o["dataAward"] ?? o["data"] ?? o["awardDate"]);
     if (dataAward) contratto.dataAward = dataAward;
-    const fornitore = stringaPulita(
-      o["fornitore"] ?? o["aggiudicatario"],
-    ).slice(0, 300);
+    const fornitore = stringaPulita(o["fornitore"] ?? o["aggiudicatario"]).slice(0, 300);
     if (fornitore) contratto.fornitore = fornitore;
-    const scheda = httpsUrl(
-      o["schedaBDNCP"] ?? o["scheda"] ?? o["urlScheda"],
-    );
+    const scheda = httpsUrl(o["schedaBDNCP"] ?? o["scheda"] ?? o["urlScheda"]);
     if (scheda) contratto.schedaBDNCP = scheda.slice(0, 500);
     const bulk = httpsUrl(o["risorsaBulk"] ?? o["url"]);
     if (bulk) contratto.risorsaBulk = bulk.slice(0, 500);
@@ -340,13 +329,9 @@ function aProvvedimentoGARicco(voce: unknown): ProvvedimentoGA | null {
     if (!/^\d{4}$/.test(anno)) return null;
     const giudice = normalizzaGiudiceGA(o["giudice"]);
     if (!giudice) return null;
-    const schedaUrl = httpsUrl(
-      o["schedaUrl"] ?? o["scheda"] ?? o["url"],
-    );
+    const schedaUrl = httpsUrl(o["schedaUrl"] ?? o["scheda"] ?? o["url"]);
     if (!schedaUrl) return null;
-    const oggettoRaw = stringaPulita(
-      o["oggetto"] ?? o["titolo"] ?? o["epigrafe"],
-    );
+    const oggettoRaw = stringaPulita(o["oggetto"] ?? o["titolo"] ?? o["epigrafe"]);
     if (oggettoRaw.length < 5) return null;
 
     const p: ProvvedimentoGA = {
@@ -357,12 +342,8 @@ function aProvvedimentoGARicco(voce: unknown): ProvvedimentoGA | null {
       schedaUrl: schedaUrl.slice(0, 500),
     };
     const sezioneRaw =
-      typeof o["giudice"] === "object" &&
-      o["giudice"] !== null &&
-      !Array.isArray(o["giudice"])
-        ? stringaPulita(
-            (o["giudice"] as Record<string, unknown>)["sezione"],
-          )
+      typeof o["giudice"] === "object" && o["giudice"] !== null && !Array.isArray(o["giudice"])
+        ? stringaPulita((o["giudice"] as Record<string, unknown>)["sezione"])
         : "";
     const sezione = stringaPulita(o["sezione"] ?? sezioneRaw).slice(0, 120);
     if (sezione) p.sezione = sezione;
@@ -487,18 +468,12 @@ export function filtraPerGiudice(
  * Paginazione: `per` ammessi 10|20|50 (default 20), `page` >= 1 (default 1).
  * Non lancia mai.
  */
-export function paginaOversight<T>(
-  elementi: readonly T[],
-  page: unknown,
-  per: unknown,
-): T[] {
+export function paginaOversight<T>(elementi: readonly T[], page: unknown, per: unknown): T[] {
   try {
     const elenco = Array.isArray(elementi) ? elementi : [];
-    const p =
-      typeof page === "number" && Number.isFinite(page) ? Math.floor(page) : 1;
+    const p = typeof page === "number" && Number.isFinite(page) ? Math.floor(page) : 1;
     const numeroPagina = p >= 1 ? p : 1;
-    const n =
-      typeof per === "number" && Number.isFinite(per) ? Math.floor(per) : 20;
+    const n = typeof per === "number" && Number.isFinite(per) ? Math.floor(per) : 20;
     const perPagina = n === 10 || n === 20 || n === 50 ? n : 20;
     const inizio = (numeroPagina - 1) * perPagina;
     return elenco.slice(inizio, inizio + perPagina);
@@ -521,10 +496,7 @@ export function contaPerGiudice(
     }
     return [...conteggi.entries()]
       .map(([nome, componenti]) => ({ nome, componenti }))
-      .sort(
-        (a, b) =>
-          b.componenti - a.componenti || a.nome.localeCompare(b.nome, "it"),
-      );
+      .sort((a, b) => b.componenti - a.componenti || a.nome.localeCompare(b.nome, "it"));
   } catch {
     return [];
   }
@@ -623,20 +595,13 @@ function leggiEnvelope(percorso: string): unknown | null {
 
 function provenanceDi(grezzo: unknown): ProvenienzaOversight | null {
   try {
-    if (!grezzo || typeof grezzo !== "object" || Array.isArray(grezzo))
-      return null;
+    if (!grezzo || typeof grezzo !== "object" || Array.isArray(grezzo)) return null;
     const o = grezzo as Record<string, unknown>;
     const prov = o["provenance"];
     if (!prov || typeof prov !== "object" || Array.isArray(prov)) return null;
     const p = prov as Record<string, unknown>;
     const out: ProvenienzaOversight = {};
-    for (const campo of [
-      "fonte",
-      "url",
-      "recuperatoIl",
-      "licenza",
-      "paginaDati",
-    ] as const) {
+    for (const campo of ["fonte", "url", "recuperatoIl", "licenza", "paginaDati"] as const) {
       const v = stringaPulita(p[campo]);
       if (v) out[campo] = v.slice(0, 500);
     }
@@ -648,8 +613,7 @@ function provenanceDi(grezzo: unknown): ProvenienzaOversight | null {
 
 function listaDi(grezzo: unknown, chiavi: string[]): unknown[] {
   try {
-    if (!grezzo || typeof grezzo !== "object" || Array.isArray(grezzo))
-      return [];
+    if (!grezzo || typeof grezzo !== "object" || Array.isArray(grezzo)) return [];
     const o = grezzo as Record<string, unknown>;
     for (const chiave of chiavi) {
       const lista = o[chiave];
@@ -692,13 +656,7 @@ function caricaProvvedimenti(): {
   try {
     const grezzo = leggiEnvelope(PERCORSO_GA);
     if (!grezzo) return { provvedimenti: [], provenance: null };
-    const lista = listaDi(grezzo, [
-      "voci",
-      "provvedimenti",
-      "atti",
-      "pronunce",
-      "items",
-    ]);
+    const lista = listaDi(grezzo, ["voci", "provvedimenti", "atti", "pronunce", "items"]);
     const provvedimenti: ProvvedimentoGA[] = [];
     const visti = new Set<string>();
     for (const voce of lista.slice(0, 100)) {

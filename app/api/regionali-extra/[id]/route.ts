@@ -39,24 +39,16 @@ function intero(value: string | null, fallback: number, min: number, max: number
   return Math.min(max, Math.max(min, Math.floor(parsed)));
 }
 
-function filtraListe(
-  liste: readonly ListaRisultatoExtra[],
-  filtro: string,
-): ListaRisultatoExtra[] {
+function filtraListe(liste: readonly ListaRisultatoExtra[], filtro: string): ListaRisultatoExtra[] {
   try {
     if (!filtro) return liste.map((l) => ({ ...l }));
-    return liste
-      .filter((l) => normalizzaExtra(l?.n).includes(filtro))
-      .map((l) => ({ ...l }));
+    return liste.filter((l) => normalizzaExtra(l?.n).includes(filtro)).map((l) => ({ ...l }));
   } catch {
     return [];
   }
 }
 
-function ordinaComuni(
-  comuni: ComuneRisultatoExtra[],
-  sort: string,
-): ComuneRisultatoExtra[] {
+function ordinaComuni(comuni: ComuneRisultatoExtra[], sort: string): ComuneRisultatoExtra[] {
   try {
     if (sort === "a_asc")
       return [...comuni].sort((a, b) => a.a - b.a || a.c.localeCompare(b.c, "it"));
@@ -104,9 +96,7 @@ export async function GET(request: Request, context: RouteContext) {
       return errore404("Dati non disponibili per questa consultazione");
     }
     const top = intero(searchParams.get("top"), 15, 1, 15);
-    const filtroLista = normalizzaExtra(
-      (searchParams.get("lista") ?? "").slice(0, 80),
-    );
+    const filtroLista = normalizzaExtra((searchParams.get("lista") ?? "").slice(0, 80));
     // topListeExtra accetta max 10: per top>10 si ordina e si tronca qui.
     const ordinate = topListeExtra(dati.liste, 10);
     const resto =
@@ -116,14 +106,9 @@ export async function GET(request: Request, context: RouteContext) {
             .sort((a, b) => b.v - a.v)
             .slice(10, top)
         : [];
-    const nazionali = filtraListe([...ordinate, ...resto], filtroLista).slice(
-      0,
-      top,
-    );
+    const nazionali = filtraListe([...ordinate, ...resto], filtroLista).slice(0, top);
     const nomi =
-      filtroLista.length >= 2
-        ? new Set(nazionali.map((l) => normalizzaExtra(l.n)))
-        : null;
+      filtroLista.length >= 2 ? new Set(nazionali.map((l) => normalizzaExtra(l.n))) : null;
     const regioni = dati.regioni.map((r) => ({
       r: r.r,
       e: r.e,
@@ -132,9 +117,7 @@ export async function GET(request: Request, context: RouteContext) {
       k: r.k,
       a: r.a,
       liste: nomi
-        ? r.liste
-            .filter((l) => nomi.has(normalizzaExtra(l.n)))
-            .map((l) => ({ ...l }))
+        ? r.liste.filter((l) => nomi.has(normalizzaExtra(l.n))).map((l) => ({ ...l }))
         : r.liste.map((l) => ({ ...l })),
     }));
     const q = (searchParams.get("q") ?? "").slice(0, 100);

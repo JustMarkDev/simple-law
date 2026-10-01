@@ -31,7 +31,7 @@
  * testo prima della scrittura.
  *
  * Uso:
- *   npx tsx scripts/ingest-reale-finestra-anni-B.ts [--anni=1962,1963,1964,1966,1967,1968,1969,1971,1972,1973,1974]
+ *   bunx tsx scripts/ingest-reale-finestra-anni-B.ts [--anni=1962,1963,1964,1966,1967,1968,1969,1971,1972,1973,1974]
  *     [--limite=80] [--testo-max=2000] [--api-base=...] [--help]
  *
  * Esce con codice 1 (SENZA scrivere file parziali) se una delle finestre
@@ -126,7 +126,19 @@ const FINESTRA_1973 = { nome: "1973", inizio: "1973-01-01", fine: "1973-12-31" }
 const FINESTRA_1974 = { nome: "1974", inizio: "1974-01-01", fine: "1974-12-31" } as const;
 
 /** Ordine di default: TAG-B (anni 60-70 assegnati, crescente). */
-const ORDINE_DEFAULT = ["1962", "1963", "1964", "1966", "1967", "1968", "1969", "1971", "1972", "1973", "1974"] as const;
+const ORDINE_DEFAULT = [
+  "1962",
+  "1963",
+  "1964",
+  "1966",
+  "1967",
+  "1968",
+  "1969",
+  "1971",
+  "1972",
+  "1973",
+  "1974",
+] as const;
 
 /** Finestre selezionabili via --anni (stesso bounded: max 80 atti). */
 const FINESTRE_DISPONIBILI = {
@@ -221,7 +233,9 @@ function isoDaParti(anno: unknown, mese: unknown, giorno: unknown): string {
 
 /** Chiave di dedup ELI: trim + lowercase (stessa regola del resto dell'app). */
 export function chiaveEliFinestraAnniB(eli: unknown): string {
-  return String(eli ?? "").trim().toLowerCase();
+  return String(eli ?? "")
+    .trim()
+    .toLowerCase();
 }
 
 function pausa(ms: number): Promise<void> {
@@ -290,7 +304,11 @@ export function urnDaVoceFinestraAnniB(voce: unknown): string {
   const numero = stringaFinestraAnniB(
     voce["numeroProvvedimento"] ?? voce["numero"] ?? voce["numeroAttoAlfanumerico"],
   );
-  const iso = isoDaParti(voce["annoProvvedimento"], voce["meseProvvedimento"], voce["giornoProvvedimento"]);
+  const iso = isoDaParti(
+    voce["annoProvvedimento"],
+    voce["meseProvvedimento"],
+    voce["giornoProvvedimento"],
+  );
   if (!tipo || !numero || !iso) return "";
   const urn = formatNIR({ tipo, data: iso, numero });
   return parseNIR(urn) ? urn : "";
@@ -344,12 +362,17 @@ export function dettaglioToRecordFinestraAnniB(
 
   const dataEmanazione =
     dto?.dataEmanazione ||
-    isoDaParti(interno["annoProvvedimento"], interno["meseProvvedimento"], interno["giornoProvvedimento"]) ||
+    isoDaParti(
+      interno["annoProvvedimento"],
+      interno["meseProvvedimento"],
+      interno["giornoProvvedimento"],
+    ) ||
     normalizzaData(interno["dataEmanazione"]) ||
     (parseNIR(voce.urn)?.data ?? "");
   if (!dataEmanazione) return null;
 
-  const codice = dto?.codiceRedazionale || stringaFinestraAnniB(interno["codiceRedazionale"]) || voce.codice;
+  const codice =
+    dto?.codiceRedazionale || stringaFinestraAnniB(interno["codiceRedazionale"]) || voce.codice;
 
   const html = dto?.articoloHtml || stringaFinestraAnniB(interno["articoloHtml"]);
   const testoIntegrale = dto?.testo || stripHtml(html);
@@ -442,7 +465,7 @@ function aiuto(): string {
     "Ingest finestra anni TAG-B 1962,1963,1964,1966,1967,1968,1969,1971,1972,1973,1974 (dati ufficiali, mai dimostrativi).",
     "",
     "Uso:",
-    "  npx tsx scripts/ingest-reale-finestra-anni-B.ts [opzioni]",
+    "  bunx tsx scripts/ingest-reale-finestra-anni-B.ts [opzioni]",
     "",
     "Opzioni:",
     "  --anni=A,B            finestre da ingerire (default TAG-B; ammessi 1962,1963,1964,1966,1967,1968,1969,1971,1972,1973,1974)",
@@ -530,8 +553,12 @@ export function isErroreLimiteAttiAnniB(cause: unknown): boolean {
 }
 
 /** Dimezza un intervallo ISO [inizio..fine] in due sotto-intervalli per giorni. */
-export function dividiIntervalloAnniB(inizio: string, fine: string): Array<[string, string]> | null {
-  if (!isIsoDateFinestraAnniB(inizio) || !isIsoDateFinestraAnniB(fine) || inizio >= fine) return null;
+export function dividiIntervalloAnniB(
+  inizio: string,
+  fine: string,
+): Array<[string, string]> | null {
+  if (!isIsoDateFinestraAnniB(inizio) || !isIsoDateFinestraAnniB(fine) || inizio >= fine)
+    return null;
   const t0 = Date.parse(`${inizio}T00:00:00Z`);
   const t1 = Date.parse(`${fine}T00:00:00Z`);
   const giorni = Math.round((t1 - t0) / 86400000);
@@ -618,7 +645,9 @@ export async function percorsiDedupAnniB(escludi: readonly string[]): Promise<st
  * Carica gli ELI/nir/chiave gia' presenti nei file esistenti (lower+trim).
  * Non lancia mai: se un file manca o e' invalido viene saltato.
  */
-export async function caricaChiaviEsistentiAnniB(percorsi: readonly string[]): Promise<Set<string>> {
+export async function caricaChiaviEsistentiAnniB(
+  percorsi: readonly string[],
+): Promise<Set<string>> {
   const chiavi = new Set<string>();
   for (const percorso of percorsi) {
     try {
@@ -720,7 +749,11 @@ async function main(): Promise<void> {
   for (const finestra of finestre) {
     const nome = finestra.nome as NomeFinestraAnniB;
     try {
-      const { voci, url } = await listaFinestraConSplit(overridesPost, finestra.inizio, finestra.fine);
+      const { voci, url } = await listaFinestraConSplit(
+        overridesPost,
+        finestra.inizio,
+        finestra.fine,
+      );
       urlPerAnno.set(nome, url);
       console.log(`Finestra ${nome}: ${voci.length} voci reali.`);
       const filtrate = escludiConosciute(voci).filter((voce) => {
@@ -729,7 +762,9 @@ async function main(): Promise<void> {
         if (eliCandidatiAnniB(voce).some((c) => eliViste.has(c))) return false;
         return true;
       });
-      console.log(`Finestra ${nome}: ${voci.length} voci, ${voci.length - filtrate.length} duplicate escluse.`);
+      console.log(
+        `Finestra ${nome}: ${voci.length} voci, ${voci.length - filtrate.length} duplicate escluse.`,
+      );
       const selezionate = filtrate.slice(0, limite);
       vociPerAnno.set(nome, selezionate);
       for (const voce of selezionate) {
@@ -755,7 +790,9 @@ async function main(): Promise<void> {
     process.exitCode = 1;
     return;
   }
-  console.log(`Recupero dettagli per ${daDettagliare.length} atti (batch da ${DETTAGLI_PER_BATCH}).`);
+  console.log(
+    `Recupero dettagli per ${daDettagliare.length} atti (batch da ${DETTAGLI_PER_BATCH}).`,
+  );
 
   const attiPerAnno = new Map<NomeFinestraAnniB, LawRecord[]>();
   for (const finestra of finestre) attiPerAnno.set(finestra.nome as NomeFinestraAnniB, []);
@@ -806,9 +843,13 @@ async function main(): Promise<void> {
     `Dettagli OK: ${finestre.map((f) => `finestra${f.nome}=${attiPerAnno.get(f.nome as NomeFinestraAnniB)?.length ?? 0}`).join(" ")}; scarti/errori: ${errori.length}.`,
   );
   // Niente parziali: OGNI finestra selezionata deve aver prodotto atti reali.
-  const vuote = finestre.filter((f) => (attiPerAnno.get(f.nome as NomeFinestraAnniB)?.length ?? 0) === 0);
+  const vuote = finestre.filter(
+    (f) => (attiPerAnno.get(f.nome as NomeFinestraAnniB)?.length ?? 0) === 0,
+  );
   if (vuote.length > 0) {
-    console.error(`Finestre senza atti reali (${vuote.map((f) => f.nome).join(",")}): nessun file scritto.`);
+    console.error(
+      `Finestre senza atti reali (${vuote.map((f) => f.nome).join(",")}): nessun file scritto.`,
+    );
     for (const e of errori.slice(0, 10)) console.error(`  - ${e}`);
     process.exitCode = 1;
     return;

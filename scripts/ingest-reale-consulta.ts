@@ -103,7 +103,11 @@ function decodificaEntita(testo: string): string {
 
 function testoPulito(grezzo: unknown): string {
   if (typeof grezzo !== "string") return "";
-  return pulisci(decodificaEntita(grezzo).replace(/<[^>]*>/g, " ").replace(/\r/g, " "));
+  return pulisci(
+    decodificaEntita(grezzo)
+      .replace(/<[^>]*>/g, " ")
+      .replace(/\r/g, " "),
+  );
 }
 
 function tronca(testo: string, limite: number): { valore: string; tagliato: boolean } {
@@ -152,14 +156,18 @@ function normalizzaVoce(voce: unknown): Pronuncia | null {
   if (dec) record.dataDecisione = dec;
   const dep = dataIso(o["data_deposito"]);
   if (dep) record.dataDeposito = dep;
-  const tipo = typeof o["tipologia_pronuncia"] === "string" ? o["tipologia_pronuncia"].trim().toUpperCase().slice(0, 4) : "";
+  const tipo =
+    typeof o["tipologia_pronuncia"] === "string"
+      ? o["tipologia_pronuncia"].trim().toUpperCase().slice(0, 4)
+      : "";
   if (tipo) record.tipologia = tipo;
   for (const [chiave, campo] of [
     ["presidente", "presidente"],
     ["redattore_pronuncia", "redattore"],
     ["relatore_pronuncia", "relatore"],
   ] as const) {
-    const v = typeof o[chiave] === "string" ? o[chiave].trim().replace(/\s+/g, " ").slice(0, 200) : "";
+    const v =
+      typeof o[chiave] === "string" ? o[chiave].trim().replace(/\s+/g, " ").slice(0, 200) : "";
     if (v) (record as Record<string, unknown>)[campo] = v;
   }
   let tagliato = false;
@@ -182,7 +190,8 @@ async function scaricaZip(sorgente: string, cartella: string): Promise<string> {
     if (contenuto.length === 0 || contenuto.length > MAX_ZIP_BYTE) {
       throw new Error("file sorgente vuoto o oltre il limite");
     }
-    if (contenuto[0] !== 0x50 || contenuto[1] !== 0x4b) throw new Error("sorgente locale non e' uno ZIP");
+    if (contenuto[0] !== 0x50 || contenuto[1] !== 0x4b)
+      throw new Error("sorgente locale non e' uno ZIP");
     const destino = join(cartella, "esterno.zip");
     writeFileSync(destino, contenuto);
     return destino;
@@ -234,7 +243,7 @@ async function main(): Promise<void> {
   const { aiuto, max, sorgente } = argomenti();
   if (aiuto) {
     console.log(
-      "Uso: npx tsx scripts/ingest-reale-consulta.ts [--max=50] [--sorgente=URL-o-file]\n" +
+      "Uso: bunx tsx scripts/ingest-reale-consulta.ts [--max=50] [--sorgente=URL-o-file]\n" +
         `Scarica ${ZIP_URL},\nestrae solo ${INNER_ZIP} (anno 2001) e scrive data/reali/consulta-pronunce-2001.json (max 50 record, <=950KB).`,
     );
     return;
@@ -247,8 +256,14 @@ async function main(): Promise<void> {
     const elenco = elencoDaJson(testo);
     if (elenco.length === 0) throw new Error("elenco_pronunce vuoto");
     const ordinate = [...elenco].sort((a, b) => {
-      const na = Number.parseInt(String((a as Record<string, unknown>)?.["numero_pronuncia"] ?? "0"), 10);
-      const nb = Number.parseInt(String((b as Record<string, unknown>)?.["numero_pronuncia"] ?? "0"), 10);
+      const na = Number.parseInt(
+        String((a as Record<string, unknown>)?.["numero_pronuncia"] ?? "0"),
+        10,
+      );
+      const nb = Number.parseInt(
+        String((b as Record<string, unknown>)?.["numero_pronuncia"] ?? "0"),
+        10,
+      );
       return (Number.isFinite(na) ? na : 0) - (Number.isFinite(nb) ? nb : 0);
     });
     const pronunce: Pronuncia[] = [];

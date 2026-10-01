@@ -1,41 +1,45 @@
-import type { Metadata, Viewport } from 'next';
-import type { ReactNode } from 'react';
-import { Nunito } from 'next/font/google';
-import { ThemeProvider } from 'next-themes';
-import './globals.css';
+import type { Metadata, Viewport } from "next";
+import type { ReactNode } from "react";
+import { Geist, Geist_Mono } from "next/font/google";
+import { ThemeProvider } from "next-themes";
+import "./globals.css";
 
-const caratterePrincipale = Nunito({
-  subsets: ['latin', 'latin-ext'],
-  weight: ['400', '600', '700', '800'],
-  variable: '--font-sans',
-  display: 'swap',
-  preload: true,
+const caratterePrincipale = Geist({
+  subsets: ["latin", "latin-ext"],
+  variable: "--font-geist-sans",
+  display: "swap",
+});
+
+const carattereMono = Geist_Mono({
+  subsets: ["latin"],
+  variable: "--font-geist-mono",
+  display: "swap",
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://simple-law.it'),
+  metadataBase: new URL("https://simple-law.it"),
   title: {
-    default: 'Simple Law - le leggi spiegate semplici',
-    template: '%s - Simple Law',
+    default: "Simple Law - le leggi spiegate semplici",
+    template: "%s - Simple Law",
   },
   description:
-    'Dati politici italiani e schede delle norme: cosa cambia, per chi e se funziona già. Frasi brevi, fonti ufficiali e un semaforo di attuazione.',
-  keywords: ['leggi italiane', 'norme spiegate', 'gazzetta ufficiale', 'attuazione leggi'],
-  authors: [{ name: 'Simple Law' }],
-  icons: { icon: '/favicon.svg' },
+    "Le leggi italiane spiegate con l’AI: in poche parole, chi riguardano, le cifre e se sono buone leggi nel merito. Con i testi ufficiali.",
+  keywords: ["leggi italiane", "norme spiegate", "gazzetta ufficiale", "attuazione leggi"],
+  authors: [{ name: "Simple Law" }],
+  icons: { icon: "/favicon.svg" },
   openGraph: {
-    type: 'website',
-    locale: 'it_IT',
-    siteName: 'Simple Law',
-    title: 'Simple Law - le leggi spiegate semplici',
+    type: "website",
+    locale: "it_IT",
+    siteName: "Simple Law",
+    title: "Simple Law - le leggi spiegate semplici",
     description:
-      'Cosa cambia, per chi e se funziona già: schede brevi delle norme italiane con fonti ufficiali.',
+      "In poche parole, chi riguarda, le cifre e se è una buona legge: le norme italiane spiegate con l’AI.",
   },
   twitter: {
-    card: 'summary_large_image',
-    title: 'Simple Law - le leggi spiegate semplici',
+    card: "summary_large_image",
+    title: "Simple Law - le leggi spiegate semplici",
     description:
-      'Cosa cambia, per chi e se funziona già: schede brevi delle norme italiane con fonti ufficiali.',
+      "In poche parole, chi riguarda, le cifre e se è una buona legge: le norme italiane spiegate con l’AI.",
   },
   robots: {
     index: true,
@@ -45,8 +49,8 @@ export const metadata: Metadata = {
 
 export const viewport: Viewport = {
   themeColor: [
-    { media: '(prefers-color-scheme: light)', color: '#faf8f3' },
-    { media: '(prefers-color-scheme: dark)', color: '#121110' },
+    { media: "(prefers-color-scheme: light)", color: "#f3f5f8" },
+    { media: "(prefers-color-scheme: dark)", color: "#0b0e14" },
   ],
 };
 
@@ -54,7 +58,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="it" suppressHydrationWarning>
       <body
-        className={`${caratterePrincipale.variable} min-h-screen bg-carta font-sans text-inchiostro antialiased dark:bg-notte dark:text-nebbia`}
+        className={`${caratterePrincipale.variable} ${carattereMono.variable} min-h-[100dvh] font-sans text-inchiostro antialiased dark:text-nebbia`}
       >
         <ThemeProvider
           attribute="class"

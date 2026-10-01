@@ -33,7 +33,7 @@
 
 import { readFile } from "node:fs/promises";
 import path from "node:path";
-import { describe, expect, it } from "vitest";
+import { describe, expect, it } from "vite-plus/test";
 import {
   caricaRegionale,
   caricaRegionaleResult,
@@ -54,10 +54,7 @@ const FILE_SOURCES = path.resolve(RADICE, "lib/sources.ts");
 const FILE_ELEZIONI_DATI = path.resolve(RADICE, "lib/elezioni-dati.ts");
 const FILE_HUB = path.resolve(RADICE, "app/elezioni/page.tsx");
 const FILE_DETTAGLIO = path.resolve(RADICE, "app/elezioni/[id]/page.tsx");
-const FILE_API_REGIONALE = path.resolve(
-  RADICE,
-  "app/api/elezioni/regionali/[id]/route.ts",
-);
+const FILE_API_REGIONALE = path.resolve(RADICE, "app/api/elezioni/regionali/[id]/route.ts");
 
 /** 1 MB: cap hard, nessun file dati reale committabile lo supera. */
 const MAX_BYTE = 1024 * 1024;
@@ -184,15 +181,7 @@ function isRecuperatoIl(v: unknown): boolean {
   return anno >= 2025 && anno <= oggi + 1;
 }
 
-const SEGNALI_INVENTATI = [
-  "example.com",
-  "malevolo",
-  "lorem",
-  "todo",
-  "xxx",
-  "inventato",
-  "fake",
-];
+const SEGNALI_INVENTATI = ["example.com", "malevolo", "lorem", "todo", "xxx", "inventato", "fake"];
 function haSegnaleInventato(v: unknown): boolean {
   if (typeof v !== "string") return false;
   const s = v.toLowerCase();
@@ -200,8 +189,7 @@ function haSegnaleInventato(v: unknown): boolean {
 }
 
 function provenanceDi(parsed: unknown): Record<string, unknown> | null {
-  if (!parsed || typeof parsed !== "object" || Array.isArray(parsed))
-    return null;
+  if (!parsed || typeof parsed !== "object" || Array.isArray(parsed)) return null;
   const p = (parsed as { provenance?: unknown }).provenance;
   if (!p || typeof p !== "object" || Array.isArray(p)) return null;
   return p as Record<string, unknown>;
@@ -360,11 +348,7 @@ function spotCheckErogazione14(voce: unknown): string | null {
     return "n_erogazioni invalido";
   }
   const totale = r["totale_euro"];
-  if (
-    typeof totale !== "number" ||
-    !Number.isFinite(totale) ||
-    totale < 0
-  ) {
+  if (typeof totale !== "number" || !Number.isFinite(totale) || totale < 0) {
     return "totale_euro invalido";
   }
   const pdf = r["fonte_pdf"];
@@ -391,36 +375,22 @@ describe("reali-14: envelope finestre Normattiva 2012/2018 (skip se assenti)", (
         expect(true).toBe(true);
         return;
       }
-      expect(letto.byte, `${atteso.nome}: oltre 1MB`).toBeLessThanOrEqual(
-        MAX_BYTE,
-      );
+      expect(letto.byte, `${atteso.nome}: oltre 1MB`).toBeLessThanOrEqual(MAX_BYTE);
       const prov = provenanceDi(letto.parsed);
       expect(prov, `${atteso.nome}: senza provenance`).not.toBeNull();
-      expect(
-        isStringaNonVuota(prov?.["fonte"]),
-        `${atteso.nome}: fonte assente`,
-      ).toBe(true);
-      expect(isHttpsUrl(prov?.["url"]), `${atteso.nome}: url non https`).toBe(
-        true,
-      );
+      expect(isStringaNonVuota(prov?.["fonte"]), `${atteso.nome}: fonte assente`).toBe(true);
+      expect(isHttpsUrl(prov?.["url"]), `${atteso.nome}: url non https`).toBe(true);
       expect(
         isRecuperatoIl(prov?.["recuperatoIl"] ?? prov?.["estratto_il"]),
         `${atteso.nome}: recuperatoIl/estratto_il non reale`,
       ).toBe(true);
-      expect(
-        isStringaNonVuota(prov?.["licenza"]),
-        `${atteso.nome}: licenza assente`,
-      ).toBe(true);
+      expect(isStringaNonVuota(prov?.["licenza"]), `${atteso.nome}: licenza assente`).toBe(true);
       const lista = estraiArrayDati(letto.parsed, atteso.chiavi);
       expect(lista, `${atteso.nome}: nessun array dati`).not.toBeNull();
-      expect(
-        lista?.length ?? 0,
-        `${atteso.nome}: conteggio zero`,
-      ).toBeGreaterThan(0);
-      expect(
-        lista?.length ?? 0,
-        `${atteso.nome}: oltre cap ${atteso.max}`,
-      ).toBeLessThanOrEqual(atteso.max);
+      expect(lista?.length ?? 0, `${atteso.nome}: conteggio zero`).toBeGreaterThan(0);
+      expect(lista?.length ?? 0, `${atteso.nome}: oltre cap ${atteso.max}`).toBeLessThanOrEqual(
+        atteso.max,
+      );
     });
 
     it(`${atteso.nome}: zero inventati (spot-check + normalizzazione)`, async () => {
@@ -447,13 +417,10 @@ describe("reali-14: envelope finestre Normattiva 2012/2018 (skip se assenti)", (
         validi += 1;
       }
       expect(validi).toBeGreaterThan(0);
-      const normalizzati = campione
-        .map((v) => normalizzaAttoReale(v))
-        .filter((r) => r !== null);
-      expect(
-        normalizzati.length,
-        `${atteso.nome}: nessun record normalizzabile`,
-      ).toBeGreaterThan(0);
+      const normalizzati = campione.map((v) => normalizzaAttoReale(v)).filter((r) => r !== null);
+      expect(normalizzati.length, `${atteso.nome}: nessun record normalizzabile`).toBeGreaterThan(
+        0,
+      );
       for (const r of normalizzati) {
         expect(r?.dimostrativo).toBe(false);
       }
@@ -474,24 +441,16 @@ describe("reali-14: regionali residue (skip se assenti)", () => {
         expect(true).toBe(true);
         return;
       }
-      expect(
-        letto.byte,
-        `${atteso.nome}: oltre 950KB`,
-      ).toBeLessThanOrEqual(MAX_BYTE_ELEZIONI);
+      expect(letto.byte, `${atteso.nome}: oltre 950KB`).toBeLessThanOrEqual(MAX_BYTE_ELEZIONI);
       const errore = spotCheckElezioni14(letto.raw, letto.parsed);
       expect(errore, `${atteso.nome}: ${errore}`).toBeNull();
       const lista = estraiArrayDati(letto.parsed, atteso.chiavi);
       expect(lista, `${atteso.nome}: nessun array dati`).not.toBeNull();
-      expect(
-        lista?.length ?? 0,
-        `${atteso.nome}: conteggio zero`,
-      ).toBeGreaterThan(0);
+      expect(lista?.length ?? 0, `${atteso.nome}: conteggio zero`).toBeGreaterThan(0);
     });
 
     it(`${atteso.nome}: loader tollerante (null se assente, envelope se presente)`, async () => {
-      const id = atteso.nome
-        .replace(/^elezioni-/, "")
-        .replace(/\.json$/, "");
+      const id = atteso.nome.replace(/^elezioni-/, "").replace(/\.json$/, "");
       let risultato: unknown = "non-chiamato";
       try {
         risultato = await caricaRegionale(id);
@@ -501,10 +460,7 @@ describe("reali-14: regionali residue (skip se assenti)", () => {
       }
       const letto = await leggiJson(path.join(DIR_REALI, atteso.nome));
       if (!letto) {
-        expect(
-          risultato,
-          `${atteso.nome}: file assente ma loader non null`,
-        ).toBeNull();
+        expect(risultato, `${atteso.nome}: file assente ma loader non null`).toBeNull();
         return;
       }
       if (risultato === null) {
@@ -513,12 +469,8 @@ describe("reali-14: regionali residue (skip se assenti)", () => {
         return;
       }
       const d = risultato as Record<string, unknown>;
-      expect(Array.isArray(d["liste"]), `${atteso.nome}: liste assenti`).toBe(
-        true,
-      );
-      expect(Array.isArray(d["comuni"]), `${atteso.nome}: comuni assenti`).toBe(
-        true,
-      );
+      expect(Array.isArray(d["liste"]), `${atteso.nome}: liste assenti`).toBe(true);
+      expect(Array.isArray(d["comuni"]), `${atteso.nome}: comuni assenti`).toBe(true);
     });
   }
 });
@@ -529,9 +481,7 @@ describe("reali-14: regionali residue (skip se assenti)", () => {
 
 describe("reali-14: finanziamenti erogazioni 2024-2026 (skip se assente)", () => {
   it(`${FILE_FINANZIAMENTI_14.nome}: envelope + licenza riuso non commerciale`, async () => {
-    const letto = await leggiJson(
-      path.join(DIR_REALI, FILE_FINANZIAMENTI_14.nome),
-    );
+    const letto = await leggiJson(path.join(DIR_REALI, FILE_FINANZIAMENTI_14.nome));
     if (!letto) {
       notaSkip(`${FILE_FINANZIAMENTI_14.nome} assente — ${FILE_FINANZIAMENTI_14.nota}`);
       expect(true).toBe(true);
@@ -542,18 +492,11 @@ describe("reali-14: finanziamenti erogazioni 2024-2026 (skip se assente)", () =>
       `${FILE_FINANZIAMENTI_14.nome}: oltre 1MB (vietati PDF integrali)`,
     ).toBeLessThanOrEqual(MAX_BYTE);
     const prov = provenanceDi(letto.parsed);
-    expect(
-      prov,
-      `${FILE_FINANZIAMENTI_14.nome}: senza provenance`,
-    ).not.toBeNull();
-    expect(
-      isStringaNonVuota(prov?.["fonte"]),
-      `${FILE_FINANZIAMENTI_14.nome}: fonte assente`,
-    ).toBe(true);
-    expect(
-      isHttpsUrl(prov?.["url"]),
-      `${FILE_FINANZIAMENTI_14.nome}: url non https`,
-    ).toBe(true);
+    expect(prov, `${FILE_FINANZIAMENTI_14.nome}: senza provenance`).not.toBeNull();
+    expect(isStringaNonVuota(prov?.["fonte"]), `${FILE_FINANZIAMENTI_14.nome}: fonte assente`).toBe(
+      true,
+    );
+    expect(isHttpsUrl(prov?.["url"]), `${FILE_FINANZIAMENTI_14.nome}: url non https`).toBe(true);
     expect(
       isRecuperatoIl(prov?.["recuperatoIl"] ?? prov?.["estratto_il"]),
       `${FILE_FINANZIAMENTI_14.nome}: recuperatoIl non reale`,
@@ -568,14 +511,8 @@ describe("reali-14: finanziamenti erogazioni 2024-2026 (skip se assente)", () =>
       `${FILE_FINANZIAMENTI_14.nome}: licenza senza vincolo non commerciale`,
     ).toBe(true);
     const lista = estraiArrayDati(letto.parsed, FILE_FINANZIAMENTI_14.chiavi);
-    expect(
-      lista,
-      `${FILE_FINANZIAMENTI_14.nome}: nessun array erogazioni`,
-    ).not.toBeNull();
-    expect(
-      lista?.length ?? 0,
-      `${FILE_FINANZIAMENTI_14.nome}: conteggio zero`,
-    ).toBeGreaterThan(0);
+    expect(lista, `${FILE_FINANZIAMENTI_14.nome}: nessun array erogazioni`).not.toBeNull();
+    expect(lista?.length ?? 0, `${FILE_FINANZIAMENTI_14.nome}: conteggio zero`).toBeGreaterThan(0);
     expect(
       lista?.length ?? 0,
       `${FILE_FINANZIAMENTI_14.nome}: oltre cap ${FILE_FINANZIAMENTI_14.max}`,
@@ -583,9 +520,7 @@ describe("reali-14: finanziamenti erogazioni 2024-2026 (skip se assente)", () =>
   });
 
   it(`${FILE_FINANZIAMENTI_14.nome}: solo aggregati, zero nominativi eroganti`, async () => {
-    const letto = await leggiJson(
-      path.join(DIR_REALI, FILE_FINANZIAMENTI_14.nome),
-    );
+    const letto = await leggiJson(path.join(DIR_REALI, FILE_FINANZIAMENTI_14.nome));
     if (!letto) {
       notaSkip(`${FILE_FINANZIAMENTI_14.nome} assente — spot-check rimandato`);
       expect(true).toBe(true);
@@ -655,10 +590,7 @@ describe("reali-14: wiring percorsi atti + registry regionali", () => {
         continue;
       }
       for (const id of ID_REGIONALI_14) {
-        expect(
-          testo.includes(id),
-          `${etichetta} senza ${id}`,
-        ).toBe(true);
+        expect(testo.includes(id), `${etichetta} senza ${id}`).toBe(true);
       }
     }
   });
@@ -690,9 +622,7 @@ describe("reali-14: wiring percorsi atti + registry regionali", () => {
       const esito = await caricaRegionaleResult(id);
       expect(typeof esito.ok).toBe("boolean");
       if (!esito.ok) {
-        expect(isStringaNonVuota(esito.errore), `errore vuoto per ${id}`).toBe(
-          true,
-        );
+        expect(isStringaNonVuota(esito.errore), `errore vuoto per ${id}`).toBe(true);
       }
     }
   });
@@ -704,8 +634,8 @@ describe("reali-14: wiring percorsi atti + registry regionali", () => {
 
 describe("reali-14: dedup ELI con finestre 2012/2018", () => {
   it("nessun ELI duplicato tra storici presenti e finestre 2012/2018", async () => {
-    const candidati = [...PERCORSI_STORICI_14, ...PERCORSI_FINESTRE_14_ATTESI].map(
-      (p) => path.join(RADICE, p),
+    const candidati = [...PERCORSI_STORICI_14, ...PERCORSI_FINESTRE_14_ATTESI].map((p) =>
+      path.join(RADICE, p),
     );
     const visti = new Map<string, string>();
     const duplicati: string[] = [];
@@ -719,9 +649,7 @@ describe("reali-14: dedup ELI con finestre 2012/2018", () => {
       const perFile = new Set<string>();
       for (const voce of lista) {
         const r = voce as Record<string, unknown>;
-        const chiave = String(
-          r["eli"] ?? r["urn"] ?? r["nir"] ?? r["chiave"] ?? "",
-        )
+        const chiave = String(r["eli"] ?? r["urn"] ?? r["nir"] ?? r["chiave"] ?? "")
           .trim()
           .toLowerCase();
         if (!chiave) continue;
@@ -731,9 +659,7 @@ describe("reali-14: dedup ELI con finestre 2012/2018", () => {
         perFile.add(chiave);
         const primo = visti.get(chiave);
         if (primo && primo !== path.basename(percorso)) {
-          duplicati.push(
-            `cross ${primo} <> ${path.basename(percorso)}: ${chiave}`,
-          );
+          duplicati.push(`cross ${primo} <> ${path.basename(percorso)}: ${chiave}`);
         } else if (!primo) {
           visti.set(chiave, path.basename(percorso));
         }
@@ -744,13 +670,8 @@ describe("reali-14: dedup ELI con finestre 2012/2018", () => {
       expect(true).toBe(true);
       return;
     }
-    console.info(
-      `[reali-14] dedup su ${fileVerificati} file, ${visti.size} chiavi uniche`,
-    );
-    expect(
-      duplicati,
-      `ELI duplicati:\n${duplicati.slice(0, 10).join("\n")}`,
-    ).toEqual([]);
+    console.info(`[reali-14] dedup su ${fileVerificati} file, ${visti.size} chiavi uniche`);
+    expect(duplicati, `ELI duplicati:\n${duplicati.slice(0, 10).join("\n")}`).toEqual([]);
   });
 });
 
@@ -774,10 +695,7 @@ describe("reali-14: getCorpusInfo coerente + corpus in crescita (mai rete)", () 
     expect(info.reali).toBeGreaterThanOrEqual(0);
     expect(info.reali).toBeLessThanOrEqual(info.totale);
     const atteso = getSeedLaws().filter((l) => l.dimostrativo === false).length;
-    expect(
-      info.reali,
-      "reali != conteggio dimostrativo===false in getSeedLaws()",
-    ).toBe(atteso);
+    expect(info.reali, "reali != conteggio dimostrativo===false in getSeedLaws()").toBe(atteso);
   });
 
   it(`corpus in crescita: reali >= soglia precedente ${SOGLIA_REALI_14} (tollerante)`, () => {
@@ -803,10 +721,9 @@ describe("reali-14: getCorpusInfo coerente + corpus in crescita (mai rete)", () 
     expect(leggi.length).toBeGreaterThan(0);
     for (const l of leggi.slice(0, 50)) {
       const r = l as Record<string, unknown>;
-      expect(
-        haSegnaleInventato(r["titolo"]),
-        "titolo con segnale inventato nel corpus",
-      ).toBe(false);
+      expect(haSegnaleInventato(r["titolo"]), "titolo con segnale inventato nel corpus").toBe(
+        false,
+      );
     }
   });
 

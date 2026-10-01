@@ -1,4 +1,4 @@
-import { describe, expect, it, vi } from "vitest";
+import { describe, expect, it, vi } from "vite-plus/test";
 import {
   SOURCE_URLS,
   fetchGovernoComunicati,
@@ -105,9 +105,13 @@ describe("SPARQL", () => {
   });
 
   it("non lancia se la rete fallisce", async () => {
-    const camera = await sparqlCamera("SELECT * WHERE { ?s ?p ?o }", { fetchImpl: fetchCheFallisce() });
+    const camera = await sparqlCamera("SELECT * WHERE { ?s ?p ?o }", {
+      fetchImpl: fetchCheFallisce(),
+    });
     expect(camera.ok).toBe(false);
-    const senato = await sparqlSenato("SELECT * WHERE { ?s ?p ?o }", { fetchImpl: fetchCheFallisce() });
+    const senato = await sparqlSenato("SELECT * WHERE { ?s ?p ?o }", {
+      fetchImpl: fetchCheFallisce(),
+    });
     expect(senato.ok).toBe(false);
   });
 

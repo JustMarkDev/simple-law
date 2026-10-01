@@ -1,7 +1,6 @@
 /**
  * Semplificatore offline (euristico) di testi normativi.
  * Produce le "5 caselle" mostrate dall'interfaccia, senza alcuna chiamata di rete.
- * Un provider LLM opzionale puo' sostituire questa euristica (vedi ai-provider.ts).
  */
 
 import { calcGulpease, contaBisTer, contaRinvii } from "./readability";
@@ -103,7 +102,9 @@ function costruisciCosaFare(input: SimplifyInput, attuativi: AttuativiInput): st
     );
   }
   if (input.air === "assente") {
-    azioni.push("Non risulta una analisi di impatto (AIR): valuta con attenzione costi e adempimenti.");
+    azioni.push(
+      "Non risulta una analisi di impatto (AIR): valuta con attenzione costi e adempimenti.",
+    );
   }
   azioni.push("Per chiarimenti rivolgiti all'amministrazione competente indicata nel testo.");
   return azioni;
@@ -132,20 +133,28 @@ function costruisciProContro(
     contro.push("L'impatto della norma non e' stato valutato con una analisi completa (AIR).");
   }
   if (input.attuativi && input.attuativi.scaduti > 0) {
-    contro.push("Ci sono decreti attuativi scaduti, quindi parti della norma potrebbero non essere operative.");
+    contro.push(
+      "Ci sono decreti attuativi scaduti, quindi parti della norma potrebbero non essere operative.",
+    );
   }
   if (rinvii > 4) {
-    contro.push(`Il testo contiene molti rinvii ad altre norme (${rinvii}): la lettura richiede collegamenti esterni.`);
+    contro.push(
+      `Il testo contiene molti rinvii ad altre norme (${rinvii}): la lettura richiede collegamenti esterni.`,
+    );
   }
   if (bisTer > 2) {
-    contro.push(`Sono presenti ${bisTer} articoli o commi aggiunti (bis/ter): il quadro normativo e' frammentato.`);
+    contro.push(
+      `Sono presenti ${bisTer} articoli o commi aggiunti (bis/ter): il quadro normativo e' frammentato.`,
+    );
   }
   if (gulpease < 60) {
     contro.push("Il linguaggio e' complesso per un lettore non specialista.");
   }
 
-  if (pro.length === 0) pro.push("La norma interviene su un tema di interesse pubblico dichiarato.");
-  if (contro.length === 0) contro.push("Non sono emerse criticita' rilevanti dalle metriche automatiche.");
+  if (pro.length === 0)
+    pro.push("La norma interviene su un tema di interesse pubblico dichiarato.");
+  if (contro.length === 0)
+    contro.push("Non sono emerse criticita' rilevanti dalle metriche automatiche.");
   return { pro, contro };
 }
 
@@ -177,32 +186,4 @@ export function simplifyLaw(input: SimplifyInput): SimplifiedLaw {
     proContro: costruisciProContro(input, gulpease, contaRinvii(testo), contaBisTer(testo)),
     gulpease,
   };
-}
-
-/** Prompt per il provider LLM: richiede esattamente la struttura di SimplifiedLaw. */
-export function buildLLMPrompt(testo: string): string {
-  const schema = [
-    "{",
-    '  "in10Secondi": string,',
-    '  "perTe": { "guida": string, "lavoro": string, "impresa": string, "studio": string },',
-    '  "cosaFare": string[],',
-    '  "statoLavora": { "colore": "verde" | "giallo" | "rosso", "motivo": string },',
-    '  "proContro": { "pro": string[], "contro": string[] },',
-    '  "gulpease": number',
-    "}",
-  ].join("\n");
-
-  return [
-    "Sei un assistente che spiega le leggi italiane a chi non e' un giurista.",
-    "Rispondi SEMPRE e SOLO con un oggetto JSON valido, in lingua italiana, senza testo fuori dal JSON.",
-    "Non usare termini tecnici senza spiegarli. Sii concreto e neutrale.",
-    "",
-    "Restituisci esattamente questa struttura:",
-    schema,
-    "",
-    "Testo della norma da semplificare:",
-    "---",
-    normalizza(testo),
-    "---",
-  ].join("\n");
 }

@@ -1,7 +1,7 @@
 /**
  * Ingest reale DDL/atti verticali (Senato + Camera, legislatura 19).
  *
- * Uso: `npx tsx scripts/ingest-reale-ddl.ts`
+ * Uso: `bunx tsx scripts/ingest-reale-ddl.ts`
  *
  * Sorgenti (solo dati osservati, mai inventati):
  *  - Senato: endpoint SPARQL `https://dati.senato.it/sparql`, lista max 100
@@ -150,9 +150,7 @@ function righeDaJson(json: unknown): Riga[] {
   if (typeof results !== "object" || results === null) return [];
   const bindings = (results as { bindings?: unknown }).bindings;
   if (!Array.isArray(bindings)) return [];
-  return bindings.filter(
-    (riga): riga is Riga => typeof riga === "object" && riga !== null,
-  );
+  return bindings.filter((riga): riga is Riga => typeof riga === "object" && riga !== null);
 }
 
 async function fetchConTimeout(url: string): Promise<Response> {
@@ -349,7 +347,11 @@ async function caricaCamera(): Promise<AttoCamera[]> {
             if (!p || !o) continue;
             if (p === "http://purl.org/dc/elements/1.1/title" && !titolo) titolo = o;
             else if (p === "http://www.w3.org/2000/01/rdf-schema#label" && !label) label = o;
-            else if (p === "http://purl.org/dc/terms/isReferencedBy" && !scheda && o.startsWith("http")) {
+            else if (
+              p === "http://purl.org/dc/terms/isReferencedBy" &&
+              !scheda &&
+              o.startsWith("http")
+            ) {
               scheda = o;
             }
           }
@@ -461,7 +463,7 @@ async function main(): Promise<void> {
 /* ---------------------------------------------------------------------------
  * REALI-9 W3: ingest full Camera (legislatura 19) in 3 shard.
  *
- * Uso: `npx tsx scripts/ingest-reale-ddl.ts --camera-full`
+ * Uso: `bunx tsx scripts/ingest-reale-ddl.ts --camera-full`
  *
  * Solo dati osservati, mai inventati:
  *  - conteggio atteso letto dal vivo (`COUNT DISTINCT ?a`, osservato 3144 il
@@ -640,7 +642,9 @@ async function mainCameraFull(): Promise<void> {
     });
     if (i + BATCH < uris.length) await dormi(PAUSA_BATCH_MS);
     if ((i + BATCH) % 500 === 0 || i + BATCH >= uris.length) {
-      console.log(`[ingest-ddl:camera-full] dettagli ${Math.min(i + BATCH, uris.length)}/${uris.length}`);
+      console.log(
+        `[ingest-ddl:camera-full] dettagli ${Math.min(i + BATCH, uris.length)}/${uris.length}`,
+      );
     }
   }
 
@@ -657,7 +661,11 @@ async function mainCameraFull(): Promise<void> {
     .map((uri) => {
       const base = perUri.get(uri);
       if (!base) esci(`camera-full: base mancante per ${uri} (nessun file scritto)`);
-      return { uri, tipo: (base as { tipo: string }).tipo, numero: (base as { numero: string }).numero };
+      return {
+        uri,
+        tipo: (base as { tipo: string }).tipo,
+        numero: (base as { numero: string }).numero,
+      };
     })
     .sort((x, y) => {
       const kx = chiaveNumeroCamera(x.numero, x.uri);

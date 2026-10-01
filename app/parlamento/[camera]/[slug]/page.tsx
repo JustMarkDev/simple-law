@@ -1,24 +1,24 @@
-import type { Metadata } from 'next'
-import Link from 'next/link'
-import { notFound } from 'next/navigation'
-import Header from '@/components/Header'
-import Footer from '@/components/Footer'
-import { tuttiDeputati, tuttiSenatori, leggiProvenance } from '@/lib/parlamento-dati'
+import type { Metadata } from "next";
+import Link from "next/link";
+import { notFound } from "next/navigation";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
+import { tuttiDeputati, tuttiSenatori, leggiProvenance } from "@/lib/parlamento-dati";
 
 interface DettaglioProps {
-  params: Promise<{ camera: string; slug: string }>
+  params: Promise<{ camera: string; slug: string }>;
 }
 
-const CAMERE_VALIDE = ['deputati', 'senatori'] as const
-type CameraParam = (typeof CAMERE_VALIDE)[number]
+const CAMERE_VALIDE = ["deputati", "senatori"] as const;
+type CameraParam = (typeof CAMERE_VALIDE)[number];
 
 function dataIT(iso: string): string {
   try {
-    const d = new Date(iso)
-    if (Number.isNaN(d.getTime())) return iso.slice(0, 10)
-    return d.toLocaleDateString('it-IT', { day: 'numeric', month: 'long', year: 'numeric' })
+    const d = new Date(iso);
+    if (Number.isNaN(d.getTime())) return iso.slice(0, 10);
+    return d.toLocaleDateString("it-IT", { day: "numeric", month: "long", year: "numeric" });
   } catch {
-    return iso.slice(0, 10)
+    return iso.slice(0, 10);
   }
 }
 
@@ -27,80 +27,83 @@ function iniziali(nome: string): string {
     .split(/\s+/)
     .filter(Boolean)
     .slice(0, 2)
-    .map((p) => p[0]?.toUpperCase() ?? '')
-    .join('')
+    .map((p) => p[0]?.toUpperCase() ?? "")
+    .join("");
 }
 
 function isCameraParam(v: string): v is CameraParam {
-  return (CAMERE_VALIDE as readonly string[]).includes(v)
+  return (CAMERE_VALIDE as readonly string[]).includes(v);
 }
 
 export async function generateStaticParams() {
   try {
-    const [deputati, senatori] = await Promise.all([tuttiDeputati(), tuttiSenatori()])
+    const [deputati, senatori] = await Promise.all([tuttiDeputati(), tuttiSenatori()]);
     return [
-      ...deputati.map((d) => ({ camera: 'deputati', slug: d.slug })),
-      ...senatori.map((s) => ({ camera: 'senatori', slug: s.slug })),
-    ]
+      ...deputati.map((d) => ({ camera: "deputati", slug: d.slug })),
+      ...senatori.map((s) => ({ camera: "senatori", slug: s.slug })),
+    ];
   } catch {
-    return []
+    return [];
   }
 }
 
 export async function generateMetadata({ params }: DettaglioProps): Promise<Metadata> {
-  const { camera, slug } = await params
-  if (!isCameraParam(camera)) return { title: 'Pagina non trovata - Stato della Repubblica' }
+  const { camera, slug } = await params;
+  if (!isCameraParam(camera)) return { title: "Pagina non trovata - Stato della Repubblica" };
   try {
-    const membri = camera === 'deputati' ? await tuttiDeputati() : await tuttiSenatori()
-    const membro = membri.find((m) => m.slug === slug)
-    if (!membro) return { title: 'Parlamentare non trovato - Stato della Repubblica' }
-    const etichetta = camera === 'deputati' ? 'Deputato' : 'Senatore'
+    const membri = camera === "deputati" ? await tuttiDeputati() : await tuttiSenatori();
+    const membro = membri.find((m) => m.slug === slug);
+    if (!membro) return { title: "Parlamentare non trovato - Stato della Repubblica" };
+    const etichetta = camera === "deputati" ? "Deputato" : "Senatore";
     return {
       title: `${membro.nome} - ${etichetta} - Stato della Repubblica`,
-      description: `${membro.nome}${membro.gruppo ? `, ${membro.gruppo}` : ''}: scheda della legislatura 19.`,
-    }
+      description: `${membro.nome}${membro.gruppo ? `, ${membro.gruppo}` : ""}: scheda della legislatura 19.`,
+    };
   } catch {
-    return { title: 'Parlamento - Stato della Repubblica' }
+    return { title: "Parlamento - Stato della Repubblica" };
   }
 }
 
 export default async function DettaglioParlamentare({ params }: DettaglioProps) {
-  const { camera, slug } = await params
-  if (!isCameraParam(camera)) notFound()
+  const { camera, slug } = await params;
+  if (!isCameraParam(camera)) notFound();
 
-  const membri = camera === 'deputati' ? await tuttiDeputati() : await tuttiSenatori()
-  const membro = membri.find((m) => m.slug === slug)
-  if (!membro) notFound()
+  const membri = camera === "deputati" ? await tuttiDeputati() : await tuttiSenatori();
+  const membro = membri.find((m) => m.slug === slug);
+  if (!membro) notFound();
 
-  const etichettaCamera = camera === 'deputati' ? 'Deputati' : 'Senatori'
-  const etichettaSingolo = camera === 'deputati' ? 'Deputato' : 'Senatore'
+  const etichettaCamera = camera === "deputati" ? "Deputati" : "Senatori";
+  const etichettaSingolo = camera === "deputati" ? "Deputato" : "Senatore";
 
-  let licenza = camera === 'deputati' ? 'CC BY-SA 4.0' : 'CC BY 3.0 IT'
-  let fonte = camera === 'deputati' ? 'dati.camera.it' : 'dati.senato.it'
-  let recuperatoIl: string | null = null
+  let licenza = camera === "deputati" ? "CC BY-SA 4.0" : "CC BY 3.0 IT";
+  let fonte = camera === "deputati" ? "dati.camera.it" : "dati.senato.it";
+  let recuperatoIl: string | null = null;
   try {
-    const prov = await leggiProvenance()
-    const p = camera === 'deputati' ? prov.camera : prov.senato
-    if (p?.licenza) licenza = p.licenza
-    if (p?.fonte) fonte = p.fonte
-    if (p?.recuperatoIl) recuperatoIl = p.recuperatoIl
+    const prov = await leggiProvenance();
+    const p = camera === "deputati" ? prov.camera : prov.senato;
+    if (p?.licenza) licenza = p.licenza;
+    if (p?.fonte) fonte = p.fonte;
+    if (p?.recuperatoIl) recuperatoIl = p.recuperatoIl;
   } catch {
     // fallback alle licenze reali note
   }
 
   const jsonLd = {
-    '@context': 'https://schema.org',
-    '@type': 'Person',
+    "@context": "https://schema.org",
+    "@type": "Person",
     name: membro.nome,
-    ...(membro.gruppo ? { memberOf: { '@type': 'Organization', name: membro.gruppo } } : {}),
+    ...(membro.gruppo ? { memberOf: { "@type": "Organization", name: membro.gruppo } } : {}),
     ...(membro.urlScheda ? { url: membro.urlScheda } : {}),
     ...(membro.foto ? { image: membro.foto } : {}),
-  }
+  };
 
   return (
     <>
       <Header />
-      <main id="contenuto" className="mx-auto w-full max-w-editoriale px-4 py-10 sm:px-6 sm:py-12 lg:px-8">
+      <main
+        id="contenuto"
+        className="mx-auto w-full max-w-editoriale px-4 py-10 sm:px-6 sm:py-12 lg:px-8"
+      >
         <nav aria-label="Percorso" className="text-sm text-inchiostro-soft dark:text-nebbia-soft">
           <ol className="flex flex-wrap items-center gap-2">
             <li>
@@ -110,14 +113,17 @@ export default async function DettaglioParlamentare({ params }: DettaglioProps) 
             </li>
             <li aria-hidden="true">/</li>
             <li>
-              <Link href="/parlamento" className="hover:text-accento dark:hover:text-accento-chiara">
+              <Link
+                href="/parlamento"
+                className="hover:text-accento dark:hover:text-accento-chiara"
+              >
                 Parlamento
               </Link>
             </li>
             <li aria-hidden="true">/</li>
             <li>
               <Link
-                href={camera === 'deputati' ? '/parlamento/deputati' : '/parlamento/senatori'}
+                href={camera === "deputati" ? "/parlamento/deputati" : "/parlamento/senatori"}
                 className="hover:text-accento dark:hover:text-accento-chiara"
               >
                 {etichettaCamera}
@@ -186,7 +192,7 @@ export default async function DettaglioParlamentare({ params }: DettaglioProps) 
               <div className="flex items-center justify-between gap-3">
                 <dt className="text-inchiostro-soft dark:text-nebbia-soft">Camera</dt>
                 <dd className="text-right font-semibold text-inchiostro dark:text-nebbia">
-                  {camera === 'deputati' ? 'Camera dei deputati' : 'Senato della Repubblica'}
+                  {camera === "deputati" ? "Camera dei deputati" : "Senato della Repubblica"}
                 </dd>
               </div>
               {membro.gruppo && (
@@ -195,7 +201,7 @@ export default async function DettaglioParlamentare({ params }: DettaglioProps) 
                   <dd className="text-right font-semibold text-inchiostro dark:text-nebbia">
                     <Link
                       href={
-                        camera === 'deputati'
+                        camera === "deputati"
                           ? `/parlamento/deputati?gruppo=${encodeURIComponent(membro.gruppo)}`
                           : `/parlamento/senatori?gruppo=${encodeURIComponent(membro.gruppo)}`
                       }
@@ -230,23 +236,26 @@ export default async function DettaglioParlamentare({ params }: DettaglioProps) 
             </h2>
             <p className="mt-3 text-sm leading-relaxed text-inchiostro-soft dark:text-nebbia-soft">
               {fonte} - {licenza} · legislatura 19
-              {recuperatoIl ? ` · aggiornato al ${dataIT(recuperatoIl)}` : ''}.
+              {recuperatoIl ? ` · aggiornato al ${dataIT(recuperatoIl)}` : ""}.
             </p>
           </section>
         </div>
 
         <p className="mt-10">
           <Link
-            href={camera === 'deputati' ? '/parlamento/deputati' : '/parlamento/senatori'}
+            href={camera === "deputati" ? "/parlamento/deputati" : "/parlamento/senatori"}
             className="inline-flex min-h-[48px] items-center gap-2 text-sm font-semibold text-accento underline underline-offset-2 dark:text-accento-chiara"
           >
             Torna ai {etichettaCamera.toLowerCase()}
           </Link>
         </p>
 
-        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
       </main>
       <Footer />
     </>
-  )
+  );
 }

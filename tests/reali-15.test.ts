@@ -19,7 +19,7 @@
 
 import { readFile, readdir } from "node:fs/promises";
 import path from "node:path";
-import { describe, expect, it } from "vitest";
+import { describe, expect, it } from "vite-plus/test";
 import {
   FILE_REFRESHABILI,
   interpretaData,
@@ -115,9 +115,14 @@ describe("reali-15: MANIFEST voci valide (mai rete)", () => {
     expect(voci, "MANIFEST senza array fonti").not.toBeNull();
     expect(voci?.length ?? 0).toBeGreaterThan(0);
     for (const voce of voci ?? []) {
-      expect(isStringaNonVuota(voce.file), `voce senza file: ${JSON.stringify(voce).slice(0, 120)}`).toBe(true);
       expect(
-        typeof voce.conteggio === "number" && Number.isInteger(voce.conteggio) && (voce.conteggio as number) >= 0,
+        isStringaNonVuota(voce.file),
+        `voce senza file: ${JSON.stringify(voce).slice(0, 120)}`,
+      ).toBe(true);
+      expect(
+        typeof voce.conteggio === "number" &&
+          Number.isInteger(voce.conteggio) &&
+          (voce.conteggio as number) >= 0,
         `conteggio non intero >= 0 per ${String(voce.file)}`,
       ).toBe(true);
       expect(
@@ -161,9 +166,10 @@ describe("reali-15: refreshabili coerenti con il disco (mai rete)", () => {
       expect(isStringaNonVuota(prov?.["licenza"]), `${atteso.nome}: licenza assente`).toBe(true);
       const lista = estraiArrayDati(letto.parsed, atteso.chiavi);
       expect(lista, `${atteso.nome}: nessun array dati`).not.toBeNull();
-      expect(lista?.length, `${atteso.nome}: len ${lista?.length} != conteggio ${atteso.conteggio}`).toBe(
-        atteso.conteggio,
-      );
+      expect(
+        lista?.length,
+        `${atteso.nome}: len ${lista?.length} != conteggio ${atteso.conteggio}`,
+      ).toBe(atteso.conteggio);
     });
   }
 
@@ -175,13 +181,20 @@ describe("reali-15: refreshabili coerenti con il disco (mai rete)", () => {
     for (const atteso of REFRESHABILI_ATTESI) {
       const voce = perFile.get(atteso.nome);
       expect(voce, `${atteso.nome}: voce MANIFEST assente`).not.toBeNull();
-      expect(voce?.conteggio, `${atteso.nome}: conteggio MANIFEST != ${atteso.conteggio}`).toBe(atteso.conteggio);
-      expect(interpretaData(voce?.recuperatoIl), `${atteso.nome}: recuperatoIl MANIFEST non valido`).not.toBeNull();
+      expect(voce?.conteggio, `${atteso.nome}: conteggio MANIFEST != ${atteso.conteggio}`).toBe(
+        atteso.conteggio,
+      );
+      expect(
+        interpretaData(voce?.recuperatoIl),
+        `${atteso.nome}: recuperatoIl MANIFEST non valido`,
+      ).not.toBeNull();
     }
   });
 
   it("emilia-romagna: convenzione liste:11 vs comuni:330 (senza cambiare numeri)", async () => {
-    const letto = await leggiJson(path.join(DIR_REALI, "elezioni-regionali-2024-emilia-romagna.json"));
+    const letto = await leggiJson(
+      path.join(DIR_REALI, "elezioni-regionali-2024-emilia-romagna.json"),
+    );
     expect(letto, "emilia-romagna illeggibile").not.toBeNull();
     if (!letto || !letto.parsed || typeof letto.parsed !== "object") return;
     const obj = letto.parsed as Record<string, unknown>;
@@ -258,7 +271,10 @@ describe("reali-15: docs FRESCHEZZA-DATI.md con date reali (mai rete)", () => {
     for (const voce of FILE_REFRESHABILI) {
       const dataReale = perFile.get(voce.file);
       expect(isStringaNonVuota(dataReale), `MANIFEST senza data per ${voce.file}`).toBe(true);
-      expect(docs.includes(dataReale ?? ""), `docs senza data REALE ${dataReale} per ${voce.file}`).toBe(true);
+      expect(
+        docs.includes(dataReale ?? ""),
+        `docs senza data REALE ${dataReale} per ${voce.file}`,
+      ).toBe(true);
     }
   });
 });
@@ -295,15 +311,39 @@ describe("reali-15: script verifica-freschezza (mai rete)", () => {
       JSON.stringify({
         fonti: [
           { file: "gazzetta-ultime.json", conteggio: 32, recuperatoIl: "2026-09-28T22:10:24.899Z" },
-          { file: "governo-comunicati.json", conteggio: 10, recuperatoIl: "2026-09-28T18:38:50.732Z" },
-          { file: "normattiva-recenti.json", conteggio: 46, recuperatoIl: "2026-09-28T19:08:27.309Z" },
+          {
+            file: "governo-comunicati.json",
+            conteggio: 10,
+            recuperatoIl: "2026-09-28T18:38:50.732Z",
+          },
+          {
+            file: "normattiva-recenti.json",
+            conteggio: 46,
+            recuperatoIl: "2026-09-28T19:08:27.309Z",
+          },
           { file: "sondaggi-nazionali.json", conteggio: 30, recuperatoIl: "2026-09-28" },
-          { file: "camera-deputati.json", conteggio: 414, recuperatoIl: "2026-09-28T18:26:21.186Z" },
+          {
+            file: "camera-deputati.json",
+            conteggio: 414,
+            recuperatoIl: "2026-09-28T18:26:21.186Z",
+          },
           { file: "camera-gruppi.json", conteggio: 13, recuperatoIl: "2026-09-28T18:26:21.186Z" },
-          { file: "camera-atti.json", conteggio: 197, recuperatoIl: "2026-09-28T19:00:23.484357+00:00" },
-          { file: "senato-senatori.json", conteggio: 212, recuperatoIl: "2026-09-28T18:27:50.369Z" },
+          {
+            file: "camera-atti.json",
+            conteggio: 197,
+            recuperatoIl: "2026-09-28T19:00:23.484357+00:00",
+          },
+          {
+            file: "senato-senatori.json",
+            conteggio: 212,
+            recuperatoIl: "2026-09-28T18:27:50.369Z",
+          },
           { file: "senato-gruppi.json", conteggio: 14, recuperatoIl: "2026-09-28T18:27:50.369Z" },
-          { file: "parlamento-ddl.json", conteggio: 5, recuperatoIl: "2026-09-28T19:00:34.734348+00:00" },
+          {
+            file: "parlamento-ddl.json",
+            conteggio: 5,
+            recuperatoIl: "2026-09-28T19:00:34.734348+00:00",
+          },
           ...[override],
         ],
       });
@@ -311,17 +351,25 @@ describe("reali-15: script verifica-freschezza (mai rete)", () => {
 
     const vecchia = JSON.parse(base({})) as { fonti: Array<Record<string, unknown>> };
     vecchia.fonti = vecchia.fonti.map((v) =>
-      v["file"] === "governo-comunicati.json" ? { ...v, recuperatoIl: "2026-09-20T00:00:00.000Z" } : v,
+      v["file"] === "governo-comunicati.json"
+        ? { ...v, recuperatoIl: "2026-09-20T00:00:00.000Z" }
+        : v,
     );
     const esitoScaduto = verificaFreschezza(JSON.stringify(vecchia), ora, false);
     expect(esitoScaduto.ok).toBe(false);
-    expect(esitoScaduto.voci.some((v) => v.file === "governo-comunicati.json" && v.stato === "scaduto")).toBe(true);
+    expect(
+      esitoScaduto.voci.some((v) => v.file === "governo-comunicati.json" && v.stato === "scaduto"),
+    ).toBe(true);
 
     const senza = JSON.parse(base({})) as { fonti: Array<Record<string, unknown>> };
     senza.fonti = senza.fonti.filter((v) => v["file"] !== "sondaggi-nazionali.json");
     const esitoMancante = verificaFreschezza(JSON.stringify(senza), ora, false);
     expect(esitoMancante.ok).toBe(false);
-    expect(esitoMancante.voci.some((v) => v.file === "sondaggi-nazionali.json" && v.stato === "mancante")).toBe(true);
+    expect(
+      esitoMancante.voci.some(
+        (v) => v.file === "sondaggi-nazionali.json" && v.stato === "mancante",
+      ),
+    ).toBe(true);
 
     const invalida = JSON.parse(base({})) as { fonti: Array<Record<string, unknown>> };
     invalida.fonti = invalida.fonti.map((v) =>
@@ -330,7 +378,9 @@ describe("reali-15: script verifica-freschezza (mai rete)", () => {
     const esitoInvalido = verificaFreschezza(JSON.stringify(invalida), ora, false);
     expect(esitoInvalido.ok).toBe(false);
     expect(
-      esitoInvalido.voci.some((v) => v.file === "normattiva-recenti.json" && v.stato === "data-non-valida"),
+      esitoInvalido.voci.some(
+        (v) => v.file === "normattiva-recenti.json" && v.stato === "data-non-valida",
+      ),
     ).toBe(true);
 
     expect(verificaFreschezza("non-json {{{", ora, false).ok).toBe(false);
@@ -351,6 +401,8 @@ describe("reali-15: script verifica-freschezza (mai rete)", () => {
     expect(verificaFreschezza(manifest, ora, false).ok).toBe(true);
     const esitoCampagna = verificaFreschezza(manifest, ora, true);
     expect(esitoCampagna.ok).toBe(false);
-    expect(esitoCampagna.voci.some((v) => v.file === "sondaggi-nazionali.json" && v.stato === "scaduto")).toBe(true);
+    expect(
+      esitoCampagna.voci.some((v) => v.file === "sondaggi-nazionali.json" && v.stato === "scaduto"),
+    ).toBe(true);
   });
 });

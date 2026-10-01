@@ -23,7 +23,7 @@
  * - Cap byte 972800 verificato PRIMA di scrivere; file <= 1MB hard.
  *
  * Uso:
- *   npx tsx scripts/ingest-reale-normattiva-bulk-b.ts [--out=...] [--api-base=...] [--help]
+ *   bunx tsx scripts/ingest-reale-normattiva-bulk-b.ts [--out=...] [--api-base=...] [--help]
  *
  * Scrive SOLO data/reali/normattiva-bulk-b-finestra-2005.json (default).
  */
@@ -31,7 +31,13 @@
 import { mkdir, readFile, writeFile } from "node:fs/promises";
 import path from "node:path";
 import { formatNIR, parseNIR } from "../lib/nir";
-import { arrayDa, eliFromUrn, isRecord, tipoFromDenominazione, unwrapData } from "../lib/normattiva";
+import {
+  arrayDa,
+  eliFromUrn,
+  isRecord,
+  tipoFromDenominazione,
+  unwrapData,
+} from "../lib/normattiva";
 
 /* ------------------------------------------------------------------ tipi */
 
@@ -109,7 +115,9 @@ const USER_AGENT_BULK_B =
 /** Chiave dedup: trim + lowercase. Mai lancia. */
 export function chiaveEliBulkB(eli: unknown): string {
   try {
-    return String(eli ?? "").trim().toLowerCase();
+    return String(eli ?? "")
+      .trim()
+      .toLowerCase();
   } catch {
     return "";
   }
@@ -262,7 +270,10 @@ export async function caricaChiaviEsistentiBulkB(
 }
 
 /** Filtra duplicati vs conosciuti + intra-lista. Mai lancia. */
-export function dedupAttiBulkB(atti: AttoBulkB[], conosciuti: Set<string>): { unici: AttoBulkB[]; duplicati: number } {
+export function dedupAttiBulkB(
+  atti: AttoBulkB[],
+  conosciuti: Set<string>,
+): { unici: AttoBulkB[]; duplicati: number } {
   try {
     const unici: AttoBulkB[] = [];
     const visti = new Set<string>();
@@ -395,7 +406,7 @@ function aiutoBulkB(): string {
     "Ingest bulk-B Normattiva — finestra 2005 lista-only (dati ufficiali, mai dimostrativi).",
     "",
     "Uso:",
-    "  npx tsx scripts/ingest-reale-normattiva-bulk-b.ts [opzioni]",
+    "  bunx tsx scripts/ingest-reale-normattiva-bulk-b.ts [opzioni]",
     "",
     "Opzioni:",
     "  --out=PERCORSO   file JSON (default data/reali/normattiva-bulk-b-finestra-2005.json)",
@@ -425,7 +436,9 @@ async function mainBulkB(): Promise<void> {
     (argomentoBulkB("api-base") ?? process.env.NORMATTIVA_API_BASE ?? "").trim() ||
     "https://api.normattiva.it/t/normattiva.api/bff-opendata/v1";
 
-  console.log(`Ingest bulk-B: finestra ${FINESTRA_INIZIO}..${FINESTRA_FINE} lista-only (zero dettagli).`);
+  console.log(
+    `Ingest bulk-B: finestra ${FINESTRA_INIZIO}..${FINESTRA_FINE} lista-only (zero dettagli).`,
+  );
 
   const conosciuti = await caricaChiaviEsistentiBulkB(PERCORSI_ESISTENTI_BULK_B);
   console.log(
@@ -462,7 +475,10 @@ async function mainBulkB(): Promise<void> {
         const ris = await postAggiornatiBulkB(apiBase, ini, fin);
         const mensili = vociDaAggiornatiBulkB(ris.raw);
         const trovatiMese = numeroAttiTrovatiBulkB(ris.raw);
-        if ((trovatiMese !== null && trovatiMese > CAP_ATTI_BULK_B) || mensili.length > CAP_ATTI_BULK_B) {
+        if (
+          (trovatiMese !== null && trovatiMese > CAP_ATTI_BULK_B) ||
+          mensili.length > CAP_ATTI_BULK_B
+        ) {
           console.error(`Mese ${ini}..${fin} oltre cap: nessun file scritto (mai tagliare).`);
           process.exitCode = 1;
           return;
@@ -474,7 +490,9 @@ async function mainBulkB(): Promise<void> {
           raccolti.push(atto);
         }
       } catch (cause) {
-        console.error(`Mese ${ini}..${fin} fallito (${messaggioDiBulkB(cause)}): nessun file scritto.`);
+        console.error(
+          `Mese ${ini}..${fin} fallito (${messaggioDiBulkB(cause)}): nessun file scritto.`,
+        );
         process.exitCode = 1;
         return;
       }
@@ -490,13 +508,17 @@ async function mainBulkB(): Promise<void> {
     return;
   }
   if (attiGrezzi.length > CAP_ATTI_BULK_B) {
-    console.error(`Lista oltre cap ${CAP_ATTI_BULK_B} (${attiGrezzi.length}): nessun file scritto.`);
+    console.error(
+      `Lista oltre cap ${CAP_ATTI_BULK_B} (${attiGrezzi.length}): nessun file scritto.`,
+    );
     process.exitCode = 1;
     return;
   }
 
   const { unici, duplicati } = dedupAttiBulkB(attiGrezzi, conosciuti);
-  console.log(`Dedup: ${attiGrezzi.length} voci, ${duplicati} duplicate escluse, ${unici.length} uniche.`);
+  console.log(
+    `Dedup: ${attiGrezzi.length} voci, ${duplicati} duplicate escluse, ${unici.length} uniche.`,
+  );
 
   if (unici.length === 0) {
     console.error("Tutte le voci duplicate di atti pre-esistenti: nessun file scritto.");

@@ -8,11 +8,11 @@
 //   data/corpus/manifest.json { versione, totaleAtti, shard[], checksumSha256, generatoIl }
 //   data/corpus/shard-00000.jsonl.gz (una riga = RecordCorpus + dimostrativo:true)
 
-import * as fs from 'node:fs';
-import * as path from 'node:path';
-import * as crypto from 'node:crypto';
-import * as zlib from 'node:zlib';
-import * as readline from 'node:readline';
+import * as fs from "node:fs";
+import * as path from "node:path";
+import * as crypto from "node:crypto";
+import * as zlib from "node:zlib";
+import * as readline from "node:readline";
 
 // ---------------------------------------------------------------------------
 // Tipi ed Esito (never-throw)
@@ -96,26 +96,30 @@ export interface StatisticheCorpus {
 // Costanti vincolanti
 // ---------------------------------------------------------------------------
 
-export const VERSIONE_CORPUS = 'simple-law-corpus-v1';
+export const VERSIONE_CORPUS = "simple-law-corpus-v1";
 export const ANNO_MIN = 1948;
 export const ANNO_MAX = 2026;
-export const DATA_MIN_ISO = '1861-01-01';
-export const DATA_MAX_ISO = '2026-12-31';
+export const DATA_MIN_ISO = "1861-01-01";
+export const DATA_MAX_ISO = "2026-12-31";
 export const TESTO_MIN_BYTE = 1536; // 1.5KB
 export const TESTO_MAX_BYTE = 6144; // 6KB
 export const RIGHE_PER_SHARD_DEFAULT = 8000;
-export const DIR_CORPUS_DEFAULT = 'data/corpus';
+export const DIR_CORPUS_DEFAULT = "data/corpus";
 
 export const ELI_REGEX = /^\/eli\/(it\/)?[a-z0-9-]+\/[0-9]{4}\/[0-9]+$/;
 export const NIR_REGEX = /^urn:nir:stato:[a-z0-9.-]+:[0-9]{4}(-[0-9]{2}-[0-9]{2})?;[0-9]+$/;
 
 export const TIPI_ATTO: TipoAtto[] = [
-  { nome: 'Legge', slugEli: 'legge', slugNir: 'legge' },
-  { nome: 'Decreto-Legge', slugEli: 'dl', slugNir: 'decreto.legge' },
-  { nome: 'Decreto Legislativo', slugEli: 'dlgs', slugNir: 'decreto.legislativo' },
-  { nome: 'Decreto del Presidente della Repubblica', slugEli: 'dpr', slugNir: 'decreto.presidente.repubblica' },
-  { nome: 'Legge Costituzionale', slugEli: 'lcost', slugNir: 'legge.costituzionale' },
-  { nome: 'Regolamento', slugEli: 'regolamento', slugNir: 'regolamento' },
+  { nome: "Legge", slugEli: "legge", slugNir: "legge" },
+  { nome: "Decreto-Legge", slugEli: "dl", slugNir: "decreto.legge" },
+  { nome: "Decreto Legislativo", slugEli: "dlgs", slugNir: "decreto.legislativo" },
+  {
+    nome: "Decreto del Presidente della Repubblica",
+    slugEli: "dpr",
+    slugNir: "decreto.presidente.repubblica",
+  },
+  { nome: "Legge Costituzionale", slugEli: "lcost", slugNir: "legge.costituzionale" },
+  { nome: "Regolamento", slugEli: "regolamento", slugNir: "regolamento" },
 ];
 
 export interface TemaCorpus {
@@ -125,29 +129,125 @@ export interface TemaCorpus {
 }
 
 export const TEMI: TemaCorpus[] = [
-  { slug: 'fisco', etichetta: 'Fisco e tributi', oggetti: ['riordino delle detrazioni fiscali', 'semplificazione degli adempimenti tributari', 'contrasto all’evasione fiscale'] },
-  { slug: 'lavoro', etichetta: 'Lavoro e previdenza', oggetti: ['tutela dei contratti a tempo determinato', 'sostegno all’occupazione giovanile', 'riordino degli ammortizzatori sociali'] },
-  { slug: 'sanita', etichetta: 'Sanità', oggetti: ['potenziamento della medicina territoriale', 'liste di attesa e livelli essenziali di assistenza', 'personale sanitario e formazione continua'] },
-  { slug: 'istruzione', etichetta: 'Istruzione e università', oggetti: ['edilizia scolastica e sicurezza', 'reclutamento dei docenti', 'diritto allo studio universitario'] },
-  { slug: 'ambiente', etichetta: 'Ambiente e territorio', oggetti: ['bonifica dei siti contaminati', 'tutela delle aree protette', 'prevenzione del dissesto idrogeologico'] },
-  { slug: 'giustizia', etichetta: 'Giustizia', oggetti: ['efficienza del processo civile', 'esecuzione penale e misure alternative', 'organico della magistratura onoraria'] },
-  { slug: 'digitale', etichetta: 'Digitale e innovazione', oggetti: ['interoperabilità delle banche dati pubbliche', 'identità digitale e domicilio elettronico', 'riuso del software pubblico'] },
-  { slug: 'energia', etichetta: 'Energia', oggetti: ['comunità energetiche rinnovabili', 'semplificazione per gli impianti fotovoltaici', 'efficienza energetica degli edifici'] },
-  { slug: 'trasporti', etichetta: 'Trasporti e infrastrutture', oggetti: ['sicurezza stradale e revisione dei veicoli', 'trasporto pubblico locale', 'manutenzione della rete ferroviaria'] },
-  { slug: 'casa', etichetta: 'Casa e urbanistica', oggetti: ['rigenerazione urbana', 'edilizia residenziale pubblica', 'contratti di locazione a canone concordato'] },
-  { slug: 'immigrazione', etichetta: 'Immigrazione e cittadinanza', oggetti: ['accoglienza e integrazione', 'ingressi per motivi di lavoro', 'procedure di riconoscimento della protezione'] },
-  { slug: 'cultura', etichetta: 'Cultura e spettacolo', oggetti: ['tutela del patrimonio culturale', 'sostegno al cinema e all’audiovisivo', 'promozione della lettura'] },
+  {
+    slug: "fisco",
+    etichetta: "Fisco e tributi",
+    oggetti: [
+      "riordino delle detrazioni fiscali",
+      "semplificazione degli adempimenti tributari",
+      "contrasto all’evasione fiscale",
+    ],
+  },
+  {
+    slug: "lavoro",
+    etichetta: "Lavoro e previdenza",
+    oggetti: [
+      "tutela dei contratti a tempo determinato",
+      "sostegno all’occupazione giovanile",
+      "riordino degli ammortizzatori sociali",
+    ],
+  },
+  {
+    slug: "sanita",
+    etichetta: "Sanità",
+    oggetti: [
+      "potenziamento della medicina territoriale",
+      "liste di attesa e livelli essenziali di assistenza",
+      "personale sanitario e formazione continua",
+    ],
+  },
+  {
+    slug: "istruzione",
+    etichetta: "Istruzione e università",
+    oggetti: [
+      "edilizia scolastica e sicurezza",
+      "reclutamento dei docenti",
+      "diritto allo studio universitario",
+    ],
+  },
+  {
+    slug: "ambiente",
+    etichetta: "Ambiente e territorio",
+    oggetti: [
+      "bonifica dei siti contaminati",
+      "tutela delle aree protette",
+      "prevenzione del dissesto idrogeologico",
+    ],
+  },
+  {
+    slug: "giustizia",
+    etichetta: "Giustizia",
+    oggetti: [
+      "efficienza del processo civile",
+      "esecuzione penale e misure alternative",
+      "organico della magistratura onoraria",
+    ],
+  },
+  {
+    slug: "digitale",
+    etichetta: "Digitale e innovazione",
+    oggetti: [
+      "interoperabilità delle banche dati pubbliche",
+      "identità digitale e domicilio elettronico",
+      "riuso del software pubblico",
+    ],
+  },
+  {
+    slug: "energia",
+    etichetta: "Energia",
+    oggetti: [
+      "comunità energetiche rinnovabili",
+      "semplificazione per gli impianti fotovoltaici",
+      "efficienza energetica degli edifici",
+    ],
+  },
+  {
+    slug: "trasporti",
+    etichetta: "Trasporti e infrastrutture",
+    oggetti: [
+      "sicurezza stradale e revisione dei veicoli",
+      "trasporto pubblico locale",
+      "manutenzione della rete ferroviaria",
+    ],
+  },
+  {
+    slug: "casa",
+    etichetta: "Casa e urbanistica",
+    oggetti: [
+      "rigenerazione urbana",
+      "edilizia residenziale pubblica",
+      "contratti di locazione a canone concordato",
+    ],
+  },
+  {
+    slug: "immigrazione",
+    etichetta: "Immigrazione e cittadinanza",
+    oggetti: [
+      "accoglienza e integrazione",
+      "ingressi per motivi di lavoro",
+      "procedure di riconoscimento della protezione",
+    ],
+  },
+  {
+    slug: "cultura",
+    etichetta: "Cultura e spettacolo",
+    oggetti: [
+      "tutela del patrimonio culturale",
+      "sostegno al cinema e all’audiovisivo",
+      "promozione della lettura",
+    ],
+  },
 ];
 
 const FRASI_ARTICOLO: string[] = [
-  'Le disposizioni del presente articolo si applicano ai procedimenti avviati dopo la data di entrata in vigore.',
-  'Con decreto del Ministro competente, da adottare entro novanta giorni, sono definite le modalità attuative.',
-  'Le amministrazioni provvedono nei limiti delle risorse umane, strumentali e finanziarie disponibili a legislazione vigente.',
-  'Resta fermo quanto previsto dalla normativa europea e dagli obblighi internazionali in materia.',
-  'Il monitoraggio degli effetti è svolto annualmente sulla base degli indicatori pubblicati in allegato.',
-  'In caso di inadempienza si applicano le sanzioni amministrative pecuniarie da mille a diecimila euro.',
-  'Sono fatte salve le competenze delle regioni a statuto speciale e delle province autonome.',
-  'L’efficacia delle misure è subordinata alla verifica della compatibilità finanziaria da parte del Ministero competente.',
+  "Le disposizioni del presente articolo si applicano ai procedimenti avviati dopo la data di entrata in vigore.",
+  "Con decreto del Ministro competente, da adottare entro novanta giorni, sono definite le modalità attuative.",
+  "Le amministrazioni provvedono nei limiti delle risorse umane, strumentali e finanziarie disponibili a legislazione vigente.",
+  "Resta fermo quanto previsto dalla normativa europea e dagli obblighi internazionali in materia.",
+  "Il monitoraggio degli effetti è svolto annualmente sulla base degli indicatori pubblicati in allegato.",
+  "In caso di inadempienza si applicano le sanzioni amministrative pecuniarie da mille a diecimila euro.",
+  "Sono fatte salve le competenze delle regioni a statuto speciale e delle province autonome.",
+  "L’efficacia delle misure è subordinata alla verifica della compatibilità finanziaria da parte del Ministero competente.",
 ];
 
 const NUMERO_ANNI = ANNO_MAX - ANNO_MIN + 1; // 79
@@ -180,7 +280,13 @@ export function creaPrngDaSeed(seed: string): () => number {
   return mulberry32(fnv1a32(seed));
 }
 
-export function semeRecord(seedBase: string, tema: string, tipo: string, anno: number, numero: number): string {
+export function semeRecord(
+  seedBase: string,
+  tema: string,
+  tipo: string,
+  anno: number,
+  numero: number,
+): string {
   return `${seedBase}:${tema}:${tipo}:${anno}:${numero}`;
 }
 
@@ -200,13 +306,13 @@ function giornoMeseDeterministico(casuale: () => number, anno: number): string {
   const mese = interoCasuale(casuale, 1, 12);
   const giornoMax = mese === 2 ? 28 : [4, 6, 9, 11].includes(mese) ? 30 : 31;
   const giorno = interoCasuale(casuale, 1, giornoMax);
-  const mm = String(mese).padStart(2, '0');
-  const gg = String(giorno).padStart(2, '0');
+  const mm = String(mese).padStart(2, "0");
+  const gg = String(giorno).padStart(2, "0");
   return `${anno}-${mm}-${gg}`;
 }
 
 function hashSha256Hex(testo: string): string {
-  return crypto.createHash('sha256').update(testo, 'utf8').digest('hex');
+  return crypto.createHash("sha256").update(testo, "utf8").digest("hex");
 }
 
 /** Genera un singolo record deterministico a partire dall'indice globale. ELI/NIR unici per costruzione. */
@@ -235,15 +341,15 @@ export function generaRecord(indice: number, seedBase: string = VERSIONE_CORPUS)
   const righe: string[] = [];
   righe.push(`${tipoInfo.nome.toUpperCase()} n. ${numero} del ${dataEmanazione}`);
   righe.push(`(${temaInfo.etichetta}: ${oggetto})`);
-  righe.push('');
+  righe.push("");
   righe.push(
-    'Visti gli articoli 76 e 87 della Costituzione; visto il parere delle competenti Commissioni parlamentari; ' +
-      'sulla proposta del Presidente del Consiglio dei ministri;',
+    "Visti gli articoli 76 e 87 della Costituzione; visto il parere delle competenti Commissioni parlamentari; " +
+      "sulla proposta del Presidente del Consiglio dei ministri;",
   );
-  righe.push('');
+  righe.push("");
 
   let numeroArticolo = 1;
-  let byteCorrenti = Buffer.byteLength(righe.join('\n'), 'utf8');
+  let byteCorrenti = Buffer.byteLength(righe.join("\n"), "utf8");
   while (byteCorrenti < obiettivoByte && numeroArticolo <= 40) {
     righe.push(`Art. ${numeroArticolo} - (Oggetto e ambito di applicazione)`);
     const commi = interoCasuale(casuale, 2, 4);
@@ -257,22 +363,25 @@ export function generaRecord(indice: number, seedBase: string = VERSIONE_CORPUS)
       }
       righe.push(comma);
     }
-    righe.push('');
+    righe.push("");
     numeroArticolo += 1;
-    byteCorrenti = Buffer.byteLength(righe.join('\n'), 'utf8');
+    byteCorrenti = Buffer.byteLength(righe.join("\n"), "utf8");
   }
-  righe.push('Il presente provvedimento entra in vigore il giorno successivo alla pubblicazione.');
-  let testo = righe.join('\n');
+  righe.push("Il presente provvedimento entra in vigore il giorno successivo alla pubblicazione.");
+  let testo = righe.join("\n");
   // Taglia all'ultimo confine di articolo se supera il massimo, ma mai sotto il minimo.
-  if (Buffer.byteLength(testo, 'utf8') > TESTO_MAX_BYTE) {
-    const righeTagliate = testo.split('\n');
-    while (righeTagliate.length > 4 && Buffer.byteLength(righeTagliate.join('\n'), 'utf8') > TESTO_MAX_BYTE) {
+  if (Buffer.byteLength(testo, "utf8") > TESTO_MAX_BYTE) {
+    const righeTagliate = testo.split("\n");
+    while (
+      righeTagliate.length > 4 &&
+      Buffer.byteLength(righeTagliate.join("\n"), "utf8") > TESTO_MAX_BYTE
+    ) {
       righeTagliate.pop();
     }
-    testo = righeTagliate.join('\n');
+    testo = righeTagliate.join("\n");
   }
 
-  const lunghezzaTesto = Buffer.byteLength(testo, 'utf8');
+  const lunghezzaTesto = Buffer.byteLength(testo, "utf8");
   const testoHash = hashSha256Hex(testo);
 
   return {
@@ -294,12 +403,17 @@ export function generaRecord(indice: number, seedBase: string = VERSIONE_CORPUS)
 
 /** Genera in memoria un piccolo corpus (per test/campioni). Per volumi grandi usare lo streaming della CLI.
  * Cap a 20000 per evitare OOM: oltre usare `scripts/corpus-100gb.ts` in streaming. */
-export function generaCorpus(totale: number, seedBase: string = VERSIONE_CORPUS): Esito<RecordCorpus[]> {
+export function generaCorpus(
+  totale: number,
+  seedBase: string = VERSIONE_CORPUS,
+): Esito<RecordCorpus[]> {
   if (!Number.isInteger(totale) || totale < 1 || totale > 20000) {
-    return fallimento('Il totale deve essere un intero tra 1 e 20000 (oltre: usare la CLI in streaming).');
+    return fallimento(
+      "Il totale deve essere un intero tra 1 e 20000 (oltre: usare la CLI in streaming).",
+    );
   }
   if (!seedBase || seedBase.length > 200) {
-    return fallimento('Seed non valido: da 1 a 200 caratteri.');
+    return fallimento("Seed non valido: da 1 a 200 caratteri.");
   }
   const record: RecordCorpus[] = [];
   for (let i = 0; i < totale; i++) {
@@ -309,7 +423,10 @@ export function generaCorpus(totale: number, seedBase: string = VERSIONE_CORPUS)
 }
 
 /** Generatore streaming per volumi 100GB: non alloca l'intero corpus (fix P0 OOM). */
-export function* iterRecord(totale: number, seedBase: string = VERSIONE_CORPUS): Generator<RecordCorpus> {
+export function* iterRecord(
+  totale: number,
+  seedBase: string = VERSIONE_CORPUS,
+): Generator<RecordCorpus> {
   const n = Math.max(0, Math.min(200000, Math.floor(totale) || 0));
   for (let i = 0; i < n; i++) {
     yield generaRecord(i, seedBase);
@@ -320,9 +437,9 @@ export function* iterRecord(totale: number, seedBase: string = VERSIONE_CORPUS):
 // Manifest (file piccolo, <100KB: lettura diretta consentita)
 // ---------------------------------------------------------------------------
 
-export function checksumManifesto(parziale: Omit<ManifestoCorpus, 'checksumSha256'>): string {
-  const base = `${parziale.versione}:${parziale.totaleAtti}:${parziale.shard.map((s) => s.checksumSha256).join(',')}`;
-  return crypto.createHash('sha256').update(base, 'utf8').digest('hex');
+export function checksumManifesto(parziale: Omit<ManifestoCorpus, "checksumSha256">): string {
+  const base = `${parziale.versione}:${parziale.totaleAtti}:${parziale.shard.map((s) => s.checksumSha256).join(",")}`;
+  return crypto.createHash("sha256").update(base, "utf8").digest("hex");
 }
 
 export function costruisciManifest(
@@ -337,7 +454,7 @@ export function costruisciManifest(
 
 export async function leggiManifest(percorso: string): Promise<Esito<ManifestoCorpus>> {
   try {
-    const grezzo = await fs.promises.readFile(percorso, 'utf8');
+    const grezzo = await fs.promises.readFile(percorso, "utf8");
     const dati = JSON.parse(grezzo) as ManifestoCorpus;
     if (!dati || dati.versione !== VERSIONE_CORPUS || !Array.isArray(dati.shard)) {
       return fallimento(`Manifest non valido in ${percorso}.`);
@@ -348,10 +465,13 @@ export async function leggiManifest(percorso: string): Promise<Esito<ManifestoCo
   }
 }
 
-export async function salvaManifest(percorso: string, manifest: ManifestoCorpus): Promise<Esito<void>> {
+export async function salvaManifest(
+  percorso: string,
+  manifest: ManifestoCorpus,
+): Promise<Esito<void>> {
   try {
     await fs.promises.mkdir(path.dirname(percorso), { recursive: true });
-    await fs.promises.writeFile(percorso, JSON.stringify(manifest, null, 2), 'utf8');
+    await fs.promises.writeFile(percorso, JSON.stringify(manifest, null, 2), "utf8");
     return successo(undefined);
   } catch (errore) {
     return fallimento(`Impossibile salvare il manifest ${percorso}: ${(errore as Error).message}`);
@@ -364,26 +484,28 @@ export async function salvaManifest(percorso: string, manifest: ManifestoCorpus)
 
 export async function calcolaSha256File(percorso: string): Promise<Esito<string>> {
   try {
-    const hash = crypto.createHash('sha256');
+    const hash = crypto.createHash("sha256");
     const flusso = fs.createReadStream(percorso);
     await new Promise<void>((risolvi, rifiuta) => {
-      flusso.on('data', (pezzo) => hash.update(pezzo as Buffer));
-      flusso.on('end', () => risolvi());
-      flusso.on('error', (errore) => rifiuta(errore));
+      flusso.on("data", (pezzo) => hash.update(pezzo as Buffer));
+      flusso.on("end", () => risolvi());
+      flusso.on("error", (errore) => rifiuta(errore));
     });
-    return successo(hash.digest('hex'));
+    return successo(hash.digest("hex"));
   } catch (errore) {
     return fallimento(`Impossibile calcolare sha256 di ${percorso}: ${(errore as Error).message}`);
   }
 }
 
-function apriLineeShard(percorso: string): Esito<{ flusso: fs.ReadStream; linee: readline.Interface }> {
+function apriLineeShard(
+  percorso: string,
+): Esito<{ flusso: fs.ReadStream; linee: readline.Interface }> {
   try {
     if (!fs.existsSync(percorso)) {
       return fallimento(`Shard non trovato: ${percorso}.`);
     }
     const flusso = fs.createReadStream(percorso);
-    const ingresso: NodeJS.ReadableStream = percorso.endsWith('.gz')
+    const ingresso: NodeJS.ReadableStream = percorso.endsWith(".gz")
       ? flusso.pipe(zlib.createGunzip())
       : flusso;
     const linee = readline.createInterface({ input: ingresso, crlfDelay: Infinity });
@@ -396,8 +518,8 @@ function apriLineeShard(percorso: string): Esito<{ flusso: fs.ReadStream; linee:
         // Mai lanciare: contratto never-throw.
       }
     };
-    flusso.on('error', chiudiSilenzioso);
-    ingresso.on('error', chiudiSilenzioso);
+    flusso.on("error", chiudiSilenzioso);
+    ingresso.on("error", chiudiSilenzioso);
     return successo({ flusso, linee });
   } catch (errore) {
     return fallimento(`Impossibile aprire lo shard ${percorso}: ${(errore as Error).message}`);
@@ -437,16 +559,16 @@ export async function scriviShardJsonlGzip(
     const gzip = zlib.createGzip();
     const uscita = fs.createWriteStream(percorso);
     const completato = new Promise<void>((risolvi, rifiuta) => {
-      uscita.on('finish', () => risolvi());
-      uscita.on('error', (errore) => rifiuta(errore));
-      gzip.on('error', (errore) => rifiuta(errore));
+      uscita.on("finish", () => risolvi());
+      uscita.on("error", (errore) => rifiuta(errore));
+      gzip.on("error", (errore) => rifiuta(errore));
     });
     gzip.pipe(uscita);
     let count = 0;
     for (const r of record) {
-      const riga = JSON.stringify(r) + '\n';
+      const riga = JSON.stringify(r) + "\n";
       if (!gzip.write(riga)) {
-        await new Promise<void>((risolvi) => gzip.once('drain', () => risolvi()));
+        await new Promise<void>((risolvi) => gzip.once("drain", () => risolvi()));
       }
       count += 1;
     }
@@ -490,9 +612,9 @@ export async function paginaShard(
   pagina: number,
   elementiPerPagina: number,
 ): Promise<Esito<PaginaCorpus>> {
-  if (!Number.isInteger(pagina) || pagina < 1) return fallimento('Pagina non valida: intero >= 1.');
+  if (!Number.isInteger(pagina) || pagina < 1) return fallimento("Pagina non valida: intero >= 1.");
   if (!Number.isInteger(elementiPerPagina) || elementiPerPagina < 1 || elementiPerPagina > 500) {
-    return fallimento('Elementi per pagina non validi: intero tra 1 e 500.');
+    return fallimento("Elementi per pagina non validi: intero tra 1 e 500.");
   }
   const aperto = apriLineeShard(percorso);
   if (!aperto.ok) return aperto;
@@ -529,7 +651,7 @@ export async function paginaShard(
 // ---------------------------------------------------------------------------
 
 function normalizza(testo: string): string {
-  return testo.toLowerCase().normalize('NFC');
+  return testo.toLowerCase().normalize("NFC");
 }
 
 export function punteggioRilevanza(record: RecordCorpus, query: string): number {
@@ -544,7 +666,10 @@ export function punteggioRilevanza(record: RecordCorpus, query: string): number 
     if (normalizza(record.testo).includes(f)) return 30;
     return 0;
   }
-  const termini = normalizza(q).split(/\s+/).filter((t) => t.length >= 2).slice(0, 10);
+  const termini = normalizza(q)
+    .split(/\s+/)
+    .filter((t) => t.length >= 2)
+    .slice(0, 10);
   if (termini.length === 0) return 0;
   const titolo = normalizza(record.titolo);
   const sintesi = normalizza(record.sintesi);
@@ -568,9 +693,9 @@ export async function cercaInShard(
   limite = 50,
 ): Promise<Esito<RecordCorpus[]>> {
   const q = query.trim().slice(0, 200);
-  if (q.length < 2) return fallimento('Ricerca troppo corta: minimo 2 caratteri.');
+  if (q.length < 2) return fallimento("Ricerca troppo corta: minimo 2 caratteri.");
   if (!Number.isInteger(limite) || limite < 1 || limite > 500) {
-    return fallimento('Limite non valido: intero tra 1 e 500.');
+    return fallimento("Limite non valido: intero tra 1 e 500.");
   }
   const aperto = apriLineeShard(percorso);
   if (!aperto.ok) return aperto;
@@ -607,21 +732,26 @@ export async function cercaInShard(
 
 export function validaRecord(record: RecordCorpus): string[] {
   const problemi: string[] = [];
-  if (!record || typeof record !== 'object') return ['Record non oggetto.'];
-  if (!ELI_REGEX.test(record.eli ?? '')) problemi.push(`ELI non valido: ${String(record.eli)}`);
-  if (!NIR_REGEX.test(record.nir ?? '')) problemi.push(`NIR non valido: ${String(record.nir)}`);
-  if (record.anno < 1861 || record.anno > 2026) problemi.push(`Anno fuori intervallo 1861-2026: ${record.anno}`);
-  if (typeof record.dataEmanazione !== 'string' || Number.isNaN(Date.parse(record.dataEmanazione))) {
+  if (!record || typeof record !== "object") return ["Record non oggetto."];
+  if (!ELI_REGEX.test(record.eli ?? "")) problemi.push(`ELI non valido: ${String(record.eli)}`);
+  if (!NIR_REGEX.test(record.nir ?? "")) problemi.push(`NIR non valido: ${String(record.nir)}`);
+  if (record.anno < 1861 || record.anno > 2026)
+    problemi.push(`Anno fuori intervallo 1861-2026: ${record.anno}`);
+  if (
+    typeof record.dataEmanazione !== "string" ||
+    Number.isNaN(Date.parse(record.dataEmanazione))
+  ) {
     problemi.push(`Data emanazione non valida: ${String(record.dataEmanazione)}`);
   } else if (record.dataEmanazione < DATA_MIN_ISO || record.dataEmanazione > DATA_MAX_ISO) {
     problemi.push(`Data fuori intervallo 1861-2026: ${record.dataEmanazione}`);
   }
-  const byteTesto = Buffer.byteLength(record.testo ?? '', 'utf8');
+  const byteTesto = Buffer.byteLength(record.testo ?? "", "utf8");
   if (byteTesto < TESTO_MIN_BYTE || byteTesto > TESTO_MAX_BYTE + 512) {
     problemi.push(`Testo fuori intervallo (~1.5-6KB): ${byteTesto} byte in ${record.eli}`);
   }
   if (record.dimostrativo !== true) problemi.push(`Flag dimostrativo mancante in ${record.eli}`);
-  if (!record.titolo || !record.sintesi || !record.testo) problemi.push(`Campi titolo/sintesi/testo mancanti in ${record.eli}`);
+  if (!record.titolo || !record.sintesi || !record.testo)
+    problemi.push(`Campi titolo/sintesi/testo mancanti in ${record.eli}`);
   return problemi;
 }
 
@@ -656,9 +786,11 @@ export async function verificaShard(
       } else {
         const record = esito.valore;
         for (const p of validaRecord(record)) errori.push(`Riga ${numeroRiga}: ${p}`);
-        if (eliVisti.has(record.eli)) errori.push(`Riga ${numeroRiga}: ELI duplicato ${record.eli}`);
+        if (eliVisti.has(record.eli))
+          errori.push(`Riga ${numeroRiga}: ELI duplicato ${record.eli}`);
         else eliVisti.add(record.eli);
-        if (nirVisti.has(record.nir)) errori.push(`Riga ${numeroRiga}: NIR duplicato ${record.nir}`);
+        if (nirVisti.has(record.nir))
+          errori.push(`Riga ${numeroRiga}: NIR duplicato ${record.nir}`);
         else nirVisti.add(record.nir);
       }
       if (errori.length >= maxErrori) break;
@@ -683,7 +815,7 @@ export async function statisticheCorpus(
   dirCorpus: string = DIR_CORPUS_DEFAULT,
   righeCampionePerShard = 500,
 ): Promise<Esito<StatisticheCorpus>> {
-  const percorsoManifest = path.join(dirCorpus, 'manifest.json');
+  const percorsoManifest = path.join(dirCorpus, "manifest.json");
   const esitoManifest = await leggiManifest(percorsoManifest);
   if (!esitoManifest.ok) return esitoManifest;
   const manifest = esitoManifest.valore;
@@ -701,8 +833,9 @@ export async function statisticheCorpus(
         if (lette >= righeCampionePerShard) break;
         try {
           const record = JSON.parse(riga) as RecordCorpus;
-          perTipo[record.tipo ?? 'sconosciuto'] = (perTipo[record.tipo ?? 'sconosciuto'] ?? 0) + 1;
-          perAnno[String(record.anno ?? 'sconosciuto')] = (perAnno[String(record.anno ?? 'sconosciuto')] ?? 0) + 1;
+          perTipo[record.tipo ?? "sconosciuto"] = (perTipo[record.tipo ?? "sconosciuto"] ?? 0) + 1;
+          perAnno[String(record.anno ?? "sconosciuto")] =
+            (perAnno[String(record.anno ?? "sconosciuto")] ?? 0) + 1;
           righeCampionate += 1;
         } catch {
           // Riga malformata nel campione: ignorata, la verifica la segnala.

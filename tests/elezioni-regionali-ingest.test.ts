@@ -13,7 +13,7 @@
  *   (comuni/liste fittizi, MAI nominativi reali).
  */
 
-import { beforeEach, describe, expect, it, vi } from "vitest";
+import { beforeEach, describe, expect, it, vi } from "vite-plus/test";
 import { existsSync, readFileSync, statSync } from "node:fs";
 import { resolve } from "node:path";
 import type {
@@ -38,9 +38,10 @@ beforeEach(() => {
 });
 
 async function modScript(): Promise<Record<string, unknown>> {
-  return (await import(
-    "@/scripts/ingest-reale-elezioni-regionali"
-  )) as unknown as Record<string, unknown>;
+  return (await import("@/scripts/ingest-reale-elezioni-regionali")) as unknown as Record<
+    string,
+    unknown
+  >;
 }
 
 // ---------------------------------------------------------------------------
@@ -258,7 +259,13 @@ describe("regionali ingest — aggregazione e envelope (fixture inline)", () => 
     const righe = [
       rigaToscana({ LISTA: "LISTA ESEMPIO UNO", VOTI_LISTA: "100" }),
       rigaToscana({ LISTA: "LISTA ESEMPIO DUE", VOTI_LISTA: "200" }),
-      rigaToscana({ COMUNE: "COMUNE GAMMA", ELETTORI: "500", VOTANTI: "300", LISTA: "LISTA ESEMPIO UNO", VOTI_LISTA: "50" }),
+      rigaToscana({
+        COMUNE: "COMUNE GAMMA",
+        ELETTORI: "500",
+        VOTANTI: "300",
+        LISTA: "LISTA ESEMPIO UNO",
+        VOTI_LISTA: "50",
+      }),
     ];
     let n = 2;
     for (const celle of righe) {
@@ -286,7 +293,13 @@ describe("regionali ingest — aggregazione e envelope (fixture inline)", () => 
     const righe = [
       rigaUmbria({ SEZIONE: "1", LISTA: "LISTA ESEMPIO DUE", VOTI_LISTA: "40" }),
       rigaUmbria({ SEZIONE: "1", LISTA: "LISTA ESEMPIO TRE", VOTI_LISTA: "10" }),
-      rigaUmbria({ SEZIONE: "2", ELETTORI_TOTALI: "100", VOTANTI_TOTALI: "50", LISTA: "LISTA ESEMPIO DUE", VOTI_LISTA: "20" }),
+      rigaUmbria({
+        SEZIONE: "2",
+        ELETTORI_TOTALI: "100",
+        VOTANTI_TOTALI: "50",
+        LISTA: "LISTA ESEMPIO DUE",
+        VOTI_LISTA: "20",
+      }),
     ];
     let num = 2;
     for (const celle of righe) {
@@ -298,7 +311,10 @@ describe("regionali ingest — aggregazione e envelope (fixture inline)", () => 
     expect(stato.e).toBe(320); // 220 (sez 1, 1x) + 100 (sez 2)
     expect(stato.v).toBe(180); // 130 + 50
     expect(stato.comuni.size).toBe(1);
-    expect(stato.comuni.get("UMBRIA||CIRCOSCRIZIONE UMBRIA||COMUNE BETA")).toMatchObject({ e: 320, v: 180 });
+    expect(stato.comuni.get("UMBRIA||CIRCOSCRIZIONE UMBRIA||COMUNE BETA")).toMatchObject({
+      e: 320,
+      v: 180,
+    });
     expect(stato.liste.get("LISTA ESEMPIO DUE")).toBe(60);
     expect(chiamateFetch).toBe(0);
   });
@@ -335,7 +351,14 @@ describe("regionali ingest — aggregazione e envelope (fixture inline)", () => 
       dataIso: "2025-10-12",
       formato: "toscana",
     } as unknown as SorgenteRegionale;
-    const env = costruisci(stato, src, "metodologia-test", "avvertenze-test", "https://example.invalid/zip", "2026-01-01");
+    const env = costruisci(
+      stato,
+      src,
+      "metodologia-test",
+      "avvertenze-test",
+      "https://example.invalid/zip",
+      "2026-01-01",
+    );
     expect(Object.keys(env).sort()).toEqual(
       ["avvertenze", "comuni", "elezione", "liste", "metodologia", "provenance", "regioni"].sort(),
     );
@@ -394,7 +417,15 @@ describe("regionali ingest — integrazione tollerante sui JSON reali (MAI rete)
     const liste = env["liste"] as { n: string; v: number; p: number }[];
     expect(liste.length).toBeGreaterThan(0);
     expect(liste.length).toBeLessThanOrEqual(64);
-    const regioni = env["regioni"] as { r: string; e: number; v: number; b: number; k: number; a: number; liste: unknown[] }[];
+    const regioni = env["regioni"] as {
+      r: string;
+      e: number;
+      v: number;
+      b: number;
+      k: number;
+      a: number;
+      liste: unknown[];
+    }[];
     expect(regioni.length).toBeGreaterThanOrEqual(1);
     expect(regioni.length).toBeLessThanOrEqual(10);
     expect(regioni[0]?.["r"]).toBe(regioneAttesa);

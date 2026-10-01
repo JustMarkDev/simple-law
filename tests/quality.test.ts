@@ -1,4 +1,4 @@
-import { describe, expect, it } from "vitest";
+import { describe, expect, it } from "vite-plus/test";
 import { scoreQuality } from "@/lib/quality";
 
 describe("scoreQuality", () => {
@@ -40,7 +40,8 @@ describe("scoreQuality", () => {
 
   it("mantiene tutti i punteggi tra 0 e 100", () => {
     const result = scoreQuality({
-      testo: "Molti rinvii: art. 1, art. 2, legge n. 3, decreto legislativo n. 4, comma 5-bis, comma 6-ter.",
+      testo:
+        "Molti rinvii: art. 1, art. 2, legge n. 3, decreto legislativo n. 4, comma 5-bis, comma 6-ter.",
       attuativi: { daAdottare: 5, adottati: 1, scaduti: 3 },
       air: "assente",
       fiducia: true,

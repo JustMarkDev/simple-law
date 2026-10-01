@@ -24,33 +24,185 @@ export interface ElementoRankabile {
 
 /** Stopword italiane rimosse in fase di tokenizzazione (non nella normalizzazione base). */
 const STOPWORD_IT: ReadonlySet<string> = new Set([
-  "di", "a", "da", "in", "con", "su", "per", "tra", "fra",
-  "il", "lo", "la", "i", "gli", "le", "un", "uno", "una",
-  "che", "come", "anche", "non", "piu", "puo", "sono", "era", "erano",
-  "stato", "stata", "stati", "state", "essere", "avere", "hanno",
-  "questo", "questa", "questi", "queste", "quello", "quella", "quelli", "quelle",
-  "della", "dello", "degli", "delle", "alla", "allo", "alla", "della",
-  "alla", "allo", "nello", "nella", "negli", "nelle",
-  "sullo", "sulla", "sugli", "sulle", "dallo", "dalla", "dagli", "dalle",
-  "della", "dello", "alla", "allo", "dal", "del", "dei", "della",
-  "alla", "al", "alla", "ai", "alla", "sul", "sui",
-  "mio", "mia", "miei", "mie", "tuo", "tua", "tuoi", "tue",
-  "suo", "sua", "suoi", "sue", "nostro", "nostra", "nostri", "nostre",
-  "vostro", "vostra", "vostri", "vostre", "loro",
-  "molto", "tutto", "tutti", "tutte", "ogni", "sempre", "solo", "gia",
-  "dopo", "prima", "quando", "dove", "quale", "quali", "quanto", "quanta",
-  "quest", "quell", "dell", "all", "dall", "nell", "sull",
-  "ed", "od", "ma", "se", "oppure", "quindi", "perche", "poiche",
-  "legge", "decreto",
+  "di",
+  "a",
+  "da",
+  "in",
+  "con",
+  "su",
+  "per",
+  "tra",
+  "fra",
+  "il",
+  "lo",
+  "la",
+  "i",
+  "gli",
+  "le",
+  "un",
+  "uno",
+  "una",
+  "che",
+  "come",
+  "anche",
+  "non",
+  "piu",
+  "puo",
+  "sono",
+  "era",
+  "erano",
+  "stato",
+  "stata",
+  "stati",
+  "state",
+  "essere",
+  "avere",
+  "hanno",
+  "questo",
+  "questa",
+  "questi",
+  "queste",
+  "quello",
+  "quella",
+  "quelli",
+  "quelle",
+  "della",
+  "dello",
+  "degli",
+  "delle",
+  "alla",
+  "allo",
+  "alla",
+  "della",
+  "alla",
+  "allo",
+  "nello",
+  "nella",
+  "negli",
+  "nelle",
+  "sullo",
+  "sulla",
+  "sugli",
+  "sulle",
+  "dallo",
+  "dalla",
+  "dagli",
+  "dalle",
+  "della",
+  "dello",
+  "alla",
+  "allo",
+  "dal",
+  "del",
+  "dei",
+  "della",
+  "alla",
+  "al",
+  "alla",
+  "ai",
+  "alla",
+  "sul",
+  "sui",
+  "mio",
+  "mia",
+  "miei",
+  "mie",
+  "tuo",
+  "tua",
+  "tuoi",
+  "tue",
+  "suo",
+  "sua",
+  "suoi",
+  "sue",
+  "nostro",
+  "nostra",
+  "nostri",
+  "nostre",
+  "vostro",
+  "vostra",
+  "vostri",
+  "vostre",
+  "loro",
+  "molto",
+  "tutto",
+  "tutti",
+  "tutte",
+  "ogni",
+  "sempre",
+  "solo",
+  "gia",
+  "dopo",
+  "prima",
+  "quando",
+  "dove",
+  "quale",
+  "quali",
+  "quanto",
+  "quanta",
+  "quest",
+  "quell",
+  "dell",
+  "all",
+  "dall",
+  "nell",
+  "sull",
+  "ed",
+  "od",
+  "ma",
+  "se",
+  "oppure",
+  "quindi",
+  "perche",
+  "poiche",
+  "legge",
+  "decreto",
 ]);
 
 /** Suffissi italiani per lo stemming leggero (ordine: piu' lungo prima). */
 const SUFFISSI_STEM: readonly string[] = [
-  "zione", "zioni", "tore", "trice", "mente", "mento", "menti",
-  "abile", "abili", "ibile", "ibili", "ismo", "ismi", "ista", "iste", "isti",
-  "ita", "oso", "osa", "osi", "ose", "ico", "ica", "ici", "iche",
-  "ale", "ali", "are", "ere", "ire", "ato", "ata", "ati", "ate",
-  "ito", "ita", "iti", "ite", "uto", "uta", "uti", "ute",
+  "zione",
+  "zioni",
+  "tore",
+  "trice",
+  "mente",
+  "mento",
+  "menti",
+  "abile",
+  "abili",
+  "ibile",
+  "ibili",
+  "ismo",
+  "ismi",
+  "ista",
+  "iste",
+  "isti",
+  "ita",
+  "oso",
+  "osa",
+  "osi",
+  "ose",
+  "ico",
+  "ica",
+  "ici",
+  "iche",
+  "ale",
+  "ali",
+  "are",
+  "ere",
+  "ire",
+  "ato",
+  "ata",
+  "ati",
+  "ate",
+  "ito",
+  "ita",
+  "iti",
+  "ite",
+  "uto",
+  "uta",
+  "uti",
+  "ute",
 ];
 
 /** Pesi di campo: titolo > sintesi > numero > tipo. */
@@ -193,19 +345,27 @@ function bm25(tf: number, lunghezzaCampo: number, lunghezzaMedia: number): numbe
 export function scoreBM25Lite(
   item: ElementoRankabile,
   tokenQuery: readonly string[],
-  opzioni?: { idf?: ReadonlyMap<string, number>; lunghezzaMedia?: number; frasi?: readonly string[] },
+  opzioni?: {
+    idf?: ReadonlyMap<string, number>;
+    lunghezzaMedia?: number;
+    frasi?: readonly string[];
+  },
 ): number {
   try {
     if (!item || typeof item !== "object") return 0;
     const tokens = (tokenQuery ?? []).filter((t) => typeof t === "string" && t);
-    if (tokens.length === 0 && !(opzioni?.frasi?.length)) return 0;
+    if (tokens.length === 0 && !opzioni?.frasi?.length) return 0;
 
     const titoloT = tokenizzaIT(campoTesto(item, "titolo"));
     const sintesiT = tokenizzaIT(campoTesto(item, "sintesi"));
     const numeroT = tokenizzaIT(campoTesto(item, "numero"));
     const tipoT = tokenizzaIT(campoTesto(item, "tipo"));
-    const lunghezzaDoc = titoloT.length * PESO_TITOLO + sintesiT.length * PESO_SINTESI + numeroT.length + tipoT.length;
-    const media = opzioni?.lunghezzaMedia && opzioni.lunghezzaMedia > 0 ? opzioni.lunghezzaMedia : Math.max(1, lunghezzaDoc);
+    const lunghezzaDoc =
+      titoloT.length * PESO_TITOLO + sintesiT.length * PESO_SINTESI + numeroT.length + tipoT.length;
+    const media =
+      opzioni?.lunghezzaMedia && opzioni.lunghezzaMedia > 0
+        ? opzioni.lunghezzaMedia
+        : Math.max(1, lunghezzaDoc);
 
     let punteggio = 0;
     for (const token of tokens) {
@@ -320,20 +480,32 @@ export function rankAndFilter<T extends ElementoRankabile>(items: readonly T[], 
 }
 
 function escapeHtml(testo: string): string {
-  return testo.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
+  return testo
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;");
 }
 
 /** Classe accent-insensitive per una lettera (es. `e` -> `[eèéêë]`). */
 function classeAccenti(carattere: string): string {
   switch (carattere) {
-    case "a": return "[aàáâãäå]";
-    case "e": return "[eèéêë]";
-    case "i": return "[iìíîï]";
-    case "o": return "[oòóôõö]";
-    case "u": return "[uùúûü]";
-    case "c": return "[cç]";
-    case "n": return "[nñ]";
-    default: return carattere.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+    case "a":
+      return "[aàáâãäå]";
+    case "e":
+      return "[eèéêë]";
+    case "i":
+      return "[iìíîï]";
+    case "o":
+      return "[oòóôõö]";
+    case "u":
+      return "[uùúûü]";
+    case "c":
+      return "[cç]";
+    case "n":
+      return "[nñ]";
+    default:
+      return carattere.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
   }
 }
 
@@ -366,7 +538,9 @@ export function highlightMatches(testo: unknown, q: unknown): string {
       .map((t) =>
         t
           .split("")
-          .map((c) => (c >= "a" && c <= "z" ? classeAccenti(c) : c.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")))
+          .map((c) =>
+            c >= "a" && c <= "z" ? classeAccenti(c) : c.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"),
+          )
           .join(""),
       )
       .join("|");

@@ -7,7 +7,7 @@
  * UI e messaggi in italiano.
  */
 
-import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
+import { afterEach, beforeEach, describe, expect, it, vi } from "vite-plus/test";
 import { existsSync, readFileSync, statSync } from "node:fs";
 import { join } from "node:path";
 

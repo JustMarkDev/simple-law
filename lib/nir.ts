@@ -60,8 +60,7 @@ export interface NirToEliMeta {
 const NIR_RE =
   /^urn:nir:([a-z0-9][a-z0-9._-]*):([a-z0-9][a-z0-9._-]*):(\d{4}-\d{2}-\d{2});([0-9A-Za-z][0-9A-Za-z._-]*)$/i;
 
-const ELI_RE =
-  /^\/eli\/id\/(\d{4})\/(\d{2})\/(\d{2})\/([0-9A-Za-z]+)(?:\/([0-9A-Za-z._-]+))?$/i;
+const ELI_RE = /^\/eli\/id\/(\d{4})\/(\d{2})\/(\d{2})\/([0-9A-Za-z]+)(?:\/([0-9A-Za-z._-]+))?$/i;
 
 const DATA_RE = /^\d{4}-\d{2}-\d{2}$/;
 

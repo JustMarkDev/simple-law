@@ -31,12 +31,10 @@ const URL_FINALE =
   "https://dait.interno.gov.it/documenti/opendata/catalogoagid/europee-2024-italia-livcomune.csv";
 const CSV_LOCALE = "/tmp/elezioni/europee-2024-italia-livcomune.csv";
 const FONTE = "Ministero Interno DAIT \u2014 Eligendo Open Data";
-const LICENZA =
-  "open-data ministeriale da confermare, info_opendata senza stringa CC-BY";
+const LICENZA = "open-data ministeriale da confermare, info_opendata senza stringa CC-BY";
 const METODOLOGIA =
   "streaming ';' quotato, filtro DATA_ELEZIONE=9/6/2024, e/v/b/k presi 1x/comune, liste sommate; a/p 1 decimale";
-const AVVERTENZE =
-  "Solo aggregati. Seggi assenti nel file. RV/SVP/DSP/Animalista solo locali.";
+const AVVERTENZE = "Solo aggregati. Seggi assenti nel file. RV/SVP/DSP/Animalista solo locali.";
 const TIPO = "europee";
 const DATA_ISO = "2024-06-09";
 
@@ -310,7 +308,13 @@ async function parseCsv(percorso: string, limiteRighe: number | null): Promise<E
     const contestate = interoNonNegativo(campi[12] ?? "");
     const lista = normalizzaLista(campi[13] ?? "");
     const voti = interoNonNegativo(campi[14] ?? "");
-    if (elettori === null || votanti === null || bianche === null || contestate === null || voti === null) {
+    if (
+      elettori === null ||
+      votanti === null ||
+      bianche === null ||
+      contestate === null ||
+      voti === null
+    ) {
       throw new Error(`riga ${numeroRiga}: numerico non valido`);
     }
     if (!regione || !provincia || !comune || !lista) {
@@ -324,7 +328,15 @@ async function parseCsv(percorso: string, limiteRighe: number | null): Promise<E
     const chiave = `${regione} ${provincia} ${comune}`;
     let agg = esito.comuni.get(chiave);
     if (!agg) {
-      agg = { c: comune, p: provincia, r: regione, e: elettori, v: votanti, b: bianche, k: contestate };
+      agg = {
+        c: comune,
+        p: provincia,
+        r: regione,
+        e: elettori,
+        v: votanti,
+        b: bianche,
+        k: contestate,
+      };
       esito.comuni.set(chiave, agg);
       esito.e += elettori;
       esito.v += votanti;
@@ -431,7 +443,9 @@ async function main(): Promise<void> {
   const comuni = [...esito.comuni.values()]
     .sort(
       (a, b) =>
-        a.r.localeCompare(b.r, "it") || a.p.localeCompare(b.p, "it") || a.c.localeCompare(b.c, "it"),
+        a.r.localeCompare(b.r, "it") ||
+        a.p.localeCompare(b.p, "it") ||
+        a.c.localeCompare(b.c, "it"),
     )
     .map((c) => ({ c: c.c, p: c.p, r: c.r, e: c.e, v: c.v, a: affluenza(c.v, c.e) }));
 
@@ -461,7 +475,9 @@ async function main(): Promise<void> {
   }
   mkdirSync(DIR_REALI, { recursive: true });
   writeFileSync(FILE_OUT, json, "utf8");
-  console.log(`[ingest-europee-2024] scritto data/reali/elezioni-europee-2024.json (${byte} byte).`);
+  console.log(
+    `[ingest-europee-2024] scritto data/reali/elezioni-europee-2024.json (${byte} byte).`,
+  );
 }
 
 const eseguitoDiretto =

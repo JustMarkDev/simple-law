@@ -49,6 +49,7 @@ export function clampPerPage(per: unknown, maxPer = 200, fallback = 20): number 
 export function eliSicuro(value: unknown, max = 500): string | null {
   const grezzo = value === undefined || value === null ? "" : String(value).trim();
   if (!grezzo || grezzo.length > max) return null;
+  // oxlint-disable-next-line no-control-regex -- strips control characters on purpose
   if (/[\u0000-\u001f\u007f]/.test(grezzo)) return null;
   return grezzo;
 }
@@ -69,7 +70,10 @@ export function splitEvidenzia(
 ): { testo: string; evidenzia: boolean }[] {
   const query = q.trim().toLowerCase().slice(0, maxToken);
   if (!testo || !query) return [{ testo, evidenzia: false }];
-  const tokens = query.split(/\s+/).filter((t) => t.length >= 2).slice(0, 8);
+  const tokens = query
+    .split(/\s+/)
+    .filter((t) => t.length >= 2)
+    .slice(0, 8);
   if (tokens.length === 0) return [{ testo, evidenzia: false }];
   const lower = testo.toLowerCase();
   const intervalli: { inizio: number; fine: number }[] = [];
@@ -119,6 +123,7 @@ export function parsePreferiti(value: unknown): string[] {
     if (typeof voce !== "string") continue;
     const eli = voce.trim().slice(0, 500);
     if (!eli || visti.has(eli)) continue;
+    // oxlint-disable-next-line no-control-regex -- strips control characters on purpose
     if (/[\u0000-\u001f\u007f]/.test(eli)) continue;
     if (eli.includes("..") || /[?#%\\]/.test(eli)) continue;
     visti.add(eli);

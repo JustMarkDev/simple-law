@@ -185,15 +185,13 @@ export interface RigaMerge {
 
 export function isHeaderItalia(campi: readonly string[]): boolean {
   return (
-    campi.length === HEADER_ITALIA.length &&
-    HEADER_ITALIA.every((atteso, i) => campi[i] === atteso)
+    campi.length === HEADER_ITALIA.length && HEADER_ITALIA.every((atteso, i) => campi[i] === atteso)
   );
 }
 
 export function isHeaderMerge(campi: readonly string[]): boolean {
   return (
-    campi.length === HEADER_MERGE.length &&
-    HEADER_MERGE.every((atteso, i) => campi[i] === atteso)
+    campi.length === HEADER_MERGE.length && HEADER_MERGE.every((atteso, i) => campi[i] === atteso)
   );
 }
 
@@ -526,23 +524,21 @@ async function parseMerge(
     // (solo uninominali: nessun voto proporzionale separato).
     const chiave = `${parsed.comune}||${parsed.collegio}||${parsed.contrassegno}`;
     stato.votiCU.set(chiave, (stato.votiCU.get(chiave) ?? 0) + parsed.voti);
-    stato.liste.set(
-      parsed.contrassegno,
-      (stato.liste.get(parsed.contrassegno) ?? 0) + parsed.voti,
-    );
+    stato.liste.set(parsed.contrassegno, (stato.liste.get(parsed.contrassegno) ?? 0) + parsed.voti);
     const chiaveCirc = `EXTRA:${parsed.regione}`;
     let ce = stato.circE.get(chiaveCirc);
     if (!ce) {
       ce = { e: 0, v: 0, b: 0, liste: new Map() };
       stato.circE.set(chiaveCirc, ce);
     }
-    ce.liste.set(
-      parsed.contrassegno,
-      (ce.liste.get(parsed.contrassegno) ?? 0) + parsed.voti,
-    );
+    ce.liste.set(parsed.contrassegno, (ce.liste.get(parsed.contrassegno) ?? 0) + parsed.voti);
     const chiaveCom = `${parsed.comune}||${parsed.collegio}`;
     if (!mergeRegioni.has(chiaveCom)) {
-      mergeRegioni.set(chiaveCom, { regione: parsed.regione, collegio: parsed.collegio, comune: parsed.comune });
+      mergeRegioni.set(chiaveCom, {
+        regione: parsed.regione,
+        collegio: parsed.collegio,
+        comune: parsed.comune,
+      });
     }
   }
   if (!headerVerificato) throw new Error("CSV merge vuoto o senza header");
@@ -557,10 +553,28 @@ interface Sorgente {
 }
 
 const SORGENTI: Sorgente[] = [
-  { nome: "camera-italia", url: URL_CAMERA_ITALIA, locale: CSV_CAMERA_ITALIA, tipo: "C", formato: "italia" },
+  {
+    nome: "camera-italia",
+    url: URL_CAMERA_ITALIA,
+    locale: CSV_CAMERA_ITALIA,
+    tipo: "C",
+    formato: "italia",
+  },
   { nome: "camera-vda", url: URL_CAMERA_VDA, locale: CSV_CAMERA_VDA, tipo: "C", formato: "merge" },
-  { nome: "senato-italia", url: URL_SENATO_ITALIA, locale: CSV_SENATO_ITALIA, tipo: "S", formato: "italia" },
-  { nome: "senato-merge", url: URL_SENATO_MERGE, locale: CSV_SENATO_MERGE, tipo: "S", formato: "merge" },
+  {
+    nome: "senato-italia",
+    url: URL_SENATO_ITALIA,
+    locale: CSV_SENATO_ITALIA,
+    tipo: "S",
+    formato: "italia",
+  },
+  {
+    nome: "senato-merge",
+    url: URL_SENATO_MERGE,
+    locale: CSV_SENATO_MERGE,
+    tipo: "S",
+    formato: "merge",
+  },
 ];
 
 async function risolviSorgente(s: Sorgente, scaricati: string[]): Promise<string> {
@@ -607,8 +621,14 @@ async function main(): Promise<void> {
   const recuperatoIl = new Date().toISOString().slice(0, 10);
   const camera = nuovoStato();
   const senato = nuovoStato();
-  const mergeRegioniCamera = new Map<string, { regione: string; collegio: string; comune: string }>();
-  const mergeRegioniSenato = new Map<string, { regione: string; collegio: string; comune: string }>();
+  const mergeRegioniCamera = new Map<
+    string,
+    { regione: string; collegio: string; comune: string }
+  >();
+  const mergeRegioniSenato = new Map<
+    string,
+    { regione: string; collegio: string; comune: string }
+  >();
   // Regione per le circoscrizioni EXTRA (da file merge, colonna REGIONE).
   const extraRegioneCamera = new Map<string, string>();
   const extraRegioneSenato = new Map<string, string>();
@@ -821,7 +841,9 @@ async function main(): Promise<void> {
     const byte = Buffer.byteLength(json, "utf8");
     console.log(`[ingest-politiche-2022] output ${etichetta}: ${byte} byte (cap ${MAX_BYTE_OUT}).`);
     if (byte > MAX_BYTE_OUT) {
-      throw new Error(`output ${etichetta} ${byte} byte oltre il cap di ${MAX_BYTE_OUT}: nessun file scritto`);
+      throw new Error(
+        `output ${etichetta} ${byte} byte oltre il cap di ${MAX_BYTE_OUT}: nessun file scritto`,
+      );
     }
     return json;
   };

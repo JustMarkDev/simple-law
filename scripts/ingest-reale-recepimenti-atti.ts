@@ -73,11 +73,7 @@ function cifreSenzaZeri(v: string): string {
  * Falsi amici rifiutati: `legge 136/2026`, `regolamento (UE) 2024/1789`,
  * numeri parziali, anno o numero da soli. Mai throw.
  */
-export function testoCitaDirettiva(
-  testo: unknown,
-  anno: unknown,
-  numero: unknown,
-): boolean {
+export function testoCitaDirettiva(testo: unknown, anno: unknown, numero: unknown): boolean {
   try {
     if (typeof testo !== "string" || !testo) return false;
     const a = typeof anno === "string" ? anno.trim() : "";
@@ -245,9 +241,7 @@ async function main(): Promise<void> {
     return;
   }
   if (direttive.length === 0) {
-    console.error(
-      "Ingest recepimenti-atti fallito (nessuna direttiva), nessun file scritto.",
-    );
+    console.error("Ingest recepimenti-atti fallito (nessuna direttiva), nessun file scritto.");
     process.exit(1);
     return;
   }
@@ -294,8 +288,7 @@ async function main(): Promise<void> {
         rec.fonti && typeof rec.fonti === "object" && !Array.isArray(rec.fonti)
           ? (rec.fonti as Record<string, unknown>)
           : {};
-      const uri =
-        urlOsservato(fonti["normattiva"]) || urlOsservato(fonti["gazzetta"]);
+      const uri = urlOsservato(fonti["normattiva"]) || urlOsservato(fonti["gazzetta"]);
       const voce: AttoCollegatoMappa = {
         titolo: titolo.slice(0, 500),
         fonte: "normattiva",
@@ -332,9 +325,7 @@ async function main(): Promise<void> {
   };
   const json = `${JSON.stringify(envelope, null, 2)}\n`;
   if (Buffer.byteLength(json, "utf8") > MAX_BYTE_OUT) {
-    console.error(
-      "Ingest recepimenti-atti fallito (output oltre 500KB), nessun file scritto.",
-    );
+    console.error("Ingest recepimenti-atti fallito (output oltre 500KB), nessun file scritto.");
     process.exit(1);
     return;
   }

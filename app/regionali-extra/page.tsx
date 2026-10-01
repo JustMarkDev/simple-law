@@ -1,72 +1,70 @@
-import type { Metadata } from 'next'
-import Link from 'next/link'
-import Header from '@/components/Header'
-import Footer from '@/components/Footer'
-import {
-  elencaRegionaliExtra,
-  leggiProvenanceRegionaleExtra,
-} from '@/lib/regionali-extra-dati'
+import type { Metadata } from "next";
+import Link from "next/link";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
+import { elencaRegionaliExtra, leggiProvenanceRegionaleExtra } from "@/lib/regionali-extra-dati";
 
-export const revalidate = 3600
+export const revalidate = 3600;
 
 export const metadata: Metadata = {
-  title: 'Regionali Liguria 2024 e Calabria 2025 - Stato della Repubblica',
+  title: "Regionali Liguria 2024 e Calabria 2025 - Stato della Repubblica",
   description:
-    'Elezioni regionali di Liguria (27 ottobre 2024) e Calabria (5 ottobre 2025) con dati ufficiali aggregati del Ministero dell’Interno (DAIT-Eligendo): affluenza e voti per lista, affluenza per comune, senza dati personali.',
-}
+    "Elezioni regionali di Liguria (27 ottobre 2024) e Calabria (5 ottobre 2025) con dati ufficiali aggregati del Ministero dell’Interno (DAIT-Eligendo): affluenza e voti per lista, affluenza per comune, senza dati personali.",
+};
 
 /* Registro statico (solo id, mai numeri): i totali sono letti dai file. */
 
 interface VoceRegistro {
-  id: string
-  titolo: string
-  descrizione: string
+  id: string;
+  titolo: string;
+  descrizione: string;
 }
 
 const REGISTRO: VoceRegistro[] = [
   {
-    id: 'regionali-2024-liguria',
-    titolo: 'Elezioni regionali 2024 - Liguria',
+    id: "regionali-2024-liguria",
+    titolo: "Elezioni regionali 2024 - Liguria",
     descrizione:
-      'Voto del 27 ottobre 2024 in Liguria (data dal nome dello ZIP DAIT): affluenza e voti per lista a livello regionale e affluenza per comune. Solo aggregati, nessun nominativo; i voti del presidente non sono pubblicati come aggregato nel tracciato.',
+      "Voto del 27 ottobre 2024 in Liguria (data dal nome dello ZIP DAIT): affluenza e voti per lista a livello regionale e affluenza per comune. Solo aggregati, nessun nominativo; i voti del presidente non sono pubblicati come aggregato nel tracciato.",
   },
   {
-    id: 'regionali-2025-calabria',
-    titolo: 'Elezioni regionali 2025 - Calabria',
+    id: "regionali-2025-calabria",
+    titolo: "Elezioni regionali 2025 - Calabria",
     descrizione:
-      'Voto del 5 ottobre 2025 in Calabria (data dal nome dello ZIP DAIT): affluenza e voti per lista a livello regionale e affluenza per comune. Solo aggregati, nessun nominativo; i voti del presidente non sono pubblicati come aggregato nel tracciato.',
+      "Voto del 5 ottobre 2025 in Calabria (data dal nome dello ZIP DAIT): affluenza e voti per lista a livello regionale e affluenza per comune. Solo aggregati, nessun nominativo; i voti del presidente non sono pubblicati come aggregato nel tracciato.",
   },
   {
-    id: 'regionali-2025-calabria',
-    titolo: 'Elezioni regionali 2025 - Calabria',
+    id: "regionali-2025-calabria",
+    titolo: "Elezioni regionali 2025 - Calabria",
     descrizione:
-      'Voto del 5 ottobre 2025 in Calabria (data dal nome dello ZIP DAIT): affluenza e voti per lista a livello regionale e affluenza per comune. Solo aggregati, nessun nominativo; i voti del presidente non sono pubblicati come aggregato nel tracciato.',
+      "Voto del 5 ottobre 2025 in Calabria (data dal nome dello ZIP DAIT): affluenza e voti per lista a livello regionale e affluenza per comune. Solo aggregati, nessun nominativo; i voti del presidente non sono pubblicati come aggregato nel tracciato.",
   },
   {
-    id: 'regionali-2024-emilia-romagna',
-    titolo: 'Elezioni regionali 2024 - Emilia-Romagna',
+    id: "regionali-2024-emilia-romagna",
+    titolo: "Elezioni regionali 2024 - Emilia-Romagna",
     descrizione:
-      'Voto del 17 novembre 2024 in Emilia-Romagna (data dal nome dello ZIP DAIT): affluenza e voti per lista a livello regionale e affluenza per comune. Solo aggregati, nessun nominativo.',
+      "Voto del 17 novembre 2024 in Emilia-Romagna (data dal nome dello ZIP DAIT): affluenza e voti per lista a livello regionale e affluenza per comune. Solo aggregati, nessun nominativo.",
   },
-]
+];
 
 function intero(value: number): string {
   try {
-    return new Intl.NumberFormat('it-IT', { maximumFractionDigits: 0 }).format(
+    return new Intl.NumberFormat("it-IT", { maximumFractionDigits: 0 }).format(
       Number.isFinite(value) ? value : 0,
-    )
+    );
   } catch {
-    return '0'
+    return "0";
   }
 }
 
 function decimaleIT(value: number): string {
   try {
-    return new Intl.NumberFormat('it-IT', { minimumFractionDigits: 1, maximumFractionDigits: 1 }).format(
-      Number.isFinite(value) ? value : 0,
-    )
+    return new Intl.NumberFormat("it-IT", {
+      minimumFractionDigits: 1,
+      maximumFractionDigits: 1,
+    }).format(Number.isFinite(value) ? value : 0);
   } catch {
-    return '0,0'
+    return "0,0";
   }
 }
 
@@ -79,28 +77,29 @@ function decimaleIT(value: number): string {
  * «Dati in preparazione» senza numeri.
  */
 export default async function RegionaliExtraPage() {
-  let voci: Awaited<ReturnType<typeof elencaRegionaliExtra>> = []
+  let voci: Awaited<ReturnType<typeof elencaRegionaliExtra>> = [];
   try {
-    voci = await elencaRegionaliExtra()
+    voci = await elencaRegionaliExtra();
   } catch {
-    voci = []
+    voci = [];
   }
-  let provenance: Awaited<ReturnType<typeof leggiProvenanceRegionaleExtra>> = {}
+  let provenance: Awaited<ReturnType<typeof leggiProvenanceRegionaleExtra>> = {};
   try {
-    const prima = voci[0]
-    provenance = prima ? await leggiProvenanceRegionaleExtra(prima.id) : {}
+    const prima = voci[0];
+    provenance = prima ? await leggiProvenanceRegionaleExtra(prima.id) : {};
   } catch {
-    provenance = {}
+    provenance = {};
   }
 
   return (
     <>
       <Header />
-      <main id="contenuto" className="mx-auto w-full max-w-editoriale px-4 py-10 sm:px-6 sm:py-12 lg:px-8">
+      <main
+        id="contenuto"
+        className="mx-auto w-full max-w-editoriale px-4 py-10 sm:px-6 sm:py-12 lg:px-8"
+      >
         <header className="border-b-2 border-inchiostro pb-5 dark:border-nebbia">
-          <p className="text-sm font-bold text-accento dark:text-accento-chiara">
-            Dati ufficiali
-          </p>
+          <p className="text-sm font-bold text-accento dark:text-accento-chiara">Dati ufficiali</p>
           <h1 className="mt-2 text-3xl font-bold text-inchiostro dark:text-nebbia sm:text-4xl">
             Regionali: Liguria 2024, Emilia-Romagna 2024 e Calabria 2025
           </h1>
@@ -117,7 +116,7 @@ export default async function RegionaliExtraPage() {
           </h2>
           <ul className="mt-4 grid gap-4 sm:grid-cols-2">
             {REGISTRO.map((voce) => {
-              const dati = voci.find((v) => v.id === voce.id) ?? null
+              const dati = voci.find((v) => v.id === voce.id) ?? null;
               return (
                 <li key={voce.id} className="flex">
                   <article className="flex w-full flex-col border border-regola bg-carta p-5 dark:border-notte-deep dark:bg-notte-soft">
@@ -133,11 +132,15 @@ export default async function RegionaliExtraPage() {
                     {dati ? (
                       <dl className="mt-3 flex flex-wrap gap-x-6 gap-y-1 text-sm text-inchiostro-soft dark:text-nebbia-soft">
                         <div className="flex gap-2">
-                          <dt className="font-semibold text-inchiostro dark:text-nebbia">Affluenza:</dt>
+                          <dt className="font-semibold text-inchiostro dark:text-nebbia">
+                            Affluenza:
+                          </dt>
                           <dd>{decimaleIT(dati.affluenza)}%</dd>
                         </div>
                         <div className="flex gap-2">
-                          <dt className="font-semibold text-inchiostro dark:text-nebbia">Elettori:</dt>
+                          <dt className="font-semibold text-inchiostro dark:text-nebbia">
+                            Elettori:
+                          </dt>
                           <dd>{intero(dati.elettori)}</dd>
                         </div>
                         <div className="flex gap-2">
@@ -145,7 +148,9 @@ export default async function RegionaliExtraPage() {
                           <dd>{intero(dati.totaleListe)}</dd>
                         </div>
                         <div className="flex gap-2">
-                          <dt className="font-semibold text-inchiostro dark:text-nebbia">Comuni:</dt>
+                          <dt className="font-semibold text-inchiostro dark:text-nebbia">
+                            Comuni:
+                          </dt>
                           <dd>{intero(dati.totaleComuni)}</dd>
                         </div>
                       </dl>
@@ -164,12 +169,15 @@ export default async function RegionaliExtraPage() {
                     </p>
                   </article>
                 </li>
-              )
+              );
             })}
           </ul>
         </section>
 
-        <section aria-labelledby="metodologia" className="mt-10 border border-regola bg-carta p-5 dark:border-notte-deep dark:bg-notte-soft">
+        <section
+          aria-labelledby="metodologia"
+          className="mt-10 border border-regola bg-carta p-5 dark:border-notte-deep dark:bg-notte-soft"
+        >
           <h2 id="metodologia" className="text-lg font-bold text-inchiostro dark:text-nebbia">
             Metodologia
           </h2>
@@ -181,8 +189,8 @@ export default async function RegionaliExtraPage() {
             </li>
             <li>
               Solo aggregati: elettori, votanti e schede contati una sola volta per sezione o
-              comune; voti sommati per lista a livello regionale. Mai righe candidato né
-              nominativi; file delle preferenze mai aperti.
+              comune; voti sommati per lista a livello regionale. Mai righe candidato né nominativi;
+              file delle preferenze mai aperti.
             </li>
             <li>
               In Liguria 821 righe senza lista collegata (solo presidente) contano solo per
@@ -190,17 +198,18 @@ export default async function RegionaliExtraPage() {
               elettorale (Nord/Centro/Sud), non la provincia.
             </li>
             <li>
-              Affluenze e percentuali arrotondate a un decimale; le somme delle percentuali
-              possono discostarsi di ±0,1 per arrotondamento. I seggi non sono presenti nei
-              file ministeriali e non vengono mai mostrati né stimati.
+              Affluenze e percentuali arrotondate a un decimale; le somme delle percentuali possono
+              discostarsi di ±0,1 per arrotondamento. I seggi non sono presenti nei file
+              ministeriali e non vengono mai mostrati né stimati.
             </li>
           </ul>
           {provenance.fonte || provenance.url ? (
             <p className="mt-3 text-sm leading-relaxed text-inchiostro-soft dark:text-nebbia-soft">
-              Fonte: {provenance.fonte ?? 'Ministero dell’Interno DAIT'}
+              Fonte: {provenance.fonte ?? "Ministero dell’Interno DAIT"}
               {provenance.url ? (
                 <>
-                  {' '}(
+                  {" "}
+                  (
                   <a
                     href={provenance.url}
                     target="_blank"
@@ -212,12 +221,12 @@ export default async function RegionaliExtraPage() {
                   )
                 </>
               ) : null}
-              {provenance.licenza ? ` - ${provenance.licenza}.` : '.'}
+              {provenance.licenza ? ` - ${provenance.licenza}.` : "."}
             </p>
           ) : null}
         </section>
       </main>
       <Footer />
     </>
-  )
+  );
 }

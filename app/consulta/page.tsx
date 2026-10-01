@@ -1,7 +1,7 @@
-import type { Metadata } from 'next'
-import Link from 'next/link'
-import Header from '@/components/Header'
-import Footer from '@/components/Footer'
+import type { Metadata } from "next";
+import Link from "next/link";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 import {
   cercaPronunce,
   contaPerTipologia,
@@ -9,65 +9,68 @@ import {
   leggiProvenanceConsulta,
   pagina,
   tuttePronunce,
-} from '@/lib/consulta'
+} from "@/lib/consulta";
 
 export const metadata: Metadata = {
-  title: 'Corte Costituzionale - Pronunce 2001 - Stato della Repubblica',
+  title: "Corte Costituzionale - Pronunce 2001 - Stato della Repubblica",
   description:
-    'Le prime 50 pronunce del 2001 della Corte Costituzionale dai dati aperti ufficiali (CC BY-SA 3.0): sentenze e ordinanze con ECLI e scheda ufficiale.',
-}
+    "Le prime 50 pronunce del 2001 della Corte Costituzionale dai dati aperti ufficiali (CC BY-SA 3.0): sentenze e ordinanze con ECLI e scheda ufficiale.",
+};
 
 interface ConsultaSearch {
-  q?: string
-  tipologia?: string
-  page?: string
+  q?: string;
+  tipologia?: string;
+  page?: string;
 }
 
 function dataIT(iso?: string): string {
   try {
-    if (!iso) return 'data non indicata'
-    const d = new Date(`${iso}T00:00:00Z`)
-    if (Number.isNaN(d.getTime())) return iso.slice(0, 10)
-    return d.toLocaleDateString('it-IT', { day: 'numeric', month: 'long', year: 'numeric' })
+    if (!iso) return "data non indicata";
+    const d = new Date(`${iso}T00:00:00Z`);
+    if (Number.isNaN(d.getTime())) return iso.slice(0, 10);
+    return d.toLocaleDateString("it-IT", { day: "numeric", month: "long", year: "numeric" });
   } catch {
-    return (iso ?? '').slice(0, 10)
+    return (iso ?? "").slice(0, 10);
   }
 }
 
 export default async function ConsultaPage({
   searchParams,
 }: {
-  searchParams: Promise<ConsultaSearch>
+  searchParams: Promise<ConsultaSearch>;
 }) {
-  const params = await searchParams
-  const q = (params.q ?? '').slice(0, 100)
-  const tipologia = (params.tipologia ?? '').slice(0, 4).toUpperCase()
-  const pageGrezza = Number.parseInt(params.page ?? '1', 10)
-  const page = Number.isFinite(pageGrezza) && pageGrezza >= 1 ? Math.floor(pageGrezza) : 1
-  const per = 20
+  const params = await searchParams;
+  const q = (params.q ?? "").slice(0, 100);
+  const tipologia = (params.tipologia ?? "").slice(0, 4).toUpperCase();
+  const pageGrezza = Number.parseInt(params.page ?? "1", 10);
+  const page = Number.isFinite(pageGrezza) && pageGrezza >= 1 ? Math.floor(pageGrezza) : 1;
+  const per = 20;
 
-  const [tutte, provenance] = await Promise.all([tuttePronunce(), leggiProvenanceConsulta()])
-  const base = tipologia ? filtraPerTipologia(tutte, tipologia) : tutte
-  const filtrate = cercaPronunce(base, q)
-  const totale = filtrate.length
-  const items = pagina(filtrate, page, per)
-  const conteggi = contaPerTipologia(tutte)
-  const pagine = Math.max(1, Math.ceil(totale / per))
-  const paginaCorrente = Math.min(page, pagine)
+  const [tutte, provenance] = await Promise.all([tuttePronunce(), leggiProvenanceConsulta()]);
+  const base = tipologia ? filtraPerTipologia(tutte, tipologia) : tutte;
+  const filtrate = cercaPronunce(base, q);
+  const totale = filtrate.length;
+  const items = pagina(filtrate, page, per);
+  const conteggi = contaPerTipologia(tutte);
+  const pagine = Math.max(1, Math.ceil(totale / per));
+  const paginaCorrente = Math.min(page, pagine);
 
   const linkPagina = (p: number) => {
-    const sp = new URLSearchParams()
-    if (q) sp.set('q', q)
-    if (tipologia) sp.set('tipologia', tipologia)
-    if (p > 1) sp.set('page', String(p))
-    const s = sp.toString()
-    return s ? `/consulta?${s}` : '/consulta'
-  }
+    const sp = new URLSearchParams();
+    if (q) sp.set("q", q);
+    if (tipologia) sp.set("tipologia", tipologia);
+    if (p > 1) sp.set("page", String(p));
+    const s = sp.toString();
+    return s ? `/consulta?${s}` : "/consulta";
+  };
 
   return (
     <>
       <Header />
-      <main id="contenuto" className="mx-auto w-full max-w-editoriale px-4 py-10 sm:px-6 sm:py-12 lg:px-8">
+      <main
+        id="contenuto"
+        className="mx-auto w-full max-w-editoriale px-4 py-10 sm:px-6 sm:py-12 lg:px-8"
+      >
         <nav aria-label="Percorso" className="text-sm text-inchiostro-soft dark:text-nebbia-soft">
           <ol className="flex items-center gap-2">
             <li>
@@ -90,15 +93,22 @@ export default async function ConsultaPage({
             Corte Costituzionale - Pronunce 2001
           </h1>
           <p className="mt-3 max-w-2xl text-sm leading-relaxed text-inchiostro-soft dark:text-nebbia-soft">
-            Le prime 50 pronunce del 2001 dai dati aperti ufficiali della Corte. Sentenze e ordinanze:
-            non sono leggi in vigore, ma decisioni su questioni di legittimità costituzionale.
+            Le prime 50 pronunce del 2001 dai dati aperti ufficiali della Corte. Sentenze e
+            ordinanze: non sono leggi in vigore, ma decisioni su questioni di legittimità
+            costituzionale.
           </p>
           <p className="mt-2 text-sm font-semibold text-inchiostro dark:text-nebbia" role="status">
-            {totale} pronunce mostrate, {tutte.length} caricate · anno intero: {provenance.totaleAnno ?? 'non indicato'} atti
+            {totale} pronunce mostrate, {tutte.length} caricate · anno intero:{" "}
+            {provenance.totaleAnno ?? "non indicato"} atti
           </p>
         </header>
 
-        <form method="get" action="/consulta" className="mt-6 flex flex-col gap-3 sm:flex-row" role="search">
+        <form
+          method="get"
+          action="/consulta"
+          className="mt-6 flex flex-col gap-3 sm:flex-row"
+          role="search"
+        >
           <label htmlFor="cerca-consulta" className="sr-only">
             Cerca per numero, ECLI o nome del giudice
           </label>
@@ -122,42 +132,46 @@ export default async function ConsultaPage({
 
         <div className="mt-4 flex flex-wrap gap-2" role="group" aria-label="Filtra per tipologia">
           <Link
-            href={q ? `/consulta?q=${encodeURIComponent(q)}` : '/consulta'}
-            aria-current={!tipologia ? 'page' : undefined}
+            href={q ? `/consulta?q=${encodeURIComponent(q)}` : "/consulta"}
+            aria-current={!tipologia ? "page" : undefined}
             className={`inline-flex min-h-[48px] items-center border px-4 py-2 text-xs font-semibold focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-inchiostro dark:focus-visible:outline-nebbia ${
               !tipologia
-                ? 'border-inchiostro bg-inchiostro text-carta dark:border-nebbia dark:bg-nebbia dark:text-notte'
-                : 'border-regola text-inchiostro hover:border-accento dark:border-notte-deep dark:text-nebbia dark:hover:border-nebbia'
+                ? "border-inchiostro bg-inchiostro text-carta dark:border-nebbia dark:bg-nebbia dark:text-notte"
+                : "border-regola text-inchiostro hover:border-accento dark:border-notte-deep dark:text-nebbia dark:hover:border-nebbia"
             }`}
           >
             Tutte ({tutte.length})
           </Link>
           {conteggi.map((c) => {
-            const attiva = tipologia === c.nome
-            const sp = new URLSearchParams()
-            if (q) sp.set('q', q)
-            sp.set('tipologia', c.nome)
+            const attiva = tipologia === c.nome;
+            const sp = new URLSearchParams();
+            if (q) sp.set("q", q);
+            sp.set("tipologia", c.nome);
             return (
               <Link
                 key={c.nome}
                 href={`/consulta?${sp.toString()}`}
-                aria-current={attiva ? 'page' : undefined}
+                aria-current={attiva ? "page" : undefined}
                 className={`inline-flex min-h-[48px] items-center border px-4 py-2 text-xs font-semibold focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-inchiostro dark:focus-visible:outline-nebbia ${
                   attiva
-                    ? 'border-inchiostro bg-inchiostro text-carta dark:border-nebbia dark:bg-nebbia dark:text-notte'
-                    : 'border-regola text-inchiostro hover:border-accento dark:border-notte-deep dark:text-nebbia dark:hover:border-nebbia'
+                    ? "border-inchiostro bg-inchiostro text-carta dark:border-nebbia dark:bg-nebbia dark:text-notte"
+                    : "border-regola text-inchiostro hover:border-accento dark:border-notte-deep dark:text-nebbia dark:hover:border-nebbia"
                 }`}
               >
-                {c.nome === 'S' ? 'Sentenze' : c.nome === 'O' ? 'Ordinanze' : c.nome} ({c.componenti})
+                {c.nome === "S" ? "Sentenze" : c.nome === "O" ? "Ordinanze" : c.nome} (
+                {c.componenti})
               </Link>
-            )
+            );
           })}
         </div>
 
         {items.length === 0 ? (
-          <p className="mt-8 border border-regola bg-carta-soft p-5 text-sm text-inchiostro-soft dark:border-notte-deep dark:bg-notte-soft dark:text-nebbia-soft" role="status">
-            Nessuna pronuncia trovata con questi criteri. Prova a togliere il filtro o a cercare un altro
-            numero.
+          <p
+            className="mt-8 border border-regola bg-carta-soft p-5 text-sm text-inchiostro-soft dark:border-notte-deep dark:bg-notte-soft dark:text-nebbia-soft"
+            role="status"
+          >
+            Nessuna pronuncia trovata con questi criteri. Prova a togliere il filtro o a cercare un
+            altro numero.
           </p>
         ) : (
           <ol className="mt-6 grid gap-4">
@@ -168,7 +182,11 @@ export default async function ConsultaPage({
               >
                 <div className="flex flex-wrap items-center gap-2">
                   <span className="inline-flex items-center border border-inchiostro px-2 py-1 text-[11px] font-bold text-inchiostro dark:border-nebbia dark:text-nebbia">
-                    {p.tipologia === 'S' ? 'S, Sentenza' : p.tipologia === 'O' ? 'O · Ordinanza' : (p.tipologia ?? '-')}
+                    {p.tipologia === "S"
+                      ? "S, Sentenza"
+                      : p.tipologia === "O"
+                        ? "O · Ordinanza"
+                        : (p.tipologia ?? "-")}
                   </span>
                   <span className="text-xs text-inchiostro-faint dark:text-nebbia-faint">
                     Deposito: {dataIT(p.dataDeposito)}
@@ -179,13 +197,13 @@ export default async function ConsultaPage({
                     href={`/consulta/${p.anno}/${p.numero}`}
                     className="underline-offset-2 hover:text-accento hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-inchiostro dark:hover:text-accento-chiara dark:focus-visible:outline-nebbia"
                   >
-                    {p.tipologia === 'S' ? 'Sentenza' : 'Ordinanza'} n. {p.numero} del {p.anno}
+                    {p.tipologia === "S" ? "Sentenza" : "Ordinanza"} n. {p.numero} del {p.anno}
                   </Link>
                 </h2>
                 <p className="mt-1 text-xs text-inchiostro-soft dark:text-nebbia-soft">
-                  {p.presidente ? `Pres. ${p.presidente}` : ''}
-                  {p.relatore ? ` · Rel. ${p.relatore}` : ''}
-                  {p.ecli ? ` · ${p.ecli}` : ''}
+                  {p.presidente ? `Pres. ${p.presidente}` : ""}
+                  {p.relatore ? ` · Rel. ${p.relatore}` : ""}
+                  {p.ecli ? ` · ${p.ecli}` : ""}
                 </p>
                 {p.epigrafe && (
                   <p className="mt-2 line-clamp-3 text-sm leading-relaxed text-inchiostro-soft dark:text-nebbia-soft">
@@ -229,13 +247,17 @@ export default async function ConsultaPage({
             Fonte e licenza
           </h2>
           <p className="mt-2 text-sm leading-relaxed text-inchiostro-soft dark:text-nebbia-soft">
-            Fonte: dati.cortecostituzionale.it (open data) - licenza {provenance.licenza ?? 'CC BY-SA 3.0'} ·
-            anno 2001 · {provenance.totaleAnno ?? '-'} atti nell&apos;anno, qui le prime {tutte.length}
-            {provenance.recuperatoIl ? ` · dati aggiornati al ${dataIT(provenance.recuperatoIl.slice(0, 10))}` : ''}.
+            Fonte: dati.cortecostituzionale.it (open data) - licenza{" "}
+            {provenance.licenza ?? "CC BY-SA 3.0"} · anno 2001 · {provenance.totaleAnno ?? "-"} atti
+            nell&apos;anno, qui le prime {tutte.length}
+            {provenance.recuperatoIl
+              ? ` · dati aggiornati al ${dataIT(provenance.recuperatoIl.slice(0, 10))}`
+              : ""}
+            .
           </p>
           <p className="mt-2 text-xs leading-relaxed text-inchiostro-faint dark:text-nebbia-faint">
-            Le schede ufficiali complete sono sul sito della Corte. Epigrafe e dispositivo possono essere
-            abbreviati per restare sotto il limite di dimensione: in quel caso è indicato.
+            Le schede ufficiali complete sono sul sito della Corte. Epigrafe e dispositivo possono
+            essere abbreviati per restare sotto il limite di dimensione: in quel caso è indicato.
           </p>
           <p className="mt-3">
             <a
@@ -251,5 +273,5 @@ export default async function ConsultaPage({
       </main>
       <Footer />
     </>
-  )
+  );
 }

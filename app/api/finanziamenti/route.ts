@@ -22,12 +22,7 @@ export const runtime = "nodejs";
 const PER_AMMESSI = [10, 20, 50] as const;
 const ORD_AMMESSI = ["totale_desc", "totale_asc", "anno_desc", "nome_asc"] as const;
 
-function intero(
-  value: string | null,
-  fallback: number,
-  min: number,
-  max: number,
-): number {
+function intero(value: string | null, fallback: number, min: number, max: number): number {
   const parsed = Number.parseInt(value ?? "", 10);
   if (!Number.isFinite(parsed)) return fallback;
   return Math.min(max, Math.max(min, Math.floor(parsed)));

@@ -1,4 +1,4 @@
-import { describe, expect, it } from "vitest";
+import { describe, expect, it } from "vite-plus/test";
 import {
   ANNO_MAX,
   ANNO_MIN,
@@ -76,7 +76,9 @@ describe("seed espanso realistico", () => {
   it("testi tra 300 e 800 parole con rinvii espliciti", () => {
     for (const atto of ATTI_ESPANSI) {
       const parole = contaParole(atto.testo);
-      expect(parole, `Parole fuori intervallo per ${atto.eli}: ${parole}`).toBeGreaterThanOrEqual(300);
+      expect(parole, `Parole fuori intervallo per ${atto.eli}: ${parole}`).toBeGreaterThanOrEqual(
+        300,
+      );
       expect(parole, `Parole fuori intervallo per ${atto.eli}: ${parole}`).toBeLessThanOrEqual(800);
       expect(atto.testo.toLowerCase()).toMatch(/rinvi|ai sensi|art\./);
     }

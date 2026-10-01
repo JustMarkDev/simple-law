@@ -1,5 +1,5 @@
-import { beforeEach, describe, expect, it, vi } from "vitest";
-import type { Law as PrismaLaw } from "@prisma/client";
+import { beforeEach, describe, expect, it, vi } from "vite-plus/test";
+import type { Law as PrismaLaw } from "@/lib/generated/prisma/client";
 import {
   countLaws,
   getStats,
@@ -160,9 +160,7 @@ describe("query e statistiche (fallback seed o corpus grande)", () => {
     // Ricerca mirata sul titolo noto del DL 133 (energia) o NIR diretto
     const energia = await listLaws({ q: "energia" });
     expect(energia.total).toBeGreaterThanOrEqual(1);
-    const seme = getSeedLaws().find(
-      (l) => l.nir === "urn:nir:stato:decreto.legge:2026-07-27;133",
-    );
+    const seme = getSeedLaws().find((l) => l.nir === "urn:nir:stato:decreto.legge:2026-07-27;133");
     expect(seme).toBeDefined();
     expect(seme?.numero).toBe("133");
   });
@@ -202,9 +200,7 @@ describe("query e statistiche (fallback seed o corpus grande)", () => {
 
 describe("persona server-side (filtro derivato, seed senza DB)", () => {
   it("listLaws/queryLaws/countLaws con persona hanno totale coerente", async () => {
-    const filtroPersona = { persona: "lavoro" } as unknown as Parameters<
-      typeof listLaws
-    >[0];
+    const filtroPersona = { persona: "lavoro" } as unknown as Parameters<typeof listLaws>[0];
     const totaleBase = await countLaws();
     const totalePersona = await countLaws(filtroPersona);
     expect(totalePersona).toBeGreaterThan(0);
@@ -213,18 +209,13 @@ describe("persona server-side (filtro derivato, seed senza DB)", () => {
     const pagina = await listLaws({ ...filtroPersona, page: 1, per: 20 });
     expect(pagina.total).toBe(totalePersona);
 
-    const tutte = await queryLaws(
-      filtroPersona,
-      Math.min(10000, Math.max(totalePersona, 1)),
-    );
+    const tutte = await queryLaws(filtroPersona, Math.min(10000, Math.max(totalePersona, 1)));
     // queryLaws ha cap 10000: coerenza bounded con il totale
     expect(tutte.length).toBe(Math.min(totalePersona, 10000));
   });
 
   it("pagina piena con persona: prima pagina completa e totali stabili", async () => {
-    const filtroPersona = { persona: "lavoro" } as unknown as Parameters<
-      typeof listLaws
-    >[0];
+    const filtroPersona = { persona: "lavoro" } as unknown as Parameters<typeof listLaws>[0];
     const per = 2;
     const prima = await listLaws({ ...filtroPersona, page: 1, per });
     expect(prima.total).toBeGreaterThanOrEqual(1);

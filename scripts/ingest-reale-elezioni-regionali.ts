@@ -188,8 +188,7 @@ export function isHeaderToscana(campi: readonly string[]): boolean {
 
 export function isHeaderUmbria(campi: readonly string[]): boolean {
   return (
-    campi.length === HEADER_UMBRIA.length &&
-    HEADER_UMBRIA.every((atteso, i) => campi[i] === atteso)
+    campi.length === HEADER_UMBRIA.length && HEADER_UMBRIA.every((atteso, i) => campi[i] === atteso)
   );
 }
 
@@ -213,7 +212,10 @@ export interface RigaRegionale {
  * (NUM_CANDIDATO/NOME/COGNOME/ALTRO_NOME/VOTI_CANDIDATO) ne' NUM_LISTA (13).
  * Ritorna null se la riga non e' target (REGIONE diversa); lancia se malformata.
  */
-export function parseRigaToscana(campi: readonly string[], numeroRiga: number): RigaRegionale | null {
+export function parseRigaToscana(
+  campi: readonly string[],
+  numeroRiga: number,
+): RigaRegionale | null {
   if (campi.length !== HEADER_TOSCANA.length) {
     throw new Error(`riga ${numeroRiga}: ${campi.length} colonne invece di 16`);
   }
@@ -228,13 +230,32 @@ export function parseRigaToscana(campi: readonly string[], numeroRiga: number): 
   const contestate = interoNonNegativo(campi[7] ?? "");
   const lista = normalizzaLista(campi[14] ?? "");
   const votiLista = interoNonNegativo(campi[15] ?? "");
-  if (elettori === null || votanti === null || bianche === null || nulle === null || contestate === null || votiLista === null) {
+  if (
+    elettori === null ||
+    votanti === null ||
+    bianche === null ||
+    nulle === null ||
+    contestate === null ||
+    votiLista === null
+  ) {
     throw new Error(`riga ${numeroRiga}: numerico non valido`);
   }
   if (!circoscrizione || !comune || !lista) {
     throw new Error(`riga ${numeroRiga}: campo testuale vuoto`);
   }
-  return { regione, circoscrizione, comune, sezione: "", elettori, votanti, bianche, nulle, contestate, lista, votiLista };
+  return {
+    regione,
+    circoscrizione,
+    comune,
+    sezione: "",
+    elettori,
+    votanti,
+    bianche,
+    nulle,
+    contestate,
+    lista,
+    votiLista,
+  };
 }
 
 /**
@@ -243,7 +264,10 @@ export function parseRigaToscana(campi: readonly string[], numeroRiga: number): 
  * candidato 13-16 (NUM/COGNOME/NOME/VOTI_CANDIDATO) ne' NUM_LISTA (17).
  * Ritorna null se la riga non e' target (REGIONE diversa); lancia se malformata.
  */
-export function parseRigaUmbria(campi: readonly string[], numeroRiga: number): RigaRegionale | null {
+export function parseRigaUmbria(
+  campi: readonly string[],
+  numeroRiga: number,
+): RigaRegionale | null {
   if (campi.length !== HEADER_UMBRIA.length) {
     throw new Error(`riga ${numeroRiga}: ${campi.length} colonne invece di 20`);
   }
@@ -259,13 +283,32 @@ export function parseRigaUmbria(campi: readonly string[], numeroRiga: number): R
   const contestate = interoNonNegativo(campi[12] ?? "");
   const lista = normalizzaLista(campi[18] ?? "");
   const votiLista = interoNonNegativo(campi[19] ?? "");
-  if (elettori === null || votanti === null || nulle === null || bianche === null || contestate === null || votiLista === null) {
+  if (
+    elettori === null ||
+    votanti === null ||
+    nulle === null ||
+    bianche === null ||
+    contestate === null ||
+    votiLista === null
+  ) {
     throw new Error(`riga ${numeroRiga}: numerico non valido`);
   }
   if (!circoscrizione || !comune || !sezione || !lista) {
     throw new Error(`riga ${numeroRiga}: campo testuale vuoto`);
   }
-  return { regione, circoscrizione, comune, sezione, elettori, votanti, bianche, nulle, contestate, lista, votiLista };
+  return {
+    regione,
+    circoscrizione,
+    comune,
+    sezione,
+    elettori,
+    votanti,
+    bianche,
+    nulle,
+    contestate,
+    lista,
+    votiLista,
+  };
 }
 
 /* ------------------------------------------------------------------ */
@@ -456,7 +499,10 @@ export interface SorgenteRegionale {
 }
 
 /** Risolve il CSV da parsare: override > CSV locale > voce da ZIP locale > download ZIP. */
-async function risolviCsv(s: SorgenteRegionale, scaricati: string[]): Promise<{ csv: string; urlProvenance: string }> {
+async function risolviCsv(
+  s: SorgenteRegionale,
+  scaricati: string[],
+): Promise<{ csv: string; urlProvenance: string }> {
   if (s.csvOverride && existsSync(s.csvOverride)) {
     return { csv: s.csvOverride, urlProvenance: s.urlZip };
   }
@@ -566,9 +612,10 @@ async function parseCsv(
       throw new Error(`riga ${numeroRiga}: ${campi.length} colonne invece di 20`);
     }
     stato.righeLette += 1;
-    const parsed = formato === "toscana"
-      ? parseRigaToscana(campi, numeroRiga)
-      : parseRigaUmbria(campi, numeroRiga);
+    const parsed =
+      formato === "toscana"
+        ? parseRigaToscana(campi, numeroRiga)
+        : parseRigaUmbria(campi, numeroRiga);
     if (!parsed) {
       stato.righeScartate += 1;
       continue;
@@ -600,22 +647,31 @@ export function costruisciEnvelope(
   }
   const liste: ListaOut[] = [...stato.liste.entries()]
     .sort((a, b) => b[1] - a[1])
-    .map(([n, v]) => ({ n, v, p: stato.votiListe > 0 ? unaDecimale((v / stato.votiListe) * 100) : 0 }));
-  const regioni = [{
-    r: s.regioneAttesa,
-    e: stato.e,
-    v: stato.v,
-    b: stato.b,
-    k: stato.k,
-    a: affluenza(stato.v, stato.e),
-    liste,
-  }];
+    .map(([n, v]) => ({
+      n,
+      v,
+      p: stato.votiListe > 0 ? unaDecimale((v / stato.votiListe) * 100) : 0,
+    }));
+  const regioni = [
+    {
+      r: s.regioneAttesa,
+      e: stato.e,
+      v: stato.v,
+      b: stato.b,
+      k: stato.k,
+      a: affluenza(stato.v, stato.e),
+      liste,
+    },
+  ];
   if (regioni.length > MAX_REGIONI) {
     throw new Error(`regioni oltre il cap di ${MAX_REGIONI}`);
   }
   const comuni = [...stato.comuni.values()]
-    .sort((a, b) =>
-      a.r.localeCompare(b.r, "it") || a.p.localeCompare(b.p, "it") || a.c.localeCompare(b.c, "it"),
+    .sort(
+      (a, b) =>
+        a.r.localeCompare(b.r, "it") ||
+        a.p.localeCompare(b.p, "it") ||
+        a.c.localeCompare(b.c, "it"),
     )
     .map((c) => ({ c: c.c, p: c.p, r: c.r, e: c.e, v: c.v, a: affluenza(c.v, c.e) }));
   return {
@@ -720,7 +776,9 @@ async function main(): Promise<void> {
     const byte = Buffer.byteLength(json, "utf8");
     console.log(`[ingest-regionali] output ${etichetta}: ${byte} byte (cap ${MAX_BYTE_OUT}).`);
     if (byte > MAX_BYTE_OUT) {
-      throw new Error(`output ${etichetta} ${byte} byte oltre il cap di ${MAX_BYTE_OUT}: nessun file scritto`);
+      throw new Error(
+        `output ${etichetta} ${byte} byte oltre il cap di ${MAX_BYTE_OUT}: nessun file scritto`,
+      );
     }
     return json;
   };

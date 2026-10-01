@@ -93,10 +93,8 @@ export interface DatiRegionaleExtra {
 export type ResultExtra<T> = { ok: true; dati: T } | { ok: false; errore: string };
 
 /** Percorsi relativi (da cwd) dei file regionali-extra. */
-export const PERCORSO_LIGURIA_2024 =
-  "data/reali/elezioni-regionali-2024-liguria.json";
-export const PERCORSO_CALABRIA_2025 =
-  "data/reali/elezioni-regionali-2025-calabria.json";
+export const PERCORSO_LIGURIA_2024 = "data/reali/elezioni-regionali-2024-liguria.json";
+export const PERCORSO_CALABRIA_2025 = "data/reali/elezioni-regionali-2025-calabria.json";
 
 /** Identificativi REST delle regionali-extra. */
 export const ID_LIGURIA_2024 = "regionali-2024-liguria" as const;
@@ -240,9 +238,7 @@ export function topListeExtra(
     if (limite < 1) limite = 1;
     if (limite > 10) limite = 10;
     return [...liste]
-      .filter(
-        (l): l is ListaRisultatoExtra => !!l && typeof l === "object",
-      )
+      .filter((l): l is ListaRisultatoExtra => !!l && typeof l === "object")
       .map((l) => ({ ...l }))
       .sort((a, b) => b.v - a.v)
       .slice(0, limite);
@@ -255,20 +251,12 @@ export function topListeExtra(
  * Paginazione generica: `page` >= 1 (default 1), `per` 1..100 (default 20).
  * Non lancia mai.
  */
-export function paginaExtra<T>(
-  elementi: readonly T[],
-  page: unknown,
-  per: unknown,
-): T[] {
+export function paginaExtra<T>(elementi: readonly T[], page: unknown, per: unknown): T[] {
   try {
     const elenco = Array.isArray(elementi) ? elementi : [];
-    const p =
-      typeof page === "number" && Number.isFinite(page)
-        ? Math.floor(page)
-        : 1;
+    const p = typeof page === "number" && Number.isFinite(page) ? Math.floor(page) : 1;
     const numeroPagina = p >= 1 ? p : 1;
-    const n =
-      typeof per === "number" && Number.isFinite(per) ? Math.floor(per) : 20;
+    const n = typeof per === "number" && Number.isFinite(per) ? Math.floor(per) : 20;
     const perPagina = n >= 1 && n <= 100 ? n : 20;
     const inizio = (numeroPagina - 1) * perPagina;
     if (inizio >= elenco.length) return [];
@@ -305,9 +293,7 @@ export function isIdRegionaleExtra(value: unknown): value is IdRegionaleExtra {
 }
 
 /** Voce di registry per id noto, altrimenti null. Non lancia mai. */
-export function voceRegistroRegionaleExtra(
-  id: unknown,
-): VoceRegistroRegionaleExtra | null {
+export function voceRegistroRegionaleExtra(id: unknown): VoceRegistroRegionaleExtra | null {
   try {
     const chiave = normalizzaIdRegionaleExtra(id);
     if (!chiave) return null;
@@ -463,8 +449,7 @@ function aComune(voce: unknown): ComuneRisultatoExtra | null {
 
 function aElezione(value: unknown): ElezioneSintesiExtra | null {
   try {
-    if (!value || typeof value !== "object" || Array.isArray(value))
-      return null;
+    if (!value || typeof value !== "object" || Array.isArray(value)) return null;
     const o = value as Record<string, unknown>;
     const tipo = stringa(o["tipo"], 64);
     const data = stringa(o["data"], 16);
@@ -487,15 +472,13 @@ function costruisciStatoPerPercorso(percorso: string): StatoCache {
     if (!mod) return { dati: null, errore: "ambiente non server" };
     let base = "";
     try {
-      base =
-        typeof process !== "undefined" && process.cwd ? process.cwd() : "";
+      base = typeof process !== "undefined" && process.cwd ? process.cwd() : "";
     } catch {
       return { dati: null, errore: "cwd non disponibile" };
     }
     if (!base) return { dati: null, errore: "cwd non disponibile" };
     const ass = mod.join(base, percorso);
-    if (!mod.existsSync(ass))
-      return { dati: null, errore: "file assente: " + percorso };
+    if (!mod.existsSync(ass)) return { dati: null, errore: "file assente: " + percorso };
     let raw = "";
     try {
       raw = mod.readFileSync(ass, "utf8");
@@ -515,8 +498,7 @@ function costruisciStatoPerPercorso(percorso: string): StatoCache {
     const o = grezzo as Record<string, unknown>;
     const elezione = aElezione(o["elezione"]);
     const liste = aListe(o["liste"], 64);
-    if (!elezione || !liste)
-      return { dati: null, errore: "elezione o liste invalidi" };
+    if (!elezione || !liste) return { dati: null, errore: "elezione o liste invalidi" };
     const regioniGrezze = o["regioni"];
     const comuniGrezzi = o["comuni"];
     if (!Array.isArray(regioniGrezze) || regioniGrezze.length < 1 || regioniGrezze.length > 64)
@@ -597,9 +579,7 @@ export interface SintesiRegionaleExtra {
  * Carica l'envelope di una regionale-extra (copia difensiva) o null se
  * id ignoto, file assente, oltre 1MB o invalido. Mai lancia.
  */
-export async function caricaRegionaleExtra(
-  id: unknown,
-): Promise<DatiRegionaleExtra | null> {
+export async function caricaRegionaleExtra(id: unknown): Promise<DatiRegionaleExtra | null> {
   try {
     const voce = voceRegistroRegionaleExtra(id);
     if (!voce) return null;
@@ -618,8 +598,7 @@ export async function caricaRegionaleExtraResult(
     const voce = voceRegistroRegionaleExtra(id);
     if (!voce) return { ok: false, errore: "consultazione non trovata" };
     const stato = statoPerPercorso(voce.file);
-    if (!stato.dati)
-      return { ok: false, errore: stato.errore || "dati non disponibili" };
+    if (!stato.dati) return { ok: false, errore: stato.errore || "dati non disponibili" };
     return { ok: true, dati: copiaDati(stato.dati) };
   } catch {
     return { ok: false, errore: "errore imprevisto" };

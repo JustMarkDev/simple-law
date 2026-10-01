@@ -79,7 +79,8 @@ function conGulpease(law: LawSeedInput): LawRecord {
   return { ...law, gulpease: calcGulpease(testo).indice };
 }
 
-const TESTO_DL133 = [
+/** Estratto del DL 133/2026, usato anche come esempio in /semplifica. */
+export const TESTO_DL133 = [
   "Disposizioni urgenti in materia di energia e di riconversione industriale dei siti produttivi strategici.",
   "Al fine di garantire la sicurezza degli approvvigionamenti energetici, il Governo adotta misure per la riconversione degli impianti alimentati a gasolio.",
   "Le amministrazioni competenti provvedono, entro sessanta giorni dalla data di entrata in vigore del presente decreto, all'adozione dei decreti attuativi previsti dall'articolo 3.",
@@ -227,7 +228,8 @@ export const SEED_LAWS: LawRecord[] = [
     tipo: "legge",
     numero: "8",
     dataEmanazione: "2026-02-10",
-    titolo: "Disposizioni in materia di sicurezza informatica e di protezione delle infrastrutture critiche",
+    titolo:
+      "Disposizioni in materia di sicurezza informatica e di protezione delle infrastrutture critiche",
     sintesi:
       "La legge introduce obblighi di notifica degli incidenti informatici e linee guida vincolanti per la protezione delle infrastrutture critiche.",
     stato: "in_vigore",
@@ -251,7 +253,11 @@ export const SEED_MINISTERS: MinisterRecord[] = [
     nome: "Giorgia Meloni",
     dicastero: "Presidenza del Consiglio dei ministri",
     partito: "Fratelli d'Italia",
-    competenze: ["indirizzo politico", "coordinamento del Governo", "rapporti con l'Unione europea"],
+    competenze: [
+      "indirizzo politico",
+      "coordinamento del Governo",
+      "rapporti con l'Unione europea",
+    ],
     provvedimenti: ["decreto-legge 133/2026", "decreto-legge 139/2026"],
   },
   {

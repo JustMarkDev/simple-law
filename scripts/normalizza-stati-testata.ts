@@ -16,7 +16,7 @@
  *   `abrogato`/`decaduto`/`sconosciuto`.
  *
  * Uso:
- *   npx tsx scripts/normalizza-stati-testata.ts [--check]
+ *   bunx tsx scripts/normalizza-stati-testata.ts [--check]
  *
  * Senza flag riscrive i JSON e stampa il report; con `--check` e' read-only
  * ed esce con codice 1 se restano atti con header ma `in_vigore`.
@@ -38,7 +38,12 @@ export function statoCorrettoTestata(
   statoAttuale: unknown,
 ): "abrogato" | "decaduto" | null {
   try {
-    if (String(statoAttuale ?? "").trim().toLowerCase() !== "in_vigore") return null;
+    if (
+      String(statoAttuale ?? "")
+        .trim()
+        .toLowerCase() !== "in_vigore"
+    )
+      return null;
     const maiusc = String(testo ?? "").toUpperCase();
     if (!maiusc) return null;
     if (RE_ABROGATO.test(maiusc)) return "abrogato";
@@ -49,7 +54,10 @@ export function statoCorrettoTestata(
   }
 }
 
-function listaAtti(grezzo: unknown): { lista: unknown[]; chiave: "leggi" | "dati" | "atti" | null } {
+function listaAtti(grezzo: unknown): {
+  lista: unknown[];
+  chiave: "leggi" | "dati" | "atti" | null;
+} {
   try {
     if (Array.isArray(grezzo)) return { lista: grezzo, chiave: null };
     if (grezzo && typeof grezzo === "object") {
@@ -98,10 +106,7 @@ function elaboraFile(nome: string, check: boolean): Risultato {
       }
     }
     if (!check && sporco) {
-      const daScrivere =
-        chiave && grezzo && typeof grezzo === "object"
-          ? grezzo
-          : lista;
+      const daScrivere = chiave && grezzo && typeof grezzo === "object" ? grezzo : lista;
       writeFileSync(ass, `${JSON.stringify(daScrivere, null, 2)}\n`, "utf8");
     }
     return vuoto;

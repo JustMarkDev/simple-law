@@ -31,7 +31,7 @@
  * duplicati e logga i conteggi.
  *
  * Uso:
- *   npx tsx scripts/ingest-reale-normattiva-bulk-a.ts [--out=...]
+ *   bunx tsx scripts/ingest-reale-normattiva-bulk-a.ts [--out=...]
  *     [--collezione=...] [--formato-richiesta=V] [--limite=100]
  *     [--api-base=...] [--help]
  *
@@ -142,7 +142,9 @@ export function isIsoDateBulkA(testo: string): boolean {
 
 /** Chiave di dedup ELI/URN: trim + lowercase (stessa regola del resto dell'app). */
 export function chiaveEliBulkA(eli: unknown): string {
-  return String(eli ?? "").trim().toLowerCase();
+  return String(eli ?? "")
+    .trim()
+    .toLowerCase();
 }
 
 function messaggioDi(cause: unknown): string {
@@ -167,11 +169,20 @@ function erroreDefinitivo(cause: unknown): boolean {
 export function estraiErroreBulkA(causa: unknown, profondita = 0): NormattivaError | null {
   try {
     if (causa instanceof NormattivaError) return causa;
-    if (!isRecord(causa) || profondita > 6) return null;
+    if (profondita > 6) return null;
+    // Effect 4: `Cause.reasons` e' un array di Fail/Die/Interrupt.
+    if (Array.isArray(causa)) {
+      for (const voce of causa) {
+        const trovato = estraiErroreBulkA(voce, profondita + 1);
+        if (trovato) return trovato;
+      }
+      return null;
+    }
+    if (!isRecord(causa)) return null;
     if ((causa as { _tag?: unknown })._tag === "NormattivaError") {
       return causa as unknown as NormattivaError;
     }
-    for (const chiave of ["failure", "error", "cause", "left", "right"] as const) {
+    for (const chiave of ["failure", "error", "cause", "reasons", "left", "right"] as const) {
       const dentro = (causa as Record<string, unknown>)[chiave];
       if (dentro !== undefined) {
         const trovato = estraiErroreBulkA(dentro, profondita + 1);
@@ -209,8 +220,16 @@ export async function eseguiBulkA<A>(
  * in_vigore. Lista-only: nessuna fine-vigenza/Art.1 disponibile. Pura.
  */
 export function statoDaMetadatiBulkA(abrogato: unknown): "in_vigore" | "abrogato" {
-  const valore = String(abrogato ?? "").trim().toLowerCase();
-  if (valore === "si" || valore === "sì" || valore === "yes" || valore === "true" || valore === "1") {
+  const valore = String(abrogato ?? "")
+    .trim()
+    .toLowerCase();
+  if (
+    valore === "si" ||
+    valore === "sì" ||
+    valore === "yes" ||
+    valore === "true" ||
+    valore === "1"
+  ) {
     return "abrogato";
   }
   return "in_vigore";
@@ -226,7 +245,9 @@ export function statoDaMetadatiBulkA(abrogato: unknown): "in_vigore" | "abrogato
  */
 export function voceCollezioneDaMetadatiBulkA(voce: unknown): VoceBulkA | null {
   if (!isRecord(voce)) return null;
-  const metadati = isRecord(voce["metadati"]) ? (voce["metadati"] as Record<string, unknown>) : voce;
+  const metadati = isRecord(voce["metadati"])
+    ? (voce["metadati"] as Record<string, unknown>)
+    : voce;
   const urn = stringaBulkA(metadati["urn"]);
   if (!parseNIR(urn)) return null;
   const titoloDoc = normalizzaBulkA(stringaBulkA(metadati["titoloDoc"]));
@@ -234,12 +255,8 @@ export function voceCollezioneDaMetadatiBulkA(voce: unknown): VoceBulkA | null {
   const eliGrezzo = stringaBulkA(metadati["eli"]);
   const eliCandidato = eliGrezzo.startsWith("/") ? eliGrezzo : eliGrezzo ? `/${eliGrezzo}` : "";
   const dataDocCandidata = normalizzaData(metadati["dataDoc"]);
-  const dataGUCandidata = normalizzaData(
-    metadati["dataPubblicazione"] ?? metadati["dataGU"],
-  );
-  const numeroGUCandidato = stringaBulkA(
-    metadati["numeroPubblicazione"] ?? metadati["numeroGU"],
-  );
+  const dataGUCandidata = normalizzaData(metadati["dataPubblicazione"] ?? metadati["dataGU"]);
+  const numeroGUCandidato = stringaBulkA(metadati["numeroPubblicazione"] ?? metadati["numeroGU"]);
   return {
     urn,
     eliReale: eliCandidato && parseELI(eliCandidato) ? eliCandidato : "",
@@ -335,7 +352,8 @@ export function vociDaZipBulkA(bytes: Uint8Array, maxVoci: number): VoceBulkA[] 
     const cdOffset = view.getUint32(eocd + 16, true);
     if (totali === 0xffff || cdOffset === 0xffffffff) return [];
     let offset = cdOffset;
-    const nomi: Array<{ nome: string; metodo: number; dimCompatta: number; headerLocale: number }> = [];
+    const nomi: Array<{ nome: string; metodo: number; dimCompatta: number; headerLocale: number }> =
+      [];
     for (let i = 0; i < totali && offset + 46 <= bytes.length; i += 1) {
       if (view.getUint32(offset, true) !== 0x02014b50) break;
       const metodo = view.getUint16(offset + 10, true);
@@ -345,7 +363,8 @@ export function vociDaZipBulkA(bytes: Uint8Array, maxVoci: number): VoceBulkA[] 
       const extraLen = view.getUint16(offset + 30, true);
       const commentoLen = view.getUint16(offset + 32, true);
       const headerLocale = view.getUint32(offset + 42, true);
-      if (dimCompatta === 0xffffffff || dimEstesa === 0xffffffff || headerLocale === 0xffffffff) break;
+      if (dimCompatta === 0xffffffff || dimEstesa === 0xffffffff || headerLocale === 0xffffffff)
+        break;
       const nome = Buffer.from(bytes.subarray(offset + 46, offset + 46 + nomeLen)).toString("utf8");
       nomi.push({ nome, metodo, dimCompatta, headerLocale });
       offset += 46 + nomeLen + extraLen + commentoLen;
@@ -460,7 +479,7 @@ function aiuto(): string {
     "Ingest bulk-A Normattiva (collezione chiusa, lista-only, zero dettagli).",
     "",
     "Uso:",
-    "  npx tsx scripts/ingest-reale-normattiva-bulk-a.ts [opzioni]",
+    "  bunx tsx scripts/ingest-reale-normattiva-bulk-a.ts [opzioni]",
     "",
     "Opzioni:",
     "  --collezione=NOME        collezione preconfezionata (default: Atti di attuazione Regolamenti UE)",
@@ -493,7 +512,9 @@ export function outConsentitoBulkA(out: string): boolean {
   const base = path.resolve("data", "reali");
   const prefisso = `normattiva-bulk-a-`;
   const nome = path.basename(risolto);
-  return risolto.startsWith(`${base}${path.sep}`) && nome.startsWith(prefisso) && nome.endsWith(".json");
+  return (
+    risolto.startsWith(`${base}${path.sep}`) && nome.startsWith(prefisso) && nome.endsWith(".json")
+  );
 }
 
 /* --------------------------------------------------------------- main */
@@ -526,7 +547,9 @@ async function main(): Promise<void> {
     ...(apiBase ? { baseUrl: apiBase } : {}),
   };
 
-  console.log(`Ingest bulk-A Normattiva: collezione [${collezione}] formato=${formatoRichiesta} (max ${limite} atti, lista-only, zero dettagli).`);
+  console.log(
+    `Ingest bulk-A Normattiva: collezione [${collezione}] formato=${formatoRichiesta} (max ${limite} atti, lista-only, zero dettagli).`,
+  );
 
   // Dedup vs TUTTI i file data/reali/*.json esistenti (mai il proprio output).
   const percorsiDedup = await elencaRealiPerDedupBulkA([out]);
@@ -589,7 +612,9 @@ async function main(): Promise<void> {
   };
 
   const { utili, duplicate } = escludiConosciute(voci);
-  console.log(`Voci: ${voci.length} totali, ${duplicate} duplicate escluse, ${utili.length} utili.`);
+  console.log(
+    `Voci: ${voci.length} totali, ${duplicate} duplicate escluse, ${utili.length} utili.`,
+  );
   if (utili.length === 0) {
     console.error("Tutte le voci sono duplicate di atti esistenti: nessun file scritto.");
     process.exitCode = 1;
@@ -635,7 +660,9 @@ async function main(): Promise<void> {
   const envelope: Envelope = {
     provenance: {
       fonte: "normattiva",
-      url: urlCollezione || `${defaultNormattivaConfig(overridesDownload).baseUrl}/api/v1/collections/download/collection-preconfezionata`,
+      url:
+        urlCollezione ||
+        `${defaultNormattivaConfig(overridesDownload).baseUrl}/api/v1/collections/download/collection-preconfezionata`,
       recuperatoIl: new Date().toISOString(),
       licenza: LICENZA,
     },

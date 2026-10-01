@@ -22,12 +22,8 @@
 
 import { readdir, readFile, stat } from "node:fs/promises";
 import path from "node:path";
-import { describe, expect, it } from "vitest";
-import {
-  estraiListaAttiReali,
-  getSeedLaws,
-  normalizzaAttoReale,
-} from "../lib/sources";
+import { describe, expect, it } from "vite-plus/test";
+import { estraiListaAttiReali, getSeedLaws, normalizzaAttoReale } from "../lib/sources";
 
 const RADICE = process.cwd();
 const DIR_REALI = path.resolve(RADICE, "data/reali");
@@ -142,15 +138,7 @@ function isRecuperatoIl(v: unknown): boolean {
   return anno >= 2025 && anno <= oggi + 1;
 }
 
-const SEGNALI_INVENTATI = [
-  "example.com",
-  "malevolo",
-  "lorem",
-  "todo",
-  "xxx",
-  "inventato",
-  "fake",
-];
+const SEGNALI_INVENTATI = ["example.com", "malevolo", "lorem", "todo", "xxx", "inventato", "fake"];
 function haSegnaleInventato(v: unknown): boolean {
   if (typeof v !== "string") return false;
   const s = v.toLowerCase();
@@ -158,8 +146,7 @@ function haSegnaleInventato(v: unknown): boolean {
 }
 
 function provenanceDi(parsed: unknown): Record<string, unknown> | null {
-  if (!parsed || typeof parsed !== "object" || Array.isArray(parsed))
-    return null;
+  if (!parsed || typeof parsed !== "object" || Array.isArray(parsed)) return null;
   const p = (parsed as { provenance?: unknown }).provenance;
   if (!p || typeof p !== "object" || Array.isArray(p)) return null;
   return p as Record<string, unknown>;
@@ -182,9 +169,7 @@ function estraiArray(parsed: unknown, chiavi: string[]): unknown[] | null {
   return null;
 }
 
-async function leggiJson(
-  percorso: string,
-): Promise<{ parsed: unknown; byte: number } | null> {
+async function leggiJson(percorso: string): Promise<{ parsed: unknown; byte: number } | null> {
   try {
     const raw = await readFile(percorso, "utf8");
     const byte = Buffer.byteLength(raw, "utf8");
@@ -199,7 +184,9 @@ function notaSkip(msg: string): void {
 }
 
 function chiaveEli(v: unknown): string {
-  return String(v ?? "").trim().toLowerCase();
+  return String(v ?? "")
+    .trim()
+    .toLowerCase();
 }
 
 // ---------------------------------------------------------------------------
@@ -210,8 +197,7 @@ function spotCheckNormattiva(voce: unknown): string | null {
   if (!voce || typeof voce !== "object") return "voce non oggetto";
   const r = voce as Record<string, unknown>;
   // Zero titoli inventati: titolo reale da lista (titoloAtto/titoloDoc/titolo).
-  const titolo =
-    r["titolo"] ?? r["titoloAtto"] ?? r["titoloDoc"] ?? r["epigrafe"];
+  const titolo = r["titolo"] ?? r["titoloAtto"] ?? r["titoloDoc"] ?? r["epigrafe"];
   if (!isStringaNonVuota(titolo)) return "manca titolo/titoloAtto/titoloDoc";
   if (haSegnaleInventato(titolo)) return "titolo con segnale inventato";
   // ELI/URN reale: eli oppure urn (bulk TU usa urn+eli).
@@ -252,7 +238,13 @@ function spotCheckCamera(voce: unknown): string | null {
   if (haSegnaleInventato(titolo)) return "titolo con segnale inventato";
   for (const k of ["scheda", "url", "link"]) {
     const v = r[k];
-    if (v !== undefined && v !== null && v !== "" && !isHttpsUrl(String(v)) && !String(v).startsWith("http")) {
+    if (
+      v !== undefined &&
+      v !== null &&
+      v !== "" &&
+      !isHttpsUrl(String(v)) &&
+      !String(v).startsWith("http")
+    ) {
       return `campo ${k} non URL`;
     }
     if (haSegnaleInventato(v)) return `campo ${k} con segnale inventato`;
@@ -285,18 +277,16 @@ describe("reali-9: envelope bulk/finestre Normattiva (skip se assenti)", () => {
       ).not.toBeNull();
       expect(isStringaNonVuota(prov?.["fonte"]), `${nome}: fonte assente`).toBe(true);
       expect(isHttpsUrl(prov?.["url"]), `${nome}: url non https`).toBe(true);
-      expect(
-        isRecuperatoIl(prov?.["recuperatoIl"]),
-        `${nome}: recuperatoIl non ISO reale`,
-      ).toBe(true);
+      expect(isRecuperatoIl(prov?.["recuperatoIl"]), `${nome}: recuperatoIl non ISO reale`).toBe(
+        true,
+      );
       expect(isStringaNonVuota(prov?.["licenza"]), `${nome}: licenza assente`).toBe(true);
       const lista = estraiArray(letto.parsed, atteso.chiavi);
       expect(lista, `${nome}: nessun array dati non vuoto`).not.toBeNull();
       expect(lista?.length ?? 0, `${nome}: conteggio zero`).toBeGreaterThan(0);
-      expect(
-        lista?.length ?? 0,
-        `${nome}: oltre il cap ${atteso.max}`,
-      ).toBeLessThanOrEqual(atteso.max);
+      expect(lista?.length ?? 0, `${nome}: oltre il cap ${atteso.max}`).toBeLessThanOrEqual(
+        atteso.max,
+      );
     });
 
     it(`${nome}: zero inventati (spot-check titolo+eli/urn)`, async () => {
@@ -397,7 +387,9 @@ describe("reali-9: shard Camera leg19 (skip se assenti)", () => {
         const r = voce as Record<string, unknown>;
         const uri = chiaveEli(r["uri"] ?? r["scheda"] ?? r["id"]);
         if (!uri) continue;
-        expect(visti.has(uri), `${path.basename(atteso.percorso)}: uri duplicato ${uri}`).toBe(false);
+        expect(visti.has(uri), `${path.basename(atteso.percorso)}: uri duplicato ${uri}`).toBe(
+          false,
+        );
         visti.add(uri);
       }
       verificati += 1;

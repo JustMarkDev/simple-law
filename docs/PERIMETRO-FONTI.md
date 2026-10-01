@@ -24,27 +24,27 @@ Corpus misurato il 2026-09-28: 6766 record (5 seed + 1763 reali
 
 ## Live (verificate su disco il 2026-09-28)
 
-| Fonte | File | Via |
-|---|---|---|
-| Normattiva recenti | `normattiva-recenti.json` | `PERCORSI_ATTI_REALI`, corpus |
-| Normattiva storici 1948–2020 | `normattiva-storico-1948/1955/1960/1970/1975/1980/1985/1990/1992-1993/1995/2000/2005-2006/2010/2015/2020.json` | `PERCORSI_ATTI_REALI`, corpus |
+| Fonte                                                                                       | File                                                                                                                                                                                                                                                      | Via                           |
+| ------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------- |
+| Normattiva recenti                                                                          | `normattiva-recenti.json`                                                                                                                                                                                                                                 | `PERCORSI_ATTI_REALI`, corpus |
+| Normattiva storici 1948–2020                                                                | `normattiva-storico-1948/1955/1960/1970/1975/1980/1985/1990/1992-1993/1995/2000/2005-2006/2010/2015/2020.json`                                                                                                                                            | `PERCORSI_ATTI_REALI`, corpus |
 | Normattiva collezioni + bulk attuazione-UE + finestra 2005 + 2005-2006 + 2010 + 2015 + 2000 | `normattiva-storico-collezioni.json`, `normattiva-bulk-a-attuazione-ue.json`, `normattiva-bulk-b-finestra-2005.json`, `normattiva-storico-2005-2006.json`, `normattiva-storico-2010.json`, `normattiva-storico-2015.json`, `normattiva-storico-2000.json` | `PERCORSI_ATTI_REALI`, corpus |
-| Normattiva finestre 2012 + 2018 (cap 80) | `normattiva-storico-2012.json` (72 atti), `normattiva-storico-2018.json` (74 atti) — verificati su disco il 2026-09-28 | `PERCORSI_ATTI_REALI`, corpus |
-| Camera leg19 (deputati, gruppi, atti A/B/C) | `camera-deputati.json`, `camera-gruppi.json`, `camera-atti*.json` | anagrafiche + atti |
-| Senato (senatori, gruppi) | `senato-senatori.json`, `senato-gruppi.json` | anagrafiche |
-| Parlamento DDL | `parlamento-ddl.json` | atti |
-| Governo comunicati | `governo-comunicati.json` | comunicati |
-| Quirinale atti + comunicati | `quirinale-atti.json`, `quirinale-comunicati.json` | atti/comunicati |
-| Consulta pronunce 2001 | `consulta-pronunce-2001.json` | atti |
-| EUR-Lex 2026 + recepimenti (+atti) | `eurlex-2026.json`, `eurlex-recepimenti.json`, `eurlex-recepimenti-atti.json` | atti |
-| Oversight ANAC/CNEL/GA | `oversight-anac-2025.json`, `oversight-cnel-2026.json`, `oversight-ga-2026.json` | oversight |
-| Gazzetta ultime (RSS diretto) | `gazzetta-ultime.json` | GU |
-| Europee 2024 | `elezioni-europee-2024.json` | UI/API elezioni |
-| Politiche 2022 Camera + Senato | `elezioni-politiche-2022-camera.json`, `elezioni-politiche-2022-senato.json` | UI/API elezioni |
-| Referendum 2025 (5 quesiti) | `referendum-2025.json` | UI/API elezioni |
-| Regionali Toscana 2025 + Umbria 2024 | `elezioni-regionali-2025-toscana.json`, `elezioni-regionali-2024-umbria.json` | UI/API elezioni |
-| Regionali Liguria 2024 + Calabria 2025 | `elezioni-regionali-2024-liguria.json`, `elezioni-regionali-2025-calabria.json` | route regionali-extra |
-| Sondaggi nazionali (fonte secondaria) | `sondaggi-nazionali.json` | hub elezioni |
+| Normattiva finestre 2012 + 2018 (cap 80)                                                    | `normattiva-storico-2012.json` (72 atti), `normattiva-storico-2018.json` (74 atti) — verificati su disco il 2026-09-28                                                                                                                                    | `PERCORSI_ATTI_REALI`, corpus |
+| Camera leg19 (deputati, gruppi, atti A/B/C)                                                 | `camera-deputati.json`, `camera-gruppi.json`, `camera-atti*.json`                                                                                                                                                                                         | anagrafiche + atti            |
+| Senato (senatori, gruppi)                                                                   | `senato-senatori.json`, `senato-gruppi.json`                                                                                                                                                                                                              | anagrafiche                   |
+| Parlamento DDL                                                                              | `parlamento-ddl.json`                                                                                                                                                                                                                                     | atti                          |
+| Governo comunicati                                                                          | `governo-comunicati.json`                                                                                                                                                                                                                                 | comunicati                    |
+| Quirinale atti + comunicati                                                                 | `quirinale-atti.json`, `quirinale-comunicati.json`                                                                                                                                                                                                        | atti/comunicati               |
+| Consulta pronunce 2001                                                                      | `consulta-pronunce-2001.json`                                                                                                                                                                                                                             | atti                          |
+| EUR-Lex 2026 + recepimenti (+atti)                                                          | `eurlex-2026.json`, `eurlex-recepimenti.json`, `eurlex-recepimenti-atti.json`                                                                                                                                                                             | atti                          |
+| Oversight ANAC/CNEL/GA                                                                      | `oversight-anac-2025.json`, `oversight-cnel-2026.json`, `oversight-ga-2026.json`                                                                                                                                                                          | oversight                     |
+| Gazzetta ultime (RSS diretto)                                                               | `gazzetta-ultime.json`                                                                                                                                                                                                                                    | GU                            |
+| Europee 2024                                                                                | `elezioni-europee-2024.json`                                                                                                                                                                                                                              | UI/API elezioni               |
+| Politiche 2022 Camera + Senato                                                              | `elezioni-politiche-2022-camera.json`, `elezioni-politiche-2022-senato.json`                                                                                                                                                                              | UI/API elezioni               |
+| Referendum 2025 (5 quesiti)                                                                 | `referendum-2025.json`                                                                                                                                                                                                                                    | UI/API elezioni               |
+| Regionali Toscana 2025 + Umbria 2024                                                        | `elezioni-regionali-2025-toscana.json`, `elezioni-regionali-2024-umbria.json`                                                                                                                                                                             | UI/API elezioni               |
+| Regionali Liguria 2024 + Calabria 2025                                                      | `elezioni-regionali-2024-liguria.json`, `elezioni-regionali-2025-calabria.json`                                                                                                                                                                           | route regionali-extra         |
+| Sondaggi nazionali (fonte secondaria)                                                       | `sondaggi-nazionali.json`                                                                                                                                                                                                                                 | hub elezioni                  |
 
 Nota: gli storici 1975/1995 (REALI-13, nomi `normattiva-storico-*`) risultano
 su disco il 2026-09-28; restano `wiring-pronto`/assenti solo gli alias
@@ -53,40 +53,40 @@ direttiva, coperti dal loader che salta gli assenti).
 
 ## Wiring-pronto REALI-14 (file attesi, loader tolleranti)
 
-| Fonte | File atteso | Via |
-|---|---|---|
-| Finanziamenti partiti 2024–2026 (solo beneficiario×anno, max 50) | `finanziamenti-erogazioni-2024-2026.json` | nuovo (W1); licenza `camera.it — solo riuso non commerciale con citazione fonte` |
-| Regionale Emilia-Romagna 2024-11-17 | `elezioni-regionali-2024-emilia-romagna.json` | registry elezioni + API regionali + hub (questo round) |
-| Regionali Campania/Puglia/Veneto 2025-11-23 | `elezioni-regionali-2025-campania.json`, `...-puglia.json`, `...-veneto.json` (bozze W3 verificate il 2026-09-28 con nomi `b-*`, stesso envelope: 20 liste, 550 comuni per la Campania) | registry elezioni + API regionali + hub (questo round) |
-| Normattiva finestre 2012 + 2018 (cap 80) | `normattiva-storico-2012.json`, `normattiva-storico-2018.json` — entrambi live il 2026-09-28 (72/74 atti) | `PERCORSI_ATTI_REALI` (questo round) |
+| Fonte                                                            | File atteso                                                                                                                                                                             | Via                                                                              |
+| ---------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- |
+| Finanziamenti partiti 2024–2026 (solo beneficiario×anno, max 50) | `finanziamenti-erogazioni-2024-2026.json`                                                                                                                                               | nuovo (W1); licenza `camera.it — solo riuso non commerciale con citazione fonte` |
+| Regionale Emilia-Romagna 2024-11-17                              | `elezioni-regionali-2024-emilia-romagna.json`                                                                                                                                           | registry elezioni + API regionali + hub (questo round)                           |
+| Regionali Campania/Puglia/Veneto 2025-11-23                      | `elezioni-regionali-2025-campania.json`, `...-puglia.json`, `...-veneto.json` (bozze W3 verificate il 2026-09-28 con nomi `b-*`, stesso envelope: 20 liste, 550 comuni per la Campania) | registry elezioni + API regionali + hub (questo round)                           |
+| Normattiva finestre 2012 + 2018 (cap 80)                         | `normattiva-storico-2012.json`, `normattiva-storico-2018.json` — entrambi live il 2026-09-28 (72/74 atti)                                                                               | `PERCORSI_ATTI_REALI` (questo round)                                             |
 
 ## Link-only per natura (mai scrape, solo link esterno)
 
-| Fonte | Motivo |
-|---|---|
-| CISE (cise.luiss.it), YouTrend | analisi di secondo livello, layout instabili — reachability verificata in `docs/elezioni-piano.md`, vietato scraparli |
-| Radio Radicale, Openpolis, think-tank | link-only per natura (verdetto REALI-14): archivi audio/aggregatori proprietari, incompatibili con ingest bounded |
-| Hub Camera (`camera.it/leg19/1384`) e relazioni CRP (`camera.it/leg19/1234`) | solo fonte-link per i finanziamenti (verdetto REALI-14) |
+| Fonte                                                                        | Motivo                                                                                                                |
+| ---------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------- |
+| CISE (cise.luiss.it), YouTrend                                               | analisi di secondo livello, layout instabili — reachability verificata in `docs/elezioni-piano.md`, vietato scraparli |
+| Radio Radicale, Openpolis, think-tank                                        | link-only per natura (verdetto REALI-14): archivi audio/aggregatori proprietari, incompatibili con ingest bounded     |
+| Hub Camera (`camera.it/leg19/1384`) e relazioni CRP (`camera.it/leg19/1234`) | solo fonte-link per i finanziamenti (verdetto REALI-14)                                                               |
 
 ## Rimandata (non definitiva, con condizione di rientro)
 
-| Fonte | Motivo e condizione |
-|---|---|
+| Fonte                                                                                              | Motivo e condizione                                                                |
+| -------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- |
 | BDU Corte dei Conti — portale pubblico (il dominio `servizionline…` con login-check resta escluso) | non assegnata per vincolo max-2 verticali; rinviata a REALI-15 (verdetto REALI-14) |
 
 ## Non-disponibile (chiusura perimetro, dal verdetto REALI-14)
 
-| Fonte | Motivo |
-|---|---|
-| CSM | WAF Radware (`Radware Block Page`, challenge browser, sitemap 404, URL `?t=<timestamp>` instabili) — incompatibile con script bounded; rientro solo con browser-rendering, fuori scope |
-| Piemonte 2024 (`regionali-20240609.csv`) | header candidati-level con DATANASCITA/LUOGONASCITA/SESSO + mancano NULLE/CONTESTATE — viola SOLO-aggregati + riuso 0% |
-| Abruzzo/Basilicata txt | candidati-level, esclusi |
-| Sardegna/Marche | 404, non pubblicate |
-| `dato per sez/*` | 314 MB, fuori cap |
-| PDF integrali finanziamenti + relazioni CRP integrali | >4 MB, vietati (solo aggregati <50 KB) |
-| Normattiva 2008 | errore code 1502 su >7000 atti, servirebbe split H1/H2 — scartato per costo |
-| Normattiva 2001 | dettaglio 25–71% volatile |
-| Normattiva 1998/1988/1978/1965 | battute da 2012/2018 per volume×resa |
+| Fonte                                                 | Motivo                                                                                                                                                                                 |
+| ----------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| CSM                                                   | WAF Radware (`Radware Block Page`, challenge browser, sitemap 404, URL `?t=<timestamp>` instabili) — incompatibile con script bounded; rientro solo con browser-rendering, fuori scope |
+| Piemonte 2024 (`regionali-20240609.csv`)              | header candidati-level con DATANASCITA/LUOGONASCITA/SESSO + mancano NULLE/CONTESTATE — viola SOLO-aggregati + riuso 0%                                                                 |
+| Abruzzo/Basilicata txt                                | candidati-level, esclusi                                                                                                                                                               |
+| Sardegna/Marche                                       | 404, non pubblicate                                                                                                                                                                    |
+| `dato per sez/*`                                      | 314 MB, fuori cap                                                                                                                                                                      |
+| PDF integrali finanziamenti + relazioni CRP integrali | >4 MB, vietati (solo aggregati <50 KB)                                                                                                                                                 |
+| Normattiva 2008                                       | errore code 1502 su >7000 atti, servirebbe split H1/H2 — scartato per costo                                                                                                            |
+| Normattiva 2001                                       | dettaglio 25–71% volatile                                                                                                                                                              |
+| Normattiva 1998/1988/1978/1965                        | battute da 2012/2018 per volume×resa                                                                                                                                                   |
 
 ## Correzioni note
 

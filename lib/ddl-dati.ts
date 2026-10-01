@@ -237,9 +237,7 @@ export function voceDaAttoCamera(voce: unknown): VoceDdl | null {
     const o = voce as Record<string, unknown>;
     const uri = urlHttp(o["uri"]);
     const numero = stringaPulita(o["numero"]);
-    const titolo = decodificaEntitaHtml(
-      stringaPulita(o["titolo"]) || stringaPulita(o["label"]),
-    );
+    const titolo = decodificaEntitaHtml(stringaPulita(o["titolo"]) || stringaPulita(o["label"]));
     if (!uri || !titolo || !numero) return null;
     const risultato: VoceDdl = {
       fonte: "camera",
@@ -366,8 +364,7 @@ function moduliNode(): ModuliNode | null {
         join(...p: string[]): string;
       };
       if (fs && path && typeof fs.readFileSync === "function") {
-        const readdir =
-          typeof fs.readdirSync === "function" ? fs.readdirSync.bind(fs) : () => [];
+        const readdir = typeof fs.readdirSync === "function" ? fs.readdirSync.bind(fs) : () => [];
         return {
           existsSync: fs.existsSync,
           readFileSync: fs.readFileSync,
@@ -413,10 +410,7 @@ function percorsiShardCamera(): string[] {
     if (!Array.isArray(voci)) return [];
     return voci
       .filter(
-        (v) =>
-          typeof v === "string" &&
-          v.startsWith(PREFISSO_SHARD_CAMERA) &&
-          v.endsWith(".json"),
+        (v) => typeof v === "string" && v.startsWith(PREFISSO_SHARD_CAMERA) && v.endsWith(".json"),
       )
       .sort()
       .map((v) => `${DIR_REALI}/${v}`);

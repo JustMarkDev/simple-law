@@ -1,4 +1,4 @@
-import { describe, expect, it } from "vitest";
+import { describe, expect, it } from "vite-plus/test";
 import { normalizzaAttoReale } from "@/lib/sources";
 import { statoCorrettoTestata } from "../scripts/normalizza-stati-testata";
 
@@ -37,25 +37,22 @@ describe("stati di testata: header formale di abrogazione/decadenza", () => {
   });
 
   it("header senza spazio resta abrogato", () => {
-    expect(
-      statoCorrettoTestata("Art. 1 ((PROVVEDIMENTO ABROGATO - testo", "in_vigore"),
-    ).toBe("abrogato");
+    expect(statoCorrettoTestata("Art. 1 ((PROVVEDIMENTO ABROGATO - testo", "in_vigore")).toBe(
+      "abrogato",
+    );
   });
 
   it("DECRETO DECADUTO -> decaduto", () => {
     expect(statoCorrettoTestata("Art. 1 DECRETO DECADUTO", "in_vigore")).toBe("decaduto");
     expect(
-      normalizzaAttoReale({ ...BASE, stato: "in_vigore", testo: "Art. 1 DECRETO DECADUTO" })
-        ?.stato,
+      normalizzaAttoReale({ ...BASE, stato: "in_vigore", testo: "Art. 1 DECRETO DECADUTO" })?.stato,
     ).toBe("decaduto");
   });
 
   it("ARTICOLO ABROGATO singolo resta in_vigore (mai toccare)", () => {
     const testo = "Art. 1 ((ARTICOLO ABROGATO DAL D. LGS. 19 DICEMBRE 2002, N. 297 ))";
     expect(statoCorrettoTestata(testo, "in_vigore")).toBeNull();
-    expect(normalizzaAttoReale({ ...BASE, stato: "in_vigore", testo })?.stato).toBe(
-      "in_vigore",
-    );
+    expect(normalizzaAttoReale({ ...BASE, stato: "in_vigore", testo })?.stato).toBe("in_vigore");
   });
 
   it("mai retrocedere abrogato/decaduto/sconosciuto", () => {
@@ -63,16 +60,12 @@ describe("stati di testata: header formale di abrogazione/decadenza", () => {
     expect(statoCorrettoTestata(testo, "abrogato")).toBeNull();
     expect(statoCorrettoTestata(testo, "decaduto")).toBeNull();
     expect(statoCorrettoTestata(testo, "sconosciuto")).toBeNull();
-    expect(
-      normalizzaAttoReale({ ...BASE, stato: "abrogato", testo })?.stato,
-    ).toBe("abrogato");
-    expect(
-      normalizzaAttoReale({ ...BASE, stato: "decaduto", testo })?.stato,
-    ).toBe("decaduto");
+    expect(normalizzaAttoReale({ ...BASE, stato: "abrogato", testo })?.stato).toBe("abrogato");
+    expect(normalizzaAttoReale({ ...BASE, stato: "decaduto", testo })?.stato).toBe("decaduto");
     // dettaglio assente senza testo verificato resta sconosciuto anche con header in sintesi
-    expect(
-      normalizzaAttoReale({ ...BASE, stato: "sconosciuto", dettaglio: false })?.stato,
-    ).toBe("sconosciuto");
+    expect(normalizzaAttoReale({ ...BASE, stato: "sconosciuto", dettaglio: false })?.stato).toBe(
+      "sconosciuto",
+    );
   });
 
   it("testo senza header non cambia stato", () => {

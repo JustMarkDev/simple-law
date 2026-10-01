@@ -58,6 +58,7 @@ function cellaCsv(value: unknown): string {
   // spazi/controlli iniziali (inclusi BOM e spazi unicode) inizia con = + - @ | % ; " tab.
   // La pulizia iniziale copre anche i caratteri bidi (U+202A-U+202E, U+200B ecc.)
   // usati per camuffare l'attacco.
+  // oxlint-disable-next-line no-control-regex -- strips control characters on purpose
   const senzaBidi = testo.replace(/^[\s\u0000-\u0020\uFEFF\u2000-\u200B\u202A-\u202E]+/, "");
   const protetto = /^[=+\-@|%;"\t]/.test(senzaBidi) ? `'${testo}` : testo;
   if (/[",\r\n]/.test(protetto)) return `"${protetto.replace(/"/g, '""')}"`;
@@ -83,9 +84,7 @@ function ipClient(request: Request): string {
   }
   const h = request.headers;
   const diretto =
-    h.get("x-forwarded-for")?.split(",")[0]?.trim() ||
-    h.get("x-real-ip")?.trim() ||
-    "anonimo";
+    h.get("x-forwarded-for")?.split(",")[0]?.trim() || h.get("x-real-ip")?.trim() || "anonimo";
   return diretto.slice(0, 80) || "anonimo";
 }
 
@@ -168,7 +167,9 @@ export async function GET(request: Request) {
     const generatedAt = new Date().toISOString();
 
     if (Date.now() - inizio > 500) {
-      console.warn(`[export] conteggio lento: ${Date.now() - inizio}ms filtri=${JSON.stringify(filtri)}`);
+      console.warn(
+        `[export] conteggio lento: ${Date.now() - inizio}ms filtri=${JSON.stringify(filtri)}`,
+      );
     }
 
     const segnale = request.signal;
