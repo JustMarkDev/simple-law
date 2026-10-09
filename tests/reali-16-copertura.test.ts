@@ -4,7 +4,7 @@
  * (singolo o range 1992-1993/2005-2006) cablato nel loader, con atti
  * veri e ELI unici. Mai inventare anni: il test fallisce se manca copertura.
  */
-import { describe, expect, it } from "vitest";
+import { describe, expect, it } from "vite-plus/test";
 import { readdirSync, readFileSync } from "node:fs";
 import { join } from "node:path";
 import { getCorpusInfo, getSeedLaws } from "@/lib/sources";

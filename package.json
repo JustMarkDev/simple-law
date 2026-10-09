@@ -18,7 +18,8 @@
     "db:seed:espanso": "tsx scripts/seed-espanso.ts",
     "smoke": "node scripts/smoke-live.mjs",
     "sync:storico": "tsx scripts/sync-storico.ts",
-    "postinstall": "prisma generate"
+    "postinstall": "prisma generate",
+    "prepare": "vp config"
   },
   "dependencies": {
     "@opencode-ai/sdk": "1.18.34",
@@ -46,10 +47,18 @@
     "tailwindcss": "4.3.3",
     "tsx": "4.23.15",
     "typescript": "7.0.2",
-    "vite-plus": "^1.0.0"
+    "vite": "npm:@voidzero-dev/vite-plus-core@1.1.0",
+    "vite-plus": "1.1.0"
   },
   "overrides": {
-    "vite": "npm:@voidzero-dev/vite-plus-core@1.0.0"
+    "vite": "npm:@voidzero-dev/vite-plus-core@1.1.0"
+  },
+  "devEngines": {
+    "packageManager": {
+      "name": "bun",
+      "version": "1.4.2",
+      "onFail": "download"
+    }
   },
   "engines": {
     "node": ">=20"

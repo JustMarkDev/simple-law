@@ -14,11 +14,16 @@ const ignorePatterns = [
 ];
 
 export default defineConfig({
+  staged: {
+    "*": "vp check --fix",
+  },
   lint: {
+    jsPlugins: [{ name: "vite-plus", specifier: "vite-plus/oxlint-plugin" }],
     plugins: ["typescript", "react", "nextjs", "jsx-a11y"],
     options: { typeAware: true, typeCheck: true },
     ignorePatterns,
     rules: {
+      "vite-plus/prefer-vite-plus-imports": "error",
       "typescript/no-explicit-any": "error",
       "no-unused-vars": ["error", { argsIgnorePattern: "^_", varsIgnorePattern: "^_" }],
       // Strict type-aware rules the previous ESLint setup (next/core-web-vitals + next/typescript) never ran.

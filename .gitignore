@@ -36,3 +36,4 @@ prisma/dev.db
 
 # archivi bulk Normattiva (scaricati a runtime)
 /data/bulk/
+.vitest/
