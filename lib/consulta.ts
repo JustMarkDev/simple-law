@@ -42,12 +42,7 @@ export interface ProvenienzaConsulta {
 export function normalizza(value: unknown): string {
   try {
     if (typeof value !== "string") return "";
-    return value
-      .toLowerCase()
-      .normalize("NFD")
-      .replace(/[̀-ͯ]/g, "")
-      .trim()
-      .replace(/\s+/g, " ");
+    return value.toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "").trim().replace(/\s+/g, " ");
   } catch {
     return "";
   }
