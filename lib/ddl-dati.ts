@@ -90,12 +90,7 @@ export interface ProvenanceDdl {
 export function normalizzaDdl(value: unknown): string {
   try {
     if (typeof value !== "string") return "";
-    return value
-      .toLowerCase()
-      .normalize("NFD")
-      .replace(/[̀-ͯ]/g, "")
-      .trim()
-      .replace(/\s+/g, " ");
+    return value.toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "").trim().replace(/\s+/g, " ");
   } catch {
     return "";
   }
