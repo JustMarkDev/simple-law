@@ -82,7 +82,7 @@ italiano.
   `2026-09-29T01:13:00.139Z` (`bunx tsx scripts/ingest-reale-governo.ts`).
 - `normattiva-recenti.json`: 46 -> 46 atti, `recuperatoIl`
   `2026-09-29T01:13:16.675Z` (`bunx tsx scripts/ingest-reale-normattiva.ts
---limite=50`; lista 330 URN, dettagli OK 46, 4 scarti senza titolo/chiave).
+  --limite=50`; lista 330 URN, dettagli OK 46, 4 scarti senza titolo/chiave).
 - `bunx tsx scripts/verifica-freschezza.ts`: exit 0, tutti i refreshabili OK.
 - Nota onesta: gli script non aggiornano `MANIFEST.json` (voci ancora al
   2026-09-28, fuori scope R1: MANIFEST in carico a W2) → 2 test di coerenza
